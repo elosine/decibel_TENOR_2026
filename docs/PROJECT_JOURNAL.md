@@ -180,6 +180,9 @@ deliverables · the planning repo's lines (at his word only).
     (d) THE BASS CLARINET from piece #5's recipe (34 presets; the slap and the second instance — NITS) · THE VIOLA from piece
     #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
     plain non-vibrato) · a save.
+  - **THE WHOLE LIST TO "FULLY OPERATIONAL", as put to him — RUNNING_LOG §27:** A playable (the sweep · the maps · the recipes · the
+    first sound) → B the settings (the round-robin check, the verdict per library, the record) → C the volume (container 5).
+    **HIS WORD ON THE REPLIES (§27): too much text — a table or a short list first, one line per item.**
   - **THEN 4.6 THE FIRST SOUND** from the composer score in his Chrome → 4.4's settings pass (the round robins — his word, §18;
     what the plugins show is in §24 · §25) → 4.7 + 4.10.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the

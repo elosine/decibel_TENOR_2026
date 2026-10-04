@@ -980,3 +980,41 @@ being written (he had said, §18: *"as soon as the rack is ready, I'll send you 
   candidates 9 Key Noises · 11 · 23 Multiphonics · 12 · 24 Air Noises · 6 Jet Whistle + Slap Tongue — their keys by the sweep.
   WHICH is the ordinary voice is his: the list has no plain non-vibrato sustain (15 Vibrato Velocity · 28 Portato Velocity · 26
   With Accent Velocity are the nearest).
+
+## §27. "A nice, organized, clear list in order" — what is left to make the rack fully operational; the probe explained; and his word on the replies (2026-10-04, Opus)
+
+**His words:** *"Can we organize and then list all that's left to be done in the rack? So is there any sort of round robin reset
+or any volume um, probes that need to be done? I noticed in the Spitfire, there is a round robin setting in one of the
+screenshots. So do we need to address those? Again, I don't want to spend too much time doing this, but I just want a better
+picture of what's left to be done. And other things in addition to volume, like the maps and whatnot. And then what is this
+probe? Can you explain it to me a little bit more clearly? And when you're making your list, please be organized and clear.
+**I'm finding the responses a bit too much text and too much to analyze to get the information out.** So explain to me what
+needs to be done in your [Ricotti], bass flute, and strings. And then how we're doing this and to what extent probe versus
+manual readings … So I'm expecting a nice, organized, clear list in order of what we need to do to get the rack fully
+operational, and then an explanation of how you want to achieve some of these things, including the probe and any other sort
+of automated mapping."*
+
+**ON THE REPLIES — a correction to the AI, kept:** too much text. From here: a table or a short numbered list first, one line
+per item, the notes cut to what changes what he does.
+
+**The list, as given (three stages, in order):**
+- **A · PLAYABLE from the composer score (the rest of container 4).** 1 the key sweep built (AI) · 2 the ranges and by-key maps
+  read by it — Ricotti's 39 patches, the bass flute's by-key presets, the strings' 16 pending voices (AI) · 3 the recipes written
+  — the Ricotti lane, bass flute, bass clarinet, viola (AI; his one choice: the bass flute's ordinary preset) · 4 the first
+  sound from the composer score (his Chrome).
+- **B · THE SETTINGS — round robins.** 5 a round-robin check per instrument (AI probe: one note repeated, the repeats compared) ·
+  6 the verdict per library and the switch (the lineage's rule for Xsample: OFF — piece #6 measured its members up to 13.8 dB
+  apart, `docs/RACK_SETTINGS.md` §2 · §3; Ricotti and Abbey Road undecided — the probe says) · 7 every hand-set value recorded.
+- **C · THE VOLUME (container 5).** 8 the reference tone and his system volume, once · 9 the clipping pre-flight (AI probe) ·
+  10 the instrument card — every instrument measured (AI probe), the trims applied by script · 11 the dynamics curves · 12 his
+  ear, then the QC battery.
+
+**"The probe", as explained to him:** the AI plays notes into an instrument through its port and reads what comes out — no
+hands. Three sizes: THE SWEEP (every key once, the meter read: which keys sound, roughly how loud — for maps and ranges) · THE
+ROUND-ROBIN CHECK (one note repeated: do the repeats differ) · THE CARD (chosen notes at set dynamics, RECORDED and measured:
+the loudness numbers the trims are computed from). By hand, his: a choice (the ordinary preset), a switch only a plugin's panel
+has, a verdict by ear.
+
+**What the record does NOT say, stated to him as unknown:** whether the viola's and the bass clarinet's states (piece #5's)
+have round robin off — the cello's (piece #6's) should, the bass flute's is the factory setting · what piece #6 did with the
+Abbey Road round robins (its settings file has no entry: untouched, as far as the record shows).
