@@ -742,3 +742,54 @@ copies on 2 … 4, and writes its read-back. Parse-checked through the bridge (R
 **The division of labour, as it came out** (for the how-to pages, 4.10): the AI made the ports, built the rack file, opened
 Reaper, set every input, proved the sound. His: enabling the new inputs in Reaper's Preferences (once) · running a Kontakt script
 from Kontakt's own menu (once per new instance) · CTRL+S.
+
+## §20. CONTAINER 4 — THE PORTS PROVEN END TO END · THE THREE CLONES SWAPPED TO THE RACKS ON DISK (his word) · RICOTTI: installed, cataloged, four tracks, four loaders (2026-10-04, Opus)
+
+**What prompted it — his words:** *"The mallets should be installed now. Could you see if you can get it into a [Kontakt]
+instrument? If not, can you see what directory it landed in? and I'm working on the rest now."* — then, mid-turn: *"disk, midi
+inputs done; I'll give you tentative non-pitched in a moment"*.
+
+**The ports, end to end (his Preferences step done).** One note through each port, the meters read by `peakwatch.lua`:
+Cello XS −27.3 / −25.9 dB · Viola XS −22.3 / −18.9 dB · Bass Clarinet XS −27.1 / −30.1 dB. The path loopMIDI → Reaper → the
+cloned Kontakt is whole. He had SAVED the rack (14:14) — from then the file is his, and every change goes through the bridge.
+
+**"disk" — the three clones re-taken from the old racks' working files.** `tools/build_rack.js --source disk --emit "<track>"`
+writes one cloned chunk; the bridge sets it on the existing track (`reaper.SetTrackStateChunk`), then `make_tracks.lua` gives
+the track its input back. Read, never written: piece #6 `LGMF_rack.rpp` as saved 2026-10-01 18:48 · piece #5
+`septet_rack.rpp` as saved 2026-09-17 15:04.
+- Cello XS: state `ef78072c7073`, 2 416 010 bytes, set in 2.6 s · Viola XS: `6aaf0033227b`, 2 274 260 bytes, 2.6 s · Bass
+  Clarinet XS (the first of piece #5's two): `84fc68314a30`, 1 606 303 bytes, 1.7 s.
+- After the swap, through the ports: **Cello XS −28.3 / −26.6 dB · Viola XS −22.6 / −23.5 dB · Bass Clarinet XS −17.9 / −16.7 dB**
+  (the bass clarinet 10 dB above git's state at the same note and velocity — the states do differ; which setting, not looked at).
+- This is a deviation from "the copy is from git" (§7), at his word, for the rack's three tracks only.
+
+**Ricotti Mallets — where it landed and what it is.** `C:\Users\jwloy\Spitfire\Spitfire Ricotti Mallets library` — `Instruments`
+· `Samples` (.nkx / .nkc containers) · `Scripts`; 16 GB; 43 `.nki`: one per instrument (`Crotales` · `Glockenspiel` ·
+`Marimba` · `Xylophone` — the articulations by keyswitch) and 39 in `_Individual patches_`, one beater or technique each —
+the 39 of his product-page screenshots (§18), name for name.
+- **The layout — the AI's call, his to reverse:** ONE Kontakt per instrument, on its own track and port; inside it ONE SLOT PER
+  INDIVIDUAL PATCH, each on its own MIDI channel. Why the individual patches and not the four keyswitched instruments: a
+  technique is then a CHANNEL, as every percussion voice of the lineage is (piece #6's D7) — two beaters can sound at once,
+  nothing is latched, and the manual says the keyswitched instrument leaves some articulations unloaded until a chip is clicked.
+  Rejected: one `DECMallets` port (39 patches against 16 channels).
+- **The catalog — `bank/ricotti_catalog.json`** (`tools/ricotti_loaders.js --scan`, from the folder; a channel is never
+  re-dealt): Crotales 9 — 1 Main (Felt) · 2 Main (Metal damped) · 3 Main (Metal) · 4 Main (Plastic damped) · 5 Main (Plastic) ·
+  6 Bowed · 7 Rolls (Metal) · 8 Rolls (Plastic) · 9 Rolls (Rubber) | Glockenspiel 12 — 1 Main (Extra Soft) · 2 Main (Hard) · 3 Main
+  (Medium Soft) · 4 Main (Medium) · 5 Main (Soft) · 6 Glisses · 7 Rolls (Hard) · 8 Rolls (Soft) · 9 Shorts (Hard) · 10 Shorts
+  (Medium Soft) · 11 Tremolo (Hard) · 12 Tremolo (Soft) | Xylophone 10 — 1 Main · 2 Main - (Hot Rods) · 3 Main (Extra Soft) ·
+  4 Main (Hard) · 5 Main (Medium) · 6 Main (Soft) · 7 Glisses · 8 Rolls (Hard) · 9 Rolls (Hot Rods) · 10 Rolls (Soft) | Marimba 8 —
+  1 Main · 2 Main - Full (Hard) · 3 Main - Full (Soft) · 4 Main - Rubber · 5 Main - Trems · 6 FX - Bows · 7 Hotrod · 8 Hotrod (Flams).
+- **The tracks** (`make_tracks.lua`, four rows, score order high to low, after the bass clarinet): Crotales RM ← `DECCrotales`
+  (device 58) · Glockenspiel RM ← `DECGlock` (59) · Xylophone RM ← `DECXylo` (61) · Marimba RM ← `DECMarimba` (60); each
+  with an EMPTY Kontakt 8, armed, monitoring.
+- **The loaders** — `reaper/kontakt/load_rm_crotales.lua` · `…_glockenspiel.lua` · `…_xylophone.lua` · `…_marimba.lua`,
+  generated from the catalog, parse-checked through the bridge. NOT RUN: a Kontakt Lua script runs only from inside that
+  Kontakt (its menu, or the file dragged onto it) — the one thing in this build the AI cannot reach. The AI did not take his
+  mouse to do it: he was working in Reaper. Machine: 31.8 GB of memory, 17.3 free, Reaper at 3.5 before the mallets.
+
+**His own track.** While this ran he added a ninth track with Spitfire Abbey Road Orchestra — the unpitched percussion,
+tentative, his to tell. `make_tracks.lua` does not touch a track that is not in its SPEC; it now sits below the cello. (Its
+audition is why the master read −4.9 dB during the first port test — not the three notes.)
+
+**For the how-to pages (4.10):** a track re-cloned in a saved rack = emit the chunk, set it through the bridge, re-run
+`make_tracks.lua` · a Kontakt library with many patches = a catalog, one slot per patch on its own channel, a generated loader.

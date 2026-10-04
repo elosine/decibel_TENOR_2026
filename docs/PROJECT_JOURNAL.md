@@ -156,17 +156,16 @@ deliverables · the planning repo's lines (at his word only).
   4.1 ☑ the nine `DEC` ports made by the AI and live · 4.2 ☑ `reaper/decibel_rack.rpp` built as text and OPEN in Reaper — Bass
   Flute XS (an empty Kontakt) · Bass Clarinet XS · Viola XS · Cello XS, the last three CLONED from pieces #5 · #6 and PROVEN to
   sound from inside Reaper; every track armed on its port.**
-  - **(1) HIS: Reaper → Options → Preferences → MIDI Inputs → select the nine `DEC…` rows → right-click → Enable input → OK.**
-    Reaper did not switch the new ports on by itself. THEN the AI: `powershell -NoProfile -File tools/note_to_port.ps1 -Port
-    DECCello -Note 57` with `reaper/bridge/jobs/peakwatch.lua` running — a level on Cello XS is the ports proven end to end;
-    the same for `DECViola` (64) · `DECBassClar` (50).
-  - **(2) HIS: in the Kontakt of "Bass Flute XS": KONTAKT ▾ → Run Lua script… → `reaper/kontakt/load_bass_flute.lua`.** THEN
-    the AI reads `reaper/kontakt/out/load_bass_flute_*.json` (four slots, channels 1 … 4) and sounds `DECBassFlute`.
-  - **(3) HIS: CTRL+S** — the rack file is his from that moment (`build_rack.js` refuses to overwrite it); committed at his word.
-  - **ONE WORD FROM HIM — git or disk:** the three clones were taken from GIT; the old racks ON DISK are newer (piece #6's saved
-    2026-10-01, piece #5's 2026-09-17) and are the ones the pieces were finished on. "disk" → the AI swaps the three tracks
-    (before (3): `node tools/build_rack.js --source disk --force`, the project re-opened; after (3): track by track through the
-    bridge, `SetTrackStateChunk`).
+  - **☑ DONE since (RUNNING_LOG §20):** his Preferences step — the ports proven END TO END · his word "disk" — the three clones
+    re-taken from the old racks' working files, sounding through their ports · Ricotti installed: `bank/ricotti_catalog.json`
+    (39 patches), four tracks (Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM) each with an empty Kontakt, four loaders
+    written · he saved the rack once (14:14) — the file is HIS; he added a ninth track himself (Abbey Road Orchestra).
+  - **(1) HIS — FIVE LOADS, one menu item each: in the Kontakt of the named track, KONTAKT menu → Run Lua script… (or drag the
+    file onto that Kontakt):** Bass Flute XS → `reaper/kontakt/load_bass_flute.lua` · Crotales RM → `load_rm_crotales.lua` ·
+    Glockenspiel RM → `load_rm_glockenspiel.lua` · Xylophone RM → `load_rm_xylophone.lua` · Marimba RM → `load_rm_marimba.lua`.
+    THEN the AI reads `reaper/kontakt/out/*.json` (the slots and channels) and sounds each port
+    (`tools/note_to_port.ps1` + `peakwatch.lua`).
+  - **(2) HIS: CTRL+S**; the rack committed at his word.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
     recipes derived — his bass flute Preset Menu screenshots; the bass clarinet from piece #5's recipe (34 presets; the slap and
     the second instance, NITS); the viola from piece #5's → **4.6 THE FIRST SOUND** from the composer score in his Chrome → **4.7**
@@ -188,8 +187,8 @@ deliverables · the planning repo's lines (at his word only).
 
 ### OPEN — 2026-10-04, after the talk (Fable; the chat continues on Opus for the build)
 
-- **The task and its state:** container 4 (running order step 2). 4.0 answered but for the unpitched percussion · **4.1 ☑ · 4.2 ☑
-  (RUNNING_LOG §19)** · 4.3 waits on his three hand steps (the block above) · Ricotti waits on its install.
+- **The task and its state:** container 4 (running order step 2). 4.1 ☑ · 4.2 ☑ — eight tracks on their ports, three sounding
+  (RUNNING_LOG §19 · §20) · 4.3 waits on his five script runs · the unpitched percussion: he is building it himself (his ninth track).
 - **The latest deliverable:** the rack — `reaper/decibel_rack.rpp`, open in Reaper, four tracks, three sounding · the nine `DEC`
   ports · `tools/build_rack.js` · `tools/note_to_port.ps1` · `reaper/bridge/jobs/sound_check_vkb.lua` · `reaper/kontakt/load_bass_flute.lua`.
 - **4.10 THE HOW-TO PAGES — his ask, 2026-10-04 (RUNNING_LOG §18):** *"fill in a few details like the CC7 multi tracks per
@@ -220,7 +219,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 4 — 4.1 ☑ · 4.2 ☑ (the rack is up, three clones sound).** His three hand steps (enable the `DEC` inputs in Reaper · run the bass flute loader in Kontakt · CTRL+S) → 4.4 the state as text → 4.5 the recipes (his bass flute screenshots) → **4.6 THE FIRST SOUND** → 4.7 + 4.10. Ricotti when installed; the unpitched percussion when chosen | Opus | no |
+| **►** | **CONTAINER 4 — 4.1 ☑ · 4.2 ☑ (eight tracks on their ports; the three clones, from the racks on disk, sound through them).** His five script runs (the bass flute + the four mallets) and CTRL+S → 4.4 the read-backs → 4.5 the recipes (his bass flute screenshots; the Ricotti catalog) → **4.6 THE FIRST SOUND** → 4.7 + 4.10. The unpitched percussion: his ninth track, tentative | Opus | no |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·

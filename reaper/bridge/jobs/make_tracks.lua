@@ -10,6 +10,8 @@
 -- earlier piece already loaded are CLONED whole (the Kontakt multi inside), the rest are bare; this job then
 -- gives every track its input, arms it, and inserts the sampler into a bare one. A device NUMBER is Reaper's
 -- own, so the input is set here, by port name, never in the text.
+-- CAUTION: every run puts each SPEC track's fader back to 0 dB and re-arms it. After container 5 (the trims), run
+-- apply_trims.lua after this job. A track NOT in SPEC (his own, the percussion's) is never touched.
 -- A NEW INSTRUMENT LATER = a row here (+ `after`), run again. The percussion and the four Ricotti mallet
 -- instruments (ports DECPerc · DECCrotales · DECGlock · DECMarimba · DECXylo, made 2026-10-04) get their rows
 -- when the libraries are in and chosen.
@@ -17,6 +19,12 @@ local KONTAKT = { "VST3i: Kontakt 8 (Native Instruments) (64 out)", "VST3i: Kont
 local SPEC = {
   { name = "Bass Flute XS",    port = "DECBassFlute", fx = KONTAKT },   -- bare in the text; Xsample Bass Flute.nki by reaper/kontakt/load_xs.lua
   { name = "Bass Clarinet XS", port = "DECBassClar",  fx = KONTAKT },   -- cloned from piece #5 (the D11 slots + the strike slot on [A] 5)
+  -- the Ricotti Mallets (a KONTAKT library; RUNNING_LOG §20): one Kontakt per instrument on its own port, score order high to low;
+  -- each loaded by reaper/kontakt/load_rm_<instrument>.lua — one slot per patch, a MIDI channel each (bank/ricotti_catalog.json)
+  { name = "Crotales RM",      port = "DECCrotales",  fx = KONTAKT, after = "Bass Clarinet XS" },
+  { name = "Glockenspiel RM",  port = "DECGlock",     fx = KONTAKT, after = "Crotales RM" },
+  { name = "Xylophone RM",     port = "DECXylo",      fx = KONTAKT, after = "Glockenspiel RM" },
+  { name = "Marimba RM",       port = "DECMarimba",   fx = KONTAKT, after = "Xylophone RM" },
   { name = "Viola XS",         port = "DECViola",     fx = KONTAKT },   -- cloned from piece #5's "Va XS"
   { name = "Cello XS",         port = "DECCello",     fx = KONTAKT },   -- cloned from piece #6
 }

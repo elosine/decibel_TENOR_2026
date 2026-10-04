@@ -3,7 +3,7 @@
 -- WATCH_S seconds and writes reaper/bridge/outbox/peakwatch.json when done. Fire the note from
 -- outside right after launching it; read the file after WATCH_S seconds.
 local WATCH_S = 8.0   -- long enough for a sender that takes seconds to start (PowerShell compiles its winmm binding first)
-local NAMES = { 'Bass Flute XS', 'Bass Clarinet XS', 'Viola XS', 'Cello XS' }   -- this piece's tracks (2026-10-04); add a row's name when a track joins the rack
+local NAMES = { 'Bass Flute XS', 'Bass Clarinet XS', 'Crotales RM', 'Glockenspiel RM', 'Xylophone RM', 'Marimba RM', 'Viola XS', 'Cello XS' }   -- this piece's tracks; add a row's name when a track joins the rack
 
 local tracks = {}
 for _, n in ipairs(NAMES) do

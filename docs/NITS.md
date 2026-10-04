@@ -122,3 +122,6 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   states differ). His one word decides (`tools/build_rack.js --source disk`). Until then a hand-set value of the finished pieces may be missing.
 - **Reaper did not enable the new loopMIDI ports as inputs by itself** (2026-10-04; piece #6 §23 found it did). One Preferences step, his; the
   masks (`midiins_h` · `midiins_x` in `reaper.ini`) are not reachable through the API. For the how-to pages (4.10).
+
+- **RESOLVED 2026-10-04 (RUNNING_LOG §20): the three clones are now from the racks ON DISK** — his word "disk". The nit above ("taken from GIT") is closed.
+- **`make_tracks.lua` resets every SPEC track's fader to 0 dB on each run** (inherited from piece #6). Harmless before container 5; after the trims, run `apply_trims.lua` after it. The caution is in the job's header.

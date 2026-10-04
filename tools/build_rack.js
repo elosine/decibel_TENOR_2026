@@ -109,6 +109,19 @@ function empty(row) {
     report: `${row.name.padEnd(18)} <- a bare track (the bridge inserts the sampler; the load is his, or a Kontakt Lua loader's)` };
 }
 
+// --emit "<track name>" <file>: ONE cloned track chunk to a file, for a rack he has already saved — the chunk is
+// then set on the existing track through the bridge (reaper.SetTrackStateChunk), and make_tracks.lua run after it
+// to give the track its input back. This is how a track is re-cloned without rebuilding the file (RUNNING_LOG §20).
+if (flag('--emit')) {
+  const i = args.indexOf('--emit'), name = args[i + 1], file = args[i + 2];
+  const row = TRACKS.find(t => t.name === name && t.from);
+  if (!row || !file) { console.error('--emit "<a cloned track of TRACKS>" <outfile>'); process.exit(2); }
+  const s = load(row.from), r = clone(s, row);
+  fs.writeFileSync(file, r.lines.join('\n') + '\n', 'latin1');
+  console.log(`source: ${SOURCE} · ${s.piece} ${s.file} @ ${s.rev}\n  ${r.report}\n  -> ${file}`);
+  process.exit(0);
+}
+
 const src = {};
 for (const k of new Set([HEADER_FROM, ...TRACKS.filter(t => t.from).map(t => t.from)])) src[k] = load(k);
 const h = src[HEADER_FROM];

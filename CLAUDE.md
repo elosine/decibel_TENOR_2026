@@ -252,8 +252,9 @@ routing advice is also credit advice, and these bind every Fable turn:
   `DECCrotales` · `DECGlock` · `DECMarimba` · `DECXylo` · `DECViola` · `DECCello`. A port is a value in loopMIDI's registry key + a restart of
   loopMIDI (Reaper closed); a NEW name takes ~2 minutes to show, and Reaper must be told to enable it (Preferences → MIDI Inputs). loopMIDI
   ports are machine-global: piece #5's (bare names) and piece #6's (`LG…`) are live beside them, and `palette_check` refuses both sets.
-- **The rack — `reaper/decibel_rack.rpp`** (built as text by `tools/build_rack.js`, three Xsample tracks cloned from pieces #5 · #6; once he
-  has saved it, it is HIS — a track is added through the bridge, `reaper/bridge/jobs/make_tracks.lua`, never by rebuilding). The bridge:
+- **The rack — `reaper/decibel_rack.rpp`** — HIS (saved 2026-10-04). Built as text by `tools/build_rack.js`; the bass clarinet, viola and cello
+  CLONED from pieces #5 · #6's racks ON DISK (his word "disk", RUNNING_LOG §20); the four Ricotti mallet tracks (`… RM`) one Kontakt each, a slot
+  per patch on its own channel (`bank/ricotti_catalog.json` · `tools/ricotti_loaders.js`). A track is added or re-cloned through the bridge, `reaper/bridge/jobs/make_tracks.lua`, never by rebuilding). The bridge:
   `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
 - **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
   (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
