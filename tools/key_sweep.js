@@ -3,6 +3,7 @@
 // 4.5; RUNNING_LOG §32, 2026-10-04). Piece #6 did this by hand-run steps (its §41 · §42); here it is one command.
 //
 //   node tools/key_sweep.js "<track>" --channels 1-6,8-10 --keys 52,53,91-96 [--vel 100] [--hold 0.30] [--json out.json]
+//                              [--cc0 14] [--cc1 100]   sent first on each channel: an Xsample PRESET (CC0 = its number − 1), the mod wheel
 //
 // For every channel × key: the note is put into Reaper's Virtual MIDI Keyboard queue on THAT channel
 // (reaper.StuffMIDIMessage), the track's meter is watched while it sounds, the note is released, and the next key
@@ -26,6 +27,7 @@ const list = s => String(s).split(',').flatMap(p => { const m = p.trim().match(/
 if (!track || track.startsWith('--')) { console.error('usage: node tools/key_sweep.js "<track>" --channels 1-4 --keys 36-84 [--vel 100] [--hold 0.30] [--floor -70] [--json out.json]'); process.exit(2); }
 const channels = list(opt('channels', '1')), keys = list(opt('keys', '36-96'));
 const vel = Number(opt('vel', 100)), hold = Number(opt('hold', 0.30)), floor = Number(opt('floor', -70));
+const cc0 = opt('cc0', null), cc1 = opt('cc1', null);
 if ([...channels, ...keys].some(n => !Number.isInteger(n)) || channels.some(c => c < 1 || c > 16) || keys.some(k => k < 0 || k > 127)) { console.error('channels 1..16, keys 0..127'); process.exit(2); }
 
 const B = process.env.REAPER_BRIDGE || path.join(process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming'), 'REAPER', 'bridge');
@@ -33,6 +35,7 @@ const OUT = path.join(B, 'outbox', 'key_sweep.json');
 const lua = `
 local TRACK, CHANNELS, KEYS = ${JSON.stringify(track)}, { ${channels.join(', ')} }, { ${keys.join(', ')} }
 local VEL, HOLD_S, QUIET, MAX_WAIT = ${vel}, ${hold}, 0.0006, 2.5        -- QUIET = about -64 dB
+local CC0, CC1 = ${cc0 == null ? 'nil' : Number(cc0)}, ${cc1 == null ? 'nil' : Number(cc1)}
 local VKB = 4096 + 62 * 32
 local sep = package.config:sub(1, 1)
 local outpath = job.root .. sep .. 'outbox' .. sep .. 'key_sweep.json'
@@ -57,6 +60,10 @@ local function loop()
     ki = ki + 1
     if ki > #KEYS then ki = 1; ci = ci + 1 end
     if ci > #CHANNELS then finish(); return end
+    if ki == 1 then   -- a new channel: its preset and its wheel first
+      if CC0 then reaper.StuffMIDIMessage(0, 0xB0 + CHANNELS[ci] - 1, 0, CC0) end
+      if CC1 then reaper.StuffMIDIMessage(0, 0xB0 + CHANNELS[ci] - 1, 1, CC1) end
+    end
     phase, t0 = 'settle', now
   elseif phase == 'settle' then
     if peak() < QUIET or now - t0 > MAX_WAIT then

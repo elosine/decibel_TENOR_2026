@@ -40,19 +40,27 @@
 
 const INSTRUMENTS = {
 
-  // ---- BASS FLUTE — LIBRARY NOT CHOSEN (the instruments talk, container 4) ----
-  // A placeholder so the lane is real: one ordinary voice. The lineage's candidates are Xsample and IRCAM Solo Instruments
-  // 2, whichever has a bass flute; nothing here was read from a library or heard. Range 48–84 (C3–C6) is the instrument's
-  // SOUNDING compass (an octave below the flute's written pitch), NOT measured. The bend range is MIDI's default, unread.
-  bass_flute: { ordinary: "ord", playerBendSt: 1, bendRangeSt: 2, label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 84, channels: { main: 1, curve: [2, 3, 4] },
-    techniques: [{ key: "ord", label: "Ordinario", channel: 1, kind: "pitched", loud: "vel" }] },
+  // ---- BASS FLUTE — Xsample (Kontakt), CC#0 selects the preset — container 4, 2026-10-04 (RUNNING_LOG §26 · §34) ----
+  // The library is his, installed 2026-10-04 (XL_Woodwinds_Bass_Flute); the rack's track "Bass Flute XS" holds it in the four
+  // slots of D11 (reaper/kontakt/load_bass_flute.lua). The roster is the Preset Menu AS HIS KONTAKT SHOWS IT (his screenshots):
+  // 32 factory presets — the manual lists 30 — then Free Presets from 33. CC#0 = preset number − 1.
+  // `ordinary` = vib_vel (#15 Vibrato Velocity), HIS CHOICE 2026-10-04: the list has no plain non-vibrato sustain.
+  // RANGE 48–86 (C3–D6 sounding; Kontakt's keyboard calls it C2–D5): MEASURED on #15 by tools/key_sweep.js — 47 silent, 48 … 86
+  // sound, 87 on silent. Every other preset is given that zone until it is read (the preset loaded by default stops at 64;
+  // the pseudo contrabass pair surely differs). NOT yet measured: the bend range, the loudness (container 5), the by-key voices' keys.
+  bass_flute: { ordinary: "vib_vel", playerBendSt: 1, bendRangeSt: 2, label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 86, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassFluteTechs(48, 86) },
 
-  // ---- BASS CLARINET — LIBRARY NOT CHOSEN (container 4) ----
-  // A placeholder, as above. The lineage has this instrument twice — piece #3's deep map and piece #5's recipe (Xsample,
-  // 34 presets, measured in the Tempus rack): container 4's sources, not carried here before the library is his word.
-  // Range 34–77 (B♭1–F5 sounding), NOT measured.
-  bass_clarinet: { ordinary: "ord", playerBendSt: 1, bendRangeSt: 2, label: "Bass Clarinet", port: "DECBassClar", rangeLow: 34, rangeHigh: 77, channels: { main: 1, curve: [2, 3, 4] },
-    techniques: [{ key: "ord", label: "Ordinario", channel: 1, kind: "pitched", loud: "vel" }] },
+  // ---- BASS CLARINET — Xsample (Kontakt), CC#0 selects the preset — PIECE #5'S ENTRY, CARRIED (2026-10-04, RUNNING_LOG §34) ----
+  // The rack's track "Bass Clarinet XS" is the CLONE of piece #5's (the Tempus septet's) as saved 2026-09-17: the same Kontakt,
+  // the same four D11 slots — so its roster, its zones and its bend are piece #5's, read there from his Kontakt (its screenshots
+  // R5, 2026-09-03) and from piece #3's deep map (XSAMPLE_BASSCL_map.md). 33 factory presets + #34, his "Flutter LOCK" of piece
+  // #3. CC#0 = preset − 1. THE FLOOR RULE: nothing below MIDI 34 is ever sent as a note (21–33 are switches and function keys).
+  // Standard zone A#0–F4 on Kontakt's keyboard = 34–65.
+  // NOT carried: piece #5's balance (−9 dB — relative to THAT ensemble; re-levelled at container 5) · its strike lane — the slap
+  // sat on channel 5 → a second Kontakt output → a "BassCl strikes" track; this engine has no strike lane, so the slap plays on
+  // channel 1 like every other preset (the strike slot is still inside the clone, idle; NITS).
+  // The bend: piece #5 MEASURED 0.98 st on this very instance — 1 here, provisional until container 5 writes its row.
+  bass_clarinet: { ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Bass Clarinet", port: "DECBassClar", rangeLow: 34, rangeHigh: 65, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassClarinetTechs() },
 
   // ---- PERCUSSION — ONE PLAYER, ONE LANE (P4) ----
   // Spitfire Abbey Road Orchestra Percussion (D6 — piece #2's library, its journal decision 4:
@@ -321,6 +329,95 @@ function xsEnglishHornTechs(lo, hi) {
     P(35, "pseudo_ob_vel_mwinv",  "Pseudo Oboe Velocity + MW inverted", true),   // NEW
     P(36, "pseudo_ob_stac",       "Pseudo Oboe Staccato Velocity"),   // NEW
     // 37–39 Free Preset — empty slots, not techniques
+  ];
+}
+
+// The Xsample BASS FLUTE roster — his Preset Menu, 2026-10-04 (RUNNING_LOG §26): 32 factory presets, CC#0 = number − 1. The keys
+// are the english horn's and the bass clarinet's wherever the preset is the same playing style, so the registry and the tools meet
+// names they know. lo/hi = the assumed zone (measured on #15) until each preset is read. By-key voices: the jet whistles (with
+// the slaps on one preset), the key noises, the multiphonics (2), the air noises (2) — their keys when the music asks (his word).
+function xsBassFluteTechs(lo, hi) {
+  const KEY = new Set(["jet_slap", "key_noises", "mp_short", "air_noises", "mp_loop", "air_noises_mw"]);
+  const P = (n, key, label, mw) => ({ key, label: label + " (#" + n + ")", channel: 1, cc0: n - 1, rangeLow: lo, rangeHigh: hi, ...(mw ? { mw: true } : {}), ...xsKind(key, new Set(), KEY), ...xsLoud(label) });
+  return [
+    P(1,  "vib_mw",                  "Vibrato MW", true),
+    P(2,  "molto_vib_mw",            "Molto Vibrato MW", true),
+    P(3,  "stac_vel_mwshape",        "Staccato Velocity 1 MW Shape", true),
+    P(4,  "stac2_mwshape",           "Staccato Velocity 2 MW Shape", true),
+    P(5,  "flutter_mw",              "Flutter Tongue MW", true),
+    P(6,  "jet_slap",                "Jet Whistle + Slap Tongue"),
+    P(7,  "slap",                    "Slap Tongue Velocity"),
+    P(8,  "airy_secco",              "Airy Secco Velocity"),
+    P(9,  "key_noises",              "Key Noises Velocity"),
+    P(10, "harmonics_vel",           "Harmonics Velocity"),
+    P(11, "mp_short",                "Multiphonics Velocity"),
+    P(12, "air_noises",              "Air Noises Velocity"),
+    P(13, "voice_breath_oct",        "Voice Breathing octave"),
+    P(14, "voice_breath_4th",        "Voice Breathing fourth"),
+    P(15, "vib_vel",                 "Vibrato Velocity"),                       // THE ORDINARY VOICE (his choice, 2026-10-04)
+    P(16, "molto_vib_vel",           "Molto Vibrato Velocity"),
+    P(17, "flutter_vel",             "Flutter Tongue Velocity"),
+    P(18, "vib_vel_mwinv",           "Vibrato Velocity + MW inverted", true),
+    P(19, "stac_keynoise_x_air_vmw", "Staccato + Key Noises X Air Velocity MW", true),
+    P(20, "vib_flutter_vxmw",        "Vibrato + Flutter Tongue Velocity X MW", true),
+    P(21, "triple16",                "Triple Tongue 16T"),
+    P(22, "stac_vel",                "Staccato Velocity"),
+    P(23, "mp_loop",                 "Multiphonics MW", true),
+    P(24, "air_noises_mw",           "Air Noises MW", true),
+    P(25, "voice_breath_mw",         "Voice Breathing MW", true),
+    P(26, "accent_vel",              "With Accent Velocity"),
+    P(27, "cresc",                   "Crescendo"),
+    P(28, "portato",                 "Portato Velocity"),
+    P(29, "vib_x_molto_vxmw",        "Vibrato - Molto Vibrato Velocity X MW", true),
+    P(30, "flutter_vel_mwinv",       "Flutter Tongue Velocity + MW inverted", true),
+    P(31, "pseudo_cb_vel_mwinv",     "Pseudo Contrabass Velocity + MW inverted", true),   // NOT in the manual's list of 30 — his menu has it
+    P(32, "pseudo_cb_stac",          "Pseudo Contrabass Staccato Velocity"),              // the same
+    // 33 … Free Preset — empty slots, not techniques
+  ];
+}
+
+// The Xsample BASS CLARINET roster — piece #5's, carried (its screenshots R5, 2026-09-03; piece #3's deep map): 33 factory presets
+// + #34 Flutter LOCK. CC#0 = number − 1. The zones are per preset, as piece #5 read them from his Kontakt: standard 34–65; the
+// flutter-tongue presets stop at 60; the glissandi 34–42; the multiphonics 34–46; #34 55–93. `kind` is new here (piece #5 predates
+// it): the multiphonics, the noises, the undefined tones and the two glissando gestures go BY KEY; everything else is pitched.
+function xsBassClarinetTechs() {
+  const KEY = new Set(["gliss_undef", "undef_tones", "key_noises", "mp_short", "air_noises", "gliss_undef_mw", "mp_loop", "air_noises_mw"]);
+  const P = (n, key, label, lo, hi, mw) => ({ key, label: label + " (#" + n + ")", channel: 1, cc0: n - 1, rangeLow: lo, rangeHigh: hi, ...(mw ? { mw: true } : {}), ...xsKind(key, new Set(), KEY), ...xsLoud(label) });
+  return [
+    P(1,  "senza_mw",            "Senza Vibrato MW", 34, 65, true),
+    P(2,  "natural_vib_mw",      "Natural Vibrato MW", 34, 65, true),
+    P(3,  "stac_vel_mwshape",    "Staccato Velocity MW Shape", 34, 65, true),
+    P(4,  "stac2_mwshape",       "Staccato 2 MW Shape", 34, 65, true),
+    P(5,  "flutter_mw",          "Flutter Tongue MW", 34, 60, true),
+    P(6,  "slap",                "Slap Tongue Velocity", 34, 65),                 // channel 1 here (piece #5: channel 5, its strike lane)
+    P(7,  "gliss_undef",         "Glissando Undefined MW Shape", 34, 42, true),
+    P(8,  "undef_tones",         "Undefined Tones Velocity", 34, 65),
+    P(9,  "key_noises",          "Key Noises Velocity", 34, 65),
+    P(10, "mp_short",            "Multiphonics Velocity", 34, 46),                // 13 keys, cataloged in piece #3's map § 6c
+    P(11, "air_noises",          "Air Noises Velocity", 34, 65),
+    P(12, "cresc",               "Crescendo", 34, 65),
+    P(13, "senza_vel",           "Senza Vibrato Velocity", 34, 65),               // THE ORDINARY VOICE (piece #5's)
+    P(14, "natural_vib_vel",     "Natural Vibrato Velocity", 34, 65),
+    P(15, "morph_vxmw",          "Senza Vibrato + Flutter Tongue Velocity X MW", 34, 60, true),
+    P(16, "flutter_vel",         "Flutter Tongue Velocity", 34, 60),
+    P(17, "senza_vel_mwinv",     "Senza Vibrato Velocity + MW inverted", 34, 65, true),
+    P(18, "triple16",            "Triple Tongue 16T", 34, 65),
+    P(19, "stac_vel",            "Staccato Velocity", 34, 65),
+    P(20, "accent_vel",          "With Accent Velocity", 34, 65),
+    P(21, "gliss_undef_mw",      "Glissando Undefined MW", 34, 42, true),
+    P(22, "mp_loop",             "Multiphonics MW", 34, 46, true),
+    P(23, "air_noises_mw",       "Air Noises MW", 34, 65, true),
+    P(24, "vib_mw",              "Vibrato MW", 34, 65, true),
+    P(25, "vib_vel",             "Vibrato Velocity", 34, 65),
+    P(26, "vib_vel_mwinv",       "Vibrato Velocity + MW inverted", 34, 65, true),
+    P(27, "secco",               "Secco Velocity", 34, 65),
+    P(28, "portato",             "Portato Velocity", 34, 65),
+    P(29, "flutter_vel_mwinv",   "Flutter Tongue Velocity + MW inverted", 34, 60, true),
+    P(30, "pseudo_cb_vel_mwinv", "Pseudo Contrabass Velocity + MW inverted", 34, 65, true),   // zone NOT read (piece #5: VERIFY)
+    P(31, "pseudo_cb_stac",      "Pseudo Contrabass Staccato Velocity", 34, 65),              // zone NOT read
+    P(32, "pseudo_cl_vel_mwinv", "Pseudo Clarinet Velocity + MW inverted", 34, 65, true),     // zone NOT read
+    P(33, "pseudo_cl_stac",      "Pseudo Clarinet Staccato Velocity", 34, 65),                // zone NOT read
+    P(34, "flutter_lock",        "Flutter LOCK — his bespoke preset from piece #3", 55, 93),
   ];
 }
 
