@@ -1773,7 +1773,7 @@ const Composer = {
         if (pointsBtn) pointsBtn.addEventListener('click', () => this.setPointsMode(!this.pointsMode));
         const fillBtn = document.getElementById('fillBtn');
         if (fillBtn) fillBtn.addEventListener('click', () => this.fillCurves());
-        [['curveBtnA', 8], ['curveBtnB', 9], ['curveBtnC', 10]].forEach(([id, L]) => {
+        ['curveBtnA', 'curveBtnB', 'curveBtnC'].map((id, i) => [id, CURVE_LAYERS[i]]).forEach(([id, L]) => {   // by CURVE_LAYERS — the literal 8 / 9 / 10 was piece #5's layout (in piece #6 button A toggled the META layer; here C threw)
             const b = document.getElementById(id);
             if (!b) return;
             b.addEventListener('click', () => { if (this.lanes[L].classList.contains('open')) this.closeCurveWin(L); else this.openCurveWin(L); });
@@ -10873,7 +10873,7 @@ const Composer = {
     // held (a DAW's automation curve). Lines only, no fill, no diamonds, no wheel, no slope dials.
     pointsMode: false,
 
-    curveBtnFor(L) { return document.getElementById(L === 8 ? 'curveBtnA' : L === 9 ? 'curveBtnB' : 'curveBtnC'); },
+    curveBtnFor(L) { return document.getElementById(['curveBtnA', 'curveBtnB', 'curveBtnC'][CURVE_LAYERS.indexOf(L)] || 'curveBtnC'); },
 
     openCurveWin(L) {
         const w = this.lanes[L]; if (!w || !CURVE_LAYERS.includes(L)) return;

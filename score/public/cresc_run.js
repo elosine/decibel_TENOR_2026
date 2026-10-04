@@ -45,7 +45,7 @@ const AC = () => root.AccelCalc || null;
 const GROUP = 'grp-crun';                                   // the working run's group — replaced by every call
 const LAST_KEY = 'septet.crescRun.last.v1', PROFILE_KEY = 'septet.crescRun.profile.v1';
 const DEFAULTS = { gap0: 2, gapN: 0.5, steep: 0.85, shape: 'geometric', hold: 0, len: 2, dyn: ['ppp', 'fff'], secco: true,
-                   players: [0, 1, 3, 4, 5, 6], pitches: [41, 48, 55, 62, 69, 76] };
+                   players: [0, 1, 3, 4, 5], pitches: [48, 55, 62, 69, 76] };   // PROVISIONAL at the port (2026-10-04): every lane but the percussion, one pitch inside each range. It was [0, 1, 3, 4, 5, 6] — piece #5's seven lanes less its piano — and lane 6 is not a part here
 const PROFILES = {
     s3: { at: 575, players: [1, 6, 5, 4, 3, 0], pitches: 'from Bb3' },   // the section-3 gesture: his standing order and pitches (2026-09-09)
 };

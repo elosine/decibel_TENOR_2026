@@ -29,6 +29,12 @@ const BC_ = () => (typeof BeatingCalc !== 'undefined' ? BeatingCalc : (root.Beat
 const TRK = () => (typeof TRACKS !== 'undefined' ? TRACKS : (root.TRACKS || []));
 const METAL = () => (typeof META_LAYER !== 'undefined' ? META_LAYER : root.META_LAYER);
 const INST = () => (typeof INSTRUMENTS !== 'undefined' ? INSTRUMENTS : (root.INSTRUMENTS || {}));
+// THE LANES THAT CAN TAKE PART IN A BEATING: every track whose instrument is not `beating: false` in the recipe (the percussion
+// has neither breath nor bow). This was the literal list 0 · 1 · 3 · 4 · 5 · 6 and `layer === 2` — piece #5's seven lanes less its
+// piano — carried unread through piece #6, and naming a lane this piece does not have: the panel threw on opening (found at
+// the port, 2026-10-04, by opening it).
+const BEAT_LANES = () => { const T = TRK(), I = INST(); return T.map((t, L) => L).filter(L => I[T[L].instKey] && I[T[L].instKey].beating !== false); };
+const CAN_BEAT = L => BEAT_LANES().includes(L);
 const TAKES_PANEL = 'beatings';
 const TAKE_NAME = /^[A-Za-z0-9._ -]{1,64}$/;
 const MAX_ROWS = 3;
@@ -258,7 +264,7 @@ const P = {
         this.init(); const C = C_();
         this.bound = null; this.patternGroupId = null; this.insertAt = null; this.boundFirst = null; this.focus = 'sequence';
         // the starting point (§160, kept as a convenience): a selected strike note gives the first row its pitch and the insert its time — no link
-        const sel = C && C.selectedObject, note = (sel && sel.type === 'waveCurve' && sel.sonifyNote != null && sel.layer < METAL() && sel.layer !== 2) ? sel : null;
+        const sel = C && C.selectedObject, note = (sel && sel.type === 'waveCurve' && sel.sonifyNote != null && sel.layer < METAL() && CAN_BEAT(sel.layer)) ? sel : null;
         if (!this.rows.length || this.rows.some(r => r.zone) || note) { this.rows = []; const r = this.defaultRow(note ? note.layer : (C ? C.activeLane : 3)); if (r) this.rows.push(r); }
         if (note && this.rows[0]) {   // the note folds as a unit for the pair (§180); a partner that reaches it as written is preferred
             const r = this.rows[0]; r.b.noteIndex = null; r.b.srcPitch = note.sonifyNote;
@@ -276,11 +282,11 @@ const P = {
     // pattern (a player in two pairs would carry two bend streams on one channel: a sum, wrong); the rows warn if it happens by hand
     defaultRow(layer, used) {
         const C = C_(), BC = BC_(); if (!C || !BC) return null;
-        const M = METAL(); if (layer == null || layer >= M || layer === 2) layer = 3;
+        const M = METAL(); if (layer == null || layer >= M || !CAN_BEAT(layer)) layer = BEAT_LANES()[0];
         const me = TRK()[layer] && TRK()[layer].instKey; if (!me) return null;
         // born EMPTY (2026-09-07, his walk-through line 5: "before I choose my instruments, I'll assign a pitch"): no note until he
         // assigns one; the partner the nearest free bending lane; the birth shape the ADSR at 3 Hz over 9 s
-        const free = [0, 1, 3, 4, 5, 6].filter(L => L !== layer && !(used && used.has(L)));
+        const free = BEAT_LANES().filter(L => L !== layer && !(used && used.has(L)));
         free.sort((a, c) => Math.abs(a - layer) - Math.abs(c - layer) || a - c);
         const b = C.beatingDefaults(layer, 0, null, free.length ? free[0] : null);
         return this.mkRow(layer, b, 0, null, 9);
@@ -290,7 +296,7 @@ const P = {
         if (this.rows.length >= MAX_ROWS) { this.setStatus('three pairs at most (the six bending players)', true); return; }
         if (this.bound && !this.patternGroupId) { this.setStatus('a lone beating is one pair — for a pattern of several open a new pattern (Beating with nothing selected), or insert this one and add to its group', true); return; }
         const used = this.usedLayers();
-        const free = [0, 1, 3, 4, 5, 6].filter(L => !used.has(L));
+        const free = BEAT_LANES().filter(L => !used.has(L));
         let r = null; for (const L of free) { r = this.defaultRow(L, used); if (r) break; }
         if (!r) { this.setStatus('no free pair — every bending player is in the pattern', true); return; }
         this.rows.push(r); this.render();
@@ -537,9 +543,9 @@ const P = {
         const userShapes = Object.keys(this.shapesBank || {}).sort();
         const shapeBtns = (cls, what) => SHAPES.map(([k, l]) => btn(cls, 'data-shape="' + k + '"', l, false, what)).join('') + userShapes.map(n => btn(cls, 'data-shape="u:' + esc(n) + '"', '&#9733; ' + esc(n), false, 'your shape "' + n + '" — ALT-click deletes it')).join('');
         // player 1 and player 2 as pull-downs, both always (a bound zone moves to the lane chosen); player 2 shows what it would sound
-        const laneSel = '<select class="bpLane" title="player 1 &#8212; the launching player (a bound zone moves to that lane)">' + [0, 1, 3, 4, 5, 6].map(L => '<option value="' + L + '"' + (L === row.layer ? ' selected' : '') + '>' + esc(T[L].label) + '</option>').join('') + '</select>';
+        const laneSel = '<select class="bpLane" title="player 1 &#8212; the launching player (a bound zone moves to that lane)">' + BEAT_LANES().map(L => '<option value="' + L + '"' + (L === row.layer ? ' selected' : '') + '>' + esc(T[L].label) + '</option>').join('') + '</select>';
         const ptSel = '<select class="bpPartner" title="player 2: every player, with the pitch it would sound on this note (&#8593; / &#8595; = folded by octaves, both together), &#10005; when no octave serves both">' + (b.partnerLayer == null ? '<option value="" selected>partner&#8230;</option>' : '')
-            + (noNote ? [0, 1, 3, 4, 5, 6].filter(L => L !== row.layer).map(L => '<option value="' + L + '"' + (L === b.partnerLayer ? ' selected' : '') + '>' + esc(T[L].label) + '</option>').join('')
+            + (noNote ? BEAT_LANES().filter(L => L !== row.layer).map(L => '<option value="' + L + '"' + (L === b.partnerLayer ? ' selected' : '') + '>' + esc(T[L].label) + '</option>').join('')
                       : seatOpts.map(o => { const L = laneOf(o.player), f = o.fold, pOf = f ? (f.lower === o.player ? f.pitch : f.pitch + iv.semitones) : null; return L < 0 ? '' : '<option value="' + L + '"' + (L === b.partnerLayer ? ' selected' : '') + '>' + esc(T[L].label) + ' — ' + (f ? nn(pOf) + BC.foldMark(f.k) : '✕') + '</option>'; }).join('')) + '</select>';
         const levLo = b.levelLo == null ? 0.3 : b.levelLo, levHi = b.levelHi == null ? 0.9 : b.levelHi;
         const brMode = (b.breath.mode || 'one') !== 'designated' ? 'one' : (b.breath.deal === false ? 'hand' : ((b.breath.phase == null ? 0.5 : +b.breath.phase) === 0 ? 'unison' : 'random'));
