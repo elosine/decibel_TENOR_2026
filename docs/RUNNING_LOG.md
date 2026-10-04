@@ -1018,3 +1018,17 @@ has, a verdict by ear.
 **What the record does NOT say, stated to him as unknown:** whether the viola's and the bass clarinet's states (piece #5's)
 have round robin off — the cello's (piece #6's) should, the bass flute's is the factory setting · what piece #6 did with the
 Abbey Road round robins (its settings file has no entry: untouched, as far as the record shows).
+
+## §28. "This is not what I was asking for" — the list again, bare; the decision he wants to make: probe, or dictate the key maps (2026-10-04, Opus)
+
+**His words:** *"Sorry, this is not what I was asking for. I just need a simple list, not in a table, and not with all the
+details of what needs to be done. Just a statement, no explanation or details. So for example, it'll be something like figure
+out key maps for bass flute and marimba … And the next will be sort out round robin for volume. And then maybe the next one
+would be do a volume probe on the glockenspiel. I just need a simple list, but in order, simply stated, so I don't have to read
+and analyze. So I can get a bird's eye view of what remains to be done. And then after that list, I would like a simple
+explanation of how you would like to achieve some of these things. One of the decisions I want to make right now is if it's
+worth doing a probe or it's better if I just dictate some of the key maps. That might be more efficient."*
+
+§27's answer was three tables; rejected. Given instead: ten bare statements in order, then one sentence each on how. The AI's
+proposal on his decision: the probe for the mallets' ranges (39 patches — dictating is slower); the by-key noise presets of
+the bass flute and the strings left unmapped until the music asks for one, then dictated by him or swept, whichever he prefers.
