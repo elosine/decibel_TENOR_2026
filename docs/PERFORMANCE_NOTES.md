@@ -8,3 +8,6 @@ Append a row whenever a decision needs a line in the notes; never write the note
 
 | # | The note must cover | Decided | Wording exists at |
 |---|---|---|---|
+
+| 1 | the CATEGORY glyph on a mic opening — "play this type of sound, your choice" (a Braxton-like vocabulary, LG-343; "it could be something simple like short") | RUNNING_LOG §2 · DEC-1 | — |
+| 2 | a returned sample is named in the score by its shape or colour, the sign it was banked under (LG-342) | RUNNING_LOG §2 · DEC-1 | — |

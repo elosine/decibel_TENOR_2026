@@ -68,3 +68,44 @@
   he keeps his own time · never a history rewrite — and "how to put things to him" are written into CLAUDE.md: the AI's
   memory is per folder, and this repo starts with none.
 - **Nothing of code.** The next step is container 3, the engine copied forward — asked first.
+
+## §2. His three answers · HIS BRIEF for the piece and for the day · THE SORTING, and how the engine sits here (2026-10-04, Fable — still in piece #6's chat)
+
+**What prompted it:** the three open slots of §1, answered *"a, none yet, a ;"* — the prefix `DEC` · no title yet · the five musical
+ideas carried into the sketch pad (D6). Then, in the same message, his brief — its three musical sections quoted whole in the sketch
+pad (DEC-1 · DEC-2 · DEC-3); the way of working he asked for, here:
+
+> *"I'd like to interrupt this process and discuss today's work brief, a brief for today's work, but I'd like to be able to rejoin this process and continue through the work we planned in the brief. And I'd like the brief to be not just a, a sketch, an overview of the work we need to do, just organized and named each component or each piece in order, more or less. So what I'd like to do is narrate the things I want to work on, how I think they should go. I'd like you to briefly help me organize them and then just lay them out into to-dos in their proper order. And perhaps you can add or name things that components that make up some of the things I want to do. So first thing I'd like to complete the port as much as possible of the whole system to the decibel piece. And I think that's what we're doing now. And we'll get back to it after we finish the brief. And then my idea is to work through the piece itself, the composition, and build the new things as I work through the piece, as I've been doing all along. And my hope is that AI can organize which things belong where. So for the live electronics is mostly what I'm talking about. We'll design the live electronics or the triggering systems, etc., and then you'll sort out which belongs in its own repo and how to put it there. And then what belongs here, or maybe it's a copy, but I would like AI to sort that out so I can just work uh, seamlessly without having to make too many decisions about what code goes where."*
+
+> *"Okay, let's organize this brief. You can just take the composition notes. Now we probably won't work on section two or section three today, but let's work through that first section. Help me organize what needs to happen in entirety today. And then try to help me organize or order just sort of the top line of things. And then when necessary, break out some of the things I dictated and mention the type of things we need to do. So, you know, uh, connect live electronics to the Reaper playback, um, that sort of thing. Just list those in items and in order of what we have to do. And then again, just as I said at the top of this prompt, um, you could either put in notes to yourself or just list them briefly in the, in the rundown. But I would expect AI to try to organize where everything goes as we're building it and how it sits in the system to try to organize that architecture as we go along. Or if we, you know, we need to have a conversation at any point about that. But I kind of want that to be done in the back end as much as possible. So I know we took a decision to keep the live electronics in a separate repo, but I don't want to have to fuss with that too much. I don't want that to become an extra administrative burden. So if we need to rethink that decision, I'm open to that."*
+
+**What he asked for:** (1) a brief that is not a sketch — the components named, in order, as to-dos he can rejoin after a clear;
+(2) the port finished first, then the piece composed and the new things built as the music reaches them; (3) THE AI SORTS THE
+ARCHITECTURE — what goes in the engine's repo, what here — in the back end, so he makes no decisions about where code goes; the
+separate-repo decision open if it is a burden.
+
+**Decided:**
+- **The brief is a RUNNING ORDER in journal §2** (piece #6's device — one active step, the position announced at every wrap,
+  reorganized only on his approval, survives clears). Eleven steps in two halves: I the start (containers 3 → 7) · II the electronics
+  and the opening (the seams · the rhythm layer · the mic opening · the return · the processing · the record). Sections 2 · 3 are notes
+  and the PLANNER's outline only. The breakouts are the AI's — what each step must contain to be done, and which part of the engine's
+  plan it is.
+- **THE SORTING — a standing practice in CLAUDE.md:** he designs; the AI places the code by the boundary test (knows this piece → the
+  piece; works for any piece → `electronics/`); one line tells him; a conversation only when the boundary is genuinely unclear.
+- **How the engine sits here — D7:** a git SUBTREE at `electronics/`, not the submodule of `#6 §807`. Why, in three: a cold session
+  commits as always — no pointer to keep in step, no second repo to push first · a clone of the piece is whole · a wrap that misses the
+  `subtree push` costs nothing. The engine's repo gets the history as it happens. Proven at its first push (part 8).
+- **The engine plan re-read by the brief:** part 5's "first sound" is a note CAPTURED at a mic opening and RETURNED — the filter is
+  third; part 11's first two members are the mic opening and the return; part 6's first effect the pedals of resonance. Written into
+  the engine's PLAN under 5 · 8 and its RUNNING_LOG §4.
+- **Two things the AI adds to his list** (the breakouts' new items): a LANE FOR THE ELECTRONICS in the composer score and a STAFF
+  TYPE for it in the notation (3.3 · 6.2) — the openings, the returns and the processing are events that need a place; and the sandbox
+  read BEFORE the first object (parts 2 · 3 · 4 — the sound seam's shape).
+- **Not his to settle now, flagged:** the effect's spelling — `SynthDef_petalsOfResonance` under GitHub says "petals", his dictation
+  "pedals" · the ensemble is FIVE players as announced (his *"if it's six"*).
+
+**Written:** the sketch pad (the five carried notes · DEC-1 … DEC-3) · PLANNER (the piece as an outline) · journal §1 (the names) ·
+§2 (the running order; D6 · D7) · CLAUDE.md (the title · the engine's seat · § THE SORTING · the state line) · PLAN (the one line · the
+engine's seat) · PERFORMANCE_NOTES #1 · #2 · piece #6's §819 · the engine's §4 and PLAN. The planning repo untouched (at his word only).
+
+**Nothing of code.** Next: a NEW chat opened in this folder — `/session-start` reads the running order; step 1 is container 3.

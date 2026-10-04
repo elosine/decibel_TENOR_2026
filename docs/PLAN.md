@@ -17,8 +17,9 @@
 ## The piece in one line
 
 For the Decibel ensemble — bass flute · bass clarinet · viola · cello · percussion · electronics, not final (D2) — with live
-electronics from the shared engine (D4) · for the TENOR conference's call · an animated scrolling score · ‹the character,
-with the sketch-pad notes it comes from›.
+electronics from the shared engine (D4 · D7) · for the TENOR conference's call · an animated scrolling score · three sections (his
+brief, DEC-1 … DEC-3): THE OPENING — mic openings that bank what the players play, their samples returned beside them, then the
+processing · THE MIDDLE — the after-effects alone, sustained · THE LAST — a hocket of strikes, the machine answering unseen.
 
 ## The profile (the protocol's 2.1)
 
@@ -56,11 +57,11 @@ with the sketch-pad notes it comes from›.
 *Outside this table:* container 1 (the harvest) is run in the LAST piece's repo · 9 (the collation) is the home's
 index, read at every session start · 10 (the upkeep) closes this section — 10.0 at the end of the start, 10.1 at the piece's close.
 
-**The engine, in this piece's start (D4).** The live electronics are NOT a container of the protocol. They are taken from
-`live-electronics-system` by that repo's `docs/TAKE.md` — a git submodule inside this repo, the commit recorded, the seams
-applied — at the engine plan's part 5 (the first sound: the trigger in THIS piece's composer score, one filter heard on a
-live instrument's note) and part 8 (the take). That needs container 3 done here (the composer score) and the engine's
-parts 3 · 4 laid out there. Not at set-up.
+**The engine, in this piece's start (D4 · D7).** The live electronics are NOT a container of the protocol. The engine's code is BUILT
+HERE, in `electronics/` — ordinary files of this repo, a git SUBTREE kept in step with `live-electronics-system` by the AI at every wrap
+(D7); the other pieces take it the same way (the engine plan's part 8, written at its first use). Its first objects come with the
+music — journal §2's RUNNING ORDER, steps 6 … 10: the seams and the sound path · the mic opening · the return · the processing. That
+needs container 3 done here (the composer score must exist). Not at set-up.
 
 ---
 

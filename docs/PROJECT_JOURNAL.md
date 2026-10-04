@@ -17,7 +17,9 @@
   parts 5 · 8 (D4)
 - **Libraries:** not chosen — container 4
 - **Phases:** 0 setup (the protocol) → 1 compose → 2 notate → 3 performance score → 4 submission
-- **The sketch pad** `docs/COMPOSITION_NOTES.md` opens with ‹the notes he made for this piece while writing others›
+- **The sketch pad** `docs/COMPOSITION_NOTES.md` opens with the five notes he made for this piece while finishing piece #6
+  (LG-340 … LG-343 · LG-345, carried at his word 2026-10-04); this piece's own notes are `DEC-N` (D6) — DEC-1 … DEC-3 are his
+  three sections. The planning talk behind the piece stays in piece #6's sketch pad: LG-334 (the slate) · LG-348 … LG-351.
 - **Reference repos** (read-only): #6 the source of the port · #5 · #4 · #2 · #1 · #3 — consult per named question only.
   What the pieces share: `composition-system/INDEX.md`.
 
@@ -29,14 +31,14 @@ lineage's pattern (piece #6: `lgmf` · `piece-lgmf` · `septet-lgmf-2026` · `lg
 | Name | Value | Whose |
 |---|---|---|
 | the repo and the folder | `decibel_TENOR_2026` — `C:\Users\jwloy\GitHub\decibel_TENOR_2026` · `github.com/elosine/decibel_TENOR_2026` | his (D3) |
-| the working title | ‹asked 2026-10-04› | his |
+| the working title | none yet (his word 2026-10-04) | his |
 | the session default (the day-one stub score) | `decibel` | the AI's |
 | the piece chain | `piece-decibel` (a save named `piece-…` is the piece); the main notation file `piece-decibel.ir.json` | the AI's |
 | the package name | `decibel-tenor-2026` | the AI's |
 | the Reaper project guard | `decibel_rack` | the AI's |
 | the two ports | the composer score **5500** · the sandbox **5000** | the lineage's rule |
-| the loopMIDI prefix | ‹asked 2026-10-04› | his |
-| the sketch pad's note prefix | ‹asked 2026-10-04› | his |
+| the loopMIDI prefix | `DEC` — `DECBassFlute` · `DECBassClar` · `DECViola` · `DECCello` · `DECPerc` the shape, named at container 4 (his word 2026-10-04, "a") | his (D6) |
+| the sketch pad's note prefix | `DEC-N` (D6); a carried note keeps its `LG-N` | his |
 
 ### Where the record of the last start lives
 
@@ -55,6 +57,83 @@ lineage's pattern (piece #6: `lgmf` · `piece-lgmf` · `septet-lgmf-2026` · `lg
 play back, then **STOP and ask**. No edits, no builds, no tool calls beyond the resume
 reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, then work.)*
 
+### RUNNING ORDER — THE BRIEF OF 2026-10-04 (his dictation, Fable; the order his, the breakouts the AI's — RUNNING_LOG §2) — THE START FINISHED, THEN THE OPENING COMPOSED, THE ELECTRONICS BUILT AS THE MUSIC REACHES THEM
+
+**HOW THIS LIST WORKS:** one step at a time — ► marks the active step, ☑ marks done; update the marks the moment a step wraps, not
+later. At every wrap the AI states: what finished · what's next · where we are in the order. The AI proposes reorganizations when
+useful; changes land only on his approval. A post-clear model reads this block and announces the position before doing anything.
+
+**What this is:** his brief for the piece and for the day, as to-dos in order — two halves. **I. THE START:** the protocol's
+containers 3 → 7, as far as they go (8 the deliverables is not here). **II. THE ELECTRONICS AND THE OPENING:** section 1 composed,
+each electronics object built the moment the music needs it; the AI sorts where its code goes (CLAUDE.md § THE SORTING) — he never
+decides that. Sections 2 · 3 are notes (DEC-2 · DEC-3) and the PLANNER's outline only. "Done when" is a step's gate; the time it
+takes is his (D5).
+
+**I. THE START**
+
+1. ► **Container 3 — the engine copied forward from piece #6** (Opus; in a NEW chat opened in this folder). ASK FIRST, one at a
+   time: (a) the protocol's 3.8 — seven small fixes made in piece #6 BEFORE the copy (`#6` journal §2, item (a), has them as
+   instructions) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
+   from GIT, or he says which go across. Then 3.0 the survey → 3.1 the copy byte-exact, committed as such → 3.2 proven whole, every
+   battery run and classified ONCE (NITS) → 3.3 THE RE-PALETTE: the lanes **bass flute · bass clarinet · viola · cello · percussion
+   — and ONE LANE FOR THE ELECTRONICS** (the AI's addition, his to reverse: the mic openings, the returns and the processing are
+   events that need a lane in the composer score and a staff in the notation; without one they would ride the players' lanes) →
+   3.4 recipes and skeletons → 3.5 the app running on **5500 / 5000** (`.claude/launch.json`: `score` · `sandbox` · `score-5501`
+   the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
+   `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
+   lanes, every check green or classified, pushed.
+2. **Container 4 — the instruments** (4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
+   look at, not decided: the Xsample bass clarinet (piece #3's deep map) · the Xsample strings for viola and cello (piece #1; piece
+   #6's cello recipe) · the bass flute — Xsample or IRCAM SI2, whichever has it · the percussion — Spitfire ARO (pieces #2 · #6),
+   WHICH instruments his). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge → 4.3 his loads → 4.4
+   the state as text → 4.5 the recipes → **4.6 THE FIRST SOUND** → 4.7 the record. **Done when:** every instrument sounds from the
+   composer score.
+3. **Container 5 — the calibration** (piece #6's 1b method: 5.1 the reference in the rack · 5.2 the pre-flight — clipping, the
+   round robins · 5.3 the card · 5.4 the trims · 5.5 the remap and the fader curves · 5.6 verified through the app and his ear · 5.7
+   the QC battery). **Done when:** the tutti and the per-part levels measured and recorded, the law applied.
+4. **Container 6 — the notation set-up** (6.0 the ensemble registry: the clefs by register, the bass clarinet's transposition, the
+   percussion staff type · **6.2 A NEW STAFF TYPE for the electronics lane** · 6.3 the batteries · 6.4 save → IR proved on a save of
+   the Decibel lanes · 6.5 the exporters run once). **Done when:** a Decibel save extracts to a valid IR and lays out on the page.
+5. **Container 7 — the composing tools, at need** (7.0 the law read · 7.1 the data checklist · the first tool the moment the music
+   asks — for step 7 the Rec lane and the bricks' moving between lanes, which exist). No tool adapted ahead of need.
+
+**II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `live-electronics-system/docs/PLAN.md`)*
+
+6. **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
+   `live-electronics-engine` — what it is built on decides the sound seam (a folder `SynthDef_petalsOfResonance` under GitHub says
+   SuperCollider; the read says) · WHERE the engine's code sits here — `electronics/` (D7) — and how the composer app loads it (a
+   script tag; a static route in `score/server.js`) · THE MESSAGE from the score to the sound: the stack already sends MIDI from the
+   browser over loopMIDI — a dedicated `DECElec` port is the first candidate, OSC through the score server the other · THE SOUND PATH
+   IN THE SIMULATION: the "live instrument" is the sampled instrument's audio in Reaper — a window of it RECORDED to a file (the bank) ·
+   a banked file PLAYED at a time · a window's audio FED to an effect · the playback route (new Reaper tracks or items) · the
+   mastering chain from the sandbox. Put to him only what is his. **Done when:** `docs/SEAMS.md` in the engine says each seam; one
+   message from the composer score reaches the sound process and is seen there.
+7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
+   kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
+8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
+   note CAPTURED and RETURNED; the filter comes at step 10]: a brick on an instrument's lane becomes a WINDOW — its time · its
+   length · its instrument · a CATEGORY (the Braxton-like type: "short", "accented long tone" … — a field on the brick that reaches
+   the IR; the glyph is the notation's, later — part 7; PERFORMANCE_NOTES #1) · in the simulation he picks the instrument and the
+   articulation; it sounds as played · THE BANK: the window's audio recorded and stored under a NAME — a shape or a colour (LG-342 ·
+   LG-345); the store in this repo (the samples are the piece's), the mechanism in `electronics/`. **Done when:** one opening placed,
+   one note heard, one file in the bank, named; played back on demand.
+9. **THE RETURN — the sample comes back** [part 11's second member; the algorithm the engine's]: a second rhythm series; at each
+   onset the player's banked sample is placed NEARBY — directly before or after — by an algorithm (its dials: before · after · both ·
+   the offset range · which of the player's samples · a seed) · the iterations: two versions of themselves, three … · the returned
+   sample named in the score by its shape or colour (LG-342; the notation later — PERFORMANCE_NOTES #2). **Done when:** a series
+   plays with each player's first sample beside the live note, and he has placed the second series himself.
+10. **THE PROCESSING — the first effects** [part 6; part 2's port of the basic machinery as far as this needs]: the pedals of
+    resonance — a resonant filter bank with much feedback: a window opens an instant, excites it, a long sustained chord sounds (his
+    spelling to confirm: "petals" in the folder's name, "pedals" in his words) · a SERIES of these developed for the piece · a freeze ·
+    a set per language type — trills and multiphonics recorded as samples first, each with its effects. **Done when:** one window
+    excites the filter bank and the chord is heard from the composer score; the series grows by need.
+11. **The record, as the work happens** (not a step he sees): this RUNNING_LOG · the engine's RUNNING_LOG for what is the engine's ·
+    the sketch pad · PERFORMANCE_NOTES a row per glyph · the sweep list · `git subtree push` at every wrap (D7).
+
+**Behind this order, not in it:** section 2 (DEC-2: the after-effects rendered in the background from section 1's bank · pitch
+extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
+deliverables · the planning repo's lines (at his word only).
+
 ### SESSION 1 OPENS ON THIS (2026-10-04, Opus — written from piece #6's chat) — THE KIT IS IN, NO CODE; ► NEXT: container 3, the engine copied forward — ASK FIRST
 
 - **The task:** the start of the Decibel piece by the new-piece protocol, v1 — its FIRST RUN
@@ -63,6 +142,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 - **Where it stands · the deliverable:** container 2 DONE — this repo: the method docs carried from piece #6 with a
   provenance line each · the record docs from the home's skeletons · the names fixed (§1) · the decisions D1 … D5. Nothing
   of code. A `‹…›` left in a doc is a thing not yet decided.
+- **THE BRIEF OF 2026-10-04 is the RUNNING ORDER above — container 3 is its step 1; the order stands over this block's list.**
 - **► THE NEXT CONCRETE STEP — in a NEW chat opened in THIS folder: `/session-start`, then ASK to begin CONTAINER 3, the
   engine copied forward.** Before any copy, put two things to him, one at a time:
   1. **3.8 — the seven small engine fixes are made in piece #6 BEFORE the copy** (the protocol's 3.8 + 5.11; `#6` journal
@@ -75,7 +155,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
   again about the home's 9.12, the shared copies of the tool docs (his *"none now"* of 2026-10-04 was for the start).
 - **`Resume reads:`** the home's `protocol/NEW_PIECE_PROTOCOL.md` § 3 only · `composition-system/INDEX.md`. Nothing else
   beyond §2.
-- **Pending him:** ‹the working title · the two prefixes · the notes carried into the sketch pad — asked 2026-10-04› · the
+- **Pending him:** the
   ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this piece, at his word only
   (the protocol's 2.6).
 - **Deliberately uncommitted:** nothing — the tree is clean at the first commit.
@@ -92,7 +172,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 |---|---|---|---|
 | **►** | **CONTAINER 3 — the engine copied forward** (the home's protocol § 3). Ask first: 3.8's seven fixes in piece #6 before the copy · his uncommitted files there. Then 3.0 the survey → 3.1 the copy → 3.2 proven whole → 3.3 the re-palette | Opus | a new chat in this folder — `/session-start` |
 | — | **CONTAINER 4 — the instruments:** 4.0 the libraries for the Decibel ensemble, a talk (the ensemble is not final, D2) | Fable | yes |
-| — | **THE ENGINE's parts 3 · 4 · 5** (the seams · the sound path · the first sound, heard in THIS piece's composer score) — laid out in `live-electronics-system`, at his word; they need container 3 here | Fable (the talk) · Opus (the build) | — |
+| — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the
 title.
@@ -175,6 +255,19 @@ Verified in this repo only when they bite.)*
 - **D5 · 2026-10-03 — HE KEEPS HIS OWN TIME.** *"I don't need AI to do any schedule keeping for me or deadline watching …
   I'll worry about the order in which things are meant to be done in."* The AI gives the parts, the dependencies and what
   is efficient; never a route framed around a date. *(`#6 §806`)*
+- **D6 · 2026-10-04 — THE PREFIX `DEC`:** the loopMIDI ports (`DECBassFlute` …, named at container 4) and the sketch pad's notes
+  (`DEC-N`); a carried note keeps its `LG-N`. His *"a"* to `DEC` · `DB` (reads as double bass) · his own. The title: *"none yet"*.
+  The notes carried into the sketch pad: the five musical ideas (*"a"*: LG-340 … LG-343 · LG-345). *(RUNNING_LOG §2)*
+- **D7 · 2026-10-04 — HOW THE ENGINE SITS IN THIS PIECE: a git SUBTREE at `electronics/`, not a submodule — the AI's call at his
+  word.** His word: the separate repo must not become *"an extra administrative burden"*; *"I would like AI to sort that out"*; open
+  to rethinking the decision. The call: the engine's code lives in this repo's `electronics/` as ORDINARY FILES — nothing for him or
+  a cold session to do beyond a normal commit, a clone whole — and the AI pushes that folder to `live-electronics-system` at every
+  wrap (`git subtree push`; a wrap missed costs nothing — the next carries everything); the other pieces take it by `git subtree`.
+  It keeps `#6 §806`'s decision (one engine, its own repo, built in the first piece) and replaces its one precision (`#6 §807`, "the
+  files live once on disk" — a submodule): a submodule needs two commits per change and a pointer kept in step by every cold
+  session, which is exactly the burden he named. Rejected: the submodule as planned · everything here and a split later (the
+  engine's repo would hold no code for weeks; the subtree gives it the history as it happens). Proven at the first push (the engine
+  plan's part 8). *(RUNNING_LOG §2; the engine's RUNNING_LOG §4)*
 
 ---
 

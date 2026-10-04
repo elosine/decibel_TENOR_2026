@@ -1,6 +1,6 @@
 # decibel TENOR 2026 — the Decibel piece
 
-**Title: ‹the working title — it may come later›**
+**Title: none yet** (his word 2026-10-04; the protocol's 2.3 — it may come later).
 
 Composition #7 in the custom-composition-system lineage
 (#1 `string_quartet_no1-composer` → #2 `composition_for_two_pianos_and_two_percussion`
@@ -30,18 +30,23 @@ holds the kit only, no code.** The delivery format is the lineage's: an animated
 devices; a presentation score (video + print); the performance score later.
 **The IR contract (inherited, #5's D9):** the composer save is the ground truth; the IR is derived from it by the
 extractor and is the single source for every downstream score.
-**The live electronics (journal D4):** this is one of the THREE electronics pieces (the Decibel piece · the Switch~ piece ·
+**The live electronics (journal D4 · D7):** this is one of the THREE electronics pieces (the Decibel piece · the Switch~ piece ·
 the improviser piece) that share ONE engine — `live-electronics-system` (`C:\Users\jwloy\GitHub\live-electronics-system`,
-public). The engine is a MODULE SET with named SEAMS that drops into this stack ADDITIVELY; this repo takes it as a **git
-submodule**, by that repo's `docs/TAKE.md`, at the engine plan's parts 5 · 8 — **not at set-up**. The generic machinery
-lives in the engine; the USES (which note · which effect · which glyph · when) live in this piece's save.
+public). The engine is a MODULE SET with named SEAMS that drops into this stack ADDITIVELY. **HOW IT SITS HERE (D7 — the AI's
+call at his word, 2026-10-04):** the engine's code lives in THIS repo, in the folder **`electronics/`**, as ordinary files — he
+works in one place, a cold session commits as always; the engine's repo is kept in step by the AI at every wrap (`git subtree
+push --prefix=electronics`, proven at its first use), and the other two pieces take it the same way (`git subtree`). Built here
+first, where he hears it (his words, `#6` LG-350). The generic machinery lives in `electronics/`; the USES (which note · which
+effect · which glyph · when · the samples themselves) live in this piece's save and its own folders. § THE SORTING below says
+how the AI decides, every time, without asking him.
 Libraries: not chosen — the protocol's container 4.
 
-**State of the piece (keep this line current):** **► 2026-10-04 (Opus, RUNNING_LOG §1): THE REPO AND ITS KIT ARE MADE — the
-new-piece protocol's container 2, its first run: the method docs carried from piece #6, the record docs from the home's
-skeletons, the names fixed. NO CODE YET. ► NEXT: `/session-start` in a NEW chat opened in THIS folder, then ASK to begin
-container 3, the engine copied forward — raising first the seven small fixes the protocol makes in piece #6 BEFORE the copy
-(3.8) and his uncommitted files there. Journal §2's block SESSION 1 OPENS ON THIS is the cold-start block.**
+**State of the piece (keep this line current):** **► 2026-10-04 (Fable, RUNNING_LOG §2): HIS BRIEF IS THE RUNNING ORDER in journal
+§2 — I. the start finished (containers 3 → 7) · II. the opening composed with the electronics built as the music reaches them (the
+seams · the mic opening · the return · the processing); the piece in three sections in PLANNER; the engine's code to be built HERE in
+`electronics/` (D7); THE SORTING a standing practice below. NO CODE YET. ► NEXT: `/session-start` in a NEW chat opened in THIS
+folder, then ASK to begin step 1 — container 3, the engine copied forward — its two asks first (3.8's seven fixes in piece #6 · his
+uncommitted files there). Journal §2's RUNNING ORDER, then its block SESSION 1 OPENS ON THIS, are the cold-start block.**
 
 ## READ FIRST — how to work here
 
@@ -91,6 +96,9 @@ IDs always with their names.
 - **The performance notes — what they must cover, collected as decided:** `docs/PERFORMANCE_NOTES.md`
 - **Working preferences & routines:** `docs/HOW_WE_WORK.md` · `docs/SESSION_PROTOCOL.md`
   · `docs/SESSION_HYGIENE.md` (clear between chunks; the docs are the handoff)
+- **TODAY'S WORK — the running order:** `docs/PROJECT_JOURNAL.md` §2, the block RUNNING ORDER — THE BRIEF OF 2026-10-04 (► the
+  active step; the position announced at every wrap)
+- **The piece as an outline (his three sections):** `docs/PLANNER.md`
 - **The start, where it stands:** `docs/PLAN.md` § 0 — the protocol's containers for this profile, each with its status
 - ‹this piece's own pointers, added as the docs appear: the settings that live only in his plugins · the notation standards · the tool docs›
 
@@ -142,6 +150,31 @@ adjusted for the current use now; the file is the memory for its revision into *
 last piece or this one. Not optional, never asked for — the lab journal's rule, for one tool. The file was carried WHOLE from
 piece #6 at this piece's start (2026-10-04), as #6 carried it from #5; its §3 stays append-only and continues here. The
 morph tool itself arrives with the copy-forward (container 3); whether this piece uses it is his, later.
+
+## Standing practice: THE SORTING — where each thing goes is the AI's to decide (composer, 2026-10-04)
+
+> *"my hope is that AI can organize which things belong where. So for the live electronics is mostly what I'm talking about.
+> We'll design the live electronics or the triggering systems, etc., and then you'll sort out which belongs in its own repo
+> and how to put it there. And then what belongs here, or maybe it's a copy, but I would like AI to sort that out so I can
+> just work uh, seamlessly without having to make too many decisions about what code goes where."* — and: *"I would expect
+> AI to try to organize where everything goes as we're building it and how it sits in the system to try to organize that
+> architecture as we go along. Or if we, you know, we need to have a conversation at any point about that. But I kind of
+> want that to be done in the back end as much as possible. So I know we took a decision to keep the live electronics in a
+> separate repo, but I don't want to have to fuss with that too much. I don't want that to become an extra administrative
+> burden."* (RUNNING_LOG §2)
+
+The rule, for every session:
+
+- **He designs the music and the devices; the AI places the code.** He is never asked where a file goes, and never runs a
+  git step for the engine. He is told in ONE line what went where, his to reverse.
+- **The boundary test** (the engine plan's objective 6): does this code know THIS piece — its instruments, its lanes, its
+  save, its names? → the piece (`score/`, `bank/`, `notation/`, as always). Does it work for any piece — a capture window,
+  a bank, a placement algorithm, an effect, a message route, a drawn kind's machinery? → the engine's folder, `electronics/`.
+  The piece's USES of the engine (which note · which effect · which glyph · when · the samples themselves) are the piece's.
+- **A conversation only when the boundary is genuinely unclear** — one question, plain words, his one-line answer; never
+  before each build.
+- **The engine's repo is kept in step by the AI at every wrap** (`git subtree push`, journal D7) — never a step of his.
+  A wrap that misses it costs nothing: the piece is complete in itself; the next wrap carries everything.
 
 ## THE RHYTHM — next steps · model · clear (standing, composer 2026-08-23; carried whole 2026-09-17)
 
