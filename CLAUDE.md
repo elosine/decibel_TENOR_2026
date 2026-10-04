@@ -31,7 +31,7 @@ each piece pulls at ITS moment, never automatically, and records the commit; a p
 pieces is the normal case. A change made for one piece reaches another when that piece pulls — the additive rule, the shield
 and the batteries run in the piece that takes a change cover it.
 
-**State (keep this line current):** **► PART 1 DONE 2026-10-03 (Fable, `#6 §814`): the repo made, public, pushing after every
+**State (keep this line current):** **► HIS PICK 2026-10-03 (`#6 §815`): PART 9's FIRST RUN — the Decibel piece's repo, by the new-piece protocol, begun in a new session from piece #6's checkpoint #5 (its record lives in THAT piece's repo, not here). HERE: nothing in hand until the first take — parts 3 the seams · 4 the sound path · 5 the first sound · 8 the take, each laid out when he reaches it; before part 4 is put to him, read the sandbox `live-electronics-engine`'s CLAUDE.md.** *(Before it:)* **► PART 1 DONE 2026-10-03 (Fable, `#6 §814`): the repo made, public, pushing after every
 commit; the kit in; `docs/PLAN.md` written — twelve parts, part 1 laid out, 2 … 12 top line only. NEXT: the part he names
 (the order and the timing are HIS — never framed by a date); structurally, 9's first run (the Decibel piece's repo by the
 protocol) comes before 5 the first sound. Journal §2's first block is the cold-start block.**

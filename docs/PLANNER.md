@@ -3,7 +3,7 @@
 > **What this is:** the working view of the ENGINE as an outline — the twelve parts of `docs/PLAN.md`, what each holds, the
 > one in hand. Rewritten freely; the lab journal is the append-only record.
 
-**NOW ►** 2026-10-03 — **► PART 1 DONE (Fable, `#6 §814`): the repo made, public, pushing after every commit; the kit in; the plan
+**NOW ►** 2026-10-03 — **► HIS PICK 2026-10-03 (`#6 §815`): PART 9's FIRST RUN — the Decibel piece's repo, by the new-piece protocol, begun in a new session from piece #6's checkpoint #5 (its record lives in THAT piece's repo, not here). HERE: nothing in hand until the first take — parts 3 the seams · 4 the sound path · 5 the first sound · 8 the take, each laid out when he reaches it; before part 4 is put to him, read the sandbox `live-electronics-engine`'s CLAUDE.md.** *(Before it:)* **► PART 1 DONE (Fable, `#6 §814`): the repo made, public, pushing after every commit; the kit in; the plan
 written (twelve parts; part 1 laid out, 2 … 12 top line only). NEXT: the part he names — the order his. Structurally: 9's first
 run (the Decibel piece's repo, by the protocol) before 5 the first sound; 3 and 4 before 5. Journal §2's first block is the
 cold-start block.**

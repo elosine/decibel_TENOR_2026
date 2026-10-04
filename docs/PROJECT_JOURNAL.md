@@ -34,6 +34,12 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 ### THE REPO OPENS ON THIS (2026-10-03, Fable) — PART 1 DONE; the next part is HIS to name
 
+- **UPDATE 2026-10-03 (`#6 §815`) — HIS PICK: PART 9's FIRST RUN**, the Decibel piece's repo by the new-piece protocol, begun in a
+  new session from piece #6's checkpoint #5 (`septet_LGMF_2026/docs/PROJECT_JOURNAL.md` §2, the block CHECKPOINT #5 AFTER THE CLOSE).
+  That run's record lives in the Decibel piece's repo. Here nothing is in hand until the first take (parts 3 · 4 · 5 · 8).
+  The route's structural shape he was given (not an order): the Decibel repo · one read of the sandbox · parts 3 and 4 laid out ·
+  part 5 the first sound, where part 8's recipe is written and proven · then parts 6 and 11 by need, 7 and 12 when notating comes.
+
 - **The task:** the shared live-electronics engine — `docs/PLAN.md`, twelve parts.
 - **Where it stands · the deliverable:** part 1 done — this repo, public, pushing after every commit; the kit in; the plan
   written. Parts 2 … 12 top line only. No code.
