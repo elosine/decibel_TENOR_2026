@@ -181,7 +181,7 @@ deliverables · the planning repo's lines (at his word only).
     #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
     plain non-vibrato) · a save.
   - **THE LIST TO "FULLY OPERATIONAL" — RESEARCHED AND NARROWED (RUNNING_LOG §29; it supersedes §27's):** 1 ☑ key ranges for the four
-    mallets — DONE (RUNNING_LOG §30 … §33; he dictated by screenshot, `tools/key_sweep.js` proved the edges) · 2 recipes: mallets, bass flute, bass clarinet, viola · 3 THE FIRST SOUND from the composer score · 4 round
+    mallets — DONE (RUNNING_LOG §30 … §33; he dictated by screenshot, `tools/key_sweep.js` proved the edges) · 2 ☑ recipes — DONE (RUNNING_LOG §34: bass flute 32, ordinary #15 · bass clarinet 34 from piece #5 · the mallets lane, 39 patches by `tools/apply_ricotti.js` · the viola stands) · 3 THE FIRST SOUND from the composer score · 4 round
     robin OFF: bass flute, bass clarinet, viola (Xsample takes it by MIDI, CC82 = 21 … 41; proposed: sent after the CC0 with every
     note — one test first) · 5 a round-robin check on ONE mallet patch · 6 the KNOWN volumes put back on the faders — cello −3.87 ·
     wood blocks +7.05 · bass drum alt −4.29 dB (piece #6's `bank/trims.json`) · 7 the volume probe, NEW instruments only: bass
@@ -258,8 +258,8 @@ DEC-4) · Q4 — the percussion: TWO lanes (D9); the pitched lane = Ricotti Mall
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
-**Checks this piece owns:** `node tools/palette_check.js` (**152** — the tracks, the recipes, the ports, every per-instrument table, the
-lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**221** voices) · `node
+**Checks this piece owns:** `node tools/palette_check.js` (**151** — the tracks, the recipes, the ports, every per-instrument table, the
+lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**311** voices) · `node
 tools/model_bank.js --validate` · `node tools/unsaved_check.js` (before a commit of scores). THE SHIELD (`tools/layout_shield.js`)
 before and after any layout change — it needs pages (container 6). The engine's batteries: `tools/port/` (RUNNING_LOG §16).
 

@@ -288,17 +288,9 @@
     // 10 s and its viola 12 s; the bass flute is the shortest breath of the five. Container 5 measures them.
     bass_flute: { breathS: 8, gapS: 0.75 }, bass_clarinet: { breathS: 12, gapS: 0.75 },
     viola: { bowS: 12, gapS: 0 }, cello: { bowS: 15, gapS: 0 },
-    // The bowed vibraphone IS a beating partner, and the central one: the opening has individual
-    // instruments beating against it (LG-15). It is bowed, so a bow ceiling and no gap, because a
-    // struck-or-bowed metal bar keeps ringing through a bow change and the seam does not show the way a
-    // string's does. NOTE it does not BEND: a bar is a fixed pitch (`playerBendSt: 0`), so in every
-    // beating pair the vibraphone is the reference and the OTHER instrument does the inflecting.
-    // 7.4 s is MEASURED, not assumed (2026-09-19, PLAN 1a.2, RUNNING_LOG §69): C5 on Bowed Velocity held
-    // 20 s into the rack, the track's meter sampled at 10 Hz — it peaks at −20.7 dBFS about a second after
-    // the attack and is 20 dB down 7.4 s later; the sample then falls off a cliff and is inaudible by
-    // ~10.5 s. This replaces the assumed 12 s, and it is the one ceiling in this table under the ten
-    // seconds the composer allowed the instrument.
-    bowed_vibraphone: { bowS: 7.4, gapS: 0 },
+    // The pitched percussion lane (key `bowed_vibraphone`) is the Ricotti MALLETS from 2026-10-04 — struck, so neither breath nor
+    // bow and NOT a beating partner (`beating: false` in the recipe). Piece #6's bowed vibraphone had a row here (bow 7.4 s,
+    // measured, its RUNNING_LOG §69); it left with the instrument. A bowed crotale or marimba bar would need its own, measured.
     // percussion has neither breath nor bow and cannot bend — not a beating partner (0c to confirm)
   };
   // The table is MF. A quiet note lasts longer and a loud one shorter, in the ratios this function has always

@@ -243,7 +243,7 @@ routing advice is also credit advice, and these bind every Fable turn:
 ## Apps
 
 - **The composer score — `http://localhost:5500/composer.html`** (`score/server.js`; launch name `score`; he starts his own with
-  `start_score_server.bat`). Six lanes: bass flute · bass clarinet · percussion · vibraphone · viola · cello (D9); META 6, the curve
+  `start_score_server.bat`). Six lanes: bass flute · bass clarinet · percussion · mallets · viola · cello (D9; the mallets lane = Ricotti, four instruments); META 6, the curve
   windows 7 / 8 / 9; `layoutVersion` 8; the day-one empty score `scores/decibel.json`. **Nothing sounds yet** (containers 4 · 5).
 - **The sandbox — `http://localhost:5000`** (`sandbox/serve.js`; launch name `sandbox`) — one instrument, one technique at a time.
 - **`.claude/launch.json`:** `score` 5500 · `sandbox` 5000 · **`score-5501`** — the THROWAWAY for verification, on the same scores
@@ -258,7 +258,7 @@ routing advice is also credit advice, and these bind every Fable turn:
   `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
 - **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
   (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
-- **The names** — `docs/NAMING.md` § 1. **The recipes:** the PERCUSSION is this piece's (2026-10-04: eight Abbey Road instruments, `bank/perc_selection.json` → `tools/apply_perc.js`); the rest still PROVISIONAL until 4.5 — the cello carried from piece #6, the vibraphone a stand-in for the Ricotti lane, three placeholders.
+- **The names** — `docs/NAMING.md` § 1. **The recipes (2026-10-04, RUNNING_LOG §25 · §34):** every lane has its own — bass flute (Xsample, 32 presets, ordinary #15) · bass clarinet (piece #5's 34) · percussion (eight Abbey Road instruments, `bank/perc_selection.json` → `tools/apply_perc.js`) · MALLETS (39 Ricotti patches, `bank/ricotti_catalog.json` → `tools/apply_ricotti.js`; the lane's internal key is still `bowed_vibraphone`) · viola · cello (piece #5's · #6's). Loudness and round robins are not done (journal §2's list).
 
 ⚠ **Standing warnings:** never bind **5400 / 4900** (piece #6's — his server may be running) or **5300 / 4800** (piece #5's) · the AI
 never holds his port and never saves from its own browser pane (the day-one score was the port's one save) · the in-app browser
@@ -268,8 +268,8 @@ keeps the engine it started with — restart after a `notation/lib` change · **
 CSS rule** (`palette_check` § 7) · **a lane NUMBER written into a module is invisible to a grep for names** — two were found only
 by opening the panels (RUNNING_LOG §16).
 
-**Checks this piece owns:** `node tools/palette_check.js` (**152** — after any change to `TRACKS`, `sandbox/instruments.js` or a
-per-instrument table) · `node tools/roster_check.js` (**221** voices) · `node tools/model_bank.js --validate` · `node
+**Checks this piece owns:** `node tools/palette_check.js` (**151** — after any change to `TRACKS`, `sandbox/instruments.js` or a
+per-instrument table) · `node tools/roster_check.js` (**311** voices) · `node tools/model_bank.js --validate` · `node
 tools/unsaved_check.js` · **THE SHIELD** (`tools/layout_shield.js` — before and after ANY layout change; it needs pages, container
 6). The engine's forty batteries read other pieces' data, staged: `tools/port/stage32.sh` · `run_batteries.sh` (`docs/NITS.md`).
 

@@ -423,7 +423,7 @@
         <svg xmlns="http://www.w3.org/2000/svg"><g class="tickGroup"></g><g class="contentGroup"></g></svg>
     </div>
     <div class="lane" id="lane4">
-        <span class="laneLabel" title="The pitched percussion lane — piece #6's bowed vibraphone, carried as the stand-in until the instruments are chosen (D9); the SAME player as Percussion">Vibraphone</span>
+        <span class="laneLabel" title="The pitched percussion lane — Ricotti Mallets: crotales · glockenspiel · xylophone · marimba, all four on this lane (DEC-5); the SAME player as Percussion">Mallets</span>
         <svg xmlns="http://www.w3.org/2000/svg"><g class="tickGroup"></g><g class="contentGroup"></g></svg>
     </div>
     <div class="lane" id="lane5">
@@ -470,7 +470,7 @@
         <option value="0" selected>Bass Flute</option>
         <option value="1">Bass Clar.</option>
         <option value="2">Percussion</option>
-        <option value="3">Vibraphone</option>
+        <option value="3">Mallets</option>
         <option value="4">Viola</option>
         <option value="5">Cello</option>
         <option value="6">META</option>
@@ -505,7 +505,7 @@
     <button id="stampBtn">Stamp → META</button>
     <button id="cc7ResetBtn" title="All-notes-off + CC7=127 on every port/channel">CC7 Reset</button>
     <button id="metaBtn" title="Show/hide the META draw window — the gestures' shapes and the stamps">META</button>
-    <button id="curveBtnA" title="Show/hide curve window A (over Vibraphone)">A</button>
+    <button id="curveBtnA" title="Show/hide curve window A (over Mallets)">A</button>
     <button id="curveBtnB" title="Show/hide curve window B (over Viola)">B</button>
     <button id="curveBtnC" title="Show/hide curve window C (over Cello)">C</button>
     <span style="color:#ccc">|</span>
@@ -1414,7 +1414,7 @@ const TRACKS = [
     // THE PITCHED PERCUSSION LANE — which instrument is his, at the instruments talk (container 4). Until then it is
     // piece #6's bowed vibraphone, carried whole (the lane id, the recipe key, the second seat), so that everything the
     // engine built on that key stays alive and tested. Same PLAYER as Percussion: two lanes, joined by a BRACE in the score.
-    { id: 'vibraphone',    label: 'Vibraphone', short: 'Vib',  instKey: 'bowed_vibraphone' },
+    { id: 'vibraphone',    label: 'Mallets',    short: 'Mal',  instKey: 'bowed_vibraphone' },   // Ricotti: crotales · glockenspiel · xylophone · marimba (DEC-5); the id and the key are piece #6's, kept (NAMING § 1)
     { id: 'viola',         label: 'Viola',      short: 'Va',   instKey: 'viola' },
     { id: 'cello',         label: 'Cello',      short: 'Vc',   instKey: 'cello' },
 ];

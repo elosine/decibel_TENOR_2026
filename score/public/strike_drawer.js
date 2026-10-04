@@ -39,7 +39,7 @@ const E_ = () => (typeof MorphEmit !== 'undefined' ? MorphEmit : (root.MorphEmit
 // vibraphone two notes. The score's TRACKS are untouched: a seat's notes leave the drawer on its instrument's lane (seats_ui.js, the
 // last mixin, translates them on the way out) and Hear routes them to the instrument's first curve channel (D11's slot A), so the two
 // bows keep their own CC7 and bend. A piece whose TRACKS lack the instKey simply has no seat. The list is built once per TRACKS.
-const EXTRA_SEATS = [{ instKey: 'bowed_vibraphone', label: 'Vibraphone 2', short: 'Vib2' }];
+const EXTRA_SEATS = [{ instKey: 'bowed_vibraphone', label: 'Mallets 2', short: 'Mal2' }];
 let _seats = null;
 const TRK = () => {
     const T = (typeof TRACKS !== 'undefined' ? TRACKS : (root.TRACKS || []));
@@ -90,7 +90,7 @@ const ART_SETS = {
     // `ordinary` in sandbox/instruments.js (read back from scores/lgmf-ref.json). The vibraphone was on its standard mallets for stage 1
     // at his word; PLAN 1c.2 (the long tones, the same day) put it on the BOWED voice the reference scores play — his "this would
     // involve adding the bowed vibraphone to the Ordinario set". The three sets above are untouched; this one is a fourth button.
-    ordinario: { bass_flute: 'vib_vel', bass_clarinet: 'senza_vel', percussion: 'main', bowed_vibraphone: 'bowed_vel', viola: 'senza_vel', cello: 'senza_vel' },
+    ordinario: { bass_flute: 'vib_vel', bass_clarinet: 'senza_vel', percussion: 'main', bowed_vibraphone: 'crot_main_metal', viola: 'senza_vel', cello: 'senza_vel' },
 };
 
 function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }

@@ -148,7 +148,7 @@ const COLOR = '#C08A52', EDGE_ON = '#f0c890', EDGE_OFF = '#5a4630';   // 1l.3: w
 // breath is built round the player's OWN maximum with no jitter, aligned, and every box is entered by attack.
 const MAP_BREATH = { striation: 'aligned', length: 30, jitter: 0, seed: 1, together: null, apart: 0.5, lengths: null, ofMax: 1, jitterS: 0 };
 const MIN_PPS = 6;
-const VIB_TECH = 'std_mallets_vel';   // 1l.6: a percussion dot become the vibraphone is STRUCK — Standard Mallets (the AI's call; the card offers the roster)   // 1l.3: the two rows' shared time scale never goes below this many pixels a second (the rows then scroll)
+const VIB_TECH = 'crot_main_metal';   // 1l.6: a percussion dot become the vibraphone is STRUCK — Standard Mallets (the AI's call; the card offers the roster)   // 1l.3: the two rows' shared time scale never goes below this many pixels a second (the rows then scroll)
 const AS_DEALT = SEQ.AS_DEALT;
 const DEF_DUR = 8, MIN_DUR = 0.1, MAX_DUR = 3600;   // 0.1: a rolled container on a small unit may be short
 const RECENTRE = 1e-6;   // cents — rounds to the centre; see the head of this file

@@ -103,23 +103,25 @@ const INSTRUMENTS = {
     ],
   },
 
-  // ---- BOWED VIBRAPHONE — Xsample Mallets Extended (Kontakt), CC#0 selects the preset ----
-  // Acquired 2026-09-18 (LG-9 closed). It has its OWN LANE at his word (D12): the opening sustains it
-  // continuously — two overlapping pitches with individual instruments beating against each one
-  // (COMPOSITION_NOTES LG-15) — so it is a voice, not a technique on the percussion track. Same player as
-  // Percussion (one percussionist); the score joins the two staves with a brace.
-  // The roster is the full Preset Menu as HIS Kontakt shows it (screenshot, 2026-09-18): 12 factory presets
-  // + Free Preset 13. CC#0 = preset number − 1, as the english horn and the strings (§32).
-  // RANGE read from his plugin's own low/high fields: F2–F5 in Xsample's octave naming = MIDI 53–89, the
-  // standard three-octave vibraphone F3–F6 sounding. NON-TRANSPOSING, single treble staff (his confirmation,
-  // 2026-09-18 — notation/registry/ensemble.json part 5).
-  // `ordinary` = bowed_vel (#12 Bowed Velocity), HIS CHOICE 2026-09-18, because the opening is bowed and a
-  // bowed tone is the steady partner a beating needs. #7 is the same bow with vibrato on CC4.
-  bowed_vibraphone: { balanceDb: 2.81,
-    ordinary: "bowed_vel", beating: true, playerBendSt: 0, bendRangeSt: 2,
-    label: "Vibraphone", port: "DECVibes", rangeLow: 53, rangeHigh: 89, mechanism: "cc0",
-    channels: { main: 1, curve: [2, 3, 4] },
-    techniques: xsVibraphoneTechs(53, 89),
+  // ---- THE PITCHED PERCUSSION LANE — Spitfire Ricotti Mallets (Kontakt): crotales · glockenspiel · xylophone · marimba ----
+  // His word, 2026-10-04 (COMPOSITION_NOTES DEC-5): "the pitch lane will hold all four mallet instruments" — ONE lane, the
+  // SAME player as Percussion; two sounding at once is the notation's question, later (opposite stems "or something like that").
+  // THE KEY IS STILL `bowed_vibraphone` — piece #6's, kept on purpose: the engine's tools know the pitched lane by that key
+  // (the strike drawer, the texture panel, the rhythm sequencer's "a percussion dot become pitched", the beating tool), and a
+  // rename is cosmetic (docs/NAMING.md § 1; NITS). What he sees is the LABEL, Mallets. Piece #6's vibraphone (Xsample Mallets
+  // Extended) is not in this rack; its roster, its balance, its bend and its dynamics curve left with it.
+  // THE ROSTER IS GENERATED, never typed: bank/ricotti_catalog.json → tools/apply_ricotti.js → the RICOTTI block below. One
+  // technique per PATCH — 39 — each on its instrument's own PORT (DECCrotales · DECGlock · DECXylo · DECMarimba; a technique's
+  // port overrides the lane's) and its own channel; the ranges are his (a screenshot each) with every edge proven by
+  // tools/key_sweep.js. Struck: the velocity IS the dynamic. `curveTechniques: []` — NO patch may use the curve channels: on
+  // these ports channels 2 … 4 are OTHER PATCHES, not copies (docs/DYNAMICS_LAW.md; composer.html's curve bank gates on it).
+  // `ordinary` = crot_main_metal, THE AI'S CALL, his to change with one word. The rolls, the tremolos and the bowed patches
+  // take their dynamic from CC1 in this library (its manual) — NOT wired: they sound at the wheel's resting value (NITS).
+  bowed_vibraphone: {
+    ordinary: "crot_main_metal", beating: false, playerBendSt: 0, bendRangeSt: 2,
+    label: "Mallets", port: "DECCrotales", rangeLow: 36, rangeHigh: 96,
+    channels: { main: 1, curve: [2, 3, 4], curveTechniques: [] },
+    techniques: [{ key: "crot_main_metal", label: "Crotales · Main (Metal)", channel: 3, kind: "pitched", loud: "vel" }],   // replaced whole by applyRicotti()
   },
 
   // ---- VIOLA — by the CELLO's mechanism, PROVISIONAL (container 4) ----
@@ -253,40 +255,6 @@ function xsStringTechs(s, lo, hi, ranges) {
 
 // The Xsample English Horn roster — his Preset Menu, 2026-09-17 (RUNNING_LOG §32). Hoisted, like xsStringTechs.
 // lo/hi = the assumed zone until 0d measures each preset. `mw` = the wheel shapes the dynamic (curve-channel material, D11).
-// The bowed vibraphone's Preset Menu, from his Kontakt (2026-09-18): 12 factory presets + Free Preset 13,
-// CC#0 = preset number − 1. `mw: true` marks a preset whose shape or damping is on the modwheel, as the
-// english horn's does; CC4 presets take their vibrato depth there (the menu names say so) and are measured
-// at 0d, not assumed. Every preset is given the instrument's whole compass: an Xsample mallet instrument is
-// one sample set per preset, so unlike the winds there is no narrower zone to find.
-function xsVibraphoneTechs(lo, hi) {
-  const P = (n, key, label, mw) => ({ key, label: label + " (#" + n + ")", channel: 1, cc0: n - 1, rangeLow: lo, rangeHigh: hi, ...(mw ? { mw: true } : {}), kind: "pitched", ...xsLoud(label) });   // 1m.4.1: every mallet preset is pitched
-  return [
-    P(1,  "std_mallets_vel",     "Standard Mallets Velocity CC4 Vibrato MW Speed", true),
-    P(2,  "damped_vel",          "Damped Velocity"),
-    P(3,  "xylo_mallets_vel",    "Xylophone Mallets Velocity CC4 Vibrato MW Speed", true),
-    P(4,  "tri_mallets_vel",     "Triangle Mallets Velocity CC4 Vibrato MW Speed", true),
-    P(5,  "hand_vibrato_vel",    "Hand Vibrato Velocity"),
-    P(6,  "harmonics_vel",       "Harmonics Velocity"),
-    P(7,  "bowed_vel_vib",       "Bowed Velocity CC4 Vibrato MW Speed", true),
-    P(8,  "std_mallets_mwdamp",  "Standard Mallets Velocity MW Damped", true),
-    P(9,  "xylo_mallets_mwshape", "Xylophone Mallets Velocity MW Shape", true),
-    P(10, "tri_mallets_mwshape", "Triangle Mallets Velocity MW Shape", true),
-    P(11, "hand_vibrato_mwshape", "Hand Vibrato Velocity MW Shape", true),
-    // THE ORDINARY VOICE IS PRESET 13, NOT 12 (2026-09-19, PLAN 1b.3a; RUNNING_LOG §79–§82).
-    // Preset 12 is the library's own "Bowed Velocity", and its Round Robin menu ships on **"Repetition"** —
-    // round robin active whenever a sound is REPEATED, which is this piece's vibraphone texture exactly: a
-    // bar is HELD by re-bowing the same pitch, about eleven times a minute (§69's measured 7.4 s sustain).
-    // Its three members measured **up to 13.8 dB apart at F#5**, so the instrument lurched between re-bows.
-    // The menu is a per-preset "global parameter", which is why setting it by hand never survived: every
-    // note sends CC#0 to select the preset, and that reloads the preset's STORED value. So preset 12 was
-    // copied to the free slot 13 with Round Robin off and Slot rr off, saved in all four instances.
-    // `bowed_vel` KEEPS ITS KEY and simply points at 13 — every score already written (641 vibraphone notes
-    // in lgmf-all alone) picks the fix up with no edit.
-    P(12, "bowed_vel_rr",        "Bowed Velocity — library default, round robin ON (superseded by #13)"),
-    P(13, "bowed_vel",           "Bowed Velocity RRoff"),
-  ];
-}
-
 function xsEnglishHornTechs(lo, hi) {
   // 1m.4.1: the by-key voices — multiphonics (2) · key noises · various noises · air noises (2) · undefined tones; their keys at 1m.4.2
   const KEY = new Set(["mp_short", "mp_loop", "key_noises", "various_noises", "air_noises", "air_noises_mw", "undef_tones"]);
@@ -523,6 +491,66 @@ function applyAroPerc(all, sel) {   // the selection is ADDED beside the placeho
 applyAroPerc(INSTRUMENTS, ARO_PERC);
 // ---- end of the ARO percussion ----
 
+// ---- RICOTTI MALLETS (generated by tools/apply_ricotti.js from bank/ricotti_catalog.json — do not edit by hand) ----
+const RICOTTI = {   // Crotales 9 @DECCrotales 60–84 · Glockenspiel 12 @DECGlock 55–84 · Xylophone 10 @DECXylo 53–95 · Marimba 8 @DECMarimba 36–96 — generated 2026-10-04
+  lane: "bowed_vibraphone",
+  instruments: [
+    {slug: "crotales", name: "Crotales", port: "DECCrotales", track: "Crotales RM", rangeLow: 60, rangeHigh: 84, patches: 9},
+    {slug: "glockenspiel", name: "Glockenspiel", port: "DECGlock", track: "Glockenspiel RM", rangeLow: 55, rangeHigh: 84, patches: 12},
+    {slug: "xylophone", name: "Xylophone", port: "DECXylo", track: "Xylophone RM", rangeLow: 53, rangeHigh: 95, patches: 10},
+    {slug: "marimba", name: "Marimba", port: "DECMarimba", track: "Marimba RM", rangeLow: 36, rangeHigh: 96, patches: 8},
+  ],
+  techniques: [
+    { key: "crot_main_felt", label: "Crotales · Main (Felt)", port: "DECCrotales", channel: 1, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_main_metal_damped", label: "Crotales · Main (Metal damped)", port: "DECCrotales", channel: 2, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_main_metal", label: "Crotales · Main (Metal)", port: "DECCrotales", channel: 3, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_main_plastic_damped", label: "Crotales · Main (Plastic damped)", port: "DECCrotales", channel: 4, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_main_plastic", label: "Crotales · Main (Plastic)", port: "DECCrotales", channel: 5, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_bowed", label: "Crotales · Bowed", port: "DECCrotales", channel: 6, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_rolls_metal", label: "Crotales · Rolls (Metal)", port: "DECCrotales", channel: 7, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_rolls_plastic", label: "Crotales · Rolls (Plastic)", port: "DECCrotales", channel: 8, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "crot_rolls_rubber", label: "Crotales · Rolls (Rubber)", port: "DECCrotales", channel: 9, rangeLow: 60, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_main_extra_soft", label: "Glockenspiel · Main (Extra Soft)", port: "DECGlock", channel: 1, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_main_hard", label: "Glockenspiel · Main (Hard)", port: "DECGlock", channel: 2, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_main_medium_soft", label: "Glockenspiel · Main (Medium Soft)", port: "DECGlock", channel: 3, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_main_medium", label: "Glockenspiel · Main (Medium)", port: "DECGlock", channel: 4, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_main_soft", label: "Glockenspiel · Main (Soft)", port: "DECGlock", channel: 5, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_glisses", label: "Glockenspiel · Glisses", port: "DECGlock", channel: 6, rangeLow: 36, rangeHigh: 107, kind: "key", loud: "vel", keys: "pending" },
+    { key: "glock_rolls_hard", label: "Glockenspiel · Rolls (Hard)", port: "DECGlock", channel: 7, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_rolls_soft", label: "Glockenspiel · Rolls (Soft)", port: "DECGlock", channel: 8, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_shorts_hard", label: "Glockenspiel · Shorts (Hard)", port: "DECGlock", channel: 9, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_shorts_medium_soft", label: "Glockenspiel · Shorts (Medium Soft)", port: "DECGlock", channel: 10, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_tremolo_hard", label: "Glockenspiel · Tremolo (Hard)", port: "DECGlock", channel: 11, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "glock_tremolo_soft", label: "Glockenspiel · Tremolo (Soft)", port: "DECGlock", channel: 12, rangeLow: 55, rangeHigh: 84, kind: "pitched", loud: "vel" },
+    { key: "xylo_main", label: "Xylophone · Main", port: "DECXylo", channel: 1, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "xylo_main_hot_rods", label: "Xylophone · Main - (Hot Rods)", port: "DECXylo", channel: 2, rangeLow: 53, rangeHigh: 91, kind: "pitched", loud: "vel" },
+    { key: "xylo_main_extra_soft", label: "Xylophone · Main (Extra Soft)", port: "DECXylo", channel: 3, rangeLow: 53, rangeHigh: 91, kind: "pitched", loud: "vel" },
+    { key: "xylo_main_hard", label: "Xylophone · Main (Hard)", port: "DECXylo", channel: 4, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "xylo_main_medium", label: "Xylophone · Main (Medium)", port: "DECXylo", channel: 5, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "xylo_main_soft", label: "Xylophone · Main (Soft)", port: "DECXylo", channel: 6, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "xylo_glisses", label: "Xylophone · Glisses", port: "DECXylo", channel: 7, rangeLow: 36, rangeHigh: 107, kind: "key", loud: "vel", keys: "pending" },
+    { key: "xylo_rolls_hard", label: "Xylophone · Rolls (Hard)", port: "DECXylo", channel: 8, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "xylo_rolls_hot_rods", label: "Xylophone · Rolls (Hot Rods)", port: "DECXylo", channel: 9, rangeLow: 53, rangeHigh: 91, kind: "pitched", loud: "vel" },
+    { key: "xylo_rolls_soft", label: "Xylophone · Rolls (Soft)", port: "DECXylo", channel: 10, rangeLow: 53, rangeHigh: 95, kind: "pitched", loud: "vel" },
+    { key: "mar_main", label: "Marimba · Main", port: "DECMarimba", channel: 1, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+    { key: "mar_main_full_hard", label: "Marimba · Main - Full (Hard)", port: "DECMarimba", channel: 2, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+    { key: "mar_main_full_soft", label: "Marimba · Main - Full (Soft)", port: "DECMarimba", channel: 3, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+    { key: "mar_main_rubber", label: "Marimba · Main - Rubber", port: "DECMarimba", channel: 4, rangeLow: 36, rangeHigh: 76, kind: "pitched", loud: "vel" },
+    { key: "mar_main_trems", label: "Marimba · Main - Trems", port: "DECMarimba", channel: 5, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+    { key: "mar_fx_bows", label: "Marimba · FX - Bows", port: "DECMarimba", channel: 6, rangeLow: 36, rangeHigh: 93, kind: "pitched", loud: "vel" },
+    { key: "mar_hotrod", label: "Marimba · Hotrod", port: "DECMarimba", channel: 7, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+    { key: "mar_hotrod_flams", label: "Marimba · Hotrod (Flams)", port: "DECMarimba", channel: 8, rangeLow: 36, rangeHigh: 96, kind: "pitched", loud: "vel" },
+  ],
+};
+function applyRicotti(all, gen) {   // the lane's roster IS the generated one; the lane entry above carries only what is the lane's (label, ordinary, channels)
+  const M = all[gen.lane]; if (!M) throw new Error("RICOTTI: no lane " + gen.lane);
+  M.techniques = gen.techniques.map(q => Object.assign({}, q));
+  M.malletInstruments = gen.instruments.map(I => Object.assign({}, I));
+  if (!M.techniques.some(q => q.key === M.ordinary)) throw new Error("RICOTTI: the lane's ordinary voice " + M.ordinary + " is not a patch of the catalog");
+}
+applyRicotti(INSTRUMENTS, RICOTTI);
+// ---- end of the Ricotti mallets ----
+
 
 // ---- MEASURED RANGES — piece #5's, for the CELLO ONLY ----
 // Measured 2026-09-06T14:50 in the Tempus rack (01-REC-260906_1415.wav): per technique [lo, hi]
@@ -560,7 +588,6 @@ applyMeasuredRanges(INSTRUMENTS, MEASURED_RANGES);
 // ---- MEASURED BEND RANGES (generated by tools/apply_bend_ranges.js — do not edit by hand) ----
 const MEASURED_BEND = {   // measured 2026-09-19T12:20 (30-REC-260919_0803.wav): semitones per full bend on the ordinary voice; RPN 0 honoured = MIDI can change it
   cello: { rangeSt: 1.012, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 60 },   // OK (1b.2, one fraction)
-  bowed_vibraphone: { rangeSt: 0.334, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 71 },   // OK (1b.2, one fraction)
 };
 function applyMeasuredBend(all, measured) {   // the measured range replaces the provisional bendRangeSt
   for (const [inst, m] of Object.entries(measured || {})) {

@@ -1174,3 +1174,60 @@ the marimba and the [glock]."*
   55 … 84 · xylophone 53 … 95 (Hot Rods · Extra Soft · Rolls Hot Rods 53 … 91) · marimba 36 … 96 (Rubber 36 … 76 · Bows 36 … 93);
   the two glisses patches by key, unmapped at his word. His way (dictation, a screenshot each) for the reading; the probe for
   the edges and for the one thing a note leaves open. That is the answer to §28's "probe or dictate": BOTH, each for its half.
+
+## §34. ITEM 2 — THE RECIPES: the bass flute, the bass clarinet, the mallets lane; the viola stands (2026-10-04, Opus)
+
+**His words:** *"15 Vibrato Velocity for ordinary, go ahead with the recipes"* — and, as it ran: *"also viola done in tempus
+piece"* (the Tempus septet = piece #5: the viola's roster, zones, bend and dynamics curve are its, as the bass clarinet's are;
+what is left for both is §29's — the round robin and one level measurement).
+
+**THE BASS FLUTE** (`sandbox/instruments.js`, `xsBassFluteTechs`): his Preset Menu's 32 (§26), CC0 = number − 1; the keys
+the english horn's and the bass clarinet's wherever the playing style is the same. **Ordinary = `vib_vel`, #15, his choice.**
+- **The range, measured:** `tools/key_sweep.js` gained `--cc0` / `--cc1` (the preset and the wheel sent first, through the
+  virtual keyboard). On #15: **47 silent · 48 … 86 sound · 87 on silent → MIDI 48 … 86** (C3 … D6 sounding). The preset loaded by
+  default (#1) had read 48 … 64 only — the sweep without a preset measures whatever was last selected; and the change of range
+  on `--cc0 14` is itself the proof that CC0 selects the preset here.
+- By-key voices, keys pending at his word: jet whistle + slap (6) · key noises (9) · multiphonics (11 · 23) · air noises (12 · 24).
+- Not measured: the bend, the loudness, the other 31 presets' zones (given #15's until read).
+
+**THE BASS CLARINET** (`xsBassClarinetTechs`): piece #5's roster carried — 33 factory presets + #34 his "Flutter LOCK" of piece
+#3, each with the zone piece #5 read from his Kontakt (standard 34 … 65; flutter 34 … 60; glissandi 34 … 42; multiphonics 34 … 46;
+#34 55 … 93). Ordinary `senza_vel`. New here: `kind` on every voice (piece #5 predates it) — eight go by key.
+- **Changed from piece #5, on purpose:** the SLAP on channel 1 (piece #5: channel 5 → a strike lane this engine does not have)
+  · no `balanceDb` (its −9 dB was relative) · the bend 1 st, provisional (piece #5 measured 0.98 on this very instance).
+- The edge probe on the preset that happened to be active: 33 silent, 34 sounds — the floor rule holds.
+
+**THE VIOLA:** already the strings' roster by the cello's helper (88 presets), which IS piece #5's viola recipe. Nothing written.
+
+**THE MALLETS LANE — the big one.**
+- **A decision, the AI's, his to reverse: the lane's INTERNAL key stays `bowed_vibraphone`** (and its id `vibraphone`). A
+  rename would touch 13 sites in 9 app modules and 15 tools, and a saved score is matched to the app by its track ids. What he
+  sees is renamed: the lane label **Mallets**, short **Mal**, the strike drawer's second seat "Mallets 2". Rejected: the rename
+  now (cosmetic, a re-palette's risk for no sound). In NAMING § 1 and NITS.
+- **`tools/apply_ricotti.js`** (the pattern of `apply_perc.js`): `bank/ricotti_catalog.json` → the generated block
+  `RICOTTI` → `applyRicotti()` sets the lane's roster: **39 techniques** — crotales 9 · glockenspiel 12 · xylophone 10 ·
+  marimba 8 — keys `crot_…` · `glock_…` · `xylo_…` · `mar_…`, each with its instrument's PORT and its patch's channel
+  and range. Pitched, loud by velocity; the two Glisses are key voices, pending.
+- **A trap seen before it sprang:** on these ports channels 2 … 4 are OTHER PATCHES, not the curve copies of D11 — a shaped note
+  sent to a curve channel would have sounded a different beater. The lane carries `curveTechniques: []`, which the composer's
+  curve bank honours (composer.html, "gated by curveTechniques").
+- **Ordinary = `crot_main_metal`** — the AI's call (the lane must have one), his to change.
+- **Out with the vibraphone:** its roster function, its `balanceDb`, its measured bend row, its dynamics curve in
+  `bank/velocity_remap.json` (the lane is now listed there as not remapped — struck), its bow ceiling in the beating tool
+  (`beating: false`). **Re-pointed:** the strike drawer's ordinary voice and the rhythm sequencer's pitched-dot voice
+  (`VIB_TECH`) → `crot_main_metal`.
+- **NOT wired (NITS):** the rolls, tremolos and bowed patches take their dynamic from CC1 in this library (its manual); they
+  sound at the wheel's resting value.
+
+**The defaults for the two winds** (the strike drawer · the crescendo card): the strike voice `slap` for both (piece #5's
+choice for the bass clarinet, 2026-09-04; the bass flute by the same rule), the short sets `stac_vel`.
+
+**CHECKS:** `palette_check` GREEN 151 (76 recipe keys new to the notation registry — container 6) · `roster_check` GREEN, **311
+voices**, 32 by-key pending · `model_bank --validate` · `unsaved_check` · `test_snapshots` 30 · `test_written_pitch` ·
+`spectrum_check` 35 · `accel_calc_check` · `check_containers` · `check_cresc_deck` · `check_cresc_panel` — all green.
+**IN THE RUNNING APP** (the throwaway server, 5501; nothing saved): the composer page loads with no console error; bass flute
+32 · bass clarinet 34 · percussion 30 · mallets 39 (DECCrotales 9 · DECGlock 12 · DECXylo 10 · DECMarimba 8) · viola 88 ·
+cello 88; every lane's ordinary voice exists; the tracks read BFl · BCl · Perc · Mal · Va · Vc. One thing only the running
+page showed: the lane's on-screen label was a hand-written span, still "Vibraphone" — fixed.
+
+**ITEM 2 OF §29's LIST IS DONE. NEXT: item 3, the first sound from the composer score — in his Chrome.**
