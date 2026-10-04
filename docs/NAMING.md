@@ -1,3 +1,5 @@
+> **Provenance (decibel TENOR 2026, 2026-10-04):** copied from piece #6 `septet_LGMF_2026/docs/NAMING.md` @ `0d70fda` (the new-piece protocol's 3.1 · 3.6). The text below is unchanged: it describes the tool as built for the EARLIER pieces — the instrument names, the lanes, the measurements and every `§N` are theirs (`#6 §N`, or `#5` where it says so). It is tidied when the tool is next used here (his word 2026-10-04, RUNNING_LOG §11). **§ 1 opens with THIS piece's names** — the one part edited beyond this line.
+
 > **Provenance (septet LGMF 2026, 2026-09-17):** from piece #5 `septet_2026/docs/NAMING.md` (itself from piece #4) with the port. **This is the one carried doc edited beyond its provenance line**, because its §1 is a table of THIS repo's real file names: the stub is `lgmf`, the piece chain will be `piece-lgmf`, there is no MAIN notation file yet, and the trill / strike capture files listed further down are piece #5's, not this piece's — they are left in place as the shape to expect when this piece makes its own. §2, the S1 conventions the extractor depends on, is unchanged and still governs.
 
 # NAMING — score files, and the S1 data conventions the IR depends on
@@ -9,6 +11,23 @@
 > follows. Rewritten freely; the reasoning is in RUNNING_LOG §13.
 
 ## 1. Score files (`scores/`)
+
+### THIS PIECE'S NAMES — decibel TENOR 2026 (fixed at the protocol's 2.3; confirmed against the code at the re-palette, 2026-10-04)
+
+| Name | Value | Where it lives |
+|---|---|---|
+| the session default — the day-one empty score | `decibel` → `scores/decibel.json` (written by the app, 2026-10-04) | `composer.html` (six sites) |
+| the piece chain | `piece-decibel` — a save named `piece-…` is the piece; the write guards refuse it without `--force` | the tools' defaults and guards |
+| the main notation file | `notation/ir/piece-decibel.ir.json` — not made yet (container 6) | the notation and print tools' default `--ir` |
+| the package | `decibel-tenor-2026` | `package.json` · `package-lock.json` |
+| the Reaper project guard | `decibel_rack` → `reaper/decibel_rack.rpp` (the rack is container 4's) | `tools/reaper_job.js` · `render_reaper.js` · `export_midi.js` |
+| the ports | the composer score **5500** · the sandbox **5000** · the throwaway **5501** | `score/server.js` · `sandbox/serve.js` · `.claude/launch.json` |
+| the loopMIDI ports — the SHAPE, fixed at container 4 (4.1) | `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECVibes` · `DECViola` · `DECCello` | `sandbox/instruments.js` · `bank/perc_selection.json` |
+| the page's storage keys | `decibel.sequenceDrawer.v1` · `decibel.rhythmSequence.v1` · `decibel.textureRow.v1` · `decibel.vibesPitch.v1` | four modules |
+| the generated reference scores | `decibel-*` (`tools/check_ceilings.js --all`) — none yet (container 5) | |
+| the sketch pad's notes | `DEC-N` (journal D6) | `docs/COMPOSITION_NOTES.md` |
+
+*The table below is piece #6's, kept as the pattern; read `lgmf` as `decibel`.*
 
 | Pattern | What it is |
 |---|---|
@@ -25,8 +44,8 @@
 **Notation pages (`notation/ir/`, listed in `index.json` = the notation app's picker):** a page is DERIVED from a save by
 `tools/notate_section.js` and is regenerable from its own `provenance.build` — never hand-edited. **This piece has no MAIN
 notation file yet.** Piece #5 designated one (its D41: `piece-septet.ir.json`, the whole piece, first in the picker, kept current
-by Save + R on the page) once it had a piece to notate; this repo will do the same, and the name will be `piece-lgmf.ir.json`.
-Today the only page is `lgmf-0i` — the 0i proof, kept as evidence.
+by Save + R on the page) once it had a piece to notate; this repo will do the same, and the name will be `piece-decibel.ir.json`.
+*(Piece #6's line read: "Today the only page is `lgmf-0i` — the 0i proof". Here there is no page yet — container 6.)*
 
 
 - **The save system (D17, composer 2026-09-04; RUNNING_LOG §67–68) — one rule for every score,

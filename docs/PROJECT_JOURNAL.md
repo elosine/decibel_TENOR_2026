@@ -12,8 +12,8 @@
   FINAL (D2) · written for the TENOR conference's call (the AI has not read it) · the title: see the names below
 - **Lineage:** composition #7. Follows #6 `septet_LGMF_2026` (_Recombination_).
 - **The profile** (the protocol's 2.1, v1): copy-forward from piece #6 · both layers · the animated scrolling score (D1)
-- **The stack:** COPIED 2026-10-04 — piece #6's engine, byte-exact (`c90b768`, 369 files), proven whole, still on piece #6's
-  palette; container 3 in progress (the fixes, then the re-palette). PLAN § 0.3 has the lists and the coupling.
+- **The stack:** HERE and this piece's (container 3 done, 2026-10-04): piece #6's engine copied byte-exact (`c90b768`), proven
+  whole, turned to six lanes on 5500 / 5000. Nothing sounds yet (4 · 5); nothing notates this ensemble yet (6).
 - **The live electronics:** the shared engine `live-electronics-system`, taken as a git submodule at the engine plan's
   parts 5 · 8 (D4)
 - **Libraries:** not chosen — container 4
@@ -72,7 +72,7 @@ takes is his (D5).
 
 **I. THE START**
 
-1. ► **Container 3 — the engine copied forward from piece #6** (Opus; in a NEW chat opened in this folder). ASK FIRST, one at a
+1. ☑ **Container 3 — the engine copied forward from piece #6** *(DONE 2026-10-04 — RUNNING_LOG §6 … §16)* (Opus; in a NEW chat opened in this folder). ASK FIRST, one at a
    time: (a) the protocol's 3.8 — seven small fixes made in piece #6 BEFORE the copy (`#6` journal §2, item (a), has them as
    instructions) — ☑ ANSWERED 2026-10-04, *"b"*: made HERE, in one commit after 3.2 and before 3.3; piece #6 untouched
    (RUNNING_LOG §6; a line in PROTOCOL_DEVIATIONS) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
@@ -86,7 +86,7 @@ takes is his (D5).
    the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
    `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
    lanes, every check green or classified, pushed.
-2. **Container 4 — the instruments** (4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
+2. ► **Container 4 — the instruments** (4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
    look at, not decided: the Xsample bass clarinet (piece #3's deep map) · the Xsample strings for viola and cello (piece #1; piece
    #6's cello recipe) · the bass flute — Xsample or IRCAM SI2, whichever has it · the percussion — Spitfire ARO (pieces #2 · #6),
    WHICH instruments his). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge → 4.3 his loads → 4.4
@@ -139,34 +139,34 @@ takes is his (D5).
 extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
 deliverables · the planning repo's lines (at his word only).
 
-### SESSION 1 — WHERE STEP 1 STANDS (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS HERE, PROVEN WHOLE, STILL ON PIECE #6's PALETTE; ► NEXT: the re-palette (3.3) — Q4 first
+### SESSION 1 — STEP 1 IS DONE (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS THIS PIECE'S: six lanes, its own ports, every panel opens; ► NEXT: step 2, container 4 — the instruments, opening with a TALK
 
-- **Done this session** (RUNNING_LOG §6 … §10; PLAN § 0.3): the two asks — the seven small fixes are made HERE after the proof (his
-  *"b"*) · none of his libraries come across (his *"a"*) · **3.0 the survey** — 573 files at piece #6's `0d70fda`: 369 copied, 204
-  left; the coupling by kind · **3.1 the copy** — 369 / 369 blob-identical, commit `c90b768` · **3.2 proven whole** — 52 checks: 34
-  green, 18 red, every red accounted for, none a copy defect; the app boots on 5500 · **3.8 the small fixes** (below).
-- **The state of the code:** piece #6's engine, UNCHANGED — its eight lanes, its names (`lgmf` · `septet-lgmf-2026` · `lgmf_rack`), its
-  ports written in the files (5400 / 4900). **`.claude/launch.json` is INERT: never start `score` or `sandbox` from it before 3.3 —
-  they are piece #6's ports, and his server runs on 5400.** A server here is started by environment only: `PORT=5500 node
-  score/server.js`. No scores, no IR pages, no measurement banks are here (the leave list).
-- **3.8 ☑ THE SMALL FIXES (RUNNING_LOG §12):** six made, one (the bare-load `TypeError`) not reproduced and left alone ·
-  `test_identity`'s harness repaired · the twelve checks of piece #5's cast retired with their two fixtures · **the battery is now 40
-  commands: 36 green, 4 red** (the self-tests that wait for container 5). The list is `tools/port/run_batteries.sh`; it reads piece
-  #6's data, staged by `tools/port/stage32.sh` — both run from a COPY in the scratchpad (they write beside themselves); delete by
-  the staged list after; the page-scanning checks on piece #6's pages alone. Three fixes were made and NOT RUN (NITS § From the
-  small fixes) — container 5's first card checks them.
-- **► THE NEXT CONCRETE STEP — 3.3 THE RE-PALETTE — Q4 ANSWERED 2026-10-04, his *"b"*: TWO lanes, SIX in all (D9) — bass flute · bass
-  clarinet · percussion · vibraphone (the pitched lane's stand-in, piece #6's carried whole) · viola · cello; META 6, the curve windows 7 / 8 / 9.** It sets the lane count (five or
-  six), so `TRACKS`, the META and curve layers, the lane CSS, `layoutVersion` 8. PLAN § 0.3 § THE COUPLING is the map (kinds A · B · C,
-  by file and line). A lane can be added later (RUNNING_LOG §3), so "one for now" is an answer. Also at 3.3: the roles line (the piano
-  absent · the percussion live · the vibraphone and its second seat only if Q4 says so — the protocol's 3.10) · the bundled font (3.9).
-- **ANSWERED AT THIS WRAP — the home's 9.12, the tool docs' ONE shared, piece-neutral copy: NOT NOW** (his *"a"*, 2026-10-04,
-  RUNNING_LOG §11). The 19 tool docs stay here as copied and get a provenance line each at 3.6; one is tidied when its tool is next
-  used. Do not raise 9.12 again in this start.
-- **`Resume reads:`** this §2 · PLAN § 0.3 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 3, steps 3.3 … 3.6 · for 3.8 only, the
-  harvest lines named above. Nothing else.
-- **Pending him:** Q4 · the ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this
-  piece, at his word only (the protocol's 2.6).
+- **Done this session** (RUNNING_LOG §6 … §16; PLAN § 0.3): the whole of container 3 — the two asks · 3.0 the survey · 3.1 the copy
+  (369 / 369) · 3.2 proven whole · 3.8 the small fixes HERE · 3.3 the re-palette (D9: six lanes) · 3.4 recipes and skeleton banks ·
+  3.5 verified in the running app · 3.6 the record. Everything committed and pushed.
+- **The state of the code:** the composer score runs on **5500** and the sandbox on **5000**, from `.claude/launch.json` (`score` ·
+  `sandbox` · `score-5501` the throwaway). Six lanes — bass flute · bass clarinet · percussion · vibraphone · viola · cello — META 6,
+  the curve windows 7 / 8 / 9, `layoutVersion` 8. A bare load has zero console errors; sixteen panels and windows open and close.
+  `scores/decibel.json` is the day-one empty score. **NOTHING SOUNDS** (no rack, no loopMIDI ports — containers 4 · 5) and
+  **NOTHING NOTATES THIS ENSEMBLE** (`notation/registry/ensemble.json` is still piece #6's eight parts — container 6).
+- **The recipes are provisional** (`sandbox/instruments.js`): the percussion · the bowed vibraphone · the cello CARRIED from piece #6
+  with ITS rack's measurements; the bass flute · the bass clarinet one placeholder voice each; the viola the strings' roster by the
+  cello's mechanism. **The pitched percussion lane is the vibraphone only as a STAND-IN (D9).**
+- **► THE NEXT CONCRETE STEP — running order step 2, CONTAINER 4, THE INSTRUMENTS. It opens with a SHORT TALK (4.0, Fable): which
+  library for each instrument, and WHICH percussion — the unpitched instruments and the pitched one.** The candidates, to look at,
+  not decided: the Xsample bass clarinet (piece #3's deep map · piece #5's recipe, 34 presets) · the Xsample strings for the viola
+  and the cello (piece #1 · piece #5's viola · this repo's cello) · the bass flute — Xsample or IRCAM SI2, whichever has one · the
+  percussion — Spitfire ARO (pieces #2 · #6). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge →
+  4.3 his loads → 4.4 the state as text → 4.5 the recipes → **4.6 THE FIRST SOUND** → 4.7 the record. He is at the machine for it.
+- **The checks, how to run them:** this repo's OWN, with nothing staged — `palette_check` (158) · `roster_check` (223 voices) ·
+  `model_bank --validate` · `unsaved_check` · `test_snapshots` · `test_written_pitch` · `spectrum_check` · `accel_calc_check` ·
+  `score/tools/check_containers` · `check_cresc_deck` · `check_cresc_panel` — all green. The engine's batteries read OTHER
+  pieces' data: `tools/port/stage32.sh` stages it and `tools/port/run_batteries.sh` runs the forty (both from a COPY in the
+  scratchpad; delete by the staged list after) — 30 green, 10 red, every red in NITS with its re-point.
+- **`Resume reads:`** this §2 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 4 · `sandbox/instruments.js` (the header and the
+  table's six entries) · `docs/NITS.md` § From the re-palette. Nothing else.
+- **Pending him:** which libraries, and which percussion (4.0) · the ensemble's final instrumentation (the call's; his to check) ·
+  the planning repo's lines for this piece, at his word only (the protocol's 2.6).
 - **Deliberately uncommitted:** nothing.
 
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
@@ -179,13 +179,13 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 3, the rest** — 3.0 · 3.1 · 3.2 · 3.8 ☑. Next: **3.3 the re-palette** (ask Q4 first: the percussion on one lane or two) → 3.4 recipes and skeletons → 3.5 the running app on 5500 / 5000 → 3.6 the record | Opus | yes — `/clear`, then `/postclear` |
-| — | **CONTAINER 4 — the instruments:** 4.0 the libraries for the Decibel ensemble, a talk (the ensemble is not final, D2) | Fable | yes |
+| **►** | **CONTAINER 4 — the instruments.** 4.0 the TALK first: which library for each, which percussion, which pitched instrument (the vibraphone is a stand-in, D9). Then the ports, the tracks, his loads, the recipes, THE FIRST SOUND | Fable (the talk) · Opus (the build) | yes — a new chat, or `/clear` + `/postclear` |
+| — | **CONTAINER 5 — the calibration** (it also re-points `dyn_table_check` · `check_ceilings` and runs the three fixes that could not be run at 3.8) | Opus | yes |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
-DEC-4) · Q4 — the percussion: which instruments, one lane or two (as piece #6's Percussion + Vibraphone).
+DEC-4) · Q4 — the percussion: TWO lanes (answered, D9); WHICH instruments, and which PITCHED one, is open — container 4's talk.
 
 **Blockers:** none.
 
@@ -193,9 +193,10 @@ DEC-4) · Q4 — the percussion: which instruments, one lane or two (as piece #6
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
-**Checks this piece owns:** none of its own yet. The batteries are here and classified once (NITS; RUNNING_LOG §10 · §12: after the small fixes 36 green, 4 red
-waiting for container 5) — every one still reads piece #6's data, staged (`tools/port/stage32.sh`). `palette_check` and `roster_check`
-become this piece's at 3.3 / 3.4; THE SHIELD (`tools/layout_shield.js`) before and after any layout change.
+**Checks this piece owns:** `node tools/palette_check.js` (**158** — the tracks, the recipes, the ports, every per-instrument table, the
+lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**223** voices) · `node
+tools/model_bank.js --validate` · `node tools/unsaved_check.js` (before a commit of scores). THE SHIELD (`tools/layout_shield.js`)
+before and after any layout change — it needs pages (container 6). The engine's batteries: `tools/port/` (RUNNING_LOG §16).
 
 ---
 
@@ -309,6 +310,8 @@ across when its system lands here and is first used.)*
 
 - 2026-10-04 — **0 · container 2** the repo and its kit: the profile, the repo, the names, the method docs carried, the
   record docs from the skeletons (RUNNING_LOG §1; `#6 §816 … §818`).
+- 2026-10-04 — **0 · container 3** the engine copied forward: 369 files byte-exact from piece #6 @ `0d70fda`, proven whole, the
+  small fixes, six Decibel lanes on 5500 / 5000, provisional recipes, verified in the running app (RUNNING_LOG §6 … §16; D9).
 
 ---
 

@@ -1,3 +1,5 @@
+> **Provenance (decibel TENOR 2026, 2026-10-04):** copied from piece #6 `septet_LGMF_2026/docs/SEQUENCE_TOOL.md` @ `0d70fda` (the new-piece protocol's 3.1 · 3.6). The text below is unchanged: it describes the tool as built for the EARLIER pieces — the instrument names, the lanes, the measurements and every `§N` are theirs (`#6 §N`, or `#5` where it says so). It is tidied when the tool is next used here (his word 2026-10-04, RUNNING_LOG §11).
+
 # The SEQUENCE tool — sustained chords in time containers
 
 *PLAN 1d. Opened 2026-09-19 with 1d.1, the generator. His brief: COMPOSITION_NOTES LG-35

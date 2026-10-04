@@ -430,3 +430,138 @@ not say which instrument; that is the instruments talk's (4.0), and it is not as
 - **Three of the six lanes exist in piece #6 with measured recipes and are carried:** the percussion (Spitfire ARO) · the bowed
   vibraphone · the cello. **Two exist in piece #5** (`septet_2026`): the bass clarinet and the viola (Xsample, measured in the Tempus
   rack) — their recipes are taken from there. **One is new:** the bass flute — a placeholder until container 4.
+
+## §14. 3.3 THE RE-PALETTE — eight lanes turned to six by one asserted script; the straggler audit found piece #6's FOLDER written into six files (2026-10-04, Opus)
+
+**A CORRECTION OF §13 FIRST** (a new entry, not an edit): §13 said the bass clarinet's and the viola's recipes "are taken from" piece
+#5. They were NOT. No library is chosen for this piece until container 4's first talk (journal §2, step 2), and carrying piece #5's
+bass-clarinet recipe would have chosen one. So: the two winds are one-voice PLACEHOLDERS; the viola borrows the strings' ROSTER by
+the cello's mechanism and none of its measurements (§15). Piece #5's two entries are container 4's sources.
+
+**The reads before the script** (PLAN § 0.3's map, then the lines themselves): the composer page holds its lane count in eleven
+places — the lane CSS (eight rules) · the curve windows' CSS (three `top` / `height`) · the lane `<div>`s · the track `<select>` ·
+`TRACKS` · `META_LAYER` · `META_LAYERS` · `META_NAMES` · `META_COLORS` · `CURVE_LAYERS` · `CURVE_NAMES` · `CURVE_COLORS` ·
+`CURVE_OVER` · `layoutVersion`. Everything else in the page reads those constants. The modules read `META_LAYER` through a
+fallback (`typeof META_LAYER !== 'undefined' ? META_LAYER : 7`), so they follow.
+
+**THE SCRIPT — `tools/port/repalette33.js`** (its text is in the repo; that is the record the protocol asks for). Every edit is
+applied to an in-memory copy and its match count asserted; nothing is written unless every edit of every file held; each search
+and replacement is translated to its file's own line ending; a file with mixed endings is refused. **It passed its dry run at the
+first try: 25 files, 76 edits.**
+
+| Kind | What it turned |
+|---|---|
+| A — the page | the title · six lane rules of 16.6667 % · the curve windows at 50 % / 66.6667 % / 83.3333 % · six lane `<div>`s · the `<select>` (six + META 6) · `TRACKS` — `bass_flute` · `bass_clarinet` · `percussion` · `vibraphone` (recipe `bowed_vibraphone`) · `viola` · `cello` · META 6, curves 7 / 8 / 9, `CURVE_OVER` lanes 3 / 4 / 5 · `layoutVersion` 8 · the session default `decibel` (six sites) · the abbreviation map |
+| A — ports, names, guard | `score/server.js` 5500 · `sandbox/serve.js` 5000 · the `.bat` · `.claude/launch.json` (`score` · `sandbox` · `score-5501`; piece #6's `tempus-5300` entry dropped, no `lgmf-5400` entry — not asked for) · `package.json` + the lock `decibel-tenor-2026` · the guard `decibel_rack` in three tools · the page's four storage keys `decibel.*` |
+| B — the tables | `beating_calc` `ORDER` · `CEILINGS` (bass flute 8 s, bass clarinet 12 s, viola 12 s — PROVISIONAL) · the three colour tables (the winds gold, the strings green, the percussion neutral) · `STRIKE_DEFAULT` ×2 · `ART_SETS` ×3 · `ART_DEFAULT` · `OPEN_STRINGS` (viola 48 55 62 69) · `STAND_IN` · the alias table · `pairOf` |
+
+**THE STRAGGLER AUDIT — `tools/port/stragglers33.js`, 41 files, 62 edits.** After the first pass, a grep for every name of piece
+#6's over the engine. By the protocol's rule (a default argument or a write guard is a parameter; a fixture stays; a coincidence is left):
+
+- **THE ONE THAT MATTERED: piece #6's FOLDER, written in full, in six files** — `reaper/bridge/jobs/clip_watch.lua` ·
+  `rec_mode_restore.lua` · `rec_mode_solo.lua` · `ref_track.lua` · `reaper/kontakt/curve_slots.lua` (each
+  `'C:/Users/jwloy/GitHub/septet_LGMF_2026/'`) and `tools/test_written_pitch.js`. The five jobs would have WRITTEN into piece #6's
+  folder from this piece's rack. The test READ there — so its green at §10 and §12 was a test of piece #6's folder, not of the copy.
+  It now reads its own repo (`path.join(__dirname, '..')`) and is green here: 10 cases + the control.
+- `piece-lgmf` → `piece-decibel`, 42 times in 22 files: the default `--ir` / `--score` of the tools, and the write guard "refusing
+  to write the piece file" in four generators. LEFT as fixtures: `eh_figure_check` · `vib_marks_check` (piece #6's own locks) and
+  three comments that cite its pages.
+- `piece: 'lgmf'` in the calibration's eleven writers → `'decibel'` · the percussion's default port in `apply_perc.js`.
+- LEFT, behind the project guard: the `LG…` port names inside the bridge's jobs — the rack's tracks are made at container 4.
+
+**What went wrong, twice, and what it taught:**
+
+- **The audit script was stopped by Windows halfway** (`UNKNOWN: unknown error, open …capture_composer_midi.js` — a file lock, not
+  the script): six files written, thirty-five not. Nothing was lost — the six were restored from git and the script run again whole.
+  But a script that asserts before it writes still writes file by file; a second run on a half-written tree fails its own counts.
+  The lesson: restore, then re-run — never patch the remainder by hand.
+- **Two one-line edits attempted through `node -e "…"` failed on the shell's quoting** (nothing written either time) — the Edit
+  tool is the tool for a one-line edit; a script is for many.
+
+## §15. 3.4 RECIPES AND SKELETON BANKS — three instruments carried, three placeholders; the libraries emptied; palette 158, roster 223 voices (2026-10-04, Opus)
+
+**The recipe file — `tools/port/recipes34.js`** rebuilds `sandbox/instruments.js` (859 → 545 lines); it refuses to write unless the
+rebuilt file EVALUATES to exactly the six instruments.
+
+| Lane | Recipe | What it is |
+|---|---|---|
+| Bass Flute | `bass_flute` → `DECBassFlute` | a PLACEHOLDER: one voice `ord`, range 48–84 (the sounding compass, not measured) |
+| Bass Clar. | `bass_clarinet` → `DECBassClar` | a PLACEHOLDER: one voice `ord`, range 34–77 (not measured) |
+| Percussion | `percussion` → `DECPerc` | CARRIED from piece #6, verbatim: 32 voices (Spitfire ARO; the selection of fourteen is piece #6's — which instruments this piece uses is his) |
+| Vibraphone | `bowed_vibraphone` → `DECVibes` | CARRIED, verbatim: 13 voices (Xsample Mallets Extended) — the stand-in for the pitched lane (D9) |
+| Viola | `viola` → `DECViola` | a PLACEHOLDER by the cello's mechanism: the strings' 88-voice roster (`xsStringTechs`), range 48–93 (piece #5's figure); no `balanceDb`, no measured range, no measured bend |
+| Cello | `cello` → `DECCello` | CARRIED, verbatim: 88 voices, its measured ranges and bend |
+
+The schema text and every helper block are kept. `UVI_PARTS` · `SI2_KINDS` · `BY_KEY_MAPS` are emptied (their rows were the bassoon's,
+the horn's, the trumpet's, the English horn's, the double bass's — and `applyKeyMaps` THROWS on an instrument that is not in the
+table, so those rows could not stay). `MEASURED_BEND` keeps the cello's and the vibraphone's rows.
+
+**The bank files the app and the checks read**, from piece #6's commit, each with a `_provenance`: `scattered_strikes.json` (empty
+there too) · `velocity_remap.json` (the vibraphone's and the cello's rows only; five instruments dropped) · `sample_lengths.json`
+(keyed by technique — the cello's rows, as it stood) · `perc_selection.json` (piece #6's fourteen, on `DECPerc`).
+
+**The libraries — `tools/port/libraries34.js`** (his "a", §7: none come across): `morph_models.json` keeps the engine's seven
+models (BALANCE · COLOUR · BLOOM · CONVERGE · SPACING · SPECTRAL · TAKES); piece #6's four own models (LG…) and 9 ids of actuals
+that stayed in piece #6 are gone · `panel_snapshots.json` is empty and valid (8 panels of takes stayed there) · `sequences.json`
+was already empty. After it: `model_bank --validate` VALID.
+
+**The checks:** `palette_check` **158** (its § 7 on six lanes; no port is one of piece #5's or piece #6's) · `roster_check` **3
+checks, 223 voices, 16 pending** (the viola's by-key voices, their keys read from his rack at container 4).
+**One thing the palette check caught at once:** a comment the AI put at the END of the `spiccato` row — the check reads a row with a
+pattern that allows nothing after the brace. The comment moved to the line above. A table a checker parses is edited to its shape.
+
+## §16. 3.5 · 3.6 VERIFIED IN THE RUNNING APP, AND THE RECORD — container 3 is done; two defects only running found (2026-10-04, Opus)
+
+**The servers, from `.claude/launch.json` for the first time:** `score` on **5500**, `sandbox` on **5000**. Piece #6's server was
+listening on 5400 throughout (PID 6380) and was never touched. The verification recipe's stubs went in with the navigation.
+
+| What was read | Result |
+|---|---|
+| a bare load | `Composer initialized` · **zero console errors** · no request 4xx (79 fetched, 63 scripts) — the four `404` of §12 are gone with the skeleton banks |
+| the page | title `Composer Score — decibel TENOR 2026` · `TRACKS` the six · `META_LAYER` 6 · curves 7 / 8 / 9 · 10 `.lane` (6 + META + 3) · the six lanes tile the stage evenly (117 px each at 1280 × 860) · the `<select>` six + META · session `decibel` · `layoutVersion` 8 |
+| each lane's range | `laneCanPlay` one below: false · lowest: true · highest: true · one above: false — all six |
+| sixteen panels and windows, opened and closed | Insertion · Morph · Texture · Pulse · MT · Strikes · Sequence · Rhythm · Crescendo · Beating · META · curve A · B · C · Points · Fill — after the two fixes below, no error |
+| the quiet role, CLICKED | the strikes drawer's Hear piano → a plain status, no throw (this piece has no piano) |
+| the ensemble warn, with a control | this piece's own save: 0 warns · a piece #6 save: 1 — `THIS SAVE WAS WRITTEN FOR A DIFFERENT ENSEMBLE` |
+| the save API | save · save versioned · list · load (layoutVersion 8, the six tracks) · discard — on a throwaway name; the one file left (a version) seen and deleted |
+| the sandbox | the instrument menu = the six · `/motives` 200 · no error |
+
+**DEFECTS THAT ONLY RUNNING FOUND — two, the same kind: a lane NUMBER from piece #5, carried unread through piece #6.**
+
+- **The Beating panel threw on opening** (`beating_panel.js:540`, `Cannot read properties of undefined (reading 'label')`). The panel
+  held the literal lanes `0, 1, 3, 4, 5, 6` four times and `layer === 2` twice — piece #5's seven lanes less its piano. In piece #6
+  that list silently offered the wrong six of eight (no horn, no double bass). Here lane 6 is not a part. Now `BEAT_LANES()`: the
+  tracks whose recipe is not `beating: false`. Its player menu reads Bass Flute · Bass Clar. · Vibraphone · Viola · Cello.
+- **Curve button C threw** (`composer.html:1779`). The three buttons were wired to layers 8 / 9 / 10 — piece #5's — and `curveBtnFor`
+  the same; in piece #6 (curves 9 / 10 / 11) button A toggled the META layer. Now by `CURVE_LAYERS`; A · B · C open and close
+  layers 7 · 8 · 9 and their buttons light.
+- With them: `cresc_run.js`'s default players named lane 6 (PROVISIONAL now: every lane but the percussion) · `openCurveWin(8)`
+  had the same root and was turned in §14's script.
+
+**The lesson, for the protocol:** the survey greps instrument NAMES; a lane NUMBER is invisible to it. At a port that changes the
+lane COUNT, grep the literal lane lists and layer numbers too — and open every panel, which is what found these.
+
+**The day-one score** `scores/decibel.json` (694 bytes: `layoutVersion` 8, the six tracks, no objects) was written by the app's own
+Save from the AI's pane — the one save the port makes. The pane's storage cleared, the viewport reset, both servers stopped.
+
+**3.6 the record:** `docs/NAMING.md` § 1 opens with this piece's names (confirmed against the code) · a provenance line on each of
+the eighteen carried tool docs (not on the generated `ENGRAVING_RULES.md`) · `docs/VERIFICATION_RECIPE.md` re-pointed (`score-5501`,
+`decibel.*`) · CLAUDE.md § Apps written · NITS · PLAN § 0 · journal §2 and §6.
+
+**THE BATTERY AFTER THE RE-PALETTE** (40 commands, piece #6's data staged a third time): **30 green, 10 red** — the four self-tests
+(container 5) · `check_rules` red by co-staging and green (34) on piece #6's pages alone · and **five that were green before and are
+red now, each bound to piece #6's cast or data, which is what a re-palette does:** `dyn_table_check` (asserts the English horn's,
+the bassoon's, the horn's measured curves) · `sequence_check` (piece #6's six reference chords and their baseline) ·
+`vibes_pitch_check` (55 / 65 — its fixtures name the double bass, the horn, the English horn, the trumpet) · `check_ceilings --all`
+(piece #6's `lgmf-*` scores read on this piece's lanes) · `model_bank --validate` (piece #6's actuals against a store that no longer
+lists them). NITS has each with its re-point.
+**In the BARE state — this repo as it is, nothing staged — eleven of the twelve checks that need no other piece's data are green**
+(`palette_check` · `roster_check` · `model_bank --validate` · `unsaved_check` · `test_snapshots` · `test_written_pitch` ·
+`spectrum_check` · `accel_calc_check` · `check_containers` · `check_cresc_deck` · `check_cresc_panel`); the twelfth,
+`check_ceilings --all`, says there are no `decibel-*` scores yet.
+
+**NOT DONE, and said:** nothing SOUNDS (container 4 · 5) · nothing notates this ensemble — `notation/registry/ensemble.json` is still
+piece #6's eight parts (container 6) · the roles helper (the protocol's 3.10) and the bundled font (3.9) were not built: the piano
+role is quiet and tested by a click, the percussion and the vibraphone roles are alive because their keys were carried — one lookup
+is not needed yet; the font changes the look of the notation and belongs with container 6 · the gestures were clicked by script,
+not with real input, so a claim here is "opens and closes without error", not "works under his hand".

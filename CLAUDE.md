@@ -25,8 +25,8 @@ scales it back, the re-orchestration is his.
 - the protocol version run: **v1** — `composition-system/protocol/NEW_PIECE_PROTOCOL.md`; this piece is its FIRST RUN
 
 This piece inherits piece #6's stack — composer score app, sandbox, notation IR + engine, print, video — by
-**copy-forward with the instrument palette rewritten** (journal D1; the protocol's container 3). **HALF DONE (2026-10-04): the
-engine is copied and proven whole; the palette is still piece #6's until the re-palette (3.3).** The delivery format is the lineage's: an animated scrolling score with the animated
+**copy-forward with the instrument palette rewritten** (journal D1; the protocol's container 3). **DONE 2026-10-04 (container 3): the
+engine is here on six Decibel lanes; its recipes are provisional until containers 4 · 5.** The delivery format is the lineage's: an animated scrolling score with the animated
 devices; a presentation score (video + print); the performance score later.
 **The IR contract (inherited, #5's D9):** the composer save is the ground truth; the IR is derived from it by the
 extractor and is the single source for every downstream score.
@@ -44,12 +44,12 @@ Libraries: not chosen — the protocol's container 4.
 **State of the piece (keep this line current):** **► 2026-10-04 (Fable, RUNNING_LOG §2): HIS BRIEF IS THE RUNNING ORDER in journal
 §2 — I. the start finished (containers 3 → 7) · II. the opening composed with the electronics built as the music reaches them (the
 seams · the mic opening · the return · the processing); the piece in three sections in PLANNER; the engine's code to be built HERE in
-`electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §10): STEP 1, CONTAINER 3, IS
-UNDER WAY — piece #6's engine is HERE, copied byte-exact (`c90b768`, 369 files) and proven whole (52 checks: 34 green, 18 red, all
-accounted for; the app boots on 5500). IT IS STILL ON PIECE #6's PALETTE: eight lanes, its names, its ports in the files — never
-start `score` / `sandbox` from `.claude/launch.json` before the re-palette; a server here runs by `PORT=5500 node score/server.js`.
-3.8 the small fixes are in and the twelve checks of piece #5's cast are retired (§12): the battery is 40 commands, 36 green, 4 waiting
-for container 5. ► NEXT: 3.3 the re-palette — ASK Q4 first (the percussion on one lane or two). Journal §2's RUNNING ORDER, then its block SESSION 1 — WHERE STEP 1 STANDS, are the cold-start block.**
+`electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §16): STEP 1, CONTAINER 3, IS
+DONE — piece #6's engine is here and is THIS piece's: copied byte-exact, proven whole, the small fixes made, turned to SIX LANES
+(D9: bass flute · bass clarinet · percussion · vibraphone · viola · cello), the composer score on 5500 and the sandbox on 5000,
+provisional recipes, verified in the running app. NOTHING SOUNDS YET; NOTHING NOTATES THIS ENSEMBLE YET. ► NEXT: step 2,
+container 4 — the instruments — opening with a TALK: which library for each, which percussion (the vibraphone lane is a stand-in).
+Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are the cold-start block.**
 
 ## READ FIRST — how to work here
 
@@ -233,23 +233,31 @@ routing advice is also credit advice, and these bind every Fable turn:
 
 ## Apps
 
-- **The code is here (2026-10-04) but NOT YET THIS PIECE'S: until the re-palette (3.3) the files still name piece #6's ports —
-  never start `score` or `sandbox` from `.claude/launch.json`; a throwaway runs by `PORT=5500 node score/server.js`.** The names fixed at 2.3
-  (2026-10-04; journal §1 has the table): the composer score on **5500**, the sandbox on **5000** — the next pair in the
-  lineage (#3 5100/4600 · #4 5200/4700 · #5 5300/4800 · #6 5400/4900).
-- ‹**Each app:** how it is started · what it is — written when it runs here.›
-- ‹**`.claude/launch.json`:** the names · a throwaway server for verification · a `<prev>-<port>` entry that runs the
-  previous piece's server side by side while it is unfinished, removed when it is.›
-- ‹**The MIDI ports** — their prefix, and why: loopMIDI ports are machine-global and the last piece's rack may still be live.›
-- ‹**The notation app · print · video** — if the piece takes THE SCORE layer.›
+- **The composer score — `http://localhost:5500/composer.html`** (`score/server.js`; launch name `score`; he starts his own with
+  `start_score_server.bat`). Six lanes: bass flute · bass clarinet · percussion · vibraphone · viola · cello (D9); META 6, the curve
+  windows 7 / 8 / 9; `layoutVersion` 8; the day-one empty score `scores/decibel.json`. **Nothing sounds yet** (containers 4 · 5).
+- **The sandbox — `http://localhost:5000`** (`sandbox/serve.js`; launch name `sandbox`) — one instrument, one technique at a time.
+- **`.claude/launch.json`:** `score` 5500 · `sandbox` 5000 · **`score-5501`** — the THROWAWAY for verification, on the same scores
+  folder (`docs/VERIFICATION_RECIPE.md`). There is no entry for piece #6's server; add `lgmf-5400` only at his word.
+- **The MIDI ports:** the prefix `DEC` (D6) — `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECVibes` · `DECViola` · `DECCello` are the
+  SHAPE in `sandbox/instruments.js`; container 4 fixes them. loopMIDI ports are machine-global: piece #5's (bare names) and piece
+  #6's (`LG…`) racks may be live, and `palette_check` refuses both sets.
+- **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
+  (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
+- **The names** — `docs/NAMING.md` § 1. **The recipes are PROVISIONAL** — three instruments carried from piece #6, three placeholders.
 
-⚠ **Standing warnings:** never bind **5400 / 4900** (piece #6's) or **5300 / 4800** (piece #5's) · the AI never holds his
-port and never saves from its own browser pane · the in-app browser has no Web MIDI, so every MIDI path is verified on his
-Chrome · ‹the rest arrive with the code›
+⚠ **Standing warnings:** never bind **5400 / 4900** (piece #6's — his server may be running) or **5300 / 4800** (piece #5's) · the AI
+never holds his port and never saves from its own browser pane (the day-one score was the port's one save) · the in-app browser
+has no Web MIDI, so every MIDI path is verified on his Chrome · print and video share the frame math — a change to one is a
+change to both · the curve-channel map is CACHED: a tool that writes a curve event calls `Composer.curveDirty()` · a server route
+keeps the engine it started with — restart after a `notation/lib` change · **a lane added to `TRACKS` needs its `<div>` and its
+CSS rule** (`palette_check` § 7) · **a lane NUMBER written into a module is invisible to a grep for names** — two were found only
+by opening the panels (RUNNING_LOG §16).
 
-**Checks this piece owns:** none of its own yet — the batteries arrived with the copy and were classified ONCE (3.2: `docs/NITS.md`;
-RUNNING_LOG §10 · §12 — after the small fixes 36 green, 4 red waiting for container 5); every one still reads piece #6's data, staged (`tools/port/stage32.sh`); among
-them **THE SHIELD** (`tools/layout_shield.js` — run before and after ANY layout change).
+**Checks this piece owns:** `node tools/palette_check.js` (**158** — after any change to `TRACKS`, `sandbox/instruments.js` or a
+per-instrument table) · `node tools/roster_check.js` (**223** voices) · `node tools/model_bank.js --validate` · `node
+tools/unsaved_check.js` · **THE SHIELD** (`tools/layout_shield.js` — before and after ANY layout change; it needs pages, container
+6). The engine's forty batteries read other pieces' data, staged: `tools/port/stage32.sh` · `run_batteries.sh` (`docs/NITS.md`).
 
 ## Reference repos (read-only context)
 
