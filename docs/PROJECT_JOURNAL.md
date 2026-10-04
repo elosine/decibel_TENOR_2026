@@ -190,6 +190,19 @@ deliverables · the planning repo's lines (at his word only).
     **ALREADY DONE, never to be redone:** the reference tone and his system volume (piece #6) · the cello's round robin, volume and
     curve · the Abbey Road round robins (left on, as piece #6) · the percussion's key maps.
     **HIS WORD ON THE REPLIES (§27 · §28): a bare list, one line per item, no table, no detail; the how after, one sentence each.**
+  - **► ITEMS 7 · 8 · 9 — ONE RUN, THE INSTRUMENT CARD FOR THIS RACK (Opus; the plan in RUNNING_LOG §41).** In order:
+    (a) `tools/card_schedule.js` re-made for THIS rack, from `sandbox/instruments.js` — 15 instruments: bass flute · bass clarinet
+    · viola (3 pitches × 24 · 64 · 100 · 127, ordinary voice, channel 1) · crotales · glockenspiel · xylophone · marimba (a main
+    patch, 3 pitches × 64 · 127) · bongos · shime daiko · China cymbal · spring coil · suspended cymbals · toms (first key of the
+    first beater × 64 · 127, no CC7); 4 s held, the tail given; NOT the cello, wood blocks, bass drum alt · (b) the REC track:
+    `reaper/bridge/jobs/make_rec_track.lua` (re-pointed: 16 receives, the end of the rack) · (c) `bank/reference.json` CARRIED from
+    piece #6 (same machine, same Reaper at unity) — a line in PROTOCOL_DEVIATIONS · (d) `probes/card_run.ps1 -StartAt 100` (the
+    timeline is empty; it needs `rec_mode_solo.lua` · `balance_probe.ps1`) · (e) `probes/analyze_card.py` with a Python that has
+    scipy (3.14 has none; find the one piece #6 used, or `pip install scipy`) → `bank/instrument_card.json` · (f)
+    `tools/compute_trims.js --voices 6` → `bank/trims.json` → `gen_apply_trims.js` → `apply_trims.lua` → his CTRL+S · (g)
+    `tools/build_remap_card.js` → the bass flute's curve, and the bass clarinet's and viola's afresh · (h) RACK_SETTINGS · NITS ·
+    the lab journal. **Resume reads for it:** this §2 · the protocol § 5 · `docs/DYNAMICS_LAW.md` · the tools named in (a) … (g),
+    their headers · `#6` RUNNING_LOG §73 … §83 (how 1b ran) · `#6` `bank/reference.json` · `bank/balance.json` (its shape only).
   - **THEN 4.6 THE FIRST SOUND** from the composer score in his Chrome → 4.4's settings pass (the round robins — his word, §18;
     what the plugins show is in §24 · §25) → 4.7 + 4.10.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
@@ -245,7 +258,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 4 — the rack: sixteen tracks, EVERY ONE SOUNDS through its port; the percussion is in the recipe (eight instruments).** NEXT, the AI's: 4.5 for the rest — a key sweep as one command → the Ricotti ranges and the pitched lane's recipe · the bass flute from its manual · the bass clarinet and viola from piece #5 → **4.6 THE FIRST SOUND** from the composer score → the settings pass → 4.7 + 4.10 | Opus | no |
+| **►** | **ITEMS 7 · 8 · 9 — THE INSTRUMENT CARD FOR THIS RACK** (the schedule from the recipe · the REC track · the run · the analysis · the trims on the faders · the bass flute's curve). Round robin skipped at his word. Then 10, listen — and container 4 · 5 are done | Opus | no — `/clear` + `/postclear` if the chat is long |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·

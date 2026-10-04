@@ -1347,3 +1347,36 @@ we'll skip number five, we're skipping four, even though the flute is done, so w
 - Container 5 will re-derive every trim against THIS piece's tutti; these three are a known start, not a result.
 - `make_tracks.lua` resets a SPEC track's fader to 0 dB when run (its header says so): after any re-run, these three again —
   the row for `apply_trims.lua` when container 5 writes this piece's `bank/trims.json`.
+
+## §41. ITEMS 7 · 8 · 9 ARE ONE RUN — the measuring chain surveyed, the plan written for Opus (2026-10-04, Fable)
+
+**His word:** *"go ahead with 7"*.
+
+**The chain, as carried from piece #6 (its PLAN 1b, 2026-09-19 — the absolute method):** a SCHEDULE (`tools/card_schedule.js` →
+`probes/card_schedule.json`: which instrument, port, channel, technique, pitches × velocities, when) → THE RUN
+(`probes/card_run.ps1`: the REC track made by `make_rec_track.lua`, Reaper rolled from 700 s, the schedule sent live over the
+ports by `balance_probe.ps1`, the recording in `reaper/Media`) → THE ANALYSIS (`probes/analyze_card.py` → `bank/instrument_card.json`:
+per note the loudest 400 ms and the K-weighted RMS of the whole sounding note) → THE TRIMS (`tools/compute_trims.js` →
+`bank/trims.json`, each voice at −20 − 10·log10(N) LUFS; `gen_apply_trims.js` → `apply_trims.lua` → the faders) → THE CURVES
+(`tools/build_remap_card.js` → `bank/velocity_remap.json`, from the same card).
+
+**What the chain needs that this repo does not have:** `bank/balance.json` (piece #6's 0d pitches — the schedulers read their
+pitches from it) · `bank/reference.json` (the chain's proof, 1b.1) · `bank/perc_rack.json` (the analyzer reads the percussion's
+keys from it) · `probes/card_schedule.json` · a Python with scipy — the machine's default is Python 3.14 without it (piece #6
+ran the analyzers on this machine: another interpreter, found at the run). And `card_run.ps1` rolls from 700 s because piece
+#6's timeline had material at 0 … 94 s and the REF items at 600 s; this rack's timeline is empty.
+
+**Why 7 · 8 · 9 are one run:** the card measures every instrument it is given at three pitches and four velocities; the bass
+clarinet and the viola (item 8) go into the same schedule, and the bass flute's curve (item 9) is read from the same card by
+`build_remap_card.js`. One recording of ~15 minutes, one analysis.
+
+**THE PLAN (Opus; in journal §2):** (a) a schedule for THIS rack from the RECIPE, not from `balance.json` — 15 instruments:
+the bass flute · the bass clarinet · the viola (three pitches each, low · mid · high of the measured range, at 24 · 64 · 100 ·
+127 on the ordinary voice, channel 1) · the four mallets (one main patch each, three pitches, 64 and 127 — struck) · the six
+unmeasured percussion (their first beater's first key, at 64 and 127; no CC7 — Spitfire binds it to the gain) — held 4 s,
+the tail given; the cello, the wood blocks and the bass drum alt NOT re-measured (item 6) · (b) `make_rec_track.lua` run
+(16 receives) · (c) the reference: piece #6's `bank/reference.json` CARRIED — the chain it proved is this machine's Reaper at
+unity, unchanged; a deviation line · (d) the run, from 100 s (the timeline is empty) · (e) the analysis with a Python that has
+scipy · (f) `compute_trims.js --voices 6` (six players — the AI's call for N, his to change) → `gen_apply_trims` → the faders
+→ his CTRL+S · (g) `build_remap_card.js` for the bass flute (and the bass clarinet and viola afresh, replacing piece #5's
+relative curves) · (h) the record: RACK_SETTINGS, the card, the trims, NITS.
