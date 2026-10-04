@@ -63,6 +63,9 @@ ok(new Set(ports).size === ports.length, 'every instrument has its own port (' +
 // loopMIDI ports are machine-global and piece #5's rack is still in use on this machine.
 const TEMPUS_PORTS = ['Flute', 'Fluteb', 'BassCl', 'Piano1', 'Piano2', 'Vn1', 'Vn2', 'Va', 'Vc'];
 for (const p of ports) ok(!TEMPUS_PORTS.includes(p), 'port "' + p + '" is not one of piece #5\'s (they share this machine)');
+// ... nor one of piece #6's: its rack may be live on this machine too
+const LGMF_PORTS = ['LGEngHorn', 'LGBassoon', 'LGBassoonb', 'LGHorn', 'LGHornb', 'LGTrumpet', 'LGTrumpetb', 'LGPerc', 'LGVibes', 'LGCello', 'LGBass'];
+for (const p of ports) ok(!LGMF_PORTS.includes(p), 'port "' + p + '" is not one of piece #6\'s');
 
 // ---------------------------------------------------------------- 3. the app's per-instrument tables
 console.log('\n3. the tables inside the app name only this piece\'s instruments, and only techniques that exist');
@@ -133,7 +136,7 @@ ok(true, 'unregistered recipe keys counted (' + unregistered.length + ') — a r
 // ---------------------------------------------------------------- 6. the percussion selection is applied
 console.log('\n6. the percussion selection (bank/perc_selection.json) is what the recipe carries — tools/apply_perc.js after any edit');
 const SEL = JSON.parse(rd('bank/perc_selection.json'));
-const selPort = SEL.port || 'LGPerc';
+const selPort = SEL.port || 'DECPerc';
 const want = (SEL.instruments || []).map(x => typeof x === 'string' ? { slug: x } : x);
 const have = (INSTRUMENTS.percussion && INSTRUMENTS.percussion.aroInstruments) || [];
 ok(rd('sandbox/instruments.js').includes('const ARO_PERC = '), 'the ARO_PERC block is in the recipe');

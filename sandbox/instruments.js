@@ -1,5 +1,5 @@
-// Rendering-recipe config — septet LGMF 2026 (the port, PLAN 0b step 4, 2026-09-17; PLAN 0c
-// fills it in). One entry per TRACK (score/public/composer.html TRACKS[].instKey).
+// Rendering-recipe config — decibel TENOR 2026 (the port from piece #6, the new-piece protocol's 3.4, 2026-10-04;
+// container 4 fills it in). One entry per TRACK (score/public/composer.html TRACKS[].instKey).
 //
 // Schema, inherited from pieces #3/#4/#5: { label, port, rangeLow, rangeHigh, mechanism?,
 // techniques: [{ key, label, channel, port?, cc0?, ks?, rangeLow?, rangeHigh? }] }.
@@ -19,184 +19,40 @@
 //     names any such entry.
 //
 // ============================ STATUS: PROVISIONAL ============================
-// **Nothing here has been heard.** Every channel number, every port name and every range not
-// marked MEASURED is a placeholder written during the port so that the lanes exist, material
-// can be assigned to them, the placement engines can route around them and the notation can
-// lay them out. PLAN 0c (the recipes) and 0e (the rack) replace them, with the composer at
-// the machine. The sound does not work until then, and is not expected to.
+// **Nothing here has been heard in this piece.** Written during the port so that the six lanes exist, material can be
+// assigned to them, the placement engines can route around them and the notation can lay them out. Container 4 (the
+// instruments) and container 5 (the calibration) replace every value, with the composer at the machine.
 //
-// Libraries — journal D6 (composer, 2026-09-17): IRCAM Solo Instruments 2 for bassoon, horn
-// and trumpet · Xsample Contemporary Solo Strings for cello (piece #5's recipe, carried
-// verbatim) and double bass · Spitfire Abbey Road Orchestra Percussion (piece #2's library) ·
-// the ENGLISH HORN is being acquired and its library is not yet named · a BOWED VIBRAPHONE is
-// still to be acquired (LG-9 — the first percussion instrument he has named).
+//   CARRIED from piece #6, verbatim — its measurements are ITS rack's, re-measured at container 5:
+//     percussion        Spitfire Abbey Road Orchestra Percussion. The selection (bank/perc_selection.json) is piece
+//                       #6's fourteen; WHICH instruments this piece uses is the composer's, at container 4.
+//     bowed_vibraphone  Xsample Mallets Extended — the STAND-IN for the pitched percussion lane (journal D9).
+//     cello             Xsample Contemporary Solo Strings.
+//   PLACEHOLDERS — no library chosen (container 4 opens with that talk):
+//     bass_flute · bass_clarinet   one ordinary voice each, so the lane is real.
+//     viola                        the strings' roster by the cello's mechanism; none of the cello's measurements.
 //
-// PORT NAMES carry an `LG` prefix on purpose: loopMIDI ports are machine-global and piece #5's
-// rack is still in use on this machine (its PLAN 3 is unbuilt). A bare `Vc` would have been the
-// Tempus cello's port, and the two pieces would have played into each other.
+// PORT NAMES carry a `DEC` prefix (journal D6): loopMIDI ports are machine-global, and piece #6's rack (`LG…`) and piece
+// #5's (bare names) may still be live on this machine. These names are the SHAPE; container 4 (4.1) fixes them.
 //
-// TECHNIQUE KEYS are the notation registry's names (notation/registry/techniques.json) wherever
-// one exists, so a key that reaches the IR is already drawable. Keys marked NEW below are not in
-// that registry yet and MUST be registered before any material uses them (principle 3: the
-// schema is a gate on the file). The SI2 rosters are the manual's own technique lists
-// (#3/docs/manuals/extracted/IRCAM_Solo_Instruments_2_manual.txt, the Instrument List) — real
-// names, so 0c starts from a roster rather than a blank.
+// TECHNIQUE KEYS are the notation registry's names (notation/registry/techniques.json) wherever one exists, so a key that
+// reaches the IR is already drawable; tools/palette_check.js lists the recipe keys the registry does not know yet.
+
 const INSTRUMENTS = {
 
-  // ---- ENGLISH HORN — LIBRARY NOT YET NAMED (D6: "english horn, getting now") ----
-  // SI2 has NO english horn (its double reed is the oboe — read from the manual, RUNNING_LOG §9);
-  // the Xsample catalog lists one. Until he says which library: one ordinary voice and a staccato,
-  // so the lane is real. Range 52–81 (E3–A5) is the standard orchestral compass, NOT measured.
-  // ---- ENGLISH HORN — Xsample (D8): the Elastic "English Horn.nki" (RUNNING_LOG §26), four Kontakt slots per D11 (§29) ----
-  // The roster is the full Preset Menu as HIS Kontakt shows it (two screenshots, 2026-09-17, RUNNING_LOG §32): 36 factory
-  // presets + Free Preset slots 37–39. CC#0 = preset number − 1. Keys reuse piece #5's bass clarinet keys wherever the
-  // preset NAME is the same (same library, same design); keys marked NEW are not in notation/registry/techniques.json
-  // yet and must be registered before material uses them. RANGES: the standard compass E3–A5 = 52–81 is assumed for
-  // every preset, NOT read — 0d measures them (the flutter, multiphonic and noise presets will be narrower, as the
-  // bass clarinet's were). `ordinary` = senza_vel, the bass clarinet's choice (a steady pitch for a beating partner);
-  // his to flip to vib_vel.
-  // BEND RANGE 1, not 2 (2026-09-19, PLAN 1a.0): the one MEASURED Xsample instrument, the cello, reads 0.97 st
-  // (bank/bend_ranges.json) — the library is set to a semitone, not a whole tone. INFERRED for this instrument, not
-  // measured; `bendMeasured` stays false and a bend probe would replace it. At 2 every cents ask landed HALF.
-  english_horn: { balanceDb: -13.98, ordinary: "senza_vel", beating: true, playerBendSt: 1, bendRangeSt: 1, label: "English Horn", port: "LGEngHorn", rangeLow: 52, rangeHigh: 81, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsEnglishHornTechs(52, 81) },
+  // ---- BASS FLUTE — LIBRARY NOT CHOSEN (the instruments talk, container 4) ----
+  // A placeholder so the lane is real: one ordinary voice. The lineage's candidates are Xsample and IRCAM Solo Instruments
+  // 2, whichever has a bass flute; nothing here was read from a library or heard. Range 48–84 (C3–C6) is the instrument's
+  // SOUNDING compass (an octave below the flute's written pitch), NOT measured. The bend range is MIDI's default, unread.
+  bass_flute: { ordinary: "ord", playerBendSt: 1, bendRangeSt: 2, label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 84, channels: { main: 1, curve: [2, 3, 4] },
+    techniques: [{ key: "ord", label: "Ordinario", channel: 1, kind: "pitched", loud: "vel" }] },
 
-  // ---- BASSOON — IRCAM Solo Instruments 2 (UVI) ----
-  // Manual: "Instrument part to be written at actual pitch"; range in sounding pitches Bb1–Eb5
-  // = MIDI 34–75. The roster below is the manual's own list. On UVI a channel IS a technique, so
-  // the curve channels of D11 are technique COPIES on a second instance (piece #5's flute did
-  // this on a `Fluteb` port): here `Bassoon SI2 b` on `LGBassoonb`, made as text (RUNNING_LOG §24).
-  bassoon: { balanceDb: -18.81,
-    label: "Bassoon", port: "LGBassoon", rangeLow: 34, rangeHigh: 75,
-    ordinary: "ord", beating: true, playerBendSt: 1, bendRangeSt: 2,
-    channels: { main: 1, curve: [] },   // WRITTEN AT LOAD by UVI_PARTS (tools/apply_uvi_parts.js): main = the Ordinario part, curve = its copies on the `b` instance. Empty curve = the voice's own channel (cresc.js) until then.
-    techniques: [
-      // ONE LINE PER TECHNIQUE, its PRESET named as the UVI browser lists it (loaded by him, one each, 2026-09-17 — Ordinario first, then
-      // the browser's order; the overflow on the `b` instance). The CHANNEL and the PORT are not written here: tools/apply_uvi_parts.js
-      // reads them from the running rack into UVI_PARTS below, applied at load. `ks` = the keyswitch inside a KS preset, the flute's
-      // pattern (C1 = 36, C#1 = 37, D1 = 38; Durations C2 = 48, C#2 = 49) — PROVISIONAL until read on the red keys (0c).
-      { key: "ord",               label: "ordinario",                     preset: "Bassoon Ordinario" },
-      { key: "blow_no_reed",      label: "blow without reed — NEW",       preset: "Bassoon Blow Without Reed" },
-      { key: "chrom_scale",       label: "chromatic scale",               preset: "Bassoon Chromatic Scale" },
-      { key: "cresc",             label: "crescendo",                     preset: "Bassoon Cresc & Decrescendo KS", ks: 36 },
-      { key: "cresc_decresc",     label: "crescendo to decrescendo",      preset: "Bassoon Cresc & Decrescendo KS", ks: 37 },
-      { key: "decresc",           label: "decrescendo",                   preset: "Bassoon Cresc & Decrescendo KS", ks: 38 },
-      { key: "dur_0_5s",          label: "note durations 0.5 s",          preset: "Bassoon Durations KS", ks: 48 },
-      { key: "dur_1s",            label: "note durations 1 s",            preset: "Bassoon Durations KS", ks: 49 },
-      { key: "flz",               label: "flatterzunge",                  preset: "Bassoon Flatterzunge" },
-      { key: "fortepiano",        label: "fortepiano",                    preset: "Bassoon Fortepiano" },
-      { key: "harmonic_fing",     label: "harmonic fingering",            preset: "Bassoon Harmonic Fingering" },
-      { key: "key_click",         label: "key click",                     preset: "Bassoon Key Click" },
-      { key: "multiphonics",      label: "multiphonics menu",             preset: "Bassoon Multiphonics Menu" },
-      { key: "ord_mute",          label: "ordinario con sordina — NEW",   preset: "Bassoon Mute Ordinario" },
-      { key: "ord_1q",            label: "ordinario quarter-tone",        preset: "Bassoon Quartertones Ordinario" },
-      { key: "sforzando",         label: "sforzando",                     preset: "Bassoon Sforzando" },
-      { key: "staccato",          label: "staccato",                      preset: "Bassoon Staccato" },
-      { key: "gliss_throat_down", label: "throat glissando down — NEW",   preset: "Bassoon Throat Glissando Down KS" },   // a KS preset: which keys select what — unread
-      { key: "gliss_throat_up",   label: "throat glissando up — NEW",     preset: "Bassoon Throat Glissando Up KS" },
-      { key: "trill_m2",          label: "trill minor 2nd up",            preset: "Bassoon Trills KS", ks: 36 },
-      { key: "trill_M2",          label: "trill major 2nd up",            preset: "Bassoon Trills KS", ks: 37 },
-      { key: "vib_vel",           label: "vibrato",                       preset: "Bassoon Vibrato" },
-    ],
-  },
-
-  // ---- HORN in F — IRCAM Solo Instruments 2 (UVI) ----
-  // Manual: "Instrument part to be written a perfect fifth higher" — this is the SOURCE for the
-  // ensemble registry's transpose: +7 (step 6).
-  // RANGE 35–77, RAISED FROM 35–65 on 2026-09-19 (PLAN 1a.1, RUNNING_LOG §68). 65 was the SI2 LIBRARY's
-  // top (sounding F4), not the instrument's — and the library's top no longer binds: the "Horn SI2 high"
-  // track takes everything above 65, plays it an octave down in the library and shifts the audio back up
-  // with ReaPitch. The library's own 35–65 shifted up an octave reaches exactly 77, and 77 is also the
-  // horn's professional ceiling (written C6 = sounding F5, §66). So 77 is both what the rack can play and
-  // what a player can play. Five of the six horn notes in the reference chords lie in the raised part.
-  horn: { balanceDb: -12.21,
-    label: "Horn", port: "LGHorn", rangeLow: 35, rangeHigh: 77,
-    ordinary: "ord", beating: true, playerBendSt: 1, bendRangeSt: 2,
-    channels: { main: 1, curve: [] },   // WRITTEN AT LOAD by UVI_PARTS (tools/apply_uvi_parts.js): main = the Ordinario part, curve = its copies on the `b` instance. Empty curve = the voice's own channel (cresc.js) until then.
-    techniques: [
-      // ONE LINE PER TECHNIQUE, its PRESET named as the UVI browser lists it (loaded by him, one each, 2026-09-17 — Ordinario first, then
-      // the browser's order; the overflow on the `b` instance). The CHANNEL and the PORT are not written here: tools/apply_uvi_parts.js
-      // reads them from the running rack into UVI_PARTS below, applied at load. `ks` = the keyswitch inside a KS preset, the flute's
-      // pattern (C1 = 36, C#1 = 37, D1 = 38; Durations C2 = 48, C#2 = 49) — PROVISIONAL until read on the red keys (0c).
-      { key: "ord",             label: "ordinario",                       preset: "French Horn Ordinario" },
-      { key: "chrom_scale",     label: "chromatic scale",                 preset: "French Horn Chromatic Scale" },
-      { key: "cresc",           label: "crescendo",                       preset: "French Horn Cresc & Decrescendo KS", ks: 36 },
-      { key: "cresc_decresc",   label: "crescendo to decrescendo",        preset: "French Horn Cresc & Decrescendo KS", ks: 37 },
-      { key: "decresc",         label: "decrescendo",                     preset: "French Horn Cresc & Decrescendo KS", ks: 38 },
-      { key: "cuivre",          label: "cuivré — NEW",                    preset: "French Horn Cuivre" },
-      { key: "dur_0_5s",        label: "note durations 0.5 s",            preset: "French Horn Durations KS", ks: 48 },
-      { key: "dur_1s",          label: "note durations 1 s",              preset: "French Horn Durations KS", ks: 49 },
-      { key: "flz",             label: "flatterzunge",                    preset: "French Horn Flatterzunge" },
-      { key: "fortepiano",      label: "fortepiano",                      preset: "French Horn Fortepiano" },
-      { key: "flz_mute",        label: "flatterzunge con sordina — NEW",  preset: "French Horn Mute Flatterzunge" },
-      { key: "ord_mute",        label: "ordinario con sordina — NEW",     preset: "French Horn Mute Ordinario" },
-      { key: "open_to_stopped", label: "open to stopped — NEW",           preset: "French Horn Open & Stopped KS", ks: 36 },
-      { key: "stopped_to_open", label: "stopped to open — NEW",           preset: "French Horn Open & Stopped KS", ks: 37 },
-      { key: "ord_to_cuivre",   label: "ordinario to cuivré — NEW",       preset: "French Horn Ord & Cuivre KS", ks: 36 },
-      { key: "cuivre_to_ord",   label: "cuivré to ordinario — NEW",       preset: "French Horn Ord & Cuivre KS", ks: 37 },
-      { key: "ord_to_flz",      label: "ordinario to flatterzunge",       preset: "French Horn Ord & Flatterzunge KS", ks: 36 },
-      { key: "flz_to_ord",      label: "flatterzunge to ordinario",       preset: "French Horn Ord & Flatterzunge KS", ks: 37 },
-      { key: "sforzando",       label: "sforzando",                       preset: "French Horn Sforzando" },
-      { key: "slap_pitched",    label: "slap pitched — NEW",              preset: "French Horn Slap Pitched" },
-      { key: "staccato",        label: "staccato",                        preset: "French Horn Staccato" },
-      { key: "flz_stopped",     label: "flatterzunge stopped — NEW",      preset: "French Horn Stopped Flatterzunge" },
-      { key: "stopped",         label: "stopped — NEW",                   preset: "French Horn Stopped Ordinario" },
-      { key: "trill_m2",        label: "trill minor 2nd up",              preset: "French Horn Trills KS", ks: 36 },
-      { key: "trill_M2",        label: "trill major 2nd up",              preset: "French Horn Trills KS", ks: 37 },
-    ],
-  },
-
-  // ---- TRUMPET in C — IRCAM Solo Instruments 2 (UVI) ----
-  // Manual: "Instrument part to be written at actual pitch" — SI2's trumpet is in C. Whether the
-  // PART is written in C or in B♭ is the composer's call at 2a; the library is unaffected.
-  // Range in sounding pitches F#3–Bb5 = MIDI 54–82. The four mutes (cup · harmon · straight · wah-wah)
-  // are KS presets of the trumpet in the browser and he loaded them — they are techniques below.
-  trumpet: { balanceDb: -9.53,
-    label: "Trumpet", port: "LGTrumpet", rangeLow: 54, rangeHigh: 82,
-    ordinary: "ord", beating: true, playerBendSt: 1, bendRangeSt: 2,
-    channels: { main: 1, curve: [] },   // WRITTEN AT LOAD by UVI_PARTS (tools/apply_uvi_parts.js): main = the Ordinario part, curve = its copies on the `b` instance. Empty curve = the voice's own channel (cresc.js) until then.
-    techniques: [
-      // ONE LINE PER TECHNIQUE, its PRESET named as the UVI browser lists it (loaded by him, one each, 2026-09-17 — Ordinario first, then
-      // the browser's order; the overflow on the `b` instance). The CHANNEL and the PORT are not written here: tools/apply_uvi_parts.js
-      // reads them from the running rack into UVI_PARTS below, applied at load. `ks` = the keyswitch inside a KS preset, the flute's
-      // pattern (C1 = 36, C#1 = 37, D1 = 38; Durations C2 = 48, C#2 = 49) — PROVISIONAL until read on the red keys (0c). The mutes
-      // are here because he loaded them; their KS order and the Glissando Menu's are GUESSES from the manual's alphabetical lists.
-      { key: "ord",                 label: "ordinario",                          preset: "Trumpet Ordinario" },
-      { key: "cresc",               label: "crescendo",                          preset: "Trumpet Cresc & Decrescendo KS", ks: 36 },
-      { key: "cresc_decresc",       label: "crescendo to decrescendo",           preset: "Trumpet Cresc & Decrescendo KS", ks: 37 },
-      { key: "decresc",             label: "decrescendo",                        preset: "Trumpet Cresc & Decrescendo KS", ks: 38 },
-      { key: "cuivre",              label: "cuivré — NEW",                       preset: "Trumpet Cuivre" },
-      { key: "dur_0_5s",            label: "note durations 0.5 s",               preset: "Trumpet Durations KS", ks: 48 },
-      { key: "dur_1s",              label: "note durations 1 s",                 preset: "Trumpet Durations KS", ks: 49 },
-      { key: "flz",                 label: "flatterzunge",                       preset: "Trumpet Flatterzunge" },
-      { key: "fortepiano",          label: "fortepiano",                         preset: "Trumpet Fortepiano" },
-      { key: "gliss_embouchure",    label: "glissando embouchure — NEW",         preset: "Trumpet Glissando Menu KS", ks: 36 },   // the menu's order: unread
-      { key: "half_valve_gliss",    label: "half-valve glissando — NEW",         preset: "Trumpet Glissando Menu KS", ks: 37 },
-      { key: "harmonics_gliss",     label: "harmonics glissando — NEW",          preset: "Trumpet Glissando Menu KS", ks: 38 },
-      { key: "legato_intervals",    label: "increasing intervals legato — NEW",  preset: "Trumpet Increasing Intervals Legato" },
-      { key: "ord_mute_cup",        label: "ordinario, cup mute — NEW",          preset: "Trumpet Mute Cup KS", ks: 36 },
-      { key: "flz_mute_cup",        label: "flatterzunge, cup mute — NEW",       preset: "Trumpet Mute Cup KS", ks: 37 },
-      { key: "ord_mute_harmon",     label: "ordinario, harmon mute — NEW",       preset: "Trumpet Mute Harmon KS", ks: 36 },
-      { key: "flz_mute_harmon",     label: "flatterzunge, harmon mute — NEW",    preset: "Trumpet Mute Harmon KS", ks: 37 },
-      { key: "ord_mute_straight",   label: "ordinario, straight mute — NEW",     preset: "Trumpet Mute Straight KS", ks: 36 },
-      { key: "flz_mute_straight",   label: "flatterzunge, straight mute — NEW",  preset: "Trumpet Mute Straight KS", ks: 37 },
-      { key: "wawa_closed",         label: "wah-wah mute, closed — NEW",         preset: "Trumpet Mute Wahwah KS", ks: 36 },   // manual: closed-to-open · flatterzunge-open · open-to-closed · ordinario-closed · ordinario-open; the KS order unread
-      { key: "wawa_open",           label: "wah-wah mute, open — NEW",           preset: "Trumpet Mute Wahwah KS", ks: 37 },
-      { key: "wawa_closed_to_open", label: "wah-wah closed to open — NEW",       preset: "Trumpet Mute Wahwah KS", ks: 38 },
-      { key: "wawa_open_to_closed", label: "wah-wah open to closed — NEW",       preset: "Trumpet Mute Wahwah KS", ks: 39 },
-      { key: "wawa_flz_open",       label: "wah-wah flatterzunge open — NEW",    preset: "Trumpet Mute Wahwah KS", ks: 40 },
-      { key: "ord_to_cuivre",       label: "ordinario to cuivré — NEW",          preset: "Trumpet Ord & Cuivre KS", ks: 36 },
-      { key: "cuivre_to_ord",       label: "cuivré to ordinario — NEW",          preset: "Trumpet Ord & Cuivre KS", ks: 37 },
-      { key: "ord_to_flz",          label: "ordinario to flatterzunge",          preset: "Trumpet Ord & Flatterzunge KS", ks: 36 },
-      { key: "flz_to_ord",          label: "flatterzunge to ordinario",          preset: "Trumpet Ord & Flatterzunge KS", ks: 37 },
-      { key: "pedal_tone",          label: "pedal tone — NEW",                   preset: "Trumpet Pedal Tone" },
-      { key: "sforzando",           label: "sforzando",                          preset: "Trumpet Sforzando" },
-      { key: "slap_pitched",        label: "slap pitched — NEW",                 preset: "Trumpet Slap Pitched" },
-      { key: "staccato",            label: "staccato",                           preset: "Trumpet Staccato" },
-      { key: "trill_m2",            label: "trill minor 2nd up",                 preset: "Trumpet Trills KS", ks: 36 },
-      { key: "trill_M2",            label: "trill major 2nd up",                 preset: "Trumpet Trills KS", ks: 37 },
-      { key: "vocalize_harmonics",  label: "vocalize on harmonics — NEW",        preset: "Trumpet Vocalize on Harmonics" },
-    ],
-  },
+  // ---- BASS CLARINET — LIBRARY NOT CHOSEN (container 4) ----
+  // A placeholder, as above. The lineage has this instrument twice — piece #3's deep map and piece #5's recipe (Xsample,
+  // 34 presets, measured in the Tempus rack): container 4's sources, not carried here before the library is his word.
+  // Range 34–77 (B♭1–F5 sounding), NOT measured.
+  bass_clarinet: { ordinary: "ord", playerBendSt: 1, bendRangeSt: 2, label: "Bass Clarinet", port: "DECBassClar", rangeLow: 34, rangeHigh: 77, channels: { main: 1, curve: [2, 3, 4] },
+    techniques: [{ key: "ord", label: "Ordinario", channel: 1, kind: "pitched", loud: "vel" }] },
 
   // ---- PERCUSSION — ONE PLAYER, ONE LANE (P4) ----
   // Spitfire Abbey Road Orchestra Percussion (D6 — piece #2's library, its journal decision 4:
@@ -221,7 +77,7 @@ const INSTRUMENTS = {
   // Choosing an instrument = one line in the selection + one Reaper track filtering on its channel +
   // the tool + palette_check — and its technique keys registered (principle 3) before material uses them.
   percussion: {
-    label: "Percussion", port: "LGPerc", rangeLow: 21, rangeHigh: 108,
+    label: "Percussion", port: "DECPerc", rangeLow: 21, rangeHigh: 108,
     ordinary: "main", beating: false, playerBendSt: 0, bendRangeSt: 0,
     channels: { main: 1, curve: [2, 3, 4] },
     techniques: [
@@ -253,10 +109,17 @@ const INSTRUMENTS = {
   // bowed tone is the steady partner a beating needs. #7 is the same bow with vibrato on CC4.
   bowed_vibraphone: { balanceDb: 2.81,
     ordinary: "bowed_vel", beating: true, playerBendSt: 0, bendRangeSt: 2,
-    label: "Vibraphone", port: "LGVibes", rangeLow: 53, rangeHigh: 89, mechanism: "cc0",
+    label: "Vibraphone", port: "DECVibes", rangeLow: 53, rangeHigh: 89, mechanism: "cc0",
     channels: { main: 1, curve: [2, 3, 4] },
     techniques: xsVibraphoneTechs(53, 89),
   },
+
+  // ---- VIOLA — by the CELLO's mechanism, PROVISIONAL (container 4) ----
+  // The roster is generated by the strings' helper, so the key set is the cello's (Xsample Contemporary Solo Strings: 88
+  // presets, CC#0 = preset − 1; Sul C / G / D / A) — piece #5's viola was this library and this helper. NOTHING of the
+  // cello's MEASUREMENTS is shared: no balanceDb, no measured ranges, no measured bend — a shared mechanism never shares a
+  // measurement. Range 48–93 (C3–A6 sounding) is piece #5's figure, not re-measured. The preset numbers are VERIFY at 4.
+  viola: { ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Viola", port: "DECViola", rangeLow: 48, rangeHigh: 93, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 48, 93) },
 
   // ---- CELLO — Xsample Contemporary Solo Strings (Kontakt), CC#0 selects the preset ----
   // PIECE #5'S ENTRY, CARRIED VERBATIM (D6) — the one recipe in this file that has been heard,
@@ -264,25 +127,7 @@ const INSTRUMENTS = {
   // name changes, and only because loopMIDI ports are machine-global (see the header).
   // The full Xsample roster is 88 presets, identical across the instruments except the string
   // names; CC#0 = preset − 1. Channels per D11: 1 main · 2–4 curve A/B/C.
-  cello: { balanceDb: -3.87, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 2, label: "Cello", port: "LGCello", rangeLow: 36, rangeHigh: 83, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 36, 83) },
-
-  // ---- DOUBLE BASS — Xsample (D6: "use xsample double bass") ----
-  // The cello's model, deliberately: one string mechanism for the PAIR (LG-1), the same CC#0
-  // preset select and the same channel bank. The roster is generated by the same helper, so the
-  // key set is the cello's. **The preset NUMBERS were VERIFIED 2026-09-17 against the Xsample double bass's own
-  // Preset Menu** (his four screenshots, RUNNING_LOG §32): all 88 in the cello's order, Sul E / A / D / G.
-  // Open strings E1 A1 D2 G2.
-  // THE OCTAVE, SETTLED 2026-09-19 (PLAN 1a.0, RUNNING_LOG §67). The library is KEYED AN OCTAVE ABOVE ITS
-  // SOUNDING PITCH — probed through the bridge: key 34 (sounding B♭1) silent, key 46 audible at −19.9 dB,
-  // and its 40–81 is exactly the bass's sounding E1–A4 written up an octave (a double bass cannot sound A5).
-  // §57 read 40–81 off his Kontakt and wrote it in here as if it were sounding pitch, which it is not.
-  // THIS RECIPE IS SOUNDING PITCH, like every other — 28–69 (E1–A4) — because the score, the IR and the
-  // notation are all sounding (ensemble.json _transposeConvention, #5's D9) and the app sends `sonifyNote`
-  // raw to the port. The +12 the sampler needs is done in REAPER: a stock `midi_transpose` at the head of
-  // the Bass XS chain (`reaper/bridge/jobs/bass_octave_fx.lua`), decision 0's pattern — Reaper-side, no app
-  // change. Do not "correct" these numbers back to the sampler's keys.
-  // The 0d probe's measured pitches 48 and 57 were SAMPLER keys = sounding 36 and 45; the trims stand.
-  double_bass: { balanceDb: -2.97, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "D. Bass", port: "LGBass", rangeLow: 28, rangeHigh: 69, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["E", "A", "D", "G"], 28, 69) },
+  cello: { balanceDb: -3.87, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 2, label: "Cello", port: "DECCello", rangeLow: 36, rangeHigh: 83, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 36, 83) },
 };
 
 // The composer's practice (R8): the VELOCITY presets by default — the MW ones "sound different" and are
@@ -480,85 +325,7 @@ function xsEnglishHornTechs(lo, hi) {
 }
 
 // ---- UVI PARTS (generated by tools/apply_uvi_parts.js from the running rack — do not edit by hand) ----
-const UVI_PARTS = {   // read from the running rack 2026-09-18 02:02 — bassoon: 22 techniques on 21 parts, 3 curve copies · horn: 25 techniques on 21 parts, 3 curve copies · trumpet: 35 techniques on 23 parts, 3 curve copies
-  bassoon: {
-    techniques: { ord: {"port":"LGBassoon","channel":1}, blow_no_reed: {"port":"LGBassoon","channel":2}, chrom_scale: {"port":"LGBassoon","channel":3}, cresc: {"port":"LGBassoon","channel":4}, cresc_decresc: {"port":"LGBassoon","channel":4}, decresc: {"port":"LGBassoon","channel":4}, dur_0_5s: {"port":"LGBassoon","channel":5}, dur_1s: {"port":"LGBassoon","channel":5}, flz: {"port":"LGBassoon","channel":6}, fortepiano: {"port":"LGBassoon","channel":7}, harmonic_fing: {"port":"LGBassoon","channel":8}, key_click: {"port":"LGBassoon","channel":9}, multiphonics: {"port":"LGBassoon","channel":10}, ord_mute: {"port":"LGBassoon","channel":11}, ord_1q: {"port":"LGBassoon","channel":12}, sforzando: {"port":"LGBassoon","channel":13}, staccato: {"port":"LGBassoon","channel":14}, gliss_throat_down: {"port":"LGBassoon","channel":15}, gliss_throat_up: {"port":"LGBassoon","channel":16}, trill_m2: {"port":"LGBassoonb","channel":1}, trill_M2: {"port":"LGBassoonb","channel":1}, vib_vel: {"port":"LGBassoonb","channel":2} },
-    main: {"port":"LGBassoon","channel":1}, curve: [{"port":"LGBassoonb","ch":3},{"port":"LGBassoonb","ch":4},{"port":"LGBassoonb","ch":5}], curveTechniques: ["ord"],
-    parts: [{"track":"Bassoon SI2","part":"Part 1","ch":1,"program":"Bassoon Ordinario"},
-            {"track":"Bassoon SI2","part":"Part 2","ch":2,"program":"Bassoon Blow Without Reed"},
-            {"track":"Bassoon SI2","part":"Part 3","ch":3,"program":"Bassoon Chromatic Scale"},
-            {"track":"Bassoon SI2","part":"Part 4","ch":4,"program":"Bassoon Cresc & Decrescendo KS"},
-            {"track":"Bassoon SI2","part":"Part 5","ch":5,"program":"Bassoon Durations KS"},
-            {"track":"Bassoon SI2","part":"Part 6","ch":6,"program":"Bassoon Flatterzunge"},
-            {"track":"Bassoon SI2","part":"Part 7","ch":7,"program":"Bassoon Fortepiano"},
-            {"track":"Bassoon SI2","part":"Part 8","ch":8,"program":"Bassoon Harmonic Fingering"},
-            {"track":"Bassoon SI2","part":"Part 9","ch":9,"program":"Bassoon Key Click"},
-            {"track":"Bassoon SI2","part":"Part 10","ch":10,"program":"Bassoon Multiphonics Menu"},
-            {"track":"Bassoon SI2","part":"Part 11","ch":11,"program":"Bassoon Mute Ordinario"},
-            {"track":"Bassoon SI2","part":"Part 12","ch":12,"program":"Bassoon Quartertones Ordinario"},
-            {"track":"Bassoon SI2","part":"Part 13","ch":13,"program":"Bassoon Sforzando"},
-            {"track":"Bassoon SI2","part":"Part 14","ch":14,"program":"Bassoon Staccato"},
-            {"track":"Bassoon SI2","part":"Part 15","ch":15,"program":"Bassoon Throat Glissando Down KS"},
-            {"track":"Bassoon SI2","part":"Part 16","ch":16,"program":"Bassoon Throat Glissando Up KS"},
-            {"track":"Bassoon SI2 b","part":"Part 1","ch":1,"program":"Bassoon Trills KS"},
-            {"track":"Bassoon SI2 b","part":"Part 2","ch":2,"program":"Bassoon Vibrato"},
-            {"track":"Bassoon SI2 b","part":"Part 3","ch":3,"program":"Bassoon Ordinario"},
-            {"track":"Bassoon SI2 b","part":"Part 4","ch":4,"program":"Bassoon Ordinario"},
-            {"track":"Bassoon SI2 b","part":"Part 5","ch":5,"program":"Bassoon Ordinario"}],
-  },
-  horn: {
-    techniques: { ord: {"port":"LGHorn","channel":1}, chrom_scale: {"port":"LGHorn","channel":2}, cresc: {"port":"LGHorn","channel":3}, cresc_decresc: {"port":"LGHorn","channel":3}, decresc: {"port":"LGHorn","channel":3}, cuivre: {"port":"LGHorn","channel":4}, dur_0_5s: {"port":"LGHorn","channel":5}, dur_1s: {"port":"LGHorn","channel":5}, flz: {"port":"LGHorn","channel":6}, fortepiano: {"port":"LGHorn","channel":7}, flz_mute: {"port":"LGHorn","channel":8}, ord_mute: {"port":"LGHorn","channel":9}, open_to_stopped: {"port":"LGHorn","channel":10}, stopped_to_open: {"port":"LGHorn","channel":10}, ord_to_cuivre: {"port":"LGHorn","channel":11}, cuivre_to_ord: {"port":"LGHorn","channel":11}, ord_to_flz: {"port":"LGHorn","channel":12}, flz_to_ord: {"port":"LGHorn","channel":12}, sforzando: {"port":"LGHorn","channel":13}, slap_pitched: {"port":"LGHorn","channel":14}, staccato: {"port":"LGHorn","channel":15}, flz_stopped: {"port":"LGHorn","channel":16}, stopped: {"port":"LGHornb","channel":1}, trill_m2: {"port":"LGHornb","channel":2}, trill_M2: {"port":"LGHornb","channel":2} },
-    main: {"port":"LGHorn","channel":1}, curve: [{"port":"LGHornb","ch":3},{"port":"LGHornb","ch":4},{"port":"LGHornb","ch":5}], curveTechniques: ["ord"],
-    parts: [{"track":"Horn SI2","part":"Part 1","ch":1,"program":"French Horn Ordinario"},
-            {"track":"Horn SI2","part":"Part 2","ch":2,"program":"French Horn Chromatic Scale"},
-            {"track":"Horn SI2","part":"Part 3","ch":3,"program":"French Horn Cresc & Decrescendo KS"},
-            {"track":"Horn SI2","part":"Part 4","ch":4,"program":"French Horn Cuivre"},
-            {"track":"Horn SI2","part":"Part 5","ch":5,"program":"French Horn Durations KS"},
-            {"track":"Horn SI2","part":"Part 6","ch":6,"program":"French Horn Flatterzunge"},
-            {"track":"Horn SI2","part":"Part 7","ch":7,"program":"French Horn Fortepiano"},
-            {"track":"Horn SI2","part":"Part 8","ch":8,"program":"French Horn Mute Flatterzunge"},
-            {"track":"Horn SI2","part":"Part 9","ch":9,"program":"French Horn Mute Ordinario"},
-            {"track":"Horn SI2","part":"Part 10","ch":10,"program":"French Horn Open & Stopped KS"},
-            {"track":"Horn SI2","part":"Part 11","ch":11,"program":"French Horn Ord & Cuivre KS"},
-            {"track":"Horn SI2","part":"Part 12","ch":12,"program":"French Horn Ord & Flatterzunge KS"},
-            {"track":"Horn SI2","part":"Part 13","ch":13,"program":"French Horn Sforzando"},
-            {"track":"Horn SI2","part":"Part 14","ch":14,"program":"French Horn Slap Pitched"},
-            {"track":"Horn SI2","part":"Part 15","ch":15,"program":"French Horn Staccato"},
-            {"track":"Horn SI2","part":"Part 16","ch":16,"program":"French Horn Stopped Flatterzunge"},
-            {"track":"Horn SI2 b","part":"Part 1","ch":1,"program":"French Horn Stopped Ordinario"},
-            {"track":"Horn SI2 b","part":"Part 2","ch":2,"program":"French Horn Trills KS"},
-            {"track":"Horn SI2 b","part":"Part 3","ch":3,"program":"French Horn Ordinario"},
-            {"track":"Horn SI2 b","part":"Part 4","ch":4,"program":"French Horn Ordinario"},
-            {"track":"Horn SI2 b","part":"Part 5","ch":5,"program":"French Horn Ordinario"}],
-  },
-  trumpet: {
-    techniques: { ord: {"port":"LGTrumpet","channel":1}, cresc: {"port":"LGTrumpet","channel":2}, cresc_decresc: {"port":"LGTrumpet","channel":2}, decresc: {"port":"LGTrumpet","channel":2}, cuivre: {"port":"LGTrumpet","channel":3}, dur_0_5s: {"port":"LGTrumpet","channel":4}, dur_1s: {"port":"LGTrumpet","channel":4}, flz: {"port":"LGTrumpet","channel":5}, fortepiano: {"port":"LGTrumpet","channel":6}, gliss_embouchure: {"port":"LGTrumpet","channel":7}, half_valve_gliss: {"port":"LGTrumpet","channel":7}, harmonics_gliss: {"port":"LGTrumpet","channel":7}, legato_intervals: {"port":"LGTrumpet","channel":8}, ord_mute_cup: {"port":"LGTrumpet","channel":9}, flz_mute_cup: {"port":"LGTrumpet","channel":9}, ord_mute_harmon: {"port":"LGTrumpet","channel":10}, flz_mute_harmon: {"port":"LGTrumpet","channel":10}, ord_mute_straight: {"port":"LGTrumpet","channel":11}, flz_mute_straight: {"port":"LGTrumpet","channel":11}, wawa_closed: {"port":"LGTrumpet","channel":12}, wawa_open: {"port":"LGTrumpet","channel":12}, wawa_closed_to_open: {"port":"LGTrumpet","channel":12}, wawa_open_to_closed: {"port":"LGTrumpet","channel":12}, wawa_flz_open: {"port":"LGTrumpet","channel":12}, ord_to_cuivre: {"port":"LGTrumpet","channel":13}, cuivre_to_ord: {"port":"LGTrumpet","channel":13}, ord_to_flz: {"port":"LGTrumpet","channel":14}, flz_to_ord: {"port":"LGTrumpet","channel":14}, pedal_tone: {"port":"LGTrumpet","channel":15}, sforzando: {"port":"LGTrumpet","channel":16}, slap_pitched: {"port":"LGTrumpetb","channel":1}, staccato: {"port":"LGTrumpetb","channel":2}, trill_m2: {"port":"LGTrumpetb","channel":3}, trill_M2: {"port":"LGTrumpetb","channel":3}, vocalize_harmonics: {"port":"LGTrumpetb","channel":4} },
-    main: {"port":"LGTrumpet","channel":1}, curve: [{"port":"LGTrumpetb","ch":5},{"port":"LGTrumpetb","ch":6},{"port":"LGTrumpetb","ch":7}], curveTechniques: ["ord"],
-    parts: [{"track":"Trumpet SI2","part":"Part 1","ch":1,"program":"Trumpet Ordinario"},
-            {"track":"Trumpet SI2","part":"Part 2","ch":2,"program":"Trumpet Cresc & Decrescendo KS"},
-            {"track":"Trumpet SI2","part":"Part 3","ch":3,"program":"Trumpet Cuivre"},
-            {"track":"Trumpet SI2","part":"Part 4","ch":4,"program":"Trumpet Durations KS"},
-            {"track":"Trumpet SI2","part":"Part 5","ch":5,"program":"Trumpet Flatterzunge"},
-            {"track":"Trumpet SI2","part":"Part 6","ch":6,"program":"Trumpet Fortepiano"},
-            {"track":"Trumpet SI2","part":"Part 7","ch":7,"program":"Trumpet Glissando Menu KS"},
-            {"track":"Trumpet SI2","part":"Part 8","ch":8,"program":"Trumpet Increasing Intervals Legato"},
-            {"track":"Trumpet SI2","part":"Part 9","ch":9,"program":"Trumpet Mute Cup KS"},
-            {"track":"Trumpet SI2","part":"Part 10","ch":10,"program":"Trumpet Mute Harmon KS"},
-            {"track":"Trumpet SI2","part":"Part 11","ch":11,"program":"Trumpet Mute Straight KS"},
-            {"track":"Trumpet SI2","part":"Part 12","ch":12,"program":"Trumpet Mute Wahwah KS"},
-            {"track":"Trumpet SI2","part":"Part 13","ch":13,"program":"Trumpet Ord & Cuivre KS"},
-            {"track":"Trumpet SI2","part":"Part 14","ch":14,"program":"Trumpet Ord & Flatterzunge KS"},
-            {"track":"Trumpet SI2","part":"Part 15","ch":15,"program":"Trumpet Pedal Tone"},
-            {"track":"Trumpet SI2","part":"Part 16","ch":16,"program":"Trumpet Sforzando"},
-            {"track":"Trumpet SI2 b","part":"Part 1","ch":1,"program":"Trumpet Slap Pitched"},
-            {"track":"Trumpet SI2 b","part":"Part 2","ch":2,"program":"Trumpet Staccato"},
-            {"track":"Trumpet SI2 b","part":"Part 3","ch":3,"program":"Trumpet Trills KS"},
-            {"track":"Trumpet SI2 b","part":"Part 4","ch":4,"program":"Trumpet Vocalize on Harmonics"},
-            {"track":"Trumpet SI2 b","part":"Part 5","ch":5,"program":"Trumpet Ordinario"},
-            {"track":"Trumpet SI2 b","part":"Part 6","ch":6,"program":"Trumpet Ordinario"},
-            {"track":"Trumpet SI2 b","part":"Part 7","ch":7,"program":"Trumpet Ordinario"}],
-  },
-};
+const UVI_PARTS = {};   // EMPTY at the port (2026-10-04) — piece #6's rows (bassoon · horn · trumpet, IRCAM SI2) left with it; tools/apply_uvi_parts.js writes this block from the running rack if a UVI instrument joins (container 4)
 function applyUviParts(all, gen) {   // the rack decides the channel and the port of every SI2 technique; the recipe keeps the preset and the keyswitch
   for (const [inst, g] of Object.entries(gen || {})) {
     const R = all[inst]; if (!R || !R.techniques) continue;
@@ -572,27 +339,27 @@ applyUviParts(INSTRUMENTS, UVI_PARTS);
 
 // ---- ARO PERCUSSION (generated by tools/apply_perc.js from bank/perc_selection.json — do not edit by hand) ----
 const ARO_PERC = {   // 14 instrument(s) selected 2026-09-22: small_metals_finger_cymbals ch1 · small_metals_bell_tree ch2 · small_metals_sleigh_bells ch3 · small_metals_triangles ch4 · small_metals_tambourines ch5 · toys_castanets ch6 · toys_claves ch7 · toys_shakers ch8 · brake_drums ch9 · crashes_and_stack ch10 · wood_blocks ch11 · bass_drum_alt ch12 · temple_bowls ch13 · tam_tams_a ch14
-  port: "LGPerc",
+  port: "DECPerc",
   instruments: [
-    { slug: "small_metals_finger_cymbals", name: "Finger Cymbals", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 1, techniques: [
+    { slug: "small_metals_finger_cymbals", name: "Finger Cymbals", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 1, techniques: [
       { key: "small_metals_finger_cymbals", label: "Finger Cymbals", channel: 1, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 62,
         keys: [{"midi":36,"label":"Low"},{"midi":38,"label":"High"},{"midi":60,"label":"Low · 36"},{"midi":62,"label":"High · 38"}] },
     ] },
-    { slug: "small_metals_bell_tree", name: "Bell Tree", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 2, techniques: [
+    { slug: "small_metals_bell_tree", name: "Bell Tree", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 2, techniques: [
       { key: "small_metals_bell_tree", label: "Bell Tree", channel: 2, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 69,
         keys: [{"midi":36,"label":"Half Gliss. - Low"},{"midi":38,"label":"Half Gliss. - High"},{"midi":40,"label":"Continuous Gliss"},{"midi":41,"label":"Full Gliss Short"},{"midi":43,"label":"Full Gliss Medium"},{"midi":45,"label":"Full Gliss Long"},{"midi":60,"label":"Half Gliss. - Low · 36"},{"midi":62,"label":"Half Gliss. - High · 38"},{"midi":64,"label":"Continuous Gliss · 40"},{"midi":65,"label":"Full Gliss Short · 41"},{"midi":67,"label":"Full Gliss Medium · 43"},{"midi":69,"label":"Full Gliss Long · 45"}] },
     ] },
-    { slug: "small_metals_sleigh_bells", name: "Sleigh Bells & Indian Bells", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 3, techniques: [
+    { slug: "small_metals_sleigh_bells", name: "Sleigh Bells & Indian Bells", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 3, techniques: [
       { key: "small_metals_sleigh_bells_sleigh_bells", label: "Sleigh Bells & Indian Bells — Sleigh Bells", channel: 3, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 64,
         keys: [{"midi":36,"label":"Single Shake L"},{"midi":38,"label":"Single Shake R"},{"midi":40,"label":"Long Shake / Roll"},{"midi":60,"label":"Single Shake L"},{"midi":62,"label":"Single Shake R"},{"midi":64,"label":"Long Shake / Roll"}] },
       { key: "small_metals_sleigh_bells_indian_rope_bells", label: "Sleigh Bells & Indian Bells — Indian Rope Bells", channel: 3, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 76,
         keys: [{"midi":48,"label":"Single Shake L"},{"midi":50,"label":"Single Shake R"},{"midi":52,"label":"Long Shake / Roll"},{"midi":72,"label":"Single Shake L"},{"midi":74,"label":"Single Shake R"},{"midi":76,"label":"Long Shake / Roll"}] },
     ] },
-    { slug: "small_metals_triangles", name: "Small Metals Triangles", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 4, techniques: [
+    { slug: "small_metals_triangles", name: "Small Metals Triangles", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 4, techniques: [
       { key: "small_metals_triangles_triangle_beater", label: "Small Metals Triangles — Triangle Beater", channel: 4, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 105,
         keys: [{"midi":36,"label":"Low · Hit"},{"midi":37,"label":"Low · Choked Hit"},{"midi":38,"label":"Low · Hit"},{"midi":39,"label":"Low · Choked Hit"},{"midi":40,"label":"Low · Roll"},{"midi":41,"label":"Low · Damped Short"},{"midi":43,"label":"Low · Damped Medium"},{"midi":45,"label":"Low · Damped Long"},{"midi":48,"label":"Middle · Hit"},{"midi":49,"label":"Middle · Choked Hit"},{"midi":50,"label":"Middle · Hit"},{"midi":51,"label":"Middle · Choked Hit"},{"midi":52,"label":"Middle · Roll"},{"midi":53,"label":"Middle · Damped Short"},{"midi":55,"label":"Middle · Damped Medium"},{"midi":57,"label":"Middle · Damped Long"},{"midi":60,"label":"High · Hit"},{"midi":61,"label":"High · Choked Hit"},{"midi":62,"label":"High · Hit"},{"midi":63,"label":"High · Choked Hit"},{"midi":64,"label":"High · Roll"},{"midi":65,"label":"High · Damped Short"},{"midi":67,"label":"High · Damped Medium"},{"midi":69,"label":"High · Damped Long"},{"midi":72,"label":"Low · Hit"},{"midi":73,"label":"Low · Choked Hit"},{"midi":74,"label":"Low · Hit"},{"midi":75,"label":"Low · Choked Hit"},{"midi":76,"label":"Low · Roll"},{"midi":77,"label":"Low · Damped Short"},{"midi":79,"label":"Low · Damped Medium"},{"midi":81,"label":"Low · Damped Long"},{"midi":84,"label":"Low · Hit"},{"midi":85,"label":"Low · Choked Hit"},{"midi":86,"label":"Low · Hit"},{"midi":87,"label":"Low · Choked Hit"},{"midi":88,"label":"Low · Roll"},{"midi":89,"label":"Low · Damped Short"},{"midi":91,"label":"Low · Damped Medium"},{"midi":93,"label":"Low · Damped Long"},{"midi":96,"label":"Low · Hit"},{"midi":97,"label":"Low · Choked Hit"},{"midi":98,"label":"Low · Hit"},{"midi":99,"label":"Low · Choked Hit"},{"midi":100,"label":"Low · Roll"},{"midi":101,"label":"Low · Damped Short"},{"midi":103,"label":"Low · Damped Medium"},{"midi":105,"label":"Low · Damped Long"}] },
     ] },
-    { slug: "small_metals_tambourines", name: "Tambourines", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 5, techniques: [
+    { slug: "small_metals_tambourines", name: "Tambourines", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 5, techniques: [
       { key: "small_metals_tambourines_pop_tambourine", label: "Tambourines — Pop Tambourine", channel: 5, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 81,
         keys: [{"midi":36,"label":"Short Shake L"},{"midi":37,"label":"Accent L"},{"midi":38,"label":"Short Shake R"},{"midi":39,"label":"Accent R"},{"midi":40,"label":"Shake Roll"},{"midi":41,"label":"Hand Hit L"},{"midi":43,"label":"Hand Hit R"},{"midi":45,"label":"Hand Roll"},{"midi":72,"label":"Short Shake L · 2"},{"midi":73,"label":"Accent L · 2"},{"midi":74,"label":"Short Shake R · 2"},{"midi":75,"label":"Accent R · 2"},{"midi":76,"label":"Shake Roll · 2"},{"midi":77,"label":"Hand Hit L · 2"},{"midi":79,"label":"Hand Hit R · 2"},{"midi":81,"label":"Hand Roll · 2"}] },
       { key: "small_metals_tambourines_alt_tambourine", label: "Tambourines — Alt Tambourine", channel: 5, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 93,
@@ -600,29 +367,29 @@ const ARO_PERC = {   // 14 instrument(s) selected 2026-09-22: small_metals_finge
       { key: "small_metals_tambourines_orchestral_tambourine", label: "Tambourines — Orchestral Tambourine", channel: 5, kind: "key", loud: "vel", rangeLow: 60, rangeHigh: 103,
         keys: [{"midi":60,"label":"Short Shake L"},{"midi":61,"label":"Accent L"},{"midi":62,"label":"Short Shake R"},{"midi":63,"label":"Accent R"},{"midi":64,"label":"Shake Roll"},{"midi":65,"label":"Hand Hit L"},{"midi":67,"label":"Hand Hit R"},{"midi":96,"label":"Short Shake L · 2"},{"midi":97,"label":"Accent L · 2"},{"midi":98,"label":"Short Shake R · 2"},{"midi":99,"label":"Accent R · 2"},{"midi":100,"label":"Shake Roll · 2"},{"midi":101,"label":"Hand Hit L · 2"},{"midi":103,"label":"Hand Hit R · 2"}] },
     ] },
-    { slug: "toys_castanets", name: "Castanets", library: "ARO High Percussion", status: "verified", port: "LGPerc", channel: 6, techniques: [
+    { slug: "toys_castanets", name: "Castanets", library: "ARO High Percussion", status: "verified", port: "DECPerc", channel: 6, techniques: [
       { key: "toys_castanets_handle", label: "Castanets — Handle", channel: 6, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 65,
         keys: [{"midi":36,"label":"1 · Single L"},{"midi":38,"label":"1 · Single R"},{"midi":40,"label":"1 · Roll"},{"midi":41,"label":"1 · Flam"},{"midi":60,"label":"2 · Single L"},{"midi":62,"label":"2 · Single R"},{"midi":64,"label":"2 · Roll"},{"midi":65,"label":"2 · Flam"}] },
       { key: "toys_castanets_machine", label: "Castanets — Machine", channel: 6, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 77,
         keys: [{"midi":48,"label":"1 · Single L"},{"midi":50,"label":"1 · Single R"},{"midi":52,"label":"1 · Roll"},{"midi":53,"label":"1 · Flam"},{"midi":72,"label":"2 · Single L"},{"midi":74,"label":"2 · Single R"},{"midi":76,"label":"2 · Roll"},{"midi":77,"label":"2 · Flam"}] },
     ] },
-    { slug: "toys_claves", name: "Claves", library: "ARO High Percussion", status: "verified", port: "LGPerc", channel: 7, techniques: [
+    { slug: "toys_claves", name: "Claves", library: "ARO High Percussion", status: "verified", port: "DECPerc", channel: 7, techniques: [
       { key: "toys_claves", label: "Claves", channel: 7, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 69,
         keys: [{"midi":36,"label":"Pair 3 Low"},{"midi":38,"label":"Pair 3 High"},{"midi":40,"label":"Pair 2 Low"},{"midi":41,"label":"Pair 2 High"},{"midi":43,"label":"Pair 1 Low"},{"midi":45,"label":"Pair 1 High"},{"midi":60,"label":"Pair 3 Low"},{"midi":62,"label":"Pair 3 High"},{"midi":64,"label":"Pair 2 Low"},{"midi":65,"label":"Pair 2 High"},{"midi":67,"label":"Pair 1 Low"},{"midi":69,"label":"Pair 1 High"}] },
     ] },
-    { slug: "toys_shakers", name: "Shakers", library: "ARO High Percussion", status: "verified", port: "LGPerc", channel: 8, techniques: [
+    { slug: "toys_shakers", name: "Shakers", library: "ARO High Percussion", status: "verified", port: "DECPerc", channel: 8, techniques: [
       { key: "toys_shakers_pair_a", label: "Shakers — Pair A", channel: 8, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 63,
         keys: [{"midi":36,"label":"Low"},{"midi":37,"label":"High"},{"midi":38,"label":"Low · 36"},{"midi":39,"label":"High · 37"},{"midi":60,"label":"Low · 36"},{"midi":61,"label":"High · 37"},{"midi":62,"label":"Low · 38"},{"midi":63,"label":"High · 39"}] },
       { key: "toys_shakers_pair_b", label: "Shakers — Pair B", channel: 8, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 75,
         keys: [{"midi":48,"label":"Low"},{"midi":49,"label":"High"},{"midi":50,"label":"Low · 48"},{"midi":51,"label":"High · 49"},{"midi":72,"label":"Low · 48"},{"midi":73,"label":"High · 49"},{"midi":74,"label":"Low · 50"},{"midi":75,"label":"High · 51"}] },
     ] },
-    { slug: "brake_drums", name: "Brake Drums", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 9, techniques: [
+    { slug: "brake_drums", name: "Brake Drums", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 9, techniques: [
       { key: "brake_drums_poly_beater", label: "Brake Drums — Poly Beater", channel: 9, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 43,
         keys: [{"midi":36,"label":"Low · Hit L"},{"midi":37,"label":"Middle · Hit L"},{"midi":38,"label":"Low · Hit R"},{"midi":39,"label":"Middle · Hit R"},{"midi":41,"label":"High · Hit L"},{"midi":43,"label":"High · Hit R"}] },
       { key: "brake_drums_rubber_mallets", label: "Brake Drums — Rubber Mallets", channel: 9, kind: "key", loud: "vel", rangeLow: 60, rangeHigh: 67,
         keys: [{"midi":60,"label":"Low · Hit L"},{"midi":61,"label":"Middle · Hit L"},{"midi":62,"label":"Low · Hit R"},{"midi":63,"label":"Middle · Hit R"},{"midi":65,"label":"High · Hit L"},{"midi":67,"label":"High · Hit R"}] },
     ] },
-    { slug: "crashes_and_stack", name: "Crashes and Stack", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 10, techniques: [
+    { slug: "crashes_and_stack", name: "Crashes and Stack", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 10, techniques: [
       { key: "crashes_and_stack_sticks", label: "Crashes and Stack — Sticks", channel: 10, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 50,
         keys: [{"midi":36,"label":"12\" Crasher · Hit L"},{"midi":38,"label":"12\" Crasher · Hit R"},{"midi":41,"label":"Cymbal Stack · Hit L"},{"midi":43,"label":"Cymbal Stack · Hit R"},{"midi":48,"label":"14\" Crasher · Hit L"},{"midi":50,"label":"14\" Crasher · Hit R"}] },
       { key: "crashes_and_stack_rods", label: "Crashes and Stack — Rods", channel: 10, kind: "key", loud: "vel", rangeLow: 60, rangeHigh: 74,
@@ -630,13 +397,13 @@ const ARO_PERC = {   // 14 instrument(s) selected 2026-09-22: small_metals_finge
       { key: "crashes_and_stack_dreads", label: "Crashes and Stack — Dreads", channel: 10, kind: "key", loud: "vel", rangeLow: 65, rangeHigh: 67,
         keys: [{"midi":65,"label":"Cymbal Stack · Hit L"},{"midi":67,"label":"Cymbal Stack · Hit R"}] },
     ] },
-    { slug: "wood_blocks", name: "Wood Blocks", library: "ARO High Percussion", status: "verified", port: "LGPerc", channel: 11, techniques: [
+    { slug: "wood_blocks", name: "Wood Blocks", library: "ARO High Percussion", status: "verified", port: "DECPerc", channel: 11, techniques: [
       { key: "wood_blocks_hard_mallets", label: "Wood Blocks — Hard Mallets", channel: 11, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 44,
         keys: [{"midi":36,"label":"Block 4 · Hit L"},{"midi":37,"label":"Block 3 · Hit L"},{"midi":38,"label":"Block 4 · Hit R"},{"midi":39,"label":"Block 3 · Hit R"},{"midi":41,"label":"Block 2 · Hit L"},{"midi":42,"label":"Block 1 · Hit L"},{"midi":43,"label":"Block 2 · Hit R"},{"midi":44,"label":"Block 1 · Hit R"}] },
       { key: "wood_blocks_soft_mallets", label: "Wood Blocks — Soft Mallets", channel: 11, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 56,
         keys: [{"midi":48,"label":"Block 4 · Hit L"},{"midi":49,"label":"Block 3 · Hit L"},{"midi":50,"label":"Block 4 · Hit R"},{"midi":51,"label":"Block 3 · Hit R"},{"midi":53,"label":"Block 2 · Hit L"},{"midi":54,"label":"Block 1 · Hit L"},{"midi":55,"label":"Block 2 · Hit R"},{"midi":56,"label":"Block 1 · Hit R"}] },
     ] },
-    { slug: "bass_drum_alt", name: "Bass Drum (Alt)", library: "ARO Low Percussion", status: "verified", port: "LGPerc", channel: 12, techniques: [
+    { slug: "bass_drum_alt", name: "Bass Drum (Alt)", library: "ARO Low Percussion", status: "verified", port: "DECPerc", channel: 12, techniques: [
       { key: "bass_drum_alt_sticks", label: "Bass Drum (Alt) — Sticks", channel: 12, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 45,
         keys: [{"midi":36,"label":"Single Hit L"},{"midi":37,"label":"Hand Damped Hit L"},{"midi":38,"label":"Single Hit R"},{"midi":39,"label":"Hand Damped Hit R"},{"midi":40,"label":"Roll"},{"midi":41,"label":"Rim Hit L"},{"midi":43,"label":"Rim Hit R"},{"midi":45,"label":"Rim Roll"}] },
       { key: "bass_drum_alt_hard_felt", label: "Bass Drum (Alt) — Hard Felt", channel: 12, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 52,
@@ -650,13 +417,13 @@ const ARO_PERC = {   // 14 instrument(s) selected 2026-09-22: small_metals_finge
       { key: "bass_drum_alt_brushes", label: "Bass Drum (Alt) — Brushes", channel: 12, kind: "key", loud: "vel", rangeLow: 72, rangeHigh: 88,
         keys: [{"midi":72,"label":"Center Hit Open L"},{"midi":73,"label":"Center Hit Closed L"},{"midi":74,"label":"Center Hit Open R"},{"midi":75,"label":"Center Hit Closed R"},{"midi":76,"label":"Roll"},{"midi":77,"label":"Edge Hit Open L"},{"midi":78,"label":"Edge Hit Closed L"},{"midi":79,"label":"Edge Hit Open R"},{"midi":80,"label":"Edge Hit Closed R"},{"midi":84,"label":"Short Sweep L"},{"midi":85,"label":"Long Sweep L"},{"midi":86,"label":"Short Sweep R"},{"midi":87,"label":"Long Sweep R"},{"midi":88,"label":"Swirling"}] },
     ] },
-    { slug: "temple_bowls", name: "Temple Bowls", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 13, techniques: [
+    { slug: "temple_bowls", name: "Temple Bowls", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 13, techniques: [
       { key: "temple_bowls_rubber_mallet", label: "Temple Bowls — Rubber Mallet", channel: 13, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 44,
         keys: [{"midi":36,"label":"Bowl 4 Single Hit L"},{"midi":37,"label":"Bowl 3 Single Hit L"},{"midi":38,"label":"Bowl 4 Single Hit R"},{"midi":39,"label":"Bowl 3 Single Hit R"},{"midi":41,"label":"Bowl 2 Single Hit L"},{"midi":42,"label":"Bowl 1 Single Hit L"},{"midi":43,"label":"Bowl 2 Single Hit R"},{"midi":44,"label":"Bowl 1 Single Hit R"}] },
       { key: "temple_bowls_brush", label: "Temple Bowls — Brush", channel: 13, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 56,
         keys: [{"midi":48,"label":"Bowl 4 Single Hit L"},{"midi":49,"label":"Bowl 3 Single Hit L"},{"midi":50,"label":"Bowl 4 Single Hit R"},{"midi":51,"label":"Bowl 3 Single Hit R"},{"midi":53,"label":"Bowl 2 Single Hit L"},{"midi":54,"label":"Bowl 1 Single Hit L"},{"midi":55,"label":"Bowl 2 Single Hit R"},{"midi":56,"label":"Bowl 1 Single Hit R"}] },
     ] },
-    { slug: "tam_tams_a", name: "Tam Tams A", library: "ARO Metal Percussion", status: "verified", port: "LGPerc", channel: 14, techniques: [
+    { slug: "tam_tams_a", name: "Tam Tams A", library: "ARO Metal Percussion", status: "verified", port: "DECPerc", channel: 14, techniques: [
       { key: "tam_tams_a_tam_tam_mallet", label: "Tam Tams A — Tam Tam Mallet", channel: 14, kind: "key", loud: "vel", rangeLow: 36, rangeHigh: 44,
         keys: [{"midi":36,"label":"Tam Tam A 30\" Single Hit"},{"midi":37,"label":"Tam Tam A 30\" Single Hit Choked"},{"midi":38,"label":"Tam Tam A 30\" Single Hit"},{"midi":39,"label":"Tam Tam A 30\" Single Hit Choked"},{"midi":41,"label":"Tam Tam A 30\" Roll"},{"midi":42,"label":"Tam Tam A 30\" Swells"},{"midi":43,"label":"Tam Tam A 30\" Roll Choked"},{"midi":44,"label":"Tam Tam A 30\" Swells Choked"}] },
       { key: "tam_tams_a_scrape", label: "Tam Tams A — Scrape", channel: 14, kind: "key", loud: "vel", rangeLow: 48, rangeHigh: 56,
@@ -714,12 +481,7 @@ applyMeasuredRanges(INSTRUMENTS, MEASURED_RANGES);
 // ---- MEASURED BEND RANGES (generated by tools/apply_bend_ranges.js — do not edit by hand) ----
 const MEASURED_BEND = {   // measured 2026-09-19T12:20 (30-REC-260919_0803.wav): semitones per full bend on the ordinary voice; RPN 0 honoured = MIDI can change it
   cello: { rangeSt: 1.012, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 60 },   // OK (1b.2, one fraction)
-  english_horn: { rangeSt: 0.922, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 67 },   // OK (1b.2, one fraction)
-  bassoon: { rangeSt: 1.992, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 55 },   // OK (1b.2, one fraction)
-  horn: { rangeSt: 2.004, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 50 },   // OK (1b.2, one fraction)
-  trumpet: { rangeSt: 2.004, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 68 },   // OK (1b.2, one fraction)
   bowed_vibraphone: { rangeSt: 0.334, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 71 },   // OK (1b.2, one fraction)
-  double_bass: { rangeSt: 0.898, spreadSt: undefined, mutableByMidi: false, residueCents: null, pitch: 48 },   // OK (1b.2, one fraction)
 };
 function applyMeasuredBend(all, measured) {   // the measured range replaces the provisional bendRangeSt
   for (const [inst, m] of Object.entries(measured || {})) {
@@ -737,11 +499,7 @@ applyMeasuredBend(INSTRUMENTS, MEASURED_BEND);
 // velocity; no wheel). The horn and the trumpet have no by-key voice on the manual's list; 1m.4.2 checks at the rack (RUNNING_LOG
 // §244: suspects, not facts). ONLY the instruments named here are stamped — an entry of any other instrument without `kind` is
 // caught by tools/roster_check.js, never defaulted.
-const SI2_KINDS = {
-  bassoon: { blow_no_reed: "key", key_click: "key", multiphonics: "key" },
-  horn: {},
-  trumpet: {},
-};
+const SI2_KINDS = {};   // EMPTY at the port (2026-10-04) — piece #6's rows (bassoon · horn · trumpet) left with it
 function applySi2Kinds(all, table) {
   for (const [inst, byKey] of Object.entries(table)) {
     const I = all[inst]; if (!I || !I.techniques) continue;
@@ -764,79 +522,7 @@ applySi2Kinds(INSTRUMENTS, SI2_KINDS);
 // prints them). His word (2026-09-22): "just put them in there. We don't have to give them labels yet."
 const NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 function noteName(midi) { return NOTE_NAMES[midi % 12] + (Math.floor(midi / 12) - 1); }
-const BY_KEY_MAPS = {
-  english_horn: {
-    mp_short: { lo: 52, hi: 60, source: "his picture 2026-09-22: Kontakt E2–C3 marked, nine keys (RUNNING_LOG §287; one press confirms the reading)" },
-  },
-  bassoon: {
-    key_click:    { lo: 34, hi: 75, source: "assumed: the bassoon's range — the click of each fingering" },
-    blow_no_reed: { lo: 34, hi: 75, source: "assumed: the bassoon's range" },
-    multiphonics: { source: "the SI2 manual, BASSOON Multiphonics (page 76–77), C1 = 36; the label = the pitches it sounds, as the manual names them", keys: [
-      { midi: 36, label: "A#1+ A#2+" },   // C1
-      { midi: 37, label: "A#1+ D4+ F3+" },   // C#1
-      { midi: 38, label: "A#1+ D4+" },   // D1
-      { midi: 39, label: "A#1 C#2 C2 C#5" },   // D#1
-      { midi: 40, label: "A#1 D#4 F#3 D4" },   // E1
-      { midi: 41, label: "A#2 C#4 E3" },   // F1
-      { midi: 42, label: "A#3+ B1+ G#3 B2" },   // F#1
-      { midi: 43, label: "A#3+ B1 G#3 C#2" },   // G1
-      { midi: 44, label: "A#3 B2 A3" },   // G#1
-      { midi: 45, label: "A1 A2+ C#4 E4" },   // A1
-      { midi: 46, label: "A3+ G#1+" },   // A#1
-      { midi: 47, label: "A3 G#2 B2+ D4" },   // B1
-      { midi: 48, label: "B1+ A4 F#3+ E4" },   // C2
-      { midi: 49, label: "B1 D#4 B2 C#3" },   // C#2
-      { midi: 50, label: "B1 D#4 F#5" },   // D2
-      { midi: 51, label: "C#2 F4 G#3 F3" },   // D#2
-      { midi: 52, label: "C#3 C3 C#4" },   // E2
-      { midi: 53, label: "C#3 C3 C2 C#4" },   // F2
-      { midi: 54, label: "C#3 C3" },   // F#2
-      { midi: 55, label: "C#3 C4 D3+" },   // G2
-      { midi: 56, label: "C#3 D3 C#4 B4" },   // G#2
-      { midi: 57, label: "C#4 A#1 C#3 C3+" },   // A2
-      { midi: 58, label: "C2+ A#4 C2 C#3+" },   // A#2
-      { midi: 59, label: "C2+ A#4 G3+ C#4" },   // B2
-      { midi: 60, label: "C3+ E3+" },   // C3
-      { midi: 61, label: "C3 B4 G4 F#4" },   // C#3
-      { midi: 62, label: "C3 C#4 A#1" },   // D3
-      { midi: 63, label: "C4 D#4 D4 G#3" },   // D#3
-      { midi: 64, label: "D#2 D#2+ A#3 G4" },   // E3
-      { midi: 65, label: "D#3+ D#2 B4 C#4" },   // F3
-      { midi: 66, label: "D#3+ D3 D4 A5+" },   // F#3
-      { midi: 67, label: "D#3 A4 D4 A#4" },   // G3
-      { midi: 68, label: "D#3 F#3 E3 D#5" },   // G#3
-      { midi: 69, label: "D#4 C#3 A#3 G3" },   // A3
-      { midi: 70, label: "D#4 F#3 A#4 C#5" },   // A#3
-      { midi: 71, label: "D2 F#4 A3 C3" },   // B3
-      { midi: 72, label: "D3 C#3 C#4 A4" },   // C4
-      { midi: 73, label: "D3 E2+ A4 E4" },   // C#4
-      { midi: 74, label: "E2+ C3 E4 A#5" },   // D4
-      { midi: 75, label: "E2+ C5 D#4 F#3" },   // D#4
-      { midi: 76, label: "E3+ E2 C5 E4+" },   // E4
-      { midi: 77, label: "E3 C3+ G4 D3" },   // F4
-      { midi: 78, label: "E3 F3+ E4" },   // F#4
-      { midi: 79, label: "E4 C#3 A#4 F#3" },   // G4
-      { midi: 80, label: "E4 C4+ C#3 C5" },   // G#4
-      { midi: 81, label: "F#4+ C#4" },   // A4
-      { midi: 82, label: "F2+ B4 B2+ C#4" },   // A#4
-      { midi: 83, label: "F2+ C4+ A4+ F4+" },   // B4
-      { midi: 84, label: "F2 C4 F#3 G3" },   // C5
-      { midi: 85, label: "F2 D5 A4 C4" },   // C#5
-      { midi: 86, label: "F3+ A#3+ F3" },   // D5
-      { midi: 87, label: "F3+ C5 F2 A#5" },   // D#5
-      { midi: 88, label: "F3 D#3+ E4+" },   // E5
-      { midi: 89, label: "G#2 D#4 C5 C3" },   // F5
-      { midi: 90, label: "G2 B4 D4 G3" },   // F#5
-      { midi: 91, label: "G2 D4 B4 A3+" },   // G5
-    ] },
-  },
-  // The strings: Xsample's Preset Designer shows every preset's own low / high (Kontakt C3 = 60 — the vibraphone's range was read the same
-  // way, §3820). THE BASS IS KEYED AN OCTAVE ABOVE SOUNDING and Reaper adds the +12 (midi_transpose, the note above): the app's key = the
-  // sampler's key − 12, so Kontakt "E1 · A2" (sampler 40–57) is written here as 28–45 — and the app's note names then read as Kontakt's.
-  double_bass: {
-    tailpiece_vel: { lo: 28, hi: 45, source: "his Preset Designer picture 2026-09-22: 58 Tailpiece Bowed Velocity, low E1 · high A2 (sampler 40–57, −12 for Reaper's +12; RUNNING_LOG §289)" },
-  },
-};
+const BY_KEY_MAPS = {};   // EMPTY at the port (2026-10-04) — piece #6's rows (english_horn · bassoon · double_bass) left with it; a by-key voice's keys are read from his rack (container 4)
 function applyKeyMaps(all, table) {
   for (const [inst, byKey] of Object.entries(table)) {
     const I = all[inst]; if (!I || !I.techniques) throw new Error("BY_KEY_MAPS: no instrument " + inst);
