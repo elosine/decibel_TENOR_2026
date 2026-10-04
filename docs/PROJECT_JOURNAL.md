@@ -190,7 +190,10 @@ deliverables · the planning repo's lines (at his word only).
     **ALREADY DONE, never to be redone:** the reference tone and his system volume (piece #6) · the cello's round robin, volume and
     curve · the Abbey Road round robins (left on, as piece #6) · the percussion's key maps.
     **HIS WORD ON THE REPLIES (§27 · §28): a bare list, one line per item, no table, no detail; the how after, one sentence each.**
-  - **☑ ITEMS 7 · 8 DONE, 9 IN PART (RUNNING_LOG §42):** the card recorded (114 notes, all found), the chain proven against piece #6
+  - **☑ ITEMS 7 · 8 · 9 ALL DONE (RUNNING_LOG §43): the bass flute reset to the factory instrument (his decision (a)), ordinary #15,
+    measured alone, trim −7.52 dB, its curve merged. SIXTEEN faders, FOUR curves. ► NEXT: item 10 — HE LISTENS (reload the composer page;
+    `decibel-first-sound`, then his own material). Then 4.7 the record · 4.10 the how-to pages — and containers 4 · 5 close.**
+  - *(as it stood before the flute's reset:)* **ITEMS 7 · 8 DONE, 9 IN PART (RUNNING_LOG §42):** the card recorded (114 notes, all found), the chain proven against piece #6
     within 0.4 dB on the three clones, FIFTEEN faders set (`bank/trims.json`; his CTRL+S), the bass clarinet's and viola's curves
     built and merged (`bank/velocity_remap.json`). **► OPEN, HIS ONE DECISION — THE BASS FLUTE:** its preset 33 takes its
     loudness from the MOD WHEEL (saved from preset 1, not #15) and its four slots are not in one state — so it has no trim and no
@@ -264,7 +267,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **ITEMS 7 · 8 · 9 — THE INSTRUMENT CARD FOR THIS RACK** (the schedule from the recipe · the REC track · the run · the analysis · the trims on the faders · the bass flute's curve). Round robin skipped at his word. Then 10, listen — and container 4 · 5 are done | Opus | no — `/clear` + `/postclear` if the chat is long |
+| **►** | **ITEM 10 — HE LISTENS.** The rack is measured and trimmed: 16 instruments on piece #6's absolute scale, 16 faders, 4 dynamics curves (RUNNING_LOG §42 · §43). After his ear: 4.7 the record (RACK_SETTINGS) · 4.10 the how-to pages (his ask, §18) · the rack committed at his word — then containers 4 · 5 are done and container 6 (the notation set-up) is next | Opus (the wrap) · Fable (container 6's talk) | yes, before container 6 |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·

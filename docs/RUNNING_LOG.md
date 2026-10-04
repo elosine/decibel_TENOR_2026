@@ -1469,3 +1469,29 @@ further diagnosis claimed. The bass flute has NO trim and NO curve; its card row
 instrument by one script (`reaper/kontakt/reset_bass_flute.lua`, to be written: remove the four slots, load four fresh),
 ordinary back to #15, and the AI re-measures the flute alone (13 notes, two minutes) · (b) he remakes the preset from #15
 and loads it in the four slots, then the same re-measure.
+
+## §43. THE BASS FLUTE — reset to the factory instrument, measured alone, trimmed, its curve built; items 7 · 8 · 9 are done (2026-10-04, Opus)
+
+**His words:** *"saved, a, go ahead with the reset script"* — then *"done"*.
+
+- **`reaper/kontakt/reset_bass_flute.lua`** (it refuses any Kontakt that does not hold a flute): run by him 17:16 — 4 slots
+  removed ("Bass Flute" · "… curve A · B · C"), 4 loaded fresh from the factory `.nki`, channels 1 … 4, −6.0 dB each, `ok`.
+  The recipe's ordinary voice back to **#15 Vibrato Velocity**; preset 33 and its file stay in the record (§37 · §38), unused.
+- **Proof the four slots are alike now** (`key_sweep`, G3, #15): velocity 24 → −28.4 · −28.5 · −28.4 · −28.5 dB on slots 1 … 4;
+  velocity 127 → −17.0 · −16.8 · −16.2 · −15.6 (the round robin's scatter, which he has accepted).
+- **The flute alone:** `card_schedule.js --only bass_flute` (13 notes, 94 s) → `17-REC-261004_1717.wav` →
+  `analyze_card.py --merge`: 13 rows replaced, the card now 16 instruments. Integrated, three pitches (50 · 67 · 84):
+  velocity 24: **-37.74** (-40.43 · -45.57 · -27.23) · 64: **-27.96** (-31.9 · -31.95 · -20.03) · 100: **-28.97**
+  (-36.71 · -33.28 · -16.91) · 127: **-24.32** (-30 · -27.93 · -15.02). The bend again: +51.4 c at half bend = 1.03 st.
+- **What the numbers say about this instrument:** it now climbs with velocity (13.4 dB from 24 to 127) · NOT monotone on single
+  notes — 100 reads below 64, and D3 alone swings 4.8 dB between 64 and 100: the round robin, three members, left on · the
+  REGISTER is steep: at fff the top pitch (C6) is 15 dB above the bottom (D3).
+- **The trim:** −31.84 − (−24.32) = **−7.52 dB**, applied and read back; `bank/trims.json` 16 rows; the recipe's `balanceDb`.
+- **The curve:** `build_remap_card.js --only bass_flute` → `remap_merge.js --cc7-from cello` (Kontakt's fader law, measured on
+  the cello — not on the flute). Own span 17.6 dB, register spread at fff 15.0 dB → **clamped 47 anchor steps at the quiet end
+  and 49 at the loud end, of 62**: with a register that steep, one velocity ladder cannot give every pitch the full written
+  12 dB. The curve is the best the card supports; a written fff low on the flute and a written pp high on it will both sit
+  closer to mf than written. A finer register measurement (piece #6's "regfine", 15 pitches) is the remedy if it matters (NITS).
+- **`dyn_table_check`** now names the four held instruments.
+- **ITEMS 7 · 8 · 9 OF §29's LIST ARE DONE.** Sixteen instruments on one absolute scale, sixteen faders, four dynamics curves.
+  What is left is item 10: his ear.

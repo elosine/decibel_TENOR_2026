@@ -17,6 +17,7 @@
 --   node tools/reaper_job.js run reaper/bridge/jobs/apply_trims.lua
 local JS_NAME = 'utility/volume'
 local TRIMS = {
+  { name = "Bass Flute XS", faderDb = -7.52, extraDb = 0.00 },   -- Bass Flute: was 0.00, -7.52
   { name = "Bass Clarinet XS", faderDb = -13.16, extraDb = 0.00 },   -- Bass Clarinet: was 0.00, -13.16
   { name = "Viola XS", faderDb = -5.23, extraDb = 0.00 },   -- Viola: was 0.00, -5.23
   { name = "Crotales RM", faderDb = -7.18, extraDb = 0.00 },   -- Crotales: was 0.00, -7.18

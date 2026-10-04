@@ -23,6 +23,26 @@
  },
  "instruments": [
   {
+   "inst": "bass_flute",
+   "label": "Bass Flute",
+   "family": "pitched",
+   "measure": "integrated",
+   "measuredDb": -24.32,
+   "maxMomentaryDb": -22.98,
+   "integratedDb": -24.32,
+   "momentaryMinusIntegratedDb": 1.34,
+   "currentTrimDb": 0,
+   "trimAtMeasurementDb": 0,
+   "basis": "the trim in force at measurement",
+   "deltaDb": -7.52,
+   "proposedTrimDb": -7.52,
+   "faderDb": -7.52,
+   "jsVolumeDb": 0,
+   "soundingS": 4.56,
+   "nPitches": 3,
+   "reference": "the instrument mean across its measured pitches"
+  },
+  {
    "inst": "bass_clarinet",
    "label": "Bass Clarinet",
    "family": "pitched",
@@ -326,5 +346,5 @@
   "overTheCeilingToday": [],
   "method": "each voice's measured sample peak at velocity 127 plus its change, summed in POWER — pessimistic, because independent peaks rarely coincide; 1b.5 measures the real thing"
  },
- "_decibel": "decibel TENOR 2026, 2026-10-04 (RUNNING_LOG §42): twelve instruments measured in this rack (reaper/Media/17-REC-261004_1655.wav) against PIECE #6's per-voice level (-31.84 dB on the card's scale — \"9 voices\" is piece #6's figure, kept so the three carried trims stay exact; a different N is one uniform shift of every fader). The bass flute is NOT here: its preset 33 took its loudness from the mod wheel, so its velocity rows are void — re-measured when that is settled."
+ "_decibel": "decibel TENOR 2026, 2026-10-04 (RUNNING_LOG §42): twelve instruments measured in this rack (reaper/Media/17-REC-261004_1655.wav) against PIECE #6's per-voice level (-31.84 dB on the card's scale — \"9 voices\" is piece #6's figure, kept so the three carried trims stay exact; a different N is one uniform shift of every fader). The bass flute joined after its reset to the factory instrument (preset 15), measured alone in 17-REC-261004_1717.wav (RUNNING_LOG §43)."
 }

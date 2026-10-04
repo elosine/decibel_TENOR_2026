@@ -143,3 +143,6 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 - **The mallets' trims rest on ONE main patch each** (crotales main metal · glockenspiel main hard · xylophone main · marimba main); the other 35 patches share the track's fader and are unmeasured — the xylophone's patches differ by up to ~29 dB at one velocity (§32). Measure a patch when the music uses it.
 - **The per-voice target is piece #6's (−31.84 dB, "nine voices")**, kept so the carried trims stay exact. Six players would be +1.76 dB on every fader. His to ask.
 - **The REC track stays in the rack** (track 17, 16 receives, master send off). `make_tracks.lua` · `make_perc_tracks.lua` add tracks before it only by name — check its receives after adding a track (`make_rec_track.lua` is idempotent).
+
+- **RESOLVED 2026-10-04 (RUNNING_LOG §43): the bass flute has its trim (−7.52 dB) and its curve** — after a reset to the factory instrument, ordinary #15.
+- **The bass flute's dynamics curve is heavily clamped** (47 low / 49 high of 62 anchor steps, RUNNING_LOG §43): its register spread at fff is 15 dB against an own span of 17.6, on three pitches, with the round robin on. If its dynamics sound flat or lopsided: a fine register run (`regfine`, ~15 pitches at 127) and a rebuild; or a round-robin-off preset made FROM #15.

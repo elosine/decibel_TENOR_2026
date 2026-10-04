@@ -48,7 +48,7 @@ const INSTRUMENTS = {
   // RANGE 48–86 (C3–D6 sounding; Kontakt's keyboard calls it C2–D5): MEASURED on #15 by tools/key_sweep.js — 47 silent, 48 … 86
   // sound, 87 on silent. Every other preset is given that zone until it is read (the preset loaded by default stops at 64;
   // the pseudo contrabass pair surely differs). NOT yet measured: the bend range, the loudness (container 5), the by-key voices' keys.
-  bass_flute: { ordinary: "vib_vel", playerBendSt: 1, bendRangeSt: 1,   /* the bend MEASURED 2026-10-04: +49.8 cents at half bend = 1.00 st (the card, RUNNING_LOG §42) */ label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 86, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassFluteTechs(48, 86) },
+  bass_flute: { balanceDb: -7.52, ordinary: "vib_vel", playerBendSt: 1, bendRangeSt: 1,   /* the bend MEASURED 2026-10-04: +49.8 cents at half bend = 1.00 st (the card, RUNNING_LOG §42) */ label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 86, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassFluteTechs(48, 86) },
 
   // ---- BASS CLARINET — Xsample (Kontakt), CC#0 selects the preset — PIECE #5'S ENTRY, CARRIED (2026-10-04, RUNNING_LOG §34) ----
   // The rack's track "Bass Clarinet XS" is the CLONE of piece #5's (the Tempus septet's) as saved 2026-09-17: the same Kontakt,
