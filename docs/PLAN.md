@@ -92,6 +92,9 @@ composer score. *To be laid out when we discuss it.*
 ***Why:*** the lineage's "first sound" step — one thing heard end to end before anything else is built.
 The trigger object in the composer score (the first member of 11) and the first effect — a filter, his example — heard on a
 live instrument's note, in the first piece's composer score. *To be laid out when we discuss it.*
+**RE-READ by his brief for the Decibel piece, 2026-10-04 (RUNNING_LOG §4; `#6 §819`):** the first sound is a note CAPTURED at a
+MIC OPENING and RETURNED beside the live note (11's first two members: the mic opening · the return); the filter — the pedals of
+resonance, 6's first — comes third. Laid out in the Decibel piece's running order, steps 8 … 10.
 
 ## 6. The effects of his brief — `todo`, open-ended
 
@@ -113,6 +116,10 @@ events; the film and the print carrying them. 12's kinds are drawn here. *To be 
 How a piece pulls the engine: the submodule checkout inside the piece · the commit recorded · the seams applied (3) · the
 batteries and THE SHIELD run in the piece · a piece's lock pins the commit. Written in `docs/TAKE.md` so a cold model runs it.
 *To be laid out when we discuss it.*
+
+**REFINED 2026-10-04 (RUNNING_LOG §4; the Decibel journal's D7):** the take is a git SUBTREE, not a submodule — the engine's code
+sits in each piece as ordinary files in `electronics/`; `git subtree add` / `pull` to take, `git subtree push --prefix=electronics`
+at every wrap to land here; the AI's steps, never his. Proven at the first push.
 
 ## 9. The three set-ups — `doing`
 

@@ -34,6 +34,10 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 ### THE REPO OPENS ON THIS (2026-10-03, Fable) — PART 1 DONE; the next part is HIS to name
 
+- **UPDATE 2 · 2026-10-04 (RUNNING_LOG §4; `#6 §819`) — THE SEAT REFINED at his word: a git SUBTREE at `electronics/` inside each
+  piece, not a submodule — he never touches it; the AI pushes at every wrap. Part 5 re-read: the first sound is a note CAPTURED and
+  RETURNED; the filter third. Part 11's first two members named (the mic opening · the return). The Decibel piece's running order
+  (its journal §2, steps 6 … 10) is where the engine's first code will be built. Q2 answered in principle.
 - **UPDATE 2026-10-04 (RUNNING_LOG §3; `#6 §816 … §818`) — 9.1: THE DECIBEL PIECE'S REPO EXISTS,** `decibel_TENOR_2026` (public;
   the protocol's container 2 done — the kit only, no code). Next THERE: container 3, the copy-forward. Here nothing is in hand:
   the first take needs that copy-forward and parts 3 · 4 laid out.

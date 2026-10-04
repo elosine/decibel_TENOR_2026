@@ -88,3 +88,19 @@ chain · the playback route · OSC) → parts 11 and 12 added, the flexibility a
 **Written here:** PLAN part 9 `doing`, sub-part **9.1** added (the plan's rule: a sub-part at the moment it is needed).
 
 **What it means for the engine:** nothing is in hand here yet. The first take needs the Decibel piece's copy-forward (its container 3 — the composer score must exist there) and parts 3 · 4 laid out here.
+
+# 2026-10-04 — written from piece #6's chat (Fable)
+
+## §4. The engine's seat in a piece REFINED at his word: a git SUBTREE at `electronics/`, not a submodule · part 5 re-read · THE SORTING
+
+**What prompted it:** his brief for the Decibel piece (`decibel_TENOR_2026/docs/RUNNING_LOG.md` §2; `#6 §819`): *"I would expect AI to try to organize where everything goes as we're building it and how it sits in the system to try to organize that architecture as we go along. Or if we, you know, we need to have a conversation at any point about that. But I kind of want that to be done in the back end as much as possible. So I know we took a decision to keep the live electronics in a separate repo, but I don't want to have to fuss with that too much. I don't want that to become an extra administrative burden. So if we need to rethink that decision, I'm open to that."*
+
+**The call (the AI's, at his word; his to reverse — the Decibel journal's D7):** the decision of `#6 §806` STANDS — one engine, this repo, built in the first piece where he hears it. Its one precision (`#6 §807`, a submodule, "the files live once on disk") is REPLACED: the engine's code lives inside each piece as ORDINARY FILES in `electronics/`, and this repo is kept in step by `git subtree push --prefix=electronics` at every wrap of a piece's session — the AI's step, never his; a piece takes the engine by `git subtree add` / `pull`.
+
+**Why a subtree and not the submodule:** a submodule needs two commits per change (inside it, then the pointer in the piece) and a push of the inner repo BEFORE the outer, by every cold session — exactly the burden he named, moved onto the AI, where a missed step breaks a clone. With a subtree a session commits as always; a clone of the piece is whole; a missed `subtree push` costs nothing — the next one carries everything. Rejected: everything in the first piece and a split later (this repo would hold no code for weeks; the subtree gives it the history as it happens).
+
+**What changes in this plan:** part 8 (the take) is written as a subtree recipe, `docs/TAKE.md` at its first use. **Part 5 RE-READ by his brief:** the first sound is a note CAPTURED at a mic opening and RETURNED beside the live note — the filter (the pedals of resonance) is the third object, not the first. **Part 11's first two members** named: the mic opening (a window on a brick: time · length · instrument · a CATEGORY) and the return (a banked sample placed near the live note by an algorithm). **Part 6's first effect:** the pedals of resonance — a folder `SynthDef_petalsOfResonance` exists under `C:\Users\jwloy\GitHub` (the spelling there "petals", his to confirm; a SuperCollider name — part 2's read of the sandbox says what it is built on).
+
+**THE SORTING:** the boundary test is a standing practice in the Decibel piece's CLAUDE.md — does the code know THIS piece → the piece; does it work for any piece → `electronics/`. The AI places; he is told in one line. Every piece's CLAUDE.md carries it.
+
+**Q2 answered in principle:** the pieces take the engine by subtree; proven at the first push. Where the first code is built: the Decibel piece's running order (its journal §2), steps 6 … 10.
