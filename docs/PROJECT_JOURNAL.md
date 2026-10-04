@@ -166,11 +166,12 @@ deliverables · the planning repo's lines (at his word only).
   six), so `TRACKS`, the META and curve layers, the lane CSS, `layoutVersion` 8. PLAN § 0.3 § THE COUPLING is the map (kinds A · B · C,
   by file and line). A lane can be added later (RUNNING_LOG §3), so "one for now" is an answer. Also at 3.3: the roles line (the piano
   absent · the percussion live · the vibraphone and its second seat only if Q4 says so — the protocol's 3.10) · the bundled font (3.9).
-- **ASKED OF HIM AT THIS WRAP, the answer pending:** the home's 9.12 — the tool docs' ONE shared, piece-neutral copy: now, or not
-  now. Either way the 19 tool docs are here as copied and get a provenance line each at 3.6.
+- **ANSWERED AT THIS WRAP — the home's 9.12, the tool docs' ONE shared, piece-neutral copy: NOT NOW** (his *"a"*, 2026-10-04,
+  RUNNING_LOG §11). The 19 tool docs stay here as copied and get a provenance line each at 3.6; one is tidied when its tool is next
+  used. Do not raise 9.12 again in this start.
 - **`Resume reads:`** this §2 · PLAN § 0.3 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 3, steps 3.3 … 3.6 · for 3.8 only, the
   harvest lines named above. Nothing else.
-- **Pending him:** Q4 · 9.12 · the ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this
+- **Pending him:** Q4 · the ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this
   piece, at his word only (the protocol's 2.6).
 - **Deliberately uncommitted:** nothing.
 

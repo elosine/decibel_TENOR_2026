@@ -354,3 +354,18 @@ cast, this piece's pages — do not exist yet).
 **The port's four scripts are kept in the repo, `tools/port/`** (`classify.js` · `copy31.sh` · `stage32.sh` · `run_batteries.sh`, with
 the copy list and the leave list) — as they ran, for 3.5's second run and for the record; they write their outputs beside themselves,
 so they are run from a copy in the scratchpad.
+
+## §11. THE WRAP OF AGENDA ITEMS 1 · 2 — the tool docs' shared copy: NOT NOW, his "a"; and the question had to be asked twice (2026-10-04, Opus)
+
+**The report put to him:** the two asks, the survey, the copy (369 / 369), the proof (52 checks: 34 green, 18 red, none the copy's), the
+app on 5500 · the AI's call on the twelve checks of piece #5's cast (they leave at the next commit, his to reverse — no objection
+raised) · and ONE decision, the home's 9.12, asked "at the copy" as journal §2 said: the tool docs' one piece-neutral copy in
+`composition-system` — (a) not now, the AI's recommendation: a rewrite, best done when a tool is next used · (b) now, before the lanes.
+
+**His reply was the question pasted back, and: *"simplify pls"*.** The first wording carried the protocol's words ("9.12", "shared
+copies", "piece-neutral", "before the lanes are turned"). Asked again in his terms — *the tool manuals: tidy them now or later?* — two
+lines each. **His word: *"a"*.** (The planning method's rule held: shortened, not re-explained. For the protocol's v2: a step's ask is
+written in plain words IN the protocol, as 2.1's deviation already says.)
+
+**So:** the 19 tool docs stay as copied; a provenance line each at 3.6; one is tidied the day its tool is next used. 9.12 is not raised
+again in this start. A clear was advised at this point — everything is in the journal and pushed.
