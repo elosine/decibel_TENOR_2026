@@ -94,15 +94,9 @@ const INSTRUMENTS = {
     techniques: [
       // 1m.4.1: `main` is PITCHED on purpose — the placeholder takes any note it is dealt (his harmony takes carry 241 percussion
       // notes on it, RUNNING_LOG §212); a real instrument is chosen by NAME from the by-key voices below it.
-      { key: "main", label: "struck, plain (the placeholder — ch 1, the rack's Finger Cymbals track)", channel: 1, kind: "pitched", loud: "vel" },
-      // LGMF PLAN 1l.1 (2026-09-21; LG-59, RUNNING_LOG §199) — the ONE exception to "catalogued, never typed here": the
-      // Texture panel's percussion fallback, his `claves pair 2 high`, on the rack's own Claves ARO track (ch 7, bank/perc_rack.json).
-      // Keyed EXACTLY as tools/apply_perc.js keys the catalog's toys_claves, so a later selection takes it over unchanged; `main`
-      // stays the ordinary voice, so no written note changes. Pair 2 High = key 41 (the catalog repeats the six at 60–69).
-      { key: "toys_claves", label: "Claves", channel: 7, rangeLow: 36, rangeHigh: 69, kind: "key", loud: "vel",
-        keys: [{ midi: 36, label: "Pair 3 Low" }, { midi: 38, label: "Pair 3 High" }, { midi: 40, label: "Pair 2 Low" }, { midi: 41, label: "Pair 2 High" },
-               { midi: 43, label: "Pair 1 Low" }, { midi: 45, label: "Pair 1 High" }, { midi: 60, label: "Pair 3 Low" }, { midi: 62, label: "Pair 3 High" },
-               { midi: 64, label: "Pair 2 Low" }, { midi: 65, label: "Pair 2 High" }, { midi: 67, label: "Pair 1 Low" }, { midi: 69, label: "Pair 1 High" }] },
+      { key: "main", label: "struck, plain (the placeholder — ch 1, the rack's Bongos track)", channel: 1, kind: "pitched", loud: "vel" },
+      // (Piece #6 kept a hand-typed claves voice here for the Texture panel's click; this rack has no claves. The click is the
+      // wood blocks' — a generated voice, named in score/public/texture_panel.js — 2026-10-04, RUNNING_LOG §45.)
     ],
   },
 

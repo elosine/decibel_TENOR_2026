@@ -146,3 +146,9 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 
 - **RESOLVED 2026-10-04 (RUNNING_LOG §43): the bass flute has its trim (−7.52 dB) and its curve** — after a reset to the factory instrument, ordinary #15.
 - **The bass flute's dynamics curve is heavily clamped** (47 low / 49 high of 62 anchor steps, RUNNING_LOG §43): its register spread at fff is 15 dB against an own span of 17.6, on three pitches, with the round robin on. If its dynamics sound flat or lopsided: a fine register run (`regfine`, ~15 pitches at 127) and a rebuild; or a round-robin-off preset made FROM #15.
+
+- **`check_rules` is 31 of 32** (2026-10-04, RUNNING_LOG §45): "(8) the cents and the partial read the same in C and in the transposed parts" has no page with a sequence overlay to compare. Green by itself once the piece has one.
+- **The mallets lane's pitch is the WRITTEN one** (the Ricotti library is keyed at written pitch; crotales and glockenspiel sound +24, xylophone +12). The notation is right as it is. A tool that deals SOUNDING pitches to the lane (a harmony take, a reference chord) would be octaves off — give the lane a per-instrument octave when such a tool is first used on it.
+- **No measured sample length for any struck voice of this rack** — the extractor uses the drawn length (12 warnings on the first page). `bank/instrument_card.json` holds a `soundingS` for every instrument measured; feed `bank/sample_lengths.json` from it when a struck note's printed length matters.
+- **Container 6, open:** his three calls (the pitch form · the percussion staff's line order · the short names) · the first print page not looked at (no PDF rasteriser here; `pdftoppm`) · `notation/ir/README.md` (6.8) · the main file's discipline (6.6) · the shield needs approved pages.
+- **RESOLVED 2026-10-04 (§45): the Texture panel's click** is the wood blocks' (hard mallets, block 2); the hand-typed claves voice is gone.

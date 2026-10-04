@@ -1,0 +1,15 @@
+{
+ "irs": [
+  {
+   "id": "decibel-first-sound",
+   "label": "first sound (container 6 test)",
+   "score": "decibel-first-sound",
+   "window": [
+    0,
+    42
+   ],
+   "profile": "trance",
+   "exp": true
+  }
+ ]
+}

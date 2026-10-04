@@ -54,7 +54,7 @@ const METAL = () => (typeof META_LAYER !== 'undefined' ? META_LAYER : (root.META
 // his defaults (LG-59): the english horn Staccato Velocity · bassoon, horn, trumpet staccato · the strings Spiccato Velocity
 const ART_DEFAULT = { bass_flute: 'ord', bass_clarinet: 'ord', viola: 'spicc_vel', cello: 'spicc_vel' };
 // the percussion's fallback when a take gives the Percussion player nothing: claves, pair 2 high (sandbox/instruments.js, 1l.1)
-const CLAVES = { tech: 'toys_claves', midi: 41, name: 'claves · pair 2 high' };
+const CLAVES = { tech: 'wood_blocks_hard_mallets', midi: 41, name: 'wood block 2 · hard mallet' };   // the Decibel rack (2026-10-04): piece #6's claves are not in it; the dry click of THIS rack — the AI's pick, his to change. The name CLAVES is piece #6's, kept.
 const PERC = 'percussion', VIB = 'bowed_vibraphone';
 const STORE = 'septet.texture.lgmf.v1';        // the chosen take and the articulations — this browser's convenience only
 const RHYTHM_PANEL = 'rhythm';                 // 1l.2: the bucket in bank/rhythm_takes.json (the `rhythms` store)

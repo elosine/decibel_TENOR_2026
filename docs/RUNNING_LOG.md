@@ -1495,3 +1495,79 @@ and loads it in the four slots, then the same re-measure.
 - **`dyn_table_check`** now names the four held instruments.
 - **ITEMS 7 · 8 · 9 OF §29's LIST ARE DONE.** Sixteen instruments on one absolute scale, sixteen faders, four dynamics curves.
   What is left is item 10: his ear.
+
+## §44. THE HOW-TO PAGES — written in the home, his ask of §18 (2026-10-04, Opus)
+
+**His words:** *"saved again, go ahead with the how-to notes and can we move directly to and thru 4? and anything from 5 now?"*
+
+- Four short pages in `composition-system/protocol/howto/` (+ a README), pushed there (`9d6c31c`): **`rack.md`** (the ports by
+  the registry · the rack as text, cloned · inputs by port name · three sound checks, smallest first · the first-sound score and
+  the capture before he plays it · `curveTechniques: []`) · **`kontakt.md`** (what a script can and cannot reach · the four
+  slots and why CC7 lives on the curve copies · articulations: CC0 for Xsample, a slot per patch for Ricotti · ranges · round
+  robin, and the copy-from-the-right-preset trap) · **`spitfire-aro.md`** (one instance per instrument · the browser the only
+  loader · the top-key check · never CC7) · **`measuring.md`** (what is already measured FIRST · the chain in seven lines ·
+  proving it with the clones · the pre-flight that would have saved a re-run).
+- By JOB, not by plugin family as the protocol's 4.10 had it: the same instrument crosses three jobs. UVI is not written (no
+  use since piece #6); its record is named in the README. The protocol's 4.10 ticked by a dated entry; the home's INDEX and LOG.
+- The steps' own wording in the protocol is NOT revised — his word (§37): later, with the hole he named.
+
+## §45. CONTAINER 6 — THE NOTATION SET-UP: the registry for six parts, the technique keys registered, a save extracted, validated, drawn, exported; and one item of container 7 (2026-10-04, Opus)
+
+**6.0 THE REGISTRY** (`notation/registry/ensemble.json`, rewritten): BFl treble **+12** (sounds an octave below written) · BCl
+treble **+14** (B♭, the French notation — his word in piece #5) · Perc, the UNPITCHED STAFF of piece #6's type, **eight lines** ·
+Mal treble, no transposition · Va alto · Vc bass. Groups: a bracket for the winds · a BRACE, joined, for the one percussionist's
+two parts · a bracket for the strings. META 6, the curve windows 7 · 8 · 9. No staff for the electronics (D8).
+- **The mallets need no transposition in the registry — a finding:** the Ricotti library maps all four at their WRITTEN pitch
+  (crotales C4–C6 · glockenspiel G3–C6 · xylophone F3–B6 · marimba C2–C7 as keyed), so the key the score sends is the note to
+  write; the crotales and the glockenspiel sound two octaves above it, the xylophone one. (So on this lane the score's
+  "pitch" is the WRITTEN one — a harmony tool that deals sounding pitches to it would be octaves off. NITS.)
+- **Three calls made by the AI by carrying the lineage, each his to reverse (the protocol's "stop and ask"):** the pitch form —
+  the working page TRANSPOSED, the presentation score IN C (the bass clarinet at sounding pitch on a bass clef there, as piece
+  #5; the bass flute keeps its octave, as piece #6's double bass) · the percussion staff's LINE ORDER — Coil · Bgo · SusCym ·
+  Shime · China · Toms · WB · BD, his rule of piece #6 ("high to low, no two neighbours of one material") as far as eight
+  instruments allow: metal · skin · metal · skin · metal · skin · wood · skin · the short names (no periods).
+- The joined lane's weight by piece #6's arithmetic: 14 + 6 + 4 = 24 ss, five lanes → **1.888** (computed; looked at once, below).
+
+**THE GATE — the technique keys** (`tools/register_techniques.js`, new): the extractor throws on a key the registry does not
+list ("never a silent unknown") — the first extraction stopped at the bongos. **76 keys added** by the registry's own family
+rule (55 one-shot, 21 sustained), `notate: null` every one — no mark until he names it; 22 existing keys gained a Decibel
+lane; 233 in the registry. `palette_check` no longer lists an unregistered key.
+
+**TWO LEFTOVERS OF PIECE #6 THAT ONLY RUNNING FOUND:**
+- `container.json`'s presentation realization overrode parts BY NAME — `english_horn` · `horn` — and the layout threw
+  ("realization override for an unknown part"). Re-pointed to this piece's one override, the bass clarinet. (The same trap the
+  last port met — the protocol's 6 data paragraph names it.)
+- **A LANE NUMBER IN A REGISTRY:** `rules.json` `staffLines.percussion` — "a lined staff shown only where it plays" — named
+  **part 4** with piece #6's section time (288.91 s). Here part 4 is the VIOLA: its staff was drawn as a 37-pixel stub after
+  the clef. Found by looking at the page, then by measuring every staff line's width in the page (33 lines, five of them 37
+  px). The row's part set to null — the rule OFF — with the reason on the row; all 33 lines full width after. CLAUDE.md's
+  warning ("a lane NUMBER written into a module is invisible to a grep for names") now covers the registries.
+
+**6.3 THE GATES:** `check_rules` 31 of 32 — the one red is "the cents and the partial read the same in C and transposed … no
+sequence page to compare": it needs a page with a sequence overlay, which this piece does not have yet (NITS) ·
+`tools/test_written_pitch.js` REWRITTEN for this ensemble — ten cases (the bass flute's B3 → the treble middle line, its C3 →
+C4; the bass clarinet's A3 → B4, its B♭1 → C3; the mallets at their keyed pitch; the viola's C4 on the alto middle line; the
+cello) and the control (the transposition removed moves the note): GREEN · `docs/ENGRAVING_RULES.md` regenerated · every
+other check of this repo green (palette 151 · roster 310 · snapshots · spectrum · accel · containers · the crescendo two).
+
+**6.4 SAVE → IR:** `node tools/notate_section.js --score decibel-first-sound --w0 0 --w1 42` → `notation/ir/decibel-first-sound.ir.json`
+— **16 events, 16 chunks, VALID against its source and complete** (`ir_validate --against-source --complete`); 12 warnings, all
+one kind: no measured sample length for a struck note (the drawn length used). In the notation app (the throwaway server):
+the six parts with their clefs, the brackets and the brace; the eight percussion notes each ON ITS OWN LINE; the four mallet
+notes on the treble staff; no console error but the choices file's by-design 404.
+- **A deviation, stated:** the protocol asks for a test save WRITTEN BY THE APP, with one of each object kind the first section
+  will use and a marker. This one is tool-written (§35) — but it loaded, played in his Chrome and extracted whole, which is
+  what the rule guards. The app-written page with the piece's real object kinds comes with his first material (6.7).
+
+**6.5 THE EXPORTERS:** `export_print --pages 1-2` → a two-page PDF (5 lanes, 10.32 s a page) — WRITTEN, NOT LOOKED AT (no PDF
+rasteriser on this machine) · `export_video --probe 14,30` → two frames through resvg — LOOKED AT: the frame at 30 s shows the
+whole system right, the cursor, the notes.
+
+**NOT DONE of container 6:** 6.6 the main file's discipline (when there is a piece to derive) · 6.8 `notation/ir/README.md` ·
+THE SHIELD (it needs approved pages) · the device sheets (6.7, as the music reaches each notation) · his three calls above.
+
+**CONTAINER 7 — "anything from 5 now?": ONE THING.** The protocol's step is "no tool adapted ahead of need". The one known
+wrong default was fixed: the Texture panel's audition click named piece #6's claves, which here would have played a cymbal
+roll — now `wood_blocks_hard_mallets`, key 41 (block 2), the dry click of THIS rack (the AI's pick, his to change); the
+hand-typed claves voice left the recipe (310 voices). Everything else of 7 waits for the music: the first tool he reaches for
+gets read against the dynamics law first (7.0 · 7.1).

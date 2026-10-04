@@ -47,7 +47,7 @@ seams · the mic opening · the return · the processing); the piece in three se
 `electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §16): STEP 1, CONTAINER 3, IS
 DONE — piece #6's engine is here and is THIS piece's: copied byte-exact, proven whole, the small fixes made, turned to SIX LANES
 (D9: bass flute · bass clarinet · percussion · vibraphone · viola · cello), the composer score on 5500 and the sandbox on 5000,
-provisional recipes, verified in the running app. **► 2026-10-04 (Opus, RUNNING_LOG §18 · §19): CONTAINER 4 IN HAND — the talk answered (Xsample ×4 · Ricotti Mallets, a Kontakt library, the
+provisional recipes, verified in the running app. **► 2026-10-04 (Opus, RUNNING_LOG §18 … §45): CONTAINERS 4 · 5 DONE, 6 SET UP — the rack built by the AI and measured (sixteen instruments sounding from the composer score, on one loudness scale, four dynamics curves), every lane's recipe written, the notation registry this piece's (a save extracts, validates, draws, exports). OPEN: his ear · his three notation calls. ► NEXT: running order step 6, the electronics' seams.** *(the line as it stood mid-build:)* **2026-10-04 (RUNNING_LOG §18 · §19): CONTAINER 4 IN HAND — the talk answered (Xsample ×4 · Ricotti Mallets, a Kontakt library, the
 pitched lane · the unpitched percussion open); nine `DEC` ports and the rack `reaper/decibel_rack.rpp` made by the AI, three tracks cloned and
 sounding IN REAPER. NOTHING SOUNDS FROM THE COMPOSER SCORE YET; NOTHING NOTATES THIS ENSEMBLE YET. ► NEXT: his three hand steps (journal §2),
 then the recipes and the first sound.
@@ -256,8 +256,7 @@ routing advice is also credit advice, and these bind every Fable turn:
   CLONED from pieces #5 · #6's racks ON DISK (his word "disk", RUNNING_LOG §20); the four Ricotti mallet tracks (`… RM`) one Kontakt each, a slot
   per patch on its own channel (`bank/ricotti_catalog.json` · `tools/ricotti_loaders.js`). A track is added or re-cloned through the bridge, `reaper/bridge/jobs/make_tracks.lua`, never by rebuilding). The bridge:
   `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
-- **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
-  (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
+- **The notation app · print · video:** THIS PIECE'S since 2026-10-04 (container 6, RUNNING_LOG §45) — `notation/registry/ensemble.json` is the six Decibel parts (BFl +12 · BCl +14 · the eight-line unpitched staff · Mal · Va alto · Vc bass); 233 technique keys (`tools/register_techniques.js` after any new recipe key — the extractor THROWS on an unregistered one); the first page `notation/ir/decibel-first-sound.ir.json`. A lane NUMBER can hide in a REGISTRY too (`rules.json` `staffLines`).
 - **The names** — `docs/NAMING.md` § 1. **The recipes (2026-10-04, RUNNING_LOG §25 · §34):** every lane has its own — bass flute (Xsample, 32 presets, ordinary #15) · bass clarinet (piece #5's 34) · percussion (eight Abbey Road instruments, `bank/perc_selection.json` → `tools/apply_perc.js`) · MALLETS (39 Ricotti patches, `bank/ricotti_catalog.json` → `tools/apply_ricotti.js`; the lane's internal key is still `bowed_vibraphone`) · viola · cello (piece #5's · #6's). Loudness and round robins are not done (journal §2's list).
 
 ⚠ **Standing warnings:** never bind **5400 / 4900** (piece #6's — his server may be running) or **5300 / 4800** (piece #5's) · the AI
@@ -269,7 +268,7 @@ CSS rule** (`palette_check` § 7) · **a lane NUMBER written into a module is in
 by opening the panels (RUNNING_LOG §16).
 
 **Checks this piece owns:** `node tools/palette_check.js` (**151** — after any change to `TRACKS`, `sandbox/instruments.js` or a
-per-instrument table) · `node tools/roster_check.js` (**311** voices) · `node tools/model_bank.js --validate` · `node
+per-instrument table) · `node tools/roster_check.js` (**310** voices) · `node tools/model_bank.js --validate` · `node
 tools/unsaved_check.js` · **THE SHIELD** (`tools/layout_shield.js` — before and after ANY layout change; it needs pages, container
 6). The engine's forty batteries read other pieces' data, staged: `tools/port/stage32.sh` · `run_batteries.sh` (`docs/NITS.md`).
 

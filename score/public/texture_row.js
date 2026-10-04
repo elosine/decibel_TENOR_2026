@@ -418,7 +418,7 @@ Object.assign(D, {
         if (!this._tx) { this.setStatus('choose a rhythm take first', true); return; }
         const p = this.txPat(), r = this.txRange(), on = new Set(p.on), lane = this.txPercLane();
         if (lane < 0) { this.setStatus('no Percussion player on this page — the claves are his', true); return; }
-        const T = TP_(), cl = (T && T.CLAVES) || { tech: 'toys_claves', midi: 41 };
+        const T = TP_(), cl = (T && T.CLAVES) || { tech: 'wood_blocks_hard_mallets', midi: 41 };
         const c = +p.cursor || 0, from = (c > r[0] && c < r[1]) ? c : r[0];
         const dots = this._tx.dots.filter(d => on.has(d.k) && d.t >= from - 1e-6 && d.t <= r[1] + 1e-6);
         if (!dots.length) { this.setStatus(p.on.length ? 'no ON dot between ' + from.toFixed(2) + ' s and ' + r[1].toFixed(2) + ' s — move the cursor or the range' : 'every dot is off — click some on (or all on)', true); return; }

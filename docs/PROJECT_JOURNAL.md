@@ -86,16 +86,16 @@ takes is his (D5).
    the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
    `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
    lanes, every check green or classified, pushed.
-2. ► **Container 4 — the instruments** (**4.1 ☑ · 4.2 ☑ 2026-10-04 (RUNNING_LOG §19): nine `DEC` ports made by the AI; the rack built as text, three tracks cloned and sounding.** **4.0 THE TALK — ANSWERED 2026-10-04 (RUNNING_LOG §18; Ricotti is a KONTAKT library, §19): Xsample for the bass flute (NEW) · bass clarinet · viola · cello; Spitfire Ricotti Mallets the pitched lane, four instruments on ONE lane (DEC-5); the unpitched percussion OPEN — he gathers; the rack built BY THE AI, three Xsample tracks cloned from pieces #5 · #6's racks, his loads the two new libraries.** *The brief was:* 4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
+2. ☑ **Container 4 — the instruments** *(DONE 2026-10-04 — RUNNING_LOG §18 … §43; the how-to pages §44)* (**4.1 ☑ · 4.2 ☑ 2026-10-04 (RUNNING_LOG §19): nine `DEC` ports made by the AI; the rack built as text, three tracks cloned and sounding.** **4.0 THE TALK — ANSWERED 2026-10-04 (RUNNING_LOG §18; Ricotti is a KONTAKT library, §19): Xsample for the bass flute (NEW) · bass clarinet · viola · cello; Spitfire Ricotti Mallets the pitched lane, four instruments on ONE lane (DEC-5); the unpitched percussion OPEN — he gathers; the rack built BY THE AI, three Xsample tracks cloned from pieces #5 · #6's racks, his loads the two new libraries.** *The brief was:* 4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
    look at, not decided: the Xsample bass clarinet (piece #3's deep map) · the Xsample strings for viola and cello (piece #1; piece
    #6's cello recipe) · the bass flute — Xsample or IRCAM SI2, whichever has it · the percussion — Spitfire ARO (pieces #2 · #6),
    WHICH instruments his). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge → 4.3 his loads → 4.4
    the state as text → 4.5 the recipes → **4.6 THE FIRST SOUND** → 4.7 the record. **Done when:** every instrument sounds from the
    composer score.
-3. **Container 5 — the calibration** (piece #6's 1b method: 5.1 the reference in the rack · 5.2 the pre-flight — clipping, the
+3. ☑ **Container 5 — the calibration** *(DONE 2026-10-04 for a composing demo — §40 … §43: sixteen faders, four curves; his ear and the QC battery remain)* (piece #6's 1b method: 5.1 the reference in the rack · 5.2 the pre-flight — clipping, the
    round robins · 5.3 the card · 5.4 the trims · 5.5 the remap and the fader curves · 5.6 verified through the app and his ear · 5.7
    the QC battery). **Done when:** the tutti and the per-part levels measured and recorded, the law applied.
-4. **Container 6 — the notation set-up** (6.0 the ensemble registry: the clefs by register, the bass clarinet's transposition, the
+4. ► **Container 6 — the notation set-up** *(the registry, the gates, save → IR, the exporters DONE 2026-10-04 — §45; OPEN: his three calls — the pitch form, the percussion staff's line order, the short names — and the app-written test page at his first material)* (6.0 the ensemble registry: the clefs by register, the bass clarinet's transposition, the
    percussion staff type · NO electronics staff (D8) — the electronics' signs are DRAWN KINDS on the players' staves, each by a
    device sheet when notating comes (DEC-4; the engine plan's part 7) · 6.3 the batteries · 6.4 save → IR proved on a save of
    the Decibel lanes · 6.5 the exporters run once). **Done when:** a Decibel save extracts to a valid IR and lays out on the page.
@@ -267,7 +267,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **ITEM 10 — HE LISTENS.** The rack is measured and trimmed: 16 instruments on piece #6's absolute scale, 16 faders, 4 dynamics curves (RUNNING_LOG §42 · §43). After his ear: 4.7 the record (RACK_SETTINGS) · 4.10 the how-to pages (his ask, §18) · the rack committed at his word — then containers 4 · 5 are done and container 6 (the notation set-up) is next | Opus (the wrap) · Fable (container 6's talk) | yes, before container 6 |
+| **►** | **THE START IS DONE BUT FOR HIS EAR AND HIS THREE NOTATION CALLS** (RUNNING_LOG §44 · §45): containers 4 · 5 done; container 6 set up — six parts, 233 technique keys, a save extracted, validated, drawn and exported. HIS: listen (item 10) · the pitch form · the percussion staff's line order · the short names. NEXT IN THE RUNNING ORDER: **step 6, the seams and the sound path** (the electronics' plumbing — `live-electronics-system/docs/PLAN.md` parts 2 · 3 · 4), then step 7, his rhythm layer | Fable (step 6 is a seam's talk and a design) | **YES — `/checkpoint` here, `/clear`, `/postclear`** |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
@@ -281,7 +281,7 @@ uncommitted files that are his — never stage, move or edit anything there · t
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
 **Checks this piece owns:** `node tools/palette_check.js` (**151** — the tracks, the recipes, the ports, every per-instrument table, the
-lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**311** voices) · `node
+lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**310** voices) · `node
 tools/model_bank.js --validate` · `node tools/unsaved_check.js` (before a commit of scores). THE SHIELD (`tools/layout_shield.js`)
 before and after any layout change — it needs pages (container 6). The engine's batteries: `tools/port/` (RUNNING_LOG §16).
 

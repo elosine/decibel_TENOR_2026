@@ -521,7 +521,7 @@ Object.assign(D, {
     txNotesBetween(from, to, withClaves, doc) {
         const p = doc || this.txCols(), tx = p && p.texture ? p.texture : this._tx; if (!p || !tx) return { notes: [], cols: [], dots: [], pitched: 0, bare: 0 };
         const on = new Set(p.on || []), lane = this.txPercLane(), short = (isFinite(+p.short) && +p.short > 0) ? +p.short : SHORT_MS;
-        const T = root.TexturePanel, cl = (T && T.CLAVES) || { tech: 'toys_claves', midi: 41 };
+        const T = root.TexturePanel, cl = (T && T.CLAVES) || { tech: 'wood_blocks_hard_mallets', midi: 41 };
         const dots = tx.dots.filter(d => on.has(d.k) && d.t >= from - 1e-6 && d.t <= to + 1e-6);
         const notes = [], cols = []; let pitched = 0, bare = 0;
         dots.forEach(d => {

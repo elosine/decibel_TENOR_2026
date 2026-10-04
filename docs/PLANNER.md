@@ -5,7 +5,7 @@
 > `COMPOSITION_NOTES.md` verbatim first and get folded into a tier here. Engineering
 > detail stays in `PLAN.md`. Rewritten freely; the sketch pad is the append-only record.
 
-**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK HAS SIXTEEN TRACKS (running order step 2; RUNNING_LOG §19 … §21): Bass Flute XS · Bass Clarinet XS · eight unpitched percussion (his tentative list, DEC-6 — bongos · shime daiko · bass drum alt · wood blocks · China cymbal · spring coil · suspended cymbals · toms) · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS. EVERY TRACK SOUNDS through its port. The percussion is in the recipe (the eight, channels 1 … 8). ► NEXT, the AI's: the recipes of the rest — the Ricotti lane, the bass flute, the bass clarinet, the viola — then the first sound from the composer score.
+**NOW ►** 2026-10-04 — THE START IS DONE BUT FOR HIS EAR (RUNNING_LOG §18 … §45): the rack — sixteen instruments on their ports, all sounding from the composer score, measured and trimmed on one scale, four dynamics curves · every lane has its recipe · the notation is set up for the six parts (a save extracts, validates, draws, exports). HIS: listen · three notation calls (the pitch form · the percussion staff's line order · the short names). ► NEXT: the electronics' plumbing (running order step 6), then his rhythm layer (step 7).
 
 *Before it —* 2026-10-04 — his brief taken: the piece in three sections (below, from DEC-1 … DEC-3); the day's work a running order in journal §2.
 *Before it —* 2026-10-04 — the repo and its kit made (the protocol's container 2); no code.

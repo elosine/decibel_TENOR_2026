@@ -9,7 +9,14 @@
   "_doc_anchorRow": "LGMF PLAN 2e.3 (RUNNING_LOG §450): these family looks name their anchor row like every device (rules.json anchors). They are PROVISIONAL: the head sits before x(t) (anchor B's spacer) with NO go line — against the anchor principle (check_rules 6 reports them by name, DN-5); each technique's own device sheet replaces them.",
   "oneshot": {
    "anchorRow": "B",
-   "memberRows": ["head", "ledger", "accidental", "ottava", "brick", "instruction"],
+   "memberRows": [
+    "head",
+    "ledger",
+    "accidental",
+    "ottava",
+    "brick",
+    "instruction"
+   ],
    "provisional": true,
    "sheet": "#6 PLAN 2a (§330 … §338 — the bricks page) — provisional, DN-5",
    "nhUnit": true,
@@ -17,7 +24,14 @@
   },
   "sustained": {
    "anchorRow": "B",
-   "memberRows": ["head", "ledger", "accidental", "ottava", "brick", "instruction"],
+   "memberRows": [
+    "head",
+    "ledger",
+    "accidental",
+    "ottava",
+    "brick",
+    "instruction"
+   ],
    "provisional": true,
    "sheet": "#6 PLAN 2a (§330 … §338 — the bricks page) — provisional, DN-5",
    "nhUnit": true
@@ -54,7 +68,8 @@
    "label": "Crescendo",
    "players": [
     "flute",
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "cresc_decresc": {
@@ -199,7 +214,10 @@
    "written": {
     "_doc": "RUNNING_LOG §400 (2026-09-11): a tongue ram sounds a MAJOR 7TH BELOW the fingered note (no air, the tube's lowest mode only), so the page writes the FINGERING: written = sounding + 11. It only speaks for fingerings B3–C♯5 (F5 with the trill keys) = sounding C3–D4; outside `range` (written MIDI) the layout and the extractor both warn and the page marks the note. The score stays sounding (D9); foldFlute() in the composer moves the notes into the window first.",
     "transpose": 11,
-    "range": [59, 73],
+    "range": [
+     59,
+     73
+    ],
     "label": "tongue ram B3–C♯5"
    },
    "label": "Pizzicato",
@@ -296,7 +314,8 @@
    "notate": null,
    "label": "Staccato Velocity MW Shape (#3)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "stac2_mwshape": {
@@ -304,7 +323,8 @@
    "notate": null,
    "label": "Staccato 2 MW Shape (#4)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "flutter_mw": {
@@ -312,7 +332,8 @@
    "notate": null,
    "label": "Flutter Tongue MW (#5)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "slap": {
@@ -320,7 +341,8 @@
    "notate": null,
    "label": "Slap Tongue Velocity (#6)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "gliss_undef": {
@@ -344,7 +366,8 @@
    "notate": null,
    "label": "Key Noises Velocity (#9)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "mp_short": {
@@ -352,7 +375,8 @@
    "notate": null,
    "label": "Multiphonics Velocity (#10)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "air_noises": {
@@ -360,7 +384,8 @@
    "notate": null,
    "label": "Air Noises Velocity (#11)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "senza_vel": {
@@ -396,7 +421,8 @@
    "notate": null,
    "label": "Flutter Tongue Velocity (#16)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "senza_vel_mwinv": {
@@ -416,7 +442,8 @@
    "notate": null,
    "label": "Triple Tongue 16T (#18)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "stac_vel": {
@@ -428,7 +455,8 @@
     "violin1",
     "violin2",
     "viola",
-    "cello"
+    "cello",
+    "bass_flute"
    ]
   },
   "accent_vel": {
@@ -436,7 +464,8 @@
    "notate": null,
    "label": "With Accent Velocity (#20)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "gliss_undef_mw": {
@@ -452,7 +481,8 @@
    "notate": null,
    "label": "Multiphonics MW (#22)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "air_noises_mw": {
@@ -460,7 +490,8 @@
    "notate": null,
    "label": "Air Noises MW (#23)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "vib_mw": {
@@ -472,7 +503,8 @@
     "violin1",
     "violin2",
     "viola",
-    "cello"
+    "cello",
+    "bass_flute"
    ]
   },
   "vib_vel": {
@@ -484,7 +516,8 @@
     "violin1",
     "violin2",
     "viola",
-    "cello"
+    "cello",
+    "bass_flute"
    ]
   },
   "vib_vel_mwinv": {
@@ -496,7 +529,8 @@
     "violin1",
     "violin2",
     "viola",
-    "cello"
+    "cello",
+    "bass_flute"
    ]
   },
   "secco": {
@@ -512,7 +546,8 @@
    "notate": null,
    "label": "Portato Velocity (#28)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "flutter_vel_mwinv": {
@@ -520,7 +555,8 @@
    "notate": null,
    "label": "Flutter Tongue Velocity + MW inverted (#29)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "pseudo_cb_vel_mwinv": {
@@ -528,7 +564,8 @@
    "notate": null,
    "label": "Pseudo Contrabass Velocity + MW inverted (#30)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "pseudo_cb_stac": {
@@ -536,7 +573,8 @@
    "notate": null,
    "label": "Pseudo Contrabass Staccato Velocity (#31)",
    "players": [
-    "bass_clarinet"
+    "bass_clarinet",
+    "bass_flute"
    ]
   },
   "pseudo_cl_vel_mwinv": {
@@ -568,7 +606,8 @@
    "notate": null,
    "label": "8Dio 1969 Legacy Piano (Steinway 1969)",
    "players": [
-    "piano"
+    "piano",
+    "percussion"
    ]
   },
   "toys_claves": {
@@ -1557,6 +1596,615 @@
    "players": [
     "bowed_vibraphone"
    ]
+  },
+  "molto_vib_mw": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Molto Vibrato MW (#2)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "jet_slap": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Jet Whistle + Slap Tongue (#6)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "airy_secco": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Airy Secco Velocity (#8)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "harmonics_vel": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Harmonics Velocity (#10)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "voice_breath_oct": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Voice Breathing octave (#13)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "voice_breath_4th": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Voice Breathing fourth (#14)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "molto_vib_vel": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Molto Vibrato Velocity (#16)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "stac_keynoise_x_air_vmw": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Staccato + Key Noises X Air Velocity MW (#19)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "vib_flutter_vxmw": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Vibrato + Flutter Tongue Velocity X MW (#20)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "voice_breath_mw": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Voice Breathing MW (#25)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "vib_x_molto_vxmw": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Vibrato - Molto Vibrato Velocity X MW (#29)",
+   "players": [
+    "bass_flute"
+   ]
+  },
+  "bongos_hands": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bongos — Hands",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bongos_fingers": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bongos — Fingers",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bongos_sticks": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bongos — Sticks",
+   "players": [
+    "percussion"
+   ]
+  },
+  "shime_daiko_hands": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Shime Daiko — Hands",
+   "players": [
+    "percussion"
+   ]
+  },
+  "shime_daiko_taiko_sticks": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Shime Daiko — Taiko Sticks",
+   "players": [
+    "percussion"
+   ]
+  },
+  "shime_daiko_rods": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Shime Daiko — Rods",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bass_drum_alt_sticks": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bass Drum (Alt) — Sticks",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bass_drum_alt_hard_felt": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bass Drum (Alt) — Hard Felt",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bass_drum_alt_hard_felt_cloth_damped": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bass Drum (Alt) — Hard Felt (Cloth Damped)",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bass_drum_alt_rods": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bass Drum (Alt) — Rods",
+   "players": [
+    "percussion"
+   ]
+  },
+  "bass_drum_alt_brushes": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Bass Drum (Alt) — Brushes",
+   "players": [
+    "percussion"
+   ]
+  },
+  "wood_blocks_hard_mallets": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Wood Blocks — Hard Mallets",
+   "players": [
+    "percussion"
+   ]
+  },
+  "china_cymbals_felt_mallet": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "China Cymbals — Felt Mallet",
+   "players": [
+    "percussion"
+   ]
+  },
+  "china_cymbals_bow": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "China Cymbals — Bow",
+   "players": [
+    "percussion"
+   ]
+  },
+  "china_cymbals_scrape": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "China Cymbals — Scrape",
+   "players": [
+    "percussion"
+   ]
+  },
+  "china_cymbals_stick": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "China Cymbals — Stick",
+   "players": [
+    "percussion"
+   ]
+  },
+  "small_metals_spring_coil": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Spring Coil",
+   "players": [
+    "percussion"
+   ]
+  },
+  "susp_cymbals_bright_felt_mallet": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Suspended Cymbals Bright — Felt Mallet",
+   "players": [
+    "percussion"
+   ]
+  },
+  "susp_cymbals_bright_brush": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Suspended Cymbals Bright — Brush",
+   "players": [
+    "percussion"
+   ]
+  },
+  "susp_cymbals_bright_stick": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Suspended Cymbals Bright — Stick",
+   "players": [
+    "percussion"
+   ]
+  },
+  "susp_cymbals_bright_scrape": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Suspended Cymbals Bright — Scrape",
+   "players": [
+    "percussion"
+   ]
+  },
+  "susp_cymbals_bright_bow": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Suspended Cymbals Bright — Bow",
+   "players": [
+    "percussion"
+   ]
+  },
+  "toms_high_sticks": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Toms High — Sticks",
+   "players": [
+    "percussion"
+   ]
+  },
+  "toms_high_felt": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Toms High — Felt",
+   "players": [
+    "percussion"
+   ]
+  },
+  "toms_high_rods": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Toms High — Rods",
+   "players": [
+    "percussion"
+   ]
+  },
+  "toms_high_brushes": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Toms High — Brushes",
+   "players": [
+    "percussion"
+   ]
+  },
+  "crot_main_felt": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Crotales · Main (Felt)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_main_metal_damped": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Crotales · Main (Metal damped)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_main_metal": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Crotales · Main (Metal)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_main_plastic_damped": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Crotales · Main (Plastic damped)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_main_plastic": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Crotales · Main (Plastic)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_bowed": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Crotales · Bowed",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_rolls_metal": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Crotales · Rolls (Metal)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_rolls_plastic": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Crotales · Rolls (Plastic)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "crot_rolls_rubber": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Crotales · Rolls (Rubber)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_main_extra_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Main (Extra Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_main_hard": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Main (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_main_medium_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Main (Medium Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_main_medium": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Main (Medium)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_main_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Main (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_glisses": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Glisses",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_rolls_hard": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Glockenspiel · Rolls (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_rolls_soft": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Glockenspiel · Rolls (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_shorts_hard": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Shorts (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_shorts_medium_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Glockenspiel · Shorts (Medium Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_tremolo_hard": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Glockenspiel · Tremolo (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "glock_tremolo_soft": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Glockenspiel · Tremolo (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main_hot_rods": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main - (Hot Rods)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main_extra_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main (Extra Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main_hard": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main_medium": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main (Medium)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_main_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Main (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_glisses": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Xylophone · Glisses",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_rolls_hard": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Xylophone · Rolls (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_rolls_hot_rods": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Xylophone · Rolls (Hot Rods)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "xylo_rolls_soft": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Xylophone · Rolls (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_main": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Main",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_main_full_hard": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Main - Full (Hard)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_main_full_soft": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Main - Full (Soft)",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_main_rubber": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Main - Rubber",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_main_trems": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Marimba · Main - Trems",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_fx_bows": {
+   "family": "sustained",
+   "notate": null,
+   "label": "Marimba · FX - Bows",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_hotrod": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Hotrod",
+   "players": [
+    "bowed_vibraphone"
+   ]
+  },
+  "mar_hotrod_flams": {
+   "family": "oneshot",
+   "notate": null,
+   "label": "Marimba · Hotrod (Flams)",
+   "players": [
+    "bowed_vibraphone"
+   ]
   }
- }
+ },
+ "_usedInPieceDecibel": "decibel TENOR 2026 (container 6, 2026-10-04): 76 keys added by tools/register_techniques.js — the bass flute's, the eight Abbey Road instruments' (one per beater), the 39 Ricotti patches; 22 existing keys gained a Decibel lane. Every new key has \"notate: null\"."
 }
