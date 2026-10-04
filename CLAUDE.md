@@ -25,8 +25,8 @@ scales it back, the re-orchestration is his.
 - the protocol version run: **v1** — `composition-system/protocol/NEW_PIECE_PROTOCOL.md`; this piece is its FIRST RUN
 
 This piece inherits piece #6's stack — composer score app, sandbox, notation IR + engine, print, video — by
-**copy-forward with the instrument palette rewritten** (journal D1; the protocol's container 3). **NOT DONE YET: this repo
-holds the kit only, no code.** The delivery format is the lineage's: an animated scrolling score with the animated
+**copy-forward with the instrument palette rewritten** (journal D1; the protocol's container 3). **HALF DONE (2026-10-04): the
+engine is copied and proven whole; the palette is still piece #6's until the re-palette (3.3).** The delivery format is the lineage's: an animated scrolling score with the animated
 devices; a presentation score (video + print); the performance score later.
 **The IR contract (inherited, #5's D9):** the composer save is the ground truth; the IR is derived from it by the
 extractor and is the single source for every downstream score.
@@ -44,9 +44,12 @@ Libraries: not chosen — the protocol's container 4.
 **State of the piece (keep this line current):** **► 2026-10-04 (Fable, RUNNING_LOG §2): HIS BRIEF IS THE RUNNING ORDER in journal
 §2 — I. the start finished (containers 3 → 7) · II. the opening composed with the electronics built as the music reaches them (the
 seams · the mic opening · the return · the processing); the piece in three sections in PLANNER; the engine's code to be built HERE in
-`electronics/` (D7); THE SORTING a standing practice below. NO CODE YET. ► NEXT: `/session-start` in a NEW chat opened in THIS
-folder, then ASK to begin step 1 — container 3, the engine copied forward — its two asks first (3.8's seven fixes in piece #6 · his
-uncommitted files there). Journal §2's RUNNING ORDER, then its block SESSION 1 OPENS ON THIS, are the cold-start block.**
+`electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §10): STEP 1, CONTAINER 3, IS
+UNDER WAY — piece #6's engine is HERE, copied byte-exact (`c90b768`, 369 files) and proven whole (52 checks: 34 green, 18 red, all
+accounted for; the app boots on 5500). IT IS STILL ON PIECE #6's PALETTE: eight lanes, its names, its ports in the files — never
+start `score` / `sandbox` from `.claude/launch.json` before the re-palette; a server here runs by `PORT=5500 node score/server.js`.
+► NEXT: 3.8 the seven small fixes + the twelve retirements (one commit), then 3.3 the re-palette — ASK Q4 first (the percussion on
+one lane or two). Journal §2's RUNNING ORDER, then its block SESSION 1 — WHERE STEP 1 STANDS, are the cold-start block.**
 
 ## READ FIRST — how to work here
 
@@ -230,7 +233,8 @@ routing advice is also credit advice, and these bind every Fable turn:
 
 ## Apps
 
-- **Not here yet — the apps arrive with the copy-forward (the protocol's container 3).** The names fixed at 2.3
+- **The code is here (2026-10-04) but NOT YET THIS PIECE'S: until the re-palette (3.3) the files still name piece #6's ports —
+  never start `score` or `sandbox` from `.claude/launch.json`; a throwaway runs by `PORT=5500 node score/server.js`.** The names fixed at 2.3
   (2026-10-04; journal §1 has the table): the composer score on **5500**, the sandbox on **5000** — the next pair in the
   lineage (#3 5100/4600 · #4 5200/4700 · #5 5300/4800 · #6 5400/4900).
 - ‹**Each app:** how it is started · what it is — written when it runs here.›
@@ -243,7 +247,8 @@ routing advice is also credit advice, and these bind every Fable turn:
 port and never saves from its own browser pane · the in-app browser has no Web MIDI, so every MIDI path is verified on his
 Chrome · ‹the rest arrive with the code›
 
-**Checks this piece owns:** none yet — every battery arrives with the copy-forward and is classified ONCE there (3.2); among
+**Checks this piece owns:** none of its own yet — the batteries arrived with the copy and were classified ONCE (3.2: `docs/NITS.md`;
+RUNNING_LOG §10 — 34 green, 18 red, all accounted for); every one still reads piece #6's data, staged (`tools/port/stage32.sh`); among
 them **THE SHIELD** (`tools/layout_shield.js` — run before and after ANY layout change).
 
 ## Reference repos (read-only context)

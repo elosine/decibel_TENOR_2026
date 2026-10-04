@@ -258,3 +258,99 @@ unmodified files and `git show HEAD:` for the three; the proof is `cmp` for the 
 the source's commit.
 
 **Not verified by this entry:** nothing was run. The line numbers are the commit's; the 910-line list is regenerated at 3.3.
+
+## §9. 3.1 THE COPY, BYTE-EXACT — 369 / 369 identical to piece #6 @ `0d70fda`; commit `c90b768` (2026-10-04, Opus)
+
+**The guards, at the moment of the copy:** the source's HEAD still `0d70fda` · of its 30 uncommitted paths exactly three are on the copy
+list (`bank/morph_models.json` · `panel_snapshots.json` · `sequences.json`) — the known three, his, taken from the commit · none of the
+369 paths existed in this repo before the copy (checked path by path; nothing overwritten).
+
+**The copy** (the scratchpad's `copy31.sh`): 366 files by ONE tar pipe from the source's working tree · 3 by `git show HEAD:<path>`.
+
+**The proof, two ways:**
+
+| Proof | Result |
+|---|---|
+| `cmp` of each copied file against the source's working-tree file | **366 / 366 identical** |
+| the blob hash of each file STAGED here against the source commit's (`git ls-files -s` here · `git ls-tree -r HEAD` there) | **369 / 369 identical** |
+
+The second is the stronger: it compares what git holds, independent of this machine's line endings, and it covers the three files that
+were not `cmp`'d (their working-tree source is his newer copy, by design not the one taken).
+
+**The commit holds the 369 files and nothing else** (`c90b768`, 182 192 lines added) — so the commit is itself the list. Pushed.
+
+**`npm install`** — 3 packages (`@resvg/resvg-js` · `pngjs` · one dependency), `node_modules/` ignored. **One thing it showed:** npm
+rewrote `package-lock.json`'s `name` from `septet-2026` to `septet-lgmf-2026` — the lock file in piece #6 still carries piece #5's
+name (never touched since that port). The copied file was restored to its byte-exact state (`git checkout --`); the lock's name joins
+the re-palette's kind A list (3.3), beside `package.json`.
+
+**After the copy:** this repo's tree clean · piece #6 still shows its same 30 uncommitted paths, nothing there touched.
+**Not done by this step, by the protocol:** nothing is changed, nothing is run — the app has not been opened here yet (3.2).
+
+## §10. 3.2 THE COPY PROVEN WHOLE — 52 checks run on the unchanged copy: 34 green, 18 red, every red accounted for, none a copy defect; the app boots on 5500 (2026-10-04, Opus)
+
+**Staged, by a list written before the first copy** (the scratchpad's `stage32.sh`; every file by `git show HEAD:` from its own repo's
+commit, never a working tree; a path that already existed here was refused): **137 paths** — piece #4's tuba pages and nine scores
+(`for_seven_tubas`) · piece #5's four pages and the two scores they name (`septet_2026`) · piece #6's data from the leave list (its
+banks · actuals · the ARO states · scores · IR pages · the film's cut lists · the probe schedules) · and two added when a check named
+them: piece #6's printed cover `print/cover/cover-a3-landscape.svg` and piece #5's score `scores/piano-harmonics-test.json`.
+
+**Run:** the scratchpad's `run_batteries.sh` — 53 commands, default arguments only (never `--update` · `--save` · `--write` ·
+`--freeze`), exit code and last line of each kept. One of the 53, `v0_proofs.js`, is a generator and not a check (it wrote 27 proof
+pages into `notation/app/proofs_v0/`; removed) — so **52 checks**.
+
+**THE TABLE — every battery classified once (the protocol's 3.2; NITS has it as the standing list):**
+
+| Class | n | The checks |
+|---|---|---|
+| **GREEN** | 34 | `test_graphic` · `test_layout` · `test_pattern_fit` (85) · `test_render` · `test_snapshots` (30) · `test_splice` · `test_stamps` · `test_step_dynamics` (13) · `test_surge_run` (30) · `test_written_pitch` (10) · `accel_calc_check` · `dyn_table_check` (68) · `eh_figure_check` (106) · `palette_check` (198) · `roster_check` (3 · 339 voices · 21 pending) · `sequence_check` (180) · `sequence_notation_check` (79) · `spectrum_check` (35) · `unsaved_check` · `vib_marks_check` (34) · `vibes_pitch_check` (65) · `check_ceilings --all` · `check_rules` (34) · `check_screen_edges` · `check_print_edges` · `check_print_frame` · `check_print_front` · `check_print_pages` (86 pages) · `score/tools/check_containers` · `check_cresc_deck` · `check_cresc_panel` · `ir_validate_battery` (36) · `model_bank --validate` (VALID, 74 warnings — H-10) · `decisions_needed` (a report) |
+| **RED — known, one of the seven fixes** | 1 | `test_animobj` — `FAIL morph bend -> curveFollower`, then a `TypeError` (H-11) |
+| **RED — a stale harness, red at the source commit** | 1 | `test_identity` — the page's `restoreData` calls `this.curveDirty()`; the harness's stand-in has none. One line in the harness |
+| **RED — bound to piece #5's cast or data (two pieces back), red in piece #6 since its own re-palette (H-7)** | 12 | `test_septet_notation` (bass clarinet, piano) · `test_trills` · `test_morph_notation` · `test_cross_staff` · `beating_calc_check` (#5's six players by name) · `strike_chords_check` (#5's seven) · `piano_harmonics_check` · `piano_cues_check` (2 FAILED even with #5's score staged) · `harm_source_check` (#5's recorded strikes #24 · #26) · `morph_septet_check` (Vc Va · Vn1 Vn2 · Fl BCl) · `score/tools/check_fill` (Fl · BCl · Pno · Vn1 · Vn2 · Va) · `fade_check` (3 FAILED — the morph's fade as piece #5 had it; its only inputs are `morph.js` and `bank/morph_models.json`) |
+| **RED — needs a schedule git never held** | 4 | `probes/selftest_bend.py` · `selftest_bend_analyzer.py` · `selftest_ranges.py` · `selftest_sweep.py` — `bend_schedule.json` · `ranges_schedule.json` · `sweep_schedule.json` are generated by a probe's dry run and are not tracked in piece #6. Container 5's |
+| **NEW red, unexplained** | 0 | — |
+
+**How "red in the source too" was established WITHOUT running anything in piece #6's folder** (the protocol's 3.2 says "a red re-run in
+the source, read-only"; not done — a deviation, in the register): the engine here is blob-identical to piece #6's commit (§9), and every
+input of these checks was staged from the same commit or from the older pieces' commits. So a red here IS the red of that commit, unless
+the staging differs from that repo's own folder — which was tested where it could matter:
+
+- **`check_rules` was RED on the first run (2 of 34) and that red was the staging's, not the source's.** It scans every page in
+  `notation/ir/`; with piece #4's and #5's pages co-staged it read 26 pages and failed on the tuba pages (`db1-all-x01` · `cloud02i-b`).
+  With piece #6's five pages alone, as in its own folder: **RULES GREEN: 34**. The lesson for the protocol: the page-scanning checks
+  are run on the source's own pages ALONE; the older goldens are staged for the batteries that read them by name.
+- **`check_print_front` · `check_print_pages` were red for a missing file** — the printed cover is on the leave list (it is piece
+  #6's) and the check reads it. Staged → both green. At this piece's own print the cover is drawn first (`make_cover.ps1`).
+- **`piano_cues_check` · `check_fill` died on `scores/piano-harmonics-test.json`** — piece #5's score, not in piece #6's git. Staged
+  from piece #5 → both still red, on #5's cast. So they are bound to that cast, not to a missing file.
+
+**THE APP BOOTS** — the copied server started by environment on **5500** (`PORT=5500 node score/server.js`; piece #6's own server was
+listening on 5400 the whole time, PID 6380, never touched), the page loaded in the AI's pane, the stubs of the verification recipe put
+in at once (autosave · every non-GET `fetch` · `sendBeacon` · `confirm`):
+
+| Read | Result |
+|---|---|
+| the console | `Composer initialized` · **zero errors** · `[InstrumentRegistry] Loaded 0 instruments` (so the map IS fetched — §8's correction of H-8 holds) · Web MIDI refused (the pane's policy) |
+| the page's resources | 81 fetched, none 4xx / 5xx · 63 `<script src>` |
+| `TRACKS` · `META_LAYER` · the lanes | piece #6's eight · 8 · 12 `.lane` (8 + META + the three curve windows) · `layoutVersion` 7 |
+| the ensemble warn | **fired** — the page opened the staged piece #5 save and warned `THIS SAVE WAS WRITTEN FOR A DIFFERENT ENSEMBLE — its tracks are [flute, bass_clarinet, piano, violin1, …]` |
+| writes | none: no non-GET request left the page; nothing new on disk, tracked or ignored |
+
+**Not seen, and said:** the harvest's H-9 (`TypeError` on every BARE load, `sequence_ui.js:1652`) did not fire — this load was not bare,
+it opened a staged save. It is looked for at the fixes step, on a bare load. The sandbox was not started (its port is hard-coded 4900,
+piece #6's, until 3.3). No panel was opened (3.5's).
+
+**After:** the pane's storage for that origin cleared (4 keys) · the server stopped · the 137 staged paths deleted BY THE LIST, and two
+empty folders the server made (`scores/versions/`) · the tree as §9 left it, checked with ignored files included · piece #6 untouched.
+
+**THE AI'S CALLS ON THE REDS, his to reverse** (H-7: classified at the copy, not carried red a fourth time): `test_animobj` — fixed
+with the seven · `test_identity` — fixed with them (one line) or retired if it does not come back green · the four self-tests — kept,
+they are container 5's and go green when its schedules exist · **the twelve bound to piece #5's cast — RETIRED: taken out of this repo
+in the fixes commit**, with `tools/fixtures/morph_notation_baseline.json` and `tools/morph_tuba_baseline.json` (read by two of them
+only), each with its reason in NITS; any of them is fetched back from piece #6 @ `0d70fda` the day its tool is used here and re-pointed
+at this piece's cast. Rejected: keeping them red (the thing H-7 forbids) · re-pointing them now (their subjects — the recipes, the
+cast, this piece's pages — do not exist yet).
+
+**The port's four scripts are kept in the repo, `tools/port/`** (`classify.js` · `copy31.sh` · `stage32.sh` · `run_batteries.sh`, with
+the copy list and the leave list) — as they ran, for 3.5's second run and for the record; they write their outputs beside themselves,
+so they are run from a copy in the scratchpad.

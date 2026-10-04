@@ -12,7 +12,8 @@
   FINAL (D2) · written for the TENOR conference's call (the AI has not read it) · the title: see the names below
 - **Lineage:** composition #7. Follows #6 `septet_LGMF_2026` (_Recombination_).
 - **The profile** (the protocol's 2.1, v1): copy-forward from piece #6 · both layers · the animated scrolling score (D1)
-- **The stack:** NOT COPIED YET — this repo holds the kit only (container 2, 2026-10-04). The copy-forward is container 3.
+- **The stack:** COPIED 2026-10-04 — piece #6's engine, byte-exact (`c90b768`, 369 files), proven whole, still on piece #6's
+  palette; container 3 in progress (the fixes, then the re-palette). PLAN § 0.3 has the lists and the coupling.
 - **The live electronics:** the shared engine `live-electronics-system`, taken as a git submodule at the engine plan's
   parts 5 · 8 (D4)
 - **Libraries:** not chosen — container 4
@@ -138,31 +139,40 @@ takes is his (D5).
 extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
 deliverables · the planning repo's lines (at his word only).
 
-### SESSION 1 OPENS ON THIS (2026-10-04, Opus — written from piece #6's chat) — THE KIT IS IN, NO CODE; ► NEXT: container 3, the engine copied forward — ASK FIRST
+### SESSION 1 — WHERE STEP 1 STANDS (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS HERE, PROVEN WHOLE, STILL ON PIECE #6's PALETTE; ► NEXT: the fixes commit (3.8), then the re-palette (3.3)
 
-- **The task:** the start of the Decibel piece by the new-piece protocol, v1 — its FIRST RUN
-  (`composition-system/protocol/NEW_PIECE_PROTOCOL.md`); also the engine plan's part 9, first run. `docs/PLAN.md` § 0 has
-  the containers and their status.
-- **Where it stands · the deliverable:** container 2 DONE — this repo: the method docs carried from piece #6 with a
-  provenance line each · the record docs from the home's skeletons · the names fixed (§1) · the decisions D1 … D5. Nothing
-  of code. A `‹…›` left in a doc is a thing not yet decided.
-- **THE BRIEF OF 2026-10-04 is the RUNNING ORDER above — container 3 is its step 1; the order stands over this block's list.**
-- **► THE NEXT CONCRETE STEP — in a NEW chat opened in THIS folder: `/session-start`, then ASK to begin CONTAINER 3, the
-  engine copied forward.** Before any copy, put two things to him, one at a time:
-  1. **3.8 — the seven small engine fixes are made in piece #6 BEFORE the copy** (the protocol's 3.8 + 5.11; `#6` journal
-     §2, item (a), has them as instructions). His word: make them now, in that repo — or copy as it is and carry them
-     as NITS.
-  2. **Piece #6 has files newer on disk than in git, all his** (his libraries, his rack, his save — the list is in `#6`
-     journal §2). The copy takes the piece's files from GIT, or he says which of the disk's go across.
-  Then container 3 as the home's protocol writes it: 3.0 the survey → 3.1 the copy byte-exact → 3.2 proven whole → 3.3 the
-  re-palette. **The deviations register is kept from the first step** (`docs/PROTOCOL_DEVIATIONS.md`). At the copy, ASK
-  again about the home's 9.12, the shared copies of the tool docs (his *"none now"* of 2026-10-04 was for the start).
-- **`Resume reads:`** the home's `protocol/NEW_PIECE_PROTOCOL.md` § 3 only · `composition-system/INDEX.md`. Nothing else
-  beyond §2.
-- **Pending him:** the
-  ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this piece, at his word only
-  (the protocol's 2.6).
-- **Deliberately uncommitted:** nothing — the tree is clean at the first commit.
+- **Done this session** (RUNNING_LOG §6 … §10; PLAN § 0.3): the two asks — the seven small fixes are made HERE after the proof (his
+  *"b"*) · none of his libraries come across (his *"a"*) · **3.0 the survey** — 573 files at piece #6's `0d70fda`: 369 copied, 204
+  left; the coupling by kind · **3.1 the copy** — 369 / 369 blob-identical, commit `c90b768` · **3.2 proven whole** — 52 checks: 34
+  green, 18 red, every red accounted for, none a copy defect; the app boots on 5500 with zero console errors.
+- **The state of the code:** piece #6's engine, UNCHANGED — its eight lanes, its names (`lgmf` · `septet-lgmf-2026` · `lgmf_rack`), its
+  ports written in the files (5400 / 4900). **`.claude/launch.json` is INERT: never start `score` or `sandbox` from it before 3.3 —
+  they are piece #6's ports, and his server runs on 5400.** A server here is started by environment only: `PORT=5500 node
+  score/server.js`. No scores, no IR pages, no measurement banks are here (the leave list).
+- **► THE NEXT CONCRETE STEP — 3.8, ONE COMMIT (Opus):**
+  1. Read first, read-only, in `septet_LGMF_2026`: `docs/HARVEST.md` H-9 · H-10 · H-11 · H-12 · H-16 · H-17 · H-19 and the
+     `docs/NITS.md` § each cites.
+  2. The seven fixes, HERE: the bare-load `TypeError` at `score/public/sequence_ui.js:1652` · `tools/model_bank.js --validate`'s
+     `provenance.palette` warn · `tools/test_animobj.js`'s case · `tools/palette_check.js` reads the composer's lane CSS (`nth-child`,
+     count = `TRACKS`) · the BEGIN marker in `tools/apply_ranges.js` / `apply_bend_ranges.js` · `trimAtMeasurementDb` written by
+     `probes/analyze_card.py` · the probes' `$Port` a parameter. With them: `tools/test_identity.js` (its stand-in needs
+     `curveDirty` — one line; retire it if it does not come back green).
+  3. The twelve retirements — NITS has the list and the two fixtures that go with them; `git rm`, explicit paths.
+  4. Verify: `node --check` each changed file · `palette_check` · `model_bank --validate` · `test_animobj` · `test_identity` — they
+     read piece #6's data, STAGED: copy `tools/port/*` into the scratchpad and run `stage32.sh` there (it writes its list first; delete
+     by that list after; run the page-scanning checks on piece #6's pages alone) · H-9 on a BARE load of the running app on 5500, the
+     verification recipe's stubs in the navigation batch, zero console errors. Then a RUNNING_LOG §, commit, push.
+- **THEN 3.3 THE RE-PALETTE — ASK FIRST, ONE QUESTION (Q4): the percussionist on ONE lane or TWO?** It sets the lane count (five or
+  six), so `TRACKS`, the META and curve layers, the lane CSS, `layoutVersion` 8. PLAN § 0.3 § THE COUPLING is the map (kinds A · B · C,
+  by file and line). A lane can be added later (RUNNING_LOG §3), so "one for now" is an answer. Also at 3.3: the roles line (the piano
+  absent · the percussion live · the vibraphone and its second seat only if Q4 says so — the protocol's 3.10) · the bundled font (3.9).
+- **ASKED OF HIM AT THIS WRAP, the answer pending:** the home's 9.12 — the tool docs' ONE shared, piece-neutral copy: now, or not
+  now. Either way the 19 tool docs are here as copied and get a provenance line each at 3.6.
+- **`Resume reads:`** this §2 · PLAN § 0.3 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 3, steps 3.3 … 3.6 · for 3.8 only, the
+  harvest lines named above. Nothing else.
+- **Pending him:** Q4 · 9.12 · the ensemble's final instrumentation (the call's; his to check) · the planning repo's lines for this
+  piece, at his word only (the protocol's 2.6).
+- **Deliberately uncommitted:** nothing.
 
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
@@ -174,7 +184,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 3 — the engine copied forward** (the home's protocol § 3). Ask first: 3.8's seven fixes in piece #6 before the copy · his uncommitted files there. Then 3.0 the survey → 3.1 the copy → 3.2 proven whole → 3.3 the re-palette | Opus | a new chat in this folder — `/session-start` |
+| **►** | **CONTAINER 3, the rest** — 3.0 · 3.1 · 3.2 ☑. Next: **3.8 the seven fixes + the twelve retirements** (one commit) → **3.3 the re-palette** (ask Q4 first: the percussion on one lane or two) → 3.4 recipes and skeletons → 3.5 the running app on 5500 / 5000 → 3.6 the record | Opus | yes — `/clear`, then `/postclear` |
 | — | **CONTAINER 4 — the instruments:** 4.0 the libraries for the Decibel ensemble, a talk (the ensemble is not final, D2) | Fable | yes |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
@@ -188,7 +198,9 @@ DEC-4) · Q4 — the percussion: which instruments, one lane or two (as piece #6
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
-**Checks this piece owns:** none yet — they arrive with the copy-forward and are classified once there (3.2).
+**Checks this piece owns:** none of its own yet. The batteries are here and classified once (NITS; RUNNING_LOG §10: 34 green, 18 red,
+all accounted for) — every one still reads piece #6's data, staged (`tools/port/stage32.sh`). `palette_check` and `roster_check`
+become this piece's at 3.3 / 3.4; THE SHIELD (`tools/layout_shield.js`) before and after any layout change.
 
 ---
 
