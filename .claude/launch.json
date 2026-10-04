@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "score",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["score/server.js"],
+      "port": 5400
+    },
+    {
+      "name": "sandbox",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["sandbox/serve.js"],
+      "port": 4900
+    },
+    {
+      "name": "score-5401",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "$env:PORT=5401; node score/server.js"],
+      "port": 5401
+    },
+    {
+      "name": "tempus-5300",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "Set-Location C:/Users/jwloy/GitHub/septet_2026; node score/server.js"],
+      "port": 5300
+    }
+  ]
+}
