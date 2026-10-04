@@ -17,62 +17,38 @@
  "port": "DECPerc",
  "instruments": [
   {
-   "slug": "small_metals_finger_cymbals",
+   "slug": "bongos",
    "channel": 1
   },
   {
-   "slug": "small_metals_bell_tree",
+   "slug": "shime_daiko",
    "channel": 2
   },
   {
-   "slug": "small_metals_sleigh_bells",
+   "slug": "bass_drum_alt",
    "channel": 3
   },
   {
-   "slug": "small_metals_triangles",
+   "slug": "wood_blocks",
    "channel": 4
   },
   {
-   "slug": "small_metals_tambourines",
+   "slug": "china_cymbals",
    "channel": 5
   },
   {
-   "slug": "toys_castanets",
+   "slug": "small_metals_spring_coil",
    "channel": 6
   },
   {
-   "slug": "toys_claves",
+   "slug": "susp_cymbals_bright",
    "channel": 7
   },
   {
-   "slug": "toys_shakers",
+   "slug": "toms_high",
    "channel": 8
-  },
-  {
-   "slug": "brake_drums",
-   "channel": 9
-  },
-  {
-   "slug": "crashes_and_stack",
-   "channel": 10
-  },
-  {
-   "slug": "wood_blocks",
-   "channel": 11
-  },
-  {
-   "slug": "bass_drum_alt",
-   "channel": 12
-  },
-  {
-   "slug": "temple_bowls",
-   "channel": 13
-  },
-  {
-   "slug": "tam_tams_a",
-   "channel": 14
   }
  ],
- "_selected": "2026-09-21 — all fourteen instruments of his rack (bank/perc_rack.json), each on its own track's channel: his word, \"percussion should have access to all of the instruments\" (RUNNING_LOG §212)",
- "_provenance": "Skeleton written by the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4. The selection is PIECE #6's (14 instruments) on this piece's port, kept so the recipe's ARO_PERC block and the selection agree (tools/palette_check.js § 6). WHICH percussion instruments this piece uses is the composer's, at container 4; then tools/apply_perc.js rewrites the block."
+ "_selected": "2026-10-04 — HIS TENTATIVE LIST (COMPOSITION_NOTES DEC-6; RUNNING_LOG §21 … §25): bongos · shime daiko (the samples; a snare drum the alternate in the performance notes) · bass drum alt · wood blocks · China cymbal · spring coil · suspended cymbals (he loaded and chose the BRIGHT All-in-One) · toms (he chose the HIGH All-in-One). One Abbey Road instance per instrument, the track \"<Name> ARO\" on this channel of DECPerc (reaper/bridge/jobs/make_perc_tracks.lua). Every slug was confirmed against the loaded preset: the All-in-One's top key = the catalog's last key.",
+ "_provenance": "Rewritten 2026-10-04 at container 4 (the new-piece protocol's 4.5) from the running rack reaper/decibel_rack.rpp, read by tools/aro_state.js info. It replaces the port's skeleton — piece #6's fourteen. After ANY change: node tools/apply_perc.js, then node tools/palette_check.js."
 }

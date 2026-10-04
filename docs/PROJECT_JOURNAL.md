@@ -169,12 +169,19 @@ deliverables · the planning repo's lines (at his word only).
   - **☑ four of the five loaded and read (RUNNING_LOG §23):** Bongos (C) → `bongos` · Shime Daiko (C) → `shime_daiko` · China Cymbal (C) →
     `china_cymbals` (the mapped entry; settled) · Suspended Cymbals (C), Cymbal BRIGHT AIO → `susp_cymbals_bright` (he switched from Mellow, §24). Each All-in-One's top key
     equals the catalog's last key — NO KEY MAP TO MAKE. **Left: Toms ARO.**
-  - **(2) HIS — FIVE LOADS in the Abbey Road plugin's own browser, one per track:** Bongos ARO · Shime Daiko ARO · China Cymbal
-    ARO · Suspended Cymbals ARO (dark, mellow or bright) · Toms ARO (high or low; both = say so, a ninth track). The All-in-One
-    preset of each, as in piece #6. THEN the AI: `node tools/aro_state.js info "<track>"` reads what he loaded →
-    `bank/perc_selection.json` (the eight, channels 1 … 8) → `node tools/apply_perc.js` → `palette_check` · `roster_check`;
-    each state banked to `bank/aro_states/`.
-  - **(3) HIS: CTRL+S**; the rack committed at his word.
+  - **☑ THE PERCUSSION IS DONE THROUGH 4.5 (RUNNING_LOG §25):** his five loads read · `bank/perc_selection.json` = bongos ·
+    shime_daiko · bass_drum_alt · wood_blocks · china_cymbals · small_metals_spring_coil · susp_cymbals_bright · toms_high on
+    channels 1 … 8 · `apply_perc.js` run · the eight states banked (`bank/aro_states/`) · all eight sound · the composer page
+    loads clean on 5501.
+  - **► NEXT, the AI's — 4.5 for the rest, in this order:** (a) A KEY SWEEP AS ONE COMMAND (a bridge job + a sender: every key
+    of a port's channel, the meter read) — then the Ricotti ranges, 39 patches · (b) THE PITCHED LANE'S RECIPE from
+    `bank/ricotti_catalog.json` — four instruments on one lane, a port each; the vibraphone stand-in (D9) retired; `DECVibes`
+    leaves the recipe · (c) THE BASS FLUTE from his Preset Menu — 32 presets: the manual's 30 (RUNNING_LOG §25) + 31 · 32 the Pseudo Contrabass pair (§26), CC0 = number − 1 ·
+    (d) THE BASS CLARINET from piece #5's recipe (34 presets; the slap and the second instance — NITS) · THE VIOLA from piece
+    #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
+    plain non-vibrato) · a save.
+  - **THEN 4.6 THE FIRST SOUND** from the composer score in his Chrome → 4.4's settings pass (the round robins — his word, §18;
+    what the plugins show is in §24 · §25) → 4.7 + 4.10.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
     recipes derived — his bass flute Preset Menu screenshots; the bass clarinet from piece #5's recipe (34 presets; the slap and
     the second instance, NITS); the viola from piece #5's → **4.6 THE FIRST SOUND** from the composer score in his Chrome → **4.7**
@@ -228,7 +235,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 4 — the rack: sixteen tracks; the four Xsample instruments, three mallets and three percussion instruments SOUND through their ports.** His: the marimba's script · five loads in the Abbey Road browser (bongos · shime daiko · China cymbal · suspended cymbals · toms) · CTRL+S → 4.4 the read-backs banked → 4.5 the recipes (his bass flute screenshots; the Ricotti catalog and ranges; the percussion selection) → **4.6 THE FIRST SOUND** from the composer score → 4.7 + 4.10 | Opus | no |
+| **►** | **CONTAINER 4 — the rack: sixteen tracks, EVERY ONE SOUNDS through its port; the percussion is in the recipe (eight instruments).** NEXT, the AI's: 4.5 for the rest — a key sweep as one command → the Ricotti ranges and the pitched lane's recipe · the bass flute from its manual · the bass clarinet and viola from piece #5 → **4.6 THE FIRST SOUND** from the composer score → the settings pass → 4.7 + 4.10 | Opus | no |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
@@ -241,8 +248,8 @@ DEC-4) · Q4 — the percussion: TWO lanes (D9); the pitched lane = Ricotti Mall
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
-**Checks this piece owns:** `node tools/palette_check.js` (**158** — the tracks, the recipes, the ports, every per-instrument table, the
-lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**223** voices) · `node
+**Checks this piece owns:** `node tools/palette_check.js` (**152** — the tracks, the recipes, the ports, every per-instrument table, the
+lane CSS; after any change to `TRACKS`, `sandbox/instruments.js` or a table) · `node tools/roster_check.js` (**221** voices) · `node
 tools/model_bank.js --validate` · `node tools/unsaved_check.js` (before a commit of scores). THE SHIELD (`tools/layout_shield.js`)
 before and after any layout change — it needs pages (container 6). The engine's batteries: `tools/port/` (RUNNING_LOG §16).
 

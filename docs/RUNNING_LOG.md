@@ -906,3 +906,77 @@ prints each articulation of the loaded preset with its `top` key. The All-in-One
   RIGHT/LEFT MAPPING off. Not changed, not yet decided: his word *"let's go through all the proper settings. Like the round
   robin"* (§18) is still to be taken up, instrument by instrument.
 - Toms ARO: still the plugin's default ("Piatti (C)").
+
+## §25. CONTAINER 4 — THE PERCUSSION IS IN THE RECIPE: his five loads read, the selection written, eight instruments sounding · and his question, "which maps are left key by key … any automations to be gained?" (2026-10-04, Opus)
+
+**What prompted it:** two more screenshots, no words — TOMS with **ALL IN ONE (HIGH)** lit; SMALL METALS with **SPRING COIL**
+lit. Then: *"And which maps are left to be done key by key? Were there, did you do an analysis? Are there any automations to be
+gained here? Just some quick ones. I don't necessarily need to spend too much time on this. But if we can give it a quick thought."*
+
+**The last load, read:** Toms ARO = "Toms (C)", family Low Percussion, 8 articulations, active "Toms High - All-in-one", top key
+82 = the catalog's `toms_high`, 36 keys, last key 82 ✓. **The spring coil's screenshot** shows the clone's switch took (§21):
+SPRING COIL lit inside Small Metals, its keyboard four blocks at octave 2 and again at octave 4 — the catalog's 16 keys
+(36 … 39 · 41 … 44 · 60 … 63 · 65 … 68: open / muted hit L · R, open / muted rake fast · slow, repeated +24). TWO-HANDED LAYOUT is ON
+in that instance — carried inside the clone from piece #6, and it is what the catalog's map assumes (piece #6 §41). Its other
+settings as shown: trigger KEYSWITCH A#-1 · activate normal · ROUND ROBINS 5 · RESET ON TRANSPORT on · RESET FROM KEY none.
+The Toms' panel: RESET ON TRANSPORT on · RESET FROM KEY none · two-handed layout off.
+
+**4.5 for the percussion — done, as text:**
+- `bank/perc_selection.json`: **1 bongos · 2 shime_daiko · 3 bass_drum_alt · 4 wood_blocks · 5 china_cymbals · 6
+  small_metals_spring_coil · 7 susp_cymbals_bright · 8 toms_high** on `DECPerc` — piece #6's fourteen replaced.
+  `tools/apply_perc.js` regenerated the recipe's `ARO_PERC` block: one technique per instrument × beater (bongos hands ·
+  fingers · sticks; … toms high sticks · felt · rods · brushes).
+- `palette_check` GREEN, **152** checks (158 with piece #6's fourteen) — 38 recipe keys are new to
+  `notation/registry/techniques.json`, to be registered before material uses them (container 6) · `roster_check` GREEN,
+  **221** voices, 16 pending · `model_bank --validate` valid.
+- The eight states BANKED from the running rack, `bank/aro_states/`: `bongos_C` · `shime_daiko_C` · `bass_drum_alt_C` ·
+  `wood_blocks_C` · `china_cymbal_C` · `small_metals_C` · `suspended_cymbals_C` · `toms_C` (.aro.xml, 32 … 120 KB; no
+  machine path in any). From now each is text: clonable into any rack with no load.
+- `make_perc_tracks.lua`: the three open slugs settled (`china_cymbals` · `susp_cymbals_bright` · `toms_high`).
+- **Sounded through `DECPerc`, key 36, each on its own channel:** Bongos −27.2 / −29.8 dB · Shime Daiko −38.5 / −39.0 · China
+  Cymbal −35.1 / −36.2 · Suspended Cymbals −42.2 / −44.4 · Toms −23.8 / −25.5 (with §21's Bass Drum Alt −24.6 · Wood Blocks
+  −26.7 · Spring Coil −28.9). ALL EIGHT SOUND.
+- **In the running app** (the throwaway server, 5501; nothing saved): the composer page loads with NO console error; the
+  percussion carries the eight on channels 1 … 8, 30 techniques.
+- **Found there, not fixed (NITS):** two hand-written percussion voices are piece #6's — `main` (the placeholder, labelled
+  "the rack's Finger Cymbals track"; channel 1 is now the BONGOS) and `toys_claves` on channel 7 (piece #6's Claves track; channel
+  7 is now the SUSPENDED CYMBALS). The Texture panel's audition click is `toys_claves` key 41 (`texture_panel.js` · `texture_row.js`
+  · `texture_cols.js`): here it would play a cymbal roll. A tool's default, fixed when the tool is first used (container 7);
+  the AI's proposal: the wood blocks, hard mallets.
+
+**His question — which maps are left key by key, and what can be automated.** The analysis, as given to him:
+- **Key by key, by hand: NONE for this rack.** The percussion's eight are the catalog's (38 of its 78 are complete).
+- **What is open is three lists, none of them hand work:** (1) the RICOTTI ranges — a low and a high key for each of 39 patches;
+  the two "Glisses" patches are by-key. (2) the BASS FLUTE — its articulation list is in the manual that shipped with the library
+  (`…/Xsample_Collection/Documentation/Xsample_Woodwinds_Bass_Flute.pdf`): a **Factory bank preset list of 30** — 1 Vibrato MW ·
+  2 Molto Vibrato MW · 3 Staccato Velocity 1 MW Shape · 4 Staccato Velocity 2 MW Shape · 5 Flutter Tongue MW · 6 Jet Whistle + Slap
+  Tongue · 7 Slap Tongue Velocity · 8 Airy Secco Velocity · 9 Key Noises Velocity · 10 Harmonics Velocity · 11 Multiphonics
+  Velocity · 12 Air Noises Velocity · 13 Voice Breathing octave · 14 Voice Breathing fourth · 15 Vibrato Velocity · 16 Molto
+  Vibrato Velocity · 17 Flutter Tongue Velocity · 18 Vibrato Velocity + MW inverted · 19 Staccato + Key Noises X Air Velocity MW ·
+  20 Vibrato + Flutter Tongue Velocity X MW · 21 Triple Tongue 16T · 22 Staccato Velocity · 23 Multiphonics MW · 24 Air Noises MW
+  · 25 Voice Breathing MW · 26 With Accent Velocity · 27 Crescendo · 28 Portato Velocity · 29 Vibrato - Molto Vibrato Velocity X
+  MW · 30 Flutter Tongue Velocity + MW inverted. So his screenshots of the Preset Menu are probably not needed (the lineage's
+  rule: CC0 = the preset number − 1; to be confirmed at the first sound). (3) 16 by-key voices of the STRINGS still "pending" in
+  the roster — viola 8, cello 8 (tailpiece · behind the bridge · peg box · finger · body · undef).
+- **The automations, quick ones:** (a) THE TOP-KEY CHECK (§23) — in use; no sound. (b) THE MANUAL AS THE SOURCE — above. (c) A KEY
+  SWEEP AS ONE COMMAND — every key of a channel played, the meter read, the sounding keys and their levels listed: the Ricotti
+  ranges, the by-key voices, and a first level per patch for container 5; piece #6 did it by hand-run steps (its §41 · §42).
+  (d) A ZONE READ-OUT FROM KONTAKT — whether Kontakt's script interface can list a slot's key range and group names with no
+  sound is NOT KNOWN; one test script would tell. The AI's recommendation: (c), because 4.5 needs it anyway.
+
+## §26. THE BASS FLUTE'S PRESET MENU, FROM HIS KONTAKT — 32 presets: the manual's 30 confirmed, and two the manual does not list (2026-10-04, Opus)
+
+**What prompted it:** two screenshots of the Preset Menu in the Bass Flute's Kontakt, no words — sent as §25's analysis was
+being written (he had said, §18: *"as soon as the rack is ready, I'll send you screenshots of the articulations for bass flute"*).
+
+- **1 … 30: the manual's Factory bank preset list, name for name** (§25 has it whole).
+- **Two more, NOT in the manual:** **31 Pseudo Contrabass Velocity + MW inverted** · **32 Pseudo Contrabass Staccato Velocity**.
+  Then **33 … Free Preset** (33 · 34 · 35 · 36 · 37 visible; the list scrolls on).
+- **A CORRECTION OF §25, minutes old:** "his screenshots are probably not needed" was wrong by two presets. The manual is a good
+  first source and the MENU IS THE TRUTH — the lineage's rule (piece #6: "the roster is the full Preset Menu as HIS Kontakt shows
+  it"). For the how-to pages (4.10): read the manual first, then ONE screenshot of the menu to close it.
+- The recipe's roster for the bass flute is therefore 32 factory presets, CC0 = the number − 1 (0 … 31), to be confirmed at the
+  first sound. By the names: `mw` presets 1 · 2 · 5 · 23 · 24 · 25 · and the shaped ones 3 · 4 · 18 · 19 · 20 · 29 · 30 · 31; by-key
+  candidates 9 Key Noises · 11 · 23 Multiphonics · 12 · 24 Air Noises · 6 Jet Whistle + Slap Tongue — their keys by the sweep.
+  WHICH is the ordinary voice is his: the list has no plain non-vibrato sustain (15 Vibrato Velocity · 28 Portato Velocity · 26
+  With Accent Velocity are the nearest).

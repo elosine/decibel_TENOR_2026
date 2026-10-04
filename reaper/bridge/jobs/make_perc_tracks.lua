@@ -17,10 +17,10 @@ local SPEC = {   -- slug = the key in bank/aro_percussion_catalog.json ('?' = wh
   { name = "Shime Daiko ARO",       channel = 2, slug = "shime_daiko" },               -- the samples; the notes name a snare drum as the alternate (PERFORMANCE_NOTES)
   { name = "Bass Drum Alt ARO",     channel = 3, slug = "bass_drum_alt" },             -- cloned from piece #6
   { name = "Wood Blocks ARO",       channel = 4, slug = "wood_blocks" },               -- cloned from piece #6
-  { name = "China Cymbal ARO",      channel = 5, slug = "china_cymbals ?" },
+  { name = "China Cymbal ARO",      channel = 5, slug = "china_cymbals" },                 -- his preset "China Cymbal (C)" IS the mapped entry (RUNNING_LOG §23)
   { name = "Spring Coil ARO",       channel = 6, slug = "small_metals_spring_coil" },  -- cloned from piece #6's Small Metals (C), the articulation switched
-  { name = "Suspended Cymbals ARO", channel = 7, slug = "susp_cymbals_dark | _mellow | _bright ?" },
-  { name = "Toms ARO",              channel = 8, slug = "toms_high | toms_low ?" },
+  { name = "Suspended Cymbals ARO", channel = 7, slug = "susp_cymbals_bright" },   -- his load: Suspended Cymbals (C), the BRIGHT All-in-One (§24)
+  { name = "Toms ARO",              channel = 8, slug = "toms_high" },             -- his load: Toms (C), the HIGH All-in-One (§25)
 }
 local function devIndex(port)
   for d = 0, reaper.GetNumMIDIInputs() - 1 do

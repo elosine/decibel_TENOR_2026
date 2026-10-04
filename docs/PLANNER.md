@@ -5,7 +5,7 @@
 > `COMPOSITION_NOTES.md` verbatim first and get folded into a tier here. Engineering
 > detail stays in `PLAN.md`. Rewritten freely; the sketch pad is the append-only record.
 
-**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK HAS SIXTEEN TRACKS (running order step 2; RUNNING_LOG §19 … §21): Bass Flute XS · Bass Clarinet XS · eight unpitched percussion (his tentative list, DEC-6 — bongos · shime daiko · bass drum alt · wood blocks · China cymbal · spring coil · suspended cymbals · toms) · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS. Sounding through their ports: the four Xsample instruments, the crotales and xylophone, the bass drum alt, wood blocks and spring coil. ► NEXT, his: the marimba's script, five loads in the Abbey Road browser, CTRL+S; then the recipes and the first sound from the composer score.
+**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK HAS SIXTEEN TRACKS (running order step 2; RUNNING_LOG §19 … §21): Bass Flute XS · Bass Clarinet XS · eight unpitched percussion (his tentative list, DEC-6 — bongos · shime daiko · bass drum alt · wood blocks · China cymbal · spring coil · suspended cymbals · toms) · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS. EVERY TRACK SOUNDS through its port. The percussion is in the recipe (the eight, channels 1 … 8). ► NEXT, the AI's: the recipes of the rest — the Ricotti lane, the bass flute, the bass clarinet, the viola — then the first sound from the composer score.
 
 *Before it —* 2026-10-04 — his brief taken: the piece in three sections (below, from DEC-1 … DEC-3); the day's work a running order in journal §2.
 *Before it —* 2026-10-04 — the repo and its kit made (the protocol's container 2); no code.

@@ -258,7 +258,7 @@ routing advice is also credit advice, and these bind every Fable turn:
   `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
 - **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
   (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
-- **The names** — `docs/NAMING.md` § 1. **The recipes are PROVISIONAL** — three instruments carried from piece #6, three placeholders.
+- **The names** — `docs/NAMING.md` § 1. **The recipes:** the PERCUSSION is this piece's (2026-10-04: eight Abbey Road instruments, `bank/perc_selection.json` → `tools/apply_perc.js`); the rest still PROVISIONAL until 4.5 — the cello carried from piece #6, the vibraphone a stand-in for the Ricotti lane, three placeholders.
 
 ⚠ **Standing warnings:** never bind **5400 / 4900** (piece #6's — his server may be running) or **5300 / 4800** (piece #5's) · the AI
 never holds his port and never saves from its own browser pane (the day-one score was the port's one save) · the in-app browser
@@ -268,8 +268,8 @@ keeps the engine it started with — restart after a `notation/lib` change · **
 CSS rule** (`palette_check` § 7) · **a lane NUMBER written into a module is invisible to a grep for names** — two were found only
 by opening the panels (RUNNING_LOG §16).
 
-**Checks this piece owns:** `node tools/palette_check.js` (**158** — after any change to `TRACKS`, `sandbox/instruments.js` or a
-per-instrument table) · `node tools/roster_check.js` (**223** voices) · `node tools/model_bank.js --validate` · `node
+**Checks this piece owns:** `node tools/palette_check.js` (**152** — after any change to `TRACKS`, `sandbox/instruments.js` or a
+per-instrument table) · `node tools/roster_check.js` (**221** voices) · `node tools/model_bank.js --validate` · `node
 tools/unsaved_check.js` · **THE SHIELD** (`tools/layout_shield.js` — before and after ANY layout change; it needs pages, container
 6). The engine's forty batteries read other pieces' data, staged: `tools/port/stage32.sh` · `run_batteries.sh` (`docs/NITS.md`).
 
