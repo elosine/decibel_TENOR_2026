@@ -1,25 +1,24 @@
--- make_tracks.lua — the instrument tracks of the LGMF rack (PLAN 0e, 2026-09-17), idempotent.
--- One track per SPEC row: name · MIDI input = its LG port, ALL channels · input monitoring ON
--- (principle 1) · armed · fader 0 dB · the sampler inserted by name. A track of the same name
--- is re-configured, never duplicated; new tracks are appended in SPEC order. Never saves.
--- Returns a read-back of every track it touched and the track order of the project.
+-- make_tracks.lua — the instrument tracks of the DECIBEL rack (the new-piece protocol's 4.2, 2026-10-04;
+-- RUNNING_LOG §19), idempotent. Carried from piece #6 (its PLAN 0e, 2026-09-17); the SPEC is this piece's.
+-- One track per SPEC row: name · MIDI input = its DEC port BY NAME, ALL channels · input monitoring ON
+-- (principle 1) · armed · fader 0 dB · the sampler inserted by name if the track has none. A track of the
+-- same name is re-configured, never duplicated; new tracks are appended in SPEC order (or `after` a sibling).
+-- Never saves. Returns a read-back of every track it touched and the track order of the project.
 --   node tools/reaper_job.js run reaper/bridge/jobs/make_tracks.lua
+--
+-- HOW THE RACK IS MADE HERE: tools/build_rack.js writes reaper/decibel_rack.rpp as TEXT — the tracks an
+-- earlier piece already loaded are CLONED whole (the Kontakt multi inside), the rest are bare; this job then
+-- gives every track its input, arms it, and inserts the sampler into a bare one. A device NUMBER is Reaper's
+-- own, so the input is set here, by port name, never in the text.
+-- A NEW INSTRUMENT LATER = a row here (+ `after`), run again. The percussion and the four Ricotti mallet
+-- instruments (ports DECPerc · DECCrotales · DECGlock · DECMarimba · DECXylo, made 2026-10-04) get their rows
+-- when the libraries are in and chosen.
+local KONTAKT = { "VST3i: Kontakt 8 (Native Instruments) (64 out)", "VST3i: Kontakt 8 (Native Instruments)" }
 local SPEC = {
-  { name = "Horn SI2",    port = "LGHorn",    fx = { "VST3i: UVIWorkstation (UVI)" } },
-  { name = "Trumpet SI2", port = "LGTrumpet", fx = { "VST3i: UVIWorkstation (UVI)" } },
-  { name = "Percussion",  port = "LGPerc",    fx = nil },   -- one Spitfire instance PER INSTRUMENT, on its own track, when chosen (bank/perc_selection.json)
-  { name = "Cello XS",    port = "LGCello",   fx = { "VST3i: Kontakt 8 (Native Instruments) (64 out)", "VST3i: Kontakt 8 (Native Instruments)" } },
-  { name = "Bass XS",     port = "LGBass",    fx = { "VST3i: Kontakt 8 (Native Instruments) (64 out)", "VST3i: Kontakt 8 (Native Instruments)" } },
-  -- the second UVI instances (the flute's `Fluteb` pattern): SI2 has more presets than one instance's 16 parts, before the
-  -- Ordinario curve copies. Each sits right after its sibling (RUNNING_LOG §21–§23).
-  { name = "Bassoon SI2 b", port = "LGBassoonb", fx = { "VST3i: UVIWorkstation (UVI)" }, after = "Bassoon SI2" },
-  { name = "Horn SI2 b",    port = "LGHornb",    fx = { "VST3i: UVIWorkstation (UVI)" }, after = "Horn SI2" },
-  { name = "Trumpet SI2 b", port = "LGTrumpetb", fx = { "VST3i: UVIWorkstation (UVI)" }, after = "Trumpet SI2" },
-  -- the bowed vibraphone, 2026-09-18: acquired (LG-9), given its own lane (D12) because the opening
-  -- sustains it continuously (LG-15). He made the track and loaded Xsample Mallets Extended himself;
-  -- this row is here so the rack stays reproducible — the job RE-CONFIGURES a track of this name
-  -- (input, monitoring, arm, fader) and never duplicates it.
-  { name = "Vibraphone XS", port = "LGVibes", fx = { "VST3i: Kontakt 8 (Native Instruments) (64 out)", "VST3i: Kontakt 8 (Native Instruments)" }, after = "Bass XS" },
+  { name = "Bass Flute XS",    port = "DECBassFlute", fx = KONTAKT },   -- bare in the text; Xsample Bass Flute.nki by reaper/kontakt/load_xs.lua
+  { name = "Bass Clarinet XS", port = "DECBassClar",  fx = KONTAKT },   -- cloned from piece #5 (the D11 slots + the strike slot on [A] 5)
+  { name = "Viola XS",         port = "DECViola",     fx = KONTAKT },   -- cloned from piece #5's "Va XS"
+  { name = "Cello XS",         port = "DECCello",     fx = KONTAKT },   -- cloned from piece #6
 }
 local function devIndex(port)
   for d = 0, reaper.GetNumMIDIInputs() - 1 do

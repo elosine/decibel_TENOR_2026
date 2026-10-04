@@ -22,7 +22,8 @@
 | the package | `decibel-tenor-2026` | `package.json` · `package-lock.json` |
 | the Reaper project guard | `decibel_rack` → `reaper/decibel_rack.rpp` (the rack is container 4's) | `tools/reaper_job.js` · `render_reaper.js` · `export_midi.js` |
 | the ports | the composer score **5500** · the sandbox **5000** · the throwaway **5501** | `score/server.js` · `sandbox/serve.js` · `.claude/launch.json` |
-| the loopMIDI ports — the SHAPE, fixed at container 4 (4.1) | `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECVibes` · `DECViola` · `DECCello` | `sandbox/instruments.js` · `bank/perc_selection.json` |
+| the loopMIDI ports — MADE 2026-10-04 (4.1, by the AI; RUNNING_LOG §19) | `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECCrotales` · `DECGlock` · `DECMarimba` · `DECXylo` · `DECViola` · `DECCello` — one port per instrument, the four Ricotti mallet instruments a port each. `DECVibes` (the stand-in's, never made) leaves the recipe at 4.5 | loopMIDI's registry key · `sandbox/instruments.js` · `bank/perc_selection.json` · `reaper/bridge/jobs/make_tracks.lua` |
+| the rack's tracks | `Bass Flute XS` · `Bass Clarinet XS` · `Viola XS` · `Cello XS` (`XS` = Xsample) | `tools/build_rack.js` · `make_tracks.lua` · `peakwatch.lua` |
 | the page's storage keys | `decibel.sequenceDrawer.v1` · `decibel.rhythmSequence.v1` · `decibel.textureRow.v1` · `decibel.vibesPitch.v1` | four modules |
 | the generated reference scores | `decibel-*` (`tools/check_ceilings.js --all`) — none yet (container 5) | |
 | the sketch pad's notes | `DEC-N` (journal D6) | `docs/COMPOSITION_NOTES.md` |

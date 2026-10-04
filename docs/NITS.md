@@ -113,3 +113,12 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 *(Offers he held — not to be raised again in this piece. The harvest reads this section whole.)*
 
 - ‹…›
+
+- **Piece #5's SECOND "Bass Clarinet XS" track and its "BassCl strikes" bus were not carried into this rack** (2026-10-04, RUNNING_LOG §19). The
+  first track (the four D11 slots + the strike slot on channel 5) was cloned; the second — a single-slot Kontakt on the same port — was not, its
+  purpose not found in the record read. This engine's recipes have no strike lane. Decide at 4.5, when the bass clarinet's recipe is derived:
+  the slap on channel 1 by CC0, or a lane.
+- **The three cloned tracks were taken from GIT; the old racks on disk are newer** (piece #6's 2026-10-01, piece #5's 2026-09-17; the plugin
+  states differ). His one word decides (`tools/build_rack.js --source disk`). Until then a hand-set value of the finished pieces may be missing.
+- **Reaper did not enable the new loopMIDI ports as inputs by itself** (2026-10-04; piece #6 §23 found it did). One Preferences step, his; the
+  masks (`midiins_h` · `midiins_x` in `reaper.ini`) are not reachable through the API. For the how-to pages (4.10).

@@ -48,7 +48,7 @@ processing · THE MIDDLE — the after-effects alone, sustained · THE LAST — 
 |---|---|---|---|
 | 2 The repo and its kit | yes — every piece | `done` 2026-10-04 | RUNNING_LOG §1 · `#6 §816 … §818` |
 | 3 The engine copied forward | yes — from piece #6 | `done` 2026-10-04 — the copy 369 / 369 · proven whole · the small fixes here · six lanes (D9) on 5500 / 5000 · provisional recipes · verified in the running app | RUNNING_LOG §6 … §16 · § 0.3 below |
-| 4 The instruments | yes | `► in progress` — 4.0 the talk answered 2026-10-04 (RUNNING_LOG §18): Xsample for the bass flute (new) · bass clarinet · viola · cello; Ricotti Mallets the pitched lane (DEC-5); the unpitched percussion open. NEXT: 4.1 the ports (H-15 first) → 4.2 the rack by the AI — three Xsample tracks cloned from pieces #5 · #6's racks → 4.3 his two loads → 4.4 · 4.5 → 4.6 the first sound → 4.7 + 4.10 the how-to pages | |
+| 4 The instruments | yes | `► in progress` — 4.0 ☑ the talk (RUNNING_LOG §18; the unpitched percussion open) · **4.1 ☑** nine `DEC` ports made by the AI (H-15: yes) · **4.2 ☑** the rack built as text, three Xsample tracks cloned from pieces #5 · #6 and proven to sound (§19). NEXT: his three hand steps (enable the inputs in Reaper · the bass flute loader in Kontakt · CTRL+S) → 4.4 · 4.5 → 4.6 the first sound → 4.7 + 4.10; Ricotti (a Kontakt library) when installed | |
 | 5 The calibration | yes | `todo` | |
 | 7 The composing tools made the piece's | yes — one at a time, at compositional need | `todo` | |
 | 6 The notation set-up — the animated scrolling score | yes | `todo` | |

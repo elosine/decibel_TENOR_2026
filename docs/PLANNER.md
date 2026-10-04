@@ -5,7 +5,7 @@
 > `COMPOSITION_NOTES.md` verbatim first and get folded into a tier here. Engineering
 > detail stays in `PLAN.md`. Rewritten freely; the sketch pad is the append-only record.
 
-**NOW ►** 2026-10-04 — CONTAINER 4 OPEN (running order step 2): the talk answered — Xsample for the bass flute (new) · bass clarinet · viola · cello; Spitfire Ricotti Mallets the pitched lane, four instruments on one lane (DEC-5); the unpitched percussion open, he gathers. THE RACK IS NOT MADE — ► NEXT: built by the AI as far as text goes (journal §2): 4.1 the ports → 4.2 the tracks, three Xsample tracks cloned from pieces #5 · #6's racks → 4.3 his two loads → 4.6 the first sound. Nothing sounds yet.
+**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK IS UP (running order step 2; RUNNING_LOG §19): nine `DEC` ports made by the AI · `reaper/decibel_rack.rpp` built as text — Bass Flute XS (empty) · Bass Clarinet XS · Viola XS · Cello XS, the last three cloned from pieces #5 · #6 and sounding. ► NEXT: his three hand steps (enable the `DEC` inputs in Reaper · the bass flute loader in Kontakt · CTRL+S), then the recipes and the first sound from the composer score. Ricotti Mallets (a Kontakt library) when installed; the unpitched percussion his, gathering.
 
 *Before it —* 2026-10-04 — his brief taken: the piece in three sections (below, from DEC-1 … DEC-3); the day's work a running order in journal §2.
 *Before it —* 2026-10-04 — the repo and its kit made (the protocol's container 2); no code.

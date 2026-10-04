@@ -666,3 +666,79 @@ bullets each — the port · the track · the instance and the channel map · th
 the read-back · the round-robin pre-flight — from `#6` RUNNING_LOG §20 … §42 and what this build proves; nothing on his end;
 the full revision later, his words. (3) The pitched lane's port RENAMED `DECVibes` → `DECMallets` at 4.1 (the AI's naming
 call). (4) The build is Opus's — the switch point; no clear needed, the chat is short.
+
+## §19. CONTAINER 4 — 4.1 THE PORTS MADE BY THE AI (H-15 answered: YES) · 4.2 THE RACK BUILT AS TEXT, three tracks CLONED from pieces #5 · #6 and PROVEN to sound · Ricotti is a KONTAKT library, a correction (2026-10-04, Opus)
+
+**What prompted it — his words:** on the step list, *"go"*; mid-build, *"mallets not yet installing now"* — read by the AI as: the
+mallets are not installed yet, still installing. So Ricotti was left alone; the build ran on the four Xsample instruments.
+
+**A CORRECTION OF §18.** §18 called Ricotti Mallets "Spitfire family, as ARO". It is not. His manual (`docs/manuals/`, p. 4):
+the library *"requires the full version of Kontakt to run, it will not work in the Kontakt 'Player'"* — a KONTAKT library of the
+Kontakt 4 / 5 years (product PP006-007), opened as `.nki` files. So its family is **Kontakt**, the same as Xsample: its loads are
+scriptable by the Kontakt Lua API, its patches sit in the slots of a Kontakt instance on MIDI channels. From the manual, for 4.4 ·
+4.5 and container 5: 8 round robins and 4 dynamic layers · an instrument's articulations are chosen by KEYSWITCH or by a CC
+("KEYSWITCH TO CC SELECTOR") · the round-robin count is a dial, 1 … 8 · "RESET FROM F7" resets the round-robin cycle from a key
+(default F0), "RESET ON TRANSPORT" on play · "CC1 MAPPED VEL" puts the shorts' dynamics on CC1 as the longs' are · the "Punch Cog"
+patches can SKIP one round robin · five microphones (Ca · V · Co · Ri · Ro) · an ARTICULATION LOCK. The marimba's eight
+articulations, in the manual's order: Main · Rubber · Full Soft · Full Hard · Hot Rod · Hot Rod Flam · Tremolo · Bow. The library
+folder: `C:\Users\jwloy\Spitfire\Spitfire Ricotti Mallets library` (still arriving at 13:38).
+
+**4.1 — H-15, THE ONE LOOK: CAN loopMIDI BE DRIVEN? YES.** (Piece #6's harvest item; his ask of 2026-09-17, *"figure out how you
+can automate the loop MIDI ports, because each of the percussion instruments will need its own port"*.)
+- loopMIDI 1.0.16.27 keeps its ports as VALUES of the registry key `HKCU\Software\Tobias Erichsen\loopMIDI\Ports` — one value per
+  port, the name the port's, the type DWORD, the data 1 — and creates them when it starts. 50 values, 50 live ports, before.
+- The method: Reaper closed (it was) → the key exported as a backup → loopMIDI stopped → nine DWORD values added → loopMIDI
+  started. Its own window listed all 59 at once.
+- **THE WAIT — the thing to know next time:** Windows did not show the new ports to other programs at once. loopMIDI started
+  13:41:03; at 13:41:10 and 13:42:24: 52 outs, 51 ins, no `DEC`; at 13:43:47: **61 outs, 60 ins, all nine `DEC` ports, in and out,
+  case-exact.** About two minutes for nine NEW names (the fifty old ones were back in seconds). Tried on the way, kept: UI
+  Automation cannot read loopMIDI's list (a Delphi grid); a capture of its own window, scrolled, can.
+- To revert: delete the nine `DEC…` values, restart loopMIDI.
+- **THE PORTS — nine, the AI's naming call, his to reverse:** `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECCrotales` ·
+  `DECGlock` · `DECMarimba` · `DECXylo` · `DECViola` · `DECCello`. The four mallet instruments get A PORT EACH, not the one
+  `DECMallets` announced in §18: the product page lists 39 patches against one instance's 16 channels, his standing ask is a port
+  per percussion instrument, and a port now costs nothing. `DECVibes` (the stand-in's) was never made.
+- **WHAT REAPER DID NOT DO:** it did not switch the new ports on as inputs. `reaper.ini`: `midiins_h=8388607` = devices 32 … 54
+  enabled; the `DEC` ports are devices 55 … 61 · 64 · 65 (`reaper-midihw.ini`). Piece #6 §23 found new ports enabled by themselves;
+  here they were not. The masks are not reachable as config variables (SWS is installed; `SNM_GetIntConfigVar('midiins_h')` returns
+  the default) — so the tick in Preferences → MIDI Inputs is HIS, one step.
+
+**4.2 — THE RACK AS TEXT (`tools/build_rack.js` → `reaper/decibel_rack.rpp`).** His idea (§18): *"copy previous racks and then
+just copy the instrument lanes back and forth"*.
+- The old racks, read from git: piece #5 `septet_rack.rpp` @ `aa33d3f` (13 tracks) · piece #6 `LGMF_rack.rpp` @ `755df22` (30).
+  A track chunk carries its Kontakt WITH the multi; the recipes of both pieces say D11 — channel 1 MAIN, 2 … 4 CURVE A / B / C.
+- Built: piece #6's project header (120 BPM, master 0 dB, no master FX) + four tracks in score order — **Bass Flute XS** (bare) ·
+  **Bass Clarinet XS** ← piece #5 (11 762 lines) · **Viola XS** ← piece #5 "Va XS" (16 634) · **Cello XS** ← piece #6 (17 625).
+  46 140 lines, 6.0 MB. On a cloned track three lines are rewritten — NAME · VOLPAN to 0 dB · REC to no input — and the tool
+  checks the plugin state's hash before and after: `8ee06c07d9f3` · `9658dc6cd9ec` · `c52717786002`, carried byte-exact.
+- The input is NOT in the text: a MIDI device number is Reaper's own. `reaper/bridge/jobs/make_tracks.lua` (its SPEC rewritten
+  to this piece's four rows) sets each input by PORT NAME, arms, monitors, and inserts Kontakt into the bare track.
+- Reaper was opened ON the file by the AI; the bridge answered after 52 s with `decibel_rack.rpp`, 4 tracks. The job's read-back:
+  Bass Flute XS ← `DECBassFlute` (device 55; Kontakt 8 inserted) · Bass Clarinet XS ← `DECBassClar` (56) · Viola XS ← `DECViola`
+  (64) · Cello XS ← `DECCello` (65); every track armed, monitoring, 0 dB, its Kontakt enabled and online.
+- **THE PROOF, and a dead end first.** A note sent to `DECCello` (`tools/note_to_port.ps1`, winmm) twice showed NO level
+  (−150 dB on every meter). Not diagnosed by guess: `MIDI_GetRecentInputEvent` showed Reaper had received nothing from
+  `DECCello` (only old CC64s from `reaper1`) — the note never arrived, because the input is not enabled (above). So the clones
+  were proven APART from the ports: `reaper/bridge/jobs/sound_check_vkb.lua` switches a track's input to Reaper's Virtual MIDI
+  Keyboard, stuffs one note, watches the meter, puts the input back. **Cello XS, A3: −26.3 / −24.8 dB · Viola XS, E4: −19.6 /
+  −18.2 dB · Bass Clarinet XS, D3: −28.0 / −26.2 dB; every input restored.** THE CLONE ROUTE WORKS: three instruments arrived
+  loaded, with no load by him. (He heard the three notes twice — the first run's answer was read too early.)
+
+**Left out, and why — his to reverse:**
+- **Git, not the working files.** Both old racks are NEWER on disk than in git — piece #6's saved 2026-10-01, piece #5's
+  2026-09-17 — and the plugin states differ (cello `c527…` in git, `ef78…` on disk; bass clarinet `8ee0…` / `84fc…`; viola
+  `9658…` / `6aaf…`). The build took git's: CLAUDE.md's rule ("from GIT or asks him") and his answer at §7 ("none go across").
+  The disk racks are the ones the pieces were finished on, and the carried cello measurements were made on piece #6's; `--source
+  disk` reads them without touching them. PUT TO HIM, one word.
+- **Piece #5's SECOND "Bass Clarinet XS" track** (a single-slot Kontakt, 229 216 bytes of state against the first's 1 125 189, on
+  the same port) and its **"BassCl strikes" bus** are not carried: what the second instance was for is not in the record the AI
+  read, and this engine's recipes have no strike lane (`lane:` occurs nowhere in `sandbox/instruments.js`). The strike slot on
+  channel 5 came along inside the clone, idle. Looked at again when the bass clarinet's recipe is derived (4.5). NITS.
+
+**Written for 4.3, not run:** `reaper/kontakt/load_bass_flute.lua` — in the empty Kontakt of "Bass Flute XS" it loads
+`Bass Flute.nki` (in the AIL installer's copy of the collection, as the English Horn's was) on channel 1 and the three curve
+copies on 2 … 4, and writes its read-back. Parse-checked through the bridge (Reaper's Lua 5.4). His part is one menu item.
+
+**The division of labour, as it came out** (for the how-to pages, 4.10): the AI made the ports, built the rack file, opened
+Reaper, set every input, proved the sound. His: enabling the new inputs in Reaper's Preferences (once) · running a Kontakt script
+from Kontakt's own menu (once per new instance) · CTRL+S.

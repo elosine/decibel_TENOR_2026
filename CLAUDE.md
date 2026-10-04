@@ -47,8 +47,10 @@ seams · the mic opening · the return · the processing); the piece in three se
 `electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §16): STEP 1, CONTAINER 3, IS
 DONE — piece #6's engine is here and is THIS piece's: copied byte-exact, proven whole, the small fixes made, turned to SIX LANES
 (D9: bass flute · bass clarinet · percussion · vibraphone · viola · cello), the composer score on 5500 and the sandbox on 5000,
-provisional recipes, verified in the running app. NOTHING SOUNDS YET; NOTHING NOTATES THIS ENSEMBLE YET. ► NEXT: step 2,
-container 4 — the instruments — opening with a TALK: which library for each, which percussion (the vibraphone lane is a stand-in).
+provisional recipes, verified in the running app. **► 2026-10-04 (Opus, RUNNING_LOG §18 · §19): CONTAINER 4 IN HAND — the talk answered (Xsample ×4 · Ricotti Mallets, a Kontakt library, the
+pitched lane · the unpitched percussion open); nine `DEC` ports and the rack `reaper/decibel_rack.rpp` made by the AI, three tracks cloned and
+sounding IN REAPER. NOTHING SOUNDS FROM THE COMPOSER SCORE YET; NOTHING NOTATES THIS ENSEMBLE YET. ► NEXT: his three hand steps (journal §2),
+then the recipes and the first sound.
 Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are the cold-start block.**
 
 ## READ FIRST — how to work here
@@ -246,9 +248,13 @@ routing advice is also credit advice, and these bind every Fable turn:
 - **The sandbox — `http://localhost:5000`** (`sandbox/serve.js`; launch name `sandbox`) — one instrument, one technique at a time.
 - **`.claude/launch.json`:** `score` 5500 · `sandbox` 5000 · **`score-5501`** — the THROWAWAY for verification, on the same scores
   folder (`docs/VERIFICATION_RECIPE.md`). There is no entry for piece #6's server; add `lgmf-5400` only at his word.
-- **The MIDI ports:** the prefix `DEC` (D6) — `DECBassFlute` · `DECBassClar` · `DECPerc` · `DECVibes` · `DECViola` · `DECCello` are the
-  SHAPE in `sandbox/instruments.js`; container 4 fixes them. loopMIDI ports are machine-global: piece #5's (bare names) and piece
-  #6's (`LG…`) racks may be live, and `palette_check` refuses both sets.
+- **The MIDI ports:** the prefix `DEC` (D6) — NINE, MADE BY THE AI 2026-10-04 (RUNNING_LOG §19): `DECBassFlute` · `DECBassClar` · `DECPerc` ·
+  `DECCrotales` · `DECGlock` · `DECMarimba` · `DECXylo` · `DECViola` · `DECCello`. A port is a value in loopMIDI's registry key + a restart of
+  loopMIDI (Reaper closed); a NEW name takes ~2 minutes to show, and Reaper must be told to enable it (Preferences → MIDI Inputs). loopMIDI
+  ports are machine-global: piece #5's (bare names) and piece #6's (`LG…`) are live beside them, and `palette_check` refuses both sets.
+- **The rack — `reaper/decibel_rack.rpp`** (built as text by `tools/build_rack.js`, three Xsample tracks cloned from pieces #5 · #6; once he
+  has saved it, it is HIS — a track is added through the bridge, `reaper/bridge/jobs/make_tracks.lua`, never by rebuilding). The bridge:
+  `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
 - **The notation app · print · video:** the code is here and proven on piece #6's pages; the registry
   (`notation/registry/ensemble.json`) is STILL PIECE #6's eight parts. Nothing notates this ensemble until container 6.
 - **The names** — `docs/NAMING.md` § 1. **The recipes are PROVISIONAL** — three instruments carried from piece #6, three placeholders.
