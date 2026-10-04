@@ -155,7 +155,8 @@ deliverables · the planning repo's lines (at his word only).
   #6's data, staged by `tools/port/stage32.sh` — both run from a COPY in the scratchpad (they write beside themselves); delete by
   the staged list after; the page-scanning checks on piece #6's pages alone. Three fixes were made and NOT RUN (NITS § From the
   small fixes) — container 5's first card checks them.
-- **► THE NEXT CONCRETE STEP — 3.3 THE RE-PALETTE — ASK FIRST, ONE QUESTION (Q4): the percussionist on ONE lane or TWO?** It sets the lane count (five or
+- **► THE NEXT CONCRETE STEP — 3.3 THE RE-PALETTE — Q4 ANSWERED 2026-10-04, his *"b"*: TWO lanes, SIX in all (D9) — bass flute · bass
+  clarinet · percussion · vibraphone (the pitched lane's stand-in, piece #6's carried whole) · viola · cello; META 6, the curve windows 7 / 8 / 9.** It sets the lane count (five or
   six), so `TRACKS`, the META and curve layers, the lane CSS, `layoutVersion` 8. PLAN § 0.3 § THE COUPLING is the map (kinds A · B · C,
   by file and line). A lane can be added later (RUNNING_LOG §3), so "one for now" is an answer. Also at 3.3: the roles line (the piano
   absent · the percussion live · the vibraphone and its second seat only if Q4 says so — the protocol's 3.10) · the bundled font (3.9).
@@ -287,6 +288,13 @@ Verified in this repo only when they bite.)*
   its GC (section 1) · a stack across the staves read as an electronic chord (section 3) · a held chord of freezes as a duration-line
   kind (section 2). Five players confirmed; the percussion's instruments and its one lane or two his, at container 4. Rejected: the
   AI's electronics lane (running order step 1, 6.2). *(RUNNING_LOG §3)*
+- **D9 · 2026-10-04 — THE LANES: SIX — THE PERCUSSIONIST ON TWO** (his *"b"* to "one lane or two", asked at the re-palette). In score
+  order: **bass flute · bass clarinet · percussion (unpitched) · the pitched percussion lane · viola · cello**; META = 6, the curve
+  windows 7 / 8 / 9 over the last three lanes. **Two calls of the AI's inside it, his to reverse:** the PITCHED lane is piece #6's
+  VIBRAPHONE lane carried whole (`vibraphone` / `bowed_vibraphone` — its recipe, its second seat, its marks) as the stand-in until
+  the instruments talk (4.0) says WHICH pitched instrument; a rename before the first real save costs nothing · the ORDER is the
+  lineage's score order, winds · percussion · strings (#5's D10). Rejected: one lane now and a second later (he answered b).
+  *(RUNNING_LOG §13)*
 
 ---
 

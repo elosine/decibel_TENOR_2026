@@ -406,3 +406,27 @@ The lesson joins the machine lessons: **a replacement string that may contain `$
 
 **Not verified, and said:** `analyze_card.py`'s stamping, `apply_ranges.js` / `apply_bend_ranges.js` and the two probes were not RUN —
 each needs a recording, a rack or a port. They are checked at container 5's first card (a line in NITS).
+
+## §13. Q4 ANSWERED — THE PERCUSSIONIST ON TWO LANES, SIX IN ALL: his "b" (D9) (2026-10-04, Opus)
+
+**Put to him at the wrap of 3.8, as the one decision the re-palette needs:** a lane is one row of the composer score; piece #6 gave its
+percussionist two (the unpitched instruments · the vibraphone). (a) ONE lane — the AI's pick "for now": five lanes, the percussion
+instruments not chosen yet, a second lane can be added later (§3) · (b) TWO lanes — one unpitched, one pitched: six lanes; right if he
+already knows the percussionist plays a pitched instrument as a voice of its own.
+
+**His word: *"b"*.** Against the AI's pick — so he does know it: the percussionist has a pitched voice of its own in this piece. He did
+not say which instrument; that is the instruments talk's (4.0), and it is not asked now.
+
+**What follows, and the AI's two calls inside it (D9, his to reverse):**
+
+- **Six lanes, in the lineage's score order** (winds · percussion · strings — #5's D10): bass flute · bass clarinet · percussion ·
+  the pitched percussion lane · viola · cello. `META_LAYER` 6; the curve windows A / B / C on layers 7 / 8 / 9, over the last three
+  lanes (the pitched lane · viola · cello). `layoutVersion` 8.
+- **The pitched lane is piece #6's VIBRAPHONE lane, carried whole, as the stand-in** — lane id `vibraphone`, recipe key
+  `bowed_vibraphone`, its measured recipe, its second seat, its notation marks. Why this and not a neutral name: the engine has a
+  whole ROLE built on that key (the second seat, the bow's marks, the strip's pitch tool, the still voice in a morph — §8, kind C), and
+  carried as it is the role stays alive and tested; a neutral key would switch all of it off and prove nothing. If the pitched
+  instrument is not a vibraphone, the lane is renamed at 4.0 — before any real save exists, so at no cost.
+- **Three of the six lanes exist in piece #6 with measured recipes and are carried:** the percussion (Spitfire ARO) · the bowed
+  vibraphone · the cello. **Two exist in piece #5** (`septet_2026`): the bass clarinet and the viola (Xsample, measured in the Tempus
+  rack) — their recipes are taken from there. **One is new:** the bass flute — a placeholder until container 4.
