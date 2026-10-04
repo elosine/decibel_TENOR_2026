@@ -49,9 +49,9 @@ processing · THE MIDDLE — the after-effects alone, sustained · THE LAST — 
 | 2 The repo and its kit | yes — every piece | `done` 2026-10-04 | RUNNING_LOG §1 · `#6 §816 … §818` |
 | 3 The engine copied forward | yes — from piece #6 | `done` 2026-10-04 — the copy 369 / 369 · proven whole · the small fixes here · six lanes (D9) on 5500 / 5000 · provisional recipes · verified in the running app | RUNNING_LOG §6 … §16 · § 0.3 below |
 | 4 The instruments | yes | `done` 2026-10-04 — the rack built by the AI (nine ports, three tracks cloned, sixteen sounding), the recipes for every lane, the first sound from the composer score, the how-to pages (RUNNING_LOG §18 … §44) | |
-| 5 The calibration | yes | `todo` | |
-| 7 The composing tools made the piece's | yes — one at a time, at compositional need | `todo` | |
-| 6 The notation set-up — the animated scrolling score | yes | `todo` | |
+| 5 The calibration | yes | `done` 2026-10-04 for a composing demo — the card (16 instruments), the chain proven against piece #6 within 0.4 dB, sixteen faders, four dynamics curves; round robin skipped at his word. Open: his ear · the QC battery (5.7) | RUNNING_LOG §29 · §40 … §43 |
+| 7 The composing tools made the piece's | yes — one at a time, at compositional need | `at need` — one item done 2026-10-04 (the Texture panel's click); 7.0 the law read and 7.1 the data checklist at the first tool he reaches for | RUNNING_LOG §45 |
+| 6 The notation set-up — the animated scrolling score | yes | `► set up` 2026-10-04 — 6.0 the registry (six parts) · the technique keys (233) · 6.3 the gates · 6.4 save → IR valid and drawn · 6.5 the exporters run. Open: his three calls (pitch form · the percussion staff's line order · short names) · the app-written test page at his first material · 6.6 · 6.8 · the shield | RUNNING_LOG §45 |
 | 8 The deliverables pipeline — the animated scrolling score | yes | `todo` | |
 
 *Outside this table:* container 1 (the harvest) is run in the LAST piece's repo · 9 (the collation) is the home's

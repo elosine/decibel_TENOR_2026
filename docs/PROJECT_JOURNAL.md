@@ -99,12 +99,12 @@ takes is his (D5).
    percussion staff type · NO electronics staff (D8) — the electronics' signs are DRAWN KINDS on the players' staves, each by a
    device sheet when notating comes (DEC-4; the engine plan's part 7) · 6.3 the batteries · 6.4 save → IR proved on a save of
    the Decibel lanes · 6.5 the exporters run once). **Done when:** a Decibel save extracts to a valid IR and lays out on the page.
-5. **Container 7 — the composing tools, at need** (7.0 the law read · 7.1 the data checklist · the first tool the moment the music
+5. **Container 7 — the composing tools, at need** *(one item done 2026-10-04: the Texture panel's click is this rack's — §45; the rest waits for the music)* (7.0 the law read · 7.1 the data checklist · the first tool the moment the music
    asks — for step 7 the Rec lane and the bricks' moving between lanes, which exist). No tool adapted ahead of need.
 
 **II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `live-electronics-system/docs/PLAN.md`)*
 
-6. **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
+6. ► NEXT **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
    `live-electronics-engine` — what it is built on decides the sound seam (a folder `SynthDef_petalsOfResonance` under GitHub says
    SuperCollider; the read says) · WHERE the engine's code sits here — `electronics/` (D7) — and how the composer app loads it (a
    script tag; a static route in `score/server.js`) · THE MESSAGE from the score to the sound: the stack already sends MIDI from the
@@ -139,123 +139,71 @@ takes is his (D5).
 extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
 deliverables · the planning repo's lines (at his word only).
 
-### SESSION 1 — STEP 1 IS DONE (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS THIS PIECE'S: six lanes, its own ports, every panel opens; ► NEXT: step 2, container 4 — the instruments, opening with a TALK
+### SESSION 1 — THE START IS DONE BUT FOR HIS EAR (2026-10-04, Fable · Opus; one long chat) — containers 3 · 4 · 5 done, 6 set up, 7 one item; ► NEXT: running order step 6, the electronics' seams
 
-- **Done this session** (RUNNING_LOG §6 … §16; PLAN § 0.3): the whole of container 3 — the two asks · 3.0 the survey · 3.1 the copy
-  (369 / 369) · 3.2 proven whole · 3.8 the small fixes HERE · 3.3 the re-palette (D9: six lanes) · 3.4 recipes and skeleton banks ·
-  3.5 verified in the running app · 3.6 the record. Everything committed and pushed.
-- **The state of the code:** the composer score runs on **5500** and the sandbox on **5000**, from `.claude/launch.json` (`score` ·
-  `sandbox` · `score-5501` the throwaway). Six lanes — bass flute · bass clarinet · percussion · vibraphone · viola · cello — META 6,
-  the curve windows 7 / 8 / 9, `layoutVersion` 8. A bare load has zero console errors; sixteen panels and windows open and close.
-  `scores/decibel.json` is the day-one empty score. **NOTHING SOUNDS** (no rack, no loopMIDI ports — containers 4 · 5) and
-  **NOTHING NOTATES THIS ENSEMBLE** (`notation/registry/ensemble.json` is still piece #6's eight parts — container 6).
-- **The recipes are provisional** (`sandbox/instruments.js`): the percussion · the bowed vibraphone · the cello CARRIED from piece #6
-  with ITS rack's measurements; the bass flute · the bass clarinet one placeholder voice each; the viola the strings' roster by the
-  cello's mechanism. **The pitched percussion lane is the vibraphone only as a STAND-IN (D9).**
-- **► THE NEXT CONCRETE STEP — HIS THREE HAND STEPS, one at a time, then 4.4 (Opus). Where the build stands (RUNNING_LOG §19):
-  4.1 ☑ the nine `DEC` ports made by the AI and live · 4.2 ☑ `reaper/decibel_rack.rpp` built as text and OPEN in Reaper — Bass
-  Flute XS (an empty Kontakt) · Bass Clarinet XS · Viola XS · Cello XS, the last three CLONED from pieces #5 · #6 and PROVEN to
-  sound from inside Reaper; every track armed on its port.**
-  - **☑ DONE since (RUNNING_LOG §20):** his Preferences step — the ports proven END TO END · his word "disk" — the three clones
-    re-taken from the old racks' working files, sounding through their ports · Ricotti installed: `bank/ricotti_catalog.json`
-    (39 patches), four tracks (Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM) each with an empty Kontakt, four loaders
-    written · he saved the rack once (14:14) — the file is HIS; he added a ninth track himself (Abbey Road Orchestra).
-  - **☑ DONE since (RUNNING_LOG §21):** four of his five script runs — the bass flute (4 slots), crotales (9), glockenspiel
-    (12), xylophone (10), each read back and sounded through its port (the glockenspiel's test key gave no note — its range is
-    read at 4.5) · THE UNPITCHED PERCUSSION, his tentative list (DEC-6): eight tracks on `DECPerc`, channels 1 … 8, three
-    cloned from piece #6 and sounding (Bass Drum Alt · Wood Blocks · Spring Coil).
-  - **☑ the marimba's script run (8 slots) and the rack SAVED by him, 14:29 — "done with scripts saved" (RUNNING_LOG §22).** All five
-    Kontakt loads are in: every Xsample and Ricotti track sounds through its port.
-  - **☑ four of the five loaded and read (RUNNING_LOG §23):** Bongos (C) → `bongos` · Shime Daiko (C) → `shime_daiko` · China Cymbal (C) →
-    `china_cymbals` (the mapped entry; settled) · Suspended Cymbals (C), Cymbal BRIGHT AIO → `susp_cymbals_bright` (he switched from Mellow, §24). Each All-in-One's top key
-    equals the catalog's last key — NO KEY MAP TO MAKE. **Left: Toms ARO.**
-  - **☑ THE PERCUSSION IS DONE THROUGH 4.5 (RUNNING_LOG §25):** his five loads read · `bank/perc_selection.json` = bongos ·
-    shime_daiko · bass_drum_alt · wood_blocks · china_cymbals · small_metals_spring_coil · susp_cymbals_bright · toms_high on
-    channels 1 … 8 · `apply_perc.js` run · the eight states banked (`bank/aro_states/`) · all eight sound · the composer page
-    loads clean on 5501.
-  - **► NEXT, the AI's — 4.5 for the rest, in this order:** (a) A KEY SWEEP AS ONE COMMAND (a bridge job + a sender: every key
-    of a port's channel, the meter read) — then the Ricotti ranges, 39 patches · (b) THE PITCHED LANE'S RECIPE from
-    `bank/ricotti_catalog.json` — four instruments on one lane, a port each; the vibraphone stand-in (D9) retired; `DECVibes`
-    leaves the recipe · (c) THE BASS FLUTE from his Preset Menu — 32 presets: the manual's 30 (RUNNING_LOG §25) + 31 · 32 the Pseudo Contrabass pair (§26), CC0 = number − 1 ·
-    (d) THE BASS CLARINET from piece #5's recipe (34 presets; the slap and the second instance — NITS) · THE VIOLA from piece
-    #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
-    plain non-vibrato) · a save.
-  - **THE LIST TO "FULLY OPERATIONAL" — RESEARCHED AND NARROWED (RUNNING_LOG §29; it supersedes §27's):** 1 ☑ key ranges for the four
-    mallets — DONE (RUNNING_LOG §30 … §33; he dictated by screenshot, `tools/key_sweep.js` proved the edges) · 2 ☑ recipes — DONE (RUNNING_LOG §34: bass flute 32, ordinary #15 · bass clarinet 34 from piece #5 · the mallets lane, 39 patches by `tools/apply_ricotti.js` · the viola stands) · 3 ☑ THE FIRST SOUND — "all 16 sound" (his Chrome, RUNNING_LOG §36; the protocol's 4.6 met) · 4 ☒ round
-    robin — SKIPPED at his word (RUNNING_LOG §39: one preset per articulation per instrument is not worth the scatter it removes);
-    the bass flute's #33 kept, being done · 5 ☒ the round-robin check — skipped with it · 6 ☑ the KNOWN volumes put back on the faders — cello −3.87 ·
-    wood blocks +7.05 · bass drum alt −4.29 dB (piece #6's `bank/trims.json`; set through the bridge, RUNNING_LOG §40; his CTRL+S) · 7 the volume probe, NEW instruments only: bass
-    flute · four mallets · bongos · shime daiko · China cymbal · spring coil · suspended cymbals · toms · 8 bass clarinet and viola
-    re-levelled (piece #5's balance was relative) · 9 the dynamics curve for the bass flute · 10 listen.
-    **ALREADY DONE, never to be redone:** the reference tone and his system volume (piece #6) · the cello's round robin, volume and
-    curve · the Abbey Road round robins (left on, as piece #6) · the percussion's key maps.
-    **HIS WORD ON THE REPLIES (§27 · §28): a bare list, one line per item, no table, no detail; the how after, one sentence each.**
-  - **☑ ITEMS 7 · 8 · 9 ALL DONE (RUNNING_LOG §43): the bass flute reset to the factory instrument (his decision (a)), ordinary #15,
-    measured alone, trim −7.52 dB, its curve merged. SIXTEEN faders, FOUR curves. ► NEXT: item 10 — HE LISTENS (reload the composer page;
-    `decibel-first-sound`, then his own material). Then 4.7 the record · 4.10 the how-to pages — and containers 4 · 5 close.**
-  - *(as it stood before the flute's reset:)* **ITEMS 7 · 8 DONE, 9 IN PART (RUNNING_LOG §42):** the card recorded (114 notes, all found), the chain proven against piece #6
-    within 0.4 dB on the three clones, FIFTEEN faders set (`bank/trims.json`; his CTRL+S), the bass clarinet's and viola's curves
-    built and merged (`bank/velocity_remap.json`). **► OPEN, HIS ONE DECISION — THE BASS FLUTE:** its preset 33 takes its
-    loudness from the MOD WHEEL (saved from preset 1, not #15) and its four slots are not in one state — so it has no trim and no
-    curve. (a) reset the instrument to factory by one script and go back to #15, or (b) he remakes the preset from #15 in four
-    slots; then the AI re-measures the flute alone (the steps are in NITS). THEN item 10, listen.
-  - *(the plan as it was written for this run, kept:)* In order:
-    (a) `tools/card_schedule.js` re-made for THIS rack, from `sandbox/instruments.js` — 15 instruments: bass flute · bass clarinet
-    · viola (3 pitches × 24 · 64 · 100 · 127, ordinary voice, channel 1) · crotales · glockenspiel · xylophone · marimba (a main
-    patch, 3 pitches × 64 · 127) · bongos · shime daiko · China cymbal · spring coil · suspended cymbals · toms (first key of the
-    first beater × 64 · 127, no CC7); 4 s held, the tail given; NOT the cello, wood blocks, bass drum alt · (b) the REC track:
-    `reaper/bridge/jobs/make_rec_track.lua` (re-pointed: 16 receives, the end of the rack) · (c) `bank/reference.json` CARRIED from
-    piece #6 (same machine, same Reaper at unity) — a line in PROTOCOL_DEVIATIONS · (d) `probes/card_run.ps1 -StartAt 100` (the
-    timeline is empty; it needs `rec_mode_solo.lua` · `balance_probe.ps1`) · (e) `probes/analyze_card.py` with a Python that has
-    scipy (3.14 has none; find the one piece #6 used, or `pip install scipy`) → `bank/instrument_card.json` · (f)
-    `tools/compute_trims.js --voices 6` → `bank/trims.json` → `gen_apply_trims.js` → `apply_trims.lua` → his CTRL+S · (g)
-    `tools/build_remap_card.js` → the bass flute's curve, and the bass clarinet's and viola's afresh · (h) RACK_SETTINGS · NITS ·
-    the lab journal. **Resume reads for it:** this §2 · the protocol § 5 · `docs/DYNAMICS_LAW.md` · the tools named in (a) … (g),
-    their headers · `#6` RUNNING_LOG §73 … §83 (how 1b ran) · `#6` `bank/reference.json` · `bank/balance.json` (its shape only).
-  - **THEN 4.6 THE FIRST SOUND** from the composer score in his Chrome → 4.4's settings pass (the round robins — his word, §18;
-    what the plugins show is in §24 · §25) → 4.7 + 4.10.
-  - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
-    recipes derived — his bass flute Preset Menu screenshots; the bass clarinet from piece #5's recipe (34 presets; the slap and
-    the second instance, NITS); the viola from piece #5's → **4.6 THE FIRST SOUND** from the composer score in his Chrome → **4.7**
-    the record + **4.10** the how-to pages (the OPEN block below).
-  - **RICOTTI, when it is installed (his word):** a KONTAKT library (§19's correction), a port per instrument already made
-    (`DECCrotales` · `DECGlock` · `DECMarimba` · `DECXylo`). The AI lists its `.nki` files → four rows in `make_tracks.lua`
-    (`after = "Bass Clarinet XS"`) → a Kontakt loader per instance, as the bass flute's → the catalog → selection → recipe
-    (the protocol's 4.5); the vibraphone stand-in (D9) retired then. **The unpitched percussion:** his, gathering; `DECPerc` waits.
-- **The checks, how to run them:** this repo's OWN, with nothing staged — `palette_check` (158) · `roster_check` (223 voices) ·
-  `model_bank --validate` · `unsaved_check` · `test_snapshots` · `test_written_pitch` · `spectrum_check` · `accel_calc_check` ·
-  `score/tools/check_containers` · `check_cresc_deck` · `check_cresc_panel` — all green. The engine's batteries read OTHER
-  pieces' data: `tools/port/stage32.sh` stages it and `tools/port/run_batteries.sh` runs the forty (both from a COPY in the
-  scratchpad; delete by the staged list after) — 30 green, 10 red, every red in NITS with its re-point.
-- **`Resume reads:`** this §2 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 4 · `sandbox/instruments.js` (the header and the
-  table's six entries) · `docs/NITS.md` § From the re-palette. Nothing else.
-- **Pending him:** which libraries, and which percussion (4.0) · the ensemble's final instrumentation (the call's; his to check) ·
-  the planning repo's lines for this piece, at his word only (the protocol's 2.6).
-- **Deliberately uncommitted:** nothing.
+*(This block was rewritten at the checkpoint. How each thing was made, tried and rejected is RUNNING_LOG §6 … §45 — go there by a
+question, not by habit.)*
 
-### OPEN — 2026-10-04, after the talk (Fable; the chat continues on Opus for the build)
+- **THE RACK — `reaper/decibel_rack.rpp`, HIS, committed.** Built by the AI as text and through the bridge (§19 … §22). 17 tracks:
+  Bass Flute XS · Bass Clarinet XS · Bongos ARO · Shime Daiko ARO · Bass Drum Alt ARO · Wood Blocks ARO · China Cymbal ARO · Spring Coil
+  ARO · Suspended Cymbals ARO · Toms ARO · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS · REC.
+  A track is added or re-cloned THROUGH THE BRIDGE, never by rebuilding the file (`tools/build_rack.js` refuses).
+- **THE PORTS — nine, made by the AI** (loopMIDI's registry key; §19): `DECBassFlute` · `DECBassClar` · `DECPerc` (eight instruments,
+  channels 1 … 8) · `DECCrotales` · `DECGlock` · `DECXylo` · `DECMarimba` · `DECViola` · `DECCello`. Enabled in Reaper by him.
+- **THE LIBRARIES:** Xsample (Kontakt) for the bass flute (new; factory instrument, ordinary #15), the bass clarinet and viola
+  (cloned from piece #5's rack ON DISK), the cello (cloned from piece #6's) · Spitfire RICOTTI MALLETS — a KONTAKT library — one
+  Kontakt per instrument, one slot per patch on its own channel (`bank/ricotti_catalog.json`, 39 patches, his ranges) · Spitfire
+  Abbey Road for the percussion, his TENTATIVE list (DEC-6): bongos · shime daiko · bass drum alt · wood blocks · China cymbal ·
+  spring coil · suspended cymbals (bright) · toms (high).
+- **THE RECIPES — every lane** (`sandbox/instruments.js`; §25 · §34): bass flute 32 presets · bass clarinet 34 · percussion 8
+  instruments (`bank/perc_selection.json` → `tools/apply_perc.js`) · MALLETS 39 patches (`tools/apply_ricotti.js`; the lane's
+  internal key is still `bowed_vibraphone`, its track id `vibraphone` — kept on purpose) · viola · cello. A struck lane carries
+  `curveTechniques: []`. **ALL 16 SOUND FROM THE COMPOSER SCORE in his Chrome** (`scores/decibel-first-sound.json`; §36).
+- **THE LOUDNESS — done for a composing demo** (§40 … §43): the instrument card (`bank/instrument_card.json`, 16 instruments), the
+  chain proven against piece #6 within 0.4 dB, **sixteen faders** (`bank/trims.json` → `apply_trims.lua`; each voice at piece
+  #6's −31.84 dB), **four dynamics curves** (`bank/velocity_remap.json`: bass flute · bass clarinet · viola · cello). ROUND ROBIN
+  SKIPPED at his word (§39). `make_tracks.lua` resets its faders to 0 dB — run `apply_trims.lua` after it.
+- **THE NOTATION — set up** (§45): `notation/registry/ensemble.json` is the six parts (BFl +12 · BCl +14 · the eight-line unpitched
+  staff · Mal · Va alto · Vc bass); 233 technique keys (`tools/register_techniques.js` after ANY new recipe key — the extractor
+  throws on an unregistered one); the first page `notation/ir/decibel-first-sound.ir.json`, valid, drawn, exported.
+- **THE TOOLS MADE TODAY** (each with its header): `tools/build_rack.js` · `note_to_port.ps1` · `key_sweep.js` ·
+  `ricotti_loaders.js` · `apply_ricotti.js` · `build_first_sound.js` · `card_schedule.js` (re-made) · `remap_merge.js` ·
+  `register_techniques.js` · `reaper/bridge/jobs/sound_check_vkb.lua` · `reaper/kontakt/load_*.lua` · `reset_bass_flute.lua`.
+  The how-to pages: `composition-system/protocol/howto/` (rack · kontakt · spitfire-aro · measuring).
+- **THE CHECKS, green:** `palette_check` 151 · `roster_check` 310 voices (32 by-key pending, at his word) · `test_written_pitch`
+  (this ensemble's ten cases) · `test_snapshots` · `spectrum_check` · `accel_calc_check` · the three under `score/tools/` ·
+  `ir_validate` on the first page. **Red by design, in NITS:** `check_rules` 31 / 32 (needs a page with a sequence) ·
+  `dyn_table_check` one assertion (names piece #6's bassoon).
+- **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
+  LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-- **The task and its state:** container 4 (running order step 2). 4.1 ☑ · 4.2 ☑ — SIXTEEN tracks on their ports (RUNNING_LOG
-  §19 … §21) · 4.3: the Xsample four and three mallets loaded and sounding, the marimba and five percussion loads his · 4.4 · 4.5 next.
-- **The latest deliverable:** the rack — `reaper/decibel_rack.rpp`, open in Reaper, four tracks, three sounding · the nine `DEC`
-  ports · `tools/build_rack.js` · `tools/note_to_port.ps1` · `reaper/bridge/jobs/sound_check_vkb.lua` · `reaper/kontakt/load_bass_flute.lua`.
-- **4.10 THE HOW-TO PAGES — his ask, 2026-10-04 (RUNNING_LOG §18):** *"fill in a few details like the CC7 multi tracks per
-  library, the way to deal with changing articulations for the different libraries … list a few things about how to do it to
-  make it slightly easier next time, and we'll revise the whole system when we have a little bit more time."* NOT written —
-  the protocol's 4.10 is `todo`. Written by Opus AT 4.7, from `#6` RUNNING_LOG §20 … §42 and from this build, one SHORT page
-  per plugin family in the home: `composition-system/protocol/howto/kontakt-xsample.md` · `spitfire.md` · `uvi-si2.md`
-  (the AI's placement, his to reverse). Each: the port · the track · the instance and its channel map · the curve copies and
-  CC7 (the law) · the articulation switch (Xsample CC0 · SI2 keyswitches · Spitfire's) · the read-back · the round-robin
-  pre-flight. A few bullets each; nothing on his end. The protocol's 4.10 ticked when they exist.
-- **`Resume reads:`** this §2 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 4 (4.1 … 4.7) · `docs/REAPER_CONTROL.md` § 2
-  (the mechanisms; 8c the Kontakt Lua) · `reaper/bridge/README.md` · `reaper/bridge/jobs/make_tracks.lua` ·
-  `sandbox/instruments.js` (the header) · `#6` RUNNING_LOG §19 … §42 (how the last rack was made — skim for the Kontakt curve
-  slots, D11) · `#6` `docs/NITS.md` on H-15 (the loopMIDI finding, if any).
-- **Pending him:** the unpitched percussion (gathering) · Reaper open on the new project when 4.2 starts · the two loads at 4.3
-  · the bass flute Preset Menu screenshots at 4.5 · whether "my improvisation with live electronics" is the improviser piece ·
-  the ensemble's final instrumentation (the call's) · the planning repo's lines, at his word only.
-- **Deliberately uncommitted:** `reaper/decibel_rack.rpp` — the rack file is his; committed at his word, after his CTRL+S (the
-  protocol's 4.2). Outside the repo: the loopMIDI key's backup is in the session scratchpad only — the revert is in RUNNING_LOG §19.
+### OPEN AT SESSION END *(mid-session checkpoint, 2026-10-04, Opus — his `/checkpoint` at the end of the start)*
+
+- **The task and its state:** the piece's start by the new-piece protocol is DONE but for his ear. Running order: 1 ☑ · 2 ☑ · 3 ☑ ·
+  4 ► set up, three calls of his open · 5 at need (one item done) · **6 NEXT — the seams and the sound path.**
+- **The latest deliverable:** a rack that sounds, measured, from the composer score — `reaper/decibel_rack.rpp` ·
+  `scores/decibel-first-sound.json` · `notation/ir/decibel-first-sound.ir.json` · the record RUNNING_LOG §18 … §45.
+- **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on FABLE: play back, STOP and ask.** Then, in this order:
+  (1) **COLLECT WHAT IS HIS, one line each** — what he heard (item 10; a thing that sounds wrong is a NIT or a fix) · his three
+  notation calls: the pitch form (working page transposed, presentation in C — carried) · the percussion staff's line order
+  (Coil · Bgo · SusCym · Shime · China · Toms · WB · BD — the AI's) · the short names. A changed call is one edit of
+  `notation/registry/ensemble.json` (+ `node tools/test_written_pitch.js`).
+  (2) **RUNNING ORDER STEP 6 — THE SEAMS AND THE SOUND PATH** (the block above has it whole; the engine's plan parts 2 · 3 · 4):
+  ONE READ of the sandbox `live-electronics-engine` (what it is built on decides the sound seam) → put to him ONLY what is his
+  → `docs/SEAMS.md` in the engine says each seam → the engine's folder `electronics/` made HERE (D7; it does not exist yet) →
+  one message from the composer score reaches the sound process and is seen there. The talk on Fable, the build on Opus.
+- **`Resume reads:`** this §2 · `live-electronics-system/docs/PROJECT_JOURNAL.md` §2 (the engine's cold-start block) ·
+  `live-electronics-system/docs/PLAN.md` parts 2 · 3 · 4 · `live-electronics-system/docs/SEAMS.md` · `docs/COMPOSITION_NOTES.md`
+  DEC-1 (the opening — what the first object must do). Nothing else; the rack's history is not needed for step 6.
+- **Pending him:** his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
+  check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
+  word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
+  `docs/PROTOCOL_DEVIATIONS.md`).
+- **Deliberately uncommitted:** nothing — `git status --short` is empty. Outside git, by design: `reaper/Media/*.wav` (the two
+  card recordings, 234 + 33 MB) · `reaper/kontakt/out/` (the loaders' read-backs). `electronics/` does not exist, so there was
+  no `git subtree push` to the engine at this wrap. Piece #6 and piece #5 were READ (their racks on disk, their git), never written.
+- **Left running:** his Reaper on the rack · his score server on 5500, if he started it · loopMIDI. The AI's throwaway server
+  (5501) is stopped.
 
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
@@ -272,7 +220,7 @@ deliverables · the planning repo's lines (at his word only).
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
-DEC-4) · Q4 — the percussion: TWO lanes (D9); the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the UNPITCHED instruments open — he gathers.
+DEC-4) · Q4 — the percussion: ANSWERED for now — the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the unpitched = his TENTATIVE eight (DEC-6) · Q5 — the three notation calls of container 6 (the pitch form · the percussion staff's line order · the short names).
 
 **Blockers:** none.
 

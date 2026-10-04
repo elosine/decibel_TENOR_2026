@@ -1571,3 +1571,18 @@ wrong default was fixed: the Texture panel's audition click named piece #6's cla
 roll — now `wood_blocks_hard_mallets`, key 41 (block 2), the dry click of THIS rack (the AI's pick, his to change); the
 hand-typed claves voice left the recipe (310 voices). Everything else of 7 waits for the music: the first tool he reaches for
 gets read against the dynamics law first (7.0 · 7.1).
+
+## §46. CHECKPOINT — the end of the start (2026-10-04, Opus; his `/checkpoint`)
+
+**His word:** `/checkpoint`, after: *"saved again, go ahead with the how-to notes and can we move directly to and thru 4? and
+anything from 5 now?"* — all three done (§44 · §45).
+
+- Journal §2's two state blocks REWRITTEN for a cold reader (the day's build had grown them by accretion); the running order
+  marked 1 ☑ · 2 ☑ · 3 ☑ · 4 ► · 6 next; PLAN § 0 rows 5 · 6 · 7 given their status. Nothing lived only in the chat.
+- **What one day of the protocol's first run came to, for the paper:** a rack of sixteen instruments from four libraries built
+  with his hands on five things — one Preferences step, five script picks, five loads in a plugin's browser, a handful of
+  screenshots, saves; three instruments arrived LOADED by cloning tracks out of two earlier pieces' racks; the measuring chain of
+  piece #6 re-pointed and proven on those clones in forty seconds; and the costs of what a port does not carry — a list that
+  repeated done work, a test proposed that had been run, a preset copied from the wrong source — each written at the hour it
+  happened (§27 … §29 · §37 · §42).
+- Tree clean; pushed. No `electronics/` yet, so no push to the engine's repo. Resume on FABLE for step 6's talk.
