@@ -287,7 +287,13 @@
      "channel": 4,
      "label": "Main - Rubber",
      "slot": "Marimba - Main - Rubber",
-     "file": "_Individual patches_/a - Marimba - Main - Rubber.nki"
+     "file": "_Individual patches_/a - Marimba - Main - Rubber.nki",
+     "range": {
+      "low": 36,
+      "high": 76,
+      "kontakt": "C1–E4",
+      "source": "his third screenshot (\"rubber\"); proven by the sweep: 76 sounds, 77 silent"
+     }
     },
     {
      "channel": 5,
@@ -299,7 +305,13 @@
      "channel": 6,
      "label": "FX - Bows",
      "slot": "Marimba - FX - Bows",
-     "file": "_Individual patches_/a - Marimba - FX - Bows.nki"
+     "file": "_Individual patches_/a - Marimba - FX - Bows.nki",
+     "range": {
+      "low": 36,
+      "high": 93,
+      "kontakt": "C1–A5",
+      "source": "his first screenshot (\"bows\"); proven by the sweep with a 2.5 s hold (a bowed note speaks slowly): 35 silent · 36 sounds · 93 sounds · 94 … 96 silent"
+     }
     },
     {
      "channel": 7,
@@ -313,8 +325,16 @@
      "slot": "Marimba - Hotrod (Flams)",
      "file": "_Individual patches_/a - Marimba - Hotrod (Flams).nki"
     }
-   ]
+   ],
+   "range": {
+    "low": 36,
+    "high": 96,
+    "kontakt": "C1–C6",
+    "source": "his screenshot of Kontakt's keyboard (\"main\"), 2026-10-04; proven by tools/key_sweep.js on channels 1 · 2 · 3 · 5 · 7 · 8: 35 and 97 silent, 36 and 96 sound"
+   },
+   "note": "His words 2026-10-04: \"I probably won't use marimba. And if I do, I'll just use the bows.\""
   }
  ],
- "_ranges": "A range is MIDI keys, sounding as the library maps them. Kontakt's keyboard names middle C \"C3\" = MIDI 60 (proven on the crotales, RUNNING_LOG §30). The field \"range\" on an instrument holds for every patch of it unless a patch carries its own."
+ "_ranges": "A range is MIDI keys, sounding as the library maps them. Kontakt's keyboard names middle C \"C3\" = MIDI 60 (proven on the crotales, RUNNING_LOG §30). The field \"range\" on an instrument holds for every patch of it unless a patch carries its own.",
+ "_rule": "HIS RULE for the ranges (2026-10-04, RUNNING_LOG §33): the range he gave as \"main\" holds for EVERY patch of the instrument, except a patch he named as an exception — which carries its own \"range\" here."
 }

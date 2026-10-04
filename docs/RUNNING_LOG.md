@@ -1149,3 +1149,28 @@ hot ro; i3 glisses, Same principle, sort out glisses, key map if I use them."*
   (Extra Soft) −52. The volume probe's business.)
 - **The glisses (channel 7): by key, four blocks** — from his third image, not verified: C1 … D2 (36 … 50) · C3 … A4 (60 … 81) ·
   C5 … F5 (84 … 89) · C6 … A6 (96 … 105). No key map, his decision, as the glockenspiel's.
+
+## §33. THE MARIMBA'S RANGES — and his rule for reading all of them; item 1 of the list is done (2026-10-04, Opus)
+
+**His words**, with three screenshots: *"i1 bows, i2 main; marimba; I probably won't use marimba. And if I do, I'll just use the
+bows. i3 rubber And I think all the rest follow the [main]."* — then, as the probe ran: *"So the images where I say main is
+the one that's used for every patch except for when I say there's an exception. So the main one will be the range for every
+patch in the xylophone except for the rolls, hot rod, extra [soft], etc. Then every other one will be the main range. Same with
+the marimba and the [glock]."*
+
+- **HIS RULE, written into the catalog (`_rule`):** "main" = every patch of the instrument; a named patch is the exception.
+  §32's probe had found exactly that for the xylophone before he said it; nothing to change.
+- **Read from the images:** main C1 … C6 · rubber C1 … E4 · bows C1 … A5.
+- **The probe** (`node tools/key_sweep.js "Marimba RM" --channels 1-8 --keys 35,36,76,77,93,94,96,97 --hold 0.5`, 64 notes):
+  channels 1 Main · 2 Full (Hard) · 3 Full (Soft) · 5 Trems · 7 Hotrod · 8 Hotrod (Flams) — 35 silent, 36 · 76 · 77 · 93 · 94 · 96
+  sound, 97 silent → **MIDI 36 … 96, five octaves.** Channel 4 Rubber — 36 and 76 sound, 77 on silent → **36 … 76.**
+- **A DEAD END, kept — the probe misreads a slow sound.** Channel 6 "FX - Bows" at a 0.5 s hold read 36 silent · 93 silent · 94
+  sounding: wrong. A bowed bar speaks slowly; half a second catches nothing, and the note's late swell is charged to the NEXT
+  key. Re-run with `--hold 2.5`: **35 silent · 36 −54.6 dB · 92 −40.5 · 93 −42.4 · 94 … 96 silent → MIDI 36 … 93**, his image.
+  (Key 37 read silent in that run — 36 was still ringing, and the probe asks 12 dB over what rings. Not chased.) **For the
+  how-to pages: a sustained or bowed patch is swept with a long hold, and its inner keys are not trusted.**
+- **His musical word, for the recipe:** the marimba is unlikely to be used; if it is, the bows.
+- **ITEM 1 OF §29's LIST IS DONE — the four mallets' ranges**, in `bank/ricotti_catalog.json`: crotales 60 … 84 · glockenspiel
+  55 … 84 · xylophone 53 … 95 (Hot Rods · Extra Soft · Rolls Hot Rods 53 … 91) · marimba 36 … 96 (Rubber 36 … 76 · Bows 36 … 93);
+  the two glisses patches by key, unmapped at his word. His way (dictation, a screenshot each) for the reading; the probe for
+  the edges and for the one thing a note leaves open. That is the answer to §28's "probe or dictate": BOTH, each for its half.

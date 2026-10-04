@@ -180,8 +180,8 @@ deliverables · the planning repo's lines (at his word only).
     (d) THE BASS CLARINET from piece #5's recipe (34 presets; the slap and the second instance — NITS) · THE VIOLA from piece
     #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
     plain non-vibrato) · a save.
-  - **THE LIST TO "FULLY OPERATIONAL" — RESEARCHED AND NARROWED (RUNNING_LOG §29; it supersedes §27's):** 1 key ranges for the four
-    mallets (the sweep) · 2 recipes: mallets, bass flute, bass clarinet, viola · 3 THE FIRST SOUND from the composer score · 4 round
+  - **THE LIST TO "FULLY OPERATIONAL" — RESEARCHED AND NARROWED (RUNNING_LOG §29; it supersedes §27's):** 1 ☑ key ranges for the four
+    mallets — DONE (RUNNING_LOG §30 … §33; he dictated by screenshot, `tools/key_sweep.js` proved the edges) · 2 recipes: mallets, bass flute, bass clarinet, viola · 3 THE FIRST SOUND from the composer score · 4 round
     robin OFF: bass flute, bass clarinet, viola (Xsample takes it by MIDI, CC82 = 21 … 41; proposed: sent after the CC0 with every
     note — one test first) · 5 a round-robin check on ONE mallet patch · 6 the KNOWN volumes put back on the faders — cello −3.87 ·
     wood blocks +7.05 · bass drum alt −4.29 dB (piece #6's `bank/trims.json`) · 7 the volume probe, NEW instruments only: bass
