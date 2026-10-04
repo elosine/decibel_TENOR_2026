@@ -166,6 +166,9 @@ deliverables · the planning repo's lines (at his word only).
     cloned from piece #6 and sounding (Bass Drum Alt · Wood Blocks · Spring Coil).
   - **☑ the marimba's script run (8 slots) and the rack SAVED by him, 14:29 — "done with scripts saved" (RUNNING_LOG §22).** All five
     Kontakt loads are in: every Xsample and Ricotti track sounds through its port.
+  - **☑ four of the five loaded and read (RUNNING_LOG §23):** Bongos (C) → `bongos` · Shime Daiko (C) → `shime_daiko` · China Cymbal (C) →
+    `china_cymbals` (the mapped entry; settled) · Suspended Cymbals (C), Cymbal MELLOW AIO → `susp_cymbals_mellow`. Each All-in-One's top key
+    equals the catalog's last key — NO KEY MAP TO MAKE. **Left: Toms ARO.**
   - **(2) HIS — FIVE LOADS in the Abbey Road plugin's own browser, one per track:** Bongos ARO · Shime Daiko ARO · China Cymbal
     ARO · Suspended Cymbals ARO (dark, mellow or bright) · Toms ARO (high or low; both = say so, a ninth track). The All-in-One
     preset of each, as in piece #6. THEN the AI: `node tools/aro_state.js info "<track>"` reads what he loaded →

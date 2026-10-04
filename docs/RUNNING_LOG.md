@@ -857,3 +857,36 @@ rack holds can be cloned; a new one costs ONE load in the plugin's own browser, 
   Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Bass Drum Alt ARO · Wood Blocks ARO · Spring Coil ARO. Empty,
   waiting for his load in the Abbey Road browser: Bongos ARO · Shime Daiko ARO · China Cymbal ARO · Suspended Cymbals ARO ·
   Toms ARO. **His hands in this whole build:** one Preferences step · five script picks · saves. No preset loaded by hand yet.
+
+## §23. THE KEY MAPS — "is that still need to be done manually?" No: the catalog has them, and the plugin's own state confirms which map is which (2026-10-04, Opus)
+
+**What prompted it — his words**, with a screenshot of the loaded Bongos' keyboard: *"Where are we with the key maps? Is that
+still need to be done manually?"* — then two more keyboards, no words: CHINA CYMBAL (All in One) and SHIME DAIKO.
+
+**The answer:** no. `bank/aro_percussion_catalog.json` (piece #2's key-by-key map of the All-in-One presets, carried) has 78
+instruments — 38 `verified`, 36 `skeleton`, 2 `predicted`, 2 `partial` — and every instrument he loaded is among the verified.
+
+**A check that needs no hands and no sound — found here, for the how-to pages (4.10):** `tools/aro_state.js info "<track>"`
+prints each articulation of the loaded preset with its `top` key. The All-in-One's `top` against the catalog's last mapped key:
+
+| His load (the preset, the active articulation) | `top` | the catalog entry | its last key | |
+|---|---|---|---|---|
+| Bongos (C) · "Bongos B - AIO" | 79 | `bongos`, 26 keys | 79 | ✓ |
+| Shime Daiko (C) · "Shime Daiko - AIO" | 57 | `shime_daiko`, 11 keys | 57 | ✓ |
+| China Cymbal (C) · "China Cymbal - AIO" | 75 | `china_cymbals`, 29 keys | 75 | ✓ |
+| Suspended Cymbals (C) · "Cymbal Mellow - AIO" | 93 | `susp_cymbals_mellow`, 37 keys | 93 | ✓ |
+
+- **The China cymbal, settled:** the catalog has TWO entries — `china_cymbals` (verified) and `china_cymbal` (a skeleton, no
+  keys). His preset is named "China Cymbal (C)"; its All-in-One ends on key 75 and its keyboard shows seven blocks — 4 · 4 | 4 · 5
+  | 4 · 4 | 4 keys, soft · bows · scrapes · sticks — which is `china_cymbals`' map block for block. So the mapped entry IS this
+  preset; the skeleton is a duplicate name. (Not yet swept key by key; the calibration touches every key.)
+- **The bongos and the shime daiko** against his screenshots: the catalog's blocks are the keyboard's — bongos C2 … A2 · C3 … A3
+  · C4 … G4 · C5 … G5, the hovered key "Low - Hand Hit (Left)" = the catalog's C2 "Low Hand Hit L"; shime daiko the white keys
+  C2 · D2 · F2 · G2 · A2 · C3 … A3, eleven.
+- **The suspended cymbals, settled by his load:** the preset "Suspended Cymbals (C)" holds eight articulations — five beaters and
+  three All-in-Ones, Dark · Mellow · Bright; the active one is **Cymbal Mellow - AIO** → `susp_cymbals_mellow`.
+- **Toms ARO:** not loaded yet (the plugin's default, "Piatti (C)").
+- **Where a hand step could return:** a `skeleton` instrument. Even then: which keys sound is a meter sweep (the AI's), the
+  names one hover screenshot (piece #6 §41).
+- The Ricotti mallets need no key map — a range per patch, read by sweep at 4.5. The Xsample bass flute needs its articulation
+  list: his screenshot of the Preset Menu.
