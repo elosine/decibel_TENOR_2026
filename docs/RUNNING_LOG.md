@@ -1231,3 +1231,30 @@ cello 88; every lane's ordinary voice exists; the tracks read BFl · BCl · Perc
 page showed: the lane's on-screen label was a hand-written span, still "Vibraphone" — fixed.
 
 **ITEM 2 OF §29's LIST IS DONE. NEXT: item 3, the first sound from the composer score — in his Chrome.**
+
+## §35. THE FIRST-SOUND SCORE — sixteen notes, one per track; and a routing fault caught by capturing the app's own playback (2026-10-04, Opus)
+
+**His words:** *"cd and node cmds pls in chat"* (given: `cd C:\Users\jwloy\GitHub\decibel_TENOR_2026` · `node score\server.js`) —
+then: *"can you put a note on each lane in a save file pls"*.
+
+- **`tools/build_first_sound.js` → `scores/decibel-first-sound.json`**: 16 plain notes at mf, one after another over 40 s, in
+  lane order — the bass flute (#15) · the bass clarinet (#13) · the eight percussion instruments, the first key of each one's
+  first beater · crotales main (metal) · glockenspiel main (hard) · xylophone main · marimba main · the viola · the cello (#6).
+  Every TRACK of the rack, not only every lane (the protocol's 4.6). The note object is the composer's `waveCurve`, as piece
+  #6's verification score wrote it; each carries its name in its performance note.
+- **Verified in the running app, by `docs/VERIFICATION_RECIPE.md`** (the throwaway server 5501; autosave, every non-GET fetch
+  and the beacon stubbed in the navigation batch; nothing saved): the score LOADS — 16 objects on lanes 0 · 1 · 2×8 · 3×4 · 4 · 5,
+  no console error. Then its own playback was CAPTURED (a stub on every port, the frame timer replaced):
+- **THE FAULT, found there:** the eight percussion notes went out on **`DECPerc` channels 2 · 3 · 4 · 2 · 3 · 4 · 2 · 3** — the
+  curve bank, dealt in rotation — not on channels 1 … 8. A HELD note on a lane is a shaped note, and the percussion lane (as in
+  piece #6) offered channels 2 … 4 as its curve copies; on this rack they are the shime daiko, the bass drum and the wood
+  blocks. He would have heard three instruments, twice each, and five silences. §34 had seen this trap for the mallets and
+  gated them; the percussion lane had the same hole. **Fixed:** `curveTechniques: []` on the percussion lane too.
+- **The capture after the fix — every note where it belongs:**
+  `DECBassFlute` ch 2, CC0 14, key 60 · `DECBassClar` ch 2, CC0 12, key 50 · `DECPerc` ch **1 · 2 · 3 · 4 · 5 · 6 · 7 · 8**, key
+  36 · `DECCrotales` ch 3, key 72 · `DECGlock` ch 2, key 72 · `DECXylo` ch 1, key 72 · `DECMarimba` ch 1, key 60 ·
+  `DECViola` ch 2, CC0 5, key 64 · `DECCello` ch 2, CC0 5, key 57 (velocity 89 — its carried curve; the others 100).
+  The four Xsample instruments play on channel 2 — curve copy A, as a held note should (D11); each has its copies.
+- 182 MIDI messages in all: 16 note-ons, 16 note-offs, 8 CC0, 79 CC7 (the shaped notes' faders), 63 all-notes-off at stop.
+- NOT verified here, and cannot be: that it SOUNDS — the AI's pane has no MIDI. That is his Chrome, item 3.
+- `palette_check` 151 · `roster_check` 311, green after the fix.

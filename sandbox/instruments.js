@@ -87,7 +87,10 @@ const INSTRUMENTS = {
   percussion: {
     label: "Percussion", port: "DECPerc", rangeLow: 21, rangeHigh: 108,
     ordinary: "main", beating: false, playerBendSt: 0, bendRangeSt: 0,
-    channels: { main: 1, curve: [2, 3, 4] },
+    // curveTechniques: [] — NO percussion voice may use the curve channels (2026-10-04, RUNNING_LOG §35): on DECPerc channels 2 … 4 are
+    // OTHER INSTRUMENTS (the shime daiko, the bass drum, the wood blocks), not curve copies. Without the gate a HELD note on this lane was
+    // dealt to 2 · 3 · 4 in rotation — found by capturing the app's own playback of the first-sound score, before he heard it.
+    channels: { main: 1, curve: [2, 3, 4], curveTechniques: [] },
     techniques: [
       // 1m.4.1: `main` is PITCHED on purpose — the placeholder takes any note it is dealt (his harmony takes carry 241 percussion
       // notes on it, RUNNING_LOG §212); a real instrument is chosen by NAME from the by-key voices below it.
