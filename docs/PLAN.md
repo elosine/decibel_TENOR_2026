@@ -110,6 +110,13 @@ The GC carrying a capture glyph · the glyph vocabulary (shape or colour × the 
 candidate, LG-343) · the collection on screen (LG-345) — each by a DEVICE SHEET; the piece's extractor emitting the trigger
 events; the film and the print carrying them. 12's kinds are drawn here. *To be laid out when notating comes.*
 
+**His staff system, 2026-10-04 (the Decibel sketch pad DEC-4; its D8):** NO electronics lane or staff — every electronic sound
+derives from a player's own input and is drawn on THAT player's staff with a SIGN OF ORIGIN: a sign just before the note with its GC
+(section 1) · a STACK of signs across the staves read as an electronic chord, the real notes placed after it (section 3) · a held
+electronic chord of freezes as a duration-line kind on each contributing player's staff (section 2). Whether section 3's stacks show
+in the parts or only in the conductor's and the presentation score: his, open. The data for 7's device sheets. For 11: an electronics
+object lives on the player's lane but is routed to the electronics, not the instrument's port.
+
 ## 8. The take — `todo`
 
 ***Why:*** three pieces take one engine; the recipe must run cold.
