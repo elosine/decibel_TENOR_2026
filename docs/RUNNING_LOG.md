@@ -1032,3 +1032,62 @@ worth doing a probe or it's better if I just dictate some of the key maps. That 
 §27's answer was three tables; rejected. Given instead: ten bare statements in order, then one sentence each on how. The AI's
 proposal on his decision: the probe for the mallets' ranges (39 patches — dictating is slower); the by-key noise presets of
 the bass flute and the strings left unmapped until the music asks for one, then dictated by him or swept, whichever he prefers.
+
+## §29. WHAT REALLY REMAINS — the research he asked for: what pieces #3 · #5 · #6 already settled, and what came along inside the cloned tracks (2026-10-04, Opus)
+
+**His words:** *"why 8 I thought we sorted this with last piece for bcl, cello and some perc? also I thought 7 was done last
+piece same with 9. … number six, I would like to know which round robins are left to be done. I know we've at least done the
+bass clarinet. Those should be off. … Do the research and then give me back the what remains in order. The format is good, just
+simple like this. But I want the list to be … more specific. … Eight, I'm skeptical. How is it that we need to volume probe
+everything still? Because that's a lot of work. So let's try to make sure we understand really what needs to be done and not
+repeat work or work inefficiently."* (Before it: *"what is 4 what is a recipe?"* — answered: the composer score's instruction
+sheet for one instrument — its port, its range, its techniques and what to send for each.)
+
+**He was right on three counts; §27 · §28's list repeated work.** The findings, each with its source:
+
+**ROUND ROBINS**
+- **Xsample switches round robin BY MIDI: CC#82 = 21 … 41 is OFF** (0 … 20 on repetition, the factory value · 42 … 62 on repetition
+  random · 63 … on always) — `Xsample_Library_en`, the Round Robin Menu page and the controller table; piece #3 used it
+  ("CC#82=21–41 freeze (deterministic default)", its `XSAMPLE_BASSCL_map.md`). **This app sends no CC82 today** (searched).
+  The setting is per preset, and a preset re-selected by CC0 takes its stored value back (piece #6, `RACK_SETTINGS` §2) — so a
+  CC82 sent AFTER the CC0, with every note, would hold it off for every preset with no hand edit. UNPROVEN here; one test.
+- **Cello: DONE and carried.** Piece #6, 2026-09-19: preset 6 "Senza Vibrato Velocity" edited in place, round robin off, in all
+  four slots (`RACK_SETTINGS` §3: four strikes of one note had read −27.9 · −31.3 · −22.7 · −27.9, a cycle 8.6 dB wide). The
+  edit lives in the Kontakt instance, and the cello track here is the clone of that rack as saved 2026-10-01. Only preset 6.
+- **Bass clarinet: NOT done in this rack — a correction of his memory, with its source.** What he remembers is piece #3: a
+  custom preset #34 "Flutter LOCK", a copy of preset 5 with round robin off, in piece #3's rack. This rack's bass clarinet is
+  piece #5's, and piece #5 measured it WITH round robin on: "the violins ±1 dB round-robin scatter, the viola and the bass
+  clarinet ±1–2, the cello ±3.5" (its RUNNING_LOG, the samplers measured). So: bass clarinet and VIOLA still on, ±1–2 dB.
+- **Bass flute:** loaded today; the factory setting, on.
+- **Ricotti:** 8 round robins a note, a dial per patch (its manual); how far apart they are is not known. One check on one patch.
+- **Abbey Road percussion:** piece #6 left them on and measured each instrument by its loudest 400 ms; no setting was changed
+  (`RACK_SETTINGS` has no entry). Nothing to do, unless a check shows otherwise.
+
+**VOLUME**
+- **The reference tone and his system volume: DONE** — piece #6, 2026-09-19 (`bank/reference.json` there: −20 dBFS pink noise
+  and a 1 kHz tone, K-20). His monitor level is a setting of the room, not of a rack. A measuring run here makes its own
+  reference track by script; nothing of his.
+- **Carried, known numbers — only to be put back on the faders** (the rack build set every fader to 0 dB): piece #6's
+  `bank/trims.json`, the absolute method (each voice at −29.54 LUFS): **cello −3.87 dB · wood blocks +7.05 dB · bass drum alt
+  −4.29 dB**. These three tracks are clones of the very instances that were measured.
+- **Bass clarinet and viola: balanced in piece #5, but RELATIVELY** (−9 and −3.5 dB, against that ensemble); piece #6 retired
+  that method — "the rack was 7–21 dB hot because 0d balanced it relatively" (`apply_trims.lua`'s header). They need ONE short
+  measurement each to land on the absolute scale; their balance against each other is known.
+- **Never measured:** the bass flute · the four mallets · six of the percussion (bongos · shime daiko · China cymbal · spring
+  coil · suspended cymbals · toms).
+- **So the volume probe is 13 instruments, not all 16, and it is one automated run** — three notes or a few hits each. The
+  AI's work before it: piece #6's measuring tools re-pointed at this rack (`tools/probe_run.sh` still changes into piece #5's
+  folder; NITS has the others).
+
+**DYNAMICS CURVES**
+- **Cello: carried** (`bank/velocity_remap.json` here holds `cello` and the stand-in vibraphone). **Bass clarinet and viola:**
+  piece #5 has curves for both (its `bank/velocity_remap.json`: flute · bass_clarinet · piano · violin1 · violin2 · viola ·
+  cello) — by its older method, anchored on its violins; reusable as a start. **Bass flute: none** — the one new curve.
+  **Mallets and percussion: none needed** — a struck note's velocity IS its dynamic (the dynamics law).
+
+**The list as re-given to him (ten lines):** 1 key ranges for the four mallets · 2 recipes: mallets, bass flute, bass clarinet,
+viola · 3 the first sound from the composer score · 4 round robin off: bass flute, bass clarinet, viola · 5 a round-robin check
+on one mallet patch · 6 the known volumes put back: cello, wood blocks, bass drum alt · 7 the volume probe, new instruments
+only: bass flute, four mallets, six percussion · 8 bass clarinet and viola re-levelled · 9 the dynamics curve for the bass flute
+· 10 listen. **Off the list:** the reference and his system volume · the cello (round robin, volume, curve) · the Abbey Road
+round robins · the percussion's key maps · the noise presets' maps (when the music asks).

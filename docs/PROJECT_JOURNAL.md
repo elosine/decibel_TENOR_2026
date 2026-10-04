@@ -180,9 +180,16 @@ deliverables · the planning repo's lines (at his word only).
     (d) THE BASS CLARINET from piece #5's recipe (34 presets; the slap and the second instance — NITS) · THE VIOLA from piece
     #5's · (e) `palette_check` · `roster_check`. **His, small:** which bass flute preset is the ORDINARY one (the list has no
     plain non-vibrato) · a save.
-  - **THE WHOLE LIST TO "FULLY OPERATIONAL", as put to him — RUNNING_LOG §27:** A playable (the sweep · the maps · the recipes · the
-    first sound) → B the settings (the round-robin check, the verdict per library, the record) → C the volume (container 5).
-    **HIS WORD ON THE REPLIES (§27): too much text — a table or a short list first, one line per item.**
+  - **THE LIST TO "FULLY OPERATIONAL" — RESEARCHED AND NARROWED (RUNNING_LOG §29; it supersedes §27's):** 1 key ranges for the four
+    mallets (the sweep) · 2 recipes: mallets, bass flute, bass clarinet, viola · 3 THE FIRST SOUND from the composer score · 4 round
+    robin OFF: bass flute, bass clarinet, viola (Xsample takes it by MIDI, CC82 = 21 … 41; proposed: sent after the CC0 with every
+    note — one test first) · 5 a round-robin check on ONE mallet patch · 6 the KNOWN volumes put back on the faders — cello −3.87 ·
+    wood blocks +7.05 · bass drum alt −4.29 dB (piece #6's `bank/trims.json`) · 7 the volume probe, NEW instruments only: bass
+    flute · four mallets · bongos · shime daiko · China cymbal · spring coil · suspended cymbals · toms · 8 bass clarinet and viola
+    re-levelled (piece #5's balance was relative) · 9 the dynamics curve for the bass flute · 10 listen.
+    **ALREADY DONE, never to be redone:** the reference tone and his system volume (piece #6) · the cello's round robin, volume and
+    curve · the Abbey Road round robins (left on, as piece #6) · the percussion's key maps.
+    **HIS WORD ON THE REPLIES (§27 · §28): a bare list, one line per item, no table, no detail; the how after, one sentence each.**
   - **THEN 4.6 THE FIRST SOUND** from the composer score in his Chrome → 4.4's settings pass (the round robins — his word, §18;
     what the plugins show is in §24 · §25) → 4.7 + 4.10.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
