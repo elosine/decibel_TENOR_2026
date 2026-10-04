@@ -1118,3 +1118,34 @@ We'll get proper key map if I use the glisses."*
 - **The glisses patch (channel 6): BY KEY, three blocks — ascending · descending · both ("I think").** From his second image,
   not verified: C1 … E2 (36 … 52) · C3 … E4 (60 … 76) · C5 … B6 (84 … 107). **No key map, his decision**; the catalog marks it
   `keys: "pending"` with his words. The recipe will carry it as a voice whose keys are unnamed.
+
+## §32. THE XYLOPHONE'S RANGES — two of them; and the key probe built, because his note left one thing open (2026-10-04, Opus)
+
+**His words**, with three screenshots: *"xylo main i1; i2 hot r, extra s, (words are cutoff ask if you need full name), rolls
+hot ro; i3 glisses, Same principle, sort out glisses, key map if I use them."*
+
+- **Read from the images:** i1 the keys lit F2 … B5 · i2 F2 … G5 · i3 four blocks.
+- **What the note left open:** WHICH range the other five patches use — Main (Hard) · (Medium) · (Soft) · Rolls (Hard) · (Soft).
+  He offered to be asked. Not asked: the question is a machine's. **`tools/key_sweep.js` built** — §25's automation (c), now
+  one command: each note goes into Reaper's virtual keyboard on its channel, the track's meter is watched, the next key waits
+  for quiet, the track's own input is put back. No port, no PowerShell per note, nothing saved.
+- **The run:** `node tools/key_sweep.js "Xylophone RM" --channels 1-6,8-10 --keys 52,53,91,92,95,96` — 54 notes, under a minute.
+
+  | channel · patch | 52 | 53 | 91 | 92 | 95 | 96 |
+  |---|---|---|---|---|---|---|
+  | 1 Main | · | −27.8 | −24.0 | −28.7 | −22.5 | · |
+  | 2 Main - (Hot Rods) | · | −40.5 | −38.8 | · | · | · |
+  | 3 Main (Extra Soft) | · | −41.6 | −52.3 | · | · | · |
+  | 4 Main (Hard) | · | −17.4 | −21.1 | −20.7 | −16.9 | · |
+  | 5 Main (Medium) | · | −27.3 | −24.9 | −28.1 | −21.9 | · |
+  | 6 Main (Soft) | · | −28.1 | −24.2 | −31.3 | −25.7 | · |
+  | 8 Rolls (Hard) | · | −15.9 | −12.5 | −13.9 | −12.3 | · |
+  | 9 Rolls (Hot Rods) | · | −29.6 | −29.3 | · | · | · |
+  | 10 Rolls (Soft) | · | −21.0 | −24.4 | −23.3 | −24.7 | · |
+
+- **So: six patches F2 … B5 = MIDI 53 … 95** (Main · Hard · Medium · Soft · Rolls Hard · Rolls Soft) **and three F2 … G5 = MIDI
+  53 … 91** (Hot Rods · Extra Soft · Rolls Hot Rods) — exactly the three he named for the second image. Both image readings held.
+- (A first look at loudness, not a measurement: the patches differ by up to ~29 dB at the same velocity — Rolls (Hard) −12, Main
+  (Extra Soft) −52. The volume probe's business.)
+- **The glisses (channel 7): by key, four blocks** — from his third image, not verified: C1 … D2 (36 … 50) · C3 … A4 (60 … 81) ·
+  C5 … F5 (84 … 89) · C6 … A6 (96 … 105). No key map, his decision, as the glockenspiel's.

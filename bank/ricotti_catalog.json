@@ -179,13 +179,25 @@
      "channel": 2,
      "label": "Main - (Hot Rods)",
      "slot": "Xylophone - Main - (Hot Rods)",
-     "file": "_Individual patches_/d - Xylophone - Main - (Hot Rods).nki"
+     "file": "_Individual patches_/d - Xylophone - Main - (Hot Rods).nki",
+     "range": {
+      "low": 53,
+      "high": 91,
+      "kontakt": "F2–G5",
+      "source": "his second screenshot (\"hot r, extra s, rolls hot ro\"); proven by the sweep: 91 sounds, 92 and 95 silent"
+     }
     },
     {
      "channel": 3,
      "label": "Main (Extra Soft)",
      "slot": "Xylophone - Main (Extra Soft)",
-     "file": "_Individual patches_/d - Xylophone - Main (Extra Soft).nki"
+     "file": "_Individual patches_/d - Xylophone - Main (Extra Soft).nki",
+     "range": {
+      "low": 53,
+      "high": 91,
+      "kontakt": "F2–G5",
+      "source": "his second screenshot (\"hot r, extra s, rolls hot ro\"); proven by the sweep: 91 sounds, 92 and 95 silent"
+     }
     },
     {
      "channel": 4,
@@ -209,7 +221,10 @@
      "channel": 7,
      "label": "Glisses",
      "slot": "Xylophone - Glisses",
-     "file": "_Individual patches_/d - Xylophone - Glisses.nki"
+     "file": "_Individual patches_/d - Xylophone - Glisses.nki",
+     "byKey": true,
+     "keys": "pending",
+     "note": "BY KEY, four blocks. Read from his screenshot, NOT verified: C1–D2 (36–50) · C3–A4 (60–81) · C5–F5 (84–89) · C6–A6 (96–105). NO KEY MAP, at his word 2026-10-04: \"Same principle, sort out glisses, key map if I use them.\""
     },
     {
      "channel": 8,
@@ -221,7 +236,13 @@
      "channel": 9,
      "label": "Rolls (Hot Rods)",
      "slot": "Xylophone - Rolls (Hot Rods)",
-     "file": "_Individual patches_/d - Xylophone - Rolls (Hot Rods).nki"
+     "file": "_Individual patches_/d - Xylophone - Rolls (Hot Rods).nki",
+     "range": {
+      "low": 53,
+      "high": 91,
+      "kontakt": "F2–G5",
+      "source": "his second screenshot (\"hot r, extra s, rolls hot ro\"); proven by the sweep: 91 sounds, 92 and 95 silent"
+     }
     },
     {
      "channel": 10,
@@ -229,7 +250,13 @@
      "slot": "Xylophone - Rolls (Soft)",
      "file": "_Individual patches_/d - Xylophone - Rolls (Soft).nki"
     }
-   ]
+   ],
+   "range": {
+    "low": 53,
+    "high": 95,
+    "kontakt": "F2–B5",
+    "source": "his screenshot of Kontakt's keyboard (\"xylo main\"), 2026-10-04; every patch's edges proven by tools/key_sweep.js: 52 and 96 silent on all nine"
+   }
   },
   {
    "slug": "marimba",
