@@ -59,7 +59,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 ### RUNNING ORDER — THE BRIEF OF 2026-10-04 (his dictation, Fable; the order his, the breakouts the AI's — RUNNING_LOG §2) — THE START FINISHED, THEN THE OPENING COMPOSED, THE ELECTRONICS BUILT AS THE MUSIC REACHES THEM
 
-**HOW THIS LIST WORKS:** one step at a time — ► marks the active step, ☑ marks done; update the marks the moment a step wraps, not
+**APPROVED by him 2026-10-04 (RUNNING_LOG §5): *"yes, the order is good — let's rejoin the port"*.** **HOW THIS LIST WORKS:** one step at a time — ► marks the active step, ☑ marks done; update the marks the moment a step wraps, not
 later. At every wrap the AI states: what finished · what's next · where we are in the order. The AI proposes reorganizations when
 useful; changes land only on his approval. A post-clear model reads this block and announces the position before doing anything.
 

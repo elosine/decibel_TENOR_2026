@@ -148,3 +148,10 @@ notes along the way."*
 log alone: his words · what was tried and rejected · the numbers · the reasoning · the references. Written into CLAUDE.md as a
 standing reminder (under the lab journal's practice), journal §7 (his own reminders), PLAN § 4 (the submission is the piece AND a
 paper). The deadline is his to keep (D5); "the same deadline" recorded as his word, not managed.
+
+## §5. THE RUNNING ORDER APPROVED — "yes, the order is good — let's rejoin the port" (2026-10-04, Fable, the last entry from piece #6's chat)
+
+**His word** on the running order of journal §2 as it stands after §3: *"yes, the order is good — let's rejoin the port"*. The order is
+his from here; a reorganization lands only on his approval. ► Step 1 — container 3, the engine copied forward — is ACTIVE. It runs in
+a NEW chat opened in this folder, on Opus (a copy is executing, not judgment), from `/session-start`: its two asks first (3.8's seven
+fixes in piece #6 · his uncommitted files there), then 3.0 … 3.5. **Piece #6's chat "Decibel piece — repo set-up" is done with.**
