@@ -1304,3 +1304,19 @@ that. If not, I'll just change each one manually."*
   (piece #6's pattern: the key stays, the factory preset is kept beside it, marked superseded). NEEDED FROM HIM: the number.
 - Untested idea for a later day, not built: load it in slot 1 only, and let a Kontakt script rebuild the three curve copies
   FROM slot 1 (if the interface can save a slot as an instrument — not known).
+
+## §38. THE BASS FLUTE'S ORDINARY VOICE IS PRESET 33 (round robin off, his preset in all four slots) · the bass clarinet: not in piece #6, and piece #5 left its round robin on (2026-10-04, Fable)
+
+**His words:** *"bass flute 33, was bcl done in piece 6? and was it not brought over?"*
+
+- **Bass flute:** his `BsFl_vibrato_velocity_rroff` loaded as preset 33 in the four slots. The recipe: `vib_vel` KEEPS ITS KEY
+  and points at #33 (CC0 32); #15 stays in the roster as `vib_vel_rr`, marked superseded — piece #6's pattern for the
+  vibraphone (RACK_SETTINGS § 2). Checked by loading the recipe: ordinary `vib_vel` → CC0 32, range 48 … 86. `palette_check`
+  151 · `roster_check` 312 voices, green. Not yet heard with 33 selected — his play of `decibel-first-sound` is the proof.
+- **The bass clarinet was NEVER in piece #6** (its instruments: english horn · bassoon · horn · trumpet · percussion · cello ·
+  double bass · the vibraphone; the two mentions in its recipe are comments). It came from piece #5 (Tempus), cloned whole
+  (§19 · §20). Piece #5 did NOT switch its round robin off: it measured the bass clarinet WITH it on (±1 … 2 dB scatter, its
+  RUNNING_LOG §3554) and has no RACK_SETTINGS file. The one round-robin-off preset inside the clone is **#34 Flutter LOCK**,
+  his from piece #3 — the flutter tongue, not the ordinary voice. So nothing was lost in the port: the off-preset for
+  `senza_vel` (#13) was never made. Same for the viola (piece #5, on). His, as the bass flute's: a copy of #13 with Round
+  Robin off, saved as a preset, loaded in the four slots; then the number.

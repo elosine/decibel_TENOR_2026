@@ -325,7 +325,7 @@ function xsBassFluteTechs(lo, hi) {
     P(12, "air_noises",              "Air Noises Velocity"),
     P(13, "voice_breath_oct",        "Voice Breathing octave"),
     P(14, "voice_breath_4th",        "Voice Breathing fourth"),
-    P(15, "vib_vel",                 "Vibrato Velocity"),                       // THE ORDINARY VOICE (his choice, 2026-10-04)
+    P(15, "vib_vel_rr",              "Vibrato Velocity — library default, round robin ON (superseded by #33)"),   // his choice of ordinary, 2026-10-04 — moved to #33 the same day
     P(16, "molto_vib_vel",           "Molto Vibrato Velocity"),
     P(17, "flutter_vel",             "Flutter Tongue Velocity"),
     P(18, "vib_vel_mwinv",           "Vibrato Velocity + MW inverted", true),
@@ -343,7 +343,11 @@ function xsBassFluteTechs(lo, hi) {
     P(30, "flutter_vel_mwinv",       "Flutter Tongue Velocity + MW inverted", true),
     P(31, "pseudo_cb_vel_mwinv",     "Pseudo Contrabass Velocity + MW inverted", true),   // NOT in the manual's list of 30 — his menu has it
     P(32, "pseudo_cb_stac",          "Pseudo Contrabass Staccato Velocity"),              // the same
-    // 33 … Free Preset — empty slots, not techniques
+    // THE ORDINARY VOICE IS PRESET 33, NOT 15 (2026-10-04, RUNNING_LOG §37 · §38): a copy of #15 with Round Robin OFF, saved by him as a
+    // preset (reaper/kontakt/BsFl_vibrato_velocity_rroff.nka) and loaded into all four slots — the setting lives in the preset, so it
+    // survives the CC0 every note sends (piece #6's vibraphone, RACK_SETTINGS § 2). `vib_vel` KEEPS ITS KEY and points at 33.
+    P(33, "vib_vel",                 "Vibrato Velocity RRoff"),
+    // 34 … Free Preset — empty slots, not techniques
   ];
 }
 
