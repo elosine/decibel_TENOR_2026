@@ -112,3 +112,15 @@ not to the instrument's port — the stack's objects do that today for other thi
 business, not his. The ensemble: five players, confirmed; the percussion undecided — the lane count is five or six (the percussionist
 on one lane or two, as piece #6's Percussion + Vibraphone), his call at container 4. His question — the lanes re-spaced midway — is
 answered in RUNNING_LOG §3: yes, from the record.
+
+### DEC-5 · 2026-10-04 — THE PITCHED PERCUSSION LANE: ONE lane holding all four Ricotti mallet instruments (crotales · glockenspiel · marimba · xylophone); simultaneous ones by opposite beaming "or something like that" — to be determined · the unpitched percussion undecided, being gathered
+
+> *"the pitch lane will hold all four mallet instruments. And then just we'll use like. The um, opposite beaming or something
+> like that if there's simultaneous ones. But all that remains to be determined."* — and: *"the unpitched percussion is
+> undecided. I'll gather some now."* (dictated; the session after `/postclear`, Fable)
+
+**The AI's reading (marked as such):** the second percussion lane (D9's stand-in vibraphone) becomes the Ricotti Mallets
+lane — four instruments on one staff, the instrument chosen per note or per passage as piece #6's percussion lane chooses its
+instrument (the catalog → selection → generator pattern, the protocol's 4.5). Two mallet instruments sounding at once is a
+NOTATION question (two voices on one staff, stems opposed), not a rack question — it waits for the device sheet at container 6.
+Nothing is decided beyond "one lane, four instruments".

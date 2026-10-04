@@ -86,7 +86,7 @@ takes is his (D5).
    the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
    `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
    lanes, every check green or classified, pushed.
-2. ► **Container 4 — the instruments** (4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
+2. ► **Container 4 — the instruments** (**4.0 THE TALK — ANSWERED 2026-10-04 (RUNNING_LOG §18): Xsample for the bass flute (NEW) · bass clarinet · viola · cello; Spitfire Ricotti Mallets the pitched lane, four instruments on ONE lane (DEC-5); the unpitched percussion OPEN — he gathers; the rack built BY THE AI, three Xsample tracks cloned from pieces #5 · #6's racks, his loads the two new libraries.** *The brief was:* 4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
    look at, not decided: the Xsample bass clarinet (piece #3's deep map) · the Xsample strings for viola and cello (piece #1; piece
    #6's cello recipe) · the bass flute — Xsample or IRCAM SI2, whichever has it · the percussion — Spitfire ARO (pieces #2 · #6),
    WHICH instruments his). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge → 4.3 his loads → 4.4
@@ -152,12 +152,32 @@ deliverables · the planning repo's lines (at his word only).
 - **The recipes are provisional** (`sandbox/instruments.js`): the percussion · the bowed vibraphone · the cello CARRIED from piece #6
   with ITS rack's measurements; the bass flute · the bass clarinet one placeholder voice each; the viola the strings' roster by the
   cello's mechanism. **The pitched percussion lane is the vibraphone only as a STAND-IN (D9).**
-- **► THE NEXT CONCRETE STEP — running order step 2, CONTAINER 4, THE INSTRUMENTS. It opens with a SHORT TALK (4.0, Fable): which
-  library for each instrument, and WHICH percussion — the unpitched instruments and the pitched one.** The candidates, to look at,
-  not decided: the Xsample bass clarinet (piece #3's deep map · piece #5's recipe, 34 presets) · the Xsample strings for the viola
-  and the cello (piece #1 · piece #5's viola · this repo's cello) · the bass flute — Xsample or IRCAM SI2, whichever has one · the
-  percussion — Spitfire ARO (pieces #2 · #6). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge →
-  4.3 his loads → 4.4 the state as text → 4.5 the recipes → **4.6 THE FIRST SOUND** → 4.7 the record. He is at the machine for it.
+- **► THE NEXT CONCRETE STEP — THE RACK, BUILT BY THE AI AS FAR AS TEXT GOES (4.1 → 4.6; Opus). His word 2026-10-04 (RUNNING_LOG
+  §18): *"right now, I want to get the rack built. And see if AI can do as much as possible in … duplicating the additional
+  tracks or making the multis, etc., or putting the lanes in with different channel values."* The route: the three Xsample
+  instruments already loaded in a rack this machine has are CLONED as track chunks — the bass clarinet and the viola from piece
+  #5's `reaper/septet_rack.rpp`, the cello from piece #6's `reaper/LGMF_rack.rpp`, both read FROM GIT (`git show HEAD:…`), never
+  the working files — so his loads shrink to the two NEW libraries. UNPROVEN: the first clone (the cello) is the proof; it sounds
+  before the other two are made. In order:**
+  - **4.1 the ports.** FIRST H-15, the protocol's one look (≤ 30 min): can loopMIDI be driven — its registry, a CLI? Yes → the
+    AI makes the six; no → he makes them from the list and the step says so. The six: `DECBassFlute` · `DECBassClar` · `DECPerc` ·
+    **`DECMallets`** (the pitched lane is Ricotti's four — renamed from `DECVibes`, the AI's call, his to reverse; `instruments.js`
+    · `bank/perc_selection.json` · `palette_check` follow) · `DECViola` · `DECCello`. No `b` port for Kontakt (Xsample's
+    articulations are CC0 inside one slot). Ricotti: ONE port; how many Spitfire INSTANCES (one per patch, as ARO — `#6`'s
+    `make_tracks.lua` comment) is asked of the plugin once installed — ONE screenshot of its browser — BEFORE its tracks are made.
+  - **4.2 the tracks by the bridge.** He opens Reaper on a NEW project saved as `reaper/decibel_rack.rpp` (NAMING §1) — the one
+    hand step; the bridge is machine-level (`reaper/bridge/install.md`). `make_tracks.lua` rewritten to this SPEC in score
+    order: Bass Flute XS · Bass Clar XS · Percussion (no FX until chosen) · Mallets (Spitfire, one track per instance) · Viola XS ·
+    Cello XS — `DEC` ports, all channels, monitoring on, armed, 0 dB. THEN a new job `clone_tracks.lua`: the chunk of a named
+    track from the old rack's text → `SetTrackStateChunk` on the new track, with name · input · fader rewritten, the plugin state
+    (Kontakt with its slots, the curve copies, the channel map) carried WHOLE. The cello first; he plays it; then the two.
+  - **4.3 his loads** — the Xsample bass flute (Kontakt; the Kontakt Lua loader of REAPER_CONTROL 8c is the AI's alternative if
+    he drags the script onto the instance once) · Ricotti (Spitfire's browser) · the unpitched percussion when he has chosen.
+    He says "done loading"; the AI reads back.
+  - **4.4 the state as text** (the curve copies / channel map per Kontakt instance — `#6`'s D11, read back by Lua; Spitfire's
+    XML state banked) → **4.5 the recipes derived** (his bass flute Preset Menu screenshots → the articulation map; Ricotti's
+    patch list, §18; the vibraphone stand-in retired; `palette_check` · `roster_check` green) → **4.6 THE FIRST SOUND** in his
+    Chrome → **4.7 the record** + **4.10 THE HOW-TO PAGES** (the OPEN block below).
 - **The checks, how to run them:** this repo's OWN, with nothing staged — `palette_check` (158) · `roster_check` (223 voices) ·
   `model_bank --validate` · `unsaved_check` · `test_snapshots` · `test_written_pitch` · `spectrum_check` · `accel_calc_check` ·
   `score/tools/check_containers` · `check_cresc_deck` · `check_cresc_panel` — all green. The engine's batteries read OTHER
@@ -169,29 +189,28 @@ deliverables · the planning repo's lines (at his word only).
   the planning repo's lines for this piece, at his word only (the protocol's 2.6).
 - **Deliberately uncommitted:** nothing.
 
-### OPEN AT SESSION END *(mid-session checkpoint, 2026-10-04, Opus — his `/checkpoint` at the wrap of container 3)*
+### OPEN — 2026-10-04, after the talk (Fable; the chat continues on Opus for the build)
 
-- **The task and its state:** the start of the piece by the new-piece protocol. Running order step 1 (container 3, the engine
-  copied forward) is DONE and pushed; step 2 (container 4, the instruments) is ► and NOT begun. The block SESSION 1 — STEP 1 IS
-  DONE above is the state in full.
-- **The latest deliverable:** the composer score of this piece — `score/public/composer.html` on six lanes, `http://localhost:5500/composer.html`
-  (he starts it with `start_score_server.bat`; the AI's own is the launch name `score`) · the record: RUNNING_LOG §6 … §17.
-- **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on FABLE: play back, STOP and ask. On his word, open container 4's
-  TALK (4.0), one question at a time, his terms, a one-line answer possible:** (1) which PERCUSSION — the unpitched instruments,
-  and which PITCHED instrument the second lane is (today a vibraphone stand-in, D9) · (2) which LIBRARY for each of the bass
-  flute · the bass clarinet · the viola · the cello (the candidates are in the block above; nothing is decided, nothing was looked
-  up). Put the data first: what the lineage already has for each instrument, in a line. Then the build (4.1 … 4.7) is Opus's.
-- **His correction at this wrap, recorded (RUNNING_LOG §17 · §7 below · CLAUDE.md § THE PAPER):** ONE paper for the TENOR call,
-  about this piece AND his improvisation with live electronics. **The AI's reading — "the improviser piece" — was not confirmed;**
-  do not build on it without his word. **When the improviser piece's repo is made, its kit carries the same reminder.** Nothing was
-  written into the engine's repo or the planning repo.
-- **`Resume reads:`** nothing beyond this §2 for the play-back. For the talk, when he says go: the home's
-  `protocol/NEW_PIECE_PROTOCOL.md` § 4 (4.0 only) · `sandbox/instruments.js`, its header (the first 45 lines).
-- **Pending him:** the talk's answers (above) · whether "my improvisation with live electronics" is the improviser piece · the
-  ensemble's final instrumentation (the call's) · the planning repo's lines, at his word only.
-- **Deliberately uncommitted:** nothing — `git status --short` is empty after this checkpoint's commit. Piece #6
-  (`septet_LGMF_2026`) still shows its 30 uncommitted paths, all his, untouched; its server was running on 5400 throughout.
-- **Left open in the AI's pane:** a tab on `http://localhost:5000/` (the sandbox, its server stopped) — nothing to save in it.
+- **The task and its state:** container 4 (running order step 2). 4.0 the talk is answered but for the unpitched percussion
+  (RUNNING_LOG §18 · DEC-5); the rack is NOT MADE; 4.1 is next. The block above has the build in full.
+- **The latest deliverable:** the record — RUNNING_LOG §18, DEC-5, `docs/manuals/RICOTTI_USER_MANUAL_PP006-007.pdf` (his;
+  moved from `docs/` by the AI).
+- **4.10 THE HOW-TO PAGES — his ask, 2026-10-04 (RUNNING_LOG §18):** *"fill in a few details like the CC7 multi tracks per
+  library, the way to deal with changing articulations for the different libraries … list a few things about how to do it to
+  make it slightly easier next time, and we'll revise the whole system when we have a little bit more time."* NOT written —
+  the protocol's 4.10 is `todo`. Written by Opus AT 4.7, from `#6` RUNNING_LOG §20 … §42 and from this build, one SHORT page
+  per plugin family in the home: `composition-system/protocol/howto/kontakt-xsample.md` · `spitfire.md` · `uvi-si2.md`
+  (the AI's placement, his to reverse). Each: the port · the track · the instance and its channel map · the curve copies and
+  CC7 (the law) · the articulation switch (Xsample CC0 · SI2 keyswitches · Spitfire's) · the read-back · the round-robin
+  pre-flight. A few bullets each; nothing on his end. The protocol's 4.10 ticked when they exist.
+- **`Resume reads:`** this §2 · the home's `protocol/NEW_PIECE_PROTOCOL.md` § 4 (4.1 … 4.7) · `docs/REAPER_CONTROL.md` § 2
+  (the mechanisms; 8c the Kontakt Lua) · `reaper/bridge/README.md` · `reaper/bridge/jobs/make_tracks.lua` ·
+  `sandbox/instruments.js` (the header) · `#6` RUNNING_LOG §19 … §42 (how the last rack was made — skim for the Kontakt curve
+  slots, D11) · `#6` `docs/NITS.md` on H-15 (the loopMIDI finding, if any).
+- **Pending him:** the unpitched percussion (gathering) · Reaper open on the new project when 4.2 starts · the two loads at 4.3
+  · the bass flute Preset Menu screenshots at 4.5 · whether "my improvisation with live electronics" is the improviser piece ·
+  the ensemble's final instrumentation (the call's) · the planning repo's lines, at his word only.
+- **Deliberately uncommitted:** nothing after this commit.
 
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
@@ -203,13 +222,12 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 4 — the instruments.** 4.0 the TALK first: which library for each, which percussion, which pitched instrument (the vibraphone is a stand-in, D9). Then the ports, the tracks, his loads, the recipes, THE FIRST SOUND | Fable (the talk) · Opus (the build) | yes — a new chat, or `/clear` + `/postclear` |
-| — | **CONTAINER 5 — the calibration** (it also re-points `dyn_table_check` · `check_ceilings` and runs the three fixes that could not be run at 3.8) | Opus | yes |
+| **►** | **CONTAINER 4 — THE RACK, built by the AI as far as text goes:** 4.1 the ports (H-15 first) → 4.2 the tracks by the bridge + the three Xsample tracks CLONED from pieces #5 · #6 (the cello first, as proof) → 4.3 his two loads (bass flute · Ricotti) → 4.4 · 4.5 → **4.6 THE FIRST SOUND** → 4.7 + 4.10 the how-to pages | Opus | no — the chat is short; switch the model in place || — | **CONTAINER 5 — the calibration** (it also re-points `dyn_table_check` · `check_ceilings` and runs the three fixes that could not be run at 3.8) | Opus | yes |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
-DEC-4) · Q4 — the percussion: TWO lanes (answered, D9); WHICH instruments, and which PITCHED one, is open — container 4's talk.
+DEC-4) · Q4 — the percussion: TWO lanes (D9); the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the UNPITCHED instruments open — he gathers.
 
 **Blockers:** none.
 

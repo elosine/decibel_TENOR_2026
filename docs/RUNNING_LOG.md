@@ -589,3 +589,80 @@ his improvisation with live electronics.
 **Done with it:** CLAUDE.md § THE PAPER carries the correction · journal §7 · PLAN § 4. **Not done, his word needed:** nothing was
 written into the engine's repo or the planning repo (each is written in a session of its own or at his word); when the improviser
 piece's repo is made, its kit carries this same reminder — a line in journal §2 says so.
+
+## §18. CONTAINER 4 OPENS — THE TALK (4.0): Xsample for the four, Ricotti Mallets for the pitched lane, the unpitched percussion open; and "can AI build the rack?" (2026-10-04, Fable, after `/clear` + `/postclear`)
+
+**What prompted it — his words at the postclear, verbatim:** *"I have a new X sample library installed for the bass flute. And
+then I'm currently installing a library that's a Spitfire library called Ricotti Mallets … So let's see if we can't get the
+documentation for that. If not, I'll find them and download them into the repo. And then whenever is the appropriate time,
+let's set these instruments up. The X sample will be like all the other ones. We'll just have to get the articulation map. And
+then we can investigate the Ricotti mallets when it's finished downloading. Maybe another 15, 20 minutes. And it is... Crotales,
+Glockenspiel, Marimba, and Xylophone. but write these things in when it's the appropriate timing. I'm not 100% sure where we are
+in the plan."* — then, on the play-back: *"manual here [`docs/RICOTTI_USER_MANUAL_PP006-007.pdf`]. And then where are we with
+the uh, Reaper rack? Has that been made yet, or do we need to make it? And then yes, bass clarinet, viola, cello, [Xsample], and
+bass flute. And as soon as the rack is ready, I'll send you screenshots of the articulations for bass flute. And then let's go
+through all the proper settings. Like the, um, round robin, etc. Now, can we devise a way for AI to build the rack if it hasn't
+been already built? Like maybe copy previous racks and then just copy the. The um, instrument lanes back and forth. I don't
+know. Let's discuss this."* (the percussion lane in COMPOSITION_NOTES DEC-5.)
+
+**The talk's answers so far (the protocol's 4.0):**
+- **Bass flute** — Xsample, a NEW library installed today (the lineage's candidates were "Xsample or IRCAM SI2, whichever has
+  one"; Xsample has one and he owns it). Kontakt family. *"like all the other ones. We'll just have to get the articulation
+  map"* — his Preset Menu screenshots once the rack stands, as piece #6 did (its 39 · 88 entries).
+- **Bass clarinet · viola · cello** — Xsample (piece #3's deep map · piece #5's bass clarinet recipe, 34 presets · piece #5's
+  viola · piece #6's cello). Kontakt family. Nothing new to acquire.
+- **The pitched percussion lane** — **Spitfire Ricotti Mallets** (product PP006-007), installing at the time of the talk:
+  crotales · glockenspiel · marimba · xylophone, ALL FOUR ON ONE LANE (DEC-5). Spitfire family, as ARO — "a new library of a
+  known family costs a load and a read-back" (the protocol's 4.0). The manual he put in `docs/`; the AI moved it to
+  `docs/manuals/` (piece #3's place for vendor manuals), his to reverse. **The patch list, from his four screenshots of the
+  product page (data for 4.5; not yet seen in the plugin):**
+  - Marimba: FX - Bows · Hotrod (Flams) · Hotrod · Main - Full (Hard) · Main - Full (Soft) · Main - Rubber · Main - Trems · Main
+  - Glockenspiel: Glisses · Main (Extra Soft) · Main (Hard) · Main (Medium Soft) · Main (Medium) · Main (Soft) · Rolls (Hard) ·
+    Rolls (Soft) · Shorts (Hard) · Shorts (Medium Soft) · Tremolo (Hard) · Tremolo (Soft)
+  - Crotales: Bowed · Main (Felt) · Main (Metal damped) · Main (Metal) · Main (Plastic damped) · Main (Plastic) · Rolls (Metal)
+    · Rolls (Plastic) · Rolls (Rubber)
+  - Xylophone: Glisses · Main - (Hot Rods) · Main (Extra Soft) · Main (Hard) · Main (Medium) · Main (Soft) · Main · Rolls
+    (Hard) · Rolls (Hot Rods) · Rolls (Soft)
+  - Microphones: Ca Cardioid · V Valve · Co Condenser · Ri Ribbon · Ro Room
+  The vibraphone stand-in (D9) goes when the Ricotti track stands.
+- **The unpitched percussion** — UNDECIDED; he is gathering candidates. The start runs on the five known and takes it as it
+  arrives (the protocol's 4.0, last sentence).
+
+**The rack — where it stands (his question):** NOT MADE. `reaper/` holds the bridge only (`bridge.lua` · `jobs/make_tracks.lua`
+· `jobs/make_perc_tracks.lua`, carried from piece #6); no `.rpp`; no `DEC…` port exists in loopMIDI. Making it IS container 4's
+4.1 (the ports) and 4.2 (the tracks). How the last rack was made (the protocol's data paragraph): ten ports made BY HIM in
+loopMIDI · the tracks by the bridge's idempotent scripts in score order · every preset loaded BY HIM in each plugin's own
+browser — "the one step no script can do" (`#6 §36`) · the AI read each load back and set the rest as text.
+
+**His idea, read back — "copy previous racks … copy the instrument lanes back and forth":** a Reaper track chunk carries its
+plugin WITH the preset loaded (the state blob; REAPER_CONTROL's mechanism 9 says never EDIT it — copying it whole is what Reaper
+itself does when a track is pasted between projects). The lineage has in git: piece #5's `reaper/septet_rack.rpp` (the Xsample
+bass clarinet with its 34 presets · the Xsample viola) and piece #6's `reaper/LGMF_rack.rpp` (the Xsample cello · the Mallets
+Extended bowed vibraphone · ARO). So three of the five known instruments are ALREADY LOADED in a rack this machine has; the AI
+can clone those tracks into the new rack as text — input re-pointed to the `DEC` port, fader to 0 dB (the old pieces' trims come
+along and container 5 re-measures), name and order this piece's — and his loads shrink to the two NEW libraries. Precedent:
+`#6 §35` "cloning yes, a new family no". **UNPROVEN here** — a claim only when the first clone sounds (4.6). Put to him as the
+one decision: clone the three, or all fresh as last time. **What stays his either way:** the loads of the bass flute (Kontakt —
+the Kontakt Lua loader of REAPER_CONTROL 8c is the scripted alternative, one drag of the script per instance) and of Ricotti
+(Spitfire's own browser) · the loopMIDI ports — unless H-15, the protocol's ONE look at whether loopMIDI can be driven, finds a
+way; it is taken at 4.1, as the protocol says · the unpitched percussion when chosen. **"The proper settings — round robin etc."**
+is 4.4 (the state as text) and container 5's 5.2 pre-flight (the round robins); noted, in order.
+
+**His second message, mid-turn, verbatim:** *"And I don't know if a sub protocol was written for the port protocol about the
+wrap [the rack], but maybe we should fill in a few details. I don't want to spend too much time on it, but fill in a few details
+like the CC7 multi tracks per library, the way to deal with changing articulations for the different libraries, et cetera, et
+cetera. Like I said, I don't want to spend too much time on it, especially on my end, but if we could just, if you could just
+list a few things about how to do it to make it slightly easier next time, and we'll revise the whole system when we have a
+little bit more time. But right now, I want to get the rack built. And see if AI can do as much as possible in, you know,
+duplicating the additional tracks or making the multis, etc., or putting the lanes in with different uh, channel values, etc.,
+etc."*
+
+**Decided (the AI's reading of his word, his to reverse):** (1) THE CLONE ROUTE — "duplicating the additional tracks … making
+the multis … the lanes with different channel values" is the clone of the three Xsample tracks from pieces #5 · #6's racks in
+git, taken as his (a); the build plan is in journal §2. (2) THE HOW-TOS: the protocol's 4.4 names "one how-to per plugin
+family" and 4.10 says write them from the record — NOT YET WRITTEN (`todo` in the protocol). They are written at 4.7 of this
+build, one short page per family (Kontakt-Xsample · Spitfire · UVI SI2) in the home repo under `protocol/howto/`, a few
+bullets each — the port · the track · the instance and the channel map · the curve copies and CC7 · the articulation switch ·
+the read-back · the round-robin pre-flight — from `#6` RUNNING_LOG §20 … §42 and what this build proves; nothing on his end;
+the full revision later, his words. (3) The pitched lane's port RENAMED `DECVibes` → `DECMallets` at 4.1 (the AI's naming
+call). (4) The build is Opus's — the switch point; no clear needed, the chat is short.
