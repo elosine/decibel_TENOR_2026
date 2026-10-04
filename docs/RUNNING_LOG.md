@@ -137,3 +137,14 @@ none here yet):**
 **Written:** the sketch pad DEC-4 · journal §2 (the running order's steps 1 · 4 corrected; D8; Q3) · PLANNER (the staff system; the open
 items) · PERFORMANCE_NOTES #3 · #4 · the engine's PLAN part 7 (one paragraph: the data for its device sheets). §2's "two things the AI
 adds" is corrected by this entry, not edited: the lane is withdrawn; the sandbox read stands.
+
+## §4. THE PAPER — his standing reminder for this piece: good lab notes along the way (2026-10-04, Fable)
+
+**His words, whole:** *"Oh, and just a reminder, and if you can keep this as a standing reminder throughout this piece, I'll need to
+create a paper directly after finishing the piece or during it somehow, same deadline. So let's keep good journal notes. Like lab
+notes along the way."*
+
+**Taken as:** the lab journal's rule (CLAUDE.md), sharpened for this piece — every entry written so the paper can be written from the
+log alone: his words · what was tried and rejected · the numbers · the reasoning · the references. Written into CLAUDE.md as a
+standing reminder (under the lab journal's practice), journal §7 (his own reminders), PLAN § 4 (the submission is the piece AND a
+paper). The deadline is his to keep (D5); "the same deadline" recorded as his word, not managed.

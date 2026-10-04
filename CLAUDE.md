@@ -140,6 +140,13 @@ Future agents: this is not optional and he will not ask for it.
   composer voices goes into `docs/COMPOSITION_NOTES.md` verbatim, dated, the moment it is
   said — with the AI's reading kept separate and marked as such.
 
+**THE PAPER — a standing reminder for THIS piece (composer, 2026-10-04, RUNNING_LOG §4):** *"Oh, and just a reminder, and if you can keep
+this as a standing reminder throughout this piece, I'll need to create a paper directly after finishing the piece or during it
+somehow, same deadline. So let's keep good journal notes. Like lab notes along the way."* So here the lab journal's test is the
+paper's, literally: every entry carries what a reader of the paper would need — his words, what was tried and rejected, the numbers,
+the reasoning, the references — and a compositional or technical move that is not in the log is lost to the paper. The paper is HIS;
+the deadline is his to keep (he keeps his own time, D5); the AI's part is the record, as the work happens, never asked for.
+
 ## Standing practice: the morph notes (composer, 2026-09-06 — #5's CN-29)
 
 > *"I want to institute a process where we're taking notes in a central document that will inform the eventual revision."*

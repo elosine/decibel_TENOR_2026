@@ -79,4 +79,5 @@ needs container 3 done here (the composer score must exist). Not at set-up.
 
 ## 4. Submission — `todo`
 
-*His. To be laid out when we discuss it.*
+*His. To be laid out when we discuss it.* **The piece AND a paper, the same deadline** (his word 2026-10-04, RUNNING_LOG §4): the paper
+written during or directly after the piece — the lab journal is its source, kept to that standard from §1.

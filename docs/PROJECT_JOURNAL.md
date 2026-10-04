@@ -300,4 +300,5 @@ across when its system lands here and is first used.)*
 
 *(The composer's own to-dos and reminders. Reviewed at session end.)*
 
-- ‹…›
+- **THE PAPER (2026-10-04):** *"I'll need to create a paper directly after finishing the piece or during it somehow, same deadline. So
+  let's keep good journal notes. Like lab notes along the way."* — a standing reminder for this piece; CLAUDE.md carries it.
