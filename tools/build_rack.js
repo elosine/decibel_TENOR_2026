@@ -112,6 +112,16 @@ function empty(row) {
 // --emit "<track name>" <file>: ONE cloned track chunk to a file, for a rack he has already saved — the chunk is
 // then set on the existing track through the bridge (reaper.SetTrackStateChunk), and make_tracks.lua run after it
 // to give the track its input back. This is how a track is re-cloned without rebuilding the file (RUNNING_LOG §20).
+// --emit-src <p5|p6> "<source track>" "<new name>" <file>: the same, for ANY track of an old rack (not only the
+// TRACKS rows) — a percussion instrument an earlier piece already loaded, a second instance. Same three rewrites.
+if (flag('--emit-src')) {
+  const i = args.indexOf('--emit-src'), key = args[i + 1], srcName = args[i + 2], name = args[i + 3], file = args[i + 4];
+  if (!SOURCES[key] || !srcName || !name || !file) { console.error('--emit-src <' + Object.keys(SOURCES).join('|') + '> "<source track>" "<new name>" <outfile>'); process.exit(2); }
+  const s = load(key), r = clone(s, { name, src: srcName, nth: 0 });
+  fs.writeFileSync(file, r.lines.join('\n') + '\n', 'latin1');
+  console.log(`source: ${SOURCE} · ${s.piece} ${s.file} @ ${s.rev}\n  ${r.report}\n  -> ${file}`);
+  process.exit(0);
+}
 if (flag('--emit')) {
   const i = args.indexOf('--emit'), name = args[i + 1], file = args[i + 2];
   const row = TRACKS.find(t => t.name === name && t.from);

@@ -5,7 +5,7 @@
 > `COMPOSITION_NOTES.md` verbatim first and get folded into a tier here. Engineering
 > detail stays in `PLAN.md`. Rewritten freely; the sketch pad is the append-only record.
 
-**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK IS UP (running order step 2; RUNNING_LOG §19 · §20): nine `DEC` ports made by the AI and proven end to end · the rack `reaper/decibel_rack.rpp`, his since his first save — Bass Flute XS · Bass Clarinet XS · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS + his own ninth track (Abbey Road Orchestra, the unpitched percussion, tentative). The bass clarinet, viola and cello are cloned from the old racks on disk and sound; the bass flute and the four mallets hold an empty Kontakt and a loader script each. ► NEXT: his five script runs, CTRL+S, then the recipes and the first sound from the composer score.
+**NOW ►** 2026-10-04 — CONTAINER 4, THE RACK HAS SIXTEEN TRACKS (running order step 2; RUNNING_LOG §19 … §21): Bass Flute XS · Bass Clarinet XS · eight unpitched percussion (his tentative list, DEC-6 — bongos · shime daiko · bass drum alt · wood blocks · China cymbal · spring coil · suspended cymbals · toms) · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Viola XS · Cello XS. Sounding through their ports: the four Xsample instruments, the crotales and xylophone, the bass drum alt, wood blocks and spring coil. ► NEXT, his: the marimba's script, five loads in the Abbey Road browser, CTRL+S; then the recipes and the first sound from the composer score.
 
 *Before it —* 2026-10-04 — his brief taken: the piece in three sections (below, from DEC-1 … DEC-3); the day's work a running order in journal §2.
 *Before it —* 2026-10-04 — the repo and its kit made (the protocol's container 2); no code.

@@ -14,3 +14,4 @@ Append a row whenever a decision needs a line in the notes; never write the note
 
 | 3 | THE SIGN OF ORIGIN: every electronic sound is drawn on the staff of the player whose input it comes from; a STACK of signs across the staves is an electronic chord, the real notes follow (section 3) | RUNNING_LOG §3 · DEC-4 (D8) | — |
 | 4 | a held electronic chord of freezes — a duration-line kind on each contributing player's staff: "the electronics playing a frozen version of that instrument's input" (section 2) | RUNNING_LOG §3 · DEC-4 | — |
+| 5 | THE PERCUSSION — a substitution: the simulation plays SHIME DAIKO samples; the notes name a regular SNARE DRUM as the alternate the player may use (his words: "alternate be the regular snare for the notation performance notes") | RUNNING_LOG §21 · DEC-6 | — |

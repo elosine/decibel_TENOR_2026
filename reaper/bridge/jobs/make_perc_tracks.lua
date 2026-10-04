@@ -1,30 +1,26 @@
--- make_perc_tracks.lua — the percussion instrument tracks of the LGMF rack (PLAN 0c/0e, 2026-09-18), idempotent.
--- D7: one Spitfire instance per instrument = one track per SPEC row, all on the one port, each filtering on ITS channel.
--- A NEW row's track is a DUPLICATE of the composer's track "Template" (his word, 2026-09-18: "please use the track called
--- Template to duplicate") — Reaper's own Track: Duplicate (fresh GUIDs, his plugin state, fader, monitoring, arm all
--- carried), then renamed, put on the row's channel and moved to the end of the percussion block. With no Template in the
--- rack a new row gets an EMPTY Abbey Road Orchestra instance instead (the first five were made that way, §37).
--- The composer loads / selects the instrument in the plugin's own browser — the only loader (§36).
+-- make_perc_tracks.lua — the UNPITCHED PERCUSSION tracks of the DECIBEL rack (the new-piece protocol's 4.2; RUNNING_LOG §21,
+-- 2026-10-04), idempotent. Carried from piece #6 (its PLAN 0c/0e, 2026-09-18); the SPEC is this piece's — his list of
+-- 2026-10-04, TENTATIVE (COMPOSITION_NOTES DEC-6).
+-- D7: one Spitfire instance per instrument = one track per SPEC row, all on the one port DECPerc, each filtering on ITS channel
+-- (Spitfire cannot switch instruments by MIDI). The block sits after the bass clarinet, before the mallets.
+-- A NEW row's track is a DUPLICATE of a track named "Template" if the rack has one (his way in piece #6); with none, as here,
+-- it gets an EMPTY Abbey Road Orchestra instance. The instrument is then LOADED IN THE PLUGIN'S OWN BROWSER — the only loader
+-- (piece #6 §36) — or, where an earlier rack already holds it, its track chunk is cloned onto the track (tools/build_rack.js
+-- --emit-src; here the bass drum alt, the wood blocks and the spring coil, from piece #6's rack).
 -- A track that already exists is READ BACK ONLY — never re-configured (he is working in the rack). Never saves.
 -- Add a row and re-run to add an instrument.
 --   BRIDGE_TIMEOUT_MS=120000 node tools/reaper_job.js run reaper/bridge/jobs/make_perc_tracks.lua
-local PORT, AFTER, TEMPLATE = "LGPerc", "Percussion", "Template"
+local PORT, AFTER, TEMPLATE = "DECPerc", "Bass Clarinet XS", "Template"
 local FX = "VST3i: Abbey Road Orchestra (Spitfire Audio)"
 local SPEC = {   -- slug = the key in bank/aro_percussion_catalog.json ('?' = which of several is settled by what he loads)
-  { name = "Finger Cymbals ARO",    channel = 1,  slug = "small_metals_finger_cymbals" },
-  { name = "Bell Tree ARO",         channel = 2,  slug = "small_metals_bell_tree" },
-  { name = "Sleigh Bells ARO",      channel = 3,  slug = "small_metals_sleigh_bells" },
-  { name = "Triangles ARO",         channel = 4,  slug = "small_metals_triangles" },
-  { name = "Tambourines ARO",       channel = 5,  slug = "small_metals_tambourines" },
-  { name = "Castanets ARO",         channel = 6,  slug = "toys_castanets" },
-  { name = "Claves ARO",            channel = 7,  slug = "toys_claves" },
-  { name = "Shakers ARO",           channel = 8,  slug = "toys_shakers" },
-  { name = "Brake Drums ARO",       channel = 9,  slug = "brake_drums" },
-  { name = "Crashers and Stack ARO", channel = 10, slug = "crashes_and_stack" },   -- the library's spelling (and his); the catalog's slug is piece #2's
-  { name = "Wood Blocks ARO",       channel = 11, slug = "wood_blocks" },
-  { name = "Bass Drum ARO",         channel = 12, slug = "bass_drum ?" },
-  { name = "Temple Bowls ARO",      channel = 13, slug = "temple_bowls" },
-  { name = "Tam Tams ARO",          channel = 14, slug = "tam_tams ?" },
+  { name = "Bongos ARO",            channel = 1, slug = "bongos" },
+  { name = "Shime Daiko ARO",       channel = 2, slug = "shime_daiko" },               -- the samples; the notes name a snare drum as the alternate (PERFORMANCE_NOTES)
+  { name = "Bass Drum Alt ARO",     channel = 3, slug = "bass_drum_alt" },             -- cloned from piece #6
+  { name = "Wood Blocks ARO",       channel = 4, slug = "wood_blocks" },               -- cloned from piece #6
+  { name = "China Cymbal ARO",      channel = 5, slug = "china_cymbals ?" },
+  { name = "Spring Coil ARO",       channel = 6, slug = "small_metals_spring_coil" },  -- cloned from piece #6's Small Metals (C), the articulation switched
+  { name = "Suspended Cymbals ARO", channel = 7, slug = "susp_cymbals_dark | _mellow | _bright ?" },
+  { name = "Toms ARO",              channel = 8, slug = "toms_high | toms_low ?" },
 }
 local function devIndex(port)
   for d = 0, reaper.GetNumMIDIInputs() - 1 do

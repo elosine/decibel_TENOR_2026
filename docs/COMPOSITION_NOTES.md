@@ -124,3 +124,16 @@ lane — four instruments on one staff, the instrument chosen per note or per pa
 instrument (the catalog → selection → generator pattern, the protocol's 4.5). Two mallet instruments sounding at once is a
 NOTATION question (two voices on one staff, stems opposed), not a rack question — it waits for the device sheet at container 6.
 Nothing is decided beyond "one lane, four instruments".
+
+### DEC-6 · 2026-10-04 — THE UNPITCHED PERCUSSION, TENTATIVE: bongos · shime daiko (the samples; a regular snare named as the alternate in the performance notes) · bass drum, the alt version · wood blocks · China cymbal · spring coil · suspended cymbals · toms — anvils named, then skipped
+
+> *"Bongos. [Shime] daiko, but we'll have uh, uh, alternate be the regular snare for the notation performance notes. But let's
+> use the Shime Daiko samples. bass drum. Let's use the alt version. wood blocks, anvils. China [cymbal]. spring coil that's in
+> small metals. Actually, let's skip the anvils. suspended [cymbals]. Toms."* (dictated, after: *"I'll give you tentative
+> non-pitched in a moment"*)
+
+**The AI's reading (marked as such):** eight instruments, all Spitfire Abbey Road Orchestra Percussion, the library of pieces
+#2 · #6. The shime daiko is the SOUND of the simulation; the part and the performance notes will allow a regular snare drum in
+its place — a substitution a player can make, written into the notes (PERFORMANCE_NOTES #5). Three choices the list leaves
+open, each settled by what he loads: WHICH suspended cymbals (the library has dark · mellow · bright) · WHICH toms (high · low ·
+both) · WHICH China cymbal preset (the library has two). "Tentative" is his word: the list may change.

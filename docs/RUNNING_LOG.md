@@ -793,3 +793,51 @@ audition is why the master read −4.9 dB during the first port test — not the
 
 **For the how-to pages (4.10):** a track re-cloned in a saved rack = emit the chunk, set it through the bridge, re-run
 `make_tracks.lua` · a Kontakt library with many patches = a catalog, one slot per patch on its own channel, a generated loader.
+
+## §21. CONTAINER 4 — THE UNPITCHED PERCUSSION (his tentative list): eight tracks on `DECPerc`, three cloned from piece #6 and sounding · HIS LOADS RUN: the bass flute, crotales, glockenspiel, xylophone loaded by script and read back (2026-10-04, Opus)
+
+**What prompted it — his words** (the list is in COMPOSITION_NOTES DEC-6, verbatim): bongos · shime daiko, *"alternate be the
+regular snare for the notation performance notes. But let's use the Shime Daiko samples"* · bass drum, *"the alt version"* · wood
+blocks · anvils, then *"let's skip the anvils"* · China cymbal · *"spring coil that's in small metals"* · suspended cymbals · toms.
+And, mid-turn: *"Do I need to run anything for the bass clarinet, or is that done?"* — answered: done, it arrived loaded.
+
+**Against the catalog** (`bank/aro_percussion_catalog.json`, piece #2's, 78 instruments): bongos `bongos` · shime daiko
+`shime_daiko` · bass drum alt `bass_drum_alt` · wood blocks `wood_blocks` · spring coil `small_metals_spring_coil` — all
+`verified`. Three left open by the list, settled by what he loads: China cymbal — `china_cymbals` (verified) or
+`china_cymbal` (a skeleton) · suspended cymbals — `susp_cymbals_dark` · `_mellow` · `_bright` (verified) · toms — `toms_high`
+· `toms_low` (verified; `epic_toms` · `roto_toms` exist).
+
+**What an Abbey Road instance can and cannot take as text** (piece #6 §33 … §36, re-read, not re-derived): a state restores
+only what the plugin has itself loaded once; it never loads a preset because a state names it. So an instrument an earlier
+rack holds can be cloned; a new one costs ONE load in the plugin's own browser, his.
+
+**Built:**
+- `reaper/bridge/jobs/make_perc_tracks.lua`, its SPEC this piece's eight rows, port `DECPerc`, after the bass clarinet. Run:
+  eight tracks, each an EMPTY Abbey Road Orchestra instance, armed, monitoring, on ITS channel — Bongos ARO 1 · Shime Daiko ARO
+  2 · Bass Drum Alt ARO 3 · Wood Blocks ARO 4 · China Cymbal ARO 5 · Spring Coil ARO 6 · Suspended Cymbals ARO 7 · Toms ARO 8.
+  The rack: 16 tracks — Bass Flute XS · Bass Clarinet XS · the eight · Crotales RM · Glockenspiel RM · Xylophone RM · Marimba
+  RM · Viola XS · Cello XS. (His own scratch Abbey Road track of §20 was gone before this ran.)
+- **Three cloned from piece #6's rack on disk** (`tools/build_rack.js --source disk --emit-src p6 …`, a new switch: any
+  track of an old rack), set through the bridge, the channel put back: Bass Drum Alt ARO ← "Bass Drum Alt ARO" (state
+  `15caedfa1294`) · Wood Blocks ARO ← "Wood Blocks ARO" (`634f9e7fb88c`, with its JS volume) · Spring Coil ARO ← "Finger
+  Cymbals ARO" (`f1bc642ebedc`) — a Small Metals (C) preset, 14 instruments as articulations; the active one switched from
+  Finger Cymbals to **Coil** (articulation 10) by `tools/aro_state.js edit --artic "Coil" --push`, read back.
+- **A dead end, kept:** the first test notes showed nothing. Reaper HAD received them (`93 3C 5A DECPerc` …) — the keys were
+  wrong: these instruments are mapped from C2 = 36 upward, in blocks with gaps (the catalog), and 60 · 60 · 40 fell outside or
+  in a gap. On key 36: **Bass Drum Alt −24.6 / −24.9 dB · Wood Blocks −26.7 / −25.1 dB · Spring Coil −28.9 / −32.6 dB;** the
+  empty Bongos track on channel 1 stayed silent — each track answers only its channel. One bridge job failed once with
+  `EBUSY` on the inbox rename and passed on the retry.
+- NOT done: the selection (`bank/perc_selection.json`, still piece #6's fourteen) and the recipe (`tools/apply_perc.js`) —
+  written when his five loads are read, as piece #6 did (its §38), since three slugs depend on what he loads.
+
+**HIS LOADS, THE KONTAKT SCRIPTS — they work.** He ran four of the five while this was built; each wrote its read-back:
+- `load_bass_flute` 14:26:28 — 0 → 4 slots: "Bass Flute" on channel 1, "Bass Flute curve A / B / C" on 2 / 3 / 4, output 0,
+  −6.0 dB each (the library's own default). The script loaded slot 1 itself — the Xsample load is no longer his.
+- `load_rm_crotales` 14:28:02 — 9 slots, channels 1 … 9 · `load_rm_glockenspiel` 14:28:23 — 12 slots, 1 … 12 ·
+  `load_rm_xylophone` 14:28:42 — 10 slots. Every `ok: true`; every slot renamed from the library's "c - Crotales - Main
+  (Felt)" form to the catalog's.
+- **Sounded through their ports, channel 1:** Bass Flute XS, C4: −22.4 / −24.6 dB — THE FIRST SOUND OF THE NEW LIBRARY ·
+  Crotales RM, key 84: −36.2 / −32.4 dB · Xylophone RM, key 72: −32.3 / −29.3 dB · Glockenspiel RM, key 84: −88 dB, which is
+  no note — the key is probably outside that patch's range; NOT diagnosed, the ranges are read at 4.5 · Marimba RM: not yet
+  loaded when this was written.
+- The rack was saved by him again after these (not dirty, 16 tracks).

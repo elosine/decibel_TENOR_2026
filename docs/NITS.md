@@ -125,3 +125,7 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 
 - **RESOLVED 2026-10-04 (RUNNING_LOG §20): the three clones are now from the racks ON DISK** — his word "disk". The nit above ("taken from GIT") is closed.
 - **`make_tracks.lua` resets every SPEC track's fader to 0 dB on each run** (inherited from piece #6). Harmless before container 5; after the trims, run `apply_trims.lua` after it. The caution is in the job's header.
+
+- **The Glockenspiel RM gave no note on key 84, channel 1** (2026-10-04, RUNNING_LOG §21: −88 dB). Not diagnosed. The key ranges of all 39 Ricotti patches are read at 4.5 (the recipe needs them): from Kontakt's keyboard, or a meter sweep.
+- **The percussion selection and recipe are still piece #6's fourteen** (`bank/perc_selection.json` · the `ARO_PERC` block). Replaced at 4.5 by the eight of DEC-6, once his five loads are read.
+- **A bridge job can fail once with `EBUSY` on the inbox rename** (2026-10-04, once in ~60 jobs); a retry passes. If it recurs, `tools/reaper_job.js` gets a retry around the rename.

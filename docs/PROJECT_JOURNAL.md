@@ -160,12 +160,17 @@ deliverables · the planning repo's lines (at his word only).
     re-taken from the old racks' working files, sounding through their ports · Ricotti installed: `bank/ricotti_catalog.json`
     (39 patches), four tracks (Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM) each with an empty Kontakt, four loaders
     written · he saved the rack once (14:14) — the file is HIS; he added a ninth track himself (Abbey Road Orchestra).
-  - **(1) HIS — FIVE LOADS, one menu item each: in the Kontakt of the named track, KONTAKT menu → Run Lua script… (or drag the
-    file onto that Kontakt):** Bass Flute XS → `reaper/kontakt/load_bass_flute.lua` · Crotales RM → `load_rm_crotales.lua` ·
-    Glockenspiel RM → `load_rm_glockenspiel.lua` · Xylophone RM → `load_rm_xylophone.lua` · Marimba RM → `load_rm_marimba.lua`.
-    THEN the AI reads `reaper/kontakt/out/*.json` (the slots and channels) and sounds each port
-    (`tools/note_to_port.ps1` + `peakwatch.lua`).
-  - **(2) HIS: CTRL+S**; the rack committed at his word.
+  - **☑ DONE since (RUNNING_LOG §21):** four of his five script runs — the bass flute (4 slots), crotales (9), glockenspiel
+    (12), xylophone (10), each read back and sounded through its port (the glockenspiel's test key gave no note — its range is
+    read at 4.5) · THE UNPITCHED PERCUSSION, his tentative list (DEC-6): eight tracks on `DECPerc`, channels 1 … 8, three
+    cloned from piece #6 and sounding (Bass Drum Alt · Wood Blocks · Spring Coil).
+  - **(1) HIS — the marimba's script** (Marimba RM → `reaper/kontakt/load_rm_marimba.lua`), if not run yet.
+  - **(2) HIS — FIVE LOADS in the Abbey Road plugin's own browser, one per track:** Bongos ARO · Shime Daiko ARO · China Cymbal
+    ARO · Suspended Cymbals ARO (dark, mellow or bright) · Toms ARO (high or low; both = say so, a ninth track). The All-in-One
+    preset of each, as in piece #6. THEN the AI: `node tools/aro_state.js info "<track>"` reads what he loaded →
+    `bank/perc_selection.json` (the eight, channels 1 … 8) → `node tools/apply_perc.js` → `palette_check` · `roster_check`;
+    each state banked to `bank/aro_states/`.
+  - **(3) HIS: CTRL+S**; the rack committed at his word.
   - **THEN 4.4** the state as text (the Kontakt read-backs; the hand-set values into `docs/RACK_SETTINGS.md`) → **4.5** the
     recipes derived — his bass flute Preset Menu screenshots; the bass clarinet from piece #5's recipe (34 presets; the slap and
     the second instance, NITS); the viola from piece #5's → **4.6 THE FIRST SOUND** from the composer score in his Chrome → **4.7**
@@ -187,8 +192,8 @@ deliverables · the planning repo's lines (at his word only).
 
 ### OPEN — 2026-10-04, after the talk (Fable; the chat continues on Opus for the build)
 
-- **The task and its state:** container 4 (running order step 2). 4.1 ☑ · 4.2 ☑ — eight tracks on their ports, three sounding
-  (RUNNING_LOG §19 · §20) · 4.3 waits on his five script runs · the unpitched percussion: he is building it himself (his ninth track).
+- **The task and its state:** container 4 (running order step 2). 4.1 ☑ · 4.2 ☑ — SIXTEEN tracks on their ports (RUNNING_LOG
+  §19 … §21) · 4.3: the Xsample four and three mallets loaded and sounding, the marimba and five percussion loads his · 4.4 · 4.5 next.
 - **The latest deliverable:** the rack — `reaper/decibel_rack.rpp`, open in Reaper, four tracks, three sounding · the nine `DEC`
   ports · `tools/build_rack.js` · `tools/note_to_port.ps1` · `reaper/bridge/jobs/sound_check_vkb.lua` · `reaper/kontakt/load_bass_flute.lua`.
 - **4.10 THE HOW-TO PAGES — his ask, 2026-10-04 (RUNNING_LOG §18):** *"fill in a few details like the CC7 multi tracks per
@@ -219,7 +224,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 4 — 4.1 ☑ · 4.2 ☑ (eight tracks on their ports; the three clones, from the racks on disk, sound through them).** His five script runs (the bass flute + the four mallets) and CTRL+S → 4.4 the read-backs → 4.5 the recipes (his bass flute screenshots; the Ricotti catalog) → **4.6 THE FIRST SOUND** → 4.7 + 4.10. The unpitched percussion: his ninth track, tentative | Opus | no |
+| **►** | **CONTAINER 4 — the rack: sixteen tracks; the four Xsample instruments, three mallets and three percussion instruments SOUND through their ports.** His: the marimba's script · five loads in the Abbey Road browser (bongos · shime daiko · China cymbal · suspended cymbals · toms) · CTRL+S → 4.4 the read-backs banked → 4.5 the recipes (his bass flute screenshots; the Ricotti catalog and ranges; the percussion selection) → **4.6 THE FIRST SOUND** from the composer score → 4.7 + 4.10 | Opus | no |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
