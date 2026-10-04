@@ -280,5 +280,5 @@
    ]
   }
  ],
- "_ranges": "A range is MIDI keys, sounding as the library maps them. Kontakt's keyboard names middle C \"C3\" = MIDI 60 (proven on the crotales, RUNNING_LOG §30).  on an instrument holds for every patch of it unless a patch carries its own."
+ "_ranges": "A range is MIDI keys, sounding as the library maps them. Kontakt's keyboard names middle C \"C3\" = MIDI 60 (proven on the crotales, RUNNING_LOG §30). The field \"range\" on an instrument holds for every patch of it unless a patch carries its own."
 }
