@@ -565,3 +565,27 @@ piece #6's eight parts (container 6) · the roles helper (the protocol's 3.10) a
 role is quiet and tested by a click, the percussion and the vibraphone roles are alive because their keys were carried — one lookup
 is not needed yet; the font changes the look of the notation and belongs with container 6 · the gestures were clicked by script,
 not with real input, so a claim here is "opens and closes without error", not "works under his hand".
+
+## §17. THE PAPER, CORRECTED — ONE paper, about the Decibel piece AND his improvisation with live electronics (2026-10-04, Opus; then `/checkpoint`)
+
+**His words, whole, at the wrap of container 3:** *"a correction for the tenor call. I'll write one paper talking about both the
+decibel piece and my um, improvisation with live electronics."* Then `/checkpoint`.
+
+**What it corrects:** §4's standing reminder (*"I'll need to create a paper directly after finishing the piece or during it
+somehow, same deadline"*) read as a paper about THIS piece. It is ONE paper for the TENOR call with TWO subjects: this piece, and
+his improvisation with live electronics.
+
+**The AI's reading, marked as such** (not asked — he went straight to the checkpoint):
+
+- "My improvisation with live electronics" is taken to be the IMPROVISER piece — one of the three electronics pieces that share the
+  engine (CLAUDE.md; `#6` LG-348 … LG-351). If he means a practice or an existing set rather than that piece, the record below still
+  holds; one line of his settles it when it matters.
+- So the paper's sources are more than this log: this RUNNING_LOG · the ENGINE's lab journal (`live-electronics-system/docs/`,
+  where what both pieces share is built and reasoned) · the improviser piece's own log, once that repo exists.
+- What the two subjects SHARE is the engine — the mic openings, the bank, the return, the processing (the running order's steps
+  6 … 10). The record of those steps is therefore written so it reads for either piece: what is the machinery (the engine's log)
+  kept apart from what is this piece's USE of it (this log) — which THE SORTING already asks of the code.
+
+**Done with it:** CLAUDE.md § THE PAPER carries the correction · journal §7 · PLAN § 4. **Not done, his word needed:** nothing was
+written into the engine's repo or the planning repo (each is written in a session of its own or at his word); when the improviser
+piece's repo is made, its kit carries this same reminder — a line in journal §2 says so.

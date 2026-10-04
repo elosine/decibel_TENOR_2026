@@ -169,6 +169,30 @@ deliverables · the planning repo's lines (at his word only).
   the planning repo's lines for this piece, at his word only (the protocol's 2.6).
 - **Deliberately uncommitted:** nothing.
 
+### OPEN AT SESSION END *(mid-session checkpoint, 2026-10-04, Opus — his `/checkpoint` at the wrap of container 3)*
+
+- **The task and its state:** the start of the piece by the new-piece protocol. Running order step 1 (container 3, the engine
+  copied forward) is DONE and pushed; step 2 (container 4, the instruments) is ► and NOT begun. The block SESSION 1 — STEP 1 IS
+  DONE above is the state in full.
+- **The latest deliverable:** the composer score of this piece — `score/public/composer.html` on six lanes, `http://localhost:5500/composer.html`
+  (he starts it with `start_score_server.bat`; the AI's own is the launch name `score`) · the record: RUNNING_LOG §6 … §17.
+- **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on FABLE: play back, STOP and ask. On his word, open container 4's
+  TALK (4.0), one question at a time, his terms, a one-line answer possible:** (1) which PERCUSSION — the unpitched instruments,
+  and which PITCHED instrument the second lane is (today a vibraphone stand-in, D9) · (2) which LIBRARY for each of the bass
+  flute · the bass clarinet · the viola · the cello (the candidates are in the block above; nothing is decided, nothing was looked
+  up). Put the data first: what the lineage already has for each instrument, in a line. Then the build (4.1 … 4.7) is Opus's.
+- **His correction at this wrap, recorded (RUNNING_LOG §17 · §7 below · CLAUDE.md § THE PAPER):** ONE paper for the TENOR call,
+  about this piece AND his improvisation with live electronics. **The AI's reading — "the improviser piece" — was not confirmed;**
+  do not build on it without his word. **When the improviser piece's repo is made, its kit carries the same reminder.** Nothing was
+  written into the engine's repo or the planning repo.
+- **`Resume reads:`** nothing beyond this §2 for the play-back. For the talk, when he says go: the home's
+  `protocol/NEW_PIECE_PROTOCOL.md` § 4 (4.0 only) · `sandbox/instruments.js`, its header (the first 45 lines).
+- **Pending him:** the talk's answers (above) · whether "my improvisation with live electronics" is the improviser piece · the
+  ensemble's final instrumentation (the call's) · the planning repo's lines, at his word only.
+- **Deliberately uncommitted:** nothing — `git status --short` is empty after this checkpoint's commit. Piece #6
+  (`septet_LGMF_2026`) still shows its 30 uncommitted paths, all his, untouched; its server was running on 5400 throughout.
+- **Left open in the AI's pane:** a tab on `http://localhost:5000/` (the sandbox, its server stopped) — nothing to save in it.
+
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
 - **S0 · 2026-10-03/04 (Fable, then Opus — in piece #6's repo and chat)** — the protocol drafted and the home made · the
@@ -321,3 +345,6 @@ across when its system lands here and is first used.)*
 
 - **THE PAPER (2026-10-04):** *"I'll need to create a paper directly after finishing the piece or during it somehow, same deadline. So
   let's keep good journal notes. Like lab notes along the way."* — a standing reminder for this piece; CLAUDE.md carries it.
+- **THE PAPER, CORRECTED (2026-10-04, RUNNING_LOG §17):** *"a correction for the tenor call. I'll write one paper talking about both
+  the decibel piece and my um, improvisation with live electronics."* — ONE paper, two subjects. The record of the electronics is
+  kept so it reads for both: the machinery in the engine's lab journal, this piece's use of it here.

@@ -150,6 +150,13 @@ paper's, literally: every entry carries what a reader of the paper would need �
 the reasoning, the references — and a compositional or technical move that is not in the log is lost to the paper. The paper is HIS;
 the deadline is his to keep (he keeps his own time, D5); the AI's part is the record, as the work happens, never asked for.
 
+**CORRECTED by him, 2026-10-04 (RUNNING_LOG §17):** *"a correction for the tenor call. I'll write one paper talking about both the
+decibel piece and my um, improvisation with live electronics."* — **ONE paper, TWO subjects.** So the record is kept for a paper
+that also covers his improvisation with live electronics (the AI reads this as the improviser piece, one of the three that share
+the engine — his to confirm): what is the ENGINE's — the machinery both share — is logged in the engine's lab journal
+(`live-electronics-system/docs/`), what is this piece's USE of it here; each entry says which. The improviser piece's repo, when
+it is made, carries this same reminder.
+
 ## Standing practice: the morph notes (composer, 2026-09-06 — #5's CN-29)
 
 > *"I want to institute a process where we're taking notes in a central document that will inform the eventual revision."*

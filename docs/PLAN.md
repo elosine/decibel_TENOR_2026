@@ -163,3 +163,5 @@ whole → **3.8 the seven small fixes, HERE** (one commit) → 3.3 the re-palett
 
 *His. To be laid out when we discuss it.* **The piece AND a paper, the same deadline** (his word 2026-10-04, RUNNING_LOG §4): the paper
 written during or directly after the piece — the lab journal is its source, kept to that standard from §1.
+**CORRECTED 2026-10-04 (RUNNING_LOG §17): ONE paper for the TENOR call, about this piece AND his improvisation with live
+electronics** — its sources are this lab journal, the engine's, and the improviser piece's own once it exists.
