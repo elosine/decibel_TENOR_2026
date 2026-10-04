@@ -2,8 +2,8 @@
 -- A job may start its own defer loop: this one samples reaper.Track_GetPeakInfo every tick for
 -- WATCH_S seconds and writes reaper/bridge/outbox/peakwatch.json when done. Fire the note from
 -- outside right after launching it; read the file after WATCH_S seconds.
-local WATCH_S = 14.0   -- long enough for a sender that takes seconds to start (PowerShell compiles its winmm binding first)
-local NAMES = { 'Bongos ARO', 'Shime Daiko ARO', 'China Cymbal ARO', 'Suspended Cymbals ARO', 'Toms ARO' }   -- the tracks watched; edit for the check in hand
+local WATCH_S = 3.5   -- long enough for a sender that takes seconds to start (PowerShell compiles its winmm binding first)
+local NAMES = { 'Crotales RM', 'Glockenspiel RM', 'Xylophone RM', 'Marimba RM' }   -- the tracks watched; edit for the check in hand
 
 local tracks = {}
 for _, n in ipairs(NAMES) do

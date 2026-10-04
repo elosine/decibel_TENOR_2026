@@ -1091,3 +1091,14 @@ on one mallet patch · 6 the known volumes put back: cello, wood blocks, bass dr
 only: bass flute, four mallets, six percussion · 8 bass clarinet and viola re-levelled · 9 the dynamics curve for the bass flute
 · 10 listen. **Off the list:** the reference and his system volume · the cello (round robin, volume, curve) · the Abbey Road
 round robins · the percussion's key maps · the noise presets' maps (when the music asks).
+
+## §30. THE MALLETS' RANGES — he dictates them, a screenshot each; the crotales first (2026-10-04, Opus)
+
+**His words**, with a screenshot of Kontakt's keyboard, the keys lit from the C marked 3 to the C marked 5: *"#1: same range
+for all crotales"* — item 1 of §29's list, answered his way: dictation, not the sweep (his question of §28, decided by doing).
+
+- **Crotales, all nine patches: C3 … C5 on Kontakt's keyboard = MIDI 60 … 84**, two octaves.
+- Which MIDI keys Kontakt's "C3" means was not assumed: four notes on `DECCrotales`, channel 1, the meter read — **key 59:
+  −154 dB (silent) · key 60: −22.1 / −29.3 dB · key 84: −31.3 / −27.3 dB · key 85: −64.5 dB** (the tail of 84 still ringing,
+  not a note). So Kontakt's C3 is MIDI 60 here, and that reading holds for the screenshots of the other three.
+- Written into `bank/ricotti_catalog.json` (`range` on the instrument; a note on the convention).
