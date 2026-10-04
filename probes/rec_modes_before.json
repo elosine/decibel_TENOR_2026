@@ -1,0 +1,22 @@
+{
+ "savedAt": "2026-10-04T16:55:10",
+ "tracks": [
+  {"index":0,"track":"Bass Flute XS","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":1,"track":"Bass Clarinet XS","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":2,"track":"Bongos ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":3,"track":"Shime Daiko ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":4,"track":"Bass Drum Alt ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":5,"track":"Wood Blocks ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":6,"track":"China Cymbal ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":7,"track":"Spring Coil ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":8,"track":"Suspended Cymbals ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":9,"track":"Toms ARO","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":10,"track":"Crotales RM","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":11,"track":"Glockenspiel RM","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":12,"track":"Xylophone RM","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":13,"track":"Marimba RM","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":14,"track":"Viola XS","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":15,"track":"Cello XS","recmodeBefore":0,"recmodeNow":2,"armed":1,"monitor":1},
+  {"index":16,"track":"REC","recmodeBefore":3,"recmodeNow":3,"armed":1,"monitor":0}
+ ]
+}

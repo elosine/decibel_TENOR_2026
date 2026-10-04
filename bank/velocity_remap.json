@@ -2005,6 +2005,848 @@
     }
    ],
    "cc7Note": "the fader law that SHAPES A HELD NOTE (D13), measured by 0d on the curve channel and relative to CC7 127, so it survived every trim. The app already does this: heldCc7 -> cc7ForHeight computes (target - achieved) per note and asks this curve for the CC7 that closes it, then multiplies any cc7Fade on top."
+  },
+  "bass_clarinet": {
+   "label": "Bass Clarinet",
+   "port": "DECBassClar",
+   "trimDb": -13.16,
+   "referenceDb": -18.68,
+   "offsetAppliedDb": -13.16,
+   "measuredSpanDb": 26.71,
+   "pitches": [
+    {
+     "pitch": 36,
+     "measured": [
+      {
+       "v": 24,
+       "db": -41.84
+      },
+      {
+       "v": 64,
+       "db": -32.65
+      },
+      {
+       "v": 100,
+       "db": -27.19
+      },
+      {
+       "v": 127,
+       "db": -23.15
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -55
+      },
+      {
+       "v": 64,
+       "db": -45.81
+      },
+      {
+       "v": 100,
+       "db": -40.35
+      },
+      {
+       "v": 127,
+       "db": -36.31
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -55
+      },
+      {
+       "v": 64,
+       "db": -45.81
+      },
+      {
+       "v": 100,
+       "db": -40.35
+      },
+      {
+       "v": 127,
+       "db": -36.31
+      }
+     ],
+     "table": [
+      77,
+      78,
+      80,
+      81,
+      82,
+      83,
+      85,
+      86,
+      87,
+      88,
+      90,
+      91,
+      92,
+      94,
+      95,
+      96,
+      97,
+      99,
+      100,
+      101,
+      103,
+      104,
+      105,
+      106,
+      108,
+      109,
+      110,
+      112,
+      113,
+      114,
+      116,
+      117,
+      118,
+      119,
+      121,
+      122,
+      123,
+      125,
+      126,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 23,
+     "spanDb": 18.69
+    },
+    {
+     "pitch": 50,
+     "measured": [
+      {
+       "v": 24,
+       "db": -38.55
+      },
+      {
+       "v": 64,
+       "db": -27.66
+      },
+      {
+       "v": 100,
+       "db": -22.17
+      },
+      {
+       "v": 127,
+       "db": -18.66
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -51.71
+      },
+      {
+       "v": 64,
+       "db": -40.82
+      },
+      {
+       "v": 100,
+       "db": -35.33
+      },
+      {
+       "v": 127,
+       "db": -31.82
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -51.71
+      },
+      {
+       "v": 64,
+       "db": -40.82
+      },
+      {
+       "v": 100,
+       "db": -35.33
+      },
+      {
+       "v": 127,
+       "db": -31.82
+      }
+     ],
+     "table": [
+      53,
+      54,
+      54,
+      55,
+      56,
+      56,
+      57,
+      58,
+      59,
+      59,
+      60,
+      61,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      70,
+      71,
+      72,
+      73,
+      75,
+      76,
+      77,
+      78,
+      80,
+      81,
+      82,
+      84,
+      85,
+      86,
+      87,
+      89,
+      90,
+      91,
+      92,
+      94,
+      95,
+      96,
+      98,
+      99,
+      100,
+      102,
+      103,
+      105,
+      106,
+      107,
+      109,
+      110,
+      112,
+      113,
+      115,
+      116,
+      118,
+      119,
+      121,
+      122,
+      124,
+      125,
+      127
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 0,
+     "spanDb": 19.89
+    },
+    {
+     "pitch": 63,
+     "measured": [
+      {
+       "v": 24,
+       "db": -40.94
+      },
+      {
+       "v": 64,
+       "db": -27.08
+      },
+      {
+       "v": 100,
+       "db": -25.53
+      },
+      {
+       "v": 127,
+       "db": -14.23
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -54.1
+      },
+      {
+       "v": 64,
+       "db": -40.24
+      },
+      {
+       "v": 100,
+       "db": -38.69
+      },
+      {
+       "v": 127,
+       "db": -27.39
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -54.1
+      },
+      {
+       "v": 64,
+       "db": -40.24
+      },
+      {
+       "v": 100,
+       "db": -38.69
+      },
+      {
+       "v": 127,
+       "db": -27.39
+      }
+     ],
+     "table": [
+      54,
+      54,
+      55,
+      55,
+      56,
+      56,
+      57,
+      58,
+      58,
+      59,
+      59,
+      60,
+      60,
+      61,
+      61,
+      62,
+      63,
+      63,
+      64,
+      66,
+      70,
+      75,
+      79,
+      84,
+      88,
+      93,
+      97,
+      100,
+      101,
+      101,
+      102,
+      102,
+      102,
+      103,
+      103,
+      104,
+      104,
+      105,
+      105,
+      106,
+      106,
+      107,
+      107,
+      108,
+      108,
+      109,
+      109,
+      109,
+      110,
+      110,
+      111,
+      111,
+      112,
+      112,
+      113,
+      113,
+      114,
+      114,
+      115,
+      115,
+      115,
+      116,
+      116
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 0,
+     "spanDb": 26.71
+    }
+   ],
+   "registerSpreadAtFffDb": 8.92,
+   "clampedLow": 0,
+   "clampedHigh": 23,
+   "cc7Curve": [
+    {
+     "cc7": 32,
+     "delta": -35.62
+    },
+    {
+     "cc7": 48,
+     "delta": -25.19
+    },
+    {
+     "cc7": 64,
+     "delta": -17.53
+    },
+    {
+     "cc7": 80,
+     "delta": -11.75
+    },
+    {
+     "cc7": 96,
+     "delta": -6.97
+    },
+    {
+     "cc7": 112,
+     "delta": -2.94
+    },
+    {
+     "cc7": 127,
+     "delta": 0
+    }
+   ],
+   "cc7Note": "the fader law that SHAPES A HELD NOTE (D13), MEASURED IN PIECE #5 on this very instance (septet_2026 bank/velocity_remap.json, its sweep of 2026-09-07) and relative to CC7 127 — carried 2026-10-04; it is Kontakt's law, the cello's line within 0.4 dB.",
+   "mergedAt": "2026-10-04T21:11:48.361Z",
+   "cardRun": "2026-10-04T17:07:17"
+  },
+  "viola": {
+   "label": "Viola",
+   "port": "DECViola",
+   "trimDb": -5.23,
+   "referenceDb": -26.61,
+   "offsetAppliedDb": -5.23,
+   "measuredSpanDb": 21.28,
+   "pitches": [
+    {
+     "pitch": 50,
+     "measured": [
+      {
+       "v": 24,
+       "db": -38.8
+      },
+      {
+       "v": 64,
+       "db": -30.38
+      },
+      {
+       "v": 100,
+       "db": -27.85
+      },
+      {
+       "v": 127,
+       "db": -26.06
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -44.03
+      },
+      {
+       "v": 64,
+       "db": -35.61
+      },
+      {
+       "v": 100,
+       "db": -33.08
+      },
+      {
+       "v": 127,
+       "db": -31.29
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -44.03
+      },
+      {
+       "v": 64,
+       "db": -35.61
+      },
+      {
+       "v": 100,
+       "db": -33.08
+      },
+      {
+       "v": 127,
+       "db": -31.29
+      }
+     ],
+     "table": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      68,
+      71,
+      74,
+      76,
+      79,
+      82,
+      85,
+      87,
+      90,
+      93,
+      96,
+      98,
+      101,
+      104,
+      107,
+      110,
+      113,
+      116,
+      119
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 0,
+     "spanDb": 12.74
+    },
+    {
+     "pitch": 69,
+     "measured": [
+      {
+       "v": 24,
+       "db": -45.02
+      },
+      {
+       "v": 64,
+       "db": -28.01
+      },
+      {
+       "v": 100,
+       "db": -28.69
+      },
+      {
+       "v": 127,
+       "db": -23.74
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -50.25
+      },
+      {
+       "v": 64,
+       "db": -33.24
+      },
+      {
+       "v": 100,
+       "db": -33.92
+      },
+      {
+       "v": 127,
+       "db": -28.97
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -50.25
+      },
+      {
+       "v": 64,
+       "db": -33.58
+      },
+      {
+       "v": 100,
+       "db": -33.58
+      },
+      {
+       "v": 127,
+       "db": -28.97
+      }
+     ],
+     "table": [
+      39,
+      40,
+      40,
+      41,
+      41,
+      42,
+      42,
+      43,
+      43,
+      44,
+      44,
+      44,
+      45,
+      45,
+      46,
+      46,
+      47,
+      47,
+      48,
+      48,
+      49,
+      49,
+      50,
+      50,
+      51,
+      51,
+      51,
+      52,
+      52,
+      53,
+      53,
+      54,
+      54,
+      55,
+      55,
+      56,
+      56,
+      57,
+      57,
+      57,
+      58,
+      58,
+      59,
+      59,
+      60,
+      60,
+      61,
+      61,
+      62,
+      62,
+      63,
+      63,
+      64,
+      64,
+      101,
+      102,
+      103,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 0,
+     "spanDb": 21.28
+    },
+    {
+     "pitch": 86,
+     "measured": [
+      {
+       "v": 24,
+       "db": -48.44
+      },
+      {
+       "v": 64,
+       "db": -34.38
+      },
+      {
+       "v": 100,
+       "db": -32.57
+      },
+      {
+       "v": 127,
+       "db": -30.04
+      }
+     ],
+     "normalised": [
+      {
+       "v": 24,
+       "db": -53.67
+      },
+      {
+       "v": 64,
+       "db": -39.61
+      },
+      {
+       "v": 100,
+       "db": -37.8
+      },
+      {
+       "v": 127,
+       "db": -35.27
+      }
+     ],
+     "monotone": [
+      {
+       "v": 24,
+       "db": -53.67
+      },
+      {
+       "v": 64,
+       "db": -39.61
+      },
+      {
+       "v": 100,
+       "db": -37.8
+      },
+      {
+       "v": 127,
+       "db": -35.27
+      }
+     ],
+     "table": [
+      52,
+      53,
+      53,
+      54,
+      54,
+      55,
+      55,
+      56,
+      56,
+      57,
+      57,
+      58,
+      59,
+      59,
+      60,
+      60,
+      61,
+      61,
+      62,
+      62,
+      63,
+      64,
+      65,
+      68,
+      72,
+      76,
+      80,
+      84,
+      88,
+      91,
+      95,
+      99,
+      102,
+      104,
+      106,
+      108,
+      110,
+      112,
+      114,
+      116,
+      118,
+      120,
+      122,
+      124,
+      126,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127,
+      127
+     ],
+     "clampedLow": 0,
+     "clampedHigh": 18,
+     "spanDb": 18.4
+    }
+   ],
+   "registerSpreadAtFffDb": 6.3,
+   "clampedLow": 0,
+   "clampedHigh": 18,
+   "cc7Curve": [
+    {
+     "cc7": 32,
+     "delta": -34.41
+    },
+    {
+     "cc7": 48,
+     "delta": -25.39
+    },
+    {
+     "cc7": 64,
+     "delta": -17.88
+    },
+    {
+     "cc7": 80,
+     "delta": -12.09
+    },
+    {
+     "cc7": 96,
+     "delta": -7.46
+    },
+    {
+     "cc7": 112,
+     "delta": -2.99
+    },
+    {
+     "cc7": 127,
+     "delta": 0
+    }
+   ],
+   "cc7Note": "the fader law that SHAPES A HELD NOTE (D13), MEASURED IN PIECE #5 on this very instance (septet_2026 bank/velocity_remap.json, its sweep of 2026-09-07) and relative to CC7 127 — carried 2026-10-04; it is Kontakt's law, the cello's line within 0.4 dB.",
+   "mergedAt": "2026-10-04T21:11:48.363Z",
+   "cardRun": "2026-10-04T17:07:17"
   }
  },
  "notRemapped": {
@@ -2060,7 +2902,20 @@
    "label": "D. Bass",
    "low": 0,
    "high": 96
+  },
+  {
+   "inst": "bass_clarinet",
+   "label": "Bass Clarinet",
+   "low": 0,
+   "high": 23
+  },
+  {
+   "inst": "viola",
+   "label": "Viola",
+   "low": 0,
+   "high": 18
   }
  ],
- "_provenance": "Skeleton written by the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4. Shape and metadata are piece #6's (its `piece`, `source` and dates are kept as the record of where the rows were measured). Of the instruments ONLY the carried ones are kept — bowed_vibraphone, cello — measured in PIECE #6's rack, to be re-measured at container 5. Dropped: english_horn, bassoon, horn, trumpet, double_bass. The bass flute, the bass clarinet and the viola are unmeasured: an instrument with no row here passes its anchor velocity through, as the app does for any missing row."
+ "_provenance": "Skeleton written by the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4. Shape and metadata are piece #6's (its `piece`, `source` and dates are kept as the record of where the rows were measured). Of the instruments ONLY the carried ones are kept — bowed_vibraphone, cello — measured in PIECE #6's rack, to be re-measured at container 5. Dropped: english_horn, bassoon, horn, trumpet, double_bass. The bass flute, the bass clarinet and the viola are unmeasured: an instrument with no row here passes its anchor velocity through, as the app does for any missing row.",
+ "_decibel": "MERGED 2026-10-04 (tools/remap_merge.js, RUNNING_LOG §42): bass_clarinet · viola built from THIS rack's card; every other instrument as carried."
 }

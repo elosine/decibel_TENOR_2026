@@ -48,11 +48,8 @@ local REC_TRIM_DB = 0.0
 --                     can be measured, and HE CHOSE THE ALT, 2026-09-18: "yes alt bass instead I believe it has
 --                     an extra mallet or articulation". Swap the two names to go back to the main one.
 -- They still sound in his monitoring; they are only kept out of the measurement.
-local EXCLUDE = {
-  ['Template']          = 'LGPerc all channels, and it holds a loaded instance — it would answer every percussion note',
-  ['Percussion']        = 'LGPerc all channels (no instrument loaded, but it is not a measurable source either)',
-  ['Bass Drum ARO']     = 'LGPerc ch 12, the same channel as Bass Drum Alt ARO — and he chose the ALT to be the measured one',
-}
+local EXCLUDE = {}   -- the Decibel rack (2026-10-04): every track is a measurable source. Piece #6 excluded its Template, its empty
+                     -- "Percussion" and its second bass drum here; none of them exists in this rack.
 
 local function findTrack(name)
   for i = 0, reaper.CountTracks(0) - 1 do

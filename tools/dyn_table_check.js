@@ -10,7 +10,7 @@ const path = require('path'), fs = require('fs');
 const ROOT = path.join(__dirname, '..');
 const T = require(path.join(ROOT, 'score', 'public', 'dyn_table.js'));
 const BANK = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'velocity_remap.json'), 'utf8'));
-const PITCHED = ['english_horn', 'bassoon', 'horn', 'trumpet', 'bowed_vibraphone', 'cello', 'double_bass'];
+const PITCHED = ['bass_clarinet', 'viola', 'cello'];   // the Decibel rack's HELD instruments that HAVE a measured curve (2026-10-04, RUNNING_LOG §42). The bass flute joins when it is re-measured (NITS).
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log('  ok   ' + m); } else { fail++; console.log('  FAIL ' + m); } };
 const L = n => T.levelOfName(n);

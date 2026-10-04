@@ -27,14 +27,11 @@ const JOB = path.join(ROOT, 'reaper', 'bridge', 'jobs', 'apply_trims.lua');
 
 // every Reaper track an instrument sounds through. The `b` instances are the same instrument's curve
 // copies; the two `high` tracks are the ReaPitch path of 1a.1 and are NEW since 0d's table.
-const PITCHED_TRACKS = {
-    english_horn: ['English Horn XS'],
-    bassoon: ['Bassoon SI2', 'Bassoon SI2 b'],
-    horn: ['Horn SI2', 'Horn SI2 b', 'Horn SI2 high', 'Horn SI2 b high'],
-    trumpet: ['Trumpet SI2', 'Trumpet SI2 b'],
-    bowed_vibraphone: ['Vibraphone XS'],
+const PITCHED_TRACKS = {   // the Decibel rack (2026-10-04); a struck instrument's track comes from bank/perc_rack.json
+    bass_flute: ['Bass Flute XS'],
+    bass_clarinet: ['Bass Clarinet XS'],
+    viola: ['Viola XS'],
     cello: ['Cello XS'],
-    double_bass: ['Bass XS'],
 };
 const percTrack = {};
 for (const t of PERC.tracks) if (t.catalog) percTrack[t.catalog] = t.track;

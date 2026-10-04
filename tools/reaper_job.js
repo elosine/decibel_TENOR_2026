@@ -85,7 +85,9 @@ function send(code, timeoutMs = 20000) {
     fs.mkdirSync(INBOX, { recursive: true }); fs.mkdirSync(OUTBOX, { recursive: true });
     const name = Date.now() + '-' + Math.floor(Math.random() * 1e6);
     const tmp = path.join(INBOX, name + '.tmp'), job = path.join(INBOX, name + '.lua'), out = path.join(OUTBOX, name + '.json');
-    fs.writeFileSync(tmp, code); fs.renameSync(tmp, job);
+    fs.writeFileSync(tmp, code);
+    // the rename can meet EBUSY / EPERM for an instant (a scanner, or the bridge listing the inbox) — seen twice on 2026-10-04 (RUNNING_LOG §21 · §42); retried, never fatal
+    for (let k = 0; ; k++) { try { fs.renameSync(tmp, job); break; } catch (e) { if (k >= 40 || !/EBUSY|EPERM|EACCES/.test(e.code || '')) throw e; Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 50); } }
     const t0 = Date.now();
     return new Promise((resolve, reject) => {
         const poll = () => {

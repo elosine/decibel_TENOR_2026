@@ -17,32 +17,21 @@
 --   node tools/reaper_job.js run reaper/bridge/jobs/apply_trims.lua
 local JS_NAME = 'utility/volume'
 local TRIMS = {
-  { name = "English Horn XS", faderDb = -13.98, extraDb = 0.00 },   -- English Horn: was 0.00, -13.98
-  { name = "Bassoon SI2", faderDb = -18.81, extraDb = 0.00 },   -- Bassoon: was -7.79, -11.02
-  { name = "Bassoon SI2 b", faderDb = -18.81, extraDb = 0.00 },   -- Bassoon: was -7.79, -11.02
-  { name = "Horn SI2", faderDb = -12.21, extraDb = 0.00 },   -- Horn: was -0.01, -12.20
-  { name = "Horn SI2 b", faderDb = -12.21, extraDb = 0.00 },   -- Horn: was -0.01, -12.20
-  { name = "Horn SI2 high", faderDb = -12.21, extraDb = 0.00 },   -- Horn: was -0.01, -12.20
-  { name = "Horn SI2 b high", faderDb = -12.21, extraDb = 0.00 },   -- Horn: was -0.01, -12.20
-  { name = "Trumpet SI2", faderDb = -9.53, extraDb = 0.00 },   -- Trumpet: was -0.17, -9.36
-  { name = "Trumpet SI2 b", faderDb = -9.53, extraDb = 0.00 },   -- Trumpet: was -0.17, -9.36
-  { name = "Cello XS", faderDb = -3.87, extraDb = 0.00 },   -- Cello: was 10.29, -14.16
-  { name = "Bass XS", faderDb = -2.97, extraDb = 0.00 },   -- D. Bass: was 5.25, -8.22
-  { name = "Finger Cymbals ARO", faderDb = 5.90, extraDb = 0.00 },   -- Finger Cymbals: was 15.29, -9.39
-  { name = "Bell Tree ARO", faderDb = 8.71, extraDb = 0.00 },   -- Bell Tree: was 21.26, -12.55
-  { name = "Sleigh Bells ARO", faderDb = -3.51, extraDb = 0.00 },   -- Sleigh Bells: was 17.81, -21.32
-  { name = "Triangles ARO", faderDb = 11.62, extraDb = 0.00 },   -- Triangles: was 22.23, -10.61
-  { name = "Tambourines ARO", faderDb = 6.66, extraDb = 0.00 },   -- Tambourines: was 15.76, -9.10
-  { name = "Castanets ARO", faderDb = 12.00, extraDb = 12.33 },   -- Castanets: was 32.02, -7.69
-  { name = "Claves ARO", faderDb = 12.00, extraDb = 4.06 },   -- Claves: was 25.64, -9.58
-  { name = "Shakers ARO", faderDb = 12.00, extraDb = 11.22 },   -- Shakers: was 29.82, -6.60
-  { name = "Brake Drums ARO", faderDb = 3.81, extraDb = 0.00 },   -- Brake Drums: was 13.03, -9.22
-  { name = "Crashers and Stack ARO", faderDb = 6.83, extraDb = 0.00 },   -- Crashers and Stack: was 16.12, -9.29
-  { name = "Wood Blocks ARO", faderDb = 7.05, extraDb = 0.00 },   -- Wood Blocks: was 15.43, -8.38
-  { name = "Bass Drum Alt ARO", faderDb = -4.29, extraDb = 0.00 },   -- Bass Drum Alt: was 5.60, -9.89
-  { name = "Temple Bowls ARO", faderDb = 11.53, extraDb = 0.00 },   -- Temple Bowls: was 21.38, -9.85
-  { name = "Tam Tams ARO", faderDb = -0.79, extraDb = 0.00 },   -- Tam Tams: was 11.32, -12.11
-  { name = "Vibraphone XS", faderDb = 2.81, extraDb = 0.00 },   -- Vibraphone: was -6.62, +9.43
+  { name = "Bass Clarinet XS", faderDb = -13.16, extraDb = 0.00 },   -- Bass Clarinet: was 0.00, -13.16
+  { name = "Viola XS", faderDb = -5.23, extraDb = 0.00 },   -- Viola: was 0.00, -5.23
+  { name = "Crotales RM", faderDb = -7.18, extraDb = 0.00 },   -- Crotales: was 0.00, -7.18
+  { name = "Glockenspiel RM", faderDb = -7.21, extraDb = 0.00 },   -- Glockenspiel: was 0.00, -7.21
+  { name = "Xylophone RM", faderDb = -5.65, extraDb = 0.00 },   -- Xylophone: was 0.00, -5.65
+  { name = "Marimba RM", faderDb = 9.27, extraDb = 0.00 },   -- Marimba: was 0.00, +9.27
+  { name = "Bongos ARO", faderDb = 4.35, extraDb = 0.00 },   -- Bongos: was 0.00, +4.35
+  { name = "Shime Daiko ARO", faderDb = 4.92, extraDb = 0.00 },   -- Shime Daiko: was 0.00, +4.92
+  { name = "China Cymbal ARO", faderDb = -3.99, extraDb = 0.00 },   -- China Cymbals: was 0.00, -3.99
+  { name = "Spring Coil ARO", faderDb = 6.87, extraDb = 0.00 },   -- Spring Coil: was 0.00, +6.87
+  { name = "Suspended Cymbals ARO", faderDb = 7.53, extraDb = 0.00 },   -- Suspended Cymbals Bright: was 0.00, +7.53
+  { name = "Toms ARO", faderDb = -2.99, extraDb = 0.00 },   -- Toms High: was 0.00, -2.99
+  { name = "Cello XS", faderDb = -3.87, extraDb = 0.00 },   -- Cello: was -3.87, +0.00
+  { name = "Wood Blocks ARO", faderDb = 7.05, extraDb = 0.00 },   -- Wood Blocks: was 7.05, +0.00
+  { name = "Bass Drum Alt ARO", faderDb = -4.29, extraDb = 0.00 },   -- Bass Drum (Alt): was -4.29, +0.00
 }
 local function findTrack(name)
   for i = 0, reaper.CountTracks(0) - 1 do

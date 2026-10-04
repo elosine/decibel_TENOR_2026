@@ -57,7 +57,9 @@ const CARD = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'instrument_card
 const TRIMS = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'trims.json'), 'utf8'));
 const TOP = TRIMS.target.perVoiceCardDb;    // each voice at fff, on the card's scale (1b.3)
 
-const PITCHED = ['english_horn', 'bassoon', 'horn', 'trumpet', 'bowed_vibraphone', 'cello', 'double_bass'];
+// the Decibel rack's HELD instruments (2026-10-04, RUNNING_LOG §42). --only key,key limits a run to those just measured: an instrument
+// with one velocity in the card (the cello here: a cross-check) would otherwise lose its carried curve — tools/remap_merge.js keeps it.
+const PITCHED = (arg('only', '') || 'bass_flute,bass_clarinet,viola,cello').split(',').filter(Boolean);
 // THE REGISTER BY CC7, NOT BY VELOCITY (his approval 2026-09-19; RUNNING_LOG §87). For these instruments
 // velocity carries the DYNAMIC alone - one shared table, so every pitch is sent the same velocity at a
 // given written height - and the per-pitch register offset is closed by CC7, which is a pure gain and does
@@ -65,7 +67,7 @@ const PITCHED = ['english_horn', 'bassoon', 'horn', 'trumpet', 'bowed_vibraphone
 // app's cc7ForHeight sees the residual (target - achieved) and asks cc7Curve to close it.
 // Velocity alone could not do this: 29 dB per bar minus a 15.4 dB register spread leaves 13.7 dB common to
 // every bar, under the 17 dB span (§86).
-const REGISTER_BY_CC7 = new Set(['bowed_vibraphone']);
+const REGISTER_BY_CC7 = new Set([]);   // piece #6's bowed vibraphone only
 // CC7's attenuation law, MEASURED by 0d on the curve channels (bank/balance.json `cc7`: six CC7 values per
 // pitch at velocity 100). On the vibraphone the three measured pitches agree within 0.1 dB and the whole
 // set fits 60*log10(cc7/127) to 0.02 dB - a pure gain law, which is what makes it safe to use as a trim.

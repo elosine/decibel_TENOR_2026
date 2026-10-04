@@ -1380,3 +1380,92 @@ unity, unchanged; a deviation line · (d) the run, from 100 s (the timeline is e
 scipy · (f) `compute_trims.js --voices 6` (six players — the AI's call for N, his to change) → `gen_apply_trims` → the faders
 → his CTRL+S · (g) `build_remap_card.js` for the bass flute (and the bass clarinet and viola afresh, replacing piece #5's
 relative curves) · (h) the record: RACK_SETTINGS, the card, the trims, NITS.
+
+## §42. THE INSTRUMENT CARD FOR THIS RACK — items 7 · 8 · (9): 114 notes recorded and measured; the chain proven against piece #6 within 0.4 dB; fifteen faders set; two curves built; THE BASS FLUTE'S PRESET 33 IS A WHEEL PRESET (2026-10-04, Opus)
+
+**His words:** *"yes to scipy, go"*.
+
+**THE SET-UP (what the port had not brought, and what was made):** scipy · numpy · soundfile installed for Python 3.14 (his
+yes) · `tools/card_schedule.js` RE-MADE for this rack — the notes from the recipe, not from piece #6's `bank/balance.json` ·
+`bank/reference.json` CARRIED from piece #6's git (the proof of REF → master → REC at unity on this machine's Reaper; not
+re-recorded) · `bank/perc_rack.json` written (the twelve struck tracks: catalog key → track → trim) · re-pointed:
+`make_rec_track.lua` (no exclusions) · `compute_trims.js` · `gen_apply_trims.js` · `build_remap_card.js` (`--only`) ·
+`dyn_table_check.js` · NEW `tools/remap_merge.js` · `tools/reaper_job.js` retries its inbox rename (EBUSY, a third time).
+The REC track: 16 receives, unity, the only writer during the run (`rec_mode_solo` → the run → `rec_mode_restore`).
+
+**THE RUN:** `probes/card_run.ps1 -StartAt 10` — 114 notes in 691.9 s → `reaper/Media/17-REC-261004_1655.wav` (234 MB, not in
+git). Held instruments on CURVE CHANNEL A (2), CC7 127, their ordinary voice by CC0, three pitches × 24 · 64 · 100 · 127, 4 s
++ 3 s, and a half-bend note; struck instruments on their own channel, no CC7, three keys × 127 · 64, 0.2 s + 5 s.
+`probes/analyze_card.py` → `bank/instrument_card.json`: **114 / 114 found**, schedule located at +1.240 s, every note within
+40 cents of its written pitch.
+
+**THE CROSS-CHECK — the chain is piece #6's, proven:** the three clones, on piece #6's own pitches and trims:
+
+| | here | piece #6 | Δ |
+|---|---|---|---|
+| Cello, vel 127, integrated (trim −3.87) | −32.50 | −32.31 | −0.19 |
+| Wood blocks, vel 127, loudest 400 ms (trim +7.05) | −31.46 | −31.84 | +0.38 |
+| Bass drum alt, vel 127, loudest 400 ms (trim −4.29) | −32.01 | −31.84 | −0.17 |
+
+Within the round-robin scatter of three notes. So carrying `bank/reference.json` and the three trims was right, and every
+number below is on piece #6's absolute scale.
+
+**THE CARD (dB at the master, faders at 0 for the new ones):**
+
+| held | 24 | 64 | 100 | 127 (integrated) | own span |
+|---|---|---|---|---|---|
+| Bass clarinet | −40.44 | −29.13 | −24.96 | **−18.68** | 21.8 dB |
+| Viola | −44.09 | −30.92 | −29.70 | **−26.61** | 17.5 dB |
+| Bass flute (#33) | −32.03 | −32.03 | −32.02 | −32.03 | **0.0 — void, below** |
+
+| struck (loudest 400 ms) | 64 | 127 | | struck | 64 | 127 |
+|---|---|---|---|---|---|---|
+| Crotales | −39.97 | **−24.66** | | Bongos | −53.93 | **−36.19** |
+| Glockenspiel | −48.43 | **−24.63** | | Shime daiko | −59.29 | **−36.76** |
+| Xylophone | −44.92 | **−26.19** | | China cymbals | −58.05 | **−27.85** |
+| Marimba | −62.75 | **−41.11** | | Spring coil | −57.73 | **−38.71** |
+| | | | | Suspended cymbals bright | −67.92 | **−39.37** |
+| | | | | Toms high | −50.84 | **−28.85** |
+
+(The struck libraries fall 15 … 30 dB from velocity 127 to 64 — their own velocity law; a struck note's velocity IS its dynamic.)
+**The bend, measured:** bass flute +49.8 c at half bend = **1.00 st** (the recipe had 2, unread — corrected) · bass clarinet
+0.98 (piece #5: 0.98) · viola 1.01 (piece #5: 0.99).
+
+**THE TRIMS** (`tools/compute_trims.js --only …` → `bank/trims.json` → `gen_apply_trims.js` → `apply_trims.lua`, applied
+and read back): the target is **piece #6's per-voice level, −31.84 dB on the card's scale** (its "9 voices at −20 LUFS-S") —
+THE AI'S CALL, kept so the three carried trims stay exact; "six players" would be one uniform +1.76 dB on every fader, his
+to ask. Bass clarinet **−13.16** · viola **−5.23** · crotales −7.18 · glockenspiel −7.21 · xylophone −5.65 · marimba **+9.27** ·
+bongos +4.35 · shime daiko +4.92 · China cymbal −3.99 · spring coil +6.87 · suspended cymbals +7.53 · toms −2.99; carried:
+cello −3.87 · wood blocks +7.05 · bass drum alt −4.29. No track needs more than the fader's +12. The recipe carries
+`balanceDb` for the bass clarinet and the viola; `bank/perc_rack.json` the struck tracks' trims. NOT SAVED — his CTRL+S.
+What the trims rest on: the held instruments on three pitches at fff; the struck on three keys at 127, ONE main patch per
+mallet instrument (the other 35 patches are unmeasured — §32 saw up to ~29 dB between the xylophone's).
+
+**THE CURVES (item 9, partly):** `build_remap_card.js --only bass_clarinet,viola` to a scratch file, `tools/remap_merge.js`
+into `bank/velocity_remap.json` — the bass clarinet (own span 26.7 dB, register spread at fff 8.9; clamped 23 anchor steps
+at the loud end) and the viola (21.3 · 6.3; 18 steps) built from THIS rack's card, replacing piece #5's relative curves; the
+cello's kept. **The fader law (CC7) is Kontakt's, not an instrument's** — piece #6's english horn · cello · double bass lie
+within 0.4 dB of each other from CC7 44 up, and piece #5 measured these very bass clarinet and viola instances on the same
+line (−17.5 · −17.9 dB at CC7 64): each takes piece #5's own measured curve. `dyn_table_check`: the three instruments pass
+every row (ppp … fff monotone, the reach, the residual); ONE assertion fails by design — it names piece #6's bassoon, a UVI
+instrument this rack does not have (NITS).
+
+**THE FINDING — THE BASS FLUTE'S PRESET 33 TAKES ITS LOUDNESS FROM THE MOD WHEEL.** The card read it at −32.03 dB at all four
+velocities, to a hundredth. Not guessed at — probed with `tools/key_sweep.js` on each slot (G3, the meter):
+
+| slot (channel) | #33, vel 24 → 127 | #33, wheel 10 → 64 → 125 | #15, vel 24 → 127 |
+|---|---|---|---|
+| 1 main | −22.7 → −22.2 (none) | −24.9 → −20.7 → −18.1 | −28.3 → −18.0 |
+| 2 curve A | −22.7 → −22.7 (none) | −24.8 → −23.0 → −19.8 | −22.7 → −22.2 (none; follows the wheel) |
+| 3 curve B | −28.4 → −19.9 | | −28.4 → −16.7 |
+| 4 curve C | −28.6 → −16.0 | | −28.5 → −17.9 |
+
+and preset 1 "Vibrato MW" on slot 1: wheel 10 → 125 = −24.9 → −16.2. So: his preset behaves as preset 1 does — it was saved
+from the wheel preset the instrument shows when it opens, not from #15 · slot 2, the one the composer score plays held notes
+on, follows the wheel on #33 AND on #15 · slots 3 and 4 follow velocity on both. THE FOUR SLOTS ARE NOT IN ONE STATE, and the
+ordinary voice is not a velocity preset. What exactly each slot holds is in Kontakt's panels, which the AI cannot read — no
+further diagnosis claimed. The bass flute has NO trim and NO curve; its card rows are void.
+**Put to him, one decision:** (a) drop #33 — he is skipping round robin anyway — reset the bass flute's Kontakt to the factory
+instrument by one script (`reaper/kontakt/reset_bass_flute.lua`, to be written: remove the four slots, load four fresh),
+ordinary back to #15, and the AI re-measures the flute alone (13 notes, two minutes) · (b) he remakes the preset from #15
+and loads it in the four slots, then the same re-measure.

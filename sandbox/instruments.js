@@ -48,7 +48,7 @@ const INSTRUMENTS = {
   // RANGE 48–86 (C3–D6 sounding; Kontakt's keyboard calls it C2–D5): MEASURED on #15 by tools/key_sweep.js — 47 silent, 48 … 86
   // sound, 87 on silent. Every other preset is given that zone until it is read (the preset loaded by default stops at 64;
   // the pseudo contrabass pair surely differs). NOT yet measured: the bend range, the loudness (container 5), the by-key voices' keys.
-  bass_flute: { ordinary: "vib_vel", playerBendSt: 1, bendRangeSt: 2, label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 86, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassFluteTechs(48, 86) },
+  bass_flute: { ordinary: "vib_vel", playerBendSt: 1, bendRangeSt: 1,   /* the bend MEASURED 2026-10-04: +49.8 cents at half bend = 1.00 st (the card, RUNNING_LOG §42) */ label: "Bass Flute", port: "DECBassFlute", rangeLow: 48, rangeHigh: 86, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassFluteTechs(48, 86) },
 
   // ---- BASS CLARINET — Xsample (Kontakt), CC#0 selects the preset — PIECE #5'S ENTRY, CARRIED (2026-10-04, RUNNING_LOG §34) ----
   // The rack's track "Bass Clarinet XS" is the CLONE of piece #5's (the Tempus septet's) as saved 2026-09-17: the same Kontakt,
@@ -60,7 +60,7 @@ const INSTRUMENTS = {
   // sat on channel 5 → a second Kontakt output → a "BassCl strikes" track; this engine has no strike lane, so the slap plays on
   // channel 1 like every other preset (the strike slot is still inside the clone, idle; NITS).
   // The bend: piece #5 MEASURED 0.98 st on this very instance — 1 here, provisional until container 5 writes its row.
-  bass_clarinet: { ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Bass Clarinet", port: "DECBassClar", rangeLow: 34, rangeHigh: 65, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassClarinetTechs() },
+  bass_clarinet: { balanceDb: -13.16, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Bass Clarinet", port: "DECBassClar", rangeLow: 34, rangeHigh: 65, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsBassClarinetTechs() },
 
   // ---- PERCUSSION — ONE PLAYER, ONE LANE (P4) ----
   // Spitfire Abbey Road Orchestra Percussion (D6 — piece #2's library, its journal decision 4:
@@ -132,7 +132,7 @@ const INSTRUMENTS = {
   // presets, CC#0 = preset − 1; Sul C / G / D / A) — piece #5's viola was this library and this helper. NOTHING of the
   // cello's MEASUREMENTS is shared: no balanceDb, no measured ranges, no measured bend — a shared mechanism never shares a
   // measurement. Range 48–93 (C3–A6 sounding) is piece #5's figure, not re-measured. The preset numbers are VERIFY at 4.
-  viola: { ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Viola", port: "DECViola", rangeLow: 48, rangeHigh: 93, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 48, 93) },
+  viola: { balanceDb: -5.23, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 1, label: "Viola", port: "DECViola", rangeLow: 48, rangeHigh: 93, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 48, 93) },
 
   // ---- CELLO — Xsample Contemporary Solo Strings (Kontakt), CC#0 selects the preset ----
   // PIECE #5'S ENTRY, CARRIED VERBATIM (D6) — the one recipe in this file that has been heard,

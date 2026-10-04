@@ -75,13 +75,13 @@ const perVoiceK = perVoiceLufs - K_TO_LUFS;
 // current trims: pitched from the recipe's balanceDb, percussion from the rack store
 const percByCatalog = {};
 for (const t of PERC.tracks) if (t.catalog) percByCatalog[t.catalog] = t;
-const PITCHED = new Set(['english_horn', 'bassoon', 'horn', 'trumpet', 'bowed_vibraphone', 'cello', 'double_bass']);
+const PITCHED = new Set(['bass_flute', 'bass_clarinet', 'viola', 'cello']);   // the Decibel rack's HELD instruments (2026-10-04): measured by the integrated figure; the mallets and the percussion are struck — the loudest 400 ms
 // AN INSTRUMENT WHOSE REGISTER IS CORRECTED BY CC7 RATHER THAN BY VELOCITY (1b.4, his approval 2026-09-19;
 // RUNNING_LOG §87). Its fader must reference the QUIETEST pitch at fff, not the mean, because CC7 can only
 // ATTENUATE: every other bar has to sit above the target for the trim to bring it down. Referenced to the
 // mean instead, half the bars sit below the target and nothing can lift them - which is exactly why the
 // vibraphone's quiet bars topped out around mf in the first build of the remap (§86).
-const REGISTER_BY_CC7 = new Set(['bowed_vibraphone']);
+const REGISTER_BY_CC7 = new Set([]);   // piece #6's bowed vibraphone only; none here
 
 const rows = [];
 for (const [key, I] of Object.entries(CARD.instruments)) {

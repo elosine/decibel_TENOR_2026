@@ -1,170 +1,120 @@
 #!/usr/bin/env node
-// card_schedule.js — PLAN 1b.2 (2026-09-19): the INSTRUMENT CARD's timetable.
+// card_schedule.js — THE INSTRUMENT CARD's timetable, FOR THIS RACK (the new-piece protocol's 5.3; RUNNING_LOG §42,
+// 2026-10-04). Re-made from piece #6's (its PLAN 1b.2, 2026-09-19): the same output shape — probes/balance_probe.ps1
+// plays it, probes/analyze_card.py reads it — but the notes come from THIS piece's recipe, not from piece #6's
+// bank/balance.json (which stayed there).
 //
-//   node tools/card_schedule.js [--out probes/card_schedule.json] [--print]
+//   node tools/card_schedule.js [--out probes/card_schedule.json] [--only key,key] [--print]
 //
-// WHAT THE CARD IS FOR, and how it differs from 0d's balance run (RUNNING_LOG §76, §77). 0d measured every
-// note for **1.2 seconds** and took the loudest 400 ms inside it. That is right for a one-shot and wrong for
-// anything that lives longer than its attack: the bowed vibraphone peaks at −20.7 dBFS and is 20 dB down
-// 7.4 s later (§69), so a 400 ms window at its onset described its first half-second and the trim computed
-// from it made the ONSET match while the rest of the note vanished — which is his *"vibraphone is quiet"*.
-// So every note here is **held 4 s and given its full tail**, and the analyzer reports it TWO ways:
-// the loudest 400 ms (how it speaks) and the K-weighted RMS over the whole sounding note (how loud it IS).
-// The difference between them is the instrument's decay profile, and it is the number a sustained
-// instrument has to be balanced on.
+// WHAT IS MEASURED, and why only this (his word 2026-10-04: "let's … not repeat work" — RUNNING_LOG §29):
+//   NEW, never measured        the bass flute · the four Ricotti mallets · six percussion instruments
+//   RE-LEVELLED                the bass clarinet · the viola — piece #5 balanced them RELATIVELY; this puts them on
+//                              piece #6's absolute scale
+//   A CROSS-CHECK, 40 seconds  the cello · the wood blocks · the bass drum alt — measured in piece #6 on these very
+//                              instances, on the very pitches used here, with the very trims now on their faders. If
+//                              they read here what they read there, the chain of this rack IS piece #6's proven chain,
+//                              and its bank/reference.json may be carried. If not, that is the finding.
 //
-// And it is measured in ABSOLUTE dBFS at the master: REC has been at unity since 1b.0 and the chain is
-// proven to three decimals (1b.1, bank/reference.json), so a number here is comparable with any other
-// studio's — which 0d's, taken through a −12 dB trim, was not.
-//
-// THE PITCHES ARE 0d's OWN (bank/balance.json anchorByPitch), so every row is directly comparable with the
-// old one — the expectation being +12.0 dB from the REC trim alone, and the analyzer says where that fails.
-//
-// FOUR ROLES
-//   card   3 pitches x 4 velocities (24 · 64 · 100 · 127) per pitched instrument — the card itself
-//   high   THE HORN ONLY, a fourth pitch at 72: above the SI2 library's F4, so it sounds through the
-//          ReaPitch "Horn SI2 high" path of 1a.1, which no measurement has ever covered. §68 proved the
-//          split is level-neutral by meter; this says what it is in dBFS.
-//   bend   one note per pitched instrument, mid pitch at velocity 100, with +50 % pitch bend — its cents
-//          against the unbent note of the same pitch and velocity (already in the run) fills
-//          bank/bend_ranges.json for the five instruments that have never been measured. §74's open
-//          question; the english horn and double bass carry an INFERRED 1 st today.
-//   perc   a SPOT CHECK, not a re-measurement: four instruments spanning 0d's range (finger cymbals ·
-//          tam tams · triangles · castanets, +15 to +32 dB of trim) on their own anchor keys. 0d's
-//          percussion numbers are DIFFERENCES and survive the REC change as a constant +12.0 dB; these
-//          four say whether that carry-over is true before 1b.3 leans on it for all fourteen.
+// HOW A NOTE IS PLAYED — as the PIECE plays it (piece #6's lesson, its PLAN 1b.4: "measure on the channels the piece plays"):
+//   a HELD instrument (the four Xsample)   its ordinary voice, on CURVE CHANNEL A (channel 2) with CC7 127 and its CC0 —
+//                                          the composer score sends every drawn note there (the capture of §35)
+//   a STRUCK instrument (mallets, percussion)   on the patch's own channel, NO CC7 and no CC0: Spitfire's plugin binds
+//                                          CC7 to its gain, and a Kontakt slot's CC7 is its volume — a probe that sent
+//                                          it would rewrite his mix
+// Held notes: 4 s and a 3 s tail, three pitches × velocities 24 · 64 · 100 · 127, and one BEND note (the bend range).
+// Struck notes: 0.2 s and a 5 s tail (a crotale and a cymbal ring), three keys × 127 · 64.
 'use strict';
-const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
-
+const fs = require('fs'), path = require('path'), vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const OUT = path.join(ROOT, arg('out', 'probes/card_schedule.json'));
-const PRINT = process.argv.includes('--print');
-// --channels curve  (PLAN 1b.4, 2026-09-19): measure on the CHANNELS THE PIECE PLAYS, not on main 1.
-// A drawn note is a curve event and routes to the CURVE BANK - the SI2 three to their `b` instance, the
-// Xsample four to channels 2-4 of their own port; only a plain or keyswitched note uses main channel 1.
-// This flag exists because that distinction turned out to matter: RUNNING_LOG §56's UVI "Dynamic Amount"
-// fix reached PART 1 OF THE MAIN INSTANCE ONLY, so the horn's and trumpet's 26 dB velocity range sat on a
-// part the piece never plays, while every drawn note went through curve copies still at the factory 0.70
-// (about 8 dB). A card measured on main channel 1 therefore described something the music does not use.
-// --only key,key   limit to named instruments.   --pitches mid   the middle pitch alone (a spot check).
-const CHANNELS = arg('channels', 'main');
 const ONLY = (arg('only', '') || '').split(',').filter(Boolean);
-const PITCHES = arg('pitches', 'all');
-
+const PRINT = process.argv.includes('--print');
 const INSTRUMENTS = vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'sandbox', 'instruments.js'), 'utf8') + '\n;INSTRUMENTS;', {});
-const BAL = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'balance.json'), 'utf8'));
-const BRASS = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'balance_brass.json'), 'utf8'));
-const OLD = JSON.parse(fs.readFileSync(path.join(ROOT, 'probes', 'balance_schedule.json'), 'utf8'));
 
-const PITCHED = ['english_horn', 'bassoon', 'horn', 'trumpet', 'bowed_vibraphone', 'cello', 'double_bass'];
-const VELS = [24, 64, 100, 127];          // pp · mp · f · fff — four points carry a monotone fit for 1b.4
-const BEND_VEL = 100;
-const HORN_HIGH_PITCH = 72;               // sounding C5: above F4, so it can only arrive through ReaPitch
-const PERC_SPOT = ['small_metals_finger_cymbals', 'tam_tams_a', 'small_metals_triangles', 'toys_castanets'];
-const PERC_VELS = [127, 64];
+const VELS = [24, 64, 100, 127], STRUCK_VELS = [127, 64], BEND_VEL = 100;
+const LEAD_IN = 3000, PRE = 300, HOLD = 4000, TAIL = 3000, STRUCK_HOLD = 200, STRUCK_TAIL = 5000, INST_GAP = 1500;
 
-// timing, in ms — the whole point of the run is that a note gets its life
-const LEAD_IN = 3000;                     // the analyzer finds the schedule by the first onset; 3 s of room
-const PRE = 300;                          // CC7 / CC0 / keyswitch / bend, ahead of the note
-const HOLD = 4000;
-const TAIL = 3000;                        // after note-off, for a release that rings
-const TAIL_VIB = 8000;                    // the bowed vibraphone is 20 dB down 7.4 s after its peak (§69)
-const PERC_HOLD = 200;
-const PERC_TAIL = 3800;
-const INST_GAP = 1500;
+// the HELD instruments: the lane key, its three pitches (low · middle · high of the ordinary voice's measured zone), its velocities
+const HELD = [
+  { key: 'bass_flute',    pitches: [50, 67, 84], vels: VELS, bend: true },
+  { key: 'bass_clarinet', pitches: [36, 50, 63], vels: VELS, bend: true },
+  { key: 'viola',         pitches: [50, 69, 86], vels: VELS, bend: true },
+  { key: 'cello',         pitches: [48, 60, 71], vels: [127], bend: false, check: 'piece #6 card, run 30-REC-260919_1140: integrated −30.00 · −30.73 · −36.20 dB at its trim −3.87' },
+];
+// the MALLETS: one main patch per instrument (the catalog's technique key), three keys across its range
+const MALLETS = [
+  { inst: 'crotales',     tech: 'crot_main_metal', pitches: [62, 72, 82] },
+  { inst: 'glockenspiel', tech: 'glock_main_hard', pitches: [57, 69, 82] },
+  { inst: 'xylophone',    tech: 'xylo_main',       pitches: [55, 74, 93] },
+  { inst: 'marimba',      tech: 'mar_main',        pitches: [38, 66, 94] },
+];
+// the PERCUSSION: `keys` named = piece #6's own keys (the cross-check); otherwise three plain HITS, one per beater where there are three
+const PERC = [
+  { slug: 'bongos' }, { slug: 'shime_daiko' }, { slug: 'china_cymbals' }, { slug: 'small_metals_spring_coil' }, { slug: 'susp_cymbals_bright' }, { slug: 'toms_high' },
+  { slug: 'wood_blocks',   keys: [36, 48, 56], check: 'piece #6 card, run 30-REC-260919_0833: loudest 400 ms −22.46 · −22.04 · −25.87 dB at trim +15.43 → −30.84 · −30.42 · −34.25 at +7.05' },
+  { slug: 'bass_drum_alt', keys: [36, 48, 55], check: 'piece #6 card, run 30-REC-260919_0833: loudest 400 ms −20.92 · −20.90 · −24.04 dB at trim +5.60 → −30.81 · −30.79 · −33.93 at −4.29' },
+];
 
-// 0d's pitches, so the two runs are row-for-row comparable
-const pitchesOf = {};
-for (const src of [BAL, BRASS]) for (const I of src.instruments) {
-    if (I.anchorByPitch) pitchesOf[I.inst] = Object.keys(I.anchorByPitch).map(Number).sort((a, b) => a - b);
+const notes = []; let t = LEAD_IN;
+const push = (o, hold, tail) => { notes.push(Object.assign({ i: notes.length, tPreMs: t - PRE, tOnMs: t, tOffMs: t + hold }, o)); t += hold + tail; };
+const want = k => !ONLY.length || ONLY.includes(k);
+
+for (const H of HELD) {
+  if (!want(H.key)) continue;
+  const R = INSTRUMENTS[H.key], tech = R.techniques.find(x => x.key === R.ordinary);
+  if (!tech) throw new Error('no ordinary voice for ' + H.key);
+  const ch = (R.channels && Array.isArray(R.channels.curve) && R.channels.curve.length) ? R.channels.curve[0] : 1;   // curve copy A
+  for (const p of H.pitches) if (p < tech.rangeLow || p > tech.rangeHigh) throw new Error(H.key + ': pitch ' + p + ' outside ' + tech.rangeLow + '–' + tech.rangeHigh);
+  const base = { inst: H.key, label: R.label, tech: tech.key, techLabel: tech.label, port: tech.port || R.port, ch, cc0: tech.cc0 != null ? tech.cc0 : null, ks: null, cc7: 127 };
+  t += INST_GAP;
+  for (const pitch of H.pitches) for (const vel of H.vels) push(Object.assign({}, base, { role: 'card', pitch, vel, anchor: vel === 64, ...(H.check ? { check: H.check } : {}) }), HOLD, TAIL);
+  if (H.bend) { const mid = H.pitches[1]; push(Object.assign({}, base, { role: 'bend', pitch: mid, vel: BEND_VEL, bend: 8192 + Math.round(0.5 * 8191), fraction: 0.5, bendResetMs: t + HOLD + 400 }), HOLD, TAIL); }
 }
-
-// the percussion spot check reuses the OLD schedule's own notes, so key, channel and technique are identical
-const percNote = {};
-for (const n of OLD.notes) if (n.role === 'perc' && n.anchor && !percNote[n.inst]) percNote[n.inst] = n;
-
-const notes = [];
-let t = LEAD_IN;
-const push = (o, hold, tail) => {
-    notes.push(Object.assign({ i: notes.length, tPreMs: t - PRE, tOnMs: t, tOffMs: t + hold }, o));
-    t += hold + tail;
-};
-
-for (const key of PITCHED) {
-    if (ONLY.length && !ONLY.includes(key)) continue;
-    const R = INSTRUMENTS[key];
-    const tech = R.techniques.find(x => x.key === R.ordinary);
-    if (!tech) throw new Error('no ordinary technique for ' + key);
-    let port, ch;
-    if (CHANNELS === 'curve' && R.channels && Array.isArray(R.channels.curve) && R.channels.curve.length) {
-        const e = R.channels.curve[0];                       // the first slot of the bank; the three are copies
-        if (e && typeof e === 'object') { port = e.port; ch = e.ch; } else { port = R.port; ch = e; }
-    } else {
-        port = tech.port || R.port;
-        ch = tech.channel || (R.channels && R.channels.main) || 1;
-    }
-    const tail = key === 'bowed_vibraphone' ? TAIL_VIB : TAIL;
-    const base = { inst: key, label: R.label, tech: tech.key, techLabel: tech.label, port, ch,
-                   cc0: tech.cc0 != null ? tech.cc0 : null, ks: tech.ks != null ? tech.ks : null, cc7: 127 };
-    let pitches = pitchesOf[key].slice();
-    if (PITCHES === 'mid') pitches = [pitchesOf[key][1]];
-    if (key === 'horn') pitches.push(HORN_HIGH_PITCH);
-    t += INST_GAP;
-    for (const pitch of pitches) {
-        for (const vel of VELS) {
-            push(Object.assign({}, base, { role: (key === 'horn' && pitch === HORN_HIGH_PITCH) ? 'high' : 'card',
-                                           pitch, vel, anchor: vel === 64 }), HOLD, tail);
-        }
-    }
-    // the bend note: mid pitch, +50 % of full bend, centred again after the note
-    const mid = pitchesOf[key][1];
-    const bendVal = 8192 + Math.round(0.5 * 8191);
-    push(Object.assign({}, base, { role: 'bend', pitch: mid, vel: BEND_VEL, bend: bendVal, fraction: 0.5,
-                                   bendResetMs: t + HOLD + 400 }), HOLD, tail);
+const L = INSTRUMENTS.bowed_vibraphone;
+for (const M of MALLETS) {
+  if (!want(M.inst)) continue;
+  const q = L.techniques.find(x => x.key === M.tech); if (!q) throw new Error('no mallet patch ' + M.tech);
+  const I = (L.malletInstruments || []).find(x => x.slug === M.inst) || {};
+  for (const p of M.pitches) if (p < q.rangeLow || p > q.rangeHigh) throw new Error(M.tech + ': key ' + p + ' outside ' + q.rangeLow + '–' + q.rangeHigh);
+  t += INST_GAP;
+  for (const pitch of M.pitches) for (const vel of STRUCK_VELS) push({ role: 'perc', inst: M.inst, label: I.name || M.inst, tech: q.key, techLabel: q.label, port: q.port, ch: q.channel, cc0: null, ks: null, cc7: null, pitch, vel, anchor: vel === 127 }, STRUCK_HOLD, STRUCK_TAIL);
 }
-
-for (const key of (ONLY.length ? [] : PERC_SPOT)) {
-    const n = percNote[key];
-    if (!n) { console.error('no 0d anchor note for ' + key + ' — skipped'); continue; }
-    t += INST_GAP;
-    for (const vel of PERC_VELS) {
-        push({ role: 'perc', inst: key, label: n.label, tech: n.tech, techLabel: n.techLabel,
-               port: n.port, ch: n.ch, cc0: n.cc0, ks: n.ks, pitch: n.pitch, vel, cc7: null, anchor: vel === 127 },
-             PERC_HOLD, PERC_TAIL);
-    }
+const P = INSTRUMENTS.percussion;
+for (const X of PERC) {
+  if (!want(X.slug)) continue;
+  const A = (P.aroInstruments || []).find(a => a.slug === X.slug); if (!A) throw new Error('percussion: ' + X.slug + ' is not in the selection');
+  const techs = P.techniques.filter(q => q.channel === A.channel && Array.isArray(q.keys) && (q.key === X.slug || q.key.startsWith(X.slug + '_')));
+  let picks = [];
+  if (X.keys) picks = X.keys.map(k => ({ midi: k, q: techs.find(q => q.keys.some(e => e.midi === k)) || techs[0] }));
+  else {
+    const isHit = e => /hit/i.test(e.label) && !/damp|chok|mute|rim|roll|flam|rake|swell|scrape|bow/i.test(e.label);
+    for (const q of techs) { const e = q.keys.find(isHit); if (e && picks.length < 3) picks.push({ midi: e.midi, q }); }                       // one plain hit per beater
+    for (const q of techs) for (const e of q.keys) if (picks.length < 3 && isHit(e) && !picks.some(x => x.midi === e.midi)) picks.push({ midi: e.midi, q });   // then more hits
+    for (const q of techs) for (const e of q.keys) if (picks.length < 3 && !picks.some(x => x.midi === e.midi)) picks.push({ midi: e.midi, q });               // then anything
+  }
+  t += INST_GAP;
+  for (const k of picks) for (const vel of STRUCK_VELS) {
+    const e = k.q.keys.find(z => z.midi === k.midi);
+    push({ role: 'perc', inst: X.slug, label: A.name, tech: k.q.key, techLabel: k.q.label + (e ? ' · ' + e.label : ''), port: A.port || P.port, ch: A.channel, cc0: null, ks: null, cc7: null, pitch: k.midi, vel, anchor: vel === 127, ...(X.check ? { check: X.check } : {}) }, STRUCK_HOLD, STRUCK_TAIL);
+  }
 }
 
 const totalMs = t + 2000;
 const out = {
-    generatedAt: new Date().toISOString(), planItem: '1b.2', piece: 'decibel',
-    what: 'the instrument card: absolute loudness per instrument, pitch and velocity, measured two ways',
-    standard: 'K-20 (Katz / SMPTE RP 200); loudness ITU-R BS.1770. REC is at unity since 1b.0, so every level '
-            + 'is dBFS AT THE MASTER (bank/reference.json proves the chain to three decimals).',
-    vels: VELS, percVels: PERC_VELS, pitched: PITCHED, pitches: pitchesOf, hornHighPitch: HORN_HIGH_PITCH,
-    percSpot: PERC_SPOT,
-    timing: { leadInMs: LEAD_IN, preMs: PRE, holdMs: HOLD, tailMs: TAIL, tailVibMs: TAIL_VIB,
-              percHoldMs: PERC_HOLD, percTailMs: PERC_TAIL, instGapMs: INST_GAP },
-    comparison: { to: 'bank/balance.json (0d)', expectedOffsetDb: 12.0,
-                  why: 'the only deliberate change to the chain is REC −12 dB → unity; anything else is a finding' },
-    totalMs, notes,
+  generatedAt: new Date().toISOString(), planItem: '5.3', piece: 'decibel',
+  what: 'the instrument card for the Decibel rack: absolute loudness per instrument, pitch and velocity, measured two ways',
+  standard: 'K-20 (Katz / SMPTE RP 200); loudness ITU-R BS.1770. REC at unity: every level is dBFS AT THE MASTER (bank/reference.json — piece #6\'s, carried; the cross-check rows prove it for this rack).',
+  vels: VELS, percVels: STRUCK_VELS, held: HELD.map(h => h.key), mallets: MALLETS.map(m => m.inst), percussion: PERC.map(p => p.slug),
+  timing: { leadInMs: LEAD_IN, preMs: PRE, holdMs: HOLD, tailMs: TAIL, struckHoldMs: STRUCK_HOLD, struckTailMs: STRUCK_TAIL, instGapMs: INST_GAP },
+  leadInMs: LEAD_IN,
+  comparison: { to: 'nothing — this rack has no earlier measurement', expectedOffsetDb: 0 },
+  totalMs, notes,
 };
-
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
-const mm = Math.floor(totalMs / 60000), ss = Math.round((totalMs % 60000) / 1000);
-console.log('THE INSTRUMENT CARD — ' + notes.length + ' notes · ' + mm + ':' + String(ss).padStart(2, '0') + '\n');
-const byRole = {};
-for (const n of notes) byRole[n.role] = (byRole[n.role] || 0) + 1;
-console.log('  roles: ' + Object.entries(byRole).map(([k, v]) => k + ' ' + v).join(' · '));
-console.log('  pitched: ' + PITCHED.map(k => INSTRUMENTS[k].label + ' ' + pitchesOf[k].join('/')).join(' · '));
-console.log('  velocities ' + VELS.join(' · ') + '   notes held ' + (HOLD / 1000) + ' s, tail ' + (TAIL / 1000)
-    + ' s (' + (TAIL_VIB / 1000) + ' s for the vibraphone)');
-console.log('  the horn also at ' + HORN_HIGH_PITCH + ' (through ReaPitch) · a bend note per instrument · '
-    + PERC_SPOT.length + ' percussion spot checks');
-console.log('\nwrote ' + path.relpath_ ? '' : path.relative(ROOT, OUT));
-if (PRINT) for (const n of notes) console.log(('  ' + (n.tOnMs / 1000).toFixed(1)).padStart(9) + ' s  '
-    + String(n.label).padEnd(17) + String(n.port).padEnd(11) + 'ch' + String(n.ch).padEnd(3)
-    + 'note ' + String(n.pitch).padStart(3) + ' vel ' + String(n.vel).padStart(3) + '  ' + n.role
-    + (n.bend != null ? '  bend ' + n.bend : ''));
+const byInst = {}; for (const n of notes) byInst[n.inst] = (byInst[n.inst] || 0) + 1;
+console.log('THE INSTRUMENT CARD — ' + notes.length + ' notes · ' + Math.floor(totalMs / 60000) + ':' + String(Math.round((totalMs % 60000) / 1000)).padStart(2, '0'));
+console.log('  ' + Object.entries(byInst).map(([k, v]) => k + ' ' + v).join(' · '));
+console.log('wrote ' + path.relative(ROOT, OUT));
+if (PRINT) for (const n of notes) console.log(((n.tOnMs / 1000).toFixed(1)).padStart(7) + ' s  ' + String(n.label).padEnd(26) + String(n.port).padEnd(13) + 'ch' + String(n.ch).padEnd(3) + 'key ' + String(n.pitch).padStart(3) + ' vel ' + String(n.vel).padStart(3) + '  ' + n.role + (n.cc0 != null ? ' cc0 ' + n.cc0 : '') + '  ' + (n.techLabel || ''));

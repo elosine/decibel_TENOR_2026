@@ -190,7 +190,13 @@ deliverables · the planning repo's lines (at his word only).
     **ALREADY DONE, never to be redone:** the reference tone and his system volume (piece #6) · the cello's round robin, volume and
     curve · the Abbey Road round robins (left on, as piece #6) · the percussion's key maps.
     **HIS WORD ON THE REPLIES (§27 · §28): a bare list, one line per item, no table, no detail; the how after, one sentence each.**
-  - **► ITEMS 7 · 8 · 9 — ONE RUN, THE INSTRUMENT CARD FOR THIS RACK (Opus; the plan in RUNNING_LOG §41).** In order:
+  - **☑ ITEMS 7 · 8 DONE, 9 IN PART (RUNNING_LOG §42):** the card recorded (114 notes, all found), the chain proven against piece #6
+    within 0.4 dB on the three clones, FIFTEEN faders set (`bank/trims.json`; his CTRL+S), the bass clarinet's and viola's curves
+    built and merged (`bank/velocity_remap.json`). **► OPEN, HIS ONE DECISION — THE BASS FLUTE:** its preset 33 takes its
+    loudness from the MOD WHEEL (saved from preset 1, not #15) and its four slots are not in one state — so it has no trim and no
+    curve. (a) reset the instrument to factory by one script and go back to #15, or (b) he remakes the preset from #15 in four
+    slots; then the AI re-measures the flute alone (the steps are in NITS). THEN item 10, listen.
+  - *(the plan as it was written for this run, kept:)* In order:
     (a) `tools/card_schedule.js` re-made for THIS rack, from `sandbox/instruments.js` — 15 instruments: bass flute · bass clarinet
     · viola (3 pitches × 24 · 64 · 100 · 127, ordinary voice, channel 1) · crotales · glockenspiel · xylophone · marimba (a main
     patch, 3 pitches × 64 · 127) · bongos · shime daiko · China cymbal · spring coil · suspended cymbals · toms (first key of the
