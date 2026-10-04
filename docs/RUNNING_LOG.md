@@ -890,3 +890,19 @@ prints each articulation of the loaded preset with its `top` key. The All-in-One
   names one hover screenshot (piece #6 §41).
 - The Ricotti mallets need no key map — a range per patch, read by sweep at 4.5. The Xsample bass flute needs its articulation
   list: his screenshot of the Preset Menu.
+
+## §24. THE SUSPENDED CYMBALS ARE THE BRIGHT ONES — a correction of §23 by his own switch; the plugin's round-robin settings seen (2026-10-04, Opus)
+
+**What prompted it:** his screenshot, no words — SUSPENDED CYMBALS with **ALL IN ONE (BRIGHT)** lit, the hovered key reading
+*"16" BRIGHT - FELT MALLET - SINGLE HIT"*.
+
+- §23 read "Cymbal Mellow - AIO" as active. He has switched: `aro_state.js info` now reads **"Cymbal Bright - AIO" active**
+  (articulation 7, top key 93) → the slug is **`susp_cymbals_bright`**, not `_mellow`.
+- Against the catalog: `susp_cymbals_bright`, 37 keys, last key 93 ✓; its C2 is "Felt Mallet · 16\" Bright Single Hit" — his
+  hovered key, word for word; its nine blocks (felt 4 · 4 | brush 4 · 4 | stick 4 | scrape 4 · 4 | bow 4 · 5) are the nine on
+  his keyboard. Mapped; nothing to make.
+- **The plugin's settings, as his screenshot shows them — for 4.4 (`docs/RACK_SETTINGS.md`) and container 5's round-robin
+  pre-flight:** ROUND ROBINS **6** · RESET ON TRANSPORT **on** · RESET FROM KEY **none** · TRANSPOSE 0 · TWO-HANDED LAYOUT off ·
+  RIGHT/LEFT MAPPING off. Not changed, not yet decided: his word *"let's go through all the proper settings. Like the round
+  robin"* (§18) is still to be taken up, instrument by instrument.
+- Toms ARO: still the plugin's default ("Piatti (C)").
