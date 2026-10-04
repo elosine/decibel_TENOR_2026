@@ -34,6 +34,9 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 ### THE REPO OPENS ON THIS (2026-10-03, Fable) — PART 1 DONE; the next part is HIS to name
 
+- **UPDATE 2026-10-04 (RUNNING_LOG §3; `#6 §816 … §818`) — 9.1: THE DECIBEL PIECE'S REPO EXISTS,** `decibel_TENOR_2026` (public;
+  the protocol's container 2 done — the kit only, no code). Next THERE: container 3, the copy-forward. Here nothing is in hand:
+  the first take needs that copy-forward and parts 3 · 4 laid out.
 - **UPDATE 2026-10-03 (`#6 §815`) — HIS PICK: PART 9's FIRST RUN**, the Decibel piece's repo by the new-piece protocol, begun in a
   new session from piece #6's checkpoint #5 (`septet_LGMF_2026/docs/PROJECT_JOURNAL.md` §2, the block CHECKPOINT #5 AFTER THE CLOSE).
   That run's record lives in the Decibel piece's repo. Here nothing is in hand until the first take (parts 3 · 4 · 5 · 8).
@@ -61,7 +64,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
 | **►** | the part he names, laid out under the planning method | Fable (the talk) · Opus (a build) | — |
-| | part 9's first run — the Decibel piece's repo, by the protocol (in its own repo) | Fable for 2.1 the profile | yes |
+| 9.1 | part 9's first run — the Decibel piece: its repo `decibel_TENOR_2026` MADE 2026-10-04 (container 2). Next there: container 3, the copy-forward (in ITS repo and chat) | Opus | — |
 
 **Open questions:** Q1 — what `live-electronics-engine` is built on (the sound seam's shape). Q2 — whether the pieces take the
 engine as a git submodule exactly, or by a copy at a tag with the commit recorded (`#6 §807` chose the submodule; proven at part 8).

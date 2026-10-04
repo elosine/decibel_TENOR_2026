@@ -114,12 +114,17 @@ How a piece pulls the engine: the submodule checkout inside the piece · the com
 batteries and THE SHIELD run in the piece · a piece's lock pins the commit. Written in `docs/TAKE.md` so a cold model runs it.
 *To be laid out when we discuss it.*
 
-## 9. The three set-ups — `todo`
+## 9. The three set-ups — `doing`
 
 ***Why:*** the pieces are where the engine is heard and used.
 The new-piece protocol's runs — the Decibel piece · the Switch~ piece · the improviser piece — each a NORMAL PORT of the
 scrolling-score stack, each taking the engine by 8. The protocol is `composition-system/protocol/NEW_PIECE_PROTOCOL.md`; its
 record and deviations live in each piece's repo, not here. *Each run laid out there, at his word.*
+
+- **9.1 The Decibel piece** — `doing`. `decibel_TENOR_2026` (`C:\Users\jwloy\GitHub\decibel_TENOR_2026` ·
+  `github.com/elosine/decibel_TENOR_2026`, public) made 2026-10-04: the protocol's container 2 done — a normal port (copy-forward
+  from piece #6 · both layers · the scrolling score), the kit in, no code yet. Next THERE: container 3, the copy-forward. The engine
+  is taken there at parts 5 · 8 — its CLAUDE.md, journal D4 and PLAN § 0 say so. (`#6 §816 … §818`)
 
 ## 10. The engine's record — `todo`, continuous
 

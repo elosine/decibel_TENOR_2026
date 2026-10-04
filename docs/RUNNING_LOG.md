@@ -76,3 +76,15 @@ chain · the playback route · OSC) → parts 11 and 12 added, the flexibility a
 **Decided:** his pick — the checkpoint, then the Decibel repo. That run's record and its deviations register live in the Decibel piece's repo. **Here nothing is in hand** until the first take.
 
 **Why the engine waits on a piece:** it has no app of its own; it is built where he hears it. The first code lands here from inside the first piece's folder (the submodule), at part 5.
+
+# 2026-10-04 — written from piece #6's chat (Opus)
+
+## §3. 9.1 — the Decibel piece's repo exists
+
+**What prompted it:** his go for the Decibel repo in piece #6's chat, 2026-10-04 — the profile confirmed (*"yes … But yes, normal port"*), the repo's three answers (*"all a"*: `decibel_TENOR_2026` · public · push after every commit) (`#6 §816 … §818`).
+
+**What exists:** `decibel_TENOR_2026` — the new-piece protocol's container 2 done: the kit only, no code. Its CLAUDE.md, its journal (D4) and its PLAN § 0 name this engine: taken as a git submodule by `docs/TAKE.md`, at parts 5 · 8, not at set-up.
+
+**Written here:** PLAN part 9 `doing`, sub-part **9.1** added (the plan's rule: a sub-part at the moment it is needed).
+
+**What it means for the engine:** nothing is in hand here yet. The first take needs the Decibel piece's copy-forward (its container 3 — the composer score must exist there) and parts 3 · 4 laid out here.
