@@ -841,3 +841,19 @@ rack holds can be cloned; a new one costs ONE load in the plugin's own browser, 
   no note — the key is probably outside that patch's range; NOT diagnosed, the ranges are read at 4.5 · Marimba RM: not yet
   loaded when this was written.
 - The rack was saved by him again after these (not dirty, 16 tracks).
+
+## §22. CONTAINER 4 — "done with scripts saved": all five Kontakt loads in, every Xsample and Ricotti track sounds (2026-10-04, Opus)
+
+**His words:** *"done with scripts saved"*.
+
+- `load_rm_marimba` (started 14:29:10; its read-back appears when the eight patches have loaded): 8 slots, channels 1 … 8 —
+  Main · Main - Full (Hard) · Main - Full (Soft) · Main - Rubber · Main - Trems · FX - Bows · Hotrod · Hotrod (Flams). `ok: true`.
+  §21's "Marimba RM −150 dB" was a note sent while it was still loading.
+- Through the ports, channel 1: **Marimba RM, key 60: −44.1 / −33.7 dB** · **Glockenspiel RM, key 72: −55.4 / −56.3 dB** — it
+  sounds, weakly (channel 1 is "Main (Extra Soft)"); key 96 gave nothing, key 84 (§21) −88 dB. The ranges and the levels of the
+  39 patches are 4.5's and container 5's.
+- The rack: `reaper/decibel_rack.rpp`, 16 tracks, saved by him 14:29, 17.0 MB, not dirty. Not committed — at his word.
+- **Where container 4 stands:** sounding through their ports — Bass Flute XS · Bass Clarinet XS · Viola XS · Cello XS ·
+  Crotales RM · Glockenspiel RM · Xylophone RM · Marimba RM · Bass Drum Alt ARO · Wood Blocks ARO · Spring Coil ARO. Empty,
+  waiting for his load in the Abbey Road browser: Bongos ARO · Shime Daiko ARO · China Cymbal ARO · Suspended Cymbals ARO ·
+  Toms ARO. **His hands in this whole build:** one Preferences step · five script picks · saves. No preset loaded by hand yet.

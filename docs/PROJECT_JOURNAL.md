@@ -164,7 +164,8 @@ deliverables · the planning repo's lines (at his word only).
     (12), xylophone (10), each read back and sounded through its port (the glockenspiel's test key gave no note — its range is
     read at 4.5) · THE UNPITCHED PERCUSSION, his tentative list (DEC-6): eight tracks on `DECPerc`, channels 1 … 8, three
     cloned from piece #6 and sounding (Bass Drum Alt · Wood Blocks · Spring Coil).
-  - **(1) HIS — the marimba's script** (Marimba RM → `reaper/kontakt/load_rm_marimba.lua`), if not run yet.
+  - **☑ the marimba's script run (8 slots) and the rack SAVED by him, 14:29 — "done with scripts saved" (RUNNING_LOG §22).** All five
+    Kontakt loads are in: every Xsample and Ricotti track sounds through its port.
   - **(2) HIS — FIVE LOADS in the Abbey Road plugin's own browser, one per track:** Bongos ARO · Shime Daiko ARO · China Cymbal
     ARO · Suspended Cymbals ARO (dark, mellow or bright) · Toms ARO (high or low; both = say so, a ninth track). The All-in-One
     preset of each, as in piece #6. THEN the AI: `node tools/aro_state.js info "<track>"` reads what he loaded →
