@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 3.2 / 3.5 — run every battery once, default arguments only (never --update / --save / --write / --freeze).
 # The list after 3.8 (2026-10-04): the twelve checks of piece #5's cast are retired, v0_proofs is a generator and is not run.
+# After 3.3: a check whose default page became this piece's is given piece #6's staged page by name (--ir piece-lgmf).
 # usage: run_batteries.sh <tag>      → logs in scratchpad/batt-<tag>/, the table in scratchpad/batt-<tag>.tsv
 set -u
 SP="$(cd "$(dirname "$0")" && pwd)"
@@ -17,8 +18,8 @@ CMDS=(
 "node tools/roster_check.js --quiet" "node tools/sequence_check.js"
 "node tools/sequence_notation_check.js" "node tools/spectrum_check.js" "node tools/unsaved_check.js"
 "node tools/vib_marks_check.js" "node tools/vibes_pitch_check.js"
-"node tools/check_ceilings.js --all" "node tools/check_rules.js" "node tools/check_screen_edges.js"
-"node tools/check_print_edges.js" "node tools/check_print_frame.js" "node tools/check_print_front.js" "node tools/check_print_pages.js"
+"node tools/check_ceilings.js --all" "node tools/check_rules.js" "node tools/check_screen_edges.js --ir piece-lgmf"
+"node tools/check_print_edges.js --ir piece-lgmf" "node tools/check_print_frame.js --ir piece-lgmf" "node tools/check_print_front.js --ir piece-lgmf" "node tools/check_print_pages.js --ir piece-lgmf"
 "node score/tools/check_containers.js" "node score/tools/check_cresc_deck.js" "node score/tools/check_cresc_panel.js"
 "node tools/ir_validate_battery.js" "node tools/model_bank.js --validate" "node tools/decisions_needed.js"
 "python probes/selftest_bend.py" "python probes/selftest_bend_analyzer.py" "python probes/selftest_ranges.py" "python probes/selftest_sweep.py"

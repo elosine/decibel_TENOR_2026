@@ -5,7 +5,7 @@
 #
 # THE CHAIN, and the step that is easy to miss:
 #
-#     scores/piece-Recombination-Draft01-done.json --(notate_section)--> notation/ir/piece-lgmf.ir.json --(export_print)--> PDF
+#     scores/piece-Recombination-Draft01-done.json --(notate_section)--> notation/ir/piece-decibel.ir.json --(export_print)--> PDF
 #                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #     The print score is drawn from the IR, NOT from the save file. Edit the
 #     score, re-run export_print alone, and you render the OLD notation with no
@@ -39,7 +39,7 @@
 set -e
 cd "$(dirname "$0")/../.."
 OUT=print/score/Recombination-score-JYang.pdf
-IR=piece-lgmf
+IR=piece-decibel
 # one moment per section: the first sequence · section 2 · the second take -> take morph · the last chord
 AT=100,300,600,870
 

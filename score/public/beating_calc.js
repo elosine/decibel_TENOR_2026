@@ -22,7 +22,7 @@
   else root.BeatingCalc = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
-  const ORDER = ['english_horn', 'bassoon', 'horn', 'trumpet', 'percussion', 'bowed_vibraphone', 'cello', 'double_bass'];   // score order (P3); the vibraphone took lane 5 on 2026-09-18 (D12)
+  const ORDER = ['bass_flute', 'bass_clarinet', 'percussion', 'bowed_vibraphone', 'viola', 'cello'];   // score order (#5's D10); Decibel's six lanes (D9, 2026-10-04)
   const NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
   const noteName = m => NAMES[((m % 12) + 12) % 12] + (Math.floor(m / 12) - 1);
   const midiHz = m => 440 * Math.pow(2, (m - 69) / 12);
@@ -284,9 +284,10 @@
   // AWAY from mf (longer quietly, shorter loudly), which is why its factors were re-based on 2026-09-19.
   // Every reference striation and every morph split reads these — "never exceeding the max".
   const CEILINGS = {
-    english_horn: { breathS: 18, gapS: 0.75 }, bassoon: { breathS: 18, gapS: 0.75 },
-    horn: { breathS: 15, gapS: 0.75 }, trumpet: { breathS: 12, gapS: 0.75 },
-    cello: { bowS: 15, gapS: 0 }, double_bass: { bowS: 10, gapS: 0 },
+    // PROVISIONAL for the Decibel winds and the viola (the port, 2026-10-04) — not measured: piece #5's bass clarinet was
+    // 10 s and its viola 12 s; the bass flute is the shortest breath of the five. Container 5 measures them.
+    bass_flute: { breathS: 8, gapS: 0.75 }, bass_clarinet: { breathS: 12, gapS: 0.75 },
+    viola: { bowS: 12, gapS: 0 }, cello: { bowS: 15, gapS: 0 },
     // The bowed vibraphone IS a beating partner, and the central one: the opening has individual
     // instruments beating against it (LG-15). It is bowed, so a bow ceiling and no gap, because a
     // struck-or-bowed metal bar keeps ringing through a bow change and the seam does not show the way a

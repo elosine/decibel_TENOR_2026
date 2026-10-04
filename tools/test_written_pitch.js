@@ -11,7 +11,7 @@
 // treble lines are E4 = -2, G4 = -1, B4 = 0, D5 = 1, F5 = 2; bass lines G2 = -2, B2 = -1,
 // D3 = 0, F3 = 1, A3 = 2. A half-step of ySs is one scale degree (a line-to-space move).
 const path = require('path');
-const ROOT = 'C:/Users/jwloy/GitHub/septet_LGMF_2026';
+const ROOT = require('path').join(__dirname, '..');   // was piece #6's folder, written in full — the test read THAT repo (found at the port, 2026-10-04)
 const Layout = require(path.join(ROOT, 'notation/lib/layout.js'));
 const ens = require(path.join(ROOT, 'notation/registry/ensemble.json'));
 const pos = Layout.positionResolver(ens);

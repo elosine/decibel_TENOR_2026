@@ -139,7 +139,7 @@ for (const key of (ONLY.length ? [] : PERC_SPOT)) {
 
 const totalMs = t + 2000;
 const out = {
-    generatedAt: new Date().toISOString(), planItem: '1b.2', piece: 'lgmf',
+    generatedAt: new Date().toISOString(), planItem: '1b.2', piece: 'decibel',
     what: 'the instrument card: absolute loudness per instrument, pitch and velocity, measured two ways',
     standard: 'K-20 (Katz / SMPTE RP 200); loudness ITU-R BS.1770. REC is at unity since 1b.0, so every level '
             + 'is dBFS AT THE MASTER (bank/reference.json proves the chain to three decimals).',

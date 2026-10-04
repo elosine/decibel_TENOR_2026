@@ -21,9 +21,16 @@ for n in piece-septet strike1 trill1 0i-test-b; do printf 'S5\tnotation/ir/%s.ir
 grep -E '^(bank|scores|probes)/|^notation/(ir|video)/|^print/cover/cover-a3-landscape[.]svg$' "$SP/leave_list.txt" | sed "s#^#S6\t#" >> "$SRC"
 
 # the list of paths (unique), written before any copy; collisions with what is already here are refused
-cut -f2 "$SRC" | sort -u > "$L"
-n=0; while IFS= read -r p; do [ -e "$D/$p" ] && { echo "REFUSED: exists here already: $p"; n=$((n+1)); }; done < "$L"
+# A path this repo TRACKS is this piece's OWN (from 3.4 on: its skeleton banks) — never staged over and never on the list,
+# so the deletion by the list can never take it. A path that exists and is NOT tracked is a leftover: refused.
+OWN="$SP/staged_own.txt"; : > "$L"; : > "$OWN"; n=0
+while IFS= read -r p; do
+  if git -C "$D" ls-files --error-unmatch -- "$p" > /dev/null 2>&1; then echo "$p" >> "$OWN"
+  elif [ -e "$D/$p" ]; then echo "REFUSED: exists here, untracked: $p"; n=$((n+1))
+  else echo "$p" >> "$L"; fi
+done < <(cut -f2 "$SRC" | sort -u)
 [ "$n" = 0 ] || exit 1
+[ -s "$OWN" ] && echo "this repo's own, not staged: $(tr '\n' ' ' < "$OWN")"
 echo "staged list written: $(wc -l < "$L") paths (from $(wc -l < "$SRC") source rows)"
 
 stage() { # $1 = tag, $2 = path
@@ -31,7 +38,7 @@ stage() { # $1 = tag, $2 = path
   mkdir -p "$D/$(dirname "$2")"
   git -C "$repo" show "HEAD:$2" > "$D/$2" 2>/dev/null || { echo "MISSING at $1 HEAD: $2"; rm -f "$D/$2"; }
 }
-while IFS=$'\t' read -r tag p; do stage "$tag" "$p"; done < "$SRC"
+while IFS=$'\t' read -r tag p; do grep -Fxq -- "$p" "$OWN" && continue; stage "$tag" "$p"; done < "$SRC"
 
 # second pass: the scores piece #5's pages name (source.score), from piece #5's HEAD unless piece #6 already staged that name
 node -e "

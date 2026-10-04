@@ -12,7 +12,7 @@
   const WINDOW = 0.05;
   // Every instrument stands in on the CELLO until it has measured trills of its own: the timing db
   // carried from piece #5 holds violin1 · viola · cello, and the cello is this piece's only own row.
-  const STAND_IN = { english_horn: 'cello', bassoon: 'cello', horn: 'cello', trumpet: 'cello', percussion: 'cello', double_bass: 'cello' };
+  const STAND_IN = { bass_flute: 'cello', bass_clarinet: 'cello', percussion: 'cello' };   // the viola has its own rows in the bank (piece #5's)
 
   // the table for an instrument, or a stand-in (violin 1's timing is pitch-agnostic and serves everyone until
   // the flute, bass clarinet and piano are sampled — the panel says so)

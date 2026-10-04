@@ -52,7 +52,7 @@ const TRK = () => (typeof TRACKS !== 'undefined' ? TRACKS : (root.TRACKS || []))
 const INSTS = () => (typeof INSTRUMENTS !== 'undefined' ? INSTRUMENTS : (root.INSTRUMENTS || {}));
 const METAL = () => (typeof META_LAYER !== 'undefined' ? META_LAYER : (root.META_LAYER != null ? root.META_LAYER : 8));
 // his defaults (LG-59): the english horn Staccato Velocity · bassoon, horn, trumpet staccato · the strings Spiccato Velocity
-const ART_DEFAULT = { english_horn: 'stac_vel', bassoon: 'staccato', horn: 'staccato', trumpet: 'staccato', cello: 'spicc_vel', double_bass: 'spicc_vel' };
+const ART_DEFAULT = { bass_flute: 'ord', bass_clarinet: 'ord', viola: 'spicc_vel', cello: 'spicc_vel' };
 // the percussion's fallback when a take gives the Percussion player nothing: claves, pair 2 high (sandbox/instruments.js, 1l.1)
 const CLAVES = { tech: 'toys_claves', midi: 41, name: 'claves · pair 2 high' };
 const PERC = 'percussion', VIB = 'bowed_vibraphone';
