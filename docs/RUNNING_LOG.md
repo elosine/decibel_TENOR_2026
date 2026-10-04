@@ -1271,3 +1271,36 @@ then: *"can you put a note on each lane in a save file pls"*.
   steps, all the AI's: a test that the message does switch it off (one note repeated, with and without) · the composer score
   made to send it · the same test through the app. The other way, piece #6's — he edits one preset per instrument by hand
   and saves — stays open if the test fails.
+
+## §37. ROUND ROBIN — "we already tested this": a preset is the only way; his bass flute preset as a file; and a NOTE for the porting protocol (2026-10-04, Opus)
+
+**His words:** *"No, we already tested this. I don't want to take the time to do this now, but we need to shore up the porting
+and uh, the porting protocol. There are some holes here about what got brought over and where to look. But let's not maybe take
+a note. Let's not do it now. You have to make a preset because when you switch a preset, it just switches round robin back
+[…] to repetition. I made a preset and I put it here. Are you able to call that preset then for all the bass flute ones that
+you need it for? Or do I need to load it manually for each instance?
+`reaper\kontakt\BsFl_vibrato_velocity_rroff.nka` if you can access it easily without too much fuss, then let's go ahead and do
+that. If not, I'll just change each one manually."*
+
+- **A CORRECTION OF THE AI's §29 · §36 PROPOSAL.** The AI proposed to test "CC82 after the CC0 on every note". Dropped at his
+  word: the round robin is stored IN the preset and a preset switch restores it, so the remedy is a preset saved with it off —
+  which piece #6 had established and recorded (`docs/RACK_SETTINGS.md` § 2: "It had to be a preset, not a dropdown"; its
+  RUNNING_LOG §3826 … §3836), and which the AI had READ in this session before proposing the test. The record was in hand and
+  was not used. That is the hole he names.
+- **THE NOTE FOR THE PORTING PROTOCOL — taken, not acted on** (`docs/PROTOCOL_DEVIATIONS.md`): the protocol carries the CODE
+  and the RACK forward but not an index of WHAT WAS SETTLED per instrument and WHERE it is written (round robin · the hand-set
+  plugin values · what was measured, by which method · which preset is the ordinary one and why). Today that cost: a list that
+  repeated work (§27 → §29), a test proposed that had been run (this entry), his memory corrected about a rack he had not
+  cloned (§29). Its home is the protocol's 4.9, the instrument knowledge base — a page per instrument that travels with it.
+- **His preset file:** `reaper/kontakt/BsFl_vibrato_velocity_rroff.nka`, 1 298 bytes, 361 lines — a Kontakt script array
+  (`%AR_Buffer`): Xsample's own "save preset to file". Its values include 48 and 86, the range §34 measured.
+- **Can the AI load it? NO.** The Kontakt script interface the lineage uses reaches the SLOTS (load an instrument, its channel,
+  output, volume, name, remove — the thirteen functions in use); loading a preset file into an instrument's own panel is the
+  instrument's script's business, behind its Load button. So the file goes into each of the four bass flute slots by his hand
+  (the main and the three curve copies — each slot is its own instrument with its own preset bank), as piece #6's vibraphone
+  preset 13 did.
+- **Can the AI CALL it? YES** — once it sits in a numbered preset in all four slots, the composer score selects it by CC0 =
+  the number − 1 on every note, exactly as every preset. The recipe's ordinary voice `vib_vel` is then pointed at that number
+  (piece #6's pattern: the key stays, the factory preset is kept beside it, marked superseded). NEEDED FROM HIM: the number.
+- Untested idea for a later day, not built: load it in slot 1 only, and let a Kontakt script rebuild the three curve copies
+  FROM slot 1 (if the interface can save a slot as an instrument — not known).
