@@ -212,3 +212,49 @@ come from HEAD for the proof (3.2) and are skeletoned at 3.4; the three untracke
 the app needs them to open is 3.2's and 3.4's question (a skeleton written by the app, never by hand). **Not looked at:** the six
 library files were known to the AI by name and size only when it recommended — said to him in the same turn.
 **Agenda item 1 (the two asks) is done.** Next: 3.0, the survey.
+
+## §8. 3.0 THE SURVEY — 573 files at piece #6's `0d70fda`: 369 copied, 204 left; the lane count changes; the harvest's H-8 wrong by one (2026-10-04, Opus)
+
+**How it was done** (every read from piece #6 was read-only; nothing there was written):
+
+1. `git ls-tree -r -l HEAD` in piece #6 → 573 tracked files, 64.7 MB, by folder: `tools` 151 · `score` 74 · `bank` 73 · `notation` 71 ·
+   `docs` 54 · `probes` 53 · `midi` 30 · `reaper` 28 · `scores` 17 · the root 8 · `print` 7 · `sandbox` 4 · `.claude` 3.
+2. The template read: the last port's plan (`septet_LGMF_2026/docs/plans/PORT_FROM_TEMPUS.md`, its step 1's two lists) and the harvest
+   (`docs/HARVEST.md` H-7 … H-14).
+3. Every file classified COPY or LEAVE by ONE script of rules (the scratchpad's `classify.js`; it refuses nothing silently — an
+   unmatched path is printed as `?`; it printed none). **369 copy (9.7 MB) · 204 leave (55.0 MB).** The lists by rule: PLAN § 0.3.
+4. The coupling: `git grep` at HEAD for the eight instrument keys and `'piano'` over the engine's folders → **910 lines in 105 files**;
+   the app's modules read line by line, the rest by file. Ports, the guard and the names by the same route.
+5. For each thing the harvest takes OFF the copy, a grep for who still names it — the step that "a missing dependency is invisible to
+   `cmp`" (the protocol's 3.2) asks for BEFORE the copy.
+
+**What the survey found that the template did not say:**
+
+- **The harvest's H-8 was wrong by one.** It drops `docs/instrument_map.json` ("loads 0"). But `score/public/composer.html` l. 647
+  fetches it on every load: without the file the page logs `[InstrumentRegistry] Failed to load instrument_map.json` and the registry's
+  ready-callbacks never fire. It is 573 bytes; it STAYS on the copy list. Taking it out means taking the loader out — a code change, a
+  line for NITS. The two dead viewers (`clusterview.html` · `chordview.html`) are named in comments only — they leave, as H-8 says.
+- **The eight retired batteries (H-7) take four fixtures with them** — `cloud02d-collapse` · `cloud02i-preamend` (only
+  `test_playability` reads them) · `coords_snapshot` (only `test_coords`) · `extract_played_snapshot` (only `test_extract_played`).
+  Nothing else requires the eight: they are named in comments and in `notation/ir/README.md` only.
+- **THE LANE COUNT CHANGES.** The last port kept seven lanes. Piece #6 ended on EIGHT (`META_LAYER` 8, the curve windows 9 / 10 / 11);
+  this piece has five, or six if the percussionist takes two (Q4, his). The re-palette is not a renaming: the META and curve layers, the
+  lane CSS, `layoutVersion` and the ensemble registry's layer numbers all move. The precedent is piece #5's port from #4 (ten → seven).
+- **Two ROLES grew in piece #6 beside the piano's** (kind C): the PERCUSSION (live here) and the BOWED VIBRAPHONE with its SECOND SEAT
+  (live only if the percussionist's second lane is a vibraphone). And kind B grew by nine tables that `palette_check` does not read
+  (`EXTRA_SEATS` · `SPAN` · `ART_DEFAULT` · `PERC` / `VIB` in three modules · `VIB_TECH` · `pairOf` · `STILL_INST`).
+- **Stale in the source, found in passing:** the composer's track `<select>` (l. 481–488) lists seven instruments and META = 7 — the
+  vibraphone was added to `TRACKS` and to the lane `<div>`s and never there. It is rewritten at 3.3 in any case.
+- **A piece-bound rule in the standards:** `notation/registry/rules.json` l. 145 names part 4 and piece #6's seconds (a staff's
+  visibility) — container 6's, by Principle 22.
+
+**Decided by the AI, his to reverse:** the tool docs (19) come byte-exact at 3.1 and get their provenance line at 3.6 — the last port
+brought them at its last step; here `check_rules` needs `ENGRAVING_RULES.md` at 3.2, and one list is simpler to prove than two ·
+`bank/aro_percussion_catalog.json` is copied (what the library holds — not a measurement, not a rack state), `bank/aro_states/` is left
+(the rack as text; container 4) · the three libraries modified in the source and his come from the COMMIT and are emptied at 3.4 (§7).
+**Rejected:** `git archive` for the copy — it would write every text file with this machine's line endings, and the proof against the
+source's working tree would fail for a reason that is not a difference. The copy is a tar pipe from the working tree for the 366
+unmodified files and `git show HEAD:` for the three; the proof is `cmp` for the 366 and the BLOB HASHES for all 369, staged here against
+the source's commit.
+
+**Not verified by this entry:** nothing was run. The line numbers are the commit's; the 910-line list is regenerated at 3.3.
