@@ -1335,3 +1335,15 @@ we'll skip number five, we're skipping four, even though the flute is done, so w
   samplers that scatter: "averaged, monotone, interpolated" (its `velocity_remap.json` `method`).
 - Items 4 and 5 of §29's list closed as SKIPPED; the bass flute's #33 stays the ordinary voice (§38). "Another time" —
   nothing scheduled (D5); the way is in RACK_SETTINGS § 2 and §37 when wanted.
+
+## §40. ITEM 6 — the three known volumes put back on the faders (2026-10-04, Fable)
+
+**His word:** *"go"*.
+
+- Through the bridge (`tools/reaper_job.js fader`): **Cello XS −3.87 dB · Wood Blocks ARO +7.05 dB · Bass Drum Alt ARO −4.29 dB**
+  — piece #6's absolute trims (`septet_LGMF_2026/bank/trims.json`, 2026-09-19: each voice at −29.54 LUFS in a 9-voice tutti)
+  on the very instances this rack cloned. Read back: those three set, the other thirteen at 0 dB; the wood blocks' and the
+  spring coil's "JS: Volume Adjustment" (carried inside the clones) read 0.0 dB. Not saved by the AI — his CTRL+S.
+- Container 5 will re-derive every trim against THIS piece's tutti; these three are a known start, not a result.
+- `make_tracks.lua` resets a SPEC track's fader to 0 dB when run (its header says so): after any re-run, these three again —
+  the row for `apply_trims.lua` when container 5 writes this piece's `bank/trims.json`.
