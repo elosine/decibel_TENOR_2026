@@ -75,9 +75,10 @@ takes is his (D5).
    time: (a) the protocol's 3.8 — seven small fixes made in piece #6 BEFORE the copy (`#6` journal §2, item (a), has them as
    instructions) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
    from GIT, or he says which go across. Then 3.0 the survey → 3.1 the copy byte-exact, committed as such → 3.2 proven whole, every
-   battery run and classified ONCE (NITS) → 3.3 THE RE-PALETTE: the lanes **bass flute · bass clarinet · viola · cello · percussion
-   — and ONE LANE FOR THE ELECTRONICS** (the AI's addition, his to reverse: the mic openings, the returns and the processing are
-   events that need a lane in the composer score and a staff in the notation; without one they would ride the players' lanes) →
+   battery run and classified ONCE (NITS) → 3.3 THE RE-PALETTE: the lanes **bass flute · bass clarinet · viola · cello · percussion**
+   — the percussionist on one lane or two (a non-pitched staff and a pitched one, as piece #6: his call at container 4; a lane can be
+   added or re-spaced later, RUNNING_LOG §3) · NO LANE FOR THE ELECTRONICS (his word 2026-10-04, D8 — the AI's addition reversed:
+   every electronic sound derives from a player's own input and is drawn on THAT player's staff, with a sign of origin) →
    3.4 recipes and skeletons → 3.5 the app running on **5500 / 5000** (`.claude/launch.json`: `score` · `sandbox` · `score-5501`
    the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
    `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
@@ -92,7 +93,8 @@ takes is his (D5).
    round robins · 5.3 the card · 5.4 the trims · 5.5 the remap and the fader curves · 5.6 verified through the app and his ear · 5.7
    the QC battery). **Done when:** the tutti and the per-part levels measured and recorded, the law applied.
 4. **Container 6 — the notation set-up** (6.0 the ensemble registry: the clefs by register, the bass clarinet's transposition, the
-   percussion staff type · **6.2 A NEW STAFF TYPE for the electronics lane** · 6.3 the batteries · 6.4 save → IR proved on a save of
+   percussion staff type · NO electronics staff (D8) — the electronics' signs are DRAWN KINDS on the players' staves, each by a
+   device sheet when notating comes (DEC-4; the engine plan's part 7) · 6.3 the batteries · 6.4 save → IR proved on a save of
    the Decibel lanes · 6.5 the exporters run once). **Done when:** a Decibel save extracts to a valid IR and lays out on the page.
 5. **Container 7 — the composing tools, at need** (7.0 the law read · 7.1 the data checklist · the first tool the moment the music
    asks — for step 7 the Rec lane and the bricks' moving between lanes, which exist). No tool adapted ahead of need.
@@ -174,8 +176,9 @@ deliverables · the planning repo's lines (at his word only).
 | — | **CONTAINER 4 — the instruments:** 4.0 the libraries for the Decibel ensemble, a talk (the ensemble is not final, D2) | Fable | yes |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
-**Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the
-title.
+**Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
+Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
+DEC-4) · Q4 — the percussion: which instruments, one lane or two (as piece #6's Percussion + Vibraphone).
 
 **Blockers:** none.
 
@@ -268,6 +271,14 @@ Verified in this repo only when they bite.)*
   session, which is exactly the burden he named. Rejected: the submodule as planned · everything here and a split later (the
   engine's repo would hold no code for weeks; the subtree gives it the history as it happens). Proven at the first push (the engine
   plan's part 8). *(RUNNING_LOG §2; the engine's RUNNING_LOG §4)*
+- **D8 · 2026-10-04 — THE STAFF SYSTEM: NO ELECTRONICS LANE, NO ELECTRONICS STAFF — THE SIGN OF ORIGIN.** His words (DEC-4): *"I don't
+  think there needs to be an electronics lane. We can just incorporate the electronics per instrument lane because they'll always be
+  based in some way or shape or form on the performer's own input … we just need to get the graphic symbols that say this is
+  electronic process sound of this particular instrument's input."* Every electronic sound is drawn on the staff of the player whose
+  input it comes from, with a sign that says so; three drawn kinds by device sheet when notating comes — a sign before the note with
+  its GC (section 1) · a stack across the staves read as an electronic chord (section 3) · a held chord of freezes as a duration-line
+  kind (section 2). Five players confirmed; the percussion's instruments and its one lane or two his, at container 4. Rejected: the
+  AI's electronics lane (running order step 1, 6.2). *(RUNNING_LOG §3)*
 
 ---
 

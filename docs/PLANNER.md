@@ -16,6 +16,11 @@
 *(From his brief of 2026-10-04, DEC-1 … DEC-3. For the Decibel ensemble — bass flute · bass clarinet · viola · cello · percussion —
 with live electronics; the ensemble not final (journal D2). The words are his; the AI's readings are marked in the notes.)*
 
+**THE STAFF SYSTEM (DEC-4, D8):** five players' staves, no electronics lane. Every electronic sound is drawn on the staff of the
+player whose input it comes from, with a SIGN OF ORIGIN — section 1: a sign (a triangle, say) just before the note, with its GC ·
+section 3: a stack of signs across the staves, read as an electronic chord, the real notes after it · section 2: a held chord of
+freezes as a duration-line kind. The percussion probably as piece #6 — a non-pitched staff and a pitched one; undecided.
+
 ### SECTION 1 — THE OPENING: mic openings, and the players with versions of themselves (DEC-1)
 
 - **The rhythm layer** — a series of notes he plays into the composer score; the rhythms kept, the pitches not; the bricks moved to
@@ -32,7 +37,8 @@ with live electronics; the ensemble not final (journal D2). The words are his; t
   - the pedals of resonance (a resonant filter bank, much feedback): a tiny opening → a long sustained chord; a series of these
   - a freeze (LG-340)
   - a set per language type — trills · multiphonics, recorded as samples first
-- **The category glyph** — a symbol on the opening telling the player what type of sound, their choice (the notation's, when notating comes)
+- **The category glyph** — a symbol on the opening telling the player what type of sound, their choice ("the strong attack is a
+  triangle. Just for example, we'll design it later" — DEC-4: just before the note, with its GC; the notation's, when notating comes)
 
 ### SECTION 2 — THE MIDDLE: the after-effect alone (DEC-2)
 
@@ -59,6 +65,7 @@ with live electronics; the ensemble not final (journal D2). The words are his; t
 
 - The category vocabulary — Braxton's Language Music a candidate (LG-343): which types, how many
 - Whether the processing begins inside section 1 or after it ("it may have started before")
-- The electronics' own lane and staff — one, or more
+- The percussion: which instruments, and one lane or two (a non-pitched staff and a pitched one, as piece #6)
+- Section 3's electronic stacks — in the parts, or in the conductor's and the presentation score only? ("I'm not sure")
 - The ensemble's final instrumentation (the call's)
 - The effect's spelling: "petals" (the SynthDef folder's name) or "pedals" (his words)

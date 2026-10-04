@@ -109,3 +109,31 @@ separate-repo decision open if it is a burden.
 engine's seat) · PERFORMANCE_NOTES #1 · #2 · piece #6's §819 · the engine's §4 and PLAN. The planning repo untouched (at his word only).
 
 **Nothing of code.** Next: a NEW chat opened in this folder — `/session-start` reads the running order; step 1 is container 3.
+
+## §3. THE STAFF SYSTEM — no electronics lane (his word, D8) · five players · the percussion open · his question: can the lanes be re-spaced midway? (2026-10-04, Fable — still in piece #6's chat)
+
+**What prompted it:** the running order's step 1 carried the AI's addition — a lane for the electronics. He talked the staff system
+through (DEC-4, verbatim) and reversed it: *"I don't think there needs to be an electronics lane. We can just incorporate the
+electronics per instrument lane because they'll always be based in some way or shape or form on the performer's own input."*
+
+**Decided — D8:** NO electronics lane in the composer score, NO electronics staff in the notation. Every electronic sound is drawn on
+the staff of the player whose input it comes from, with a sign that says so (the sign of origin). Three drawn kinds, by device sheet
+when notating comes — a sign before the note with its GC (section 1) · a stack across the staves read as an electronic chord (section
+3) · a held chord of freezes as a duration-line kind (section 2). Five players, confirmed. **Open, his:** section 3's electronics in the
+parts, or only in the conductor's and the presentation score · the percussion — which instruments, one lane or two.
+
+**His question — "confirm that we can readjust the lanes midway" — answered from the record, not re-checked in an app (there is
+none here yet):**
+- **The composer score.** The lanes are laid out by CSS rules in `composer.html`, one per entry of `TRACKS`, as percentages of the
+  height (`#6 §183`); a note is keyed to its INSTRUMENT, not to a lane's position. **The precedent:** piece #6 went from seven lanes to
+  eight on 2026-09-21, with section 1 already composed — CSS only, a tab reload, nothing in the save changed (`#6 §183`). So RE-SPACING
+  the lanes, or ADDING one (the percussionist's second), is easy at any time.
+- **The notation.** The staves and their gaps are the ensemble registry (`notation/registry/ensemble.json`) and the rules; a change
+  re-lays out the page from the same IR. The ONE cost is a change of ORDER: the IR addresses a part by its index in the ensemble's order
+  (`#6`: EH 0 · Bsn 1 …), and the hand notations name a part by that index (`--plainNotes P:…`, `--hand`). Re-ordering BEFORE the hand
+  notation costs a re-extract; AFTER it, a renumbering of those arguments — a script's work, the AI's. Re-spacing never touches that.
+- **In one line:** re-space any time · add a lane any time · re-order freely until the hand notation begins, at a small cost after.
+
+**Written:** the sketch pad DEC-4 · journal §2 (the running order's steps 1 · 4 corrected; D8; Q3) · PLANNER (the staff system; the open
+items) · PERFORMANCE_NOTES #3 · #4 · the engine's PLAN part 7 (one paragraph: the data for its device sheets). §2's "two things the AI
+adds" is corrected by this entry, not edited: the lane is withdrawn; the sandbox read stands.
