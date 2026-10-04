@@ -1320,3 +1320,18 @@ that. If not, I'll just change each one manually."*
   his from piece #3 — the flutter tongue, not the ordinary voice. So nothing was lost in the port: the off-preset for
   `senza_vel` (#13) was never made. Same for the viola (piece #5, on). His, as the bass flute's: a copy of #13 with Round
   Robin off, saved as a preset, loaded in the four slots; then the number.
+
+## §39. ROUND ROBIN — SKIPPED, his decision: the volume differences accepted; the bass flute's #33 kept because it exists (2026-10-04, Fable)
+
+**His words:** *"Actually, I don't think this is good use of time. Let's just not bother with the round robin. We'll deal with it
+another time. I'll just accept the volume differences in the round robins. Because in fact, I'll be using a lot of different
+voices, articulations. So if I have to go through this for every single articulation, it's not worth it. Let's just skip. …
+we'll skip number five, we're skipping four, even though the flute is done, so we might as well use it."*
+
+- **The reasoning, for the record:** the off-preset is per PRESET; a piece that uses many articulations would need one per
+  articulation per instrument, four slots each. Not worth it against the scatter it removes (±1 … 2 dB on the bass clarinet
+  and viola in piece #5; the cello's 8.6 dB cycle is already off, carried). The mallets and the percussion stay as the
+  libraries ship them. **Container 5's card measures each voice as it is, round robin and all** — piece #5's method for the
+  samplers that scatter: "averaged, monotone, interpolated" (its `velocity_remap.json` `method`).
+- Items 4 and 5 of §29's list closed as SKIPPED; the bass flute's #33 stays the ordinary voice (§38). "Another time" —
+  nothing scheduled (D5); the way is in RACK_SETTINGS § 2 and §37 when wanted.
