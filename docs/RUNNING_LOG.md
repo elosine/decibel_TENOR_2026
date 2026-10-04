@@ -1258,3 +1258,16 @@ then: *"can you put a note on each lane in a save file pls"*.
 - 182 MIDI messages in all: 16 note-ons, 16 note-offs, 8 CC0, 79 CC7 (the shaped notes' faders), 63 all-notes-off at stop.
 - NOT verified here, and cannot be: that it SOUNDS — the AI's pane has no MIDI. That is his Chrome, item 3.
 - `palette_check` 151 · `roster_check` 311, green after the fix.
+
+## §36. THE FIRST SOUND — "all 16 sound" (2026-10-04, Opus)
+
+**His words:** *"all 16 sound, what needs to be done for four, very succinctly, please."*
+
+- **The protocol's 4.6 is met:** every track of the rack sounds from the composer score, in his Chrome — the bass flute, the bass
+  clarinet, the eight percussion instruments, the four mallet instruments, the viola, the cello — from `decibel-first-sound`.
+  Items 1 · 2 · 3 of §29's list are done.
+- **Item 4, as put to him** (round robin off: bass flute · bass clarinet · viola): Xsample takes it by MIDI, CC82 = 21 … 41 (§29).
+  Because a preset re-selected by CC0 takes its stored setting back, the message has to follow the CC0 on every note. Three
+  steps, all the AI's: a test that the message does switch it off (one note repeated, with and without) · the composer score
+  made to send it · the same test through the app. The other way, piece #6's — he edits one preset per instrument by hand
+  and saves — stays open if the test fails.
