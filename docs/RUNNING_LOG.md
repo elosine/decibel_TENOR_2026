@@ -155,3 +155,60 @@ paper). The deadline is his to keep (D5); "the same deadline" recorded as his wo
 his from here; a reorganization lands only on his approval. ► Step 1 — container 3, the engine copied forward — is ACTIVE. It runs in
 a NEW chat opened in this folder, on Opus (a copy is executing, not judgment), from `/session-start`: its two asks first (3.8's seven
 fixes in piece #6 · his uncommitted files there), then 3.0 … 3.5. **Piece #6's chat "Decibel piece — repo set-up" is done with.**
+
+## §6. SESSION 1 OPENS — the agenda agreed · THE FIRST ASK: the seven small fixes are made HERE, after the copy is proven — his "b" (2026-10-04, Opus — the first chat opened in this repo)
+
+**What prompted it:** `/session-start` in a new chat opened in this folder. His first line: *"Decibel - TENOR 2026 (chat name)"* — read as
+the chat's name; the chat renamed to it, his to reverse. The orientation came from journal §2 · PLAN § 0 · the home's `INDEX.md`; no
+code was read. The agenda put to him: 1 the two asks · 2 container 3's 3.0 → 3.2 (the survey · the copy byte-exact · proven whole) ·
+3 container 3's 3.3 → 3.5 (the Decibel lanes · the app on 5500 / 5000). **His word: *"yes, this agenda — first ask"*.**
+
+**The first ask — the protocol's 3.8 (+ 5.11): WHERE are the seven small engine fixes made?** The seven, as piece #6's journal §2,
+item (a), lists them: the bare-load `TypeError` at `sequence_ui.js:1652` · `model_bank --validate`'s `provenance.palette` warn ·
+`test_animobj.js`'s case · `palette_check` reads the composer's lane CSS (`nth-child`, count = `TRACKS`) · the BEGIN marker in
+`apply_ranges.js` / `apply_bend_ranges.js` · `trimAtMeasurementDb` written by `analyze_card.py` · the probes' `$Port` a parameter
+(the harvest's H-9 · H-10 · H-11 · H-12 · H-16 · H-17 · H-19). None in the music, none in the layout.
+
+**Put to him as three options, the reasoning beside each:**
+
+- **(a) in piece #6, before the copy** — the protocol as written: both pieces fixed, the copy arrives clean. Against it: it edits a
+  piece submitted the day before, in a repo that holds 30 uncommitted paths of his.
+- **(b) here, right after the copy is proven** — the AI's recommendation: piece #6 stays exactly as submitted · the copy is proven
+  whole FIRST (Principle 20), so a red after the fixes has one cause · the next piece copies from THIS one, so the lineage gets the
+  fixes either way. The cost: piece #6 keeps the seven faults; one line in the deviations register.
+- **(c) copy as it is, carry them as nits** — the least work now; and how they were carried red three times (H-7).
+
+**His word: *"b"*.**
+
+**So:** the seven fixes are a step of THIS repo's container 3 — one commit, after 3.2 (the copy proven whole on the old palette) and
+before 3.3 (the re-palette, which needs `palette_check` reading the lane CSS in any case). Each fault's note (piece #6's
+`docs/HARVEST.md` H-9 … H-19 and the NITS § each cites) is read before a file is touched. At 3.2 the faults that show are classified
+"known — fixed at the next step", not retired. Piece #6: nothing touched. `docs/PROTOCOL_DEVIATIONS.md` has the line (3.8).
+**What this entry does NOT rest on:** nothing was run; when the AI recommended (b) it had read the LIST of the seven, not each
+fault's note — said to him in the same turn.
+
+## §7. THE SECOND ASK: none of his libraries come across — his "a"; the copy is from git, every library starts empty (2026-10-04, Opus)
+
+**The data, taken read-only just before the ask:** piece #6 at HEAD `0d70fda` (2026-10-04); `git status --short` there — 5 modified +
+25 untracked = 30 paths, the same 30 its journal §2 lists. Nothing there was touched.
+
+**Put to him as two groups and one decision:**
+
+- **24 stay behind in any case — piece #6's own material:** his sixteen saves in `scores/` (`piece-Recombination-Draft01-done.json`
+  modified · fifteen untracked) · five actuals (`bank/actuals/ACT-BLOOM-07` · `-08` · `ACT-TAKES-01` · `-02` · `-03`) ·
+  `bank/passages/lgmf-sec2.json` · the rack `reaper/LGMF_rack.rpp` · `notation/video/renders/`.
+- **6 are libraries — the only ones that could travel:** the rhythm library, untracked, git has none of the three —
+  `bank/patterns.json` (3.4 MB) · `bank/rhythm_sequences.json` (74 KB) · `bank/rhythm_takes.json` (16 KB) · and three modified, git
+  holding an older copy — `bank/sequences.json` (298 KB) · `bank/morph_models.json` (66 KB) · `bank/panel_snapshots.json` (3.8 MB).
+- **The decision — which libraries come across, as they are on disk today?** (a) none — the AI's recommendation: a new ensemble, new
+  material; every library starts empty, as the protocol's 3.4 writes it; nothing lost, piece #6's files stay where they are and any
+  one can be fetched later at his word · (b) the rhythm library only — if he wants piece #6's rhythms at hand for the rhythm layer
+  (running order step 7) · (c) he names which.
+
+**His word: *"a"*.**
+
+**So:** the copy (3.1) takes every file from GIT at piece #6's named HEAD — no file from its working tree. The three tracked libraries
+come from HEAD for the proof (3.2) and are skeletoned at 3.4; the three untracked rhythm files are not in the copy at all — whether
+the app needs them to open is 3.2's and 3.4's question (a skeleton written by the app, never by hand). **Not looked at:** the six
+library files were known to the AI by name and size only when it recommended — said to him in the same turn.
+**Agenda item 1 (the two asks) is done.** Next: 3.0, the survey.

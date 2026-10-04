@@ -47,7 +47,7 @@ processing · THE MIDDLE — the after-effects alone, sustained · THE LAST — 
 | Container | Taken? | Status | Record |
 |---|---|---|---|
 | 2 The repo and its kit | yes — every piece | `done` 2026-10-04 | RUNNING_LOG §1 · `#6 §816 … §818` |
-| 3 The engine copied forward | yes — from piece #6 | `todo` — NEXT | |
+| 3 The engine copied forward | yes — from piece #6 | `doing` — the two asks answered 2026-10-04 (the seven fixes HERE after 3.2 · none of his libraries across); 3.0 the survey next | RUNNING_LOG §6 · §7 |
 | 4 The instruments | yes | `todo` | |
 | 5 The calibration | yes | `todo` | |
 | 7 The composing tools made the piece's | yes — one at a time, at compositional need | `todo` | |

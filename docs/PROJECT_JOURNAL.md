@@ -73,8 +73,10 @@ takes is his (D5).
 
 1. ► **Container 3 — the engine copied forward from piece #6** (Opus; in a NEW chat opened in this folder). ASK FIRST, one at a
    time: (a) the protocol's 3.8 — seven small fixes made in piece #6 BEFORE the copy (`#6` journal §2, item (a), has them as
-   instructions) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
-   from GIT, or he says which go across. Then 3.0 the survey → 3.1 the copy byte-exact, committed as such → 3.2 proven whole, every
+   instructions) — ☑ ANSWERED 2026-10-04, *"b"*: made HERE, in one commit after 3.2 and before 3.3; piece #6 untouched
+   (RUNNING_LOG §6; a line in PROTOCOL_DEVIATIONS) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
+   from GIT, or he says which go across — ☑ ANSWERED 2026-10-04, *"a"*: NONE go across; the copy is from git, every library starts
+   empty here (RUNNING_LOG §7). Then 3.0 the survey → 3.1 the copy byte-exact, committed as such → 3.2 proven whole, every
    battery run and classified ONCE (NITS) → 3.3 THE RE-PALETTE: the lanes **bass flute · bass clarinet · viola · cello · percussion**
    — the percussionist on one lane or two (a non-pitched staff and a pitched one, as piece #6: his call at container 4; a lane can be
    added or re-spaced later, RUNNING_LOG §3) · NO LANE FOR THE ELECTRONICS (his word 2026-10-04, D8 — the AI's addition reversed:
