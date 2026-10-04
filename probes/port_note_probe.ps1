@@ -8,7 +8,7 @@
 # CC7 = 127 is sent first (the residue guard), then CC0 (preset select; -1 = don't send), a
 # 300 ms settle, the note, the note-off.
 param(
-    [string]$Port = 'Vc',
+    [Parameter(Mandatory = $true)][string]$Port,   # no default: a probe never guesses a port - an older piece's rack may be live on this machine
     [int]$Channel = 1,        # 1-based
     [int]$CC0 = -1,           # Xsample: preset number - 1; -1 = leave the preset as it is
     [int]$Note = 48,

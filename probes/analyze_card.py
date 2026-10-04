@@ -179,8 +179,31 @@ for i, n in enumerate(notes):
                  'centsBySpectralPeak': cents_pk, 'spectralPeakStrength': pk_strength,
                  **({'bendFraction': n['fraction']} if n.get('fraction') is not None else {})})
 
+# ---- THE TRIM IN FORCE NOW, stamped on every row THIS run measured (the harvest's H-17; piece #6's RUNNING_LOG §87) ----
+# compute_trims.js computes  new trim = trim + (target - measured), which is only right when `trim` is the one that was in
+# force when `measured` was taken. So each row carries it: pitched from the recipe's balanceDb, percussion from
+# bank/perc_rack.json - read through tools/current_trims.js, the same two sources compute_trims.js calls "current".
+# A row merged in from an earlier card keeps whatever it carries (nothing, if it predates this).
+TRIMS = None
+try:
+    import subprocess
+    p = subprocess.run(['node', os.path.join(ROOT, 'tools', 'current_trims.js')], capture_output=True, text=True, timeout=30)
+    if p.returncode == 0: TRIMS = json.loads(p.stdout)
+    else: print(f'  WARNING: tools/current_trims.js failed ({p.stderr.strip()[:120]}) - rows carry no trimAtMeasurementDb')
+except Exception as e:
+    print(f'  WARNING: could not read the current trims ({e}) - rows carry no trimAtMeasurementDb')
+
+def one_trim(rs):
+    """the trim ALL of these rows were measured under; None when they disagree or one carries none"""
+    ts = {r.get('trimAtMeasurementDb') for r in rs}
+    if len(ts) == 1:
+        (t,) = ts
+        return t
+    return None
+
 for r in rows:
     r['run'] = os.path.basename(a.wav)
+    r['trimAtMeasurementDb'] = None if TRIMS is None else TRIMS.get(r['inst'])
 
 if a.merge:
     try:
@@ -240,8 +263,11 @@ for key, c in card.items():
             'soundingS': round(float(np.mean([d['soundingS'] for d in pp.values()])), 2),
             'nPerPitch': {p: d['n'] for p, d in pp.items()},
             'worstRepeatSpreadDb': round(max(spreads), 2) if spreads else None,
+            'trimAtMeasurementDb': one_trim(sel),   # H-17: None = the rows of this velocity were measured under different trims, or carry none
             'perPitch': pp,
         }
+        if per_vel[str(v)]['trimAtMeasurementDb'] is None and any(r.get('trimAtMeasurementDb') is not None for r in sel):
+            print(f"  WARNING  {c['label']} vel {v}: its rows were measured under DIFFERENT trims - re-measure the instrument in one run")
     b = BAL.get(key, {})
     old64, old127 = b.get('anchorDb'), b.get('fullDb')
     rec = {'label': c['label'], 'port': c['port'], 'byVelocity': per_vel,

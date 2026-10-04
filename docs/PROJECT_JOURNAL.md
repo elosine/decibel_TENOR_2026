@@ -139,30 +139,23 @@ takes is his (D5).
 extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
 deliverables · the planning repo's lines (at his word only).
 
-### SESSION 1 — WHERE STEP 1 STANDS (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS HERE, PROVEN WHOLE, STILL ON PIECE #6's PALETTE; ► NEXT: the fixes commit (3.8), then the re-palette (3.3)
+### SESSION 1 — WHERE STEP 1 STANDS (2026-10-04, Opus; the first chat opened in this repo) — THE ENGINE IS HERE, PROVEN WHOLE, STILL ON PIECE #6's PALETTE; ► NEXT: the re-palette (3.3) — Q4 first
 
 - **Done this session** (RUNNING_LOG §6 … §10; PLAN § 0.3): the two asks — the seven small fixes are made HERE after the proof (his
   *"b"*) · none of his libraries come across (his *"a"*) · **3.0 the survey** — 573 files at piece #6's `0d70fda`: 369 copied, 204
   left; the coupling by kind · **3.1 the copy** — 369 / 369 blob-identical, commit `c90b768` · **3.2 proven whole** — 52 checks: 34
-  green, 18 red, every red accounted for, none a copy defect; the app boots on 5500 with zero console errors.
+  green, 18 red, every red accounted for, none a copy defect; the app boots on 5500 · **3.8 the small fixes** (below).
 - **The state of the code:** piece #6's engine, UNCHANGED — its eight lanes, its names (`lgmf` · `septet-lgmf-2026` · `lgmf_rack`), its
   ports written in the files (5400 / 4900). **`.claude/launch.json` is INERT: never start `score` or `sandbox` from it before 3.3 —
   they are piece #6's ports, and his server runs on 5400.** A server here is started by environment only: `PORT=5500 node
   score/server.js`. No scores, no IR pages, no measurement banks are here (the leave list).
-- **► THE NEXT CONCRETE STEP — 3.8, ONE COMMIT (Opus):**
-  1. Read first, read-only, in `septet_LGMF_2026`: `docs/HARVEST.md` H-9 · H-10 · H-11 · H-12 · H-16 · H-17 · H-19 and the
-     `docs/NITS.md` § each cites.
-  2. The seven fixes, HERE: the bare-load `TypeError` at `score/public/sequence_ui.js:1652` · `tools/model_bank.js --validate`'s
-     `provenance.palette` warn · `tools/test_animobj.js`'s case · `tools/palette_check.js` reads the composer's lane CSS (`nth-child`,
-     count = `TRACKS`) · the BEGIN marker in `tools/apply_ranges.js` / `apply_bend_ranges.js` · `trimAtMeasurementDb` written by
-     `probes/analyze_card.py` · the probes' `$Port` a parameter. With them: `tools/test_identity.js` (its stand-in needs
-     `curveDirty` — one line; retire it if it does not come back green).
-  3. The twelve retirements — NITS has the list and the two fixtures that go with them; `git rm`, explicit paths.
-  4. Verify: `node --check` each changed file · `palette_check` · `model_bank --validate` · `test_animobj` · `test_identity` — they
-     read piece #6's data, STAGED: copy `tools/port/*` into the scratchpad and run `stage32.sh` there (it writes its list first; delete
-     by that list after; run the page-scanning checks on piece #6's pages alone) · H-9 on a BARE load of the running app on 5500, the
-     verification recipe's stubs in the navigation batch, zero console errors. Then a RUNNING_LOG §, commit, push.
-- **THEN 3.3 THE RE-PALETTE — ASK FIRST, ONE QUESTION (Q4): the percussionist on ONE lane or TWO?** It sets the lane count (five or
+- **3.8 ☑ THE SMALL FIXES (RUNNING_LOG §12):** six made, one (the bare-load `TypeError`) not reproduced and left alone ·
+  `test_identity`'s harness repaired · the twelve checks of piece #5's cast retired with their two fixtures · **the battery is now 40
+  commands: 36 green, 4 red** (the self-tests that wait for container 5). The list is `tools/port/run_batteries.sh`; it reads piece
+  #6's data, staged by `tools/port/stage32.sh` — both run from a COPY in the scratchpad (they write beside themselves); delete by
+  the staged list after; the page-scanning checks on piece #6's pages alone. Three fixes were made and NOT RUN (NITS § From the
+  small fixes) — container 5's first card checks them.
+- **► THE NEXT CONCRETE STEP — 3.3 THE RE-PALETTE — ASK FIRST, ONE QUESTION (Q4): the percussionist on ONE lane or TWO?** It sets the lane count (five or
   six), so `TRACKS`, the META and curve layers, the lane CSS, `layoutVersion` 8. PLAN § 0.3 § THE COUPLING is the map (kinds A · B · C,
   by file and line). A lane can be added later (RUNNING_LOG §3), so "one for now" is an answer. Also at 3.3: the roles line (the piano
   absent · the percussion live · the vibraphone and its second seat only if Q4 says so — the protocol's 3.10) · the bundled font (3.9).
@@ -185,7 +178,7 @@ deliverables · the planning repo's lines (at his word only).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **CONTAINER 3, the rest** — 3.0 · 3.1 · 3.2 ☑. Next: **3.8 the seven fixes + the twelve retirements** (one commit) → **3.3 the re-palette** (ask Q4 first: the percussion on one lane or two) → 3.4 recipes and skeletons → 3.5 the running app on 5500 / 5000 → 3.6 the record | Opus | yes — `/clear`, then `/postclear` |
+| **►** | **CONTAINER 3, the rest** — 3.0 · 3.1 · 3.2 · 3.8 ☑. Next: **3.3 the re-palette** (ask Q4 first: the percussion on one lane or two) → 3.4 recipes and skeletons → 3.5 the running app on 5500 / 5000 → 3.6 the record | Opus | yes — `/clear`, then `/postclear` |
 | — | **CONTAINER 4 — the instruments:** 4.0 the libraries for the Decibel ensemble, a talk (the ensemble is not final, D2) | Fable | yes |
 | — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
 
@@ -199,8 +192,8 @@ DEC-4) · Q4 — the percussion: which instruments, one lane or two (as piece #6
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
 here · he keeps his own time: no schedule keeping, no route framed around a date (D5).
 
-**Checks this piece owns:** none of its own yet. The batteries are here and classified once (NITS; RUNNING_LOG §10: 34 green, 18 red,
-all accounted for) — every one still reads piece #6's data, staged (`tools/port/stage32.sh`). `palette_check` and `roster_check`
+**Checks this piece owns:** none of its own yet. The batteries are here and classified once (NITS; RUNNING_LOG §10 · §12: after the small fixes 36 green, 4 red
+waiting for container 5) — every one still reads piece #6's data, staged (`tools/port/stage32.sh`). `palette_check` and `roster_check`
 become this piece's at 3.3 / 3.4; THE SHIELD (`tools/layout_shield.js`) before and after any layout change.
 
 ---

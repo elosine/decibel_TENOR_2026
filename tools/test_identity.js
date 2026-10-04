@@ -35,12 +35,13 @@ function makeComposer(opts) {
     let src = '({\n' + NAMES.map(method).join(',\n') + '\n})';
     // the bite check: put back the undo line as it was before 2d.1 and the reuse must show
     if (opts && opts.legacyUndo) src = src.replace('this.nextId = Math.max(this.nextId, prev.nextId);', 'this.nextId = prev.nextId;');
-    const M = vm.runInNewContext(src, { console: { warn() {}, log() {} }, JSON, Math, Date, META_LAYER, CURVE_LAYERS: [] });
+    // TRACKS: `restoreData` reads it for the DIFFERENT ENSEMBLE warn (piece #6); this battery is about ids, so an empty list serves
+    const M = vm.runInNewContext(src, { console: { warn() {}, log() {} }, JSON, Math, Date, META_LAYER, CURVE_LAYERS: [], TRACKS: [] });
     const noop = () => {};
     return Object.assign(Object.create(M), {
         objects: [], markers: [], nextId: 1, _motiveCache: {}, undoStack: [], redoStack: [], maxUndoSteps: 100, lastUndoPushTime: 0,
         selectedObject: null, selectedObjects: [], selectedNodeIdx: -1, databases: {}, assets: {},
-        _restoreMotives: noop, renderAll: noop, markDirty: noop, renderWaveCurve: noop, generateTicks: noop, applyScroll: noop,
+        _restoreMotives: noop, renderAll: noop, markDirty: noop, curveDirty: noop, renderWaveCurve: noop, generateTicks: noop, applyScroll: noop,
         selectObject(o) { this.selectedObject = o; }, scheduleConflictRefresh: null,
     });
 }

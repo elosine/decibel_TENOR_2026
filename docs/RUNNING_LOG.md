@@ -369,3 +369,40 @@ written in plain words IN the protocol, as 2.1's deviation already says.)
 
 **So:** the 19 tool docs stay as copied; a provenance line each at 3.6; one is tidied the day its tool is next used. 9.12 is not raised
 again in this start. A clear was advised at this point — everything is in the journal and pushed.
+
+## §12. 3.8 THE SMALL FIXES, HERE — six made, one not reproduced; twelve checks retired; 36 green, 4 waiting for container 5 (2026-10-04, Opus)
+
+**His word on the clear advised in §11: *"keep going here pls"*.** So 3.8 ran in the same chat.
+
+**Read first** (piece #6, read-only): the harvest's H-9 · H-10 · H-11 · H-12 · H-16 · H-17 · H-19 and the NITS bullet each cites.
+
+| # | The fault (the harvest) | What was done | How it was checked |
+|---|---|---|---|
+| 1 | H-9 — a `TypeError` on every bare load, `sequence_ui.js:1652`, the drawer's `stop()` before its DOM | **NOTHING — not reproduced.** Line 1652 is no longer `stop()` (it is inside `hear()`); `stop()` and `stopLine()` are guarded by `this.el &&` today | the app on 5500 (by environment), two BARE loads — one with no stored drawer state, one with — zero uncaught errors; `SequenceDrawer.stop()` and `RhythmSequence.stop()` called by hand: no throw |
+| 2 | H-10 — `model_bank --validate` warns on `provenance.palette` | `'palette'` added to `PROV_KEYS` (`tools/model_bank.js`) | on piece #6's staged bank: warnings **74 → 41**, the 33 `palette` ones gone; VALID |
+| 3 | H-11 — `test_animobj` red since #6 §454 (the curve follower off by rule) | the test's own pattern for a device switched off (its `lineWedge` · `motivePie` cases): the registry value asserted OFF, no follower collected, then the coverage and the motion checks run with the switch forced on | **ANIMOBJ GREEN** |
+| 4 | H-12 — `palette_check` does not look at the composer's lane CSS | a § 7: one `.lane:nth-child(N)` rule per track, numbered 1 … N in order, tiling 0 → 100 %; one lane `<div>` per track | **PALETTE GREEN: 202** (198 + the four new) on piece #6's eight lanes |
+| 5 | H-16 — `apply_ranges.js` would insert a second `MEASURED_RANGES` (its BEGIN marker no longer matches the carried block's header) | the block found by its header's PREFIX (`// ---- MEASURED RANGES`), and a refusal if the recipe declares the constant and the markers are not found; the same two lines in `apply_bend_ranges.js` | `node --check`; NOT RUN — it writes the recipe; first run at container 5 |
+| 6 | H-17 — a card row carries no record of the trim in force when it was measured, so a re-run applies a correction twice | `tools/current_trims.js` (NEW — the recipe's `balanceDb` and `bank/perc_rack.json`, as JSON) · `probes/analyze_card.py` stamps `trimAtMeasurementDb` on every row it measures and on each velocity's summary (None when the rows disagree, with a warning) · `tools/compute_trims.js` starts the sum from that trim when the row carries it; a row without it falls back to the current trim under the old guard | on piece #6's staged card (no row stamped): the tool's whole output **byte-identical** before and after · the cello's fff row stamped −3.87 (its trim): proposed −3.40, as before, and its "applied twice" warning gone · stamped 0: proposed +0.47 = 0 + (target − measured) · `analyze_card.py` COMPILES and was NOT RUN (it needs a recording) |
+| 7 | H-19 — the probes' default `$Port` is an older piece's | `-Port` made mandatory, no default, in the two probes that had one (`ceiling_probe.ps1` 'tuba1' · `port_note_probe.ps1` 'Vc') | both files parse (PowerShell's parser); not run (they send MIDI) |
+| + | `test_identity` — its stand-in fell behind the page's `restoreData` | two lines: `curveDirty` on the stand-in, `TRACKS: []` in its context | **ALL PASS** on `lgmf-ref` (349 objects). Its DEFAULT score `piece-lgmf` is an EMPTY save in piece #6's git (0 objects) and fails one degenerate case — the default is re-pointed with the names at 3.3; the runner passes `--score` meanwhile |
+
+**Retired, as §10 called it** (`git rm`, fourteen paths; nothing else requires them — they are named in comments only, checked by grep): the twelve
+checks of piece #5's cast and the two fixtures only they read. NITS has the list.
+
+**THE WHOLE BATTERY AGAIN, after the fixes** (40 commands; piece #6's data staged again by its list, 136 paths, deleted by the list
+after): **36 green · 4 red** — the four self-tests that wait for container 5's schedules. `check_rules` green on piece #6's pages alone
+(34), as at §10. Nothing that was green at §10 turned red.
+
+**One thing running showed that reading had not:** a BARE load (no scores, no measurement banks — this repo's real state) logs four
+`404` — `bank/scattered_strikes.json` · `velocity_remap.json` (twice) · `sample_lengths.json` — and `[velocity] remap not loaded`.
+They are the leave-list banks; 3.4's skeletons end them. Not a fault of the copy, and not "zero console errors" until 3.4.
+
+**A mistake of the AI's, caught at once, nothing lost:** a `node` one-liner edited `tools/port/stage32.sh` with `String.replace`, and
+the new text contained `$'` — which JavaScript reads as "everything after the match", so the script was written with half of itself
+doubled. Bash stopped on the syntax error before it staged a file; the script was restored from git and edited with the Edit tool.
+The lesson joins the machine lessons: **a replacement string that may contain `$` goes through a function or a slice, never
+`String.replace(a, b)`.**
+
+**Not verified, and said:** `analyze_card.py`'s stamping, `apply_ranges.js` / `apply_bend_ranges.js` and the two probes were not RUN —
+each needs a recording, a rack or a port. They are checked at container 5's first card (a line in NITS).

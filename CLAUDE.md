@@ -48,8 +48,8 @@ seams · the mic opening · the return · the processing); the piece in three se
 UNDER WAY — piece #6's engine is HERE, copied byte-exact (`c90b768`, 369 files) and proven whole (52 checks: 34 green, 18 red, all
 accounted for; the app boots on 5500). IT IS STILL ON PIECE #6's PALETTE: eight lanes, its names, its ports in the files — never
 start `score` / `sandbox` from `.claude/launch.json` before the re-palette; a server here runs by `PORT=5500 node score/server.js`.
-► NEXT: 3.8 the seven small fixes + the twelve retirements (one commit), then 3.3 the re-palette — ASK Q4 first (the percussion on
-one lane or two). Journal §2's RUNNING ORDER, then its block SESSION 1 — WHERE STEP 1 STANDS, are the cold-start block.**
+3.8 the small fixes are in and the twelve checks of piece #5's cast are retired (§12): the battery is 40 commands, 36 green, 4 waiting
+for container 5. ► NEXT: 3.3 the re-palette — ASK Q4 first (the percussion on one lane or two). Journal §2's RUNNING ORDER, then its block SESSION 1 — WHERE STEP 1 STANDS, are the cold-start block.**
 
 ## READ FIRST — how to work here
 
@@ -248,7 +248,7 @@ port and never saves from its own browser pane · the in-app browser has no Web 
 Chrome · ‹the rest arrive with the code›
 
 **Checks this piece owns:** none of its own yet — the batteries arrived with the copy and were classified ONCE (3.2: `docs/NITS.md`;
-RUNNING_LOG §10 — 34 green, 18 red, all accounted for); every one still reads piece #6's data, staged (`tools/port/stage32.sh`); among
+RUNNING_LOG §10 · §12 — after the small fixes 36 green, 4 red waiting for container 5); every one still reads piece #6's data, staged (`tools/port/stage32.sh`); among
 them **THE SHIELD** (`tools/layout_shield.js` — run before and after ANY layout change).
 
 ## Reference repos (read-only context)

@@ -37,10 +37,13 @@ lines.push('applyMeasuredBend(INSTRUMENTS, MEASURED_BEND);');
 const block = BEGIN + '\n' + lines.join('\n') + '\n' + END + '\n';
 
 let src = fs.readFileSync(RECIPE, 'utf8');
-const i = src.indexOf(BEGIN), j = src.indexOf(END);
+// found by the header's PREFIX, and never inserted twice — as tools/apply_ranges.js (the harvest's H-16)
+const hm = src.match(/^\/\/ ---- MEASURED BEND RANGES\b.*$/m);
+const i = hm ? hm.index : -1, j = src.indexOf(END);
 let out;
 if (i >= 0 && j > i) out = src.slice(0, i) + block + src.slice(j + END.length + 1);
 else {
+    if (/\bconst MEASURED_BEND\b/.test(src)) throw new Error('the recipe already declares MEASURED_BEND but its block markers were not found — refusing to insert a second one');
     // first time: after the measured ranges block, before the hardware-capture lines at the file's end
     const anchor = '// Hardware capture input.';
     const k = src.indexOf(anchor);

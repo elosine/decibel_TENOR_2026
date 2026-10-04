@@ -17,7 +17,8 @@ for n in tranceA002f piece-final-draft-001 piece-s25-finished01 piece-s23 piece-
 # piece #5: its four pages + index; the scores they name are added after the pages are staged (second pass below)
 for n in piece-septet strike1 trill1 0i-test-b; do printf 'S5\tnotation/ir/%s.ir.json\n' "$n" >> "$SRC"; done
 # piece #6: everything on the leave list under bank/ scores/ notation/ir/ notation/video/ probes/
-grep -E '^(bank|scores|probes)/|^notation/(ir|video)/' "$SP/leave_list.txt" | sed "s#^#S6\t#" >> "$SRC"
+# ... and its printed cover: check_print_front / check_print_pages read it (found at 3.2)
+grep -E '^(bank|scores|probes)/|^notation/(ir|video)/|^print/cover/cover-a3-landscape[.]svg$' "$SP/leave_list.txt" | sed "s#^#S6\t#" >> "$SRC"
 
 # the list of paths (unique), written before any copy; collisions with what is already here are refused
 cut -f2 "$SRC" | sort -u > "$L"

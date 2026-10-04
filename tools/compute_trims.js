@@ -99,8 +99,14 @@ for (const [key, I] of Object.entries(CARD.instruments)) {
     const current = isPitched
         ? (INSTRUMENTS[key] && INSTRUMENTS[key].balanceDb != null ? INSTRUMENTS[key].balanceDb : 0)
         : (percByCatalog[key] ? percByCatalog[key].trimDb : 0);
-    const delta = perVoiceK - measured;               // what the fader must move by
-    const proposed = current + delta;                 // the trim the track should carry
+    // THE TRIM IN FORCE AT MEASUREMENT (the harvest's H-17; piece #6's RUNNING_LOG §87). A card row written since
+    // probes/analyze_card.py stamps it carries `trimAtMeasurementDb`, and the correction starts from THAT — so a re-run over
+    // a row measured post-trim proposes the trim it already has, never the correction twice. A row without it (an older
+    // card, or rows measured under different trims) falls back to `current`, under the guard below.
+    const atMeas = (typeof v.trimAtMeasurementDb === 'number') ? v.trimAtMeasurementDb : null;
+    const base = atMeas != null ? atMeas : current;
+    const delta = perVoiceK - measured;               // what the fader must move by, from where it stood at measurement
+    const proposed = base + delta;                    // the trim the track should carry
     const fader = Math.min(proposed, FADER_MAX_DB);
     const js = Math.round((proposed - fader) * 100) / 100;
     const r = {
@@ -108,6 +114,8 @@ for (const [key, I] of Object.entries(CARD.instruments)) {
         measuredDb: measured, maxMomentaryDb: v.maxMomentaryDb, integratedDb: v.integratedDb,
         momentaryMinusIntegratedDb: Math.round((v.maxMomentaryDb - v.integratedDb) * 100) / 100,
         currentTrimDb: Math.round(current * 100) / 100,
+        trimAtMeasurementDb: atMeas,
+        basis: atMeas != null ? 'the trim in force at measurement' : 'the current trim (the row carries no record of its own)',
         deltaDb: Math.round(delta * 100) / 100,
         proposedTrimDb: Math.round(proposed * 100) / 100,
         faderDb: Math.round(fader * 100) / 100, jsVolumeDb: js,
@@ -125,7 +133,7 @@ for (const [key, I] of Object.entries(CARD.instruments)) {
             offsetsDb: Object.fromEntries(per.map(([p, d]) => [p, Math.round((d - mean) * 100) / 100])),
         };
     }
-    if (Math.abs(measured - perVoiceK) < ALREADY_AT_TARGET_DB && Math.abs(current) > 0.05) {
+    if (atMeas == null && Math.abs(measured - perVoiceK) < ALREADY_AT_TARGET_DB && Math.abs(current) > 0.05) {
         r.warning = 'measured within ' + ALREADY_AT_TARGET_DB + ' dB of target while already carrying a trim of '
             + r.currentTrimDb + ' dB — this row was probably measured POST-trim, so the change below would be applied twice';
         console.error('  WARNING  ' + r.label + ': ' + r.warning);
@@ -154,7 +162,8 @@ const show = (list, title) => {
     for (const r of list.sort((a, b) => a.deltaDb - b.deltaDb)) {
         const split = r.jsVolumeDb > 0.005 ? `${r.faderDb.toFixed(2)} + ${r.jsVolumeDb.toFixed(2)}` : r.faderDb.toFixed(2);
         console.log('  ' + r.label.padEnd(20) + r.measuredDb.toFixed(2).padStart(9)
-            + r.momentaryMinusIntegratedDb.toFixed(1).padStart(6) + r.currentTrimDb.toFixed(2).padStart(9)
+            + r.momentaryMinusIntegratedDb.toFixed(1).padStart(6)
+            + (r.trimAtMeasurementDb != null ? r.trimAtMeasurementDb : r.currentTrimDb).toFixed(2).padStart(9)   // the trim the sum starts from: the one in force at measurement when the row carries it (H-17), else the current one
             + (r.deltaDb >= 0 ? '+' : '') + r.deltaDb.toFixed(2).padStart(7) + r.proposedTrimDb.toFixed(2).padStart(10)
             + '   ' + split);
     }

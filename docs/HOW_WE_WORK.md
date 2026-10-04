@@ -164,3 +164,6 @@ and the pages gate counted it green (`#6 §772`).
   - **The Write and Edit tools turn a typed `\uXXXX` into the literal character**, so `sequence_ui.js` holds `—` and `·`, not escapes.
   - **A PARALLEL SESSION of his may be appending to `RUNNING_LOG.md` and `COMPOSITION_NOTES.md`.** Append only; **read the last
     heading number immediately before writing** and take the next free one; explicit paths, never `git add -A`.
+- **This piece's own, added as they bite:**
+  - **A splice's replacement text goes through a slice or `split` / `join`, never `String.replace(a, b)`** (2026-10-04, RUNNING_LOG
+    §12): in JavaScript a `$'` · `` $` `` · `$&` inside `b` is a pattern, not text — a line ending in `$'` wrote half a script twice.

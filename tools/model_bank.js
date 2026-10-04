@@ -91,7 +91,7 @@ const WAYPOINT_KEYS = ['at', 'patch'];
 const ACTUAL_KEYS = ['entity', 'kind', 'label', 'tags', 'spanSec', 'parts', 'register',
                      'objects', 'notes', 'provenance', 'placements', 'source'];
 const PROV_KEYS = ['model', 'recipeSettings', 'resolvedParams', 'seed',
-                   'engineConstants', 'captured', 'shapePreset'];
+                   'engineConstants', 'captured', 'shapePreset', 'palette'];   // `palette`: buildActual writes it on every render (each voice's player, voice and reach — #6 §213); the writer is right
 const STATUSES = ['stock', 'draft', 'retired'];
 
 function checkUnknown(obj, allowed, where) {

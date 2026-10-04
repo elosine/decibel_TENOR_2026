@@ -13,9 +13,11 @@
 A check that reads another piece's pages needs them STAGED — the recipe is `tools/port/stage32.sh`; the page-scanning checks
 (`check_rules` · `decisions_needed` · `check_screen_edges`) are run on ONE piece's pages alone.*
 
-- **Fixed with the seven small fixes (3.8):** `test_animobj` (H-11) · `test_identity` (the harness's stand-in lacks `curveDirty`,
-  which the page's `restoreData` now calls — one line; retired instead if it does not come back green).
-- **RETIRED in the fixes commit — bound to piece #5's cast or data, red in piece #6 since its own re-palette** (twelve; fetch one back
+- **FIXED at 3.8 (RUNNING_LOG §12):** `test_animobj` (H-11) — green · `test_identity` — green on a save with objects
+  (`--score lgmf-ref`, staged). **Its default score is still `piece-lgmf`, an EMPTY save in piece #6's git** — re-point the default
+  with the names at 3.3, to this piece's chain; until this piece has a save with objects it is run with `--score`.
+- **After 3.8 the battery is 40 commands: 36 green, 4 red (the self-tests below)** — `tools/port/run_batteries.sh` is the list.
+- **RETIRED at 3.8 — bound to piece #5's cast or data, red in piece #6 since its own re-palette** (twelve; fetch one back
   from `septet_LGMF_2026` @ `0d70fda` the day its tool is used here, and re-point it at this piece's cast): `test_septet_notation` ·
   `test_trills` · `test_morph_notation` (+ `tools/fixtures/morph_notation_baseline.json`) · `test_cross_staff` · `beating_calc_check` ·
   `strike_chords_check` · `piano_harmonics_check` · `piano_cues_check` · `harm_source_check` · `morph_septet_check`
@@ -34,6 +36,19 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   container 6, when this piece has pages of its own.
 - **Not checks, not run:** `v0_proofs.js` (a generator: writes `notation/app/proofs_v0/`) · `range_check.js` · `check_print_pdf.js` ·
   `cresc_test.js` · `cresc_secco_test.js` · `cc7_ramp_test.js` (each needs a file or writes a score).
+
+### From the small fixes (3.8, RUNNING_LOG §12)
+
+- **Three of the fixes were made and NOT RUN — check each at container 5's first card:** `probes/analyze_card.py` stamps
+  `trimAtMeasurementDb` (it compiles; it needs a recording) · `tools/apply_ranges.js` / `apply_bend_ranges.js` find their block by its
+  header's prefix and refuse a second insert (they write the recipe) · `probes/ceiling_probe.ps1` · `port_note_probe.ps1` now REQUIRE
+  `-Port` (they parse; they send MIDI).
+- **The harvest's H-9 (a `TypeError` on a bare load, `sequence_ui.js`) did not reproduce** — two bare loads, no error; `stop()` is
+  guarded today. Nothing was changed. If a "sequence panel came up wrong after a reload" is ever reported, this is still the first read.
+- **`probes/panic.ps1` defaults to piece #5's ports** (`Flute` · `Fluteb` · `BassCl` · `Piano` · `Vn1` …) — a panic that needs
+  arguments is no panic, so the default stays until container 4 names this piece's ports (4.1), then becomes them.
+- **A bare load logs four `404`** (`bank/scattered_strikes.json` · `velocity_remap.json` ×2 · `sample_lengths.json`) and
+  `[velocity] remap not loaded` — the leave-list banks; 3.4's skeleton banks end them.
 
 ### From the copy itself (3.0 · 3.1, RUNNING_LOG §8 · §9)
 

@@ -44,10 +44,15 @@ lines.push('applyMeasuredRanges(INSTRUMENTS, MEASURED_RANGES);');
 const block = BEGIN + '\n' + lines.join('\n') + '\n' + END + '\n';
 
 let src = fs.readFileSync(RECIPE, 'utf8');
-const i = src.indexOf(BEGIN), j = src.indexOf(END);
+// The block is found by its header's PREFIX, not by the whole generated line: a carried block's header is rewritten at a port
+// ("MEASURED RANGES — piece #5's, for the CELLO ONLY"), the full line then no longer matched, and a re-run inserted a SECOND
+// `const MEASURED_RANGES` — after which the recipe does not evaluate (piece #6's NITS; the harvest's H-16).
+const hm = src.match(/^\/\/ ---- MEASURED RANGES\b.*$/m);
+const i = hm ? hm.index : -1, j = src.indexOf(END);
 let out;
 if (i >= 0 && j > i) out = src.slice(0, i) + block + src.slice(j + END.length + 1);
 else {
+    if (/\bconst MEASURED_RANGES\b/.test(src)) throw new Error('the recipe already declares MEASURED_RANGES but its block markers were not found — refusing to insert a second one');
     // first time: after the INSTRUMENTS table and its helpers, before the hardware-capture lines at the file's end
     const anchor = '// Hardware capture input.';
     const k = src.indexOf(anchor);

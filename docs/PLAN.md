@@ -47,7 +47,7 @@ processing · THE MIDDLE — the after-effects alone, sustained · THE LAST — 
 | Container | Taken? | Status | Record |
 |---|---|---|---|
 | 2 The repo and its kit | yes — every piece | `done` 2026-10-04 | RUNNING_LOG §1 · `#6 §816 … §818` |
-| 3 The engine copied forward | yes — from piece #6 | `doing` — 3.0 ☑ the survey · 3.1 ☑ the copy, 369 / 369 identical (`c90b768`) · 3.2 ☑ proven whole (52 checks: 34 green, 18 red, all accounted for; the app boots on 5500). **NEXT: 3.8 the seven fixes + the twelve retirements (one commit) → 3.3 the re-palette** (needs Q4, the percussion's lanes) | RUNNING_LOG §6 … §10 · § 0.3 below |
+| 3 The engine copied forward | yes — from piece #6 | `doing` — 3.0 ☑ the survey · 3.1 ☑ the copy, 369 / 369 identical (`c90b768`) · 3.2 ☑ proven whole (52 checks: 34 green, 18 red, all accounted for; the app boots on 5500). · 3.8 ☑ the small fixes (six made, one not reproduced), twelve checks retired — the battery 36 green, 4 waiting for container 5. **NEXT: 3.3 the re-palette** (needs Q4, the percussion's lanes) | RUNNING_LOG §6 … §12 · § 0.3 below |
 | 4 The instruments | yes | `todo` | |
 | 5 The calibration | yes | `todo` | |
 | 7 The composing tools made the piece's | yes — one at a time, at compositional need | `todo` | |

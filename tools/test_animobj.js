@@ -56,7 +56,16 @@ const inst = Anim.collect(ir, score, ST);
 // collect coverage: every kind bound from its stratum
 const byKind = k => inst.filter(i => i.kind === k);
 ok(byKind('gc').length === 1 && byKind('gc')[0]._src === 'ir-device', 'gc collected from IR devices');
-ok(byKind('curveFollower').length === 1, 'morph bend -> curveFollower');
+// the curve follower: OFF in the registry since piece #6's §454 (the tuba's morph-section dot — his "can we suppress these"),
+// so its coverage check runs with the switch forced on, the wedge's pattern below; the registry value itself is asserted off
+ok(ST.curveFollower.enabled === false, 'registry: curveFollower is OFF (#6 §454)');
+ok(byKind('curveFollower').length === 0, 'curveFollower OFF collects no follower');
+{
+  const ON = JSON.parse(JSON.stringify(ST)); ON.curveFollower.enabled = true;
+  const f = Anim.collect(ir, score, ON).filter(i => i.kind === 'curveFollower');
+  ok(f.length === 1, 'morph bend -> curveFollower (switch on)');
+  var FOLLOWER = f[0];   // the motion checks below ride the switch-on instance
+}
 ok(byKind('envFollower').length === 1, 'layer-10 shape -> envFollower');
 // the wedge port: OFF in the septet's registry (§401m — 'they don't play a part here'), so its coverage
 // check runs with the switch forced on, the pie's pattern; the registry value itself is asserted off
@@ -226,7 +235,7 @@ ok(hAt(13.7) > hAt(13.9), 'drop height grows with time-to-impact (readable traje
 }
 
 // curveFollower: y moves with the bend (midi 47 bending +2 st over 4 s)
-const cf = byKind('curveFollower')[0], cfSt = ST.curveFollower;
+const cf = FOLLOWER, cfSt = ST.curveFollower;
 const cfy = t => parseFloat(Anim._registry.curveFollower(cf, view, t, cfSt)[0].match(/cy="([\d.]+)"/)[1]);
 ok(cfy(16) < cfy(12), 'follower rises as the bend rises');
 eq(cfy(12), view.system(2).yOfSs(Anim.staffPosOfMidi(47)), 0.11, 'follower starts at the unbent pitch');

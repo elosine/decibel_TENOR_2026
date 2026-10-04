@@ -1,7 +1,7 @@
 ﻿# ceiling_probe.ps1 - gain-staging ceiling stimulus (GAIN_STAGING.md).
 # Sustained mid note, velocity 127 + CC7 127: the loudest normal playing state.
 param(
-    [string]$Port = 'tuba1',
+    [Parameter(Mandatory = $true)][string]$Port,   # no default: a probe never guesses a port - an older piece's rack may be live on this machine
     [int]$Channel = 1,
     [int]$Pitch = 45,
     [int]$HoldMs = 4000,

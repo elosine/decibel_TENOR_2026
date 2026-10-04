@@ -143,5 +143,21 @@ for (const w of want) {
   ok(!!a && a.channel === w.channel && a.port === (w.port || selPort), 'percussion: ' + w.slug + ' applied on ' + (w.port || selPort) + ' ch' + w.channel);
 }
 
+// ---------------------------------------------------------------- 7. the composer's lanes
+// A lane added to TRACKS needs its `.lane:nth-child(N)` rule and its `<div class="lane">` on the page too. In piece #6 the
+// vibraphone was added to TRACKS and not to the CSS, and lane 8 landed on the English horn (#6 §183; the harvest's H-12).
+console.log('\n7. the composer\'s lanes — one `.lane:nth-child` rule and one lane <div> per track');
+const laneRules = [...chSrc.matchAll(/^\s*\.lane:nth-child\((\d+)\)\s*\{\s*top:\s*([\d.]+)%\s*;\s*height:\s*([\d.]+)%\s*;?\s*\}/gm)]
+  .map(m => ({ n: +m[1], top: +m[2], height: +m[3] }));
+ok(laneRules.length === KEYS.length, 'lane CSS: ' + laneRules.length + ' `.lane:nth-child` rule(s) for ' + KEYS.length + ' track(s)');
+ok(laneRules.every((r, i) => r.n === i + 1), 'lane CSS: the rules run 1 … ' + laneRules.length + ' in order, none twice');
+{
+  let at = 0, tiled = true;
+  for (const r of laneRules) { if (Math.abs(r.top - at) > 0.02) tiled = false; at += r.height; }
+  ok(tiled && Math.abs(at - 100) < 0.05, 'lane CSS: the lanes tile the stage top to bottom (they end at ' + Math.round(at * 100) / 100 + ' %)');
+}
+const laneDivs = (chSrc.match(/<div class="lane" id="lane\d+">/g) || []).length;
+ok(laneDivs === KEYS.length, 'the page: ' + laneDivs + ' lane <div>(s) for ' + KEYS.length + ' track(s)');
+
 console.log('\n' + (fail ? 'PALETTE RED: ' + fail + ' failure(s), ' + pass + ' ok' : 'PALETTE GREEN: ' + pass + ' checks'));
 process.exit(fail ? 1 : 0);
