@@ -1102,3 +1102,19 @@ for all crotales"* — item 1 of §29's list, answered his way: dictation, not t
   −154 dB (silent) · key 60: −22.1 / −29.3 dB · key 84: −31.3 / −27.3 dB · key 85: −64.5 dB** (the tail of 84 still ringing,
   not a note). So Kontakt's C3 is MIDI 60 here, and that reading holds for the screenshots of the other three.
 - Written into `bank/ricotti_catalog.json` (`range` on the instrument; a note on the convention).
+
+## §31. THE GLOCKENSPIEL'S RANGE, and its glisses left unmapped at his word (2026-10-04, Opus)
+
+**His words**, with two screenshots of Kontakt's keyboard: *"glock range for all i1, glock glisses i2 first range is ascending,
+second range is descending, third range I think is both. Let's not worry about the key map for this one. I may not use glisses.
+We'll get proper key map if I use the glisses."*
+
+- **Glockenspiel, every patch but the glisses: G2 … C5 on Kontakt's keyboard = MIDI 55 … 84**, thirty keys (the instrument's two
+  and a half octaves). Read from his first image (the lit keys start three white keys below the C marked 3 and end on the C
+  marked 5), then proven at the edges on channel 2, "Main (Hard)": **key 54: −155 dB (silent) · 55: −27.7 / −33.7 dB · 84: −26.7
+  / −31.8 dB · 85: −84 dB** (the tail of 84).
+- §21's "−88 dB on key 84" and §22's "−55 dB on key 72" were both on channel 1, "Main (Extra Soft)", minutes after the load.
+  Not looked into; the hard patch is plainly alive at both ends.
+- **The glisses patch (channel 6): BY KEY, three blocks — ascending · descending · both ("I think").** From his second image,
+  not verified: C1 … E2 (36 … 52) · C3 … E4 (60 … 76) · C5 … B6 (84 … 107). **No key map, his decision**; the catalog marks it
+  `keys: "pending"` with his words. The recipe will carry it as a voice whose keys are unnamed.

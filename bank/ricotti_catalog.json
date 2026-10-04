@@ -113,7 +113,10 @@
      "channel": 6,
      "label": "Glisses",
      "slot": "Glockenspiel - Glisses",
-     "file": "_Individual patches_/b - Glock - Glisses.nki"
+     "file": "_Individual patches_/b - Glock - Glisses.nki",
+     "byKey": true,
+     "keys": "pending",
+     "note": "BY KEY, three blocks — his words 2026-10-04: \"first range is ascending, second range is descending, third range I think is both\". Read from his screenshot, NOT verified: C1–E2 (36–52) · C3–E4 (60–76) · C5–B6 (84–107). NO KEY MAP, at his word: \"Let's not worry about the key map for this one. I may not use glisses. We'll get proper key map if I use the glisses.\""
     },
     {
      "channel": 7,
@@ -151,7 +154,13 @@
      "slot": "Glockenspiel - Tremolo (Soft)",
      "file": "_Individual patches_/b - Glock - Tremolo (Soft).nki"
     }
-   ]
+   ],
+   "range": {
+    "low": 55,
+    "high": 84,
+    "kontakt": "G2–C5",
+    "source": "his screenshot of Kontakt's keyboard + his word \"glock range for all\", 2026-10-04; the edges proven by meter on channel 2: 54 silent · 55 and 84 sound · 85 silent"
+   }
   },
   {
    "slug": "xylophone",
