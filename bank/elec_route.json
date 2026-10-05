@@ -5,5 +5,7 @@
     { "name": "bcl", "track": "Bass Clarinet XS", "engineIn": 1, "port": "DECBassClar", "testNote": 50 }
   ],
   "return": { "track": "ELEC RETURN", "engineOut": 1 },
-  "latencyLoop": { "engineIn": 3 }
+  "latencyLoop": { "engineIn": 3 },
+  "_listenEcho": "A LISTENING AID for the route (RUNNING_LOG §55): `start` returns each note this many seconds LATER, so the return is heard as a second sound. 0 = straight through (two of Reaper's blocks behind — not heard as separate). It goes when the playback brick exists (6.5).",
+  "listenEchoSeconds": 1
 }

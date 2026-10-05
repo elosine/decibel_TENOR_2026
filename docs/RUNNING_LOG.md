@@ -1814,3 +1814,51 @@ Reaper (the route is in the rack, unsaved) · double-click `start_electronics.ba
 second 23 ms behind and from the track ELEC RETURN.
 
 **Sub-steps (a) … (f) of 6.1 are done.** Next in the order: 6.2, the message route — a talk first.
+
+## §55. *"I don't hear the return"* — the AI's probe had killed his engine; the runner fixed; the return made audible, one second behind (2026-10-04, Opus)
+
+**His words:** *"saved, commit the rack; I don't hear the bass clarinet playback. And then, right. So I guess that's all we're working on
+now. I just don't hear the return. And plus I want it to be explicit anyways. But maybe we haven't got to the super collider part yet."*
+
+**The rack committed** as he saved it — the route is in the file (`ELEC RETURN` present).
+
+**What was tried, in order, and what it showed:**
+1. Before anything else: `sclang` and `scsynth` both running, started 21:00:37 by his double-click — HIS engine was up.
+2. `node tools/elec.js probe` — the route intact, Reaper on ASIO.
+3. A new look-only command, `node tools/elec.js meters` (one note; the rack's meters; nothing started or stopped): Bass Clarinet XS
+   −27.91 / −26.24 · **ELEC RETURN −154 dB — silence** · master −41.07 / −39.4, the player alone.
+4. The return track read whole: armed, monitoring, not muted, input ReaRoute 1 stereo, 0 dB. Nothing wrong in the rack.
+5. The processes again: **`scsynth` was gone; only his `sclang` was left.**
+
+**THE CAUSE OF THAT SILENCE WAS THE AI'S OWN TOOL.** `electronics/tools/sc.js` ended every run by removing any `scsynth` on the engine's
+port — written to clear a server left behind by a run cut short. The probe of step 2 runs a small SuperCollider file to list the
+devices; when that file ended, the sweep took down the server HE had started three minutes before. So step 3's −154 dB measured the
+AI's damage, not his complaint. **What he did or did not hear BEFORE the probe is therefore NOT KNOWN from the evidence.** The likely
+reading, unproven: the engine was passing his note straight through, 23 ms behind and at the same level (§54) — a copy that close is not
+heard as a second sound, only as the same note slightly coloured. The other reading — that nothing was returning — cannot be ruled out.
+
+**The fixes:**
+- **`sc.js` sweeps only the server of the run's OWN sclang** (matched by parent process), and REFUSES to start a file that boots a server
+  while an engine is already up: *"the engine is already running … close that window first"*. So `check` · `latency` · `selftest` can no
+  longer touch his engine.
+- **`probe` no longer lists the audio devices while an engine is up** — listing ASIO devices loads each driver, ReaRoute among them, beside
+  a live client. It says *"engine RUNNING — left alone"* instead. `meters` never starts anything.
+- **A LISTENING AID — the return one second behind.** His own word, *"I want it to be explicit anyways"*: a return must be HEARD as a
+  return. `start` now returns each note `listenEchoSeconds` later (`bank/elec_route.json`, 1; 0 = straight through); the engine has
+  a `leEcho` beside `lePass`. It is a stand-in for the ear on the wire, NOT the piece's device: the explicit opening and the explicit
+  playback are bricks in the score (6.2 … 6.5), and the aid goes when the playback brick exists.
+
+**PROVEN after the fix** (the launcher's own path, `session.scd` with the one-second return; one note; then stopped):
+- the engine: *"Each note comes back 1.0 s later."* · its own lines *in −42.6 dB · out −45.8 dB*, then *in −43.0 · out −42.6* — the out
+  trailing the in;
+- the rack's meters, read by `meters` WHILE the engine ran: Bass Clarinet XS −29.51 / −29.32 · **ELEC RETURN −42.62 / −42.62** · master
+  −40.3 / −41.02;
+- **the engine still up after the `meters` command** — the sweep no longer reaches a server it did not start;
+- the self-test passes as before (sample-exact · the safety · the probe).
+
+**Also done:** the dead engine's leftover `sclang` (his window's, its server already gone) was stopped by the AI so the next start is
+clean — said to him. **Not claimed:** his ear. His to do: close the old window, double-click `start_electronics.bat`, play a note — the
+note, then the same note a second later from ELEC RETURN.
+
+**For the paper:** a measurement taken after one's own instrument has disturbed the thing measured says nothing about the thing; the
+order of the readings in this entry is the whole argument.

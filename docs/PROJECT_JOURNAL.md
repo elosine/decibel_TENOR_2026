@@ -139,6 +139,11 @@ takes is his (D5).
    One note to `DECBassClar`: heard by the engine −42.6 dB · sent −42.6 · back −42.63 — unity; **the round trip 23.22 ms = two of
    Reaper's blocks of 512.** Learned: Reaper lists ReaRoute's channels at hardware index 512 … 527 · the track's own meter reads BEFORE
    the fader — the master is the reference. NOT CLAIMED: his ear. **► NEXT: 6.2, the message route — a talk (Fable).**
+   **AFTER HIS FIRST LISTEN (RUNNING_LOG §55):** he heard no return. The AI's probe had killed his engine (the runner swept every server
+   on the port) — FIXED: the runner sweeps only its own, refuses to boot beside a live engine, and `probe` / `meters` leave a live
+   engine alone. A straight pass-through is 23 ms behind and is not heard as a second sound, so `start` now returns each note ONE SECOND
+   later (`bank/elec_route.json` `listenEchoSeconds`) — a listening aid until the playback brick (6.5). Proven by the meters with the
+   engine up (ELEC RETURN −42.62 dB); HIS EAR STILL OPEN.
 7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -220,7 +225,7 @@ question, not by habit.)*
   three notation calls.
 - **`Resume reads:`** this §2 · `electronics/docs/SEAMS.md` (the sound path as proven) · the header of `electronics/tools/sc.js`
   (the line protocol) · `docs/COMPOSITION_NOTES.md` DEC-7 (the first object as a demo). Nothing else; §51 · §54 only by a question.
-- **Pending him:** **CTRL+S in Reaper — the route is in the rack, unsaved (§54)** · his ear on the engine (`start_electronics.bat`, a note) · the electronics in REMOTE sessions — *"maybe"*, not today (§53 · §54) · his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
+- **Pending him:** **his ear on the engine: `start_electronics.bat`, a bass clarinet note — the note, then the same note ONE SECOND later from ELEC RETURN (§55)** (the rack is saved and committed with the route in it) · the electronics in REMOTE sessions — *"maybe"*, not today (§53 · §54) · his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
   check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
   word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
   `docs/PROTOCOL_DEVIATIONS.md`).

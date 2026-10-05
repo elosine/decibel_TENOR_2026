@@ -7,6 +7,7 @@
 //   node tools/elec.js check      # 6.1's PROOF: one note into the rack -> heard by the engine -> heard back on ELEC RETURN
 //   node tools/elec.js check --rack-only   # the rack's half alone, no engine: the note reaches the player's track
 //   node tools/elec.js latency    # the round trip rack -> engine -> rack, measured (eight clicks, audible, quiet)
+//   node tools/elec.js meters     # one note, and what the meters showed: the player, ELEC RETURN, the master — nothing started or stopped
 //   node tools/elec.js start      # the engine up and listening — what start_electronics.bat runs
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
 //
@@ -53,8 +54,10 @@ function job(mode, extra = {}) {
     return out.result;
 }
 
+// (never asked while an engine is up: listing the ASIO devices loads each driver, ReaRoute among them, beside a live client)
 async function engineSeesReaRoute() {
-    const r = await sc.start(SCD('devices.scd'), { timeoutS: 60 }).done;
+    if (sc.engineUp()) return { asio: ['not asked — the engine is running'], reaRoute: true, engineUp: true };
+    const r = await sc.start(SCD('devices.scd'), { timeoutS: 60, boots: false }).done;
     return r.results[0] || { asio: [], reaRoute: false };
 }
 
@@ -108,7 +111,7 @@ async function readPeaks(waitMs) {
 
     if (cmd === 'start') {
         const players = CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(',');
-        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: { LE_PLAYERS: players }, onLine: (l) => { if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY|RESULT)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: ')); } });
+        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: { LE_PLAYERS: players, LE_ECHO: String(CFG.listenEchoSeconds || 0) }, onLine: (l) => { if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY|RESULT)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: ')); } });
         process.on('SIGINT', () => { p.kill(); });
         const r = await p.done; process.exit(r.code == null ? 1 : r.code);
     }
@@ -116,6 +119,7 @@ async function readPeaks(waitMs) {
     if (cmd === 'probe') {
         const d = job('probe'), dev = await engineSeesReaRoute();
         show(d, dev);
+        if (dev.engineUp) console.log('engine     RUNNING (a scsynth on UDP ' + sc.PORT + ') — left alone');
         const m = missing(d, dev);
         console.log(m.length ? '\nMISSING, in order:\n' + m.map((x, i) => '  ' + (i + 1) + '. ' + x).join('\n') : '\nNothing is missing: the route is in the rack.  node tools/elec.js check');
         process.exit(m.length ? 2 : 0);
@@ -126,6 +130,16 @@ async function readPeaks(waitMs) {
         show(d);
         if (!d.error) console.log('\nThe rack is changed and NOT saved — CTRL+S in Reaper is his. (One undo point: "Electronics route".)');
         process.exit(d.error ? 2 : 0);
+    }
+
+    // one note, and what the rack's meters showed — with whatever is running left as it is (the engine up or not)
+    if (cmd === 'meters') {
+        const p0 = CFG.players[0];
+        job('watch', { seconds: 7 });
+        console.log('note       ' + note(p0));
+        const pk = (await readPeaks(12000)).peakDb;
+        for (const k of Object.keys(pk)) console.log('  ' + k.padEnd(20) + 'L ' + pk[k].L + '  R ' + pk[k].R + ' dB');
+        process.exit(0);
     }
 
     if (cmd === 'check') {
