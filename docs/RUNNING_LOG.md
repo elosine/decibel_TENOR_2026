@@ -2920,3 +2920,12 @@ refined (§85):** the page's working copy was newer than his save by a minute an
 so the tool now compares the two and refuses only when the copy holds something the save does not; it says so and asks for a
 Reload after. **Pending him:** Reload · F5 (if not yet) · the engine restarted (the chain, the index fix) · a pass from 0: at each
 impulse 3 three onsets — the live note, then its two samples in a rolled order.
+
+## §86. SWEEP_LIST #3 CLOSED BY HIS PASS — nine rows, the first takes among them (2026-10-05, Fable)
+
+His 10:27 pass with the engine restarted (the fix of §84 in it): the index holds NINE rows — `bfl-impulse-1` at last (388 ms,
+−19 dB, 10:27:31), the four other impulse-1s re-taken, and the four impulse-2s as FIRST takes with their rows (va −3.5 · vc −3.2 ·
+bcl −14 · bfl −15.2 dB). The one proof (D13); #3 closes. Still missing: `perc-impulse-2` — the glockenspiel on the mallets lane
+recorded nothing, which says the page had not been reloaded (F5) when it played: the lane's player comes with the new route
+table at page load. His F5, then the pass. Noted for his ear, not acted on: the viola's and the cello's impulse 2 peak at −3 dB
+after the faders' +12 (§79) — louder than the first takes by 6 … 9 dB.
