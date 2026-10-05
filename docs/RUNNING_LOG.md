@@ -3502,3 +3502,11 @@ heard; his engine is up and predates the build; his page holds unsaved edits to 
 - The hints are the AI's descriptions and the AI's idea of "usual" — his ear corrects them; a hint is one string in the table.
 
 **Proven once:** the module parses; the slider's arithmetic run in node at the ends and the middle of six dial shapes (log: 0.002 → 0.032 → 0.5 · 20 → 400 → 8000 · 1 → 16 → 256; linear: 0 → 0.5 → 1 · −12 → 0 → 12 · 0.1 → 2 → 4; a value round-trips to its step). NOT seen by him; his F5. The engine is untouched.
+
+## §109. THE CANDIDATES — a shelf for the settings he has heard and wants kept (2026-10-05, Fable)
+
+**His words, with a screenshot of a brick's panel:** *"I'm going to, or could you keep these as a list of candidates for this impulse processing chain?"* The panel: `bfl-impulse-1` (385 ms) → `bfl-impulse-1~1`, label "a pitch", effect **crush** — mix 0.4 · bits 4 · rate 10400 Hz · tail (−60 dB · 8000 ms) · peak as its source's · rendered 403 ms at −19 dB, made 15:53:51. (The panel in the picture has no sliders yet — made before his F5 of §108.)
+
+**Done:** `docs/CANDIDATES.md` opened — a table: when kept · heard on · effect · THE SETTING as the box's JSON (paste → Apply → Render = the same sound) · the render's numbers · his remark quoted. Row 1 is this one. **A standing practice from now:** whenever he says "keep this" or "candidate" (a screenshot or the box's JSON is enough), the AI adds a row — never asked for again. The `source` is left out of the JSON on purpose: a candidate is a TREATMENT, applied to whatever a brick's source is; the row says what it was heard on. Which go into the piece, and in what order, is his: the file is the shelf, the scheme is the music. Pointed to from CLAUDE.md's "Orient from docs".
+
+**For the paper:** the catalogue is grown by audition (§106); the CHAIN is composed by selection from a shelf of heard settings — he listens, keeps, and later arranges. Two lists, two acts: what the machine can do, what he has chosen to hear again.
