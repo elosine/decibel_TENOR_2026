@@ -190,12 +190,13 @@ question, not by habit.)*
 - **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
   LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-### OPEN AT SESSION END *(mid-session checkpoint, 2026-10-04, Opus — his `/checkpoint` at the end of the start)*
+### OPEN AT SESSION END *(mid-session checkpoint #2, 2026-10-04, Opus — his `/checkpoint` before the build of 6.1; NO CLEAR at his word, the build goes on in the same chat)*
 
-- **The task and its state:** the piece's start by the new-piece protocol is DONE but for his ear. Running order: 1 ☑ · 2 ☑ · 3 ☑ ·
-  4 ► set up, three calls of his open · 5 at need (one item done) · **6 NEXT — the seams and the sound path.**
-- **The latest deliverable:** a rack that sounds, measured, from the composer score — `reaper/decibel_rack.rpp` ·
-  `scores/decibel-first-sound.json` · `notation/ir/decibel-first-sound.ir.json` · the record RUNNING_LOG §18 … §45.
+- **The task and its state:** running order step 6, the electronics' plumbing — OPENED. The sound seam decided, the six sub-steps
+  6.1 … 6.6 approved, 6.1 the audio route LAID OUT (PLAN.md 1.1). Running order: 1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his
+  open · 5 at need · **6 ► ACTIVE — 6.1 the build next.** No electronics code exists yet.
+- **The latest deliverable:** the plan for the first object — `docs/PLAN.md` 1.1 · the engine's `docs/PLAN.md` part 4 (4.1) · the
+  record RUNNING_LOG §47 … §49 (here) · §5 · §6 (the engine's) · DEC-7. The rack `reaper/decibel_rack.rpp` committed as he last saved it.
 - **► THE NEXT CONCRETE STEP — THE BUILD OF 6.1, the audio route Reaper → SC → Reaper, on OPUS after a clear** (laid out and
   approved 2026-10-04, RUNNING_LOG §47 … §49; the sub-steps (a) … (f) in PLAN.md 1.1 — follow them in order; (a) first and claim
   nothing before it is seen). Then 6.2, the message route — a talk first (MIDI port or OSC), Fable. Behind it, still his: what he
@@ -207,7 +208,7 @@ question, not by habit.)*
   check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
   word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
   `docs/PROTOCOL_DEVIATIONS.md`).
-- **Deliberately uncommitted:** nothing — `git status --short` is empty. Outside git, by design: `reaper/Media/*.wav` (the two
+- **Deliberately uncommitted:** nothing — `git status --short` is empty after this checkpoint (his rack save committed at his word). Outside git, by design: `reaper/Media/*.wav` (the two
   card recordings, 234 + 33 MB) · `reaper/kontakt/out/` (the loaders' read-backs). `electronics/` does not exist, so there was
   no `git subtree push` to the engine at this wrap. Piece #6 and piece #5 were READ (their racks on disk, their git), never written.
 - **Left running:** his Reaper on the rack · his score server on 5500, if he started it · loopMIDI. The AI's throwaway server

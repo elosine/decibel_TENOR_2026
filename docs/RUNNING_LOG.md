@@ -1694,3 +1694,9 @@ engine's journal §2 updated (Q1 answered; part 4 the part in hand). `electronic
 ports whole · the latency. Each is found at the build.
 
 **Model:** the build is Opus, after a checkpoint and a clear — the cold-execution test is met by PLAN.md 1.1 + journal §2.
+
+## §50. CHECKPOINT #2 — before the build of 6.1; no clear (2026-10-04, Opus)
+
+**His words:** *"commit the rack too, then /checkpoint then build as much as possible independently no clear"*. The rack committed as
+he last saved it (17 tracks, as before; the diff is Reaper's re-serialized plugin state). Journal §2's checkpoint entry rewritten for
+the state now. The build of 6.1 follows in this same chat, on Opus — as far as it goes without his hand.
