@@ -189,3 +189,9 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   cascade) · the bank is mono: the chain's `space` stage is out until a stereo sample is wanted · a duplicated stage keeps its `out` name —
   two bricks, one sample, until one is renamed · the default dials are the sandbox's or the AI's guess, unheard (the spectral gate's
   threshold, the freeze's moment) · `process_test.scd`'s scratch bank is made in sclang's temp folder and removed on a pass.
+- **The processed return (RUNNING_LOG §116), deferred:** a variant no brick asks for any more (a new deal, a preset renamed) stays in the bank and
+  the index — no tool removes an orphan · the bank is re-made at every pass: thirty `~<key>-<env>` files change in git each time he plays
+  through (the bank at work; committed at a wrap) · how many renders his machine carries beside Reaper and a playing score is unmeasured
+  (`~le[\planWidth]`, two) · a pattern brick's samples take a variant in the message but its panel has no rows for them (group 5's talk) ·
+  an opening renamed does not carry a return's variant (keyed by the sample's name); the impulses are named by the tool · the fourteen
+  presets of the AI's and the three shelf settings changed for a return are unheard (`bank/presets.json`).

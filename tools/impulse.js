@@ -72,7 +72,7 @@ slots.forEach((slot, i) => {
   // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
   const who = player || slot.lane;
   const nameOf = (q) => (q === '*' ? '*' : who + '-' + q);   // §89: '*' = every sample in the bank, not this player's alone
-  const nAll = (() => { try { return Math.max(1, (JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'samples', 'index.json'), 'utf8')).samples || []).length); } catch (e) { return 1; } })();
+  const nAll = (() => { try { return Math.max(1, (JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'samples', 'index.json'), 'utf8')).samples || []).filter((r) => r.kind !== 'processed').length); } catch (e) { return 1; } })();   // '*' = every CAPTURED sample: a render or a plan's variant is not one (§103 · §116)
   const nLinks = (RETURN && RETURN.samples || []).includes('*') ? nAll : (RETURN && RETURN.samples || []).length;
   const ret = !RETURN ? null : RETURN.behaviour === 'arChain'   // §87: a region from regionMs before the note to regionMs after it plus 0.5 s per further sample
     ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000 + 0.5 * Math.max(0, nLinks - 1), { name: nameOf((RETURN.samples || [])[0]), names: (RETURN.samples || []).map(nameOf), behaviour: 'arChain' }, 'elecPlay')
