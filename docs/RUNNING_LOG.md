@@ -2422,3 +2422,26 @@ inside the one bar's own HTML comment (the extractor took them for a tag); with 
 the failed chain (a heredoc ends a `&&` chain; the next line runs regardless) — so this entry follows in its own commit. No page loaded (D13 —
 he finds the rest while composing). Seen in `git status`, not touched: `reaper/decibel_rack.rpp` modified — his Reaper's save (the route, §54);
 it goes in at the wrap.
+
+## §69. The strip goes into the bar; the bass flute's short notes under his keyboard (2026-10-04, Fable)
+
+**His words, with a screenshot of the bass flute lane, the pill `harmony for C…` on it at 25 s:** *"No, it just got moved up into the bass flute
+lane. Can you make it part of the menu bar somehow? And the bass flute MIDI play, when I play with my keyboard, it's all short notes."*
+
+**1 · The strip.** §68's change was right but he had not seen it (the pill in his shot is the no-sonority branch, which §68 no longer draws) —
+and his ask is better anyway: the crescendo-harmony strip now lives IN THE BAR, not on any lane (`renderCrescBar`: created without
+`position:absolute`, appended to `#topBar`; §68's dead no-sonority branch removed). It appears only once a sonority is chosen (Insert ▾ →
+Crescendo harmony…), names the active lane it will write on (`→ BFl`), and its ✕ puts it away. Nothing of the tool stands on the score.
+
+**2 · The short notes — the evidence, then the fix.** The live-thru path (`onHwMidi`: his keyboard → the capture patch) sends, at each note-on,
+CC7 = 127 and the preset's CC0, then the note; never the MOD WHEEL. The record technique box starts on the FIRST preset of the instrument's list
+(`fillRecTechs`: `techs[0]`): for the bass flute that is **#1 "Vibrato MW"** — a bare-MW preset, `loud: "mw"` in the recipe's own reading (the
+wheel IS its loudness) — and the recipe's note (`sandbox/instruments.js`, the bass flute's list) records that an MW preset was already found to
+take its loudness from the wheel on the instrument card, §42. At wheel 0 the sustain is gone and the attack is what is left: "all short notes".
+The bass clarinet never showed it: its list begins with a Velocity preset. **Done, two ends:** (a) the technique box starts on the instrument's
+ORDINARY preset when the recipe names one (the bass flute's #15 "Vibrato Velocity"), else the first; (b) the live-thru forwards his keyboard's
+CC1, and for a `loud: "mw"` preset sends CC1 = the velocity he played at every note-on — so an MW preset chosen deliberately sounds whole. **Not
+claimed:** that this is what he heard — he plays, he says. If the notes are still short on #15 the fault is elsewhere (the preset, the rack) and
+it goes on. `docs/SWEEP_LIST.md` #2, open until his word.
+
+**Proof:** the page's inline scripts parse (`node --check`, comments stripped). No page loaded (D13).
