@@ -447,3 +447,13 @@ clipping and a speaker's colour, so that a tone BLOOMS out of the impulse and si
 string's resonances re-excited by the speaker, one harmonic winning, limited by the clipping, drifting as the player moves. The
 nine distortions are static shapes applied to the sample; this one has a LIFE — a growth, a hold, a release — and its pitch comes
 either from a string he tunes or from the material itself. A talk first, at his word; then a tenth stage, `feedback`.)*
+
+### DEC-19 · 2026-10-05 — THE FEEDBACK SHOULD CARRY A SPECTRUM, NOT A SINGLE PITCH: "more like an actual guitar distortion"; six open strings by default, and build
+
+> *"Could we have a spectrum instead of a single pitch? So more like an actual guitar distortion."* — and, on the AI's proposal of
+> six strings (the open guitar, E A D G B E) that fight and bloom, with an empty box meaning the slap's own spectrum: *"a and build."*
+
+*(The AI's reading, marked as such: the feedback he hears in his head is the WHOLE guitar against the amp — a dense, clipped harmonic
+field in which several roots compete — not one tone drawn out of the slap. Built as the stage `feedback` (RUNNING_LOG §110): six
+strings, the amp's clipping, a speaker's colour, the path; its bloom set as a time. The nine distortions kept beside it as static
+shapes; this one has a life.)*
