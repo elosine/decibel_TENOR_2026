@@ -2283,3 +2283,41 @@ places at the build — each time because the code, read closely, or the concert
 him. The written plan was the handoff across the clear, not a contract. (2) A guardrail written after an incident ("never kill a
 process you did not start") met a case its reason did not cover. The AI neither obeyed it blindly nor stepped round it: it removed
 the cause, so the rule and the case no longer meet.
+
+## §65. HIS WORD ON TESTING, STANDING — "I'll test and troubleshoot when I'm writing, when I'm composing" (2026-10-04, Fable, after the first object's build)
+
+> *"nor more testing unless absolutely necessary. I'll test and troubleshoot when I'm writing, when I'm composing. How far are we? What's next?"*
+
+**The rule, as the AI reads it:** §61's word covered checks that need HIS hands; this one covers the AI's OWN runs too. A build is
+proven once, by what proves it, and stops there — no second pass, no proof-with-real-sound beside a proof-without, no "and in the
+throwaway as well" unless the plan names it or a claim cannot be made without it. **The faults will show when he composes, and
+that is where they are found and fixed** (`docs/SWEEP_LIST.md`). Saved to the AI's memory as well, so it binds every session.
+*(Read against today: the first object was proven three ways — the self-test, the rack, the throwaway page. Under this rule the
+self-test and ONE of the other two would have done.)*
+
+**Where we are, told to him:** I. the start — steps 1 … 3 done, 4 set up (three calls of his), 5 at need · II. step 6 done but
+for his ear · ► step 7, the rhythm layer, HIS — no build expected · 8 … 10 the objects as the music reaches them · 11 the record.
+
+## §66. SESSION 1 ENDS — the start finished, the electronics' plumbing laid, the first object built (2026-10-04, Opus; his `/session-end`)
+
+**The session in five lines** (Claude Code — Fable for the talks and the layouts, Opus for the builds; one day, four checkpoints):
+the start finished (containers 3 · 4 · 5; 6 set up) · the electronics' plumbing laid — one engine, SuperCollider, the same in
+concert and in simulation, seated here as a subtree · the first object built end to end, a mic opening and a return · his words
+that bind every session, the last of them on testing (§65) · not claimed: his ear on the first object.
+
+**What the wrap did.** The journal's §2 rewritten for a cold start, 310 lines → 185: the running order's done steps one line each,
+the superseded checkpoint block out, ONE "open at session end" block. Promoted to §4: **D11** the engine returns only what it
+makes · **D12** the bricks are zones with a model of their own, and the bank's rules · **D13** his word on testing. §3 gained this
+piece's first three principles (24 the owner of a server · 25 say what the thing IS before its plumbing · 26 a check can write).
+§5 its first playbook, the electronics' routine. §6 the four milestones the checkpoints had not entered. CLAUDE.md § THE RHYTHM
+carries D13, so it loads in every session.
+
+**Lessons asked for at the wrap** — put to him in the chat; his answer, if he gives one, is the next session's first entry.
+
+**For the paper — the day's shape.** A piece's whole infrastructure in one sitting: a port (369 files), a rack, a calibration, a
+notation registry, a sound engine in another language seated as a subtree, and one working object on it. What made it possible was
+not speed of typing but three habits: every build began from a plan written to the sub-step by a different model in a different
+mode; every clear was bridged by a journal block written for a reader who had seen nothing; and the composer was asked only what
+only he could answer — which lane, which library, whether a rule held. The costs are in the record too: a probe that took his
+engine down (§55), a first object proven three times when once would have done (§65), and a day in which "the engine" was named by
+its ports before it was named by what it is (§64).

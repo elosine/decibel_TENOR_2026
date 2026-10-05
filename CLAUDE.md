@@ -216,6 +216,10 @@ compact notes section at the bottom for the honest side-matter. **And (2026-09-1
 verifications and qc"* — no probe, no cross-check, no QC pass that he did not ask for or that the plan does not name as a
 required step; if something looks worth checking, ONE line offering it, and he decides. This does not relax
 `AI_METHODOLOGY`'s rule that a confidence CLAIM must be verified in the running app — unverified simply means unclaimed.
+**AND AGAIN, STRONGER (2026-10-04, journal D13 — RUNNING_LOG §61 · §65):** *"no more testing unless absolutely necessary. I'll test
+and troubleshoot when I'm writing, when I'm composing."* **A build is proven ONCE, by the one thing that proves it, and stops** — no
+second proof of the same claim (the first electronics object was proven three ways; one too many), no check that needs his hands
+unless he asks. A fault shows when he composes: it goes to `docs/SWEEP_LIST.md` and is fixed there.
 **In the DOCS nothing changes:** journal §2's NEXT STEPS ·
 MODEL · CLEAR table is still kept current — it is the handoff, and it is what makes the chat free to stay on one thing.
 The paragraph below is the 2026-08-23 original; read it through this.

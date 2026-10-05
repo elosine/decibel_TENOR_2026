@@ -70,101 +70,31 @@ each electronics object built the moment the music needs it; the AI sorts where 
 decides that. Sections 2 · 3 are notes (DEC-2 · DEC-3) and the PLANNER's outline only. "Done when" is a step's gate; the time it
 takes is his (D5).
 
-**I. THE START**
+**I. THE START** *(done — one line each; how each was made is the lab journal's)*
 
-1. ☑ **Container 3 — the engine copied forward from piece #6** *(DONE 2026-10-04 — RUNNING_LOG §6 … §16)* (Opus; in a NEW chat opened in this folder). ASK FIRST, one at a
-   time: (a) the protocol's 3.8 — seven small fixes made in piece #6 BEFORE the copy (`#6` journal §2, item (a), has them as
-   instructions) — ☑ ANSWERED 2026-10-04, *"b"*: made HERE, in one commit after 3.2 and before 3.3; piece #6 untouched
-   (RUNNING_LOG §6; a line in PROTOCOL_DEVIATIONS) · (b) piece #6's files newer on disk than in git, all his (its journal §2's list) — the copy takes the piece's files
-   from GIT, or he says which go across — ☑ ANSWERED 2026-10-04, *"a"*: NONE go across; the copy is from git, every library starts
-   empty here (RUNNING_LOG §7). Then 3.0 the survey → 3.1 the copy byte-exact, committed as such → 3.2 proven whole, every
-   battery run and classified ONCE (NITS) → 3.3 THE RE-PALETTE: the lanes **bass flute · bass clarinet · viola · cello · percussion**
-   — the percussionist on one lane or two (a non-pitched staff and a pitched one, as piece #6: his call at container 4; a lane can be
-   added or re-spaced later, RUNNING_LOG §3) · NO LANE FOR THE ELECTRONICS (his word 2026-10-04, D8 — the AI's addition reversed:
-   every electronic sound derives from a player's own input and is drawn on THAT player's staff, with a sign of origin) →
-   3.4 recipes and skeletons → 3.5 the app running on **5500 / 5000** (`.claude/launch.json`: `score` · `sandbox` · `score-5501`
-   the throwaway · a `lgmf-5400` entry only if he wants piece #6's server beside it) → the names of §1 confirmed against the code and
-   `docs/NAMING.md` §1 written → `docs/VERIFICATION_RECIPE.md` re-pointed. **Done when:** the composer score opens on the Decibel
-   lanes, every check green or classified, pushed.
-2. ☑ **Container 4 — the instruments** *(DONE 2026-10-04 — RUNNING_LOG §18 … §43; the how-to pages §44)* (**4.1 ☑ · 4.2 ☑ 2026-10-04 (RUNNING_LOG §19): nine `DEC` ports made by the AI; the rack built as text, three tracks cloned and sounding.** **4.0 THE TALK — ANSWERED 2026-10-04 (RUNNING_LOG §18; Ricotti is a KONTAKT library, §19): Xsample for the bass flute (NEW) · bass clarinet · viola · cello; Spitfire Ricotti Mallets the pitched lane, four instruments on ONE lane (DEC-5); the unpitched percussion OPEN — he gathers; the rack built BY THE AI, three Xsample tracks cloned from pieces #5 · #6's racks, his loads the two new libraries.** *The brief was:* 4.0 a SHORT TALK first, Fable — which library for each; the candidates from the lineage, to
-   look at, not decided: the Xsample bass clarinet (piece #3's deep map) · the Xsample strings for viola and cello (piece #1; piece
-   #6's cello recipe) · the bass flute — Xsample or IRCAM SI2, whichever has it · the percussion — Spitfire ARO (pieces #2 · #6),
-   WHICH instruments his). Then 4.1 the ports `DEC…` from a standard name set → 4.2 the tracks by the bridge → 4.3 his loads → 4.4
-   the state as text → 4.5 the recipes → **4.6 THE FIRST SOUND** → 4.7 the record. **Done when:** every instrument sounds from the
-   composer score.
-3. ☑ **Container 5 — the calibration** *(DONE 2026-10-04 for a composing demo — §40 … §43: sixteen faders, four curves; his ear and the QC battery remain)* (piece #6's 1b method: 5.1 the reference in the rack · 5.2 the pre-flight — clipping, the
-   round robins · 5.3 the card · 5.4 the trims · 5.5 the remap and the fader curves · 5.6 verified through the app and his ear · 5.7
-   the QC battery). **Done when:** the tutti and the per-part levels measured and recorded, the law applied.
-4. ► **Container 6 — the notation set-up** *(the registry, the gates, save → IR, the exporters DONE 2026-10-04 — §45; OPEN: his three calls — the pitch form, the percussion staff's line order, the short names — and the app-written test page at his first material)* (6.0 the ensemble registry: the clefs by register, the bass clarinet's transposition, the
-   percussion staff type · NO electronics staff (D8) — the electronics' signs are DRAWN KINDS on the players' staves, each by a
-   device sheet when notating comes (DEC-4; the engine plan's part 7) · 6.3 the batteries · 6.4 save → IR proved on a save of
-   the Decibel lanes · 6.5 the exporters run once). **Done when:** a Decibel save extracts to a valid IR and lays out on the page.
-5. **Container 7 — the composing tools, at need** *(one item done 2026-10-04: the Texture panel's click is this rack's — §45; the rest waits for the music)* (7.0 the law read · 7.1 the data checklist · the first tool the moment the music
-   asks — for step 7 the Rec lane and the bricks' moving between lanes, which exist). No tool adapted ahead of need.
+1. ☑ **Container 3 — the engine copied forward from piece #6** — byte-exact from git, proven whole, the small fixes made HERE, six
+   Decibel lanes on 5500 / 5000 (RUNNING_LOG §6 … §16; D9).
+2. ☑ **Container 4 — the instruments** — nine `DEC` ports and the rack built by the AI; Xsample ×4, Ricotti Mallets, his tentative
+   eight Abbey Road percussion; every lane's recipe; all sixteen sound from the composer score (§18 … §43).
+3. ☑ **Container 5 — the calibration** — for a composing demo: sixteen faders, four dynamics curves; round robin skipped at his word
+   (§39 … §43). His ear and the QC battery remain.
+4. ◐ **Container 6 — the notation set-up** — the registry, the gates, save → IR, the exporters DONE (§45). **OPEN, HIS: three calls —
+   the pitch form · the percussion staff's line order · the short names** (one edit of `notation/registry/ensemble.json` each) — and
+   the app-written test page at his first material. The electronics' signs are DRAWN KINDS on the players' staves, each by a device
+   sheet when notating comes (D8 · DEC-4).
+5. **Container 7 — the composing tools, at need** — one item done (the Texture panel's click, §45); the rest waits for the music.
+   No tool adapted ahead of need.
 
-**II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `live-electronics-system/docs/PLAN.md`)*
+**II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `electronics/docs/PLAN.md`)*
 
-6. ☑ *(BUILT AND PROVEN 2026-10-04 — RUNNING_LOG §51 … §64; HIS EAR on the first object OPEN, offered)* **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
-   `live-electronics-engine` — what it is built on decides the sound seam (a folder `SynthDef_petalsOfResonance` under GitHub says
-   SuperCollider; the read says) · WHERE the engine's code sits here — `electronics/` (D7) — and how the composer app loads it (a
-   script tag; a static route in `score/server.js`) · THE MESSAGE from the score to the sound: the stack already sends MIDI from the
-   browser over loopMIDI — a dedicated `DECElec` port is the first candidate, OSC through the score server the other · THE SOUND PATH
-   IN THE SIMULATION: the "live instrument" is the sampled instrument's audio in Reaper — a window of it RECORDED to a file (the bank) ·
-   a banked file PLAYED at a time · a window's audio FED to an effect · the playback route (new Reaper tracks or items) · the
-   mastering chain from the sandbox. Put to him only what is his. **Done when:** `docs/SEAMS.md` in the engine says each seam; one
-   message from the composer score reaches the sound process and is seen there.
-   **THE TOP LINE — APPROVED by him 2026-10-04 (*"Order is good"*; RUNNING_LOG §47 · §48). The sound process = SuperCollider real-time,
-   fed by Reaper over ReaRoute; SC's master IS the output live; in simulation Reaper is only the players and one FLAT return track
-   (the loudspeaker). The pedals of resonance and the recent engine's processing = phase 2, not here.** Sub-steps, one at a time:
-   **6.1** the audio route Reaper → SC → Reaper — a sampled note heard passing through SC untouched · **6.2** the message route — one
-   brick's onset seen in SC with its data (OSC through the score server — DECIDED 2026-10-04, D10; §57 · §58) · **6.3** the opening brick + SC's capture — a window of N
-   seconds on one player lands as a file in the piece's bank · **6.3b** the crop — the recording trimmed to the attack itself,
-   reliably, before it is named (his word 2026-10-04, DEC-8; the reorganization approved, *"a"*) · **6.4** the sample index — one file, a row per sample (id · name ·
-   player · time · length · category · file), written by the capture, read by the score · **6.5** the playback brick — a few seconds
-   later SC's buffer player returns the sample through Reaper · **6.6** the demo end to end from the composer score, and the record
-   (`SEAMS.md` in the engine · the engine's log · this log · `git subtree push`).
-   **► 6.1 LAID OUT AND WRITTEN 2026-10-04 (his word *"a, write it"*; PLAN.md 1.1 has the sub-steps (a) … (f); the engine's plan 4.1
-   the generic form). NEXT: ITS BUILD — Opus, after a clear.** In one line: ReaRoute checked → SC's boot file in `electronics/sc/` →
-   a send from the bass clarinet track + the flat `ELEC RETURN` track, through the bridge → a pass-through patch → verified on his
-   Chrome, the latency measured → the log and the first `SEAMS.md` lines.
-   **► 6.1 BUILT 2026-10-04 AS FAR AS THE MACHINE ALLOWS (Opus, RUNNING_LOG §51) — TWO HAND STEPS OF HIS, THEN THREE COMMANDS.** Found:
-   ReaRoute is NOT installed · his Reaper is on WASAPI. Built and proven without them: the engine seated at `electronics/` (a git
-   subtree — D7) · the SuperCollider code and its self-test (`node tools/elec.js selftest`: all pass) · this rack's route job and
-   tool (`node tools/elec.js probe` says what is missing; `route` refuses and changes nothing; the note reaches the bass
-   clarinet's track at −26.24 dB). NOT PROVEN: the crossing. **HIS:** (1) close Reaper, run Reaper's installer again (same version),
-   tick "ReaRoute ASIO driver", start Reaper · (2) Preferences → Audio → Device → Audio system ASIO, ASIO driver UMC ASIO Driver.
-   **THEN:** `node tools/elec.js probe` (must say nothing is missing) → `route` → he saves the rack → `check` → `latency`;
-   `start_electronics.bat` starts the engine for him after that.
-   **☑ 6.1 DONE 2026-10-04 (Opus, RUNNING_LOG §54) — THE CROSSING PROVEN.** His two steps done (Reaper 7.82 · ASIO · ReaRoute). The route
-   is in the rack: the bass clarinet's send to ReaRoute 1 and the flat track `ELEC RETURN` (17; `REC` is 18) — **UNSAVED, his CTRL+S.**
-   One note to `DECBassClar`: heard by the engine −42.6 dB · sent −42.6 · back −42.63 — unity; **the round trip 23.22 ms = two of
-   Reaper's blocks of 512.** Learned: Reaper lists ReaRoute's channels at hardware index 512 … 527 · the track's own meter reads BEFORE
-   the fader — the master is the reference. NOT CLAIMED: his ear. **► NEXT: 6.2, the message route — a talk (Fable).**
-   **AFTER HIS FIRST LISTEN (RUNNING_LOG §55):** he heard no return. The AI's probe had killed his engine (the runner swept every server
-   on the port) — FIXED: the runner sweeps only its own, refuses to boot beside a live engine, and `probe` / `meters` leave a live
-   engine alone. A straight pass-through is 23 ms behind and is not heard as a second sound, so `start` now returns each note ONE SECOND
-   later (`bank/elec_route.json` `listenEchoSeconds`) — a listening aid until the playback brick (6.5). Proven by the meters with the
-   engine up (ELEC RETURN −42.62 dB); HIS EAR STILL OPEN.
-   **☑ HEARD BY HIM 2026-10-04 — *"I hear it now, let's go on to 6.2"* (RUNNING_LOG §56). 6.1 IS CLOSED. ► 6.2 THE MESSAGE ROUTE IS NEXT.**
-   **► 6.2 LAID OUT AND WRITTEN 2026-10-04 (Fable; his words *"a, lay it out"* · *"a, write it"* — RUNNING_LOG §57 · §58 · §59): OSC through the
-   score server, concert and simulation on ONE road (D10 — the correspondence rule, his); the loopMIDI trigger rejected; PLAN.md 1.1 has
-   (a) … (f), the engine's plan 4.2 the generic form; 6.3b THE CROP added after the capture (DEC-8). NEXT: ITS BUILD — Opus, after a clear.**
-   **► 6.2 BUILT 2026-10-04 (Opus, his word *"build here no clear"* — RUNNING_LOG §60): PROVEN TO THE EDGE OF WEB MIDI.** The engine hears
-   on UDP 57211; the composer page's own playback reached it — `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`; hello
-   through the score server 0.71 ms; a real note paired with its message. NOT MEASURED: the score's lead over its own sound — HIS CHROME,
-   two hand steps (restart the score server · `start_electronics.bat`). **► NEXT: 6.3 + 6.3b, the opening brick, the capture and the crop — a talk (Fable).**
-   **☑ 6.2 DONE 2026-10-04 (RUNNING_LOG §61) — THE LEAD MEASURED ON HIS CHROME: the message leaves 92.8 ms ahead of the note, the note's
-   sound reaches the engine 114.2 ms after the message.** His word: *"Let's just try to avoid unnecessary testing … What's next? Let's move
-   on."* **► 6.3 · 6.3b · 6.4 · 6.5 PROPOSED AS ONE BUILD — the first object end to end (§61); his go awaited.**
-   **► 6.3 … 6.6 LAID OUT AND WRITTEN 2026-10-04 (Fable; his word *"a, write it"* — RUNNING_LOG §62): both bricks are ZONES WITH A NEW
-   MODEL (`elecOpen` · `elecPlay`), the capture from the message to the window's end, the crop in the engine by a rule his ear tunes,
-   the index in the piece's bank with the engine's schema, the playback scheduled on the engine's clock; PLAN.md 1.1 has every sub-step,
-   the engine's plan 4.3 … 4.4 the generic form. NEXT: THE BUILD — Opus (a checkpoint and a clear recommended; his call).**
-   **☑ 6.3 … 6.6 BUILT AND PROVEN 2026-10-04 (Opus, his word *"move thru the whole build independently"* — RUNNING_LOG §64; the engine's
-   §14): in the composer score `M` puts a MIC OPENING over the selected note and `R` a RETURN at the playhead; played through with
-   the engine up, the window is recorded, cropped to its attack, banked (`bank/samples/`) and returned where the brick is, at unity
-   (a bass clarinet note: −41.2 dB captured, −41.22 dB back). The demo: `scores/decibel-first-object.json`. **STEP 6 IS DONE BUT FOR
-   HIS EAR — the listen is offered, not assumed. ► STEP 7 IS NEXT: the rhythm layer, his composing.**
+6. ☑ **The seams and the sound path, and the first object end to end** [parts 2 · 3 · 4 · 11] — **DONE 2026-10-04 BUT FOR HIS EAR**
+   (PLAN.md 1.1; RUNNING_LOG §47 … §64; the engine's §5 … §14). In one line each:
+   **6.1** the audio route — the rack → ReaRoute → SuperCollider → ReaRoute → the flat track `ELEC RETURN`; unity; 23.22 ms round
+   trip; HEARD BY HIM (§56) · **6.2** the message route — the page → `POST /api/elec` → OSC → the engine's language on UDP 57211; the
+   same road in concert (D10); the message is at the engine 114.2 ms before the note's sound (§61) · **6.3** the mic opening + the
+   capture · **6.3b** the crop to the attack · **6.4** the sample index · **6.5** the return · **6.6** the demo
+   `scores/decibel-first-object.json` — built as ONE (§64): `M` and `R` in the composer score; a bass clarinet note captured at
+   −41.2 dB and returned at −41.22 dB. **The pedals of resonance and the sandbox's processing are PHASE 2 (step 10), not here.**
 7. ► **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -191,7 +121,7 @@ takes is his (D5).
 extracted or pushed) · section 3 (DEC-3: a responder object; the machine's part unwritten in the players' score) · container 8 the
 deliverables · the planning repo's lines (at his word only).
 
-### SESSION 1 — THE START IS DONE BUT FOR HIS EAR (2026-10-04, Fable · Opus; one long chat) — containers 3 · 4 · 5 done, 6 set up, 7 one item; ► NEXT: running order step 6, the electronics' seams
+### WHAT EXISTS — THE START, as session 1 made it (2026-10-04) — the rack, the ports, the libraries, the recipes, the loudness, the notation
 
 *(This block was rewritten at the checkpoint. How each thing was made, tried and rejected is RUNNING_LOG §6 … §45 — go there by a
 question, not by habit.)*
@@ -229,10 +159,23 @@ question, not by habit.)*
 - **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
   LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-### THE STATE NOW — THE FIRST OBJECT IS BUILT (2026-10-04, Opus, RUNNING_LOG §64) — read this BEFORE the checkpoint block below; where they differ, this one is true
+### LAST SESSION — S1 · 2026-10-04 (Claude Code — Fable for the talks and the layouts, Opus for the builds; one day, four checkpoints, one `/session-end`)
 
-- **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer (his composing), is next.**
-- **What he can do in the composer score now** (`http://localhost:5500/composer.html`, after a reload of the page):
+- **The start was finished** — containers 3 · 4 · 5, and 6 set up: piece #6's engine here on six Decibel lanes; a rack of sixteen
+  instruments built by the AI and sounding from the composer score on one loudness scale; the notation registry this piece's.
+- **The electronics' plumbing was laid** — ONE engine, SuperCollider real-time, the SAME in concert and in simulation (D10); it sits
+  HERE at `electronics/` as a git subtree (D7); audio over ReaRoute, messages by OSC through the score server.
+- **The first electronics object was built end to end** — a MIC OPENING and a RETURN as bricks in the composer score; the engine
+  records the window, crops it to the attack, banks it, and returns it where the brick is, at unity (D11 · D12).
+- **His words that bind every session** — a bare list, not a wall of text (§27 · §28) · no check that needs his hands unless he asks
+  (§61) · **no more testing unless absolutely necessary: he tests and troubleshoots while composing (§65, D13)**.
+- **Not done, and not claimed:** HIS EAR on the first object and on the crop's numbers · his three notation calls.
+
+### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
+
+- **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer — HIS composing — is next. No build is
+  in hand and none is expected for step 7.**
+- **What he can do in the composer score** (`http://localhost:5500/composer.html`):
   - **`M`** — a MIC OPENING over the selected note (it opens 100 ms before the note, 500 ms long), or at the playhead on the
     active lane with no note selected. Named `bcl-A`, `bcl-B` … — his to rename in its panel (name · category · window).
   - **`R`** — a RETURN at the playhead: the sample of the selected opening, else of the nearest opening before the playhead. Its
@@ -240,99 +183,29 @@ question, not by habit.)*
   - **Played through with the engine up:** the opening's window is recorded, cropped to the attack, saved as
     `bank/samples/<name>.wav` with a row in `bank/samples/index.json`; the return plays it where the brick is, at unity.
   - **The demo:** the score `decibel-first-object` — a bass clarinet note at 5 s, its opening, its return at 8 s.
+- **HIS, to make it live — TWO THINGS, NOT YET DONE AT THIS WRAP:** start the engine (`start_electronics.bat`) · reload the
+  composer page (F5). No restart of the score server.
 - **ONLY THE BASS CLARINET HAS A MICROPHONE** (`bank/elec_route.json` `players`). An opening on another lane is drawn `— no microphone
   on this lane` and records nothing. Another player = a row in that table + `node tools/elec.js route` + his CTRL+S in Reaper.
-- **THE ENGINE RETURNS ONLY WHAT IT MAKES now** — no dry note, no one-second echo (`listenEchoSeconds` 0; above 0 it is a route check).
+- **THE ENGINE RETURNS ONLY WHAT IT MAKES** — no dry note, no echo (D11; `listenEchoSeconds` above 0 is a route check).
 - **The crop's numbers are the engine's defaults** (`electronics/sc/bank.scd`); his ear tunes them in `bank/elec_route.json`
   `bank.crop` (e.g. `"attackDb": -24`), used from the engine's next start. A re-crop of a kept raw recording has no tool yet (NITS).
-- **Every pass through an opening re-records its sample** (the latest take wins) — so a listen leaves `bank/samples/` changed in git.
-  That is the bank doing its work, not a fault; commit the samples at a wrap, or not, as the music wants.
-- **HIS, to make it live after this build — TWO THINGS:** start the engine again (`start_electronics.bat`) · reload the composer
-  page (F5). **NO restart of the score server** — `score/server.js` and the relay were not touched.
-- **THE ENGINE'S WINDOW:** closing it now takes its sound server with it; and if one is ever left, the next start clears it
-  (§64 — the rule "only `probe` · `meters` · `ping` beside his engine" stands for a LIVE engine). New: `node tools/elec.js object`
-  (the first object's proof with real sound, on a scratch bank; it boots a server — refused beside his window).
-- **Left running by this build:** nothing of the AI's. His Reaper on the rack · his score server on 5500 · loopMIDI. **HIS ENGINE
-  IS DOWN** (he closed it for the build).
-- **Not claimed:** his ear on the return and on the crop · a capture made from his own page's playback (Web MIDI — his Chrome).
-
-### OPEN AT SESSION END *(mid-session checkpoint #4, 2026-10-04, Opus — his `/checkpoint` with the first object laid out and written, before its build — SUPERSEDED BY THE BLOCK ABOVE where they differ: the build it hands off is DONE)*
-
-- **The task and its state:** the running order's step 6, the electronics' plumbing — **6.1 the audio route ☑ · 6.2 the message route ☑**
-  (RUNNING_LOG §51 … §61; D10 the correspondence rule). THE PLUMBING IS DONE; THE OBJECTS ARE NOT BUILT. **POSITION: step 6 of 11 is
-  active; inside it 6.1 ☑ · 6.2 ☑ · 6.3 … 6.6 LAID OUT AND WRITTEN (§62) · ► THEIR BUILD next, as ONE — the first object end to end.** (1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need.)
-- **What exists, for a session that has never seen this chat:**
-  - **The engine is SuperCollider, real-time, and lives HERE in `electronics/`** — a git subtree of `live-electronics-system` (D7),
-    WHOLE: its code `electronics/sc/` · `electronics/tools/sc.js` and its docs `electronics/docs/`. **Edit the engine's docs THERE;**
-    the clone at `C:\Users\jwloy\GitHub\live-electronics-system` is a mirror. At every wrap, after the piece's push:
-    `git subtree push --prefix=electronics engine main` then `git -C ../live-electronics-system pull --ff-only`.
-  - **The wire:** the composer score → MIDI → the player's track in Reaper → a hardware send (mono, post-fader, unity) → ReaRoute →
-    the engine (its server on UDP 57210) → its master → ReaRoute → the flat track `ELEC RETURN` (17; `REC` is 18) → what he hears.
-    One player so far: `bcl` = Bass Clarinet XS on ReaRoute 1 (`bank/elec_route.json`). Unity through the engine; the round trip
-    23.22 ms = two of Reaper's blocks of 512.
-  - **The messages (6.2):** the composer page → `POST /api/elec` on the score server → OSC over UDP → the engine's LANGUAGE on
-    **UDP 57211** (the server stays 57210). A message is `/le/<kind>` + NAME, VALUE pairs; `/le/hello` is answered. The page's code is
-    the engine's (`electronics/score/le_msg.js`, served at `/electronics/`); the address and the test switch are in
-    `bank/elec_route.json` (`message`: host · port · `testOnsets`). THE TEST HOOK: while `testOnsets` is true, a note the page plays
-    on the bass clarinet's port also sends `/le/onset` — it goes at 6.3. The same road in concert (D10).
-  - **He starts the engine with `start_electronics.bat`** (= `node tools/elec.js start`). It returns each note ONE SECOND later —
-    a LISTENING AID (`listenEchoSeconds` in `bank/elec_route.json`) that goes when the playback brick exists (6.5).
-  - **The machine:** Reaper 7.82 on ASIO (UMC ASIO Driver) with ReaRoute. **ASIO is the studio setting; over Chrome Remote Desktop he
-    switches Reaper to WASAPI and the electronics are silent** — a remote route is *"maybe"*, not designed (§53).
-- **The latest deliverable:** the message route — `electronics/sc/` (the ear · the onset probe · the session shows an onset and times
-  the sound against it) · `electronics/tools/osc.js` · `relay.js` · `electronics/score/le_msg.js` · `score/server.js` (three lines) ·
-  `composer.html` (one tag, one hook) · `tools/elec.js` (`ping` · `message`). The numbers: `probes/elec_message.json` (hello 0.71 ms; the
-  page's own playback shown by the engine as `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`).
-- **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on OPUS: play back, STOP and ask. Then THE BUILD OF THE FIRST OBJECT,
-  exactly as `docs/PLAN.md` 1.1 lays it out — 6.3 (a) → (f), 6.3b, 6.4, 6.5, 6.6 in order, each proven before the next.**
-  **FIRST, ONE PLAIN SENTENCE TO HIM — a MUST, not a test:** his engine window is open (it was at this checkpoint: sclang and scsynth, his),
-  and every engine run of the build (`selftest`, a bounded session) REFUSES beside it — ask him to close that window before the engine's
-  half; never kill it. At the END, two more musts, said the same way: he starts the engine again (`start_electronics.bat` — his window runs
-  the code it started with), and restarts the score server ONLY IF `score/server.js` or `electronics/tools/relay.js` changed.
-  **The shape:** both bricks are zones with a new `midiModel` (`elecOpen` · `elecPlay`) made by `createZone`; the mixin
-  `electronics/score/le_objects.js` adds the label, a panel section, the gesture and the tick's message; the engine's side in
-  `electronics/sc/` (the capture, the crop, the index, `leSample`); the bank folder from a new `bank` block in `bank/elec_route.json` via
-  `LE_BANK`. The placing is the AI's; he is told in ONE line what went where. **HIS WORD (§61): no check that needs his hands unless he
-  asks — the listen at the end is OFFERED in one line. Hand steps, when they are his: all at once, each explicit (which window, the
-  full path, the keys, what he should see).**
-- **FOR THE BUILD — found this session, not to be derived again** (the dying session's notes; hints, not decisions, unless PLAN.md says so):
-  - **In the composer** (`score/public/composer.html`, by name): `Composer` is a `const`, not on `window` · a zone is made by
-    `createZone({ layer, startTime, endTime, zoneFunction: 'midiPreview', midiModel, color, opacity, zoneHeight, yOffset, performanceNotes })`
-    — two callers make one over a selection (the trill's and the beating's): copy their shape · `renderZone`'s label is ONE chained
-    expression on `zone.midiModel` · the zones' playback is `tickZoneMidiPlayback`; the notes' is `tickCurvePlayback`, whose
-    `LOOKAHEAD_S = 0.1` and `perfAt(sec)` are the pattern for sending AHEAD (6.2's hook sits there, right after the note-on) · the bass
-    clarinet is layer 1, its port `DECBassClar`; `scores/decibel-first-sound.json` has its one note `wc-2`, 5 … 7 s, key 50.
-  - **The engine** (`electronics/sc/`): `~le.hear(kind, { |le, data, time, addr| })` is all a new message kind needs; `le_msg.js`'s
-    `LE.send(kind, data)` all the page needs — only strings, numbers and booleans cross (the relay drops the rest) · an OSC string arrives
-    in sclang as a SYMBOL · `~le.json` writes a FLAT event (numbers, strings, arrays of those) — an index row fits; a file of rows needs a
-    small extension · the Event trap: a key must not share a name with a method (`boot.scd`'s header) · `\quiet` mode has no hardware:
-    a capture can be tested there by putting a test tone on the player's bus, as `selftest.scd` E does · a parse error in a `.scd` prints
-    NO `LE_` line — the runner only times out (exit 4): `node electronics/tools/sc.js run <file> --verbose` shows it.
-  - **The piece's tool:** `tools/elec.js start` appends EVERY `LE_RESULT` line that has a `msg` field to `probes/elec_message_log.jsonl`
-    — a new result kind (a capture's row) lands there too unless that filter is narrowed.
-  - **The numbers:** a message is at the engine 114.2 ms before the sound it announces (sent 92.8 ms ahead; 21.4 ms from a note's own start
-    to its sound at the engine) · hello through the server 0.7 … 0.8 ms · the route's round trip 23.22 ms.
-  - **The machine** (`docs/HOW_WE_WORK.md` § MACHINE LESSONS; `docs/VERIFICATION_RECIPE.md`, its last AND SINCE): a Bash command over
-    8 KB fails · a doubled backslash through the shell arrives as one — a file with backslashes is written by the Write tool · the
-    throwaway page's non-GET stub must let `/api/elec` through · the pane has no Web MIDI: a note there makes no sound.
-- **`Resume reads:`** this §2 · `docs/PLAN.md` 1.1 — the block 6.3 … 6.6 (THE PLAN OF THE BUILD) · RUNNING_LOG §62 (the design and its
-  reasons) · `electronics/docs/SEAMS.md` · `electronics/sc/session.scd` · `electronics/score/le_msg.js` · `bank/elec_route.json` · the HEADERS
-  of `electronics/sc/boot.scd` and `electronics/tools/sc.js`. Nothing else: DEC-7 · DEC-8 and §51 … §61 only by a question; the composer
-  by a grep for the four names above, never by reading.
-- **⚠ WHILE HIS ENGINE WINDOW IS OPEN** (IT IS, at checkpoint #4 — sclang and scsynth, his): only `node tools/elec.js probe`, `meters` and `ping` — they leave it
-  alone. `check` · `latency` · `selftest` · `message` boot a server and refuse. Never kill a SuperCollider process the session did not start
-  (§55: a probe once took his engine down).
-- **Pending him:** what he heard of the rack · the three notation calls (the pitch form · the percussion staff's line order · the short
-  names) · the electronics in remote sessions — *"maybe"*, not today · the ensemble's final instrumentation (the call's; his to check) ·
-  whether "my improvisation with live electronics" is the improviser piece (§17) · "pedals" or "petals" of resonance (phase 2) · the
-  planning repo's lines, at his word only · the porting protocol's hole (§37; `docs/PROTOCOL_DEVIATIONS.md`) — noted, not acted on.
-- **Deliberately uncommitted:** nothing — `git status --short` is empty at checkpoint #4. (`probes/elec_message_log.jsonl` is committed: his engine window appends to it at every
-  paired note while `testOnsets` is true.) Outside git, by design: `reaper/Media/*.wav` ·
-  `reaper/kontakt/out/`. The engine's repo is in step (subtree push at this wrap; the mirror pulled). Pieces #4 · #5 · #6 and the sandbox
-  were READ, never written.
-- **Left running:** his Reaper on the rack · his score server on 5500, RESTARTED by him 2026-10-04 — it has the message route · HIS
-  engine window (`start_electronics.bat` — sclang and scsynth, his: only `probe` · `meters` · `ping` beside it) · loopMIDI. Nothing of the AI's.
-
+- **Every pass through an opening re-records its sample** (the latest take wins) — a listen leaves `bank/samples/` changed in git.
+  That is the bank at work, not a fault; the samples are committed at a wrap.
+- **THE ENGINE'S WINDOW:** closing it takes its sound server with it; a leftover is cleared at the next start (§64). **While his
+  engine window is open: only `node tools/elec.js probe` · `meters` · `ping`** — `check` · `latency` · `selftest` · `message` ·
+  `object` boot a server and refuse. Never end a LIVE engine.
+- **The machine:** Reaper 7.82 on ASIO (UMC ASIO Driver) with ReaRoute — the studio setting. Over Chrome Remote Desktop he switches
+  Reaper to WASAPI and the electronics are silent; a remote route is *"maybe"*, not designed (§53).
+- **A FAULT WHILE HE COMPOSES → `docs/SWEEP_LIST.md`**, fixed on Opus; one proof, then stop (D13).
+- **Pending him, when he offers them:** what he heard — of the rack, and of the first object · the three notation calls · the
+  ensemble's final instrumentation (the call's; his to check) · whether "my improvisation with live electronics" is the improviser
+  piece (§17) · "pedals" or "petals" of resonance (phase 2) · the electronics in remote sessions · the planning repo's lines, at his
+  word only · the porting protocol's hole (§37; `docs/PROTOCOL_DEVIATIONS.md`) — noted, not acted on.
+- **Deliberately uncommitted:** nothing. Outside git, by design: `reaper/Media/*.wav` · `reaper/kontakt/out/` · `bank/samples/raw/`.
+  The engine's repo is in step (`a54562a`; the mirror pulled). Pieces #4 · #5 · #6 and the sandbox were READ, never written.
+- **Left running:** his Reaper on the rack · his score server on 5500 · loopMIDI. **His engine is DOWN** (closed for the build).
+  Nothing of the AI's.
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
 - **S0 · 2026-10-03/04 (Fable, then Opus — in piece #6's repo and chat)** — the protocol drafted and the home made · the
@@ -343,8 +216,7 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| ☑ | THE BUILD OF THE FIRST OBJECT END TO END — 6.3 · 6.3b · 6.4 · 6.5 · 6.6 as ONE — **DONE 2026-10-04 (§64); his ear offered** | Opus | — |
-| **►** | **Step 7 — the rhythm layer, HIS COMPOSING** (DEC-1): he plays a series into the Rec lane; the rhythms kept, the bricks moved to the players' lanes. No build expected; a fault → `docs/SWEEP_LIST.md` | **Fable** (the talk, if he wants one) | a good point for a `/checkpoint` and a clear — the build's context is long; his call |
+| **►** | **Step 7 — the rhythm layer, HIS COMPOSING** (DEC-1): he plays a series into the Rec lane; the rhythms kept, the bricks moved to the players' lanes. No build expected; a fault → `docs/SWEEP_LIST.md` | **Fable** (a talk, if he wants one) · **Opus** (a fault's fix) | **a new session: `/session-start`** |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
@@ -407,7 +279,14 @@ Verified in this repo only when they bite.)*
 
 *This piece's own:*
 
-24. ‹…›
+24. **An engine is a server WITH its owner.** When a parent can die and leave its child (sclang → a `cmd` wrapper → scsynth), "is it
+    up?" is a question about the OWNER, not about a process name on a port — and a sweep that compares the wrong generation is a
+    silent no-op. Look the chain up before believing either answer (RUNNING_LOG §64).
+25. **Say what the thing IS, in concert terms, before its plumbing.** After a day of ports, routes and a `.bat` he had to ask:
+    *"Is this just the simulation engine?"* The first sentence about any electronics object is what it does on stage; then how it
+    is simulated (D10); the ports last (RUNNING_LOG §64).
+26. **A tool run as a CHECK can write.** `notate_section.js` put its page in `notation/ir/` and the picker whatever `--out` said.
+    After any check, `git status` before the next step (RUNNING_LOG §64).
 
 ---
 
@@ -471,6 +350,24 @@ Verified in this repo only when they bite.)*
   route: the engine's address). The concert's shape as he has it: the score in browsers on iPads, the engine on a separate laptop
   (SuperCollider; a standalone later; a coordinating performance module later, not now). Rejected: any simulation-only road — the
   first casualty is §56's `DECElec` loopMIDI trigger, which has no concert counterpart. *(RUNNING_LOG §57 · §58)*
+- **D11 · 2026-10-04 — THE ENGINE RETURNS ONLY WHAT IT MAKES.** No player's own sound goes to the engine's master by itself: the
+  player is already heard in the room (in the simulation, in the rack), and a straight copy two DAW blocks behind is a comb on the
+  live sound — in concert, the dry microphone in the PA. A pass-through remains as a ROUTE CHECK alone (`LE_PASS` · `LE_ECHO`).
+  **The AI's call at the build, his to reverse** — the plan had retired only the one-second listening aid. Rejected: leaving the
+  straight pass-through behind it. *(RUNNING_LOG §64; the engine's §14)*
+- **D12 · 2026-10-04 — THE ELECTRONICS' BRICKS ARE ZONES WITH A MODEL OF THEIR OWN** (`elecOpen` the mic opening · `elecPlay` the
+  return; `zoneFunction: 'elec'`; the data in `zone.elec`), keys `M` and `R`, the machinery the engine's with a tick of its own.
+  Why: the composer tests an object's TYPE by name in some 250 places and has no registry; a zone already draws, selects, moves,
+  resizes, saves and has a panel. **THE BANK with it:** the capture runs from the message to the window's end and the engine crops
+  to the attack by a rule his ear tunes; a name taken twice — the latest take wins; the cropped samples are COMMITTED, the raw
+  recordings are not; a return plays at UNITY on the engine's clock. **The AI's design at his *"a, write it"* (§62), seven places
+  moved at the build (§64), his to reverse.** Rejected: a new object type · the crop in Node · a capture scheduled to the brick's
+  exact start · the message inside the MIDI tick (a tablet in concert has no MIDI). *(RUNNING_LOG §62 · §64)*
+- **D13 · 2026-10-04 — HIS WORD ON TESTING: a build is proven ONCE and stops.** *"no more testing unless absolutely necessary. I'll
+  test and troubleshoot when I'm writing, when I'm composing."* With §61's (*"Let's just try to avoid unnecessary testing"* — no
+  check that needs his hands unless he asks) it covers the AI's own runs too: no second proof of one claim; a check worth making is
+  OFFERED in one line. Faults are found in the composing → `docs/SWEEP_LIST.md`. Not relaxed: a confidence CLAIM must have been
+  verified — unverified is unclaimed. *(RUNNING_LOG §61 · §65; CLAUDE.md § THE RHYTHM)*
 
 ---
 
@@ -478,6 +375,18 @@ Verified in this repo only when they bite.)*
 
 *(Mode-specific procedures and gotchas. The last piece's §5 holds the engine's playbooks; bring one
 across when its system lands here and is first used.)*
+
+- **THE ELECTRONICS — the routine** *(first used 2026-10-04; the detail is `electronics/docs/SEAMS.md` and CLAUDE.md § Apps)*
+  - **A player gets a microphone:** a row in `bank/elec_route.json` `players` (name · track · engineIn · port) → `node tools/elec.js
+    route` → HIS CTRL+S in Reaper → the engine started again.
+  - **The crop cuts wrong:** a number in `bank/elec_route.json` `bank.crop` → the engine started again → play through the opening.
+  - **A new message kind:** the engine `~le.hear(kind, { |le, data| … })` · the page `LE.send(kind, data)` — strings, numbers and
+    booleans only; an OSC string arrives in sclang as a SYMBOL.
+  - **A new object:** a zone with a model of its own in `electronics/score/le_objects.js`; a new TYPE is the last resort (D12).
+  - **Gotchas:** an engine run refuses beside his window — ask him to close it, never end a live engine · a `.scd` parse error
+    prints nothing and times out: `node electronics/tools/sc.js run <file> --verbose` · an Event key must not share a name with a
+    method (`boot.scd`'s header) · a doubled backslash through the Bash tool arrives as one — a file with backslashes is written by
+    the Write tool · the bricks are verified by `docs/VERIFICATION_RECIPE.md`'s last AND SINCE, and only when a claim needs it (D13).
 
 ---
 
@@ -487,6 +396,12 @@ across when its system lands here and is first used.)*
   record docs from the skeletons (RUNNING_LOG §1; `#6 §816 … §818`).
 - 2026-10-04 — **0 · container 3** the engine copied forward: 369 files byte-exact from piece #6 @ `0d70fda`, proven whole, the
   small fixes, six Decibel lanes on 5500 / 5000, provisional recipes, verified in the running app (RUNNING_LOG §6 … §16; D9).
+- 2026-10-04 — **0 · container 4** the instruments: nine ports, the rack of sixteen, every lane's recipe, the first sound from the
+  composer score (RUNNING_LOG §18 … §43).
+- 2026-10-04 — **0 · container 5** the calibration, for a composing demo: sixteen faders, four dynamics curves (§40 … §43).
+- 2026-10-04 — **0 · container 6** SET UP: the registry for six parts, the technique keys, a save extracted, drawn, exported (§45).
+- 2026-10-04 — **1.1** the electronics' plumbing and THE FIRST OBJECT: the audio route, the message route, the mic opening, the crop,
+  the bank's index, the return, the demo — done but for his ear (RUNNING_LOG §47 … §64; D10 · D11 · D12).
 
 ---
 
