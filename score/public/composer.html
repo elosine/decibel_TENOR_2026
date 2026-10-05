@@ -420,6 +420,7 @@
         <button id="motivePlaceBtn">Place Motive</button>
         <button id="stampBtn">Stamp → META</button>
         <button id="clearAllBtn">Clear All</button>
+        <button id="crescHarmBtn" title="the crescendo harmony (PLAN 1m): choose the sonority C deals from with nothing selected — the strip then sits on the active lane until its ✕">Crescendo harmony…</button>
         <button id="blastsBtn" title="insertion strip: pick a source, flip through a list, audition, insert at the playhead">Insertion</button>
     </span>
 </div>
@@ -433,7 +434,7 @@
                                   ['restoreBtn', 'Restore a named version…'], ['hintBtn', 'the save rules — show / hide']]],
         menuInsert: ['Insert ▾', [['markerBtn', 'Marker'], ['zoneBtn', 'Zone'], ['trillBtn', 'Trill   (T)'], ['crescBtn', 'Crescendo   (C)'], ['lwBtn', 'Line wedge'],
                                   ['motivePlaceBtn', 'Place the chosen motive'], ['stampBtn', 'Stamp the chosen shape → META'], ['blastsBtn', 'Insertion strip (blasts · clusters)'],
-                                  ['clearAllBtn', 'Clear all…']]],
+                                  ['crescHarmBtn', 'Crescendo harmony… (what C deals from)'], ['clearAllBtn', 'Clear all…']]],
         menuPanels: ['Panels ▾', [['strikesBtn', 'Strikes'], ['sequenceBtn', 'Sequence'], ['rhythmSeqBtn', 'Rhythm'], ['beatingBtn', 'Beating   (B)'],
                                   ['morphBtn', 'Morph'], ['textureBtn', 'Texture'], ['pulseBtn', 'Pulse'], ['mtBtn', 'Multitempo']]],
     };
@@ -1564,6 +1565,7 @@ const Composer = {
         document.getElementById('trillBtn').addEventListener('click', () => this.createTrill());
         document.getElementById('crescBtn').addEventListener('click', () => this.createCrescendo());   // PLAN 1m
         document.getElementById('beatingBtn').addEventListener('click', () => { if (typeof BeatingPanel !== 'undefined') BeatingPanel.toggle(); });   // PLAN 1f step 4
+        { const ch = document.getElementById('crescHarmBtn'); if (ch) ch.addEventListener('click', () => this.crescBarChoose()); }   // §68: the way in to the crescendo harmony, from Insert ▾
         document.getElementById('panicBtn').addEventListener('click', () => this.panicAll());   // §176: the trapped note
         document.getElementById('lwBtn').addEventListener('click', () => this.createLineWedge());
         const mpBtn = document.getElementById('motivePlaceBtn');
@@ -10119,6 +10121,9 @@ const Composer = {
         const laneEl = this.lanes && this.lanes[layer]; if (!laneEl || typeof Cresc === 'undefined') return;
         const B = this.crescBar(), son = this.crescBarSonority();
         let bar = laneEl.querySelector('#crescBar');
+        // 2026-10-04 (RUNNING_LOG §68, his "get rid of harmony for C"): with no sonority chosen NOTHING stands on the lane — the way in is
+        // Insert ▾ → Crescendo harmony… (the hidden #crescHarmBtn). The strip appears once a sonority is chosen; its ✕ puts it away again.
+        if (!B.src) { if (bar) bar.remove(); return; }
         if (!bar) {
             bar = document.createElement('div'); bar.id = 'crescBar';
             bar.style.cssText = 'position:absolute;right:6px;top:16px;z-index:3;font-size:10px;color:#7a3a12;background:rgba(255,244,236,0.94);border:1px solid #C2410C;border-radius:3px;padding:1px 5px;display:flex;gap:6px;align-items:center;user-select:none;white-space:nowrap;pointer-events:auto';
