@@ -386,3 +386,30 @@ different process at each stage; the result at every stage KEPT, and the stages 
 slap), sits as a brick, and each transformation of it as a further brick; the engine renders each stage from the one before.
 The samples: the 25 in the bank now. This is DEC-14's variants workshop reached by another road, and step 10 of the running
 order — the processing — opened by it. The scheme itself — which processes, in what order — is the talk at the resume.)*
+
+### DEC-16b · 2026-10-05 — THE WORKSHOP'S SHAPE, in his words at the resume: start from the effects already built in the sandbox engine, named · an experimental save file · a series of bricks, each processed from the one before · labelled · the effect changeable in the card · some dials visible, the AI turning most of them
+
+> *"lets work on the workshop for transforming samples, see the live-electronics engine a number of effects are their and
+> built, we can start with those, list and name them, devise a format for the workshop Probably just an experimental save file
+> with just a series of bricks, each one successively having been processed with something. And then you can label or name
+> them. And maybe a way, like in the card or something, to change the effect being applied. And then some of the dials, I'll
+> probably mostly get AI to change the dials, but maybe to see what's going on and maybe make some tweaks myself. Anyways, just
+> uh, let's... build a plan for this, not, not a formal plan, but let's sketch out what this will look like."*
+
+*(The AI's reading, marked as such: this CONFIRMS DEC-16's reading — a chain, each brick's sample processed from the brick
+before it — and adds four requirements for the workshop: the effects are the sandbox's, by name; the workshop is a save score
+of bricks; each brick's card chooses its effect; a few dials show, the AI sets most. The sketch is RUNNING_LOG §100; the shape
+and the scheme are his to approve or rewrite.)*
+
+### DEC-16c · 2026-10-05 — THE RENDER GETS AN ENVELOPE STAGE: duration and shape under his control — "a series of still attack-sounding objects, but with the timbre of the reprocessed samples"; the tail-to-silence kept as an option · the card as recommended, adjusted later
+
+> *"For the render stage, let's add an enveloping stage here so we can control the duration and its envelope. In other words,
+> if I wanted to make a series of a still attack sounding objects, but with the timbre of the reprocessed samples, I would be
+> able to put a percussive envelope on it and not wait for the tail to fall under 60 dB. But let's have the one you recommended
+> as an option as well. The card is okay for now, but let's, we'll need to develop that. I probably will just get AI to do
+> modifications, but let's go with what you recommend for the card and then we'll make adjustments later."*
+
+*(The AI's reading, marked as such: the END of a render has two modes — `shape`, an envelope after the effect (attack · duration ·
+release · curve; percussive at a short attack and a falling curve), his primary; `tail`, until the output falls under −60 dB,
+kept as the option. A compositional point for the paper: the processed TIMBRE and the ATTACK shape are decoupled — a chain can
+run deep into resonance and still yield struck objects. Built as PLAN.md § 1.3, 10.1.)*

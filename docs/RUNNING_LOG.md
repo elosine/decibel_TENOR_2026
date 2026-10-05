@@ -3213,3 +3213,102 @@ confirm first at the resume.
 **The checkpoint:** the day's three builds are committed and pushed (§97 · §98, the engine's repo in step at `86b56f5`); this
 commit carries the note, the journal's block, and HIS 25 samples with their index as a pass re-recorded them today (the bank at
 work, D12 — never discarded, committed at the wrap). The next session is a TALK first: the reading · the workshop · the scheme.
+
+## §100. THE WORKSHOP SKETCHED — the sandbox's effects named; a PROCESS brick; a render on demand from its card; derived names (2026-10-05, Fable; DEC-16b; the resume of checkpoint #3)
+
+**What prompted it:** his `/postclear` carried the brief — DEC-16b, verbatim in the sketch pad: the effects already built in the
+sandbox, listed and named · an experimental save file of bricks, each processed from the one before · labelled · the effect
+changeable in the card · some dials visible, the AI turning most · *"not a formal plan, but let's sketch out what this will look
+like."* His words also answer the checkpoint's first question — the reading of DEC-16 (a chain, stage n from stage n − 1) is
+confirmed by his own description.
+
+**What was read, and only that:** the resume reads (journal §2 whole · DEC-14 · DEC-16 · the engine plan's parts 2 and 6 · the
+sandbox's CLAUDE.md · the petals README — empty but for its title), then ONE question: which processes does the sandbox hold,
+built? Answered from `live-electronics-engine/synths/` — the file headers and the SynthDef argument lists (`process-chain.scd`
+whole to its drive stage · `feature-chain.scd` · `roads-cloud.scd` `\roadsCloudBuf` · `grain-articulate.scd`) and the petals
+synth's arguments (`SynthDef_petalsOfResonance_2025Update.scd`). No code of this piece opened.
+
+**The catalogue — what exists, by name.** The sandbox's `\processChain` is a single SuperCollider synth that plays a BUFFER
+through a fixed order of stages, EVERY stage a wet/dry mix (so a "mode" is a set of mix levels, and stages overlap); its
+order is deliberate — harmonics-makers before the filter, spectral stages after it, reverb last. Its stages (the header's
+words, condensed): (1) resonator bank — four ringing bands 110 · 440 · 1600 · 5200 Hz, decay · (2) complex resonator — one
+partial, tuneable in flight (ComplexRes) · (3) drive — six shapers: tanh · sine · crossover · fold · bitcrush · disintegrate,
+tamed by the filter after · (4) ring modulation, sine carrier · (5) diode ring modulation — the circuit modelled, gritty ·
+(6) frequency shift — detunes, inharmonic · (7) comb — a delay with feedback · (8) filter — four models: MoogFF · Moog ladder
+· LPF18 · RLPFD, plus a high-pass · (9) freeze — holds the spectrum · (10) smear — spectral blur · (11) spectral gate — the
+loudest bins only · (12) diffusion — nested allpass, smears the transient without a tail · (13) string resonator — a plucked
+string tuned by delay time · (14) Greyhole — delay and reverb at once; small = a resonator, large = never settles · (15) JPverb
+— a reverb with a decay per band · (16) reverb — time · damping · room · (17) space — width by decorrelation, a swirl · (18) a
+noise bed following the carrier's envelope. The DEIND stages (2 · 5 · 14 · 15) and the selectable shapers and filters are
+sc3-plugins — installed on this machine (the sandbox's `docs/reference/supercollider-extensions.md`). Beside the chain, two
+granular voices that READ a buffer: (19) `\roadsCloudBuf` — a Roads cloud over a sound file: density · grain length · a
+playhead scrubbed 0 → 1 with jitter · transposition in semitones with per-grain spread — the time-stretch; (20)
+`\grainArticulate` — one window cut out of a sample in five articulations (muted 50 ms · plucked 140 · struck 300 · harmonic
+900 · inside 180). And (21) the PEDALS OF RESONANCE (`SynthDef_petalsOfResonance`, his own repo): two banks of thirteen partials
+on two fundamentals, ring lengths, spread, an input length — it takes LIVE INPUT on a bus, so it is the one process that
+needs a real port, not a copy. `\featureChain` is the four-stage ancestor of the chain (its stages steered by measured
+features) — nothing in it the chain lacks. The engine plan's part 6 names, besides: the momentary gate · delay · loop +
+granular · freeze · Greyhole — all in the list above but the loop.
+
+**The shape proposed (the AI's; his to approve):**
+- THE SCORE: `scores/workshop-bfl-slap.json`, a save score opened like any other — no new machinery for the file.
+- BRICK 0: the slap as it is — a plain return brick (`R`) on `bfl-impulse-1`.
+- BRICKS 1 … n: a THIRD electronics object, a PROCESS brick (key `P`; `midiModel` `elecProcess`, a zone like the other two):
+  its SOURCE (by default the brick before it on the lane; any banked sample by choice) · its EFFECT (one of the names above,
+  a menu) · its DIALS · a RENDER button. Rendered, it is a banked sample like any other, and the brick plays it where it sits.
+- THE RENDER: the page sends `/le/process` with source · effect · dials; the engine plays the source buffer through the one
+  stage (the chain with that stage's mix at 1, the rest at 0 — the sandbox's own switching principle), records the output into
+  a buffer, runs on past the source's end until the tail falls under −60 dB (a cap, 8 s, his to move), writes
+  `bank/samples/<source>~<n>.wav` and a row (with `parent` · `effect` · `dials`), answers the page, which refreshes its index.
+  Real time on the running server, not NRT: the engine is up anyway, a stage is seconds long, and the same synth serves the
+  concert later. The length grows stage by stage — that IS the Lucier effect.
+- THE NAMES: the file `bfl-impulse-1~1`, `~2` …; the label the readable chain — `P2 · greyhole ← ~1`. His to rename.
+- THE CARD: Source ▾ · Effect ▾ · the effect's three to six dials that matter, with the AI's defaults · a JSON box holding
+  the whole setting (the AI's hands; his eye) · Render · the result's length and level.
+- UPSTREAM CHANGES: a stage re-rendered invalidates the stages after it; a "Render from here" re-runs the chain down the lane.
+  First build: by hand, one brick at a time; the cascade later if he wants it.
+- THE PURE LUCIER CASE is in it: name the same effect at every stage.
+
+**THE SORTING, decided by the AI (standing practice):** the stages and the render — `electronics/sc/process.scd`, the chain
+ported from the sandbox's `synths/process-chain.scd` with the two granular voices, the petals when he calls them — and the
+brick's machinery in `electronics/score/le_objects.js` are the ENGINE's (its part 6 by way of part 2). The workshop score,
+which effect at which stage, the dials chosen and the rendered samples are the PIECE's (`scores/` · `bank/samples/`).
+
+**A first scheme for the slap, proposed for him to rewrite:** 1 comb (the slap acquires a pitch) · 2 Greyhole, small (a
+room rings) · 3 freeze + smear (the ring held) · 4 the cloud (the held ring stretched to a texture).
+
+**Not decided, not built, not heard.** The one decision put to him: does the shape hold — a `P` brick · render on demand
+from its card · derived names? Then the scheme. Q7 ("pedals" / "petals") comes up at the stage that uses them.
+
+## §101. THE WORKSHOP APPROVED, WITH AN ENVELOPE STAGE; plan then build — the block written as PLAN.md § 1.3 (2026-10-05, Fable; DEC-16c)
+
+**What prompted it:** his answer to §100's one decision — DEC-16c, verbatim in the sketch pad. The shape holds (the `P` brick · the
+render from its card · derived names); ONE ADDITION: *"let's add an enveloping stage here so we can control the duration and its
+envelope … a series of a still attack sounding objects, but with the timbre of the reprocessed samples … a percussive envelope on
+it and not wait for the tail to fall under 60 dB. But let's have the one you recommended as an option as well."* The card: *"okay
+for now … let's go with what you recommend … adjustments later."* And his question: *"plan or can you go to build or is it better
+if you plan then build?"*
+
+**What changed from §100's sketch:** the render's END is a STAGE with two modes — `shape` (an envelope AFTER the effect: attack ·
+duration · release · curve; his primary — the processed timbre with a struck shape) and `tail` (until the output sits under −60 dB
+for 100 ms, capped at 8 s — §100's proposal, now the option). A compositional point worth the paper: timbre and attack shape are
+DECOUPLED — a chain may run deep into resonance and still yield percussive objects.
+
+**Plan or build — the AI's answer: PLAN, THEN BUILD ON OPUS, as one.** Why: this is the largest build since the first object
+(a ~300-line synth ported from the sandbox · a render path with two end modes · a third brick with a catalogue of eighteen effects
+and its card · a score builder); the lineage's proven road for exactly that size was Fable's layout → Opus's build as ONE (6.3 …
+6.6, §62 → §64); and Fable's allotment is the one he watches. The pattern brick (§97 · §98) was built here because it was a
+fourth branch of an existing brick; this is a new object on both sides of the seam.
+
+**Written in this turn:** PLAN.md § 1.3 — 10.1 THE BUILD BLOCK (a) the engine `process.scd` + `/le/process` + the END stage + the
+headless proof `process_test.scd` · (b) the page: `MODELS.elecProcess`, key `P`, the panel, Render with an index poll, playback
+as a plain return · the catalogue `le_effects.js` (one more script line — a seam) · (c) `tools/build_workshop.js` →
+`scores/workshop-bfl-slap.json`, a NEW file carrying the first scheme unrendered (comb · greyhole small · freeze + smear · jpverb;
+the cloud waits for 10.2) · (d) the record; 10.2 the granular voices · 10.3 the pedals of resonance · 10.4 the cascade. Journal §2:
+the hand-off block and the table row; PLANNER's NOW line.
+
+**Two design calls made by the AI, said once:** the page decides the synth's argument values (the catalogue lives in the page's
+module; the engine applies what it is sent and stores it in the row — the engine never needs the menu) · the engine answers a
+render the way it answers a capture: the index; the page polls `loadIndex` until the row is there (no new return road).
+
+**Not built, not heard.** The scheme's four stages are the AI's proposal, his to rewrite in the cards.

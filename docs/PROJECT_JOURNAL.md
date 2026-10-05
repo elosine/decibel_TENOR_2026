@@ -173,6 +173,16 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► AFTER CHECKPOINT #3 — 2026-10-05, Fable (RUNNING_LOG §100 · §101): THE WORKSHOP LAID OUT AND APPROVED; THE BUILD BLOCK IS PLAN.md § 1.3, 10.1. THIS SUPERSEDES the checkpoint's "NEXT CONCRETE STEP" below.**
+
+- **The talk, done in two turns:** his words DEC-16b · 16c; the sandbox's effects named — eighteen stages of one chain, two granular voices, his pedals (§100); the shape APPROVED by him: a PROCESS brick (`P`) · a render on demand from its card · derived names `bfl-impulse-1~1`, `~2` … · an END STAGE with two modes — `shape` (attack · duration · release · curve; his: "still attack-sounding objects with the timbre of the reprocessed samples") and `tail` (until −60 dB, 8 s cap) · the card as the AI recommended, *"adjustments later"*.
+- **THE NEXT CONCRETE STEP — BUILD 10.1 AS ONE, ON OPUS, AFTER A CLEAR** (his question "plan or build" answered: plan, then build — §101): (a) the engine `electronics/sc/process.scd` + `/le/process` + the END stage · (b) the page — `MODELS.elecProcess`, key `P`, the panel, Render, playback as a plain return — and the catalogue `electronics/score/le_effects.js` · (c) `tools/build_workshop.js` → `scores/workshop-bfl-slap.json` (a NEW file, announced to him) · (d) the record. THE ONE PROOF: `electronics/sc/process_test.scd`, headless. Then stop (D13).
+- **`Resume reads:` PLAN.md § 1.3 (the block, whole) · `electronics/sc/bank.scd` (the `/le/open` handler · `captureDone` · `samplePlay` — the conventions to copy) · `electronics/sc/roll_test.scd` (the headless pattern) · `electronics/score/le_objects.js` whole (`MODELS` · `make` · `panel` · `decorate` · `fire` · `loadIndex`) · `live-electronics-engine/synths/process-chain.scd` whole (the port's source — READ ONLY, never edited) · `tools/build_first_object.js`.** RUNNING_LOG §100 for the catalogue's names only; §101 for the two design calls. Nothing else.
+- **PENDING HIM, when he offers them:** the scheme — the four stages are the AI's proposal, rewritten in the cards · his ear on the four return behaviours (§97 · §98) · the sixth group's behaviour · DEC-13's accented long tones · the three notation calls.
+- **DELIBERATELY UNCOMMITTED: nothing after this turn's commit.** The temp save `scores/temp01new_cello_bass_flute_perc_25.72.json` is his, untracked, untouched. The engine's repo in step (nothing in `electronics/` changed this turn).
+- **LEFT RUNNING — ALL HIS:** Reaper on the rack · the score server on 5500 · his engine (predates §97 · §98's code) · loopMIDI.
+- **RESUME ON: Opus.** `/checkpoint` on Opus · `/clear` · `/postclear` on Opus · the build.
+
 **► CHECKPOINT #3 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Fable (RUNNING_LOG §97 … §99). Where the blocks below disagree with this one, THIS BLOCK WINS.**
 
 - **THE TASK AND ITS STATE:** running order step 9 is DONE BUT FOR HIS EAR — a return brick has FOUR behaviours: `ar` · `chain` · `arChain` rolled by the engine, `pattern` composed in its panel with the Strikes drawer's whole rhythm menu (accel · round robin with gap → last, containers, the dealing, a level ramp — §97 · §98). **HIS NOTE DEC-16 OPENS STEP 10, THE PROCESSING, by way of a WORKSHOP:** each sample transformed through the piece, *"I am sitting in a room"* style — a chain of processes, each stage from the one before, every stage kept; **start with the bass flute's tongue slap `bfl-impulse-1`; each transformation its own brick**; the 25 samples of the bank as they are.
@@ -345,7 +355,8 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — THE PROCESSING, opened by DEC-16 (checkpoint #3 above): the WORKSHOP and the TRANSFORMATIONAL SCHEME for the flute's tongue slap — a talk first (the reading · the workshop · the scheme), then the build** | **Fable** (the talk) · the build here at his word, or Opus | **yes — `/clear`, `/postclear`** |
+| **►** | **Step 10.1 — THE BUILD OF THE WORKSHOP (PLAN.md § 1.3, 10.1): the chain ported to `process.scd`, the END stage (`shape` · `tail`), `/le/process`, the `P` brick and its card, the catalogue `le_effects.js`, `scores/workshop-bfl-slap.json`; ONE headless proof** | **Opus** (a build from a written block) | **yes — `/checkpoint` on Opus · `/clear` · `/postclear`** |
+| — | Step 10.2 … 10.4 — the granular voices · the pedals of resonance (Q7) · the cascade — each a talk, then a build | Fable (the talk) · Opus (the build) | — |
 | — | Step 9 — HIS EAR on the four behaviours (§97 · §98): a letter A … I for the rolled ones (`bank/elec_route.json` `return.ar` · `return.chain`); a brick → Behaviour → pattern for the composed one. A fault → `docs/SWEEP_LIST.md` | Fable (the talk) · Opus (a fix) | — |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
