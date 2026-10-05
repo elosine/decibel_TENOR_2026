@@ -295,6 +295,27 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
     (zones of other models are skipped; if it throws, one filter, and a NITS line otherwise) · `node tools/unsaved_check.js`.
   - *His part:* his ear, and his word that this is the first object he meant (DEC-7).
 
+### 1.2 The impulses, the live architecture, the crop — the running order's step 8 opened — `doing` 2026-10-05 (RUNNING_LOG §71)
+
+*His design, built on Fable in one sitting at his word ("let's just build here"). Each item is one line; how it was made and measured is §71.*
+
+- **8.1 Impulse 1 — `done` 2026-10-05 (§71):** `tools/impulse.js` + `bank/impulses.json` (his dictation, a row per impulse): the next five notes of
+  his recorded rhythm → five players, their techniques, a pitch in the middle of each range, a MIC OPENING over each named `<player>-impulse-<N>`,
+  category `impulse` — the sample's and the buffer's identity. In `scores/piece-sec01-a.json`. Impulse 2 = the next five, one command.
+- **8.2 The microphones — `done but unsaved` (§71):** four rows in `bank/elec_route.json` (bfl · perc = the shime daiko's track · va · vc), the
+  sends in the rack through the bridge — his CTRL+S. The percussion's other seven tracks get a send as the music uses them (NITS).
+- **8.3 The modes — `done, proven hardware-free` (§71):** one word in the route table — `compose` · `compose-locked` · `rehearsal` · `concert` —
+  names which bank fills the buffers at start, where captures go, whether an opening records (`LE_SOURCE` · `LE_RECORD`; `bankOn`).
+  The backup bank `bank/backup/` (the players' rehearsal recordings, same names); the concert's live captures `bank/live/<date>/`.
+  THE SAFETY NET: a capture without an attack keeps the buffer's loaded take and says so — its analysis to be made foolproof before the
+  concert (NITS, his word). **His choice:** in concert the buffers start FULL from the backup.
+- **8.4 The crop tested — `done, one kind open` (§71):** `node tools/elec.js croptest` (`bank/crop_test.json` · `electronics/tools/crop_report.js`):
+  one of each kind through the rack on a scratch bank, drawn on http://localhost:5500/crop_test/report.html. Six of seven cropped; the impulses
+  keep 0.7 … 1.0 s (the room — his ear sets `endDb`); the flute's slap awaits his Reaper restart (ReaRoute wedged by a killed engine — now the
+  tools leave gracefully, `/le/leave`).
+- **8.5 The first five captured — `todo`, HIS:** CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0.
+  Done when the five samples are in `bank/samples/` with their rows and he has heard one returned (`R`).
+
 ## 2. Notate — `todo`
 
 *To be laid out when we discuss it.*

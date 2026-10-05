@@ -1,0 +1,61 @@
+{
+ "_what": "THE CROP TEST — one of each kind (RUNNING_LOG §71, 2026-10-05; his word: \"test the cropping for one of each kind … the impulses or whatever, multiphonics, whatever I decide to use\"). node tools/elec.js croptest sends each kind through the rack on a SCRATCH bank with the tool's own engine (his must be down) and draws the result on http://localhost:5500/crop_test/report.html. A kind: the player (a name in elec_route.json players), the key, the preset (cc0 = preset − 1; none for a struck lane), the channel (the percussion's instrument), the note's length, a category. The window is 4 s for all — the note's sender takes a moment to start; the crop finds the attack wherever it falls.",
+ "kinds": [
+  {
+   "name": "impulse-bfl-slap",
+   "player": "bfl",
+   "note": 67,
+   "cc0": 6,
+   "noteMs": 150,
+   "category": "impulse"
+  },
+  {
+   "name": "impulse-bcl-slap",
+   "player": "bcl",
+   "note": 50,
+   "cc0": 5,
+   "noteMs": 150,
+   "category": "impulse"
+  },
+  {
+   "name": "impulse-perc-shime",
+   "player": "perc",
+   "note": 43,
+   "channel": 2,
+   "noteMs": 150,
+   "category": "impulse"
+  },
+  {
+   "name": "impulse-va-bartok",
+   "player": "va",
+   "note": 71,
+   "cc0": 79,
+   "noteMs": 150,
+   "category": "impulse"
+  },
+  {
+   "name": "impulse-vc-gettato",
+   "player": "vc",
+   "note": 56,
+   "cc0": 20,
+   "noteMs": 150,
+   "category": "impulse"
+  },
+  {
+   "name": "multiphonic-bcl",
+   "player": "bcl",
+   "note": 40,
+   "cc0": 9,
+   "noteMs": 1500,
+   "category": "multiphonic"
+  },
+  {
+   "name": "long-bfl-vib",
+   "player": "bfl",
+   "note": 67,
+   "cc0": 14,
+   "noteMs": 2000,
+   "category": "long tone"
+  }
+ ]
+}

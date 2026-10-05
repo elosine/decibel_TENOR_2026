@@ -13,6 +13,7 @@
 //   node tools/elec.js ping       # is the engine there? one /le/hello — starts nothing, safe beside his engine window  [--via 5500: through the score server]
 //   node tools/elec.js message    # 6.2's PROOF: the engine up for 20 s; a message, the note after it, and whatever the composer score sends  [--via <port>] [--seconds N] [--quiet]
 //   node tools/elec.js object     # 6.3 … 6.5's PROOF, on a SCRATCH bank (the piece's is not touched): an opening, the note into the rack, the crop, the index; the sample returned and seen on ELEC RETURN; then whatever the composer score sends until the time is up  [--via <port>] [--seconds N] [--name bcl-A] [--listen: skip the tool's own part, keep the scratch bank]
+//   node tools/elec.js croptest     # THE CROP, one of each kind (bank/crop_test.json) through the rack on a SCRATCH bank with the tool's own engine (his must be down): the raw window, the attack found, the sample kept — numbers and pictures on http://localhost:5500/crop_test/report.html; the piece's bank is not touched  [--only <kind>]
 //
 // WHAT IS THE PIECE'S AND WHAT IS THE ENGINE'S (CLAUDE.md § THE SORTING): this file, bank/elec_route.json and the bridge job
 // reaper/bridge/jobs/elec_route.lua know THIS rack — its track names, its port. The SuperCollider code and its runner
@@ -42,14 +43,43 @@ const flagValue = (flags, name) => (flags.includes(name) ? flags[flags.indexOf(n
 // what the engine is STARTED with, from this piece's route table (bank/elec_route.json): its players · the bank's folder ·
 // the crop's rule where this piece overrides the engine's defaults · a route check's echo. The engine takes these at its
 // start and never from a message (RUNNING_LOG §62).
+const MODES = {   // §71 (2026-10-05): which bank FILLS the buffers at start · where captures are WRITTEN · whether an opening records
+    'compose':        { load: 'samples', write: 'samples', record: true,  what: 'the samples recorded here from the rack; an opening records (the latest take wins)' },
+    'compose-locked': { load: 'samples', write: 'samples', record: false, what: 'the samples as they are; an opening changes nothing' },
+    'rehearsal':      { load: 'backup',  write: 'backup',  record: true,  what: 'the players record the BACKUP bank' },
+    'concert':        { load: 'backup',  write: 'live',    record: true,  what: 'buffers full from the backup; a live capture replaces one only when it caught a sound; the captures kept in a dated folder' },
+};
+function modeOf() {
+    const m = CFG.mode || 'compose';
+    if (!MODES[m]) throw new Error('unknown mode "' + m + '" in bank/elec_route.json — one of ' + Object.keys(MODES).join(' · '));
+    return Object.assign({ name: m }, MODES[m]);
+}
+function bankDirs() {
+    const B = CFG.bank || {}, day = new Date().toISOString().slice(0, 10);
+    const abs = (d) => path.resolve(ROOT, d).split(path.sep).join('/');
+    return { samples: abs(B.dir || 'bank/samples'), backup: abs(CFG.backupDir || 'bank/backup'), live: abs((CFG.liveDir || 'bank/live') + '/' + day) };
+}
+function modeLine() {
+    const m = modeOf(), d = bankDirs();
+    return 'MODE       ' + m.name + ' — ' + m.what + '\n           buffers from ' + path.relative(ROOT, d[m.load]) + ' · captures to ' + path.relative(ROOT, d[m.write]) + ' · openings ' + (m.record ? 'record' : 'do NOT record');
+}
 function engineEnv() {
-    const B = CFG.bank || {};
+    const B = CFG.bank || {}, m = modeOf(), dirs = bankDirs();
     const crop = Object.entries(B.crop || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
-    const env = { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(',') };
-    if (B.dir) env.LE_BANK = path.resolve(ROOT, B.dir).split(path.sep).join('/');
+    const env = { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_SOURCE: dirs[m.load], LE_BANK: dirs[m.write], LE_RECORD: m.record ? '1' : '0' };
+    fs.mkdirSync(env.LE_SOURCE, { recursive: true }); fs.mkdirSync(env.LE_BANK, { recursive: true });
     if (crop) env.LE_CROP = crop;
     if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
     return env;
+}
+
+// a tool's engine put down GRACEFULLY: /le/leave makes the language quit its server (the device closed properly) and exit; the kill is only
+// the fallback. §71: a run ended with taskkill left ReaRoute's client side wedged — every later boot hung at its first sync until Reaper restarted.
+async function stopEngine(run) {
+    const M = CFG.message || {};
+    try { await osc.send({ host: M.host, port: M.port, address: '/le/leave', args: [] }); } catch (e) { /* no ear: the kill below */ }
+    const r = await Promise.race([run.done, sleep(8000).then(() => null)]);
+    if (r == null) { run.kill(); await run.done; }
 }
 
 // one message to a score server's relay (POST /api/elec) — the road a page's message takes; null when nothing answers
@@ -145,6 +175,7 @@ async function readPeaks(waitMs) {
     if (cmd === 'selftest') { const r = await sc.start(SCD('selftest.scd'), { timeoutS: 90, onLine: (l) => { if (/^LE_/.test(l)) console.log(l); } }).done; process.exit(r.code); }
 
     if (cmd === 'start') {
+        console.log(modeLine());
         const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: engineEnv(), onLine: (l) => {
             const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: nothing is shown. A route check's pairing (an onset with its sound) is kept; a capture's row is in the bank's index
             if (m) { try { const o = JSON.parse(m[1]); if (o.msg === 'onset') fs.appendFileSync(path.join(ROOT, 'probes', 'elec_message_log.jsonl'), JSON.stringify({ when: new Date().toISOString(), ...o }) + '\n'); } catch (e) {} return; }
@@ -310,7 +341,7 @@ async function readPeaks(waitMs) {
         const d = job('probe'), dev = await engineSeesReaRoute(), miss = missing(d, dev);
         if (miss.length) { show(d, dev); console.log('\nMISSING, in order:\n' + miss.map((x, i) => '  ' + (i + 1) + '. ' + x).join('\n')); process.exit(2); }
         const t0 = Date.now();
-        const run = sc.start(SCD('session.scd'), { timeoutS: secs + 90, env: { ...engineEnv(), LE_BANK: scratch, LE_SECONDS: String(secs + 30) },
+        const run = sc.start(SCD('session.scd'), { timeoutS: secs + 90, env: { ...engineEnv(), LE_BANK: scratch, LE_SOURCE: scratch, LE_RECORD: '1', LE_SECONDS: String(secs + 30) },
             onLine: (l) => { if (/^LE_INFO\s+(open|captured|cropped|nothing to crop|play)\b/.test(l)) { shown.push(l.replace(/^LE_INFO\s*/, '')); console.log('  engine   ' + shown[shown.length - 1]); } } });
         try { console.log('engine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
         catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
@@ -347,11 +378,60 @@ async function readPeaks(waitMs) {
             Object.assign(out, { listenedS: left, fromTheScore: mine, returnWhileListeningDb: ret });
             if (listenOnly) pass = mine.length > 0;
         }
-        run.kill(); await run.done;
+        await stopEngine(run);
         out.engineLines = shown; out.pass = pass;
         console.log('\n' + (pass ? (listenOnly ? 'THE SCORE\'S OBJECTS REACH THE ENGINE.' : 'THE FIRST OBJECT HOLDS: a window of the player is captured, cropped, indexed, and returned at unity.') : 'BROKEN — see the first line above that is missing.'));
         fs.writeFileSync(path.join(ROOT, 'probes', listenOnly ? 'elec_object_page.json' : 'elec_object.json'), JSON.stringify(out, null, 1) + '\n');
         process.exit(pass ? 0 : 1);
+    }
+
+    if (cmd === 'croptest') {
+        // §71 (2026-10-05): THE CROP TESTED on one of each kind, with real sound through the rack, on a SCRATCH bank (the piece's is not touched)
+        // and the tool's own engine (his must be down). Each kind: an opening with a 4 s window (the note's sender takes a moment to start), the
+        // note into the rack by its port, channel and preset, the engine's capture; the raw window, the sample and the row are copied to
+        // score/public/crop_test/ and drawn on report.html (electronics/tools/crop_report.js) — the page he opens from his score server.
+        const M = CFG.message || {};
+        const kinds = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'crop_test.json'), 'utf8')).kinds;
+        const only = flagValue(flags, '--only');
+        const list = only ? kinds.filter((k) => k.name === only) : kinds;
+        if (!list.length) { console.error('no such kind' + (only ? ' "' + only + '"' : '') + ' in bank/crop_test.json'); process.exit(2); }
+        const scratch = path.join(os.tmpdir(), 'decibel_elec_croptest_bank'); fs.rmSync(scratch, { recursive: true, force: true }); fs.mkdirSync(scratch, { recursive: true });
+        const outDir = path.join(ROOT, 'score', 'public', 'crop_test'); fs.rmSync(outDir, { recursive: true, force: true }); fs.mkdirSync(outDir, { recursive: true });
+        const d = job('probe'), dev = await engineSeesReaRoute(), miss = missing(d, dev);
+        if (miss.length) { show(d, dev); console.log('\nMISSING, in order:\n' + miss.map((x, i) => '  ' + (i + 1) + '. ' + x).join('\n')); process.exit(2); }
+        const lines = [];
+        const run = sc.start(SCD('session.scd'), { timeoutS: 90 + list.length * 12, env: { ...engineEnv(), LE_BANK: scratch, LE_SOURCE: scratch, LE_RECORD: '1', LE_SECONDS: String(60 + list.length * 12) },
+            onLine: (l) => { if (/^LE_INFO\s+(open|captured|cropped|nothing to crop)\b/.test(l)) { lines.push(l.replace(/^LE_INFO\s*/, '')); console.log('  engine   ' + lines[lines.length - 1]); } } });
+        try { console.log('engine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
+        catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
+        const items = [];
+        for (const k of list) {
+            const p = CFG.players.find((x) => x.name === k.player);
+            if (!p) { console.log('SKIPPED    ' + k.name + ' — no player ' + k.player + ' in the route table'); continue; }
+            const win = k.windowMs || 4000;
+            await osc.send({ host: M.host, port: M.port, address: '/le/open', args: osc.pairs({ player: p.name, lane: -1, id: k.name, name: k.name, category: k.category || 'test', t: 0, lengthMs: win, dueMs: 0 }) });
+            const args = ['-NoProfile', '-File', path.join(ROOT, 'tools', 'note_to_port.ps1'), '-Port', p.port, '-Note', String(k.note), '-Channel', String(k.channel || 1), '-Vel', String(k.vel || 100), '-Ms', String(k.noteMs || 150)];
+            if (k.cc0 != null) args.push('-Cc0', String(k.cc0));
+            const ps = cp.spawn('powershell', args, { stdio: 'ignore' });
+            console.log('kind       ' + k.name + ' — ' + p.name + ' key ' + k.note + (k.cc0 != null ? ' preset ' + (k.cc0 + 1) : '') + (k.channel ? ' ch ' + k.channel : '') + ' · ' + (k.noteMs || 150) + ' ms · window ' + win + ' ms');
+            let row = null;
+            const mine = new RegExp('^LE_RESULT (?=.*"msg": "captured")(?=.*"name": "' + k.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '")');   // THIS kind's capture, by name — a wait that takes any earlier line runs ahead of the engine
+            try { row = JSON.parse((await run.waitFor(mine, win + 10000)).replace(/^LE_RESULT\s*/, '')); } catch (e) { console.log('           no capture came'); }
+            await new Promise((r) => { if (ps.exitCode != null) r(); else { ps.on('exit', r); setTimeout(r, 4000); } });   // the sender finishes on its own: its note-off is sent (a sender killed mid-note leaves a stuck note)
+            const rawRel = 'raw_' + k.name + '.wav', smpRel = k.name + '.wav';
+            const rawSrc = path.join(scratch, 'raw', k.name + '.wav'), smpSrc = path.join(scratch, k.name + '.wav');
+            if (fs.existsSync(rawSrc)) fs.copyFileSync(rawSrc, path.join(outDir, rawRel));
+            if (row && row.cropped && fs.existsSync(smpSrc)) fs.copyFileSync(smpSrc, path.join(outDir, smpRel));
+            items.push({ name: k.name, category: k.category || '', note: p.name + ' · key ' + k.note + (k.cc0 != null ? ' · preset ' + (k.cc0 + 1) : '') + ' · ' + (k.noteMs || 150) + ' ms', rawFile: rawRel, sampleFile: row && row.cropped ? smpRel : null, row });
+            await sleep(400);
+        }
+        await stopEngine(run);
+        const crop = Object.assign({ attackDb: -30, floorDb: -50, preMs: 5, endDb: -45, holdMs: 50, fadeInMs: 2, fadeOutMs: 10 }, (CFG.bank || {}).crop || {});
+        const rep = require(path.join(ROOT, 'electronics', 'tools', 'crop_report.js')).report(outDir, items, { title: list.length + ' kind(s)', when: new Date().toISOString(), crop });
+        fs.writeFileSync(path.join(outDir, 'results.json'), JSON.stringify({ when: new Date().toISOString(), crop, items }, null, 1) + '\n');
+        const ok = items.filter((x) => x.row && x.row.cropped).length;
+        console.log('\n' + ok + ' of ' + items.length + ' cropped · ' + path.relative(ROOT, rep) + '\nLOOK:  http://localhost:5500/crop_test/report.html');
+        process.exit(ok === items.length ? 0 : 1);
     }
 
     console.error('unknown command ' + cmd); process.exit(2);

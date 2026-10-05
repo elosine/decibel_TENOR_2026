@@ -1,15 +1,65 @@
 {
   "_what": "THE ELECTRONICS' ROUTE in this rack — this piece's USE of the engine's sound seam (electronics/docs/SEAMS.md). Which instrument track stands for which player's microphone, and the one flat track the engine's master returns on. Read by tools/elec.js; put into the rack through the bridge (reaper/bridge/jobs/elec_route.lua). Channels are ReaRoute's, counted from 1 as Reaper names them.",
-  "_made": "2026-10-04, PLAN 1.1 · 6.1 (RUNNING_LOG §51). One player for the first proof; the others are added here as the music reaches them.",
+  "_made": "2026-10-04, PLAN 1.1 · 6.1 (RUNNING_LOG §51): one player for the first proof. 2026-10-05 (RUNNING_LOG §71, impulse 1): the other four — the percussion's microphone is the shime daiko's track for now (one track per player row; the other seven percussion tracks get a send as the music uses them). engineIn 3 is the latency loop.",
   "players": [
-    { "name": "bcl", "track": "Bass Clarinet XS", "engineIn": 1, "port": "DECBassClar", "testNote": 50 }
+    {
+      "name": "bcl",
+      "track": "Bass Clarinet XS",
+      "engineIn": 1,
+      "port": "DECBassClar",
+      "testNote": 50
+    },
+    {
+      "name": "bfl",
+      "track": "Bass Flute XS",
+      "engineIn": 2,
+      "port": "DECBassFlute",
+      "testNote": 67
+    },
+    {
+      "name": "perc",
+      "track": "Shime Daiko ARO",
+      "engineIn": 4,
+      "port": "DECPerc",
+      "testNote": 43
+    },
+    {
+      "name": "va",
+      "track": "Viola XS",
+      "engineIn": 5,
+      "port": "DECViola",
+      "testNote": 70
+    },
+    {
+      "name": "vc",
+      "track": "Cello XS",
+      "engineIn": 6,
+      "port": "DECCello",
+      "testNote": 56
+    }
   ],
-  "return": { "track": "ELEC RETURN", "engineOut": 1 },
-  "latencyLoop": { "engineIn": 3 },
+  "return": {
+    "track": "ELEC RETURN",
+    "engineOut": 1
+  },
+  "latencyLoop": {
+    "engineIn": 3
+  },
   "_message": "THE MESSAGE ROUTE (PLAN 1.1 · 6.2; RUNNING_LOG §60): where the score server sends the page's messages — the engine's LANGUAGE port, UDP 57211 (its server is 57210). In concert and in simulation the same road; this address is the one thing that may differ. testOnsets: A ROUTE CHECK, off since the mic opening is a brick of its own (6.3, RUNNING_LOG §64) — the hook that sent it is out of the composer page; the engine still shows an /le/onset a tool sends. Read at every request: no restart needed.",
-  "message": { "host": "127.0.0.1", "port": 57211, "testOnsets": false },
+  "message": {
+    "host": "127.0.0.1",
+    "port": 57211,
+    "testOnsets": false
+  },
   "_bank": "THE BANK (PLAN 1.1 · 6.3 … 6.5; RUNNING_LOG §64): dir = where the engine keeps this piece's samples — <dir>/<name>.wav the cropped samples (COMMITTED: the samples are the piece's), <dir>/raw/ the whole recordings (gitignored, kept for a re-crop), <dir>/index.json a row per sample (the engine writes it; the composer page reads it at /bank/samples/index.json). crop = THE CROP'S RULE where this piece overrides the engine's defaults (electronics/sc/bank.scd): attackDb -30 · floorDb -50 · preMs 5 · endDb -45 · holdMs 50 · fadeInMs 2 · fadeOutMs 10 — HIS EAR TUNES THEM; a number written here is used from the engine's next start. Both are given to the engine at its START (tools/elec.js start), never by a message.",
-  "bank": { "dir": "bank/samples", "crop": {} },
+  "bank": {
+    "dir": "bank/samples",
+    "crop": {}
+  },
   "_listenEcho": "A ROUTE CHECK (RUNNING_LOG §55): above 0, `start` returns each note this many seconds LATER, so the route is heard as a second sound. 0 since the playback brick exists (6.5, RUNNING_LOG §64): the engine returns what it MAKES — a sample played back — and nothing of the player's own sound.",
-  "listenEchoSeconds": 0
+  "listenEchoSeconds": 0,
+  "_mode": "THE MODE (RUNNING_LOG §71, 2026-10-05; his design): one word that names which bank FILLS the engine's buffers at start, where captures are WRITTEN, and whether an opening records. compose = bank/samples both ways, openings record (the latest take wins) · compose-locked = the same samples, openings change nothing · rehearsal = the players record the BACKUP bank (bank/backup) · concert = buffers full from the backup, a live capture replaces one only when it caught a sound, the captures kept in bank/live/<date>. The bricks in the score are the same in every mode. Read at the engine's START (tools/elec.js start).",
+  "mode": "compose",
+  "backupDir": "bank/backup",
+  "liveDir": "bank/live"
 }

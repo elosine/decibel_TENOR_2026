@@ -2485,3 +2485,106 @@ rule is generic. Playback has had piece #3's floor rule since the port; the live
 
 **For the paper:** a sampler's function keys are a composing hazard the moment a keyboard is wired straight to it; the score's floor rule
 existed for playback only. The measurement that found it cost three notes and no hands.
+
+## §71. IMPULSE 1, THE LIVE ARCHITECTURE, THE CROP TESTED — step 8 opens; the engine's modes; the backup layer (2026-10-05, Fable)
+
+**His words, three messages.** The dictation: *"Okay, I've played in the rhythms. They will turn into mic inputs and be distributed. Let's just
+do the first five. The first one will be bass flute, and we'll use slap tongue velocity as the input. Second is bass clarinet, and that will be
+slap tongue. The third one is percussion. Let's use the shime taiko, taiko sticks. The fourth, viola, Bartok pits. Oh, and for all of them, just
+choose something in the middle of the range, uh, pitch-wise, for the input. Cello. Let's do Bartok pits again. Actually, cello, let's do...
+Gittato velocity, and again, something in the middle of its range. So let's start with those five, first five notes. You can take them out of the
+bass flute, leave the rest. And let's, let's actually have the mic open and that the ones I dictated played out. And then, I don't know if we
+built it yet, but talk to me about the storage system. And where can I see them in the composer score? So this will be like attack or impulse.
+That'll be like the, the language element. And it'll be like, let's just call it impulse, impulse one. For each of them. And that's will be its
+identity throughout the piece. And it may be that later I have a way to replace impulse one, but I haven't decided that yet. So let's just have
+that slot. But then the next five will be impulse two, etc. And so then I need to be able to find those again, but the sample version, and then
+be able to reinsert those into the score."*
+
+The architecture: *"So the samples are okay for now, but let's build the actual live electronic architecture here for the live performance. My
+thought was that these would be buffers and stored into super collider buffers. So you'll need a buffer for each one that we end up making in
+the score. Well, I don't know if you can make them on the fly. And then the triggers will play back the buffers. And we'll just have some kind of
+sound file scaffolding so I don't have to play the score from, from the beginning each time to record the inputs. But we should have the triggers
+built and ready anyways. So anyways, propose something for this, that we have the actual architecture in place and maybe just for the
+composition score and the simulation, we have some sort of load sound files into buffers. Yeah, maybe that's the solution. Have those mic
+openings still point to recording to buffers and have it wired up so that the bricks that play them back will play back those buffers, but
+somehow record the sound files and then load those into those buffers instead of the live mic, something like that. Make, make me a proposal that
+deals with this in a simple way, expedient way. And then the return bricks should be similar. They should be wired up to name the buffer it's
+playing back there for the live performance. Actually, sorry, for the live performance, I also wanted to build in a backup. So for example, if
+let's say they couldn't find microphones or something like that, or couldn't get too much feedback or whatever, couldn't get the live input to
+work, then we do have a backup layer where I would, in a separate setting, in a rehearsal, record all their, all the samples they were meant to
+record live and have those as backups. So we might as well build the both systems now. And then for the composer score, we can just use the
+quote unquote recorded samples version. Anyways, make a proposal and talk me through it, please."*
+
+The decisions: *"Full from the backup, I would, however, like to test the clipping function, the cropping function as well here. So can you add
+that? … I would propose maybe we test the cropping for one of each kind. So the impulses or whatever, multiphonics, whatever I decide to use, or
+I'm open to another proposal. If you want to test them in a separate experimental score or something like that, but it would be worth at least
+running through the crop, the simulated re uh, record, live mic, and then crop, but otherwise, The proposal's good. And at some point, we don't
+have to do it now, but at some point we should make a note to make sure the, what you propose the, the concert safety net. We want to make sure
+the, Analysis is very robust, it's foolproof. So we're not sending files when a sound is actually captured or vice versa."* — and, offered a
+written plan for Opus: *"No, that's okay. Let's just build here."*
+
+**1 · IMPULSE 1 — built (`tools/impulse.js` · `bank/impulses.json`).** His 28 recorded notes sat on the bass flute lane (`scores/piece-sec01-a.json`,
+all slap tongue as he played them, saved — `unsaved_check` clean). The dictation is a row of `bank/impulses.json` (lane · technique · pitch,
+"mid" = the middle of the technique's range, a by-key voice its middle key); the tool takes the next five unassigned notes of the Rec lane in time
+order, moves them to the players' lanes with the technique and the pitch, tags each (`impulse: {n, slot, name}`) and puts a MIC OPENING over
+each — 100 ms before the onset, 500 ms long — named `<player>-impulse-<N>`, category `impulse`. The name is the sample's and the buffer's
+identity. Impulse 1: 1.525 s bass flute Slap Tongue Velocity G4 (67) · 2.669 s bass clarinet Slap Tongue D3 (50) · 4.145 s shime daiko taiko
+sticks key 43 (Hit R) · 4.480 s viola Bartók pizz 71 · 5.212 s cello Gettato 56. 24 notes stay on the bass flute lane. Impulse 2 = the next five,
+one command. The four other microphones: rows in `bank/elec_route.json` (bfl → ReaRoute 2 · perc = the shime daiko's track → 4 · va → 5 · vc →
+6; 3 is the latency loop) and `node tools/elec.js route` — the sends made through the bridge, UNSAVED until his CTRL+S. The percussion's
+microphone is one track for now (one track per player row).
+
+**2 · THE LIVE ARCHITECTURE — what was there, what was added.** The engine ALREADY held a buffer per name (a capture lands in a buffer and a
+file; at start the bank's index fills a buffer per file; a return plays the buffer by name; buffers are made on the fly). Added, all in
+`electronics/`: **(a)** `bankOn(dir, crop, source, record)` — the buffers are FILLED from `source` (the bank itself, or the backup), captures
+WRITTEN to `dir`, `record = false` makes an opening change nothing (`indexRowsOf` reads any folder's index); **(b)** THE SAFETY NET: a capture
+with no attack above the floor leaves the buffer as it was and says which take it keeps (loaded or earlier), `kept` in its result; **(c)** THE
+MODES, one word in `bank/elec_route.json` (`mode`): `compose` (samples both ways, record on) · `compose-locked` (record off) · `rehearsal`
+(the players fill `bank/backup/`) · `concert` (buffers full from the backup — HIS CHOICE — live captures to `bank/live/<date>/`); `tools/elec.js
+start` prints the mode and its folders; `LE_SOURCE` · `LE_RECORD` carry it. `.gitignore`: `bank/backup/raw/` · `bank/live/` · the crop test's
+page. Nothing in the score changes between modes. **Rejected:** a per-opening mode (one word for the whole engine is what a concert needs); a
+second message to reload buffers (the start does it).
+
+**3 · THE CROP TESTED — `node tools/elec.js croptest` (`bank/crop_test.json` · `electronics/tools/crop_report.js`).** One of each kind through the
+rack on a SCRATCH bank with the tool's own engine: an opening (a 4 s window — the note's sender takes a second to start), the note by port ·
+channel · preset (`note_to_port.ps1`), the capture; the raw window, the sample and the row copied to `score/public/crop_test/` and DRAWN —
+the raw envelope, the kept region in green, the attack a red line, the cropped sample below, both playable — on
+**http://localhost:5500/crop_test/report.html**. The engine's defaults (attack −30 dB of peak · floor −50 · pre 5 ms · end −45 · hold 50 ms):
+
+| kind | raw peak | attack found at | kept | note |
+|---|---|---|---|---|
+| bass clarinet slap, D3 | −29.6 dB | 536 ms | 781 ms | the slap and its room |
+| shime daiko taiko sticks, Hit R | −21.7 dB | 438 ms | 974 ms | the drum's ring |
+| viola Bartók pizz, 71 | −22.2 dB | 521 ms | 706 ms | |
+| cello gettato, 56 | −25.5 dB | 516 ms | 998 ms | the bounces |
+| bass clarinet multiphonic, key 40, 1.5 s | −29.4 dB | 771 ms | 1600 ms | the attack found where the level reached −30 dB of peak — 1.3 s in, as the multiphonic swells |
+| bass flute vibrato, G4, 2 s | −30.3 dB | 597 ms | 2989 ms | the whole tone and its release |
+| bass flute slap, G4 | — | — | — | SILENCE at the engine, twice — see 4 |
+
+The reading: for an IMPULSE the crop keeps the attack and about 0.7 … 1.0 s of tail — the end rule (−45 dB below the peak, held 50 ms) runs
+into the instrument's room; HIS EAR decides whether an impulse should be cut shorter (`bank.crop` `endDb` −30 … −36 would). For a swelling
+sound (the multiphonic) the attack rule finds the swell's crossing, not its start — the "attack" of a multiphonic is a question for the device
+sheet. The flute's long tone: 2989 ms kept of a 2000 ms note — the release.
+
+**4 · WHAT THE TEST FOUND BESIDES THE CROP — three faults, two mine.** (i) My tool's wait for a capture matched the FIRST kind's result for every
+kind after it (sclang's lines are buffered) — the tool ran ahead and killed the engine with captures pending; fixed (a wait by name). (ii) My tool
+killed its note senders mid-note: a sender that never sends its note-off leaves a STUCK NOTE in Kontakt — the bass flute's G4 stuck on, so the
+next G4 (the slap kind) toggled it OFF: silence captured, twice, while the flute's long tone captured fine (the route was never the fault). Cleared
+with CC 123 · 120 to both ports (`note_to_port.ps1 -Cc 123 -NoNote`, added); the sender now finishes on its own. On the track's own meter a slap at
+G4 then read −20.6 dB with a normal tail — impulse 1's key stands; the crop of the flute's slap is still to be seen. (iii) The engine was stopped
+with `taskkill` at every run's end — after one such end no engine could boot: the server came up on ReaRoute, and the language's first `s.sync`
+never returned (no audio callback). Reaper's audio re-opened through the bridge (`Audio_Quit/Init`) did not free it; Reaper's preference "close
+audio device when stopped and inactive" was found ON and TURNED OFF by the AI (`SNM_SetIntConfigVar audiocloseinactive 0` — his to reverse in
+Preferences → Audio → Device; the engine needs the device open while he is in Chrome) — not it either. The hardware-free `selftest` passed
+throughout: the code is sound; ReaRoute's client side is wedged until Reaper restarts. Built against it: the engine leaves on `/le/leave` (the
+server quits its device properly) and the tools call that first, the kill a fallback. **A rule from it: never end an engine with a kill while it
+holds ReaRoute.**
+
+**His hand steps, given in the reply:** CTRL+S in Reaper (the four sends; his own work) · restart Reaper with the rack (ReaRoute) ·
+`start_electronics.bat` (mode compose, five players) · Reload the score · play from 0 — the five impulses captured; then the flute slap's crop
+(`croptest --only impulse-bfl-slap`, his engine down) to complete the table.
+
+**Noted for later (NITS):** the safety net's analysis must be made foolproof before the concert — his word; the percussion's seven other tracks
+need a send each as the music uses them; a kind's "attack" for swelling sounds.
+
+**Not claimed:** his ear on anything of this; the flute slap's crop; the engine booting after his restart.

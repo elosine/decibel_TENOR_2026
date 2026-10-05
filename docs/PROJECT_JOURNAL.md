@@ -95,9 +95,9 @@ takes is his (D5).
    capture · **6.3b** the crop to the attack · **6.4** the sample index · **6.5** the return · **6.6** the demo
    `scores/decibel-first-object.json` — built as ONE (§64): `M` and `R` in the composer score; a bass clarinet note captured at
    −41.2 dB and returned at −41.22 dB. **The pedals of resonance and the sandbox's processing are PHASE 2 (step 10), not here.**
-7. ► **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
+7. ☑ **The rhythm layer — his composing** — DONE 2026-10-05: 28 notes played into the Rec lane (`scores/piece-sec01-a.json`); the bass flute's short notes under his keyboard found and fixed by measurement (§70). *(as written:)* (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
-8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
+8. ► **THE MIC OPENING — the first electronics object** — OPENED 2026-10-05 (§71; PLAN.md § 1.2): impulse 1 placed, the four microphones routed (unsaved), the modes and the backup layer built, the crop tested on six kinds. HIS NEXT: the five hand steps in OPEN AT SESSION END. *(as written:)* [part 11's first member · part 5 the first sound, re-read by his brief: a
    note CAPTURED and RETURNED; the filter comes at step 10]: a brick on an instrument's lane becomes a WINDOW — its time · its
    length · its instrument · a CATEGORY (the Braxton-like type: "short", "accented long tone" … — a field on the brick that reaches
    the IR; the glyph is the notation's, later — part 7; PERFORMANCE_NOTES #1) · in the simulation he picks the instrument and the
@@ -173,6 +173,12 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+- **THE IMPULSES AND THE LIVE ARCHITECTURE (S2 · 2026-10-05, Fable; RUNNING_LOG §71; PLAN.md § 1.2):** impulse 1 is in `piece-sec01-a` (five
+  notes on five lanes, an opening over each, `bfl-impulse-1` …); the four microphones are routed in the rack but UNSAVED (his CTRL+S); the engine
+  has MODES (`bank/elec_route.json` `mode`: compose now) and a backup bank; the crop is drawn on http://localhost:5500/crop_test/report.html
+  (six kinds; the impulses keep ~0.7 … 1.0 s of room). **BEFORE HIS ENGINE WILL BOOT: RESTART REAPER** — ReaRoute was wedged by a tool's killed
+  engine (the tools now leave gracefully). The AI turned OFF Reaper's "close audio device when stopped and inactive" (Preferences → Audio →
+  Device; his to reverse). HIS FIVE STEPS: CTRL+S · restart Reaper · `start_electronics.bat` · Reload the score · play from 0 → five samples.
 - **THE ONE BAR (S2 · 2026-10-04, Fable; RUNNING_LOG §67; SWEEP_LIST #1 closed):** the composer score has ONE 24 px bar — File ▾ · Insert ▾ ·
   Panels ▾ and the direct controls; the bottom bar and the four tabs are GONE; the status text hidden at rest (a save, an error, a key hint
   still show). A menu option presses the old button, kept hidden in `#barHidden` — every key and panel as before; the modules' panel buttons
@@ -226,7 +232,8 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 7 — the rhythm layer, HIS COMPOSING** (DEC-1): he plays a series into the Rec lane; the rhythms kept, the bricks moved to the players' lanes. No build expected; a fault → `docs/SWEEP_LIST.md` | **Fable** (a talk, if he wants one) · **Opus** (a fault's fix) | **a new session: `/session-start`** |
+| **►** | **Step 8 — the first five impulses captured, HIS HANDS** (PLAN.md 8.5): CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0; then `node tools/elec.js croptest --only impulse-bfl-slap` (his engine down) closes the crop table; his ear on the crops (`endDb`) and on a return (`R`) | **Fable** (his findings) · **Opus** (a fault's fix) | — |
+| — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 

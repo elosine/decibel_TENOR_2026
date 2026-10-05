@@ -171,3 +171,16 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   this build's; a check through it must be taken out again (`docs/VERIFICATION_RECIPE.md`).
 - **`probes/elec_message_log.jsonl`** (committed) no longer grows: it kept the route check's pairings while `testOnsets` was on.
   Left as the record of 6.2's measure.
+
+## From step 8 (2026-10-05, RUNNING_LOG §71)
+
+- **THE CONCERT SAFETY NET'S ANALYSIS MUST BE FOOLPROOF (his word):** today a capture replaces the buffer when the crop finds an attack above
+  the floor (−50 dB) at −30 dB of the window's peak; a loud room, a neighbour's sound or feedback would count as "a sound was captured", and a
+  quiet true attack would not. Before the concert: a per-player floor measured in the hall, a minimum length, a spectral sanity check, and the
+  verdict shown per opening on the engine's screen. Deferred: no concert yet.
+- **The percussion's microphone is one track** (the shime daiko's): the other seven Abbey Road tracks need a send to ReaRoute 4 as the music
+  uses them — `elec_route.lua` takes one track per player row; a `tracks` list is the small change.
+- **A swelling sound's "attack":** the crop finds where the level first reaches −30 dB of the peak — for a multiphonic that is the swell, 1.3 s
+  in; the device sheet for such kinds decides what "the attack" means (`attackDb` per category, or the onset of sound).
+- **The crop test needs his engine down and a healthy ReaRoute;** after a wedge only a Reaper restart helps (§71). The test tool now leaves its
+  engine gracefully; `sustain_watch.lua`'s track name is still hard-coded (a scratch copy is used).

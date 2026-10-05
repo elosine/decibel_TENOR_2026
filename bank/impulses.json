@@ -1,0 +1,10 @@
+{
+ "_what": "THE IMPULSES — his dictation (2026-10-05, RUNNING_LOG §71), a row per impulse number: the five players in order, each slot the lane (its instrument key in sandbox/instruments.js), the technique key, and the pitch — absent or \"mid\" = the middle of the technique's range (his word: \"something in the middle of the range\"); a by-key voice takes its middle key. tools/impulse.js reads a row and turns the next five notes of his recorded rhythm (the Rec lane) into that impulse: the notes moved to the players' lanes, a mic opening named <player>-impulse-<N> over each. The name is the sample's — and its buffer's — identity through the piece.",
+ "1": [
+  { "lane": "bass_flute", "tech": "slap" },
+  { "lane": "bass_clarinet", "tech": "slap" },
+  { "lane": "percussion", "tech": "shime_daiko_taiko_sticks" },
+  { "lane": "viola", "tech": "bartok_vel" },
+  { "lane": "cello", "tech": "gettato_vel" }
+ ]
+}
