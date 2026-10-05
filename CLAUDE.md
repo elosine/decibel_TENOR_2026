@@ -103,9 +103,11 @@ IDs always with their names.
 - **Where this start left the protocol:** `docs/PROTOCOL_DEVIATIONS.md` — one line at the moment of each deviation
 - **Faults met while composing:** `docs/SWEEP_LIST.md` · **Deferred, real but not now:** `docs/NITS.md`
 - **The performance notes — what they must cover, collected as decided:** `docs/PERFORMANCE_NOTES.md`
-- **THE CANDIDATES — the shelf of process-brick settings he has heard and wants kept** (2026-10-05, §109): `docs/CANDIDATES.md` — a
-  row whenever he says "keep this" / "candidate" (a screenshot or the box's JSON is enough): the setting as paste-able JSON, what it
-  was heard on, his remark. Never asked for again. The shelf is his to arrange into the chain.
+- **THE CANDIDATES — the shelf of process-brick settings he has heard and wants kept** (2026-10-05, §109 · §113): **the data is
+  `bank/candidates.json`; `docs/CANDIDATES.md` is RENDERED from it by `node tools/candidates.js` — edit the JSON, then render.** A row
+  whenever he says "keep this" / "candidate" (a screenshot or the box's JSON is enough): the setting as paste-able JSON, what it was
+  heard on, his remark. Never asked for again. In the page: the brick panel's **Shelf** menu applies a kept setting whole; **keep →
+  shelf** posts one (`POST /api/candidates`, `score/server.js` — a server started before §113 has no route: restart). His to arrange.
 - **Working preferences & routines:** `docs/HOW_WE_WORK.md` · `docs/SESSION_PROTOCOL.md`
   · `docs/SESSION_HYGIENE.md` (clear between chunks; the docs are the handoff)
 - **TODAY'S WORK — the running order:** `docs/PROJECT_JOURNAL.md` §2, the block RUNNING ORDER — THE BRIEF OF 2026-10-04 (► the

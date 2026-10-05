@@ -3555,3 +3555,21 @@ heard; his engine is up and predates the build; his page holds unsaved edits to 
 **Proven once:** the module parses; the draw's arithmetic is §108's slider mapping and §111's rounding. NOT seen: his F5 (the page only; the engine is untouched).
 
 **For the paper:** three grains of chance in the workshop now — a dial as a range (drawn at every render), the whole effect rolled (⚄ all / ⚄ usual), and the behaviours' rolls in the engine (D15). The composer sets the bounds; the machine draws within them; he keeps what he hears (the shelf, §109).
+
+## §113. THE SHELF IN THE PANEL — a Shelf menu of the kept settings, a "keep → shelf" button, the data moved to JSON; a layout fault fixed; candidate 7 (2026-10-05, Fable; the engine's §34)
+
+**His words, with two screenshots of the feedback panel (the preset slow bloom on the viola's impulse 3, cap 1.7 s, the peak-match unticked):** *"this is slow bloom; And then can we organize a presets menu of the ones I've sent you so far? and then maybe a way to add to that menu manually here."*
+
+**The fault the screenshot showed first:** on the rows with a unit (tone · path · the six strings) the ⚄ button WRAPPED under the slider — the row's flex container wraps, and slider 110 px + box 64 + unit + button overran the panel's column. **Fixed:** the slider shrinks before the row wraps (`flex: 1 1 60px; min 50 · max 110`), and a dial's row no longer wraps at all. Not seen by me; his F5.
+
+**Built — THE SHELF, as data and as a menu:**
+- **The data is `bank/candidates.json`** now (the piece's — THE SORTING: his uses); **`docs/CANDIDATES.md` is RENDERED from it** by `node tools/candidates.js` (never edited by hand again — its header says so). The seven rows carried over, the seventh his slow bloom. `tools/candidates.js` exports `load · add · render · cleanSetting` (a setting cleaned to the brick's known keys; args numbers or `[lo, hi]` ranges).
+- **The server's one route, `/api/candidates`** (`score/server.js`, beside `/api/elec`; SEAMS.md row 2c): GET the rows · POST one more — the tool's `add()` writes the JSON and re-renders the md. **A score server started before this has no route** — the Shelf MENU still works (the module falls back to the static file `/bank/candidates.json`); the KEEP button needs his restart (`start_score_server.bat`); its failure says so in the status line.
+- **The panel (`electronics/score/le_process.js`, the engine's — a seam: `opts.shelfUrl` · `opts.shelfFile`):** a **Shelf** menu under Preset — every kept setting, named `n · effect — his remark · on <sample>`; picking one applies the setting WHOLE (effect · dials · ending · level; the source stays — a treatment on this brick's source). A **keep → shelf** button beside Render: a one-line prompt for a remark (optional), then the brick's setting is posted; the row carries what it was heard on, its name, its label, the render's numbers; the menu refreshes; the status line says *kept as candidate N*.
+- The AI's road is unchanged in substance: at his "keep this" / a screenshot the AI adds the row — in the JSON now — and renders.
+
+**Proven once:** the three files parse (`node --check`); the md rendered from the JSON — 7 rows, read back by `--list`; `cleanSetting` on a setting with a range and junk keys keeps `drmFreq: [80, 400]` and drops the junk. NOT seen: the menu, the button, the unwrapped rows — his F5 (and the restart for keep). The route itself was not exercised against a running server (D13: he will, at his first keep; a fault → SWEEP_LIST).
+
+**His bank at work, carried at this wrap:** ten processed samples he has rendered since the morning (`bcl-impulse-1~1` · `bfl-impulse-1~1 ~2` · `bfl-impulse-5~1 ~2` · `perc-impulse-1~1` · `perc-impulse-5~1` · `va-impulse-3~1` · `vc-impulse-2~1` · `vc-impulse-5~1`) and the index — committed, never discarded (journal §2's rule).
+
+**For the paper:** the shelf closes a loop — hear · keep · recall — inside the instrument: a kept setting is one pick away from any brick, and the keeping is his own gesture at the panel, not a message to the AI.

@@ -381,6 +381,19 @@ const server = http.createServer((req, res) => {
 
     // APIs
     if (url === '/api/elec') return elecRelay(req, res);   // 6.2: GET = what the page needs · POST { kind, data } = one message to the engine
+    // §113 (2026-10-05): THE SHELF — the process-brick settings he keeps (bank/candidates.json; docs/CANDIDATES.md is rendered from it
+    // by tools/candidates.js). GET = the rows · POST { setting, heardOn, out, label, effect, render, remark } = one more row (the brick's
+    // "keep → shelf" button). The route is the piece's; the panel's Shelf menu and button are the engine's (electronics/score/le_process.js).
+    if (url === '/api/candidates') {
+        const shelf = require('../tools/candidates.js');
+        if (req.method !== 'POST') return R.json({ success: true, rows: shelf.load() });
+        return readBody(req, (err, body) => {
+            if (err || !body || !body.setting || typeof body.setting !== 'object') return R.status(400).json({ success: false, error: 'a setting is needed' });
+            const row = shelf.add(body);
+            console.log('shelf: kept candidate ' + row.n + ' · ' + row.effect + ' on ' + row.heardOn);
+            return R.json({ success: true, row, rows: shelf.load() });
+        });
+    }
     // PLAN 1c (2026-09-03): re-ingest a save into the scattered-strike database from the
     // Strikes drawer. Runs tools/strike_db.js as a child (the tool stays the one authority on
     // the capture); returns its census text. Body: { score, gap?, sim?, label? }.
