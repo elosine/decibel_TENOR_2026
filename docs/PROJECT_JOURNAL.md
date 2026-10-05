@@ -109,7 +109,7 @@ takes is his (D5).
    the offset range · which of the player's samples · a seed) · the iterations: two versions of themselves, three … · the returned
    sample named in the score by its shape or colour (LG-342; the notation later — PERFORMANCE_NOTES #2). **Done when:** a series
    plays with each player's first sample beside the live note, and he has placed the second series himself.
-10. ► **THE PROCESSING — the first effects** — LAID OUT AND APPROVED 2026-10-05 (PLAN.md § 1.3; RUNNING_LOG §100 · §101; checkpoint #4): **10.1** the workshop's build — the chain ported, the END stage (`shape` · `tail`), the `P` brick, the catalogue, the first score (Opus, as one) · **10.2** the granular voices · **10.3** the pedals of resonance · **10.4** the cascade. *(as opened:)* OPENED 2026-10-05 BY DEC-16 (checkpoint #3 above): a WORKSHOP in which a banked sample is transformed through a CHAIN of processes, each stage kept — *"I am sitting in a room"* style — starting with the bass flute's tongue slap, a brick per stage; the scheme (which processes, in what order) his, at the resume's talk. *(as written:)* [part 6; part 2's port of the basic machinery as far as this needs]: the pedals of
+10. ► **THE PROCESSING — the first effects** — LAID OUT AND APPROVED 2026-10-05 (PLAN.md § 1.3; RUNNING_LOG §100 · §101; checkpoint #4): **10.1 ☑ BUILT 2026-10-05, done but for his ear (§103)** — the chain rendered offline, the END stage (`shape` · `tail`), the PROCESS brick (key `E`), eighteen effects, the score `workshop-bfl-slap` · **10.2** the granular voices · **10.3** the pedals of resonance · **10.4** the cascade. *(as opened:)* OPENED 2026-10-05 BY DEC-16 (checkpoint #3 above): a WORKSHOP in which a banked sample is transformed through a CHAIN of processes, each stage kept — *"I am sitting in a room"* style — starting with the bass flute's tongue slap, a brick per stage; the scheme (which processes, in what order) his, at the resume's talk. *(as written:)* [part 6; part 2's port of the basic machinery as far as this needs]: the pedals of
     resonance — a resonant filter bank with much feedback: a window opens an instant, excites it, a long sustained chord sounds (his
     spelling to confirm: "petals" in the folder's name, "pedals" in his words) · a SERIES of these developed for the piece · a freeze ·
     a set per language type — trills and multiphonics recorded as samples first, each with its effects. **Done when:** one window
@@ -172,6 +172,19 @@ question, not by habit.)*
 - **Not done, and not claimed:** HIS EAR on the first object and on the crop's numbers · his three notation calls.
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
+
+**► AFTER CHECKPOINT #4 — 2026-10-05, Opus (RUNNING_LOG §103; the engine's §26): THE WORKSHOP IS BUILT — step 10.1, on his "build here go and build independently as much as possible". THIS SUPERSEDES checkpoint #4's "NEXT CONCRETE STEP" below.**
+
+- **What exists:** the PROCESS brick (key **`E`**; `midiModel` `elecProcess`) — a banked sample through one of eighteen effects, banked again as `<root>~<n>`; its panel: Source · Name · Label · Effect · the dials · Ends by (`shape` — his envelope · `tail`) · Level · **Render** · ▶ hear it · ▶ its source · the whole setting as a JSON box. The engine renders OFFLINE (`electronics/sc/process.scd`); the page's part is `electronics/score/le_process.js`. The score **`scores/workshop-bfl-slap.json`**: the slap, then four stages UNRENDERED — a pitch (comb, a struck shape) · a room (Greyhole) · held (freeze) · a hall (JPverb): a PROPOSAL, his to rewrite.
+- **HIS, to hear it — in this order:** F5 the composer page · close the engine's window and `start_electronics.bat` (the running engine predates the code: a Render would get no answer) · File ▾ → open `workshop-bfl-slap` · select stage 1 → **Render** → **▶ hear it** · stages 2, 3, 4 in order (each is made from the one before) · play from 0.
+- **Proven, headless, once each side:** the engine — `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/process_test.scd` (PROCESS_TEST PASS) · the page module under a stub window (18 checks). **NOT heard; no render has gone through his engine; no browser has opened the page.**
+- **Decided at the build, his to reverse (§103, six lines):** offline, not real time · `E`, not `P` (taken) · a render's peak matched to its source's · `space` out, `tape` in · `*` and a pattern's "every sample" now mean every CAPTURED sample — a workshop render does not join group 5's flock.
+- **If a Render says "no answer in 20 s":** the engine is down, or was started before the build — its window says which. A fault while he works → `docs/SWEEP_LIST.md`.
+- **THE NEXT CONCRETE STEP: HIS EAR** — on the four stages and their dials; he may dictate a change ("more ring on stage 1") and the AI writes it into the brick's setting, or he turns the dial. Then, at his word: 10.2 the granular voices (the cloud — the stretch) · 10.3 the pedals of resonance · 10.4 the cascade.
+- **`Resume reads:` nothing beyond this §2** for his ear and for dial changes (the brick's fields are in `electronics/score/le_process.js`'s header, the dials' names in its `EFFECTS`). For 10.2: `live-electronics-engine/synths/roads-cloud.scd` · `grain-articulate.scd` · `electronics/sc/process.scd`.
+- **DELIBERATELY UNCOMMITTED: nothing of the build.** `scores/temp01new_cello_bass_flute_perc_25.72.json` is his, untracked, untouched. Once he renders: `bank/samples/bfl-impulse-1~*.wav` and the index are the bank at work — committed at the next wrap, never discarded; `bank/samples/raw/*.nrt.wav` are outside git by design.
+- **LEFT RUNNING — ALL HIS:** Reaper · the score server on 5500 (no restart: the new file is served from `electronics/score/`) · his engine (it predates the build) · loopMIDI. Nothing of the AI's.
+- **RESUME ON:** Fable for the talk on what he heard and for 10.2 … 10.4's lay-outs; Opus for a fix or a build.
 
 **► CHECKPOINT #4 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Opus; the session's talk was Fable's (RUNNING_LOG §100 … §102). Where the blocks below disagree with this one, THIS BLOCK WINS.**
 
@@ -358,7 +371,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10.1 — THE BUILD OF THE WORKSHOP (PLAN.md § 1.3, 10.1): the chain ported to `process.scd`, the END stage (`shape` · `tail`), `/le/process`, the `P` brick and its card, the catalogue `le_effects.js`, `scores/workshop-bfl-slap.json`; ONE headless proof** | **Opus** (a build from a written block) | **yes — `/clear`, then `/postclear` on Opus (checkpoint #4 is written)** |
+| **►** | **Step 10.1 — HIS EAR on the workshop (§103): F5 · the engine restarted · open `workshop-bfl-slap` · Render the four stages in order · ▶; the dials his, or dictated** | Fable (the talk) · Opus (a fix) | — |
 | — | Step 10.2 … 10.4 — the granular voices · the pedals of resonance (Q7) · the cascade — each a talk, then a build | Fable (the talk) · Opus (the build) | — |
 | — | Step 9 — HIS EAR on the four behaviours (§97 · §98): a letter A … I for the rolled ones (`bank/elec_route.json` `return.ar` · `return.chain`); a brick → Behaviour → pattern for the composed one. A fault → `docs/SWEEP_LIST.md` | Fable (the talk) · Opus (a fix) | — |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |

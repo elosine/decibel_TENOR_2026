@@ -184,3 +184,8 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   in; the device sheet for such kinds decides what "the attack" means (`attackDb` per category, or the onset of sound).
 - **The crop test needs his engine down and a healthy ReaRoute;** after a wedge only a Reaper restart helps (§71). The test tool now leaves its
   engine gracefully; `sustain_watch.lua`'s track name is still hard-coded (a scratch copy is used).
+- **The process brick (RUNNING_LOG §103), deferred:** a stage renamed or re-pointed after a render leaves its old sample in the bank (no tool
+  removes an orphan) · a stage re-rendered does not re-render those made from it — the label says which are stale (PLAN 1.3 · 10.4, the
+  cascade) · the bank is mono: the chain's `space` stage is out until a stereo sample is wanted · a duplicated stage keeps its `out` name —
+  two bricks, one sample, until one is renamed · the default dials are the sandbox's or the AI's guess, unheard (the spectral gate's
+  threshold, the freeze's moment) · `process_test.scd`'s scratch bank is made in sclang's temp folder and removed on a pass.

@@ -3333,3 +3333,83 @@ were counted at byte level: LF only, all six.
 
 **The state at the clear:** nothing built; no file outside `docs/` and `CLAUDE.md` changed this session. The engine's repo in step
 (`86b56f5`). Resume on Opus: the build of 10.1 as one, one headless proof, then his ear.
+
+## §103. THE WORKSHOP BUILT — step 10.1: the chain rendered offline, the PROCESS brick (key E), eighteen effects, the first score (2026-10-05, Opus; PLAN 1.3; the engine's §26)
+
+**What prompted it:** after checkpoint #4 (§102), with no clear between: *"build here go and build independently as much as
+possible"*. So the block of PLAN 1.3 · 10.1 was built here, on Opus, as one, with no question put to him.
+
+**What he can do now** (after F5 and an engine restart — the running engine predates the code):
+- open the score **`workshop-bfl-slap`** — on the bass flute's lane: the slap as it is at 2 s, then four stages, 7 s apart;
+- select a stage → its panel: **Source · Name · Label · Effect · the effect's dials · Ends by · Level · Render · ▶ hear it · ▶ its
+  source**, and a box with the whole setting as text (the AI's hands; his eye);
+- **Render** each stage IN ORDER (each is made from the one before); it is banked as `bank/samples/bfl-impulse-1~1.wav`, `~2` …
+  and the brick plays it where it sits;
+- **`E`** adds a stage at the playhead, made from the brick selected or the nearest before it.
+
+**THE SORTING, as made:** the ENGINE's (`electronics/`): `sc/process.scd` (the chain, the render) · `sc/process_test.scd` ·
+`score/le_process.js` (the brick, the catalogue) · the hooks in `score/le_objects.js` · `~` in a name and `*`'s meaning in
+`sc/bank.scd` · one load line in `sc/boot.scd`. The PIECE's: `scores/workshop-bfl-slap.json` · `tools/build_workshop.js` · one
+tag and one key in `score/public/composer.html` · the samples the renders will make. How the engine's part was built, tried and
+measured is ITS log, §26; here what differs from the lay-out (§100 · §101 · PLAN 1.3) and why.
+
+**Six things decided at the build, each the AI's call (his to reverse):**
+1. **THE RENDER IS OFFLINE, not real time** — the lay-out said "real time on the running server"; checkpoint #3 had left it as
+   "the engine's call". Offline is how the sandbox itself renders this chain on this machine; it cannot glitch a performance;
+   four renders take under two seconds; and it could be PROVEN with his engine up — a real-time render could not.
+2. **THE KEY IS `E`, not `P`** — `P` opens the panel of a selected zone (a beating's, a texture's) in this page; `E` (effect) was
+   free in the page and every module.
+3. **THE BRICK IS A FILE OF ITS OWN, `le_process.js`, mixed into `LEObjects`** — not grown into `le_objects.js`, and the
+   catalogue lives in it rather than in a second file `le_effects.js`: one new tag, not two; a page without it still opens the score.
+4. **EIGHTEEN EFFECTS, but not the eighteen of §100:** `space` is out (the bank is mono — §102's point) and **tape** is in (speed
+   and direction — the chain's own `rate`, and reading backwards, which is the AI's addition). The freeze has a dial for WHEN (§102).
+5. **A RENDER'S LEVEL: its peak is set to its source's** (`match`, on by default; `gainDb` after it) — NOT in the lay-out. Without
+   it a chain drifts: each stage's wet level is its own (a resonator bank at 0.2, a reverb at 0.4), and four stages on, the
+   sample is 20 dB down or clipping. "I am sitting in a room" re-records at a matched level too. One box turns it off.
+6. **`*` AND A PATTERN'S "EVERY SAMPLE" NOW MEAN EVERY CAPTURED SAMPLE.** Found while reading the engine: group 5 of
+   `piece-sec01-a` plays `*`, "every sample in the bank at playback" (DEC-12). A workshop render lands in the same bank — so
+   rendering a stage would have added it to group 5's flock, and to any pattern brick with no pick, unasked. A processed
+   sample is now played by its own brick, by name, or by its own box in a pattern. *(If he wants the transformed samples IN the
+   flock, that is one word — a second star, say — and his to ask for.)*
+
+**How a render ends — his addition (DEC-16c), as built:** `shape` — attack · length · release · curve, applied AFTER the effect;
+the whole is exactly the length asked; a release as long as the length is a struck shape falling from the attack (the first
+score's stage 1: 2 ms up, 600 ms long, release 600, curve −4). `tail` — to 60 dB under the render's own peak, or faded at the
+cap (8 s past the source). Both in the panel's "Ends by".
+
+**THE FIRST SCHEME, written into the score as settings — a proposal, his to rewrite in the panels:**
+
+| | name | effect | dials | ends by |
+|---|---|---|---|---|
+| 1 a pitch | `bfl-impulse-1~1` ← the slap | comb | delay 12 ms (≈ 83 Hz and its harmonics) · ring 0.85 s | shape 600 ms, struck |
+| 2 a room | `~2` ← `~1` | Greyhole, small | delay 0.1 s · size 0.5 · feedback 0.8 · mix 0.7 | tail |
+| 3 held | `~3` ← `~2` | freeze + smear | the spectrum 120 ms in · smear 6 bins | shape 1.5 s (20 ms up, 800 down) |
+| 4 a hall | `~4` ← `~3` | JPverb | 3 s · size 1.5 · the highs ×0.8 | tail |
+
+The reasoning: the slap is nearly all attack and noise — stage 1 gives it a pitch while keeping it a struck object (his "still
+attack sounding objects, but with the timbre of the reprocessed samples"); stage 2 lets a small space ring on that pitch; stage
+3 takes one moment of that ring and holds it — the attack is gone, only the resonance is left, which is Lucier's direction;
+stage 4 puts the held sound in a large room. The cloud (the stretch of §100's sketch) waits for 10.2.
+
+**The proofs — one per side, headless, then stopped (D13):**
+- the engine: `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/process_test.scd` — PROCESS_TEST PASS (four
+  renders on a scratch bank; the two faults it found are in the engine's §26: a file writer's type, and a tail that never
+  ended because the sample player holds its last value — measured, −66.6 dBFS of DC);
+- the page: `le_objects.js` + `le_process.js` under a stub window, with `workshop-bfl-slap` and the bank's real index — the
+  message of each stage, the panel built, a dial and the effect changed by their own handlers, a render known by its id, the
+  label's states, the tick, the key `E` — PASS (18 checks).
+
+His engine was up throughout and was not touched: its hello answered before and after (5.7 ms · 5.5 ms).
+
+**A slip of the machine, again, for the next writer:** a heredoc collapses `\\` to `\` on the way to the shell — an edit script
+with a SuperCollider symbol in it (`o[\fadeOutMs]`) arrived with a form feed. A script or a text with a backslash is written
+with the file tool, never through a heredoc.
+
+**NOT DONE, and not claimed:** nothing was heard — no render has gone through his engine, and no browser has opened the page
+(the stub is not Chrome). The first Render is his. The dials are the sandbox's defaults or the AI's guesses: the spectral
+gate's threshold and the freeze's moment most of all.
+
+**A note for the paper** — what this object IS, compositionally: until today a banked sample was a recording, returned. Now it
+is material with a HISTORY: every stage keeps its source's name in its own (`bfl-impulse-1~3`) and in its row (`source` ·
+`effect` · `args`), so the bank records how each sound was made, and a piece can place any generation of it. The envelope at
+the end separates two things that a recording binds together — what a sound is made of and how it begins.

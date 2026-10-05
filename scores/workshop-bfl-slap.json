@@ -1,0 +1,300 @@
+{
+ "version": 1,
+ "layoutVersion": 8,
+ "tracks": [
+  {
+   "id": "bass_flute",
+   "label": "Bass Flute",
+   "short": "BFl",
+   "instKey": "bass_flute"
+  },
+  {
+   "id": "bass_clarinet",
+   "label": "Bass Clar.",
+   "short": "BCl",
+   "instKey": "bass_clarinet"
+  },
+  {
+   "id": "percussion",
+   "label": "Percussion",
+   "short": "Perc",
+   "instKey": "percussion"
+  },
+  {
+   "id": "vibraphone",
+   "label": "Mallets",
+   "short": "Mal",
+   "instKey": "bowed_vibraphone"
+  },
+  {
+   "id": "viola",
+   "label": "Viola",
+   "short": "Va",
+   "instKey": "viola"
+  },
+  {
+   "id": "cello",
+   "label": "Cello",
+   "short": "Vc",
+   "instKey": "cello"
+  }
+ ],
+ "assets": {},
+ "metadata": {
+  "created": "2026-10-05T18:35:00.640Z",
+  "modified": "2026-10-05T18:35:00.640Z",
+  "note": "THE WORKSHOP (PLAN 1.3 · 10.1) — bfl-impulse-1 and a chain of four transformations of it, each made from the one before (a pitch · a room · held · a hall). Select a stage, Render it from its panel with the engine up — in order — then play. The scheme is a proposal: every effect and dial is his. First written by tools/build_workshop.js; his from then on."
+ },
+ "objects": [
+  {
+   "id": "zn-1",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 2,
+   "endTime": 2.385,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1"
+   }
+  },
+  {
+   "id": "zn-2",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 9,
+   "endTime": 9.6,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecProcess",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#EF6C00",
+   "opacity": 0.35,
+   "yOffset": 2,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "source": "bfl-impulse-1",
+    "out": "bfl-impulse-1~1",
+    "label": "a pitch",
+    "effect": "comb",
+    "args": {
+     "combMix": 1,
+     "combTime": 0.012,
+     "combFb": 0.85
+    },
+    "rendered": null,
+    "end": "shape",
+    "atkMs": 2,
+    "durMs": 600,
+    "relMs": 600,
+    "curve": -4,
+    "floorDb": -60,
+    "capMs": 8000,
+    "gainDb": 0,
+    "match": 1
+   }
+  },
+  {
+   "id": "zn-3",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 16,
+   "endTime": 17,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecProcess",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#EF6C00",
+   "opacity": 0.35,
+   "yOffset": 2,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "source": "bfl-impulse-1~1",
+    "out": "bfl-impulse-1~2",
+    "label": "a room",
+    "effect": "greyhole",
+    "args": {
+     "ghMix": 0.7,
+     "ghTime": 0.1,
+     "ghSize": 0.5,
+     "ghFb": 0.8,
+     "ghDiff": 0.7,
+     "ghDamp": 0.2
+    },
+    "rendered": null,
+    "end": "tail",
+    "atkMs": 2,
+    "durMs": 600,
+    "relMs": 600,
+    "curve": -4,
+    "floorDb": -60,
+    "capMs": 8000,
+    "gainDb": 0,
+    "match": 1
+   }
+  },
+  {
+   "id": "zn-4",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 23,
+   "endTime": 24.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecProcess",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#EF6C00",
+   "opacity": 0.35,
+   "yOffset": 2,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "source": "bfl-impulse-1~2",
+    "out": "bfl-impulse-1~3",
+    "label": "held",
+    "effect": "freeze",
+    "args": {
+     "freezeAtMs": 120,
+     "smear": 6
+    },
+    "rendered": null,
+    "end": "shape",
+    "atkMs": 20,
+    "durMs": 1500,
+    "relMs": 800,
+    "curve": -2,
+    "floorDb": -60,
+    "capMs": 8000,
+    "gainDb": 0,
+    "match": 1
+   }
+  },
+  {
+   "id": "zn-5",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 30,
+   "endTime": 31,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecProcess",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#EF6C00",
+   "opacity": 0.35,
+   "yOffset": 2,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "source": "bfl-impulse-1~3",
+    "out": "bfl-impulse-1~4",
+    "label": "a hall",
+    "effect": "jpverb",
+    "args": {
+     "jpMix": 0.6,
+     "jpT60": 3,
+     "jpSize": 1.5,
+     "jpDamp": 0.3,
+     "jpLow": 1,
+     "jpMid": 1,
+     "jpHigh": 0.8
+    },
+    "rendered": null,
+    "end": "tail",
+    "atkMs": 2,
+    "durMs": 600,
+    "relMs": 600,
+    "curve": -4,
+    "floorDb": -60,
+    "capMs": 8000,
+    "gainDb": 0,
+    "match": 1
+   }
+  }
+ ],
+ "markers": [],
+ "databases": {},
+ "nextId": 8,
+ "viewport": {
+  "pixelsPerSecond": 100,
+  "scrollOffset": 0
+ }
+}
