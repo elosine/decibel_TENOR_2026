@@ -3057,3 +3057,11 @@ concert, D10; each onset a window line). "As played" has no meaning for samples 
 will; the dials and the seed stay on the brick so a save reproduces it. **Effort:** the size of today's chain build — the panel
 section and the generator's call are the larger half, the engine's pattern playback ~20 lines (a chain without rolls); the tool
 untouched (he arranges in the page). **Not in it:** a "take" — the brick IS the take (duplicate the zone for another).
+
+## §96. CHECKPOINT #2 OF SESSION 2 — the return is in the music; the composed rhythm is next, his (a)/(b) first (2026-10-05, Fable; his `/checkpoint`)
+
+His word: *"Let's do a checkpoint and make sure ai knows what to do after the clear for the build."* The journal's §2 carries the
+block: the state (five groups, the bank full — 25 rows, the percussion's all there since his score-server restart), the next
+step as a numbered build of the behaviour `pattern` (engine · page · the drawer's generator reused · one headless proof · the
+record), the `Resume reads:` (§95 and three code spans), what is pending him, and today's rules of his. Committed WITH his 25
+samples, the index and his rack as he saved them. The engine's repo is in step. Resume on Opus; `/clear` is safe.
