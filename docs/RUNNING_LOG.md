@@ -3018,3 +3018,12 @@ all the algorithms."* **B now** (`bank/elec_route.json` `return.ar.B_rangesMs`, 
 went in with §90's fix and his restart after it carried them — in play since; a sample takes the release when it is re-taken
 (every pass re-records). **Group 5:** `chain` of `*` (every sample in the bank at playback) after each of his five; the tool runs
 at his word — he is editing the final five and asked to be told before the score is written (his rule of this session).
+
+## §93. GROUP 5 PLACED — every live note followed by the whole bank (2026-10-05, Fable; his word "saved, go ahead with group five")
+
+His five, read from his save: viola marcato (51) 22.991 · wood blocks hard mallets (36) 24.595 · bass flute pseudo-contrabass
+(54) 25.825 · cello natural harmonic sul C (61) 26.170 · bass clarinet flutter (34) 27.413 — `bank/impulses.json` row 5, the tool:
+five openings `<player>-impulse-5`, five returns `* ~ chain` starting at each live note, drawn as long as the index is today
+(17 samples × 0.5 s); the engine resolves `*` at playback to every sample it holds (§89), shuffled (I), chained (H). His pitches
+and voices kept. More notes lie beyond (bass drum 28.9 · viola 30.4 · bass flute 31.5 …) — a sixth group in the making, untouched.
+**His:** Reload · restart the engine (§92's bands) · play from 0 — at each impulse 5 the live note, then the whole bank.
