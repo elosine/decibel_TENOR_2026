@@ -246,3 +246,23 @@ anticipates or reacts, with a human's imprecision. The algorithms are in RUNNING
 > decide those are in a bank and then can be brought back in any type of algorithm, in this case, this one or others. And they
 > can be brought back in other players' lanes, for example, or processed. So then while we're showing them in the players'
 > lanes, the overall live electronics is like its own performer. And I'll build the behaviors as I go forward."*
+
+### DEC-10 · 2026-10-05 — THE THIRD GROUP OF FIVE: FLOCKING REDESIGNED AS A CHAIN ("Chinese whispers") · the same instrument's two banked samples follow the live note, one after the other · every group of five is a recorded input (impulse 3) · the live instruction: "play immediately after a named performer"
+
+> *"And then for the third group of five, I want to work with the flocking algorithm and redesign that one. And so in concept, I
+> want it to be like flocking, if not the exact algorithm. And that would be like a cascading type of algorithm, like a Chinese
+> whispers sort of, of thing, where one player follows the first player, and then the third player follows the second player,
+> etc. With a similar approach to anticipation reaction, but So the live version would be, I would tell the, performer to play
+> after a certain named performer. So I might say bass clarinet, try to play immediately after the flute or the bass flute and so
+> on and so on. And so the sample algorithm will behave the same. In this case, it'll be the same instrument. So now flute has two
+> sounds. So I didn't mention earlier for this particular, the third group of five, it would be the two banked samples, impulse one
+> and impulse two of the same instrument. So bass clarinet, the other two samples will behave in this flocking manner around the
+> live bass clarinet input. And then getting back to it for the simulated one, one sample will follow the live bass clarinet input,
+> and another sample will follow the other one. And I don't know if I mentioned it already for the other ones, but each group of
+> five should be a, a recorded input as well. So that second group of five should have been impulse two, and this third group of
+> five will be impulse three, but the sample playback will follow this flocking behavior. So let's discuss how the flocking
+> algorithm should look and then implemented."*
+
+*The AI's reading, marked as such:* a CHAIN — the live note, then sample 1 follows it, then sample 2 follows sample 1 — each link
+with the listening player's imprecision (the same human model as DEC-9's), the error accumulating down the chain as whispers do.
+Impulse 3 is recorded as impulses 1 and 2 were. The proposal and the open points are RUNNING_LOG §80.

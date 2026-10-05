@@ -2825,3 +2825,29 @@ Cymbals — Felt Mallet", channel 5), `kind: 'key'`, and the KEY the note sends 
 (`sandbox/instruments.js`, 29 voices, 8 instruments) but the composer page NEVER READS a voice's `keys` — the card shows the key
 as a pitch, no articulation name. So "how to work with it" today: Voice = instrument + mallet; the pitch field = the articulation
 by number, the names looked up in the recipe. OFFERED, not built: a labelled key picker in the card for a by-key voice.
+
+## §80. THE CARD'S BY-KEY VOICES FIXED (SWEEP_LIST #4); THE CHAIN — his flocking redesigned, the proposal (2026-10-05, Fable; his words DEC-10)
+
+**The fault, his words:** *"If I choose China symbol scrape, that's not the sample that plays. I have to use the MIDI note number
+and dial it in. I have to press minus or plus until I hear the scrape sound. So what I'd like is for the menu, when I choose
+China symbol scrape, it dials the proper note in."* **Why:** a percussion voice is a BY-KEY voice (`kind: 'key'`, `keys` = its
+articulations); the card's Technique select wrote the technique and left the note where it was — on a key of the PREVIOUS
+voice, often outside the new one's keys, so another articulation (or nothing) sounded. **Done (`score/public/composer.html`,
+two places):** `applyPanelField` — choosing a technique on a note sets the note to the voice's FIRST key when the voice is by-key
+and the note is not already one of its keys (a pitched voice keeps its pitch: the pitch is the music); the card — a by-key voice
+shows "Sound key (the articulation)" as a SELECT of its keys BY NAME (`60 · Fast Scrape 1` …) in place of the bare number. Live at
+his F5; not tested (D13). SWEEP_LIST #4 closes at his word.
+
+**THE CHAIN — his flocking (DEC-10), the AI's proposal for his one decision.** What he described: the live note; sample 1 follows
+it; sample 2 follows sample 1 — "Chinese whispers"; the live instruction *"play immediately after a named performer"*; the same
+human model as the anticipation-reaction (DEC-9c); every group of five is a recorded input too (impulse 3 = his next five notes
++ openings, as impulse 2 was). **The proposal:** a behaviour `chain` beside `ar`, in the engine: the brick names its samples IN
+ORDER (impulse-1, impulse-2); link 1 rolls its distance from the live note, link 2 from link 1's ACTUAL time, and so on — the
+error accumulates, as whispers do. A FOLLOWER's stances (dial **G**, the chain's shares): just-after 70 · lazy-after 20 ·
+near-unison 10 · just-before 0 — you cannot follow what has not sounded; a lucky near-unison stands in for the guess. The
+ranges are **B**'s, shared with `ar`; no miss (the lazy band is the fumbled reaction). Dial **H**, whom a link follows: 1.0 = the
+previous link, always (his chain); 0 = the live note (a fan); between = #2's cascade coin (it was 0.5 there). Default 1.0. Dial
+**I**, the order of the samples: as named (default) · shuffled per roll. Rolled live by the engine (D15), the page's brick a
+region from the live note forward (0.5 s per link). Rejected from #2's flocking: the initiator's shuffle (the live note is the
+initiator here), the density curve (one chain per note), the before-share (a follower). The decision is his; a new entry carries
+it, and the build follows the `ar` pattern (engine · page · tool · the dials lettered on).

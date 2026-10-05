@@ -6026,9 +6026,15 @@ const Composer = {
                 html += this.ppRow('Opacity', 'number', 'opacity', obj.opacity, 'step="0.05" min="0" max="1"');
                 html += this.ppRow('Track', 'select', 'layer', obj.layer, '',
                     TRACKS.map((t, i) => [String(i), t.label]).concat([[String(META_LAYER), 'META']], CURVE_LAYERS.map(L => [String(L), 'curve ' + CURVE_NAMES[L]])));
-                html += this.ppRow('Sound note (MIDI, blank=off)', 'number', 'sonifyNote', obj.sonifyNote != null ? obj.sonifyNote : '', 'step="1" min="0" max="127"');
                 {
+                    // SWEEP_LIST #4 (2026-10-05, RUNNING_LOG §80): a BY-KEY voice — a percussion patch, where the key IS the articulation —
+                    // shows its keys by name instead of a bare number; choosing the voice dials its first key in (applyPanelField).
                     const wcTechs = this.trackTechniques(obj.layer);
+                    const wcTech = wcTechs.find(t => t.key === obj.technique) || null;
+                    if (wcTech && Array.isArray(wcTech.keys) && wcTech.keys.length)
+                        html += this.ppRow('Sound key (the articulation)', 'select', 'sonifyNote', String(obj.sonifyNote != null ? obj.sonifyNote : wcTech.keys[0].midi), '',
+                            wcTech.keys.map(k => [String(k.midi), k.midi + ' · ' + (k.label || k.name || '')]));
+                    else html += this.ppRow('Sound note (MIDI, blank=off)', 'number', 'sonifyNote', obj.sonifyNote != null ? obj.sonifyNote : '', 'step="1" min="0" max="127"');
                     if (wcTechs.length) html += this.ppRow('Technique', 'select', 'technique', obj.technique || wcTechs[0].key, '', wcTechs.map(t => [t.key, t.label]));
                 }
                 if (this.isGrain(obj) && typeof GRAIN_ENV_SHAPES !== 'undefined') {
@@ -8791,6 +8797,16 @@ const Composer = {
             if (obj.midiSnippet) obj.midiSnippet._stale = true;
             this.showPropertyPanel();
             this.markDirty();
+            return;
+        } else if (field === 'technique' && obj.type === 'waveCurve') {
+            // SWEEP_LIST #4 (§80): a by-key voice is heard the moment it is chosen — its key is the articulation, so the note
+            // must be one of its keys; a pitched voice keeps the pitch (the pitch is the music)
+            obj.technique = value;
+            const q = this.trackTechniques(obj.layer).find(t => t.key === value);
+            if (q && Array.isArray(q.keys) && q.keys.length && !q.keys.some(k => k.midi === obj.sonifyNote)) obj.sonifyNote = q.keys[0].midi;
+            this.renderWaveCurve(obj);
+            this.markDirty();
+            this.showPropertyPanel();
             return;
         } else if (field === 'sonifyNote' && obj.type === 'waveCurve') {
             const pv = parseInt(value, 10);
