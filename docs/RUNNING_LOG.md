@@ -2944,3 +2944,10 @@ engine's defaults unchanged (another piece's). From his next engine start.
 18.862 · bass clarinet (multiphonic, 37) 20.794 · mallets (crotales metal damped, 81) 22.261 — five openings `<player>-impulse-4`,
 five returns `<player>-impulse-1 + -2 + -3 ~ arChain`. His pitches and voices kept. **Not tested (D13).** His: Reload · restart the
 engine · play from 0 — at each impulse 4, four onsets.
+
+## §88. THE PERCUSSIONIST'S OTHER SEVEN TRACKS SENT TO HIS MICROPHONE — `perc-impulse-3` (the china cymbal) had recorded nothing (2026-10-05, Fable)
+
+His pass after impulse 3: `bcl · bfl · va · vc-impulse-3` captured; `perc-impulse-3` not — the china cymbal's track had no send
+(§71 gave the shime daiko's only, "the other seven as the music uses them"; §78 the four mallets). Now all twelve of the
+percussionist's tracks send into engineIn 4 (`bank/elec_route.json` `players[perc].tracks`; `node tools/elec.js route` made seven
+sends, kept five) — UNSAVED, his CTRL+S in Reaper. One player, one microphone, whatever he strikes.
