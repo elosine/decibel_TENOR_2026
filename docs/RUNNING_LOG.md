@@ -2951,3 +2951,20 @@ His pass after impulse 3: `bcl · bfl · va · vc-impulse-3` captured; `perc-imp
 (§71 gave the shime daiko's only, "the other seven as the music uses them"; §78 the four mallets). Now all twelve of the
 percussionist's tracks send into engineIn 4 (`bank/elec_route.json` `players[perc].tracks`; `node tools/elec.js route` made seven
 sends, kept five) — UNSAVED, his CTRL+S in Reaper. One player, one microphone, whatever he strikes.
+
+## §89. IMPULSE 4 NOT HEARD — the engine's restart, not the score; the four notes of the next series restored from his other save; `*` = every sample (2026-10-05, Fable; his words DEC-12)
+
+**Impulse 4:** his main save (10:57:43) holds everything — impulses 1 … 4 tagged, 20 openings, 15 returns (ar 5 · chain 5 ·
+arChain 5). So the bricks fire; what the running engine lacks is the behaviour: started before §87, it meets `behaviour arChain`,
+matches neither `ar` nor `chain`, and plays ONE sample where it should roll three — two onsets, not four. The restart of my last
+message was the step not taken. Yes: the live note and three samples, four onsets.
+**The next series:** he saved it as `scores/temp01new_cello_bass_flute_perc_25.72.json` (10:53:58) from a page that predated the
+impulse-4 write (no impulse-4 tags or bricks in it) — four notes placed on their lanes: viola marcato (51) 22.991 · wood blocks
+hard mallets (36) 24.595 · bass flute pseudo-contrabass (54) 25.825 · cello natural harmonic (61) 26.170; no bass clarinet yet.
+RESTORED into `piece-sec01-a` by id (wc-39 … wc-42 replaced by the temp file's versions; everything else of the main save
+kept). His Reload shows them; the fifth is his to place, then row 5.
+**`*` — every sample (DEC-12):** in the engine a name `*` in a chain's list becomes every sample the bank holds AT PLAYBACK (all
+players, all impulses so far — the bank grows as he records), shuffled by I; the page labels such a brick `ALL n samples` and
+draws it 0.5 s per sample the index holds today; the tool's `samples: ['*']`. Row 5's shape: `return: { behaviour: 'chain',
+samples: ['*'] }` — the live note first, then the whole bank in a rolled order (~17 samples, 3 … 8 s at B's bands). The dials
+are G · H · I as before. **Not tested (D13).** His: Reload · restart the engine · play from 0.

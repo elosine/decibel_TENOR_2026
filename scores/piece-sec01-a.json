@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-05T14:49:25.148Z",
-  "modified": "2026-10-05T14:49:53.410Z"
+  "created": "2026-10-05T14:57:43.949Z",
+  "modified": "2026-10-05T15:05:05.825Z"
  },
  "objects": [
   {
@@ -789,9 +789,9 @@
   {
    "id": "wc-39",
    "type": "waveCurve",
-   "layer": 0,
+   "layer": 4,
    "startSeconds": 22.991,
-   "endSeconds": 23.081,
+   "endSeconds": 23.141,
    "nodes": [
     {
      "pos": 0,
@@ -815,26 +815,26 @@
    "opacity": 0.55,
    "performanceNotes": "TAKE",
    "properties": {},
-   "sonifyNote": 55,
-   "technique": "slap",
+   "sonifyNote": 51,
+   "technique": "marcato_sfz_vel",
    "sonifyMode": "plain",
    "recVel": 127
   },
   {
    "id": "wc-40",
    "type": "waveCurve",
-   "layer": 0,
+   "layer": 2,
    "startSeconds": 24.595,
-   "endSeconds": 24.681,
+   "endSeconds": 24.744999999999997,
    "nodes": [
     {
      "pos": 0,
-     "y": 9.6,
+     "y": 10,
      "smooth": 0.25
     },
     {
      "pos": 1,
-     "y": 9.6,
+     "y": 10,
      "smooth": 0.25
     }
    ],
@@ -849,10 +849,10 @@
    "opacity": 0.55,
    "performanceNotes": "TAKE",
    "properties": {},
-   "sonifyNote": 58,
-   "technique": "slap",
+   "sonifyNote": 36,
+   "technique": "wood_blocks_hard_mallets",
    "sonifyMode": "plain",
-   "recVel": 122
+   "recVel": 127
   },
   {
    "id": "wc-41",
@@ -883,26 +883,26 @@
    "opacity": 0.55,
    "performanceNotes": "TAKE",
    "properties": {},
-   "sonifyNote": 48,
-   "technique": "slap",
+   "sonifyNote": 54,
+   "technique": "pseudo_cb_vel_mwinv",
    "sonifyMode": "plain",
    "recVel": 127
   },
   {
    "id": "wc-42",
    "type": "waveCurve",
-   "layer": 0,
+   "layer": 5,
    "startSeconds": 26.17,
-   "endSeconds": 26.248,
+   "endSeconds": 26.32,
    "nodes": [
     {
      "pos": 0,
-     "y": 9,
+     "y": 10,
      "smooth": 0.25
     },
     {
      "pos": 1,
-     "y": 9,
+     "y": 10,
      "smooth": 0.25
     }
    ],
@@ -918,9 +918,9 @@
    "performanceNotes": "TAKE",
    "properties": {},
    "sonifyNote": 61,
-   "technique": "slap",
+   "technique": "nh_sul1_vel",
    "sonifyMode": "plain",
-   "recVel": 114
+   "recVel": 127
   },
   {
    "id": "wc-43",
@@ -2378,7 +2378,7 @@
    "elec": {
     "name": "perc-impulse-4",
     "category": "impulse",
-    "player": "perc"
+    "player": ""
    }
   },
   {
@@ -2430,6 +2430,6 @@
  "nextId": 85,
  "viewport": {
   "pixelsPerSecond": 112.76577608011848,
-  "scrollOffset": 3771.3497047348524
+  "scrollOffset": 2730.4879488501174
  }
 }

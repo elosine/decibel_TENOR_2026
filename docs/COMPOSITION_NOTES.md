@@ -281,3 +281,18 @@ Impulse 3 is recorded as impulses 1 and 2 were. The proposal and the open points
 > be following that one. And can you adjust the algorithm across the board, I guess for both anticipation reaction and flocking?
 > The immediate after, the soon after, is a little bit too close. Let's make it like 50% longer and then push the rest out from
 > there. It's like the lazy one and whichever other one."*
+
+### DEC-12 · 2026-10-05 — THE NEXT SERIES: a flocking where EVERY live input triggers ALL the samples of all the instruments recorded so far · impulse 4 should give three repeats after the live note
+
+> *"I don't think the impulse four ones are working. I don't hear four onsets. I might have messed something up with the timing of
+> the save files. And also to that, I saved the next five in a different save file. temp01new_cello_bass_flute_perc_25.72 So one,
+> can we get the impulse four ones working? So I should hear three onsets, correct? Or three repeats in addition to the one played
+> live. Then restore those, the next five from the save file I gave you. And then the next series will just be a flocking, except
+> every live input will trigger all the samples. from all the instruments. So I believe in this series, Cello is first. And then
+> that will trigger the flocking algorithm for every player sample recorded so far. But we'll continue to record. That'll be
+> impulse four."*
+
+*The AI's reading, marked as such:* the arChain group (17.8 … 22.3 s, the cello first) is impulse 4 and should give the live note
+plus three samples; the series in the new file (viola 22.99 · wood blocks 24.60 · bass flute 25.83 · cello 26.17; the fifth not
+yet placed) is impulse 5, recorded as the others, each live note followed by a chain of EVERY sample in the bank. "That'll be
+impulse four" read as the fifth group; his to correct.
