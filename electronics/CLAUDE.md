@@ -1,0 +1,199 @@
+# live-electronics-system — the shared live-electronics engine
+
+**What this is:** ONE live-electronics engine, with its notation and graphics, built once and dropped into THREE pieces — the
+Decibel piece · the Switch~ piece · the composer's improvisation with live electronics (his words: `septet_LGMF_2026`
+COMPOSITION_NOTES LG-346 · LG-348 … LG-351). **Not a piece** — it has no score of its own. It is a **MODULE SET with named
+SEAMS** that lives INSIDE each piece's folder (a git submodule): its files live once on disk and are seen from every piece;
+a piece records the engine commit it uses. Planned 2026-10-03 with the composer in piece #6's lab journal — **`#6 §805 … §814`**
+(`septet_LGMF_2026/docs/RUNNING_LOG.md`); the plan is `docs/PLAN.md` here.
+
+**The lineage:** the custom-composition-system pieces #1 … #6 (`composition-system/INDEX.md`). The engine is a PORT of the
+experimental work in `live-electronics-engine` — the sandbox, which stays alive for experiments — into the stack the pieces
+share: the composer score · the notation engine · the Reaper rack (pieces #4 … #6). The three pieces themselves are a NORMAL
+PORT of that stack (the new-piece protocol, `composition-system/protocol/NEW_PIECE_PROTOCOL.md`); the engine is added to each.
+
+**The three seams** — where the engine plugs into a piece's stack (`docs/SEAMS.md`, filled at part 3):
+- **the composer score** — a mixin file + one script tag (the way piece #6's `texture_row.js` · `harmony_sel.js` · `vibes_pitch.js` went in, without touching the drawer)
+- **the sound path** — the processing sits DOWNSTREAM of the sample (an effect in Reaper switched by a message from the score, or the sandbox's own process fed the audio — which is part 4's design); the composer score's part is a TRIGGER that sends its message at its time
+- **the notation** — a new graphic = a rules row + a drawn or animated kind + its edge class (the piece's `check_rules` · `check_screen_edges` hold that shape)
+
+**The boundary:** the engine holds the GENERIC machinery (routing · the effects · the trigger kinds · the glyph kinds); the
+piece's SAVE holds the uses (which note · which effect · which glyph · when). The piece's save stays the ground truth; the
+piece's extractor emits the trigger events like any other.
+
+**THE RULE THE ENGINE'S CODE OBEYS — ADDITIVE:** new files, registry rows, one hook line each. Every line a stack file must
+change is listed in `docs/SEAMS.md` and applied once per piece at the take (`docs/TAKE.md`, part 8). If the engine had to
+rewrite stack files, "take the engine" would be a patch, not a drop-in — and the engine would belong inside the first piece
+instead (the option set aside, `#6 §806`).
+
+**How it is built and taken** (`#6 §807 · §808`): built in the FIRST piece, where he hears it, landing here as it is built;
+each piece pulls at ITS moment, never automatically, and records the commit; a piece's lock pins it; parallel work on the
+pieces is the normal case. A change made for one piece reaches another when that piece pulls — the additive rule, the shield
+and the batteries run in the piece that takes a change cover it.
+
+**State (keep this line current):** **► 2026-10-04 (RUNNING_LOG §4, Fable): THE SEAT REFINED at his word — a git SUBTREE at `electronics/` inside each piece, not a submodule; he never touches it, the AI pushes here at every wrap. Part 5 re-read: the first sound is a note CAPTURED and RETURNED; the filter third. The first code will be built in the Decibel piece by its running order (its journal §2, steps 6 … 10). HERE nothing in hand.** *(Before it:)* **► 2026-10-04 (RUNNING_LOG §3): 9.1 — THE DECIBEL PIECE'S REPO EXISTS, `decibel_TENOR_2026` (public; the new-piece protocol's container 2 done, no code there yet; its record is in THAT repo). HERE nothing is in hand until the first take — which needs that piece's copy-forward (its container 3) and parts 3 · 4 laid out.** *(Before it:)* **► HIS PICK 2026-10-03 (`#6 §815`): PART 9's FIRST RUN — the Decibel piece's repo, by the new-piece protocol, begun in a new session from piece #6's checkpoint #5 (its record lives in THAT piece's repo, not here). HERE: nothing in hand until the first take — parts 3 the seams · 4 the sound path · 5 the first sound · 8 the take, each laid out when he reaches it; before part 4 is put to him, read the sandbox `live-electronics-engine`'s CLAUDE.md.** *(Before it:)* **► PART 1 DONE 2026-10-03 (Fable, `#6 §814`): the repo made, public, pushing after every
+commit; the kit in; `docs/PLAN.md` written — twelve parts, part 1 laid out, 2 … 12 top line only. NEXT: the part he names
+(the order and the timing are HIS — never framed by a date); structurally, 9's first run (the Decibel piece's repo by the
+protocol) comes before 5 the first sound. Journal §2's first block is the cold-start block.**
+
+## READ FIRST — how to work here
+
+**`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,
+and confidence (inherited unchanged from piece #4 by way of #5 and #6). It governs everything below
+and outranks the working-preference docs where they conflict. In short: fix what blocks the
+work and flag the rest to `docs/NITS.md` · don't make the composer decide minutiae ·
+prefer one robust build over a fragile one · **a confidence claim must be verified in the
+running app** · no clear evidence means no diagnosis.
+
+The composer's own rule for a port (said of piece #5's, 2026-09-03; it holds here):
+*"I don't want to get too bogged down in technical details of porting and code and such,
+but I want to do a good, solid job and not leave out things now that might bite later ...
+leaving everything we can for when the time comes."* Keep the conversation at the
+conceptual level; consult the code yourself. **In this repo that rule is the plan's own rule:** the parts are
+containers; a sub-part is added the moment it is needed and not before (`docs/PLAN.md` header).
+
+**How he reads (his user-level CLAUDE.md, 2026-08-24):** succinct
+language, clear spatial division between chunks, short lines, one idea per chunk, bullets
+first. A one-line TL;DR leads any reply over two paragraphs. One step at a time.
+
+**He keeps his own time** (his word 2026-10-03, `#6 §806`): no schedule keeping, no deadline watching, no ordering by date
+from the AI. The AI gives the parts, the dependencies and what is efficient; the order and the pace are his.
+
+**A NEW NOTATION BEGINS WITH A DEVICE SHEET** (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET): the engraving rules are the
+piece's `notation/registry/rules.json`, read through its generated `docs/ENGRAVING_RULES.md`; the engine ADDS rows, it
+never edits a code number. Parts 7 and 12 are made of device sheets.
+
+## Orient from docs, not from scanning
+
+- **What the pieces share — the index, read at every session start:** `composition-system/INDEX.md`
+- **ANY WORK ON THE SOUND PATH — READ THIS FIRST:** the piece's `docs/DYNAMICS_LAW.md` (piece #6's is the current copy) — the two
+  kinds of note, the fader on the curve channels; the engine's processing sits DOWNSTREAM of that sample and must not undo it
+- **What now / what next:** `docs/PLANNER.md` — the **NOW ►** line
+- **Living plan:** `docs/PLAN.md` — stable IDs; the twelve parts; the rule in its header
+- **Session state, decisions:** `docs/PROJECT_JOURNAL.md` — §2 Resume Here first
+- **The lab journal:** `docs/RUNNING_LOG.md` — append-only, written as the work happens; **a bare `§N` here is THIS repo's; piece #6's is `#6 §N`**
+- **Where the engine plugs in · how a piece takes it:** `docs/SEAMS.md` · `docs/TAKE.md`
+- **Building a plan item / analyzing an issue for the plan:** `docs/PLANNING_METHOD.md` — three phases, fixed formats
+- **Deferred, real but not now:** `docs/NITS.md`
+- **Working preferences & routines:** `docs/HOW_WE_WORK.md` · `docs/SESSION_PROTOCOL.md` · `docs/SESSION_HYGIENE.md` (clear between chunks; the docs are the handoff)
+- **No sketch pad here, by design (his to reverse):** a musical idea about the electronics is an LG note in the PIECE that has it —
+  the brief for this engine is `septet_LGMF_2026` LG-340 … LG-345 (the device) · LG-346 (the order) · LG-348 … LG-351 (the plan's talk).
+  A process note about the ENGINE itself goes in this repo's RUNNING_LOG, verbatim, the AI's reading marked.
+
+Do NOT scan or analyze the codebase unprompted. Name the question first, then read only
+what answers it. High bar for subagents / background processes.
+
+**After `/clear` + `/postclear` (his standing rule, 2026-09-11):** play back, then **STOP
+and ask**. No edits, no builds, no tool calls beyond the resume reads. Start only on his
+word. At `/session-start`: orient, agree the agenda, then work.
+
+## Standing practice: the lab journal (composer, 2026-09-03 — not optional, never asked for)
+
+> *"I'd like to keep a running journal like lab notes, so I can look back on decisions or
+> comments, theory, philosophy, etcetera, or how we actually made something, if I wanted
+> to write a paper later about this — and I would expect the AI agent to do this
+> automatically as a habit."*
+
+The rules, adopted from `live-electronics-engine` (its CLAUDE.md and `docs/journal/README.md`):
+
+- **When:** at the end of any exchange that produced a decision, a result, a rejection, a
+  measurement, a theoretical or philosophical point, or a question worth remembering.
+  Not at session end — by then the reasoning has blurred.
+- **What each entry carries:** what prompted it, in the composer's words, quoted not
+  paraphrased · what was tried, in order · the numbers · what was rejected and why (dead
+  ends at the same weight as successes) · what was decided, and why that rather than the
+  alternative · corrections as NEW entries, never edits.
+
+**EXTENDED TO THE COMPOSING ITSELF (composer, 2026-09-18):** *"could you remember to take
+journal notes during the comp process and remind somehow future agents to do the same, lab notes so if I want to come back
+and write a paper on how I wrote this piece."* The engine is built WHILE a piece is composed, so the two logs run together:
+what settles the ENGINE (a mechanism, an effect's design, a seam) goes here; what settles the PIECE goes in the piece's log,
+and each cites the other (`#6 §N` here; this repo's name and `§N` there). **The test: could someone write the paper "how
+this engine was made" from this log alone?** Future agents: this is not optional and he will not ask for it.
+
+- **Append-only.** The journal is the record of how the thinking went; it is never tidied.
+  Current state lives in the plan, the journal §2 and the READMEs, which are rewritten freely.
+
+*The morph-notes practice of pieces #5 · #6 is NOT carried: the morph tool is a composing tool of the pieces, not of the
+engine. Checked heading by heading against `septet_LGMF_2026/CLAUDE.md` at the first commit (`#6 §814`).*
+
+## THE RHYTHM — next steps · model · clear (standing, composer 2026-08-23; carried whole)
+
+*(It was in piece #4's CLAUDE.md and the copy-forward to piece #5 dropped it, so it loaded
+in no septet session for a week and the advice came only sometimes — his own verdict,
+2026-09-10: "This was happening for a while, but then is inconsistent." It is carried here
+from the first commit, deliberately.)*
+
+**REFINED by him, 2026-09-18 (guidelines, not hard rules — his user-level CLAUDE.md, "The shape of a working reply"):**
+*"the next model clear dialog is good, but lets keep that more focused and local, only when we are moving on to something
+that needs a model change or clear"* — and *"no more things left to do, or left pending or even whats next unless I
+specifically ask."* So **in the CHAT:** model / clear advice only at a real switch point, one or two lines; no next-steps
+list unless he asks; replies are a goal heading, a short ✓ trail, the one thing in hand with a brief why per step, and ONE
+compact notes section at the bottom for the honest side-matter. **And (2026-09-18):**
+*"avoid unnessary extra work unless asked for, so like verifications and such unless we write these into a plan as necessary
+verifications and qc"* — no probe, no cross-check, no QC pass that he did not ask for or that the plan does not name as a
+required step; if something looks worth checking, ONE line offering it, and he decides. This does not relax
+`AI_METHODOLOGY`'s rule that a confidence CLAIM must be verified in the running app — unverified simply means unclaimed.
+**In the DOCS nothing changes:** journal §2's NEXT STEPS · MODEL · CLEAR table is still kept current — it is the handoff,
+and it is what makes the chat free to stay on one thing. The paragraph below is the 2026-08-23 original; read it through this.
+
+At every juncture — a chunk wrap, a milestone, a mode change (execution ↔ conversation),
+or when asked "where are we" — the AI **states the next 2–4 logical steps, each with a
+recommended model and whether to clear before it**, and **says out loud when a good clear
+or switch point has arrived** ("this is a good time to clear", "switch to Opus for this").
+Not when asked — as a habit, like the lab journal. The rule for the recommendation is in
+`docs/SESSION_HYGIENE.md` § Model strategy (Fable = judgment / verdicts / design;
+Opus = executing a written plan; clear at milestones and mode changes; the cold-execution
+test before any clear).
+
+**The running thread lives in `docs/PROJECT_JOURNAL.md` §2 → "NEXT STEPS · MODEL · CLEAR".**
+Keep it current as steps complete — it is the first thing a model reads after a clear, and
+it must say what is next, with what model, right now.
+
+**Fable's allotment is separate and is the one he watches** (composer, 2026-09-10). So the
+routing advice is also credit advice, and these bind every Fable turn:
+- **Fewest round trips.** Batch independent reads and tool calls into one response; no
+  exploratory reads; name the question before opening anything.
+- **No screenshots unless the screenshot IS the proof he asked for.** `read_page` otherwise.
+- **Never spawn a subagent on Fable.** If one is ever justified, pass `model: "sonnet"`.
+- **Wrap on Opus.** `/checkpoint` and `/session-end` are mechanical work at the long,
+  expensive end of a session: switch to Opus, wrap, `/clear`, switch to Fable, `/postclear`.
+- **A `Resume reads:` list names what the NEXT STEP needs, not what the last session wrote.**
+  Every line on it is re-read in every turn of the session that follows.
+
+## Apps
+
+- **The engine has no app of its own.** It runs inside a piece's composer score (`node score/server.js` there) and notation
+  app, and sounds through the piece's Reaper rack. It is exercised and verified IN A PIECE — on that piece's throwaway
+  server (`score-5401` in piece #6's `.claude/launch.json`), never his port.
+- **`.claude/launch.json`:** none here until a part needs one.
+- **The sandbox** `live-electronics-engine` has its own apps and its own record — the source of part 2's port; read-only here.
+
+⚠ **Standing warnings, inherited and still true:** the AI never holds his port and never saves from its own browser pane
+(piece #5's principle 9) · the in-app browser has no Web MIDI, so every MIDI path is verified on his Chrome · loopMIDI ports are
+machine-global and the pieces' racks may be live — the engine never binds a piece's `LG…` ports or piece #5's.
+
+**Checks this repo owns:** none yet — each part brings its battery when it is built; THE SHIELD (`tools/layout_shield.js` of the
+piece) runs in the piece that takes a change, before and after.
+
+## Reference repos (read-only context)
+
+- **The sandbox** `C:\Users\jwloy\GitHub\live-electronics-engine` — the source of part 2's port: the experimental live-electronics
+  work; its CLAUDE.md and `docs/journal/README.md` are where the lab-journal rules came from. **Never edit it** — it stays alive
+  for experiments; the port TAKES from it.
+- **The pieces #1 … #6** — by `composition-system/INDEX.md`. Piece #6 `septet_LGMF_2026` is the current stack and the plan's
+  record (`#6 §805 … §814`); piece #2 `composition_for_two_pianos_and_two_percussion` holds the CELLS LG-341 names
+  (`docs/CELL_ARCHITECTURE_ADR.md` · `CELL_CODE_MAP.md`). **Piece #5 has the composer's own uncommitted files — never stage,
+  move or edit anything there.**
+
+Consult only when a specific named question requires it. Never edit them.
+
+## Git
+
+- Commit at the natural wrap of an approved chunk; reference plan IDs (`N.m`) in messages.
+- Stage **explicit paths only, never `git add -A`**.
+- **Push after every commit** — his word, 2026-10-03: *"live-electronics-system (if available), public, push after every commit"*
+  (`#6 §813`). Do not ask.
+- **PUBLIC repo:** nothing personal lands here — no call screenshots, no account details, no licensed fonts.
+- **A commit here reaches a piece only when the piece pulls** (the submodule's pointer). A piece pulls at ITS moment, never
+  automatically; a piece's lock pins the commit it was submitted with (`docs/TAKE.md`).
