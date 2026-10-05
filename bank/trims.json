@@ -34,14 +34,15 @@
    "currentTrimDb": -7.52,
    "trimAtMeasurementDb": 0,
    "basis": "the trim in force at measurement",
-   "deltaDb": 6,
-   "proposedTrimDb": -1.52,
-   "faderDb": -1.52,
+   "deltaDb": 13.04,
+   "proposedTrimDb": 5.52,
+   "faderDb": 5.52,
    "jsVolumeDb": 0,
    "soundingS": 4.56,
    "nPitches": 3,
    "reference": "the instrument mean across its measured pitches",
-   "liftDb": 6
+   "liftDb": 13.04,
+   "byHand": "2026-10-05"
   },
   {
    "inst": "bass_clarinet",
@@ -55,14 +56,15 @@
    "currentTrimDb": -13.16,
    "trimAtMeasurementDb": 0,
    "basis": "the trim in force at measurement",
-   "deltaDb": 6,
-   "proposedTrimDb": -7.16,
-   "faderDb": -7.16,
+   "deltaDb": 12,
+   "proposedTrimDb": -1.16,
+   "faderDb": -1.16,
    "jsVolumeDb": 0,
    "soundingS": 4.56,
    "nPitches": 3,
    "reference": "the instrument mean across its measured pitches",
-   "liftDb": 6
+   "liftDb": 12,
+   "byHand": "2026-10-05"
   },
   {
    "inst": "viola",
@@ -76,14 +78,15 @@
    "currentTrimDb": -5.23,
    "trimAtMeasurementDb": 0,
    "basis": "the trim in force at measurement",
-   "deltaDb": 6,
-   "proposedTrimDb": 0.77,
-   "faderDb": 0.77,
+   "deltaDb": 12,
+   "proposedTrimDb": 6.77,
+   "faderDb": 6.77,
    "jsVolumeDb": 0,
    "soundingS": 4.47,
    "nPitches": 3,
    "reference": "the instrument mean across its measured pitches",
-   "liftDb": 6
+   "liftDb": 12,
+   "byHand": "2026-10-05"
   },
   {
    "inst": "crotales",
@@ -293,12 +296,13 @@
    "measuredDb": -32.5,
    "currentTrimDb": -3.87,
    "trimAtMeasurementDb": -3.87,
-   "deltaDb": 6,
-   "proposedTrimDb": 2.13,
-   "faderDb": 2.13,
+   "deltaDb": 12,
+   "proposedTrimDb": 8.13,
+   "faderDb": 8.13,
    "jsVolumeDb": 0,
    "basis": "CARRIED from piece #6 (its bank/trims.json, 2026-09-19) — NOT recomputed: this track is the clone of the instance measured there. THE CROSS-CHECK: at this trim it read -32.5 dB here against -32.31 dB in piece #6 (-0.19 dB) — three notes, inside the round-robin scatter.",
-   "liftDb": 6
+   "liftDb": 12,
+   "byHand": "2026-10-05"
   },
   {
    "inst": "wood_blocks",
@@ -351,5 +355,5 @@
   "method": "each voice's measured sample peak at velocity 127 plus its change, summed in POWER — pessimistic, because independent peaks rarely coincide; 1b.5 measures the real thing"
  },
  "_decibel": "decibel TENOR 2026, 2026-10-04 (RUNNING_LOG §42): twelve instruments measured in this rack (reaper/Media/17-REC-261004_1655.wav) against PIECE #6's per-voice level (-31.84 dB on the card's scale — \"9 voices\" is piece #6's figure, kept so the three carried trims stay exact; a different N is one uniform shift of every fader). The bass flute joined after its reset to the factory instrument (preset 15), measured alone in 17-REC-261004_1717.wav (RUNNING_LOG §43).",
- "_lift": "2026-10-05 (RUNNING_LOG §74, his word): +6 dB on the four XSAMPLE tracks only — he found them quiet and set their Kontakt instances from the default -6 dB to 0 by hand twice; the instances did not hold. The lift lives HERE, on Reaper's fader, which no MIDI touches. The percussion and the mallets are untouched. liftDb below is the shift over the measured trim."
+ "_lift": "2026-10-05 (RUNNING_LOG §74 · §79): the four XSAMPLE faders — the AI lifted them +6 dB over the measured trim (§74); he then raised them by hand again (§79: bcl -1.16 · bfl +5.52 · va +6.77 · vc +8.13 as the rack reads) and THE RECORD FOLLOWS HIS HAND: these are his values, so apply_trims.lua never undoes them. liftDb = the shift over the measured trim."
 }

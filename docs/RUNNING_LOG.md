@@ -2803,3 +2803,25 @@ missEarlyHi=300`. The page's two modules pass `node --check`.
 **The flute (SWEEP_LIST #3 b):** his 09:00:42 recapture wrote `bfl-impulse-1.wav` again (50940 bytes, a full window) and the raw
 `zn-47.wav` (78288 bytes — sound in it this time); no row again. Deterministic for the flute alone; the engine's `LE_ERROR`
 line (§74) names it at his next start. **For the paper:** the engine's part is in its §17; this is the piece's use.
+
+## §79. AFTER THE BUILD — impulse 2 placed (and his pitches put back after the tool re-pitched them); the faders as his hand left them; the percussion in the card (2026-10-05, Fable)
+
+**His words:** *"1. is done. The percussion instruments, for example, like the China cymbals, or really any of them in the card, you
+choose the articulation in the voice, pull down, but those are really controlled by the key you send. And the voice is the
+typically the all-in-one. Anyways, let's find out how to work with percussions in the card. And then have the Reaper volume
+faders been adjusted yet? It doesn't look like it. I'll just do it manually."*
+**Impulse 2 placed** (`node tools/impulse.js --score piece-sec01-a --n 2` after his save): five notes tagged, five openings
+`<player>-impulse-2`, five returns `<player>-impulse-1 ~ ar`. **A FAULT OF THE TOOL, CAUGHT BY ITS OWN PRINTOUT:** on a note he
+placed himself it still took the MIDDLE of the voice's range as the pitch — viola 51 → 71, bass flute 53 → 67, cello 44 → 60, bass
+clarinet 34 → 47 (the glockenspiel's 70 by chance the same). Put back by hand in the file before his Reload; the tool now keeps
+his pitch on a note it did not place, and only WARNS when it lies outside the voice's range (his placement is his).
+**The faders:** the probe read the rack at his words — bcl −1.16 · bfl +5.52 · va +6.77 · vc +8.13: the AI's +6 of §74 WAS
+there, and he had raised each by hand another +6 (the flute +7) on top. **The record follows his hand:** `bank/trims.json`
+carries the rack's values (`byHand`; lift over the measured trim +12 … +13.04), so `apply_trims.lua` never undoes them. His
+ear, his numbers; the calibration of §42 stands as the measured basis underneath.
+**The percussion in the card — what is true:** a percussion VOICE is one Abbey Road patch (an instrument + its mallet: "China
+Cymbals — Felt Mallet", channel 5), `kind: 'key'`, and the KEY the note sends chooses the articulation inside it (36 Single Hit ·
+37 Single Hit Choked · 41 Roll · 42 Swells · 43 Roll Choked · 44 Swells Choked …); the recipe carries those names
+(`sandbox/instruments.js`, 29 voices, 8 instruments) but the composer page NEVER READS a voice's `keys` — the card shows the key
+as a pitch, no articulation name. So "how to work with it" today: Voice = instrument + mallet; the pitch field = the articulation
+by number, the names looked up in the recipe. OFFERED, not built: a labelled key picker in the card for a by-key voice.

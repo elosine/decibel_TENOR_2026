@@ -17,9 +17,9 @@
 --   node tools/reaper_job.js run reaper/bridge/jobs/apply_trims.lua
 local JS_NAME = 'utility/volume'
 local TRIMS = {
-  { name = "Bass Flute XS", faderDb = -1.52, extraDb = 0.00 },   -- Bass Flute: was -7.52, +6.00
-  { name = "Bass Clarinet XS", faderDb = -7.16, extraDb = 0.00 },   -- Bass Clarinet: was -13.16, +6.00
-  { name = "Viola XS", faderDb = 0.77, extraDb = 0.00 },   -- Viola: was -5.23, +6.00
+  { name = "Bass Flute XS", faderDb = 5.52, extraDb = 0.00 },   -- Bass Flute: was -7.52, +13.04
+  { name = "Bass Clarinet XS", faderDb = -1.16, extraDb = 0.00 },   -- Bass Clarinet: was -13.16, +12.00
+  { name = "Viola XS", faderDb = 6.77, extraDb = 0.00 },   -- Viola: was -5.23, +12.00
   { name = "Crotales RM", faderDb = -7.18, extraDb = 0.00 },   -- Crotales: was 0.00, -7.18
   { name = "Glockenspiel RM", faderDb = -7.21, extraDb = 0.00 },   -- Glockenspiel: was 0.00, -7.21
   { name = "Xylophone RM", faderDb = -5.65, extraDb = 0.00 },   -- Xylophone: was 0.00, -5.65
@@ -30,7 +30,7 @@ local TRIMS = {
   { name = "Spring Coil ARO", faderDb = 6.87, extraDb = 0.00 },   -- Spring Coil: was 0.00, +6.87
   { name = "Suspended Cymbals ARO", faderDb = 7.53, extraDb = 0.00 },   -- Suspended Cymbals Bright: was 0.00, +7.53
   { name = "Toms ARO", faderDb = -2.99, extraDb = 0.00 },   -- Toms High: was 0.00, -2.99
-  { name = "Cello XS", faderDb = 2.13, extraDb = 0.00 },   -- Cello: was -3.87, +6.00
+  { name = "Cello XS", faderDb = 8.13, extraDb = 0.00 },   -- Cello: was -3.87, +12.00
   { name = "Wood Blocks ARO", faderDb = 7.05, extraDb = 0.00 },   -- Wood Blocks: was 7.05, +0.00
   { name = "Bass Drum Alt ARO", faderDb = -4.29, extraDb = 0.00 },   -- Bass Drum (Alt): was -4.29, +0.00
 }

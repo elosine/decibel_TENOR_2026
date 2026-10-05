@@ -56,7 +56,7 @@ slots.forEach((slot, i) => {
   const tech = (inst.techniques || []).find((q) => q.key === (slot.tech || (own && own.technique)));
   if (!tech) throw new Error('slot ' + (i + 1) + ': ' + slot.lane + ' has no technique "' + slot.tech + '"');
   const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
-  let note = slot.note != null && slot.note !== 'mid' ? +slot.note : Math.round((lo + hi) / 2);
+  let note = slot.note != null && slot.note !== 'mid' ? +slot.note : (own ? +own.sonifyNote : Math.round((lo + hi) / 2));   // his own note keeps its pitch (§79)
   if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((k) => k.midi === note)) note = tech.keys[Math.floor(tech.keys.length / 2)].midi;   // a by-key voice: the middle KEY
   const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';   // a player may own several ports (the percussionist's two lanes)
   const wc = own || pool[i];
@@ -65,7 +65,7 @@ slots.forEach((slot, i) => {
   // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
   const ret = RETURN ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
     { name: (player || slot.lane) + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay') : null;
-  if (note < lo || note > hi) throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')');   // the preset's own range, never the instrument's
+  if (note < lo || note > hi) { if (own) console.warn('slot ' + (i + 1) + ': HIS key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ') — kept, it may be silent'); else throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')'); }   // the preset's own range, never the instrument's
   rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? ret.elec.name : '' });
   if (!DRY) {
     wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
