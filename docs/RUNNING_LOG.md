@@ -2890,3 +2890,21 @@ it fixed quickly lets move on."* **The cause, read in the code:** §81's handler
 `commit` function, not in the handler's scope — a ReferenceError at every voice change, thrown after the technique was set and
 before the card re-rendered and heard the note: the voice changed, nothing sounded. **The fix, one token:** `C()` — the card's own
 accessor for the composer. Not tested (D13); if it still fails, revert `note_card.js` to `38ace9c` and `composer.html` to `5c20f0a`.
+
+## §84. SWEEP_LIST #3 b SOLVED BY HIS OWN PASS — a FIRST take of any name lost its row; never the flute (2026-10-05, Fable)
+
+**The evidence, his 10:22 pass through impulses 1 and 2 (the engine of 09:00, not restarted):** files written for `bfl-impulse-1`,
+`bfl-impulse-2`, `bcl-impulse-2`, `va-impulse-2`, `vc-impulse-2` — five FIRST takes — and NONE got a row; `bcl-impulse-1`,
+`perc-impulse-1`, `va-impulse-1`, `vc-impulse-1` — four RE-takes — all four rows rewritten (10:22:02 … 04). The flute's "fault"
+was only that its impulse 1 had never had a row: every first take fails the same way, every re-take succeeds. (`perc-impulse-2`
+wrote no file at all — the page had not been reloaded, so the mallets lane still had no player; F5.)
+**The mechanism, read in `captureDone`:** `self[\indexRows] = self[\indexRows].reject({…}); self[\indexRows].add(row);` —
+`reject` hands back a collection sized exactly to what is left; on a re-take one row was removed, so the `add` fits; on a first
+take nothing was removed, the collection is full, and `add` on a full Array returns a NEW array — which was thrown away. No
+exception, so §74's `try` had nothing to say. (Which step turns the index's List into an Array — `reject`'s species or the
+bank's loading — is not pinned down; the fix does not depend on it.) **The fix, one line:** the rows are made a List
+(`.asList`) before the add — a List adds in place. From his next engine start. **Not tested (D13).** The flute's "out of range"
+(§74) stands as a separate, true fact of the 08:27 pass; it was not this.
+**A slip of the AI's, for the record:** the first attempt at this commit (`001379d`) carried the engine's lab note §19 and his
+captures, but NOT the code — an edit's anchor failed and a heredoc broke the command chain; the code and this entry follow in
+the next commit. The engine's repo took §19 a commit early.
