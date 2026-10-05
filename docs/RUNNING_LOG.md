@@ -3192,3 +3192,24 @@ absent = unity. `patternOnsets` and the window line show it.
 **Where it went (THE SORTING):** the menu, the dealing and the message in the engine's page module (`electronics/score/le_objects.js`,
 405 → 546 lines); the level in the engine (`electronics/sc/bank.scd`); ONE seam line grown in `composer.html` (and SEAMS.md row 3);
 the calculators the stack's, untouched. The engine's log has it as its §25. Subtree-pushed at this wrap.
+
+## §99. DEC-16 TAKEN — each sample transformed through the piece, "I am sitting in a room" style; a workshop; CHECKPOINT #3 OF SESSION 2 (2026-10-05, Fable; his `/checkpoint`)
+
+**His note, verbatim in the sketch pad (DEC-16):** every sample to undergo a chain of transformations across the piece — *"the
+sample's processed and then that sample is processed by something else and then that sample is processed by something else"* —
+a WORKSHOP to build it in (*"a save score, whichever is easiest"*), the 25 samples of the bank as they are, **starting with
+one: the bass flute's tongue slap** (`bfl-impulse-1`), *"they can each be a separate brick. We can do a transformation for
+each one"*; and his order: *"take this note and then let's checkpoint and clear, and then we'll resume here. We'll go ahead and
+build this workshop and devise a transformational scheme."*
+
+**What this is for the running order:** STEP 10, THE PROCESSING, opened — not by the pedals of resonance as step 10 was written,
+but by a chain of transformations of a banked sample, each stage KEPT; the pedals are one candidate process among the stages.
+It is also DEC-14's variants workshop reached by another road (there: variants rendered in the background once a sample is
+stored; here: a composed chain, a brick per stage). THE SORTING, in advance: the rendering of a sample through a process into
+a new banked sample is the ENGINE's (its part 6, by way of part 2's port from the sandbox); which process at which stage, and
+the workshop score, the PIECE's. Nothing designed yet — the reading of the note is marked as the AI's in the sketch pad, to
+confirm first at the resume.
+
+**The checkpoint:** the day's three builds are committed and pushed (§97 · §98, the engine's repo in step at `86b56f5`); this
+commit carries the note, the journal's block, and HIS 25 samples with their index as a pass re-recorded them today (the bank at
+work, D12 — never discarded, committed at the wrap). The next session is a TALK first: the reading · the workshop · the scheme.

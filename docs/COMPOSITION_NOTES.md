@@ -369,3 +369,20 @@ phase 2 (running order step 10) is where it goes, unless he calls it sooner.
 *(The AI's reading: "the Excel" = the accel · round robin. Built the same day, RUNNING_LOG §98 — the drawer's calculators handed
 to the engine's module through its seam; five items left out as meaningless for samples: as played · span × · amount · drop
 rests · pitches / re-deal.)*
+
+### DEC-16 · 2026-10-05 — EACH SAMPLE TRANSFORMED THROUGH THE PIECE, "I am sitting in a room" style: a workshop, a transformational scheme; start with the flute tongue slap, a brick per transformation
+> *"a composition note. I want each sample to undergo a transformation throughout the piece. Uh, sort of, I am sitting in a room
+> style where the sample's processed and then that sample is processed by something else and then that sample is processed by
+> something else. So let's build a workshop. We can do a save score, whichever is easiest. And if those samples are already
+> recorded, let's just use the current samples that we've made so far. We can just start with one. Let's start with um, the flute
+> tongue slap. And then start with a, they can each be a separate brick. We can do a transformation for each one. But actually
+> take this note and then let's checkpoint and clear, and then we'll resume here. We'll go ahead and build this workshop and
+> devise a transformational scheme."*
+
+*(The AI's reading, to confirm at the resume: a CHAIN of processes, each stage's output the next stage's input — Lucier's
+piece as the model (a sound re-recorded through the same room until the room's resonances are all that is left), here with a
+different process at each stage; the result at every stage KEPT, and the stages spread across the piece. The workshop: a score
+(its own save, or a scratch score — "whichever is easiest") in which the first sample, `bfl-impulse-1` (the bass flute's tongue
+slap), sits as a brick, and each transformation of it as a further brick; the engine renders each stage from the one before.
+The samples: the 25 in the bank now. This is DEC-14's variants workshop reached by another road, and step 10 of the running
+order — the processing — opened by it. The scheme itself — which processes, in what order — is the talk at the resume.)*
