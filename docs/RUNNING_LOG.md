@@ -3312,3 +3312,24 @@ module; the engine applies what it is sent and stores it in the row — the engi
 render the way it answers a capture: the index; the page polls `loadIndex` until the row is there (no new return road).
 
 **Not built, not heard.** The scheme's four stages are the AI's proposal, his to rewrite in the cards.
+
+## §102. HE TAKES THE ROUTE — plan, then build on Opus; CHECKPOINT #4 OF SESSION 2 (2026-10-05, Opus; his `/model` · `/checkpoint`)
+
+**What prompted it:** after §101's answer to his *"plan or can you go to build or is it better if you plan then build?"* he set the
+model to Opus and ran `/checkpoint` — the recommended route, taken.
+
+**What the checkpoint added to the block, on a last reading of it — three honest lines, not design:** (1) the block was written
+from the sandbox's synth and from a GREP of this engine's names (`bank.scd`'s handlers, `le_objects.js`'s structure), not from a
+read of their bodies — what it assumes (a fresh sample is loaded into the play buffers at once · the index row's fields · the key
+`P` is free · every sc3-plugins stage compiles in this engine) is named in journal §2 for the build to confirm; (2) `space` — the
+chain's last stage, width and swirl — means nothing in a MONO bank: the recommendation is to leave it out of the catalogue
+(seventeen effects) until a stereo sample is wanted; (3) `freeze` needs a MOMENT: engaged from the start it holds the first frame —
+silence, or the click of the attack — so the brick needs a dial for when it engages (the AI's default: just after the source's
+peak). Both are in PLAN.md § 1.3 as "left to the build".
+
+**A slip of the machine, for the next writer:** the plan block failed as ONE heredoc — the known false "matching quote" error of a
+Bash command over ~8 KB; it was written in two halves to the scratchpad and spliced into PLAN.md by a node script file. The docs
+were counted at byte level: LF only, all six.
+
+**The state at the clear:** nothing built; no file outside `docs/` and `CLAUDE.md` changed this session. The engine's repo in step
+(`86b56f5`). Resume on Opus: the build of 10.1 as one, one headless proof, then his ear.
