@@ -3007,3 +3007,14 @@ the live note or of another link is pushed to 40 ms after it; four distinct onse
 unison shares to 0 (the flams gone, the "before + after" collision stays).
 **The percussion:** its impulse-4 chain has one sample of three until `perc-impulse-2` and `-3` are captured (the score server's
 restart, §90's step 1, gives the mallets lane its microphone).
+
+## §92. THE MINIMUMS WIDENED AGAIN, ACROSS THE BEHAVIOURS; the fade confirmed in play; group 5 waits for his save (2026-10-05, Fable)
+
+His words: *"let's change the definition of what it means to play just before or just after, or that minimum at least, and make it
+a little bit more … we said 100 milliseconds after … 150 milliseconds, let's make it 175 then … And same with before. And across
+all the algorithms."* **B now** (`bank/elec_route.json` `return.ar.B_rangesMs`, shared by ar · chain · arChain): just-after
+150–270 → **175–300** · just-before 90–225 → **105–240** (the same proportion) · lazy 270–600 → **300–650** · the early miss
+225–450 → **250–480** · unison 10–40 untouched. From his next engine start. **The fade:** `bank.crop` fadeOutMs 80 · fadeInMs 3
+went in with §90's fix and his restart after it carried them — in play since; a sample takes the release when it is re-taken
+(every pass re-records). **Group 5:** `chain` of `*` (every sample in the bank at playback) after each of his five; the tool runs
+at his word — he is editing the final five and asked to be told before the score is written (his rule of this session).

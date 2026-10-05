@@ -72,23 +72,24 @@
       },
       "B_rangesMs": {
         "after": [
-          150,
-          270
+          175,
+          300
         ],
         "before": [
-          90,
-          225
+          105,
+          240
         ],
         "lazy": [
-          270,
-          600
+          300,
+          650
         ],
         "unison": [
           10,
           40
         ],
         "skew": 2,
-        "_2026_10_05": "his ear (DEC-11): \"the immediate after, the soon after, is a little bit too close. Let's make it like 50% longer and then push the rest out from there\" — after 100–180 → 150–270; before, lazy and the miss pushed out by the same factor; unison untouched (it is meant to be close). Shared by ar, chain and arChain."
+        "_2026_10_05": "his ear (DEC-11): \"the immediate after, the soon after, is a little bit too close. Let's make it like 50% longer and then push the rest out from there\" — after 100–180 → 150–270; before, lazy and the miss pushed out by the same factor; unison untouched (it is meant to be close). Shared by ar, chain and arChain.",
+        "_2026_10_05b": "his ear again (§92): the minimum of just-after 150 → 175 (and the band to 300), just-before 90 → 105 (to 240) in the same proportion; lazy and the early miss pushed out from there (300–650 · 250–480); unison untouched. Shared by ar · chain · arChain. From the engine's next start."
       },
       "C_miss": {
         "rate": 0.1,
@@ -98,8 +99,8 @@
           120
         ],
         "earlyMs": [
-          225,
-          450
+          250,
+          480
         ]
       },
       "D_leanings": "none — fresh dice at every note",
