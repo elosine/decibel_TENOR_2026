@@ -2146,3 +2146,19 @@ is written whole, and only what is his is put to him).
 
 **The switch point:** the build is a written plan → Opus. The context of this chat is long (the talk, 6.2's build and its record); the plan
 is the handoff — a `/checkpoint` and a clear before the build is the AI's recommendation, his call.
+
+## §63. CHECKPOINT #4 — the plumbing whole, the first object written, before its build (2026-10-04, Opus; his `/checkpoint`)
+
+**Where the chat ends:** `/postclear` (*"6.2 discussion"*) → his brief for the electronics (DEC-8) → D10 the correspondence rule → 6.2 laid
+out, written, built in the same chat (*"build here no clear"*), proven by the AI's run, measured on his Chrome (114.2 ms) → his word on
+testing and on hand steps (§61) → the first object end to end laid out and written as one build (§62). Six commits, each pushed; the
+engine's repo in step at each.
+
+**What the next session is handed** (journal §2): the build's plan (PLAN.md 1.1, 6.3 … 6.6) · the design's reasons (§62) · a block of
+things found in this chat and not to be derived again (where a zone is made and labelled; how a new message kind is added on each side;
+the traps of sclang's Events and of this machine's shell) · and three sentences it owes him as MUSTS, not tests: close the engine window
+before the engine's half; start it again after; restart the score server only if its code changed.
+
+**A note on the session's shape, for the paper:** the talk and the build of 6.2 ran in one chat at his word, against the standing habit of
+a clear between them. It cost nothing — the reasoning was in context and the build needed no resume reads — and it is the pattern he
+reached for again (*"Let's move on"*). The clear came where the context, not the habit, asked for it: before the largest build so far.

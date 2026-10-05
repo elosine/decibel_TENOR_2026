@@ -224,7 +224,7 @@ question, not by habit.)*
 - **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
   LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-### OPEN NOW *(mid-session, 2026-10-04, Fable — the first object LAID OUT AND WRITTEN; before its build on Opus)*
+### OPEN AT SESSION END *(mid-session checkpoint #4, 2026-10-04, Opus — his `/checkpoint` with the first object laid out and written, before its build)*
 
 - **The task and its state:** the running order's step 6, the electronics' plumbing — **6.1 the audio route ☑ · 6.2 the message route ☑**
   (RUNNING_LOG §51 … §61; D10 the correspondence rule). THE PLUMBING IS DONE; THE OBJECTS ARE NOT BUILT. **POSITION: step 6 of 11 is
@@ -252,24 +252,49 @@ question, not by habit.)*
   `composer.html` (one tag, one hook) · `tools/elec.js` (`ping` · `message`). The numbers: `probes/elec_message.json` (hello 0.71 ms; the
   page's own playback shown by the engine as `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`).
 - **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on OPUS: play back, STOP and ask. Then THE BUILD OF THE FIRST OBJECT,
-  exactly as `docs/PLAN.md` 1.1 lays it out — 6.3 (a) → (f), 6.3b, 6.4, 6.5, 6.6 in order, each proven before the next.** Both bricks are
-  zones with a new `midiModel` (`elecOpen` · `elecPlay`) made by `createZone` (as a trill or a beating zone is made over a selection); the
-  mixin `electronics/score/le_objects.js` adds the label (`renderZone`'s label chain), a panel section (`showPropertyPanel`), the gesture
-  (a free key) and the tick's message (`tickZoneMidiPlayback`); the engine's side in `electronics/sc/` (the capture, the crop, the index,
-  `leSample`), the bank folder from `bank/elec_route.json`'s new `bank` block via `LE_BANK`. The placing is the AI's; he is told in one
-  line what went where. **HIS WORD (§61): no check that needs his hands unless he asks — the listen at the end is OFFERED.**
-- **`Resume reads:`** this §2 · `docs/PLAN.md` 1.1, the block 6.3 … 6.6 (THE PLAN OF THE BUILD) · RUNNING_LOG §62 (the design and its
-  reasons) · `docs/COMPOSITION_NOTES.md` DEC-7 · DEC-8 · `electronics/docs/SEAMS.md` · the headers of `electronics/sc/boot.scd`,
-  `electronics/tools/sc.js`, `electronics/score/le_msg.js` · `electronics/sc/session.scd` · `bank/elec_route.json`. In the composer,
-  by name not by line: `createZone` · `renderZone` · `showPropertyPanel` · `tickZoneMidiPlayback`. Nothing else; §51 … §61 only by a question.
-- **⚠ WHILE HIS ENGINE WINDOW IS OPEN** (it was, at this checkpoint): only `node tools/elec.js probe`, `meters` and `ping` — they leave it
+  exactly as `docs/PLAN.md` 1.1 lays it out — 6.3 (a) → (f), 6.3b, 6.4, 6.5, 6.6 in order, each proven before the next.**
+  **FIRST, ONE PLAIN SENTENCE TO HIM — a MUST, not a test:** his engine window is open (it was at this checkpoint: sclang and scsynth, his),
+  and every engine run of the build (`selftest`, a bounded session) REFUSES beside it — ask him to close that window before the engine's
+  half; never kill it. At the END, two more musts, said the same way: he starts the engine again (`start_electronics.bat` — his window runs
+  the code it started with), and restarts the score server ONLY IF `score/server.js` or `electronics/tools/relay.js` changed.
+  **The shape:** both bricks are zones with a new `midiModel` (`elecOpen` · `elecPlay`) made by `createZone`; the mixin
+  `electronics/score/le_objects.js` adds the label, a panel section, the gesture and the tick's message; the engine's side in
+  `electronics/sc/` (the capture, the crop, the index, `leSample`); the bank folder from a new `bank` block in `bank/elec_route.json` via
+  `LE_BANK`. The placing is the AI's; he is told in ONE line what went where. **HIS WORD (§61): no check that needs his hands unless he
+  asks — the listen at the end is OFFERED in one line. Hand steps, when they are his: all at once, each explicit (which window, the
+  full path, the keys, what he should see).**
+- **FOR THE BUILD — found this session, not to be derived again** (the dying session's notes; hints, not decisions, unless PLAN.md says so):
+  - **In the composer** (`score/public/composer.html`, by name): `Composer` is a `const`, not on `window` · a zone is made by
+    `createZone({ layer, startTime, endTime, zoneFunction: 'midiPreview', midiModel, color, opacity, zoneHeight, yOffset, performanceNotes })`
+    — two callers make one over a selection (the trill's and the beating's): copy their shape · `renderZone`'s label is ONE chained
+    expression on `zone.midiModel` · the zones' playback is `tickZoneMidiPlayback`; the notes' is `tickCurvePlayback`, whose
+    `LOOKAHEAD_S = 0.1` and `perfAt(sec)` are the pattern for sending AHEAD (6.2's hook sits there, right after the note-on) · the bass
+    clarinet is layer 1, its port `DECBassClar`; `scores/decibel-first-sound.json` has its one note `wc-2`, 5 … 7 s, key 50.
+  - **The engine** (`electronics/sc/`): `~le.hear(kind, { |le, data, time, addr| })` is all a new message kind needs; `le_msg.js`'s
+    `LE.send(kind, data)` all the page needs — only strings, numbers and booleans cross (the relay drops the rest) · an OSC string arrives
+    in sclang as a SYMBOL · `~le.json` writes a FLAT event (numbers, strings, arrays of those) — an index row fits; a file of rows needs a
+    small extension · the Event trap: a key must not share a name with a method (`boot.scd`'s header) · `\quiet` mode has no hardware:
+    a capture can be tested there by putting a test tone on the player's bus, as `selftest.scd` E does · a parse error in a `.scd` prints
+    NO `LE_` line — the runner only times out (exit 4): `node electronics/tools/sc.js run <file> --verbose` shows it.
+  - **The piece's tool:** `tools/elec.js start` appends EVERY `LE_RESULT` line that has a `msg` field to `probes/elec_message_log.jsonl`
+    — a new result kind (a capture's row) lands there too unless that filter is narrowed.
+  - **The numbers:** a message is at the engine 114.2 ms before the sound it announces (sent 92.8 ms ahead; 21.4 ms from a note's own start
+    to its sound at the engine) · hello through the server 0.7 … 0.8 ms · the route's round trip 23.22 ms.
+  - **The machine** (`docs/HOW_WE_WORK.md` § MACHINE LESSONS; `docs/VERIFICATION_RECIPE.md`, its last AND SINCE): a Bash command over
+    8 KB fails · a doubled backslash through the shell arrives as one — a file with backslashes is written by the Write tool · the
+    throwaway page's non-GET stub must let `/api/elec` through · the pane has no Web MIDI: a note there makes no sound.
+- **`Resume reads:`** this §2 · `docs/PLAN.md` 1.1 — the block 6.3 … 6.6 (THE PLAN OF THE BUILD) · RUNNING_LOG §62 (the design and its
+  reasons) · `electronics/docs/SEAMS.md` · `electronics/sc/session.scd` · `electronics/score/le_msg.js` · `bank/elec_route.json` · the HEADERS
+  of `electronics/sc/boot.scd` and `electronics/tools/sc.js`. Nothing else: DEC-7 · DEC-8 and §51 … §61 only by a question; the composer
+  by a grep for the four names above, never by reading.
+- **⚠ WHILE HIS ENGINE WINDOW IS OPEN** (IT IS, at checkpoint #4 — sclang and scsynth, his): only `node tools/elec.js probe`, `meters` and `ping` — they leave it
   alone. `check` · `latency` · `selftest` · `message` boot a server and refuse. Never kill a SuperCollider process the session did not start
   (§55: a probe once took his engine down).
 - **Pending him:** what he heard of the rack · the three notation calls (the pitch form · the percussion staff's line order · the short
   names) · the electronics in remote sessions — *"maybe"*, not today · the ensemble's final instrumentation (the call's; his to check) ·
   whether "my improvisation with live electronics" is the improviser piece (§17) · "pedals" or "petals" of resonance (phase 2) · the
   planning repo's lines, at his word only · the porting protocol's hole (§37; `docs/PROTOCOL_DEVIATIONS.md`) — noted, not acted on.
-- **Deliberately uncommitted:** nothing — `git status --short` is empty. (`probes/elec_message_log.jsonl` is committed: his engine window appends to it at every
+- **Deliberately uncommitted:** nothing — `git status --short` is empty at checkpoint #4. (`probes/elec_message_log.jsonl` is committed: his engine window appends to it at every
   paired note while `testOnsets` is true.) Outside git, by design: `reaper/Media/*.wav` ·
   `reaper/kontakt/out/`. The engine's repo is in step (subtree push at this wrap; the mirror pulled). Pieces #4 · #5 · #6 and the sandbox
   were READ, never written.
@@ -286,7 +311,7 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **THE BUILD OF THE FIRST OBJECT END TO END — 6.3 · 6.3b · 6.4 · 6.5 · 6.6 as ONE**, exactly as PLAN.md 1.1 lays it out (LAID OUT AND WRITTEN 2026-10-04, §62) | **Opus** | **YES — `/checkpoint`, `/clear`, `/postclear` (recommended: the plan is the handoff; the chat is long)** |
+| **►** | **THE BUILD OF THE FIRST OBJECT END TO END — 6.3 · 6.3b · 6.4 · 6.5 · 6.6 as ONE**, exactly as PLAN.md 1.1 lays it out (LAID OUT AND WRITTEN 2026-10-04, §62). First: one plain sentence asking him to close his engine window | **Opus** | **DONE — checkpoint #4; `/clear`, then `/postclear`** |
 | — | 6.6 the demo's record → step 7, his rhythm layer | Fable (each talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
