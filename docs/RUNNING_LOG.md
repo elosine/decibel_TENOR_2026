@@ -3545,3 +3545,13 @@ heard; his engine is up and predates the build; his page holds unsaved edits to 
 **Candidates 4 and 5** (two screenshots): the diode ring modulator on the group-5 slap at 218 Hz, kept WITH his randomizer 80 … 400 — row 4 is the range; the freeze on the same slap at 130 ms, smear 1, under a 1.2 s cap — a freeze never falls, so the cap is its length. (`docs/CANDIDATES.md`.)
 
 **For the paper:** the END of a render is now a small catalogue of its own — his envelope, the ring-out, Env.perc, five grain envelopes from Roads — and a dial can be a distribution rather than a number: the chain renders a FAMILY, and each render is one member of it.
+
+## §112. THE GLOBAL RANDOMIZER — every dial of an effect drawn at once, the mix left alone (2026-10-05, Fable; the engine's §33)
+
+**His words:** *"And then can you also add a global randomizer so it will randomize all of the dials within their accepted parameters, maybe with the exception of things like mix, just the actual effects parameters."*
+
+**Built (`electronics/score/le_process.js`):** under an effect's dials, two buttons — **⚄ all**: every dial drawn at random across its WHOLE range · **⚄ usual**: every dial drawn within its USUAL range, the one the hover hint names (§108's table, parsed from the hint; a dial with no usual range falls back to the whole). His "accepted parameters" read two ways, so both are there — one line to him. Left alone: every `…Mix` dial (his exception) and any dial already a RANGE (§111 — it draws itself at each render). An option dial (the shaper, the filter model, waveloss's which) picks one of its options. A frequency or time (a log slider) is drawn log-uniform, so the low octaves get their share; each draw is rounded to the dial's step. One commit — one undo step — per roll.
+
+**Proven once:** the module parses; the draw's arithmetic is §108's slider mapping and §111's rounding. NOT seen: his F5 (the page only; the engine is untouched).
+
+**For the paper:** three grains of chance in the workshop now — a dial as a range (drawn at every render), the whole effect rolled (⚄ all / ⚄ usual), and the behaviours' rolls in the engine (D15). The composer sets the bounds; the machine draws within them; he keeps what he hears (the shelf, §109).
