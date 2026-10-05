@@ -34,6 +34,13 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 ### THE REPO OPENS ON THIS (2026-10-03, Fable) — PART 1 DONE; the next part is HIS to name
 
+- **UPDATE 3 · 2026-10-04 (RUNNING_LOG §5 · §6) — Q1 ANSWERED; PART 4 IN HAND.** The sandbox read: SuperCollider 3.14.1 (offline
+  renders) + a Web Audio layer (labs); NO live-input path anywhere; his pedals of resonance is an SC SynthDef on `SoundIn`. His word:
+  the sound process is SC REAL-TIME, fed by a piece's Reaper over ReaRoute; SC's master IS the output live; in simulation the DAW is only
+  the players and ONE FLAT RETURN TRACK. Part 4 `doing`, **4.1 the audio route laid out** (PLAN.md); parts 2 · 3 each carry one line.
+  The first run is the Decibel piece's running order 6.1 … 6.6 (its PLAN.md 1.1) — the build is THERE, on Opus; the code comes here by
+  `git subtree push` once `electronics/` exists. The pedals and the recent engine's processing: his phase 2.
+
 - **UPDATE 2 · 2026-10-04 (RUNNING_LOG §4; `#6 §819`) — THE SEAT REFINED at his word: a git SUBTREE at `electronics/` inside each
   piece, not a submodule — he never touches it; the AI pushes at every wrap. Part 5 re-read: the first sound is a note CAPTURED and
   RETURNED; the filter third. Part 11's first two members named (the mic opening · the return). The Decibel piece's running order
@@ -67,10 +74,10 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | the part he names, laid out under the planning method | Fable (the talk) · Opus (a build) | — |
+| **►** | **part 4 — the sound path: 4.1 the audio route DAW → SC → DAW**, its first run the Decibel piece's 6.1 (built THERE, in `electronics/`; comes here by subtree). Then 4.2 the message, 4.3 the capture, 4.4 the playback — as that piece reaches 6.2 … 6.5 | Opus (the build, in the piece's repo) · Fable (6.2's talk) | — |
 | 9.1 | part 9's first run — the Decibel piece: its repo `decibel_TENOR_2026` MADE 2026-10-04 (container 2). Next there: container 3, the copy-forward (in ITS repo and chat) | Opus | — |
 
-**Open questions:** Q1 — what `live-electronics-engine` is built on (the sound seam's shape). Q2 — whether the pieces take the
+**Open questions:** Q1 — ANSWERED 2026-10-04 (RUNNING_LOG §5): SuperCollider + a Web Audio lab layer, no live-input path; the seam = SC real-time fed over ReaRoute. **Q3 — where the SAMPLE INDEX sits in the twelve parts** (part 4, part 11, or its own). **Q4 — the message route: a loopMIDI port or OSC** (decided at the Decibel piece's 6.2). Q2 — whether the pieces take the
 engine as a git submodule exactly, or by a copy at a tag with the commit recorded (`#6 §807` chose the submodule; proven at part 8).
 
 **Blockers:** none.

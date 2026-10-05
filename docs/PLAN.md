@@ -71,21 +71,40 @@ state line, the twelve parts and the rule. No code yet.
 ***Why:*** the engine's first contents are the experimental work that already exists.
 `live-electronics-engine` surveyed; the BASIC MACHINERY taken into the engine (the signal chain · the mastering chain with its
 limiters and master bus · the analysis · whatever else is machinery, not experiment); what stays an experiment stays there.
-*To be laid out when we discuss it.*
+*To be laid out when we discuss it.* **One line from the first run (2026-10-04, RUNNING_LOG §5):** the sandbox has NO live-input
+path — it processes recordings; so for the FIRST OBJECT (the Decibel piece's 6.1 … 6.6) only the SC boot and the mastering chain
+(`synths/process-chain.scd`, if it is one) port; the clouds, the freeze, the labs and his pedals of resonance come with the processing
+phase.
 
 ## 3. The seams — `todo`
 
 ***Why:*** additive or it is a patch (CLAUDE.md).
 The three plug points in a piece's stack named and, where missing, made: the composer score's script tag and hook · the
 message route to the sound (OSC or MIDI from the composer score) · the registry rows for a notation kind. Written in
-`docs/SEAMS.md`; applied once per piece at the take. *To be laid out when we discuss it.*
+`docs/SEAMS.md`; applied once per piece at the take. *To be laid out when we discuss it.* **Known already (2026-10-04, RUNNING_LOG §5 · §6):** the sound-path seam's first lines are
+one SEND from a player's DAW track to the engine's input and ONE FLAT RETURN TRACK (0 dB, no effects — the loudspeaker); the message
+route is decided in the Decibel piece's 6.2 (a loopMIDI port read by `MIDIIn`, or OSC through the piece's score server).
 
-## 4. The sound path — `todo`
+## 4. The sound path — `doing` (the shape decided 2026-10-04 in the Decibel piece — RUNNING_LOG §5 · §6; his words in that piece's RUNNING_LOG §47 · §48)
 
-***Why:*** he must hear the sampled note processed as it would be live.
-How a sampled note is processed — an effect in Reaper switched by the score, or the sandbox's own process fed the audio; the
-trigger's message; the playback route (new Reaper tracks or items as needed); the mastering chain (from 2); heard in a piece's
-composer score. *To be laid out when we discuss it.*
+***Why:*** he must hear the sampled note processed as it would be live — *"should actually use the actual pipeline."*
+
+**The shape (his word 2026-10-04):** the sound process is **SuperCollider, REAL-TIME**. Live: the mics → the interface → SC's input
+buses; SC's master bus (the mastering chain, from part 2) → the interface → the PA; no DAW in the chain. In a piece's simulation: the
+sampled players in the piece's Reaper rack → ReaRoute → SC's input buses — the same code from there on; SC's output → ReaRoute → ONE
+FLAT RETURN TRACK in Reaper (the loudspeaker; 0 dB, no effects), so the players and the electronics meet at one pair of monitors.
+The simulation and the concert differ in ONE place: the input device. The sandbox's Web Audio layer is NOT the live path.
+
+- **4.1 The audio route DAW → SC → DAW — `doing`** (first run: the Decibel piece's 6.1, `decibel_TENOR_2026/docs/PLAN.md` 1.1).
+  *Result when done:* one note from a piece's composer score heard direct and again after passing through SC untouched, on the flat
+  return; the round-trip latency measured. The generic sub-steps: (a) the bridge driver present — ReaRoute ASIO on Windows (Reaper's
+  installer option); a virtual cable the fallback · (b) SC's boot file — device, the DAW's sample rate, 16 in / 16 out; the boot
+  convention from the sandbox · (c) in the DAW: one send per player track to an engine input channel; the flat return track — made by
+  the piece's own tooling (the Decibel piece: its bridge) · (d) the pass-through patch + the mastering chain · (e) verified in the
+  piece's running app; the latency the number · (f) `docs/SEAMS.md`'s sound-path row filled from what was proven. The code lives
+  in the piece's `electronics/` (its journal D7) and comes here by `git subtree push`.
+- **4.2 The trigger's message · 4.3 the capture to a bank · 4.4 the playback from the bank · the sample index** — their first runs
+  are the Decibel piece's 6.2 … 6.5; *each to be laid out when we discuss it.* Where the index sits (here, or part 11) is open.
 
 ## 5. The first sound — `todo`
 

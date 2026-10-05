@@ -104,3 +104,46 @@ chain · the playback route · OSC) → parts 11 and 12 added, the flexibility a
 **THE SORTING:** the boundary test is a standing practice in the Decibel piece's CLAUDE.md — does the code know THIS piece → the piece; does it work for any piece → `electronics/`. The AI places; he is told in one line. Every piece's CLAUDE.md carries it.
 
 **Q2 answered in principle:** the pieces take the engine by subtree; proven at the first push. Where the first code is built: the Decibel piece's running order (its journal §2), steps 6 … 10.
+
+## §5. Q1 ANSWERED — what the sandbox is built on; the sound seam's shape; the first object named in the Decibel piece (2026-10-04, Fable, in the Decibel piece's chat)
+
+**What prompted it:** the Decibel piece's running order step 6 (its journal §2) — *"ONE READ of the sandbox … what it is built on
+decides the sound seam."* His words, the brief for the first object, are in that piece's RUNNING_LOG §47 — the piece's; here the
+engine's part.
+
+**The read of `live-electronics-engine` (its CLAUDE.md · README · `docs/plan/next-session.md` · folder listings · two greps):**
+
+- **Two layers.** SuperCollider 3.14.1 (sc3-plugins, Sediment): `synths/*.scd` — roads-cloud · grain-articulate · grain-spectral ·
+  string-grain · elotonic-drum · feature-chain · process-chain · gesture-voice; `lib/grain-envelopes.scd`; rendered OFFLINE (NRT).
+  And the browser, Web Audio: the playhead engine (freeze · backward · slow · loop), `perform.html`, five labs, `tools/serve.py` on
+  8732 with store/list endpoints for his kept settings.
+- **No live input path.** `SoundIn` appears nowhere in `synths/ lib/ tests/`; `getUserMedia` nowhere in `engine/`. The sandbox
+  processes recordings. A live window's capture and its plain playback are NEW code for the engine, not a port.
+- **His pedals of resonance is SC** (`SynthDef_petalsOfResonance.scd`: `input = SoundIn.ar(ibs)`; thirteen resonators × two banks) —
+  a live-input SynthDef. He said it is for phase 2, not the first object.
+
+**What it decides for the plan (the AI's reading, put to him; his word pending):**
+
+- **Part 4, the sound path: SuperCollider REAL-TIME, fed by a piece's Reaper rack.** His rig is SC; his phase-2 processing is in
+  this sandbox's lineage; his rule — *"should actually use the actual pipeline"* — means the simulation and the concert differ in
+  ONE place, the input device (ReaRoute from Reaper here · a mic through the interface live). The Web Audio layer is not the live
+  path.
+- **The audio route's first candidate: ReaRoute ASIO** (SC's device; 16 channels each way; Reaper stays the mixer). Unverified on
+  his machine — a check at the build.
+- **Part 3, the message seam:** a loopMIDI port (`DECElec`) read by `MIDIIn`, or OSC through the piece's score server. Undecided;
+  the AI leans OSC for the data it carries.
+- **Part 2, the port from the sandbox, for the first object: almost nothing** — the SC boot and chain conventions. The clouds, the
+  freeze, the labs follow with phase 2.
+- **NEW for the plan — the sample index:** one JSON per piece, a row per banked sample (id · name · player · time · length ·
+  category · file · the opening that made it); the schema, writer and reader are the engine's; the file and the samples the piece's.
+  Where it sits in the twelve parts (part 4? part 11? its own?) — to be laid out with him.
+
+**The first object's shape, in his words (piece §47):** an opening brick → the simulated input (MIDI → the sampled instrument in
+Reaper) → recorded by SC to a buffer and a file → a second brick a few seconds later plays it back through the buffer player.
+
+## §6. Part 4's output stage settled in principle: SuperCollider's master bus IS the output, live; a piece's Reaper only stands in for the players and the loudspeaker in simulation (2026-10-04, Fable; his question in the Decibel piece's §48)
+
+Live: the engine's mastering chain (ported from the sandbox at part 2) → the interface; no DAW in the chain. Simulation: the
+engine's output returns to the piece's DAW on one flat track (ReaRoute, Windows — the device forces the return) so the player
+tracks and the electronics meet at one pair of speakers. The master is the engine's in both. A piece's return track carries no
+processing — a rule for `docs/SEAMS.md` at part 3.
