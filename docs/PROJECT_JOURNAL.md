@@ -173,6 +173,15 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► AFTER THE CHECKPOINT — 2026-10-05, Fable (RUNNING_LOG §74). His three items done; THIS SUPERSEDES the checkpoint block's "NEXT CONCRETE STEP" below.**
+
+- **The flute's silence is EXPLAINED:** the tool's key 67 is outside the slap preset's zone (48 … 64, measured — the recipe had the instrument's 48–86); his hand-move to 59 sounds. The recipe's  range is 64; the tool and §70's floor hold it.
+- **The row that was not written (SWEEP_LIST #3 b) is OPEN, instrumented:** the engine's row-making now reports its error ( in the window,  to the page) — from its next start. Nothing in the code explained it.
+- **The standard at conversion:**  makes every impulse 127 / 10 / 150 ms. Impulse 1's five notes were already so, by his hand.
+- **+6 dB on the four Xsample tracks** (bass flute −1.52 · bass clarinet −7.16 · viola +0.77 · cello +2.13), on Reaper's fader — applied to his rack, UNSAVED. The instances are at 0 by his hand; his word: the lift stands anyway.
+- **HIS TWO STEPS:** CTRL+S in Reaper · play  from 0 with the engine up → the flute's row. If no row: the window's  line is the picture. Then he composes.
+- **Deliberately uncommitted: nothing.** The engine's repo is in step (the subtree push of this wrap).
+
 **► CHECKPOINT #1 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Opus; the session's work was Fable's (RUNNING_LOG §67 … §72). Where the S1 lines
 further down disagree with this block, THIS BLOCK WINS.**
 
@@ -279,7 +288,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 8 — THE BASS FLUTE'S IMPULSE DID NOT CAPTURE (SWEEP_LIST #3):** measure in the order of the checkpoint block (probe · the track's meter under an outside slap · the crop test on the flute with his engine down · what the page sends); fix; ONE proof. Then his ear on the four samples and a return (`R`) | **Opus** | **yes — `/clear`, `/postclear`** |
+| **►** | **Step 8 — HIS RECAPTURE of  (CTRL+S in Reaper, then the pass from 0 with the engine up); the four samples and a return () to his ear. Then his composing.** A fault while he composes → SWEEP_LIST, Opus | **Fable (the talk) · Opus (a fix)** | no |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |

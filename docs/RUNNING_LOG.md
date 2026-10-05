@@ -2647,3 +2647,56 @@ cello's silent window left its earlier take in place.
 
 **A note on checkpoints:** a save-point taken while he composes cannot be clean — the bank re-records at every pass. The journal says so now: a
 dirty bank or score after the commit is his live work, committed at the next wrap, never discarded.
+
+## §74. STEP 8 CONTINUED — his three items after the checkpoint: the flute's key was out of the slap preset's zone; the impulse standard; +6 dB on the four Xsample tracks; the engine's row-making now reports its own failure (2026-10-05, Fable)
+
+**What prompted it — his postclear brief, verbatim (2026-10-05):** *"One, the bass flute, I believe, was out of range. So we need to
+recapture just that sample, the BFL impulse one. Number two, as we're converting my played notes into these impulses, Let's have a
+standard dynamic that happens during the conversion. So I think you mostly left them as played. So the dynamic should be one, two,
+seven, or 10 of 10. The length, 0.15 or 150 milliseconds. Just when you convert them, change my whatever I play to the standard.
+Number three, I really want to avoid spending too much time on this. The volume has issue has just continuously taken up too much
+time and being very hard to tame. … I noticed that the instruments were quiet, the X sample ones, and so I changed their instances.
+Their instances in the contact were negative six. That seems to be the default. So I've gone through and changed them all to zero
+… Saved it and everything. And then when I came back, they're all back to negative six. So can we have a stable solution there?
+Either I change it one last time and they stay that way, or we bump the … track volume."* Then: *"I have already reset them back to
+zero. But just leave it. Just go ahead and do the plus six boost anyway. And maybe eventually they'll get reset. If not, I'll deal
+with it later."* And, when a key sweep ran: *"No, these are the unnecessary tests I'm talking about. I could just take a picture.
+I just need to know what's going on."*
+
+**1 · THE VOLUME — +6 dB on the four Xsample tracks, on Reaper's fader (`bank/trims.json` → `gen_apply_trims.js` →
+`apply_trims.lua` through the bridge; 16 rows ok; UNSAVED — his CTRL+S).** Why four and not sixteen — his correction: the quiet
+ones were the Xsample instances; the percussion and the mallets keep the calibration's numbers (§42). The four: bass flute −7.52 →
+−1.52 · bass clarinet −13.16 → −7.16 · viola −5.23 → +0.77 · cello −3.87 → +2.13. The Kontakt instances are at 0 dB by his hand
+as this is written, so the four tracks stand +12 dB over the calibration until they revert; his word. **Why the fader and not the
+instance — the stable rule:** Reaper's fader is touched by no MIDI; a Kontakt instrument's volume knob is bound to CC7 by default,
+and this stack sends CC7 to the instruments (the live-thru path sends CC7 127 at every note-on, composer.html §70's block; a shaped
+note's dynamic IS its CC7, `DYNAMICS_LAW`). **The AI's reading of the revert, UNVERIFIED and not claimed:** a CC7 from the score
+sets that knob, and his hand-set 0 dB lasts until the next one. Not measured — he asked for no measuring.
+
+**2 · THE STANDARD AT CONVERSION — `tools/impulse.js`:** every impulse it places is velocity 127, nodes 10, 150 ms long,
+whatever he played; the rhythm and the pitch are kept (`STD_VEL` · `STD_LEN_S`). The five notes of impulse 1 were ALREADY at
+127 / 10 / 0.150 s in `piece-sec01-a` — not the tool's doing: at `0797066` (00:52) the flute's note was 0.084 s at 122, at
+`15a5085` (08:30) 0.150 s at 127 and its key 67 → 59; the other 23 Rec-lane notes still vary (0.074 … 0.190 s, 111 … 127). His
+hand in the page, before his passes. The tool also now REFUSES a key outside the technique's range.
+
+**3 · THE FLUTE — "out of range" was right, and the recipe was the reason.** The tool had placed the flute's slap at 67 (the middle
+of the recipe's slap range 48–86 — the INSTRUMENT's range, assumed for every preset). A key sweep of the slap preset (`key_sweep.js
+"Bass Flute XS" --channels 1 --keys 48-86 --cc0 6`, vel 100 — the test he did not want; his word above, taken) found it sounds on
+**48 … 64 only** (C2–E3 as Kontakt names it, C3 = 60; 59 read −22.4 dB), **65 … 86 silent**. So 67 made no sound at all — the
+EXACT ZEROS of the 08:27:26 window (§72) — and his move to 59 by hand was the fix. Set: `sandbox/instruments.js` bass flute `slap`
+`rangeHigh: 64` (palette 151 green); §70's floor and the tool now hold the preset's own edge. **A contradiction left standing:**
+§71 item 4 says a slap at G4 read −20.6 dB on the track's meter after the stuck notes were cleared; today 67 is silent. Which
+preset that reading was of is not known; not chased.
+
+**4 · THE ROW THAT WAS NOT WRITTEN (SWEEP_LIST #3 b) — read, not solved.** The 08:29:23 take at 59: raw 265 ms (the playhead was
+already inside the opening when its message left — `lengthMs` is the remainder, `le_objects.js` 254; the AI's reading), peak
+−36.9 dB, `bfl-impulse-1.wav` written (243 ms), no row. `captureDone` (`electronics/sc/bank.scd`) writes the file, then builds
+the row, adds it, writes the index. Checked and ruled out: the rows are a `List` (no Array-`add` trap); `indexRead` runs only at
+the bank's load, so no reload dropped the row; the 08:29:26 write (viola) carries every row that was in memory — so the flute's
+never got in: something threw between the file and the add, and the window alone has it (the engine keeps no log). **Done, the
+engine's (its §16):** the row-making is in a `try` — a failure says `LE_ERROR the row of <name> was NOT made … <error>` in the
+window and `rowError` in the result the page gets. From the engine's next start. Not tested (D13; the braces balance).
+
+**His part, two steps:** CTRL+S in Reaper (the four faders) · play `piece-sec01-a` from 0 with the engine up — the flute's row
+should appear (the panel says "in the bank: … ms"). If it does not, the window's `LE_ERROR` line is the picture to take.
+**The paper:** the trims, the standard and the range are the PIECE's; the try is the ENGINE's (§16 there).

@@ -27,6 +27,7 @@ const slots = PLAN[N];
 if (!Array.isArray(slots) || !slots.length) { console.error('bank/impulses.json has no row "' + N + '" — his dictation goes there first'); process.exit(2); }
 
 const REC_LANE = 0;                 // the Rec lane: his rhythm lands on the bass flute's lane
+const STD_VEL = 127, STD_LEN_S = 0.150;   // THE STANDARD (his word 2026-10-05, RUNNING_LOG §74): an impulse is 10 of 10 and 150 ms long whatever he played — the rhythm is his, the dynamic and the length are the kind's
 const BEFORE_S = 0.1, WINDOW_S = 0.5;   // the opening: 100 ms before the onset, 500 ms long (the M key's default, RUNNING_LOG §64)
 
 const save = JSON.parse(fs.readFileSync(FILE, 'utf8'));
@@ -57,9 +58,12 @@ slots.forEach((slot, i) => {
   const wc = pool[i];
   const name = (player || slot.lane) + '-impulse-' + N;
   const open = zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
+  if (note < lo || note > hi) throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')');   // the preset's own range, never the instrument's
   rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id });
   if (!DRY) {
     wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
+    wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
+    wc.nodes = [{ pos: 0, y: 10, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }];
     wc.impulse = { n: +N, slot: i + 1, name };
     objects.push(open);
   }
