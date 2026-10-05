@@ -29,7 +29,8 @@ if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT
   const WORK = path.join(ROOT, 'scores', NAME + '-work.json');
   if (fs.existsSync(WORK)) {
     let same = false; try { same = JSON.stringify(JSON.parse(fs.readFileSync(WORK, 'utf8')).objects) === JSON.stringify(JSON.parse(fs.readFileSync(FILE, 'utf8')).objects); } catch (e) { same = false; }
-    if (!same && !DRY) { console.error('the page holds a working copy of ' + NAME + ' with UNSAVED changes — Save (CTRL+S) or Reload there first'); process.exit(3); }
+    if (!same && !DRY && !process.argv.includes('--unsaved-ok')) { console.error('the page holds a working copy of ' + NAME + ' with UNSAVED changes — Save (CTRL+S) or Reload there first (or --unsaved-ok at HIS word: the page\'s Reload then drops them)'); process.exit(3); }
+    if (!same && !DRY) console.log('(the page holds UNSAVED changes — written over at his word; File ▾ → Reload → OK "drop the unsaved edits" loads this)');
     console.log(same ? '(the working copy is identical to the save: nothing unsaved; Reload in the page after this)' : '(THE PAGE HOLDS UNSAVED CHANGES — this dry run is of the SAVE, not of what the page shows)');
   }
 }

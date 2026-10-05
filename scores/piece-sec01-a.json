@@ -42,7 +42,16 @@
  "assets": {},
  "metadata": {
   "created": "2026-10-05T19:06:12.109Z",
-  "modified": "2026-10-05T21:43:41.758Z"
+  "modified": "2026-10-05T21:48:47.924Z",
+  "deal": {
+   "seed": 3,
+   "env": "tail",
+   "class": "time",
+   "from": 0,
+   "to": 22.5,
+   "when": "2026-10-05T21:48",
+   "command": "node tools/deal_variants.js --score piece-sec01-a --to 22.5 --seed 3 --env tail --class time"
+  }
  },
  "objects": [
   {
@@ -1437,7 +1446,7 @@
     "name": "perc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "perc-impulse-1": "bands-tail"
+     "perc-impulse-1": "bloom-tail"
     }
    }
   },
@@ -1509,7 +1518,7 @@
     "name": "bfl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bfl-impulse-1": "diffuse-tail"
+     "bfl-impulse-1": "grey-tail"
     }
    }
   },
@@ -1581,7 +1590,7 @@
     "name": "vc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "vc-impulse-1": "grey-tail"
+     "vc-impulse-1": "diffuse-tail"
     }
    }
   },
@@ -1653,7 +1662,7 @@
     "name": "bcl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bcl-impulse-1": "squeal-tail"
+     "bcl-impulse-1": "freeze-tail"
     }
    }
   },
@@ -1729,8 +1738,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-1": "bloom-tail",
-     "perc-impulse-2": "freeze-tail"
+     "perc-impulse-1": "bands-tail",
+     "perc-impulse-2": "squeal-tail"
     }
    }
   },
@@ -1807,7 +1816,7 @@
     "behaviour": "chain",
     "variants": {
      "bfl-impulse-1": "jp-tail",
-     "bfl-impulse-2": "bands-tail"
+     "bfl-impulse-2": "bloom-tail"
     }
    }
   },
@@ -1883,8 +1892,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "diffuse-tail",
-     "va-impulse-2": "grey-tail"
+     "va-impulse-1": "grey-tail",
+     "va-impulse-2": "diffuse-tail"
     }
    }
   },
@@ -1960,8 +1969,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-1": "squeal-tail",
-     "vc-impulse-2": "bloom-tail"
+     "vc-impulse-1": "freeze-tail",
+     "vc-impulse-2": "bands-tail"
     }
    }
   },
@@ -2037,7 +2046,7 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-1": "freeze-tail",
+     "bcl-impulse-1": "squeal-tail",
      "bcl-impulse-2": "jp-tail"
     }
    }
@@ -2183,9 +2192,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "vc-impulse-1": "bands-tail",
-     "vc-impulse-2": "diffuse-tail",
-     "vc-impulse-3": "grey-tail"
+     "vc-impulse-1": "bloom-tail",
+     "vc-impulse-2": "grey-tail",
+     "vc-impulse-3": "diffuse-tail"
     }
    }
   },
@@ -2262,9 +2271,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "va-impulse-1": "squeal-tail",
-     "va-impulse-2": "bloom-tail",
-     "va-impulse-3": "freeze-tail"
+     "va-impulse-1": "freeze-tail",
+     "va-impulse-2": "bands-tail",
+     "va-impulse-3": "squeal-tail"
     }
    }
   },
@@ -2342,8 +2351,8 @@
     "behaviour": "arChain",
     "variants": {
      "bfl-impulse-1": "jp-tail",
-     "bfl-impulse-2": "bands-tail",
-     "bfl-impulse-3": "diffuse-tail"
+     "bfl-impulse-2": "bloom-tail",
+     "bfl-impulse-3": "grey-tail"
     }
    }
   },
@@ -2420,9 +2429,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bcl-impulse-1": "grey-tail",
-     "bcl-impulse-2": "squeal-tail",
-     "bcl-impulse-3": "bloom-tail"
+     "bcl-impulse-1": "diffuse-tail",
+     "bcl-impulse-2": "freeze-tail",
+     "bcl-impulse-3": "bands-tail"
     }
    }
   },
@@ -2499,9 +2508,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "perc-impulse-1": "freeze-tail",
+     "perc-impulse-1": "squeal-tail",
      "perc-impulse-2": "jp-tail",
-     "perc-impulse-3": "bands-tail"
+     "perc-impulse-3": "bloom-tail"
     }
    }
   },
