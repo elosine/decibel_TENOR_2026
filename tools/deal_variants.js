@@ -97,8 +97,12 @@ if (CLEAR) {
   dealt.forEach((z) => { z.elec.variants = {}; });
   plays.forEach((p) => { p.z.elec.variants[p.name] = p.preset.key + '-' + p.env; });
 }
-save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });
+// THE DEAL IS RECORDED IN THE SCORE (his §120: "know which one it was"): metadata.deal — the same command gives the same deal again
+save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString(),
+  deal: CLEAR ? null : { seed: SEED, env: ENV || 'the mix', class: CLASS || 'all', from: FROM, to: TO === Infinity ? null : TO, when: new Date().toISOString().slice(0, 16),
+    command: 'node tools/deal_variants.js --score ' + NAME + (TO === Infinity ? '' : ' --to ' + TO) + (FROM ? ' --from ' + FROM : '') + ' --seed ' + SEED + (ENV ? ' --env ' + ENV : '') + (CLASS ? ' --class ' + CLASS : '') } });
 fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n');
+if (!CLEAR) console.log('the deal is recorded in the score: ' + save.metadata.deal.command);
 console.log(path.relative(ROOT, FILE) + ' written — ' + (CLEAR ? 'the variants taken off ' : 'a variant on every sample of ') + dealt.length + ' return bricks. Reload it in the composer page (File ▾ → Reload).');
 
 // --render: THE PLAN to the engine, as the page sends it (electronics/sc/process.scd header: /le/plan — a row per variant,
