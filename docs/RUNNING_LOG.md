@@ -1862,3 +1862,25 @@ note, then the same note a second later from ELEC RETURN.
 
 **For the paper:** a measurement taken after one's own instrument has disturbed the thing measured says nothing about the thing; the
 order of the readings in this entry is the whole argument.
+
+## §56. HE HEARS IT — 6.1 closed by his ear; CHECKPOINT #3 before 6.2 (2026-10-04, Opus; his `/checkpoint`)
+
+**His words:** *"I hear it now, let's go on to 6.2 /checkpoint"*.
+
+So 6.1's result stands as it was written — a note played is heard twice, direct and from the engine — by the meters (§54 · §55) AND by
+his ear, with the return one second behind (the listening aid). The first electronics sound of the piece: a bass clarinet note, and the
+same note a second later, out of SuperCollider, through the track ELEC RETURN.
+
+**Toward 6.2, the message route — the AI's notes, NOT decided** (for the talk; the plumbing is the AI's to place, CLAUDE.md § THE SORTING):
+- **What 6.2 must deliver:** one brick's onset in the composer score arrives in the engine WITH ITS DATA and ON TIME.
+- **The two roads differ in exactly those two things.** A loopMIDI port (`DECElec`) carries the trigger on the SAME clock as the notes —
+  the composer score already schedules its MIDI ahead through Web MIDI, so an opening lands with the note it belongs to for free; but a
+  MIDI message holds two 7-bit numbers, no names. OSC through the score server carries anything (a sample's name, a length, a category)
+  but arrives when the network delivers it — jitter the notes do not have — unless it is time-tagged against a clock the browser and
+  SuperCollider share, which is work.
+- **A third shape worth putting on the table:** both — the DATA ahead of time by the slow road (or read from the sample index, 6.4: a
+  brick's id is a row), the TRIGGER by MIDI at the instant (a note or controller number = the brick's id). The engine then acts on time
+  with full data, and the concert uses the same two roads.
+- **To find first, by one grep each, not by reading:** where the composer score opens its MIDI outputs and schedules a note · whether
+  `score/server.js` holds any UDP or WebSocket today · whether SuperCollider's `MIDIIn` sees the loopMIDI ports (`MIDIClient.init`).
+- **His, in 6.2: probably nothing** — unless the trigger's timing tolerance is a musical question (how late may an opening be?).
