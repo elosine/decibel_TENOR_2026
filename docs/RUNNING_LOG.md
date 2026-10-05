@@ -2100,3 +2100,49 @@ back proves nothing to the ear). The top line:
 **The AI's defaults, his to change:** the window 500 ms (his figure, DEC-8) · the names per player in order, attack A, B, C … · the crop
 from the attack's start to where the sound falls back to silence, with a small margin. **The correspondence (D10):** in concert the same
 engine code records the microphone; here it records the sampled note under the brick. **Parked, still his:** feedback's *"other ways"*.
+
+## §62. "a, write it" — THE FIRST OBJECT END TO END laid out and written: 6.3 the opening brick + the capture · 6.3b the crop · 6.4 the index · 6.5 the playback brick · 6.6 the demo (2026-10-04, Fable)
+
+**His words:** *"was the plan written already?"* — the top line was (§61), the sub-steps were not — then *"a, write it"*: the full layout into
+the plan now, the bare list shown, the build on his go.
+
+**Two reads before the design, by one grep each** (the composer's object system, `score/public/composer.html`):
+- An object's TYPE is tested by name in some 250 places (`zone` 72 · `waveCurve` 56 · `marker` 28 · `cellRef` 22 · `lineWedge` 18 …) and
+  there is no registry of types. A NEW TYPE would mean hooks in a dozen places — draw, hit-test, select, move, resize, save, load, panel, tick.
+- A ZONE's MODEL (`midiModel`) is tested in a few places only (trill 22 · beating 10 · imitation 4 · the rest 2 … 3), and a zone is made in
+  one call (`createZone({ layer, startTime, endTime, midiModel, color … })`, already used over a selection for a trill and a beating). The
+  notation's extractor reads zones with `midiModel === 'trill'` alone — any other model is skipped, so a save with new models still extracts.
+
+**The design, as written into `docs/PLAN.md` 1.1 (6.3 … 6.6) and the engine's plan 4.3 · 4.3b · 4.4 · the index · part 11 — the AI's, his to
+reverse:**
+- **Both bricks are ZONES WITH A NEW MODEL** — `midiModel: 'elecOpen'` and `'elecPlay'` — not a new object type. One robust build over a
+  fragile one (AI_METHODOLOGY): drawing, selecting, moving, resizing, saving and the panel come for free; the mixin adds the label, a panel
+  section, a gesture and the tick's message. The notation's drawn kind for the opening (DEC-4; the device sheet) reads the same object later.
+- **The window opens 100 ms before the note it is made over, and is 500 ms long** (his figure, DEC-8): the crop finds the attack, so early is
+  right (§57). The names: the player's short name and a letter in order of time, `bcl-A`, `bcl-B` … — the shape of his *"attack A, attack
+  B, attack C"*, his to rename.
+- **The capture starts at the message and runs to the window's end** (`dueMs/1000 + length`): no scheduling, no shared clock.
+- **The crop is the engine's, in sclang on the recording's samples** — so the engine stays whole for a standalone (DEC-8: *"eventually,
+  ideally, it would be a standalone"*). The rule: the attack = the first rise above −30 dB below the peak and above −50 dBFS, 5 ms pre-roll;
+  the end = −45 dB below the peak for 50 ms, or the window's end; 2 / 10 ms fades. Defaults; **his ear tunes them.** A self-test case
+  (a synthetic attack cropped to within 2 ms) before any real capture.
+- **The bank's folder and the engine's address come from the piece's route table at the engine's start, never from a message** — the relay's
+  rule (§60), applied again. `bank/samples/` here; `raw/` gitignored, the cropped samples committed (DEC-1: the store in this repo).
+- **The index sits in the piece's bank; its schema is the engine's** — the open question of the engine's plan ("here, or part 11") answered.
+  The page reads it over the server's existing `/bank/` route.
+- **The playback is scheduled on the engine's clock `dueMs` later** — the lead measured in §61 (about 100 ms) is what compensates; it
+  lands where the brick is, within the network's few ms. The sample at UNITY: as loud as the note was (post-fader sends, `SEAMS.md`).
+- **Two things retired by 6.5:** the one-second listening aid, and 6.2's test hook (`testOnsets`) — the opening brick IS the message.
+- **The sorting** (CLAUDE.md § THE SORTING): the models' machinery, the capture, the crop, the index writer, the sample player → the engine
+  (`electronics/score/le_objects.js` · `electronics/sc/`); the hook lines in `composer.html`, the `bank` block in `bank/elec_route.json`, the
+  samples and the index, the demo score → the piece. Each hook line goes into `SEAMS.md` when proven.
+
+**What is his in it:** the window's length and the names, if not the defaults · the crop's thresholds, by ear · where a playback brick sits
+(the player's lane, or another's) · his ear at the end, and his word that this is DEC-7's first object. Nothing else.
+
+**Rejected:** a new object type (above) · the crop in Node (the engine would need the score server's machine to be whole) · scheduling the
+capture to the brick's exact start (needless — the crop finds the attack) · a per-sub-step talk (his words §61: *"Let's move on"*; the layout
+is written whole, and only what is his is put to him).
+
+**The switch point:** the build is a written plan → Opus. The context of this chat is long (the talk, 6.2's build and its record); the plan
+is the handoff — a `/checkpoint` and a clear before the build is the AI's recommendation, his call.

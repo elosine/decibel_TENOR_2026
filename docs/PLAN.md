@@ -219,20 +219,81 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
     table (composer.html: one tag, one hook · server.js: one require, one route, one static route) · `TAKE.md` · the engine plan 4.2 ·
     `git subtree push`.
   - *His part:* nothing.
-- **6.3 The opening brick + SC's capture** — a window of N seconds on one player recorded to a file in the piece's bank. *To be laid
-  out when we discuss it.*
-- **6.3b The crop** — the recording trimmed to the attack itself by onset detection, reliably, before it is named and indexed (his
-  word 2026-10-04, DEC-8: *"something quite reliable to the actual attack itself"*; the reorganization approved, *"a"*). *Laid out
-  with 6.3.*
-- **6.4 The sample index** — one file the piece owns, a row per sample (id · name · player · time · length · category · file · the
-  opening that made it), written by the capture, read by the score, the notation, SC; the schema and its reader/writer the engine's.
-  *To be laid out when we discuss it.*
-- **6.5 The playback brick** — a few seconds later, SC's buffer player returns the sample through the flat return. *To be laid out
-  when we discuss it.*
-- **6.6 The demo end to end** from the composer score, and the record (`SEAMS.md` · the engine's log · this log · `git subtree
-  push`). *To be laid out when we discuss it.*
-
-*The rest of Compose — to be laid out when we discuss it.*
+- **6.3 · 6.3b · 6.4 · 6.5 ARE BUILT AS ONE — THE FIRST OBJECT END TO END** (his word 2026-10-04, *"a, write it"* — RUNNING_LOG §61 · §62;
+  DEC-7 · DEC-8). The order below is the build's order, each step proven before the next; the labels are kept. **THE SHAPE, decided here
+  (the AI's, his to reverse):** both bricks are ZONES WITH A NEW MODEL (`type: 'zone'`, `midiModel: 'elecOpen'` · `'elecPlay'`), not a new
+  object type — the composer tests an object's TYPE by name in some 250 places and has no registry, while a zone already draws on a lane,
+  selects, moves, resizes, saves and has a panel, and its MODEL is tested in a few places only (trill 22 · beating 10 · the rest 2 … 4); the
+  extractor reads trill zones alone, so a save with these in it still extracts. The machinery for the models is the ENGINE's
+  (`electronics/score/le_objects.js` — label · panel section · gesture · tick); the hook lines in `composer.html` are the piece's, listed in
+  `SEAMS.md`. The engine's side (`electronics/sc/`): the capture, the crop, the index writer, the sample player — all generic. The bank's
+  FOLDER and the engine's ADDRESS come from `bank/elec_route.json` at the engine's start, never from a message.
+- **6.3 The opening brick + the capture — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* a brick he
+  places on a player's lane IS the mic opening — its place when the mic opens, its length the window, a name on it; when the score plays
+  through it the engine records that player for the window, and a raw file lands in the piece's bank. **Sub-steps:**
+  - (a) **The brick:** a zone, `midiModel: 'elecOpen'`, with `elec: { name, category: 'attack', player }`; `startTime` · `endTime` the
+    window — **500 ms the default** (his figure, DEC-8); its own colour; the label the name.
+  - (b) **The gesture:** a note selected, ONE KEY → an opening over it, starting **100 ms before the note** (the window opens before the
+    notated moment and runs long — the crop finds the attack; §57); nothing selected → an empty opening at the playhead on the chosen lane.
+    The key found free at the build (the piece's key map; `palette_check`). The name assigned: the player's short name and a letter in
+    order of time — `bcl-A`, `bcl-B` … — his to rename in the panel (attack A · B · C, DEC-8).
+  - (c) **The panel:** the zone panel gains a section for the model — name (editable) · category · window in ms · the player (read from
+    the lane).
+  - (d) **The message:** in `tickZoneMidiPlayback`, a zone of this model sends ONE message at its start, ahead by the look-ahead like a
+    note: `/le/open  player · id · name · category · t · length · dueMs` (`LE.open(zone)` in `le_msg.js`).
+  - (e) **The capture, in the engine:** on `/le/open`, record the player's bus from NOW until the window's end (`dueMs/1000 + length`
+    seconds — early is right); the raw recording written as `<bank>/raw/<id>.wav`. The bank's folder: `LE_BANK` at the engine's start,
+    from a new `bank` block in `bank/elec_route.json` (`elec.js start` passes it). The engine says `open · bcl · bcl-A · 500 ms`, then
+    `captured · bcl-A · raw · peak −N dB`.
+  - (f) **Verified, the AI's run:** the throwaway page plays through an opening; the engine's two lines; the raw file exists with the window's
+    length. (The note under it is a stub in the pane — the REAL sound into the capture is proven with 6.5's listen, his, offered.)
+  - *His part:* the window's length and the names, only if he wants others than the defaults.
+- **6.3b The crop — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* the raw recording is trimmed to the
+  attack itself, reliably, and saved under its name. **Sub-steps:**
+  - (a) **The rule, in the engine** (sclang, on the recording's samples): THE ATTACK = the first point where the level rises above −30 dB
+    below the recording's peak AND above −50 dBFS (silence is not an attack), stepped back 5 ms of pre-roll · THE END = where the level
+    falls below −45 dB below the peak and stays there 50 ms, or the window's end · 2 ms fade in, 10 ms fade out. Each a default of the
+    engine's, overridable from the route table's `bank.crop` — **his ear tunes them.**
+  - (b) **The file:** `<bank>/<name>.wav`, mono, the engine's sample rate; the raw kept beside it in `raw/` for a re-crop. `raw/` gitignored;
+    the cropped samples COMMITTED — the samples are the piece's (DEC-1).
+  - (c) The engine says `cropped · bcl-A · 143 ms of 500 · peak −18 dB`. A window with no attack in it is REPORTED, not saved:
+    `nothing to crop · bcl-A`.
+  - (d) **Verified on the self-test** (no hardware): a synthetic attack at a known place in a buffer is cropped to within 2 ms of it. Then
+    on a real capture from (e) above.
+  - *His part:* the thresholds, if a crop cuts wrong — by ear.
+- **6.4 The sample index — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* one file the piece owns lists
+  every sample taken; the score reads it; a sample is found by name. **Sub-steps:**
+  - (a) `bank/samples/index.json` — a row per sample: `id · name · player · lane · category · scoreTime · lengthMs · peakDb · file · raw ·
+    openingId · captured`. The schema the engine's (its `docs/`); the file the piece's.
+  - (b) Written by the engine after each crop (read, add the row, write). A name taken twice replaces its row and its file — the latest take
+    wins, and the log line says so.
+  - (c) Read by the page — `fetch('/bank/samples/index.json')`: the server serves `/bank/` already, no new route.
+  - (d) Verified: the row appears after a capture; the page lists it.
+  - *His part:* nothing.
+- **6.5 The playback brick — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* a second brick, placed on a
+  lane, names a sample; when the score plays through it the engine plays the sample back through the return, where the brick is. **Sub-steps:**
+  - (a) **The brick:** a zone, `midiModel: 'elecPlay'`, `elec: { name }`; its length = the sample's (read from the index); its lane the
+    player's whose sound it is (D8 — drawn on that player's staff with a sign of origin), or another's at his placing.
+  - (b) **The gesture:** one key at the playhead → a playback brick; its panel's picker lists the index's samples (name · player · length).
+  - (c) **The message:** `/le/play  name · id · t · dueMs` at the brick's start, ahead by the look-ahead; **the engine schedules the sample
+    on ITS clock `dueMs` later** — it lands on the brick, compensated by the lead, with no shared clock.
+  - (d) **The engine:** the index's samples loaded into buffers at `start`, and each new one at its `captured`; `leSample` plays a buffer to
+    the master at UNITY — the sample is as loud as the note was (the sends are post-fader, `SEAMS.md`).
+  - (e) **Two things retired:** the listening aid — `listenEchoSeconds` → 0 (the `leEcho` synth stays for a route check) · the test hook of
+    6.2 — `testOnsets` false and the hook line removed: the opening brick is the message now.
+  - (f) **Verified, the AI's run:** a cropped sample played at a placed brick — ELEC RETURN's meter moves at the brick's time, the engine's
+    line says which sample. **HIS EAR, offered:** a note, an opening over it, a playback brick some seconds later; he hears the note, then
+    the sample.
+  - *His part:* his ear, when he wants it.
+- **6.6 The demo end to end, and the record — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* one score
+  he can open — a bass clarinet note, an opening over it, a playback brick three seconds later — played with the engine up, the note
+  sounds and the sample comes back; and the record is whole. **Sub-steps:**
+  - (a) the demo score `scores/decibel-first-object.json`, built by a tool as `build_first_sound.js` was — his to play.
+  - (b) the record: RUNNING_LOG · the engine's log · `SEAMS.md` (the composer-score seam's hook lines, the `bank` block, the kinds `open` ·
+    `play` · `captured`) · `TAKE.md` · the engine plan 4.3 … 4.4 and part 11 marked · `git subtree push`.
+  - (c) the checks: the engine's self-test with the crop case · `palette_check` after a key is added · the extractor run on the demo score
+    (zones of other models are skipped; if it throws, one filter, and a NITS line otherwise) · `node tools/unsaved_check.js`.
+  - *His part:* his ear, and his word that this is the first object he meant (DEC-7).
 
 ## 2. Notate — `todo`
 
