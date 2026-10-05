@@ -47,7 +47,7 @@ seams · the mic opening · the return · the processing); the piece in three se
 `electronics/` (D7); THE SORTING a standing practice below. **► 2026-10-04 (Opus, RUNNING_LOG §6 … §16): STEP 1, CONTAINER 3, IS
 DONE — piece #6's engine is here and is THIS piece's: copied byte-exact, proven whole, the small fixes made, turned to SIX LANES
 (D9: bass flute · bass clarinet · percussion · vibraphone · viola · cello), the composer score on 5500 and the sandbox on 5000,
-provisional recipes, verified in the running app. **► 2026-10-04 (Opus, RUNNING_LOG §18 … §45): CONTAINERS 4 · 5 DONE, 6 SET UP — the rack built by the AI and measured (sixteen instruments sounding from the composer score, on one loudness scale, four dynamics curves), every lane's recipe written, the notation registry this piece's (a save extracts, validates, draws, exports). OPEN: his ear · his three notation calls. ► NEXT: running order step 6, the electronics' seams.** **► 2026-10-04 (Fable, RUNNING_LOG §47 … §49): STEP 6 OPENED — the sound seam decided (SuperCollider REAL-TIME, fed by the Reaper rack over ReaRoute; SC's master IS the output; in simulation Reaper is only the players and ONE FLAT RETURN TRACK); the six sub-steps 6.1 … 6.6 approved; 6.1 the audio route LAID OUT (PLAN.md 1.1). ► NEXT: THE BUILD OF 6.1 — Opus, after a clear.** *(the line as it stood mid-build:)* **2026-10-04 (RUNNING_LOG §18 · §19): CONTAINER 4 IN HAND — the talk answered (Xsample ×4 · Ricotti Mallets, a Kontakt library, the
+provisional recipes, verified in the running app. **► 2026-10-04 (Opus, RUNNING_LOG §18 … §45): CONTAINERS 4 · 5 DONE, 6 SET UP — the rack built by the AI and measured (sixteen instruments sounding from the composer score, on one loudness scale, four dynamics curves), every lane's recipe written, the notation registry this piece's (a save extracts, validates, draws, exports). OPEN: his ear · his three notation calls. ► NEXT: running order step 6, the electronics' seams.** **► 2026-10-04 (Fable, RUNNING_LOG §47 … §49): STEP 6 OPENED — the sound seam decided (SuperCollider REAL-TIME, fed by the Reaper rack over ReaRoute; SC's master IS the output; in simulation Reaper is only the players and ONE FLAT RETURN TRACK); the six sub-steps 6.1 … 6.6 approved; 6.1 the audio route LAID OUT (PLAN.md 1.1). ► NEXT: THE BUILD OF 6.1 — Opus, after a clear.** **► 2026-10-04 (Opus, RUNNING_LOG §50 · §51): 6.1 BUILT AS FAR AS THE MACHINE ALLOWS — the engine is SEATED at `electronics/` (a git subtree, D7 — its docs are edited THERE now); the SuperCollider code and its self-test pass; this rack's route job and tool are written and refuse safely. THE CROSSING IS UNPROVEN: ReaRoute is not installed and his Reaper is on WASAPI — TWO HAND STEPS OF HIS (journal §2). ► NEXT: his two steps, then `node tools/elec.js probe → route → check → latency`.** *(the line as it stood mid-build:)* **2026-10-04 (RUNNING_LOG §18 · §19): CONTAINER 4 IN HAND — the talk answered (Xsample ×4 · Ricotti Mallets, a Kontakt library, the
 pitched lane · the unpitched percussion open); nine `DEC` ports and the rack `reaper/decibel_rack.rpp` made by the AI, three tracks cloned and
 sounding IN REAPER. NOTHING SOUNDS FROM THE COMPOSER SCORE YET; NOTHING NOTATES THIS ENSEMBLE YET. ► NEXT: his three hand steps (journal §2),
 then the recipes and the first sound.
@@ -86,6 +86,10 @@ IDs always with their names.
 - **ANY WORK ON THE SOUND PATH — READ THIS FIRST:** `docs/DYNAMICS_LAW.md` *(arrives with the copy-forward, container 3;
   until then `septet_LGMF_2026/docs/DYNAMICS_LAW.md`)* — the two kinds of note (a STRUCK note: the velocity IS the dynamic ·
   a SHAPED note: struck at mf, the fader normalized 0 → 127), moving CC7 on the curve channels only
+- **THE ENGINE IS HERE, at `electronics/`** (a git subtree since 2026-10-04, RUNNING_LOG §51): its code `electronics/sc/` ·
+  `electronics/tools/sc.js` AND its docs `electronics/docs/` (PLAN · SEAMS · TAKE · its own journal and lab journal). **Edit the
+  engine's docs THERE, never in the stand-alone clone** — that clone is a mirror the AI pulls after each `git subtree push`. Where this
+  file or the journal says `live-electronics-system/docs/…`, read `electronics/docs/…`.
 - **The shared live-electronics engine:** `live-electronics-system` — its `docs/PLAN.md` (twelve parts) · `docs/SEAMS.md` ·
   `docs/TAKE.md`; ITS journal §2 is the cold-start block for engine work
 - **How to verify without touching his work:** `docs/VERIFICATION_RECIPE.md` (the harvest's H-1 — the throwaway server,
@@ -256,6 +260,11 @@ routing advice is also credit advice, and these bind every Fable turn:
   CLONED from pieces #5 · #6's racks ON DISK (his word "disk", RUNNING_LOG §20); the four Ricotti mallet tracks (`… RM`) one Kontakt each, a slot
   per patch on its own channel (`bank/ricotti_catalog.json` · `tools/ricotti_loaders.js`). A track is added or re-cloned through the bridge, `reaper/bridge/jobs/make_tracks.lua`, never by rebuilding). The bridge:
   `node tools/reaper_job.js heartbeat`; one note to a port: `tools/note_to_port.ps1`; a track sounded without its port: `sound_check_vkb.lua`.
+- **THE LIVE ELECTRONICS — `node tools/elec.js`** (RUNNING_LOG §51): `probe` (look only — what is missing, in order) · `route` /
+  `unroute` (the player's send and the flat track `ELEC RETURN`, through the bridge; he saves) · `check` (one note in, four levels,
+  a verdict) · `latency` · `start` (= `start_electronics.bat`: the engine up and listening) · `selftest` (no hardware, no sound).
+  The engine is SuperCollider on **UDP 57210** (never 57110), fed by the rack over **ReaRoute**; which track is which player:
+  `bank/elec_route.json`. **ReaRoute must be installed and Reaper on ASIO — neither was, 2026-10-04.**
 - **The notation app · print · video:** THIS PIECE'S since 2026-10-04 (container 6, RUNNING_LOG §45) — `notation/registry/ensemble.json` is the six Decibel parts (BFl +12 · BCl +14 · the eight-line unpitched staff · Mal · Va alto · Vc bass); 233 technique keys (`tools/register_techniques.js` after any new recipe key — the extractor THROWS on an unregistered one); the first page `notation/ir/decibel-first-sound.ir.json`. A lane NUMBER can hide in a REGISTRY too (`rules.json` `staffLines`).
 - **The names** — `docs/NAMING.md` § 1. **The recipes (2026-10-04, RUNNING_LOG §25 · §34):** every lane has its own — bass flute (Xsample, 32 presets, ordinary #15) · bass clarinet (piece #5's 34) · percussion (eight Abbey Road instruments, `bank/perc_selection.json` → `tools/apply_perc.js`) · MALLETS (39 Ricotti patches, `bank/ricotti_catalog.json` → `tools/apply_ricotti.js`; the lane's internal key is still `bowed_vibraphone`) · viola · cello (piece #5's · #6's). Loudness and round robins are not done (journal §2's list).
 
@@ -281,7 +290,7 @@ tools/unsaved_check.js` · **THE SHIELD** (`tools/layout_shield.js` — before a
   anything there; a copy-forward takes the piece's files from GIT or asks him** (`#6` journal §2).
 - **The home** `C:\Users\jwloy\GitHub\composition-system` — what the pieces share: `INDEX.md` first, then
   `protocol/NEW_PIECE_PROTOCOL.md` (the LIVING protocol; this piece is its first run).
-- **The engine** `C:\Users\jwloy\GitHub\live-electronics-system` — the shared live-electronics engine (above).
+- **The engine** `C:\Users\jwloy\GitHub\live-electronics-system` — the shared live-electronics engine (above). **Since 2026-10-04 a MIRROR of `electronics/` here:** never edit it while this piece is at work; `git -C` it `pull --ff-only` after each subtree push.
 - **The sandbox** `C:\Users\jwloy\GitHub\live-electronics-engine` — his experimental live-electronics work; the engine's
   first contents are ported from it (the engine plan's part 2).
 - **The earlier pieces, each the source named:** **#5** `C:\Users\jwloy\GitHub\septet_2026` · **#4**

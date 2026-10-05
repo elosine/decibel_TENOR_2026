@@ -1700,3 +1700,37 @@ ports whole · the latency. Each is found at the build.
 **His words:** *"commit the rack too, then /checkpoint then build as much as possible independently no clear"*. The rack committed as
 he last saved it (17 tracks, as before; the diff is Reaper's re-serialized plugin state). Journal §2's checkpoint entry rewritten for
 the state now. The build of 6.1 follows in this same chat, on Opus — as far as it goes without his hand.
+
+## §51. 6.1 BUILT AS FAR AS THE MACHINE ALLOWS — the engine seated at `electronics/`, the SuperCollider code and its self-test, the rack's route job and tool; TWO HAND STEPS OF HIS stand before the first sound through the engine (2026-10-04, Opus)
+
+**What prompted it — his words:** *"commit the rack too, then /checkpoint then build as much as possible independently no clear"*.
+
+**(a) THE MACHINE — the check the plan put first, and what it found:**
+- **ReaRoute is NOT installed** (one ASIO driver in the registry, `UMC ASIO Driver`; no ReaRoute file in Reaper's `Plugins`).
+- **His Reaper is on WASAPI** — OUT 01-02 of the Behringer UMC 1820, 44100 Hz, block 512. ReaRoute's channels are offered when Reaper's audio system is ASIO; `reaper.ini` shows the UMC ASIO driver was his setting once.
+- SuperCollider 3.14.1 runs headless and its build has ASIO (it lists `ASIO : UMC ASIO Driver`), so it will see ReaRoute when it exists.
+- **Both are HIS:** an installer and an audio setting of his machine. The AI did neither. A route with no install was looked for and rejected (the engine's log §7).
+
+**THE SEAT (D7), made:** `git subtree add --prefix=electronics engine main` — the engine's repo is now the folder `electronics/` here, WHOLE: its plan, journal and kit beside its code (a push can only fast-forward the engine's `main` if this folder contains it). **So the engine's docs are now edited HERE, in `electronics/docs/`,** and reach `live-electronics-system` by `git subtree push --prefix=electronics engine main`; the clone at `C:\Users\jwloy\GitHub\live-electronics-system` is a mirror, pulled after each push. The remote is named `engine`.
+
+**WHERE EACH THING WENT (THE SORTING):**
+- **The engine's — knows no piece → `electronics/`:** `tools/sc.js` (finds sclang, runs a file headless, the line protocol) · `sc/boot.scd` · `synths.scd` · `selftest.scd` · `check_route.scd` · `latency.scd` · `session.scd` · `devices.scd`. Its record: `electronics/docs/RUNNING_LOG.md` §7 (the numbers, the master chain's origin, what was rejected).
+- **The piece's — knows this rack:** `bank/elec_route.json` (which track stands for which player's microphone: `bcl` = Bass Clarinet XS → ReaRoute 1; the return track; the latency loop's channel) · `reaper/bridge/jobs/elec_route.lua` (probe · apply · remove · loop_on / loop_off · watch) · `tools/elec.js` (probe · route · unroute · check · latency · start · selftest) · `start_electronics.bat`.
+
+**THE ROUTE AS DESIGNED, and why:**
+- **A player's microphone = a hardware send from the player's track to one ReaRoute channel — mono, POST-FADER, unity.** Post-fader on purpose: this rack's faders ARE its loudness calibration (`bank/trims.json`, §40 … §43), so the engine hears each player at the level he does, and a sample the engine plays back at unity is as loud as the note was. Pre-fader would return every sample off by its own track's trim — from −13 to +9 dB across this rack. The engine's `leIn` has an `amp` — the preamp — for the day a level must be trimmed.
+- **The loudspeaker = one track `ELEC RETURN`:** input the ReaRoute pair the engine's master leaves on, monitoring on, RECORD MODE NONE (armed only because Reaper monitors armed tracks — it never writes a file, so his REC workflow is untouched), 0 dB, no effects. Inserted BEFORE `REC` so `REC` stays last (`make_rec_track.lua`'s place for it). `REC` does not yet receive it — `make_rec_track.lua` re-run picks it up when a recording must hold the electronics.
+- **The latency is measured by the engine, not by Reaper** (a Lua meter ticks ~30 times a second — too coarse): the engine clicks on its output, `ELEC RETURN` sends the click back on ReaRoute 3 for the length of the run, the engine times the gap. Two crossings and Reaper's block — the same parts as rack → engine → rack. Nothing else runs during it, so the loop cannot feed itself.
+- **The job never saves and refuses without ReaRoute; one undo point per change.**
+
+**PROVEN TODAY, in the running rack and the running engine:**
+- `node tools/elec.js selftest` — the engine's three tests pass: the pass-through is sample-exact (largest difference 0.0) · the safety never passes full scale · the latency probe reads a given delay to the sample (13.061 ms).
+- `node tools/elec.js probe` — reads his rack through the bridge and SuperCollider's devices, prints what is missing, in order. Exit 2 today, with the two steps.
+- `node tools/elec.js route` — REFUSES, changes nothing (17 tracks before and after).
+- `node tools/elec.js check --rack-only` — the note reaches the player's track: `DECBassClar` note 50, velocity 90, 1.5 s → **Bass Clarinet XS −26.24 dB peak, post-fader** (its fader at −13.16 dB). This is the level the engine will be handed.
+
+**NOT PROVEN — all behind the two hand steps:** the job's `apply` · `remove` · `loop_on/off` (parse-checked through the bridge; never run) · the engine's boot on ReaRoute · `check` whole · `latency`. Sub-step (e) — a note from the composer score heard twice, the round trip measured — is therefore OPEN, and nothing is claimed of it.
+
+**HIS TWO STEPS, then the AI's three commands:** (1) close Reaper, run Reaper's installer again (the same version), tick "ReaRoute ASIO driver", start Reaper · (2) Preferences → Audio → Device → Audio system ASIO, driver UMC ASIO Driver. Then `node tools/elec.js probe` (nothing missing) → `route` → he saves the rack → `check` → `latency`; `start_electronics.bat` is how he starts the engine after that.
+
+**A note for the paper:** his recollection — *"a mastering bus built in SuperCollider"* (§48) — was of the sandbox's BROWSER engine (`playhead-engine.js`: high-pass · glue · safety, with a reverb and a tape send). It is now in SuperCollider for the first time, translated, its colouring stages off until he has heard them (the engine's §7).

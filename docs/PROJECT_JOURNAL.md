@@ -126,6 +126,14 @@ takes is his (D5).
    the generic form). NEXT: ITS BUILD — Opus, after a clear.** In one line: ReaRoute checked → SC's boot file in `electronics/sc/` →
    a send from the bass clarinet track + the flat `ELEC RETURN` track, through the bridge → a pass-through patch → verified on his
    Chrome, the latency measured → the log and the first `SEAMS.md` lines.
+   **► 6.1 BUILT 2026-10-04 AS FAR AS THE MACHINE ALLOWS (Opus, RUNNING_LOG §51) — TWO HAND STEPS OF HIS, THEN THREE COMMANDS.** Found:
+   ReaRoute is NOT installed · his Reaper is on WASAPI. Built and proven without them: the engine seated at `electronics/` (a git
+   subtree — D7) · the SuperCollider code and its self-test (`node tools/elec.js selftest`: all pass) · this rack's route job and
+   tool (`node tools/elec.js probe` says what is missing; `route` refuses and changes nothing; the note reaches the bass
+   clarinet's track at −26.24 dB). NOT PROVEN: the crossing. **HIS:** (1) close Reaper, run Reaper's installer again (same version),
+   tick "ReaRoute ASIO driver", start Reaper · (2) Preferences → Audio → Device → Audio system ASIO, ASIO driver UMC ASIO Driver.
+   **THEN:** `node tools/elec.js probe` (must say nothing is missing) → `route` → he saves the rack → `check` → `latency`;
+   `start_electronics.bat` starts the engine for him after that.
 7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -192,23 +200,27 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(mid-session checkpoint #2, 2026-10-04, Opus — his `/checkpoint` before the build of 6.1; NO CLEAR at his word, the build goes on in the same chat)*
 
-- **The task and its state:** running order step 6, the electronics' plumbing — OPENED. The sound seam decided, the six sub-steps
-  6.1 … 6.6 approved, 6.1 the audio route LAID OUT (PLAN.md 1.1). Running order: 1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his
-  open · 5 at need · **6 ► ACTIVE — 6.1 the build next.** No electronics code exists yet.
-- **The latest deliverable:** the plan for the first object — `docs/PLAN.md` 1.1 · the engine's `docs/PLAN.md` part 4 (4.1) · the
-  record RUNNING_LOG §47 … §49 (here) · §5 · §6 (the engine's) · DEC-7. The rack `reaper/decibel_rack.rpp` committed as he last saved it.
-- **► THE NEXT CONCRETE STEP — THE BUILD OF 6.1, the audio route Reaper → SC → Reaper, on OPUS after a clear** (laid out and
-  approved 2026-10-04, RUNNING_LOG §47 … §49; the sub-steps (a) … (f) in PLAN.md 1.1 — follow them in order; (a) first and claim
-  nothing before it is seen). Then 6.2, the message route — a talk first (MIDI port or OSC), Fable. Behind it, still his: what he
-  heard · the three notation calls (collect when he offers them; never block on them).
-- **`Resume reads:`** this §2 · `docs/PLAN.md` 1.1 (6.1's sub-steps) · `live-electronics-system/docs/PLAN.md` part 4 (4.1) ·
-  RUNNING_LOG §47 · §48 (the seam's reasoning; the output path) · `live-electronics-engine/docs/audio-workflow.md` (how sclang
-  is found on this machine) · `reaper/bridge/README.md` if it exists, else the bridge's job headers. Nothing else.
-- **Pending him:** his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
+- **The task and its state:** running order step 6, sub-step **6.1 the audio route — BUILT, THE CROSSING UNPROVEN** (RUNNING_LOG §51).
+  Everything that does not need ReaRoute exists and is tested; ReaRoute is not installed and his Reaper is on WASAPI — both his.
+  Running order: 1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need · **6 ► ACTIVE — 6.1 waits on his two hand steps.**
+- **The latest deliverable:** the engine's first code — `electronics/sc/` · `electronics/tools/sc.js` — and this rack's side of
+  the route — `bank/elec_route.json` · `reaper/bridge/jobs/elec_route.lua` · `tools/elec.js` · `start_electronics.bat`. The record:
+  RUNNING_LOG §47 … §51 · `electronics/docs/RUNNING_LOG.md` §5 … §7 · `electronics/docs/SEAMS.md` · `TAKE.md`.
+- **► THE NEXT CONCRETE STEP — ASK HIM WHETHER HIS TWO HAND STEPS ARE DONE** (ReaRoute installed by Reaper's installer · Reaper's
+  audio system ASIO, UMC ASIO Driver — the block above has them word for word). **When they are:** `node tools/elec.js probe` —
+  it must end "Nothing is missing" or name what still is · `node tools/elec.js route` (the send and `ELEC RETURN`, through the
+  bridge; read its read-back) · he saves the rack · `node tools/elec.js check` (the proof: four levels, a verdict; writes
+  `probes/elec_route_check.json`) · `node tools/elec.js latency` (writes `probes/elec_latency.json`) · the numbers into
+  RUNNING_LOG and 6.1 marked done. **The job's `apply` · `remove` · `loop_on/off` have never run — read each read-back; if Reaper
+  does not list ReaRoute's channels by name, the job refuses and the probe shows what it sees.** Then 6.2, the message route — a
+  talk first (a `DECElec` loopMIDI port or OSC), Fable. Still his, never blocking: what he heard · the three notation calls.
+- **`Resume reads:`** this §2 · RUNNING_LOG §51 (what was built, what is unproven) · the header of `tools/elec.js` · the header
+  of `reaper/bridge/jobs/elec_route.lua`. For 6.2's talk add `electronics/docs/SEAMS.md`. Nothing else.
+- **Pending him:** **THE TWO HAND STEPS — ReaRoute installed · Reaper on ASIO (RUNNING_LOG §51)** · his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
   check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
   word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
   `docs/PROTOCOL_DEVIATIONS.md`).
-- **Deliberately uncommitted:** nothing — `git status --short` is empty after this checkpoint (his rack save committed at his word). Outside git, by design: `reaper/Media/*.wav` (the two
+- **Deliberately uncommitted:** nothing — `git status --short` is empty at this wrap. `electronics/` EXISTS now and was pushed to the engine (`git subtree push --prefix=electronics engine main`); the stand-alone clone pulled. Outside git, by design: `reaper/Media/*.wav` (the two
   card recordings, 234 + 33 MB) · `reaper/kontakt/out/` (the loaders' read-backs). `electronics/` does not exist, so there was
   no `git subtree push` to the engine at this wrap. Piece #6 and piece #5 were READ (their racks on disk, their git), never written.
 - **Left running:** his Reaper on the rack · his score server on 5500, if he started it · loopMIDI. The AI's throwaway server
@@ -224,7 +236,7 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **6.1 THE AUDIO ROUTE Reaper → SuperCollider → Reaper — THE BUILD** (PLAN.md 1.1, sub-steps (a) … (f); engine plan 4.1). Laid out and approved 2026-10-04 (RUNNING_LOG §47 … §49). Done when one note from the composer score is heard direct AND through SC on the flat `ELEC RETURN` track, the latency measured | **Opus** (a written plan, executed) | **YES — `/checkpoint`, `/clear`, `/postclear`** |
+| **►** | **6.1 — THE CROSSING PROVEN AND THE LATENCY MEASURED**, once his two hand steps are done (ReaRoute installed · Reaper on ASIO): `node tools/elec.js probe → route → (he saves) → check → latency`; the numbers logged, 6.1 marked done. Everything else of 6.1 is built and tested (RUNNING_LOG §51) | **Opus** (five commands and their read-backs) | no — or after a clear, by the block above |
 | — | **6.2 the message route** (a talk: MIDI port or OSC) → 6.3 the opening brick + capture → 6.4 the index → 6.5 the playback → 6.6 the demo | Fable (6.2's talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 

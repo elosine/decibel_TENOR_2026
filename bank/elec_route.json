@@ -1,0 +1,9 @@
+{
+  "_what": "THE ELECTRONICS' ROUTE in this rack — this piece's USE of the engine's sound seam (electronics/docs/SEAMS.md). Which instrument track stands for which player's microphone, and the one flat track the engine's master returns on. Read by tools/elec.js; put into the rack through the bridge (reaper/bridge/jobs/elec_route.lua). Channels are ReaRoute's, counted from 1 as Reaper names them.",
+  "_made": "2026-10-04, PLAN 1.1 · 6.1 (RUNNING_LOG §51). One player for the first proof; the others are added here as the music reaches them.",
+  "players": [
+    { "name": "bcl", "track": "Bass Clarinet XS", "engineIn": 1, "port": "DECBassClar", "testNote": 50 }
+  ],
+  "return": { "track": "ELEC RETURN", "engineOut": 1 },
+  "latencyLoop": { "engineIn": 3 }
+}
