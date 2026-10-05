@@ -302,7 +302,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **8.1 Impulse 1 — `done` 2026-10-05 (§71):** `tools/impulse.js` + `bank/impulses.json` (his dictation, a row per impulse): the next five notes of
   his recorded rhythm → five players, their techniques, a pitch in the middle of each range, a MIC OPENING over each named `<player>-impulse-<N>`,
   category `impulse` — the sample's and the buffer's identity. In `scores/piece-sec01-a.json`. Impulse 2 = the next five, one command.
-- **8.2 The microphones — `done but unsaved` (§71):** four rows in `bank/elec_route.json` (bfl · perc = the shime daiko's track · va · vc), the
+- **8.2 The microphones — `done` (§71; SAVED by him 2026-10-05, the rack committed at checkpoint #1):** four rows in `bank/elec_route.json` (bfl · perc = the shime daiko's track · va · vc), the
   sends in the rack through the bridge — his CTRL+S. The percussion's other seven tracks get a send as the music uses them (NITS).
 - **8.3 The modes — `done, proven hardware-free` (§71):** one word in the route table — `compose` · `compose-locked` · `rehearsal` · `concert` —
   names which bank fills the buffers at start, where captures go, whether an opening records (`LE_SOURCE` · `LE_RECORD`; `bankOn`).
@@ -313,7 +313,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   one of each kind through the rack on a scratch bank, drawn on http://localhost:5500/crop_test/report.html. Six of seven cropped; the impulses
   keep 0.7 … 1.0 s (the room — his ear sets `endDb`); the flute's slap awaits his Reaper restart (ReaRoute wedged by a killed engine — now the
   tools leave gracefully, `/le/leave`).
-- **8.5 The first five captured — `todo`, HIS:** CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0.
+- **8.5 The first five captured — `doing`: HIS FIVE STEPS DONE 2026-10-05 — FOUR OF FIVE captured (bcl · perc · va · vc; RUNNING_LOG §72); `bfl-impulse-1` did NOT — its window is digital silence (SWEEP_LIST #3, open: measure, do not guess). As written:** CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0.
   Done when the five samples are in `bank/samples/` with their rows and he has heard one returned (`R`).
 
 ## 2. Notate — `todo`

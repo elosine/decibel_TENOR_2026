@@ -97,7 +97,7 @@ takes is his (D5).
    −41.2 dB and returned at −41.22 dB. **The pedals of resonance and the sandbox's processing are PHASE 2 (step 10), not here.**
 7. ☑ **The rhythm layer — his composing** — DONE 2026-10-05: 28 notes played into the Rec lane (`scores/piece-sec01-a.json`); the bass flute's short notes under his keyboard found and fixed by measurement (§70). *(as written:)* (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
-8. ► **THE MIC OPENING — the first electronics object** — OPENED 2026-10-05 (§71; PLAN.md § 1.2): impulse 1 placed, the four microphones routed (unsaved), the modes and the backup layer built, the crop tested on six kinds. HIS NEXT: the five hand steps in OPEN AT SESSION END. *(as written:)* [part 11's first member · part 5 the first sound, re-read by his brief: a
+8. ► **THE MIC OPENING — the first electronics object** — OPENED 2026-10-05 (§71; PLAN.md § 1.2): impulse 1 placed, the four microphones routed (unsaved), the modes and the backup layer built, the crop tested on six kinds. HIS FIVE HAND STEPS DONE 2026-10-05: four of five captured; the bass flute's did not (SWEEP_LIST #3 — the checkpoint in OPEN AT SESSION END). *(as written:)* [part 11's first member · part 5 the first sound, re-read by his brief: a
    note CAPTURED and RETURNED; the filter comes at step 10]: a brick on an instrument's lane becomes a WINDOW — its time · its
    length · its instrument · a CATEGORY (the Braxton-like type: "short", "accented long tone" … — a field on the brick that reaches
    the IR; the glyph is the notation's, later — part 7; PERFORMANCE_NOTES #1) · in the simulation he picks the instrument and the
@@ -173,10 +173,50 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► CHECKPOINT #1 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Opus; the session's work was Fable's (RUNNING_LOG §67 … §72). Where the S1 lines
+further down disagree with this block, THIS BLOCK WINS.**
+
+- **THE TASK AND ITS STATE:** running order step 8, the mic opening in the music (PLAN.md § 1.2). Impulse 1 is placed; the five microphones are
+  routed AND SAVED in the rack (his CTRL+S, 07:54); the engine has its modes (`compose` now); the crop is tested on six kinds. **His five hand
+  steps are DONE: he played `piece-sec01-a` from 0 with the engine up — FOUR OF FIVE impulses captured** (08:25): `bcl-impulse-1` 368 ms −26.0 dB ·
+  `perc-impulse-1` 392 ms −12.4 · `va-impulse-1` 383 ms −20.8 · `vc-impulse-1` 378 ms −20.8, in `bank/samples/` with their rows. He froze the score
+  as `piece-sec01-a-vfirst_samples`.
+- **THE OPEN FAULT — `bfl-impulse-1` DID NOT CAPTURE (SWEEP_LIST #3):** no row, no sample; its raw window `bank/samples/raw/zn-47.wav` is 598 ms of
+  DIGITAL SILENCE (exact zeros), written 08:27:26 — a second pass, two minutes after the other four. Known, and NOT a diagnosis: the same send
+  carried a flute long tone to the engine at −30.3 dB in the crop test (before his Reaper restart); a slap at G4 from outside read −20.6 dB on
+  the track's own meter; the crop test's flute SLAP was silent twice, explained in §71 by a stuck note of the tool's making — that explanation
+  was never verified at the engine and is now in doubt.
+- **THE LATEST DELIVERABLES:** `tools/impulse.js` + `bank/impulses.json` · `node tools/elec.js croptest` + `bank/crop_test.json` +
+  `electronics/tools/crop_report.js` → http://localhost:5500/crop_test/report.html · the modes (`electronics/sc/bank.scd` · `session.scd` ·
+  `bank/elec_route.json` `mode`) · the one bar (`score/public/composer.html`) · the four samples.
+- **THE NEXT CONCRETE STEP — MEASURE THE FLUTE, DO NOT GUESS** (he corrected a guessed cause once this session, §69 → §70):
+  1. `node tools/elec.js probe` — look only: is `bfl = Bass Flute XS … sends to hardware: ReaRoute 2` there after his restart?
+  2. The track's own sound, no hands: copy `reaper/bridge/jobs/sustain_watch.lua` to the scratchpad with its `local NAME, WATCH_S, STEP_S` line
+     set to `'Bass Flute XS', 3.0, 0.1`; `node tools/reaper_job.js run <copy>`; at once `powershell -NoProfile -File tools/note_to_port.ps1
+     -Port DECBassFlute -Note 67 -Channel 1 -Vel 100 -Ms 150 -Cc0 6`; read `%APPDATA%/REAPER/bridge/outbox/sustain.json` (about −20 dB = it sounds).
+  3. The engine's half needs HIS ENGINE DOWN (the tools refuse beside it): ask him in ONE line to close the engine window, then `node tools/elec.js
+     croptest --only impulse-bfl-slap` and `--only long-bfl-vib` — a scratch bank; the two rows say whether the flute reaches the engine, and
+     close the crop table.
+  4. Only if 2 and 3 are sound: what the PAGE sends for lane 0 — his engine window prints a line per opening (`open · bfl · bfl-impulse-1 ·
+     500 ms`, or `the engine has no such player`).
+  **WHILE HIS ENGINE IS UP: only `probe` · `meters` · `ping`.** One proof of the fix, then stop (D13).
+- **`Resume reads:` nothing beyond this §2.** (RUNNING_LOG §71 item 4 only if an engine will not boot; §70 only for how a fault was measured.)
+- **PENDING HIM, when he offers them:** his ear on the four samples and on a return (`R`) · the impulses' LENGTH — they are ~370 … 390 ms because
+  the 500 ms window ends them (§72); the crop test's 4 s windows kept 0.7 … 1.0 s (a longer brick, or `endDb`) · impulse 2's dictation (a row in
+  `bank/impulses.json`, then `node tools/impulse.js --score <name> --n 2`) · everything on S1's pending line below.
+- **DELIBERATELY UNCOMMITTED: nothing.** Outside git by design: `bank/samples/raw/` · `bank/backup/raw/` · `bank/live/` · `score/public/crop_test/` ·
+  `reaper/Media/*.wav` · `reaper/kontakt/out/`. The engine's repo is in step (`e03438c`; nothing in `electronics/` changed since).
+- **LEFT RUNNING — ALL HIS:** Reaper on the rack (restarted, saved) · the score server on 5500 · **his engine, UP, five players** · loopMIDI. A
+  `testkit/server.js` node process is on the machine — not this session's. Nothing of the AI's. **Changed by the AI and left so:** Reaper's "close
+  audio device when stopped and inactive" is OFF (§71; Preferences → Audio → Device).
+- **RESUME ON: Opus** (a fault's measurement and fix). His dictation of impulse 2 needs no model in particular.
+
+*— below: this session's three records, then the block as S1's end left it —*
+
 - **THE IMPULSES AND THE LIVE ARCHITECTURE (S2 · 2026-10-05, Fable; RUNNING_LOG §71; PLAN.md § 1.2):** impulse 1 is in `piece-sec01-a` (five
   notes on five lanes, an opening over each, `bfl-impulse-1` …); the four microphones are routed in the rack but UNSAVED (his CTRL+S); the engine
   has MODES (`bank/elec_route.json` `mode`: compose now) and a backup bank; the crop is drawn on http://localhost:5500/crop_test/report.html
-  (six kinds; the impulses keep ~0.7 … 1.0 s of room). **BEFORE HIS ENGINE WILL BOOT: RESTART REAPER** — ReaRoute was wedged by a tool's killed
+  (six kinds; the impulses keep ~0.7 … 1.0 s of room). *(his five steps are DONE — the checkpoint above)* BEFORE HIS ENGINE WOULD BOOT: RESTART REAPER — ReaRoute was wedged by a tool's killed
   engine (the tools now leave gracefully). The AI turned OFF Reaper's "close audio device when stopped and inactive" (Preferences → Audio →
   Device; his to reverse). HIS FIVE STEPS: CTRL+S · restart Reaper · `start_electronics.bat` · Reload the score · play from 0 → five samples.
 - **THE ONE BAR (S2 · 2026-10-04, Fable; RUNNING_LOG §67; SWEEP_LIST #1 closed):** the composer score has ONE 24 px bar — File ▾ · Insert ▾ ·
@@ -189,7 +229,7 @@ question, not by habit.)*
   cut every note, slots 2 … 4 and the clarinet held. A stray key had switched slot 1 out of Preset Mode (Xsample's A0–B0 hard and A#7 are
   FUNCTION KEYS; the live path had no floor). `-Cc0 126` put it back; the live path now refuses a key outside the preset's range, and the
   technique box starts on the ordinary preset. The crescendo-harmony strip sits in the bar (§69). NOT CLAIMED: his ear on the flute since.
-- **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer — HIS composing — is next. No build is
+- *(S1's — SUPERSEDED by the checkpoint above)* **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer — HIS composing — is next. No build is
   in hand and none is expected for step 7.**
 - **What he can do in the composer score** (`http://localhost:5500/composer.html`):
   - **`M`** — a MIC OPENING over the selected note (it opens 100 ms before the note, 500 ms long), or at the playhead on the
@@ -199,9 +239,9 @@ question, not by habit.)*
   - **Played through with the engine up:** the opening's window is recorded, cropped to the attack, saved as
     `bank/samples/<name>.wav` with a row in `bank/samples/index.json`; the return plays it where the brick is, at unity.
   - **The demo:** the score `decibel-first-object` — a bass clarinet note at 5 s, its opening, its return at 8 s.
-- **HIS, to make it live — TWO THINGS, NOT YET DONE AT THIS WRAP:** start the engine (`start_electronics.bat`) · reload the
+- *(S1's — SUPERSEDED by the checkpoint above)* **HIS, to make it live — TWO THINGS, NOT YET DONE AT THIS WRAP:** start the engine (`start_electronics.bat`) · reload the
   composer page (F5). No restart of the score server.
-- **ONLY THE BASS CLARINET HAS A MICROPHONE** (`bank/elec_route.json` `players`). An opening on another lane is drawn `— no microphone
+- *(S1's — SUPERSEDED by the checkpoint above)* **ONLY THE BASS CLARINET HAS A MICROPHONE** (`bank/elec_route.json` `players`). An opening on another lane is drawn `— no microphone
   on this lane` and records nothing. Another player = a row in that table + `node tools/elec.js route` + his CTRL+S in Reaper.
 - **THE ENGINE RETURNS ONLY WHAT IT MAKES** — no dry note, no echo (D11; `listenEchoSeconds` above 0 is a route check).
 - **The crop's numbers are the engine's defaults** (`electronics/sc/bank.scd`); his ear tunes them in `bank/elec_route.json`
@@ -218,9 +258,9 @@ question, not by habit.)*
   ensemble's final instrumentation (the call's; his to check) · whether "my improvisation with live electronics" is the improviser
   piece (§17) · "pedals" or "petals" of resonance (phase 2) · the electronics in remote sessions · the planning repo's lines, at his
   word only · the porting protocol's hole (§37; `docs/PROTOCOL_DEVIATIONS.md`) — noted, not acted on.
-- **Deliberately uncommitted:** nothing. Outside git, by design: `reaper/Media/*.wav` · `reaper/kontakt/out/` · `bank/samples/raw/`.
+- *(S1's — SUPERSEDED by the checkpoint above)* **Deliberately uncommitted:** nothing. Outside git, by design: `reaper/Media/*.wav` · `reaper/kontakt/out/` · `bank/samples/raw/`.
   The engine's repo is in step (`a54562a`; the mirror pulled). Pieces #4 · #5 · #6 and the sandbox were READ, never written.
-- **Left running:** his Reaper on the rack · his score server on 5500 · loopMIDI. **His engine is DOWN** (closed for the build).
+- *(S1's — SUPERSEDED by the checkpoint above)* **Left running:** his Reaper on the rack · his score server on 5500 · loopMIDI. **His engine is DOWN** (closed for the build).
   Nothing of the AI's.
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
@@ -232,7 +272,7 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 8 — the first five impulses captured, HIS HANDS** (PLAN.md 8.5): CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0; then `node tools/elec.js croptest --only impulse-bfl-slap` (his engine down) closes the crop table; his ear on the crops (`endDb`) and on a return (`R`) | **Fable** (his findings) · **Opus** (a fault's fix) | — |
+| **►** | **Step 8 — THE BASS FLUTE'S IMPULSE DID NOT CAPTURE (SWEEP_LIST #3):** measure in the order of the checkpoint block (probe · the track's meter under an outside slap · the crop test on the flute with his engine down · what the page sends); fix; ONE proof. Then his ear on the four samples and a return (`R`) | **Opus** | **yes — `/clear`, `/postclear`** |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |

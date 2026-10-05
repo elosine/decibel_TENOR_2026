@@ -2588,3 +2588,35 @@ holds ReaRoute.**
 need a send each as the music uses them; a kind's "attack" for swelling sounds.
 
 **Not claimed:** his ear on anything of this; the flute slap's crop; the engine booting after his restart.
+
+## §72. CHECKPOINT #1 OF SESSION 2 — his five steps done: four of five impulses captured; the bass flute's is silent (2026-10-05, Opus; his `/checkpoint`)
+
+**What he did between §71 and this checkpoint** (read from the files, not from the chat): saved the rack with the five sends (07:54) · restarted
+Reaper · started the engine (it answers: five players, bcl · bfl · perc · va · vc) · played `piece-sec01-a` from 0 (08:25) · froze the score as
+`piece-sec01-a-vfirst_samples`. His one question in between: *"Is there a save file with uh, five uh, in the appropriate instruments with the
+articulations that I listed?"* — yes, `piece-sec01-a`, changed in place (§71).
+
+**THE FIRST REAL CAPTURES** — the piece's bank, mode `compose`, the engine's default crop, 500 ms bricks opening 100 ms before each onset:
+
+| sample | raw window | raw peak | attack found at | kept |
+|---|---|---|---|---|
+| `bcl-impulse-1` | 591 ms | −26.0 dB | 227.9 ms | 368.0 ms |
+| `perc-impulse-1` | 596 ms | −12.4 dB | 209.0 ms | 392.2 ms |
+| `va-impulse-1` | 591 ms | −20.8 dB | 213.7 ms | 382.7 ms |
+| `vc-impulse-1` | 593 ms | −20.8 dB | 219.8 ms | 378.4 ms |
+| `bfl-impulse-1` | 598 ms | exact zeros | — | NOT CAPTURED |
+
+**Readings.** The raw window is the brick's 500 ms plus the message's lead, 91 … 98 ms (§61 measured 92.8 ms sent ahead). The attack sits
+209 … 228 ms into the raw: the lead + the brick's 100 ms + the sound path. EVERY SAMPLE RUNS TO THE WINDOW'S END (attack − 5 ms + kept = the
+raw's length, to 0.1 ms): at 500 ms it is the WINDOW that ends the sample, not the crop's end rule — the crop test's 4 s windows kept
+0.7 … 1.0 s of the same kinds (§71). So an impulse's length is, today, its brick's length; whether that is what he wants is his ear's (a
+longer brick, or `endDb`).
+
+**The flute.** No row, no file; its raw `bank/samples/raw/zn-47.wav` is exact zeros, written 08:27:26 — a second pass, two minutes after the
+others (the first pass's raw is overwritten; it cannot have cropped either, or a row would stand). NOT DIAGNOSED. Known: the flute's send carried
+a 2 s tone to the engine at −30.3 dB in the crop test, before his Reaper restart; an outside slap at G4 read −20.6 dB on the track's own meter;
+the crop test's flute slap was silent twice and §71 explained it by a stuck note of the tool's making — never verified at the engine, now in
+doubt. `docs/SWEEP_LIST.md` #3; the measuring order is journal §2's checkpoint block. The lesson of §69 → §70 stands: measure first.
+
+**State at the checkpoint:** committed and pushed — the four samples and the index, his rack with the sends, his score and its frozen version,
+the docs. Nothing deliberately uncommitted. His engine is UP. Resume on Opus.
