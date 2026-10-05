@@ -2403,3 +2403,22 @@ CLAUDE.md § This machine). Written to a scratch file and spliced, as that note 
 
 **For the paper:** the composer score's chrome is now one line; the tools that write the piece — the panels, the bricks M and R, the keys —
 are unchanged. The page's build tag reads `b38-onebar`.
+
+## §68. "get rid of harmony for C" — the crescendo-harmony strip no longer stands on the lane uninvited (2026-10-04, Fable)
+
+**His word, with a screenshot of the bass clarinet lane at 25 s, an orange pill `harmony for C…` on it:** *"get rid of harmony for c"*.
+
+**What it was:** PLAN 1m's crescendo-harmony strip (`renderCrescBar`, `#crescBar`), drawn on the ACTIVE lane at its right edge: with no sonority
+chosen it showed only its way in, the button `harmony for C…`; with one chosen, the strip (name · notes · order · seed · restart · change · ✕).
+Piece #6's inheritance; this browser's setting, not the piece's.
+
+**Done (`score/public/composer.html`, three places; commit `c958cac`):** with no sonority chosen the strip is REMOVED from the lane, not drawn —
+nothing on the score. The way in moved to the bar: a hidden `#crescHarmBtn` (its click = `crescBarChoose()`, the fixed centred picker), offered
+in **Insert ▾ → Crescendo harmony… (what C deals from)**. Once a sonority is chosen the strip appears as before and its ✕ puts it away. His rule
+honoured twice over: nothing juts into the score; nothing of the tool is lost.
+
+**Proof, and a slip:** the page's inline scripts were extracted and parsed with `node --check` — the first run FAILED on the words `<script>`
+inside the one bar's own HTML comment (the extractor took them for a tag); with comments stripped first, SYNTAX OK. The commit had gone out on
+the failed chain (a heredoc ends a `&&` chain; the next line runs regardless) — so this entry follows in its own commit. No page loaded (D13 —
+he finds the rest while composing). Seen in `git status`, not touched: `reaper/decibel_rack.rpp` modified — his Reaper's save (the route, §54);
+it goes in at the wrap.
