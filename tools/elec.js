@@ -135,31 +135,41 @@ async function readPeaks(waitMs) {
             const dev = await engineSeesReaRoute(), m = missing(d, dev);
             if (m.length) { show(d, dev); console.log('\nMISSING, in order:\n' + m.map((x, i) => '  ' + (i + 1) + '. ' + x).join('\n')); process.exit(2); }
         }
-        let eng = null, run = null;
-        if (!rackOnly) {
-            run = sc.start(SCD('check_route.scd'), { timeoutS: 90, env: { LE_SECONDS: '10', LE_IN: String(p0.engineIn - 1) } });
-            try { console.log('engine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
-            catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
-        }
+        // TWO PASSES, the same note twice. Pass 1, the engine NOT running: the master holds the player alone — what he
+        // hears of the note. Pass 2, the engine running: what it heard, what it sent, what came back.
+        // (The track's own meter is NOT that reference: on this rack it reads BEFORE the fader — found 2026-10-04, when a
+        // -26 dB track sat at -39 dB on the master, its fader at -13. The master and the engine's own meters are the truth.)
+        const lr = (x) => 'L ' + x.L + '  R ' + x.R + ' dB';
+        const mono = (x) => Math.round(200 * Math.log10((Math.pow(10, x.L / 20) + Math.pow(10, x.R / 20)) / 2)) / 10;   // what a mono fold of L and R peaks at, at most
         job('watch', { seconds: 7 });
-        console.log('note       ' + note(p0));
-        const peaks = (await readPeaks(12000)).peakDb;
-        if (run) { const r = await run.done; eng = r.results.find((x) => x.check === 'route'); if (!eng) { console.log('STOPPED    ' + (r.errors.join(' · ') || 'the engine gave no result')); process.exit(3); } }
-        const dir = Math.max(peaks[p0.track].L, peaks[p0.track].R);
-        const ret = peaks[CFG.return.track] ? Math.max(peaks[CFG.return.track].L, peaks[CFG.return.track].R) : null;
-        console.log('\n  the player\'s track in Reaper   ' + dir + ' dB   (' + p0.track + ', post-fader)');
-        if (eng) console.log('  heard by the engine           ' + eng.inPeakDb + ' dB\n  sent by the engine            ' + eng.outPeakDb + ' dB');
-        if (ret != null) console.log('  back on ' + CFG.return.track + '           ' + ret + ' dB');
-        const result = { when: new Date().toISOString(), player: p0, reaper: d.audio, peakDb: { track: dir, engineIn: eng && eng.inPeakDb, engineOut: eng && eng.outPeakDb, ret },
-            roundTripGainDb: ret != null && ret > -100 && dir > -100 ? Math.round((ret - dir) * 10) / 10 : null, engine: eng };
-        let pass;
-        if (rackOnly) { pass = dir > -80; console.log('\n' + (pass ? 'THE RACK\'S HALF HOLDS: the note reaches the track.' : 'NOTHING on the track — is the port live, is the track armed?')); }
-        else {
-            pass = dir > -80 && eng.inPeakDb > -80 && ret != null && ret > -80;
-            console.log('\n' + (pass ? 'THE ROUTE HOLDS: the note is heard direct and again through the engine. The round trip changes its level by ' + result.roundTripGainDb + ' dB.'
-                : 'THE ROUTE IS BROKEN at the first line above that reads -150.'));
-            fs.writeFileSync(path.join(ROOT, 'probes', 'elec_route_check.json'), JSON.stringify({ ...result, pass }, null, 1) + '\n');
+        console.log('note       ' + note(p0) + '   (pass 1 — the player alone)');
+        const alone = (await readPeaks(12000)).peakDb;
+        const trackMeter = Math.max(alone[p0.track].L, alone[p0.track].R);
+        console.log('\n  PASS 1 — the player alone\n    the track\'s own meter      ' + lr(alone[p0.track]) + '   (' + p0.track + ', before its fader)\n    at the master              ' + lr(alone.MASTER) + '   <- what he hears of the note');
+        if (rackOnly) {
+            const ok = trackMeter > -80;
+            console.log('\n' + (ok ? 'THE RACK\'S HALF HOLDS: the note reaches the track.' : 'NOTHING on the track — is the port live, is the track armed?'));
+            process.exit(ok ? 0 : 1);
         }
+        const run = sc.start(SCD('check_route.scd'), { timeoutS: 90, env: { LE_SECONDS: '10', LE_IN: String(p0.engineIn - 1) } });
+        try { console.log('\nengine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
+        catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
+        job('watch', { seconds: 7 });
+        console.log('note       ' + note(p0) + '   (pass 2 — with the engine)');
+        const both = (await readPeaks(12000)).peakDb;
+        const r2 = await run.done, eng = r2.results.find((x) => x.check === 'route');
+        if (!eng) { console.log('STOPPED    ' + (r2.errors.join(' · ') || 'the engine gave no result')); process.exit(3); }
+        const ret = both[CFG.return.track];
+        console.log('\n  PASS 2 — the same note, the engine running\n    heard by the engine        ' + eng.inPeakDb + ' dB\n    sent by the engine         ' + eng.outPeakDb + ' dB' +
+            '\n    back on ' + CFG.return.track + '        ' + (ret ? lr(ret) : 'no such track') + '\n    at the master              ' + lr(both.MASTER) + '   (the player and the return together)');
+        const pass = trackMeter > -80 && eng.inPeakDb > -80 && !!ret && Math.max(ret.L, ret.R) > -80;
+        const direct = mono(alone.MASTER), back = ret ? Math.max(ret.L, ret.R) : null;
+        const gain = pass ? Math.round((back - direct) * 10) / 10 : null;
+        console.log('\n' + (pass ? 'THE ROUTE HOLDS: the note is heard direct and again through the engine.\nIt comes back at ' + back + ' dB; direct, folded to mono, it is ' + direct + ' dB — ' + gain + ' dB apart.'
+            : 'THE ROUTE IS BROKEN at the first line above that reads -150.'));
+        fs.writeFileSync(path.join(ROOT, 'probes', 'elec_route_check.json'), JSON.stringify({ when: new Date().toISOString(), player: p0, reaper: d.audio,
+            pass1: { trackMeter: alone[p0.track], master: alone.MASTER }, pass2: { engineInDb: eng.inPeakDb, engineOutDb: eng.outPeakDb, ret, master: both.MASTER },
+            directMonoDb: direct, returnDb: back, returnMinusDirectDb: gain, engine: eng, pass }, null, 1) + '\n');
         process.exit(pass ? 0 : 1);
     }
 

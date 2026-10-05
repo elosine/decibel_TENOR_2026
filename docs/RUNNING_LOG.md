@@ -1762,3 +1762,55 @@ electronics over ReaRoute, all at once; over Chrome Remote Desktop, WASAPI — t
 are not offered there). Put to him as the one question: does he need the electronics to sound in remote sessions? If yes it is a
 different route for those sessions, not designed. **On 7.82:** yes — a minor update of version 7 over 7.72; the changelog was not read,
 and he was told so.
+
+## §54. 6.1 DONE — THE CROSSING PROVEN: a note into the rack is heard by the engine and comes back, at unity; the round trip is two of Reaper's blocks (2026-10-04, Opus)
+
+**His words:** *"maybe but a is fine, no need for the different route today; new install rearoute and switch to aiso"* — the electronics in
+remote sessions: perhaps one day, not designed now (§53's question, answered **a**). And his two hand steps, done: Reaper is 7.82, on ASIO
+(UMC ASIO Driver, 44100 Hz, block 512); the registry holds `ReaRoute ASIO (x64)`; SuperCollider lists `ASIO : ReaRoute ASIO (x64)`.
+
+**What was tried, in order:**
+1. **`node tools/elec.js probe` said: installed, but Reaper shows none of its channels.** Wrong — the JOB was looking in the wrong place.
+   **Reaper lists ReaRoute's sixteen channels at hardware index 512 … 527** (where ReWire's sit), not among the device's own
+   (`GetNumAudioOutputs` counts 12; `GetOutputChannelName(512)` is "ReaRoute 1"; the same for inputs). `elec_route.lua` now keeps
+   the channels as a map by hardware index and scans 512 … 575. This was the one thing §51 named as unknowable without the driver.
+2. **`route`** — its first run: *made the send Bass Clarinet XS → ReaRoute 1* (mono, 0 dB, post-fader) · *made the track ELEC RETURN at
+   17* (input ReaRoute 1, stereo; monitor on; record mode 2, none; 0 dB; no effects). `REC` is 18, still last. One undo point. NOT saved —
+   his CTRL+S.
+3. **`check`, first form — the route held and the verdict line was WRONG:** track −26.24 dB · heard by the engine −41.3 · sent −41.3 ·
+   back on ELEC RETURN −41.32 — *"the round trip changes its level by −15.1 dB"*. The engine's own three numbers agreed to 0.02 dB, so
+   nothing was being lost in the crossing; the reference was the fault. **The track's own meter reads BEFORE the fader on this rack**:
+   the same watch showed the master at −39.64 / −37.73 with the track at −27.91 / −26.24 and its fader at −13.16.
+4. **`check` rewritten as TWO PASSES, the same note twice** — pass 1 with the engine not running, so the master holds the player alone
+   (what he hears of the note); pass 2 with it running. The reference is now the master, never the track's meter.
+
+**THE NUMBERS** (`DECBassClar` note 50, velocity 90, 1.5 s; `probes/elec_route_check.json`):
+
+| | L | R |
+|---|---|---|
+| pass 1 · the track's own meter (before its fader, −13.16 dB) | −26.73 | −29.45 |
+| pass 1 · at the master — the player alone | −39.89 | −42.61 |
+| pass 2 · heard by the engine (one channel, mono) | −42.6 | |
+| pass 2 · sent by the engine | −42.6 | |
+| pass 2 · back on ELEC RETURN | −42.63 | −42.63 |
+| pass 2 · at the master — the player and the return | −37.69 | −38.58 |
+
+- **Pass 1 proves the meter:** −26.73 − 13.16 = −39.89 and −29.45 − 13.16 = −42.61, to the hundredth.
+- **The engine is at unity, exactly:** in −42.6, out −42.6, back −42.63.
+- **The return against the direct sound: −1.5 dB** (the return −42.63; the direct, folded to mono, at most −41.1). Two things are in that
+  1.5 dB and neither is a loss: a mono fold of a stereo sample peaks under the louder channel, and the two passes are two NOTES — the
+  library's round robin gave −27.91 / −26.24 one time and −26.73 / −29.45 the next. **Reaper's mono fold is the half-sum** (the engine
+  hears about the average of L and R, not their sum) — so dual mono at unity is the right return, and no preamp trim is needed.
+- **THE ROUND TRIP: 23.22 ms = 1024 samples = exactly two of Reaper's blocks of 512** (nine clicks, the median;
+  `probes/elec_latency.json`). Each ReaRoute crossing costs one block. Measured engine → Reaper → engine; rack → engine → rack is the
+  same two crossings. **It is a number of the SIMULATION** — it halves with Reaper's block (256 → 11.6 ms; 128 → 5.8 ms), and the concert
+  has no such loop (a microphone, the interface, the engine, the interface). The loop's extra send was taken down afterwards.
+- **The engine as he will start it** (`session.scd`, what `start_electronics.bat` runs): booted on ReaRoute, heard the note, posted
+  *"bcl in −41.2 dB · out −41.2 dB"*, stopped; nothing left running.
+
+**What is NOT claimed:** that HE has heard it. The proof used a note sent to the composer score's own port, `DECBassClar` — the same
+road every note of the composer score takes (§36) — not a note from the composer score in his Chrome, and no ear. His: CTRL+S in
+Reaper (the route is in the rack, unsaved) · double-click `start_electronics.bat` · play a bass clarinet note: it sounds twice, the
+second 23 ms behind and from the track ELEC RETURN.
+
+**Sub-steps (a) … (f) of 6.1 are done.** Next in the order: 6.2, the message route — a talk first.

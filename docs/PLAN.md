@@ -160,7 +160,10 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 4.1 (`live-electronics-system/docs/PLAN.md`), built HERE in `electronics/` (D7). **The sub-steps keep the running order's labels
 6.1 … 6.6** (journal §2) so the journal and this plan say the same thing.
 
-- **6.1 The audio route — Reaper → SuperCollider → Reaper — `doing`: BUILT 2026-10-04 (RUNNING_LOG §51), THE CROSSING UNPROVEN —
+- **6.1 The audio route — Reaper → SuperCollider → Reaper — `done` 2026-10-04 (RUNNING_LOG §54): THE CROSSING PROVEN — the note is
+  heard by the engine and comes back at unity (in −42.6 · out −42.6 · back −42.63 dB); the round trip 23.22 ms = two of Reaper's
+  blocks of 512. (a) … (f) ☑. HIS, not claimed: his own ear on it from the composer score — CTRL+S, `start_electronics.bat`, a note.**
+  *(As it stood before his two hand steps:)* `doing`: BUILT 2026-10-04 (RUNNING_LOG §51), THE CROSSING UNPROVEN —
   ReaRoute is not on his machine and his Reaper is on WASAPI (his two hand steps).** (a) ☐ HIS · (b) ☑ `electronics/sc/boot.scd` ·
   (c) ☐ written, parse-checked, refuses without ReaRoute — not run: `node tools/elec.js route` · (d) ☑ `electronics/sc/synths.scd` ·
   (e) ☐ the engine's half ☑ (its self-test) and the rack's half ☑ (the note reaches the track, −26.24 dB); the crossing and the

@@ -134,6 +134,11 @@ takes is his (D5).
    tick "ReaRoute ASIO driver", start Reaper · (2) Preferences → Audio → Device → Audio system ASIO, ASIO driver UMC ASIO Driver.
    **THEN:** `node tools/elec.js probe` (must say nothing is missing) → `route` → he saves the rack → `check` → `latency`;
    `start_electronics.bat` starts the engine for him after that.
+   **☑ 6.1 DONE 2026-10-04 (Opus, RUNNING_LOG §54) — THE CROSSING PROVEN.** His two steps done (Reaper 7.82 · ASIO · ReaRoute). The route
+   is in the rack: the bass clarinet's send to ReaRoute 1 and the flat track `ELEC RETURN` (17; `REC` is 18) — **UNSAVED, his CTRL+S.**
+   One note to `DECBassClar`: heard by the engine −42.6 dB · sent −42.6 · back −42.63 — unity; **the round trip 23.22 ms = two of
+   Reaper's blocks of 512.** Learned: Reaper lists ReaRoute's channels at hardware index 512 … 527 · the track's own meter reads BEFORE
+   the fader — the master is the reference. NOT CLAIMED: his ear. **► NEXT: 6.2, the message route — a talk (Fable).**
 7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -200,23 +205,22 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(mid-session checkpoint #2, 2026-10-04, Opus — his `/checkpoint` before the build of 6.1; NO CLEAR at his word, the build goes on in the same chat)*
 
-- **The task and its state:** running order step 6, sub-step **6.1 the audio route — BUILT, THE CROSSING UNPROVEN** (RUNNING_LOG §51).
-  Everything that does not need ReaRoute exists and is tested; ReaRoute is not installed and his Reaper is on WASAPI — both his.
-  Running order: 1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need · **6 ► ACTIVE — 6.1 waits on his two hand steps.**
+- **The task and its state:** running order step 6 — **6.1 the audio route DONE** (RUNNING_LOG §54): a note into the rack is heard by
+  the engine and comes back at unity, 23.22 ms later. Running order: 1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need ·
+  **6 ► ACTIVE — 6.1 ☑ · 6.2 the message route NEXT.**
 - **The latest deliverable:** the engine's first code — `electronics/sc/` · `electronics/tools/sc.js` — and this rack's side of
   the route — `bank/elec_route.json` · `reaper/bridge/jobs/elec_route.lua` · `tools/elec.js` · `start_electronics.bat`. The record:
   RUNNING_LOG §47 … §51 · `electronics/docs/RUNNING_LOG.md` §5 … §7 · `electronics/docs/SEAMS.md` · `TAKE.md`.
-- **► THE NEXT CONCRETE STEP — ASK HIM WHETHER HIS TWO HAND STEPS ARE DONE** (ReaRoute installed by Reaper's installer · Reaper's
-  audio system ASIO, UMC ASIO Driver — the block above has them word for word). **When they are:** `node tools/elec.js probe` —
-  it must end "Nothing is missing" or name what still is · `node tools/elec.js route` (the send and `ELEC RETURN`, through the
-  bridge; read its read-back) · he saves the rack · `node tools/elec.js check` (the proof: four levels, a verdict; writes
-  `probes/elec_route_check.json`) · `node tools/elec.js latency` (writes `probes/elec_latency.json`) · the numbers into
-  RUNNING_LOG and 6.1 marked done. **The job's `apply` · `remove` · `loop_on/off` have never run — read each read-back; if Reaper
-  does not list ReaRoute's channels by name, the job refuses and the probe shows what it sees.** Then 6.2, the message route — a
-  talk first (a `DECElec` loopMIDI port or OSC), Fable. Still his, never blocking: what he heard · the three notation calls.
-- **`Resume reads:`** this §2 · RUNNING_LOG §51 (what was built, what is unproven) · the header of `tools/elec.js` · the header
-  of `reaper/bridge/jobs/elec_route.lua`. For 6.2's talk add `electronics/docs/SEAMS.md`. Nothing else.
-- **Pending him:** **THE TWO HAND STEPS — ReaRoute installed · Reaper on ASIO (RUNNING_LOG §51)** · his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
+- **► THE NEXT CONCRETE STEP — 6.2, THE MESSAGE ROUTE, a talk on FABLE:** how one brick's onset in the composer score reaches the
+  engine with its data. The two candidates: a `DECElec` loopMIDI port read by SuperCollider's `MIDIIn` · OSC through the score
+  server (`score/server.js` → UDP 57210, the engine's port). Put to him only what is his; lay 6.2 out under the planning method;
+  write it into PLAN.md 1.1 and the engine's plan 4.2; then the build on Opus. **Before it, his, never blocking:** CTRL+S in Reaper
+  (the route is in the rack UNSAVED — then commit `reaper/decibel_rack.rpp` at his word) · his own ear:
+  `start_electronics.bat`, a bass clarinet note from the composer score, heard twice. Still his: what he heard of the rack · the
+  three notation calls.
+- **`Resume reads:`** this §2 · `electronics/docs/SEAMS.md` (the sound path as proven) · the header of `electronics/tools/sc.js`
+  (the line protocol) · `docs/COMPOSITION_NOTES.md` DEC-7 (the first object as a demo). Nothing else; §51 · §54 only by a question.
+- **Pending him:** **CTRL+S in Reaper — the route is in the rack, unsaved (§54)** · his ear on the engine (`start_electronics.bat`, a note) · the electronics in REMOTE sessions — *"maybe"*, not today (§53 · §54) · his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
   check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
   word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
   `docs/PROTOCOL_DEVIATIONS.md`).
@@ -236,8 +240,8 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **6.1 — THE CROSSING PROVEN AND THE LATENCY MEASURED**, once his two hand steps are done (ReaRoute installed · Reaper on ASIO): `node tools/elec.js probe → route → (he saves) → check → latency`; the numbers logged, 6.1 marked done. Everything else of 6.1 is built and tested (RUNNING_LOG §51) | **Opus** (five commands and their read-backs) | no — or after a clear, by the block above |
-| — | **6.2 the message route** (a talk: MIDI port or OSC) → 6.3 the opening brick + capture → 6.4 the index → 6.5 the playback → 6.6 the demo | Fable (6.2's talk) · Opus (the builds) | — |
+| **►** | **6.2 — THE MESSAGE ROUTE: a talk** — one brick's onset from the composer score reaches the engine with its data (a `DECElec` loopMIDI port read by `MIDIIn`, or OSC through the score server to UDP 57210); laid out under the planning method, written into PLAN.md 1.1 and the engine's 4.2. 6.1 is DONE (RUNNING_LOG §54) | **Fable** (the talk) · Opus (its build) | a good point to clear — the docs carry it |
+| — | 6.3 the opening brick + the capture → 6.4 the index → 6.5 the playback → 6.6 the demo | Fable (each talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·

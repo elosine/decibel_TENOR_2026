@@ -33,16 +33,25 @@ local function findTrack(name)
   end
   return nil
 end
-local function list(n, fn) local t = {} for i = 0, n - 1 do t[#t + 1] = fn(i) end return t end
+-- a MAP hardware index -> name. The device's own channels are 0 … n-1; ReaRoute's sit at 512 … 527, where ReWire's do
+-- (found 2026-10-04 on Reaper 7.82: GetNumAudioOutputs counts 12, and GetOutputChannelName(512) is "ReaRoute 1").
+local function list(n, fn)
+  local t = {}
+  for i = 0, n - 1 do t[i] = fn(i) end
+  for i = 512, 575 do local s = fn(i); if s and s ~= '' then t[i] = s end end
+  return t
+end
 local function dB(v) if v and v > 0 then return math.floor(20 * math.log(v, 10) * 100 + 0.5) / 100 end return -150 end
 
-local outs = list(reaper.GetNumAudioOutputs(), reaper.GetOutputChannelName)
-local ins = list(reaper.GetNumAudioInputs(), reaper.GetInputChannelName)
+local nOut, nIn = reaper.GetNumAudioOutputs(), reaper.GetNumAudioInputs()
+local outs = list(nOut, reaper.GetOutputChannelName)
+local ins = list(nIn, reaper.GetInputChannelName)
 local function firstReaRoute(names)
-  for i, n in ipairs(names) do if tostring(n):lower():find('rearoute', 1, true) then return i - 1 end end
-  return nil
+  local best = nil
+  for i, n in pairs(names) do if tostring(n):lower():find('rearoute', 1, true) and (best == nil or i < best) then best = i end end
+  return best
 end
-local rrOut, rrIn = firstReaRoute(outs), firstReaRoute(ins)   -- 0-based hardware indices of ReaRoute 1, or nil
+local rrOut, rrIn = firstReaRoute(outs), firstReaRoute(ins)   -- the hardware index of ReaRoute 1 (512), or nil
 local _, aMode = reaper.GetAudioDeviceInfo('MODE', '')
 local _, aRate = reaper.GetAudioDeviceInfo('SRATE', '')
 local _, aSize = reaper.GetAudioDeviceInfo('BSIZE', '')
@@ -52,7 +61,7 @@ local function hwSends(tr)
   local t = {}
   for i = 0, reaper.GetTrackNumSends(tr, 1) - 1 do
     local d = math.floor(reaper.GetTrackSendInfo_Value(tr, 1, i, 'I_DSTCHAN'))
-    t[#t + 1] = { index = i, to = outs[(d & 1023) + 1] or ('hardware ' .. (d & 1023)), dst = d & 1023, mono = (d & 1024) ~= 0,
+    t[#t + 1] = { index = i, to = outs[d & 1023] or ('hardware ' .. (d & 1023)), dst = d & 1023, mono = (d & 1024) ~= 0,
       dB = dB(reaper.GetTrackSendInfo_Value(tr, 1, i, 'D_VOL')), sendmode = reaper.GetTrackSendInfo_Value(tr, 1, i, 'I_SENDMODE'),
       mute = reaper.GetTrackSendInfo_Value(tr, 1, i, 'B_MUTE') }
   end
@@ -88,7 +97,7 @@ local function describe()
   if rt then
     local rin = math.floor(reaper.GetMediaTrackInfo_Value(rt, 'I_RECINPUT'))
     ret.index = ri + 1
-    ret.input = (rin >= 0 and (rin & 4096) == 0) and (ins[(rin & 1023) + 1] or ('hardware ' .. (rin & 1023))) or 'none'
+    ret.input = (rin >= 0 and (rin & 4096) == 0) and (ins[rin & 1023] or ('hardware ' .. (rin & 1023))) or 'none'
     ret.stereo = rin >= 0 and (rin & 1024) ~= 0
     ret.monitor = reaper.GetMediaTrackInfo_Value(rt, 'I_RECMON')
     ret.arm = reaper.GetMediaTrackInfo_Value(rt, 'I_RECARM')
@@ -100,8 +109,8 @@ local function describe()
     ret.hardwareSends = hwSends(rt)
   end
   return { mode = MODE, audio = { system = aMode, srate = aRate, block = aSize, out = aOut },
-    hardwareOuts = #outs, hardwareIns = #ins, reaRoute = (rrOut ~= nil and rrIn ~= nil),
-    reaRouteOutAt = rrOut, reaRouteInAt = rrIn, firstOuts = { outs[1], outs[2] }, players = players, ret = ret }
+    hardwareOuts = nOut, hardwareIns = nIn, reaRoute = (rrOut ~= nil and rrIn ~= nil),
+    reaRouteOutAt = rrOut, reaRouteInAt = rrIn, firstOuts = { outs[0], outs[1] }, players = players, ret = ret }
 end
 
 if MODE == 'probe' then return describe() end
@@ -147,7 +156,7 @@ if MODE == 'apply' then
     if not tr then did[#did + 1] = 'NO TRACK named ' .. p.track
     else
       local made = ensureHwSend(tr, rrOut + p.engineIn - 1)
-      did[#did + 1] = (made and 'made' or 'kept') .. ' the send ' .. p.track .. ' -> ' .. tostring(outs[rrOut + p.engineIn])
+      did[#did + 1] = (made and 'made' or 'kept') .. ' the send ' .. p.track .. ' -> ' .. tostring(outs[rrOut + p.engineIn - 1])
     end
   end
   local rt = findTrack(RET)
@@ -186,7 +195,7 @@ elseif MODE == 'loop_on' or MODE == 'loop_off' then
   local rt = findTrack(RET)
   if not rt then did[#did + 1] = 'NO TRACK named ' .. RET
   elseif MODE == 'loop_on' then
-    ensureHwSend(rt, rrOut + LOOP_CH - 1); did[#did + 1] = 'loop on: ' .. RET .. ' -> ' .. tostring(outs[rrOut + LOOP_CH])
+    ensureHwSend(rt, rrOut + LOOP_CH - 1); did[#did + 1] = 'loop on: ' .. RET .. ' -> ' .. tostring(outs[rrOut + LOOP_CH - 1])
   else
     local i = findHwSend(rt, rrOut + LOOP_CH - 1)
     if i then reaper.RemoveTrackSend(rt, 1, i); did[#did + 1] = 'loop off' else did[#did + 1] = 'loop was not on' end

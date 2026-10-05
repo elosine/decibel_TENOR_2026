@@ -1,0 +1,49 @@
+{
+ "when": "2026-10-05T00:48:45.479Z",
+ "player": {
+  "name": "bcl",
+  "track": "Bass Clarinet XS",
+  "engineIn": 1,
+  "port": "DECBassClar",
+  "testNote": 50
+ },
+ "reaper": {
+  "block": "512",
+  "out": "ASIO UMC ASIO Driver",
+  "srate": "44100",
+  "system": "ASIO"
+ },
+ "pass1": {
+  "trackMeter": {
+   "L": -26.73,
+   "R": -29.45
+  },
+  "master": {
+   "L": -39.89,
+   "R": -42.61
+  }
+ },
+ "pass2": {
+  "engineInDb": -42.6,
+  "engineOutDb": -42.6,
+  "ret": {
+   "L": -42.63,
+   "R": -42.63
+  },
+  "master": {
+   "L": -37.69,
+   "R": -38.58
+  }
+ },
+ "directMonoDb": -41.1,
+ "returnDb": -42.63,
+ "returnMinusDirectDb": -1.5,
+ "engine": {
+  "check": "route",
+  "device": "ASIO : ReaRoute ASIO (x64)",
+  "inPeakDb": -42.6,
+  "outPeakDb": -42.6,
+  "sr": 44100
+ },
+ "pass": true
+}

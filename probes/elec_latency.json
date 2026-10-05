@@ -1,0 +1,15 @@
+{
+ "when": "2026-10-05T00:49:05.261Z",
+ "reaper": {
+  "block": "512",
+  "out": "ASIO UMC ASIO Driver",
+  "srate": "44100",
+  "system": "ASIO"
+ },
+ "block": 64,
+ "check": "latency",
+ "clicks": 9,
+ "roundTripMs": 23.22,
+ "roundTripSamples": 1024,
+ "sr": 44100
+}
