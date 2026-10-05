@@ -3668,3 +3668,9 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **THE SORTING (one line, his to reverse):** the presets, the mix and the dealing are the piece's (`bank/presets.json` · `tools/deal_variants.js`); the variant on a brick, the plan, the queue and the fallback work for any piece — the engine's (`electronics/score/le_objects.js` · `electronics/sc/`).
 
 **For the paper:** the processed return is where the simulation and the concert stopped being two designs. A score that *names* its transformations ahead of time (a plan) and an engine that makes them from whatever the microphone has just given it (after the capture, the soonest-needed first, a fallback when late) is one mechanism with two clocks — the composer's, who deals the presets, and the performance's, which supplies the sound. What is fixed is the pairing of note and treatment; what is never fixed is the material treated.
+
+## §117. THE DEAL WRITTEN — thirty transformations onto groups 2 … 4, at his word (2026-10-05, Fable)
+
+**What prompted it:** after the build's wrap he played and wrote *"I dont think the effects are playing"* — correctly: the score carried no variants (the deal had been printed, not written, waiting on his word), and the engine's ping cannot say which build it runs. Put to him as a) deal as printed · b) another seed; his answer: **"a"**.
+
+**What was done:** `node tools/deal_variants.js --score piece-sec01-a --to 22.5` (seed 1) — the save had no working copy beside it; 15 return bricks now carry `elec.variants`, 30 in all, the pairing exactly §116's table (the diode's carrier is drawn at each plan send, so its length differs by a few ms from the dry run). Committed with this entry. **Not claimed:** heard. His steps: restart the engine (if not since the build) · F5 · File ▾ → Reload · play from 0.
