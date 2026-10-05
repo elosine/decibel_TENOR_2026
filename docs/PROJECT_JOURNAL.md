@@ -173,6 +173,14 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► AFTER CHECKPOINT #5 — 2026-10-05, Fable (RUNNING_LOG §105): HIS FIRST STEPS, A FAULT FIXED, HIS LETTER OPEN. THIS SUPERSEDES checkpoint #5's "NEXT CONCRETE STEP" below as far as it goes.**
+
+- **His F5 before CTRL+S lost nothing:** the page's working copy (`scores/<name>-work.json`, autosaved every 5 s) holds the edits and is resumed at the next open; ONLY the app's Reload and Restore drop it, both after a confirm. `piece-sec01-a` still holds unsaved edits — his CTRL+S.
+- **SWEEP_LIST #5, FIXED:** the four stage bricks of `workshop-bfl-slap` drew a whole lane below the bass flute lane — a zone's `yOffset` is a FRACTION of the lane (0 top · 1 bottom) and the process model had 2. Now 0.5 in `electronics/score/le_objects.js` `MODELS.elecProcess`, in `tools/build_workshop.js` and in the score file's four bricks. **The score's working copy still holds the 2** (the AI's deletion was refused by the permission layer; not pursued another way): **HIS — F5 · File ▾ → Reload on `workshop-bfl-slap` · OK to "drop the unsaved edits"** (the page's bookkeeping, nothing of his). Then the note's steps 2 … 6.
+- **OPEN, HIS LETTER — the effect to build IN PARALLEL with his workshop work:** a) the granular voices (10.2; the sources `live-electronics-engine/synths/roads-cloud.scd` · `grain-articulate.scd`) · b) the pedals of resonance (10.3) · c) the cascade (10.4) · d) his own. The parallel rule, told him: his engine and his page see an edit only at a restart / an F5 — no restart or F5 while a build is said to be in flight; one line from the AI when it is in and proven. A new effect = one SynthDef in `electronics/sc/process.scd` + one row in `electronics/score/le_process.js` `EFFECTS`, proven headless by `process_test.scd` (safe beside his engine).
+- **Uncommitted after this wrap's commit: nothing of the AI's.** The temp save his; `piece-sec01-a-work.json` and `workshop-bfl-slap-work.json` are the page's (gitignored).
+- **RESUME ON:** Fable for his letter and the talk; Opus for the effect's build.
+
 **► CHECKPOINT #5 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Opus (RUNNING_LOG §104). Where the blocks below disagree with this one, THIS BLOCK WINS.**
 
 - **AT `/postclear` — HIS WORD, BEFORE ANYTHING ELSE:** *"Please keep this for me to read and present it on post clear. The workshop for transforming samples thru to the end of the notes 'the record'."* So: **read `docs/WORKSHOP_NOTE.md` and PRESENT IT TO HIM WHOLE AND VERBATIM** (everything under its first italic line — the heading, the ✓ lines, "To hear it" with its six steps, the notes down to "The record") — not summarised, not re-worded. THEN the playback in ≤5 bullets, the tree check, and STOP: start only on his word.

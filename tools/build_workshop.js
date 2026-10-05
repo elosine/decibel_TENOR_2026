@@ -61,7 +61,7 @@ const objects = [zone('zn-1', 'elecPlay', START, Math.round((START + len) * 1000
 STAGES.forEach((s, i) => {
   const at = START + STEP * (i + 1), source = i === 0 ? SRC : SRC + '~' + i, out = SRC + '~' + (i + 1);
   const length = s.ends.end === 'shape' ? s.ends.durMs / 1000 : 1;   // until it is rendered; then the brick is as long as its sample
-  objects.push(zone('zn-' + (i + 2), 'elecProcess', at, at + length, '#EF6C00', 2,
+  objects.push(zone('zn-' + (i + 2), 'elecProcess', at, at + length, '#EF6C00', 0.5,
     Object.assign({ source, out, label: s.label, effect: s.effect, args: s.args, rendered: null }, s.ends)));
 });
 const now = new Date().toISOString();
