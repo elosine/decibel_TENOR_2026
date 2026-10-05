@@ -1734,3 +1734,10 @@ the state now. The build of 6.1 follows in this same chat, on Opus — as far as
 **HIS TWO STEPS, then the AI's three commands:** (1) close Reaper, run Reaper's installer again (the same version), tick "ReaRoute ASIO driver", start Reaper · (2) Preferences → Audio → Device → Audio system ASIO, driver UMC ASIO Driver. Then `node tools/elec.js probe` (nothing missing) → `route` → he saves the rack → `check` → `latency`; `start_electronics.bat` is how he starts the engine after that.
 
 **A note for the paper:** his recollection — *"a mastering bus built in SuperCollider"* (§48) — was of the sandbox's BROWSER engine (`playhead-engine.js`: high-pass · glue · safety, with a reverb and a tape send). It is now in SuperCollider for the first time, translated, its colouring stages off until he has heard them (the engine's §7).
+
+## §52. D7 PROVEN — the first `git subtree push`; the mirror pulled (2026-10-04, Opus)
+
+`git subtree push --prefix=electronics engine main` → `467dc7e..3ce152c`, a FAST-FORWARD of the engine's `main`: the engine's repo now holds
+`sc/` and `tools/` at its root beside its docs, with this piece's commit message. The stand-alone clone pulled `--ff-only`, clean.
+So D7's mechanism holds as written, with the one thing learned in making it (§51): the engine arrives WHOLE, docs and code, and its docs
+are edited here. A second push follows this entry — the every-wrap case. Nothing of the AI's is left running (no sclang, no scsynth).

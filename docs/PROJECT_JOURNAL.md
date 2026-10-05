@@ -337,7 +337,9 @@ Verified in this repo only when they bite.)*
   files live once on disk" — a submodule): a submodule needs two commits per change and a pointer kept in step by every cold
   session, which is exactly the burden he named. Rejected: the submodule as planned · everything here and a split later (the
   engine's repo would hold no code for weeks; the subtree gives it the history as it happens). Proven at the first push (the engine
-  plan's part 8). *(RUNNING_LOG §2; the engine's RUNNING_LOG §4)*
+  plan's part 8). *(RUNNING_LOG §2; the engine's RUNNING_LOG §4)* **PROVEN 2026-10-04 (RUNNING_LOG §51 · §52): seated by `git subtree
+  add` (no squash), pushed as a fast-forward `467dc7e..3ce152c`. Learned: the engine arrives WHOLE — its docs live at
+  `electronics/docs/` and are edited HERE; the stand-alone clone is a mirror.**
 - **D8 · 2026-10-04 — THE STAFF SYSTEM: NO ELECTRONICS LANE, NO ELECTRONICS STAFF — THE SIGN OF ORIGIN.** His words (DEC-4): *"I don't
   think there needs to be an electronics lane. We can just incorporate the electronics per instrument lane because they'll always be
   based in some way or shape or form on the performer's own input … we just need to get the graphic symbols that say this is
