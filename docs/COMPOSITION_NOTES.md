@@ -457,3 +457,21 @@ either from a string he tunes or from the material itself. A talk first, at his 
 field in which several roots compete — not one tone drawn out of the slap. Built as the stage `feedback` (RUNNING_LOG §110): six
 strings, the amp's clipping, a speaker's colour, the path; its bloom set as a time. The nine distortions kept beside it as static
 shapes; this one has a life.)*
+
+### DEC-20 · 2026-10-05 — PRESETS for the feedback · ENVELOPES added to "Ends by" (Curtis Roads's, and SuperCollider's perc), each with a standard duration and a box to change it · a RANDOMIZER on a dial (the diode carrier, 80 … 400 Hz)
+
+> *"can I get a few presets for the feedback uh, effect? And then can we add the to the ends by a couple of envelopes, if that's the
+> right place? So the tail will keep the shape, I guess. But then can we have a few of the, the Rhodes, Curtis Rhodes envelopes and
+> then include the perk envelope from Super Collider? I think we, we're already using that in the Live Electronics Engine. And then
+> I guess like an envelope duration too. Like the stand, whatever standard duration seems good for each envelope setting, but then
+> also the box that I can change it."*
+
+> *(with the diode ring modulator at 218 Hz on the group-5 slap:)* *"and I'll build a preset menu in a moment. But this one would
+> have a randomizer for the carrier between 80 and 400 hertz."*
+
+*(The AI's reading, marked as such: three things. (1) Presets — named starting points for an effect's dials; he will write the
+feedback's own ("I'll build a preset menu"); the AI's six stand until then. (2) The END of a render as a small catalogue: his
+`shape` and the `tail` kept, plus `Env.perc` (the sandbox's grains use it — his memory is right) and Roads's grain envelopes from
+Microsound — gauss · quasi-Gaussian · triangle · expodec · rexpodec — each with a standard length set at the pick and a box to change
+it. (3) A dial as a DISTRIBUTION — a range drawn at every render — so a brick renders a family, not one member; first on the diode's
+carrier. Built as RUNNING_LOG §111.)*
