@@ -1741,3 +1741,24 @@ the state now. The build of 6.1 follows in this same chat, on Opus — as far as
 `sc/` and `tools/` at its root beside its docs, with this piece's commit message. The stand-alone clone pulled `--ff-only`, clean.
 So D7's mechanism holds as written, with the one thing learned in making it (§51): the engine arrives WHOLE, docs and code, and its docs
 are edited here. A second push follows this entry — the every-wrap case. Nothing of the AI's is left running (no sclang, no scsynth).
+
+## §53. WHY HIS REAPER IS ON WASAPI — the record's answer: remote listening, not MIDI (2026-10-04, Opus)
+
+**His words:** *"is it ok to install the latest reaper v7.82"* — and: *"there was a reason we were using waspi I think in order to play and
+record midi in the composer score, how will we reconsile all of it? if this is the case I don't ever need to play and run electronics at
+the same time so just a switch each time I want midi input?"*
+
+**The record, read before answering** (one grep for "WASAPI" across the pieces' docs):
+- `for_seven_tubas/docs/REMOTE_AUDITION.md` (2026-08-12): *"the studio config is ASIO; remote sessions need … Audio system: WASAPI
+  (Shared, Output = Default output device) … Back in the studio, flip back to ASIO."* — and: *"ASIO would bypass CRD."*
+- `septet_2026/docs/RUNNING_LOG.md` (line 1386): *"remote over Chrome Remote Desktop, Reaper switched to WASAPI shared so CRD carries
+  its audio."*
+- Nothing in any piece's record ties WASAPI to MIDI.
+
+**So:** the WASAPI setting is for LISTENING REMOTELY — Chrome Remote Desktop carries only what plays through Windows' shared audio, and
+ASIO goes around it. MIDI is a separate road: the composer score → loopMIDI → Reaper, the same under either audio system; playing in
+and recording MIDI need no switch. **The switch that exists is studio / remote:** at the desk, ASIO — the rack, MIDI in, and the
+electronics over ReaRoute, all at once; over Chrome Remote Desktop, WASAPI — the rack and MIDI, and NO electronics (ReaRoute's channels
+are not offered there). Put to him as the one question: does he need the electronics to sound in remote sessions? If yes it is a
+different route for those sessions, not designed. **On 7.82:** yes — a minor update of version 7 over 7.72; the changelog was not read,
+and he was told so.
