@@ -3129,3 +3129,66 @@ A new `R` brick at the playhead, Behaviour → pattern, picks every sample in th
 **Where it went (THE SORTING):** the parser and the playback the engine's (`electronics/sc/bank.scd`); the panel and the
 generator the engine's page module (`electronics/score/le_objects.js`); nothing in the stack changed; the uses — which brick,
 which pick, which rhythm — in his save. The engine's log has it as its §24. Subtree-pushed at this wrap.
+
+## §98. THE PATTERN BRICK GETS THE DRAWER'S WHOLE RHYTHM MENU — accel · round robin, containers, the dealing, a level ramp (2026-10-05, Fable; DEC-15b; his "a")
+
+**What prompted it — his words, with two screenshots of the Strikes drawer's rhythm part (DEC-15b):** *"Can we get the full menu
+of items seen in image two and then the full functionality of each item? I didn't go through each one, but I know the Excel has a
+lot of different ones, including the round robin capabilities. But mostly to be able to set the gap and then the last. Those were
+ones I used a lot. But let's see if it's not too hard to build the full functionality, just like the in the strikes drawer. And
+if that's onerous, let me know what can be built."* ("the Excel" = the accel.) The AI's assessment: not onerous — the drawer's
+run is a PURE calculator (`score/public/accel_calc.js`, `window.AccelCalc`, no DOM) and the containers a pure roller
+(`time_containers.js`, `window.TimeContainers`); both can be HANDED to the engine's module. Five items have no meaning without
+played notes. The one decision put to him: (A) all of it now · (B) accel and the shapes now, containers later. **His: "a".**
+
+**THE ARCHITECTURE (THE SORTING, held):** the engine's page module may lean on no file of a piece's stack — so it does not
+`require` or load the calculators; the HOST hands them in at attach: `LEObjects.attach(Composer, { …, accel: window.AccelCalc,
+containers: window.TimeContainers, … })` — the one seam line grown by two words (`electronics/docs/SEAMS.md` row 3). A page
+with neither shows the two shapes greyed, `(not in this page)`. The calculators stay ONE file each, the drawer's; nothing copied.
+
+**THE SHAPE MENU, as the drawer's (image two):** unison · even · front-loaded · back-loaded · centre · edges · random (the
+module's own `rhythm()`) · **accel · round robin** · **containers**. A simple shape gives one onset per sample; a RUN has its own
+count of onsets and the samples are DEALT onto them.
+
+**accel · round robin — every dial of image one that means something for samples, under the drawer's own names:** run (even ·
+geometric · curve · S-curve · two-phase · late rush · linear ms — `AccelCalc.SHAPES`, its one dial shown when the shape has one:
+curve · ease · head · power) · **gap (first) · → last** · length by steep / notes / = ms · jitter % → % · hold N gaps · mirror ·
+**level dB → dB, curve** (the drawer's vel ramp, as dB from unity — the engine's sample synth already has `amp`) · deal round robin
+/ free · re-attack ≥ ms. The spec is built exactly as `strike_drawer.js accelSpec()` builds it.
+
+**The dealing (`deal()`, a port of the drawer's U13 for samples):** round robin — every picked sample once per lap, lap 1 in the
+order asked, each later lap a shuffle that keeps the re-attack rule against the known times (every permutation tried for ≤ 7
+samples, 3000 draws above), else the order again, flagged; free — each onset to any sample the rule allows, at random, never the
+one just played while another is free, leaning to the longest wait. **The rule is per SAMPLE** (the same file not struck again
+within N ms), not per player as in the drawer: the electronics has no hands (D14); what the rule guards here is the mechanical
+repeat of one sound. The readout says what happened: laps · shuffled · in order again · ⚠ re-attacks.
+
+**containers:** values × unit s · weights · total s to fill · stick · jump · contour (flat · grow · shrink · open-close ·
+close-open; turn · bow · depth) — the roller's `roll()` + `onsetsMs()`, its `describe()` as the readout; the samples dealt as
+above. Default total 20 s here (the drawer's 60 is long for a brick).
+
+**Common:** = ms · gap (the span as gap × (n − 1)) · jitter ms (not for accel, which has its own %) · order (as named · by
+impulse · shuffled, its OWN seed and a shuffle-order button, as the drawer keeps rSeed and oSeed apart) · seed + reshuffle ·
+generate · reverse (mirrored within the span, the first onset still at 0) · rotate (the gaps turned one more place per click) ·
+reset rhythm. **Left out, no meaning for samples:** as played · span × · amount · drop rests · pitches / re-deal. A brick saved
+before a dial existed gets the dial's default.
+
+**THE MESSAGE grew one field:** `name:atMs:db` when a run has a level; the engine clips it to +12 dB and plays `\amp = db.dbamp`;
+absent = unity. `patternOnsets` and the window line show it.
+
+**THE PROOF — once each side, headless, his engine untouched (D13):**
+- engine: `roll_test.scd` — `"a:0:-6,b:250:3.5,c:500:40"` → a −6.0 dB (amp 0.501) · b 3.5 dB (1.496) · c clipped to 12.0 dB (3.981).
+- page: the module under a stub window with the two calculators `require`d as node modules (both export for node), a fake bank
+  2 × 3: even 2000 → 0 · 400 … 2000 · unison → six at 0 · random reversed / rotated 2 · **accel 100 → 45, steep 0.85 → 6 notes ·
+  5 gaps · 349 ms · steep 0.819 (re-fitted so → last lands)** · 14 notes with re-attack 400 → 3 laps, 2 in order again, 4
+  re-attacks flagged · free with a level 0 → −12 dB → `bfl-3:0:0, bfl-1:100:-1.3 … bfl-1:899.3:-12` · S-curve mirrored, hold 2
+  → 16 notes · containers 1 2 3 × 0.25 s over 4 s → 7 onsets, "4 of 4 s", 2 laps · one sample on 5 notes → 5 laps, 4 flagged ·
+  nothing picked → no onsets, the brick 100 ms, nothing sent.
+- NOT tested: the sound in the running app — his, as he composes.
+
+**HIS, to hear it:** F5 the composer page (the module AND the attach line — no server restart) · close the engine's window and
+`start_electronics.bat` (the level field) · a return brick → Behaviour → pattern → Shape → accel · round robin → gap · → last.
+
+**Where it went (THE SORTING):** the menu, the dealing and the message in the engine's page module (`electronics/score/le_objects.js`,
+405 → 546 lines); the level in the engine (`electronics/sc/bank.scd`); ONE seam line grown in `composer.html` (and SEAMS.md row 3);
+the calculators the stack's, untouched. The engine's log has it as its §25. Subtree-pushed at this wrap.

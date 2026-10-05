@@ -17926,7 +17926,7 @@ document.addEventListener('change', (e) => {
 // PLAN 1.1 · 6.3 … 6.5 (2026-10-04): THE ELECTRONICS' BRICKS — this piece's part of it: its keys (M a mic opening · R a return),
 // its player lanes, and how a lane is known to be one of the engine's players (the MIDI port of the lane's instrument, which
 // bank/elec_route.json lists). Before init, so the first drawing of a loaded score already has the bricks' labels.
-if (window.LEObjects) LEObjects.attach(Composer, { keys: { open: 'm', play: 'r' }, lanes: META_LAYER, indexUrl: '/bank/samples/index.json',
+if (window.LEObjects) LEObjects.attach(Composer, { keys: { open: 'm', play: 'r' }, lanes: META_LAYER, indexUrl: '/bank/samples/index.json', accel: window.AccelCalc, containers: window.TimeContainers,   // §98: the two calculators the pattern brick may use
     portOf: (l) => (Composer.trackInstrument(l) || {}).port, laneLabel: (l) => (TRACKS[l] || {}).short || ('lane ' + l) });
 document.addEventListener('DOMContentLoaded', () => Composer.init());
 </script>

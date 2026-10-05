@@ -358,3 +358,14 @@ phase 2 (running order step 10) is where it goes, unless he calls it sooner.
 > but might want to include a smaller subset. Anyways, give me some analysis about how we might do this. So in other words, the
 > current zone that just plays uh, flocking, I still want that option, but I can also change the way that zone plays all those
 > samples, the rhythm."*
+
+### DEC-15b · 2026-10-05 — THE PATTERN BRICK: the Strikes drawer's WHOLE rhythm menu, "mostly to be able to set the gap and then the last" (two screenshots of the drawer's rhythm part, the accel panel and the shape menu)
+> *"Can we get the full menu of items seen in image two and then the full functionality of each item? I didn't go through each
+> one, but I know the Excel has a lot of different ones, including the round robin capabilities. But mostly to be able to set the
+> gap and then the last. Those were ones I used a lot. But let's see if it's not too hard to build the full functionality, just
+> like the in the strikes drawer. And if that's onerous, let me know what can be built."* — and, to (A) all of it now / (B) accel
+> and the shapes now, containers later: *"a"*.
+
+*(The AI's reading: "the Excel" = the accel · round robin. Built the same day, RUNNING_LOG §98 — the drawer's calculators handed
+to the engine's module through its seam; five items left out as meaningless for samples: as played · span × · amount · drop
+rests · pitches / re-deal.)*
