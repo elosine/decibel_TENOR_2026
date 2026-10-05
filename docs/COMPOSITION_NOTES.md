@@ -327,3 +327,16 @@ impulse four" read as the fifth group; his to correct.
   onset probe (boot.scd); a "sustain gone" probe is its mirror.
 - The pedals of resonance are a resonant filter bank with much feedback (DEC's phase 2, step 10); for the long tones he wants
   something ELSE — to be designed when the music reaches them; the crop's attack is the obvious exciter.
+
+### DEC-14 · 2026-10-05 — A WORKSHOP ON MODIFIED VERSIONS OF THE IMPULSE SAMPLES · then the engine makes a few modified versions in the background, once a sample is stored
+
+> *"composition note. Do a workshop to have slightly modified versions of the impulse samples. And so we would listen to some of
+> the impulses and then try to do some mod versions of them. And then have the engine do something like once it gets stored in,
+> then in the background, we generate a few modified versions to use."*
+
+*The AI's reading, marked as such:* two steps — first a LISTENING workshop (his ear, a few impulses, hand-made variants: the
+engine plan's part 6 processing is where the means live — pitch, time, filter, envelope, grain, reverse …), then the rule that
+comes out of it goes into the engine's capture path: after a sample is banked, the background renders N variants under names of
+their own (`<name>-v1 …`), ready for the behaviours to pick as "which of the player's samples". DEC-2 already imagined
+section 2's after-effects rendered in the background from section 1's bank; this is its first concrete shape. Not built;
+phase 2 (running order step 10) is where it goes, unless he calls it sooner.
