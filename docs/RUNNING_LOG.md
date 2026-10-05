@@ -3027,3 +3027,14 @@ five openings `<player>-impulse-5`, five returns `* ~ chain` starting at each li
 (17 samples × 0.5 s); the engine resolves `*` at playback to every sample it holds (§89), shuffled (I), chained (H). His pitches
 and voices kept. More notes lie beyond (bass drum 28.9 · viola 30.4 · bass flute 31.5 …) — a sixth group in the making, untouched.
 **His:** Reload · restart the engine (§92's bands) · play from 0 — at each impulse 5 the live note, then the whole bank.
+
+## §94. "NO CHAIN IN GR 5" — `*` was scrubbed to nothing before the check for it; the names' resolution is one function now, proven headless (2026-10-05, Fable)
+
+**The cause, read in the code:** `samplePlay` built a chain's list as `names.split(",").collect(safeName).reject(empty)` and THEN
+asked `list.includes("*")` — but `safeName` keeps only letters, digits, `_` and `-`, so `"*"` had already become `""` and been
+rejected: an empty list, no links, silence. (§89's `*` edit never ran against a real message — D13's "no testing"; the headless
+roll test of §91 tested `chainRoll`, not this line.) **The fix:** `~le.chainNames(names)` — `"*"` is looked for in the RAW
+split, before the scrub, and becomes every sample the bank holds (`self[\samples].keys`, sorted); anything else is scrubbed as
+before. `samplePlay` calls it; the var order kept (§90). **A second trap the test caught:** an Array's includes() compares by IDENTITY in SuperCollider — two equal Strings are never the same object — so the star was not found until compared by content (any({ |x| x == "*" })). **The proof, headless (`roll_test.scd`, four cases):** `"a,b,c"` →
+`[a, b, c]` · `"*"` → the three stubbed samples · `"a,*"` → the three (the star wins) · `""` → `[]`. **His:** restart the engine ·
+play from 0 — at each impulse 5 the live note, then the whole bank.
