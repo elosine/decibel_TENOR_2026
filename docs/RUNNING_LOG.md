@@ -2908,3 +2908,15 @@ bank's loading — is not pinned down; the fix does not depend on it.) **The fix
 **A slip of the AI's, for the record:** the first attempt at this commit (`001379d`) carried the engine's lab note §19 and his
 captures, but NOT the code — an edit's anchor failed and a heredoc broke the command chain; the code and this entry follow in
 the next commit. The engine's repo took §19 a commit early.
+
+## §85. IMPULSE 3 PLACED — his five notes tagged, opened, and chained (2026-10-05, Fable; his word "3rd group of 5 are done")
+
+His five, the earliest untagged note on each player's lane after impulse 2, read from his save (10:27:58): percussion
+(china cymbals scrape, key 60) 11.222 · bass flute (voice breathing fourth, 61) 12.182 · viola (sul ponticello spiccato, 62)
+13.373 · cello (col legno, 44) 14.942 · bass clarinet (secco, 52) 16.353 — `bank/impulses.json` row 3, `node tools/impulse.js
+--score piece-sec01-a --n 3`: five openings `<player>-impulse-3`, five chain returns `<player>-impulse-1 + <player>-impulse-2 ~
+chain` starting at each live note, one second long (two links). His pitches and voices kept (§79's rule). **The tool's refusal
+refined (§85):** the page's working copy was newer than his save by a minute and IDENTICAL in its objects — nothing unsaved —
+so the tool now compares the two and refuses only when the copy holds something the save does not; it says so and asks for a
+Reload after. **Pending him:** Reload · F5 (if not yet) · the engine restarted (the chain, the index fix) · a pass from 0: at each
+impulse 3 three onsets — the live note, then its two samples in a rolled order.

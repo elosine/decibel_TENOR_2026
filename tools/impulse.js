@@ -16,7 +16,14 @@ const N = String(arg('n', '1')), NAME = arg('score', '');
 if (!NAME) { console.error('which score?  --score piece-sec01-a'); process.exit(2); }
 const FILE = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT, FILE)); process.exit(2); }
-if (fs.existsSync(path.join(ROOT, 'scores', NAME + '-work.json'))) { console.error('the page holds a working copy of ' + NAME + ' — Save (CTRL+S) or Reload there first'); process.exit(3); }
+{   // the page's working copy: a refusal only when it holds something the save does not (§85: identical = nothing unsaved)
+  const WORK = path.join(ROOT, 'scores', NAME + '-work.json');
+  if (fs.existsSync(WORK)) {
+    let same = false; try { same = JSON.stringify(JSON.parse(fs.readFileSync(WORK, 'utf8')).objects) === JSON.stringify(JSON.parse(fs.readFileSync(FILE, 'utf8')).objects); } catch (e) { same = false; }
+    if (!same) { console.error('the page holds a working copy of ' + NAME + ' with UNSAVED changes — Save (CTRL+S) or Reload there first'); process.exit(3); }
+    console.log("(the working copy is identical to the save: nothing unsaved; Reload in the page after this)");
+  }
+}
 
 const INSTRUMENTS = vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'sandbox', 'instruments.js'), 'utf8') + '\n;INSTRUMENTS;', {});
 const html = fs.readFileSync(path.join(ROOT, 'score', 'public', 'composer.html'), 'utf8');
