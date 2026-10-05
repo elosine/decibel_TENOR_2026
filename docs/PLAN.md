@@ -313,7 +313,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   one of each kind through the rack on a scratch bank, drawn on http://localhost:5500/crop_test/report.html. Six of seven cropped; the impulses
   keep 0.7 … 1.0 s (the room — his ear sets `endDb`); the flute's slap awaits his Reaper restart (ReaRoute wedged by a killed engine — now the
   tools leave gracefully, `/le/leave`).
-- **8.5 The first five captured — `doing`: HIS FIVE STEPS DONE 2026-10-05 — FOUR OF FIVE captured (bcl · perc · va · vc; RUNNING_LOG §72); `bfl-impulse-1` did NOT — its window is digital silence (SWEEP_LIST #3, open: measure, do not guess). As written:** CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0.
+- **8.5 The first five captured — `doing`: HIS FIVE STEPS DONE 2026-10-05 — FOUR OF FIVE captured (bcl · perc · va · vc; RUNNING_LOG §72); the bass flute's is NOT in the index — a window of zeros, then a short one, then a sample file written with no row (SWEEP_LIST #3, open, not diagnosed; RUNNING_LOG §73). As written:** CTRL+S in Reaper · restart Reaper · `start_electronics.bat` · Reload the score · play from 0.
   Done when the five samples are in `bank/samples/` with their rows and he has heard one returned (`R`).
 
 ## 2. Notate — `todo`

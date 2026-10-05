@@ -2620,3 +2620,30 @@ doubt. `docs/SWEEP_LIST.md` #3; the measuring order is journal §2's checkpoint 
 
 **State at the checkpoint:** committed and pushed — the four samples and the index, his rack with the sends, his score and its frozen version,
 the docs. Nothing deliberately uncommitted. His engine is UP. Resume on Opus.
+
+## §73. CORRECTION OF §72 — he was playing as the checkpoint was written: the flute's sample file is written, its row is not (2026-10-05, Opus)
+
+§72 said the bass flute "did not capture". It was written at 08:27; by the time its commit ran (08:30) he had made two more passes and the bank
+had moved. The facts, read from the files' times and contents (the engine's own window was not seen):
+
+| pass | what the bank shows |
+|---|---|
+| 08:25:09 … 12 | bcl · perc · va · vc captured (§72's table); the flute's result unknown — its raw was overwritten |
+| 08:27:26 | the flute's raw `zn-47.wav`: 598 ms, exact zeros |
+| 08:28:58 | the cello re-taken: 374.9 ms, −22.5 dB |
+| 08:29:23 … 27 | the flute's raw: 265 ms, peak −36.9 dB — and `bank/samples/bfl-impulse-1.wav` WRITTEN (243 ms, −36.9 dB) with NO ROW in the index (last written 08:29:26: vc · bcl · perc · va) · bcl 375.6 ms −26.7 dB · perc 396.8 ms −14.5 · va 388.7 ms −20.8 re-taken · the cello's raw exact zeros, its 08:28:58 take kept |
+
+Between passes he raised the percussion's and the viola's notes to velocity 127 (`wc-21` · `wc-22`) and saved.
+
+**What this is and is not — two separate things.** (a) A window of exact zeros (the flute 08:27, the cello 08:29) and a window 265 ms long where
+the brick is 500: nothing of that player reached the engine during the window, or the window was not the whole brick. What those passes were
+is his to say; no cause is claimed. (b) A cropped sample written without its row: `captureDone` writes the file, then builds and adds the row,
+then writes the index — and a row once added stays for the engine's life (only a capture of the same name replaces it). So the row was never
+added: the language stopped between the two writes, and his engine window would show it. The safety net (§71) is seen doing its work once: the
+cello's silent window left its earlier take in place.
+
+**The record corrected:** journal §2's checkpoint block (the fault's facts; the next step now begins by ASKING him), `SWEEP_LIST` #3, PLAN.md
+8.5, CLAUDE.md's state line. The orphan `bfl-impulse-1.wav` is committed as the engine left it — evidence; the next pass overwrites it.
+
+**A note on checkpoints:** a save-point taken while he composes cannot be clean — the bank re-records at every pass. The journal says so now: a
+dirty bank or score after the commit is his live work, committed at the next wrap, never discarded.

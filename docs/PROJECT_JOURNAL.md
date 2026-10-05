@@ -179,32 +179,39 @@ further down disagree with this block, THIS BLOCK WINS.**
 - **THE TASK AND ITS STATE:** running order step 8, the mic opening in the music (PLAN.md § 1.2). Impulse 1 is placed; the five microphones are
   routed AND SAVED in the rack (his CTRL+S, 07:54); the engine has its modes (`compose` now); the crop is tested on six kinds. **His five hand
   steps are DONE: he played `piece-sec01-a` from 0 with the engine up — FOUR OF FIVE impulses captured** (08:25): `bcl-impulse-1` 368 ms −26.0 dB ·
-  `perc-impulse-1` 392 ms −12.4 · `va-impulse-1` 383 ms −20.8 · `vc-impulse-1` 378 ms −20.8, in `bank/samples/` with their rows. He froze the score
+  `perc-impulse-1` 392 ms −12.4 · `va-impulse-1` 383 ms −20.8 · `vc-impulse-1` 378 ms −20.8, in `bank/samples/` with their rows (the first pass's numbers — re-taken since: the latest take wins, the index has them). He froze the score
   as `piece-sec01-a-vfirst_samples`.
-- **THE OPEN FAULT — `bfl-impulse-1` DID NOT CAPTURE (SWEEP_LIST #3):** no row, no sample; its raw window `bank/samples/raw/zn-47.wav` is 598 ms of
-  DIGITAL SILENCE (exact zeros), written 08:27:26 — a second pass, two minutes after the other four. Known, and NOT a diagnosis: the same send
-  carried a flute long tone to the engine at −30.3 dB in the crop test (before his Reaper restart); a slap at G4 from outside read −20.6 dB on
-  the track's own meter; the crop test's flute SLAP was silent twice, explained in §71 by a stuck note of the tool's making — that explanation
-  was never verified at the engine and is now in doubt.
+- **THE OPEN FAULT — THE BASS FLUTE'S IMPULSE IS NOT IN THE INDEX (SWEEP_LIST #3). He was playing passes while this checkpoint was written; the
+  facts across them (RUNNING_LOG §72 · §73) — NOT a diagnosis:**
+  · 08:25 — bcl · perc · va · vc captured; the flute's result unknown (its raw was overwritten).
+  · 08:27:26 — the flute's raw window `bank/samples/raw/zn-47.wav`: 598 ms of exact zeros.
+  · 08:28:58 — the cello re-taken.
+  · 08:29:23 … 27 — the flute's raw only 265 ms long, peak −36.9 dB; **a cropped `bank/samples/bfl-impulse-1.wav` (243 ms) WAS WRITTEN AND NO
+    ROW FOLLOWED IT INTO THE INDEX** — the page cannot offer it, a return cannot play it; bcl · perc · va re-taken; the cello's raw exact zeros
+    (its 08:28:58 take kept — the safety net at work).
+  TWO THINGS TO EXPLAIN, kept apart: **(a)** windows of exact zeros and one short window — what those passes WERE (stopped early? started inside
+  a brick?) is his to say; **(b)** a sample file written without its row — the ENGINE's: `captureDone` in `electronics/sc/bank.scd` writes the
+  file, then builds the row, then the index; his engine window will show an `ERROR` near 08:29:23 if the language threw between them. §71's
+  "stuck note" reading of the crop test's silent flute slap was never verified at the engine.
 - **THE LATEST DELIVERABLES:** `tools/impulse.js` + `bank/impulses.json` · `node tools/elec.js croptest` + `bank/crop_test.json` +
   `electronics/tools/crop_report.js` → http://localhost:5500/crop_test/report.html · the modes (`electronics/sc/bank.scd` · `session.scd` ·
   `bank/elec_route.json` `mode`) · the one bar (`score/public/composer.html`) · the four samples.
-- **THE NEXT CONCRETE STEP — MEASURE THE FLUTE, DO NOT GUESS** (he corrected a guessed cause once this session, §69 → §70):
-  1. `node tools/elec.js probe` — look only: is `bfl = Bass Flute XS … sends to hardware: ReaRoute 2` there after his restart?
-  2. The track's own sound, no hands: copy `reaper/bridge/jobs/sustain_watch.lua` to the scratchpad with its `local NAME, WATCH_S, STEP_S` line
-     set to `'Bass Flute XS', 3.0, 0.1`; `node tools/reaper_job.js run <copy>`; at once `powershell -NoProfile -File tools/note_to_port.ps1
-     -Port DECBassFlute -Note 67 -Channel 1 -Vel 100 -Ms 150 -Cc0 6`; read `%APPDATA%/REAPER/bridge/outbox/sustain.json` (about −20 dB = it sounds).
-  3. The engine's half needs HIS ENGINE DOWN (the tools refuse beside it): ask him in ONE line to close the engine window, then `node tools/elec.js
-     croptest --only impulse-bfl-slap` and `--only long-bfl-vib` — a scratch bank; the two rows say whether the flute reaches the engine, and
-     close the crop table.
-  4. Only if 2 and 3 are sound: what the PAGE sends for lane 0 — his engine window prints a line per opening (`open · bfl · bfl-impulse-1 ·
-     500 ms`, or `the engine has no such player`).
+- **THE NEXT CONCRETE STEP — ASK FIRST, THEN READ, THEN MEASURE; NEVER GUESS** (he corrected a guessed cause once this session, §69 → §70):
+  1. ASK HIM, ONE LINE: how he played those passes (from 0 to the end? stopped after a note? started mid-score?), and whether his engine window
+     shows an `ERROR` around 08:29:23 — or to paste its last 30 lines. That answers more than any probe.
+  2. READ: `captureDone` (`electronics/sc/bank.scd`) — what can throw between the sample's `wavWrite` and `indexRows.add(row)` for a 265 ms raw on
+     lane 0; and how `electronics/score/le_objects.js` sizes an opening's `lengthMs` · `dueMs` when playback starts inside its brick.
+  3. With HIS ENGINE DOWN (one line to him — the tools refuse beside it): reproduce on a scratch bank — `node tools/elec.js croptest --only
+     impulse-bfl-slap` (give that kind `"windowMs": 170` in `bank/crop_test.json` to mimic the short window), then `--only long-bfl-vib`.
+  4. Only if needed, the track's own sound with no hands: a scratchpad copy of `reaper/bridge/jobs/sustain_watch.lua` with its `local NAME,
+     WATCH_S, STEP_S` line set to `'Bass Flute XS', 3.0, 0.1`; `node tools/reaper_job.js run <copy>`; at once `powershell -NoProfile -File
+     tools/note_to_port.ps1 -Port DECBassFlute -Note 67 -Channel 1 -Vel 100 -Ms 150 -Cc0 6`; read `%APPDATA%/REAPER/bridge/outbox/sustain.json`.
   **WHILE HIS ENGINE IS UP: only `probe` · `meters` · `ping`.** One proof of the fix, then stop (D13).
 - **`Resume reads:` nothing beyond this §2.** (RUNNING_LOG §71 item 4 only if an engine will not boot; §70 only for how a fault was measured.)
 - **PENDING HIM, when he offers them:** his ear on the four samples and on a return (`R`) · the impulses' LENGTH — they are ~370 … 390 ms because
   the 500 ms window ends them (§72); the crop test's 4 s windows kept 0.7 … 1.0 s (a longer brick, or `endDb`) · impulse 2's dictation (a row in
   `bank/impulses.json`, then `node tools/impulse.js --score <name> --n 2`) · everything on S1's pending line below.
-- **DELIBERATELY UNCOMMITTED: nothing.** Outside git by design: `bank/samples/raw/` · `bank/backup/raw/` · `bank/live/` · `score/public/crop_test/` ·
+- **DELIBERATELY UNCOMMITTED: nothing at the commit — but HE IS AT WORK in the page as this is written: the bank re-records at every pass and he saves the score as he goes, so whatever `git status` shows after this commit (`bank/samples/*` · `scores/piece-sec01-a.json`) is his LIVE WORK — commit it at the next wrap, never discard it.** Outside git by design: `bank/samples/raw/` · `bank/backup/raw/` · `bank/live/` · `score/public/crop_test/` ·
   `reaper/Media/*.wav` · `reaper/kontakt/out/`. The engine's repo is in step (`e03438c`; nothing in `electronics/` changed since).
 - **LEFT RUNNING — ALL HIS:** Reaper on the rack (restarted, saved) · the score server on 5500 · **his engine, UP, five players** · loopMIDI. A
   `testkit/server.js` node process is on the machine — not this session's. Nothing of the AI's. **Changed by the AI and left so:** Reaper's "close
