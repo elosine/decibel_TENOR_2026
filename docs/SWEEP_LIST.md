@@ -10,3 +10,4 @@ gives verdicts once; ONE global fix follows. A line is closed here only when the
 
 | # | Date | Where | What I did | What happened | Expected | Blocking |
 |---|---|---|---|---|---|---|
+| 1 | 2026-10-04 | the composer score, its bars | opened the page to compose (session 2) | the bottom bar ran off the right edge (buttons unreachable), its two-word buttons stuck up into the last lane, four panel tabs stood over the score, the top bar wrapped to two rows with the status text across it | every control reachable; nothing over the score; as little vertical space as possible | Y — **CLOSED the same day:** one 24 px bar with three menus, verified on the throwaway 5501 (RUNNING_LOG §67) |

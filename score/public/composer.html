@@ -33,34 +33,38 @@
         animation: inputCommitFlash 0.45s ease-out;
     }
 
-    /* Top bar */
-    /* LGMF 2026-09-24 (RUNNING_LOG §315 — his "move that passages menu over … because I can't select the solo for English horn"): the bar
-       WRAPS on a window narrower than its controls; it was a fixed 32 px, so the wrapped lines hung over the first lane's label and solo.
-       Now it GROWS (min-height) and the lanes start below its real bottom (--barH, set by fitTopBar). */
-    #topBar { flex-wrap: wrap; row-gap: 3px; font-size: 11px;
-        position: fixed; top: 0; left: 0; right: 0; min-height: 32px; box-sizing: border-box; z-index: 100;
+    /* Top bar — THE ONE BAR (2026-10-04, RUNNING_LOG §67; his word: "I don't need two bars … a very quick and expedient redesign that uses
+       as little vertical space as possible, maybe smaller buttons, maybe pull down menus"). Every control of the page is here: the bottom
+       bar's controls moved up whole, ids unchanged; three MENUS — File · Insert · Panels — are plain <select>s whose option presses the
+       button of that id, kept in the bar HIDDEN (#barHidden), so every key (T · C · B · M · R · CTRL+S) and every panel works as before.
+       11 px — one row at his width. It still WRAPS on a narrower window and the lanes start below its real bottom (--barH, set by
+       fitTopBar — LGMF 2026-09-24, RUNNING_LOG §315, which is why nothing can hang over the first lane). */
+    #topBar { flex-wrap: wrap; row-gap: 2px;
+        position: fixed; top: 0; left: 0; right: 0; min-height: 24px; box-sizing: border-box; z-index: 100;
         background: #f5f5f5; border-bottom: 1px solid #ccc;
-        display: flex; align-items: center; padding: 3px 12px; gap: 10px; font-size: 12px;
+        display: flex; align-items: center; padding: 2px 8px; gap: 4px; font-size: 11px;
     }
-    #topBar label { color: #666; }
-    #topBar input[type="text"] { border: 1px solid #ccc; padding: 2px 6px; font-size: 12px; width: 140px; }
-    #topBar select { border: 1px solid #ccc; padding: 2px 4px; font-size: 12px; width: 160px; }
-    #topBar button { border: 1px solid #ccc; background: #fff; padding: 2px 8px; font-size: 12px; cursor: pointer; }
+    #topBar label { color: #666; font-size: 10px; }
+    #topBar input[type="text"] { border: 1px solid #ccc; padding: 1px 4px; font-size: 11px; width: 80px; }
+    #topBar input[type="number"] { border: 1px solid #ccc; padding: 1px 3px; font-size: 11px; width: 50px; }
+    #topBar select { border: 1px solid #ccc; padding: 1px 2px; font-size: 11px; max-width: 120px; background: #fff; }
+    #topBar button { border: 1px solid #ccc; background: #fff; padding: 1px 4px; font-size: 11px; cursor: pointer; white-space: nowrap; }
     #topBar button:hover { background: #eee; }
-    /* the status keeps ONE share of the bar whatever its text (a 36em basis — about the old status's usual width — the line's spare room on top of it, the rest cut with … and
-       the whole text on hover) — so a long message can never add a line to the bar and make the lanes jump (§315) */
-    #saveStatus { color: #999; font-size: 11px; flex: 100 1 36em; min-width: 6em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* a menu is as wide as its TITLE, not its longest option (a select sizes itself by the longest option; the open list still shows every option whole) */
+    #topBar .barMenu { font-weight: 600; background: #eef2f6; border-color: #b8c2cc; }
+    #menuFile { width: 58px; } #menuInsert { width: 68px; } #menuPanels { width: 72px; }
+    #topBar .barGap { flex: none; width: 1px; height: 14px; background: #d4d4d4; margin: 0 2px; }
+    #barHidden { display: none !important; }
+    /* the status shows only what is NOT the resting state — "Ready", "working copy of …", "unsaved edits · autosaved …" (his word: that text
+       gone) — a save, an error, a key hint; the observer in init() sets .rest. No share of the row, cut with … past 30em, whole on hover. */
+    #saveStatus { color: #777; font-size: 10px; flex: 0 1 auto; max-width: 30em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #saveStatus.rest { display: none; }
+    #buildTag { display: none; }
     #timeDisplay { color: #333; font-weight: bold; font-size: 13px; font-family: 'Consolas', monospace; margin-left: auto; }
 
-    /* Bottom bar (reserved for future controls) */
-    #bottomBar {
-        position: fixed; bottom: 0; left: 0; right: 0; height: 32px; z-index: 100;
-        background: #f5f5f5; border-top: 1px solid #ccc;
-    }
-
-    /* Lane container */
+    /* Lane container — the whole height under the bar; the bottom bar is gone (2026-10-04) */
     #laneContainer {
-        position: absolute; top: var(--barH, 32px); left: 0; right: 0; bottom: 32px;
+        position: absolute; top: var(--barH, 24px); left: 0; right: 0; bottom: 0;
     }
 
     /* Individual lanes */
@@ -177,23 +181,11 @@
        just all in the big font right next to each other"). */
     #floatingTime .ftZoom { display: none; color: #2a6faa; }
 
-    /* Bottom bar controls */
-    #bottomBar {
-        display: flex; align-items: center; padding: 0 12px; gap: 8px; font-size: 12px;
-    }
-    #bottomBar label { color: #666; }
-    #bottomBar input[type="number"] { border: 1px solid #ccc; padding: 2px 4px; font-size: 12px; width: 60px; }
-    #bottomBar select { border: 1px solid #ccc; padding: 2px 4px; font-size: 12px; }
-    #bottomBar button { border: 1px solid #ccc; background: #fff; padding: 2px 8px; font-size: 12px; cursor: pointer; }
-    #bottomBar button:hover { background: #eee; }
-    /* 2026-09-24, his word ("so I can reach the buttons under the panel ones"): the four panel tabs sit JUST ABOVE the bottom bar,
-       side by side (measured widths: strikes 88 · beating 101 · sequence 131 · rhythm 115 px, 10 px apart) — they were on top of
-       the bar's buttons and SEQUENCE sat under BEATING. !important because each panel writes its tab's inline style. */
-    #strikesTab, #beatingTab, #sequenceTab, #rhythmSeqTab { bottom: 34px !important; }
-    #strikesTab { right: 14px !important; }
-    #beatingTab { right: 112px !important; }
-    #sequenceTab { right: 223px !important; }
-    #rhythmSeqTab { right: 364px !important; }
+    /* 2026-10-04, his word ("get rid of the tabs … nothing should be jutting out into the score itself"): the four panel TABS — RHYTHM ·
+       SEQUENCE · BEATING · STRIKES — that stood over the old bottom bar are GONE; each panel has its button, reached through Panels ▾.
+       !important because each panel writes its tab's inline style and shows the tab again when it closes. (The bottom bar itself is gone
+       too — its controls are in the one top bar.) */
+    #strikesTab, #beatingTab, #sequenceTab, #rhythmSeqTab { display: none !important; }
 
     /* Floating property panel */
     #propertyPanel {
@@ -350,28 +342,118 @@
 </head>
 <body>
 
-<!-- Top Bar -->
+<!-- Top Bar — THE ONE BAR (2026-10-04, RUNNING_LOG §67; his word: "I don't need two bars … as little vertical space as possible … maybe pull down
+     menus"). The old bottom bar's controls are here, ids unchanged. Three MENUS (File · Insert · Panels — the <script> after the bar) press the
+     buttons kept in #barHidden. The panel buttons the modules add — Morph · Texture · Pulse · MT · Strikes · Sequence · Rhythm — anchor
+     themselves after #blastsBtn, which sits in #barHidden, so they land hidden too and are reached through Panels ▾ (the ids are the same;
+     no module changed). The passages group (passages.js) appends itself to the bar's end. The bar wraps on a narrow window and the lanes
+     start below its real bottom (--barH, fitTopBar, §315). -->
 <div id="topBar">
-    <label>Session:</label>
-    <input type="text" id="sessionName" value="decibel" />
-    <button id="saveBtn" title="Save (CTRL+S): write the file. Until then your edits live only in the working copy.">Save</button>
-    <button id="versionBtn" title="Name version: save the file AND freeze a copy under a label you choose (1.5 &#8594; name-v1.5). A frozen copy is never overwritten.">Name version</button>
-    <button id="reloadBtn" title="Reload: drop the unsaved edits and go back to the file as last saved.">Reload</button>
-    <button id="restoreBtn" title="Restore: make a named version the file again. The file as it is now is frozen first (…-before-restore), the unsaved edits are dropped.">Restore…</button>
-    <button id="hintBtn" title="show / hide the save rules" style="padding:2px 6px">?</button>
-    <span style="opacity:.35">&#9474;</span>
-    <span style="color:#888; font-size:11px">open:</span>
-    <select id="pieceSelect" title="the piece: every piece-* save and its named versions - opens a working copy"><option value="">-- Piece --</option></select>
-    <select id="loadSelect" title="everything else: experiments and their named versions - opens a working copy"><option value="">-- Experiments --</option></select>
+    <input type="text" id="sessionName" value="decibel" title="the session — the file's name" />
+    <select id="menuFile" class="barMenu" title="the file: Save (CTRL+S) · Name version · Reload · Restore… · the save rules"></select>
+    <select id="pieceSelect" title="the piece: every piece-* save and its named versions - opens a working copy"><option value="">Piece ▾</option></select>
+    <select id="loadSelect" title="everything else: experiments and their named versions - opens a working copy"><option value="">Experiments ▾</option></select>
     <button id="loadBtn" style="display:none">Load</button>
-    <span style="opacity:.35">&#9474;</span>
-    <span id="saveStatus">Ready</span>
-    <span id="buildTag" style="color:#7a8; font-size:11px" title="code build loaded in this page">b37-save</span>
-    <span style="flex:1 1 auto"></span>
+    <span class="barGap"></span>
+    <select id="menuInsert" class="barMenu" title="put something in the score: a marker · a zone · a trill (T) · a crescendo (C) · a line wedge · the chosen motive · the chosen stamp → META · the insertion strip · clear all"></select>
+    <select id="motiveSelect" title="the motive that Insert ▾ → Place the chosen motive puts at the playhead"><option value="">— motives —</option></select>
+    <select id="stampSelect" title="the shape that Insert ▾ → Stamp puts on the META window">
+        <option value="arch">Arch</option>
+        <option value="surge">Surge</option>
+        <option value="bloom">Bloom</option>
+        <option value="line">Line</option>
+        <option value="saw">Sawtooth</option>
+        <option value="container-build">▣ Container: Density Build</option>
+    </select>
+    <span class="barGap"></span>
+    <select id="menuPanels" class="barMenu" title="the panels: Strikes · Sequence · Rhythm · Beating (B) · Morph · Texture · Pulse · Multitempo"></select>
+    <span class="barGap"></span>
+    <button id="metaBtn" title="Show/hide the META draw window — the gestures' shapes and the stamps">META</button>
+    <button id="curveBtnA" title="Show/hide curve window A (over Mallets)">A</button>
+    <button id="curveBtnB" title="Show/hide curve window B (over Viola)">B</button>
+    <button id="curveBtnC" title="Show/hide curve window C (over Cello)">C</button>
+    <span class="barGap"></span>
+    <input type="number" id="wcStartInput" value="0" step="0.01" min="0" placeholder="start" title="Start (s) of the curve Draw Curve draws" />
+    <input type="number" id="wcEndInput" value="10" step="0.01" min="0" placeholder="end" title="End (s) of the curve Draw Curve draws" />
+    <select id="wcLayerSelect" title="the track Draw Curve draws on">
+        <option value="0" selected>Bass Flute</option>
+        <option value="1">Bass Clar.</option>
+        <option value="2">Percussion</option>
+        <option value="3">Mallets</option>
+        <option value="4">Viola</option>
+        <option value="5">Cello</option>
+        <option value="6">META</option>
+    </select>
+    <button id="wcDrawBtn" title="draw a curve from Start to End on the Track chosen here">Draw Curve</button>
+    <button id="drawBtn" title="Freehand on the META window">&#9998; Draw</button>
+    <button id="pointsBtn" title="Points: click in an open curve window to place a dot; with a curve selected the dots continue it (ESC ends)">&#10002; Points</button>
+    <button id="fillBtn" title="Fill: draw the line through the dots — new dots with nothing selected become a new curve; dots placed on a selected curve extend it">Fill</button>
+    <select id="fitSelect" title="how closely Fill follows the dots">
+        <option value="0.015">Fit: light</option>
+        <option value="0.03" selected>Fit: medium</option>
+        <option value="0.06">Fit: heavy</option>
+    </select>
+    <span class="barGap"></span>
+    <select id="recLaneSel" title="record target part"></select>
+    <select id="recTechSel" title="capture technique"></select>
+    <button id="recBtn" title="Capture played notes into the target lane (play the score to record against the scroll)">&#9210; Rec</button>
+    <span class="barGap"></span>
+    <button id="panicBtn" title="Panic: silence everything — an explicit note-off on every key of every channel of every port, the bends centred, CC7 back to 127 (a trapped note)" style="color:#b00;font-weight:bold">&#9632; Panic</button>
+    <button id="cc7ResetBtn" title="All-notes-off + CC7=127 on every port/channel">CC7 Reset</button>
     <button id="conflictBadge" title="playability: notes double-booked on one player (red) or too close to re-attack (amber). Click to resolve." style="display:none; background:#4a1414; color:#ff8080; font-family:Consolas,monospace">&#9888; 0</button>
     <button id="conflictMarksBtn" title="show or hide the conflict boxes drawn over the notes (the count stays either way)" style="display:none">marks on</button>
-    <button id="blastsBtn" title="insertion strip: pick a source, flip through a list, audition, insert at the playhead">Insertion</button>
+    <span id="saveStatus" class="rest">Ready</span>
+    <span id="buildTag" style="color:#7a8; font-size:11px" title="code build loaded in this page">b38-onebar</span>
+    <!-- the buttons the menus press — hidden, never removed: every key and every handler is theirs -->
+    <span id="barHidden">
+        <button id="saveBtn" title="Save (CTRL+S): write the file. Until then your edits live only in the working copy.">Save</button>
+        <button id="versionBtn" title="Name version: save the file AND freeze a copy under a label you choose (1.5 &#8594; name-v1.5). A frozen copy is never overwritten.">Name version</button>
+        <button id="reloadBtn" title="Reload: drop the unsaved edits and go back to the file as last saved.">Reload</button>
+        <button id="restoreBtn" title="Restore: make a named version the file again. The file as it is now is frozen first (…-before-restore), the unsaved edits are dropped.">Restore…</button>
+        <button id="hintBtn" title="show / hide the save rules">?</button>
+        <button id="markerBtn">Add Marker</button>
+        <button id="zoneBtn">Add Zone</button>
+        <button id="trillBtn" title="Add Trill (T): over the selected curve, from the selected note (its pitch, 4 s — the note becomes the attack), or 4 s from the playhead on the active lane. Then click an interval to hear it and take it.">Add Trill</button>
+        <button id="crescBtn" title="Crescendo (C): on the selected note(s) — the standard surge, ending 0.17 s before that player&#39;s next sound (5 s when there is none), ppp → fff, secco, at the player&#39;s ordinary voice; the note itself goes grey and comes back if the crescendo is deleted. With nothing selected it takes the next pitch of the harmony bar on the active lane. A card opens on it — the range, the duration, the articulation, the secco tick; ENTER keeps, ESC removes, a click on any crescendo reopens it.">Crescendo</button>
+        <button id="beatingBtn" title="Beating (B on a strike note makes one there): the panel — a pattern of up to three pairs, the mirrored rate curves with handles, the crescendo and breath lanes, SPACE plays it; P on a selected beating opens it bound to that one">Beating</button>
+        <button id="lwBtn">Add Line Wedge</button>
+        <button id="motivePlaceBtn">Place Motive</button>
+        <button id="stampBtn">Stamp → META</button>
+        <button id="clearAllBtn">Clear All</button>
+        <button id="blastsBtn" title="insertion strip: pick a source, flip through a list, audition, insert at the playhead">Insertion</button>
+    </span>
 </div>
+<script>
+// THE THREE MENUS (2026-10-04, RUNNING_LOG §67). An option presses the button of its id — in #barHidden, or a panel's own button, which lands there
+// too — then the menu springs back to its title and lets go of the keyboard, so SPACE and the letter keys stay the score's. The list is rebuilt
+// each time a menu opens: an option whose button is not on the page (a module that did not load) is simply not offered.
+(function () {
+    const MENUS = {
+        menuFile:   ['File ▾',   [['saveBtn', 'Save   (CTRL+S)'], ['versionBtn', 'Name version…'], ['reloadBtn', 'Reload — drop the unsaved edits'],
+                                  ['restoreBtn', 'Restore a named version…'], ['hintBtn', 'the save rules — show / hide']]],
+        menuInsert: ['Insert ▾', [['markerBtn', 'Marker'], ['zoneBtn', 'Zone'], ['trillBtn', 'Trill   (T)'], ['crescBtn', 'Crescendo   (C)'], ['lwBtn', 'Line wedge'],
+                                  ['motivePlaceBtn', 'Place the chosen motive'], ['stampBtn', 'Stamp the chosen shape → META'], ['blastsBtn', 'Insertion strip (blasts · clusters)'],
+                                  ['clearAllBtn', 'Clear all…']]],
+        menuPanels: ['Panels ▾', [['strikesBtn', 'Strikes'], ['sequenceBtn', 'Sequence'], ['rhythmSeqBtn', 'Rhythm'], ['beatingBtn', 'Beating   (B)'],
+                                  ['morphBtn', 'Morph'], ['textureBtn', 'Texture'], ['pulseBtn', 'Pulse'], ['mtBtn', 'Multitempo']]],
+    };
+    Object.keys(MENUS).forEach(id => {
+        const sel = document.getElementById(id); if (!sel) return;
+        const title = MENUS[id][0], items = MENUS[id][1];
+        const fill = () => {
+            sel.innerHTML = '';
+            const o = document.createElement('option'); o.value = ''; o.textContent = title; sel.appendChild(o);
+            items.forEach(it => { const b = document.getElementById(it[0]); if (!b) return;
+                const op = document.createElement('option'); op.value = it[0]; op.textContent = it[1]; op.title = b.title || ''; sel.appendChild(op); });
+            sel.selectedIndex = 0;
+        };
+        fill();
+        window.addEventListener('load', fill);
+        sel.addEventListener('mousedown', fill);
+        sel.addEventListener('change', () => { const b = document.getElementById(sel.value); sel.selectedIndex = 0; sel.blur(); if (b) b.click(); });
+    });
+})();
+</script>
 <!-- D17 (composer 2026-09-04: "put in some hints ... reminders how to use the save system"): one line,
      toggled by the ? button, remembered per browser; the lane container moves down while it shows -->
 <div id="saveHints" style="display:none; position:fixed; top:var(--barH, 32px); left:0; right:0; z-index:99; background:#fff8e6; border-bottom:1px solid #e0c274; color:#5a4a1a; font-size:11px; padding:3px 12px; line-height:1.5">
@@ -459,71 +541,7 @@
     <div id="floatingTime">0.00</div>
 </div>
 
-<!-- Bottom bar -->
-<div id="bottomBar">
-    <label>Start:</label>
-    <input type="number" id="wcStartInput" value="0" step="0.01" min="0" />
-    <label>End:</label>
-    <input type="number" id="wcEndInput" value="10" step="0.01" min="0" />
-    <label>Track:</label>
-    <select id="wcLayerSelect">
-        <option value="0" selected>Bass Flute</option>
-        <option value="1">Bass Clar.</option>
-        <option value="2">Percussion</option>
-        <option value="3">Mallets</option>
-        <option value="4">Viola</option>
-        <option value="5">Cello</option>
-        <option value="6">META</option>
-    </select>
-    <button id="wcDrawBtn">Draw Curve</button>
-    <span style="color:#ccc">|</span>
-    <button id="markerBtn">Add Marker</button>
-    <span style="color:#ccc">|</span>
-    <button id="zoneBtn">Add Zone</button>
-    <span style="color:#ccc">|</span>
-    <button id="trillBtn" title="Add Trill (T): over the selected curve, from the selected note (its pitch, 4 s — the note becomes the attack), or 4 s from the playhead on the active lane. Then click an interval to hear it and take it.">Add Trill</button>
-    <span style="color:#ccc">|</span>
-    <button id="crescBtn" title="Crescendo (C): on the selected note(s) — the standard surge, ending 0.17 s before that player&#39;s next sound (5 s when there is none), ppp → fff, secco, at the player&#39;s ordinary voice; the note itself goes grey and comes back if the crescendo is deleted. With nothing selected it takes the next pitch of the harmony bar on the active lane. A card opens on it — the range, the duration, the articulation, the secco tick; ENTER keeps, ESC removes, a click on any crescendo reopens it.">Crescendo</button>
-    <span style="color:#ccc">|</span>
-    <button id="beatingBtn" title="Beating (B on a strike note makes one there): the panel — a pattern of up to three pairs, the mirrored rate curves with handles, the crescendo and breath lanes, SPACE plays it; P on a selected beating opens it bound to that one">Beating</button>
-    <span style="color:#ccc">|</span>
-    <button id="panicBtn" title="Panic: silence everything — an explicit note-off on every key of every channel of every port, the bends centred, CC7 back to 127 (a trapped note)" style="color:#b00;font-weight:bold">&#9632; Panic</button>
-    <span style="color:#ccc">|</span>
-    <button id="lwBtn">Add Line Wedge</button>
-    <span style="color:#ccc">|</span>
-    <select id="motiveSelect"><option value="">— motives —</option></select>
-    <button id="motivePlaceBtn">Place Motive</button>
-    <span style="color:#ccc">|</span>
-    <select id="stampSelect">
-        <option value="arch">Arch</option>
-        <option value="surge">Surge</option>
-        <option value="bloom">Bloom</option>
-        <option value="line">Line</option>
-        <option value="saw">Sawtooth</option>
-        <option value="container-build">▣ Container: Density Build</option>
-    </select>
-    <button id="stampBtn">Stamp → META</button>
-    <button id="cc7ResetBtn" title="All-notes-off + CC7=127 on every port/channel">CC7 Reset</button>
-    <button id="metaBtn" title="Show/hide the META draw window — the gestures' shapes and the stamps">META</button>
-    <button id="curveBtnA" title="Show/hide curve window A (over Mallets)">A</button>
-    <button id="curveBtnB" title="Show/hide curve window B (over Viola)">B</button>
-    <button id="curveBtnC" title="Show/hide curve window C (over Cello)">C</button>
-    <span style="color:#ccc">|</span>
-    <select id="recLaneSel" title="record target part"></select>
-    <select id="recTechSel" title="capture technique"></select>
-    <button id="recBtn" title="Capture played notes into the target lane (play the score to record against the scroll)">&#9210; Rec</button>
-    <span style="color:#ccc">|</span>
-    <button id="clearAllBtn">Clear All</button>
-    <span style="color:#ccc">|</span>
-    <button id="drawBtn" title="Freehand on the META window">&#9998; Draw</button>
-    <button id="pointsBtn" title="Points: click in an open curve window to place a dot; with a curve selected the dots continue it (ESC ends)">&#10002; Points</button>
-    <button id="fillBtn" title="Fill: draw the line through the dots — new dots with nothing selected become a new curve; dots placed on a selected curve extend it">Fill</button>
-    <select id="fitSelect">
-        <option value="0.015">Fit: light</option>
-        <option value="0.03" selected>Fit: medium</option>
-        <option value="0.06">Fit: heavy</option>
-    </select>
-</div>
+<!-- The bottom bar is GONE (2026-10-04, his word "I don't need two bars"): its controls are in the top bar, ids unchanged. -->
 
 <!-- Floating property panel -->
 <div id="propertyPanel"></div>
@@ -1599,7 +1617,7 @@ const Composer = {
         // resize path below. The status's whole text on hover, since the bar cuts a long one (#saveStatus).
         this.fitTopBar = () => {
             const bar = document.getElementById('topBar'); if (!bar) return;
-            const hgt = Math.max(32, Math.ceil(bar.getBoundingClientRect().height));
+            const hgt = Math.max(24, Math.ceil(bar.getBoundingClientRect().height));   // 2026-10-04: the one bar is 24 px at rest
             if (hgt === this._barH) return;
             this._barH = hgt; document.documentElement.style.setProperty('--barH', hgt + 'px');
             window.dispatchEvent(new Event('resize'));
@@ -1608,7 +1626,9 @@ const Composer = {
           if (bar && typeof ResizeObserver !== 'undefined') new ResizeObserver(() => this.fitTopBar()).observe(bar);
           window.addEventListener('resize', () => this.fitTopBar());
           const st = document.getElementById('saveStatus');
-          if (st && typeof MutationObserver !== 'undefined') new MutationObserver(() => { st.title = st.textContent; }).observe(st, { childList: true, characterData: true, subtree: true });
+          // 2026-10-04 (§67): the resting messages are hidden (.rest) — he asked for the "working copy of …" text gone; a save, an error, a key hint still shows
+          const restMsg = t => /^(Ready$|working copy of |unsaved edits · autosaved)/.test(t);
+          if (st && typeof MutationObserver !== 'undefined') new MutationObserver(() => { st.title = st.textContent; st.classList.toggle('rest', restMsg(st.textContent)); }).observe(st, { childList: true, characterData: true, subtree: true });
           this.fitTopBar(); }
         // Window resize: lane geometry changes, everything must re-render
         let _rsz = null;

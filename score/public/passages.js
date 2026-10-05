@@ -252,16 +252,15 @@
             if (!bar || document.getElementById('psgSelect')) return;
             const wrap = document.createElement('span');
             wrap.style.cssText = 'display:inline-flex;align-items:center;gap:4px';
-            const box = 'width:46px;background:#141419;color:#ddd;border:1px solid #444;padding:1px 2px;font-size:11px';
+            // 2026-10-04 (the one bar, RUNNING_LOG §67): compact — no "from" / "to" words (the boxes say start · end), `insert` for `insert @ playhead`, the list capped at 110 px
+            const box = 'width:40px;background:#141419;color:#ddd;border:1px solid #444;padding:1px 2px;font-size:11px';
             const stamp = 'padding:1px 3px;font-size:10px;line-height:1';
             wrap.innerHTML =
                 '<span style="opacity:.35">│</span>' +
-                '<select id="psgSelect" title="the passage collection — captured stretches of score, insertable at the playhead into any score"><option value="">-- Passages --</option></select>' +
-                '<button id="psgInsert" title="insert the chosen passage at the playhead; it arrives selected, so one drag moves the whole thing. CTRL+Z removes it.">insert @ playhead</button>' +
-                '<span style="color:#888;font-size:11px;margin-left:4px">from</span>' +
+                '<select id="psgSelect" style="max-width:110px" title="the passage collection — captured stretches of score, insertable at the playhead into any score"><option value="">-- Passages --</option></select>' +
+                '<button id="psgInsert" title="insert the chosen passage at the playhead; it arrives selected, so one drag moves the whole thing. CTRL+Z removes it.">insert</button>' +
                 '<input id="psgFrom" type="number" step="0.01" placeholder="start" style="' + box + '" title="capture start, in seconds. Leave both boxes empty to capture the whole score. The boundary is a net, not a ruler — a passage always begins on its first event, never on the time you typed.">' +
                 '<button id="psgFromNow" style="' + stamp + '" title="take the playhead time as the capture start">⤓</button>' +
-                '<span style="color:#888;font-size:11px">to</span>' +
                 '<input id="psgTo" type="number" step="0.01" placeholder="end" style="' + box + '" title="capture end, in seconds. Leave empty for the end of the score.">' +
                 '<button id="psgToNow" style="' + stamp + '" title="take the playhead time as the capture end">⤓</button>' +
                 '<button id="psgClear" style="' + stamp + '" title="clear both boxes — back to the whole score (or the selection, if there is one)">✕</button>' +

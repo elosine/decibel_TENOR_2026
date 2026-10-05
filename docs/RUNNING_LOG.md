@@ -2321,3 +2321,85 @@ mode; every clear was bridged by a journal block written for a reader who had se
 only he could answer — which lane, which library, whether a rule held. The costs are in the record too: a probe that took his
 engine down (§55), a first object proven three times when once would have done (§65), and a day in which "the engine" was named by
 its ports before it was named by what it is (§64).
+
+## §67. THE ONE BAR — the composer score's two bars and four tabs become one 24 px bar with three menus (2026-10-04, Fable; session 2's first exchange)
+
+**What prompted it — his words, at `/session-start`, with two screenshots (the bottom bar overflowing to the right, "Add Line Wedge" and "Stamp →
+META" wrapped to two lines and jutting up out of it; the top bar wrapped to two rows, "working copy of … — autosave lives here" and "b37-save"
+across it, "Strikes · Sequence · Rhythm" on the second row):** *"I cant see some of the buttons in the composer score, could we also get rid of
+the tabs, a rhythm sequence beating, any ones that aren't already buttons, make buttons above. You can get rid of the text where it says working
+copy and B37 save, these sorts of things. And then stat buttons there. no, nothing should be jutting out into the score itself. Maybe we can make
+smaller fonts or something, try to, or maybe pull down menus, something so we're not taking up so much real estate with the buttons. If you could
+quickly present a practical expedient solution, I don't need a big plan. I just need to do some UI cleanup in the most expedient way and to try to
+minimize the amount of clutter now. They're taking up too much vertical space. I don't need two bars. Let's have a, a very quick and expedient
+redesign that uses as little vertical space as possible, maybe smaller buttons, maybe pull down menus. But I don't want to troubleshoot this
+either. So to have reliable things at work. I don't want to have to come back several more times to say, oh, I can't see this button or I can't
+see that button."*
+
+**Read as:** a fault met while composing (D13's rule: `docs/SWEEP_LIST.md` #1, fixed once, proven once) — not a plan item. The one decision put
+to him: (a) one bar with pull-down menus for the stateless actions, or (b) one bar, every button visible but small. **His word: "a".**
+
+**What was there (piece #6's inheritance):** a fixed top bar (32 px, wrapping — §315's fix, so the lanes start below its real bottom) with the
+file controls, the status text, the build tag and, added by the modules, the panel buttons (Morph · Texture · Pulse · MT · Strikes · Sequence ·
+Rhythm) and the passages group; a fixed BOTTOM bar (32 px, NOT wrapping — `height: 32px`, no `flex-wrap`) with 30 controls; four panel TABS
+(RHYTHM · SEQUENCE · BEATING · STRIKES) standing on the bottom bar at `bottom: 34px`. On his window the bottom bar's row ran past the right edge
+(the controls beyond it unreachable — "I can't see some of the buttons"), its two-word buttons wrapped inside a 32 px bar and stuck up into the
+last lane, and the tabs stood over the score. Chrome taken by all of it: about 120 px.
+
+**What was built — `score/public/composer.html` (the CSS, the bar's markup, the menus' script, two lines in `init()`) and one block of
+`score/public/passages.js`:**
+
+- ONE bar, fixed at the top, 11 px, `min-height: 24px`, wrapping with `row-gap: 2px`; `--barH` floors at 24 (was 32); the lane container's
+  `bottom` 32 → 0. The bottom bar's markup is gone; every control of it is in the top bar with THE SAME ID — no handler changed, no module
+  changed.
+- THREE MENUS, plain `<select>`s (`.barMenu`): **File ▾** Save (CTRL+S) · Name version… · Reload · Restore… · the save rules · **Insert ▾**
+  Marker · Zone · Trill (T) · Crescendo (C) · Line wedge · Place the chosen motive · Stamp the chosen shape → META · Insertion strip · Clear
+  all… · **Panels ▾** Strikes · Sequence · Rhythm · Beating (B) · Morph · Texture · Pulse · Multitempo. An option presses the button of its id
+  (`b.click()`), the menu springs back to its title and blurs — so SPACE and the letter keys stay the score's. The option list is rebuilt at
+  every open (mousedown) and at `load`: a button that is not on the page is not offered. The buttons themselves live on, HIDDEN, in
+  `#barHidden` (`display: none !important`) — `.click()` works on a hidden element.
+- HOW THE MODULES' BUTTONS WENT INTO THE MENU WITHOUT TOUCHING A MODULE: each anchors itself after the previous one, the chain rooted at
+  `#blastsBtn` (`host.parentNode.insertBefore(btn, host.nextSibling)`); `#blastsBtn` sits in `#barHidden`, so all seven land in it, hidden,
+  and Panels ▾ reaches them by id. The passages group tests `anchor.parentNode === bar`, fails, and appends itself to the bar's END — visible.
+  Checked before deciding: no panel positions itself from its button's rectangle (a grep for `getBoundingClientRect` against every bar
+  button id — none).
+- The four TABS: `display: none !important` (each panel writes its tab's inline style and re-shows it on close; the `!important` wins).
+- The status text: hidden at rest (`.rest` — "Ready", "working copy of …", "unsaved edits · autosaved …", by a regex in the existing
+  MutationObserver), shown for anything else (a save, an error, a key hint), `flex: 0 1 auto; max-width: 30em`, no share of the row. The build
+  tag hidden by CSS (its text is now `b38-onebar`). The "│" dividers and "open:" gone; thin 1 px `.barGap` rules between groups.
+- What STAYS a visible control, and why: anything with an input or a state — Piece ▾ · Experiments ▾ · the motive and stamp pickers · META ·
+  A · B · C (toggles) · start · end · track · Draw Curve · Draw · Points · Fill · Fit (Draw and Points carry an active class) · the rec lane,
+  technique and Rec (its text and class change while recording) · Panic (red) · CC7 Reset · the conflict badge · the passages group.
+
+**Measured on the throwaway server (5501) in the in-app browser at 1920 × 1000, twice:**
+
+| | first cut | after the width trim |
+|---|---|---|
+| the bar's content, laid in one line | 2568 px | 2073 px |
+| bar height at 1920 | 46 px (two rows) | 46 px (two rows — only the passages group, 352 px, wraps) |
+| the menus' widths | 150 / 150 / 85 (a `<select>` sizes itself by its LONGEST OPTION) | 58 / 68 / 72 (explicit widths; the open list still shows every option whole) |
+| the passages group | 475 px | 352 px |
+
+The trim: the menus given their titles' widths · every select capped at 120 px (was 150) · the session box 80 px · `Start:` `End:` `Track:` labels
+folded into placeholders and titles · button padding 1 px 4 px · the passages group compact — no "from" / "to" words (the boxes say start · end),
+`insert` for `insert @ playhead`, its list capped at 110 px. **Result: ONE row (24 px) from about 2090 px of window width; TWO rows (46 px)
+below that, never a control lost — the bar wraps and the lanes follow (§315).** Against ~120 px of chrome before. His window's width is not
+known to the AI (his screenshot is 2000 px wide and cropped). Every menu listed its live buttons (File 5 · Insert 9 · Panels 8); all four tabs
+`display: none`; `#barHidden` held the fifteen static buttons and the seven modules' buttons; the passages group visible at the bar's end; no
+script error in the console (only the in-app browser's Web MIDI refusals, as always).
+
+**Rejected:** (i) a JS-built menu bar or a library — more to go wrong, nothing gained over the browser's own `<select>`; (ii) moving the
+bottom bar's nodes at runtime (`appendChild` in `init()`) — the static markup is one place to read; (iii) hiding the curve-drawing tools unless
+a window is open — stateful, exactly the kind of thing that makes him "come back several more times"; (iv) a status toast over the lanes —
+"nothing should be jutting out into the score"; (v) folding the passages capture boxes to reach one row at 1920 — it is a tool of his, and a
+second row costs 22 px.
+
+**Seen, not chased (D13):** the throwaway page logged some 475 `ERR_CONNECTION_REFUSED` fetches in its first seconds — not to 5500, not from
+this change; whatever polls there will show on his 5500 if it matters. The save-rules line (`#saveHints`) showed in the in-app browser (40 px
+under the bar) — a per-browser memory; his is whatever he set, and File ▾ → the save rules toggles it.
+
+**A machine note, again:** the first append of this entry failed — a Bash heredoc over ~8 KB, the false "matching quote" error (his user-level
+CLAUDE.md § This machine). Written to a scratch file and spliced, as that note says.
+
+**For the paper:** the composer score's chrome is now one line; the tools that write the piece — the panels, the bricks M and R, the keys —
+are unchanged. The page's build tag reads `b38-onebar`.

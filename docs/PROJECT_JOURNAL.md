@@ -173,6 +173,11 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+- **THE ONE BAR (S2 · 2026-10-04, Fable; RUNNING_LOG §67; SWEEP_LIST #1 closed):** the composer score has ONE 24 px bar — File ▾ · Insert ▾ ·
+  Panels ▾ and the direct controls; the bottom bar and the four tabs are GONE; the status text hidden at rest (a save, an error, a key hint
+  still show). A menu option presses the old button, kept hidden in `#barHidden` — every key and panel as before; the modules' panel buttons
+  land there by anchoring to `#blastsBtn`. One row from ~2090 px of window width, two rows (46 px) below that. Live on his page at F5 — no
+  server restart. Build tag `b38-onebar`.
 - **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer — HIS composing — is next. No build is
   in hand and none is expected for step 7.**
 - **What he can do in the composer score** (`http://localhost:5500/composer.html`):
