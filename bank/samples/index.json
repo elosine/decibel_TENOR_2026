@@ -2,9 +2,9 @@
  "schema": 1,
  "_what": "THE SAMPLE INDEX — a row per sample in this folder, written by the engine after each capture (electronics/sc/bank.scd). GENERATED: do not hand-edit while the engine is up.",
  "samples": [
-  {"attackMs": 221.9, "captured": "2026-10-05T09:46:46", "category": "impulse", "file": "bcl-impulse-1.wav", "id": "smp_20261005094646", "lane": 1, "lengthMs": 374.9, "name": "bcl-impulse-1", "openingId": "zn-48", "peakDb": -20.8, "player": "bcl", "raw": "raw/zn-48.wav", "scoreTime": 2.569, "windowMs": 500.0},
-  {"attackMs": 208.9, "captured": "2026-10-05T09:46:48", "category": "impulse", "file": "perc-impulse-1.wav", "id": "smp_20261005094648", "lane": 2, "lengthMs": 393.7, "name": "perc-impulse-1", "openingId": "zn-49", "peakDb": -9.2, "player": "perc", "raw": "raw/zn-49.wav", "scoreTime": 4.045, "windowMs": 500.0},
-  {"attackMs": 215.5, "captured": "2026-10-05T09:46:48", "category": "impulse", "file": "va-impulse-1.wav", "id": "smp_20261005094648", "lane": 4, "lengthMs": 382.1, "name": "va-impulse-1", "openingId": "zn-50", "peakDb": -14.2, "player": "va", "raw": "raw/zn-50.wav", "scoreTime": 4.38, "windowMs": 500.0},
-  {"attackMs": 217.1, "captured": "2026-10-05T09:46:49", "category": "impulse", "file": "vc-impulse-1.wav", "id": "smp_20261005094649", "lane": 5, "lengthMs": 382.4, "name": "vc-impulse-1", "openingId": "zn-51", "peakDb": -16.5, "player": "vc", "raw": "raw/zn-51.wav", "scoreTime": 5.112, "windowMs": 500.0}
+  {"attackMs": 223.6, "captured": "2026-10-05T10:22:02", "category": "impulse", "file": "bcl-impulse-1.wav", "id": "smp_20261005102202", "lane": 1, "lengthMs": 377.9, "name": "bcl-impulse-1", "openingId": "zn-48", "peakDb": -14.6, "player": "bcl", "raw": "raw/zn-48.wav", "scoreTime": 2.569, "windowMs": 500.0},
+  {"attackMs": 209.0, "captured": "2026-10-05T10:22:03", "category": "impulse", "file": "perc-impulse-1.wav", "id": "smp_20261005102203", "lane": 2, "lengthMs": 388.3, "name": "perc-impulse-1", "openingId": "zn-49", "peakDb": -8.6, "player": "perc", "raw": "raw/zn-49.wav", "scoreTime": 4.045, "windowMs": 500.0},
+  {"attackMs": 214.0, "captured": "2026-10-05T10:22:04", "category": "impulse", "file": "va-impulse-1.wav", "id": "smp_20261005102204", "lane": 4, "lengthMs": 384.9, "name": "va-impulse-1", "openingId": "zn-50", "peakDb": -8.2, "player": "va", "raw": "raw/zn-50.wav", "scoreTime": 4.38, "windowMs": 500.0},
+  {"attackMs": 215.3, "captured": "2026-10-05T10:22:04", "category": "impulse", "file": "vc-impulse-1.wav", "id": "smp_20261005102204", "lane": 5, "lengthMs": 388.9, "name": "vc-impulse-1", "openingId": "zn-51", "peakDb": -8.8, "player": "vc", "raw": "raw/zn-51.wav", "scoreTime": 5.112, "windowMs": 500.0}
  ]
 }
