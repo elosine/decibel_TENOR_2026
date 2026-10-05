@@ -413,3 +413,25 @@ and the scheme are his to approve or rewrite.)*
 release · curve; percussive at a short attack and a falling curve), his primary; `tail`, until the output falls under −60 dB,
 kept as the option. A compositional point for the paper: the processed TIMBRE and the ATTACK shape are decoupled — a chain can
 run deep into resonance and still yield struck objects. Built as PLAN.md § 1.3, 10.1.)*
+
+### DEC-17 · 2026-10-05 — THE SIDE PROJECT, in parallel with his work in the workshop: a clone of Buffer Override · a family of distortion effects, guitar-pedal style · hear a brick through each, then the knobs, then into the library
+
+> *"Okay, so the side project I'd like to work on is I'd like to clone the effect called buffer override. So if we can, if
+> there's some open source code or if you have an idea of how you might duplicate that effect, let's work on that in parallel.
+> I'll use that a little bit later. And then I'd like to explore some distortion effects. So I believe we have already bit
+> crushing. And then there might be something we can get out of the um, analog style ring modulator. But then let me see if we
+> can develop an effect that sounds like Guitar pedal distortion applied here. So what I'd like to be able to do is either take
+> one of these bricks and just hear it through the different bits of distortion to see if I like those effects. So I guess we
+> need to build the effects. Oh, and and any others that you can think of. Build the distortion style effects. Um, let me hear
+> them and then we'll construct the appropriate knobs and then add them to our effect library."*
+
+*(The AI's reading, marked as such. Two builds for the catalogue of the PROCESS brick, so a brick can be heard through each:
+(1) BUFFER OVERRIDE — Destroy FX's plugin (Sophia Poirier, GPL): the incoming audio is cut into FORCED BUFFERS; of each, only the
+FIRST MINI-BUFFER is kept and repeated until the next forced buffer begins — a stutter that becomes a pitch when the mini-buffer is
+short (a repeat every 1/f seconds sounds at f); its dials the forced buffer, the divisor (mini-buffers per forced buffer), the
+smoothing of the joins, the mix; LFOs and a MIDI pitch later. Cloned from how it works, in SuperCollider — no GPL code copied into
+this public repo. (2) THE DISTORTIONS — what exists already: `drive` (six shapers: tanh · sine · crossover · fold · a sample-rate
+"bitcrush" · disintegrate), `ring` and the analog-style `diode` ring modulator; to build: guitar-pedal models (overdrive · fuzz ·
+octave fuzz), a speaker-cabinet voicing after them, a true bit-depth crusher, a Chebyshev waveshaper, and two sc3-plugins
+shredders (Squiz · WaveLoss). His method, in his words: build → hear → knobs → library; the dials provisional until he has heard.
+For the paper: the workshop's catalogue grows by audition, not by design — an effect is admitted after it is heard on a brick.)*

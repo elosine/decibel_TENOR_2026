@@ -336,6 +336,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **10.2 The granular voices — `todo`:** the sandbox's `\roadsCloudBuf` (the cloud — density · grain · scrub · transpose · jitter: the stretch) and `\grainArticulate` (five articulations) as effects of their own in `process.scd` and the catalogue; the scheme's stage 4. *To be laid out at 10.1's end.*
 - **10.3 The pedals of resonance — `todo`:** `SynthDef_petalsOfResonance` ported to a buffer input (it takes a live bus today); Q7 "pedals / petals" answered here. *To be laid out when we discuss it.*
 - **10.4 The cascade — `todo`, his call:** a stage re-rendered re-renders the stages after it ("Render from here"). *A second build, not the first (§100).*
+- **10.5 The catalogue grows by audition — `built 2026-10-05`, his DEC-17 (RUNNING_LOG §106; the engine's §28):** his side project, in parallel with his work in the workshop — nine stages added to `process.scd` and the catalogue, each a mix at 0 like the rest, the dials PROVISIONAL: `override` (a clone of Destroy FX's Buffer Override, written from how it works — a forced buffer's first mini-buffer repeated; a pitch when short), and after `drive` the pedals `overdrive` · `fuzz` · `octave` with a speaker `cab`, then `crush` (a true bit depth) · `cheby` · `squiz` · `waveloss`. His method: build → hear on a brick → the knobs shaped → admitted to the library. *Later, at his word: Buffer Override's LFOs and MIDI pitch; the knobs after his ear.*
 
 ## 2. Notate — `todo`
 
