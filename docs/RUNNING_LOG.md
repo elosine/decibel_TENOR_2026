@@ -2445,3 +2445,43 @@ claimed:** that this is what he heard — he plays, he says. If the notes are st
 it goes on. `docs/SWEEP_LIST.md` #2, open until his word.
 
 **Proof:** the page's inline scripts parse (`node --check`, comments stripped). No page loaded (D13).
+
+## §70. The bass flute's short notes — found by measurement: Kontakt slot 1 switched out of Preset Mode by a stray key (2026-10-04, Fable)
+
+**His correction of §69:** *"No, it's just that I can't play long notes. It's not nothing to do with the preset. It just plays short notes. I can't
+sustain anything. I can with the other instruments. It's something else. If I set the other ones to vibrato MW, I can still play long notes."*
+He was right: §69's reading (the wheel) was a guess dressed as a cause; its two changes stay (the ordinary preset as the default, the wheel
+through) because they are right on their own, but they were not the fault.
+
+**The reasoning:** the page's live path (`onHwMidi`) is the same code for every lane; the difference had to be downstream. The rack text showed
+the two Xsample tracks alike (Kontakt 8, one MIDI input each). So: MEASURE — a held note from OUTSIDE the page (`tools/note_to_port.ps1`, 4000 ms,
+vel 100, CC0 14 = preset 15) with the track's meter sampled at 10 Hz (`reaper/bridge/jobs/sustain_watch.lua`, the track name changed in a
+scratch copy; the bridge alive on the rack). No hands of his; he heard the notes.
+
+| the note | the meter, every 0.3 s | verdict |
+|---|---|---|
+| Bass Flute XS, channel 1 (slot 1 — the plain-note and live slot) | −18.7 at onset, then −28 dB/s straight down: −28 · −60 · −86 … | CUT — an attack, no body |
+| Bass Flute XS, channel 2 (slot 2, curve A — the card's slot) | −14 ± 1 for the whole 4 s, then the fall | HOLDS |
+| Bass Clarinet XS, channel 1 (the control) | −12 ± 1 for 4 s, then the fall | HOLDS |
+
+All four flute slots were loaded from the same `.nki` by the same reset (§43, the read-back: slot 1 "Bass Flute" on channel 1, −6 dB, like the
+other three). The one thing slot 1 alone has received since: HIS KEYBOARD, through the live path — which had NO FLOOR. Piece #3's map
+(`XSAMPLE_BASSCL_map.md` § control system): A0–B0 at high velocity are FUNCTION KEYS (A0 tune-base mode · A#0 toggle mode · B0 trill & slide
+mode), A#7 above the zone is the preset / phrase toggle, CC#0 126 = Preset Mode on, 127 = Phrase Mode on. A stray key from an 88-key keyboard
+reaches Kontakt as that function key. Two runs meant to test a program change and the wheel were POLLUTED by notes arriving every ~1.2 s on the
+same track (his playing) and decided nothing — logged as such.
+
+**The restore, from here:** CC#0 126 (Preset Mode on — a definite state, unlike 121 / 122 which toggle) to channel 1, then CC0 14 and the same
+4 s note under the watch: **−23.6 → −19.3, steady for 4 s, the fall at 4.7 s. SLOT 1 HOLDS AGAIN.** Which key he hit is not known (A#7 = MIDI
+106 is the likeliest: above the flute's zone 48–86, where no floor looked). Slot 1 reads ~6 dB under slot 2 at the same velocity — noted, not
+chased; his ear decides.
+
+**The guard, in the page (`onHwMidi`):** a key outside the preset's `rangeLow … rangeHigh` is neither passed to the instrument nor recorded;
+the status line says so once (`key 106 is outside Vibrato Velocity (48–86) — not sent …`). Every recipe's preset carries its range, so the
+rule is generic. Playback has had piece #3's floor rule since the port; the live path never did.
+
+**Not claimed:** his ear on the flute since the restore. If it is short again, the first look is the status line (a refused key) and then
+`sustain_watch` on slot 1 — a repeatable measurement now, one command each.
+
+**For the paper:** a sampler's function keys are a composing hazard the moment a keyboard is wired straight to it; the score's floor rule
+existed for playback only. The measurement that found it cost three notes and no hands.

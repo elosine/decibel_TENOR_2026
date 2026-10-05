@@ -178,6 +178,11 @@ question, not by habit.)*
   still show). A menu option presses the old button, kept hidden in `#barHidden` — every key and panel as before; the modules' panel buttons
   land there by anchoring to `#blastsBtn`. One row from ~2090 px of window width, two rows (46 px) below that. Live on his page at F5 — no
   server restart. Build tag `b38-onebar`.
+- **THE BASS FLUTE'S SHORT NOTES (S2 · 2026-10-04, Fable; RUNNING_LOG §70; SWEEP_LIST #2 closed):** his keyboard could not hold a note on
+  the bass flute. Measured through the bridge (`sustain_watch.lua` on the track's meter, a 4 s note from `note_to_port.ps1`): Kontakt SLOT 1
+  cut every note, slots 2 … 4 and the clarinet held. A stray key had switched slot 1 out of Preset Mode (Xsample's A0–B0 hard and A#7 are
+  FUNCTION KEYS; the live path had no floor). `-Cc0 126` put it back; the live path now refuses a key outside the preset's range, and the
+  technique box starts on the ordinary preset. The crescendo-harmony strip sits in the bar (§69). NOT CLAIMED: his ear on the flute since.
 - **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer — HIS composing — is next. No build is
   in hand and none is expected for step 7.**
 - **What he can do in the composer score** (`http://localhost:5500/composer.html`):

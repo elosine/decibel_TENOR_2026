@@ -280,7 +280,7 @@ has no Web MIDI, so every MIDI path is verified on his Chrome · print and video
 change to both · the curve-channel map is CACHED: a tool that writes a curve event calls `Composer.curveDirty()` · a server route
 keeps the engine it started with — restart after a `notation/lib` change · **a lane added to `TRACKS` needs its `<div>` and its
 CSS rule** (`palette_check` § 7) · **a track's own meter (`Track_GetPeakInfo`) reads BEFORE the fader on this rack** — the master is the reference for what he hears (RUNNING_LOG §54) · **a lane NUMBER written into a module is invisible to a grep for names** — two were found only
-by opening the panels (RUNNING_LOG §16).
+by opening the panels (RUNNING_LOG §16). · **a key outside a preset's range is a FUNCTION KEY on Xsample** (A0–B0 hard · A#7: modes, phrase mode, trill & slide) — the live keyboard path drops it since §70; a slot that stops holding notes is put back into Preset Mode with `tools/note_to_port.ps1 -Port <port> -Channel <slot> -Cc0 126` (then its preset again), measured with `reaper/bridge/jobs/sustain_watch.lua`
 
 **Checks this piece owns:** `node tools/palette_check.js` (**151** — after any change to `TRACKS`, `sandbox/instruments.js` or a
 per-instrument table) · `node tools/roster_check.js` (**310** voices) · `node tools/model_bank.js --validate` · `node

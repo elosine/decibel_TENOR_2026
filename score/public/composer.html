@@ -2193,6 +2193,14 @@ const Composer = {
         if (cmd === 0xB0 && d1 === 1) { const rw = this.recRouting(); if (rw) rw.out.send([0xB0 | rw.ch, 1, d2]); return; }
         if (!isOn && !isOff) return;
         const r = this.recRouting();
+        // §70 — THE FLOOR, LIVE (SWEEP_LIST #2): a key outside the preset's range is NEVER passed to the instrument nor recorded. On Xsample the keys
+        // below the zone are keyswitches and velocity-sensitive FUNCTION KEYS (A0 hard = a mode toggle, B0 = trill & slide mode; A#7 above the zone =
+        // the preset/phrase toggle — piece #3's XSAMPLE_BASSCL_map, its floor rule). His keyboard's stray key put the bass flute's slot 1 into a
+        // short-note mode while slots 2 … 4, which never hear the keyboard, held (RUNNING_LOG §70). Playback has had the rule since piece #3.
+        if (r && r.tech && typeof r.tech.rangeLow === 'number' && typeof r.tech.rangeHigh === 'number' && (d1 < r.tech.rangeLow || d1 > r.tech.rangeHigh)) {
+            if (isOn) this.saveStatus.textContent = 'key ' + d1 + ' is outside ' + (r.tech.label || 'this preset') + ' (' + r.tech.rangeLow + '–' + r.tech.rangeHigh + ') — not sent: beyond the zone lie the sampler\'s function keys';
+            return;
+        }
         if (r) {   // live thru: hear the capture patch while playing
             if (isOn) {
                 r.out.send([0xB0 | r.ch, 7, 127]);
