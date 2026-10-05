@@ -5,9 +5,13 @@
 // pass gives a preset ANOTHER envelope than its first. The envelopes by the file's `mix` (perc 40 · expodec 40 · gauss 10 · tri 10),
 // as exact shares of the plays, shuffled by the seed. Written as  elec.variants = { '<sample>': '<key>-<env>' }  on each brick; the
 // page sends the plan and the engine renders (electronics/score/le_objects.js · electronics/sc/process.scd).
-//   node tools/deal_variants.js --score piece-sec01-a --to 22.5 [--from 0] [--seed 1] [--dry] [--clear]
+//   node tools/deal_variants.js --score piece-sec01-a --to 22.5 [--from 0] [--seed 1] [--env tail] [--render] [--dry] [--clear]
 // Dealt: the return bricks (midiModel elecPlay) that start in [from, to) and play NAMED samples — plain · ar · chain · arChain.
 // NOT dealt: a pattern brick and a brick of '*' (group 5: its rhythm is his first; its effects after — perc · expodec only).
+// --env <name>: ONE envelope for every play instead of the mix (his §118: "just letting them ring" = --env tail; a second lap then
+//   repeats a variant, since a preset under one envelope is one sample). --render: the plan is then SENT to the engine through the
+//   score server (--port 5500) with render 1 — the same message the page sends, so the thirty are made from the bank now, without
+//   a pass through the openings or a click of his. A range ([lo, hi] — a dial's, or the tail's ring time) is drawn at the send.
 // --dry prints the deal and writes nothing. --clear takes the variants off the bricks in the range instead.
 // The score file is written in place: he has SAVED first — a working copy that differs from the save refuses the tool (§85). Reload after.
 // THE SORTING: this tool knows the piece (its save, its bank, its presets) — it is the piece's, not the engine's.
@@ -15,8 +19,9 @@
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
-const DRY = process.argv.includes('--dry'), CLEAR = process.argv.includes('--clear');
+const DRY = process.argv.includes('--dry'), CLEAR = process.argv.includes('--clear'), RENDER = process.argv.includes('--render');
 const NAME = arg('score', ''), FROM = +arg('from', 0), TO = arg('to', null) == null ? Infinity : +arg('to'), SEED = +arg('seed', 1);
+const ENV = arg('env', ''), PORT = +arg('port', 5500);
 if (!NAME) { console.error('which score?  --score piece-sec01-a'); process.exit(2); }
 const FILE = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT, FILE)); process.exit(2); }
@@ -53,8 +58,9 @@ if (CLEAR) {
   if (!plays.length) { console.error('no return brick with a named sample starts in [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') of ' + NAME); process.exit(4); }
   // THE PRESETS, round robin: one shuffle; a lap uses every preset once
   const order = shuffled(P.presets, mulberry32(SEED * 7919 + 3));
-  // THE ENVELOPES, by the mix: exact shares of the plays (the largest remainders round it), shuffled
-  const mix = Object.entries(P.mix || { perc: 1 }).filter(([k, w]) => P.envelopes[k] && w > 0), wSum = mix.reduce((s, [, w]) => s + w, 0);
+  // THE ENVELOPES, by the mix: exact shares of the plays (the largest remainders round it), shuffled — or the ONE envelope asked for
+  if (ENV && !P.envelopes[ENV]) { console.error('no envelope "' + ENV + '" in bank/presets.json — one of: ' + Object.keys(P.envelopes).join(' · ')); process.exit(2); }
+  const mix = ENV ? [[ENV, 1]] : Object.entries(P.mix || { perc: 1 }).filter(([k, w]) => P.envelopes[k] && w > 0), wSum = mix.reduce((s, [, w]) => s + w, 0);
   const share = mix.map(([k, w]) => ({ k, exact: plays.length * w / wSum })); share.forEach((s) => { s.n = Math.floor(s.exact); });
   for (let left = plays.length - share.reduce((s, x) => s + x.n, 0); left > 0; left--) share.slice().sort((a, b) => (b.exact - b.n) - (a.exact - a.n))[0].n++;
   const envs = shuffled(share.flatMap((s) => Array(s.n).fill(s.k)), mulberry32(SEED * 104729 + 17));
@@ -63,7 +69,7 @@ if (CLEAR) {
   plays.forEach((p, i) => {
     p.preset = order[i % order.length];
     const used = had.get(p.preset.key) || [];
-    if (used.includes(envs[i])) {
+    if (!ENV && used.includes(envs[i])) {
       let j = -1;
       for (let q = i + 1; q < envs.length; q++) if (!used.includes(envs[q])) { j = q; break; }
       if (j >= 0) [envs[i], envs[j]] = [envs[j], envs[i]];
@@ -76,6 +82,7 @@ if (CLEAR) {
   const lane = (l) => ((TRACKS[l] && TRACKS[l].label) || 'lane ' + l);
   const lengthOf = (p) => {
     const row = INDEX.find((r) => r.name === p.name), cls = (P.classes || {})[p.preset.class] || {}, rate = Math.min(8, Math.max(0.05, Math.abs(+(p.preset.args || {}).rate || 1)));
+    if (p.env === 'tail') { const c = p.preset.capMs || (P.envelopes.tail || {}).capMs || 4000; return 'rings ≤ ' + (Array.isArray(c) ? c.join('…') : c) + ' ms past it'; }
     return row ? Math.round(row.lengthMs / rate * (+p.preset.durX || +cls.durX || 1)) + ' ms' : 'not captured';
   };
   console.log('THE DEAL — ' + NAME + ' [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') · seed ' + SEED + ' · ' + plays.length + ' plays on ' + dealt.length + ' bricks · ' + order.length + ' presets'
@@ -91,3 +98,33 @@ if (CLEAR) {
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });
 fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n');
 console.log(path.relative(ROOT, FILE) + ' written — ' + (CLEAR ? 'the variants taken off ' : 'a variant on every sample of ') + dealt.length + ' return bricks. Reload it in the composer page (File ▾ → Reload).');
+
+// --render: THE PLAN to the engine, as the page sends it (electronics/sc/process.scd header: /le/plan — a row per variant,
+// base;suffix;effect;end;atkMs;durX;match;t;capMs;args, '|' between rows, parts of six that share a stamp), with render 1.
+// The message's format is the engine's contract; the rows are built here from the save just written.
+if (RENDER && !CLEAR) {
+  const draw = (v) => (Array.isArray(v) && v.length === 2 ? Math.round((Math.min(+v[0], +v[1]) + Math.random() * Math.abs(+v[1] - +v[0])) * 100) / 100 : +v);
+  const out = new Map();
+  (save.objects || []).filter((o) => o.type === 'zone' && o.midiModel === 'elecPlay' && o.elec && o.elec.variants).sort((a, b) => a.startTime - b.startTime).forEach((z) => {
+    for (const [name, v] of Object.entries(z.elec.variants)) {
+      const i = String(v).lastIndexOf('-'), key = i > 0 ? v.slice(0, i) : v, env = i > 0 ? v.slice(i + 1) : '', p = P.presets.find((x) => x.key === key), E = P.envelopes[env];
+      if (!p || !E) continue;
+      const id = name + '~' + v, t = Math.round(z.startTime * 1000) / 1000;
+      if (out.has(id)) { if (t < out.get(id).t) out.get(id).t = t; continue; }
+      const cls = (P.classes || {})[p.class] || {};
+      const args = Object.keys(p.args || {}).filter((k) => /^[A-Za-z][A-Za-z0-9]*$/.test(k)).map((k) => { const x = draw(p.args[k]); return Number.isFinite(x) ? k + ':' + x : null; }).filter(Boolean).join(',');
+      out.set(id, { t, line: [name, v, String(p.effect || '').replace(/[^A-Za-z0-9 _+-]/g, '').slice(0, 40), env === 'tail' ? 'tail' : env, +E.atkMs || 0, +(p.durX || cls.durX || 1), p.match === 0 ? 0 : 1, t,
+        env === 'tail' ? Math.round(draw(p.capMs || E.capMs || 4000)) : 0, args] });
+    }
+  });
+  const rows = [...out.values()].sort((a, b) => a.t - b.t).map((r) => { r.line[7] = r.t; return r.line.join(';'); });
+  const per = 6, n = Math.max(1, Math.ceil(rows.length / per)), stamp = 't' + Date.now().toString(36);
+  (async () => {
+    for (let i = 0; i < n; i++) {
+      const body = JSON.stringify({ kind: 'plan', data: { stamp, part: i + 1, of: n, rows: rows.slice(i * per, (i + 1) * per).join('|'), render: 1 } });
+      const r = await fetch('http://localhost:' + PORT + '/api/elec', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body }).then((x) => x.json()).catch((e) => ({ ok: false, error: e.message }));
+      if (!r || !r.ok) { console.error('the plan did NOT reach the score server on ' + PORT + ': ' + ((r && r.error) || 'no answer') + ' — is it running?'); process.exit(5); }
+    }
+    console.log('the plan sent to the engine through the score server on ' + PORT + ' — ' + rows.length + ' variants in ' + n + ' part(s), render 1: the engine makes them from the bank now (its window names each; an engine started before the build hears nothing).');
+  })();
+}
