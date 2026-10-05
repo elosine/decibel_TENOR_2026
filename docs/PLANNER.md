@@ -5,7 +5,7 @@
 > `COMPOSITION_NOTES.md` verbatim first and get folded into a tier here. Engineering
 > detail stays in `PLAN.md`. Rewritten freely; the sketch pad is the append-only record.
 
-**NOW ►** 2026-10-04 — THE START IS DONE BUT FOR HIS EAR (RUNNING_LOG §18 … §45): the rack — sixteen instruments on their ports, all sounding from the composer score, measured and trimmed on one scale, four dynamics curves · every lane has its recipe · the notation is set up for the six parts (a save extracts, validates, draws, exports). HIS: listen · three notation calls (the pitch form · the percussion staff's line order · the short names). ► NEXT: the electronics' plumbing (running order step 6), then his rhythm layer (step 7).
+**NOW ►** 2026-10-04 — THE START IS DONE BUT FOR HIS EAR (RUNNING_LOG §18 … §45): the rack — sixteen instruments on their ports, all sounding from the composer score, measured and trimmed on one scale, four dynamics curves · every lane has its recipe · the notation is set up for the six parts (a save extracts, validates, draws, exports). HIS: listen · three notation calls (the pitch form · the percussion staff's line order · the short names). ► STEP 6 OPENED 2026-10-04 (RUNNING_LOG §47 … §49): the sound process is SuperCollider real-time fed by Reaper over ReaRoute, SC's master the output, one flat return track; 6.1 the audio route laid out (PLAN.md 1.1) — ► NEXT its build (Opus), then 6.2 the message route, then his rhythm layer (step 7).
 
 *Before it —* 2026-10-04 — his brief taken: the piece in three sections (below, from DEC-1 … DEC-3); the day's work a running order in journal §2.
 *Before it —* 2026-10-04 — the repo and its kit made (the protocol's container 2); no code.

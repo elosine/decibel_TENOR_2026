@@ -104,7 +104,7 @@ takes is his (D5).
 
 **II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `live-electronics-system/docs/PLAN.md`)*
 
-6. ► NEXT **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
+6. ► ACTIVE (the talk begun 2026-10-04, Fable) **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
    `live-electronics-engine` — what it is built on decides the sound seam (a folder `SynthDef_petalsOfResonance` under GitHub says
    SuperCollider; the read says) · WHERE the engine's code sits here — `electronics/` (D7) — and how the composer app loads it (a
    script tag; a static route in `score/server.js`) · THE MESSAGE from the score to the sound: the stack already sends MIDI from the
@@ -113,6 +113,19 @@ takes is his (D5).
    a banked file PLAYED at a time · a window's audio FED to an effect · the playback route (new Reaper tracks or items) · the
    mastering chain from the sandbox. Put to him only what is his. **Done when:** `docs/SEAMS.md` in the engine says each seam; one
    message from the composer score reaches the sound process and is seen there.
+   **THE TOP LINE — APPROVED by him 2026-10-04 (*"Order is good"*; RUNNING_LOG §47 · §48). The sound process = SuperCollider real-time,
+   fed by Reaper over ReaRoute; SC's master IS the output live; in simulation Reaper is only the players and one FLAT return track
+   (the loudspeaker). The pedals of resonance and the recent engine's processing = phase 2, not here.** Sub-steps, one at a time:
+   **6.1** the audio route Reaper → SC → Reaper — a sampled note heard passing through SC untouched · **6.2** the message route — one
+   brick's onset seen in SC with its data (MIDI port or OSC, decided here) · **6.3** the opening brick + SC's capture — a window of N
+   seconds on one player lands as a file in the piece's bank · **6.4** the sample index — one file, a row per sample (id · name ·
+   player · time · length · category · file), written by the capture, read by the score · **6.5** the playback brick — a few seconds
+   later SC's buffer player returns the sample through Reaper · **6.6** the demo end to end from the composer score, and the record
+   (`SEAMS.md` in the engine · the engine's log · this log · `git subtree push`).
+   **► 6.1 LAID OUT AND WRITTEN 2026-10-04 (his word *"a, write it"*; PLAN.md 1.1 has the sub-steps (a) … (f); the engine's plan 4.1
+   the generic form). NEXT: ITS BUILD — Opus, after a clear.** In one line: ReaRoute checked → SC's boot file in `electronics/sc/` →
+   a send from the bass clarinet track + the flat `ELEC RETURN` track, through the bridge → a pass-through patch → verified on his
+   Chrome, the latency measured → the log and the first `SEAMS.md` lines.
 7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -183,18 +196,13 @@ question, not by habit.)*
   4 ► set up, three calls of his open · 5 at need (one item done) · **6 NEXT — the seams and the sound path.**
 - **The latest deliverable:** a rack that sounds, measured, from the composer score — `reaper/decibel_rack.rpp` ·
   `scores/decibel-first-sound.json` · `notation/ir/decibel-first-sound.ir.json` · the record RUNNING_LOG §18 … §45.
-- **► THE NEXT CONCRETE STEP — after `/clear` + `/postclear`, on FABLE: play back, STOP and ask.** Then, in this order:
-  (1) **COLLECT WHAT IS HIS, one line each** — what he heard (item 10; a thing that sounds wrong is a NIT or a fix) · his three
-  notation calls: the pitch form (working page transposed, presentation in C — carried) · the percussion staff's line order
-  (Coil · Bgo · SusCym · Shime · China · Toms · WB · BD — the AI's) · the short names. A changed call is one edit of
-  `notation/registry/ensemble.json` (+ `node tools/test_written_pitch.js`).
-  (2) **RUNNING ORDER STEP 6 — THE SEAMS AND THE SOUND PATH** (the block above has it whole; the engine's plan parts 2 · 3 · 4):
-  ONE READ of the sandbox `live-electronics-engine` (what it is built on decides the sound seam) → put to him ONLY what is his
-  → `docs/SEAMS.md` in the engine says each seam → the engine's folder `electronics/` made HERE (D7; it does not exist yet) →
-  one message from the composer score reaches the sound process and is seen there. The talk on Fable, the build on Opus.
-- **`Resume reads:`** this §2 · `live-electronics-system/docs/PROJECT_JOURNAL.md` §2 (the engine's cold-start block) ·
-  `live-electronics-system/docs/PLAN.md` parts 2 · 3 · 4 · `live-electronics-system/docs/SEAMS.md` · `docs/COMPOSITION_NOTES.md`
-  DEC-1 (the opening — what the first object must do). Nothing else; the rack's history is not needed for step 6.
+- **► THE NEXT CONCRETE STEP — THE BUILD OF 6.1, the audio route Reaper → SC → Reaper, on OPUS after a clear** (laid out and
+  approved 2026-10-04, RUNNING_LOG §47 … §49; the sub-steps (a) … (f) in PLAN.md 1.1 — follow them in order; (a) first and claim
+  nothing before it is seen). Then 6.2, the message route — a talk first (MIDI port or OSC), Fable. Behind it, still his: what he
+  heard · the three notation calls (collect when he offers them; never block on them).
+- **`Resume reads:`** this §2 · `docs/PLAN.md` 1.1 (6.1's sub-steps) · `live-electronics-system/docs/PLAN.md` part 4 (4.1) ·
+  RUNNING_LOG §47 · §48 (the seam's reasoning; the output path) · `live-electronics-engine/docs/audio-workflow.md` (how sclang
+  is found on this machine) · `reaper/bridge/README.md` if it exists, else the bridge's job headers. Nothing else.
 - **Pending him:** his ear on the rack · the three notation calls · the ensemble's final instrumentation (the call's; his to
   check) · whether "my improvisation with live electronics" is the improviser piece (§17) · the planning repo's lines, at his
   word only · the porting protocol's hole — "what got brought over and where to look" — noted, NOT acted on (§37;
@@ -215,12 +223,13 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **THE START IS DONE BUT FOR HIS EAR AND HIS THREE NOTATION CALLS** (RUNNING_LOG §44 · §45): containers 4 · 5 done; container 6 set up — six parts, 233 technique keys, a save extracted, validated, drawn and exported. HIS: listen (item 10) · the pitch form · the percussion staff's line order · the short names. NEXT IN THE RUNNING ORDER: **step 6, the seams and the sound path** (the electronics' plumbing — `live-electronics-system/docs/PLAN.md` parts 2 · 3 · 4), then step 7, his rhythm layer | Fable (step 6 is a seam's talk and a design) | **YES — `/checkpoint` here, `/clear`, `/postclear`** |
-| — | **THE ELECTRONICS — the running order's steps 6 … 10** (the seams and the sound path · the mic opening · the return · the processing; the engine plan's parts 2 · 3 · 4 · 5 · 11 · 6) — built HERE in `electronics/` (D7), as the music reaches each; they need step 1 | Fable (a seam's talk) · Opus (a build) | — |
+| **►** | **6.1 THE AUDIO ROUTE Reaper → SuperCollider → Reaper — THE BUILD** (PLAN.md 1.1, sub-steps (a) … (f); engine plan 4.1). Laid out and approved 2026-10-04 (RUNNING_LOG §47 … §49). Done when one note from the composer score is heard direct AND through SC on the flat `ELEC RETURN` track, the latency measured | **Opus** (a written plan, executed) | **YES — `/checkpoint`, `/clear`, `/postclear`** |
+| — | **6.2 the message route** (a talk: MIDI port or OSC) → 6.3 the opening brick + capture → 6.4 the index → 6.5 the playback → 6.6 the demo | Fable (6.2's talk) · Opus (the builds) | — |
+| — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
-DEC-4) · Q4 — the percussion: ANSWERED for now — the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the unpitched = his TENTATIVE eight (DEC-6) · Q5 — the three notation calls of container 6 (the pitch form · the percussion staff's line order · the short names).
+DEC-4) · Q4 — the percussion: ANSWERED for now — the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the unpitched = his TENTATIVE eight (DEC-6) · Q5 — the three notation calls of container 6 (the pitch form · the percussion staff's line order · the short names). · **Q6 — the message route, 6.2: a `DECElec` loopMIDI port read by SC's `MIDIIn`, or OSC through the score server? (the AI leans OSC — it carries names and numbers)** · **Q7 — "pedals" or "petals" of resonance: the folder spells one, his dictation the other; at phase 2.**
 
 **Blockers:** none.
 

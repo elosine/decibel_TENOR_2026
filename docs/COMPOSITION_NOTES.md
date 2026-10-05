@@ -137,3 +137,17 @@ Nothing is decided beyond "one lane, four instruments".
 its place — a substitution a player can make, written into the notes (PERFORMANCE_NOTES #5). Three choices the list leaves
 open, each settled by what he loads: WHICH suspended cymbals (the library has dark · mellow · bright) · WHICH toms (high · low ·
 both) · WHICH China cymbal preset (the library has two). "Tentative" is his word: the list may change.
+
+### DEC-7 · 2026-10-04 — THE FIRST OBJECT, AS A DEMO: one opening brick in the composer score · the live input simulated by MIDI into the Reaper rack · recorded by SuperCollider · a second brick a few seconds later plays it back through the buffer player · the pedals of resonance NOT yet — phase 2, the processing, in the recent engine
+
+> *"So the goal here for this phase will be to insert one of these live electronics openings or portals into the composer score.
+> Simulate the live input and record it with the SuperCollider, whatever patch we develop, and then have another brick a few
+> seconds later that will play that back, but via the live electronics buffer playback."*
+
+> *"Pedals of resonance, not yet. That's for second phase when we're processing the input. This will be in the live electronics
+> engine, the one I developed relatively recently."*
+
+*AI reading (marked as such):* DEC-1's stages (2) the opening and (3) the return, cut to their smallest demo — ONE opening, ONE
+playback, a few seconds apart, the live performer simulated as the sampled instrument in Reaper and the whole downstream path the
+real one (SuperCollider: capture → bank → playback). The return's ALGORITHM (before · after · iterations) is not in this demo; the
+processing (stage 4) is phase 2. The reasoning and the plan: RUNNING_LOG §47.

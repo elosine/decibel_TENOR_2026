@@ -1586,3 +1586,111 @@ anything from 5 now?"* — all three done (§44 · §45).
   repeated done work, a test proposed that had been run, a preset copied from the wrong source — each written at the hour it
   happened (§27 … §29 · §37 · §42).
 - Tree clean; pushed. No `electronics/` yet, so no push to the engine's repo. Resume on FABLE for step 6's talk.
+
+## §47. RUNNING ORDER STEP 6 OPENED — his brief for the first electronics object; the ONE READ of the sandbox; the sound seam's shape (2026-10-04, Fable)
+
+**What prompted it — his words, after `/postclear`:**
+
+> *"I want to be able to use the composer score in the same way I use the MIDI. So the idea is that I'm simulating the live
+> performer there so I can hear it. The live electronics should be similar. Should actually use the actual pipeline. So I don't
+> know how much we've ported over from my live electronics repo. Let's start there. Let's talk about what and how to port from
+> the live electronics repo. And then I just want to simply set up a simulation. Let's talk about what the path, the sound path,
+> signal path should be. So the composer score will have some sort of brick or something that represents the mic opening. And
+> then also we'll have a MIDI which simulates the live performer playing into the microphone. And then the routing will go from
+> the Reaper rack into the live electronics buffer to save. And then we just need a way to keep track of the samples across all
+> the platforms. So the composer score, eventually the notation score, the live electronics, you know, some sort of tracking
+> indexing sort of system. So let's break this down again into simple to-dos in order."*
+
+> *"So the goal here for this phase will be to insert one of these live electronics openings or portals into the composer score.
+> Simulate the live input and record it with the SuperCollider, whatever patch we develop, and then have another brick a few
+> seconds later that will play that back, but via the live electronics buffer playback."*
+
+> *"Pedals of resonance, not yet. That's for second phase when we're processing the input. This will be in the live electronics
+> engine, the one I developed relatively recently."*
+
+**The state of the port — the honest fact first:** NOTHING has been ported. The engine repo (`live-electronics-system`) has no code
+(its journal §2: *"No code"*); `electronics/` does not exist in this repo. The copy-forward (container 3) carried piece #6's stack,
+which has no electronics.
+
+**THE ONE READ of the sandbox `live-electronics-engine`** (the running order's step 6 names it; the engine's journal Q1 asked it):
+
+- **Built on TWO layers.** (1) **SuperCollider 3.14.1** (sc3-plugins, Sediment) — `synths/*.scd` (roads-cloud · grain-articulate ·
+  grain-spectral · string-grain · elotonic-drum · feature-chain · process-chain · gesture-voice), `lib/grain-envelopes.scd`, rendered
+  OFFLINE (NRT) by `tests/render-*.scd` and `tools/render_*.py`. (2) **The browser, Web Audio** — `engine/*.html`: the playhead
+  engine (`playhead-processor.js`, freeze · backward · slow · loop), `perform.html` (the sandbox under his fingers), five labs
+  (attack · freeze · assembly · longtone · stutter), served by `python tools/serve.py` on **8732** with store/list endpoints that file
+  his kept settings (attacks · freezes · sequences · gestures · longtones · stutters).
+- **NO LIVE INPUT PATH anywhere.** `grep SoundIn synths lib tests` → nothing; `grep getUserMedia engine` → nothing. Everything in the
+  sandbox processes a RECORDING (his improv archive, the labs' files). The capture of a live window and its plain playback are NEW
+  code, not a port.
+- **The pedals of resonance IS a SuperCollider SynthDef** — `SynthDef_petalsOfResonance/SynthDef_petalsOfResonance.scd` (and a 2025
+  update): `input = SoundIn.ar(ibs)` — it reads a LIVE input bus; two banks of thirteen tuned resonators, `trig`, `inputLen`. The
+  folder spells "petals"; his dictation says "pedals" — still his to confirm, at phase 2 (he said: not yet).
+- Its last session (2026-09-02, journal §185): the Stutter Lab built and unheard; the repo waits on his ear.
+
+**What the read decides (the AI's reading; put to him in the chat):**
+
+- **The sound seam = SuperCollider, REAL-TIME,** fed by Reaper. Three facts point one way: his live rig is SC (the pedals reads
+  `SoundIn`); the processing he names for phase 2 lives in the recent engine, which is SC; "should actually use the actual pipeline"
+  — so the simulation differs from the concert in ONE place only, the input device: a mic through the interface live, the sampled
+  instrument's audio from Reaper here. Everything downstream — the capture, the bank, the playback, later the effects — is the same
+  SC code. The browser layer of the sandbox (Web Audio) is NOT the live path; it stays what it is, a decision tool and labs.
+- **The audio route Reaper → SC → Reaper:** the first candidate is **ReaRoute ASIO** (ships with Reaper's installer, 16 channels each
+  way): SC's device = ReaRoute; a Reaper instrument track sends to a ReaRoute channel = SC's `SoundIn` bus; SC's output returns on a
+  ReaRoute channel to a Reaper track, so Reaper stays the mixer and the master. To be VERIFIED on his machine (is ReaRoute
+  installed; does SC see it) — a check at the build, not a claim now. The fallback is a virtual cable (VB-Cable) or Reaper's
+  loopback.
+- **The message route composer score → SC:** two candidates, as the running order says — a `DECElec` loopMIDI port read by SC's
+  `MIDIIn` (the stack already sends MIDI from the browser), or OSC through the score server (SC's native language, carries names and
+  numbers, no 7-bit squeeze). The AI leans OSC via the server for the data (a sample's id · player · length · category) — undecided
+  until step 2 of the top line below.
+- **What is PORTED from the sandbox for THIS phase: almost nothing.** The way SC is booted and chained (the master chain of
+  `process-chain.scd`, if it is one) and its naming habits. The grain clouds, the freeze, the labs come at phase 2, with the pedals.
+- **The sample index** — his *"tracking indexing sort of system"* — ONE file the piece owns, a row per banked sample (id · name, the
+  shape or colour of LG-342 · player · time in the score · length · category · file · which opening made it), WRITTEN by SC's
+  capture, READ by the composer score (the return's placement), the notation (the glyph), SC (the playback). The MECHANISM (the
+  schema, the writer, the reader) is the engine's → `electronics/`; the FILE and the samples are the piece's (THE SORTING).
+
+**THE TOP LINE proposed to him — the first opening, end to end, simulated** (the planning method's phase 2; nothing more until his
+word): 1 the audio route Reaper → SC → Reaper, a sampled note heard passing through SC untouched · 2 the message route, one brick's
+onset seen in SC with its data · 3 the opening brick + SC's capture: a window of N seconds on one player recorded to a file in the
+piece's bank · 4 the sample index, written by the capture, read back by the score · 5 the playback brick, a few seconds later: SC's
+buffer player returns the sample through Reaper · 6 the demo from the composer score end to end, and the record (`SEAMS.md` in the
+engine, the engine's log, this log). **Awaiting his word on the order.**
+
+**What is the engine's and what is the piece's here:** the sandbox read and the seam's shape are the ENGINE's — logged there as its
+§5; his words and the piece's use are HERE.
+
+## §48. THE OUTPUT PATH, LIVE AND IN THE SIMULATION — SuperCollider is the mixer and the master; Reaper is only the players and the loudspeaker (2026-10-04, Fable)
+
+**What prompted it — his words:** *"about the playback number five in, or help me understand why playback through Reaper in live.
+What will we do there? Just use SuperCollider as the mixer? Or have still have Reaper in the signal chain? I know we established a
+like a mastering bus built in SuperCollider for sound out."*
+
+**The answer put to him:** LIVE, Reaper is not in the chain at all. SuperCollider's master bus (the sandbox's mastering chain —
+limiters, master) goes straight to the interface; SC is the mixer of the electronics. IN THE SIMULATION, SC's master is still the
+master; its output comes back into Reaper only because of the Windows audio device: SC runs on ReaRoute, so its output can only
+surface through a Reaper track. That track is the LOUDSPEAKER — one fader at unity, no effects — and Reaper's instrument tracks
+are the PLAYERS. So the simulation mirrors the hall: the players heard directly, the electronics from the PA; what he hears from
+the return track is SC's master exactly as it would be live. The design choice is SC = master; Reaper's place in the return is a
+consequence of the device, not a choice. Engine's part: the engine's log §6.
+
+## §49. 6.1 LAID OUT AND WRITTEN — the audio route Reaper → SuperCollider → Reaper; where it went (2026-10-04, Fable)
+
+**What prompted it:** *"Okay, good. Order is good. What's next? A plan?"* — then, to the sub-steps as proposed: *"a, write it"*.
+
+**The step as laid out (the planning method's phase 3 — the goal, then the sub-steps):** *Result when done:* one note from the composer
+score heard twice in Reaper — direct, and after passing through SC untouched on the flat return — the round-trip latency measured.
+Sub-steps (a) ReaRoute present? (b) SC's boot file in `electronics/sc/` (c) a send + the flat `ELEC RETURN` track through the bridge
+(d) the pass-through patch, the sandbox's chain if it ports whole (e) verified on his Chrome, the latency measured (f) the record and
+the first `SEAMS.md` lines. His part: ReaRoute's install if missing · the rack's re-save. The bass clarinet the first instrument through.
+
+**Where it went (THE SORTING, told in one line):** the piece's USE → `docs/PLAN.md` 1.1 (the six sub-steps 6.1 … 6.6, 6.1 whole);
+the running order (journal §2, step 6) marked ACTIVE with 6.1 written and the NEXT STEPS table pointing at its build; the GENERIC
+form → the engine's `docs/PLAN.md` part 4 (`doing`; 4.1 the audio route DAW → SC → DAW) with a line in parts 2 · 3; the
+engine's journal §2 updated (Q1 answered; part 4 the part in hand). `electronics/` is still not made — it is the build's first file.
+
+**Not claimed:** whether ReaRoute is installed on his machine · whether the sandbox's `process-chain.scd` is a mastering chain that
+ports whole · the latency. Each is found at the build.
+
+**Model:** the build is Opus, after a checkpoint and a clear — the cold-execution test is met by PLAN.md 1.1 + journal §2.

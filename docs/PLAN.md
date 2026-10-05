@@ -147,9 +147,49 @@ whole → **3.8 the seven small fixes, HERE** (one commit) → 3.3 the re-palett
 
 ---
 
-## 1. Compose — `todo`
+## 1. Compose — `doing`
 
-*To be laid out when we discuss it.*
+### 1.1 The electronics' plumbing — the running order's step 6, the first object simulated end to end — `doing` (laid out 2026-10-04, RUNNING_LOG §47 · §48 · §49)
+
+***Why:*** the first mic opening cannot be built until the score can speak to a sound process and that process has a home; and he
+must hear it *"through the actual pipeline"* — the simulation and the concert differing in the input device only.
+
+**What is decided (his word 2026-10-04):** the sound process is **SuperCollider, real-time**, fed by the Reaper rack over ReaRoute ·
+SC's master bus IS the output, live; in the simulation Reaper is only the players and ONE FLAT RETURN TRACK, the loudspeaker · the
+pedals of resonance and the recent engine's processing are PHASE 2, not here. The generic machinery is the engine's — its plan part
+4.1 (`live-electronics-system/docs/PLAN.md`), built HERE in `electronics/` (D7). **The sub-steps keep the running order's labels
+6.1 … 6.6** (journal §2) so the journal and this plan say the same thing.
+
+- **6.1 The audio route — Reaper → SuperCollider → Reaper — `todo`, LAID OUT.** *Result when done:* one note from the composer
+  score is heard twice in Reaper — direct from its instrument track, and again after passing through SC untouched, on the flat
+  return track; the round-trip latency measured and written down. **Sub-steps:**
+  - (a) **ReaRoute present?** An option of Reaper's installer (the ReaRoute ASIO driver). Absent → HE re-runs the installer with the
+    box ticked, one minute; the fallback a virtual cable. Checked first, claimed only when seen.
+  - (b) **SC's boot file** in `electronics/sc/`: device ReaRoute ASIO, the sample rate Reaper's, 16 in / 16 out; the sandbox's boot
+    convention ported (`live-electronics-engine/docs/audio-workflow.md` — how sclang is found on this machine), nothing more.
+  - (c) **Two rack changes, THROUGH THE BRIDGE** (never by rebuilding): a send from the bass clarinet track to ReaRoute out 1 · a new
+    track `ELEC RETURN` — input ReaRoute 1/2, monitoring on, 0 dB, NO effects. He re-saves the rack. (`make_tracks.lua` resets
+    faders — `apply_trims.lua` after it.)
+  - (d) **The pass-through patch** in SC: `SoundIn` → `Out`, plus the sandbox's mastering chain if it ports in one piece (its
+    `process-chain.scd` — read at the build); otherwise a bare limiter now, the chain at phase 2.
+  - (e) **Verified in the running app, on his Chrome:** a note from the composer score → SC's input meter moves → the return track
+    meters → both heard. The latency each way measured (the number into the log).
+  - (f) **The record:** RUNNING_LOG; the engine's `docs/SEAMS.md` — the sound-path row's first lines: one send and one flat return
+    track per piece; `git subtree push` once `electronics/` exists.
+  - *His part:* (a) if ReaRoute is missing · the re-save in (c). Nothing else.
+- **6.2 The message route** — one brick's onset arrives in SC with its data (a `DECElec` loopMIDI port read by `MIDIIn`, or OSC
+  through the score server — decided here). *To be laid out when we discuss it.*
+- **6.3 The opening brick + SC's capture** — a window of N seconds on one player recorded to a file in the piece's bank. *To be laid
+  out when we discuss it.*
+- **6.4 The sample index** — one file the piece owns, a row per sample (id · name · player · time · length · category · file · the
+  opening that made it), written by the capture, read by the score, the notation, SC; the schema and its reader/writer the engine's.
+  *To be laid out when we discuss it.*
+- **6.5 The playback brick** — a few seconds later, SC's buffer player returns the sample through the flat return. *To be laid out
+  when we discuss it.*
+- **6.6 The demo end to end** from the composer score, and the record (`SEAMS.md` · the engine's log · this log · `git subtree
+  push`). *To be laid out when we discuss it.*
+
+*The rest of Compose — to be laid out when we discuss it.*
 
 ## 2. Notate — `todo`
 
