@@ -3694,3 +3694,19 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **What was done:** `tools/deal_variants.js` gained **`--class <name>`** (the presets of one class only); the deal `--env tail --class time --seed 2 --render`: 30 plays on 15 bricks from SEVEN presets — `diffuse` · `grey` · `freeze` · `jp` · `bloom` · `bands` · `squeal` — so each treatment comes four or five times, on different players' impulses (28 distinct variant samples: twice the same sample met the same preset). The plan sent, the engine rendered them within 12 s. Committed with the bank.
 
 **Not claimed:** heard. His: F5 · File ▾ → Reload · play from 6 s.
+
+## §120. THE GRANULAR FREEZE — the cloud, the first granular voice (10.2), built on his "b" after a talk on the freeze's repeat (2026-10-05, Fable; the engine's §36)
+
+**His words:** *"can we look at the freeze algorithm? There's it, it repeats. There's a oscillation. Is there anything we can do? Is this granular? I think we did something with like buffer read and the phasor index. Anyway, if there could be, I guess, longer windows maybe and more overlap so that it's more of a sustained freeze rather than a repeated type of effect. Let's discuss first."* — heard on the ring versions of §118 · §119 (`freeze-tail` on several impulses).
+
+**The talk (one turn):** what the freeze IS — spectral (PV_MagFreeze on a 2048 window, hop ¼, the phases re-drawn by PV_Diffuser at 200/s): one 43 ms slice held and re-synthesised. **The AI's reading of the repeat, NOT measured:** the phase re-draw at 200/s against a frame rate of ~94/s — two rates that do not divide, a beating at some 6 … 12 a second; and a 43 ms slice re-synthesised is one grain over and over. Two roads put to him: **A** tune the spectral freeze (window 8192 · hop ⅛ · the re-draw once per frame) — three numbers; **B** a GRANULAR freeze, the sandbox's cloud (`\roadsCloudBuf`, the buffer-and-phasor thing he remembered) — a new stage. Recommended A then B; **his word: "lets do b."**
+
+**What was built — the stage `cloud` (`electronics/sc/process.scd`, after the spectral block, before the reverbs):** the signal so far is written into a 4 s buffer while the source plays (the writing stops at the source's end — the moment is never overwritten); from `gfAtMs` on, Hann grains of `gfDur` ms at `gfDens` a second, ASYNCHRONOUS (Dust, so no period), each beginning at the moment ± `gfSpread` ms, each at a random pitch within ± `gfPitch` semitones; the level compensated by 1/√overlap (the sandbox's measured rule: density is texture, not loudness); until the first grains, the dry sound. GrainBuf, maxGrains 512. The catalogue row `cloud` with six dials and their hints (`le_process.js`); the preset `cloud` (class `time`) in `bank/presets.json` — the time class is EIGHT now; a `--class time` deal includes it.
+
+**Why held, not repeated:** many offset readings of one place at random times, not one snapshot re-drawn at a frame rate — there is no rate for the ear to find. What repeats, if anything, is the 200 ms excerpt itself: with `gfSpread` 0 the same stretch is read over and over (a shimmering loop); `gfSpread` smears where it begins, `gfPitch` detunes each reading.
+
+**Proven once:** `process_test.scd` PASS with the case added — the cloud from 80 ms under a tail capped 1.5 s past a 350 ms source: 1804 ms long, cut at the cap (it never falls), and 0.6 … 1.1 s in it is −12.6 dB under its peak with the source long over. NOT heard. His engine PREDATES it: a restart.
+
+**NOT done:** A — the spectral freeze is as it was (his to ask) · the LFO-like slow motion of the sandbox's cloud (density and grain length as envelopes across the cloud) — one grain length and one density per render here · a stereo spread (the bank is mono).
+
+**THE SORTING:** the stage, the row and the hints are the engine's; the preset is the piece's.

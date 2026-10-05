@@ -57,6 +57,8 @@
     "args": { "resMix": 1, "resDcy": 1.2, "rlo": 0.4, "rlomid": 0.8, "rhimid": 0.7, "rhi": 0.3 } },
   { "key": "whistle", "name": "filter — LPF18, resonant at 900 Hz", "effect": "filter", "class": "colour",
     "args": { "filtMix": 1, "filtType": 2, "cut": 900, "res": 3.2, "filtDist": 0.6, "hpf": 30 } },
+  { "key": "cloud", "name": "granular freeze — the cloud, held", "effect": "cloud", "class": "time",
+    "args": { "gfMix": 1, "gfAtMs": 80, "gfDur": 200, "gfDens": 40, "gfSpread": 20, "gfPitch": 0 } },
   { "key": "squeal", "name": "feedback — a squeal that climbs", "effect": "feedback", "class": "time",
     "args": { "fbMix": 1, "fbBloom": 0.1, "fbHold": 3, "fbDrive": 12, "fbTone": 4000, "fbPath": 5, "fbClimb": 0.8, "fbWobble": 0.3, "fbS1": 82.41, "fbS2": 110, "fbS3": 146.83, "fbS4": 196, "fbS5": 246.94, "fbS6": 329.63 } }
  ]
