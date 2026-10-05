@@ -3413,3 +3413,20 @@ gate's threshold and the freeze's moment most of all.
 is material with a HISTORY: every stage keeps its source's name in its own (`bfl-impulse-1~3`) and in its row (`source` ·
 `effect` · `args`), so the bank records how each sound was made, and a piece can place any generation of it. The envelope at
 the end separates two things that a recording binds together — what a sound is made of and how it begins.
+
+## §104. CHECKPOINT #5 OF SESSION 2 — the build's wrap kept for him, to be presented at the resume (2026-10-05, Opus; his `/checkpoint`)
+
+**What prompted it:** his `/checkpoint`, with this: *"Please keep this for me to read and present it on post clear. The workshop
+for transforming samples thru to the end of the notes 'the record'."* — the chat message that closed §103's build: what exists,
+his six steps to hear it, the notes.
+
+**What was done:** that message is `docs/WORKSHOP_NOTE.md`, verbatim under one line of provenance — a file he can open, and the
+one thing on the checkpoint's `Resume reads:`; journal §2's checkpoint #5 tells the resuming session to present it WHOLE AND
+VERBATIM before the playback, then stop. Nothing else changed: no code, no score, nothing in `electronics/`.
+
+**A point of method, for the record:** the chat is never the record — but a message written FOR HIM (steps for his hands, in
+his notation) is worth keeping as it was said, apart from the journal's block written for the next AI. The two are different
+documents for different readers; this is the first time one of the first kind was kept at his asking.
+
+**The state at the clear:** step 10.1 built and pushed (`b913495`; the engine `098f9d6`), proven headless both sides, NOT
+heard; his engine is up and predates the build; his page holds unsaved edits to `piece-sec01-a` (his). Resume on Opus.
