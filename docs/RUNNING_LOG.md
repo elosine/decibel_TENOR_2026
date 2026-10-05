@@ -2061,3 +2061,42 @@ were written by the file tool instead (`docs/HOW_WE_WORK.md` has both now).
 choice made by his sentence about correspondence, against a simpler studio-only road (a MIDI port on the notes' own clock, §56).
 And the timing problem was not solved but REMOVED, by his crop: a window that opens early and is trimmed to the attack afterwards
 needs no clock shared between the score and the engine.
+
+## §61. 6.2 CLOSED — the lead measured on his Chrome: 114.2 ms · his word on testing · "Where are we?" — the first object's top line put to him (2026-10-04, Opus)
+
+**His words, after playing the bass clarinet note from the composer score with the engine up:** *"it played, but why are we testing this
+again? That's okay, you don't have to answer. Let's just try to avoid unnecessary testing. We already tested it. What's next? Let's move
+on. Do we have the way to simulate the open mic and play the sample back and the cropping and all that? Where are we?"* — and before it,
+of the hand steps: *"clearer instructions pls; kill the 5500 server? what do you mean close score server window where is the
+start_score... path"* · *"done but just give all steps just so they are comprehensible"*.
+
+**The measure** (`probes/elec_message_log.jsonl`, one note — `decibel-first-sound`, the bass clarinet's `wc-2` at 5 s, his Chrome, his
+server on 5500 restarted, his engine window): the message left **92.8 ms** ahead of the note's own start; the note's sound reached the
+engine **114.2 ms** after the message. So from the note's own start to its sound in the engine: **21.4 ms** — the sampler and the
+crossing. A message from the score is at the engine a tenth of a second before the sound it announces. 6.2's last box is ticked.
+
+**What the AI got wrong, and takes from it:** the engine's ear, the relay, the page's hook and the pairing of a sound with its message
+were all proven by the AI's own run (§60). What remained was ONE NUMBER for the record, and to get it the AI walked him through four hand
+steps, first vaguely (*"close the score server's window"* — the server was running in a PowerShell window, started by a typed line, not by
+the batch file), then one step per turn. To him that was a second test of a tested thing. **The rule taken:** a check that needs HIS hands
+is a cost of its own — it is OFFERED in one line, with what it would add, and done only on his word; a number for the record waits until
+he is at that window anyway. (The restart of his score server was needed regardless — the route does not exist in a server started
+before it — and that was the thing to say, in one plain sentence.) And hand steps, when they are his: all at once, each one explicit —
+which window and how to know it, the full path, the keys, what he should see.
+
+**"Where are we?" — answered:** the PLUMBING is done (6.1 the sound into the engine and back; 6.2 the score's messages to the engine).
+The OBJECTS are not built: there is no mic-opening brick, no recording, no crop, no bank, no playback brick. That is 6.3 · 6.3b · 6.4 ·
+6.5, which the running order had as four talks and four builds.
+
+**Put to him — the AI's proposal, NOT decided:** build them as ONE thing, THE FIRST OBJECT END TO END, because that is what he asked for
+in DEC-7 and DEC-8 and what his question asks for now, and because the four are one path (a sample that is captured but cannot be played
+back proves nothing to the ear). The top line:
+1. **The opening brick** — a new brick on a player's lane: where it sits is when the mic opens, its length is the window, it carries a name.
+2. **The capture** — at the brick the score tells the engine "open"; the engine records that player's input for the window.
+3. **The crop** — the engine finds the attack in the recording, trims to it, saves the file into the piece's bank under the name.
+4. **The index** — one list of the samples taken, which the score reads.
+5. **The playback brick** — a second new brick: a sample chosen by name, placed anywhere; there the engine plays it back.
+6. **Heard** from the composer score: the note, the opening over it, and later the sample back.
+**The AI's defaults, his to change:** the window 500 ms (his figure, DEC-8) · the names per player in order, attack A, B, C … · the crop
+from the attack's start to where the sound falls back to silence, with a small margin. **The correspondence (D10):** in concert the same
+engine code records the microphone; here it records the sampled note under the brick. **Parked, still his:** feedback's *"other ways"*.

@@ -184,13 +184,12 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   - (f) **The record:** RUNNING_LOG; the engine's `docs/SEAMS.md` — the sound-path row's first lines: one send and one flat return
     track per piece; `git subtree push` once `electronics/` exists.
   - *His part:* (a) if ReaRoute is missing · the re-save in (c). Nothing else.
-- **6.2 The message route — the composer score → the engine, OSC through the score server — `doing`: BUILT 2026-10-04 (RUNNING_LOG §60), PROVEN TO THE EDGE OF WEB MIDI.
+- **6.2 The message route — the composer score → the engine, OSC through the score server — `done` 2026-10-04 (RUNNING_LOG §60 · §61): BUILT, PROVEN, AND THE LEAD MEASURED ON HIS CHROME —
+  the message leaves 92.8 ms ahead of the note; the note's sound reaches the engine 114.2 ms after the message.
   (a) ☑ the ear on UDP 57211 + the onset probe (`electronics/sc/`) · (b) ☑ `electronics/tools/osc.js` · (c) ☑ `electronics/tools/relay.js`;
   `score/server.js` three lines; `bank/elec_route.json` `message` · (d) ☑ `electronics/score/le_msg.js`; `composer.html` one tag, one hook ·
   (e) the engine's half ☑ · the page's own playback seen by the engine ☑ (`onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`;
-  hello 0.71 ms) · a real note paired with its message ☑ · **THE SCORE'S LEAD OVER ITS OWN SOUND ☐ — HIS CHROME: restart the score
-  server, `start_electronics.bat`, play a bass clarinet note; the engine window shows both lines and `probes/elec_message_log.jsonl`
-  keeps the number** · (f) ☑ the record. (LAID OUT AND WRITTEN 2026-10-04,
+  hello 0.71 ms) · a real note paired with its message ☑ · **THE SCORE'S LEAD OVER ITS OWN SOUND ☑ — his Chrome, 2026-10-04: 114.2 ms (`probes/elec_message_log.jsonl`)** · (f) ☑ the record. (LAID OUT AND WRITTEN 2026-10-04,
   his word *"a, write it"* — RUNNING_LOG §57 · §58 · §59; D10).** *Result when done:* with the engine up, a note
   played from the composer score on the bass clarinet lane is seen in his engine window as ONE line — which lane, which brick, when —
   BEFORE its sound arrives there; the lead measured and written down. *The road, both halves (D10):* CONCERT — an iPad's browser → the

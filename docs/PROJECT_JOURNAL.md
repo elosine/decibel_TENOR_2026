@@ -153,6 +153,9 @@ takes is his (D5).
    on UDP 57211; the composer page's own playback reached it — `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`; hello
    through the score server 0.71 ms; a real note paired with its message. NOT MEASURED: the score's lead over its own sound — HIS CHROME,
    two hand steps (restart the score server · `start_electronics.bat`). **► NEXT: 6.3 + 6.3b, the opening brick, the capture and the crop — a talk (Fable).**
+   **☑ 6.2 DONE 2026-10-04 (RUNNING_LOG §61) — THE LEAD MEASURED ON HIS CHROME: the message leaves 92.8 ms ahead of the note, the note's
+   sound reaches the engine 114.2 ms after the message.** His word: *"Let's just try to avoid unnecessary testing … What's next? Let's move
+   on."* **► 6.3 · 6.3b · 6.4 · 6.5 PROPOSED AS ONE BUILD — the first object end to end (§61); his go awaited.**
 7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
@@ -217,12 +220,12 @@ question, not by habit.)*
 - **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
   LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-### OPEN NOW *(mid-session, 2026-10-04, Opus — 6.2 BUILT in the chat that held its talk; his two hand steps close it. Checkpoint #3 was before the talk)*
+### OPEN NOW *(mid-session, 2026-10-04, Opus — 6.2 DONE AND MEASURED; the first object proposed as one build, his go awaited)*
 
-- **The task and its state:** the running order's step 6, the electronics' plumbing — **6.1 the audio route DONE AND HEARD** (RUNNING_LOG
-  §51 … §56); **6.2 the message route BUILT** (§57 … §60; D10 the correspondence rule) — proven to the edge of Web MIDI, ONE MEASURE LEFT
-  ON HIS CHROME (below). **POSITION: step 6 of 11 is active; inside it 6.1 ☑ · 6.2 built, his two hand steps close it · ► 6.3 + 6.3b
-  next (a talk) · then 6.4 · 6.5 · 6.6.** (1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need.)
+- **The task and its state:** the running order's step 6, the electronics' plumbing — **6.1 the audio route ☑ · 6.2 the message route ☑**
+  (RUNNING_LOG §51 … §61; D10 the correspondence rule). THE PLUMBING IS DONE; THE OBJECTS ARE NOT BUILT. **POSITION: step 6 of 11 is
+  active; inside it 6.1 ☑ · 6.2 ☑ · ► 6.3 · 6.3b · 6.4 · 6.5 next — PROPOSED TO HIM AS ONE BUILD, the first object end to end (§61); his
+  answer is awaited · then 6.6 the record.** (1 ☑ · 2 ☑ · 3 ☑ · 4 set up, three calls of his open · 5 at need.)
 - **What exists, for a session that has never seen this chat:**
   - **The engine is SuperCollider, real-time, and lives HERE in `electronics/`** — a git subtree of `live-electronics-system` (D7),
     WHOLE: its code `electronics/sc/` · `electronics/tools/sc.js` and its docs `electronics/docs/`. **Edit the engine's docs THERE;**
@@ -245,36 +248,31 @@ question, not by habit.)*
   the sound against it) · `electronics/tools/osc.js` · `relay.js` · `electronics/score/le_msg.js` · `score/server.js` (three lines) ·
   `composer.html` (one tag, one hook) · `tools/elec.js` (`ping` · `message`). The numbers: `probes/elec_message.json` (hello 0.71 ms; the
   page's own playback shown by the engine as `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`).
-- **► THE NEXT CONCRETE STEP — TWO THINGS, the first his:**
-  **(1) HIS TWO HAND STEPS, which close 6.2's one open measure** (the score's lead over its own sound — it needs Web MIDI): restart
-  the score server (close its window, `start_score_server.bat`), reload the composer tab · `start_electronics.bat`. Then a bass
-  clarinet note played from the composer score shows TWO LINES in the engine window — `onset · bcl · …` and `heard · bcl · its sound
-  arrived N ms after its message` — and the number lands in `probes/elec_message_log.jsonl`. A look without playing: `node
-  tools/elec.js ping --via 5500`. When the number is there: write it into PLAN.md 1.1 (e), `electronics/docs/PLAN.md` 4.2 and both logs.
-  **(2) 6.3 + 6.3b — THE OPENING BRICK, THE CAPTURE AND THE CROP: a talk under the planning method, on FABLE.** *Result when done:* a
-  brick on a player's lane opens a window; the engine records it, crops it to the attack itself, and a named file lands in the piece's
-  bank. Begin from DEC-8 (his scenario: the window about 500 ms, longer than the attack · the crop *"quite reliable to the actual
-  attack itself"* · the name — attack A · B · C … · feedback, *"maybe there's other ways"*, parked for THIS talk) and DEC-7. What 6.2
-  leaves ready: the message road (a new kind, say `/le/open`, is one `hear` in the engine and one `LE.send` in the page) · the onset
-  probe (the crop's start) · the test hook, to be replaced by the brick. Put to him ONLY what is his: the window's length, what the
-  brick carries, the name — the placing is the AI's (§ THE SORTING).
-- **`Resume reads:`** this §2 · `docs/COMPOSITION_NOTES.md` DEC-7 · DEC-8 · RUNNING_LOG §60 · `electronics/docs/SEAMS.md` (the message
-  half) · `docs/PLAN.md` 1.1, the lines 6.3 … 6.5. For the build after it: the headers of `electronics/sc/boot.scd` and
-  `electronics/tools/sc.js`. Nothing else; §51 … §59 only by a question.
+- **► THE NEXT CONCRETE STEP — THE FIRST OBJECT END TO END (6.3 · 6.3b · 6.4 · 6.5 as ONE build), IF HE SAYS GO.** The top line put to him
+  2026-10-04 (RUNNING_LOG §61): (1) the opening brick — on a player's lane; its place is when the mic opens, its length the window, it
+  carries a name · (2) the capture — the score tells the engine "open", the engine records that player's input · (3) the crop — trimmed
+  to the attack, saved into the piece's bank under the name · (4) the index — one list of the samples, read by the score · (5) the
+  playback brick — a sample chosen by name, placed anywhere, played back by the engine · (6) heard from the composer score. The AI's
+  defaults, his to change: the window 500 ms · names per player in order, attack A, B, C … · the crop from the attack's start to the
+  fall back to silence, a small margin. On his go: lay each step out under the planning method INTO `docs/PLAN.md` 1.1 and the engine's
+  plan 4.3 … 4.4 as it is built — no separate talk per sub-step unless something is genuinely his. Parked, his: feedback's *"other ways"*.
+  **HIS WORD ON TESTING (§61): no check that needs his hands unless he asks — offer it in one line.**
+- **`Resume reads:`** this §2 · `docs/COMPOSITION_NOTES.md` DEC-7 · DEC-8 · RUNNING_LOG §60 · §61 · `electronics/docs/SEAMS.md` (the message
+  half) · `docs/PLAN.md` 1.1, the lines 6.3 … 6.5 · for the build: the headers of `electronics/sc/boot.scd` and `electronics/tools/sc.js`,
+  `electronics/sc/session.scd`, `electronics/score/le_msg.js`. Nothing else; §51 … §59 only by a question.
 - **⚠ WHILE HIS ENGINE WINDOW IS OPEN** (it was, at this checkpoint): only `node tools/elec.js probe`, `meters` and `ping` — they leave it
   alone. `check` · `latency` · `selftest` · `message` boot a server and refuse. Never kill a SuperCollider process the session did not start
   (§55: a probe once took his engine down).
-- **Pending him:** **THE TWO HAND STEPS THAT CLOSE 6.2 (above)** · what he heard of the rack · the three notation calls (the pitch form · the percussion staff's line order · the short
+- **Pending him:** **his go on the first object as one build (§61)** · what he heard of the rack · the three notation calls (the pitch form · the percussion staff's line order · the short
   names) · the electronics in remote sessions — *"maybe"*, not today · the ensemble's final instrumentation (the call's; his to check) ·
   whether "my improvisation with live electronics" is the improviser piece (§17) · "pedals" or "petals" of resonance (phase 2) · the
   planning repo's lines, at his word only · the porting protocol's hole (§37; `docs/PROTOCOL_DEVIATIONS.md`) — noted, not acted on.
-- **Deliberately uncommitted:** nothing — `git status --short` is empty. (Once he plays with the engine up, `probes/elec_message_log.jsonl`
-  appears — the measure: read it, commit it.) Outside git, by design: `reaper/Media/*.wav` ·
+- **Deliberately uncommitted:** nothing — `git status --short` is empty. (`probes/elec_message_log.jsonl` is committed: his engine window appends to it at every
+  paired note while `testOnsets` is true.) Outside git, by design: `reaper/Media/*.wav` ·
   `reaper/kontakt/out/`. The engine's repo is in step (subtree push at this wrap; the mirror pulled). Pieces #4 · #5 · #6 and the sandbox
   were READ, never written.
-- **Left running:** his Reaper on the rack · his score server on 5500 — STARTED BEFORE THE MESSAGE ROUTE EXISTED, so it has no
-  `/api/elec` until he restarts it (the page there plays as before; the hook is skipped) · loopMIDI. His engine window was CLOSED at
-  this wrap. Nothing of the AI's: the throwaway 5501 stopped, no sclang, no scsynth.
+- **Left running:** his Reaper on the rack · his score server on 5500, RESTARTED by him 2026-10-04 — it has the message route · HIS
+  engine window (`start_electronics.bat` — sclang and scsynth, his: only `probe` · `meters` · `ping` beside it) · loopMIDI. Nothing of the AI's.
 
 ### THE SESSIONS BEFORE THIS ONE — one line each; the lab journal has them whole
 
@@ -286,9 +284,8 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **HIS: two hand steps that close 6.2** — restart the score server, reload the composer tab · `start_electronics.bat` · play a bass clarinet note: two lines in the engine window, the lead into `probes/elec_message_log.jsonl`. **6.2 is BUILT and proven to the edge of Web MIDI (§60)** | — | — |
-| **►** | **6.3 + 6.3b — THE OPENING BRICK, THE CAPTURE AND THE CROP: a talk** — a brick opens a window on a player; the engine records, crops to the attack, names the file into the bank (DEC-7 · DEC-8; feedback's *"other ways"* is for this talk) | **Fable** (the talk) · Opus (its build) | **YES — `/checkpoint`, `/clear`, `/postclear`** |
-| — | 6.4 the index → 6.5 the playback → 6.6 the demo | Fable (each talk) · Opus (the builds) | — |
+| **►** | **THE FIRST OBJECT END TO END — 6.3 the opening brick + the capture · 6.3b the crop · 6.4 the index · 6.5 the playback brick, as ONE build** (proposed 2026-10-04, §61; his go awaited). **6.2 is DONE: the lead measured on his Chrome, 114.2 ms** | **Opus** (a written top line; each step laid out into the plan as it is built) | his call — here, or after `/checkpoint` · `/clear` |
+| — | 6.6 the demo's record → step 7, his rhythm layer | Fable (each talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
