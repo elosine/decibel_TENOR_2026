@@ -3065,3 +3065,67 @@ block: the state (five groups, the bank full — 25 rows, the percussion's all t
 step as a numbered build of the behaviour `pattern` (engine · page · the drawer's generator reused · one headless proof · the
 record), the `Resume reads:` (§95 and three code spans), what is pending him, and today's rules of his. Committed WITH his 25
 samples, the index and his rack as he saved them. The engine's repo is in step. Resume on Opus; `/clear` is safe.
+
+## §97. BEHAVIOUR `pattern` BUILT — a COMPOSED rhythm for the samples a return brick plays (2026-10-05, Fable; DEC-15 · §95 version B; his "go", "build here")
+
+**What prompted it:** his note DEC-15 (§95 — the Strikes drawer's rhythm part, for the samples) and his answer to §95's (a)/(b):
+`/postclear build here` → *"go"*. Built on Fable in one pass, as `ar` · `chain` · `arChain` were (§78 · §82 · §87): engine · page ·
+one proof each side. No plan written for another model (his word of session 2: *"Let's just build here"*).
+
+**WHAT IT IS, in his terms:** a fourth Behaviour on a return brick. The three built before are ROLLED by the engine (dice at
+every playback); this one is COMPOSED — he arranges the rhythm in the brick's panel, the brick stores it, ONE message carries
+every onset, and the engine plays each on time. The same in concert and in simulation (D10). No dice.
+
+**THE ENGINE (`electronics/sc/bank.scd`) — what is the engine's:** `patternOnsets(pattern)` parses the message's
+`pattern "name:atMs,name:atMs,…"` — split on `,` then `:`, each name through `safeName`, each time a number of ms from the live
+note clipped at 0, a pair without a name dropped. `samplePlay`'s new first branch, `behaviour == "pattern"`: each onset scheduled
+`due + atMs/1000` in a bundle, one window line each (`pattern · <name> · in N ms · M ms after the live note`), the `LE_RESULT`
+carries the count and the pattern back. A name not in the bank says so and is skipped. Every `var` before the first statement
+(§90); Strings compared by content (§94). The message route is unchanged: a `pattern` value is one more NAME VALUE pair; the
+relay's 64 KB body takes a thousand onsets.
+
+**THE PAGE (`electronics/score/le_objects.js`, 319 → 405 lines):** the Behaviour select's fifth option, `pattern — a composed
+rhythm for the samples picked`. Under it:
+- **the samples by TWO ROWS OF BOXES** (his version B): the PLAYERS (every `player` in the bank's index) × the IMPULSES (the tag
+  after the player's prefix — `bcl-impulse-1` → `impulse-1`, shown as `1`; a sample named otherwise shows its own tag). Stored
+  as `elec.pick = { players, impulses }`; **no pick = every sample the bank holds at playback** (the brick follows the bank's
+  growth until he unticks a box). The plain Sample picker is hidden for a pattern.
+- **the rhythm's dials** (`elec.rhythm`): Shape — even · front (dense at the start) · back (dense at the end) · centre · edges ·
+  accel (each gap ¾ of the one before) · rit (its mirror) · random · Span ms · Gap ms (above 0 it sets the span as gap × (n − 1))
+  · Jitter ms (all onsets but the first; the first IS the live note) · Order — as named · by impulse, then by name · shuffled ·
+  Seed · Generate · Reshuffle (seed + 1). Every dial change regenerates at once; Generate is for a bank that has grown.
+- **Generate** → `elec.pattern = [{ name, atMs }]`; the brick's START is the live note (as `chain`), its END the span or the
+  last onset, whichever is later (100 ms floor). The label: `▶ 12 samples · 2000 ms ~ PATTERN`. The panel lists the first
+  twelve onsets. The seed and the dials stay on the brick: a save reproduces what he heard.
+- **fire:** at the brick's start, `/le/play` with `name` (the first), `pattern "a:0,b:400,…"`, `behaviour pattern`, `t`, `dueMs`.
+  An empty pattern sends nothing and says so in the status line.
+
+**THE GENERATOR — the one call inside the plan, mine:** written SMALL and OWN in `le_objects.js` (`rhythm(n, cfg)`, ~20 lines),
+NOT lifted from the Strikes drawer. The checkpoint allowed either; in one read the lift is not clean: the drawer's `pattern()`
+is bound to its config and its played slots (`this.cfg`, `this.slotsPlayed`, `spanFallback`), and THE SORTING forbids the
+engine's module to lean on a piece's drawer at all — the generator is the engine's when it lives in the engine's file. The
+drawer is untouched (no shield, no palette run). Dropped from the checkpoint's dial list: **"drop rests"** — a rest has no
+meaning for a list of samples (every picked sample sounds); and **"as played"** — nothing was played (§95 said so).
+
+**THE PROOF — once each side, headless, his engine untouched (D13):**
+- the engine: `roll_test.scd` gained the parse — `"a:0,b:250.5"` → a at 0.0 · b at 250.5 ms; `"vc-impulse-1: 10, x/y:-5, :3,"`
+  → vc-impulse-1 at 10.0 · xy at 0.0 (the −5 clipped, the nameless `:3` and the trailing comma dropped); `""` → 0 onsets.
+  `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/roll_test.scd` — all four behaviours still print.
+- the page: the module loaded under a stub window with a fake bank (2 players × 3 impulses): even 2000 ms → 0 · 400 · 800 ·
+  1200 · 1600 · 2000; accel → 0 · 655.6 · 1147.2 · 1516 · 1792.6 · 2000; random + shuffled + seed 7 twice → the SAME six
+  onsets (reproducible); gap 250 + jitter 30 by impulse → 0 · 261.3 · 502.6 · 765.4 · 1029.2 · 1275.5, the brick ending
+  at the last; a pick of bfl × {2, 3} → two; a pick of nothing → none, the brick 100 ms, nothing sent.
+- NOT tested: the sound in the running app — his, as he composes (D13). A fault → `docs/SWEEP_LIST.md`.
+
+**A slip of mine, for the record:** the test's three lines went into `node -e` with escaped backslashes — `\name` became a
+newline + `ame` (the rule of §74, broken again: a script with escapes goes to a FILE). The broken test hung `sclang` beside HIS
+ENGINE; it was found by its command line (`roll_test` — his is `session.scd`) and ended alone; his engine was never touched.
+The repair came from a scratch file. Two slips, same rule — it is in CLAUDE.md § THE MACHINE already; it binds node -e too.
+
+**HIS, to hear it:** F5 the composer page (the module) · close the engine's window and `start_electronics.bat` (the branch is in
+the code, not in the running engine) · select a return brick → Behaviour → pattern → tick, dial, Generate · play from before it.
+A new `R` brick at the playhead, Behaviour → pattern, picks every sample in the bank in one go.
+
+**Where it went (THE SORTING):** the parser and the playback the engine's (`electronics/sc/bank.scd`); the panel and the
+generator the engine's page module (`electronics/score/le_objects.js`); nothing in the stack changed; the uses — which brick,
+which pick, which rhythm — in his save. The engine's log has it as its §24. Subtree-pushed at this wrap.

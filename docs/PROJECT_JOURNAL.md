@@ -104,7 +104,7 @@ takes is his (D5).
    articulation; it sounds as played · THE BANK: the window's audio recorded and stored under a NAME — a shape or a colour (LG-342 ·
    LG-345); the store in this repo (the samples are the piece's), the mechanism in `electronics/`. **Done when:** one opening placed,
    one note heard, one file in the bank, named; played back on demand.
-9. ► **THE RETURN — the sample comes back** — BUILT 2026-10-05 (RUNNING_LOG §78; DEC-9 … 9c; D14 · D15): the behaviour `ar` in the engine (rolled live; the dials A … F in `bank/elec_route.json` `return.ar`), the brick's behaviour in the page, the percussionist's two lanes into one microphone, impulse 2's openings and returns by `tools/impulse.js --n 2` (PENDING his save of the page). *(as written:)* [part 11's second member; the algorithm the engine's]: a second rhythm series; at each
+9. ► **THE RETURN — the sample comes back** — FOUR BEHAVIOURS BUILT 2026-10-05: `ar` · `chain` · `arChain` rolled by the engine (§78 · §82 · §87), `pattern` COMPOSED in the brick's panel (§97, DEC-15); five groups of impulses in the music, the bank full (§96). OPEN: his ear. *(as it was built:)* BUILT 2026-10-05 (RUNNING_LOG §78; DEC-9 … 9c; D14 · D15): the behaviour `ar` in the engine (rolled live; the dials A … F in `bank/elec_route.json` `return.ar`), the brick's behaviour in the page, the percussionist's two lanes into one microphone, impulse 2's openings and returns by `tools/impulse.js --n 2` (PENDING his save of the page). *(as written:)* [part 11's second member; the algorithm the engine's]: a second rhythm series; at each
    onset the player's banked sample is placed NEARBY — directly before or after — by an algorithm (its dials: before · after · both ·
    the offset range · which of the player's samples · a seed) · the iterations: two versions of themselves, three … · the returned
    sample named in the score by its shape or colour (LG-342; the notation later — PERFORMANCE_NOTES #2). **Done when:** a series
@@ -172,6 +172,13 @@ question, not by habit.)*
 - **Not done, and not claimed:** HIS EAR on the first object and on the crop's numbers · his three notation calls.
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
+
+**► AFTER CHECKPOINT #2 — 2026-10-05, Fable (RUNNING_LOG §97): BEHAVIOUR `pattern` BUILT, on his "go" ("build here"). THIS SUPERSEDES the checkpoint's "NEXT CONCRETE STEP" below.**
+
+- **A return brick has a fourth Behaviour, `pattern — a composed rhythm for the samples picked`:** the samples by two rows of boxes (the players × the impulses; no pick = the whole bank at playback), the dials (shape · span · gap · jitter · order · seed), Generate · Reshuffle; the brick stores `elec.pattern`, ONE message carries every onset, the engine plays each on time — no dice (D10). The generator is the engine's module's own (`rhythm()`), not the drawer's; the drawer untouched; "drop rests" dropped (a rest means nothing for a list of samples).
+- **Proven once each side, headless** (`roll_test.scd` the parse · the module under a stub window, a reproducible generate); his engine untouched. NOT heard: his, as he composes (D13).
+- **HIS, to hear it:** F5 the page · close the engine's window and `start_electronics.bat` · a return brick → Behaviour → pattern → tick, dial, Generate · play from before it.
+- **Deliberately uncommitted: nothing.** The engine's repo in step at this wrap (subtree push).
 
 **► CHECKPOINT #2 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Fable (RUNNING_LOG §74 … §96). Where the blocks below disagree with this one, THIS BLOCK WINS.**
 
@@ -321,7 +328,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 9 — THE COMPOSED RHYTHM, behaviour `pattern` (journal §2 checkpoint #2, the numbered build; RUNNING_LOG §95): ASK (a) build / (b) skip, then build as one piece — engine · page · the generator reused · one headless proof · the record · the subtree push.** Then his ear on everything (a letter A … I) | **Opus** | **yes — `/clear`, `/postclear`** |
+| **►** | **Step 9 — HIS EAR on the four behaviours (`pattern` BUILT, RUNNING_LOG §97): a letter A … I for the rolled ones (`bank/elec_route.json` `return.ar` · `return.chain`); a brick → Behaviour → pattern for the composed one. Then his composing on — the sixth group, DEC-13, DEC-14.** A fault → `docs/SWEEP_LIST.md` | Fable (his ear, the talk) · Opus (a fix) | — |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
