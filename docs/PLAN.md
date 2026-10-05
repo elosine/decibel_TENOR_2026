@@ -184,10 +184,41 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   - (f) **The record:** RUNNING_LOG; the engine's `docs/SEAMS.md` — the sound-path row's first lines: one send and one flat return
     track per piece; `git subtree push` once `electronics/` exists.
   - *His part:* (a) if ReaRoute is missing · the re-save in (c). Nothing else.
-- **6.2 The message route** — one brick's onset arrives in SC with its data (a `DECElec` loopMIDI port read by `MIDIIn`, or OSC
-  through the score server — decided here). *To be laid out when we discuss it.*
+- **6.2 The message route — the composer score → the engine, OSC through the score server — `todo` (LAID OUT AND WRITTEN 2026-10-04,
+  his word *"a, write it"* — RUNNING_LOG §57 · §58 · §59; D10). NEXT: its build, Opus.** *Result when done:* with the engine up, a note
+  played from the composer score on the bass clarinet lane is seen in his engine window as ONE line — which lane, which brick, when —
+  BEFORE its sound arrives there; the lead measured and written down. *The road, both halves (D10):* CONCERT — an iPad's browser → the
+  laptop's score server → OSC over UDP → SuperCollider's language; the human plays · SIMULATION — his Chrome → the score server on 5500
+  → OSC → SuperCollider, all on this machine; the MIDI to Reaper is the simulated player. The one difference: the engine's address in
+  `bank/elec_route.json`. *Decided here:* OSC through the score server; the `DECElec` loopMIDI trigger REJECTED (no concert
+  counterpart); a WebSocket REJECTED (a dependency — `package.json`: the stack is dependency-free Node "and stays that way"); a shared
+  clock NOT NEEDED (the crop, 6.3b, finds the attack — the message need only be early). **Sub-steps:**
+  - (a) **The engine's ear** — `electronics/sc/`: the language port pinned (57211; the server keeps 57210) and ONE `OSCdef` for
+    `/le/…`: `/le/hello` (a handshake) · `/le/onset` (lane · brick id · the score time · the browser's send time). Each message printed
+    as an `LE_INFO` line — his engine window shows it — and stamped with SC's clock. Generic: the engine's.
+  - (b) **The OSC encoder** — `electronics/tools/osc.js`: the message format in dependency-free Node (about forty lines); node's
+    `dgram` sends it. The engine's.
+  - (c) **The server's relay** — `score/server.js`: ONE route `POST /api/elec` (JSON in → OSC out, to the address in
+    `bank/elec_route.json`) and ONE static route serving `electronics/score/` to the browser. The piece's two hook lines, listed in
+    `SEAMS.md`. A POST, not a WebSocket: about a millisecond on localhost, enough for openings, which are sparse; the WebSocket when the
+    performance module comes.
+  - (d) **The score's voice** — `electronics/score/le_msg.js`, the first mixin of the composer-score seam: `LE.send(kind, data)` → the
+    POST. ONE `<script>` tag in `composer.html`; ONE hook line where the playback emits a note (lane · brick · time), behind a test
+    toggle (the bass clarinet lane only) until 6.3's opening brick takes it over. The mixin the engine's; the tag and the hook the
+    piece's.
+  - (e) **Verified in the running app, on his Chrome:** the engine up (`start`), a note on the bass clarinet lane → the line in his
+    engine window. THE MEASURE: the message's lead over the note's own sound, which SC already hears through 6.1 — an onset detector
+    on that input, the gap in ms → `probes/`. `node tools/elec.js ping` added: one message, no server boot, safe beside his engine.
+    (The throwaway server 5501, `docs/VERIFICATION_RECIPE.md`, if his 5500 is up.)
+  - (f) **The record:** RUNNING_LOG · the engine's log · `electronics/docs/SEAMS.md` the message half and the first rows of its last
+    table (composer.html: one tag, one hook · server.js: one require, one route, one static route) · `TAKE.md` · the engine plan 4.2 ·
+    `git subtree push`.
+  - *His part:* nothing.
 - **6.3 The opening brick + SC's capture** — a window of N seconds on one player recorded to a file in the piece's bank. *To be laid
   out when we discuss it.*
+- **6.3b The crop** — the recording trimmed to the attack itself by onset detection, reliably, before it is named and indexed (his
+  word 2026-10-04, DEC-8: *"something quite reliable to the actual attack itself"*; the reorganization approved, *"a"*). *Laid out
+  with 6.3.*
 - **6.4 The sample index** — one file the piece owns, a row per sample (id · name · player · time · length · category · file · the
   opening that made it), written by the capture, read by the score, the notation, SC; the schema and its reader/writer the engine's.
   *To be laid out when we discuss it.*

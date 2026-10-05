@@ -1884,3 +1884,103 @@ same note a second later, out of SuperCollider, through the track ELEC RETURN.
 - **To find first, by one grep each, not by reading:** where the composer score opens its MIDI outputs and schedules a note · whether
   `score/server.js` holds any UDP or WebSocket today · whether SuperCollider's `MIDIIn` sees the loopMIDI ports (`MIDIClient.init`).
 - **His, in 6.2: probably nothing** — unless the trigger's timing tolerance is a musical question (how late may an opening be?).
+
+## §57. HIS BRIEF FOR THE ELECTRONICS, AT THE OPENING OF 6.2 — the performance engine and its simulation, in correspondence · what the three greps found · the AI's reading toward the message route, NOT decided (2026-10-04, Fable)
+
+**What prompted it:** after `/postclear` he dictated the whole scenario — the sketch pad has it verbatim, DEC-8. The sentences that
+bear on 6.2: *"we're going to need to talk in terms of the actual performance engine and then how we simulate it. And if those are
+separate things, so that's fine, but let's make sure there's correspondence at least."* · *"the idea is that Browser runs on the iPad,
+whatever mechanism we decide, and the live electronics runs on a separate laptop."* · *"once it's in there, we should have some sort
+of processing where it's cropped or trimmed, something quite reliable to the actual attack itself."*
+
+**The three greps (§56's list), one each — the data before the talk:**
+- The composer score opens Web MIDI in `composer.html` (five `requestMIDIAccess` sites) and every panel sends WITH A TIMESTAMP —
+  `out.send([…], t)`: the notes are queued a few ms ahead on the browser's clock (`now + 5` · `at + 5 + u·dur`); the offs by timers,
+  never queued ahead (#6 §178).
+- `score/server.js` (1218 lines) has NO UDP, NO WebSocket, no socket of any kind. The browser reaches it by HTTP `fetch` only
+  (`/api/snapshots` · `/api/actuals` · the banks under `/bank/`).
+- The engine's `sc/` speaks OSC already, internally: `OSCdef` on `s.addr` for the meter, the latency and the self-test. No `MIDIIn`;
+  no port opened for an outside sender yet. Whether sclang's `MIDIIn` sees loopMIDI was NOT run — it needs sclang, and his engine
+  window may be up; see below why it may not matter.
+- His sandbox: one legacy file uses `OSCdef` / `MIDIIn` (`docs/reference/bufrd-legacy/02_…scroll.scd`) — not a habit to inherit.
+
+**The AI's reading toward 6.2 — put to him, NOT decided:**
+- **His concert topology decides the road.** The message from the score to the engine crosses from an iPad's browser to a laptop: a
+  NETWORK crossing. loopMIDI is a Windows loopback — it has no concert counterpart. Under his correspondence rule the simulation
+  takes the concert's road: browser → the score server → OSC → SuperCollider. §56's MIDI road drops for the MESSAGE (the notes' MIDI
+  to Reaper is untouched — that is the simulated player, not the message).
+- **His crop answers §56's timing question** (*"how late may an opening be?"*). If the window opens a little before the notated
+  moment and runs longer than the attack, and the recording is then trimmed to the attack by onset detection, the message need only be
+  EARLY, never exact: the crop finds the attack, not the clock. Localhost delivers in about a millisecond; a concert LAN in a few to a
+  few tens; the performer's own timing varies more than either. §56's "third shape" (the data ahead, the trigger by MIDI) is not needed.
+- **What the plumbing would be** (the AI's to place, CLAUDE.md § THE SORTING): the score server gains ONE route in (an HTTP POST or a
+  WebSocket from the browser) and ONE UDP sender out (OSC to the engine's LANGUAGE port — pinned beside 57210, so another sclang of his
+  is never hit); the engine gains ONE `OSCdef` for a piece's messages (`/le/…`) — generic machinery, so `electronics/`; which brick
+  sends what, and when, is the piece's (`score/`). The lines a stack file must change go into `electronics/docs/SEAMS.md` — the first
+  entries of its last table.
+- **The crop is a stage DEC-7 did not have.** Proposed as a sub-step after 6.3's capture: 6.3 the opening brick + the capture · 6.3b
+  the crop · 6.4 the index · 6.5 the playback. A reorganization of the running order — his to approve.
+- **Nothing in 6.2 is his to decide.** What IS his, in this exchange: the correspondence rule as a standing decision of the piece (→ D10),
+  and the reorganization. Feedback — *"other ways"* — parked for the capture's talk (6.3).
+
+## §58. "a, lay it out" — D10 the correspondence rule · the crop into the running order (6.3b) · 6.2 LAID OUT, put to him (2026-10-04, Fable)
+
+**His word:** *"a, lay it out"* — to the read-back of DEC-8, the correspondence rule as a decision, and the crop after the capture.
+
+**Written at his word:** journal §4 **D10 — THE CORRESPONDENCE RULE** (every electronics object said twice, concert and simulation, the
+two corresponding; where they differ, ONE named thing) · the running order (journal §2) and PLAN.md 1.1 gain **6.3b the crop** between
+the capture and the index — labels are stable, so 6.4 … 6.6 keep their numbers.
+
+**One fact that decides the plumbing's shape:** `package.json`'s note — *"score server, sandbox, notation engine, every tool — is
+dependency-free Node and stays that way."* So the browser → server leg is an HTTP POST (no `ws` package), the server → engine leg is
+node's own `dgram`, and the OSC message is encoded by hand (about forty lines; the format is small) — no new dependency anywhere.
+
+**6.2 THE MESSAGE ROUTE — as laid out, put to him (the form of 6.1; the running order's label kept):**
+
+*Result when done:* with the engine up, a note played from the composer score on the bass clarinet lane is seen in his engine window
+as ONE line — which lane, which brick, when — BEFORE its sound arrives there; the lead measured and written down. Concert and
+simulation on the same road, the engine's address the one difference (D10).
+
+*The road, both halves:* **concert** — an iPad's browser → the laptop's score server → OSC over UDP → SuperCollider's language; the
+human plays. **Simulation** — his Chrome → the score server on 5500 → OSC → SuperCollider, all on this machine; the MIDI to Reaper is
+the simulated player. The one difference: the address in `bank/elec_route.json`.
+
+- (a) **The engine's ear** — `electronics/sc/`: the language port pinned (57211; the server keeps 57210) and ONE `OSCdef` for `/le/…`:
+  `/le/hello` (a handshake) · `/le/onset` (lane · brick id · the score time · the browser's send time). Each message printed as an
+  `LE_INFO` line — his engine window shows it — and stamped with SC's clock. Generic: the engine's.
+- (b) **The OSC encoder** — `electronics/tools/osc.js`: the message format in dependency-free Node; `dgram` sends it. The engine's.
+- (c) **The server's relay** — `score/server.js`: ONE route `POST /api/elec` (JSON in → OSC out, to the address in
+  `bank/elec_route.json`) and ONE static route serving `electronics/score/` to the browser. The piece's two hook lines — listed in
+  `SEAMS.md`. A POST, not a WebSocket: zero dependency, about a millisecond on localhost, enough for openings, which are sparse; the
+  WebSocket when the performance module comes.
+- (d) **The score's voice** — `electronics/score/le_msg.js`, the first mixin of the composer-score seam: `LE.send(kind, data)` → the
+  POST. ONE `<script>` tag in `composer.html`; ONE hook line where the playback emits a note (lane · brick · time), behind a test toggle
+  (the bass clarinet lane only) until 6.3's opening brick takes it over. The mixin the engine's; the tag and the hook the piece's.
+- (e) **Verified in the running app, on his Chrome:** the engine up (`start`), a note on the bass clarinet lane → the line in his engine
+  window. THE MEASURE: the message's lead over the note's own sound, which SC already hears through 6.1 — an onset detector on that
+  input, the gap in ms → `probes/`. `elec.js ping` added: one message, no server boot, safe beside his engine.
+- (f) **The record:** this log · the engine's log · `SEAMS.md` the message half and the first rows of its last table (composer.html:
+  one tag, one hook · server.js: one require, one route, one static route) · `TAKE.md` · the engine plan 4.2 · `git subtree push`.
+- *His part:* nothing.
+
+**Rejected, and why:** the `DECElec` loopMIDI trigger — no concert counterpart (D10) · a WebSocket — a dependency the stack refuses,
+for a gain the openings do not need · a shared clock between the browser and SC — the crop (6.3b) finds the attack, so the message
+need only be early (§57). **If he says "write it":** PLAN.md 1.1 · the engine plan 4.2 · journal §2 and its table · PLANNER's NOW
+line; then the build on Opus after a clear.
+
+## §59. "a, write it" — 6.2 WRITTEN into both plans and the journal; the switch point to Opus (2026-10-04, Fable)
+
+**His word:** *"a, write it"* — to the layout of §58, unchanged.
+
+**Written:** `docs/PLAN.md` 1.1 — the 6.2 block, result · the road in both halves (D10) · what was decided and rejected · (a) … (f) · his
+part: nothing · `electronics/docs/PLAN.md` 4.2 — the generic form (the engine's: the pinned language port, one `OSCdef`, `tools/osc.js`,
+the first composer-score mixin `score/le_msg.js`; the piece's: one route, one static route, one tag, one hook), and 4.3b the crop beside
+4.3 · journal §2 — the running order's step 6 marked, the position (6.1 ☑ · 6.2 laid out · ► its build), the next concrete step as the
+build's (a) → (f) with its resume reads, the table's ► row on Opus, Q6 answered · PLANNER's NOW line · CLAUDE.md's state line.
+
+**The engine's share of this entry** (the sorting, for the paper): the message route's MACHINERY — the listener, the encoder, the mixin —
+is the engine's and goes to `electronics/` at the build; its plan 4.2 carries the generic form now. The piece's share: which lane, which
+brick, when, and the two hook lines, listed in `SEAMS.md` when proven. Nothing of this needed a question to him.
+
+**Switch point:** the talk is done; the build is a written plan → Opus, after a clear (`/postclear` plays back and stops; the build on his
+word). Committed and pushed; the engine's repo kept in step (`git subtree push`, the mirror pulled).

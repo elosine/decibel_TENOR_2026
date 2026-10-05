@@ -151,3 +151,44 @@ both) · WHICH China cymbal preset (the library has two). "Tentative" is his wor
 playback, a few seconds apart, the live performer simulated as the sampled instrument in Reaper and the whole downstream path the
 real one (SuperCollider: capture → bank → playback). The return's ALGORITHM (before · after · iterations) is not in this demo; the
 processing (stage 4) is phase 2. The reasoning and the plan: RUNNING_LOG §47.
+
+### DEC-8 · 2026-10-04 — THE PERFORMANCE ENGINE AND ITS SIMULATION, TWO VOCABULARIES IN CORRESPONDENCE · the buffer collecting · the score on iPads, the electronics on a separate laptop · a Braxton-like collection of captured attacks per performer (attack A · B · C …) · the window ~500 ms, slightly longer than the attack, against feedback · the crop to the attack itself · the named sample as a brick of its own · PHASE 1 = the mic in, the crop, the sound out, placeable
+
+> *"So throughout the live electronics process, we're going to need to talk in terms of the actual performance engine and then how
+> we simulate it. And if those are separate things, so that's fine, but let's make sure there's correspondence at least. So in live
+> performance, the way I would do it in SuperCloud would just write it to a buffer. And then that buffer would be identified and it
+> could play back. And then we could apply some effects or whatever at some point. So, but let's just talk about the buffer
+> collecting. And if you have a different mechanism for this, this is fine. I'm imagining just like all the other scores, things are
+> playing on the iPads. The score itself. So we'll have some need to have some kind of mechanism. We haven't built a performance
+> module yet, but we'll have to add to that at some point about coordinating. But we haven't we haven't figured out the engine yet,
+> so we'll defer that. But I think at least for these pieces, the idea is that Browser runs on the iPad, whatever mechanism we
+> decide, and the live electronics runs on a separate laptop. It's fine, we'll have a super collider install, but eventually,
+> ideally, it would be a standalone. Maybe we can just make a standalone super collider run, or we can deal with the details when we
+> get there. So the score needs to simulate this. Or in live performance, they see the notation, it's some sort of window or a
+> duration line or something like that. Performers will know that's when the mic is open and they play into it. Uh, I think as I
+> mentioned, there'll be a collection of these things per performer. So we'll need a sort of system of collecting these buffers and
+> there'll be Nothing's been decided, but it'll be a little bit like Anthony Braxton's language music. There'll be some sort of
+> symbol for the input, like now you're recording an attack. And then there'll be something that might say like attack A, attack B,
+> attack C, etc. And then these will all be collected, and then I'll be able to bring them back into the score, the playback. Now,
+> this might be for a later stage. But I'll talk through the whole scenario anyways. Ideally, there would be, we'll decide on the
+> window length, but maybe longer than they need. My main concern and the kind of the reason I'm doing this small mic opening is to
+> avoid feedback. So we could talk more about that. Maybe there's other ways to avoid feedback. But let's say it's a, a length
+> that's slightly longer than they need to hit an accent. Maybe. 500 milliseconds, we can decide. Then once it's in there, we should
+> have some sort of processing where it's cropped or trimmed, something quite reliable to the actual attack itself. So if there's
+> the attack only lasted 150 milliseconds, there's a way to detect and then crop. And then that gets stored into something named,
+> you know, attack. number one or something like that. And then we can, then I could bring it back. Now it, it becomes a, its own
+> thing that I can bring back. So in the composer score, it's just a brick of some sort that I can bring that particular sample
+> back and I can feed that back into some processing, et cetera. But for this first phase, I just want something representing the
+> mic in some way of simulating the mic in. Uh, we probably should go ahead and do the, the crop and then uh, something to simulate
+> the, a brick for the mic back out or the sound back out. And then have that as something I can call and place somehow."*
+
+*AI reading (marked as such):* said at the opening of the 6.2 talk, after `/postclear`. (1) A STANDING RULE, put to him for
+confirmation: every electronics object is described twice — as the engine does it in concert, and as the stack simulates it — and
+the two must correspond; if he confirms, journal §4 D10. (2) The concert topology — the score in browsers on iPads, SuperCollider on
+a separate laptop (a standalone later; a coordinating performance module later, not now) — makes the score → engine message a
+NETWORK crossing; what that does to 6.2 is RUNNING_LOG §57. (3) DEC-7's demo gains one stage it did not have: THE CROP — the window
+is recorded long (~500 ms, his figure to decide), then trimmed reliably to the attack itself (150 ms of it) by onset detection,
+before it is named and stored; proposed as a sub-step of the running order's 6.3, his to approve. (4) The Braxton-like signs and
+names (the input sign · attack A · B · C …) are the notation's, later (PERFORMANCE_NOTES #1; the engine plan's part 7); the field on
+the brick that carries them is the capture's and the index's (6.3 · 6.4). (5) Feedback: the short opening is his answer today;
+*"other ways"* parked for the capture's talk. (6) "SuperCloud" is the dictation's SuperCollider.
