@@ -3686,3 +3686,11 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **For the record:** a preset's class (`colour` · `time`) sets nothing under `tail` — the ring ends where the sound does or at the cap; a crush of a 380 ms impulse rings no longer than the impulse. His ear decides whether "ring" wants the time effects only.
 
 **Not claimed:** heard. His: F5 · File ▾ → Reload `piece-sec01-a` · play from 6 s (the thirty are in the engine's buffers now; a pass from 0 re-captures and re-renders them).
+
+## §119. THE TIME EFFECTS ONLY — the thirty re-dealt from the seven `time` presets, seed 2, ring versions (2026-10-05, Fable)
+
+**His words:** *"just the time effects, drop the colour ones and reshuffle/reseed different set of effects pls"* — after §118's note that a colour effect rings no longer than the impulse.
+
+**What was done:** `tools/deal_variants.js` gained **`--class <name>`** (the presets of one class only); the deal `--env tail --class time --seed 2 --render`: 30 plays on 15 bricks from SEVEN presets — `diffuse` · `grey` · `freeze` · `jp` · `bloom` · `bands` · `squeal` — so each treatment comes four or five times, on different players' impulses (28 distinct variant samples: twice the same sample met the same preset). The plan sent, the engine rendered them within 12 s. Committed with the bank.
+
+**Not claimed:** heard. His: F5 · File ▾ → Reload · play from 6 s.

@@ -42,7 +42,7 @@
  "assets": {},
  "metadata": {
   "created": "2026-10-05T19:06:12.109Z",
-  "modified": "2026-10-05T21:40:20.756Z"
+  "modified": "2026-10-05T21:43:41.758Z"
  },
  "objects": [
   {
@@ -1365,7 +1365,7 @@
     "name": "va-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "va-impulse-1": "od-tail"
+     "va-impulse-1": "jp-tail"
     }
    }
   },
@@ -1437,7 +1437,7 @@
     "name": "perc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "perc-impulse-1": "comb-tail"
+     "perc-impulse-1": "bands-tail"
     }
    }
   },
@@ -1509,7 +1509,7 @@
     "name": "bfl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bfl-impulse-1": "freeze-tail"
+     "bfl-impulse-1": "diffuse-tail"
     }
    }
   },
@@ -1581,7 +1581,7 @@
     "name": "vc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "vc-impulse-1": "string-tail"
+     "vc-impulse-1": "grey-tail"
     }
    }
   },
@@ -1653,7 +1653,7 @@
     "name": "bcl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bcl-impulse-1": "grey-tail"
+     "bcl-impulse-1": "squeal-tail"
     }
    }
   },
@@ -1729,8 +1729,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-1": "diffuse-tail",
-     "perc-impulse-2": "tape-tail"
+     "perc-impulse-1": "bloom-tail",
+     "perc-impulse-2": "freeze-tail"
     }
    }
   },
@@ -1806,8 +1806,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-1": "diode-tail",
-     "bfl-impulse-2": "stutter-tail"
+     "bfl-impulse-1": "jp-tail",
+     "bfl-impulse-2": "bands-tail"
     }
    }
   },
@@ -1883,8 +1883,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "loss-tail",
-     "va-impulse-2": "jp-tail"
+     "va-impulse-1": "diffuse-tail",
+     "va-impulse-2": "grey-tail"
     }
    }
   },
@@ -1960,8 +1960,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-1": "bands-tail",
-     "vc-impulse-2": "fuzz-tail"
+     "vc-impulse-1": "squeal-tail",
+     "vc-impulse-2": "bloom-tail"
     }
    }
   },
@@ -2037,8 +2037,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-1": "cheby-tail",
-     "bcl-impulse-2": "shift-tail"
+     "bcl-impulse-1": "freeze-tail",
+     "bcl-impulse-2": "jp-tail"
     }
    }
   },
@@ -2183,9 +2183,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "vc-impulse-1": "crush4-tail",
-     "vc-impulse-2": "squeal-tail",
-     "vc-impulse-3": "bloom-tail"
+     "vc-impulse-1": "bands-tail",
+     "vc-impulse-2": "diffuse-tail",
+     "vc-impulse-3": "grey-tail"
     }
    }
   },
@@ -2262,9 +2262,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "va-impulse-1": "squiz-tail",
-     "va-impulse-2": "whistle-tail",
-     "va-impulse-3": "oct-tail"
+     "va-impulse-1": "squeal-tail",
+     "va-impulse-2": "bloom-tail",
+     "va-impulse-3": "freeze-tail"
     }
    }
   },
@@ -2341,9 +2341,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bfl-impulse-1": "od-tail",
-     "bfl-impulse-2": "comb-tail",
-     "bfl-impulse-3": "freeze-tail"
+     "bfl-impulse-1": "jp-tail",
+     "bfl-impulse-2": "bands-tail",
+     "bfl-impulse-3": "diffuse-tail"
     }
    }
   },
@@ -2420,9 +2420,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bcl-impulse-1": "string-tail",
-     "bcl-impulse-2": "grey-tail",
-     "bcl-impulse-3": "diffuse-tail"
+     "bcl-impulse-1": "grey-tail",
+     "bcl-impulse-2": "squeal-tail",
+     "bcl-impulse-3": "bloom-tail"
     }
    }
   },
@@ -2499,9 +2499,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "perc-impulse-1": "tape-tail",
-     "perc-impulse-2": "diode-tail",
-     "perc-impulse-3": "stutter-tail"
+     "perc-impulse-1": "freeze-tail",
+     "perc-impulse-2": "jp-tail",
+     "perc-impulse-3": "bands-tail"
     }
    }
   },

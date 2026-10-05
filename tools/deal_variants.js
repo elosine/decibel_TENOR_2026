@@ -21,7 +21,7 @@ const ROOT = path.resolve(__dirname, '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const DRY = process.argv.includes('--dry'), CLEAR = process.argv.includes('--clear'), RENDER = process.argv.includes('--render');
 const NAME = arg('score', ''), FROM = +arg('from', 0), TO = arg('to', null) == null ? Infinity : +arg('to'), SEED = +arg('seed', 1);
-const ENV = arg('env', ''), PORT = +arg('port', 5500);
+const ENV = arg('env', ''), PORT = +arg('port', 5500), CLASS = arg('class', '');   // --class time: only the presets of that class (his §119: "just the time effects")
 if (!NAME) { console.error('which score?  --score piece-sec01-a'); process.exit(2); }
 const FILE = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT, FILE)); process.exit(2); }
@@ -57,7 +57,9 @@ if (CLEAR) {
   dealt.forEach((z) => namesOf(z.elec).forEach((name) => plays.push({ z, name })));
   if (!plays.length) { console.error('no return brick with a named sample starts in [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') of ' + NAME); process.exit(4); }
   // THE PRESETS, round robin: one shuffle; a lap uses every preset once
-  const order = shuffled(P.presets, mulberry32(SEED * 7919 + 3));
+  const pool = CLASS ? P.presets.filter((p) => p.class === CLASS) : P.presets;
+  if (!pool.length) { console.error('no preset of class "' + CLASS + '" in bank/presets.json — the classes: ' + Object.keys(P.classes || {}).join(' · ')); process.exit(2); }
+  const order = shuffled(pool, mulberry32(SEED * 7919 + 3));
   // THE ENVELOPES, by the mix: exact shares of the plays (the largest remainders round it), shuffled — or the ONE envelope asked for
   if (ENV && !P.envelopes[ENV]) { console.error('no envelope "' + ENV + '" in bank/presets.json — one of: ' + Object.keys(P.envelopes).join(' · ')); process.exit(2); }
   const mix = ENV ? [[ENV, 1]] : Object.entries(P.mix || { perc: 1 }).filter(([k, w]) => P.envelopes[k] && w > 0), wSum = mix.reduce((s, [, w]) => s + w, 0);
