@@ -152,3 +152,22 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 - **No measured sample length for any struck voice of this rack** — the extractor uses the drawn length (12 warnings on the first page). `bank/instrument_card.json` holds a `soundingS` for every instrument measured; feed `bank/sample_lengths.json` from it when a struck note's printed length matters.
 - **Container 6, open:** his three calls (the pitch form · the percussion staff's line order · the short names) · the first print page not looked at (no PDF rasteriser here; `pdftoppm`) · `notation/ir/README.md` (6.8) · the main file's discipline (6.6) · the shield needs approved pages.
 - **RESOLVED 2026-10-04 (§45): the Texture panel's click** is the wood blocks' (hard mallets, block 2); the hand-typed claves voice is gone.
+
+## From the first electronics object (2026-10-04, RUNNING_LOG §64)
+
+- **No re-crop tool.** The raw recording of every opening is kept (`bank/samples/raw/<opening id>.wav`) so a crop can be redone with
+  other numbers, but nothing does it yet: to hear a changed `bank.crop` he plays through the opening again. Deferred: one object,
+  one note — the need is not here. (The engine's: a `cropFind` + `cropTake` over a kept raw, by name.)
+- **`M` makes ONE opening, over the primary selected note.** A selection of many notes → one opening. Deferred to step 8, when a
+  series of notes wants a series of openings.
+- **A duplicated opening (CTRL+drag) keeps its name** — two openings of one name, the later take replaces the earlier sample. Right
+  for a return (the same sample again), wrong for an opening. Deferred: rename in the panel.
+- **A lane is one of the engine's players by ONE MIDI port** (`portOf` in `composer.html`'s `LEObjects.attach`). The percussionist's
+  two lanes play on five ports and the mallets' techniques carry their own — the rule needs a second look when the percussion gets
+  a microphone (a `lanes` list per player in `bank/elec_route.json` would do).
+- **A very short return is hard to grab** — a 143 ms sample is a 14-pixel brick at the default zoom, and the zone's edge handles
+  take 12 of them. By the numbers only — not tried, by the AI or by him; zooming in is the way round it.
+- **`tools/notate_section.js` ignores `--out`** — it always writes `notation/ir/<id>.ir.json` and adds the page to the picker. Not
+  this build's; a check through it must be taken out again (`docs/VERIFICATION_RECIPE.md`).
+- **`probes/elec_message_log.jsonl`** (committed) no longer grows: it kept the route check's pairings while `testOnsets` was on.
+  Left as the record of 6.2's measure.

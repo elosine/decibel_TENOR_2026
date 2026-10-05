@@ -12,6 +12,7 @@
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
 //   node tools/elec.js ping       # is the engine there? one /le/hello — starts nothing, safe beside his engine window  [--via 5500: through the score server]
 //   node tools/elec.js message    # 6.2's PROOF: the engine up for 20 s; a message, the note after it, and whatever the composer score sends  [--via <port>] [--seconds N] [--quiet]
+//   node tools/elec.js object     # 6.3 … 6.5's PROOF, on a SCRATCH bank (the piece's is not touched): an opening, the note into the rack, the crop, the index; the sample returned and seen on ELEC RETURN; then whatever the composer score sends until the time is up  [--via <port>] [--seconds N] [--name bcl-A] [--listen: skip the tool's own part, keep the scratch bank]
 //
 // WHAT IS THE PIECE'S AND WHAT IS THE ENGINE'S (CLAUDE.md § THE SORTING): this file, bank/elec_route.json and the bridge job
 // reaper/bridge/jobs/elec_route.lua know THIS rack — its track names, its port. The SuperCollider code and its runner
@@ -37,6 +38,19 @@ const SCD = (name) => path.join(sc.SC_DIR, name);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const flagValue = (flags, name) => (flags.includes(name) ? flags[flags.indexOf(name) + 1] : null);
+
+// what the engine is STARTED with, from this piece's route table (bank/elec_route.json): its players · the bank's folder ·
+// the crop's rule where this piece overrides the engine's defaults · a route check's echo. The engine takes these at its
+// start and never from a message (RUNNING_LOG §62).
+function engineEnv() {
+    const B = CFG.bank || {};
+    const crop = Object.entries(B.crop || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
+    const env = { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(',') };
+    if (B.dir) env.LE_BANK = path.resolve(ROOT, B.dir).split(path.sep).join('/');
+    if (crop) env.LE_CROP = crop;
+    if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
+    return env;
+}
 
 // one message to a score server's relay (POST /api/elec) — the road a page's message takes; null when nothing answers
 function post(port, obj) {
@@ -126,18 +140,19 @@ async function readPeaks(waitMs) {
 
 (async () => {
     const cmd = process.argv[2], flags = process.argv.slice(3);
-    if (!cmd || cmd === '-h') { console.log(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 14).join('\n')); return; }
+    if (!cmd || cmd === '-h') { console.log(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 15).join('\n')); return; }
 
     if (cmd === 'selftest') { const r = await sc.start(SCD('selftest.scd'), { timeoutS: 90, onLine: (l) => { if (/^LE_/.test(l)) console.log(l); } }).done; process.exit(r.code); }
 
     if (cmd === 'start') {
-        const players = CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(',');
-        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: { LE_PLAYERS: players, LE_ECHO: String(CFG.listenEchoSeconds || 0) }, onLine: (l) => {
-            const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: a message paired with its sound is kept, nothing is shown
-            if (m) { try { fs.appendFileSync(path.join(ROOT, 'probes', 'elec_message_log.jsonl'), JSON.stringify({ when: new Date().toISOString(), ...JSON.parse(m[1]) }) + '\n'); } catch (e) {} return; }
+        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: engineEnv(), onLine: (l) => {
+            const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: nothing is shown. A route check's pairing (an onset with its sound) is kept; a capture's row is in the bank's index
+            if (m) { try { const o = JSON.parse(m[1]); if (o.msg === 'onset') fs.appendFileSync(path.join(ROOT, 'probes', 'elec_message_log.jsonl'), JSON.stringify({ when: new Date().toISOString(), ...o }) + '\n'); } catch (e) {} return; }
             if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: '));
         } });
-        process.on('SIGINT', () => { p.kill(); });
+        // the window closed (SIGHUP on Windows), CTRL+C, a kill: the engine's server goes WITH its window. Without this the
+        // language dies and its server stays — holding the port and ReaRoute, reachable by nothing (RUNNING_LOG §64).
+        for (const sig of ['SIGINT', 'SIGHUP', 'SIGTERM', 'SIGBREAK']) process.on(sig, () => { p.kill(); });
         const r = await p.done; process.exit(r.code == null ? 1 : r.code);
     }
 
@@ -278,5 +293,67 @@ async function readPeaks(waitMs) {
         process.exit(pass ? 0 : 1);
     }
 
+    // 6.3 … 6.5's PROOF, with REAL SOUND and on a SCRATCH BANK — the piece's bank/samples is not touched.
+    // THE TOOL'S OWN PART: /le/open (a long window: the note below is started by PowerShell, which is slow to start) ->
+    // the player's test note into the rack -> the engine's `captured` with its row -> the scratch index read back ->
+    // /le/play -> ELEC RETURN's meter. THEN, until --seconds are up, it listens: whatever the composer score sends
+    // (an opening, a playback brick) is shown, and ELEC RETURN's loudest moment in that time is reported.
+    // --listen skips the tool's own part and KEEPS the scratch bank as the last run left it (a sample for a page's brick to play).
+    // --name the sample's name (default <player>-proof). --via <port>: the tool's messages go through a score server.
+    // Boots a server: refused beside his engine window. It SOUNDS: one note of the rack, and its sample a moment later.
+    if (cmd === 'object') {
+        const secs = +(flagValue(flags, '--seconds') || 30), via = flagValue(flags, '--via'), listenOnly = flags.includes('--listen');
+        const p0 = CFG.players[0], M = CFG.message || {}, name = flagValue(flags, '--name') || p0.name + '-proof', shown = [];
+        const scratch = path.join(os.tmpdir(), 'decibel_elec_object_bank');
+        if (!listenOnly) fs.rmSync(scratch, { recursive: true, force: true });
+        const send = (kind, data) => (via ? post(via, { kind, data }) : osc.send({ host: M.host, port: M.port, address: '/le/' + kind, args: osc.pairs(data) }));
+        const d = job('probe'), dev = await engineSeesReaRoute(), miss = missing(d, dev);
+        if (miss.length) { show(d, dev); console.log('\nMISSING, in order:\n' + miss.map((x, i) => '  ' + (i + 1) + '. ' + x).join('\n')); process.exit(2); }
+        const t0 = Date.now();
+        const run = sc.start(SCD('session.scd'), { timeoutS: secs + 90, env: { ...engineEnv(), LE_BANK: scratch, LE_SECONDS: String(secs + 30) },
+            onLine: (l) => { if (/^LE_INFO\s+(open|captured|cropped|nothing to crop|play)\b/.test(l)) { shown.push(l.replace(/^LE_INFO\s*/, '')); console.log('  engine   ' + shown[shown.length - 1]); } } });
+        try { console.log('engine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
+        catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
+        const out = { when: new Date().toISOString(), via: via ? 'score server ' + via : 'straight to the engine', player: p0, name, scratch, reaper: d.audio };
+        let pass = true;
+        if (!listenOnly) {
+            await send('open', { player: p0.name, lane: -1, id: 'elec_js', name, category: 'attack', t: 0, lengthMs: 4000, dueMs: 0 });
+            console.log('note       ' + note(p0) + '   (the tool\'s own, into the rack)');
+            let row = null;
+            try { row = JSON.parse((await run.waitFor(/^LE_RESULT .*"msg": "captured"/, 12000)).replace(/^LE_RESULT\s*/, '')); } catch (e) { /* none came */ }
+            let idx = null; try { idx = JSON.parse(fs.readFileSync(path.join(scratch, 'index.json'), 'utf8')); } catch (e) { /* not written */ }
+            const inIndex = !!(idx && (idx.samples || []).some((x) => x.name === name));
+            const files = { raw: fs.existsSync(path.join(scratch, 'raw', 'elec_js.wav')), sample: fs.existsSync(path.join(scratch, name + '.wav')) };
+            await sleep(600);   // the sample's buffer is read after the index is written
+            job('watch', { seconds: 4 });
+            await sleep(300);
+            await send('play', { name, id: 'elec_js_play', lane: -1, t: 0, dueMs: 300 });
+            const pk = (await readPeaks(9000)).peakDb, ret = pk[CFG.return.track], back = ret ? Math.max(ret.L, ret.R) : null;
+            const unity = row && row.cropped && back != null ? Math.round((back - row.peakDb) * 10) / 10 : null;
+            console.log('\n  THE CAPTURE     ' + (row && row.cropped ? row.lengthMs + ' ms kept of ' + row.rawMs + ' · the attack at ' + row.attackMs + ' ms · peak ' + row.peakDb + ' dB' : row ? 'NOTHING TO CROP (raw peak ' + row.rawPeakDb + ' dB)' : 'NO RESULT CAME') +
+                '\n  the files       raw ' + (files.raw ? 'yes' : 'NO') + ' · sample ' + (files.sample ? 'yes' : 'NO') + ' · in the index ' + (inIndex ? 'yes' : 'NO') +
+                '\n  THE RETURN      on ' + CFG.return.track + ': ' + (ret ? 'L ' + ret.L + '  R ' + ret.R + ' dB' : 'no such track') + (unity != null ? '   (' + (unity >= 0 ? '+' : '') + unity + ' dB against the captured peak)' : ''));
+            pass = !!(row && row.cropped) && files.raw && files.sample && inIndex && back != null && back > -80 && Math.abs(unity) < 1.5;
+            Object.assign(out, { captured: row, files, inIndex, returnPeakDb: ret, returnMinusCapturedDb: unity });
+        }
+        const left = Math.round(secs - (Date.now() - t0) / 1000);
+        if (left > 3) {
+            const n0 = shown.length;
+            console.log('\nlistening  for the composer score, ' + left + ' s more …');
+            job('watch', { seconds: left });
+            const pk = (await readPeaks((left + 8) * 1000)).peakDb, ret = pk[CFG.return.track];
+            const mine = shown.slice(n0);
+            console.log('\n  from the score  ' + (mine.length ? mine.length + ' line(s), above' : 'nothing came') + '\n  ' + CFG.return.track + ' in that time   ' + (ret ? 'L ' + ret.L + '  R ' + ret.R + ' dB' : 'no such track'));
+            Object.assign(out, { listenedS: left, fromTheScore: mine, returnWhileListeningDb: ret });
+            if (listenOnly) pass = mine.length > 0;
+        }
+        run.kill(); await run.done;
+        out.engineLines = shown; out.pass = pass;
+        console.log('\n' + (pass ? (listenOnly ? 'THE SCORE\'S OBJECTS REACH THE ENGINE.' : 'THE FIRST OBJECT HOLDS: a window of the player is captured, cropped, indexed, and returned at unity.') : 'BROKEN — see the first line above that is missing.'));
+        fs.writeFileSync(path.join(ROOT, 'probes', listenOnly ? 'elec_object_page.json' : 'elec_object.json'), JSON.stringify(out, null, 1) + '\n');
+        process.exit(pass ? 0 : 1);
+    }
+
     console.error('unknown command ' + cmd); process.exit(2);
+
 })().catch((e) => { console.error(e.message); process.exit(1); });

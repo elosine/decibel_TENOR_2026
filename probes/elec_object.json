@@ -1,0 +1,56 @@
+{
+ "when": "2026-10-05T02:37:11.631Z",
+ "via": "straight to the engine",
+ "player": {
+  "name": "bcl",
+  "track": "Bass Clarinet XS",
+  "engineIn": 1,
+  "port": "DECBassClar",
+  "testNote": 50
+ },
+ "name": "bcl-A",
+ "scratch": "C:\\Users\\jwloy\\AppData\\Local\\Temp\\decibel_elec_object_bank",
+ "reaper": {
+  "block": "512",
+  "out": "ASIO UMC ASIO Driver",
+  "srate": "44100",
+  "system": "ASIO"
+ },
+ "captured": {
+  "attackMs": 575,
+  "captured": "2026-10-04T22:37:15",
+  "category": "attack",
+  "cropped": true,
+  "file": "bcl-A.wav",
+  "id": "smp_20261004223715",
+  "lane": -1,
+  "lengthMs": 2476.1,
+  "msg": "captured",
+  "name": "bcl-A",
+  "openingId": "elec_js",
+  "peakDb": -41.2,
+  "player": "bcl",
+  "raw": "raw/elec_js.wav",
+  "rawMs": 4000,
+  "replaced": false,
+  "scoreTime": 0,
+  "windowMs": 4000
+ },
+ "files": {
+  "raw": true,
+  "sample": true
+ },
+ "inIndex": true,
+ "returnPeakDb": {
+  "L": -41.22,
+  "R": -41.22
+ },
+ "returnMinusCapturedDb": 0,
+ "engineLines": [
+  "open · bcl · bcl-A · 4000 ms",
+  "captured · bcl-A · raw · 4000 ms · peak -41.2 dB",
+  "cropped · bcl-A · 2476 ms of 4000 · the attack at 575 ms · peak -41.2 dB",
+  "play · bcl-A · in 300 ms · 2476 ms long"
+ ],
+ "pass": true
+}

@@ -149,7 +149,7 @@ whole → **3.8 the seven small fixes, HERE** (one commit) → 3.3 the re-palett
 
 ## 1. Compose — `doing`
 
-### 1.1 The electronics' plumbing — the running order's step 6, the first object simulated end to end — `doing` (laid out 2026-10-04, RUNNING_LOG §47 · §48 · §49)
+### 1.1 The electronics' plumbing — the running order's step 6, the first object simulated end to end — `done but for his ear` 2026-10-04 (6.1 … 6.6 built and proven, RUNNING_LOG §51 … §64; laid out §47 · §48 · §49)
 
 ***Why:*** the first mic opening cannot be built until the score can speak to a sound process and that process has a home; and he
 must hear it *"through the actual pipeline"* — the simulation and the concert differing in the input device only.
@@ -219,7 +219,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
     table (composer.html: one tag, one hook · server.js: one require, one route, one static route) · `TAKE.md` · the engine plan 4.2 ·
     `git subtree push`.
   - *His part:* nothing.
-- **6.3 · 6.3b · 6.4 · 6.5 ARE BUILT AS ONE — THE FIRST OBJECT END TO END** (his word 2026-10-04, *"a, write it"* — RUNNING_LOG §61 · §62;
+- **6.3 · 6.3b · 6.4 · 6.5 ARE BUILT AS ONE — THE FIRST OBJECT END TO END — BUILT AND PROVEN 2026-10-04 (RUNNING_LOG §64; where the build left what is written below, §64 lists it)** (his word 2026-10-04, *"a, write it"* — RUNNING_LOG §61 · §62;
   DEC-7 · DEC-8). The order below is the build's order, each step proven before the next; the labels are kept. **THE SHAPE, decided here
   (the AI's, his to reverse):** both bricks are ZONES WITH A NEW MODEL (`type: 'zone'`, `midiModel: 'elecOpen'` · `'elecPlay'`), not a new
   object type — the composer tests an object's TYPE by name in some 250 places and has no registry, while a zone already draws on a lane,
@@ -228,7 +228,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   (`electronics/score/le_objects.js` — label · panel section · gesture · tick); the hook lines in `composer.html` are the piece's, listed in
   `SEAMS.md`. The engine's side (`electronics/sc/`): the capture, the crop, the index writer, the sample player — all generic. The bank's
   FOLDER and the engine's ADDRESS come from `bank/elec_route.json` at the engine's start, never from a message.
-- **6.3 The opening brick + the capture — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* a brick he
+- **6.3 The opening brick + the capture — `done` 2026-10-04 (BUILT, RUNNING_LOG §64: the key is M; the brick a zone `elecOpen` with `zoneFunction: 'elec'`; the message from the mixin's own tick; `lengthMs` and `lane` in it; an opening the playhead starts inside still opens. Laid out §62).** *Result when done:* a brick he
   places on a player's lane IS the mic opening — its place when the mic opens, its length the window, a name on it; when the score plays
   through it the engine records that player for the window, and a raw file lands in the piece's bank. **Sub-steps:**
   - (a) **The brick:** a zone, `midiModel: 'elecOpen'`, with `elec: { name, category: 'attack', player }`; `startTime` · `endTime` the
@@ -248,7 +248,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   - (f) **Verified, the AI's run:** the throwaway page plays through an opening; the engine's two lines; the raw file exists with the window's
     length. (The note under it is a stub in the pane — the REAL sound into the capture is proven with 6.5's listen, his, offered.)
   - *His part:* the window's length and the names, only if he wants others than the defaults.
-- **6.3b The crop — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* the raw recording is trimmed to the
+- **6.3b The crop — `done` 2026-10-04 (BUILT, RUNNING_LOG §64: on the self-test 0.16 ms from a known attack; on a real bass clarinet note 2476 ms kept of 4000, the attack 575 ms in. HIS EAR on the numbers: open. Laid out §62).** *Result when done:* the raw recording is trimmed to the
   attack itself, reliably, and saved under its name. **Sub-steps:**
   - (a) **The rule, in the engine** (sclang, on the recording's samples): THE ATTACK = the first point where the level rises above −30 dB
     below the recording's peak AND above −50 dBFS (silence is not an attack), stepped back 5 ms of pre-roll · THE END = where the level
@@ -261,7 +261,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   - (d) **Verified on the self-test** (no hardware): a synthetic attack at a known place in a buffer is cropped to within 2 ms of it. Then
     on a real capture from (e) above.
   - *His part:* the thresholds, if a crop cuts wrong — by ear.
-- **6.4 The sample index — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* one file the piece owns lists
+- **6.4 The sample index — `done` 2026-10-04 (BUILT, RUNNING_LOG §64: `bank/samples/index.json`, committed empty; two more fields, `windowMs` · `attackMs`. Laid out §62).** *Result when done:* one file the piece owns lists
   every sample taken; the score reads it; a sample is found by name. **Sub-steps:**
   - (a) `bank/samples/index.json` — a row per sample: `id · name · player · lane · category · scoreTime · lengthMs · peakDb · file · raw ·
     openingId · captured`. The schema the engine's (its `docs/`); the file the piece's.
@@ -270,7 +270,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
   - (c) Read by the page — `fetch('/bank/samples/index.json')`: the server serves `/bank/` already, no new route.
   - (d) Verified: the row appears after a capture; the page lists it.
   - *His part:* nothing.
-- **6.5 The playback brick — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* a second brick, placed on a
+- **6.5 The playback brick — `done` 2026-10-04 (BUILT, RUNNING_LOG §64: the key is R; the return at unity — −41.2 dB captured, −41.22 dB back; BOTH retirements made, and the engine returns nothing of the dry note. HIS EAR: offered. Laid out §62).** *Result when done:* a second brick, placed on a
   lane, names a sample; when the score plays through it the engine plays the sample back through the return, where the brick is. **Sub-steps:**
   - (a) **The brick:** a zone, `midiModel: 'elecPlay'`, `elec: { name }`; its length = the sample's (read from the index); its lane the
     player's whose sound it is (D8 — drawn on that player's staff with a sign of origin), or another's at his placing.
@@ -285,7 +285,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
     line says which sample. **HIS EAR, offered:** a note, an opening over it, a playback brick some seconds later; he hears the note, then
     the sample.
   - *His part:* his ear, when he wants it.
-- **6.6 The demo end to end, and the record — `todo` (LAID OUT AND WRITTEN 2026-10-04, RUNNING_LOG §62).** *Result when done:* one score
+- **6.6 The demo end to end, and the record — `done but for his ear` 2026-10-04 (RUNNING_LOG §64: `scores/decibel-first-object.json` by `tools/build_first_object.js`; the record written in both repos; the checks green. OPEN: his ear, and his word that this is DEC-7's first object. Laid out §62).** *Result when done:* one score
   he can open — a bass clarinet note, an opening over it, a playback brick three seconds later — played with the engine up, the note
   sounds and the sample comes back; and the record is whole. **Sub-steps:**
   - (a) the demo score `scores/decibel-first-object.json`, built by a tool as `build_first_sound.js` was — his to play.

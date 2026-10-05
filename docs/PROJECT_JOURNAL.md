@@ -104,7 +104,7 @@ takes is his (D5).
 
 **II. THE ELECTRONICS AND THE OPENING** *(the engine plan's parts in brackets — `live-electronics-system/docs/PLAN.md`)*
 
-6. ► ACTIVE (the talk begun 2026-10-04, Fable) **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
+6. ☑ *(BUILT AND PROVEN 2026-10-04 — RUNNING_LOG §51 … §64; HIS EAR on the first object OPEN, offered)* **The seams and the sound path — the AI's, before the first object** [parts 2 · 3 · 4]: ONE READ of the sandbox
    `live-electronics-engine` — what it is built on decides the sound seam (a folder `SynthDef_petalsOfResonance` under GitHub says
    SuperCollider; the read says) · WHERE the engine's code sits here — `electronics/` (D7) — and how the composer app loads it (a
    script tag; a static route in `score/server.js`) · THE MESSAGE from the score to the sound: the stack already sends MIDI from the
@@ -160,7 +160,12 @@ takes is his (D5).
    MODEL (`elecOpen` · `elecPlay`), the capture from the message to the window's end, the crop in the engine by a rule his ear tunes,
    the index in the piece's bank with the engine's schema, the playback scheduled on the engine's clock; PLAN.md 1.1 has every sub-step,
    the engine's plan 4.3 … 4.4 the generic form. NEXT: THE BUILD — Opus (a checkpoint and a clear recommended; his call).**
-7. **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
+   **☑ 6.3 … 6.6 BUILT AND PROVEN 2026-10-04 (Opus, his word *"move thru the whole build independently"* — RUNNING_LOG §64; the engine's
+   §14): in the composer score `M` puts a MIC OPENING over the selected note and `R` a RETURN at the playhead; played through with
+   the engine up, the window is recorded, cropped to its attack, banked (`bank/samples/`) and returned where the brick is, at unity
+   (a bass clarinet note: −41.2 dB captured, −41.22 dB back). The demo: `scores/decibel-first-object.json`. **STEP 6 IS DONE BUT FOR
+   HIS EAR — the listen is offered, not assumed. ► STEP 7 IS NEXT: the rhythm layer, his composing.**
+7. ► **The rhythm layer — his composing** (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
 8. **THE MIC OPENING — the first electronics object** [part 11's first member · part 5 the first sound, re-read by his brief: a
    note CAPTURED and RETURNED; the filter comes at step 10]: a brick on an instrument's lane becomes a WINDOW — its time · its
@@ -224,7 +229,34 @@ question, not by habit.)*
 - **HIS WORDS ON HOW TO PUT THINGS TO HIM, said today (§27 · §28):** *"I'm finding the responses a bit too much text"* — a BARE
   LIST, one short statement per item, in order, no table, no detail; the how AFTER, one sentence each; the one decision last.
 
-### OPEN AT SESSION END *(mid-session checkpoint #4, 2026-10-04, Opus — his `/checkpoint` with the first object laid out and written, before its build)*
+### THE STATE NOW — THE FIRST OBJECT IS BUILT (2026-10-04, Opus, RUNNING_LOG §64) — read this BEFORE the checkpoint block below; where they differ, this one is true
+
+- **POSITION: running order step 6 of 11 is ☑ but for his ear; ► step 7, the rhythm layer (his composing), is next.**
+- **What he can do in the composer score now** (`http://localhost:5500/composer.html`, after a reload of the page):
+  - **`M`** — a MIC OPENING over the selected note (it opens 100 ms before the note, 500 ms long), or at the playhead on the
+    active lane with no note selected. Named `bcl-A`, `bcl-B` … — his to rename in its panel (name · category · window).
+  - **`R`** — a RETURN at the playhead: the sample of the selected opening, else of the nearest opening before the playhead. Its
+    panel picks any sample of the bank. It is as long as its sample.
+  - **Played through with the engine up:** the opening's window is recorded, cropped to the attack, saved as
+    `bank/samples/<name>.wav` with a row in `bank/samples/index.json`; the return plays it where the brick is, at unity.
+  - **The demo:** the score `decibel-first-object` — a bass clarinet note at 5 s, its opening, its return at 8 s.
+- **ONLY THE BASS CLARINET HAS A MICROPHONE** (`bank/elec_route.json` `players`). An opening on another lane is drawn `— no microphone
+  on this lane` and records nothing. Another player = a row in that table + `node tools/elec.js route` + his CTRL+S in Reaper.
+- **THE ENGINE RETURNS ONLY WHAT IT MAKES now** — no dry note, no one-second echo (`listenEchoSeconds` 0; above 0 it is a route check).
+- **The crop's numbers are the engine's defaults** (`electronics/sc/bank.scd`); his ear tunes them in `bank/elec_route.json`
+  `bank.crop` (e.g. `"attackDb": -24`), used from the engine's next start. A re-crop of a kept raw recording has no tool yet (NITS).
+- **Every pass through an opening re-records its sample** (the latest take wins) — so a listen leaves `bank/samples/` changed in git.
+  That is the bank doing its work, not a fault; commit the samples at a wrap, or not, as the music wants.
+- **HIS, to make it live after this build — TWO THINGS:** start the engine again (`start_electronics.bat`) · reload the composer
+  page (F5). **NO restart of the score server** — `score/server.js` and the relay were not touched.
+- **THE ENGINE'S WINDOW:** closing it now takes its sound server with it; and if one is ever left, the next start clears it
+  (§64 — the rule "only `probe` · `meters` · `ping` beside his engine" stands for a LIVE engine). New: `node tools/elec.js object`
+  (the first object's proof with real sound, on a scratch bank; it boots a server — refused beside his window).
+- **Left running by this build:** nothing of the AI's. His Reaper on the rack · his score server on 5500 · loopMIDI. **HIS ENGINE
+  IS DOWN** (he closed it for the build).
+- **Not claimed:** his ear on the return and on the crop · a capture made from his own page's playback (Web MIDI — his Chrome).
+
+### OPEN AT SESSION END *(mid-session checkpoint #4, 2026-10-04, Opus — his `/checkpoint` with the first object laid out and written, before its build — SUPERSEDED BY THE BLOCK ABOVE where they differ: the build it hands off is DONE)*
 
 - **The task and its state:** the running order's step 6, the electronics' plumbing — **6.1 the audio route ☑ · 6.2 the message route ☑**
   (RUNNING_LOG §51 … §61; D10 the correspondence rule). THE PLUMBING IS DONE; THE OBJECTS ARE NOT BUILT. **POSITION: step 6 of 11 is
@@ -311,8 +343,9 @@ question, not by habit.)*
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **THE BUILD OF THE FIRST OBJECT END TO END — 6.3 · 6.3b · 6.4 · 6.5 · 6.6 as ONE**, exactly as PLAN.md 1.1 lays it out (LAID OUT AND WRITTEN 2026-10-04, §62). First: one plain sentence asking him to close his engine window | **Opus** | **DONE — checkpoint #4; `/clear`, then `/postclear`** |
-| — | 6.6 the demo's record → step 7, his rhythm layer | Fable (each talk) · Opus (the builds) | — |
+| ☑ | THE BUILD OF THE FIRST OBJECT END TO END — 6.3 · 6.3b · 6.4 · 6.5 · 6.6 as ONE — **DONE 2026-10-04 (§64); his ear offered** | Opus | — |
+| **►** | **Step 7 — the rhythm layer, HIS COMPOSING** (DEC-1): he plays a series into the Rec lane; the rhythms kept, the bricks moved to the players' lanes. No build expected; a fault → `docs/SWEEP_LIST.md` | **Fable** (the talk, if he wants one) | a good point for a `/checkpoint` and a clear — the build's context is long; his call |
+| — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
