@@ -192,3 +192,57 @@ before it is named and stored; proposed as a sub-step of the running order's 6.3
 names (the input sign · attack A · B · C …) are the notation's, later (PERFORMANCE_NOTES #1; the engine plan's part 7); the field on
 the brick that carries them is the capture's and the index's (6.3 · 6.4). (5) Feedback: the short opening is his answer today;
 *"other ways"* parked for the capture's talk. (6) "SuperCloud" is the dictation's SuperCollider.
+
+### DEC-9 · 2026-10-05 — IMPULSE 2 PLACED BY HIM · THE ANTICIPATION-REACTION OF A SAMPLE AROUND THE LIVE NOTE (step 9, the return) · "a relatively savvy jitter" · all five players: their impulse-1 sample before or after their impulse 2 — two onsets, the sample and themselves
+
+> *"Okay, the next five are in place in their instruments with their proper articulations and everything else. So those don't need
+> to be touched. Those will be impulse two for each of the five instruments. And also, I want you to look, please, at piece number
+> one and piece number two. There were a couple of algorithms, one called anticipation reaction, another one three body problem,
+> another one called see all the people. Let's pull forward their algorithms. Just the deciding algorithm, if there is, you don't
+> have to look too hard. And then let's focus on the anticipation reaction one. The idea is that with live performers, they would,
+> the instruction is to try to either anticipate and play right before another player is playing. So they'll have to guess. or to
+> play directly after another performer plays. So we made a simple algorithm to simulate this. In this piece, I want to actually
+> simulate it for reals using the samples. So in this, in this current, what we're doing currently, the violas first at around
+> 6.63, will play his impulse one in this anticipation reaction format around the live playing. So the algorithm will look at,
+> see that there's a mic opening at 6.63 and then either play to anticipate it or play after directly. And then let's talk about,
+> we can look at that string quartet algorithm But let's talk about maybe making improvements or what it should be. It should be
+> a fair bit of jitter. Um, I expect that it's not just trying to play as much as humanly possible before or after, but sometimes
+> they'll make a musical choice there and maybe play, anticipate by a little bit more than as fast as possible or play a little
+> bit after. So uh, relatively savvy jitter algorithm. But again, I don't want to necessarily spend too much time on it, but let
+> me have some proposals on that. And then once we decide on that algorithm, all five instruments will have their sample played
+> anticipation reaction before their impulse two. So around the time they're recording impulse two, you'll hear two onsets, the
+> sample and then themselves."*
+
+*The AI's reading, marked as such:* impulse 2 as he placed it in `piece-sec01-a` (saved 09:07) — viola 6.639 s marcato sfz (key 51) ·
+MALLETS lane 6.991 s glockenspiel shorts hard (70) · bass flute 8.251 s staccato (53) · cello 9.900 s bow-op marcato sfz (44) · bass
+clarinet 10.137 s flutter (34); no mic openings over them yet. The machine takes the live player's part of #2's instruction: it
+anticipates or reacts, with a human's imprecision. The algorithms are in RUNNING_LOG §75.
+
+### DEC-9b · 2026-10-05 — ROLLED LIVE AT THE CONCERT, the composer score stable · the human model: listening, guessing, a lazy after, a near-unison · anticipation-reaction only, for these five · the algorithms for live performers later
+
+> *"So, so the one call before the jitter, it is rolled live at concert, but we'll have to figure out a stable composer score. So
+> this is what I've been talking about. We'll have to do all through this composition process is to build the actual live
+> electronics that are supposed to be used and then have some kind of simulation that doesn't interfere with the actual score. So
+> yeah, the intention is that it's re-rolled. And then I just want to underline, I want to try to make improvements if applicable
+> here to the algorithms. So the human instruction, for example, for anticipation reaction is to try to play just before or just
+> after another player, but they're listening. They don't know when that other performer is playing. And they also can make a
+> creative choice to play a little bit more lazily after, or to try to hit almost unison, that sort of thing. That would be a
+> musical choice. So I want to try to simulate that with the sample playback. So maybe a layer, an extra layer of sophistication.
+> And then I'll use those algorithms later in the future, even for live performers. And while I'm just using anticipation reaction
+> now, I might use some of the others later, but we don't have to work those out right now. Let's just use anticipation reaction.
+> for these five."*
+
+### DEC-9c · 2026-10-05 — THE PERCUSSIONIST'S ONE MICROPHONE (a simulated sixth for the mallets lane; in the score the same mic) · THE DIALS A … F: the AI's defaults now, his ear later, by letter or by description · D: no leanings · THE FRAMEWORK: the samples are ANOTHER PLAYER — the live electronics is its own performer, with a bank and behaviours built as he goes
+
+> *"Okay, so first the mallet lane microphone. Again, this needs to be some sort of simulation because the percussionist probably
+> will just have the one microphone. So here we build a sixth microphone because it's a different lane. But in the actual score,
+> we need to make sure it's opening the same microphone for the mallets and then for the non-pitch percussion. Then what I think
+> should happen is we record or make sure it's clear what the dials are here. The A through F, and then I'll ask you to fill in
+> your take on them, and then I may adjust by ear later when I've heard a few of these. So what I'm saying is you'll put in your
+> defaults right now or your decisions. And then if I hear something off or I'd like something to be different, I can easily
+> reference the A through F again, or I can describe what I'd like different and you could discern what the A through F needs to
+> be changed. D, no leanings. And I'll give you a conceptual framework. I'm thinking of these samples as almost as another player.
+> So whatever recorded samples like impulse one, impulse two, or later ones, multiphonics one, multiphonics two, or whatever, I
+> decide those are in a bank and then can be brought back in any type of algorithm, in this case, this one or others. And they
+> can be brought back in other players' lanes, for example, or processed. So then while we're showing them in the players'
+> lanes, the overall live electronics is like its own performer. And I'll build the behaviors as I go forward."*

@@ -23,7 +23,7 @@ const html = fs.readFileSync(path.join(ROOT, 'score', 'public', 'composer.html')
 const TRACKS = vm.runInNewContext(html.match(/const TRACKS = (\[[\s\S]*?\]);/)[1], {});
 const ROUTE = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'elec_route.json'), 'utf8'));
 const PLAN = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'impulses.json'), 'utf8'));
-const slots = PLAN[N];
+const ROW = PLAN[N], slots = Array.isArray(ROW) ? ROW : (ROW && ROW.slots), RETURN = Array.isArray(ROW) ? null : (ROW && ROW.return);   // §78: a row may name notes he placed himself, and a return around each
 if (!Array.isArray(slots) || !slots.length) { console.error('bank/impulses.json has no row "' + N + '" — his dictation goes there first'); process.exit(2); }
 
 const REC_LANE = 0;                 // the Rec lane: his rhythm lands on the bass flute's lane
@@ -33,14 +33,15 @@ const BEFORE_S = 0.1, WINDOW_S = 0.5;   // the opening: 100 ms before the onset,
 const save = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const objects = save.objects || [];
 const pool = objects.filter((o) => o.type === 'waveCurve' && o.layer === REC_LANE && !o.impulse).sort((a, b) => a.startSeconds - b.startSeconds);
-if (pool.length < slots.length) { console.error('the Rec lane holds ' + pool.length + ' unassigned note(s); impulse ' + N + ' needs ' + slots.length); process.exit(4); }
+const placed = slots.every((q) => q.noteId);   // §78: his own placement — the notes are on their lanes already; the tool tags, opens, returns
+if (!placed && pool.length < slots.length) { console.error('the Rec lane holds ' + pool.length + ' unassigned note(s); impulse ' + N + ' needs ' + slots.length); process.exit(4); }
 if (objects.some((o) => o.impulse && String(o.impulse.n) === N)) { console.error('impulse ' + N + ' is already in ' + NAME); process.exit(4); }
 
 let nextId = +save.nextId || (objects.length + 1);
-const zone = (layer, start, end, elec) => ({
-  id: 'zn-' + (nextId++), type: 'zone', layer, startTime: start, endTime: end, player: '', instrument: '', zoneFunction: 'elec', midiModel: 'elecOpen',
+const zone = (layer, start, end, elec, model) => ({
+  id: 'zn-' + (nextId++), type: 'zone', layer, startTime: start, endTime: end, player: '', instrument: '', zoneFunction: 'elec', midiModel: model || 'elecOpen',
   ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [], ratioSourceZoneId: '', ratioGroup: '',
-  responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null, color: '#00897B', opacity: 0.35, yOffset: 0, zoneHeight: 0.2,
+  responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null, color: model === 'elecPlay' ? '#8E24AA' : '#00897B', opacity: 0.35, yOffset: model === 'elecPlay' ? 1 : 0, zoneHeight: 0.2,
   performanceNotes: '', properties: {}, elec,
 });
 
@@ -49,28 +50,35 @@ slots.forEach((slot, i) => {
   const lane = TRACKS.findIndex((t) => t.instKey === slot.lane);
   const inst = INSTRUMENTS[slot.lane];
   if (lane < 0 || !inst) throw new Error('slot ' + (i + 1) + ': no lane plays ' + slot.lane);
-  const tech = (inst.techniques || []).find((q) => q.key === slot.tech);
+  const own = slot.noteId ? objects.find((o) => o.id === slot.noteId && o.type === 'waveCurve') : null;
+  if (slot.noteId && !own) throw new Error('slot ' + (i + 1) + ': no note ' + slot.noteId + ' in ' + NAME);
+  if (own && own.layer !== lane) throw new Error('slot ' + (i + 1) + ': ' + slot.noteId + ' is on lane ' + own.layer + ', not ' + slot.lane);
+  const tech = (inst.techniques || []).find((q) => q.key === (slot.tech || (own && own.technique)));
   if (!tech) throw new Error('slot ' + (i + 1) + ': ' + slot.lane + ' has no technique "' + slot.tech + '"');
   const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
   let note = slot.note != null && slot.note !== 'mid' ? +slot.note : Math.round((lo + hi) / 2);
   if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((k) => k.midi === note)) note = tech.keys[Math.floor(tech.keys.length / 2)].midi;   // a by-key voice: the middle KEY
-  const player = (ROUTE.players.find((p) => p.port === inst.port) || {}).name || '';
-  const wc = pool[i];
+  const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';   // a player may own several ports (the percussionist's two lanes)
+  const wc = own || pool[i];
   const name = (player || slot.lane) + '-impulse-' + N;
   const open = zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
+  // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
+  const ret = RETURN ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
+    { name: (player || slot.lane) + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay') : null;
   if (note < lo || note > hi) throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')');   // the preset's own range, never the instrument's
-  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id });
+  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? ret.elec.name : '' });
   if (!DRY) {
     wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
     wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
     wc.nodes = [{ pos: 0, y: 10, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }];
     wc.impulse = { n: +N, slot: i + 1, name };
     objects.push(open);
+    if (ret) objects.push(ret);
   }
 });
-rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '')));
+rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret + ' ~ ar' : '')));
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 save.nextId = nextId;
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });
 fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n');
-console.log(path.relative(ROOT, FILE) + ' written — ' + rows.length + ' notes moved, ' + rows.length + ' openings placed. Reload it in the composer page.');
+console.log(path.relative(ROOT, FILE) + ' written — ' + rows.length + ' notes ' + (placed ? 'tagged' : 'moved') + ', ' + rows.length + ' openings placed' + (RETURN ? ', ' + rows.length + ' returns placed' : '') + '. Reload it in the composer page.');

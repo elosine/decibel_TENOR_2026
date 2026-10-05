@@ -2700,3 +2700,106 @@ window and `rowError` in the result the page gets. From the engine's next start.
 **His part, two steps:** CTRL+S in Reaper (the four faders) · play `piece-sec01-a` from 0 with the engine up — the flute's row
 should appear (the panel says "in the bank: … ms"). If it does not, the window's `LE_ERROR` line is the picture to take.
 **The paper:** the trims, the standard and the range are the PIECE's; the try is the ENGINE's (§16 there).
+
+## §75. STEP 9 OPENS — the three algorithms pulled forward from piece #2 (the deciding rules only); impulse 2 as he placed it; the proposal for the sample's anticipation-reaction with a savvy jitter (2026-10-05, Fable)
+
+**What prompted it:** DEC-9, his dictation verbatim. **Where they live:** all three are in piece #2's composer
+(`composition_for_two_pianos_and_two_percussion/public/composer.html`); piece #1 (`string_quartet_no1-composer/public/index.html`)
+has NOTHING under those names — not looked for further, his word ("you don't have to look too hard"). The deciding rules, read, not run:
+
+- **Anticipation-Reaction (a MARKER, two instruments; `generateAnticipationReactionMidi`, 6692 …):** instrument 1 is the reference;
+  a coin (0.5) says BEFORE or AFTER; before = 80 … 170 ms earlier, after = 100 … 200 ms later, uniform; the offset is kept on the
+  marker (`arLastOffset`) and the notation aligns to the marker's time, the offset is MIDI-only (#2's Principle 18).
+- **Flocking (a ZONE, N players; 6849 …):** an initiator at 0; each other player takes as reference the initiator or the most
+  recently placed (cascade 0.5); BEFORE with probability 0.3 (80 … 170 ms) else AFTER (100 … 200); a minimum separation of
+  25 ms; the clusters' spacing from a curve (2500 → 150 ms).
+- **Three Body (a ZONE; 7138 …):** every player ANTICIPATES one other and REACTS to another (two derangements, never the same
+  target); an instigator per cluster, then a cascade; reaction = 100 … 200 ms after; anticipation has an ACCURACY 0 … 1: a hit
+  (probability = accuracy) lands 20 … 80 + (1 − accuracy) × 140 ms before; a MISS is an "air shot", ±200 ms at random; both
+  targets placed → a blend, reaction dominant (weight accuracy × 0.5); separation 25 ms; density → gap 4000 → 350 ms.
+- **See All The People (a ZONE; 7438 …):** a different idea — P1 runs at 80 … 100 ms gaps, the others cycle at ratios
+  (2.0 · 2.7 · 1.5) and invert direction with probability 0.7, each onset offset 50 … 80 ms, aiming at the LARGEST GAP between
+  the onsets already placed. Pulled forward for the record; not this step's.
+
+**The data here:** impulse 2 as he placed it — viola 6.639 · mallets 6.991 (the GLOCKENSPIEL, lane 3 — NOT the unpitched lane
+impulse 1 used) · bass flute 8.251 · cello 9.900 · bass clarinet 10.137; all 127 / 150 ms; no openings over them yet; the four
+impulse-1 samples in the bank, the flute's pending his recapture.
+
+**The proposal (the AI's, for his one decision) — PLACED, not rolled live:** the sample's return is a brick (`R`, `elecPlay`)
+PLACED by an algorithm next to the player's opening, re-rolled on demand with a seed — because the glyph must be in the players'
+score before the concert (step 9's "named in the score by its shape or colour"), and D10 (said twice, the same in simulation and
+concert) holds for free: the page sends `/le/play` where the brick is. The machine's "guess" is simulated by the jitter, not by
+dice at the concert. **THE JITTER — three layers, three dials:** (1) the INTENT — before or after, `pBefore` 0.5; (2) the
+DISTANCE — two bands per side, a draw skewed to the fast edge: TIGHT (as fast as a human: after 100 … 180 ms, before 60 … 150 ms)
+with share `tightness` 0.7, else CHOSEN (a musical placement: after 180 … 400, before 150 … 350); (3) the MISS — `missRate`
+0.08: an anticipation that lands late, 0 … 80 ms AFTER the note (two onsets still heard: a floor of 40 ms between them). Reused
+from #2: the bands' floors (80 / 100), the separation idea (25 → 40 ms, two attacks must read as two), three-body's accuracy as
+the tight share and its air shot as the miss. Dropped: the uniform draw (humans cluster at their floor), #2's blend (one
+reference here, the player's own note). THE SORTING: the algorithm is the ENGINE's (`electronics/score/`, step 9's "[the
+algorithm the engine's]"); which players, which samples, the seed, the dials' values are the PIECE's (the save). The decision is
+his; a new entry carries it.
+
+**A fact for the build, not a decision:** the glockenspiel note sits on the MALLETS lane, whose ports are not in
+`bank/elec_route.json` `players` — no microphone there yet; the percussionist is one player with two lanes, so the mallets'
+tracks need a send (`elec.js route`) and the player table a row, before impulse 2 can be recorded there.
+
+## §76. CORRECTION OF §75's DESIGN CALL — the return is ROLLED LIVE by the engine; the composer score stays still (2026-10-05, Fable; his words DEC-9b)
+
+§75 proposed a PLACED, seeded brick. He corrected it: *"it is rolled live at concert, but we'll have to figure out a stable
+composer score"* — the engine decides before/after and the offset at every performance; the score's brick only says "the sample
+comes around here"; the simulation goes through the same engine and the same dice (D10), so a playback here is one possible
+concert. Consequences for the build: the ALGORITHM lives in the ENGINE (SuperCollider, `electronics/sc/`), not in the page; the
+page sends the return's message early enough for a "before" (a lead of ~0.5 s against the longest anticipation; `samplePlay` clips
+`dueMs` at 5 s); the notation shows a region, not a point. The human model he wants simulated: the player LISTENS and does not know
+when the other will play (a guess can miss); the stances are just-before · just-after · lazily-after · near-unison. The algorithm
+is to serve live performers later too — so it is written as a general placement against a reference onset. The jitter's numbers
+are still his to settle; the open points are listed in the chat of this turn and settle into a new entry.
+
+## §77. THE FRAMEWORK AND THE DIALS — the electronics is its own performer; the percussionist's one microphone; the AI's defaults for A … F (2026-10-05, Fable; his words DEC-9c)
+
+**The framework, his (DEC-9c):** the bank's samples (impulse 1 · 2 · multiphonics 1 · 2 … as he decides) are the material of ONE
+MORE PERFORMER — the live electronics — whose BEHAVIOURS (this algorithm, others, processing) bring them back anywhere: in any
+player's lane, processed or not. A lane is only where a return is SHOWN. So in the engine: a bank + behaviours; in the page: a
+brick in a lane that names a behaviour and its sample. The behaviours are built as the music asks.
+**The percussionist's microphone:** ONE in concert. His words: a simulated "sixth" for the mallets lane, the score opening the same
+mic for both lanes. The AI's way to do exactly that (one change, read back to him): no sixth engine input — the four mallet tracks
+SEND to the percussionist's existing input, so the engine hears "perc" from either lane, as the one mic would; the player table
+says perc = lane 2 + lane 3 (`DECPerc` + the four `RM` ports). A separate sixth input would make the simulation differ from the
+concert (D10) for nothing.
+**The dials — the AI's defaults, his ear later, referenced by letter (DEC-9c); D fixed by him: no leanings, fresh dice every
+note.** A · the shares: just-before 35 % · just-after 35 % · lazy-after 15 % · near-unison 15 %. B · the ranges, each drawn
+skewed to its fast edge: just-after 100 … 180 ms · just-before 60 … 150 · lazy-after 180 … 400 · near-unison 10 … 40 either
+side. C · the miss: 10 % of the just-before rolls; two thirds land late (0 … 80 ms after), one third far too early (150 … 300
+before). D · none. E · the reference: the player's own opening (the brick names it; any opening by name later). F · on the page:
+the brick is a REGION ±400 ms around its opening; after a playback its panel says what was rolled (the engine's result message
+carries the stance and the offset), as #2's marker showed `arLastOffset`. **Where they live:** the values are the PIECE's —
+`bank/elec_route.json` `return.ar` with the letters in the keys; the algorithm and its defaults the ENGINE's.
+
+## §78. STEP 9 BUILT — the return's behaviour `ar` in the engine, rolled live; the brick's behaviour in the page; the percussionist's two lanes into one microphone; impulse 2 tagged, opened and returned by the tool (2026-10-05, Fable; his word "Go ahead and build it, no sixth input")
+
+**What was built, and where (THE SORTING):**
+- **ENGINE (`electronics/`):** `sc/bank.scd` — `arDefaults` (A · B · C as flat names) · `arRoll` (the stance by cumulative shares; each
+  range drawn `lo + (hi − lo) · u^skew`, skew 2 — most rolls near the fast edge; near-unison either side by a coin; a just-before
+  misses with `missRate`: late 0 … 80 after, or early 150 … 300 before) · `samplePlay` takes `behaviour ar`: the message's `dueMs`
+  points at the brick's CENTRE, the roll moves the sample by its offset, a roll the message came too late for is clipped to now
+  and says so; the window shows `play · <name> · in N ms · AR <stance> ±ms`; the result JSON carries `behaviour · stance · offsetMs`.
+  `sc/session.scd` — `LE_AR` parsed into `le[\arOpts]` beside `LE_CROP`. `score/le_objects.js` — `elec.behaviour`: the label
+  `~ AR`, the panel's Behaviour select (plain ↔ ar: the brick becomes a region ±`arRegionMs` about its former start, and back),
+  `redraw` leaves a behaviour's region alone, `fire` sends the centre's time and `dueMs` with the behaviour (the tick fires at
+  the region's start, 100 ms ahead: ~500 ms before the note). `score/le_msg.js` and `tools/relay.js` — a player's `ports`.
+- **PIECE:** `bank/elec_route.json` — the `perc` row: five tracks, five ports (one microphone, two lanes); `return.ar` with the
+  dials LETTERED A … F (his ear names a letter); `tools/elec.js` — the tracks to the route job, `LE_AR` to the engine;
+  `reaper/bridge/jobs/elec_route.lua` — one send per TRACK of a player; `tools/impulse.js` — a row whose slots name his own
+  notes (`noteId`) is tagged, not moved, and a `return` on the row places an `ar` region ±400 ms around each note;
+  `bank/impulses.json` row 2 = his five notes.
+**Done on his rack (unsaved):** the four mallet tracks' sends into ReaRoute 4 (made; the five earlier kept).
+**Refused, his to unblock:** the score write — the page held a working copy (09:51:45) newer than his save (09:48:55); the
+tool's rule. CTRL+S in the page, the tool, Reload.
+**Not tested (D13):** the engine's new code parses by eye and by brace count; a syntax fault shows at his next
+`start_electronics.bat`. `LE_AR` was read back from the tool: `before=0.35,after=0.35,lazy=0.15,unison=0.15,afterLo=100 …
+missEarlyHi=300`. The page's two modules pass `node --check`.
+**Rejected on the way:** a sixth engine input for the mallets lane (his word: no sixth); a placed, seeded return (his correction,
+§76); per-player leanings (D, his word).
+**The flute (SWEEP_LIST #3 b):** his 09:00:42 recapture wrote `bfl-impulse-1.wav` again (50940 bytes, a full window) and the raw
+`zn-47.wav` (78288 bytes — sound in it this time); no row again. Deterministic for the flute alone; the engine's `LE_ERROR`
+line (§74) names it at his next start. **For the paper:** the engine's part is in its §17; this is the piece's use.

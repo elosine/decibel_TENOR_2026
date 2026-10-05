@@ -97,14 +97,14 @@ takes is his (D5).
    −41.2 dB and returned at −41.22 dB. **The pedals of resonance and the sandbox's processing are PHASE 2 (step 10), not here.**
 7. ☑ **The rhythm layer — his composing** — DONE 2026-10-05: 28 notes played into the Rec lane (`scores/piece-sec01-a.json`); the bass flute's short notes under his keyboard found and fixed by measurement (§70). *(as written:)* (DEC-1): he plays a series of notes into the composer score (the Rec lane); the rhythms
    kept, the pitches not; the bricks moved to the instruments' lanes. No build expected; a fault → `docs/SWEEP_LIST.md`.
-8. ► **THE MIC OPENING — the first electronics object** — OPENED 2026-10-05 (§71; PLAN.md § 1.2): impulse 1 placed, the four microphones routed (unsaved), the modes and the backup layer built, the crop tested on six kinds. HIS FIVE HAND STEPS DONE 2026-10-05: four of five captured; the bass flute's did not (SWEEP_LIST #3 — the checkpoint in OPEN AT SESSION END). *(as written:)* [part 11's first member · part 5 the first sound, re-read by his brief: a
+8. ☑ **THE MIC OPENING — the first electronics object** — DONE 2026-10-05 BUT FOR ONE ROW: four impulse-1 samples in the bank; the flute's file is written at every pass and its row never follows (SWEEP_LIST #3 b — the engine now names the error at its next start, §74). OPENED 2026-10-05 (§71; PLAN.md § 1.2): impulse 1 placed, the four microphones routed (unsaved), the modes and the backup layer built, the crop tested on six kinds. HIS FIVE HAND STEPS DONE 2026-10-05: four of five captured; the bass flute's did not (SWEEP_LIST #3 — the checkpoint in OPEN AT SESSION END). *(as written:)* [part 11's first member · part 5 the first sound, re-read by his brief: a
    note CAPTURED and RETURNED; the filter comes at step 10]: a brick on an instrument's lane becomes a WINDOW — its time · its
    length · its instrument · a CATEGORY (the Braxton-like type: "short", "accented long tone" … — a field on the brick that reaches
    the IR; the glyph is the notation's, later — part 7; PERFORMANCE_NOTES #1) · in the simulation he picks the instrument and the
    articulation; it sounds as played · THE BANK: the window's audio recorded and stored under a NAME — a shape or a colour (LG-342 ·
    LG-345); the store in this repo (the samples are the piece's), the mechanism in `electronics/`. **Done when:** one opening placed,
    one note heard, one file in the bank, named; played back on demand.
-9. **THE RETURN — the sample comes back** [part 11's second member; the algorithm the engine's]: a second rhythm series; at each
+9. ► **THE RETURN — the sample comes back** — BUILT 2026-10-05 (RUNNING_LOG §78; DEC-9 … 9c; D14 · D15): the behaviour `ar` in the engine (rolled live; the dials A … F in `bank/elec_route.json` `return.ar`), the brick's behaviour in the page, the percussionist's two lanes into one microphone, impulse 2's openings and returns by `tools/impulse.js --n 2` (PENDING his save of the page). *(as written:)* [part 11's second member; the algorithm the engine's]: a second rhythm series; at each
    onset the player's banked sample is placed NEARBY — directly before or after — by an algorithm (its dials: before · after · both ·
    the offset range · which of the player's samples · a seed) · the iterations: two versions of themselves, three … · the returned
    sample named in the score by its shape or colour (LG-342; the notation later — PERFORMANCE_NOTES #2). **Done when:** a series
@@ -172,6 +172,15 @@ question, not by habit.)*
 - **Not done, and not claimed:** HIS EAR on the first object and on the crop's numbers · his three notation calls.
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
+
+**► STEP 9 BUILT — 2026-10-05, Fable (RUNNING_LOG §78; the engine's §17). THIS SUPERSEDES the two blocks below.**
+
+- **The electronics is its own performer (D14); a return is ROLLED LIVE by the engine (D15).** A return brick with behaviour `ar` sends its message at the brick's CENTRE (the live note), half a second early; the engine rolls just-before · just-after · lazily-after · near-unison · a miss, and says each roll in its window. The dials: `bank/elec_route.json` `return.ar`, lettered A … F (his ear names a letter); the engine's defaults in `electronics/sc/bank.scd`; used from the engine's next start.
+- **The percussionist's two lanes, one microphone:** the four mallet tracks SEND into engineIn 4 beside the shime daiko (made in his rack — UNSAVED, his CTRL+S in Reaper); the `perc` row owns five ports; `LE.playerOf` and the relay know `ports`.
+- **Impulse 2 — his placement, the tool's tags:** `bank/impulses.json` row 2 names his five notes (`noteId`); `node tools/impulse.js --score piece-sec01-a --n 2` tags them, opens the mic over each (`<player>-impulse-2`) and places the return of `<player>-impulse-1` as an `ar` region ±400 ms around each. **REFUSED at the build: the page held a working copy newer than the save.** HIS ORDER: CTRL+S in the page → the AI runs the tool → Reload in the page.
+- **HIS STEPS, in order:** CTRL+S in Reaper (the four sends) · CTRL+S in the composer page → say so → the tool runs → Reload the score in the page · close the engine's window and `start_electronics.bat` (the behaviour and the flute's error line are in the code, not in the running engine) · F5 the page · play from 0: at each impulse 2, two onsets.
+- **The flute's row (SWEEP_LIST #3 b):** his 09:00 recapture wrote the file again (a full window, sound in it) and no row again — deterministic for the flute; the engine's `LE_ERROR` line at the next start names it.
+- **Deliberately uncommitted:** his rack and his score as he saves them (live work). The engine's repo in step at this wrap.
 
 **► AFTER THE CHECKPOINT — 2026-10-05, Fable (RUNNING_LOG §74). His three items done; THIS SUPERSEDES the checkpoint block's "NEXT CONCRETE STEP" below.**
 
@@ -288,7 +297,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 8 — HIS RECAPTURE of `bfl-impulse-1` (the pass from 0 with the engine up); the four samples and a return (`R`) to his ear. Then his composing.** A fault while he composes → SWEEP_LIST, Opus | **Fable (the talk) · Opus (a fix)** | no |
+| **►** | **Step 9 — HIS STEPS (journal §2, the block STEP 9 BUILT): save the page → the tool places impulse 2's openings and returns → Reload · CTRL+S in Reaper · restart the engine · F5 · play from 0. His ear on the rolls (A … F by letter). The flute's row: the engine's error line.** A fault → SWEEP_LIST, Opus | **Fable (the talk) · Opus (a fix)** | no |
 | — | Impulse 2 … — his dictation into `bank/impulses.json`, `node tools/impulse.js --score <name> --n 2` | Fable | — |
 | — | Step 8 — the mic opening in the music: more players' microphones (a row + `elec.js route` each), the CATEGORY's meaning, the names | Fable (the talk) · Opus (the builds) | — |
 | — | **HIS, when he offers them:** what he heard · the pitch form · the percussion staff's line order · the short names (one edit of `notation/registry/ensemble.json` each) | — | — |
@@ -444,6 +453,14 @@ Verified in this repo only when they bite.)*
 
 ---
 
+- **D14 · 2026-10-05 — THE LIVE ELECTRONICS IS ITS OWN PERFORMER** (his framework, DEC-9c; RUNNING_LOG §77). The bank's samples are
+  its material; its BEHAVIOURS (the anticipation-reaction now; others and the processing later) bring them back in any player's
+  lane, processed or not; a lane is only where a return is SHOWN. In the engine: a bank + behaviours; in the page: a brick that
+  names a behaviour and its sample. Built as the music asks.
+- **D15 · 2026-10-05 — THE RETURN IS ROLLED LIVE, BY THE ENGINE; THE COMPOSER SCORE STAYS STILL** (his correction, DEC-9b; §76).
+  The engine decides the stance and the offset at every performance; the page's brick says only "around here" and sends its
+  message early enough for a "before"; the simulation runs the same dice (D10). The dials' VALUES are the piece's
+  (`bank/elec_route.json` `return.ar`, lettered A … F so he can name one by ear); the algorithm is the engine's. D: no leanings.
 ## §5 Playbooks
 
 *(Mode-specific procedures and gotchas. The last piece's §5 holds the engine's playbooks; bring one

@@ -21,7 +21,22 @@
       "track": "Shime Daiko ARO",
       "engineIn": 4,
       "port": "DECPerc",
-      "testNote": 43
+      "testNote": 43,
+      "_lanes": "ONE MICROPHONE, TWO LANES (DEC-9c, 2026-10-05; RUNNING_LOG §78): the unpitched percussion and the mallets are one player — every track here SENDS into engineIn 4, every port here is his. In concert the one mic; in simulation the same input, no sixth.",
+      "tracks": [
+        "Shime Daiko ARO",
+        "Crotales RM",
+        "Glockenspiel RM",
+        "Xylophone RM",
+        "Marimba RM"
+      ],
+      "ports": [
+        "DECPerc",
+        "DECCrotales",
+        "DECGlock",
+        "DECXylo",
+        "DECMarimba"
+      ]
     },
     {
       "name": "va",
@@ -40,7 +55,51 @@
   ],
   "return": {
     "track": "ELEC RETURN",
-    "engineOut": 1
+    "engineOut": 1,
+    "ar": {
+      "A_shares": {
+        "before": 0.35,
+        "after": 0.35,
+        "lazy": 0.15,
+        "unison": 0.15
+      },
+      "B_rangesMs": {
+        "after": [
+          100,
+          180
+        ],
+        "before": [
+          60,
+          150
+        ],
+        "lazy": [
+          180,
+          400
+        ],
+        "unison": [
+          10,
+          40
+        ],
+        "skew": 2
+      },
+      "C_miss": {
+        "rate": 0.1,
+        "lateShare": 0.67,
+        "lateMs": [
+          0,
+          80
+        ],
+        "earlyMs": [
+          150,
+          300
+        ]
+      },
+      "D_leanings": "none — fresh dice at every note",
+      "E_reference": "the brick's centre — the player's own note; any opening by name later",
+      "F_page": {
+        "regionMs": 400
+      }
+    }
   },
   "latencyLoop": {
     "engineIn": 3
@@ -61,5 +120,6 @@
   "_mode": "THE MODE (RUNNING_LOG §71, 2026-10-05; his design): one word that names which bank FILLS the engine's buffers at start, where captures are WRITTEN, and whether an opening records. compose = bank/samples both ways, openings record (the latest take wins) · compose-locked = the same samples, openings change nothing · rehearsal = the players record the BACKUP bank (bank/backup) · concert = buffers full from the backup, a live capture replaces one only when it caught a sound, the captures kept in bank/live/<date>. The bricks in the score are the same in every mode. Read at the engine's START (tools/elec.js start).",
   "mode": "compose",
   "backupDir": "bank/backup",
-  "liveDir": "bank/live"
+  "liveDir": "bank/live",
+  "_return_ar": "THE RETURN'S BEHAVIOUR 'ar' — ANTICIPATION-REACTION (step 9; DEC-9 … 9c; RUNNING_LOG §77 · §78). A return brick with behaviour ar is ROLLED BY THE ENGINE at every playback: the sample lands BEFORE or AFTER the brick's CENTRE (the live note), as a listening player would. The dials, LETTERED AS HE NAMES THEM BY EAR; these values override the engine's defaults (electronics/sc/bank.scd) and are used from the engine's next start (tools/elec.js start → LE_AR). A: the stances' shares. B: each stance's range in ms, drawn skewed to its fast edge (skew 2: most rolls near the low end). C: the miss — a just-before that lands late (0 … 80 after) or far too early. D: no leanings, fresh dice at every note (his word). E: the reference is the brick's centre. F: the page draws the brick as a region regionMs either side of its centre."
 }

@@ -20,7 +20,11 @@
 --   node tools/reaper_job.js run reaper/bridge/jobs/elec_route.lua         (bare = probe)
 local CFG = CFG or { mode = 'probe' }
 local MODE = CFG.mode or 'probe'
-local PLAYERS = CFG.players or { { name = 'bcl', track = 'Bass Clarinet XS', engineIn = 1 } }
+local RAW = CFG.players or { { name = 'bcl', track = 'Bass Clarinet XS', engineIn = 1 } }
+local PLAYERS = {}   -- one row per TRACK: a player with several tracks (the percussionist's two lanes, §78) sends each into the same channel
+for _, p in ipairs(RAW) do
+  for _, t in ipairs(p.tracks or { p.track }) do PLAYERS[#PLAYERS + 1] = { name = p.name, track = t, engineIn = p.engineIn } end
+end
 local RET = CFG.returnTrack or 'ELEC RETURN'
 local RET_CH = CFG.engineOut or 1        -- the engine's master leaves on this ReaRoute channel and the next (1-based)
 local LOOP_CH = CFG.loopIn or 3          -- the latency loop's channel back to the engine (1-based)

@@ -69,6 +69,14 @@ function engineEnv() {
     const env = { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_SOURCE: dirs[m.load], LE_BANK: dirs[m.write], LE_RECORD: m.record ? '1' : '0' };
     fs.mkdirSync(env.LE_SOURCE, { recursive: true }); fs.mkdirSync(env.LE_BANK, { recursive: true });
     if (crop) env.LE_CROP = crop;
+    // §78: the return behaviour's dials (bank/elec_route.json return.ar, lettered A · B · C) flattened to the engine's names (sc/bank.scd arDefaults)
+    const ar = (CFG.return && CFG.return.ar) || {}, arB = ar.B_rangesMs || {}, arC = ar.C_miss || {}, flat = Object.assign({}, ar.A_shares || {});
+    for (const k of ['after', 'before', 'lazy', 'unison']) if (Array.isArray(arB[k])) { flat[k + 'Lo'] = arB[k][0]; flat[k + 'Hi'] = arB[k][1]; }
+    if (arB.skew != null) flat.skew = arB.skew;
+    if (arC.rate != null) flat.missRate = arC.rate; if (arC.lateShare != null) flat.missLateShare = arC.lateShare;
+    if (Array.isArray(arC.lateMs)) { flat.missLateLo = arC.lateMs[0]; flat.missLateHi = arC.lateMs[1]; } if (Array.isArray(arC.earlyMs)) { flat.missEarlyLo = arC.earlyMs[0]; flat.missEarlyHi = arC.earlyMs[1]; }
+    const arSpec = Object.entries(flat).filter(([k, v]) => typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
+    if (arSpec) env.LE_AR = arSpec;
     if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
     return env;
 }
@@ -106,7 +114,7 @@ function lua(v) {
 
 // the bridge job in one of its modes; returns what the job returned
 function job(mode, extra = {}) {
-    const cfg = { mode, players: CFG.players.map((p) => ({ name: p.name, track: p.track, engineIn: p.engineIn })),
+    const cfg = { mode, players: CFG.players.map((p) => ({ name: p.name, track: p.track, tracks: p.tracks || [p.track], engineIn: p.engineIn })),
         returnTrack: CFG.return.track, engineOut: CFG.return.engineOut, loopIn: CFG.latencyLoop.engineIn, ...extra };
     const body = 'CFG = ' + lua(cfg) + '\n' + fs.readFileSync(path.join(ROOT, 'reaper', 'bridge', 'jobs', 'elec_route.lua'), 'utf8');
     const tmp = path.join(os.tmpdir(), 'elec_route_' + process.pid + '_' + mode + '.lua');
