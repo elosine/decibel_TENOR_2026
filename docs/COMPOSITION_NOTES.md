@@ -475,3 +475,54 @@ feedback's own ("I'll build a preset menu"); the AI's six stand until then. (2) 
 Microsound — gauss · quasi-Gaussian · triangle · expodec · rexpodec — each with a standard length set at the pick and a box to change
 it. (3) A dial as a DISTRIBUTION — a range drawn at every render — so a brick renders a family, not one member; first on the diode's
 carrier. Built as RUNNING_LOG §111.)*
+
+### DEC-21 · 2026-10-05 — THE CHAIN IDEA DROPPED FOR SINGLE EFFECTS; every return PROCESSED, so the playback stops being loopy ("80s DJ … Max Headroom"); 21 presets, each a RING and an ENVELOPED version; round robin through groups 1 … 4, no effect reused; then group 5
+
+> *"Okay, so here's what I want to try. First of all, I'm rethinking the chain idea. Let's just have single effects applied. So the
+> main sort of concept behind this is that I'm finding the sample playback in the score a bit repetitive or loopy, like um, sort of
+> like, yeah, it's the same sound repeated. A bit 80s DJ kind of thing, or max headroom. And so I want to avoid that. So when the
+> samples come back, they should be processed in some way. And I want to have several possibilities, but I don't necessarily need
+> to dial every single one in. I might eventually refine some of them. So let's use the ones I given you as presets, but I want a
+> ring version and a enveloped version. And you can just kind of randomly choose one of the envelopes. Let's have a kind of somewhat
+> limited list like the perk, the Gauss, the Expo deck, um, Yeah, we can try the triangle as well. And then if you can make some
+> additional presets as you see fit. So right now it looks like we have seven. Let's have like triple that, like 21. And then I guess
+> each will be like a ring or an envelope version. And then in the main score up through group four, let's have each So each impulse,
+> whether it be one, two, three, or four, I guess the group four doesn't have four in it yet. One, two, or three, each time that
+> particular impulse comes back, it's processed in a new way. And just like round robin it as we move through the piece. So the
+> effects aren't reused. And then let me just hear that in the main score. And then we'll move to, well, after that, I'll make the
+> rhythm for group five. And then we'll add the effects to group five as well. But all of those will probably be enveloped ones. But
+> let's work through group four first, and then we'll tackle group five."*
+
+*(The AI's reading, marked as such — a compositional principle and its plan. THE PRINCIPLE: a sample must never come back as itself —
+every return is a transformation, so the electronics is a voice that varies, not a sampler that repeats; the "I am sitting in a room"
+chain (DEC-16) gives way to SINGLE effects, one per return. THE MATERIAL: 21 presets — his seven kept settings and fourteen more of the
+AI's — each in two versions: RING (the effect's tail rings out) and ENVELOPED (one of perc · gauss · expodec · triangle, drawn at
+random). THE PLACEMENT: in `piece-sec01-a`, groups 1 … 4, every return of a given impulse (1 · 2 · 3) gets a preset of its own, dealt
+round robin through the piece with none reused. THEN: he hears it; he composes group 5's rhythm; group 5's returns get effects too,
+"probably all enveloped". For the paper: the first compositional rule of the electronics layer — variation as a law of the return.)*
+
+### DEC-21b · 2026-10-05 — the adjustment: both versions in the LIST, but through group 5 and eventually group 6, ONLY the enveloped one
+
+> *"And then I'd like to make an adjustment. You can add the two versions to the envelope version and the the sustained version, the
+> ring version, to the list. But for this section, you know, through group five and then eventually group six, let's just use the
+> the enveloped version."*
+
+*(The AI's reading: the catalogue of presets carries ring and enveloped for every preset; the dealing into the score, groups 2 … 6,
+draws from the enveloped ones only — 21 variants for 30 plays in groups 2 … 4, so a preset may return once more under another
+envelope, or the ring versions stay on the shelf for a later section.)*
+
+### DEC-22 · 2026-10-05 — THE ENVELOPING for the returns: short, about the impulse's own length, slightly longer where there is ring; the trade-off between the ATTACK and the effect READING; group 5 an acceleration, so short attacks; a strategy now, other lengths later
+
+> *"Let's think a little bit about the enveloping. For this chain, the envelopes should probably be pretty short about the length of
+> the original impulse, maybe slightly longer if there's any sort of ring. So that's the trade-off between having a an impulse, uh,
+> an attack, and having the effect read. So if you have any suggestions about this, but at least through the first six groupings,
+> I'll want, like for example, I'll probably make group five some kind of acceleration. So I'll need pretty short attacks, but at the
+> same time, I want the effects to read somewhat. So let's develop a strategy for this. And then we'll have different links available
+> for later. I might use them in different ways, but we can cross that bridge when we come to it. We'll still, like you said, we'll
+> still have to have a look ahead and full rendering."*
+
+*(The AI's reading: the processed return must stay an IMPULSE — an attack-sounding object about as long as its source (~400 ms) —
+while the effect is still heard; the two pull against each other, most for the effects that need time (reverbs · feedback · freeze)
+and least for those that colour the attack itself (crush · ring · fuzz …). The strategy is to be relative to the impulse's length —
+which, live, is not known until it is captured — and to favour the attack-keeping envelopes (perc · expodec) where the rhythm is
+fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for other uses later.)*
