@@ -273,3 +273,11 @@ Impulse 3 is recorded as impulses 1 and 2 were. The proposal and the open points
 > have been the live performer behavior. So one sample is assigned the, in this case, one sample is assigned the live input and
 > another sample is assigned the first sample that played. So I guess you'll have to roll to see who follows the live performer
 > and then the remaining sample will follow the first sample."*
+
+### DEC-11 · 2026-10-05 — THE FOURTH GROUP: one sample in anticipation-reaction to the live note, the other two flocking off it · the bands widened: the immediate after 50% longer, the rest pushed out
+
+> *"Next five are up. This time I want one of the samples to be anticipation reaction to the live input. And then the other two to
+> be flocking. of the other two. Not the live input. So one will be following the anticipation reaction one, and another one will
+> be following that one. And can you adjust the algorithm across the board, I guess for both anticipation reaction and flocking?
+> The immediate after, the soon after, is a little bit too close. Let's make it like 50% longer and then push the rest out from
+> there. It's like the lazy one and whichever other one."*

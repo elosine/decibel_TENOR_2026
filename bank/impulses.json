@@ -83,6 +83,40 @@
    }
   ]
  },
+ "4": {
+  "_what": "IMPULSE 4 — AR + CHAIN (DEC-11; RUNNING_LOG §87): his five notes, placed in the page 2026-10-05; one of the player's three samples anticipates or reacts to the live note, the other two chain after it (the engine rolls which).",
+  "return": {
+   "behaviour": "arChain",
+   "samples": [
+    "impulse-1",
+    "impulse-2",
+    "impulse-3"
+   ],
+   "regionMs": 400
+  },
+  "slots": [
+   {
+    "lane": "cello",
+    "noteId": "wc-34"
+   },
+   {
+    "lane": "viola",
+    "noteId": "wc-35"
+   },
+   {
+    "lane": "bass_flute",
+    "noteId": "wc-36"
+   },
+   {
+    "lane": "bass_clarinet",
+    "noteId": "wc-37"
+   },
+   {
+    "lane": "bowed_vibraphone",
+    "noteId": "wc-38"
+   }
+  ]
+ },
  "_what": "THE IMPULSES — his dictation (2026-10-05, RUNNING_LOG §71), a row per impulse number: the five players in order, each slot the lane (its instrument key in sandbox/instruments.js), the technique key, and the pitch — absent or \"mid\" = the middle of the technique's range (his word: \"something in the middle of the range\"); a by-key voice takes its middle key. tools/impulse.js reads a row and turns the next five notes of his recorded rhythm (the Rec lane) into that impulse: the notes moved to the players' lanes, a mic opening named <player>-impulse-<N> over each. The name is the sample's — and its buffer's — identity through the piece.",
  "3_template": {
   "_what": "IMPULSE 3 — THE CHAIN (DEC-10 · 10b; RUNNING_LOG §82): when he has placed his next five notes, copy this to \"3\", fill the five noteIds, and run  node tools/impulse.js --score <name> --n 3  — the notes are tagged, a microphone opened over each, and the player's impulse 1 and impulse 2 chained after each live note (the engine rolls which comes first).",

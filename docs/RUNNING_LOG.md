@@ -2929,3 +2929,18 @@ bcl −14 · bfl −15.2 dB). The one proof (D13); #3 closes. Still missing: `pe
 recorded nothing, which says the page had not been reloaded (F5) when it played: the lane's player comes with the new route
 table at page load. His F5, then the pass. Noted for his ear, not acted on: the viola's and the cello's impulse 2 peak at −3 dB
 after the faders' +12 (§79) — louder than the first takes by 6 … 9 dB.
+
+## §87. IMPULSE 4 — the behaviour `arChain`; the bands B widened at his ear (2026-10-05, Fable; his words DEC-11)
+
+**The behaviour:** `arChain` — the first sample (rolled, I shuffled) anticipates or reacts to the LIVE note by the ar roll (A · B ·
+C, its miss included); the others chain after IT (G · H). In the engine `chainRoll(names, arFirst)` grew the switch; `samplePlay`
+takes `behaviour arChain`; the page's brick runs from 400 ms before the live note to 400 ms after it plus 0.5 s per further
+sample, the message points at the live note; the panel's Behaviour has it; the tool's `return.behaviour: 'arChain'`.
+**The bands, his ear (B, shared by ar · chain · arChain):** just-after 100–180 → **150–270** (×1.5, his "50% longer"); the rest
+pushed out by the same factor: lazy 180–400 → **270–600**, before 60–150 → **90–225**, the miss late 0–80 → 0–120, early 150–300
+→ 225–450; near-unison 10–40 untouched (meant to be close). In `bank/elec_route.json` `return.ar.B_rangesMs` · `C_miss`; the
+engine's defaults unchanged (another piece's). From his next engine start.
+**Impulse 4 placed:** cello (Bartók pizz, 36) 17.818 · viola (bow overpressure, 50) 18.099 · bass flute (jet whistle + slap, 50)
+18.862 · bass clarinet (multiphonic, 37) 20.794 · mallets (crotales metal damped, 81) 22.261 — five openings `<player>-impulse-4`,
+five returns `<player>-impulse-1 + -2 + -3 ~ arChain`. His pitches and voices kept. **Not tested (D13).** His: Reload · restart the
+engine · play from 0 — at each impulse 4, four onsets.

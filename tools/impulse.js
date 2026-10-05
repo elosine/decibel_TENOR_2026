@@ -71,7 +71,9 @@ slots.forEach((slot, i) => {
   const open = zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
   // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
   const who = player || slot.lane;
-  const ret = !RETURN ? null : RETURN.behaviour === 'chain'   // §82: the chain starts AT the note and runs 0.5 s per sample, the samples in the row's order
+  const ret = !RETURN ? null : RETURN.behaviour === 'arChain'   // §87: a region from regionMs before the note to regionMs after it plus 0.5 s per further sample
+    ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000 + 0.5 * Math.max(0, (RETURN.samples || []).length - 1), { name: who + '-' + (RETURN.samples || [])[0], names: (RETURN.samples || []).map((q) => who + '-' + q), behaviour: 'arChain' }, 'elecPlay')
+    : RETURN.behaviour === 'chain'   // §82: the chain starts AT the note and runs 0.5 s per sample, the samples in the row's order
     ? zone(lane, wc.startSeconds, wc.startSeconds + 0.5 * (RETURN.samples || []).length, { name: who + '-' + (RETURN.samples || [])[0], names: (RETURN.samples || []).map((q) => who + '-' + q), behaviour: 'chain' }, 'elecPlay')
     : zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
     { name: who + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay');
