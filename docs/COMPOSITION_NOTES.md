@@ -435,3 +435,15 @@ this public repo. (2) THE DISTORTIONS — what exists already: `drive` (six shap
 octave fuzz), a speaker-cabinet voicing after them, a true bit-depth crusher, a Chebyshev waveshaper, and two sc3-plugins
 shredders (Squiz · WaveLoss). His method, in his words: build → hear → knobs → library; the dials provisional until he has heard.
 For the paper: the workshop's catalogue grows by audition, not by design — an effect is admitted after it is heard on a brick.)*
+
+### DEC-18 · 2026-10-05 — THE NINE DISTORTIONS KEPT, NONE OF THEM IT; what he wants is a FEEDBACK distortion from an impulse — Jimi Hendrix's feedback — to be discussed first
+
+> *"I'll keep these distortion effects, but none of them are quite what I'm looking for. Can we do some sort of feedback
+> distortion with an impulse, like a Jimi Hendrix style feedbacks distortion somehow? Let's uh, check in with me, discuss what
+> that might be like."*
+
+*(The AI's reading, marked as such: the sample — an impulse, the slap — EXCITES a loop that FEEDS BACK on itself through an amp's
+clipping and a speaker's colour, so that a tone BLOOMS out of the impulse and sings, the way a guitar held to its amp does: the
+string's resonances re-excited by the speaker, one harmonic winning, limited by the clipping, drifting as the player moves. The
+nine distortions are static shapes applied to the sample; this one has a LIFE — a growth, a hold, a release — and its pitch comes
+either from a string he tunes or from the material itself. A talk first, at his word; then a tenth stage, `feedback`.)*

@@ -3490,3 +3490,15 @@ heard; his engine is up and predates the build; his page holds unsaved edits to 
 **Built:** `electronics/score/le_process.js` `EFFECTS` — first row `none`, no dials. Picking it clears the dials (`effectDefaults` of a dial-less effect is `{}`); its render carries no args, so every stage of the chain stays at 0 and the source passes — through the player and the DC blocker, ended by the brick's envelope or tail, the peak matched. So a `none` render is a USE, not only a reset: the plain sample under his shape. The engine is unchanged (a word for the row). HIS: F5 only.
 
 **Not claimed:** the menu seen by him. Proven: the module parses.
+
+## §108. SLIDERS AND HOVER HINTS ON THE PROCESS BRICK'S DIALS; his first verdict on the distortions (2026-10-05, Fable; the engine's §30)
+
+**His words:** *"And then can you add sliders to the effect dials? And can you have hover hints? Like I hover the mouse and it tells me what it does and the, um, the max and mins or the range, the useful range."* — and, while this was being built, his ear on the nine: *"I'll keep these distortion effects, but none of them are quite what I'm looking for."* (His next ask, the feedback distortion, is DEC-18 and §109.)
+
+**Built (`electronics/score/le_process.js`):**
+- **A slider beside every dial's number box.** While it is dragged the box follows and the brick's value changes live — nothing is rebuilt (the panel is rebuilt on every commit, and a rebuild would end the drag). At its release ONE commit: one undo step, the brick redrawn, the score dirty. The box still commits on its own change, as before.
+- **A LOG scale for frequencies and times** — any dial whose range spans 50× or more (20 … 8000 Hz, 0.002 … 0.5 s, 1 … 256): the slider's middle is the geometric middle (400 Hz on 20 … 8000; 0.032 s on 0.002 … 0.5; 16 on 1 … 256), so the low end has room. The rest linear. Every position rounds to the dial's own step.
+- **The hints:** a table `HINTS` by control name — what it does, in plain words, and the USUAL range; the FULL range is read off the dial (min … max unit). Shown as the title of the label, the slider and the box: hover anywhere on the row. A `…Mix` dial has one shared hint. Option dials (the shaper, the filter model, waveloss's which, tape's direction) explain their options. The END stage's attack · length · release · curve · floor · cap · gain and the match box have hints too.
+- The hints are the AI's descriptions and the AI's idea of "usual" — his ear corrects them; a hint is one string in the table.
+
+**Proven once:** the module parses; the slider's arithmetic run in node at the ends and the middle of six dial shapes (log: 0.002 → 0.032 → 0.5 · 20 → 400 → 8000 · 1 → 16 → 256; linear: 0 → 0.5 → 1 · −12 → 0 → 12 · 0.1 → 2 → 4; a value round-trips to its step). NOT seen by him; his F5. The engine is untouched.
