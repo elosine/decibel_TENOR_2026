@@ -215,7 +215,13 @@
                 this.hear(this.wc);
             };
 
-            d.querySelector('#ncTech').addEventListener('change', (e) => commit(wc => { wc.technique = e.target.value; }));
+            d.querySelector('#ncTech').addEventListener('change', (e) => commit(wc => {
+                wc.technique = e.target.value;
+                // SWEEP_LIST #4 (RUNNING_LOG §81): a BY-KEY voice (the percussion's patches — the key IS the articulation) is heard the moment it is
+                // chosen: the note becomes one of ITS keys (its first) unless it already is one; a pitched voice keeps its pitch (the pitch is the music)
+                const q = (Cp.trackTechniques(wc.layer) || []).find(t => t.key === wc.technique);
+                if (q && Array.isArray(q.keys) && q.keys.length && !q.keys.some(k => k.midi === wc.sonifyNote)) wc.sonifyNote = q.keys[0].midi;
+            }));
             d.querySelector('#ncFull').addEventListener('change', (e) => commit(wc => {
                 if (e.target.checked) { wc.cc7Abs = { lo: 0, hi: 127 }; wc.velAbs = mfVel(wc.layer, wc.sonifyNote); }
                 else { delete wc.cc7Abs; delete wc.velAbs; }

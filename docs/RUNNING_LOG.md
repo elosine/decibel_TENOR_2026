@@ -2851,3 +2851,14 @@ previous link, always (his chain); 0 = the live note (a fan); between = #2's cas
 region from the live note forward (0.5 s per link). Rejected from #2's flocking: the initiator's shuffle (the live note is the
 initiator here), the density curve (one chain per note), the before-share (a follower). The decision is his; a new entry carries
 it, and the build follows the `ar` pattern (engine · page · tool · the dials lettered on).
+
+## §81. SWEEP_LIST #4, THE SECOND PLACE — the floating NOTE card, not the side panel (2026-10-05, Fable)
+
+His screenshot: the card he composes with is the floating NOTE card (`score/public/note_card.js`: part · voice · pitch · dyn ·
+start · len · hear), not the side panel §80 changed. His words: *"the way, say, Viola works is you choose the voice and it changes
+the preset … With percussion, it's the actual pitch that determines the articulation. So the voice pull down needs to change the
+pitch accordingly. Or at least it needs to select one of the pitches … let's just pick one of them. Eventually … the voice will
+limit the pitch range to the available scrapes. But let's not worry about that right now."* **Done:** the NOTE card's voice menu
+now sets the note to the voice's FIRST key when the voice is by-key and the note is not already one of its keys; the card's own
+commit hears it at once. A pitched voice keeps its pitch. The range indicator still shows the part's range (A0–C8) — the limit to
+the voice's keys is deferred at his word. §80's side-panel change stands beside it. Live at his F5; not tested (D13).
