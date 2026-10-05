@@ -611,6 +611,7 @@
 <script src="/cresc_run.js" defer></script>   <!-- CN-59 (2026-09-09): crescRun(...) — overlapping, accelerating, shortening crescendos, one console line per version; SPACE plays it -->
 <script src="/chord_run.js" defer></script>   <!-- 2026-09-10: chordRun(...) — a series of chords, one per onset, dealt over the free players by 1k's engine; one console line per version -->
 <script src="/beating_panel.js" defer></script>   <!-- PLAN 1f step 4: the BEATING panel (docs/BEATING_TOOL.md §6) -->
+<script src="/electronics/le_msg.js"></script>   <!-- PLAN 1.1 · 6.2 (2026-10-04): THE LIVE ELECTRONICS' VOICE — LE.send(kind, data) -> POST /api/elec -> OSC -> the engine. The file is the ENGINE's (electronics/score/); absent or unserved, window.LE is undefined and the hook below is skipped -->
 <script>
 // ============================================
 // INSTRUMENT REGISTRY — Loads instrument_map.json, bridges Layer 2 (musical intent) ↔ Layer 3 (MIDI/sampler)
@@ -11324,6 +11325,7 @@ const Composer = {
             preArm(Math.max(nowPerf, onAt - (lateSwitch ? TRILL_SWITCH_LEAD_MS : PREARM_S * 1000)));
             output.send([0x90 | ch, wc.sonifyNote,
                 wc.velAbs != null ? wc.velAbs : ((wc.sonifyMode === 'plain' && wc.recVel != null) ? wc.recVel : (ksMode ? 100 : this.heldVel(wc)))], onAt);   // 1g item 5: the velocity for the curve's top — §349: `velAbs` pins it (a swell sends the velocity its audition sent)
+            if (window.LE) LE.noteOn(inst.port, wc.layer, wc.id, wc.startSeconds, onAt);   // PLAN 1.1 · 6.2: THE LIVE ELECTRONICS' TEST HOOK — this note's onset to the engine, ahead of its sound (electronics/docs/SEAMS.md); it goes when the mic opening is a brick (6.3)
             // `ccNext` is where the queue has been filled to, in score seconds; `lastCC` starts at what the pre-arm just sent, so the
             // first streamed value is only sent if it actually differs
             const rec = { note: wc.sonifyNote, onAt, lastCC: ksMode ? null : this.heldCc7(wc, this.evalWaveCurve(wc, 0)),

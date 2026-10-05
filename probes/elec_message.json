@@ -1,0 +1,25 @@
+{
+ "when": "2026-10-05T01:50:41.552Z",
+ "via": "score server 5501",
+ "mode": "sim",
+ "seconds": 40,
+ "hello": true,
+ "helloMs": 0.71,
+ "engineLines": [
+  "onset · bcl · lane -1 · brick elec.js · at 0.0 s · due in 0 ms",
+  "heard · bcl · its sound arrived 536.6 ms after its message",
+  "onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms"
+ ],
+ "paired": [
+  {
+   "dueMs": 0,
+   "id": "elec.js",
+   "lane": -1,
+   "leadMs": 536.6,
+   "msg": "onset",
+   "player": "bcl",
+   "t": 0
+  }
+ ],
+ "pass": true
+}

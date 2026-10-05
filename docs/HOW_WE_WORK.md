@@ -167,3 +167,8 @@ and the pages gate counted it green (`#6 §772`).
 - **This piece's own, added as they bite:**
   - **A splice's replacement text goes through a slice or `split` / `join`, never `String.replace(a, b)`** (2026-10-04, RUNNING_LOG
     §12): in JavaScript a `$'` · `` $` `` · `$&` inside `b` is a pattern, not text — a line ending in `$'` wrote half a script twice.
+  - **A DOUBLED BACKSLASH typed into a shell heredoc reaches the file as ONE** (2026-10-04, RUNNING_LOG §60) — even under a quoted
+    `<<'EOF'`. A splice script so written put `~le[msgPort]` where `~le[\msgPort]` was meant; sclang stopped at the parse and printed
+    nothing the runner reads (its only sign: the timeout, exit 4). **A file that carries backslashes — JavaScript with escapes,
+    SuperCollider with symbols — is written by the Write tool, never through the shell.** A parse failure in a `.scd` shows only with
+    `node electronics/tools/sc.js run <file> --verbose`.

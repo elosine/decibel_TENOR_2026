@@ -6,6 +6,8 @@
   ],
   "return": { "track": "ELEC RETURN", "engineOut": 1 },
   "latencyLoop": { "engineIn": 3 },
+  "_message": "THE MESSAGE ROUTE (PLAN 1.1 · 6.2; RUNNING_LOG §60): where the score server sends the page's messages — the engine's LANGUAGE port, UDP 57211 (its server is 57210). In concert and in simulation the same road; this address is the one thing that may differ. testOnsets: while true, every note the composer score plays on a player's port (above) also tells the engine its onset (/le/onset) — the test device of 6.2; set it false when the mic opening is a brick of its own (6.3). Read at every request: no restart needed.",
+  "message": { "host": "127.0.0.1", "port": 57211, "testOnsets": true },
   "_listenEcho": "A LISTENING AID for the route (RUNNING_LOG §55): `start` returns each note this many seconds LATER, so the return is heard as a second sound. 0 = straight through (two of Reaper's blocks behind — not heard as separate). It goes when the playback brick exists (6.5).",
   "listenEchoSeconds": 1
 }

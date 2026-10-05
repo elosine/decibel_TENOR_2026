@@ -15,6 +15,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');   // PLAN 1c: /api/strikes/ingest runs tools/strike_db.js
+// THE LIVE ELECTRONICS' MESSAGE ROUTE (PLAN 1.1 · 6.2; electronics/docs/SEAMS.md): the page's JSON -> OSC -> the engine. The relay is the
+// engine's; this piece gives it its route table. Three lines of this file in all: this one, the route, the static folder.
+const elecRelay = require('../electronics/tools/relay.js')({ configFile: path.join(__dirname, '..', 'bank', 'elec_route.json') });
 
 // 5500 is THE port — every doc, bookmark and launch config says so, and the
 // default is unchanged. The override exists only so a second, throwaway instance
@@ -377,6 +380,7 @@ const server = http.createServer((req, res) => {
     const R = wrapRes(res);
 
     // APIs
+    if (url === '/api/elec') return elecRelay(req, res);   // 6.2: GET = what the page needs · POST { kind, data } = one message to the engine
     // PLAN 1c (2026-09-03): re-ingest a save into the scattered-strike database from the
     // Strikes drawer. Runs tools/strike_db.js as a child (the tool stays the one authority on
     // the capture); returns its census text. Body: { score, gap?, sim?, label? }.
@@ -1173,6 +1177,8 @@ const server = http.createServer((req, res) => {
         if (url === '/' || url === '/composer.html') rel = '/composer.html';
         if (url.startsWith('/docs/')) { base = DOCS_DIR; rel = url.slice('/docs'.length); }
         if (url.startsWith('/bank/')) { base = path.join(__dirname, '..', 'bank'); rel = url.slice('/bank'.length); }
+        // [2026-10-04, PLAN 1.1 · 6.2] the engine's own page code (electronics/score/ — le_msg.js), read-only GET
+        if (url.startsWith('/electronics/')) { base = path.join(__dirname, '..', 'electronics', 'score'); rel = url.slice('/electronics'.length); }
         // notation stratum (read-only GET): app page, lib modules, IR docs,
         // registry, schema — Phase B5 (plan DB-1)
         if (url.startsWith('/notation/')) { base = path.join(__dirname, '..', 'notation'); rel = url.slice('/notation'.length); }

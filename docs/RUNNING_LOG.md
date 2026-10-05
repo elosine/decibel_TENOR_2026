@@ -1984,3 +1984,80 @@ brick, when, and the two hook lines, listed in `SEAMS.md` when proven. Nothing o
 
 **Switch point:** the talk is done; the build is a written plan → Opus, after a clear (`/postclear` plays back and stops; the build on his
 word). Committed and pushed; the engine's repo kept in step (`git subtree push`, the mirror pulled).
+
+## §60. 6.2 BUILT — the message route: the composer score speaks to the engine; proven to the edge of Web MIDI, one measure left for his Chrome (2026-10-04, Opus; his word *"build here no clear"*)
+
+**His word:** *"build here no clear"* — after the switch to Opus, in the chat that held the talk (§57 … §59). So the build had the
+talk's reasoning in context and needed no resume reads.
+
+**What was built, in the plan's order (PLAN.md 1.1 · 6.2), and where each thing went (CLAUDE.md § THE SORTING — the engine's own
+account is its RUNNING_LOG §11):**
+
+- **(a) the engine's ear — the ENGINE's** (`electronics/sc/boot.scd` · `synths.scd` · `session.scd` · `selftest.scd`): the language
+  listens on **UDP 57211**, pinned beside the server's 57210; a message is `/le/<kind>` + NAME, VALUE pairs; `/le/hello` is answered.
+  An ONSET PROBE on each player's bus tells the language when that player's sound arrives, so a message's LEAD can be measured.
+- **(b) the OSC encoder — the ENGINE's** (`electronics/tools/osc.js`): plain Node, no dependency (the stack's rule, `package.json`).
+- **(c) the relay — the ENGINE's module, the PIECE's three lines** (`electronics/tools/relay.js`; `score/server.js`: one require, the
+  route `/api/elec`, the static folder `/electronics/`). The address is read from `bank/elec_route.json`, a new `message` block —
+  never from a request.
+- **(d) the page's voice — the ENGINE's file, the PIECE's two lines** (`electronics/score/le_msg.js`; `composer.html`: one tag, one
+  hook in `tickCurvePlayback` right after the note-on is handed to Web MIDI). THE TEST HOOK: while the route table says
+  `testOnsets`, a note the page plays on a player's port (`bcl` = `DECBassClar`) also sends `/le/onset`. It goes at 6.3.
+- **The piece's tool** (`tools/elec.js`): `ping` (one hello — starts nothing, safe beside his engine; `--via 5500` asks through the
+  score server) · `message` (the bounded proof) · `start` no longer shows the machine's lines in his window, and appends each
+  message-and-sound pairing to `probes/elec_message_log.jsonl`.
+
+**The message, as the engine shows it:** `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms` — the player, the lane, the
+brick's own id, its time in the score, and how far ahead of the note's own start the message left.
+
+**What was tried, in order, and the numbers:**
+
+1. `node electronics/tools/osc.js selftest` — five cases pass; the first compares against bytes written out by hand.
+2. `node tools/elec.js selftest` — the engine's five (A · B · C as before; **D the ear:** every field back, the hello answered;
+   **E the onset probe:** a tone started 100 ms after its message is reported **118.0 ms** after it). No hardware, no sound.
+3. The throwaway score server (5501), the engine DOWN: `GET /api/elec?ping=1` → `"up": false`; a `hello` → `"engine": false`; an
+   onset → `{"ok": true}` (sent into nothing, no error); a bad kind → refused; `/electronics/le_msg.js` 200; a path climbing out of
+   the folder 403. The server stayed up through all of it.
+4. **THE PROOF** — `node tools/elec.js message --via 5501 --seconds 40`, the engine up on ReaRoute (`probes/elec_message.json`):
+   - `hello` through the score server and back: **0.71 ms**; asked from the page itself (`LE.hello()`): **0.5 ms**.
+   - The tool's own onset, then the bass clarinet's test note into the rack: the engine showed the onset, then
+     `heard · bcl · its sound arrived 536.6 ms after its message` — the REAL input paired with its message. (536.6 ms is PowerShell
+     starting; it is not a score's lead.)
+   - **The composer page's OWN playback** (the throwaway's page, `decibel-first-sound`, played from 4.2 s over the bass clarinet's
+     note at 5 s): its note-on left for the port at 800 ms, and the engine showed
+     `onset · bcl · lane 1 · brick wc-2 · at 5.0 s · due in 99.0 ms`. The page sent 98.6 ms ahead (its 100 ms look-ahead).
+   - A note on another lane sent nothing (`LE.noteOn` on the viola's port: 0 messages).
+   - Afterwards: no sclang, no scsynth left; the throwaway stopped; his server on 5500 untouched.
+
+**NOT MEASURED — said plainly:** the score's lead over ITS OWN sound. The desktop app's browser pane has no Web MIDI, so in step 4 the
+page's note went to a stub and made no sound: the message arrived, and nothing followed it. The measure needs HIS Chrome, on HIS
+score server — which was started before the route existed and so does not have it. **His two hand steps close 6.2:** restart the
+score server (`start_score_server.bat`) and reload the composer tab · `start_electronics.bat`. Then a bass clarinet note played from
+the composer score shows both lines in the engine window, and the lead is written to `probes/elec_message_log.jsonl`. EXPECTED, NOT
+CLAIMED: up to 100 ms of look-ahead plus the sampler and one of Reaper's blocks.
+
+**Decisions made in the build, the AI's, each his to reverse:**
+- **NAME, VALUE pairs, not positions** — a field can be added (6.3: a length, a category, a name) without breaking a reader.
+- **The engine's address is in the route table, never in a request** — a page cannot aim the relay elsewhere.
+- **An onset is not acknowledged** — UDP gives no receipt, and the score must not wait on the electronics. Only `hello` waits.
+- **The player is found by the lane's MIDI port** (`DECBassClar` → `bcl`) — the test hook's rule only; in 6.3 the opening brick
+  names its player itself.
+- **The route table is read at every request** — flipping `testOnsets` needs no restart.
+- **The page degrades to nothing:** on a server without the route `le_msg.js` is not served, `window.LE` is undefined, the hook is
+  skipped. His running 5500 is in exactly that state now, and plays as before.
+
+**The correspondence, said twice (D10):** IN CONCERT a player's tablet shows the score; its page POSTs to the score server on the
+laptop; the server sends OSC to SuperCollider beside it; the player plays. IN THE SIMULATION the same page, in his Chrome, POSTs to
+the same server, which sends the same OSC; the page also plays the sampled player through MIDI. One road. What is NOT yet said for
+the concert: several tablets, each with its own playhead — which one speaks. That is the performance module's (his word, DEC-8:
+deferred); the message carries the brick's `id` so the engine can tell a duplicate.
+
+**Two faults of the machine, met and kept:** a doubled backslash typed into a shell heredoc reaches the file as ONE — a splice script
+wrote `~le[msgPort]` for `~le[\msgPort]`, sclang stopped at the parse and printed no `LE_` line (the runner's only sign: its timeout,
+exit 4); found by a verbose run, fixed in place · four commands over 8 KB failed with the false "matching quote" error — the files
+were written by the file tool instead (`docs/HOW_WE_WORK.md` has both now).
+
+**For the paper:** the message route is the first place the piece's architecture answers the concert rather than the studio — a
+choice made by his sentence about correspondence, against a simpler studio-only road (a MIDI port on the notes' own clock, §56).
+And the timing problem was not solved but REMOVED, by his crop: a window that opens early and is trimmed to the attack afterwards
+needs no clock shared between the score and the engine.

@@ -10,6 +10,8 @@
 //   node tools/elec.js meters     # one note, and what the meters showed: the player, ELEC RETURN, the master — nothing started or stopped
 //   node tools/elec.js start      # the engine up and listening — what start_electronics.bat runs
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
+//   node tools/elec.js ping       # is the engine there? one /le/hello — starts nothing, safe beside his engine window  [--via 5500: through the score server]
+//   node tools/elec.js message    # 6.2's PROOF: the engine up for 20 s; a message, the note after it, and whatever the composer score sends  [--via <port>] [--seconds N] [--quiet]
 //
 // WHAT IS THE PIECE'S AND WHAT IS THE ENGINE'S (CLAUDE.md § THE SORTING): this file, bank/elec_route.json and the bridge job
 // reaper/bridge/jobs/elec_route.lua know THIS rack — its track names, its port. The SuperCollider code and its runner
@@ -17,18 +19,37 @@
 // THE SIGNAL: the composer score -> MIDI -> the player's track in Reaper -> a hardware send -> ReaRoute -> the engine
 // (SuperCollider) -> its master -> ReaRoute -> the track ELEC RETURN -> the master he hears. Live, the first three become
 // a microphone and the last two a PA; the engine between them is the same.
+// THE MESSAGES (6.2; RUNNING_LOG §60): the composer score's page -> POST /api/elec on the score server -> OSC over UDP -> the engine's
+// LANGUAGE port (57211; bank/elec_route.json "message"). Live, the page is on a tablet; the road is the same.
 'use strict';
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const cp = require('child_process');
+const http = require('http');
 
 const ROOT = path.resolve(__dirname, '..');
 const sc = require(path.join(ROOT, 'electronics', 'tools', 'sc.js'));
+const osc = require(path.join(ROOT, 'electronics', 'tools', 'osc.js'));
 const CFG = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'elec_route.json'), 'utf8'));
 const BRIDGE = process.env.REAPER_BRIDGE || path.join(process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming'), 'REAPER', 'bridge');
 const SCD = (name) => path.join(sc.SC_DIR, name);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const flagValue = (flags, name) => (flags.includes(name) ? flags[flags.indexOf(name) + 1] : null);
+
+// one message to a score server's relay (POST /api/elec) — the road a page's message takes; null when nothing answers
+function post(port, obj) {
+    return new Promise((resolve) => {
+        const body = JSON.stringify(obj);
+        const req = http.request({ host: '127.0.0.1', port: +port, path: '/api/elec', method: 'POST', timeout: 3000,
+            headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) } }, (res) => {
+            let s = ''; res.on('data', (d) => { s += d; }); res.on('end', () => { try { resolve(JSON.parse(s)); } catch (e) { resolve(null); } });
+        });
+        req.on('error', () => resolve(null)); req.on('timeout', () => { req.destroy(); resolve(null); });
+        req.end(body);
+    });
+}
 
 // a JS value as a Lua literal
 function lua(v) {
@@ -105,13 +126,17 @@ async function readPeaks(waitMs) {
 
 (async () => {
     const cmd = process.argv[2], flags = process.argv.slice(3);
-    if (!cmd || cmd === '-h') { console.log(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 12).join('\n')); return; }
+    if (!cmd || cmd === '-h') { console.log(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 14).join('\n')); return; }
 
     if (cmd === 'selftest') { const r = await sc.start(SCD('selftest.scd'), { timeoutS: 90, onLine: (l) => { if (/^LE_/.test(l)) console.log(l); } }).done; process.exit(r.code); }
 
     if (cmd === 'start') {
         const players = CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(',');
-        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: { LE_PLAYERS: players, LE_ECHO: String(CFG.listenEchoSeconds || 0) }, onLine: (l) => { if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY|RESULT)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: ')); } });
+        const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: { LE_PLAYERS: players, LE_ECHO: String(CFG.listenEchoSeconds || 0) }, onLine: (l) => {
+            const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: a message paired with its sound is kept, nothing is shown
+            if (m) { try { fs.appendFileSync(path.join(ROOT, 'probes', 'elec_message_log.jsonl'), JSON.stringify({ when: new Date().toISOString(), ...JSON.parse(m[1]) }) + '\n'); } catch (e) {} return; }
+            if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: '));
+        } });
         process.on('SIGINT', () => { p.kill(); });
         const r = await p.done; process.exit(r.code == null ? 1 : r.code);
     }
@@ -201,6 +226,56 @@ async function readPeaks(waitMs) {
         console.log('  Reaper\'s block is ' + d.audio.block + ' samples; the engine\'s is ' + res.block + '.');
         fs.writeFileSync(path.join(ROOT, 'probes', 'elec_latency.json'), JSON.stringify({ when: new Date().toISOString(), reaper: d.audio, ...res }, null, 1) + '\n');
         process.exit(0);
+    }
+
+    // IS THE ENGINE THERE? One /le/hello. It starts nothing and stops nothing — safe beside his own engine window.
+    // --via <port>: the same question asked THROUGH a score server (5500 his · 5501 the throwaway), the road a page's message takes.
+    if (cmd === 'ping') {
+        const via = flagValue(flags, '--via'), M = CFG.message || {};
+        if (via) {
+            const r = await post(via, { kind: 'hello' });
+            console.log(!r ? 'no score server answered on ' + via + ' (or it was started before the message route existed — restart it)'
+                : r.engine ? 'the engine answered through the score server on ' + via + ' in ' + r.ms + ' ms · players: ' + (r.reply.players || '—')
+                : 'the score server on ' + via + ' has the route; THE ENGINE DID NOT ANSWER — is its window open?  (start_electronics.bat)');
+            process.exit(r && r.engine ? 0 : 1);
+        }
+        const t0 = process.hrtime.bigint(), r = await osc.send({ host: M.host, port: M.port, address: '/le/hello', args: ['from', 'elec.js'], waitMs: 400 });
+        const ms = Math.round(Number(process.hrtime.bigint() - t0) / 1e4) / 100;
+        console.log(r ? 'the engine answered in ' + ms + ' ms · players: ' + (osc.unpairs(r.args).players || '—') + ' · UDP ' + (M.port || osc.PORT)
+            : 'THE ENGINE DID NOT ANSWER on UDP ' + (M.port || osc.PORT) + ' — is its window open?  (start_electronics.bat)');
+        process.exit(r ? 0 : 1);
+    }
+
+    // 6.2's PROOF. The engine up for --seconds (20), then it leaves by itself. First the tool's own message: one /le/onset —
+    // through a score server with --via <port>, else straight to the engine — and the player's test note into the rack right
+    // after it, so the engine is seen to pair a sound with its message on the REAL input. Then, for the rest of the time,
+    // whatever the composer score sends is listened for. Everything seen goes to probes/elec_message.json.
+    // --quiet: no hardware and no note (the messages alone). Boots a server: refused while his engine is up.
+    if (cmd === 'message') {
+        const secs = +(flagValue(flags, '--seconds') || 20), via = flagValue(flags, '--via'), quiet = flags.includes('--quiet');
+        const p0 = CFG.players[0], M = CFG.message || {}, shown = [];
+        const run = sc.start(SCD('session.scd'), { timeoutS: secs + 60,
+            env: { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_ECHO: '0', LE_SECONDS: String(secs), ...(quiet ? { LE_MODE: 'quiet' } : {}) },
+            onLine: (l) => { if (/^LE_INFO\s+(onset|heard)/.test(l)) { shown.push(l.replace(/^LE_INFO\s*/, '')); console.log('  engine   ' + shown[shown.length - 1]); } } });
+        try { console.log('engine     ' + (await run.waitFor(/^LE_READY/, 60000)).replace(/^LE_READY\s*/, '')); }
+        catch (e) { const r = await run.done; console.log('STOPPED    ' + (r.errors.join(' · ') || e.message)); process.exit(r.code || 3); }
+        const hello = via ? await post(via, { kind: 'hello' }) : await osc.send({ host: M.host, port: M.port, address: '/le/hello', args: ['from', 'elec.js'], waitMs: 400 });
+        const helloOk = via ? !!(hello && hello.engine) : !!hello;
+        console.log('hello      ' + (helloOk ? 'answered' + (via ? ' through the score server on ' + via + ' in ' + hello.ms + ' ms' : ', straight') : 'NOT ANSWERED' + (via ? ' through ' + via : '')));
+        const own = { player: p0.name, lane: -1, id: 'elec.js', t: 0, dueMs: 0 };
+        if (via) await post(via, { kind: 'onset', data: own }); else await osc.send({ host: M.host, port: M.port, address: '/le/onset', args: osc.pairs(own) });
+        if (!quiet) console.log('note       ' + note(p0) + '   (the tool\'s own: its lead is PowerShell starting, not the score\'s)');
+        console.log('listening  for the composer score, until the ' + secs + ' s are up …');
+        const r = await run.done, heard = r.results.filter((x) => x.msg === 'onset');
+        const onsets = shown.filter((l) => /^onset/.test(l)).length;
+        const fromScore = heard.filter((x) => x.id !== 'elec.js');
+        console.log('\n  onsets shown by the engine        ' + onsets + '\n  of them paired with their sound   ' + heard.length +
+            (fromScore.length ? '\n  THE SCORE\'S LEAD (message -> its own sound)   ' + fromScore.map((x) => x.leadMs + ' ms (sent ' + x.dueMs + ' ms ahead)').join(' · ') : ''));
+        const pass = helloOk && onsets >= 1 && (quiet || heard.length >= 1);
+        console.log('\n' + (pass ? 'THE MESSAGE ROUTE HOLDS: a message reaches the engine with its data' + (quiet ? '.' : ', and the engine times the sound against it.') : 'THE MESSAGE ROUTE IS BROKEN — see the first line above that is missing.'));
+        fs.writeFileSync(path.join(ROOT, 'probes', 'elec_message.json'), JSON.stringify({ when: new Date().toISOString(), via: via ? 'score server ' + via : 'straight to the engine',
+            mode: quiet ? 'quiet' : 'sim', seconds: secs, hello: helloOk, helloMs: via && hello ? hello.ms : null, engineLines: shown, paired: heard, pass }, null, 1) + '\n');
+        process.exit(pass ? 0 : 1);
     }
 
     console.error('unknown command ' + cmd); process.exit(2);
