@@ -3038,3 +3038,22 @@ split, before the scrub, and becomes every sample the bank holds (`self[\samples
 before. `samplePlay` calls it; the var order kept (§90). **A second trap the test caught:** an Array's includes() compares by IDENTITY in SuperCollider — two equal Strings are never the same object — so the star was not found until compared by content (any({ |x| x == "*" })). **The proof, headless (`roll_test.scd`, four cases):** `"a,b,c"` →
 `[a, b, c]` · `"*"` → the three stubbed samples · `"a,*"` → the three (the star wins) · `""` → `[]`. **His:** restart the engine ·
 play from 0 — at each impulse 5 the live note, then the whole bank.
+
+## §95. ANALYSIS — a COMPOSED rhythm for the samples a return brick plays, beside the rolled ones (2026-10-05, Fable; his words DEC-15; the decision his)
+
+**What it is:** a fourth way for a return brick to play its samples — a rhythm HE arranges (fixed onsets), beside the three the
+engine rolls (`ar` · `chain` · `arChain`). The brick keeps the flocking: its Behaviour switches between `chain` (rolled) and
+`pattern` (composed). **The generator exists:** the Strikes drawer's rhythm part is `pattern()` on the drawer's config
+(`score/public/strike_drawer.js` ~890 …: shape even · front · … · the accelerating run through `accelSeq()`/`accel_calc.js`;
+span · gap · jitter · drop rests · reverse · rotate · reshuffle · order · seed) — callable with a small config, or lifted into a
+function; a small refactor, the stack's own code (THE SORTING: the generator is the piece's stack, the brick's playback the
+engine's). **Version A (the drawer with a "samples" source):** not advised — the drawer emits strike NOTES on instrument lanes
+and orchestrates by instrument ROWS; samples would need their own emit path and 17+ rows ("troublesome", his word).
+**Version B (on the zone), advised:** the return brick's panel gets the drawer's rhythm controls; the samples chosen by TWO ROWS
+OF CHECKBOXES — the players (bfl · bcl · perc · va · vc) and the impulse numbers (1 … 5) — never per sample (the list is derived
+from the bank's index; `*` = all boxes on); Generate → the brick stores `elec.pattern` = [{ name, atMs }] with the seed and the
+dials, its length = the span; at playback ONE message carries the pattern and the engine schedules it (no dice; the same in
+concert, D10; each onset a window line). "As played" has no meaning for samples → "as named" · "shuffled" (seed). Re-generate at
+will; the dials and the seed stay on the brick so a save reproduces it. **Effort:** the size of today's chain build — the panel
+section and the generator's call are the larger half, the engine's pattern playback ~20 lines (a chain without rolls); the tool
+untouched (he arranges in the page). **Not in it:** a "take" — the brick IS the take (duplicate the zone for another).

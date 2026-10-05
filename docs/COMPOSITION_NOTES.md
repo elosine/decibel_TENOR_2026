@@ -340,3 +340,21 @@ comes out of it goes into the engine's capture path: after a sample is banked, t
 their own (`<name>-v1 …`), ready for the behaviours to pick as "which of the player's samples". DEC-2 already imagined
 section 2's after-effects rendered in the background from section 1's bank; this is its first concrete shape. Not built;
 phase 2 (running order step 10) is where it goes, unless he calls it sooner.
+
+### DEC-15 · 2026-10-05 — THE RHYTHM OF THE SAMPLES A ZONE PLAYS: the Strikes drawer's rhythm part, for the samples (a grouping of them — all, or a subset) · shapes, reshuffle, include/exclude · "the current zone that just plays flocking, I still want that option, but I can also change the way that zone plays all those samples, the rhythm"
+
+> *"Can we try to build something quick and simple and straightforward? Like if this is going to take too much time, then I'll
+> just skip it. But something like the rhythm part of the strikes drawer. So then I would be able to choose some grouping of those
+> samples. In this case, just all of them. And then I would be able to rearrange the rhythms of those samples. So like the even
+> shape, or I can do an Excel, round robin, all the ones that are front loaded, etc. And then I can do a reshuffle that will
+> reshuffle the samples. So one version, I can think of two versions, but there may be others, and you advise me, where the
+> samples or a collection of the samples becomes a strike. I can say all impulses or something like that. And then instead of the
+> instruments, they get moved into the orchestration part, and I can turn samples on and off. But this might be troublesome if
+> there's lots of samples. And then I arrange the rhythm and then save it as a take. Or we can have something like the rhythm
+> part of this, but attach it to the zone, for example. And then I'll just need something quite simple that shuffles the samples,
+> lets me include or exclude certain samples. So it gives me a quick list, maybe check boxes or something, and then lets me
+> generate the rhythm. If the rhythm generating part is, the, is easy enough and the selecting the samples is complicated, we can
+> think of something more expedient to work around that. So maybe a, I probably won't ever select individual samples anyways,
+> but might want to include a smaller subset. Anyways, give me some analysis about how we might do this. So in other words, the
+> current zone that just plays uh, flocking, I still want that option, but I can also change the way that zone plays all those
+> samples, the rhythm."*
