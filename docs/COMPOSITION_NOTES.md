@@ -296,3 +296,34 @@ Impulse 3 is recorded as impulses 1 and 2 were. The proposal and the open points
 plus three samples; the series in the new file (viola 22.99 · wood blocks 24.60 · bass flute 25.83 · cello 26.17; the fifth not
 yet placed) is impulse 5, recorded as the others, each live note followed by a chain of EVERY sample in the bank. "That'll be
 impulse four" read as the fifth group; his to correct.
+
+### DEC-13 · 2026-10-05 — A FADE ON THE CROP · NEXT: ACCENTED LONG TONES (the mic opens for the accent alone; something launched alongside the long tone — NOT the pedals of resonance; how it ends: detection doubted, a random duration possible; recommendations asked) · THEN TRILLS ON A CURVE (an impulse accents the curve's end and launches an effect like the pedals) · A SKETCH: INTERVALLIC FORMINGS — a linear line, effects as squares or portals the player plays through, placed rhythmically
+
+> *"another thing to fix is we should have some sort of fade out on the crop of the impulses. Just a standard short release so
+> that there isn't a click or a clip. Then could you take this composition note? I'll work on accented long tones next and have
+> the pedals of resonance. Players will play an accented long tone, but I'll only indicate the when. So it'll probably be like a
+> GC, and then they can hold. The sampler will sample the accent. Or I should say the mic will open up and potentially sample, but
+> the mic will open up for the accent and launch the, the resonant filters and I'll want to come up with some other effects too
+> for this part. And then after this, we're gonna do trills and the players will trill on a curve and one of their impulses will
+> at the end accent the end of their curve and launch some effect like pedals of resonance. And sorry, going back to the accented
+> long tones, let's not use pedals of resonance, but think about something else. So if they'll hit an accented long tone, the mic
+> will open up just for the accent. And then it'll immediately generate something that'll play alongside the long tone. And then
+> we'll have to figure out how that thing ends. We can try signal detection, but there'll probably be a lot going on. So I'm not
+> sure that gate will necessarily work. Leave this just as a composition note, but as part of the note, I'll ask for some
+> recommendations here. But I don't want to rely too much on detection unless it's pretty fail safe. Maybe we just have a, a
+> random duration. That's a possibility too. And then I have a bit of a sketch of an idea for intervallic formings. where the
+> performer plays a more linear line and effects are represented by squares or portals, which they play through and then placed
+> in sort of rhythmic positions. And then the portal's also similar, mic opens and launches some sort of effect."*
+
+*The AI's recommendations on HOW THE THING ENDS, asked for, marked as the AI's:*
+- **(a) The score knows the end.** An accented long tone is a note in the score with a written end; in concert the page sends the
+  score's time as it does now, so the engine can be told "release at the note's end" — no detection, deterministic, the same in
+  simulation and concert (D10). The player's hold is "then they can hold": the written end is the composer's, not the player's,
+  which is right for a thing launched BY the score.
+- **(b) A rolled duration on top.** The release at the written end plus a rolled tail (a dial: min … max ms, the jitter's manner),
+  so no two endings are the same and nothing depends on hearing the player stop. (a) + (b) is the fail-safe pair.
+- **(c) Detection only as a bonus, never as the gate:** a release triggered EARLY when the player's own level falls below a floor
+  for N ms, with (a) + (b) still the ceiling — if the room is too busy, nothing is lost. The engine already has the per-player
+  onset probe (boot.scd); a "sustain gone" probe is its mirror.
+- The pedals of resonance are a resonant filter bank with much feedback (DEC's phase 2, step 10); for the long tones he wants
+  something ELSE — to be designed when the music reaches them; the crop's attack is the obvious exciter.

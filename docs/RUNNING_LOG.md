@@ -2968,3 +2968,20 @@ players, all impulses so far — the bank grows as he records), shuffled by I; t
 draws it 0.5 s per sample the index holds today; the tool's `samples: ['*']`. Row 5's shape: `return: { behaviour: 'chain',
 samples: ['*'] }` — the live note first, then the whole bank in a rolled order (~17 samples, 3 … 8 s at B's bands). The dials
 are G · H · I as before. **Not tested (D13).** His: Reload · restart the engine · play from 0.
+
+## §90. EVERYTHING SILENT — a `var` after a statement in bank.scd (§89's `*` edit); the crop's fade; his questions answered (2026-10-05, Fable; his words DEC-13)
+
+**His words:** *"things seem to be broken in general … I'm not hearing two things at impulse two, even, or impulse three. So the
+playback seems to be not working. But I'm just concerned that something got messed up with the save files."*
+**The cause, read in the code, certain:** SuperCollider requires every `var` of a block before its first statement. §89's `*`
+resolution put an `if` between `var list = …` and `var links = …` in `samplePlay` — the whole of `bank.scd` fails to parse, so
+at his restart the bank never came up: no returns at any impulse, and no captures. **The fix:** `var links;` declared beside
+`list`, assigned after the `if`. A sweep of the file for the same shape found no other. **The save files are intact:** his main
+save holds all 65 objects, impulses 1 … 4 tagged, 20 openings, 15 returns; the four notes of the next series restored (§89).
+**The crop's fade (his word):** `bank/elec_route.json` `bank.crop` `fadeOutMs` 80 · `fadeInMs` 3 (the engine's defaults were
+10 · 2; the window cuts the ring and clicked). From the next start; a re-take re-crops with it.
+**Answered:** impulse 4's return = ONE sample in anticipation-reaction to the live note and the other two chained after it
+(`arChain`) — not yet all the samples; that is impulse 5's (`*`, built §89, not yet tagged: the bass clarinet's note pending).
+**For the paper:** a day of four builds on the engine without a boot between them (D13's "no testing") cost one dead restart;
+the hardware-free `selftest` exists for exactly this and refuses only while his engine is up — the AI's judgment, not his rule,
+should have run it with his engine down between builds. Noted, not a rule change.

@@ -132,7 +132,11 @@
   "_bank": "THE BANK (PLAN 1.1 · 6.3 … 6.5; RUNNING_LOG §64): dir = where the engine keeps this piece's samples — <dir>/<name>.wav the cropped samples (COMMITTED: the samples are the piece's), <dir>/raw/ the whole recordings (gitignored, kept for a re-crop), <dir>/index.json a row per sample (the engine writes it; the composer page reads it at /bank/samples/index.json). crop = THE CROP'S RULE where this piece overrides the engine's defaults (electronics/sc/bank.scd): attackDb -30 · floorDb -50 · preMs 5 · endDb -45 · holdMs 50 · fadeInMs 2 · fadeOutMs 10 — HIS EAR TUNES THEM; a number written here is used from the engine's next start. Both are given to the engine at its START (tools/elec.js start), never by a message.",
   "bank": {
     "dir": "bank/samples",
-    "crop": {}
+    "crop": {
+      "fadeOutMs": 80,
+      "fadeInMs": 3,
+      "_fade": "2026-10-05 (DEC-13, his word): a standard short release on every cropped sample — the window cuts the ring and a 10 ms fade clicked; 80 ms out, 3 ms in; applies to every capture from the engine's next start (a re-take re-crops)"
+    }
   },
   "_listenEcho": "A ROUTE CHECK (RUNNING_LOG §55): above 0, `start` returns each note this many seconds LATER, so the route is heard as a second sound. 0 since the playback brick exists (6.5, RUNNING_LOG §64): the engine returns what it MAKES — a sample played back — and nothing of the player's own sound.",
   "listenEchoSeconds": 0,
