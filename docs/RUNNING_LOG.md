@@ -2985,3 +2985,25 @@ save holds all 65 objects, impulses 1 … 4 tagged, 20 openings, 15 returns; the
 **For the paper:** a day of four builds on the engine without a boot between them (D13's "no testing") cost one dead restart;
 the hardware-free `selftest` exists for exactly this and refuses only while his engine is up — the AI's judgment, not his rule,
 should have run it with his engine down between builds. Noted, not a rule change.
+
+## §91. "LET'S JUST MAKE SURE FOUR SAMPLES ARE BEING PLAYED" — the rolls run headless: three links every time; what merges is the near-unison by design (2026-10-05, Fable)
+
+**His words:** *"Originally, I just heard two samples. Now I just hear three. The previous group three, I can hear three distinct
+samples. So before we start messing with the timing, let's just make sure four samples are being played. Or three samples plus
+the quote unquote live input."*
+**The one proof, no hands and no sound:** `bank.scd` loaded into a bare sclang (no server) with the piece's dials as the engine
+receives them (`LE_AR` · `LE_CHAIN` strings, parsed as `session.scd` does) — `electronics/sc/roll_test.scd`, run as
+`"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/roll_test.scd`. **arChain, eight rolls of three samples: 3
+links every time**, e.g. `vc-impulse-2 after 201 (live) · vc-impulse-1 after 414 (previous) · vc-impulse-3 after 641 (previous)`;
+`vc-impulse-1 before −98 (live) · vc-impulse-3 lazy 176 · vc-impulse-2 after 329`. **chain, four rolls: 3 links every time.**
+**ar, six rolls:** after 184 · before −157 · after 187 · before −93 · before −112 · unison 27. The engine schedules one Synth
+per link (`samplePlay`), and the cello's three samples are in the bank — so at an impulse-4 note three samples ARE played.
+**Why he counts three:** in three of the eight rolls the first link was `unison` (10 · 29 · 36 ms from the live note — a flam,
+heard as one), and in one a `before −217` was followed by an `after` that landed 31 ms after the live note. Both are the design
+(A's unison 15 %, G's 10 %; a follower measures from the sample before it, not from the live note). Group 3 reads as three
+distinct because a plain chain's first link is a follower (no "before" to land the next one on the live note).
+**Offered, his decision, not built:** a separation floor — dial **J**, `minGapMs` 40: a link that would land within 40 ms of
+the live note or of another link is pushed to 40 ms after it; four distinct onsets always, the unisons gone. Or A's and G's
+unison shares to 0 (the flams gone, the "before + after" collision stays).
+**The percussion:** its impulse-4 chain has one sample of three until `perc-impulse-2` and `-3` are captured (the score server's
+restart, §90's step 1, gives the mallets lane its microphone).
