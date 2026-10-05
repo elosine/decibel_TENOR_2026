@@ -266,3 +266,10 @@ anticipates or reacts, with a human's imprecision. The algorithms are in RUNNING
 *The AI's reading, marked as such:* a CHAIN — the live note, then sample 1 follows it, then sample 2 follows sample 1 — each link
 with the listening player's imprecision (the same human model as DEC-9's), the error accumulating down the chain as whispers do.
 Impulse 3 is recorded as impulses 1 and 2 were. The proposal and the open points are RUNNING_LOG §80.
+
+### DEC-10b · 2026-10-05 — THE CHAIN SETTLED: the order shuffled at every roll; one sample is assigned the live input, the other the first sample that played
+
+> *"explain H; I shuffled at each role ; And just so we're clear, I want the samples to imitate the live performer or what it would
+> have been the live performer behavior. So one sample is assigned the, in this case, one sample is assigned the live input and
+> another sample is assigned the first sample that played. So I guess you'll have to roll to see who follows the live performer
+> and then the remaining sample will follow the first sample."*

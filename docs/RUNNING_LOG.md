@@ -2862,3 +2862,31 @@ limit the pitch range to the available scrapes. But let's not worry about that r
 now sets the note to the voice's FIRST key when the voice is by-key and the note is not already one of its keys; the card's own
 commit hears it at once. A pitched voice keeps its pitch. The range indicator still shows the part's range (A0–C8) — the limit to
 the voice's keys is deferred at his word. §80's side-panel change stands beside it. Live at his F5; not tested (D13).
+
+## §82. THE CHAIN DECIDED AND BUILT — behaviour `chain`: a roll for who follows the live note, the rest follow the one before; G · H · I (2026-10-05, Fable; his words DEC-10b)
+
+**The decision, his (DEC-10b):** I = SHUFFLED at every roll — *"you'll have to roll to see who follows the live performer and then
+the remaining sample will follow the first sample"*; and that IS H = 1: every link listens to the one just before it (the first
+to the live note). G as proposed (after 70 · lazy 20 · unison 10 · before 0). **H explained to him:** whom a link listens to —
+1 = the sample just before it, always (his chain); 0 = the live note (both samples follow the live note, a fan); between = a coin
+per link (piece #2's flocking had 0.5).
+**Built, where (THE SORTING):** ENGINE — `sc/bank.scd` `chainDefaults` · `chainRoll(names)` (the order scrambled when I says so;
+link by link: the reference = the previous link's ACTUAL time (H) or the live note; the stance by G's shares; the distance by
+ar's B draw, skewed to the fast edge; the error accumulates) · `samplePlay` takes `behaviour chain` with `names a,b`: each sample
+scheduled from the live note by its link's time, one window line per link (`chain · va-impulse-2 · in 143 ms · after 143 ms after
+the live`), a missing sample said and skipped, the result carries the links; `sc/session.scd` `LE_CHAIN` → `le[\chainOpts]`;
+`score/le_objects.js` — behaviour `chain` on a return: `elec.names` (the samples in order), the brick STARTS at the live note and
+runs 0.5 s per sample, the panel's Behaviour has it with a "Samples, in order" field, the label `▶ a + b ~ CHAIN`, the message
+carries `names`. PIECE — `bank/elec_route.json` `return.chain` (G_shares · H_follow 1.0 · I_order shuffled); `tools/elec.js`
+`LE_CHAIN`; `tools/impulse.js` a row's `return.behaviour: 'chain'` with `samples` places the chain brick at the note;
+`bank/impulses.json` `3_template` — row 3's shape, his five noteIds to fill when he has placed impulse 3.
+**Not tested (D13):** braces and parens balance; the JS parses; the engine's new code shows at his next start.
+**Pending him:** impulse 3's five notes (then row 3, the tool, Reload); the engine restart; F5.
+
+## §83. SWEEP_LIST #4, THE FAULT IN THE FIX — a name out of scope silenced every voice change in the NOTE card (2026-10-05, Fable)
+
+His words: *"still not working; In fact, it's worse. Uh, other percussions just don't sound now … one more try then if you can't get
+it fixed quickly lets move on."* **The cause, read in the code:** §81's handler used `Cp`, which the card defines INSIDE its
+`commit` function, not in the handler's scope — a ReferenceError at every voice change, thrown after the technique was set and
+before the card re-rendered and heard the note: the voice changed, nothing sounded. **The fix, one token:** `C()` — the card's own
+accessor for the composer. Not tested (D13); if it still fails, revert `note_card.js` to `38ace9c` and `composer.html` to `5c20f0a`.

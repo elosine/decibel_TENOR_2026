@@ -63,10 +63,13 @@ slots.forEach((slot, i) => {
   const name = (player || slot.lane) + '-impulse-' + N;
   const open = zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
   // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
-  const ret = RETURN ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
-    { name: (player || slot.lane) + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay') : null;
+  const who = player || slot.lane;
+  const ret = !RETURN ? null : RETURN.behaviour === 'chain'   // §82: the chain starts AT the note and runs 0.5 s per sample, the samples in the row's order
+    ? zone(lane, wc.startSeconds, wc.startSeconds + 0.5 * (RETURN.samples || []).length, { name: who + '-' + (RETURN.samples || [])[0], names: (RETURN.samples || []).map((q) => who + '-' + q), behaviour: 'chain' }, 'elecPlay')
+    : zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
+    { name: who + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay');
   if (note < lo || note > hi) { if (own) console.warn('slot ' + (i + 1) + ': HIS key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ') — kept, it may be silent'); else throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')'); }   // the preset's own range, never the instrument's
-  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? ret.elec.name : '' });
+  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? (ret.elec.names ? ret.elec.names.join(' + ') : ret.elec.name) + ' ~ ' + ret.elec.behaviour : '' });
   if (!DRY) {
     wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
     wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
@@ -76,7 +79,7 @@ slots.forEach((slot, i) => {
     if (ret) objects.push(ret);
   }
 });
-rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret + ' ~ ar' : '')));
+rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret : '')));
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 save.nextId = nextId;
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });

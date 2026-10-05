@@ -219,7 +219,7 @@
                 wc.technique = e.target.value;
                 // SWEEP_LIST #4 (RUNNING_LOG §81): a BY-KEY voice (the percussion's patches — the key IS the articulation) is heard the moment it is
                 // chosen: the note becomes one of ITS keys (its first) unless it already is one; a pitched voice keeps its pitch (the pitch is the music)
-                const q = (Cp.trackTechniques(wc.layer) || []).find(t => t.key === wc.technique);
+                const q = (C().trackTechniques(wc.layer) || []).find(t => t.key === wc.technique);   // C(): the composer — Cp is commit's own name, not this scope's (§83)
                 if (q && Array.isArray(q.keys) && q.keys.length && !q.keys.some(k => k.midi === wc.sonifyNote)) wc.sonifyNote = q.keys[0].midi;
             }));
             d.querySelector('#ncFull').addEventListener('change', (e) => commit(wc => {

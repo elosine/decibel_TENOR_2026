@@ -77,6 +77,11 @@ function engineEnv() {
     if (Array.isArray(arC.lateMs)) { flat.missLateLo = arC.lateMs[0]; flat.missLateHi = arC.lateMs[1]; } if (Array.isArray(arC.earlyMs)) { flat.missEarlyLo = arC.earlyMs[0]; flat.missEarlyHi = arC.earlyMs[1]; }
     const arSpec = Object.entries(flat).filter(([k, v]) => typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
     if (arSpec) env.LE_AR = arSpec;
+    const ch = (CFG.return && CFG.return.chain) || {}, chFlat = Object.assign({}, ch.G_shares || {});   // §82: the chain's dials G · H · I
+    if (ch.H_follow != null) chFlat.follow = ch.H_follow;
+    if (ch.I_order != null) chFlat.shuffle = ch.I_order === 'shuffled' ? 1 : 0;
+    const chSpec = Object.entries(chFlat).filter(([k, v]) => typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
+    if (chSpec) env.LE_CHAIN = chSpec;
     if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
     return env;
 }
