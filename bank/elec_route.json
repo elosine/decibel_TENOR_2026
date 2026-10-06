@@ -68,7 +68,8 @@
         "before": 0.35,
         "after": 0.35,
         "lazy": 0.15,
-        "unison": 0.15
+        "far": 0.15,
+        "unison": 0
       },
       "B_rangesMs": {
         "after": [
@@ -81,13 +82,18 @@
         ],
         "lazy": [
           300,
-          650
+          500
+        ],
+        "far": [
+          500,
+          750
         ],
         "unison": [
           10,
           40
         ],
         "skew": 2,
+        "_2026_10_05c": "his ear (DEC-30, RUNNING_LOG §135): \"get rid of unison and create a tier after lazily after … make lazily after 300 to 500, and then after that, 500 to 750. But then keep that longest one similarly 10% … like the unison was\" — unison's share 0 (its range kept, unused); lazy 300–500; the new tier FAR 500–750 takes unison's share: 10 % in a chain (G), 15 % in ar (A). Shared by ar · chain · arChain. From the engine's next start.",
         "_2026_10_05": "his ear (DEC-11): \"the immediate after, the soon after, is a little bit too close. Let's make it like 50% longer and then push the rest out from there\" — after 100–180 → 150–270; before, lazy and the miss pushed out by the same factor; unison untouched (it is meant to be close). Shared by ar, chain and arChain.",
         "_2026_10_05b": "his ear again (§92): the minimum of just-after 150 → 175 (and the band to 300), just-before 90 → 105 (to 240) in the same proportion; lazy and the early miss pushed out from there (300–650 · 250–480); unison untouched. Shared by ar · chain · arChain. From the engine's next start."
       },
@@ -113,7 +119,8 @@
       "G_shares": {
         "after": 0.7,
         "lazy": 0.2,
-        "unison": 0.1,
+        "far": 0.1,
+        "unison": 0,
         "before": 0
       },
       "H_follow": 1,

@@ -71,7 +71,7 @@ function engineEnv() {
     if (crop) env.LE_CROP = crop;
     // §78: the return behaviour's dials (bank/elec_route.json return.ar, lettered A · B · C) flattened to the engine's names (sc/bank.scd arDefaults)
     const ar = (CFG.return && CFG.return.ar) || {}, arB = ar.B_rangesMs || {}, arC = ar.C_miss || {}, flat = Object.assign({}, ar.A_shares || {});
-    for (const k of ['after', 'before', 'lazy', 'unison']) if (Array.isArray(arB[k])) { flat[k + 'Lo'] = arB[k][0]; flat[k + 'Hi'] = arB[k][1]; }
+    for (const k of ['after', 'before', 'lazy', 'far', 'unison']) if (Array.isArray(arB[k])) { flat[k + 'Lo'] = arB[k][0]; flat[k + 'Hi'] = arB[k][1]; }   // far: the fifth tier (DEC-30)
     if (arB.skew != null) flat.skew = arB.skew;
     if (arC.rate != null) flat.missRate = arC.rate; if (arC.lateShare != null) flat.missLateShare = arC.lateShare;
     if (Array.isArray(arC.lateMs)) { flat.missLateLo = arC.lateMs[0]; flat.missLateHi = arC.lateMs[1]; } if (Array.isArray(arC.earlyMs)) { flat.missEarlyLo = arC.earlyMs[0]; flat.missEarlyHi = arC.earlyMs[1]; }
