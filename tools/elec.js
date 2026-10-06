@@ -10,6 +10,7 @@
 //   node tools/elec.js meters     # one note, and what the meters showed: the player, ELEC RETURN, the master — nothing started or stopped
 //   node tools/elec.js start      # the engine up and listening — what start_electronics.bat runs
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
+//   node tools/elec.js bus        # THE BUS (the master: high-pass · low-pass · the glue · the limiter): its dials shown; with words — bus glue=off lpf=6000 — moved on the LIVING engine, by a message
 //   node tools/elec.js ping       # is the engine there? one /le/hello — starts nothing, safe beside his engine window  [--via 5500: through the score server]
 //   node tools/elec.js message    # 6.2's PROOF: the engine up for 20 s; a message, the note after it, and whatever the composer score sends  [--via <port>] [--seconds N] [--quiet]
 //   node tools/elec.js object     # 6.3 … 6.5's PROOF, on a SCRATCH bank (the piece's is not touched): an opening, the note into the rack, the crop, the index; the sample returned and seen on ELEC RETURN; then whatever the composer score sends until the time is up  [--via <port>] [--seconds N] [--name bcl-A] [--listen: skip the tool's own part, keep the scratch bank]
@@ -63,6 +64,18 @@ function modeLine() {
     const m = modeOf(), d = bankDirs();
     return 'MODE       ' + m.name + ' — ' + m.what + '\n           buffers from ' + path.relative(ROOT, d[m.load]) + ' · captures to ' + path.relative(ROOT, d[m.write]) + ' · openings ' + (m.record ? 'record' : 'do NOT record');
 }
+// the bus's dials, the piece's words -> the engine's: { hpfHz, lpfHz, glue: { on, thresholdDb, ratio, kneeDb, attackMs, releaseMs, makeupDb }, ceilingDb, lookaheadMs, releaseMs }
+function masterFlat(M) {
+    const o = {}, G = (M && M.glue) || {}, num = (k, v) => { if (typeof v === 'number' && Number.isFinite(v)) o[k] = v; };
+    if (!M) return o;
+    num('hpfHz', M.hpfHz); num('lpfHz', M.lpfHz);
+    if (G.on != null) o.glueOn = G.on ? 1 : 0;
+    num('glueThr', G.thresholdDb); num('glueRatio', G.ratio); num('glueKnee', G.kneeDb); num('glueAtkMs', G.attackMs); num('glueRelMs', G.releaseMs); num('glueGainDb', G.makeupDb);
+    num('ceilingDb', M.ceilingDb); num('lookaheadMs', M.lookaheadMs); num('limRelMs', M.releaseMs);
+    return o;
+}
+// `bus`: the words he types -> the engine's dials (a filter at 0 = off; glue on | off)
+const BUS_WORDS = { hpf: 'hpfHz', lpf: 'lpfHz', glue: 'glueOn', threshold: 'glueThr', ratio: 'glueRatio', knee: 'glueKnee', attack: 'glueAtkMs', release: 'glueRelMs', makeup: 'glueGainDb', ceiling: 'ceilingDb', limrelease: 'limRelMs' };
 function engineEnv() {
     const B = CFG.bank || {}, m = modeOf(), dirs = bankDirs();
     const crop = Object.entries(B.crop || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
@@ -86,6 +99,9 @@ function engineEnv() {
     // driveRef (11.4) and bleedDb (11.7) ride with it. Flat numbers, the engine's own names (electronics/sc/level.scd levelDefaults).
     const lvSpec = Object.entries(CFG.level || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
     if (lvSpec) env.LE_LEVEL = lvSpec;
+    // PLAN 1.4 · 11.6: THE BUS's dials (bank/elec_route.json master) flattened to the engine's names (electronics/sc/boot.scd masterDefaults)
+    const msSpec = Object.entries(masterFlat(CFG.master)).map(([k, v]) => k + '=' + v).join(',');
+    if (msSpec) env.LE_MASTER = msSpec;
     if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
     return env;
 }
@@ -293,6 +309,28 @@ async function readPeaks(waitMs) {
 
     // IS THE ENGINE THERE? One /le/hello. It starts nothing and stops nothing — safe beside his own engine window.
     // --via <port>: the same question asked THROUGH a score server (5500 his · 5501 the throwaway), the road a page's message takes.
+    if (cmd === 'bus') {   // PLAN 1.4 · 11.6: the bus's dials — shown, or moved on the LIVING engine (a message; nothing started, nothing stopped)
+        const M = CFG.message || {}, words = flags.filter((f) => /^[a-z]+=/.test(f));
+        if (!words.length) {
+            console.log('THE BUS, as bank/elec_route.json "master" gives it to the engine at its start:\n  ' + (Object.entries(masterFlat(CFG.master)).map(([k, v]) => k + ' ' + v).join(' · ') || '(nothing: the engine\'s neutral defaults)'));
+            console.log('to move a dial on the engine that is running:  node tools/elec.js bus ' + Object.keys(BUS_WORDS).map((w) => w + '=…').slice(0, 5).join(' ') + ' …\n  words: ' + Object.keys(BUS_WORDS).join(' · ') + '   (hpf=0 · lpf=0: off · glue=on | off)');
+            return;
+        }
+        const data = {};
+        for (const w of words) {
+            const [k, v] = w.split('='), key = BUS_WORDS[k];
+            if (!key) { console.error('"' + k + '" is no dial of the bus — ' + Object.keys(BUS_WORDS).join(' · ')); process.exit(2); }
+            const n = key === 'glueOn' ? (/^(on|1|true|yes)$/i.test(v) ? 1 : 0) : +v;
+            if (!Number.isFinite(n)) { console.error(k + ': a number' + (key === 'glueOn' ? ', or on | off' : '')); process.exit(2); }
+            data[key] = n;
+        }
+        const r = await osc.send({ host: M.host, port: M.port, address: '/le/hello', args: ['from', 'elec.js'], waitMs: 400 });
+        if (!r) { console.log('THE ENGINE DID NOT ANSWER on UDP ' + (M.port || osc.PORT) + ' — nothing was moved  (start_electronics.bat)'); process.exit(1); }
+        await osc.send({ host: M.host, port: M.port, address: '/le/master', args: osc.pairs(data) });
+        console.log('sent to the engine: ' + Object.entries(data).map(([k, v]) => k + ' ' + v).join(' · ') + ' — its window says what the bus is now.\nIt holds until the engine stops; to make it stay, the same value goes into bank/elec_route.json "master".');
+        return;
+    }
+
     if (cmd === 'ping') {
         const via = flagValue(flags, '--via'), M = CFG.message || {};
         if (via) {

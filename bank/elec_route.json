@@ -155,6 +155,23 @@
     "driveRef": -20,
     "bleedDb": 12
   },
+  "_master": "THE BUS (PLAN 1.4 · 11.6; RUNNING_LOG §164; his 'A': the bus is SuperCollider's): the engine's master is a mastering bus, live — a high-pass, a low-pass, the glue (a soft-knee RMS compressor), a look-ahead limiter, the clip. Reaper's ELEC RETURN stays FLAT. hpfHz · lpfHz: 0 = that filter is off. glue: on true | false · thresholdDb · ratio · kneeDb · attackMs · releaseMs · makeupDb. ceilingDb: the limiter's ceiling (a sample's peak; the decibel above it is room for what lies between samples). lookaheadMs: how far the limiter looks ahead — the bus runs that much late and the engine plays its samples that much early. releaseMs: the limiter's. THE NUMBERS ARE A START (the sandbox's ensemble bus) — HIS EAR MOVES THEM: here, used from the engine's next start; or on the running engine with  node tools/elec.js bus glue=off lpf=6000 …",
+  "master": {
+    "hpfHz": 30,
+    "lpfHz": 0,
+    "glue": {
+      "on": true,
+      "thresholdDb": -18,
+      "ratio": 2,
+      "kneeDb": 6,
+      "attackMs": 30,
+      "releaseMs": 250,
+      "makeupDb": 0
+    },
+    "ceilingDb": -1,
+    "lookaheadMs": 5,
+    "releaseMs": 100
+  },
   "_listenEcho": "A ROUTE CHECK (RUNNING_LOG §55): above 0, `start` returns each note this many seconds LATER, so the route is heard as a second sound. 0 since the playback brick exists (6.5, RUNNING_LOG §64): the engine returns what it MAKES — a sample played back — and nothing of the player's own sound.",
   "listenEchoSeconds": 0,
   "_mode": "THE MODE (RUNNING_LOG §71, 2026-10-05; his design): one word that names which bank FILLS the engine's buffers at start, where captures are WRITTEN, and whether an opening records. compose = bank/samples both ways, openings record (the latest take wins) · compose-locked = the same samples, openings change nothing · rehearsal = the players record the BACKUP bank (bank/backup) · concert = buffers full from the backup, a live capture replaces one only when it caught a sound, the captures kept in bank/live/<date>. The bricks in the score are the same in every mode. Read at the engine's START (tools/elec.js start).",
