@@ -181,6 +181,8 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► THE LEVEL — THE BUILD IN FLIGHT (2026-10-06, Opus; his "go"). BUILT SO FAR, each with an AS BUILT line in PLAN.md § 1.4: 11.1 the measure · 11.2 the ladder · 11.3 the dynamic on the brick (RUNNING_LOG §161; the engine's §42). NEXT IN THE BUILD: 11.4 the drive → 11.5 → 11.6 → 11.7, then `docs/LEVEL_NOTE.md`. A session that finds this line picks up at the first item not listed as built; the proofs so far: `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/level_test.scd` · `node electronics/tools/page_test.js` · `electronics/sc/process_test.scd`. His engine was UP through the build and was not touched; it does not have the new code until he restarts it — nothing asks him to before the note.**
+
 **► THE LEVEL LAID OUT — 2026-10-06, Fable (RUNNING_LOG §154 … §159; PLAN.md § 1.4; DEC-33; D17). THIS SUPERSEDES checkpoint #9's "next concrete step" below as far as the build goes; his ear on the two auditions still stands behind it, unasked.**
 
 - **What he asked (DEC-33, verbatim in COMPOSITION_NOTES):** the whole rig's signal chain and gain staging looked at, portable to all three electronics pieces; the electronics scored like players, ppp … fff, with deterministic crescendos, subito, sotto voce; player agency kept ("played back as played or re leveled as my composer intention"); some impulses were quieter than others, and their processed versions with them.

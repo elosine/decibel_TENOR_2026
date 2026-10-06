@@ -146,6 +146,15 @@
       "_fade": "2026-10-05 (DEC-13, his word): a standard short release on every cropped sample — the window cuts the ring and a 10 ms fade clicked; 80 ms out, 3 ms in; applies to every capture from the engine's next start (a re-take re-crops)"
     }
   },
+  "_level": "THE LEVEL (PLAN 1.4, step 11; RUNNING_LOG §154 … §161; D17): THE LADDER the electronics are scored on — the players' own law (docs/DYNAMICS_LAW.md Rule 2). reference = the loudness, in LUFS, of the electronics' fff: the AI'S START is the trims' per-voice target (bank/trims.json, −29.54 — the electronics as the tenth voice); HIS EAR MOVES THIS ONE NUMBER and the whole ladder moves with it. stepDb = one written step (4). So mf = reference − 12, ppp = reference − 28. liftCapDb = a sample is never raised by more than this (a whisper is not lifted into the room's noise). floorDb = a sample quieter than this is never raised at all. driveRef (11.4) = the loudness a sample is brought to BEFORE an effect when its drive is 'normalized'. bleedDb (11.7) = how far over the room a capture's attack must stand, in concert. Read at the engine's START (tools/elec.js start → LE_LEVEL).",
+  "level": {
+    "reference": -29.54,
+    "stepDb": 4,
+    "liftCapDb": 20,
+    "floorDb": -60,
+    "driveRef": -20,
+    "bleedDb": 12
+  },
   "_listenEcho": "A ROUTE CHECK (RUNNING_LOG §55): above 0, `start` returns each note this many seconds LATER, so the route is heard as a second sound. 0 since the playback brick exists (6.5, RUNNING_LOG §64): the engine returns what it MAKES — a sample played back — and nothing of the player's own sound.",
   "listenEchoSeconds": 0,
   "_mode": "THE MODE (RUNNING_LOG §71, 2026-10-05; his design): one word that names which bank FILLS the engine's buffers at start, where captures are WRITTEN, and whether an opening records. compose = bank/samples both ways, openings record (the latest take wins) · compose-locked = the same samples, openings change nothing · rehearsal = the players record the BACKUP bank (bank/backup) · concert = buffers full from the backup, a live capture replaces one only when it caught a sound, the captures kept in bank/live/<date>. The bricks in the score are the same in every mode. Read at the engine's START (tools/elec.js start).",
