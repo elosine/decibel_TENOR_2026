@@ -182,7 +182,8 @@ question, not by habit.)*
 - **THEN (§133): "reseed with all"** — `deal_variants.js --score piece-sec01-a --seed 5 --env tail --render`: all 49 presets, 75 plays (colour 39 · time 36), 73 variants, the plan sent. **And HE MOVED GROUP 6 forward** in the page before it (29.75 · 31.20 · 32.40 · 32.90 · 34.30 s — the opening now runs 0 … 37 s), saved at the AI's word; it is in the commit. The page's copy was newer than the file: CTRL+S, not Reload — the check is a diff of `scores/<name>-work.json` against the save by object id.
 - **THEN (§134): "reseed again" — SEED 6** from all 49 (colour 35 · time 40 · 73 variants, the plan sent). Seed 5 heard and passed over.
 - **THEN (§135, DEC-30): THE FOLLOWING TIMES** — unison's share 0 · lazily after 300–500 · a FIFTH TIER `far` 500–750 with unison's share (chain 10 % · ar 15 %); the numbers in `bank/elec_route.json` (A · B · G), the tier in the engine (`bank.scd` `arRoll` · `chainRoll`; `roll_test.scd` PASS). **HIS ENGINE MUST BE RESTARTED to take it** — told. The engine's repo in step.
-- **► NEXT: his ear on the six groups (seed 6, all 49, the far tier).** Then what he says — a reseed · the presets · the tiers again · his next notes.
+- **THEN (§136): "reseed again" — SEED 7** from all 49 (colour 37 · time 38 · 73 variants, the plan sent). Seed 6 heard and passed over.
+- **► NEXT: his ear on the six groups (seed 7, all 49, the far tier).** Then what he says — a reseed · the presets · the tiers again · his next notes.
 
 **► THE RE-DEAL AND THE PATTERN'S EFFECTS — 2026-10-05, Fable (RUNNING_LOG §131; the engine's §38; DEC-28). THIS SUPERSEDES the "NEXT" of the blocks below.**
 
@@ -480,7 +481,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132 · §133: groups 5 · 6 all flocking, group 6 at 29.8 … 34.3 s, the whole score on SEED 6 FROM ALL 49 (§134; seed 5 passed over); THE FAR TIER in the rolls (§135) — HIS ENGINE RESTARTED · Reload · play from 0). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --render`, `--class time` for the time presets only; he saves first — CTRL+S if the page's copy is newer, the diff says); a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
+| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132 · §133: groups 5 · 6 all flocking, group 6 at 29.8 … 34.3 s, the whole score on SEED 7 FROM ALL 49 (§136; seeds 5 · 6 passed over); THE FAR TIER in the rolls (§135) — HIS ENGINE RESTARTED · Reload · play from 0). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --render`, `--class time` for the time presets only; he saves first — CTRL+S if the page's copy is newer, the diff says); a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
 | — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
 | — | His next notes beyond group 6 — a row 7 in `bank/impulses.json` when he places them (`impulse.js --n 7`; `shuffle` for another order) | Fable | — |
 | — | Step 10.1 — HIS EAR on the workshop (§103) — he is in it; the shelf grows (§113) | Fable (the talk) · Opus (a fix) | — |
