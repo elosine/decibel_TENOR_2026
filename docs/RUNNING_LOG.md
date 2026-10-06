@@ -3929,3 +3929,7 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 ## §141. SEED 11 KEPT — deal 3; his question on the combs (2026-10-05, Fable)
 
 **His words:** *"You can add that one to the list. Can you tell me how many comb filter ones we have in there?"* — seed 11 kept by the tool (`scores/piece-sec01-a-deal-s11.json`, deal 3 on the shelf; 25 bricks · 75 plays · the 43). Three deals are kept now: seeds 7 (the 49) · 10 · 11 (the 43). **The combs: 4 of 43** — comb2 (rings 0.7 s) · comb3 (1.05 s) · comb5 (1.15 s) · comb6 (1.35 s), each a pitch drawn 83 … 333 Hz fresh per variant. Told; what he wants of them not yet said.
+
+## §142. THE COMBS IN A FILE — `audition-comb` (2026-10-05, Fable)
+
+**His words:** *"Can you put the comb ones into a file so I can hear them all?"* — `tools/build_audition.js` gained **`--effect <name>`** (only that effect's presets; each brick labelled by the preset's KEY, so he can name one). `node tools/build_audition.js --name audition-comb --effect comb`: four return bricks — comb2 · comb3 · comb5 · comb6 — from 1 s, 2.5 s apart, each on a different captured impulse, ring versions; the plan sent with render 1. HIS: File ▾ → Experiments → `audition-comb` · play from 0. NOT heard.
