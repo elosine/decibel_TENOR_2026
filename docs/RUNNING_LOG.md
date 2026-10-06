@@ -4304,3 +4304,77 @@ Within one player up to 32 dB apart (perc #1 … #3); across players 11 dB at th
 **What the wrap's message gave him** — the note, shortened to a screen: the seven ✓ lines, the three hand steps, four of the six things to listen for (the main score as it is · one brick `ff` · a hairpin · the bus on and off), the two questions for his ear (`reference` · the compressor), and the notes — not run; proven offline; the calls made; the feedback's 3 dB for 20. The whole of it is `docs/LEVEL_NOTE.md`, presented first at `/postclear` as §160 has it.
 
 **Nothing was decided in the chat that is not already in the record** (§161 … §166). The hand-off is journal §2's first block; `Resume reads`: the note, nothing else.
+
+## §168. THE RESUME AFTER CHECKPOINT #10 — the level and the auditions PARKED at his word; THE DRONE LISTENING FILES OPENED, the determination on icy's other dials (2026-10-06, Fable)
+
+**What prompted it** — his `/postclear` arguments and his second message, verbatim in `docs/COMPOSITION_NOTES.md` DEC-34: *"please just keep track of these things and I'll ask to see what needs todo when i am ready"* (the petals test · *"signal/volume management"* — step 11) · *"I would now like to develop another processing fx with sample/review … a section where players are playing multiphonics and then these are processed with time stretching into drones using my icy synthdef"* · *"1st you make a determination and if you think I should listen to some variations then make a save file"* · *"for strings in addition to bow op lets do sul pont … one that might render more harmonics"* · *"no pitch changes"*.
+
+**The resume** — the project's `postclear.md` followed: journal §2 whole, the PLANNER's NOW line, `docs/LEVEL_NOTE.md` (the checkpoint's one resume read). **The note was NOT presented whole** — his first words parked it; it stays in the journal's NEXT STEPS table with the two auditions, to be presented when he asks. The tree: one untracked file, his temp save, as the checkpoint said. His engine's state was not looked at (nothing sent).
+
+**The facts gathered for the plan** (reads of the recipe, the catalogs, the engine; no scan):
+- the bass flute and the bass clarinet each have *Multiphonics Velocity* (`mp_short`) and *Multiphonics MW* (`mp_loop`, held — a SHAPED note); the clarinet's keys are known (34 … 46, piece #3's map), **the flute's are unmapped** (`BY_KEY_MAPS` empty at the port; the recipe: *"their keys when the music asks"*) — `tools/key_sweep.js` finds them with no hands;
+- `china_cymbals` beater 1 = Bow · `susp_cymbals_bright` beater 4 = Bow (Abbey Road, both verified) · the Ricotti patch *Crotales – Bowed* is loaded (its Kontakt's channel 6; the lane's key `crot_bowed` by `apply_ricotti.js`'s rule) — the mallets lane records through the percussionist's one input (`players[].ports`);
+- Xsample strings: *Bow Overpressure* Velocity (54) · MW (55, held) · × marcato (56) · staccato (57); *Sul Ponticello* Velocity (46) · MW (47, held) · spiccato (48) · tremolo Velocity (49) · MW (50) · flautando × sp (45). **No double- or triple-stop patch** among the 70-odd presets;
+- an opening's window: `lengthMs` clipped 20 … 30 000 ms (`bank.scd` 207) — the opening's length IS the cap he asked for; the crop keeps the sound to −45 dB (`endDb`), the 80 ms fade out (`bank.crop`);
+- a render under `tail`: `capMs` up to 60 000 (`process.scd` 430) — a 20 s drone brick is in range; the plan's row carries `capMs` per variant;
+- `icy`'s dials (`le_process.js` 81): `icMix` · `icSpeed` (the head's pace: 1 real time · 0.03 thirty times slower · 0 held) · `icFromMs` · `icWin` · `icOverlaps` · `icRand` · `icPitch` · `icEnv` (Hann + his ten); the stage: `Warp1` over the buffer, the head crawling from `icFromMs` at `icSpeed`, the output divided by √overlaps (`process.scd` 358 … 372).
+
+**THE DETERMINATION — which of the OTHER dials change the sound a lot in a stretch** (from how `Warp1` works and how the stage drives it; not heard — his ear decides):
+- **overlaps — YES at the low end.** Each window holds `overlaps` grains; with 1 … 4 and the head near still, each grain's envelope is heard as a pulse (2 grains in a 0.6 s window = about 3 pulses a second — a flutter); from about 8 the pulses merge; past about 20 the sum is a dense chorus and the differences shrink. The √overlaps division keeps the loudness about even, so what changes is the texture, not the level. Variations: 2 · 4 · 8 · 17 · 40.
+- **rand — YES.** The grain's start is scattered by this fraction of the window. At 0 the grains fall on a strict grid — a periodicity, heard as a buzz or a comb colour while the head is near still; 0.1 … 0.3 breaks the grid; 0.5 … 1 smears the head's place by up to a window — a blur, a chorusing. Variations: 0 · 0.1 · 0.3 · 0.6 · 1.
+- **from — YES, as a choice of the source's moment.** At a pace of 1/30 a 20 s brick crosses only 0.67 s of the source; at 1/100, 0.2 s. So `from` decides WHICH moment of a 5 s held sound becomes the drone: the attack (the breath, the bow's catch) or the settled tone. Variations: 0 ms · 1 500 · 3 500. In file B it is fixed at 800 ms (the tone settled).
+- **mix — no.** 1 for a drone; below 1 the dry 5 s sample simply plays under the first seconds of the stretch. Fixed at 1.
+- **pitch — out, at his word.** (Also not a variation: the interpolation, fixed at linear in the stage.)
+So FILE A IS WORTH HIS EAR: 13 variations around one reference on ONE input, all else equal.
+
+**The proposal as revised** (his *"mostly good"*; the changes are from his second message):
+- **The inputs — NINE:** bass flute multiphonic (MW, held) · bass clarinet multiphonic (MW, held) · China cymbal bowed · suspended cymbal bowed · crotales bowed · viola overpressure (MW) · viola sul ponticello (MW — the plain held sul pont, the preset whose point is the high harmonics; the tremolo kept as an alternative) · cello overpressure (MW) · cello sul ponticello (MW). The stops OUT: no patch, his condition fails (his to reverse with a stand-in chord). Each a 5 s note under a 6 s opening (100 ms before), 8 s apart, in one source score — his ONE PASS with the engine up banks the nine.
+- **The reference setting** (his *"icy live"* of 2015, the catalogue's second preset): pace 1/30 · window 0.6 s · 17 overlaps · rand 0.2 · expodec · from 800 ms · mix 1; every brick 20 s under `tail` (`capMs` 20 000).
+- **File A — `audition-stretch-dials`:** the bass clarinet multiphonic only (its keys known — the reliable input); the reference, then overlaps ×5, rand ×5, from ×3 — 14 bricks, 20 s each, about 5 minutes.
+- **File B — `audition-drones`:** the nine inputs × 8 bricks each = 72, about 24 minutes; the three categories dealt as a balanced assortment, seeded — the 11 grain windows (each 6 or 7 times) × 3 grain sizes (0.15 · 0.5 · 1.2 s — 24 each) × 4 paces (¼ · 1/10 · 1/30 · 1/100 — 18 each; ½ dropped: barely a drone), no combination twice, each input's eight distinct; overlaps · rand · from at the reference. Every brick labelled (`▶ bcl-mp-1 · 1/30 · 0.5 s · gauss`), a sheet in `docs/auditions/`.
+- **The presets** `deal: false` (`audition: drones`) — never dealt into the main score; a builder of its own, after `build_petals.js`.
+
+**Nothing built; nothing of his touched.** The top line of the steps goes to him now (the planning method's phase 2); the sub-steps are written into PLAN.md (item 10.13) at his go, as the build begins.
+
+## §169. THE HEAD IN ORDER, FROM THE BEGINNING, LOOPING — his clarification on `rand` and `from`; the loop a new option (2026-10-06, Fable)
+
+**What prompted it** — DEC-34b: *"if rand is the order in the buffer the read head reads the grains, then for this piece I'll always read the source in order, if this is not that, then disregard; from same, for this piece will read from beginning to end of source and loop, as a side consideration if we need to look at cropping and fade in/out for source pls add to plan"*.
+
+**`rand` is not the order.** In `Warp1` the pointer (`icPtr`, `process.scd` 369) advances monotonically — the source is always read in order; `windowRandRatio` (`icRand`) scatters each grain's cut point around the pointer by a fraction of the window. His condition fails → disregarded, as he said: rand stays in file A (0 · 0.1 · 0.3 · 0.6 · 1).
+
+**`from` is out; a LOOP is in.** Today the head starts at `icFromMs` and HOLDS at the source's end (`.min(icWr)`). His rule for this piece: start at the beginning, read to the end, loop. → a new option on the stage, `icLoop` (1 = the pointer wraps at the source's end — `% srcDur` in place of `.min(icWr)`), the row in `le_process.js` beside it, default ON for this piece's icy row and `icFromMs` 0; the engine's stage keeps 0 as its own default (three pieces share it). Proven once by `process_test.scd`; his engine restarted — which step 3 does anyway. The seven icy keepers of `bank/presets.json` are unaffected in practice (a `time` variant is 1.75 × a ~400 ms impulse: the head never reaches the end).
+
+**The seam.** A loop joins the source's end (the release, dying to −45 dB, the 80 ms fade) to its beginning (the attack): a jump in level and content, softened only by the grains' overlap. Within a 20 s brick the seam is heard only at a fast pace (a 5 s source at ½ laps every 10 s; at ¼ exactly once at the brick's end; at 1/10 and slower never). → file A gains ONE brick: the reference setting at pace ½, 30 s long — the seam heard at 10 s and 20 s. **His side consideration goes into the plan as an item of its own (10.13 e): the source's crop and fades for a loop** — where the sample starts and ends (skip the attack and the release, or keep them), an equal-power crossfade at the wrap — looked at after his ear on A, built only if the seam is heard. A re-crop of a kept raw recording has no tool yet (NITS) — that item would make one.
+
+**File A as it stands:** reference · overlaps ×5 · rand ×5 · the seam ×1 = 12 bricks (eleven of 20 s, one of 30 s), about 4 minutes. File B unchanged but `from` 0 and the loop on.
+
+## §170. THE DRONES, 10.13 (a) · (b) BUILT — the keys found by the sweep and the catalogs, the source score written (2026-10-06, Fable)
+
+**What prompted it** — his *"go, build steps 1 and 2 here"* on the top line of §168 … §169 (DEC-34 · 34b).
+
+**(a) THE KEYS.**
+- **The bass flute's multiphonics, measured:** `node tools/key_sweep.js "Bass Flute XS" --channels 1 --keys 48-86 --cc0 22 --cc1 100 --hold 0.6` (preset #23 *Multiphonics MW*; the wheel at 100 because an MW preset takes its loudness from it; a longer hold because a multiphonic speaks slowly). **48 … 60 SOUND — 13 keys, as the clarinet's 13 at 34 … 46; 61 … 86 silent.** The levels: 48 −19.6 · 49 −15.8 · 50 −17.2 · 51 −20.8 · 52 −23.7 · 53 −19.6 · 54 −17.8 · 55 −23.4 · 56 −16.0 · 57 −41.4 · 58 −18.4 · 59 −16.8 · 60 −27.5 dB. The track's input was switched to Reaper's virtual keyboard for the run and put back (`inputRestored: true`); nothing saved; the notes passed through his rack and, if his engine was up, through it — no opening open, nothing recorded. Two minutes. **Key 56 taken** (one of the strongest); 57 is the quiet one. The recipe's `mp_short` · `mp_loop` rows still carry the instrument's 48 … 86 (no range argument in `xsBassFluteTechs`) — the measured 48 … 60 is recorded in `bank/drone_sources.json`; the recipe when the music asks for them beyond the drones (NITS).
+- **The bass clarinet:** #22 *Multiphonics MW*, 34 … 46 (piece #3's map § 6c); **key 40**.
+- **The bowed cymbals, read from `bank/aro_percussion_catalog.json`:** China cymbal, beater Bow = 48 … 56 (half bows 1 … 4 · full bows 1 … 4) and **57 *Long Continuous Bowing*** — taken; suspended cymbal (bright), Bow = 84 … 92 and **93 *Long Continuous Bowing*** — taken. Both techniques are in the generated roster (`china_cymbals_bow` · `susp_cymbals_bright_bow`, `kind: key`).
+- **The bowed crotales:** Ricotti *Crotales – Bowed* (`crot_bowed`, channel 6 of its Kontakt), 60 … 84; **key 67**. The library's bowed patches take their dynamic from CC1, unwired here (NITS) — they sound at the wheel's resting value (the marimba's bows were heard so in the sweep of §32).
+- **The strings:** *Bow Overpressure MW* (#55, `bow_op_mw`) and *Sul Ponticello MW* (#47, `sp_mw`) — HELD presets (the wheel), the plain sul pont because its point IS the high partials (his *"one that might render more harmonics"*); the tremolo (#50) is the alternative. Viola G3 (55) overpressure · C4 (60) sul pont; cello G2 (43) · C3 (48). **No double- or triple-stop patch** among Xsample's presets (grep of the recipe): the stops are OUT — his condition failed; a stand-in chord (two or three notes at once on one lane, Kontakt being polyphonic) at his word.
+
+**(b) THE SOURCE SCORE.** `bank/drone_sources.json` — HIS DATA: a row per input (name · inst · technique · key · label · the keys' provenance) and the timing (startS 2 · gapS 8 · holdS 5 · preMs 100 · windowS 6 · category `drone`). `tools/build_drone_sources.js` reads it, resolves each lane by the recipe key through the page's `TRACKS`, checks the technique exists on that lane and the key is within its range, finds the player by the technique's port (the mallets' opening is `perc`'s — one microphone, `players[].ports`), and writes `scores/drone-sources.json`: nine `waveCurve` notes at mf (the first object's shape — `technique` the recipe's key, `sonifyNote` the key) and nine `elecOpen` zones (100 ms before each note, 6 s long — the opening's length IS the cap he asked for; the crop keeps the sound from −30 dB under its peak to −45 dB, the 80 ms fade). The table:
+
+```
+   2.0 s  lane 0 Bass Flute    bfl-mp-1          key 56  Multiphonics MW (#23)
+  10.0 s  lane 1 Bass Clar.    bcl-mp-1          key 40  Multiphonics MW (#22)
+  18.0 s  lane 2 Percussion    perc-china-bow-1  key 57  China Cymbals — Bow
+  26.0 s  lane 2 Percussion    perc-susp-bow-1   key 93  Suspended Cymbals Bright — Bow
+  34.0 s  lane 3 Mallets       perc-crot-bow-1   key 67  Crotales · Bowed
+  42.0 s  lane 4 Viola         va-op-1           key 55  Bow Overpressure MW (#55)
+  50.0 s  lane 4 Viola         va-sp-1           key 60  Sul Ponticello MW (#47)
+  58.0 s  lane 5 Cello         vc-op-1           key 43  Bow Overpressure MW (#55)
+  66.0 s  lane 5 Cello         vc-sp-1           key 48  Sul Ponticello MW (#47)
+```
+
+**Decided at the build, his to reverse:** the names `<player>-<what>-1`, NOT `-impulse-N` — a drone source is not an impulse: the audition builder's impulse filter and the pattern brick's boxes leave them alone, meant · category `drone` · every note at mf (a struck lane's velocity, a shaped lane's wheel) · a 6 s window on a 5 s note: 0.9 s of release inside it · the tool refuses to write over a score without `--replace` and never a `piece-…` name · the recipe untouched.
+
+**Not verified in the running app, and not claimed:** the page has not opened the score; no note has sounded from it. His pass is the proof (D13) — the window's `cropped · <name>` lines, nine rows in the index. **THE SORTING:** the data, the tool and the score are the piece's; nothing in `electronics/` changed — no subtree push this wrap.
+
+**What (d) needs, for the record:** the icy stage's pointer `icPtr = (from + Sweep(icOn, speed)).min(icWr) / bufDur` (`process.scd` 369) holds at the source's end; the loop is `% srcDur` in its place, behind a control `icLoop` (0 as the engine's default, 1 as this piece's row default with `icFromMs` 0). Offered to him: built before his pass, so one engine restart serves both.

@@ -1,0 +1,20 @@
+{
+ "_doc": "THE DRONE SOURCES (DEC-34 · 34b; PLAN.md 10.13; RUNNING_LOG §170): the held sounds the players give the electronics to stretch into drones with his `icy`. One row per input: `name` is the sample's name in the bank (the mic opening is named so) · `inst` the lane's recipe key (sandbox/instruments.js) · `technique` the recipe's technique key on that lane · `key` the MIDI key the note is written on · `label` what it is, in words. `holdS` the note's length; `windowS` the opening's length (it opens `preMs` before the note — the opening's length IS the cap on the sample); `gapS` from one note to the next; `startS` the first note. tools/build_drone_sources.js reads this and writes scores/drone-sources.json; his one pass with the engine up banks the nine. HIS DATA — a key, a technique or a name changed here, then the tool again (--replace), then File ▾ → Reload.",
+ "startS": 2,
+ "gapS": 8,
+ "holdS": 5,
+ "preMs": 100,
+ "windowS": 6,
+ "category": "drone",
+ "inputs": [
+  { "name": "bfl-mp-1", "inst": "bass_flute", "technique": "mp_loop", "key": 56, "label": "bass flute · multiphonic (MW, held)", "_keys": "the sweep of 2026-10-06 (RUNNING_LOG §170): preset #23 sounds on 48 … 60 only; 56 one of the strongest (−16.0 dB); 57 the quiet one (−41.4)" },
+  { "name": "bcl-mp-1", "inst": "bass_clarinet", "technique": "mp_loop", "key": 40, "label": "bass clarinet · multiphonic (MW, held)", "_keys": "preset #22, 13 keys 34 … 46 (piece #3's map § 6c)" },
+  { "name": "perc-china-bow-1", "inst": "percussion", "technique": "china_cymbals_bow", "key": 57, "label": "China cymbal · bowed (long continuous bowing)", "_keys": "Abbey Road: 48 … 56 half and full bows, 57 Long Continuous Bowing" },
+  { "name": "perc-susp-bow-1", "inst": "percussion", "technique": "susp_cymbals_bright_bow", "key": 93, "label": "suspended cymbal (bright) · bowed (long continuous bowing)", "_keys": "Abbey Road: 84 … 92 half and full bows, 93 Long Continuous Bowing" },
+  { "name": "perc-crot-bow-1", "inst": "bowed_vibraphone", "technique": "crot_bowed", "key": 67, "label": "crotales · bowed", "_keys": "Ricotti Crotales – Bowed, 60 … 84; the bowed patches take their dynamic from CC1, unwired (NITS) — they sound at the wheel's resting value" },
+  { "name": "va-op-1", "inst": "viola", "technique": "bow_op_mw", "key": 55, "label": "viola · bow overpressure (MW, held) · G3", "_keys": "Xsample #55; any key of the lane" },
+  { "name": "va-sp-1", "inst": "viola", "technique": "sp_mw", "key": 60, "label": "viola · sul ponticello (MW, held) · C4", "_keys": "Xsample #47 — the plain held sul pont (high harmonics); #50 the tremolo is the alternative" },
+  { "name": "vc-op-1", "inst": "cello", "technique": "bow_op_mw", "key": 43, "label": "cello · bow overpressure (MW, held) · G2", "_keys": "Xsample #55" },
+  { "name": "vc-sp-1", "inst": "cello", "technique": "sp_mw", "key": 48, "label": "cello · sul ponticello (MW, held) · C3", "_keys": "Xsample #47" }
+ ]
+}
