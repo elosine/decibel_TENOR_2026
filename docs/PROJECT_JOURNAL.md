@@ -173,6 +173,15 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► THE TWO AUDITIONS LAID OUT — 2026-10-06, Fable (RUNNING_LOG §150; DEC-32; PLAN.md 10.3 · 10.12). THIS SUPERSEDES the "NEXT CONCRETE STEP" of checkpoint #8 below; the throws stay available at his word.**
+
+- **What he asked (DEC-32):** his `SynthDef_petalsOfResonance` ported — the ORIGINAL kept beside a CLEANED signal path, heard side by side: TWENTY PAIRS at different settings, on several impulses; and the FEEDBACK (10.6) tuned to ALL 54 of his chord shapes (`bank/harmonies.json` `banks.chordShapes`), in order, on several impulses; a score file each, everything labelled, for him to sample from. **Q7 ANSWERED: "petals" — the flower.**
+- **THE NEXT CONCRETE STEP — THE BUILD OF 10.3 AND 10.12 AS ONE, on Opus, after a clear. `docs/PLAN.md` 10.3 · 10.12 ARE THE INSTRUCTION** (each: Result when done, then the to-dos in order; what the AI decided, his to reverse). Then his steps (in the items) and STOP (D13). Proven ONCE: `process_test.scd` with a case per new stage, headless; the page's part under the builder's own run.
+- **`Resume reads:`** PLAN.md 10.3 · 10.12 (grep `10.3 THE PETALS` · `10.12 THE FEEDBACK ON`) · **`C:/Users/jwloy/GitHub/SynthDef_petalsOfResonance/SynthDef_petalsOfResonance.scd` — HIS, READ ONLY, never edited** (the 2025 file is the same SynthDef under an unused sketch) · `electronics/sc/process.scd` — the header's option list and `processDefaults` · the `--- resonator bank` and `--- feedback` stages · where the chain's `sig` begins (the stages' pattern) · `electronics/score/le_process.js` — the `feedback` row and `FB_PRESETS` (a row's shape; `D(...)` a dial) · `tools/build_audition.js` whole (the frame to copy) · `tools/deal_variants.js` ~line 61 (the pool) · `electronics/score/le_objects.js` `fxPool` · `planRows` (grep) · `tools/gen_presets.js` where it writes `presets` · `bank/harmonies.json` `banks.chordShapes.entries[0]` (a row's fields) · `bank/candidates.json` row 7 (the feedback's base dials) · `electronics/sc/process_test.scd` (the proof's pattern). Nothing else.
+- **WHAT THE BLOCK DOES NOT KNOW** (confirm at the reads, decide, one line in the log): that the plan message carries a preset's ARGS and the envelope's `capMs` from the page (`planRows`) — then a `ring` envelope is a row of the presets file and no engine change · that a `Rand`-family UGen with CONTROL inputs will not compile — draw 0 … 1 at scalar rate and map in kr (`ringLo + (ringHi − ringLo) × Rand(0, 1)`) · how long forty 16 s NRT renders take two at a time (say it to him) · the cleaned path as one `DynKlank` of 26 modulated partials or 26 `Ringz` summed — either; say which · that a brick's `elec.label` is shown first on the brick (`decorate`) — the audition builder uses it.
+- **DELIBERATELY UNCOMMITTED · LEFT RUNNING: as checkpoint #8 below** — nothing of this turn's beyond the docs.
+- **RESUME ON: Opus** (a build from a written block). Fable for his ear after it.
+
 **► CHECKPOINT #8 OF SESSION 2 (mid-session checkpoint) — 2026-10-05, Opus; the work since checkpoint #7 was Opus's (§129 · §130) then Fable's (§131 … §147). Where the blocks below disagree with this one, THIS BLOCK WINS.**
 
 - **THE TASK AND ITS STATE:** running order step 10, the processing. **The opening is SIX GROUPS of impulses, 0 … 37 s, every return processed; he is THROWING DEALS and keeping the ones he likes.** What exists:
@@ -520,7 +529,8 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — THE THROWS (checkpoint #8, §148): the score on seed 15 from the 40; five deals kept (7 · 10 · 11 · 14 · 15). By his word: "reseed" (`deal_variants.js --score piece-sec01-a --seed 16 --env tail --render`) · "save that one" (`keep_deal.js --seed <the seed in the score>`, BEFORE the next reseed) · "take out X" (the rows of `bank/presets.json`) · a choice among the five** | **Opus** (the throws, a fix, a wrap) · Fable (a design talk) | — |
+| **►** | **Steps 10.3 · 10.12 — THE TWO AUDITIONS (§150, DEC-32): the petals of resonance in the engine — the original beside the cleaned path, twenty pairs on rotating impulses — and the feedback on all 54 chord shapes in order; PLAN.md 10.3 · 10.12 are the instruction; ONE build, proven once, then his ear** | **Opus** (the build) | **yes** |
+| — | Step 10 — THE THROWS (checkpoint #8, §148): the score on seed 15 from the 40; five deals kept (7 · 10 · 11 · 14 · 15). By his word: "reseed" (`deal_variants.js --score piece-sec01-a --seed 16 --env tail --render`) · "save that one" (`keep_deal.js --seed <the seed in the score>`, BEFORE the next reseed) · "take out X" (the rows of `bank/presets.json`) · a choice among the five | Opus (the throws, a fix, a wrap) · Fable (a design talk) | — |
 | — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
 | — | His next notes beyond group 6 — a row 7 in `bank/impulses.json` when he places them (`impulse.js --n 7`; `shuffle` for another order) | Fable | — |
 | — | Step 10.1 — HIS EAR on the workshop (§103) — he is in it; the shelf grows (§113) | Fable (the talk) · Opus (a fix) | — |
@@ -532,7 +542,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
-DEC-4) · Q4 — the percussion: ANSWERED for now — the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the unpitched = his TENTATIVE eight (DEC-6) · Q5 — the three notation calls of container 6 (the pitch form · the percussion staff's line order · the short names). · **Q6 — ANSWERED 2026-10-04: OSC through the score server, concert and simulation alike (D10); the loopMIDI trigger rejected — no concert counterpart (§57 · §58)** · **Q7 — "pedals" or "petals" of resonance: the folder spells one, his dictation the other; at phase 2.**
+DEC-4) · Q4 — the percussion: ANSWERED for now — the pitched lane = Ricotti Mallets, four instruments on one lane (DEC-5); the unpitched = his TENTATIVE eight (DEC-6) · Q5 — the three notation calls of container 6 (the pitch form · the percussion staff's line order · the short names). · **Q6 — ANSWERED 2026-10-04: OSC through the score server, concert and simulation alike (D10); the loopMIDI trigger rejected — no concert counterpart (§57 · §58)** · **Q7 — ANSWERED 2026-10-06: PETALS, the flower (DEC-32; the folder's spelling stands; the catalogue row `petals`).**
 
 **Blockers:** none.
 
