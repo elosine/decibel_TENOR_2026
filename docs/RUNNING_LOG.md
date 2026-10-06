@@ -4474,3 +4474,11 @@ Three are SHORTER than their 5 s notes — `bcl-mp-1` 1.8 s · `vc-op-1` 2.6 s �
 **Not known, left for the build (the plan's last bullet):** the bass flute's straightest Xsample preset (its roster has no plain non-vibrato sustain — `instruments.js` 47); the bowed crotales' technique key after `applyRicotti`; whether `sampleCurveForZone` reads a reference curve by name alone; the K-weighting's gain at 1 … 4 kHz from the coefficients; `createZone`'s group field.
 
 **Written:** PLAN.md § 1.5 whole (replacing the morning's skeleton) · journal §2's running-order step 12 line says the plan is written · this entry. Committed at this wrap. **Put to him:** the plan is written; the build — 12.1 → 12.6 as one — here, or Opus after a clear.
+
+## §176. THE SINE TONES — the hand-off to Opus for the build, no formal checkpoint (2026-10-06, Fable)
+
+**What prompted it** — his word on §175's question: *"i would like to build with opus is plan ready for them, I'll switch models and go so no formal checkpoint so document as necessary before go"*. So: option b without the clear — he switches the model in place and says go.
+
+**Written for it:** journal §2's block **THE BUILD OF STEP 12** — the cold-start block for the build (the position · the instruction: 12.1 → 12.6 as one from PLAN.md § 1.5, a proof once per item, an entry and a commit per item, the subtree push at the wrap · the order and the seam lines · the `Resume reads` list, exhaustive · what the block does not know, six items · his hand steps at the end only · what is left running — his engine of 15:10 will predate the sine too · the model). CLAUDE.md's state line and PLANNER's NOW line say the same. Committed and pushed.
+
+**Not a checkpoint by name** (his word); it carries what a checkpoint carries, so a `/clear` at any point resumes from it. **The AI's position at the hand-off:** the plan is ready for Opus — every item has its result, its sub-steps, its one proof and the files it touches; the six unknowns are named and each is answered by a read, not by him.
