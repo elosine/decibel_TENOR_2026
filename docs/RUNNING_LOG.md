@@ -3871,3 +3871,13 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **The state of the music now:** six groups of impulses — 1 plain · 2 `ar` · 3 chain of two · 4 `arChain` of three · 5 chain of four · 6 chain of five — 25 return bricks, every sample of every return a time preset under a ring, seed 4. The bank will hold 30 raw impulses after his next pass (impulse 6's five are new captures). The pattern brick of DEC-28 is in no score now; it stays in the kit.
 
 **HIS:** File ▾ → Reload `piece-sec01-a` · play from 0 with the engine up (group 6's five are captured at 45 … 50 s and their returns then play) — or any purple brick → render all planned → play from 6 s for groups 2 … 5 now.
+
+## §133. "RESEED WITH ALL" — the whole score from the 49, seed 5; group 6 moved forward by him (2026-10-05, Fable)
+
+**His words:** *"reseed with all"* — then, at the tool's refusal, *"saved"*.
+
+**Seen on the way (his composing, not the AI's):** the page's copy was NEWER than the file — after the Reload he had MOVED group 6 forward: its five notes, openings and chains from 44.95 … 49.50 s to **29.75 · 31.20 · 32.40 · 32.90 · 34.30 s** (wood blocks? — the lanes as before: percussion · viola · bass flute · cello · bass clarinet). So the advice was CTRL+S, not Reload (a Reload would have dropped the move); the tool's comparison showed which — a check worth keeping: `scores/<name>-work.json` against the save, by object id. Group 6 now follows group 5 by about two seconds; the whole opening runs 0 … 37 s.
+
+**The deal:** `node tools/deal_variants.js --score piece-sec01-a --seed 5 --env tail --render` — no `--class`: all 49 presets · 75 plays on 25 bricks · colour 39 · time 36 · ring versions · two laps (26 presets come round twice) · 73 distinct variants, the plan sent with render 1. Recorded in the score's `metadata.deal` (the page's save will drop it again; it is here). NOT heard.
+
+**The state:** six groups, 0 … 37 s, every return a preset of the 49 under a ring, seed 5. The bank: 30 raw impulses once his next pass captures impulse 6's five.

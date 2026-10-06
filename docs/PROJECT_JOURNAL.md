@@ -179,7 +179,8 @@ question, not by habit.)*
 - **The tool:** `tools/impulse.js --redo` replaces an impulse's returns from its row (notes and openings kept); a row's `shuffle: <seed>` orders the samples per player; `--dry` runs under an unsaved copy.
 - **HIS:** File ▾ → Reload · play from 0 with the engine up (impulse 6 is captured at 45 … 50 s), or a purple brick → render all planned → play from 6 s.
 - **A reseed = the same command with another `--seed`** (he saves first; the page's save drops `metadata.deal` — the command is here and in §132). "all" = `--class all`, the 49.
-- **► NEXT: his ear on the six groups.** Then what he says — a reseed · the presets · his next notes.
+- **THEN (§133): "reseed with all"** — `deal_variants.js --score piece-sec01-a --seed 5 --env tail --render`: all 49 presets, 75 plays (colour 39 · time 36), 73 variants, the plan sent. **And HE MOVED GROUP 6 forward** in the page before it (29.75 · 31.20 · 32.40 · 32.90 · 34.30 s — the opening now runs 0 … 37 s), saved at the AI's word; it is in the commit. The page's copy was newer than the file: CTRL+S, not Reload — the check is a diff of `scores/<name>-work.json` against the save by object id.
+- **► NEXT: his ear on the six groups (seed 5, all 49).** Then what he says — a reseed · the presets · his next notes.
 
 **► THE RE-DEAL AND THE PATTERN'S EFFECTS — 2026-10-05, Fable (RUNNING_LOG §131; the engine's §38; DEC-28). THIS SUPERSEDES the "NEXT" of the blocks below.**
 
@@ -477,7 +478,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132: groups 5 · 6 all flocking, the whole score on seed 4 — Reload · play from 0 with the engine up). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --class time --render`; he saves first); "all" widens the pool to the 49; a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
+| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132 · §133: groups 5 · 6 all flocking, group 6 at 29.8 … 34.3 s, the whole score on SEED 5 FROM ALL 49 — Reload · play from 0 with the engine up). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --render`, `--class time` for the time presets only; he saves first — CTRL+S if the page's copy is newer, the diff says); a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
 | — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
 | — | His next notes beyond group 6 — a row 7 in `bank/impulses.json` when he places them (`impulse.js --n 7`; `shuffle` for another order) | Fable | — |
 | — | Step 10.1 — HIS EAR on the workshop (§103) — he is in it; the shelf grows (§113) | Fable (the talk) · Opus (a fix) | — |
