@@ -3907,3 +3907,7 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **What a kept deal IS:** the shelf (`bank/candidates.json`, §109 · §113) held SETTINGS — one effect's dials, heard on one sample. A deal is a different keep: a whole score's transformations at once — which preset on which sample of which brick. Reproducible by its command while the presets file and the bricks stay as they are; not otherwise. So two things were kept: **(1) `scores/piece-sec01-a-deal-s7.json`** — the score as seed 7 left it, copied BEFORE the reseed (a frozen copy, like his own `-vfirst_samples`); **(2) a row in `bank/candidates.json` under a new key `deals`** — the command, the seed, the presets it drew from, the frozen file, and the whole map brick → sample → variant (25 bricks, 75 plays), so the deal can be read without opening the score. `tools/candidates.js` renders the deals as a second table in `docs/CANDIDATES.md`.
 
 **Then:** `node tools/deal_variants.js --score piece-sec01-a --seed 8 --env tail --render` — all 49 · 75 plays · time 37 · colour 38 · 73 variants, the plan sent. NOT heard. Seeds: 1 · 3 · 4 · 5 · 6 · **7 kept** · 8.
+
+## §138. "RESEED AGAIN" — seed 9 (2026-10-05, Fable)
+
+**His words:** *"reseed again"* — seed 8 heard and passed over. `node tools/deal_variants.js --score piece-sec01-a --seed 9 --env tail --render`: all 49 · 75 plays · colour 36 · time 39 · 73 variants, the plan sent. NOT heard. Seeds: 1 · 3 · 4 · 5 · 6 · **7 kept** · 8 · 9.
