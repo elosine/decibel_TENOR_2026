@@ -532,3 +532,11 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 > *"these are the presets that are applied in the main score, the effects. Can we find a way to make sure there's a diversity of pitch content in the resonator ones? So in the feedback ones, there's a bloom one. There is a resonator bank one. There's various other ones that we're reusing. Can we somehow impose a pitch diversity? I find the pitch content too repetitive, even if we're trying new seeds."* — said while the icy build was asked for ("either for now or for later").
 
 *(The AI's reading, marked: the pitched presets carry FIXED pitches — the feedback's six strings E A D G B E in `bloom` and `squeal`, the resonator bank's 110 · 440 · 1600 · 5200 Hz in `bands`, the comb at 167 Hz, the string resonator at 250 Hz — so every deal, whatever its seed, rings the same notes; only `diode` draws its carrier (80 … 400 Hz). Two ways, his to pick: (a) the pitched dials as RANGES in `bank/presets.json`, drawn fresh per variant at each plan send — quick, no control over WHICH pitches; (b) a PITCH SET per preset — chords or scales of his, the deal cycling through them so no two variants of a preset share a chord — his material, a little more machinery (a `pitchSets` field read by the tool and the page). Not built; logged for later at his word.)*
+
+*(DECIDED the same day, his word **"a"** — RANDOM: the pitched dials as ranges drawn fresh per variant; the chosen-sets road (b) kept as a later mode. Planned as PLAN.md 10.9; RUNNING_LOG §123.)*
+
+### DEC-24 · 2026-10-05 — THE RHYTHM PANEL (the pattern brick): "not quite working for me"; the rhythms to be addressed
+
+> *"Also, just make a note that I want to address the rhythms. I'm not, or the, the new panel's not quite working for me. Actually, let's try something now. What if I wanted to have a gradual acceleration over, say, 20 seconds? What would I put in so we can test to see if it works? And otherwise, that needs to revise too."*
+
+*(The AI's reading, marked: what "not quite working" means is his to say at the next session — the test of a 20 s acceleration (RUNNING_LOG §123 has the numbers) is the first probe; one thing seen in his screenshot: the Impulses boxes list the workshop renders (`2~1` …) among the impulses. Logged, not acted on.)*
