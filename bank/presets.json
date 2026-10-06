@@ -796,766 +796,6 @@
    }
   },
   {
-   "key": "pet01o",
-   "name": "P01 ORIGINAL — petals, his SynthDef as it is · fund 35 Hz · first partial 5 · spread 1.33 · bank B +8.1 st · ring 7 … 15 s (his own set line)",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet01c",
-   "name": "P01 CLEANED — petals, the cleaned path · fund 35 Hz · first partial 5 · spread 1.33 · bank B +8.1 st · ring 7 … 15 s (his own set line)",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 35,
-    "ptFirst": 5,
-    "ptSpread": 1.33,
-    "ptOffset": 8.1,
-    "ptRingLo": 7,
-    "ptRingHi": 15,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet02o",
-   "name": "P02 ORIGINAL — petals, his SynthDef as it is · fund 82.5 Hz · first partial 2.89 · spread 0.37 · bank B +3.31 st · ring 7.5 … 10 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 82.5,
-    "poFirst": 2.89,
-    "poSpread": 0.37,
-    "poOffset": 3.31,
-    "poRingLo": 7.5,
-    "poRingHi": 10,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet02c",
-   "name": "P02 CLEANED — petals, the cleaned path · fund 82.5 Hz · first partial 2.89 · spread 0.37 · bank B +3.31 st · ring 7.5 … 10 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 82.5,
-    "ptFirst": 2.89,
-    "ptSpread": 0.37,
-    "ptOffset": 3.31,
-    "ptRingLo": 7.5,
-    "ptRingHi": 10,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet03o",
-   "name": "P03 ORIGINAL — petals, his SynthDef as it is · fund 122.3 Hz · first partial 4.91 · spread 0.45 · bank B +6.11 st · ring 8.1 … 12.6 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 122.3,
-    "poFirst": 4.91,
-    "poSpread": 0.45,
-    "poOffset": 6.11,
-    "poRingLo": 8.1,
-    "poRingHi": 12.6,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet03c",
-   "name": "P03 CLEANED — petals, the cleaned path · fund 122.3 Hz · first partial 4.91 · spread 0.45 · bank B +6.11 st · ring 8.1 … 12.6 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 122.3,
-    "ptFirst": 4.91,
-    "ptSpread": 0.45,
-    "ptOffset": 6.11,
-    "ptRingLo": 8.1,
-    "ptRingHi": 12.6,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet04o",
-   "name": "P04 ORIGINAL — petals, his SynthDef as it is · fund 82 Hz · first partial 3.12 · spread 0.59 · bank B +2.29 st · ring 9.3 … 12.4 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 82,
-    "poFirst": 3.12,
-    "poSpread": 0.59,
-    "poOffset": 2.29,
-    "poRingLo": 9.3,
-    "poRingHi": 12.4,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet04c",
-   "name": "P04 CLEANED — petals, the cleaned path · fund 82 Hz · first partial 3.12 · spread 0.59 · bank B +2.29 st · ring 9.3 … 12.4 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 82,
-    "ptFirst": 3.12,
-    "ptSpread": 0.59,
-    "ptOffset": 2.29,
-    "ptRingLo": 9.3,
-    "ptRingHi": 12.4,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet05o",
-   "name": "P05 ORIGINAL — petals, his SynthDef as it is · fund 129.5 Hz · first partial 3.15 · spread 0.57 · bank B +2.21 st · ring 9.8 … 12.4 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 129.5,
-    "poFirst": 3.15,
-    "poSpread": 0.57,
-    "poOffset": 2.21,
-    "poRingLo": 9.8,
-    "poRingHi": 12.4,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet05c",
-   "name": "P05 CLEANED — petals, the cleaned path · fund 129.5 Hz · first partial 3.15 · spread 0.57 · bank B +2.21 st · ring 9.8 … 12.4 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 129.5,
-    "ptFirst": 3.15,
-    "ptSpread": 0.57,
-    "ptOffset": 2.21,
-    "ptRingLo": 9.8,
-    "ptRingHi": 12.4,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet06o",
-   "name": "P06 ORIGINAL — petals, his SynthDef as it is · fund 84.3 Hz · first partial 2.61 · spread 1.14 · bank B +4.59 st · ring 8 … 12.5 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 84.3,
-    "poFirst": 2.61,
-    "poSpread": 1.14,
-    "poOffset": 4.59,
-    "poRingLo": 8,
-    "poRingHi": 12.5,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet06c",
-   "name": "P06 CLEANED — petals, the cleaned path · fund 84.3 Hz · first partial 2.61 · spread 1.14 · bank B +4.59 st · ring 8 … 12.5 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 84.3,
-    "ptFirst": 2.61,
-    "ptSpread": 1.14,
-    "ptOffset": 4.59,
-    "ptRingLo": 8,
-    "ptRingHi": 12.5,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet07o",
-   "name": "P07 ORIGINAL — petals, his SynthDef as it is · fund 87.3 Hz · first partial 2.25 · spread 1.04 · bank B +5.74 st · ring 9.1 … 12.4 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 87.3,
-    "poFirst": 2.25,
-    "poSpread": 1.04,
-    "poOffset": 5.74,
-    "poRingLo": 9.1,
-    "poRingHi": 12.4,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet07c",
-   "name": "P07 CLEANED — petals, the cleaned path · fund 87.3 Hz · first partial 2.25 · spread 1.04 · bank B +5.74 st · ring 9.1 … 12.4 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 87.3,
-    "ptFirst": 2.25,
-    "ptSpread": 1.04,
-    "ptOffset": 5.74,
-    "ptRingLo": 9.1,
-    "ptRingHi": 12.4,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet08o",
-   "name": "P08 ORIGINAL — petals, his SynthDef as it is · fund 139.7 Hz · first partial 3.01 · spread 1.14 · bank B +3.1 st · ring 9.2 … 14.1 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 139.7,
-    "poFirst": 3.01,
-    "poSpread": 1.14,
-    "poOffset": 3.1,
-    "poRingLo": 9.2,
-    "poRingHi": 14.1,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet08c",
-   "name": "P08 CLEANED — petals, the cleaned path · fund 139.7 Hz · first partial 3.01 · spread 1.14 · bank B +3.1 st · ring 9.2 … 14.1 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 139.7,
-    "ptFirst": 3.01,
-    "ptSpread": 1.14,
-    "ptOffset": 3.1,
-    "ptRingLo": 9.2,
-    "ptRingHi": 14.1,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet09o",
-   "name": "P09 ORIGINAL — petals, his SynthDef as it is · fund 105.8 Hz · first partial 4.51 · spread 0.68 · bank B +5.77 st · ring 8.8 … 11.9 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 105.8,
-    "poFirst": 4.51,
-    "poSpread": 0.68,
-    "poOffset": 5.77,
-    "poRingLo": 8.8,
-    "poRingHi": 11.9,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet09c",
-   "name": "P09 CLEANED — petals, the cleaned path · fund 105.8 Hz · first partial 4.51 · spread 0.68 · bank B +5.77 st · ring 8.8 … 11.9 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 105.8,
-    "ptFirst": 4.51,
-    "ptSpread": 0.68,
-    "ptOffset": 5.77,
-    "ptRingLo": 8.8,
-    "ptRingHi": 11.9,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet10o",
-   "name": "P10 ORIGINAL — petals, his SynthDef as it is · fund 127.5 Hz · first partial 4.22 · spread 0.49 · bank B +3.2 st · ring 7.6 … 10.4 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 127.5,
-    "poFirst": 4.22,
-    "poSpread": 0.49,
-    "poOffset": 3.2,
-    "poRingLo": 7.6,
-    "poRingHi": 10.4,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet10c",
-   "name": "P10 CLEANED — petals, the cleaned path · fund 127.5 Hz · first partial 4.22 · spread 0.49 · bank B +3.2 st · ring 7.6 … 10.4 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 127.5,
-    "ptFirst": 4.22,
-    "ptSpread": 0.49,
-    "ptOffset": 3.2,
-    "ptRingLo": 7.6,
-    "ptRingHi": 10.4,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet11o",
-   "name": "P11 ORIGINAL — petals, his SynthDef as it is · fund 66.6 Hz · first partial 4.17 · spread 0.67 · bank B +7.17 st · ring 7.2 … 10.1 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 66.6,
-    "poFirst": 4.17,
-    "poSpread": 0.67,
-    "poOffset": 7.17,
-    "poRingLo": 7.2,
-    "poRingHi": 10.1,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet11c",
-   "name": "P11 CLEANED — petals, the cleaned path · fund 66.6 Hz · first partial 4.17 · spread 0.67 · bank B +7.17 st · ring 7.2 … 10.1 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 66.6,
-    "ptFirst": 4.17,
-    "ptSpread": 0.67,
-    "ptOffset": 7.17,
-    "ptRingLo": 7.2,
-    "ptRingHi": 10.1,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet12o",
-   "name": "P12 ORIGINAL — petals, his SynthDef as it is · fund 92.2 Hz · first partial 4.64 · spread 0.83 · bank B +6.36 st · ring 9.8 … 12 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 92.2,
-    "poFirst": 4.64,
-    "poSpread": 0.83,
-    "poOffset": 6.36,
-    "poRingLo": 9.8,
-    "poRingHi": 12,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet12c",
-   "name": "P12 CLEANED — petals, the cleaned path · fund 92.2 Hz · first partial 4.64 · spread 0.83 · bank B +6.36 st · ring 9.8 … 12 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 92.2,
-    "ptFirst": 4.64,
-    "ptSpread": 0.83,
-    "ptOffset": 6.36,
-    "ptRingLo": 9.8,
-    "ptRingHi": 12,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet13o",
-   "name": "P13 ORIGINAL — petals, his SynthDef as it is · fund 132.8 Hz · first partial 4.59 · spread 0.76 · bank B +7.19 st · ring 7 … 10 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 132.8,
-    "poFirst": 4.59,
-    "poSpread": 0.76,
-    "poOffset": 7.19,
-    "poRingLo": 7,
-    "poRingHi": 10,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet13c",
-   "name": "P13 CLEANED — petals, the cleaned path · fund 132.8 Hz · first partial 4.59 · spread 0.76 · bank B +7.19 st · ring 7 … 10 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 132.8,
-    "ptFirst": 4.59,
-    "ptSpread": 0.76,
-    "ptOffset": 7.19,
-    "ptRingLo": 7,
-    "ptRingHi": 10,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet14o",
-   "name": "P14 ORIGINAL — petals, his SynthDef as it is · fund 111.5 Hz · first partial 4.85 · spread 0.62 · bank B +6.09 st · ring 7.5 … 10.4 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 111.5,
-    "poFirst": 4.85,
-    "poSpread": 0.62,
-    "poOffset": 6.09,
-    "poRingLo": 7.5,
-    "poRingHi": 10.4,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet14c",
-   "name": "P14 CLEANED — petals, the cleaned path · fund 111.5 Hz · first partial 4.85 · spread 0.62 · bank B +6.09 st · ring 7.5 … 10.4 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 111.5,
-    "ptFirst": 4.85,
-    "ptSpread": 0.62,
-    "ptOffset": 6.09,
-    "ptRingLo": 7.5,
-    "ptRingHi": 10.4,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet15o",
-   "name": "P15 ORIGINAL — petals, his SynthDef as it is · fund 59 Hz · first partial 3.86 · spread 0.59 · bank B +6.9 st · ring 7.6 … 12.2 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 59,
-    "poFirst": 3.86,
-    "poSpread": 0.59,
-    "poOffset": 6.9,
-    "poRingLo": 7.6,
-    "poRingHi": 12.2,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet15c",
-   "name": "P15 CLEANED — petals, the cleaned path · fund 59 Hz · first partial 3.86 · spread 0.59 · bank B +6.9 st · ring 7.6 … 12.2 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 59,
-    "ptFirst": 3.86,
-    "ptSpread": 0.59,
-    "ptOffset": 6.9,
-    "ptRingLo": 7.6,
-    "ptRingHi": 12.2,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet16o",
-   "name": "P16 ORIGINAL — petals, his SynthDef as it is · fund 106.4 Hz · first partial 3.12 · spread 0.63 · bank B +7.7 st · ring 8.6 … 12.5 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 106.4,
-    "poFirst": 3.12,
-    "poSpread": 0.63,
-    "poOffset": 7.7,
-    "poRingLo": 8.6,
-    "poRingHi": 12.5,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet16c",
-   "name": "P16 CLEANED — petals, the cleaned path · fund 106.4 Hz · first partial 3.12 · spread 0.63 · bank B +7.7 st · ring 8.6 … 12.5 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 106.4,
-    "ptFirst": 3.12,
-    "ptSpread": 0.63,
-    "ptOffset": 7.7,
-    "ptRingLo": 8.6,
-    "ptRingHi": 12.5,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet17o",
-   "name": "P17 ORIGINAL — petals, his SynthDef as it is · fund 142.9 Hz · first partial 2.32 · spread 1.1 · bank B +6.88 st · ring 8.8 … 13.3 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 142.9,
-    "poFirst": 2.32,
-    "poSpread": 1.1,
-    "poOffset": 6.88,
-    "poRingLo": 8.8,
-    "poRingHi": 13.3,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet17c",
-   "name": "P17 CLEANED — petals, the cleaned path · fund 142.9 Hz · first partial 2.32 · spread 1.1 · bank B +6.88 st · ring 8.8 … 13.3 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 142.9,
-    "ptFirst": 2.32,
-    "ptSpread": 1.1,
-    "ptOffset": 6.88,
-    "ptRingLo": 8.8,
-    "ptRingHi": 13.3,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet18o",
-   "name": "P18 ORIGINAL — petals, his SynthDef as it is · fund 140.8 Hz · first partial 2.37 · spread 1.31 · bank B +6.57 st · ring 7.7 … 9.6 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 140.8,
-    "poFirst": 2.37,
-    "poSpread": 1.31,
-    "poOffset": 6.57,
-    "poRingLo": 7.7,
-    "poRingHi": 9.6,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet18c",
-   "name": "P18 CLEANED — petals, the cleaned path · fund 140.8 Hz · first partial 2.37 · spread 1.31 · bank B +6.57 st · ring 7.7 … 9.6 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 140.8,
-    "ptFirst": 2.37,
-    "ptSpread": 1.31,
-    "ptOffset": 6.57,
-    "ptRingLo": 7.7,
-    "ptRingHi": 9.6,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet19o",
-   "name": "P19 ORIGINAL — petals, his SynthDef as it is · fund 146.4 Hz · first partial 2.22 · spread 0.59 · bank B +5.95 st · ring 9.5 … 14.1 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 146.4,
-    "poFirst": 2.22,
-    "poSpread": 0.59,
-    "poOffset": 5.95,
-    "poRingLo": 9.5,
-    "poRingHi": 14.1,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet19c",
-   "name": "P19 CLEANED — petals, the cleaned path · fund 146.4 Hz · first partial 2.22 · spread 0.59 · bank B +5.95 st · ring 9.5 … 14.1 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 146.4,
-    "ptFirst": 2.22,
-    "ptSpread": 0.59,
-    "ptOffset": 5.95,
-    "ptRingLo": 9.5,
-    "ptRingHi": 14.1,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet20o",
-   "name": "P20 ORIGINAL — petals, his SynthDef as it is · fund 48.6 Hz · first partial 2.65 · spread 1.21 · bank B +6.7 st · ring 8.9 … 12.9 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 48.6,
-    "poFirst": 2.65,
-    "poSpread": 1.21,
-    "poOffset": 6.7,
-    "poRingLo": 8.9,
-    "poRingHi": 12.9,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
-   "key": "pet20c",
-   "name": "P20 CLEANED — petals, the cleaned path · fund 48.6 Hz · first partial 2.65 · spread 1.21 · bank B +6.7 st · ring 8.9 … 12.9 s",
-   "effect": "petals",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "ptMix": 1,
-    "ptFund": 48.6,
-    "ptFirst": 2.65,
-    "ptSpread": 1.21,
-    "ptOffset": 6.7,
-    "ptRingLo": 8.9,
-    "ptRingHi": 12.9,
-    "ptInLen": 1
-   },
-   "deal": false,
-   "audition": "petals"
-  },
-  {
    "key": "cs001",
    "name": "cs-001 M7 [0,11] — feedback on D2 C#3 · bloom 3 s · hold 6 s · drive 4 · tone 1800 Hz",
    "effect": "feedback",
@@ -2958,6 +2198,766 @@
    },
    "deal": false,
    "audition": "feedback-chords"
+  },
+  {
+   "key": "pet01o",
+   "name": "P01 ORIGINAL — petals, his SynthDef as it is · fund 35 Hz · first partial 5 · spread 1.33 · bank B +8.1 st · ring 7 … 15 s (his own set line)",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet01c",
+   "name": "P01 CLEANED — petals, the cleaned path · fund 35 Hz · first partial 5 · spread 1.33 · bank B +8.1 st · ring 7 … 15 s (his own set line)",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 35,
+    "ptFirst": 5,
+    "ptSpread": 1.33,
+    "ptOffset": 8.1,
+    "ptRingLo": 7,
+    "ptRingHi": 15,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet02o",
+   "name": "P02 ORIGINAL — petals, his SynthDef as it is · fund 82.5 Hz · first partial 2.89 · spread 0.37 · bank B +3.31 st · ring 7.5 … 10 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 82.5,
+    "poFirst": 2.89,
+    "poSpread": 0.37,
+    "poOffset": 3.31,
+    "poRingLo": 7.5,
+    "poRingHi": 10,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet02c",
+   "name": "P02 CLEANED — petals, the cleaned path · fund 82.5 Hz · first partial 2.89 · spread 0.37 · bank B +3.31 st · ring 7.5 … 10 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 82.5,
+    "ptFirst": 2.89,
+    "ptSpread": 0.37,
+    "ptOffset": 3.31,
+    "ptRingLo": 7.5,
+    "ptRingHi": 10,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet03o",
+   "name": "P03 ORIGINAL — petals, his SynthDef as it is · fund 122.3 Hz · first partial 4.91 · spread 0.45 · bank B +6.11 st · ring 8.1 … 12.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 122.3,
+    "poFirst": 4.91,
+    "poSpread": 0.45,
+    "poOffset": 6.11,
+    "poRingLo": 8.1,
+    "poRingHi": 12.6,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet03c",
+   "name": "P03 CLEANED — petals, the cleaned path · fund 122.3 Hz · first partial 4.91 · spread 0.45 · bank B +6.11 st · ring 8.1 … 12.6 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 122.3,
+    "ptFirst": 4.91,
+    "ptSpread": 0.45,
+    "ptOffset": 6.11,
+    "ptRingLo": 8.1,
+    "ptRingHi": 12.6,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet04o",
+   "name": "P04 ORIGINAL — petals, his SynthDef as it is · fund 82 Hz · first partial 3.12 · spread 0.59 · bank B +2.29 st · ring 9.3 … 12.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 82,
+    "poFirst": 3.12,
+    "poSpread": 0.59,
+    "poOffset": 2.29,
+    "poRingLo": 9.3,
+    "poRingHi": 12.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet04c",
+   "name": "P04 CLEANED — petals, the cleaned path · fund 82 Hz · first partial 3.12 · spread 0.59 · bank B +2.29 st · ring 9.3 … 12.4 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 82,
+    "ptFirst": 3.12,
+    "ptSpread": 0.59,
+    "ptOffset": 2.29,
+    "ptRingLo": 9.3,
+    "ptRingHi": 12.4,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet05o",
+   "name": "P05 ORIGINAL — petals, his SynthDef as it is · fund 129.5 Hz · first partial 3.15 · spread 0.57 · bank B +2.21 st · ring 9.8 … 12.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 129.5,
+    "poFirst": 3.15,
+    "poSpread": 0.57,
+    "poOffset": 2.21,
+    "poRingLo": 9.8,
+    "poRingHi": 12.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet05c",
+   "name": "P05 CLEANED — petals, the cleaned path · fund 129.5 Hz · first partial 3.15 · spread 0.57 · bank B +2.21 st · ring 9.8 … 12.4 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 129.5,
+    "ptFirst": 3.15,
+    "ptSpread": 0.57,
+    "ptOffset": 2.21,
+    "ptRingLo": 9.8,
+    "ptRingHi": 12.4,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet06o",
+   "name": "P06 ORIGINAL — petals, his SynthDef as it is · fund 84.3 Hz · first partial 2.61 · spread 1.14 · bank B +4.59 st · ring 8 … 12.5 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 84.3,
+    "poFirst": 2.61,
+    "poSpread": 1.14,
+    "poOffset": 4.59,
+    "poRingLo": 8,
+    "poRingHi": 12.5,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet06c",
+   "name": "P06 CLEANED — petals, the cleaned path · fund 84.3 Hz · first partial 2.61 · spread 1.14 · bank B +4.59 st · ring 8 … 12.5 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 84.3,
+    "ptFirst": 2.61,
+    "ptSpread": 1.14,
+    "ptOffset": 4.59,
+    "ptRingLo": 8,
+    "ptRingHi": 12.5,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet07o",
+   "name": "P07 ORIGINAL — petals, his SynthDef as it is · fund 87.3 Hz · first partial 2.25 · spread 1.04 · bank B +5.74 st · ring 9.1 … 12.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 87.3,
+    "poFirst": 2.25,
+    "poSpread": 1.04,
+    "poOffset": 5.74,
+    "poRingLo": 9.1,
+    "poRingHi": 12.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet07c",
+   "name": "P07 CLEANED — petals, the cleaned path · fund 87.3 Hz · first partial 2.25 · spread 1.04 · bank B +5.74 st · ring 9.1 … 12.4 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 87.3,
+    "ptFirst": 2.25,
+    "ptSpread": 1.04,
+    "ptOffset": 5.74,
+    "ptRingLo": 9.1,
+    "ptRingHi": 12.4,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet08o",
+   "name": "P08 ORIGINAL — petals, his SynthDef as it is · fund 139.7 Hz · first partial 3.01 · spread 1.14 · bank B +3.1 st · ring 9.2 … 14.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 139.7,
+    "poFirst": 3.01,
+    "poSpread": 1.14,
+    "poOffset": 3.1,
+    "poRingLo": 9.2,
+    "poRingHi": 14.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet08c",
+   "name": "P08 CLEANED — petals, the cleaned path · fund 139.7 Hz · first partial 3.01 · spread 1.14 · bank B +3.1 st · ring 9.2 … 14.1 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 139.7,
+    "ptFirst": 3.01,
+    "ptSpread": 1.14,
+    "ptOffset": 3.1,
+    "ptRingLo": 9.2,
+    "ptRingHi": 14.1,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet09o",
+   "name": "P09 ORIGINAL — petals, his SynthDef as it is · fund 105.8 Hz · first partial 4.51 · spread 0.68 · bank B +5.77 st · ring 8.8 … 11.9 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 105.8,
+    "poFirst": 4.51,
+    "poSpread": 0.68,
+    "poOffset": 5.77,
+    "poRingLo": 8.8,
+    "poRingHi": 11.9,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet09c",
+   "name": "P09 CLEANED — petals, the cleaned path · fund 105.8 Hz · first partial 4.51 · spread 0.68 · bank B +5.77 st · ring 8.8 … 11.9 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 105.8,
+    "ptFirst": 4.51,
+    "ptSpread": 0.68,
+    "ptOffset": 5.77,
+    "ptRingLo": 8.8,
+    "ptRingHi": 11.9,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet10o",
+   "name": "P10 ORIGINAL — petals, his SynthDef as it is · fund 127.5 Hz · first partial 4.22 · spread 0.49 · bank B +3.2 st · ring 7.6 … 10.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 127.5,
+    "poFirst": 4.22,
+    "poSpread": 0.49,
+    "poOffset": 3.2,
+    "poRingLo": 7.6,
+    "poRingHi": 10.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet10c",
+   "name": "P10 CLEANED — petals, the cleaned path · fund 127.5 Hz · first partial 4.22 · spread 0.49 · bank B +3.2 st · ring 7.6 … 10.4 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 127.5,
+    "ptFirst": 4.22,
+    "ptSpread": 0.49,
+    "ptOffset": 3.2,
+    "ptRingLo": 7.6,
+    "ptRingHi": 10.4,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet11o",
+   "name": "P11 ORIGINAL — petals, his SynthDef as it is · fund 66.6 Hz · first partial 4.17 · spread 0.67 · bank B +7.17 st · ring 7.2 … 10.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 66.6,
+    "poFirst": 4.17,
+    "poSpread": 0.67,
+    "poOffset": 7.17,
+    "poRingLo": 7.2,
+    "poRingHi": 10.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet11c",
+   "name": "P11 CLEANED — petals, the cleaned path · fund 66.6 Hz · first partial 4.17 · spread 0.67 · bank B +7.17 st · ring 7.2 … 10.1 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 66.6,
+    "ptFirst": 4.17,
+    "ptSpread": 0.67,
+    "ptOffset": 7.17,
+    "ptRingLo": 7.2,
+    "ptRingHi": 10.1,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet12o",
+   "name": "P12 ORIGINAL — petals, his SynthDef as it is · fund 92.2 Hz · first partial 4.64 · spread 0.83 · bank B +6.36 st · ring 9.8 … 12 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 92.2,
+    "poFirst": 4.64,
+    "poSpread": 0.83,
+    "poOffset": 6.36,
+    "poRingLo": 9.8,
+    "poRingHi": 12,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet12c",
+   "name": "P12 CLEANED — petals, the cleaned path · fund 92.2 Hz · first partial 4.64 · spread 0.83 · bank B +6.36 st · ring 9.8 … 12 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 92.2,
+    "ptFirst": 4.64,
+    "ptSpread": 0.83,
+    "ptOffset": 6.36,
+    "ptRingLo": 9.8,
+    "ptRingHi": 12,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet13o",
+   "name": "P13 ORIGINAL — petals, his SynthDef as it is · fund 132.8 Hz · first partial 4.59 · spread 0.76 · bank B +7.19 st · ring 7 … 10 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 132.8,
+    "poFirst": 4.59,
+    "poSpread": 0.76,
+    "poOffset": 7.19,
+    "poRingLo": 7,
+    "poRingHi": 10,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet13c",
+   "name": "P13 CLEANED — petals, the cleaned path · fund 132.8 Hz · first partial 4.59 · spread 0.76 · bank B +7.19 st · ring 7 … 10 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 132.8,
+    "ptFirst": 4.59,
+    "ptSpread": 0.76,
+    "ptOffset": 7.19,
+    "ptRingLo": 7,
+    "ptRingHi": 10,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet14o",
+   "name": "P14 ORIGINAL — petals, his SynthDef as it is · fund 111.5 Hz · first partial 4.85 · spread 0.62 · bank B +6.09 st · ring 7.5 … 10.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 111.5,
+    "poFirst": 4.85,
+    "poSpread": 0.62,
+    "poOffset": 6.09,
+    "poRingLo": 7.5,
+    "poRingHi": 10.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet14c",
+   "name": "P14 CLEANED — petals, the cleaned path · fund 111.5 Hz · first partial 4.85 · spread 0.62 · bank B +6.09 st · ring 7.5 … 10.4 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 111.5,
+    "ptFirst": 4.85,
+    "ptSpread": 0.62,
+    "ptOffset": 6.09,
+    "ptRingLo": 7.5,
+    "ptRingHi": 10.4,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet15o",
+   "name": "P15 ORIGINAL — petals, his SynthDef as it is · fund 59 Hz · first partial 3.86 · spread 0.59 · bank B +6.9 st · ring 7.6 … 12.2 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 59,
+    "poFirst": 3.86,
+    "poSpread": 0.59,
+    "poOffset": 6.9,
+    "poRingLo": 7.6,
+    "poRingHi": 12.2,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet15c",
+   "name": "P15 CLEANED — petals, the cleaned path · fund 59 Hz · first partial 3.86 · spread 0.59 · bank B +6.9 st · ring 7.6 … 12.2 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 59,
+    "ptFirst": 3.86,
+    "ptSpread": 0.59,
+    "ptOffset": 6.9,
+    "ptRingLo": 7.6,
+    "ptRingHi": 12.2,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet16o",
+   "name": "P16 ORIGINAL — petals, his SynthDef as it is · fund 106.4 Hz · first partial 3.12 · spread 0.63 · bank B +7.7 st · ring 8.6 … 12.5 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 106.4,
+    "poFirst": 3.12,
+    "poSpread": 0.63,
+    "poOffset": 7.7,
+    "poRingLo": 8.6,
+    "poRingHi": 12.5,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet16c",
+   "name": "P16 CLEANED — petals, the cleaned path · fund 106.4 Hz · first partial 3.12 · spread 0.63 · bank B +7.7 st · ring 8.6 … 12.5 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 106.4,
+    "ptFirst": 3.12,
+    "ptSpread": 0.63,
+    "ptOffset": 7.7,
+    "ptRingLo": 8.6,
+    "ptRingHi": 12.5,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet17o",
+   "name": "P17 ORIGINAL — petals, his SynthDef as it is · fund 142.9 Hz · first partial 2.32 · spread 1.1 · bank B +6.88 st · ring 8.8 … 13.3 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 142.9,
+    "poFirst": 2.32,
+    "poSpread": 1.1,
+    "poOffset": 6.88,
+    "poRingLo": 8.8,
+    "poRingHi": 13.3,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet17c",
+   "name": "P17 CLEANED — petals, the cleaned path · fund 142.9 Hz · first partial 2.32 · spread 1.1 · bank B +6.88 st · ring 8.8 … 13.3 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 142.9,
+    "ptFirst": 2.32,
+    "ptSpread": 1.1,
+    "ptOffset": 6.88,
+    "ptRingLo": 8.8,
+    "ptRingHi": 13.3,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet18o",
+   "name": "P18 ORIGINAL — petals, his SynthDef as it is · fund 140.8 Hz · first partial 2.37 · spread 1.31 · bank B +6.57 st · ring 7.7 … 9.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 140.8,
+    "poFirst": 2.37,
+    "poSpread": 1.31,
+    "poOffset": 6.57,
+    "poRingLo": 7.7,
+    "poRingHi": 9.6,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet18c",
+   "name": "P18 CLEANED — petals, the cleaned path · fund 140.8 Hz · first partial 2.37 · spread 1.31 · bank B +6.57 st · ring 7.7 … 9.6 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 140.8,
+    "ptFirst": 2.37,
+    "ptSpread": 1.31,
+    "ptOffset": 6.57,
+    "ptRingLo": 7.7,
+    "ptRingHi": 9.6,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet19o",
+   "name": "P19 ORIGINAL — petals, his SynthDef as it is · fund 146.4 Hz · first partial 2.22 · spread 0.59 · bank B +5.95 st · ring 9.5 … 14.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 146.4,
+    "poFirst": 2.22,
+    "poSpread": 0.59,
+    "poOffset": 5.95,
+    "poRingLo": 9.5,
+    "poRingHi": 14.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet19c",
+   "name": "P19 CLEANED — petals, the cleaned path · fund 146.4 Hz · first partial 2.22 · spread 0.59 · bank B +5.95 st · ring 9.5 … 14.1 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 146.4,
+    "ptFirst": 2.22,
+    "ptSpread": 0.59,
+    "ptOffset": 5.95,
+    "ptRingLo": 9.5,
+    "ptRingHi": 14.1,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet20o",
+   "name": "P20 ORIGINAL — petals, his SynthDef as it is · fund 48.6 Hz · first partial 2.65 · spread 1.21 · bank B +6.7 st · ring 8.9 … 12.9 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 48.6,
+    "poFirst": 2.65,
+    "poSpread": 1.21,
+    "poOffset": 6.7,
+    "poRingLo": 8.9,
+    "poRingHi": 12.9,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
+  },
+  {
+   "key": "pet20c",
+   "name": "P20 CLEANED — petals, the cleaned path · fund 48.6 Hz · first partial 2.65 · spread 1.21 · bank B +6.7 st · ring 8.9 … 12.9 s",
+   "effect": "petals",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "ptMix": 1,
+    "ptFund": 48.6,
+    "ptFirst": 2.65,
+    "ptSpread": 1.21,
+    "ptOffset": 6.7,
+    "ptRingLo": 8.9,
+    "ptRingHi": 12.9,
+    "ptInLen": 1
+   },
+   "deal": false,
+   "audition": "petals"
   }
  ],
  "generated": {
@@ -3055,7 +3055,7 @@
    "n": 40,
    "what": "his petals of resonance, the original beside the cleaned path — 20 pairs (pair 1 his own set line; seed 1)",
    "command": "node tools/build_petals.js --name audition-petals --n 20 --seed 1",
-   "when": "2026-10-06T12:49"
+   "when": "2026-10-06T13:08"
   },
   "feedback-chords": {
    "n": 54,

@@ -4054,3 +4054,12 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **NOT CLAIMED:** his ear on either · anything seen in a browser (the page's two rows, the switch, the long tag, the two scores opened) · a render of the new stages through a LIVING engine — his engine predates them and must be restarted.
 
 **For the paper:** (1) a port is also a reading — the original's own text said one thing (`rrand(ringL1, ringL2)` per resonator: 26 rings) and its behaviour another (one flickering ring time: the bank sinks as one), and only a measurement of the server told them apart; both are now in the engine, side by side, as two rows. (2) "Guitar feedback on a chord" turned out not to be a setting of the feedback but a different object: a loop sings where its strings AGREE, and a cluster agrees on nothing — so the chord version keeps the loop's dials and its result and drops the loop.
+
+## §152. THE CLEANED PETALS LOSE THE FADE-IN — his word (2026-10-06, Opus; the engine's §41)
+
+**His words**, on the one offer at §151's wrap: *"Go ahead and drop 20ms fade from cleaned petals"*.
+
+- **Done, one line of the `petals` stage** (`electronics/sc/process.scd`): the input envelope `Env.perc(0.02, inputLen, 1, -1)` → `Env([1, 0], [inputLen], -1)` — no rise, the same fall on his curve. His 20 ms rise was the microphone's gate; on a banked impulse, cropped to its attack, it shaved the first 20 ms of what excites the bank. **`petalsOrig` keeps it, as his.** A pair now differs in FOUR ways — the attack · the ring · the wobble · the ending (the sheet says so; `tools/build_petals.js` re-run with `--replace`: the same twenty settings, the same bricks).
+- **The proof:** PROCESS_TEST PASS — case `~12`, the cleaned path, 2089 ms (1657 ms before, on the same source: struck harder, it falls under −60 dB later; each render's draws move it too).
+- **HIS:** the engine restarted (the stage is code) · `audition-petals` → a purple brick → render all planned · play from 0. If he had not yet restarted since §151, it is the same one restart.
+- **NOT CLAIMED:** his ear.

@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T12:49:54.356Z",
-  "modified": "2026-10-06T12:49:54.356Z",
+  "created": "2026-10-06T13:08:30.316Z",
+  "modified": "2026-10-06T13:08:30.316Z",
   "builtBy": "tools/build_petals.js",
   "note": "THE PETALS AUDITION (DEC-32 · PLAN 10.3 · RUNNING_LOG §151): his petals of resonance in 20 PAIRS — the same setting twice in a row on one captured impulse, first his original SynthDef (petalsOrig), then the cleaned signal path (petals). Pair 1 is his own set line; the others are drawn (seed 1) from the ranges his file names. Every brick asks for <impulse>~pet<NN>o-tail or …c-tail; the engine renders them from the bank when the plan is sent with render (a purple brick → render all planned). The sheet: docs/auditions/audition-petals.md. Written by tools/build_petals.js; his from then on."
  },

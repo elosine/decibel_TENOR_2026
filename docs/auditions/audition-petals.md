@@ -10,6 +10,7 @@
 
 - **the ring** — orig: all 26 partials sink together, at one time between the two ring numbers · clean: each partial has its own ring between them, so the chord thins out partial by partial.
 - **the wobble** — orig: the 26 wobble speeds are the same in every render, all starting together · clean: drawn fresh at every render, each starting somewhere else.
+- **the attack** — orig: your 20 ms fade-in on what goes in (the microphone's gate) · clean: no fade-in — the impulse hits the bank as it is.
 - **the ending** — orig: your limiter and your fade (cut a third of a second after the longer ring number) · clean: it rings out until it is 60 dB under its peak.
 
 | pair | orig at | clean at | impulse | fund Hz | first partial | spread | bank B + st | ring s | presets |
