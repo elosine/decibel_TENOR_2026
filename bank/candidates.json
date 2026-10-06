@@ -2,39 +2,460 @@
   "_about": "THE SHELF (RUNNING_LOG §109 · §113) — the process-brick settings he has heard and wants kept. The data; docs/CANDIDATES.md is rendered from it by `node tools/candidates.js`. A row is added by the AI at his 'keep this' / a screenshot, or by the brick's 'keep → shelf' button (POST /api/candidates). `setting` is pasted whole into a brick's JSON box (or picked from the panel's Shelf menu); the source is left out on purpose — a candidate is a treatment.",
   "rows": [
     {
-      "n": 1, "kept": "2026-10-05T15:53", "heardOn": "bfl-impulse-1", "out": "bfl-impulse-1~1", "label": "a pitch", "effect": "crush",
-      "setting": { "effect": "crush", "args": { "crMix": 0.4, "crBits": 4, "crRate": 10400 }, "end": "tail", "floorDb": -60, "capMs": 8000, "gainDb": 0, "match": 1 },
-      "render": "403 ms · peak −19 dB", "remark": "", "note": "the panel shown, no words; the first kept"
+      "n": 1,
+      "kept": "2026-10-05T15:53",
+      "heardOn": "bfl-impulse-1",
+      "out": "bfl-impulse-1~1",
+      "label": "a pitch",
+      "effect": "crush",
+      "setting": {
+        "effect": "crush",
+        "args": {
+          "crMix": 0.4,
+          "crBits": 4,
+          "crRate": 10400
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 8000,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "403 ms · peak −19 dB",
+      "remark": "",
+      "note": "the panel shown, no words; the first kept"
     },
     {
-      "n": 2, "kept": "2026-10-05T15:59", "heardOn": "perc-impulse-1", "out": "perc-impulse-1~1", "label": "a pitch", "effect": "diffusion",
-      "setting": { "effect": "diffusion", "args": { "diffMix": 1, "diffTime": 0.0245, "diffGain": 0.55 }, "end": "tail", "floorDb": -60, "capMs": 8000, "gainDb": 0, "match": 1 },
-      "render": "1926 ms · peak −9.1 dB", "remark": "", "note": "the \"no tail\" stage rings five times the source's length at amount 0.55"
+      "n": 2,
+      "kept": "2026-10-05T15:59",
+      "heardOn": "perc-impulse-1",
+      "out": "perc-impulse-1~1",
+      "label": "a pitch",
+      "effect": "diffusion",
+      "setting": {
+        "effect": "diffusion",
+        "args": {
+          "diffMix": 1,
+          "diffTime": 0.0245,
+          "diffGain": 0.55
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 8000,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "1926 ms · peak −9.1 dB",
+      "remark": "",
+      "note": "the \"no tail\" stage rings five times the source's length at amount 0.55"
     },
     {
-      "n": 3, "kept": "2026-10-05T16:02", "heardOn": "bfl-impulse-5", "out": "bfl-impulse-5~1", "label": "a pitch", "effect": "greyhole",
-      "setting": { "effect": "greyhole", "args": { "ghMix": 0.8, "ghTime": 0.08, "ghSize": 0.7, "ghFb": 0.8, "ghDiff": 0.8, "ghDamp": 0.2 }, "end": "tail", "floorDb": -60, "capMs": 8000, "gainDb": 0, "match": 1 },
-      "render": "8390 ms · peak −15.3 dB", "remark": "", "note": "the source + the whole 8 s cap: STILL SOUNDING at the cap, faded there; a longer cap lets it ring out"
+      "n": 3,
+      "kept": "2026-10-05T16:02",
+      "heardOn": "bfl-impulse-5",
+      "out": "bfl-impulse-5~1",
+      "label": "a pitch",
+      "effect": "greyhole",
+      "setting": {
+        "effect": "greyhole",
+        "args": {
+          "ghMix": 0.8,
+          "ghTime": 0.08,
+          "ghSize": 0.7,
+          "ghFb": 0.8,
+          "ghDiff": 0.8,
+          "ghDamp": 0.2
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 8000,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "8390 ms · peak −15.3 dB",
+      "remark": "",
+      "note": "the source + the whole 8 s cap: STILL SOUNDING at the cap, faded there; a longer cap lets it ring out"
     },
     {
-      "n": 4, "kept": "2026-10-05T16:07", "heardOn": "bfl-impulse-5", "out": "bfl-impulse-5~1", "label": "a pitch", "effect": "diode",
-      "setting": { "effect": "diode", "args": { "drmMix": 1, "drmFreq": [80, 400] }, "end": "tail", "floorDb": -60, "capMs": 8000, "gainDb": 0, "match": 1 },
-      "render": "406 ms · peak −15.3 dB (heard at 218 Hz)", "remark": "this one would have a randomizer for the carrier between 80 and 400 hertz", "note": "the carrier is a RANGE: drawn fresh between 80 and 400 Hz at every Render (§111)"
+      "n": 4,
+      "kept": "2026-10-05T16:07",
+      "heardOn": "bfl-impulse-5",
+      "out": "bfl-impulse-5~1",
+      "label": "a pitch",
+      "effect": "diode",
+      "setting": {
+        "effect": "diode",
+        "args": {
+          "drmMix": 1,
+          "drmFreq": [
+            80,
+            400
+          ]
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 8000,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "406 ms · peak −15.3 dB (heard at 218 Hz)",
+      "remark": "this one would have a randomizer for the carrier between 80 and 400 hertz",
+      "note": "the carrier is a RANGE: drawn fresh between 80 and 400 Hz at every Render (§111)"
     },
     {
-      "n": 5, "kept": "2026-10-05T16:11", "heardOn": "bfl-impulse-5", "out": "bfl-impulse-5~1", "label": "a pitch", "effect": "freeze",
-      "setting": { "effect": "freeze", "args": { "freeze": 1, "freezeAtMs": 130, "smear": 1 }, "end": "tail", "floorDb": -60, "capMs": 1200, "gainDb": 0, "match": 1 },
-      "render": "1561 ms · peak −15.3 dB", "remark": "", "note": "a freeze never falls: the cap IS its length — 1.2 s past the source, cut and faded there"
+      "n": 5,
+      "kept": "2026-10-05T16:11",
+      "heardOn": "bfl-impulse-5",
+      "out": "bfl-impulse-5~1",
+      "label": "a pitch",
+      "effect": "freeze",
+      "setting": {
+        "effect": "freeze",
+        "args": {
+          "freeze": 1,
+          "freezeAtMs": 130,
+          "smear": 1
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 1200,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "1561 ms · peak −15.3 dB",
+      "remark": "",
+      "note": "a freeze never falls: the cap IS its length — 1.2 s past the source, cut and faded there"
     },
     {
-      "n": 6, "kept": "2026-10-05T16:20", "heardOn": "perc-impulse-5", "out": "perc-impulse-5~1", "label": "a pitch", "effect": "jpverb",
-      "setting": { "effect": "jpverb", "args": { "jpMix": 0.6, "jpT60": 2, "jpSize": 2, "jpDamp": 0.15, "jpLow": 0.9, "jpMid": 1.3, "jpHigh": 0.65 }, "end": "tail", "floorDb": -60, "capMs": 1100, "gainDb": 0, "match": 1 },
-      "render": "1495 ms · peak −12 dB", "remark": "", "note": "a 2 s reverb cut and faded 1.1 s past the source: the cap shapes it"
+      "n": 6,
+      "kept": "2026-10-05T16:20",
+      "heardOn": "perc-impulse-5",
+      "out": "perc-impulse-5~1",
+      "label": "a pitch",
+      "effect": "jpverb",
+      "setting": {
+        "effect": "jpverb",
+        "args": {
+          "jpMix": 0.6,
+          "jpT60": 2,
+          "jpSize": 2,
+          "jpDamp": 0.15,
+          "jpLow": 0.9,
+          "jpMid": 1.3,
+          "jpHigh": 0.65
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 1100,
+        "gainDb": 0,
+        "match": 1
+      },
+      "render": "1495 ms · peak −12 dB",
+      "remark": "",
+      "note": "a 2 s reverb cut and faded 1.1 s past the source: the cap shapes it"
     },
     {
-      "n": 7, "kept": "2026-10-05T16:21", "heardOn": "va-impulse-3", "out": "va-impulse-3~1", "label": "a pitch", "effect": "feedback",
-      "setting": { "effect": "feedback", "args": { "fbMix": 1, "fbBloom": 3, "fbHold": 6, "fbDrive": 4, "fbTone": 1800, "fbPath": 10, "fbClimb": 0, "fbWobble": 0.1, "fbS1": 82.41, "fbS2": 110, "fbS3": 146.83, "fbS4": 196, "fbS5": 246.94, "fbS6": 329.63 }, "end": "tail", "floorDb": -60, "capMs": 1700, "gainDb": 0, "match": 0 },
-      "render": "2377 ms · peak −15 dB", "remark": "this is slow bloom", "note": "the preset slow bloom on the viola's impulse 3; the peak NOT matched (his box unticked); the cap 1.7 s — the panel said its settings had changed since that render: kept as shown"
+      "n": 7,
+      "kept": "2026-10-05T16:21",
+      "heardOn": "va-impulse-3",
+      "out": "va-impulse-3~1",
+      "label": "a pitch",
+      "effect": "feedback",
+      "setting": {
+        "effect": "feedback",
+        "args": {
+          "fbMix": 1,
+          "fbBloom": 3,
+          "fbHold": 6,
+          "fbDrive": 4,
+          "fbTone": 1800,
+          "fbPath": 10,
+          "fbClimb": 0,
+          "fbWobble": 0.1,
+          "fbS1": 82.41,
+          "fbS2": 110,
+          "fbS3": 146.83,
+          "fbS4": 196,
+          "fbS5": 246.94,
+          "fbS6": 329.63
+        },
+        "end": "tail",
+        "floorDb": -60,
+        "capMs": 1700,
+        "gainDb": 0,
+        "match": 0
+      },
+      "render": "2377 ms · peak −15 dB",
+      "remark": "this is slow bloom",
+      "note": "the preset slow bloom on the viola's impulse 3; the peak NOT matched (his box unticked); the cap 1.7 s — the panel said its settings had changed since that render: kept as shown"
+    }
+  ],
+  "deals": [
+    {
+      "n": 1,
+      "kept": "2026-10-06T03:24",
+      "score": "piece-sec01-a",
+      "seed": 7,
+      "command": "node tools/deal_variants.js --score piece-sec01-a --seed 7 --env tail",
+      "presets": "bank/presets.json as of RUNNING_LOG §130 — his 49 keepers of the generation of seed 1 (the hundred: bank/presets_gen_s1_100.json)",
+      "frozen": "scores/piece-sec01-a-deal-s7.json",
+      "bricks": 25,
+      "plays": 75,
+      "heard": "the six groups, 0 … 37 s, the far tier in the rolls (§135), ring versions",
+      "remark": "add that one to the list of candidates",
+      "note": "the first DEAL kept — a whole score's transformations at once, not one setting; the same command on the same presets and bricks gives it again; the frozen copy gives it whatever changes",
+      "variants": {
+        "zn-54": {
+          "at": 6.24,
+          "lane": "Viola",
+          "behaviour": "ar",
+          "variants": {
+            "va-impulse-1": "fuzz8-tail"
+          }
+        },
+        "zn-56": {
+          "at": 6.59,
+          "lane": "Mallets",
+          "behaviour": "ar",
+          "variants": {
+            "perc-impulse-1": "icy2-tail"
+          }
+        },
+        "zn-58": {
+          "at": 7.85,
+          "lane": "Bass Flute",
+          "behaviour": "ar",
+          "variants": {
+            "bfl-impulse-1": "greyhole1-tail"
+          }
+        },
+        "zn-60": {
+          "at": 9.5,
+          "lane": "Cello",
+          "behaviour": "ar",
+          "variants": {
+            "vc-impulse-1": "squiz6-tail"
+          }
+        },
+        "zn-62": {
+          "at": 9.74,
+          "lane": "Bass Clar.",
+          "behaviour": "ar",
+          "variants": {
+            "bcl-impulse-1": "jpverb1-tail"
+          }
+        },
+        "zn-64": {
+          "at": 11.22,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-1": "diode7-tail",
+            "perc-impulse-2": "squiz1-tail"
+          }
+        },
+        "zn-66": {
+          "at": 12.18,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-1": "octave8-tail",
+            "bfl-impulse-2": "cres5-tail"
+          }
+        },
+        "zn-68": {
+          "at": 13.37,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-1": "jpverb2-tail",
+            "va-impulse-2": "diode8-tail"
+          }
+        },
+        "zn-70": {
+          "at": 14.94,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-1": "octave5-tail",
+            "vc-impulse-2": "fuzz2-tail"
+          }
+        },
+        "zn-72": {
+          "at": 16.35,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-1": "squiz5-tail",
+            "bcl-impulse-2": "icy4-tail"
+          }
+        },
+        "zn-76": {
+          "at": 17.42,
+          "lane": "Cello",
+          "behaviour": "arChain",
+          "variants": {
+            "vc-impulse-1": "feedback1-tail",
+            "vc-impulse-2": "feedback4-tail",
+            "vc-impulse-3": "comb6-tail"
+          }
+        },
+        "zn-78": {
+          "at": 17.7,
+          "lane": "Viola",
+          "behaviour": "arChain",
+          "variants": {
+            "va-impulse-1": "crush1-tail",
+            "va-impulse-2": "cres7-tail",
+            "va-impulse-3": "icy1-tail"
+          }
+        },
+        "zn-80": {
+          "at": 18.46,
+          "lane": "Bass Flute",
+          "behaviour": "arChain",
+          "variants": {
+            "bfl-impulse-1": "diode4-tail",
+            "bfl-impulse-2": "greyhole4-tail",
+            "bfl-impulse-3": "comb3-tail"
+          }
+        },
+        "zn-82": {
+          "at": 20.39,
+          "lane": "Bass Clar.",
+          "behaviour": "arChain",
+          "variants": {
+            "bcl-impulse-1": "icy6-tail",
+            "bcl-impulse-2": "jpverb3-tail",
+            "bcl-impulse-3": "override7-tail"
+          }
+        },
+        "zn-84": {
+          "at": 21.9,
+          "lane": "Mallets",
+          "behaviour": "arChain",
+          "variants": {
+            "perc-impulse-1": "greyhole2-tail",
+            "perc-impulse-2": "squiz2-tail",
+            "perc-impulse-3": "icy3-tail"
+          }
+        },
+        "zn-95": {
+          "at": 22.99,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-1": "feedback2-tail",
+            "va-impulse-3": "feedback8-tail",
+            "va-impulse-2": "squiz4-tail",
+            "va-impulse-4": "crush8-tail"
+          }
+        },
+        "zn-96": {
+          "at": 24.6,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-3": "squiz7-tail",
+            "perc-impulse-1": "feedback3-tail",
+            "perc-impulse-4": "cres1-tail",
+            "perc-impulse-2": "comb5-tail"
+          }
+        },
+        "zn-97": {
+          "at": 25.83,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-2": "octave6-tail",
+            "bfl-impulse-1": "crush4-tail",
+            "bfl-impulse-4": "diode1-tail",
+            "bfl-impulse-3": "diode2-tail"
+          }
+        },
+        "zn-98": {
+          "at": 26.17,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-4": "icy5-tail",
+            "vc-impulse-1": "icy7-tail",
+            "vc-impulse-2": "greyhole5-tail",
+            "vc-impulse-3": "feedback5-tail"
+          }
+        },
+        "zn-99": {
+          "at": 27.41,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-3": "jpverb6-tail",
+            "bcl-impulse-1": "comb2-tail",
+            "bcl-impulse-4": "feedback6-tail",
+            "bcl-impulse-2": "fuzz8-tail"
+          }
+        },
+        "zn-101": {
+          "at": 29.85,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-5": "icy2-tail",
+            "perc-impulse-4": "greyhole1-tail",
+            "perc-impulse-1": "squiz6-tail",
+            "perc-impulse-2": "jpverb1-tail",
+            "perc-impulse-3": "diode7-tail"
+          }
+        },
+        "zn-103": {
+          "at": 31.3,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-3": "squiz1-tail",
+            "va-impulse-4": "octave8-tail",
+            "va-impulse-1": "cres5-tail",
+            "va-impulse-2": "jpverb2-tail",
+            "va-impulse-5": "diode8-tail"
+          }
+        },
+        "zn-105": {
+          "at": 32.5,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-1": "octave5-tail",
+            "bfl-impulse-2": "fuzz2-tail",
+            "bfl-impulse-3": "squiz5-tail",
+            "bfl-impulse-5": "icy4-tail",
+            "bfl-impulse-4": "feedback1-tail"
+          }
+        },
+        "zn-107": {
+          "at": 33,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-4": "feedback4-tail",
+            "vc-impulse-3": "comb6-tail",
+            "vc-impulse-1": "crush1-tail",
+            "vc-impulse-5": "cres7-tail",
+            "vc-impulse-2": "icy1-tail"
+          }
+        },
+        "zn-109": {
+          "at": 34.4,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-3": "diode4-tail",
+            "bcl-impulse-4": "greyhole4-tail",
+            "bcl-impulse-1": "comb3-tail",
+            "bcl-impulse-5": "icy6-tail",
+            "bcl-impulse-2": "jpverb3-tail"
+          }
+        }
+      }
     }
   ]
 }

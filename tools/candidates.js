@@ -20,6 +20,12 @@ function load() {
     try { const d = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8')); return Array.isArray(d.rows) ? d.rows : []; }
     catch (e) { return []; }
 }
+// THE DEALS (RUNNING_LOG §137): a whole score's transformations kept at once — the command, the presets it drew from, the frozen
+// score, the map brick → sample → variant. Added by the AI at his "add that one to the candidates" after a reseed; a second table.
+function loadDeals() {
+    try { const d = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8')); return Array.isArray(d.deals) ? d.deals : []; }
+    catch (e) { return []; }
+}
 
 function save(rows) {
     let d = {};
@@ -88,8 +94,22 @@ function render(rows) {
         const remark = r.remark ? '*"' + r.remark + '"*' : '*(no words)*';
         return '| ' + r.n + ' | ' + String(r.kept).replace('T', ' ') + ' | ' + on + ' | **' + r.effect + '** | ' + setting + ' | ' + (r.render || '') + ' | ' + remark + ' |';
     });
-    fs.writeFileSync(MD_FILE, HEADER + lines.join('\n') + '\n');
-    return lines.length;
+    const deals = loadDeals().slice().sort((a, b) => (+a.n) - (+b.n)).map((d) => {
+        const plays = Object.values(d.variants || {}).map((b) => b.at + ' s ' + b.lane + ' ' + (b.behaviour || '') + ': ' + Object.entries(b.variants || {}).map(([s, v]) => s + '~' + v).join(' · ')).join(' / ');
+        return '| ' + d.n + ' | ' + String(d.kept).replace('T', ' ') + ' | `' + d.score + '` seed **' + d.seed + '** — `' + d.command + '` | ' + str(d.presets, 160) + ' | `' + d.frozen + '` | ' + (d.bricks || '') + ' bricks · ' + (d.plays || '') + ' plays — ' + str(plays, 4000) + ' | ' + (d.remark ? '*"' + d.remark + '"*' : '*(no words)*') + (d.note ? ' — *' + d.note + '*' : '') + ' |';
+    });
+    const DEALS = deals.length ? `
+## THE DEALS — whole scores' transformations he has heard and wants kept (RUNNING_LOG §137)
+
+*A deal is every return of a score given its preset at once (\`tools/deal_variants.js\`). It comes back by its command while the presets
+file and the bricks are as they were; the frozen score gives it whatever changes (File ▾ → open it). The map says which preset went
+on which sample of which brick.*
+
+| # | kept | score · seed · the command | the presets it drew from | the frozen score | the map | his remark |
+|---|---|---|---|---|---|---|
+` + deals.join('\n') + '\n' : '';
+    fs.writeFileSync(MD_FILE, HEADER + lines.join('\n') + '\n' + DEALS);
+    return lines.length + deals.length;
 }
 
 if (require.main === module) {
@@ -98,4 +118,4 @@ if (require.main === module) {
     else console.log('docs/CANDIDATES.md rendered — ' + render(rows) + ' rows');
 }
 
-module.exports = { load, add, render, cleanSetting };
+module.exports = { load, loadDeals, add, render, cleanSetting };
