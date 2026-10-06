@@ -59,5 +59,6 @@ if (N > 13) console.log('  …');
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 P.generated = { seed: SEED, n: N, effects: EFFECTS, when: new Date().toISOString().slice(0, 16), command: 'node tools/gen_presets.js --seed ' + SEED + ' --n ' + N + ' --effects ' + EFFECTS.join(',') };
 P.presets = presets;
+delete P.kept;   // a new generation is no one's keepers (RUNNING_LOG §130)
 fs.writeFileSync(FILE, JSON.stringify(P, null, 1) + '\n');
 console.log(path.relative(ROOT, FILE) + ' written — ' + N + ' presets, seed ' + SEED + '. Rebuild the audition: node tools/build_audition.js --name audition-' + N + '-s' + SEED);

@@ -3816,3 +3816,22 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **Done:** a return brick honours **`elec.label`** — a tag shown first on the brick (`▶ 17 · va-impulse-2~icy2`), whatever its behaviour (`electronics/score/le_objects.js` `decorate`; the engine's, any piece's) · `tools/build_audition.js` writes each brick's number as its label · **`scores/audition-100-s1-numbered.json`** — a NEW file (the tool never writes over a score, and the page holds a working copy of `audition-100-s1`): the same generation (seed 1), the same hundred variants at the same times, checked brick by brick against `audition-100-s1`; built with `--no-render`, so the renders he made at the wrap play and no pitch is drawn again. **Brick N is row N of `bank/presets.json`** — the handle for his keepers and kills.
 
 **Proven:** the two scripts parse; the two scores agree in their variants and times. NOT seen in a browser. His: F5 · File ▾ → Experiments → `audition-100-s1-numbered` · play from 0.
+
+## §130. HIS KEEPERS OF THE HUNDRED — forty-nine (2026-10-05, Opus; after `/postclear`)
+
+**His words:** *"Of that 100, let's keep the effects for 4, 5, 6, 7, 9, 10, 11, 12, 15, 17, 19, 20, 21, 22, 23, 24, 30, 34, 35, 37, 43, 44, 45, 46, 48, 49, 55, 56, 59, 60, 61, 62, 64, 68, 69, 72, 73, 74, 76, 79, 84, 85, 87, 90, 93, 94, 95, 96, 97."*
+
+**What it was heard on:** the generation of seed 1 (§127) in the audition score — a hundred presets in a row, each once, each on a different captured impulse, the ring versions (`tail`) — named by the brick numbers of `audition-100-s1-numbered` (§129): brick N = row N of the hundred. He gave the numbers and no reasons.
+
+**What was done:**
+- the hundred kept whole, a byte copy: `bank/presets_gen_s1_100.json` — the brick numbers are ITS rows from now on;
+- `bank/presets.json` `presets` = his 49 rows, in the hundred's order, the keys unchanged (`feedback1` … `diode8`); a `kept` record in the file (the rows, where they came from, when);
+- `tools/gen_presets.js` drops `kept` when it writes a new generation (one line) — a new generation REPLACES the presets, so the 49 would go from the file (they are in git at this commit).
+
+**The tally by effect (kept / generated):** feedback 7 / 8 · icy 7 / 8 · squiz 6 / 8 · diode 5 / 8 · comb 4 / 8 · greyhole 4 / 7 · jpverb 4 / 7 · octave 3 / 8 · crush 3 / 8 · cres 3 / 7 · fuzz 2 / 8 · override 1 / 8 · string 0 / 7. *(The AI's reading, his to correct:)* the feedback and his own freeze kept nearly whole; the string resonator not at all; Buffer Override once.
+
+**The 51 dropped (rows of the hundred):** 1 · 2 · 3 · 8 · 13 · 14 · 16 · 18 · 25 · 26 · 27 · 28 · 29 · 31 · 32 · 33 · 36 · 38 · 39 · 40 · 41 · 42 · 47 · 50 · 51 · 52 · 53 · 54 · 57 · 58 · 63 · 65 · 66 · 67 · 70 · 71 · 75 · 77 · 78 · 80 · 81 · 82 · 83 · 86 · 88 · 89 · 91 · 92 · 98 · 99 · 100.
+
+**What follows from it, NOT done:** the two audition scores name all hundred keys — the 51 dropped read "not in the presets: raw" in the panel and play their earlier renders from the bank · the main score `piece-sec01-a` still names the hand set's keys (§127) — a re-deal from the 49 at his word ("reseed"). Nothing rendered, nothing heard as a set; the page reads the file at his F5.
+
+**Proven:** the script's own count (49) and tally. No more (D13). **Seen at the wrap:** `scores/piece-sec01-a.json` is modified in git — his save during this session; his live work, left for the next wrap.
