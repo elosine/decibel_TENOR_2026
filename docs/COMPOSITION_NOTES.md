@@ -526,3 +526,9 @@ while the effect is still heard; the two pull against each other, most for the e
 and least for those that colour the attack itself (crush · ring · fuzz …). The strategy is to be relative to the impulse's length —
 which, live, is not known until it is captured — and to favour the attack-keeping envelopes (perc · expodec) where the rhythm is
 fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for other uses later.)*
+
+### DEC-23 · 2026-10-05 — PITCH DIVERSITY in the pitched presets of the processed returns: the same pitches come back whatever the seed
+
+> *"these are the presets that are applied in the main score, the effects. Can we find a way to make sure there's a diversity of pitch content in the resonator ones? So in the feedback ones, there's a bloom one. There is a resonator bank one. There's various other ones that we're reusing. Can we somehow impose a pitch diversity? I find the pitch content too repetitive, even if we're trying new seeds."* — said while the icy build was asked for ("either for now or for later").
+
+*(The AI's reading, marked: the pitched presets carry FIXED pitches — the feedback's six strings E A D G B E in `bloom` and `squeal`, the resonator bank's 110 · 440 · 1600 · 5200 Hz in `bands`, the comb at 167 Hz, the string resonator at 250 Hz — so every deal, whatever its seed, rings the same notes; only `diode` draws its carrier (80 … 400 Hz). Two ways, his to pick: (a) the pitched dials as RANGES in `bank/presets.json`, drawn fresh per variant at each plan send — quick, no control over WHICH pitches; (b) a PITCH SET per preset — chords or scales of his, the deal cycling through them so no two variants of a preset share a chord — his material, a little more machinery (a `pitchSets` field read by the tool and the page). Not built; logged for later at his word.)*
