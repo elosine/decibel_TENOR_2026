@@ -41,15 +41,15 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-05T19:06:12.109Z",
-  "modified": "2026-10-05T21:48:47.924Z",
+  "created": "2026-10-06T02:21:43.948Z",
+  "modified": "2026-10-06T02:24:43.720Z",
   "deal": {
    "seed": 3,
    "env": "tail",
    "class": "time",
    "from": 0,
    "to": 22.5,
-   "when": "2026-10-05T21:48",
+   "when": "2026-10-06T02:24",
    "command": "node tools/deal_variants.js --score piece-sec01-a --to 22.5 --seed 3 --env tail --class time"
   }
  },
@@ -1374,7 +1374,7 @@
     "name": "va-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "va-impulse-1": "jp-tail"
+     "va-impulse-1": "icy6-tail"
     }
    }
   },
@@ -1446,7 +1446,7 @@
     "name": "perc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "perc-impulse-1": "bloom-tail"
+     "perc-impulse-1": "cres5-tail"
     }
    }
   },
@@ -1518,7 +1518,7 @@
     "name": "bfl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bfl-impulse-1": "grey-tail"
+     "bfl-impulse-1": "icy7-tail"
     }
    }
   },
@@ -1590,7 +1590,7 @@
     "name": "vc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "vc-impulse-1": "diffuse-tail"
+     "vc-impulse-1": "icy4-tail"
     }
    }
   },
@@ -1662,7 +1662,7 @@
     "name": "bcl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bcl-impulse-1": "freeze-tail"
+     "bcl-impulse-1": "icy5-tail"
     }
    }
   },
@@ -1738,8 +1738,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-1": "bands-tail",
-     "perc-impulse-2": "squeal-tail"
+     "perc-impulse-1": "feedback8-tail",
+     "perc-impulse-2": "jpverb2-tail"
     }
    }
   },
@@ -1815,8 +1815,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-1": "jp-tail",
-     "bfl-impulse-2": "bloom-tail"
+     "bfl-impulse-1": "jpverb1-tail",
+     "bfl-impulse-2": "feedback5-tail"
     }
    }
   },
@@ -1892,8 +1892,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "grey-tail",
-     "va-impulse-2": "diffuse-tail"
+     "va-impulse-1": "greyhole4-tail",
+     "va-impulse-2": "icy3-tail"
     }
    }
   },
@@ -1969,8 +1969,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-1": "freeze-tail",
-     "vc-impulse-2": "bands-tail"
+     "vc-impulse-1": "icy2-tail",
+     "vc-impulse-2": "cres1-tail"
     }
    }
   },
@@ -2046,8 +2046,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-1": "squeal-tail",
-     "bcl-impulse-2": "jp-tail"
+     "bcl-impulse-1": "feedback2-tail",
+     "bcl-impulse-2": "greyhole5-tail"
     }
    }
   },
@@ -2192,9 +2192,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "vc-impulse-1": "bloom-tail",
-     "vc-impulse-2": "grey-tail",
-     "vc-impulse-3": "diffuse-tail"
+     "vc-impulse-1": "icy1-tail",
+     "vc-impulse-2": "feedback6-tail",
+     "vc-impulse-3": "feedback1-tail"
     }
    }
   },
@@ -2271,9 +2271,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "va-impulse-1": "freeze-tail",
-     "va-impulse-2": "bands-tail",
-     "va-impulse-3": "squeal-tail"
+     "va-impulse-1": "greyhole2-tail",
+     "va-impulse-2": "jpverb3-tail",
+     "va-impulse-3": "feedback4-tail"
     }
    }
   },
@@ -2350,9 +2350,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bfl-impulse-1": "jp-tail",
-     "bfl-impulse-2": "bloom-tail",
-     "bfl-impulse-3": "grey-tail"
+     "bfl-impulse-1": "greyhole1-tail",
+     "bfl-impulse-2": "feedback3-tail",
+     "bfl-impulse-3": "jpverb6-tail"
     }
    }
   },
@@ -2429,9 +2429,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bcl-impulse-1": "diffuse-tail",
-     "bcl-impulse-2": "freeze-tail",
-     "bcl-impulse-3": "bands-tail"
+     "bcl-impulse-1": "cres7-tail",
+     "bcl-impulse-2": "icy6-tail",
+     "bcl-impulse-3": "cres5-tail"
     }
    }
   },
@@ -2508,9 +2508,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "perc-impulse-1": "squeal-tail",
-     "perc-impulse-2": "jp-tail",
-     "perc-impulse-3": "bloom-tail"
+     "perc-impulse-1": "icy7-tail",
+     "perc-impulse-2": "icy4-tail",
+     "perc-impulse-3": "icy5-tail"
     }
    }
   },
@@ -2590,7 +2590,40 @@
      "gapMs": 0,
      "jitterMs": 0,
      "order": "named",
-     "seed": 1
+     "seed": 1,
+     "oSeed": 1,
+     "reverse": false,
+     "rotate": 0,
+     "aShape": "geometric",
+     "aLen": "ratio",
+     "aFirst": 100,
+     "aFloor": 45,
+     "aRatio": 0.85,
+     "aCount": 12,
+     "aDur": 2000,
+     "aCurve": 0,
+     "aEase": 2,
+     "aKnee": 0.5,
+     "aGamma": 2,
+     "aJit": 0,
+     "aJitEnd": "",
+     "aHold": 0,
+     "aMirror": false,
+     "aDeal": "robin",
+     "aMin": 250,
+     "aDb0": "",
+     "aDb1": "",
+     "aDbCurve": 0,
+     "cValues": "2 5 7 15",
+     "cWeights": "",
+     "cUnit": 1,
+     "cTotal": 20,
+     "cStick": 0.8,
+     "cJump": 0.1,
+     "cContour": "flat",
+     "cTurn": 0.5,
+     "cBow": 1,
+     "cDepth": 1
     },
     "pattern": [
      {
@@ -2661,7 +2694,7 @@
    "type": "zone",
    "layer": 2,
    "startTime": 24.595,
-   "endTime": 34.595,
+   "endTime": 49.679,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2686,11 +2719,459 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "*",
+    "name": "bcl-impulse-3",
     "names": [
      "*"
     ],
-    "behaviour": "chain"
+    "behaviour": "pattern",
+    "rhythm": {
+     "shape": "accel",
+     "spanMs": 2000,
+     "gapMs": 0,
+     "jitterMs": 0,
+     "seed": 1,
+     "order": "shuffled",
+     "oSeed": 1,
+     "reverse": false,
+     "rotate": 0,
+     "aShape": "geometric",
+     "aLen": "ratio",
+     "aFirst": 800,
+     "aFloor": 45,
+     "aRatio": 0.97,
+     "aCount": 12,
+     "aDur": 2000,
+     "aCurve": 0,
+     "aEase": 2,
+     "aKnee": 0.5,
+     "aGamma": 2,
+     "aJit": 0,
+     "aJitEnd": "",
+     "aHold": 0,
+     "aMirror": false,
+     "aDeal": "robin",
+     "aMin": 250,
+     "aDb0": "",
+     "aDb1": "",
+     "aDbCurve": 0,
+     "cValues": "2 5 7 15",
+     "cWeights": "",
+     "cUnit": 1,
+     "cTotal": 20,
+     "cStick": 0.8,
+     "cJump": 0.1,
+     "cContour": "flat",
+     "cTurn": 0.5,
+     "cBow": 1,
+     "cDepth": 1
+    },
+    "pattern": [
+     {
+      "name": "bcl-impulse-3",
+      "atMs": 0
+     },
+     {
+      "name": "perc-impulse-5~1",
+      "atMs": 800
+     },
+     {
+      "name": "bfl-impulse-4",
+      "atMs": 1575.9
+     },
+     {
+      "name": "bfl-impulse-2~1",
+      "atMs": 2328.4
+     },
+     {
+      "name": "bcl-impulse-5",
+      "atMs": 3058.2
+     },
+     {
+      "name": "vc-impulse-1",
+      "atMs": 3765.9
+     },
+     {
+      "name": "perc-impulse-4",
+      "atMs": 4452.4
+     },
+     {
+      "name": "perc-impulse-2",
+      "atMs": 5118.1
+     },
+     {
+      "name": "bfl-impulse-2~2",
+      "atMs": 5763.8
+     },
+     {
+      "name": "va-impulse-3",
+      "atMs": 6390
+     },
+     {
+      "name": "bcl-impulse-4",
+      "atMs": 6997.3
+     },
+     {
+      "name": "bfl-impulse-2",
+      "atMs": 7586.4
+     },
+     {
+      "name": "vc-impulse-5~1",
+      "atMs": 8157.6
+     },
+     {
+      "name": "bfl-impulse-5~2",
+      "atMs": 8711.6
+     },
+     {
+      "name": "bfl-impulse-1",
+      "atMs": 9249
+     },
+     {
+      "name": "bfl-impulse-1~7",
+      "atMs": 9770.1
+     },
+     {
+      "name": "perc-impulse-1",
+      "atMs": 10275.5
+     },
+     {
+      "name": "vc-impulse-5",
+      "atMs": 10765.7
+     },
+     {
+      "name": "bcl-impulse-1",
+      "atMs": 11241
+     },
+     {
+      "name": "bfl-impulse-5~1",
+      "atMs": 11702.1
+     },
+     {
+      "name": "va-impulse-2",
+      "atMs": 12149.2
+     },
+     {
+      "name": "va-impulse-4",
+      "atMs": 12582.9
+     },
+     {
+      "name": "vc-impulse-2~1",
+      "atMs": 13003.5
+     },
+     {
+      "name": "bfl-impulse-1~5",
+      "atMs": 13411.4
+     },
+     {
+      "name": "va-impulse-5",
+      "atMs": 13807
+     },
+     {
+      "name": "vc-impulse-4",
+      "atMs": 14190.7
+     },
+     {
+      "name": "vc-impulse-2",
+      "atMs": 14562.8
+     },
+     {
+      "name": "perc-impulse-1~1",
+      "atMs": 14923.7
+     },
+     {
+      "name": "vc-impulse-3",
+      "atMs": 15273.7
+     },
+     {
+      "name": "bcl-impulse-1~2",
+      "atMs": 15613.2
+     },
+     {
+      "name": "perc-impulse-3",
+      "atMs": 15942.4
+     },
+     {
+      "name": "va-impulse-3~1",
+      "atMs": 16261.7
+     },
+     {
+      "name": "bcl-impulse-2",
+      "atMs": 16571.4
+     },
+     {
+      "name": "bcl-impulse-1~1",
+      "atMs": 16871.7
+     },
+     {
+      "name": "perc-impulse-5",
+      "atMs": 17163
+     },
+     {
+      "name": "bfl-impulse-1~1",
+      "atMs": 17445.5
+     },
+     {
+      "name": "va-impulse-1",
+      "atMs": 17719.5
+     },
+     {
+      "name": "bfl-impulse-3",
+      "atMs": 17985.2
+     },
+     {
+      "name": "bfl-impulse-1~2",
+      "atMs": 18242.9
+     },
+     {
+      "name": "bfl-impulse-5~3",
+      "atMs": 18492.8
+     },
+     {
+      "name": "bfl-impulse-5",
+      "atMs": 18735.2
+     },
+     {
+      "name": "vc-impulse-4~1",
+      "atMs": 18970.3
+     },
+     {
+      "name": "bfl-impulse-1~6",
+      "atMs": 19198.3
+     },
+     {
+      "name": "perc-impulse-1",
+      "atMs": 19419.4
+     },
+     {
+      "name": "perc-impulse-4",
+      "atMs": 19633.9
+     },
+     {
+      "name": "bfl-impulse-1~2",
+      "atMs": 19841.8
+     },
+     {
+      "name": "bcl-impulse-1~2",
+      "atMs": 20043.6
+     },
+     {
+      "name": "bfl-impulse-1~1",
+      "atMs": 20239.2
+     },
+     {
+      "name": "perc-impulse-5",
+      "atMs": 20428.9
+     },
+     {
+      "name": "vc-impulse-2~1",
+      "atMs": 20613
+     },
+     {
+      "name": "va-impulse-2",
+      "atMs": 20791.4
+     },
+     {
+      "name": "perc-impulse-2",
+      "atMs": 20964.5
+     },
+     {
+      "name": "vc-impulse-4~1",
+      "atMs": 21132.4
+     },
+     {
+      "name": "bfl-impulse-5~3",
+      "atMs": 21295.2
+     },
+     {
+      "name": "vc-impulse-4",
+      "atMs": 21453.1
+     },
+     {
+      "name": "bfl-impulse-5~1",
+      "atMs": 21606.2
+     },
+     {
+      "name": "bfl-impulse-2",
+      "atMs": 21754.7
+     },
+     {
+      "name": "bcl-impulse-4",
+      "atMs": 21898.8
+     },
+     {
+      "name": "va-impulse-5",
+      "atMs": 22038.5
+     },
+     {
+      "name": "bfl-impulse-1~7",
+      "atMs": 22173.9
+     },
+     {
+      "name": "bfl-impulse-1~5",
+      "atMs": 22305.3
+     },
+     {
+      "name": "bfl-impulse-1~6",
+      "atMs": 22432.8
+     },
+     {
+      "name": "va-impulse-3",
+      "atMs": 22556.4
+     },
+     {
+      "name": "va-impulse-4",
+      "atMs": 22676.2
+     },
+     {
+      "name": "bcl-impulse-1~1",
+      "atMs": 22792.5
+     },
+     {
+      "name": "vc-impulse-3",
+      "atMs": 22905.2
+     },
+     {
+      "name": "bcl-impulse-3",
+      "atMs": 23014.6
+     },
+     {
+      "name": "bfl-impulse-1",
+      "atMs": 23120.6
+     },
+     {
+      "name": "bfl-impulse-5",
+      "atMs": 23223.5
+     },
+     {
+      "name": "bfl-impulse-2~1",
+      "atMs": 23323.3
+     },
+     {
+      "name": "vc-impulse-5",
+      "atMs": 23420
+     },
+     {
+      "name": "vc-impulse-5~1",
+      "atMs": 23513.8
+     },
+     {
+      "name": "vc-impulse-1",
+      "atMs": 23604.8
+     },
+     {
+      "name": "perc-impulse-5~1",
+      "atMs": 23693.1
+     },
+     {
+      "name": "bfl-impulse-4",
+      "atMs": 23778.7
+     },
+     {
+      "name": "bfl-impulse-3",
+      "atMs": 23861.7
+     },
+     {
+      "name": "bcl-impulse-1",
+      "atMs": 23942.2
+     },
+     {
+      "name": "bcl-impulse-2",
+      "atMs": 24020.3
+     },
+     {
+      "name": "bcl-impulse-5",
+      "atMs": 24096
+     },
+     {
+      "name": "bfl-impulse-2~2",
+      "atMs": 24169.4
+     },
+     {
+      "name": "perc-impulse-1~1",
+      "atMs": 24240.7
+     },
+     {
+      "name": "bfl-impulse-5~2",
+      "atMs": 24309.8
+     },
+     {
+      "name": "vc-impulse-2",
+      "atMs": 24376.8
+     },
+     {
+      "name": "perc-impulse-3",
+      "atMs": 24441.7
+     },
+     {
+      "name": "va-impulse-3~1",
+      "atMs": 24504.8
+     },
+     {
+      "name": "va-impulse-1",
+      "atMs": 24565.9
+     },
+     {
+      "name": "bfl-impulse-2~2",
+      "atMs": 24625.2
+     },
+     {
+      "name": "va-impulse-4",
+      "atMs": 24682.6
+     },
+     {
+      "name": "va-impulse-3",
+      "atMs": 24738.4
+     },
+     {
+      "name": "bfl-impulse-1~2",
+      "atMs": 24792.5
+     },
+     {
+      "name": "perc-impulse-1~1",
+      "atMs": 24844.9
+     },
+     {
+      "name": "vc-impulse-5",
+      "atMs": 24895.8
+     },
+     {
+      "name": "va-impulse-5",
+      "atMs": 24945.1
+     },
+     {
+      "name": "vc-impulse-1",
+      "atMs": 24992.9
+     },
+     {
+      "name": "vc-impulse-2",
+      "atMs": 25039.3
+     },
+     {
+      "name": "bcl-impulse-5",
+      "atMs": 25084.3
+     }
+    ],
+    "pick": {
+     "impulses": [
+      "impulse-1",
+      "impulse-1~1",
+      "impulse-1~2",
+      "impulse-1~5",
+      "impulse-1~6",
+      "impulse-1~7",
+      "impulse-2",
+      "impulse-2~1",
+      "impulse-2~2",
+      "impulse-3",
+      "impulse-3~1",
+      "impulse-4",
+      "impulse-4~1",
+      "impulse-5",
+      "impulse-5~1",
+      "impulse-5~2",
+      "impulse-5~3"
+     ]
+    }
    }
   },
   {
@@ -2919,6 +3400,6 @@
  "nextId": 95,
  "viewport": {
   "pixelsPerSecond": 82.95083512236835,
-  "scrollOffset": 2077.2101156731974
+  "scrollOffset": 3
  }
 }
