@@ -4294,3 +4294,13 @@ Within one player up to 32 dB apart (perc #1 … #3); across players 11 dB at th
 **Two things learned about the method, for the next build:** (1) every red result of this build — six — was the TEST's own mistake: a nearest-mark rounding done wrong by hand · a file write handed something that was not a `FloatArray` (it threw inside a routine, the routine died, and the test hung for eight minutes: a test that forks is run under a time limit from now on) · the page test reading the wrong brick · an `if` on a signal in a test synth · a true peak read at one instant instead of over a window · a room quieter than the crop's own threshold, so the case proved nothing. The engine's new code passed at its first run each time. That is not a claim about the code that could NOT be run — the session's start has no test to be right or wrong. (2) Twice an edit through `node -e` broke on a backslash — the standing rule (scripts with escapes go through the file tool) was written for exactly this and was skipped for a "quick" one-liner; both were caught by a parse check within the minute.
 
 **NEXT:** his ear — the note. Then what his ear moves: `reference`, the glue, the drive.
+
+## §167. CHECKPOINT #10 OF SESSION 2 — the build of step 11 checkpointed; unheard, and still unrun (2026-10-06, Opus)
+
+**What prompted it:** his `/checkpoint`, the first thing he sent after the build's wrap. No word on the build itself.
+
+**The state at this moment, looked at and not touched:** his engine is the one started 2026-10-05 23:19:02 (`sclang … session.scd`, its scsynth on UDP 57210; a hello answered in 6 ms) — it predates every line of the build, so step 11 has still not run in any engine · the tree holds one untracked file, his temp save · the page holds unsaved working copies of `audition-100-s1`, `audition-30` and `workshop-bfl-slap` (as at checkpoint #9); the main score is saved.
+
+**What the wrap's message gave him** — the note, shortened to a screen: the seven ✓ lines, the three hand steps, four of the six things to listen for (the main score as it is · one brick `ff` · a hairpin · the bus on and off), the two questions for his ear (`reference` · the compressor), and the notes — not run; proven offline; the calls made; the feedback's 3 dB for 20. The whole of it is `docs/LEVEL_NOTE.md`, presented first at `/postclear` as §160 has it.
+
+**Nothing was decided in the chat that is not already in the record** (§161 … §166). The hand-off is journal §2's first block; `Resume reads`: the note, nothing else.
