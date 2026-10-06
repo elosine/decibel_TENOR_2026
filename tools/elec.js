@@ -11,6 +11,9 @@
 //   node tools/elec.js start      # the engine up and listening — what start_electronics.bat runs
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
 //   node tools/elec.js bus        # THE BUS (the master: high-pass · low-pass · the glue · the limiter): its dials shown; with words — bus glue=off lpf=6000 — moved on the LIVING engine, by a message
+//   node tools/elec.js calibrate --venue <name>   # THE SOUND CHECK (11.7 b): each player one mf on cue; the engine reads it and the venue's trims are written — the tool's own engine (his must be down)  [--seconds 6] [--mark mf] [--player bcl] [--sim: the rack plays the notes; it SOUNDS] [--dry]
+//   node tools/elec.js tone       # the house's line-up tone from the LIVING engine: 1 kHz at −18 dBFS for 10 s, past the bus — it SOUNDS  [--seconds N] [--db -18] [--hz 1000]
+//   node tools/elec.js env        # LOOK ONLY: what the engine is started with (the players, the bank, the crop, the rolls, the ladder, the bus, the venue)
 //   node tools/elec.js ping       # is the engine there? one /le/hello — starts nothing, safe beside his engine window  [--via 5500: through the score server]
 //   node tools/elec.js message    # 6.2's PROOF: the engine up for 20 s; a message, the note after it, and whatever the composer score sends  [--via <port>] [--seconds N] [--quiet]
 //   node tools/elec.js object     # 6.3 … 6.5's PROOF, on a SCRATCH bank (the piece's is not touched): an opening, the note into the rack, the crop, the index; the sample returned and seen on ELEC RETURN; then whatever the composer score sends until the time is up  [--via <port>] [--seconds N] [--name bcl-A] [--listen: skip the tool's own part, keep the scratch bank]
@@ -76,6 +79,27 @@ function masterFlat(M) {
 }
 // `bus`: the words he types -> the engine's dials (a filter at 0 = off; glue on | off)
 const BUS_WORDS = { hpf: 'hpfHz', lpf: 'lpfHz', glue: 'glueOn', threshold: 'glueThr', ratio: 'glueRatio', knee: 'glueKnee', attack: 'glueAtkMs', release: 'glueRelMs', makeup: 'glueGainDb', ceiling: 'ceilingDb', limrelease: 'limRelMs' };
+// THE HOUSE (PLAN 1.4 · 11.7): a venue's numbers for each microphone — bank/venue/<name>.json { players: { bcl: { trimDb, hpfHz, eq: [{ hz, db, q }] } } }.
+// Which venue: --venue <name> on the command line, else bank/elec_route.json "venue"; none = every microphone flat (the simulation).
+function venueOf() {
+    const i = process.argv.indexOf('--venue'), name = i > 0 ? process.argv[i + 1] : (CFG.venue || '');
+    if (!name) return null;
+    const file = path.join(ROOT, 'bank', 'venue', name + '.json');
+    if (!fs.existsSync(file)) throw new Error('no such venue: bank/venue/' + name + '.json  (copy bank/venue/_template.json to begin one)');
+    return { name, file, doc: JSON.parse(fs.readFileSync(file, 'utf8')) };
+}
+// name=<n>;bcl:trimDb=-2.5:hpfHz=90:eq1=250/-3/1,bfl:…  — what electronics/sc/boot.scd takeSpecs reads
+function venueSpec(V) {
+    const ps = (V.doc && V.doc.players) || {}, num = (x) => typeof x === 'number' && Number.isFinite(x);
+    const one = (who) => {
+        const p = ps[who] || {}, f = [who];
+        if (num(p.trimDb)) f.push('trimDb=' + p.trimDb);
+        if (num(p.hpfHz) && p.hpfHz > 0) f.push('hpfHz=' + p.hpfHz);
+        (Array.isArray(p.eq) ? p.eq : []).slice(0, 2).forEach((e, k) => { if (e && num(e.hz) && num(e.db)) f.push('eq' + (k + 1) + '=' + e.hz + '/' + e.db + '/' + (num(e.q) ? e.q : 1)); });
+        return f.join(':');
+    };
+    return 'name=' + String(V.name).replace(/[^A-Za-z0-9_-]/g, '') + ';' + CFG.players.map((p) => one(p.name)).join(',');
+}
 function engineEnv() {
     const B = CFG.bank || {}, m = modeOf(), dirs = bankDirs();
     const crop = Object.entries(B.crop || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
@@ -102,6 +126,10 @@ function engineEnv() {
     // PLAN 1.4 · 11.6: THE BUS's dials (bank/elec_route.json master) flattened to the engine's names (electronics/sc/boot.scd masterDefaults)
     const msSpec = Object.entries(masterFlat(CFG.master)).map(([k, v]) => k + '=' + v).join(',');
     if (msSpec) env.LE_MASTER = msSpec;
+    // PLAN 1.4 · 11.7: the venue's input chains, and — in a concert — a bled capture refused (the backup stands in)
+    const V = venueOf();
+    if (V) env.LE_VENUE = venueSpec(V);
+    if (m.name === 'concert') env.LE_REFUSE_BLEED = '1';
     if (CFG.listenEchoSeconds > 0) env.LE_ECHO = String(CFG.listenEchoSeconds);
     return env;
 }
@@ -209,6 +237,7 @@ async function readPeaks(waitMs) {
 
     if (cmd === 'start') {
         console.log(modeLine());
+        { const V = venueOf(); console.log('VENUE      ' + (V ? V.name + ' — bank/venue/' + V.name + '.json: each microphone\'s trim, high-pass and EQ' : 'none — every microphone flat (the simulation)')); }
         const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: engineEnv(), onLine: (l) => {
             const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: nothing is shown. A route check's pairing (an onset with its sound) is kept; a capture's row is in the bank's index
             if (m) { try { const o = JSON.parse(m[1]); if (o.msg === 'onset') fs.appendFileSync(path.join(ROOT, 'probes', 'elec_message_log.jsonl'), JSON.stringify({ when: new Date().toISOString(), ...o }) + '\n'); } catch (e) {} return; }
@@ -309,6 +338,53 @@ async function readPeaks(waitMs) {
 
     // IS THE ENGINE THERE? One /le/hello. It starts nothing and stops nothing — safe beside his own engine window.
     // --via <port>: the same question asked THROUGH a score server (5500 his · 5501 the throwaway), the road a page's message takes.
+    if (cmd === 'env') { const E = engineEnv(); for (const k of Object.keys(E)) console.log(k.padEnd(16) + E[k]); return; }   // LOOK ONLY: what the engine is started with, from bank/elec_route.json (and --venue)
+
+    if (cmd === 'calibrate') {   // PLAN 1.4 · 11.7 b: the sound check — the tool's own engine (sc.start refuses beside a living one)
+        const V = venueOf();
+        if (!V) { console.log('which venue?  --venue <name>   (bank/venue/<name>.json — copy bank/venue/_template.json to begin one)'); process.exit(2); }
+        const secs = +(flagValue(flags, '--seconds') || 6), mark = flagValue(flags, '--mark') || 'mf', sim = flags.includes('--sim'), dry = flags.includes('--dry'), only = flagValue(flags, '--player');
+        const players = CFG.players.filter((p) => !only || p.name === only);
+        if (!players.length) { console.error('no such player: ' + only + ' — ' + CFG.players.map((p) => p.name).join(' · ')); process.exit(2); }
+        const E = engineEnv(), env = { LE_PLAYERS: players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_VENUE: venueSpec(V), LE_CAL_SECONDS: String(secs), LE_CAL_MARK: mark, LE_CAL_GAP: sim ? '2' : '4' };
+        if (E.LE_LEVEL) env.LE_LEVEL = E.LE_LEVEL;
+        if (!sim && process.env.LE_DEVICE) env.LE_MODE = 'live';
+        console.log('CALIBRATION  venue ' + V.name + ' · ' + players.map((p) => p.name).join(' · ') + ' · one ' + mark + ' each, ' + secs + ' s' + (sim ? ' · THE RACK PLAYS THE NOTES (it sounds)' : ' · the players play on the cue NOW') + (dry ? ' · dry: the file is not written' : ''));
+        const got = [];
+        const run = sc.start(SCD('calibrate.scd'), { timeoutS: 90 + players.length * (secs + 10), env, onLine: (l) => {
+            const m = /^LE_RESULT\s+(.*)$/.exec(l);
+            if (m) {
+                try {
+                    const o = JSON.parse(m[1]);
+                    if (o.msg === 'calibrated') got.push(o);
+                    if (o.msg === 'listen' && sim) { const p = players.find((x) => x.name === o.player); if (p) setTimeout(() => cp.spawn('powershell', ['-NoProfile', '-File', path.join(ROOT, 'tools', 'note_to_port.ps1'), '-Port', p.port, '-Note', String(p.testNote), '-Vel', '100', '-Ms', '1500'], { stdio: 'ignore' }), 500); }
+                } catch (e) { /* not a line of ours */ }
+                return;
+            }
+            if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: '));
+        } });
+        await run.done;
+        const heard = got.filter((o) => o.heard);
+        if (!heard.length) { console.log('NOTHING WAS HEARD — the venue\'s file is as it was.'); process.exit(1); }
+        V.doc.players = V.doc.players || {};
+        for (const o of heard) V.doc.players[o.player] = Object.assign({ hpfHz: 0, eq: [] }, V.doc.players[o.player], { trimDb: o.trimDb });
+        V.doc.calibrated = { when: new Date().toISOString(), mark, seconds: secs, simulated: sim, readings: got };
+        console.log(heard.map((o) => '  ' + o.player.padEnd(5) + ' read ' + o.loudDb + ' LUFS (peak ' + o.peakDb + ' dB) · trim ' + o.hadTrimDb + ' → ' + o.trimDb + ' dB').join('\n'));
+        if (got.length > heard.length) console.log('  not heard: ' + got.filter((o) => !o.heard).map((o) => o.player).join(' · ') + ' — their trims are as they were');
+        if (dry) console.log('(dry — bank/venue/' + V.name + '.json not written)');
+        else { fs.writeFileSync(V.file, JSON.stringify(V.doc, null, 2) + '\n'); console.log('written: bank/venue/' + V.name + '.json — used from the engine\'s next start' + (CFG.venue === V.name ? '' : '  (name it in bank/elec_route.json "venue", or start with --venue ' + V.name + ')')); }
+        return;
+    }
+
+    if (cmd === 'tone') {   // PLAN 1.4 · 11.7 d: the house's line-up tone — from the LIVING engine, past its bus. IT SOUNDS.
+        const M = CFG.message || {}, data = { seconds: +(flagValue(flags, '--seconds') || 10), db: +(flagValue(flags, '--db') || -18), hz: +(flagValue(flags, '--hz') || 1000) };
+        const r = await osc.send({ host: M.host, port: M.port, address: '/le/hello', args: ['from', 'elec.js'], waitMs: 400 });
+        if (!r) { console.log('THE ENGINE DID NOT ANSWER on UDP ' + (M.port || osc.PORT) + ' — no tone  (start_electronics.bat)'); process.exit(1); }
+        await osc.send({ host: M.host, port: M.port, address: '/le/tone', args: osc.pairs(data) });
+        console.log('the engine is asked for ' + data.hz + ' Hz at ' + data.db + ' dBFS on both outputs for ' + data.seconds + ' s — past its bus, as it is.');
+        return;
+    }
+
     if (cmd === 'bus') {   // PLAN 1.4 · 11.6: the bus's dials — shown, or moved on the LIVING engine (a message; nothing started, nothing stopped)
         const M = CFG.message || {}, words = flags.filter((f) => /^[a-z]+=/.test(f));
         if (!words.length) {

@@ -114,14 +114,13 @@ takes is his (D5).
     spelling to confirm: "petals" in the folder's name, "pedals" in his words) · a SERIES of these developed for the piece · a freeze ·
     a set per language type — trills and multiphonics recorded as samples first, each with its effects. **Done when:** one window
     excites the filter bank and the chord is heard from the composer score; the series grows by need.
-11. ► **THE LEVEL — the electronics scored ppp … fff, with player agency** — LAID OUT 2026-10-06 (PLAN.md § 1.4; RUNNING_LOG
-    §154 … §159; DEC-33; D17): 11.1 the measure (a loudness figure on every sample) · 11.2 the ladder (marks to dB, the players' law) ·
-    11.3 the dynamic on the brick (mode · mark · shape — hairpin, step, line) · 11.4 the drive into an effect · 11.5 the impulses' own
-    dynamics · 11.6 the bus (SuperCollider's — HPF · LP · a soft-knee compressor · a look-ahead limiter · a meter; his "A") · 11.7 the
-    house (the input chain, the sound-check calibration, the bleed guard, the handshake). The defaults, his "a": the dynamic `as
-    played`, the drive `normalized`, a mark overrides. NOTHING BUILT. **Done when:** a return brick written `mf` sounds at a player's
-    mf whatever was captured; a hairpin on a brick is heard; the master is the engine's bus with a meter; a hall's microphones are taken
-    through a venue file.
+11. ► **THE LEVEL — the electronics scored ppp … fff, with player agency** — **BUILT 2026-10-06, DONE BUT FOR HIS EAR** (RUNNING_LOG §161 … §166;
+    the engine's §42 … §45; PLAN.md § 1.4, an AS BUILT line on each item; `docs/LEVEL_NOTE.md` is his way in): 11.1 ☑ the measure · 11.2 ☑ the ladder ·
+    11.3 ☑ the dynamic on the brick · 11.4 ☑ the drive · 11.5 ☑ the impulses' own dynamics · 11.6 ☑ the bus · 11.7 ☑ the house (its real proof at
+    a rehearsal). Proven offline (`level_test` · `bus_test` · `process_test` · `page_test`); NO ENGINE HAS RUN IT — his restart is the first.
+    *(as laid out, 2026-10-06 — §154 … §159; DEC-33; D17:)* the defaults, his "a": the dynamic `as played`, the drive `normalized`, a mark
+    overrides. **Done when:** a return brick written `mf` sounds at a player's mf whatever was captured; a hairpin on a brick is heard; the
+    master is the engine's bus with a meter; a hall's microphones are taken through a venue file.
 12. **The record, as the work happens** (not a step he sees): this RUNNING_LOG · the engine's RUNNING_LOG for what is the engine's ·
     the sketch pad · PERFORMANCE_NOTES a row per glyph · the sweep list · `git subtree push` at every wrap (D7).
 
@@ -181,7 +180,30 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
-**► THE LEVEL — THE BUILD IN FLIGHT (2026-10-06, Opus; his "go"). BUILT SO FAR, each with an AS BUILT line in PLAN.md § 1.4: 11.1 the measure · 11.2 the ladder · 11.3 the dynamic on the brick (RUNNING_LOG §161; the engine's §42) · 11.4 the drive (§162; the engine's §43) · 11.5 the impulses' own dynamics (§163) · 11.6 the bus (§164; the engine's §44 — proven offline by `electronics/sc/bus_test.scd`; `selftest.scd` A · B rewritten and NOT RUN, his engine was up). NEXT IN THE BUILD: 11.7 the house, then `docs/LEVEL_NOTE.md`. A session that finds this line picks up at the first item not listed as built; the proofs so far: `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/level_test.scd` · `node electronics/tools/page_test.js` · `electronics/sc/process_test.scd`. His engine was UP through the build and was not touched; it does not have the new code until he restarts it — nothing asks him to before the note.**
+**► THE LEVEL IS BUILT — 2026-10-06, Opus (his "go"; RUNNING_LOG §161 … §166; the engine's §42 … §45; PLAN.md § 1.4, an AS BUILT line on each of 11.1 … 11.7). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
+
+- **AT `/postclear` — BEFORE ANYTHING ELSE: read `docs/LEVEL_NOTE.md` and PRESENT IT TO HIM WHOLE AND VERBATIM** (everything under its first italic line: the heading, the ✓ lines, "To hear it" with its three steps, "What to listen for" A … F, "What I need from your ear", the notes) — not summarised, not re-worded. THEN the playback in ≤5 bullets, the tree check, and STOP: start only on his word.
+- **POSITION:** running order step 11 of 11, THE LEVEL — built, ► his ear.
+- **WHAT EXISTS (one line each; the how is the lab journal's):** a loudness figure on every sample (`loudDb` · `loudIntDb` · `played`, written at capture and at render; the bank as it stands is measured at the engine's start, about two minutes in the background) · the ladder (`bank/elec_route.json` `level`: `reference` −29.54 = the electronics' fff, 4 dB a step) · a DYNAMIC on every return brick (`zone.elec.dyn`; the panel's Dynamic rows; `dyn` · `env` on `/le/play`; `\leSample`'s envelope) · the DRIVE (a plan's variant `normalized` by default; a brick's own drive names its own render `…_dN` · `_dP` · `_d12`; a dial as a line `2@0,8@6000`) · the impulses' own dynamics (`tools/impulse.js`: a row's `dyn`, `--dyn`; `--redo` only where one is said) · THE BUS (`bank/elec_route.json` `master`: high-pass 30 · low-pass off · the glue ON · ceiling −1 dB · 5 ms look-ahead; movable on the running engine: `node tools/elec.js bus glue=off lpf=6000`) and its meter on the window's two-second line · the house (`bank/venue/` · `elec.js calibrate` · the bleed guard · `elec.js tone`).
+- **⚠ WHAT WILL SURPRISE A COLD SESSION:**
+  · **NO ENGINE HAS RUN THE NEW CODE.** His was up through the whole build (only ever pinged; his rule: never a second engine). `session.scd`'s start, the boot's master line, the meter's start and `selftest.scd`'s rewritten A · B are PARSED AND READ, NOT EXECUTED. His restart (the note's step 2) is their first run. **If his window stops with an error: ASK FOR A SCREENSHOT of the window (memory: read his screen first), fix from what it says, prove with the offline batteries, tell him to start again.** A fault → `docs/SWEEP_LIST.md`.
+  · **The main score WILL sound different with no brick changed:** every planned variant is now driven `normalized`, and the bus has a compressor and a high-pass on it. Both are meant; `node tools/elec.js bus glue=off hpf=0` takes the bus back to neutral while he listens.
+  · A mark on a sample with no figure yet plays as captured and the window says `UNMEASURED` — wait for `measured · … every sample has its loudness now`.
+  · The page's panels show `loud … LUFS` only after an F5 that follows the measuring.
+  · `\leSample`, `\leMaster`, `\leIn` changed: an engine started before this build has none of it; a page reloaded against an OLD engine still works (the old engine ignores `dyn` · `env`, and an eleven-field plan row).
+- **THE BATTERIES — all offline, safe beside his engine, all green at this wrap:** `"C:/Program Files/SuperCollider-3.14.1/sclang.exe" electronics/sc/level_test.scd` · `… electronics/sc/bus_test.scd` · `… electronics/sc/process_test.scd` (about two minutes; give it a `timeout 400` — a routine that throws never exits) · `… electronics/sc/roll_test.scd` · `node electronics/tools/page_test.js`. **With his engine DOWN, one more:** `node tools/elec.js selftest` (tests A · B are new and have never run).
+- **THE NEXT CONCRETE STEP — after the note is presented and HIS WORD: ASK WHAT HE HEARD.** Then, by what he says — each is small:
+  · *"the electronics are too loud / too quiet against the players"* → `bank/elec_route.json` `level.reference` (one number; the whole ladder moves) — his engine restarted.
+  · *the compressor · the filters · the ceiling* → `node tools/elec.js bus <word>=<value>` while he listens; what he keeps goes into `bank/elec_route.json` `master`.
+  · *"the effects are too even / I want the player to drive them"* → the default lives in `electronics/score/le_objects.js` `planRows` (`|| 'normalized'`) and `electronics/sc/process.scd` `processRender` (`"normalized"` for a planned render); or per preset, `drive` in `bank/presets.json`; or per brick, its menu.
+  · *a dynamic for a group of impulses* → `"dyn": "mf"` on the row of `bank/impulses.json` · `node tools/impulse.js --score piece-sec01-a --n <N> --redo --dry` first · then without `--dry` (HE SAVES FIRST; the tool refuses a differing working copy) · File ▾ → Reload.
+  · *the engine's window stopped at its start* → the screenshot; see ⚠ above.
+  · *the two auditions* (checkpoint #9, still unheard as far as the bank said) · *the throws* (checkpoint #8; the next unused seed is 16) — only if he turns to them.
+- **`Resume reads:` `docs/LEVEL_NOTE.md` (to present) — nothing else.** For a fault at the engine's start: `electronics/sc/session.scd` (107 lines) · `electronics/sc/boot.scd` § the bus · § the house. For a dial: `bank/elec_route.json` `level` · `master`.
+- **PENDING HIM, when he offers them:** his ear on all of step 11 · `reference` · the glue on or off · the drive's default · a dynamic on his six groups · the calibration and the bleed guard at a rehearsal · `PERFORMANCE_NOTES` row 8's loudness figure (read off the window once the piece is played through) · and everything on checkpoint #9's and #8's pending lines (the two auditions · which deal · the rhythm panel · the three notation calls).
+- **DELIBERATELY UNCOMMITTED: nothing of the build.** `scores/temp01new_cello_bass_flute_perc_25.72.json` — his, untracked, untouched. Once his engine restarts and measures: `bank/samples/index.json` changes (940 rows gain their figures) — his bank at work, committed at the next wrap. The plan's renders stay ignored by git (D16); a drive of a brick's own makes new ones (`…_dP.wav`), matched by the same pattern.
+- **LEFT RUNNING — ALL HIS, none touched:** Reaper · the score server on 5500 (no restart needed: no server line changed) · his engine, UP and OLDER than this build · loopMIDI · the composer page. Nothing of the AI's — the one process it started and had to end was its own stalled test (`sclang … process_test.scd`), identified by its command line before it was ended.
+- **RESUME ON: Fable** for what he hears (a talk about sound, and what the ladder's one number should be). **Opus** for a fault at the engine's start, a dial, a wrap.
 
 **► THE LEVEL LAID OUT — 2026-10-06, Fable (RUNNING_LOG §154 … §159; PLAN.md § 1.4; DEC-33; D17). THIS SUPERSEDES checkpoint #9's "next concrete step" below as far as the build goes; his ear on the two auditions still stands behind it, unasked.**
 
@@ -585,7 +607,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 11 — THE LEVEL, laid out (PLAN.md § 1.4; RUNNING_LOG §154 … §159; D17): THE BUILD OF 11.1 … 11.7 TO THE END (his "a", §160) — a checkpoint between items, one headless proof each; then `docs/LEVEL_NOTE.md` and ONE listening session; 11.7's real proof at a rehearsal** | **Opus** (the build) · Fable (his ear; 11.7's talk) | **yes — before the build** |
+| **►** | **Step 11 — THE LEVEL, BUILT (RUNNING_LOG §161 … §166; PLAN.md § 1.4): HIS EAR — `docs/LEVEL_NOTE.md` presented first at `/postclear`; his engine restarted (THE FIRST RUN of the new code — a screenshot if its window stops) · F5 · the main score, one brick `ff`, a hairpin, the bus on and off. Then what his ear moves: `level.reference` · the glue · the drive's default. 11.7's real proof at a rehearsal** | **Fable** (what he hears; the ladder's one number) · Opus (a fault at the engine's start, a dial) | — |
 | — | **Steps 10.3 · 10.12 — THE TWO AUDITIONS, BUILT (§151): HIS EAR on `audition-petals` (20 pairs, original · cleaned) and `audition-feedback-chords` (54 shapes, every string singing) — after his engine restart · F5 · render all planned in each. Then the knobs from what he says** | **Fable** (what he hears) · Opus (a knob, a builder re-run) | — |
 | — | Step 10 — THE THROWS (checkpoint #8, §148): the score on seed 15 from the 40; five deals kept (7 · 10 · 11 · 14 · 15). By his word: "reseed" (`deal_variants.js --score piece-sec01-a --seed 16 --env tail --render`) · "save that one" (`keep_deal.js --seed <the seed in the score>`, BEFORE the next reseed) · "take out X" (the rows of `bank/presets.json`) · a choice among the five | Opus (the throws, a fix, a wrap) · Fable (a design talk) | — |
 | — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
