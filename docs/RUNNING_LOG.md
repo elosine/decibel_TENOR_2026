@@ -4198,3 +4198,36 @@ Within one player up to 32 dB apart (perc #1 … #3); across players 11 dB at th
 - **NOT CLAIMED:** his ear · a dynamic through a living engine (his was up through the build and was not touched: only `ping`) · the envelope as SOUND — the bus's offline test (11.6) plays one.
 
 **THE SORTING:** the measure, the ladder's machinery, the envelope, the brick's field and panel are the engine's (`electronics/sc/level.scd` · `synths.scd` · `bank.scd` · `score/le_objects.js`); the numbers are the piece's (`bank/elec_route.json` `level`).
+
+## §162. 11.4 BUILT — the drive into an effect; a dial as a line in time (2026-10-06, Opus)
+
+**What it is:** how hard a sample hits an effect, said apart from how loud the result comes out. In the engine a gain on the SOURCE, before every stage of the chain (`\leProcess` `srcAmp`); what comes out is still set by `match` and, at playback, by the brick's dynamic (§161) — the two are independent, as D17 has it.
+
+**The three words** (`/le/process` `srcDrive`; a plan row's eleventh field): `normalized` — the source brought to `level.driveRef` (−20 LUFS) whatever was captured · `played` — as it is · `+12` / `-6` — that many dB. The source is measured on the spot, from the samples in hand (a row may have no figure yet). The drive is HELD so that the driven source's own peak stays a decibel under full scale, and says so.
+- **The defaults:** a PLAN's variant that names none is driven `normalized` (D17, his "a") · a stage of the WORKSHOP (the `E` brick) that names none goes in `played` — **decided at the build, his to reverse:** a stage is made from the stage before it, at its level; normalizing between stages would have re-made his workshop.
+- **Where it is said:** on a preset of `bank/presets.json` (`drive`, optional — none carries one) · on a return brick's variant, `elec.variants[name] = { v: '<key>-<env>', drive }` (the string form still read; `tools/deal_variants.js` and `keep_deal.js` untouched) · on a process brick, `elec.drive`. **A brick's own drive gives the variant a NAME of its own** — `<sample>~<key>-<env>_dN` · `_dP` · `_d12` · `_dm6` — or two bricks driving one preset differently would write over each other's file (not in the block; the `.gitignore` pattern for the plan's renders still holds them).
+- **The panels:** a drive menu beside each sample of "Processed as" (the preset's · normalized · as played · boost, with its dB) · a Drive row on the process brick.
+
+**A dial as a line** — `fbDrive:2@0,8@6000` in `args`: value@ms breakpoints from the render's start. The dial starts at the first value; the offline score steps it along the line every 50 ms (the chain's own lag smooths the steps — the block had steps at the breakpoints only: a line would have been a staircase). In the process brick's panel a dial has a third form beside the box and the range: `∿` makes it a line, `=` takes it back; a preset's dial may be written so in `bank/presets.json`. `gen_presets.js` untouched.
+
+**THE PROOF, once** (`electronics/sc/process_test.scd` — PROCESS_TEST PASS; the source of the test and a copy of it 20 dB down):
+- `normalized`, the feedback: **−9.9 LUFS from the loud source and −9.9 from the quiet one** (driven +5.0 and +25.0 dB).
+- `played`, a linear stage (the comb): −21.1 and −41.1 — the sources' own 20 dB.
+- a boost of 12: −41.1 → −29.1.
+- a plan's variant that names no drive: `normalized +5.0 dB` in its row.
+- a line: read into its start and its breakpoints; played — a reverb whose tail rang 1649 ms ends at 274 ms with its level drawn to nothing over 300.
+- **Measured, and it corrects the block's proof line:** the block expected the feedback under `played` to differ "by the sources' difference (± 1 dB)". It does not: **−10.0 from the loud source, −13.0 from the quiet one — 3 dB for 20.** The loop saturates; once it sings, the amp's ceiling sets its level, not the impulse. So for the feedback the drive is mostly a matter of WHETHER and HOW FAST it takes off, not how loud it gets — a thing to know when he scores it. (The linear case carries the proof instead.)
+- The page, under the stub window (`node electronics/tools/page_test.js`, PAGE_TEST PASS): a variant as it was keeps its name and is planned `normalized`; a drive of its own asks for `…_d12` and the plan's row carries eleven fields, the line whole; a preset's own drive is honoured; the menus write and clear it; a stage's message carries `srcDrive` and the line; its panel builds.
+- **NOT CLAIMED:** his ear · a driven render through a living engine.
+
+**What changes in what he hears, and it is the point:** every planned variant of the main score is now driven `normalized` at its next render — a quiet impulse excites its effect as a loud one does. The linear effects come out the same (they are levelled to the source's peak after); the feedback, the fuzz, the crush, the diode will speak more evenly across the players.
+
+## §163. 11.5 BUILT — the impulses' own dynamics (2026-10-06, Opus)
+
+**What it is:** `tools/impulse.js` no longer strikes every impulse at velocity 127. A row of `bank/impulses.json` may say `"dyn": "mf"` (a mark — the lane's LADDER velocity at that pitch, `DYNAMICS_LAW` Rule 4's `velAbs`, by the stack's own helper `score/public/texture_dyn.js` through `bank/velocity_remap.json`) or `"dyn": "played"` (the velocity he recorded is kept); a slot may say its own; `--dyn` on the command line stands for the row's. Absent on a NEW impulse: `mf`. The 150 ms length is still the standard's. The tile's height follows the velocity (a struck note's height IS its velocity); the note records what was asked (`impulse.dyn`).
+
+**Decided at the build, his to reverse:** under `--redo` a dynamic is applied ONLY where one is said — the notes of his rows 1 … 6, which say none, are not touched by a redo (the block's "absent = mf" would otherwise have turned six groups from 127 to mf at the next `--redo`).
+
+**THE PROOF, once — `--dry` on the save, nothing written** (impulse 3, `--redo`): no dynamic said → `vel 127 (kept)` on all five · `--dyn mf` → percussion 100 · bass flute 121 · viola 56 · cello 79 · bass clarinet 91 · `--dyn pp` → 74 · 59 · 40 · 60 · 59 · `--dyn played` → 127, kept. The percussion has no measured curve: it takes the written anchor (65 … 127 by name). The spread at one mark (56 … 121 at mf) is the remap's — each instrument's own velocity for the same loudness.
+
+**NOT CLAIMED:** a row written with a dynamic; his ear. His rows are his to mark.

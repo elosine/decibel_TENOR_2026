@@ -4,10 +4,15 @@
 // named <player>-impulse-<N>, category `impulse` — the name is the sample's identity through the piece (and its buffer's, in the
 // engine). The rhythm is his: he played it into the Rec lane (lane 0, the bass flute); the notes are MOVED to the players' lanes,
 // the rest of the rhythm stays where it is. The dictation lives in bank/impulses.json — a row per impulse number, five slots.
-//   node tools/impulse.js --score piece-sec01-a --n 1 [--dry] [--redo]
+//   node tools/impulse.js --score piece-sec01-a --n 1 [--dry] [--redo] [--dyn mf|played]
 // The score file is written in place (he has saved: a working copy of it refuses the tool; --dry runs on the save anyway). Reload it in the page after.
 // --redo (DEC-29, 2026-10-05): impulse N is in the score already — its RETURNS are replaced from the row as it now reads; the notes
 //   and the openings stay. A row's return may carry  shuffle: <seed>  — its samples in ANOTHER ORDER for each player, none twice.
+// THE IMPULSES' OWN DYNAMICS (PLAN 1.4 · 11.5, 2026-10-06): an impulse is no longer forced to velocity 127. A row of bank/impulses.json may
+//   say  "dyn": "mf"  (a mark, ppp … fff — the lane's LADDER velocity for that pitch, through bank/velocity_remap.json where the instrument
+//   has a measured curve, the written anchor where it has none) or  "dyn": "played"  (the velocity he recorded is KEPT); a slot may say its
+//   own. Absent: mf. --dyn on the command line stands for the row's. The length stays the standard's 150 ms.
+//   --redo re-applies a dynamic ONLY where one is said (the row's, a slot's, or --dyn): the notes of rows that say none are not touched.
 // THE SORTING: this tool knows the piece (its lanes, its save, its route table) — it is the piece's, not the engine's.
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
@@ -15,6 +20,9 @@ const ROOT = path.resolve(__dirname, '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
 const DRY = process.argv.includes('--dry'), REDO = process.argv.includes('--redo');
 const N = String(arg('n', '1')), NAME = arg('score', '');
+const MARKS = ['ppp', 'pp', 'p', 'mp', 'mf', 'f', 'ff', 'fff'];
+const CLI_DYN = arg('dyn', '');
+if (CLI_DYN && CLI_DYN !== 'played' && !MARKS.includes(CLI_DYN)) { console.error('--dyn: a mark (' + MARKS.join(' ') + ') or "played"'); process.exit(2); }
 const mulberry32 = (a) => () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 if (!NAME) { console.error('which score?  --score piece-sec01-a'); process.exit(2); }
 const FILE = path.join(ROOT, 'scores', NAME + '.json');
@@ -37,7 +45,11 @@ const ROW = PLAN[N], slots = Array.isArray(ROW) ? ROW : (ROW && ROW.slots), RETU
 if (!Array.isArray(slots) || !slots.length) { console.error('bank/impulses.json has no row "' + N + '" — his dictation goes there first'); process.exit(2); }
 
 const REC_LANE = 0;                 // the Rec lane: his rhythm lands on the bass flute's lane
-const STD_VEL = 127, STD_LEN_S = 0.150;   // THE STANDARD (his word 2026-10-05, RUNNING_LOG §74): an impulse is 10 of 10 and 150 ms long whatever he played — the rhythm is his, the dynamic and the length are the kind's
+const STD_DYN = 'mf', STD_LEN_S = 0.150;   // THE STANDARD: 150 ms long whatever he played (his word 2026-10-05, RUNNING_LOG §74). Until 11.5 it was also "10 of 10" — velocity 127 on every technique; now the DYNAMIC is the row's (above), mf where none is said
+// the lane's ladder velocity for a mark at a pitch — DYNAMICS_LAW Rule 4's velAbs, by the stack's one helper (node-loadable)
+const TextureDyn = require(path.join(ROOT, 'score', 'public', 'texture_dyn.js'));
+const REMAP = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'velocity_remap.json'), 'utf8'));
+const velFor = (instKey, midi, mark) => Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, instKey, midi, MARKS.indexOf(mark) / (MARKS.length - 1)))));
 const BEFORE_S = 0.1, WINDOW_S = 0.5;   // the opening: 100 ms before the onset, 500 ms long (the M key's default, RUNNING_LOG §64)
 
 const save = JSON.parse(fs.readFileSync(FILE, 'utf8'));
@@ -72,6 +84,11 @@ slots.forEach((slot, i) => {
   if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((k) => k.midi === note)) note = tech.keys[Math.floor(tech.keys.length / 2)].midi;   // a by-key voice: the middle KEY
   const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';   // a player may own several ports (the percussionist's two lanes)
   const wc = own || pool[i];
+  // 11.5: the dynamic — the slot's, else --dyn, else the row's, else mf for a new impulse; under --redo nothing unless one is said
+  const dyn = slot.dyn || CLI_DYN || (ROW && !Array.isArray(ROW) && ROW.dyn) || (REDO ? '' : STD_DYN);
+  if (dyn && dyn !== 'played' && !MARKS.includes(dyn)) throw new Error('slot ' + (i + 1) + ': "' + dyn + '" is no dynamic — a mark (' + MARKS.join(' ') + ') or "played"');
+  const wasVel = wc.recVel != null ? wc.recVel : 100;
+  const vel = !dyn ? null : dyn === 'played' ? wasVel : velFor(slot.lane, note, dyn);
   const name = (player || slot.lane) + '-impulse-' + N;
   const have = REDO ? objects.find((o) => o.type === 'zone' && o.midiModel === 'elecOpen' && o.layer === lane && o.elec && o.elec.name === name) : null;   // --redo: the opening that is there stays
   const open = have || zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
@@ -94,21 +111,26 @@ slots.forEach((slot, i) => {
   // --redo: the returns that sit at this note now, whatever they are — an elecPlay on this lane starting from the region before the note to just after it
   const old = REDO ? objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecPlay' && o.layer === lane && o.startTime >= wc.startSeconds - 0.45 && o.startTime <= wc.startSeconds + 0.05) : [];
   if (note < lo || note > hi) { if (own) console.warn('slot ' + (i + 1) + ': HIS key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ') — kept, it may be silent'); else throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')'); }   // the preset's own range, never the instrument's
-  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? (ret.elec.names ? ret.elec.names.join(' + ') : ret.elec.name) + ' ~ ' + ret.elec.behaviour : '',
+  rows.push({ vel, dyn, wasVel, slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? (ret.elec.names ? ret.elec.names.join(' + ') : ret.elec.name) + ' ~ ' + ret.elec.behaviour : '',
     old: old.map((o) => o.id + ' ' + ((o.elec || {}).behaviour || '') + ' ' + ((o.elec || {}).names || [(o.elec || {}).name]).join('+')).join(', ') });
   if (!DRY) {
     if (!REDO) {
       wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
-      wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
-      wc.nodes = [{ pos: 0, y: 10, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }];
+      wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000;   // the standard length
       wc.impulse = { n: +N, slot: i + 1, name };
+    }
+    if (vel != null) {   // the dynamic: the velocity, the tile's height in step with it (a struck note's height IS its velocity), and what was asked, on the note
+      const y = Math.max(1, Math.round((vel / 127) * 100) / 10);
+      wc.recVel = vel;
+      wc.nodes = [{ pos: 0, y, smooth: 0.25 }, { pos: 1, y, smooth: 0.25 }];
+      wc.impulse = Object.assign({}, wc.impulse, { dyn });
     }
     old.forEach((o) => objects.splice(objects.indexOf(o), 1));
     if (!have) objects.push(open);
     if (ret) objects.push(ret);
   }
 });
-rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret : '') + (r.old ? '  REPLACES ' + r.old : '')));
+rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + (r.vel == null ? 'vel ' + r.wasVel + ' (kept)' : 'vel ' + r.vel + ' (' + r.dyn + (r.vel !== r.wasVel ? ', was ' + r.wasVel : '') + ')').padEnd(24) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret : '') + (r.old ? '  REPLACES ' + r.old : '')));
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 save.nextId = nextId;
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });
