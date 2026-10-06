@@ -3754,3 +3754,15 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **A gradual acceleration over 20 seconds — what to put in the pattern brick's panel (his test):** Shape **accel · round robin** · run **geometric** (a steady acceleration; `curve` with curve 0 is the same shape) · gap (first) **1500** ms · → last **120** ms · length by **= ms → 20000** · jitter 0 · hold 0 · level blank · deal round robin, re-attack ≥ 250 · order as he likes · **generate**. Expected: the brick runs 20 s from its start; the readout under the dials says how many onsets the run holds (about 40 with these numbers) and the fit; the first onset at the live note. If the readout says "fit off by …" or the brick is not 20 s long, the calculator's duration fit is the fault — to the SWEEP_LIST.
 
 **Then:** his checkpoint and clear (Opus for the wrap, as the rhythm says).
+
+## §124. ICY HEARD — quiet, and "an attack, then a gap, then the frozen sustain": the stretch now swells in from the start; the mix decides the attack (2026-10-05, Fable; the engine's §37 b)
+
+**His words:** *"One thing is it's quiet. The result is a little bit quiet. … is there any way to either match the attack and the, um, the frozen part? So there's an attack and then there's a little bit of a gap and then there's a frozen sustain. Or even just suppress the attack altogether. But when I go to mix zero, I can't hear anything."*
+
+**What it was:** the stage was gated — the DRY sound passed until the first window could be filled (`from` + half a window = 360 ms with his `icy live` numbers), then it crossfaded to Warp1, whose first windows take a moment to reach full amplitude → the raw attack, a dip, the sustain. And the level: with the peak matched to the source's and the dry attack passing, the attack WAS the peak — the sustain sat far under it ("quiet").
+
+**The change (`electronics/sc/process.scd`, the icy stage):** no gate. Warp1 runs from the start, its windows filling as the material is written — it swells in under the attack, no gap; the read point waits at `from` until the sound reaches it, then crawls. **The mix is the whole story:** 1 = the stretch alone — the attack suppressed, and the peak-match lifts the sustain to the source's peak · 0.5 = attack and sustain together · 0 = the sample as it is. The hint on `mix` says so.
+
+**Proven once:** `process_test.scd`, the icy case: 0.6 … 1.1 s into it the sustain is now **−5.5 dB** under the render's peak (it was −11.9 with the dry attack as the peak). NOT heard: his restart · F5 · Render with mix 1.
+
+**His "mix zero, nothing":** mix 0 is the sample as it is, under the tail ending — 380 ms of impulse; if it was silent for him, the brick had not been re-rendered since the dial moved (the label says "changed: render again"). Not reproduced; noted.
