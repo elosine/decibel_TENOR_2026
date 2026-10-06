@@ -722,6 +722,272 @@
           }
         }
       }
+    },
+    {
+      "n": 3,
+      "kept": "2026-10-06T03:34",
+      "score": "piece-sec01-a",
+      "seed": 11,
+      "command": "node tools/deal_variants.js --score piece-sec01-a --seed 11 --env tail",
+      "presets": "bank/presets.json as it was — 43 presets: feedback 7 · crush 3 · diode 5 · icy 7 · greyhole 4 · jpverb 4 · cres 3 · fuzz 2 · comb 4 · octave 3 · override 1 (his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 202)",
+      "frozen": "scores/piece-sec01-a-deal-s11.json",
+      "bricks": 25,
+      "plays": 75,
+      "heard": "the six groups, the far tier, ring versions; the 43",
+      "remark": "You can add that one to the list.",
+      "note": "",
+      "variants": {
+        "zn-54": {
+          "at": 6.24,
+          "lane": "Viola",
+          "behaviour": "ar",
+          "variants": {
+            "va-impulse-1": "jpverb1-tail"
+          }
+        },
+        "zn-56": {
+          "at": 6.59,
+          "lane": "Mallets",
+          "behaviour": "ar",
+          "variants": {
+            "perc-impulse-1": "jpverb6-tail"
+          }
+        },
+        "zn-58": {
+          "at": 7.85,
+          "lane": "Bass Flute",
+          "behaviour": "ar",
+          "variants": {
+            "bfl-impulse-1": "octave8-tail"
+          }
+        },
+        "zn-60": {
+          "at": 9.5,
+          "lane": "Cello",
+          "behaviour": "ar",
+          "variants": {
+            "vc-impulse-1": "cres7-tail"
+          }
+        },
+        "zn-62": {
+          "at": 9.74,
+          "lane": "Bass Clar.",
+          "behaviour": "ar",
+          "variants": {
+            "bcl-impulse-1": "feedback4-tail"
+          }
+        },
+        "zn-64": {
+          "at": 11.22,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-1": "cres5-tail",
+            "perc-impulse-2": "octave6-tail"
+          }
+        },
+        "zn-66": {
+          "at": 12.18,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-1": "greyhole1-tail",
+            "bfl-impulse-2": "feedback6-tail"
+          }
+        },
+        "zn-68": {
+          "at": 13.37,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-1": "crush4-tail",
+            "va-impulse-2": "icy6-tail"
+          }
+        },
+        "zn-70": {
+          "at": 14.94,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-1": "cres1-tail",
+            "vc-impulse-2": "greyhole4-tail"
+          }
+        },
+        "zn-72": {
+          "at": 16.35,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-1": "greyhole5-tail",
+            "bcl-impulse-2": "fuzz8-tail"
+          }
+        },
+        "zn-76": {
+          "at": 17.42,
+          "lane": "Cello",
+          "behaviour": "arChain",
+          "variants": {
+            "vc-impulse-1": "feedback8-tail",
+            "vc-impulse-2": "feedback3-tail",
+            "vc-impulse-3": "diode2-tail"
+          }
+        },
+        "zn-78": {
+          "at": 17.7,
+          "lane": "Viola",
+          "behaviour": "arChain",
+          "variants": {
+            "va-impulse-1": "crush1-tail",
+            "va-impulse-2": "crush8-tail",
+            "va-impulse-3": "icy4-tail"
+          }
+        },
+        "zn-80": {
+          "at": 18.46,
+          "lane": "Bass Flute",
+          "behaviour": "arChain",
+          "variants": {
+            "bfl-impulse-1": "comb2-tail",
+            "bfl-impulse-2": "diode8-tail",
+            "bfl-impulse-3": "comb6-tail"
+          }
+        },
+        "zn-82": {
+          "at": 20.39,
+          "lane": "Bass Clar.",
+          "behaviour": "arChain",
+          "variants": {
+            "bcl-impulse-1": "jpverb3-tail",
+            "bcl-impulse-2": "jpverb2-tail",
+            "bcl-impulse-3": "diode1-tail"
+          }
+        },
+        "zn-84": {
+          "at": 21.9,
+          "lane": "Mallets",
+          "behaviour": "arChain",
+          "variants": {
+            "perc-impulse-1": "icy3-tail",
+            "perc-impulse-2": "icy5-tail",
+            "perc-impulse-3": "comb5-tail"
+          }
+        },
+        "zn-95": {
+          "at": 22.99,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-1": "octave5-tail",
+            "va-impulse-3": "feedback1-tail",
+            "va-impulse-2": "override7-tail",
+            "va-impulse-4": "icy2-tail"
+          }
+        },
+        "zn-96": {
+          "at": 24.6,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-3": "greyhole2-tail",
+            "perc-impulse-1": "icy7-tail",
+            "perc-impulse-4": "fuzz2-tail",
+            "perc-impulse-2": "diode4-tail"
+          }
+        },
+        "zn-97": {
+          "at": 25.83,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-2": "icy1-tail",
+            "bfl-impulse-1": "comb3-tail",
+            "bfl-impulse-4": "feedback2-tail",
+            "bfl-impulse-3": "diode7-tail"
+          }
+        },
+        "zn-98": {
+          "at": 26.17,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-4": "feedback5-tail",
+            "vc-impulse-1": "jpverb1-tail",
+            "vc-impulse-2": "jpverb6-tail",
+            "vc-impulse-3": "octave8-tail"
+          }
+        },
+        "zn-99": {
+          "at": 27.41,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-3": "cres7-tail",
+            "bcl-impulse-1": "feedback4-tail",
+            "bcl-impulse-4": "cres5-tail",
+            "bcl-impulse-2": "octave6-tail"
+          }
+        },
+        "zn-101": {
+          "at": 29.85,
+          "lane": "Percussion",
+          "behaviour": "chain",
+          "variants": {
+            "perc-impulse-5": "greyhole1-tail",
+            "perc-impulse-4": "feedback6-tail",
+            "perc-impulse-1": "crush4-tail",
+            "perc-impulse-2": "icy6-tail",
+            "perc-impulse-3": "cres1-tail"
+          }
+        },
+        "zn-103": {
+          "at": 31.3,
+          "lane": "Viola",
+          "behaviour": "chain",
+          "variants": {
+            "va-impulse-3": "greyhole4-tail",
+            "va-impulse-4": "greyhole5-tail",
+            "va-impulse-1": "fuzz8-tail",
+            "va-impulse-2": "feedback8-tail",
+            "va-impulse-5": "feedback3-tail"
+          }
+        },
+        "zn-105": {
+          "at": 32.5,
+          "lane": "Bass Flute",
+          "behaviour": "chain",
+          "variants": {
+            "bfl-impulse-1": "diode2-tail",
+            "bfl-impulse-2": "crush1-tail",
+            "bfl-impulse-3": "crush8-tail",
+            "bfl-impulse-5": "icy4-tail",
+            "bfl-impulse-4": "comb2-tail"
+          }
+        },
+        "zn-107": {
+          "at": 33,
+          "lane": "Cello",
+          "behaviour": "chain",
+          "variants": {
+            "vc-impulse-4": "diode8-tail",
+            "vc-impulse-3": "comb6-tail",
+            "vc-impulse-1": "jpverb3-tail",
+            "vc-impulse-5": "jpverb2-tail",
+            "vc-impulse-2": "diode1-tail"
+          }
+        },
+        "zn-109": {
+          "at": 34.4,
+          "lane": "Bass Clar.",
+          "behaviour": "chain",
+          "variants": {
+            "bcl-impulse-3": "icy3-tail",
+            "bcl-impulse-4": "icy5-tail",
+            "bcl-impulse-1": "comb5-tail",
+            "bcl-impulse-5": "octave5-tail",
+            "bcl-impulse-2": "feedback1-tail"
+          }
+        }
+      }
     }
   ]
 }

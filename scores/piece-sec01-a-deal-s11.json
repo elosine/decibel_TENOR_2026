@@ -1,0 +1,3374 @@
+{
+ "version": 1,
+ "layoutVersion": 8,
+ "tracks": [
+  {
+   "id": "bass_flute",
+   "label": "Bass Flute",
+   "short": "BFl",
+   "instKey": "bass_flute"
+  },
+  {
+   "id": "bass_clarinet",
+   "label": "Bass Clar.",
+   "short": "BCl",
+   "instKey": "bass_clarinet"
+  },
+  {
+   "id": "percussion",
+   "label": "Percussion",
+   "short": "Perc",
+   "instKey": "percussion"
+  },
+  {
+   "id": "vibraphone",
+   "label": "Mallets",
+   "short": "Mal",
+   "instKey": "bowed_vibraphone"
+  },
+  {
+   "id": "viola",
+   "label": "Viola",
+   "short": "Va",
+   "instKey": "viola"
+  },
+  {
+   "id": "cello",
+   "label": "Cello",
+   "short": "Vc",
+   "instKey": "cello"
+  }
+ ],
+ "assets": {},
+ "metadata": {
+  "created": "2026-10-06T03:31:35.014Z",
+  "modified": "2026-10-06T03:32:30.991Z",
+  "deal": {
+   "seed": 11,
+   "env": "tail",
+   "class": "all",
+   "from": 0,
+   "to": null,
+   "when": "2026-10-06T03:32",
+   "command": "node tools/deal_variants.js --score piece-sec01-a --seed 11 --env tail"
+  }
+ },
+ "objects": [
+  {
+   "id": "wc-19",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 1.525,
+   "endSeconds": 1.6749999999999998,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 59,
+   "technique": "slap",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 1,
+    "slot": 1,
+    "name": "bfl-impulse-1"
+   }
+  },
+  {
+   "id": "wc-20",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 2.669,
+   "endSeconds": 2.819,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 50,
+   "technique": "slap",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 1,
+    "slot": 2,
+    "name": "bcl-impulse-1"
+   }
+  },
+  {
+   "id": "wc-21",
+   "type": "waveCurve",
+   "layer": 2,
+   "startSeconds": 4.145,
+   "endSeconds": 4.295,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 43,
+   "technique": "shime_daiko_taiko_sticks",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 1,
+    "slot": 3,
+    "name": "perc-impulse-1"
+   }
+  },
+  {
+   "id": "wc-22",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 4.48,
+   "endSeconds": 4.630000000000001,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 71,
+   "technique": "bartok_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 1,
+    "slot": 4,
+    "name": "va-impulse-1"
+   }
+  },
+  {
+   "id": "wc-23",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 5.212,
+   "endSeconds": 5.362,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 56,
+   "technique": "gettato_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 1,
+    "slot": 5,
+    "name": "vc-impulse-1"
+   }
+  },
+  {
+   "id": "wc-25",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 6.991,
+   "endSeconds": 7.141,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 70,
+   "technique": "glock_shorts_hard",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 2,
+    "slot": 2,
+    "name": "perc-impulse-2"
+   }
+  },
+  {
+   "id": "wc-26",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 8.251,
+   "endSeconds": 8.401,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 53,
+   "technique": "stac_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 2,
+    "slot": 3,
+    "name": "bfl-impulse-2"
+   }
+  },
+  {
+   "id": "wc-27",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 9.9,
+   "endSeconds": 10.05,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 44,
+   "technique": "bow_op_x_marcato_sfz_mw_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 2,
+    "slot": 4,
+    "name": "vc-impulse-2"
+   }
+  },
+  {
+   "id": "wc-28",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 10.137,
+   "endSeconds": 10.287,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 34,
+   "technique": "flutter_vel_mwinv",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 2,
+    "slot": 5,
+    "name": "bcl-impulse-2"
+   }
+  },
+  {
+   "id": "wc-29",
+   "type": "waveCurve",
+   "layer": 2,
+   "startSeconds": 11.222,
+   "endSeconds": 11.372,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 60,
+   "technique": "china_cymbals_scrape",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 3,
+    "slot": 1,
+    "name": "perc-impulse-3"
+   }
+  },
+  {
+   "id": "wc-30",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 12.182,
+   "endSeconds": 12.332,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 61,
+   "technique": "voice_breath_4th",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 3,
+    "slot": 2,
+    "name": "bfl-impulse-3"
+   }
+  },
+  {
+   "id": "wc-31",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 13.373,
+   "endSeconds": 13.523,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 62,
+   "technique": "sp_spicc_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 3,
+    "slot": 3,
+    "name": "va-impulse-3"
+   }
+  },
+  {
+   "id": "wc-32",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 14.942,
+   "endSeconds": 15.092,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 44,
+   "technique": "col_legno_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 3,
+    "slot": 4,
+    "name": "vc-impulse-3"
+   }
+  },
+  {
+   "id": "wc-33",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 16.353,
+   "endSeconds": 16.503,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 52,
+   "technique": "secco",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 3,
+    "slot": 5,
+    "name": "bcl-impulse-3"
+   }
+  },
+  {
+   "id": "wc-34",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 17.818,
+   "endSeconds": 17.968,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 36,
+   "technique": "bartok_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 4,
+    "slot": 1,
+    "name": "vc-impulse-4"
+   }
+  },
+  {
+   "id": "wc-35",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 18.099,
+   "endSeconds": 18.249,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 50,
+   "technique": "bow_op_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 4,
+    "slot": 2,
+    "name": "va-impulse-4"
+   }
+  },
+  {
+   "id": "wc-36",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 18.862,
+   "endSeconds": 19.012,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 50,
+   "technique": "jet_slap",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 4,
+    "slot": 3,
+    "name": "bfl-impulse-4"
+   }
+  },
+  {
+   "id": "wc-37",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 20.794,
+   "endSeconds": 20.944,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 37,
+   "technique": "mp_short",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 4,
+    "slot": 4,
+    "name": "bcl-impulse-4"
+   }
+  },
+  {
+   "id": "wc-38",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 22.261,
+   "endSeconds": 22.411,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 81,
+   "technique": "crot_main_metal_damped",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 4,
+    "slot": 5,
+    "name": "perc-impulse-4"
+   }
+  },
+  {
+   "id": "wc-39",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 22.991,
+   "endSeconds": 23.141,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 51,
+   "technique": "marcato_sfz_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 5,
+    "slot": 1,
+    "name": "va-impulse-5"
+   }
+  },
+  {
+   "id": "wc-40",
+   "type": "waveCurve",
+   "layer": 2,
+   "startSeconds": 24.595,
+   "endSeconds": 24.745,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 36,
+   "technique": "wood_blocks_hard_mallets",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 5,
+    "slot": 2,
+    "name": "perc-impulse-5"
+   }
+  },
+  {
+   "id": "wc-41",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 25.825,
+   "endSeconds": 25.975,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 54,
+   "technique": "pseudo_cb_vel_mwinv",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 5,
+    "slot": 3,
+    "name": "bfl-impulse-5"
+   }
+  },
+  {
+   "id": "wc-42",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 26.17,
+   "endSeconds": 26.32,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 61,
+   "technique": "nh_sul1_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 5,
+    "slot": 4,
+    "name": "vc-impulse-5"
+   }
+  },
+  {
+   "id": "wc-43",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 27.413,
+   "endSeconds": 27.563,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 34,
+   "technique": "flutter_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 5,
+    "slot": 5,
+    "name": "bcl-impulse-5"
+   }
+  },
+  {
+   "id": "wc-44",
+   "type": "waveCurve",
+   "layer": 2,
+   "startSeconds": 29.85,
+   "endSeconds": 30,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 36,
+   "technique": "bass_drum_alt_sticks",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 1,
+    "name": "perc-impulse-6"
+   }
+  },
+  {
+   "id": "wc-45",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 31.3,
+   "endSeconds": 31.45,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 50,
+   "technique": "bartok_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 2,
+    "name": "va-impulse-6"
+   }
+  },
+  {
+   "id": "wc-46",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 32.5,
+   "endSeconds": 32.65,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 56,
+   "technique": "jet_slap",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 3,
+    "name": "bfl-impulse-6"
+   }
+  },
+  {
+   "id": "zn-47",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 1.4249999999999998,
+   "endTime": 1.9249999999999998,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-48",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 2.569,
+   "endTime": 3.069,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-1",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-49",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 4.045,
+   "endTime": 4.545,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-1",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-50",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 4.380000000000001,
+   "endTime": 4.880000000000001,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-1",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-51",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 5.112,
+   "endTime": 5.612,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-1",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "wc-52",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 6.639,
+   "endSeconds": 6.789,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 51,
+   "technique": "marcato_sfz_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 2,
+    "slot": 1,
+    "name": "va-impulse-2"
+   }
+  },
+  {
+   "id": "zn-53",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 6.539000000000001,
+   "endTime": 7.039000000000001,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-2",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-54",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 6.239,
+   "endTime": 7.039000000000001,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-1",
+    "behaviour": "ar",
+    "variants": {
+     "va-impulse-1": "jpverb1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-55",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 6.891,
+   "endTime": 7.391,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-2",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-56",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 6.590999999999999,
+   "endTime": 7.391,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-1",
+    "behaviour": "ar",
+    "variants": {
+     "perc-impulse-1": "jpverb6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-57",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 8.151,
+   "endTime": 8.651,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-2",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-58",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 7.850999999999999,
+   "endTime": 8.651,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "behaviour": "ar",
+    "variants": {
+     "bfl-impulse-1": "octave8-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-59",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 9.8,
+   "endTime": 10.3,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-2",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-60",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 9.5,
+   "endTime": 10.3,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-1",
+    "behaviour": "ar",
+    "variants": {
+     "vc-impulse-1": "cres7-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-61",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 10.037,
+   "endTime": 10.537,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-2",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-62",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 9.737,
+   "endTime": 10.537,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-1",
+    "behaviour": "ar",
+    "variants": {
+     "bcl-impulse-1": "feedback4-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-63",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 11.122,
+   "endTime": 11.622,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-3",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-64",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 11.222,
+   "endTime": 12.222,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-1",
+    "names": [
+     "perc-impulse-1",
+     "perc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "perc-impulse-1": "cres5-tail",
+     "perc-impulse-2": "octave6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-65",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 12.082,
+   "endTime": 12.582,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-3",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-66",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 12.182,
+   "endTime": 13.182,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "names": [
+     "bfl-impulse-1",
+     "bfl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bfl-impulse-1": "greyhole1-tail",
+     "bfl-impulse-2": "feedback6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-67",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 13.273,
+   "endTime": 13.773,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-3",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-68",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 13.373,
+   "endTime": 14.373,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-1",
+    "names": [
+     "va-impulse-1",
+     "va-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "va-impulse-1": "crush4-tail",
+     "va-impulse-2": "icy6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-69",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 14.842,
+   "endTime": 15.342,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-3",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-70",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 14.942,
+   "endTime": 15.942,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-1",
+    "names": [
+     "vc-impulse-1",
+     "vc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "vc-impulse-1": "cres1-tail",
+     "vc-impulse-2": "greyhole4-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-71",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 16.253,
+   "endTime": 16.753,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-3",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-72",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 16.353,
+   "endTime": 17.353,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-1",
+    "names": [
+     "bcl-impulse-1",
+     "bcl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bcl-impulse-1": "greyhole5-tail",
+     "bcl-impulse-2": "fuzz8-tail"
+    }
+   }
+  },
+  {
+   "id": "wc-73",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 33,
+   "endSeconds": 33.15,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 49,
+   "technique": "bow_op_vel",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 4,
+    "name": "vc-impulse-6"
+   }
+  },
+  {
+   "id": "wc-74",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 34.4,
+   "endSeconds": 34.55,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE",
+   "properties": {},
+   "sonifyNote": 36,
+   "technique": "slap",
+   "sonifyMode": "plain",
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 5,
+    "name": "bcl-impulse-6"
+   }
+  },
+  {
+   "id": "zn-75",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 17.718,
+   "endTime": 18.218,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-4",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-76",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 17.418000000000003,
+   "endTime": 19.218,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-1",
+    "names": [
+     "vc-impulse-1",
+     "vc-impulse-2",
+     "vc-impulse-3"
+    ],
+    "behaviour": "arChain",
+    "variants": {
+     "vc-impulse-1": "feedback8-tail",
+     "vc-impulse-2": "feedback3-tail",
+     "vc-impulse-3": "diode2-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-77",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 17.999,
+   "endTime": 18.499,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-4",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-78",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 17.699,
+   "endTime": 19.499,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-1",
+    "names": [
+     "va-impulse-1",
+     "va-impulse-2",
+     "va-impulse-3"
+    ],
+    "behaviour": "arChain",
+    "variants": {
+     "va-impulse-1": "crush1-tail",
+     "va-impulse-2": "crush8-tail",
+     "va-impulse-3": "icy4-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-79",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 18.761999999999997,
+   "endTime": 19.261999999999997,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-4",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-80",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 18.462,
+   "endTime": 20.261999999999997,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "names": [
+     "bfl-impulse-1",
+     "bfl-impulse-2",
+     "bfl-impulse-3"
+    ],
+    "behaviour": "arChain",
+    "variants": {
+     "bfl-impulse-1": "comb2-tail",
+     "bfl-impulse-2": "diode8-tail",
+     "bfl-impulse-3": "comb6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-81",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 20.694,
+   "endTime": 21.194,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-4",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-82",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 20.394000000000002,
+   "endTime": 22.194,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-1",
+    "names": [
+     "bcl-impulse-1",
+     "bcl-impulse-2",
+     "bcl-impulse-3"
+    ],
+    "behaviour": "arChain",
+    "variants": {
+     "bcl-impulse-1": "jpverb3-tail",
+     "bcl-impulse-2": "jpverb2-tail",
+     "bcl-impulse-3": "diode1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-83",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 22.160999999999998,
+   "endTime": 22.660999999999998,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-4",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-84",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 21.9,
+   "endTime": 23.660999999999998,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-1",
+    "names": [
+     "perc-impulse-1",
+     "perc-impulse-2",
+     "perc-impulse-3"
+    ],
+    "behaviour": "arChain",
+    "variants": {
+     "perc-impulse-1": "icy3-tail",
+     "perc-impulse-2": "icy5-tail",
+     "perc-impulse-3": "comb5-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-85",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 22.891,
+   "endTime": 23.391,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-5",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-87",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 24.494999999999997,
+   "endTime": 24.994999999999997,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-5",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-89",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 25.724999999999998,
+   "endTime": 26.224999999999998,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-5",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-91",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 26.07,
+   "endTime": 26.57,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-5",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-93",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 27.313,
+   "endTime": 27.813,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-5",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-95",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 22.991,
+   "endTime": 24.991,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-1",
+    "names": [
+     "va-impulse-1",
+     "va-impulse-3",
+     "va-impulse-2",
+     "va-impulse-4"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "va-impulse-1": "octave5-tail",
+     "va-impulse-3": "feedback1-tail",
+     "va-impulse-2": "override7-tail",
+     "va-impulse-4": "icy2-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-96",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 24.595,
+   "endTime": 26.595,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-3",
+    "names": [
+     "perc-impulse-3",
+     "perc-impulse-1",
+     "perc-impulse-4",
+     "perc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "perc-impulse-3": "greyhole2-tail",
+     "perc-impulse-1": "icy7-tail",
+     "perc-impulse-4": "fuzz2-tail",
+     "perc-impulse-2": "diode4-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-97",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 25.825,
+   "endTime": 27.825,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-2",
+    "names": [
+     "bfl-impulse-2",
+     "bfl-impulse-1",
+     "bfl-impulse-4",
+     "bfl-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bfl-impulse-2": "icy1-tail",
+     "bfl-impulse-1": "comb3-tail",
+     "bfl-impulse-4": "feedback2-tail",
+     "bfl-impulse-3": "diode7-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-98",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 26.17,
+   "endTime": 28.17,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-4",
+    "names": [
+     "vc-impulse-4",
+     "vc-impulse-1",
+     "vc-impulse-2",
+     "vc-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "vc-impulse-4": "feedback5-tail",
+     "vc-impulse-1": "jpverb1-tail",
+     "vc-impulse-2": "jpverb6-tail",
+     "vc-impulse-3": "octave8-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-99",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 27.413,
+   "endTime": 29.413,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-3",
+    "names": [
+     "bcl-impulse-3",
+     "bcl-impulse-1",
+     "bcl-impulse-4",
+     "bcl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bcl-impulse-3": "cres7-tail",
+     "bcl-impulse-1": "feedback4-tail",
+     "bcl-impulse-4": "cres5-tail",
+     "bcl-impulse-2": "octave6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-100",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 29.75,
+   "endTime": 30.25,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-6",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-101",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 29.85,
+   "endTime": 32.35,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-5",
+    "names": [
+     "perc-impulse-5",
+     "perc-impulse-4",
+     "perc-impulse-1",
+     "perc-impulse-2",
+     "perc-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "perc-impulse-5": "greyhole1-tail",
+     "perc-impulse-4": "feedback6-tail",
+     "perc-impulse-1": "crush4-tail",
+     "perc-impulse-2": "icy6-tail",
+     "perc-impulse-3": "cres1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-102",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 31.2,
+   "endTime": 31.7,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-6",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-103",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 31.3,
+   "endTime": 33.8,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-3",
+    "names": [
+     "va-impulse-3",
+     "va-impulse-4",
+     "va-impulse-1",
+     "va-impulse-2",
+     "va-impulse-5"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "va-impulse-3": "greyhole4-tail",
+     "va-impulse-4": "greyhole5-tail",
+     "va-impulse-1": "fuzz8-tail",
+     "va-impulse-2": "feedback8-tail",
+     "va-impulse-5": "feedback3-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-104",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 32.4,
+   "endTime": 32.9,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-6",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-105",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 32.5,
+   "endTime": 35,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "names": [
+     "bfl-impulse-1",
+     "bfl-impulse-2",
+     "bfl-impulse-3",
+     "bfl-impulse-5",
+     "bfl-impulse-4"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bfl-impulse-1": "diode2-tail",
+     "bfl-impulse-2": "crush1-tail",
+     "bfl-impulse-3": "crush8-tail",
+     "bfl-impulse-5": "icy4-tail",
+     "bfl-impulse-4": "comb2-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-106",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 32.9,
+   "endTime": 33.4,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-6",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-107",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 33,
+   "endTime": 35.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-4",
+    "names": [
+     "vc-impulse-4",
+     "vc-impulse-3",
+     "vc-impulse-1",
+     "vc-impulse-5",
+     "vc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "vc-impulse-4": "diode8-tail",
+     "vc-impulse-3": "comb6-tail",
+     "vc-impulse-1": "jpverb3-tail",
+     "vc-impulse-5": "jpverb2-tail",
+     "vc-impulse-2": "diode1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-108",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 34.3,
+   "endTime": 34.8,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-6",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-109",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 34.4,
+   "endTime": 36.9,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 0.9526599790814871,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-3",
+    "names": [
+     "bcl-impulse-3",
+     "bcl-impulse-4",
+     "bcl-impulse-1",
+     "bcl-impulse-5",
+     "bcl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bcl-impulse-3": "icy3-tail",
+     "bcl-impulse-4": "icy5-tail",
+     "bcl-impulse-1": "comb5-tail",
+     "bcl-impulse-5": "octave5-tail",
+     "bcl-impulse-2": "feedback1-tail"
+    }
+   }
+  }
+ ],
+ "markers": [],
+ "databases": {
+  "chordShapes": [],
+  "sets": [],
+  "cells": []
+ },
+ "nextId": 110,
+ "viewport": {
+  "pixelsPerSecond": 82.95083512236835,
+  "scrollOffset": 0
+ }
+}
