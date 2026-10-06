@@ -3851,3 +3851,23 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **Proven ONCE (D13), headless — the module under a stub window with the bank's REAL index (310 rows: 25 raw · 285 processed, 264 of them planned) and the real 49:** 17 checks, `FX_TEST PASS` — the raw 25 and only them; 25 onsets → 25 DIFFERENT presets; the same seed the same deal; the plan a row per onset, timed 23.000 … 27.000 s by the onset; the message `<sample>~<key>-tail:ms` per onset; class colour → 24, one comes round again on 25; the mix → perc 10 · expodec 10 · gauss 3 · tri 2 of 25; mode none → nothing planned. NOT heard, NOT seen in a browser.
 
 **HIS, to hear and to use:** F5 (the module is page code — no server restart) · File ▾ → Reload `piece-sec01-a` (the re-deal) · play from 0 with the engine up, or any purple brick → **render all planned** → play from 6 s · for group 5: his pattern brick → Effects → `a preset for every impact` → Generate. If the engine's window shows no `plan ·` lines at the pass, it predates §125: restart it.
+
+## §132. GROUPS 5 AND 6 — ALL FLOCKING, THE IMPULSES SHUFFLED, THE WHOLE SCORE RESEEDED (2026-10-05, Fable; DEC-29)
+
+**His words:** `docs/COMPOSITION_NOTES.md` DEC-29. In one line: groups 5 and 6 as groups 2 … 4 were — a chain of the player's earlier impulses after each live note, one more each group, in another order per player, none twice, every sample processed; then the deal drawn again over everything.
+
+**What the score held before (read, not guessed):** group 5 = five notes tagged impulse 5 (viola 22.991 · wood blocks 24.595 · bass flute 25.825 · cello 26.170 · bass clarinet 27.413) with two PATTERN bricks (the viola's, the percussion's — his trials of §97) and three `chain` of `*`; **group 6 = five untagged notes of his beyond 44 s** — bass drum 44.950 · viola 46.400 · bass flute (jet whistle + slap) 47.600 · cello (bow overpressure) 48.100 · bass clarinet (slap) 49.500. The page's working copy differed from the save by ONE thing, the viola's pattern brick regenerated (its end 25.0 → 26.97 s) — the brick that was going anyway; his CTRL+S at the AI's one line, then the writes.
+
+**What was built (the piece's — `tools/impulse.js` · `bank/impulses.json`):**
+- `impulse.js --redo` — impulse N is in the score already: its RETURNS are replaced from the row as it now reads (an `elecPlay` on the note's lane starting from 0.45 s before the note to 0.05 s after it — the region of an `ar` brick, the start of a chain or a pattern); the notes and the openings stay. Before, the tool refused a second run on the same impulse.
+- a row's return may carry **`shuffle: <seed>`** — its samples in another order for each player (mulberry32 on the seed and the slot), none twice by construction.
+- `--dry` now runs on the save under an unsaved working copy, and says so (the refusal stays for a write).
+- **row 5 rewritten:** `chain` of `impulse-1 … impulse-4`, `shuffle 5`; `_was` keeps DEC-12's "a chain of *". **Row 6 made:** the five noteIds above, `chain` of `impulse-1 … impulse-5`, `shuffle 6`.
+
+**What was written to the score, in order (his "saved" first):** `--n 5 --redo` — 5 returns replaced (the orders: va 1·3·2·4 · perc 3·1·4·2 · bfl 2·1·4·3 · vc 4·1·2·3 · bcl 3·1·4·2) · `--n 6` — 5 notes tagged, 5 openings (`<player>-impulse-6`), 5 chains of five (perc 5·4·1·2·3 · va 3·4·1·2·5 · bfl 1·2·3·5·4 · vc 4·3·1·5·2 · bcl 3·4·1·5·2), 2.5 s each · **the deal, whole: `node tools/deal_variants.js --score piece-sec01-a --seed 4 --env tail --class time --render`** — 75 plays on 25 bricks from the 25 time presets (three laps; the same preset falls on the same sample six times, so 69 distinct variants), ring versions; the plan sent, render 1. His settings kept (time · ring) — "all" would widen the pool to the 49. NOT heard.
+
+*(Seen, for the record: the engine's chain dial `I_order` is `shuffled` — the engine re-shuffles a chain's order at every playback anyway; the row's shuffle fixes the order the score SHOWS and the deal reads, which is what his "shuffled, no repeats" asked for in the score itself.)*
+
+**The state of the music now:** six groups of impulses — 1 plain · 2 `ar` · 3 chain of two · 4 `arChain` of three · 5 chain of four · 6 chain of five — 25 return bricks, every sample of every return a time preset under a ring, seed 4. The bank will hold 30 raw impulses after his next pass (impulse 6's five are new captures). The pattern brick of DEC-28 is in no score now; it stays in the kit.
+
+**HIS:** File ▾ → Reload `piece-sec01-a` · play from 0 with the engine up (group 6's five are captured at 45 … 50 s and their returns then play) — or any purple brick → render all planned → play from 6 s for groups 2 … 5 now.

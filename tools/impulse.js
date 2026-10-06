@@ -4,15 +4,18 @@
 // named <player>-impulse-<N>, category `impulse` — the name is the sample's identity through the piece (and its buffer's, in the
 // engine). The rhythm is his: he played it into the Rec lane (lane 0, the bass flute); the notes are MOVED to the players' lanes,
 // the rest of the rhythm stays where it is. The dictation lives in bank/impulses.json — a row per impulse number, five slots.
-//   node tools/impulse.js --score piece-sec01-a --n 1 [--dry]
-// The score file is written in place (he has saved: a working copy of it refuses the tool). Reload it in the page after.
+//   node tools/impulse.js --score piece-sec01-a --n 1 [--dry] [--redo]
+// The score file is written in place (he has saved: a working copy of it refuses the tool; --dry runs on the save anyway). Reload it in the page after.
+// --redo (DEC-29, 2026-10-05): impulse N is in the score already — its RETURNS are replaced from the row as it now reads; the notes
+//   and the openings stay. A row's return may carry  shuffle: <seed>  — its samples in ANOTHER ORDER for each player, none twice.
 // THE SORTING: this tool knows the piece (its lanes, its save, its route table) — it is the piece's, not the engine's.
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
-const DRY = process.argv.includes('--dry');
+const DRY = process.argv.includes('--dry'), REDO = process.argv.includes('--redo');
 const N = String(arg('n', '1')), NAME = arg('score', '');
+const mulberry32 = (a) => () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
 if (!NAME) { console.error('which score?  --score piece-sec01-a'); process.exit(2); }
 const FILE = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT, FILE)); process.exit(2); }
@@ -20,8 +23,8 @@ if (!fs.existsSync(FILE)) { console.error('no such score: ' + path.relative(ROOT
   const WORK = path.join(ROOT, 'scores', NAME + '-work.json');
   if (fs.existsSync(WORK)) {
     let same = false; try { same = JSON.stringify(JSON.parse(fs.readFileSync(WORK, 'utf8')).objects) === JSON.stringify(JSON.parse(fs.readFileSync(FILE, 'utf8')).objects); } catch (e) { same = false; }
-    if (!same) { console.error('the page holds a working copy of ' + NAME + ' with UNSAVED changes — Save (CTRL+S) or Reload there first'); process.exit(3); }
-    console.log("(the working copy is identical to the save: nothing unsaved; Reload in the page after this)");
+    if (!same && !DRY) { console.error('the page holds a working copy of ' + NAME + ' with UNSAVED changes — Save (CTRL+S) or Reload there first'); process.exit(3); }
+    console.log(same ? "(the working copy is identical to the save: nothing unsaved; Reload in the page after this)" : '(THE PAGE HOLDS UNSAVED CHANGES — this dry run is of the SAVE, not of what the page shows)');
   }
 }
 
@@ -42,7 +45,9 @@ const objects = save.objects || [];
 const pool = objects.filter((o) => o.type === 'waveCurve' && o.layer === REC_LANE && !o.impulse).sort((a, b) => a.startSeconds - b.startSeconds);
 const placed = slots.every((q) => q.noteId);   // §78: his own placement — the notes are on their lanes already; the tool tags, opens, returns
 if (!placed && pool.length < slots.length) { console.error('the Rec lane holds ' + pool.length + ' unassigned note(s); impulse ' + N + ' needs ' + slots.length); process.exit(4); }
-if (objects.some((o) => o.impulse && String(o.impulse.n) === N)) { console.error('impulse ' + N + ' is already in ' + NAME); process.exit(4); }
+const already = objects.some((o) => o.impulse && String(o.impulse.n) === N);
+if (already && !REDO) { console.error('impulse ' + N + ' is already in ' + NAME + ' (--redo replaces its returns from the row)'); process.exit(4); }
+if (REDO && !already) { console.error('--redo: impulse ' + N + ' is not in ' + NAME + ' yet'); process.exit(4); }
 
 let nextId = +save.nextId || (objects.length + 1);
 const zone = (layer, start, end, elec, model) => ({
@@ -68,32 +73,44 @@ slots.forEach((slot, i) => {
   const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';   // a player may own several ports (the percussionist's two lanes)
   const wc = own || pool[i];
   const name = (player || slot.lane) + '-impulse-' + N;
-  const open = zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
+  const have = REDO ? objects.find((o) => o.type === 'zone' && o.midiModel === 'elecOpen' && o.layer === lane && o.elec && o.elec.name === name) : null;   // --redo: the opening that is there stays
+  const open = have || zone(lane, Math.max(0, wc.startSeconds - BEFORE_S), wc.startSeconds - BEFORE_S + WINDOW_S, { name, category: 'impulse', player });
   // the return around the note (§78): a region ±regionMs about the note's onset, the engine rolls inside it (behaviour 'ar')
   const who = player || slot.lane;
   const nameOf = (q) => (q === '*' ? '*' : who + '-' + q);   // §89: '*' = every sample in the bank, not this player's alone
+  const samples = (RETURN && RETURN.samples || []).slice();
+  if (RETURN && RETURN.shuffle != null && !samples.includes('*')) {   // DEC-29: the row's samples in ANOTHER ORDER for each player (the seed and the slot), none twice
+    const rnd = mulberry32((+RETURN.shuffle || 0) * 7919 + i + 1);
+    for (let a = samples.length - 1; a > 0; a--) { const b = Math.floor(rnd() * (a + 1)); [samples[a], samples[b]] = [samples[b], samples[a]]; }
+  }
   const nAll = (() => { try { return Math.max(1, (JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'samples', 'index.json'), 'utf8')).samples || []).filter((r) => r.kind !== 'processed').length); } catch (e) { return 1; } })();   // '*' = every CAPTURED sample: a render or a plan's variant is not one (§103 · §116)
-  const nLinks = (RETURN && RETURN.samples || []).includes('*') ? nAll : (RETURN && RETURN.samples || []).length;
+  const nLinks = samples.includes('*') ? nAll : samples.length;
   const ret = !RETURN ? null : RETURN.behaviour === 'arChain'   // §87: a region from regionMs before the note to regionMs after it plus 0.5 s per further sample
-    ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000 + 0.5 * Math.max(0, nLinks - 1), { name: nameOf((RETURN.samples || [])[0]), names: (RETURN.samples || []).map(nameOf), behaviour: 'arChain' }, 'elecPlay')
-    : RETURN.behaviour === 'chain'   // §82: the chain starts AT the note and runs 0.5 s per sample, the samples in the row's order
-    ? zone(lane, wc.startSeconds, wc.startSeconds + 0.5 * nLinks, { name: nameOf((RETURN.samples || [])[0]), names: (RETURN.samples || []).map(nameOf), behaviour: 'chain' }, 'elecPlay')
+    ? zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000 + 0.5 * Math.max(0, nLinks - 1), { name: nameOf(samples[0]), names: samples.map(nameOf), behaviour: 'arChain' }, 'elecPlay')
+    : RETURN.behaviour === 'chain'   // §82: the chain starts AT the note and runs 0.5 s per sample, the samples in the row's order (or the shuffle's)
+    ? zone(lane, wc.startSeconds, wc.startSeconds + 0.5 * nLinks, { name: nameOf(samples[0]), names: samples.map(nameOf), behaviour: 'chain' }, 'elecPlay')
     : zone(lane, Math.max(0, wc.startSeconds - (RETURN.regionMs || 400) / 1000), wc.startSeconds + (RETURN.regionMs || 400) / 1000,
     { name: who + '-' + RETURN.sample, behaviour: RETURN.behaviour || 'ar' }, 'elecPlay');
+  // --redo: the returns that sit at this note now, whatever they are — an elecPlay on this lane starting from the region before the note to just after it
+  const old = REDO ? objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecPlay' && o.layer === lane && o.startTime >= wc.startSeconds - 0.45 && o.startTime <= wc.startSeconds + 0.05) : [];
   if (note < lo || note > hi) { if (own) console.warn('slot ' + (i + 1) + ': HIS key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ') — kept, it may be silent'); else throw new Error('slot ' + (i + 1) + ': key ' + note + ' is outside ' + tech.label + ' (' + lo + '–' + hi + ')'); }   // the preset's own range, never the instrument's
-  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? (ret.elec.names ? ret.elec.names.join(' + ') : ret.elec.name) + ' ~ ' + ret.elec.behaviour : '' });
+  rows.push({ slot: i + 1, at: wc.startSeconds, lane: TRACKS[lane].label, tech: tech.label, note, player: player || '(no microphone)', name, noteId: wc.id, openId: open.id, ret: ret ? (ret.elec.names ? ret.elec.names.join(' + ') : ret.elec.name) + ' ~ ' + ret.elec.behaviour : '',
+    old: old.map((o) => o.id + ' ' + ((o.elec || {}).behaviour || '') + ' ' + ((o.elec || {}).names || [(o.elec || {}).name]).join('+')).join(', ') });
   if (!DRY) {
-    wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
-    wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
-    wc.nodes = [{ pos: 0, y: 10, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }];
-    wc.impulse = { n: +N, slot: i + 1, name };
-    objects.push(open);
+    if (!REDO) {
+      wc.layer = lane; wc.sonifyNote = note; wc.technique = tech.key; wc.sonifyMode = 'plain';
+      wc.endSeconds = Math.round((wc.startSeconds + STD_LEN_S) * 1000) / 1000; wc.recVel = STD_VEL;   // the standard
+      wc.nodes = [{ pos: 0, y: 10, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }];
+      wc.impulse = { n: +N, slot: i + 1, name };
+    }
+    old.forEach((o) => objects.splice(objects.indexOf(o), 1));
+    if (!have) objects.push(open);
     if (ret) objects.push(ret);
   }
 });
-rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret : '')));
+rows.forEach((r) => console.log('impulse ' + N + '.' + r.slot + '  ' + r.at.toFixed(3) + ' s  ' + r.lane.padEnd(11) + r.tech.padEnd(34) + 'key ' + String(r.note).padEnd(4) + r.name.padEnd(18) + (r.player === '(no microphone)' ? '  NO MICROPHONE' : '') + (r.ret ? '  return ' + r.ret : '') + (r.old ? '  REPLACES ' + r.old : '')));
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 save.nextId = nextId;
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString() });
 fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n');
-console.log(path.relative(ROOT, FILE) + ' written — ' + rows.length + ' notes ' + (placed ? 'tagged' : 'moved') + ', ' + rows.length + ' openings placed' + (RETURN ? ', ' + rows.length + ' returns placed' : '') + '. Reload it in the composer page.');
+console.log(path.relative(ROOT, FILE) + ' written — ' + (REDO ? rows.length + ' notes kept, ' + rows.filter((r) => r.old).length + ' returns replaced' : rows.length + ' notes ' + (placed ? 'tagged' : 'moved') + ', ' + rows.length + ' openings placed' + (RETURN ? ', ' + rows.length + ' returns placed' : '')) + '. Reload it in the composer page.');

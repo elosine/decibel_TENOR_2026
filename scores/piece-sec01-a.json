@@ -41,16 +41,16 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T02:21:43.948Z",
-  "modified": "2026-10-06T02:24:43.720Z",
+  "created": "2026-10-06T02:47:51.532Z",
+  "modified": "2026-10-06T02:48:03.365Z",
   "deal": {
-   "seed": 3,
+   "seed": 4,
    "env": "tail",
    "class": "time",
    "from": 0,
-   "to": 22.5,
-   "when": "2026-10-06T02:24",
-   "command": "node tools/deal_variants.js --score piece-sec01-a --to 22.5 --seed 3 --env tail --class time"
+   "to": null,
+   "when": "2026-10-06T02:48",
+   "command": "node tools/deal_variants.js --score piece-sec01-a --seed 4 --env tail --class time"
   }
  },
  "objects": [
@@ -1022,7 +1022,12 @@
    "sonifyNote": 36,
    "technique": "bass_drum_alt_sticks",
    "sonifyMode": "plain",
-   "recVel": 127
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 1,
+    "name": "perc-impulse-6"
+   }
   },
   {
    "id": "wc-45",
@@ -1056,14 +1061,19 @@
    "sonifyNote": 50,
    "technique": "bartok_vel",
    "sonifyMode": "plain",
-   "recVel": 127
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 2,
+    "name": "va-impulse-6"
+   }
   },
   {
    "id": "wc-46",
    "type": "waveCurve",
    "layer": 0,
    "startSeconds": 47.6,
-   "endSeconds": 47.7,
+   "endSeconds": 47.75,
    "nodes": [
     {
      "pos": 0,
@@ -1090,7 +1100,12 @@
    "sonifyNote": 56,
    "technique": "jet_slap",
    "sonifyMode": "plain",
-   "recVel": 127
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 3,
+    "name": "bfl-impulse-6"
+   }
   },
   {
    "id": "zn-47",
@@ -1374,7 +1389,7 @@
     "name": "va-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "va-impulse-1": "icy6-tail"
+     "va-impulse-1": "icy2-tail"
     }
    }
   },
@@ -1446,7 +1461,7 @@
     "name": "perc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "perc-impulse-1": "cres5-tail"
+     "perc-impulse-1": "icy1-tail"
     }
    }
   },
@@ -1518,7 +1533,7 @@
     "name": "bfl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bfl-impulse-1": "icy7-tail"
+     "bfl-impulse-1": "feedback8-tail"
     }
    }
   },
@@ -1662,7 +1677,7 @@
     "name": "bcl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bcl-impulse-1": "icy5-tail"
+     "bcl-impulse-1": "greyhole2-tail"
     }
    }
   },
@@ -1738,8 +1753,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-1": "feedback8-tail",
-     "perc-impulse-2": "jpverb2-tail"
+     "perc-impulse-1": "jpverb1-tail",
+     "perc-impulse-2": "cres5-tail"
     }
    }
   },
@@ -1815,8 +1830,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-1": "jpverb1-tail",
-     "bfl-impulse-2": "feedback5-tail"
+     "bfl-impulse-1": "feedback2-tail",
+     "bfl-impulse-2": "icy6-tail"
     }
    }
   },
@@ -1892,8 +1907,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "greyhole4-tail",
-     "va-impulse-2": "icy3-tail"
+     "va-impulse-1": "jpverb3-tail",
+     "va-impulse-2": "jpverb6-tail"
     }
    }
   },
@@ -1969,8 +1984,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-1": "icy2-tail",
-     "vc-impulse-2": "cres1-tail"
+     "vc-impulse-1": "icy7-tail",
+     "vc-impulse-2": "icy3-tail"
     }
    }
   },
@@ -2046,8 +2061,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-1": "feedback2-tail",
-     "bcl-impulse-2": "greyhole5-tail"
+     "bcl-impulse-1": "greyhole4-tail",
+     "bcl-impulse-2": "cres7-tail"
     }
    }
   },
@@ -2083,7 +2098,12 @@
    "sonifyNote": 49,
    "technique": "bow_op_vel",
    "sonifyMode": "plain",
-   "recVel": 127
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 4,
+    "name": "vc-impulse-6"
+   }
   },
   {
    "id": "wc-74",
@@ -2117,7 +2137,12 @@
    "sonifyNote": 36,
    "technique": "slap",
    "sonifyMode": "plain",
-   "recVel": 127
+   "recVel": 127,
+   "impulse": {
+    "n": 6,
+    "slot": 5,
+    "name": "bcl-impulse-6"
+   }
   },
   {
    "id": "zn-75",
@@ -2192,9 +2217,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "vc-impulse-1": "icy1-tail",
-     "vc-impulse-2": "feedback6-tail",
-     "vc-impulse-3": "feedback1-tail"
+     "vc-impulse-1": "feedback5-tail",
+     "vc-impulse-2": "feedback1-tail",
+     "vc-impulse-3": "feedback3-tail"
     }
    }
   },
@@ -2271,9 +2296,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "va-impulse-1": "greyhole2-tail",
-     "va-impulse-2": "jpverb3-tail",
-     "va-impulse-3": "feedback4-tail"
+     "va-impulse-1": "icy5-tail",
+     "va-impulse-2": "cres1-tail",
+     "va-impulse-3": "jpverb2-tail"
     }
    }
   },
@@ -2350,9 +2375,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bfl-impulse-1": "greyhole1-tail",
-     "bfl-impulse-2": "feedback3-tail",
-     "bfl-impulse-3": "jpverb6-tail"
+     "bfl-impulse-1": "feedback4-tail",
+     "bfl-impulse-2": "greyhole5-tail",
+     "bfl-impulse-3": "feedback6-tail"
     }
    }
   },
@@ -2429,9 +2454,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bcl-impulse-1": "cres7-tail",
-     "bcl-impulse-2": "icy6-tail",
-     "bcl-impulse-3": "cres5-tail"
+     "bcl-impulse-1": "greyhole1-tail",
+     "bcl-impulse-2": "icy2-tail",
+     "bcl-impulse-3": "icy1-tail"
     }
    }
   },
@@ -2508,9 +2533,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "perc-impulse-1": "icy7-tail",
+     "perc-impulse-1": "feedback8-tail",
      "perc-impulse-2": "icy4-tail",
-     "perc-impulse-3": "icy5-tail"
+     "perc-impulse-3": "greyhole2-tail"
     }
    }
   },
@@ -2550,111 +2575,6 @@
    }
   },
   {
-   "id": "zn-86",
-   "type": "zone",
-   "layer": 4,
-   "startTime": 23,
-   "endTime": 25,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {},
-   "elec": {
-    "name": "va-impulse-1",
-    "names": [
-     "*"
-    ],
-    "behaviour": "pattern",
-    "rhythm": {
-     "shape": "accel",
-     "spanMs": 2000,
-     "gapMs": 0,
-     "jitterMs": 0,
-     "order": "named",
-     "seed": 1,
-     "oSeed": 1,
-     "reverse": false,
-     "rotate": 0,
-     "aShape": "geometric",
-     "aLen": "ratio",
-     "aFirst": 100,
-     "aFloor": 45,
-     "aRatio": 0.85,
-     "aCount": 12,
-     "aDur": 2000,
-     "aCurve": 0,
-     "aEase": 2,
-     "aKnee": 0.5,
-     "aGamma": 2,
-     "aJit": 0,
-     "aJitEnd": "",
-     "aHold": 0,
-     "aMirror": false,
-     "aDeal": "robin",
-     "aMin": 250,
-     "aDb0": "",
-     "aDb1": "",
-     "aDbCurve": 0,
-     "cValues": "2 5 7 15",
-     "cWeights": "",
-     "cUnit": 1,
-     "cTotal": 20,
-     "cStick": 0.8,
-     "cJump": 0.1,
-     "cContour": "flat",
-     "cTurn": 0.5,
-     "cBow": 1,
-     "cDepth": 1
-    },
-    "pattern": [
-     {
-      "name": "va-impulse-1",
-      "atMs": 0
-     },
-     {
-      "name": "va-impulse-2",
-      "atMs": 731.4
-     },
-     {
-      "name": "va-impulse-3",
-      "atMs": 1280
-     },
-     {
-      "name": "va-impulse-4",
-      "atMs": 1691.4
-     },
-     {
-      "name": "va-impulse-5",
-      "atMs": 2000
-     }
-    ],
-    "pick": {
-     "players": [
-      "va"
-     ]
-    }
-   }
-  },
-  {
    "id": "zn-87",
    "type": "zone",
    "layer": 2,
@@ -2687,491 +2607,6 @@
     "name": "perc-impulse-5",
     "category": "impulse",
     "player": "perc"
-   }
-  },
-  {
-   "id": "zn-88",
-   "type": "zone",
-   "layer": 2,
-   "startTime": 24.595,
-   "endTime": 49.679,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {},
-   "elec": {
-    "name": "bcl-impulse-3",
-    "names": [
-     "*"
-    ],
-    "behaviour": "pattern",
-    "rhythm": {
-     "shape": "accel",
-     "spanMs": 2000,
-     "gapMs": 0,
-     "jitterMs": 0,
-     "seed": 1,
-     "order": "shuffled",
-     "oSeed": 1,
-     "reverse": false,
-     "rotate": 0,
-     "aShape": "geometric",
-     "aLen": "ratio",
-     "aFirst": 800,
-     "aFloor": 45,
-     "aRatio": 0.97,
-     "aCount": 12,
-     "aDur": 2000,
-     "aCurve": 0,
-     "aEase": 2,
-     "aKnee": 0.5,
-     "aGamma": 2,
-     "aJit": 0,
-     "aJitEnd": "",
-     "aHold": 0,
-     "aMirror": false,
-     "aDeal": "robin",
-     "aMin": 250,
-     "aDb0": "",
-     "aDb1": "",
-     "aDbCurve": 0,
-     "cValues": "2 5 7 15",
-     "cWeights": "",
-     "cUnit": 1,
-     "cTotal": 20,
-     "cStick": 0.8,
-     "cJump": 0.1,
-     "cContour": "flat",
-     "cTurn": 0.5,
-     "cBow": 1,
-     "cDepth": 1
-    },
-    "pattern": [
-     {
-      "name": "bcl-impulse-3",
-      "atMs": 0
-     },
-     {
-      "name": "perc-impulse-5~1",
-      "atMs": 800
-     },
-     {
-      "name": "bfl-impulse-4",
-      "atMs": 1575.9
-     },
-     {
-      "name": "bfl-impulse-2~1",
-      "atMs": 2328.4
-     },
-     {
-      "name": "bcl-impulse-5",
-      "atMs": 3058.2
-     },
-     {
-      "name": "vc-impulse-1",
-      "atMs": 3765.9
-     },
-     {
-      "name": "perc-impulse-4",
-      "atMs": 4452.4
-     },
-     {
-      "name": "perc-impulse-2",
-      "atMs": 5118.1
-     },
-     {
-      "name": "bfl-impulse-2~2",
-      "atMs": 5763.8
-     },
-     {
-      "name": "va-impulse-3",
-      "atMs": 6390
-     },
-     {
-      "name": "bcl-impulse-4",
-      "atMs": 6997.3
-     },
-     {
-      "name": "bfl-impulse-2",
-      "atMs": 7586.4
-     },
-     {
-      "name": "vc-impulse-5~1",
-      "atMs": 8157.6
-     },
-     {
-      "name": "bfl-impulse-5~2",
-      "atMs": 8711.6
-     },
-     {
-      "name": "bfl-impulse-1",
-      "atMs": 9249
-     },
-     {
-      "name": "bfl-impulse-1~7",
-      "atMs": 9770.1
-     },
-     {
-      "name": "perc-impulse-1",
-      "atMs": 10275.5
-     },
-     {
-      "name": "vc-impulse-5",
-      "atMs": 10765.7
-     },
-     {
-      "name": "bcl-impulse-1",
-      "atMs": 11241
-     },
-     {
-      "name": "bfl-impulse-5~1",
-      "atMs": 11702.1
-     },
-     {
-      "name": "va-impulse-2",
-      "atMs": 12149.2
-     },
-     {
-      "name": "va-impulse-4",
-      "atMs": 12582.9
-     },
-     {
-      "name": "vc-impulse-2~1",
-      "atMs": 13003.5
-     },
-     {
-      "name": "bfl-impulse-1~5",
-      "atMs": 13411.4
-     },
-     {
-      "name": "va-impulse-5",
-      "atMs": 13807
-     },
-     {
-      "name": "vc-impulse-4",
-      "atMs": 14190.7
-     },
-     {
-      "name": "vc-impulse-2",
-      "atMs": 14562.8
-     },
-     {
-      "name": "perc-impulse-1~1",
-      "atMs": 14923.7
-     },
-     {
-      "name": "vc-impulse-3",
-      "atMs": 15273.7
-     },
-     {
-      "name": "bcl-impulse-1~2",
-      "atMs": 15613.2
-     },
-     {
-      "name": "perc-impulse-3",
-      "atMs": 15942.4
-     },
-     {
-      "name": "va-impulse-3~1",
-      "atMs": 16261.7
-     },
-     {
-      "name": "bcl-impulse-2",
-      "atMs": 16571.4
-     },
-     {
-      "name": "bcl-impulse-1~1",
-      "atMs": 16871.7
-     },
-     {
-      "name": "perc-impulse-5",
-      "atMs": 17163
-     },
-     {
-      "name": "bfl-impulse-1~1",
-      "atMs": 17445.5
-     },
-     {
-      "name": "va-impulse-1",
-      "atMs": 17719.5
-     },
-     {
-      "name": "bfl-impulse-3",
-      "atMs": 17985.2
-     },
-     {
-      "name": "bfl-impulse-1~2",
-      "atMs": 18242.9
-     },
-     {
-      "name": "bfl-impulse-5~3",
-      "atMs": 18492.8
-     },
-     {
-      "name": "bfl-impulse-5",
-      "atMs": 18735.2
-     },
-     {
-      "name": "vc-impulse-4~1",
-      "atMs": 18970.3
-     },
-     {
-      "name": "bfl-impulse-1~6",
-      "atMs": 19198.3
-     },
-     {
-      "name": "perc-impulse-1",
-      "atMs": 19419.4
-     },
-     {
-      "name": "perc-impulse-4",
-      "atMs": 19633.9
-     },
-     {
-      "name": "bfl-impulse-1~2",
-      "atMs": 19841.8
-     },
-     {
-      "name": "bcl-impulse-1~2",
-      "atMs": 20043.6
-     },
-     {
-      "name": "bfl-impulse-1~1",
-      "atMs": 20239.2
-     },
-     {
-      "name": "perc-impulse-5",
-      "atMs": 20428.9
-     },
-     {
-      "name": "vc-impulse-2~1",
-      "atMs": 20613
-     },
-     {
-      "name": "va-impulse-2",
-      "atMs": 20791.4
-     },
-     {
-      "name": "perc-impulse-2",
-      "atMs": 20964.5
-     },
-     {
-      "name": "vc-impulse-4~1",
-      "atMs": 21132.4
-     },
-     {
-      "name": "bfl-impulse-5~3",
-      "atMs": 21295.2
-     },
-     {
-      "name": "vc-impulse-4",
-      "atMs": 21453.1
-     },
-     {
-      "name": "bfl-impulse-5~1",
-      "atMs": 21606.2
-     },
-     {
-      "name": "bfl-impulse-2",
-      "atMs": 21754.7
-     },
-     {
-      "name": "bcl-impulse-4",
-      "atMs": 21898.8
-     },
-     {
-      "name": "va-impulse-5",
-      "atMs": 22038.5
-     },
-     {
-      "name": "bfl-impulse-1~7",
-      "atMs": 22173.9
-     },
-     {
-      "name": "bfl-impulse-1~5",
-      "atMs": 22305.3
-     },
-     {
-      "name": "bfl-impulse-1~6",
-      "atMs": 22432.8
-     },
-     {
-      "name": "va-impulse-3",
-      "atMs": 22556.4
-     },
-     {
-      "name": "va-impulse-4",
-      "atMs": 22676.2
-     },
-     {
-      "name": "bcl-impulse-1~1",
-      "atMs": 22792.5
-     },
-     {
-      "name": "vc-impulse-3",
-      "atMs": 22905.2
-     },
-     {
-      "name": "bcl-impulse-3",
-      "atMs": 23014.6
-     },
-     {
-      "name": "bfl-impulse-1",
-      "atMs": 23120.6
-     },
-     {
-      "name": "bfl-impulse-5",
-      "atMs": 23223.5
-     },
-     {
-      "name": "bfl-impulse-2~1",
-      "atMs": 23323.3
-     },
-     {
-      "name": "vc-impulse-5",
-      "atMs": 23420
-     },
-     {
-      "name": "vc-impulse-5~1",
-      "atMs": 23513.8
-     },
-     {
-      "name": "vc-impulse-1",
-      "atMs": 23604.8
-     },
-     {
-      "name": "perc-impulse-5~1",
-      "atMs": 23693.1
-     },
-     {
-      "name": "bfl-impulse-4",
-      "atMs": 23778.7
-     },
-     {
-      "name": "bfl-impulse-3",
-      "atMs": 23861.7
-     },
-     {
-      "name": "bcl-impulse-1",
-      "atMs": 23942.2
-     },
-     {
-      "name": "bcl-impulse-2",
-      "atMs": 24020.3
-     },
-     {
-      "name": "bcl-impulse-5",
-      "atMs": 24096
-     },
-     {
-      "name": "bfl-impulse-2~2",
-      "atMs": 24169.4
-     },
-     {
-      "name": "perc-impulse-1~1",
-      "atMs": 24240.7
-     },
-     {
-      "name": "bfl-impulse-5~2",
-      "atMs": 24309.8
-     },
-     {
-      "name": "vc-impulse-2",
-      "atMs": 24376.8
-     },
-     {
-      "name": "perc-impulse-3",
-      "atMs": 24441.7
-     },
-     {
-      "name": "va-impulse-3~1",
-      "atMs": 24504.8
-     },
-     {
-      "name": "va-impulse-1",
-      "atMs": 24565.9
-     },
-     {
-      "name": "bfl-impulse-2~2",
-      "atMs": 24625.2
-     },
-     {
-      "name": "va-impulse-4",
-      "atMs": 24682.6
-     },
-     {
-      "name": "va-impulse-3",
-      "atMs": 24738.4
-     },
-     {
-      "name": "bfl-impulse-1~2",
-      "atMs": 24792.5
-     },
-     {
-      "name": "perc-impulse-1~1",
-      "atMs": 24844.9
-     },
-     {
-      "name": "vc-impulse-5",
-      "atMs": 24895.8
-     },
-     {
-      "name": "va-impulse-5",
-      "atMs": 24945.1
-     },
-     {
-      "name": "vc-impulse-1",
-      "atMs": 24992.9
-     },
-     {
-      "name": "vc-impulse-2",
-      "atMs": 25039.3
-     },
-     {
-      "name": "bcl-impulse-5",
-      "atMs": 25084.3
-     }
-    ],
-    "pick": {
-     "impulses": [
-      "impulse-1",
-      "impulse-1~1",
-      "impulse-1~2",
-      "impulse-1~5",
-      "impulse-1~6",
-      "impulse-1~7",
-      "impulse-2",
-      "impulse-2~1",
-      "impulse-2~2",
-      "impulse-3",
-      "impulse-3~1",
-      "impulse-4",
-      "impulse-4~1",
-      "impulse-5",
-      "impulse-5~1",
-      "impulse-5~2",
-      "impulse-5~3"
-     ]
-    }
    }
   },
   {
@@ -3210,43 +2645,6 @@
    }
   },
   {
-   "id": "zn-90",
-   "type": "zone",
-   "layer": 0,
-   "startTime": 25.825,
-   "endTime": 35.825,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {},
-   "elec": {
-    "name": "*",
-    "names": [
-     "*"
-    ],
-    "behaviour": "chain"
-   }
-  },
-  {
    "id": "zn-91",
    "type": "zone",
    "layer": 5,
@@ -3279,43 +2677,6 @@
     "name": "vc-impulse-5",
     "category": "impulse",
     "player": "vc"
-   }
-  },
-  {
-   "id": "zn-92",
-   "type": "zone",
-   "layer": 5,
-   "startTime": 26.17,
-   "endTime": 36.17,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {},
-   "elec": {
-    "name": "*",
-    "names": [
-     "*"
-    ],
-    "behaviour": "chain"
    }
   },
   {
@@ -3354,11 +2715,11 @@
    }
   },
   {
-   "id": "zn-94",
+   "id": "zn-95",
    "type": "zone",
-   "layer": 1,
-   "startTime": 27.413,
-   "endTime": 37.413,
+   "layer": 4,
+   "startTime": 22.991,
+   "endTime": 24.991,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -3383,11 +2744,619 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "*",
+    "name": "va-impulse-1",
     "names": [
-     "*"
+     "va-impulse-1",
+     "va-impulse-3",
+     "va-impulse-2",
+     "va-impulse-4"
     ],
-    "behaviour": "chain"
+    "behaviour": "chain",
+    "variants": {
+     "va-impulse-1": "jpverb1-tail",
+     "va-impulse-3": "cres5-tail",
+     "va-impulse-2": "feedback2-tail",
+     "va-impulse-4": "icy6-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-96",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 24.595,
+   "endTime": 26.595,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-3",
+    "names": [
+     "perc-impulse-3",
+     "perc-impulse-1",
+     "perc-impulse-4",
+     "perc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "perc-impulse-3": "jpverb3-tail",
+     "perc-impulse-1": "jpverb6-tail",
+     "perc-impulse-4": "icy7-tail",
+     "perc-impulse-2": "icy3-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-97",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 25.825,
+   "endTime": 27.825,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-2",
+    "names": [
+     "bfl-impulse-2",
+     "bfl-impulse-1",
+     "bfl-impulse-4",
+     "bfl-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bfl-impulse-2": "greyhole4-tail",
+     "bfl-impulse-1": "cres7-tail",
+     "bfl-impulse-4": "feedback5-tail",
+     "bfl-impulse-3": "feedback1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-98",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 26.17,
+   "endTime": 28.17,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-4",
+    "names": [
+     "vc-impulse-4",
+     "vc-impulse-1",
+     "vc-impulse-2",
+     "vc-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "vc-impulse-4": "feedback3-tail",
+     "vc-impulse-1": "icy5-tail",
+     "vc-impulse-2": "cres1-tail",
+     "vc-impulse-3": "jpverb2-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-99",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 27.413,
+   "endTime": 29.413,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-3",
+    "names": [
+     "bcl-impulse-3",
+     "bcl-impulse-1",
+     "bcl-impulse-4",
+     "bcl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bcl-impulse-3": "feedback4-tail",
+     "bcl-impulse-1": "greyhole5-tail",
+     "bcl-impulse-4": "feedback6-tail",
+     "bcl-impulse-2": "greyhole1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-100",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 44.85,
+   "endTime": 45.35,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-6",
+    "category": "impulse",
+    "player": "perc"
+   }
+  },
+  {
+   "id": "zn-101",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 44.95,
+   "endTime": 47.45,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "perc-impulse-5",
+    "names": [
+     "perc-impulse-5",
+     "perc-impulse-4",
+     "perc-impulse-1",
+     "perc-impulse-2",
+     "perc-impulse-3"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "perc-impulse-5": "icy2-tail",
+     "perc-impulse-4": "icy1-tail",
+     "perc-impulse-1": "feedback8-tail",
+     "perc-impulse-2": "icy4-tail",
+     "perc-impulse-3": "greyhole2-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-102",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 46.3,
+   "endTime": 46.8,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-6",
+    "category": "impulse",
+    "player": "va"
+   }
+  },
+  {
+   "id": "zn-103",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 46.4,
+   "endTime": 48.9,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "va-impulse-3",
+    "names": [
+     "va-impulse-3",
+     "va-impulse-4",
+     "va-impulse-1",
+     "va-impulse-2",
+     "va-impulse-5"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "va-impulse-3": "jpverb1-tail",
+     "va-impulse-4": "cres5-tail",
+     "va-impulse-1": "feedback2-tail",
+     "va-impulse-2": "icy6-tail",
+     "va-impulse-5": "jpverb3-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-104",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 47.5,
+   "endTime": 48,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-6",
+    "category": "impulse",
+    "player": "bfl"
+   }
+  },
+  {
+   "id": "zn-105",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 47.6,
+   "endTime": 50.1,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bfl-impulse-1",
+    "names": [
+     "bfl-impulse-1",
+     "bfl-impulse-2",
+     "bfl-impulse-3",
+     "bfl-impulse-5",
+     "bfl-impulse-4"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bfl-impulse-1": "jpverb6-tail",
+     "bfl-impulse-2": "icy7-tail",
+     "bfl-impulse-3": "icy3-tail",
+     "bfl-impulse-5": "greyhole4-tail",
+     "bfl-impulse-4": "cres7-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-106",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 48,
+   "endTime": 48.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-6",
+    "category": "impulse",
+    "player": "vc"
+   }
+  },
+  {
+   "id": "zn-107",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 48.1,
+   "endTime": 50.6,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "vc-impulse-4",
+    "names": [
+     "vc-impulse-4",
+     "vc-impulse-3",
+     "vc-impulse-1",
+     "vc-impulse-5",
+     "vc-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "vc-impulse-4": "feedback5-tail",
+     "vc-impulse-3": "feedback1-tail",
+     "vc-impulse-1": "feedback3-tail",
+     "vc-impulse-5": "icy5-tail",
+     "vc-impulse-2": "cres1-tail"
+    }
+   }
+  },
+  {
+   "id": "zn-108",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 49.4,
+   "endTime": 49.9,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecOpen",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#00897B",
+   "opacity": 0.35,
+   "yOffset": 0,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-6",
+    "category": "impulse",
+    "player": "bcl"
+   }
+  },
+  {
+   "id": "zn-109",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 49.5,
+   "endTime": 52,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {},
+   "elec": {
+    "name": "bcl-impulse-3",
+    "names": [
+     "bcl-impulse-3",
+     "bcl-impulse-4",
+     "bcl-impulse-1",
+     "bcl-impulse-5",
+     "bcl-impulse-2"
+    ],
+    "behaviour": "chain",
+    "variants": {
+     "bcl-impulse-3": "jpverb2-tail",
+     "bcl-impulse-4": "feedback4-tail",
+     "bcl-impulse-1": "greyhole5-tail",
+     "bcl-impulse-5": "feedback6-tail",
+     "bcl-impulse-2": "greyhole1-tail"
+    }
    }
   }
  ],
@@ -3397,9 +3366,9 @@
   "sets": [],
   "cells": []
  },
- "nextId": 95,
+ "nextId": 110,
  "viewport": {
   "pixelsPerSecond": 82.95083512236835,
-  "scrollOffset": 3
+  "scrollOffset": 2486.6091125814187
  }
 }

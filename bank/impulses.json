@@ -118,12 +118,17 @@
   ]
  },
  "5": {
-  "_what": "IMPULSE 5 — EVERY SAMPLE (DEC-12; RUNNING_LOG §89 · §93): his five notes, placed in the page 2026-10-05; each live note followed by every sample the bank holds at playback (all players, all impulses so far), in a rolled order — a chain of *.",
+  "_what": "IMPULSE 5 — ALL FLOCKING (DEC-29, 2026-10-05; RUNNING_LOG §132): his five notes, placed in the page 2026-10-05; the player's FOUR impulses chained after each live note, in another order for each player (shuffle = the seed; the slot adds to it), none twice — the pattern of groups 2 … 4 continued (one sample, two, three; now four), each sample processed by the deal. Placed with  node tools/impulse.js --score piece-sec01-a --n 5 --redo  — the returns of DEC-12 (a chain of *, and the pattern bricks of §97) replaced, the notes and openings kept.",
+  "_was": "until DEC-29: EVERY SAMPLE (DEC-12; RUNNING_LOG §89 · §93) — a chain of * after each live note",
   "return": {
    "behaviour": "chain",
    "samples": [
-    "*"
-   ]
+    "impulse-1",
+    "impulse-2",
+    "impulse-3",
+    "impulse-4"
+   ],
+   "shuffle": 5
   },
   "slots": [
    {
@@ -145,6 +150,42 @@
    {
     "lane": "bass_clarinet",
     "noteId": "wc-43"
+   }
+  ]
+ },
+ "6": {
+  "_what": "IMPULSE 6 — THE SAME, FIVE SAMPLES (DEC-29): his five notes beyond 44 s, placed in the page 2026-10-05 (bass drum 44.950 · viola 46.400 · bass flute 47.600 · cello 48.100 · bass clarinet 49.500); a microphone over each (<player>-impulse-6), the player's FIVE impulses chained after each live note, shuffled per player, none twice; each sample processed by the deal.",
+  "return": {
+   "behaviour": "chain",
+   "samples": [
+    "impulse-1",
+    "impulse-2",
+    "impulse-3",
+    "impulse-4",
+    "impulse-5"
+   ],
+   "shuffle": 6
+  },
+  "slots": [
+   {
+    "lane": "percussion",
+    "noteId": "wc-44"
+   },
+   {
+    "lane": "viola",
+    "noteId": "wc-45"
+   },
+   {
+    "lane": "bass_flute",
+    "noteId": "wc-46"
+   },
+   {
+    "lane": "cello",
+    "noteId": "wc-73"
+   },
+   {
+    "lane": "bass_clarinet",
+    "noteId": "wc-74"
    }
   ]
  },
