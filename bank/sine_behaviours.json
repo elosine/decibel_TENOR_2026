@@ -1,0 +1,30 @@
+{
+ "_doc": "THE SINE TONES — who bends against a sine, with which voice, and how (PLAN.md 1.5 · 12.4; DEC-35 · 35b; RUNNING_LOG §179). HIS DATA: every number here is a start of the AI's, his ear's to move. Read by score/public/sine_sim.js (the draw) through score/public/sine_go.js (the GO — the ∿ sines button on the harmony strip, and tools/sine_go.js). A LANE is keyed by its instrument (TRACKS[lane].instKey); a lane that is not here is left alone by the GO (the unpitched percussion: it has no pitch to beat against).",
+ "_lanes": "voice = the technique the simulated player holds the long tone on (sandbox/instruments.js). who = WHO MOVES: `player` — the sine holds the pitch and the player's note is bent (a line of cents on the note, played by the stack's own note player through the instrument's measured bend range) · `sine` — the player holds and the SINE glisses (the bowed crotales: a struck or bowed bar cannot bend). cents = the range a player's offset is drawn from (never past the instrument's own limit: the smaller of playerBendSt and bendRangeSt, 100 cents on all four). beatHz = for a gliding sine, the range the FARTHEST beating is drawn from, in beats a second (his: 'up to about 30 Hz, depending on frequency'); it becomes cents at the sine's own pitch. sineOctave · sineCents = where the sine sits against the note's KEY — the sounding pitch.",
+ "lanes": {
+  "bass_flute": {
+   "voice": "vib_vel", "who": "player", "cents": [8, 50],
+   "_voice": "THE STAND-IN: the Xsample bass flute's 32 presets hold NO sustain without vibrato (sandbox/instruments.js, the roster's note). vib_vel (#15) is his ordinary voice — it has vibrato, so this lane's beating is blurred by it. His to change with one word (a preset's key from the roster); docs/NITS.md has the line."
+  },
+  "bass_clarinet": { "voice": "senza_vel", "who": "player", "cents": [8, 50] },
+  "bowed_vibraphone": {
+   "voice": "crot_bowed", "who": "sine", "beatHz": [3, 30], "sineOctave": 24, "sineCents": 17,
+   "_measured": "MEASURED 2026-10-06 on bank/samples/perc-crot-bow-1.wav (the bowed crotale, key 67, captured through the engine): its strongest partial 1583.4 Hz = G6 +17 cents — the key + 24.17 semitones. So a Ricotti crotale SOUNDS TWO OCTAVES ABOVE ITS KEY (as the instrument does above its written pitch), and this one stands 17 cents over equal temperament. ONE KEY was measured: the other 24 may differ by some cents — the sine's unison is then that far off, heard as a slow beating where the draw says none. A sweep of the 25 keys is one pass of his rack, at his word. IN CONCERT the real crotales have their own tuning: the offset is a rehearsal's measure (docs/PERFORMANCE_NOTES.md)."
+  },
+  "viola": { "voice": "senza_vel", "who": "player", "cents": [8, 50] },
+  "cello": { "voice": "senza_vel", "who": "player", "cents": [8, 50] }
+ },
+ "_player": "kinds = how often each behaviour is drawn (weights). toUnison: the player starts off the pitch and FINDS it — arriving at a fraction of the length drawn from `settle`, then holding the unison · fromUnison: holds the unison for a fraction drawn from `leave`, then drifts off · through: from one side across the unison to the other (the far side 30 … 100 % as far) · hold: a steady offset, small — a steady slow beating · waver: around the unison, a third of the range at the most. Above or below: a coin. ease = the shape in time: linear · in (slow, then quick) · out (quick, then slow).",
+ "player": {
+  "kinds": { "toUnison": 4, "fromUnison": 2, "through": 2, "hold": 1, "waver": 1 },
+  "settle": [0.55, 0.9],
+  "leave": [0.1, 0.4],
+  "ease": { "linear": 2, "in": 1, "out": 1 }
+ },
+ "_sine": "For a lane whose `who` is `sine`: the sine brick's gliss. to: it starts off (above or below, a coin) and ARRIVES at the player's pitch · from: starts on it and leaves · through: from one side to the other · around: out and back.",
+ "sine": {
+  "kinds": { "to": 4, "from": 2, "through": 2, "around": 2 }
+ },
+ "_level": "the dynamic a new sine brick is given (the players' ladder, ppp … fff); a brick's own panel changes it — flat, a hairpin, or a drawn curve.",
+ "level": "mf"
+}

@@ -121,7 +121,7 @@ takes is his (D5).
     *(as laid out, 2026-10-06 — §154 … §159; DEC-33; D17:)* the defaults, his "a": the dynamic `as played`, the drive `normalized`, a mark
     overrides. **Done when:** a return brick written `mf` sounds at a player's mf whatever was captured; a hairpin on a brick is heard; the
     master is the engine's bus with a meter; a hall's microphones are taken through a venue file.
-12. ► **THE SINE TONES — a GENERATED electronics voice the players beat against** — OPENED 2026-10-06 by DEC-35 · 35b; the top line of
+12. ◐ **THE SINE TONES — a GENERATED electronics voice the players beat against** — **BUILT 2026-10-06, 12.1 … 12.7, DONE BUT FOR HIS EAR** (RUNNING_LOG §177 … §181; PLAN.md § 1.5, an AS BUILT line on each item; journal §2's first block is his way in). OPENED 2026-10-06 by DEC-35 · 35b; the top line of
     seven approved by him the same day ("good"; RUNNING_LOG §173 · §174; PLAN.md § 1.5): 12.1 the sine voice in the engine · 12.2 the sine
     brick in the composer score · 12.3 the crescendo from a curve lane · 12.4 the performer simulation · 12.5 the GO (selected played notes
     + a take → sine bricks and simulated parts) · 12.6 the demo score · 12.7 the record. NOT the beating tool (his word). **THE WHOLE PLAN
@@ -187,7 +187,39 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
-**► THE BUILD OF STEP 12, THE SINE TONES — 2026-10-06, written by Fable for OPUS at his word (*"i would like to build with opus is plan ready for them, I'll switch models and go so no formal checkpoint so document as necessary before go"*; RUNNING_LOG §173 … §176; DEC-35 · 35b). THIS IS THE COLD-START BLOCK FOR THE BUILD; where the blocks below disagree with it, THIS BLOCK WINS. The checkpoint #11 block below it stays the record of the drones (parked).**
+**► STEP 12 IS BUILT — THE SINE TONES; HIS EAR IS NEXT — 2026-10-06, Opus (RUNNING_LOG §177 … §181; the engine's §47 · §48; PLAN.md § 1.5, an AS BUILT line on each of 12.1 … 12.7). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
+
+- **POSITION:** running order step 12 of 13, THE SINE TONES — built, ► his ear. The parked list (the level · the petals · the feedback on his chords · the drones · the throws) is presented only when he asks.
+- **WHAT EXISTS, in his words' order** (*"I play. bricks appear … I make a take for this ensemble, I select played notes in composer, select a take, press go"*):
+  · **he plays** — notes into the Rec lane, moved to the players' lanes, as at step 7;
+  · **he makes a take** — Panels ▾ → Strikes: a harmony from the banners (his `bank/harmonies.json`), orchestrated on the rows BFl · BCl · Perc · Mal · Va · Vc · Mal2, a name, `save take`. THE DRAWER HAS THIS ENSEMBLE — seen (§181);
+  · **he selects the played notes** — the HARMONY STRIP appears at the top right;
+  · **`take ▾`** — the take's pitch for each note's player (the strip's own, as in piece #6);
+  · **`∿ sines`** — THE GO: each note its lane's senza-vibrato voice, a SINE BRICK over it, a bend drawn ON the note; the bowed crotales hold and their sine glisses. `seed` beside it: another seed, other behaviours. `∿ off` takes the sines off; `back` takes them off and restores the pitches;
+  · **a sine brick alone:** `S` over a selected note, or at the playhead; its panel — Pitch · Length · Gliss · Level (flat · hairpin · **curve A · B · C · a curve on this lane**: draw the curve in its window, the sine follows it at the next pass) · ▶ hear;
+  · **the numbers his ear may move:** `bank/sine_behaviours.json` (each lane's voice · who moves · the cents · the beating · the kinds' weights) and `bank/elec_route.json` `level` (the ladder: how loud a sine's mf is).
+- **THE LATEST DELIVERABLE:** `scores/sine-demo.json` (15 notes, 15 sines, curve A) and the sample take `take-01-sine-demo` — by `node tools/build_sine_demo.js`.
+- **⚠ WHAT WILL SURPRISE A COLD SESSION:**
+  · **NO SOUND HAS BEEN MADE.** His engine (started 2026-10-06 15:10:53) predates the sine AND the drones' loop: a `/le/sine` to it falls on no ear, SILENTLY — no error anywhere. His restart is the first run of `sinePlay` · `sineLetGo` (parsed, their arithmetic proven, never run on a server). A fault at that start: a SCREENSHOT of the engine's window first.
+  · **THE BASS FLUTE HAS NO SUSTAIN WITHOUT VIBRATO** — its simulated long tone is `vib_vel`, vibrato and all (`bank/sine_behaviours.json`; NITS). The other three play `senza_vel`.
+  · **A CROTALE SOUNDS TWO OCTAVES AND 17 CENTS ABOVE ITS KEY** (measured on ONE key, §179): the mallets' sine brick reads `F#7 +17c` over a note whose key is F#5. If the crotales' sine beats slowly where it should be still, that is the other keys' own tuning — a sweep, at his word.
+  · **A low player beats slowly for the same cents** (40 c: 15 a second on the flute's E5, 1.6 on the cello's D2) — what a bend does; a `beatHz` range for a player lane is one small change if he asks.
+  · The plan's Sines panel, its companion bend zone and its group were NOT built — the harmony strip and the note's own `morphBend` already did those jobs (§179 · §180). PLAN.md § 1.5 says so on each item.
+- **THE NEXT CONCRETE STEP — HIS EAR. His steps, whole:** (1) the engine's window: close it · double-click `C:\Users\jwloy\GitHub\decibel_TENOR_2026\start_electronics.bat` — the window's start lists nothing new for the sine; the first `sine · …` line appears when a brick is played · (2) Chrome, the composer page: F5 · (3) File ▾ → Experiments → `sine-demo` · play from 0 — in the engine's window a line per sine (`sine · E5 · 659.26 Hz · 6.5 s · …`) · (4) to try the GO himself: box-select some notes → the strip → change `seed` → `∿ sines`; and `S` on a note for a brick of his own. **THEN ASK WHAT HE HEARD** — a word is enough. By what he says, each is small:
+  · *the sine is too loud / too soft against the player* → the brick's Dynamic, or for all of them `bank/sine_behaviours.json` `level`; the whole ladder is `bank/elec_route.json` `level.reference`.
+  · *the bends are too wide / too narrow / too alike* → `bank/sine_behaviours.json`: a lane's `cents`, `player.kinds` (the weights), `settle` · `leave`; then `∿ sines` again with another seed (F5 first: the page reads the file once).
+  · *the crotales' sine is not at the unison* → `lanes.bowed_vibraphone.sineCents` (17 today); or the sweep of the 25 keys.
+  · *the flute's vibrato spoils it* → another voice for the lane (one word in the file), or a preset of his without vibrato.
+  · *a click at a sine's start or end* → `\leSine`'s 10 ms rise and 30 ms fall (`electronics/sc/synths.scd`).
+  · *nothing sounds* → a SCREENSHOT of the engine's window (is there a `sine ·` line? an ERROR at the start?) — never guessed.
+  · *a group, so a note and its brick move as one* · *a crossfade between two takes at a breath* → small builds, at his word.
+- **`Resume reads:` nothing beyond this §2.** For a number: `bank/sine_behaviours.json` (its `_doc` lines say what each is). For a fault at the engine's start: `electronics/sc/sine.scd` (150 lines). For the GO: `score/public/sine_go.js`'s header.
+- **DELIBERATELY UNCOMMITTED: nothing of the build's.** `scores/temp01new_cello_bass_flute_perc_25.72.json` — his, untracked, untouched. The page still holds his unsaved working copies of `audition-100-s1` · `audition-30` · `workshop-bfl-slap` (his; as at checkpoints #9 … #11).
+- **LEFT RUNNING — ALL HIS, none touched:** Reaper · the score server on 5500 (NO restart needed — no server line changed) · his engine (the one of 15:10:53 — it has neither the loop nor the sine) · loopMIDI · the composer page. The AI's throwaway server (5501) was started for one look and STOPPED; it wrote nothing.
+- **RESUME ON: Fable** for what he heard and what the section needs. **Opus** for a number, a fault at the engine's start, a small build.
+
+
+*(kept for the trail — SUPERSEDED by the block above: the build it asked for is done)* **► THE BUILD OF STEP 12, THE SINE TONES — 2026-10-06, written by Fable for OPUS at his word (*"i would like to build with opus is plan ready for them, I'll switch models and go so no formal checkpoint so document as necessary before go"*; RUNNING_LOG §173 … §176; DEC-35 · 35b). THIS IS THE COLD-START BLOCK FOR THE BUILD; where the blocks below disagree with it, THIS BLOCK WINS. The checkpoint #11 block below it stays the record of the drones (parked).**
 
 - **POSITION:** running order step 12 of 13, THE SINE TONES — ► active; the plan WRITTEN WHOLE (PLAN.md § 1.5, 12.1 … 12.7, approved by him at the top line and written at his word); NOTHING BUILT. Step 10's drones, step 11's level and the two auditions are PARKED; the parked list is presented only when he asks.
 - **THE INSTRUCTION: BUILD 12.1 → 12.6 AS ONE from PLAN.md § 1.5 — the section IS the instruction** (each item: Result when done · the sub-steps · THE PROOF, once). His word on the way of working (D13 · §61 · §65): a build is proven ONCE by the one thing that proves it, and stops; no check that needs his hands; he tests when he composes. A RUNNING_LOG entry per item as it is built (what was decided, the numbers; the engine's lab journal `electronics/docs/` for 12.1 … 12.3's engine side); a commit per item, pushed (D3); `git subtree push --prefix=electronics` at the wrap and the mirror pulled (D7). 12.7 the record is done AS the items are built, not after.

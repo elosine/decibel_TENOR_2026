@@ -1,6 +1,90 @@
 {
- "_version": 1,
- "_contract": "PLAN 2ab — named snapshots of a sandbox PANEL's state, one file for every panel. DATA, NOT CODE. `state` is OPAQUE to the server and to this file's readers: it is byte-for-byte whatever that panel's own save() writes to localStorage, so a panel can change its state shape without touching the server or this contract. localStorage remains the live scratch — a snapshot is a NAMED point the composer chose to keep, and it survives a chat clear, a browser change and a different machine. THIS FILE IS ALSO THE AI-DIALING CHANNEL: the AI appends a named snapshot (takes are named `take-NN-<slug>` with the composer's verbatim words in `comment`) and the composer picks it from the panel's Load list, which refetches every time it is opened. THE AI NEVER OVERWRITES AN EXISTING NAME — it writes a new one; the composer may overwrite and delete freely. NOT stored under scores/ on purpose: sandbox state is not score objects, and the composer score's 5 s autosave has clobbered a loaded score before (D8).",
- "_provenance": "Skeleton written at the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4; the composer's word: none of his libraries come across. EMPTY: piece #6's takes (8 panels: pulse · multitempo · phase · strikes · beatings · beatingPairs · beatingShapes · morphPitches) stayed in its repo.",
- "panels": {}
+  "_version": 1,
+  "_contract": "PLAN 2ab — named snapshots of a sandbox PANEL's state, one file for every panel. DATA, NOT CODE. `state` is OPAQUE to the server and to this file's readers: it is byte-for-byte whatever that panel's own save() writes to localStorage, so a panel can change its state shape without touching the server or this contract. localStorage remains the live scratch — a snapshot is a NAMED point the composer chose to keep, and it survives a chat clear, a browser change and a different machine. THIS FILE IS ALSO THE AI-DIALING CHANNEL: the AI appends a named snapshot (takes are named `take-NN-<slug>` with the composer's verbatim words in `comment`) and the composer picks it from the panel's Load list, which refetches every time it is opened. THE AI NEVER OVERWRITES AN EXISTING NAME — it writes a new one; the composer may overwrite and delete freely. NOT stored under scores/ on purpose: sandbox state is not score objects, and the composer score's 5 s autosave has clobbered a loaded score before (D8).",
+  "_provenance": "Skeleton written at the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4; the composer's word: none of his libraries come across. EMPTY: piece #6's takes (8 panels: pulse · multitempo · phase · strikes · beatings · beatingPairs · beatingShapes · morphPitches) stayed in its repo.",
+  "panels": {
+    "strikes": {
+      "take-01-sine-demo": {
+        "comment": "A SAMPLE take for the sine tones (PLAN 1.5 · 12.6) — his chord shape cs-054 \"m2+3oct M2+3oct m3+3oct M3+3oct [0,37,38,39,40]\", one pitch a player by range. Written by tools/build_sine_demo.js; his own takes he makes in the drawer.",
+        "state": {
+          "strikeId": "hs::harm:chordShapes:cs-054",
+          "cfg": {
+            "strikeId": "hs::harm:chordShapes:cs-054",
+            "voicing": "original",
+            "order": "played",
+            "transpose": 0
+          },
+          "rowKeys": {},
+          "voices": [
+            {
+              "i": 0,
+              "pitch": 38,
+              "lane": 5,
+              "fold": 0,
+              "tech": "senza_vel",
+              "standIn": null,
+              "piano": false,
+              "solo": false,
+              "slot": 0,
+              "skip": false,
+              "also": []
+            },
+            {
+              "i": 1,
+              "pitch": 75,
+              "lane": 1,
+              "fold": -1,
+              "tech": "senza_vel",
+              "standIn": null,
+              "piano": false,
+              "solo": false,
+              "slot": 1,
+              "skip": false,
+              "also": []
+            },
+            {
+              "i": 2,
+              "pitch": 76,
+              "lane": 0,
+              "fold": 0,
+              "tech": "vib_vel",
+              "standIn": null,
+              "piano": false,
+              "solo": false,
+              "slot": 2,
+              "skip": false,
+              "also": []
+            },
+            {
+              "i": 3,
+              "pitch": 77,
+              "lane": 4,
+              "fold": 0,
+              "tech": "senza_vel",
+              "standIn": null,
+              "piano": false,
+              "solo": false,
+              "slot": 3,
+              "skip": false,
+              "also": []
+            },
+            {
+              "i": 4,
+              "pitch": 78,
+              "lane": 3,
+              "fold": 0,
+              "tech": "crot_bowed",
+              "standIn": null,
+              "piano": false,
+              "solo": false,
+              "slot": 4,
+              "skip": false,
+              "also": []
+            }
+          ]
+        },
+        "saved": "2026-10-06T20:54:42.924Z"
+      }
+    }
+  }
 }
