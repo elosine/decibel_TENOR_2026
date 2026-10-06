@@ -3808,3 +3808,11 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **The session after the build, in one paragraph, for the paper:** the build (§116) made a mechanism; the afternoon made it a practice. He dealt, listened, and cut — by envelope (ring versions, a ring time drawn 950 … 1350 ms), by class (the time effects only), by seed; he reached for a freeze the catalogue did not have, rejected the spectral one and the cloud built for him, and found the sound in a repo of his own from 2015; he asked that no two returns ring the same notes and chose luck over chosen sets; he cut five effects by ear and named thirteen to keep; and he asked for a hundred to hear in a row. The tools followed his words one at a time: `--env` · `--class` · `--render` · `metadata.deal` · `gen_presets.js` · `build_audition.js`. One hour went to a fault that was not one (§121) — the lesson is in the block.
 
 **Not done, not claimed:** what he heard in the hundred (rendered, see above — a first draft of this entry said "not rendered": the bank said otherwise at the sweep) · the main score is not re-dealt from them · the rhythm panel (DEC-24) is a note · the blips are unexplained.
+
+## §129. THE HUNDRED AGAIN, NUMBERED — a tag on a return brick's label (2026-10-05, Opus; after checkpoint #7)
+
+**His words:** *"Can you give me the hundred again, but can you number each of the bricks somehow in the label?"*
+
+**Done:** a return brick honours **`elec.label`** — a tag shown first on the brick (`▶ 17 · va-impulse-2~icy2`), whatever its behaviour (`electronics/score/le_objects.js` `decorate`; the engine's, any piece's) · `tools/build_audition.js` writes each brick's number as its label · **`scores/audition-100-s1-numbered.json`** — a NEW file (the tool never writes over a score, and the page holds a working copy of `audition-100-s1`): the same generation (seed 1), the same hundred variants at the same times, checked brick by brick against `audition-100-s1`; built with `--no-render`, so the renders he made at the wrap play and no pitch is drawn again. **Brick N is row N of `bank/presets.json`** — the handle for his keepers and kills.
+
+**Proven:** the two scripts parse; the two scores agree in their variants and times. NOT seen in a browser. His: F5 · File ▾ → Experiments → `audition-100-s1-numbered` · play from 0.

@@ -34,7 +34,7 @@ const zone = (layer, start, end, elec) => ({
 const objects = [], rows = [];
 P.presets.forEach((p, i) => {
   const smp = impulses[i % impulses.length], t = 1 + i * GAP;
-  const z = zone(smp.lane >= 0 ? smp.lane : 0, t, t + 0.5, { name: smp.name, variants: { [smp.name]: p.key + '-' + ENV } });
+  const z = zone(smp.lane >= 0 ? smp.lane : 0, t, t + 0.5, { name: smp.name, label: String(i + 1), variants: { [smp.name]: p.key + '-' + ENV } });   // the brick's number = the preset's place in the file
   objects.push(z);
   rows.push({ i: i + 1, t, lane: smp.lane, sample: smp.name, variant: p.key + '-' + ENV, name: p.name });
 });
