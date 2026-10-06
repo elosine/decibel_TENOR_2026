@@ -102,7 +102,12 @@ if (CLEAR) {
 save.metadata = Object.assign({}, save.metadata, { modified: new Date().toISOString(),
   deal: CLEAR ? null : { seed: SEED, env: ENV || 'the mix', class: CLASS || 'all', from: FROM, to: TO === Infinity ? null : TO, when: new Date().toISOString().slice(0, 16),
     command: 'node tools/deal_variants.js --score ' + NAME + (TO === Infinity ? '' : ' --to ' + TO) + (FROM ? ' --from ' + FROM : '') + ' --seed ' + SEED + (ENV ? ' --env ' + ENV : '') + (CLASS ? ' --class ' + CLASS : '') } });
-fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n');
+// the write, with a retry: the score file is held for an instant now and then (the page's autosave, the server's read — RUNNING_LOG
+// §140 · §146: `UNKNOWN: unknown error, open …`, errno -4094, three times in one evening); the deal is computed above, nothing is half-written
+for (let tries = 0; ; tries++) {
+  try { fs.writeFileSync(FILE, JSON.stringify(save, null, 1) + '\n'); break; }
+  catch (e) { if (tries >= 5) throw e; console.log('(the score file is held by another process — again in 300 ms)'); Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 300); }
+}
 if (!CLEAR) console.log('the deal is recorded in the score: ' + save.metadata.deal.command);
 console.log(path.relative(ROOT, FILE) + ' written — ' + (CLEAR ? 'the variants taken off ' : 'a variant on every sample of ') + dealt.length + ' return bricks. Reload it in the composer page (File ▾ → Reload).');
 

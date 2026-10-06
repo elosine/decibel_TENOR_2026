@@ -192,7 +192,8 @@ question, not by habit.)*
 - **THEN (§143): the combs — comb3 · comb5 kept, comb2 · comb6 out: `bank/presets.json` is 41.** SEED 12 from the 41 (colour 29 · time 46 · 75 variants, the plan sent).
 - **THEN (§144): Buffer Override out — `bank/presets.json` is 40.** SEED 13 from the 40 (time 48 · colour 27 · 74 variants, the plan sent).
 - **THEN (§145): SEED 14** (seed 13 passed over; colour 27 · time 48 · 74 variants, the plan sent).
-- **► NEXT: his ear on seed 14.** A kept deal comes back by its command (`--seed 7`, while the presets and bricks are as they were) or by opening the frozen score. Then what he says — a reseed · another keep · the presets · the tiers · his next notes.
+- **THEN (§146): SEED 14 KEPT — deal 4** (`scores/piece-sec01-a-deal-s14.json`). Four deals kept: 7 · 10 · 11 · 14. His question answered: a chain's order is SHUFFLED BY THE ENGINE AT EVERY PLAYBACK (dial I); the deal is by name. **SEED 15** from the 40 (time 46 · colour 29 · 74 variants). `deal_variants.js` retries its write (the momentary lock, three times this evening).
+- **► NEXT: his ear on seed 15.** A kept deal comes back by its command (`--seed 7`, while the presets and bricks are as they were) or by opening the frozen score. Then what he says — a reseed · another keep · the presets · the tiers · his next notes.
 
 **► THE RE-DEAL AND THE PATTERN'S EFFECTS — 2026-10-05, Fable (RUNNING_LOG §131; the engine's §38; DEC-28). THIS SUPERSEDES the "NEXT" of the blocks below.**
 
@@ -490,7 +491,7 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132 · §133: groups 5 · 6 all flocking, group 6 at 29.8 … 34.3 s, the whole score on SEED 14 FROM THE 40 (§145; Buffer Override out at §144; SEEDS 7 · 10 · 11 KEPT on the shelf — `scores/piece-sec01-a-deal-s7.json` · `-s10.json` · `-s11.json` · `bank/candidates.json` `deals`, by `node tools/keep_deal.js --score piece-sec01-a --seed N`; the others passed over); THE FAR TIER in the rolls (§135) — Reload · play from 0). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --render`, `--class time` for the time presets only; he saves first — CTRL+S if the page's copy is newer, the diff says); a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
+| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132 · §133: groups 5 · 6 all flocking, group 6 at 29.8 … 34.3 s, the whole score on SEED 15 FROM THE 40 (§146; SEEDS 7 · 10 · 11 · 14 KEPT on the shelf — `scores/piece-sec01-a-deal-s7.json` · `-s10` · `-s11` · `-s14.json` · `bank/candidates.json` `deals`, by `node tools/keep_deal.js --score piece-sec01-a --seed N`; the others passed over); THE FAR TIER in the rolls (§135) — Reload · play from 0). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --render`, `--class time` for the time presets only; he saves first — CTRL+S if the page's copy is newer, the diff says); a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
 | — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
 | — | His next notes beyond group 6 — a row 7 in `bank/impulses.json` when he places them (`impulse.js --n 7`; `shuffle` for another order) | Fable | — |
 | — | Step 10.1 — HIS EAR on the workshop (§103) — he is in it; the shelf grows (§113) | Fable (the talk) · Opus (a fix) | — |

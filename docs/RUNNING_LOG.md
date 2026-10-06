@@ -3949,3 +3949,13 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 ## §145. "RESEED AGAIN" — seed 14 (2026-10-05, Fable)
 
 **His words:** *"reseed again"* — seed 13 heard and passed over. `node tools/deal_variants.js --score piece-sec01-a --seed 14 --env tail --render`: the 40 · 75 plays · colour 27 · time 48 · 74 variants, the plan sent. NOT heard. Seeds: … · **10 kept** · **11 kept** · 12 · 13 · 14 (40).
+
+## §146. SEED 14 KEPT — deal 4; his question on the order; seed 15; the write's retry (2026-10-05, Fable)
+
+**His words:** *"Okay, save that one. Can you confirm for me that the sample order is being shuffled each time, or are they being played in order? And then reseed again, please."*
+
+**Kept:** seed 14 — deal 4 on the shelf (`scores/piece-sec01-a-deal-s14.json`; 25 bricks · 75 plays · the 40). Four deals kept: 7 (the 49) · 10 · 11 (the 43) · 14 (the 40).
+
+**The order — answered from the code, not guessed:** a chain's samples are SHUFFLED AT EVERY PLAYBACK by the engine — `bank/elec_route.json` `return.chain` `I_order: "shuffled"` → `electronics/sc/bank.scd` `chainRoll`: `order = if(o[\shuffle] > 0.5) { names.scramble } { names }` (§82's dial I, his word then). So the order the SCORE shows (the row's shuffle of §132) is the order the brick names; what sounds is a fresh scramble each pass, the first of them following the live note, each next one the one before. The deal is BY NAME (which preset on which sample), so a sample's preset follows it wherever it lands in the order. An `arChain` (group 4) is scrambled the same, then its first link takes the ar roll.
+
+**Seed 15:** `node tools/deal_variants.js --score piece-sec01-a --seed 15 --env tail --render` — the first run failed at the write again (`UNKNOWN … open`, errno -4094 — the third time this evening, each right after a keep or an F5); the retry went through: the 40 · 75 plays · time 46 · colour 29 · 74 variants, the plan sent. **The tool now retries its write itself** (five tries, 300 ms apart; the deal is computed before the write, so nothing is half-written). NOT heard. Seeds: … · **14 kept** · 15 (40).
