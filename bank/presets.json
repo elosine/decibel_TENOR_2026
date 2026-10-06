@@ -232,20 +232,6 @@
    }
   },
   {
-   "key": "comb2",
-   "name": "comb — a pitch drawn 83 … 333 Hz · rings 0.7 s",
-   "effect": "comb",
-   "class": "colour",
-   "args": {
-    "combMix": 1,
-    "combTime": [
-     0.003,
-     0.012
-    ],
-    "combFb": 0.7
-   }
-  },
-  {
    "key": "icy2",
    "name": "icy — 22× slower · window 0.18 s · 42 grains · rand 0.3 · hanning",
    "effect": "icy",
@@ -640,20 +626,6 @@
    }
   },
   {
-   "key": "comb6",
-   "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.35 s",
-   "effect": "comb",
-   "class": "colour",
-   "args": {
-    "combMix": 1,
-    "combTime": [
-     0.003,
-     0.012
-    ],
-    "combFb": 1.35
-   }
-  },
-  {
    "key": "icy6",
    "name": "icy — 50× slower · window 0.2 s · 38 grains · rand 0.2 · expodec",
    "effect": "icy",
@@ -861,7 +833,7 @@
   "command": "node tools/gen_presets.js --seed 1 --n 100 --effects override,fuzz,octave,feedback,crush,diode,squiz,comb,icy,greyhole,jpverb,cres,string"
  },
  "kept": {
-  "n": 43,
+  "n": 41,
   "from": "bank/presets_gen_s1_100.json — the generation of seed 1, the hundred whole",
   "rows": [
    4,
@@ -915,14 +887,16 @@
    97
   ],
   "when": "2026-10-06T02:19",
-  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 2026-10-05 (RUNNING_LOG §139): every squiz preset taken out at his ear — squiz1 squiz2 squiz4 squiz5 squiz6 squiz7 (49 → 43)",
+  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 2026-10-05 (RUNNING_LOG §139): every squiz preset taken out at his ear — squiz1 squiz2 squiz4 squiz5 squiz6 squiz7 (49 → 43) · 2026-10-05 (RUNNING_LOG §143): comb2 comb6 out at his ear after audition-comb — \"keep three and five\" (43 → 41)",
   "dropped": [
    "squiz1",
    "squiz2",
    "squiz4",
    "squiz5",
    "squiz6",
-   "squiz7"
+   "squiz7",
+   "comb2",
+   "comb6"
   ]
  }
 }
