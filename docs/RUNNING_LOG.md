@@ -4482,3 +4482,25 @@ Three are SHORTER than their 5 s notes — `bcl-mp-1` 1.8 s · `vc-op-1` 2.6 s �
 **Written for it:** journal §2's block **THE BUILD OF STEP 12** — the cold-start block for the build (the position · the instruction: 12.1 → 12.6 as one from PLAN.md § 1.5, a proof once per item, an entry and a commit per item, the subtree push at the wrap · the order and the seam lines · the `Resume reads` list, exhaustive · what the block does not know, six items · his hand steps at the end only · what is left running — his engine of 15:10 will predate the sine too · the model). CLAUDE.md's state line and PLANNER's NOW line say the same. Committed and pushed.
 
 **Not a checkpoint by name** (his word); it carries what a checkpoint carries, so a `/clear` at any point resumes from it. **The AI's position at the hand-off:** the plan is ready for Opus — every item has its result, its sub-steps, its one proof and the files it touches; the six unknowns are named and each is answered by a read, not by him.
+
+## §177. 12.1 BUILT — THE SINE VOICE IN THE ENGINE: `\leSine`, `sine.scd`, `/le/sine`, proven offline (2026-10-06, Opus)
+
+**What prompted it** — his "go" on Opus, the build of step 12 from PLAN.md § 1.5 as one (journal §2's block THE BUILD OF STEP 12; §176).
+
+**Built (the engine's — `electronics/sc/`; its own journal §47):** `synths.scd` `\leSine` — a sine on both channels for `dur` s; its level `envDb` (8, dB of its PEAK) over `envDt` (7) on `envCurve`, `\leSample`'s shape; its pitch `freq` moved by `glissCents` (8) over `glissDt` (7), straight in cents, at AUDIO rate (a control-rate frequency steps once a block); a 10 ms rise and a 30 ms fall under both; `gate` 0 = it lets go in 50 ms. **`sine.scd`** (new, loaded by `boot.scd` after `level.scd`): `kGainDb` · `markNum` · `sineGain` · `sinePoints` · `sineLine` · `sineSpec` · `sineArgs` · `sineSaid` · `sinePlay` · `sineStop` · `sineHear`. `session.scd`: one line — `sineHear`, with or without a bank.
+
+**The message, AS BUILT (where it differs from the plan's bullet):** `/le/sine  id · lane · t · dueMs · midi · lengthMs · [level · levelCurve · gliss]` — the two lines are NOT eight values and seven times but **the engine's own breakpoint form, `ms:value` pairs** (`level 0:mp,3000:f,end:p` · `gliss 0:-28,end:0`), as `/le/play`'s `env` already is: one convention in the engine, unequal segments for free, eight points at the most. `level` may be one bare mark (`mf` · `4.5`); a mark is a NAME or a NUMBER on the ladder (ppp = 0 … fff = 7, fractions between, below 0 on down at 4 dB a step). And a second kind, **`/le/sinestop`** — not in the plan: a nine-second tone must not hang over a stopped score; every sine lets go, and once more 0.2 s on for one sent ahead and not yet begun.
+
+**A sine is not the bank's:** the plan put the responder in `bank.scd`; it went into its own file, because `bankHear` is wired only when a session has a bank and a generated voice needs none (the improviser piece may run without one).
+
+**THE LEVEL, exact by formula — and the plan's formula corrected.** The plan wrote LUFS = −0.691 + 20·log10(peak/√2) + K(f): that is ONE channel. `\leSine` sends both, as `\leSample` does, and `level.scd` measures a sample "as it will sound" (twice one channel's energy). So: **LUFS = −0.691 + 20·log10(A) + K(f)**, the peak for a mark = `markDb + 0.691 − K(f)`, held under −3 dBFS. K(f) from `level.scd`'s own two biquads at the engine's rate — COMPUTED: +0.698 dB at 1 kHz (the standard's +0.691 at 48 kHz; the engine runs at 44.1) · −0.21 at 220 Hz · **+3.20 at 2093 Hz (C7) · +3.99 at 4186 Hz (C8)** — a crotale's sine is played 3 … 4 dB softer in peak for the same mark. With the piece's ladder (`reference` −29.54 LUFS = fff, 4 dB a step): A3 at mf peaks −40.64 dBFS, at fff −28.64.
+
+**THE PROOF, once — `electronics/sc/sine_test.scd`, SINE_TEST PASS (ten checks; NRT, safe beside his engine):**
+- the K at 1 kHz 0.698 dB; fff at 1 kHz peaks −29.55 dBFS against the reference −29.54;
+- a 3 s sine on A3 gliding −50 → 0 cents: 214.151 Hz at 0.2 s = −46.65 c (the line −46.67) · 219.576 Hz at 2.8 s = −3.34 c (the line −3.33) — within 0.02 cents;
+- the level 1.5 → ff over 2 s: half way its peak −41.84 dB (half way in decibels −41.64); held at ff it READS −33.6 LUFS by `loudOf` — the measure the bank's samples are read with — against ff = −33.54, its peak −32.64 the formula's −32.64;
+- C7 written mf reads −41.7 LUFS against mf = −41.54 (its peak −44.1 dB: the shelf counted);
+- told to let go at 1.0 s, silent from 1.1 s.
+And `level_test.scd` once (LEVEL_TEST PASS) — for ONE claim the sine test cannot make: `session.scd`, which boots a server and cannot run beside his engine, still PARSES with its new line.
+
+**NOT claimed:** a sine through a LIVING engine (his restart is its first run) · his ear · the group `grpSine` and the stop's second sweep (they need a server). **An engine started before this has no `\leSine` and no `/le/sine`: the message would fall on no ear, silently.**
