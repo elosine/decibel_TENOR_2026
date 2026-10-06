@@ -3911,3 +3911,9 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 ## §138. "RESEED AGAIN" — seed 9 (2026-10-05, Fable)
 
 **His words:** *"reseed again"* — seed 8 heard and passed over. `node tools/deal_variants.js --score piece-sec01-a --seed 9 --env tail --render`: all 49 · 75 plays · colour 36 · time 39 · 73 variants, the plan sent. NOT heard. Seeds: 1 · 3 · 4 · 5 · 6 · **7 kept** · 8 · 9.
+
+## §139. THE SQUIZ OUT — 49 → 43 presets; seed 10 (2026-10-05, Fable)
+
+**His words:** *"And we take out all the squiz effects and then reseed, please."* — after seed 9 (passed over). For the paper: the squiz (a pitch-shifting buffer chopper) was kept 6 of 8 at §130 and is out whole at his ear now, the first effect dropped from the keepers.
+
+**Done:** `bank/presets.json` `presets` 49 → **43** — out: squiz1 · squiz2 · squiz4 · squiz5 · squiz6 · squiz7 (the file's `kept` names them under `dropped`; the hundred whole stays in `bank/presets_gen_s1_100.json`). The set by effect now: feedback 7 · icy 7 · diode 5 · greyhole 4 · jpverb 4 · comb 4 · crush 3 · cres 3 · octave 3 · fuzz 2 · override 1 — colour 18 · time 25. Then `node tools/deal_variants.js --score piece-sec01-a --seed 10 --env tail --render`: 43 presets · 75 plays · colour 30 · time 45 · 74 variants, the plan sent. NOT heard. *(The kept deal of seed 7 named six squiz variants; its frozen score still plays them from their renders in the bank — the frozen copy is the keep, not the command.)* Seeds: 1 · 3 · 4 · 5 · 6 · **7 kept** · 8 · 9 · 10 (43).

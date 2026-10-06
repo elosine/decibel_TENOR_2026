@@ -104,17 +104,6 @@
    }
   },
   {
-   "key": "squiz1",
-   "name": "squiz — ratio 3 · 1 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 3,
-    "sqChunks": 1
-   }
-  },
-  {
    "key": "icy1",
    "name": "icy — 14× slower · window 0.32 s · 40 grains · rand 0.25 · hamming",
    "effect": "icy",
@@ -240,17 +229,6 @@
      70,
      500
     ]
-   }
-  },
-  {
-   "key": "squiz2",
-   "name": "squiz — ratio 2.3 · 7 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 2.3,
-    "sqChunks": 7
    }
   },
   {
@@ -462,17 +440,6 @@
    }
   },
   {
-   "key": "squiz4",
-   "name": "squiz — ratio 2.2 · 4 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 2.2,
-    "sqChunks": 4
-   }
-  },
-  {
    "key": "icy4",
    "name": "icy — 15× slower · window 0.41 s · 45 grains · rand 0.15 · blackman",
    "effect": "icy",
@@ -556,17 +523,6 @@
      247,
      440
     ]
-   }
-  },
-  {
-   "key": "squiz5",
-   "name": "squiz — ratio 2.4 · 6 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 2.4,
-    "sqChunks": 6
    }
   },
   {
@@ -684,17 +640,6 @@
    }
   },
   {
-   "key": "squiz6",
-   "name": "squiz — ratio 2.1 · 8 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 2.1,
-    "sqChunks": 8
-   }
-  },
-  {
    "key": "comb6",
    "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.35 s",
    "effect": "comb",
@@ -765,17 +710,6 @@
      70,
      500
     ]
-   }
-  },
-  {
-   "key": "squiz7",
-   "name": "squiz — ratio 2.6 · 6 chunks",
-   "effect": "squiz",
-   "class": "colour",
-   "args": {
-    "sqMix": 1,
-    "sqRatio": 2.6,
-    "sqChunks": 6
    }
   },
   {
@@ -927,7 +861,7 @@
   "command": "node tools/gen_presets.js --seed 1 --n 100 --effects override,fuzz,octave,feedback,crush,diode,squiz,comb,icy,greyhole,jpverb,cres,string"
  },
  "kept": {
-  "n": 49,
+  "n": 43,
   "from": "bank/presets_gen_s1_100.json — the generation of seed 1, the hundred whole",
   "rows": [
    4,
@@ -981,6 +915,14 @@
    97
   ],
   "when": "2026-10-06T02:19",
-  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file"
+  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 2026-10-05 (RUNNING_LOG §139): every squiz preset taken out at his ear — squiz1 squiz2 squiz4 squiz5 squiz6 squiz7 (49 → 43)",
+  "dropped": [
+   "squiz1",
+   "squiz2",
+   "squiz4",
+   "squiz5",
+   "squiz6",
+   "squiz7"
+  ]
  }
 }
