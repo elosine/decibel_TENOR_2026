@@ -1,83 +1,1679 @@
 {
  "_about": "THE PRESETS OF THE PROCESSED RETURN (PLAN 10.8 · 10.9; DEC-21 · 21b · 22 · 23; RUNNING_LOG §116 · §125) — the transformations a return brick may give its sample: ONE effect of the engine's chain under an envelope. A return's variant is  <key>-<envelope>  and its sample is  <sample>~<key>-<envelope>  (bfl-impulse-1~crush4-perc), rendered by the engine right after the sample's capture. Read by the composer page (electronics/score/le_objects.js, opts.presetsUrl) and by tools/deal_variants.js · tools/build_audition.js. `args` are the chain's own control names (electronics/sc/process.scd), whole — nothing is merged in; a value may be a RANGE [lo, hi], drawn fresh each time the plan is sent — SINCE §125 EVERY PITCHED DIAL IS ONE (DEC-23, his word 'a': no two returns ring the same notes; the notes are luck within his ranges). THIRTY presets (his word §125): the shelf's (`from` = the shelf's row; `changed` says where a return's version differs), the AI's across the catalogue, and SEVEN versions of his own freeze `icy` — none of the stretches shifts pitch (his word). The spectral `freeze` and the `cloud` are out of the deal (still in the catalogue). Rows are PROVISIONAL until his ear.",
  "classes": {
-  "colour": { "durX": 1.0, "what": "the effect is in the attack: the variant is as long as the impulse itself" },
-  "time": { "durX": 1.75, "what": "the effect needs room: one and three quarters of the impulse" }
+  "colour": {
+   "durX": 1,
+   "what": "the effect is in the attack: the variant is as long as the impulse itself"
+  },
+  "time": {
+   "durX": 1.75,
+   "what": "the effect needs room: one and three quarters of the impulse"
+  }
  },
  "envelopes": {
-  "perc": { "atkMs": 3, "what": "3 ms up, the rest down (Env.perc): keeps the attack" },
-  "expodec": { "what": "instant, then an exponential fall: keeps the attack" },
-  "gauss": { "what": "a bell: the attack is gone, a swell" },
-  "tri": { "what": "a triangle: up to the middle, then down" },
-  "tail": { "capMs": [950, 1350], "what": "the ring version — no envelope: it rings out to −60 dB under its peak, or is cut and faded at a RING TIME drawn fresh at every plan send, between 950 and 1350 ms past the source (his word 2026-10-05, RUNNING_LOG §118). A [lo, hi] here is drawn like a dial's range" }
+  "perc": {
+   "atkMs": 3,
+   "what": "3 ms up, the rest down (Env.perc): keeps the attack"
+  },
+  "expodec": {
+   "what": "instant, then an exponential fall: keeps the attack"
+  },
+  "gauss": {
+   "what": "a bell: the attack is gone, a swell"
+  },
+  "tri": {
+   "what": "a triangle: up to the middle, then down"
+  },
+  "tail": {
+   "capMs": [
+    950,
+    1350
+   ],
+   "what": "the ring version — no envelope: it rings out to −60 dB under its peak, or is cut and faded at a RING TIME drawn fresh at every plan send, between 950 and 1350 ms past the source (his word 2026-10-05, RUNNING_LOG §118). A [lo, hi] here is drawn like a dial's range"
+  }
  },
- "mix": { "perc": 0.4, "expodec": 0.4, "gauss": 0.1, "tri": 0.1 },
+ "mix": {
+  "perc": 0.4,
+  "expodec": 0.4,
+  "gauss": 0.1,
+  "tri": 0.1
+ },
  "presets": [
-  { "key": "crush6", "name": "crush — 6 bits at 4 kHz (his setting, §126)", "effect": "crush", "class": "colour",
-    "changed": "replaces the shelf's crush4 (0.4 · 4 bits · 10.4 kHz) at his word: mix 1 · 6 bits · 4000 Hz",
-    "args": { "crMix": 1, "crBits": 6, "crRate": 4000 } },
-  { "key": "diffuse", "name": "diffusion — the attack smeared", "effect": "diffusion", "class": "time", "from": 2,
-    "args": { "diffMix": 1, "diffTime": 0.0245, "diffGain": 0.55 } },
-  { "key": "grey", "name": "Greyhole — a small space", "effect": "greyhole", "class": "time", "from": 3,
-    "args": { "ghMix": 0.8, "ghTime": 0.08, "ghSize": 0.7, "ghFb": 0.8, "ghDiff": 0.8, "ghDamp": 0.2 } },
-  { "key": "diode", "name": "diode ring — a carrier drawn 70 … 500 Hz", "effect": "diode", "class": "colour", "from": 4,
-    "changed": "the carrier's range 70 … 500 Hz (was 80 … 400) and four more of the kind at his word (§126): an assortment of mixes",
-    "args": { "drmMix": 1, "drmFreq": [70, 500] } },
-  { "key": "diodeB", "name": "diode ring — another carrier 70 … 500 Hz, mix 0.85", "effect": "diode", "class": "colour",
-    "args": { "drmMix": 0.85, "drmFreq": [70, 500] } },
-  { "key": "diodeC", "name": "diode ring — another carrier 70 … 500 Hz, mix 0.7", "effect": "diode", "class": "colour",
-    "args": { "drmMix": 0.7, "drmFreq": [70, 500] } },
-  { "key": "diodeD", "name": "diode ring — another carrier 70 … 500 Hz, mix 1", "effect": "diode", "class": "colour",
-    "args": { "drmMix": 1, "drmFreq": [70, 500] } },
-  { "key": "diodeE", "name": "diode ring — another carrier 70 … 500 Hz, mix 0.55", "effect": "diode", "class": "colour",
-    "args": { "drmMix": 0.55, "drmFreq": [70, 500] } },
-  { "key": "jp", "name": "JPverb — a bright room", "effect": "jpverb", "class": "time", "from": 6,
-    "changed": "mix 0.85, not 0.6 — the room has to be heard inside the envelope; the shelf's cap (1100) gave way to the tail envelope's ring time (§118)",
-    "args": { "jpMix": 0.85, "jpT60": 2, "jpSize": 2, "jpDamp": 0.15, "jpLow": 0.9, "jpMid": 1.3, "jpHigh": 0.65 } },
-  { "key": "bloom", "name": "feedback — the bloom, six strings drawn around the open strings", "effect": "feedback", "class": "time", "from": 7,
-    "changed": "bloom 0.15 s, not 3 s (a 3 s bloom is silent under ~0.7 s); the peak matched to the source's; the shelf's cap (1700) gave way to the ring time (§118); the six strings RANGES about a fifth around E A D G B E, drawn per variant (DEC-23, §125)",
-    "args": { "fbMix": 1, "fbBloom": 0.15, "fbHold": 6, "fbDrive": 4, "fbTone": 1800, "fbPath": 10, "fbClimb": 0, "fbWobble": 0.1, "fbS1": [60, 110], "fbS2": [82, 150], "fbS3": [110, 200], "fbS4": [147, 262], "fbS5": [185, 330], "fbS6": [247, 440] } },
-
-  { "key": "stutter", "name": "buffer override — a pitch drawn 100 … 400 Hz", "effect": "override", "class": "colour",
-    "args": { "ovrMix": 1, "ovrBuf": 120, "ovrDiv": [12, 48], "ovrSmooth": 0.1 } },
-  { "key": "fuzz", "name": "fuzz into a cabinet", "effect": "fuzz", "class": "colour",
-    "args": { "fzMix": 1, "fzGain": 60, "fzBias": 0.3, "fzTone": 4000, "cabMix": 1, "cabLow": 100, "cabHigh": 4500, "cabPres": 3 } },
-  { "key": "oct", "name": "octave fuzz into a cabinet", "effect": "octave", "class": "colour",
-    "args": { "ocMix": 1, "ocOctave": 1, "ocGain": 30, "ocTone": 4500, "cabMix": 1, "cabLow": 100, "cabHigh": 4500, "cabPres": 3 } },
-  { "key": "squiz", "name": "squiz — squeezed up", "effect": "squiz", "class": "colour",
-    "args": { "sqMix": 1, "sqRatio": 2.5, "sqChunks": 3 } },
-  { "key": "tape", "name": "tape — half speed, an octave down", "effect": "tape", "class": "colour",
-    "args": { "rate": 0.5, "rev": 0 } },
-  { "key": "comb", "name": "comb — a pitch drawn 83 … 333 Hz", "effect": "comb", "class": "colour",
-    "args": { "combMix": 1, "combTime": [0.003, 0.012], "combFb": 1.2 } },
-  { "key": "string", "name": "string resonator — a pitch drawn 125 … 500 Hz", "effect": "string", "class": "colour",
-    "args": { "stresMix": 1, "stresTime": [0.002, 0.008], "stresRes": 0.95 } },
-  { "key": "bands", "name": "resonator bank — four bands drawn in four registers", "effect": "resonator", "class": "time",
-    "args": { "resMix": 1, "resDcy": 1.2, "resF1": [80, 200], "rlo": 0.4, "resF2": [300, 700], "rlomid": 0.8, "resF3": [1000, 2500], "rhimid": 0.7, "resF4": [3500, 7000], "rhi": 0.3 } },
-  { "key": "whistle", "name": "filter — LPF18, resonant at 900 Hz", "effect": "filter", "class": "colour",
-    "args": { "filtMix": 1, "filtType": 2, "cut": 900, "res": 3.2, "filtDist": 0.6, "hpf": 30 } },
-  { "key": "squeal", "name": "feedback — a squeal that climbs, strings drawn", "effect": "feedback", "class": "time",
-    "args": { "fbMix": 1, "fbBloom": 0.1, "fbHold": 3, "fbDrive": 12, "fbTone": 4000, "fbPath": 5, "fbClimb": 0.8, "fbWobble": 0.3, "fbS1": [60, 110], "fbS2": [82, 150], "fbS3": [110, 200], "fbS4": [147, 262], "fbS5": [185, 330], "fbS6": [247, 440] } },
-  { "key": "ring", "name": "ring modulation — a carrier drawn 60 … 900 Hz", "effect": "ring", "class": "colour",
-    "args": { "rmMix": 1, "rmFreq": [60, 900] } },
-  { "key": "cres", "name": "complex resonator — one partial drawn 100 … 2000 Hz", "effect": "cres", "class": "time",
-    "args": { "cresMix": 1, "cresFreq": [100, 2000], "cresDcy": 0.9 } },
-
-  { "key": "icySmooth", "name": "icy — smooth: 0.8 s windows, 40 grains, hanning, fifty times slower", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.02, "icFromMs": 60, "icWin": 0.8, "icOverlaps": 40, "icRand": 0.1, "icPitch": 0, "icEnv": 7 } },
-  { "key": "icyLive", "name": "icy — his live setting: 0.6 s, 17 grains, expodec, thirty times slower", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.03, "icFromMs": 60, "icWin": 0.6, "icOverlaps": 17, "icRand": 0.2, "icPitch": 0, "icEnv": 4 } },
-  { "key": "icySlow", "name": "icy — slow: 0.8 s, 33 grains, gauss, a hundred times slower", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.01, "icFromMs": 60, "icWin": 0.8, "icOverlaps": 33, "icRand": 0.15, "icPitch": 0, "icEnv": 5 } },
-  { "key": "icyGlass", "name": "icy — glass: 0.4 s, 24 grains, rexpodec", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.03, "icFromMs": 80, "icWin": 0.4, "icOverlaps": 24, "icRand": 0.1, "icPitch": 0, "icEnv": 9 } },
-  { "key": "icyRough", "name": "icy — rough: 150 ms windows, 6 grains, tri", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.05, "icFromMs": 60, "icWin": 0.15, "icOverlaps": 6, "icRand": 0.3, "icPitch": 0, "icEnv": 10 } },
-  { "key": "icyGrain", "name": "icy — grainy: 80 ms windows, 4 grains, 3-stage linear", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.08, "icFromMs": 60, "icWin": 0.08, "icOverlaps": 4, "icRand": 0.4, "icPitch": 0, "icEnv": 1 } },
-  { "key": "icyHeld", "name": "icy — held: the read point does not move, 0.6 s, 17 grains, expodec", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0, "icFromMs": 120, "icWin": 0.6, "icOverlaps": 17, "icRand": 0.2, "icPitch": 0, "icEnv": 4 } },
-  { "key": "icyWide", "name": "icy — wide: 1.2 s windows, 48 grains, blackman-harris, the smoothest", "effect": "icy", "class": "time",
-    "args": { "icMix": 1, "icSpeed": 0.015, "icFromMs": 60, "icWin": 1.2, "icOverlaps": 48, "icRand": 0.1, "icPitch": 0, "icEnv": 3 } }
- ]
+  {
+   "key": "override1",
+   "name": "buffer override — buffer 344 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 344,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.19
+   }
+  },
+  {
+   "key": "fuzz1",
+   "name": "fuzz 53 · bias 0.5 · tone 5880 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 53,
+    "fzBias": 0.5,
+    "fzTone": 5880,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4257,
+    "cabPres": 3
+   }
+  },
+  {
+   "key": "octave1",
+   "name": "octave fuzz — octave 0.9 · fuzz 54 · tone 3441",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.9,
+    "ocGain": 54,
+    "ocTone": 3441,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 3619,
+    "cabPres": 1
+   }
+  },
+  {
+   "key": "feedback1",
+   "name": "feedback — bloom 0.27 s · hold 5 · drive 5.5 · tone 3411 · climb 0.7, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.27,
+    "fbHold": 5,
+    "fbDrive": 5.5,
+    "fbTone": 3411,
+    "fbPath": 18,
+    "fbClimb": 0.7,
+    "fbWobble": 0.35,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush1",
+   "name": "crush — 5 bits at 13537 Hz · mix 0.7",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.7,
+    "crBits": 5,
+    "crRate": 13537
+   }
+  },
+  {
+   "key": "diode1",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.65",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.65,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz1",
+   "name": "squiz — ratio 3 · 1 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 3,
+    "sqChunks": 1
+   }
+  },
+  {
+   "key": "comb1",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 2 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 2
+   }
+  },
+  {
+   "key": "icy1",
+   "name": "icy — 14× slower · window 0.32 s · 40 grains · rand 0.25 · hamming",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.07,
+    "icFromMs": 97,
+    "icWin": 0.32,
+    "icOverlaps": 40,
+    "icRand": 0.25,
+    "icPitch": 0,
+    "icEnv": 6
+   }
+  },
+  {
+   "key": "greyhole1",
+   "name": "Greyhole — delay 0.89 s · size 2.8 · feedback 0.7 · mix 0.8",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.8,
+    "ghTime": 0.89,
+    "ghSize": 2.8,
+    "ghFb": 0.7,
+    "ghDiff": 0.6,
+    "ghDamp": 0.3
+   }
+  },
+  {
+   "key": "jpverb1",
+   "name": "JPverb — 4.3 s · size 2.1 · damping 0.4 · mix 0.75",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.75,
+    "jpT60": 4.3,
+    "jpSize": 2.1,
+    "jpDamp": 0.4,
+    "jpLow": 1,
+    "jpMid": 1.45,
+    "jpHigh": 0.95
+   }
+  },
+  {
+   "key": "cres1",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.68",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.68
+   }
+  },
+  {
+   "key": "string1",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.96",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.96
+   }
+  },
+  {
+   "key": "override2",
+   "name": "buffer override — buffer 340 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 340,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.1
+   }
+  },
+  {
+   "key": "fuzz2",
+   "name": "fuzz 85 · bias 0.4 · tone 2632 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 85,
+    "fzBias": 0.4,
+    "fzTone": 2632,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4878,
+    "cabPres": 2
+   }
+  },
+  {
+   "key": "octave2",
+   "name": "octave fuzz — octave 0.9 · fuzz 49 · tone 5527",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.9,
+    "ocGain": 49,
+    "ocTone": 5527,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 5745,
+    "cabPres": 4
+   }
+  },
+  {
+   "key": "feedback2",
+   "name": "feedback — bloom 0.19 s · hold 5.5 · drive 11.5 · tone 4637 · climb 0.05, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.19,
+    "fbHold": 5.5,
+    "fbDrive": 11.5,
+    "fbTone": 4637,
+    "fbPath": 12.5,
+    "fbClimb": 0.05,
+    "fbWobble": 0.45,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush2",
+   "name": "crush — 4 bits at 10146 Hz · mix 0.85",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.85,
+    "crBits": 4,
+    "crRate": 10146
+   }
+  },
+  {
+   "key": "diode2",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.85",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.85,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz2",
+   "name": "squiz — ratio 2.3 · 7 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.3,
+    "sqChunks": 7
+   }
+  },
+  {
+   "key": "comb2",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 0.7 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 0.7
+   }
+  },
+  {
+   "key": "icy2",
+   "name": "icy — 22× slower · window 0.18 s · 42 grains · rand 0.3 · hanning",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.045,
+    "icFromMs": 118,
+    "icWin": 0.18,
+    "icOverlaps": 42,
+    "icRand": 0.3,
+    "icPitch": 0,
+    "icEnv": 7
+   }
+  },
+  {
+   "key": "greyhole2",
+   "name": "Greyhole — delay 0.07 s · size 1.9 · feedback 0.55 · mix 0.85",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.85,
+    "ghTime": 0.07,
+    "ghSize": 1.9,
+    "ghFb": 0.55,
+    "ghDiff": 0.85,
+    "ghDamp": 0.25
+   }
+  },
+  {
+   "key": "jpverb2",
+   "name": "JPverb — 5.5 s · size 2.5 · damping 0.4 · mix 0.8",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.8,
+    "jpT60": 5.5,
+    "jpSize": 2.5,
+    "jpDamp": 0.4,
+    "jpLow": 0.9,
+    "jpMid": 0.95,
+    "jpHigh": 1.4
+   }
+  },
+  {
+   "key": "cres2",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.52",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.52
+   }
+  },
+  {
+   "key": "string2",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.97",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.97
+   }
+  },
+  {
+   "key": "override3",
+   "name": "buffer override — buffer 288 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 288,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.15
+   }
+  },
+  {
+   "key": "fuzz3",
+   "name": "fuzz 33 · bias 0.5 · tone 4119 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 33,
+    "fzBias": 0.5,
+    "fzTone": 4119,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 5458,
+    "cabPres": 3.5
+   }
+  },
+  {
+   "key": "octave3",
+   "name": "octave fuzz — octave 0.9 · fuzz 25 · tone 2158",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.9,
+    "ocGain": 25,
+    "ocTone": 2158,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 3020,
+    "cabPres": 6
+   }
+  },
+  {
+   "key": "feedback3",
+   "name": "feedback — bloom 0.16 s · hold 3 · drive 12 · tone 4546 · climb 0.35, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.16,
+    "fbHold": 3,
+    "fbDrive": 12,
+    "fbTone": 4546,
+    "fbPath": 3.5,
+    "fbClimb": 0.35,
+    "fbWobble": 0.15,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush3",
+   "name": "crush — 3 bits at 3088 Hz · mix 0.7",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.7,
+    "crBits": 3,
+    "crRate": 3088
+   }
+  },
+  {
+   "key": "diode3",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.55",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.55,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz3",
+   "name": "squiz — ratio 3 · 7 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 3,
+    "sqChunks": 7
+   }
+  },
+  {
+   "key": "comb3",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.05 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 1.05
+   }
+  },
+  {
+   "key": "icy3",
+   "name": "icy — 67× slower · window 0.65 s · 46 grains · rand 0.3 · rexpodec",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.015,
+    "icFromMs": 73,
+    "icWin": 0.65,
+    "icOverlaps": 46,
+    "icRand": 0.3,
+    "icPitch": 0,
+    "icEnv": 9
+   }
+  },
+  {
+   "key": "greyhole3",
+   "name": "Greyhole — delay 0.08 s · size 0.7 · feedback 0.65 · mix 0.8",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.8,
+    "ghTime": 0.08,
+    "ghSize": 0.7,
+    "ghFb": 0.65,
+    "ghDiff": 0.65,
+    "ghDamp": 0.45
+   }
+  },
+  {
+   "key": "jpverb3",
+   "name": "JPverb — 5.9 s · size 1.5 · damping 0.55 · mix 0.65",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.65,
+    "jpT60": 5.9,
+    "jpSize": 1.5,
+    "jpDamp": 0.55,
+    "jpLow": 0.6,
+    "jpMid": 0.7,
+    "jpHigh": 0.75
+   }
+  },
+  {
+   "key": "cres3",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.71",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.71
+   }
+  },
+  {
+   "key": "string3",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.91",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.91
+   }
+  },
+  {
+   "key": "override4",
+   "name": "buffer override — buffer 212 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 212,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.08
+   }
+  },
+  {
+   "key": "fuzz4",
+   "name": "fuzz 97 · bias 0.4 · tone 3715 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 97,
+    "fzBias": 0.4,
+    "fzTone": 3715,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4220,
+    "cabPres": 4.5
+   }
+  },
+  {
+   "key": "octave4",
+   "name": "octave fuzz — octave 0.75 · fuzz 22 · tone 5831",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.75,
+    "ocGain": 22,
+    "ocTone": 5831,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 5882,
+    "cabPres": 5.5
+   }
+  },
+  {
+   "key": "feedback4",
+   "name": "feedback — bloom 0.2 s · hold 4.5 · drive 3.5 · tone 1515 · climb 0.4, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.2,
+    "fbHold": 4.5,
+    "fbDrive": 3.5,
+    "fbTone": 1515,
+    "fbPath": 6,
+    "fbClimb": 0.4,
+    "fbWobble": 0.45,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush4",
+   "name": "crush — 10 bits at 10472 Hz · mix 0.7",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.7,
+    "crBits": 10,
+    "crRate": 10472
+   }
+  },
+  {
+   "key": "diode4",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.7",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.7,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz4",
+   "name": "squiz — ratio 2.2 · 4 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.2,
+    "sqChunks": 4
+   }
+  },
+  {
+   "key": "comb4",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 2 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 2
+   }
+  },
+  {
+   "key": "icy4",
+   "name": "icy — 15× slower · window 0.41 s · 45 grains · rand 0.15 · blackman",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.065,
+    "icFromMs": 149,
+    "icWin": 0.41,
+    "icOverlaps": 45,
+    "icRand": 0.15,
+    "icPitch": 0,
+    "icEnv": 2
+   }
+  },
+  {
+   "key": "greyhole4",
+   "name": "Greyhole — delay 0.09 s · size 0.7 · feedback 0.85 · mix 0.65",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.65,
+    "ghTime": 0.09,
+    "ghSize": 0.7,
+    "ghFb": 0.85,
+    "ghDiff": 0.75,
+    "ghDamp": 0.25
+   }
+  },
+  {
+   "key": "jpverb4",
+   "name": "JPverb — 5.7 s · size 2.6 · damping 0.6 · mix 0.9",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.9,
+    "jpT60": 5.7,
+    "jpSize": 2.6,
+    "jpDamp": 0.6,
+    "jpLow": 1.25,
+    "jpMid": 0.75,
+    "jpHigh": 1.3
+   }
+  },
+  {
+   "key": "cres4",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.69",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.69
+   }
+  },
+  {
+   "key": "string4",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.91",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.91
+   }
+  },
+  {
+   "key": "override5",
+   "name": "buffer override — buffer 405 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 405,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.07
+   }
+  },
+  {
+   "key": "fuzz5",
+   "name": "fuzz 93 · bias 0.3 · tone 3904 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 93,
+    "fzBias": 0.3,
+    "fzTone": 3904,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4143,
+    "cabPres": 0.5
+   }
+  },
+  {
+   "key": "octave5",
+   "name": "octave fuzz — octave 1 · fuzz 56 · tone 4387",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 1,
+    "ocGain": 56,
+    "ocTone": 4387,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4005,
+    "cabPres": 2.5
+   }
+  },
+  {
+   "key": "feedback5",
+   "name": "feedback — bloom 0.16 s · hold 3.5 · drive 4 · tone 2707 · climb 0.65, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.16,
+    "fbHold": 3.5,
+    "fbDrive": 4,
+    "fbTone": 2707,
+    "fbPath": 12,
+    "fbClimb": 0.65,
+    "fbWobble": 0.05,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush5",
+   "name": "crush — 9 bits at 4177 Hz · mix 0.8",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.8,
+    "crBits": 9,
+    "crRate": 4177
+   }
+  },
+  {
+   "key": "diode5",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.75",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.75,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz5",
+   "name": "squiz — ratio 2.4 · 6 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.4,
+    "sqChunks": 6
+   }
+  },
+  {
+   "key": "comb5",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.15 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 1.15
+   }
+  },
+  {
+   "key": "icy5",
+   "name": "icy — 33× slower · window 0.3 s · 43 grains · rand 0.15 · hanning",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.03,
+    "icFromMs": 52,
+    "icWin": 0.3,
+    "icOverlaps": 43,
+    "icRand": 0.15,
+    "icPitch": 0,
+    "icEnv": 7
+   }
+  },
+  {
+   "key": "greyhole5",
+   "name": "Greyhole — delay 0.38 s · size 2.5 · feedback 0.75 · mix 0.8",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.8,
+    "ghTime": 0.38,
+    "ghSize": 2.5,
+    "ghFb": 0.75,
+    "ghDiff": 0.8,
+    "ghDamp": 0.45
+   }
+  },
+  {
+   "key": "jpverb5",
+   "name": "JPverb — 2.6 s · size 1.5 · damping 0.45 · mix 0.7",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.7,
+    "jpT60": 2.6,
+    "jpSize": 1.5,
+    "jpDamp": 0.45,
+    "jpLow": 1.4,
+    "jpMid": 1.1,
+    "jpHigh": 1.4
+   }
+  },
+  {
+   "key": "cres5",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.56",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.56
+   }
+  },
+  {
+   "key": "string5",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.95",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.95
+   }
+  },
+  {
+   "key": "override6",
+   "name": "buffer override — buffer 189 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 189,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.09
+   }
+  },
+  {
+   "key": "fuzz6",
+   "name": "fuzz 85 · bias 0.35 · tone 5300 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 85,
+    "fzBias": 0.35,
+    "fzTone": 5300,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4573,
+    "cabPres": 5.5
+   }
+  },
+  {
+   "key": "octave6",
+   "name": "octave fuzz — octave 0.55 · fuzz 50 · tone 2462",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.55,
+    "ocGain": 50,
+    "ocTone": 2462,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 3782,
+    "cabPres": 5
+   }
+  },
+  {
+   "key": "feedback6",
+   "name": "feedback — bloom 0.15 s · hold 3.5 · drive 3.5 · tone 2806 · climb 0.45, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.15,
+    "fbHold": 3.5,
+    "fbDrive": 3.5,
+    "fbTone": 2806,
+    "fbPath": 16,
+    "fbClimb": 0.45,
+    "fbWobble": 0,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush6",
+   "name": "crush — 4 bits at 8559 Hz · mix 0.65",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.65,
+    "crBits": 4,
+    "crRate": 8559
+   }
+  },
+  {
+   "key": "diode6",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.55",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.55,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz6",
+   "name": "squiz — ratio 2.1 · 8 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.1,
+    "sqChunks": 8
+   }
+  },
+  {
+   "key": "comb6",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.35 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 1.35
+   }
+  },
+  {
+   "key": "icy6",
+   "name": "icy — 50× slower · window 0.2 s · 38 grains · rand 0.2 · expodec",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.02,
+    "icFromMs": 108,
+    "icWin": 0.2,
+    "icOverlaps": 38,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4
+   }
+  },
+  {
+   "key": "greyhole6",
+   "name": "Greyhole — delay 0.14 s · size 0.9 · feedback 0.7 · mix 0.7",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.7,
+    "ghTime": 0.14,
+    "ghSize": 0.9,
+    "ghFb": 0.7,
+    "ghDiff": 0.7,
+    "ghDamp": 0.4
+   }
+  },
+  {
+   "key": "jpverb6",
+   "name": "JPverb — 2.9 s · size 1.1 · damping 0.5 · mix 0.8",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.8,
+    "jpT60": 2.9,
+    "jpSize": 1.1,
+    "jpDamp": 0.5,
+    "jpLow": 1,
+    "jpMid": 1.05,
+    "jpHigh": 1
+   }
+  },
+  {
+   "key": "cres6",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.87",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.87
+   }
+  },
+  {
+   "key": "string6",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.89",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.89
+   }
+  },
+  {
+   "key": "override7",
+   "name": "buffer override — buffer 297 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 297,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.19
+   }
+  },
+  {
+   "key": "fuzz7",
+   "name": "fuzz 33 · bias 0.1 · tone 4236 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 33,
+    "fzBias": 0.1,
+    "fzTone": 4236,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 3014,
+    "cabPres": 4
+   }
+  },
+  {
+   "key": "octave7",
+   "name": "octave fuzz — octave 0.6 · fuzz 47 · tone 3610",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.6,
+    "ocGain": 47,
+    "ocTone": 3610,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4344,
+    "cabPres": 4
+   }
+  },
+  {
+   "key": "feedback7",
+   "name": "feedback — bloom 0.15 s · hold 4.5 · drive 8.5 · tone 3549 · climb 0.65, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.15,
+    "fbHold": 4.5,
+    "fbDrive": 8.5,
+    "fbTone": 3549,
+    "fbPath": 13,
+    "fbClimb": 0.65,
+    "fbWobble": 0.4,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush7",
+   "name": "crush — 10 bits at 5834 Hz · mix 0.9",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.9,
+    "crBits": 10,
+    "crRate": 5834
+   }
+  },
+  {
+   "key": "diode7",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.95",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.95,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz7",
+   "name": "squiz — ratio 2.6 · 6 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.6,
+    "sqChunks": 6
+   }
+  },
+  {
+   "key": "comb7",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 1.2 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 1.2
+   }
+  },
+  {
+   "key": "icy7",
+   "name": "icy — 15× slower · window 1.13 s · 47 grains · rand 0.35 · blackman-harris",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.065,
+    "icFromMs": 127,
+    "icWin": 1.13,
+    "icOverlaps": 47,
+    "icRand": 0.35,
+    "icPitch": 0,
+    "icEnv": 3
+   }
+  },
+  {
+   "key": "greyhole7",
+   "name": "Greyhole — delay 0.44 s · size 2.5 · feedback 0.65 · mix 0.65",
+   "effect": "greyhole",
+   "class": "time",
+   "args": {
+    "ghMix": 0.65,
+    "ghTime": 0.44,
+    "ghSize": 2.5,
+    "ghFb": 0.65,
+    "ghDiff": 0.85,
+    "ghDamp": 0.35
+   }
+  },
+  {
+   "key": "jpverb7",
+   "name": "JPverb — 2.6 s · size 2.4 · damping 0.3 · mix 0.85",
+   "effect": "jpverb",
+   "class": "time",
+   "args": {
+    "jpMix": 0.85,
+    "jpT60": 2.6,
+    "jpSize": 2.4,
+    "jpDamp": 0.3,
+    "jpLow": 0.9,
+    "jpMid": 1.3,
+    "jpHigh": 1.4
+   }
+  },
+  {
+   "key": "cres7",
+   "name": "complex resonator — a partial drawn 100 … 2000 Hz · decay 0.75",
+   "effect": "cres",
+   "class": "time",
+   "args": {
+    "cresMix": 1,
+    "cresFreq": [
+     100,
+     2000
+    ],
+    "cresDcy": 0.75
+   }
+  },
+  {
+   "key": "string7",
+   "name": "string resonator — a pitch drawn 125 … 500 Hz · resonance 0.91",
+   "effect": "string",
+   "class": "colour",
+   "args": {
+    "stresMix": 1,
+    "stresTime": [
+     0.002,
+     0.008
+    ],
+    "stresRes": 0.91
+   }
+  },
+  {
+   "key": "override8",
+   "name": "buffer override — buffer 284 ms, the pitch drawn",
+   "effect": "override",
+   "class": "colour",
+   "args": {
+    "ovrMix": 1,
+    "ovrBuf": 284,
+    "ovrDiv": [
+     12,
+     48
+    ],
+    "ovrSmooth": 0.07
+   }
+  },
+  {
+   "key": "fuzz8",
+   "name": "fuzz 45 · bias 0.15 · tone 5430 into a cabinet",
+   "effect": "fuzz",
+   "class": "colour",
+   "args": {
+    "fzMix": 1,
+    "fzGain": 45,
+    "fzBias": 0.15,
+    "fzTone": 5430,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 3802,
+    "cabPres": 5
+   }
+  },
+  {
+   "key": "octave8",
+   "name": "octave fuzz — octave 0.65 · fuzz 27 · tone 3506",
+   "effect": "octave",
+   "class": "colour",
+   "args": {
+    "ocMix": 1,
+    "ocOctave": 0.65,
+    "ocGain": 27,
+    "ocTone": 3506,
+    "cabMix": 1,
+    "cabLow": 100,
+    "cabHigh": 4627,
+    "cabPres": 1.5
+   }
+  },
+  {
+   "key": "feedback8",
+   "name": "feedback — bloom 0.16 s · hold 5 · drive 4 · tone 3586 · climb 0.25, the strings drawn",
+   "effect": "feedback",
+   "class": "time",
+   "args": {
+    "fbMix": 1,
+    "fbBloom": 0.16,
+    "fbHold": 5,
+    "fbDrive": 4,
+    "fbTone": 3586,
+    "fbPath": 9.5,
+    "fbClimb": 0.25,
+    "fbWobble": 0,
+    "fbS1": [
+     60,
+     110
+    ],
+    "fbS2": [
+     82,
+     150
+    ],
+    "fbS3": [
+     110,
+     200
+    ],
+    "fbS4": [
+     147,
+     262
+    ],
+    "fbS5": [
+     185,
+     330
+    ],
+    "fbS6": [
+     247,
+     440
+    ]
+   }
+  },
+  {
+   "key": "crush8",
+   "name": "crush — 3 bits at 9818 Hz · mix 0.6",
+   "effect": "crush",
+   "class": "colour",
+   "args": {
+    "crMix": 0.6,
+    "crBits": 3,
+    "crRate": 9818
+   }
+  },
+  {
+   "key": "diode8",
+   "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.65",
+   "effect": "diode",
+   "class": "colour",
+   "args": {
+    "drmMix": 0.65,
+    "drmFreq": [
+     70,
+     500
+    ]
+   }
+  },
+  {
+   "key": "squiz8",
+   "name": "squiz — ratio 2.5 · 5 chunks",
+   "effect": "squiz",
+   "class": "colour",
+   "args": {
+    "sqMix": 1,
+    "sqRatio": 2.5,
+    "sqChunks": 5
+   }
+  },
+  {
+   "key": "comb8",
+   "name": "comb — a pitch drawn 83 … 333 Hz · rings 0.9 s",
+   "effect": "comb",
+   "class": "colour",
+   "args": {
+    "combMix": 1,
+    "combTime": [
+     0.003,
+     0.012
+    ],
+    "combFb": 0.9
+   }
+  },
+  {
+   "key": "icy8",
+   "name": "icy — 50× slower · window 0.24 s · 24 grains · rand 0.2 · gauss",
+   "effect": "icy",
+   "class": "time",
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.02,
+    "icFromMs": 81,
+    "icWin": 0.24,
+    "icOverlaps": 24,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5
+   }
+  }
+ ],
+ "generated": {
+  "seed": 1,
+  "n": 100,
+  "effects": [
+   "override",
+   "fuzz",
+   "octave",
+   "feedback",
+   "crush",
+   "diode",
+   "squiz",
+   "comb",
+   "icy",
+   "greyhole",
+   "jpverb",
+   "cres",
+   "string"
+  ],
+  "when": "2026-10-06T01:59",
+  "command": "node tools/gen_presets.js --seed 1 --n 100 --effects override,fuzz,octave,feedback,crush,diode,squiz,comb,icy,greyhole,jpverb,cres,string"
+ }
 }
