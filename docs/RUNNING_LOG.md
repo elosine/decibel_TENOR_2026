@@ -3881,3 +3881,7 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **The deal:** `node tools/deal_variants.js --score piece-sec01-a --seed 5 --env tail --render` — no `--class`: all 49 presets · 75 plays on 25 bricks · colour 39 · time 36 · ring versions · two laps (26 presets come round twice) · 73 distinct variants, the plan sent with render 1. Recorded in the score's `metadata.deal` (the page's save will drop it again; it is here). NOT heard.
 
 **The state:** six groups, 0 … 37 s, every return a preset of the 49 under a ring, seed 5. The bank: 30 raw impulses once his next pass captures impulse 6's five.
+
+## §134. "RESEED AGAIN" — seed 6 (2026-10-05, Fable)
+
+**His words:** *"reseed again"* — after a listen to seed 5 (what he heard, he did not say; for the paper: seed 5 was heard and passed over). The page's copy matched the save this time — no refusal. `node tools/deal_variants.js --score piece-sec01-a --seed 6 --env tail --render`: all 49 · 75 plays · colour 35 · time 40 · 73 variants, the plan sent with render 1. NOT heard. The seeds so far on this score: 1 (§116, printed only) · 3 (§119, the time class) · 4 (§132, time, six groups) · 5 (§133, all) · 6.
