@@ -3975,3 +3975,14 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **The record's own weight, noted for the next session:** each "reseed again" was given a log entry, two journal lines, a CLAUDE.md clause and a PLANNER clause — five files for one command. The AI's proposal, his to reverse: a reseed or a keep = ONE line in this log and the journal's active row; CLAUDE.md and PLANNER at a wrap.
 
 **Not done, not claimed:** nothing of this stretch was heard by the AI or seen in a browser; the pattern brick's Effects row is in no score and unheard; whether his engine was restarted after §135 (the far tier needs it) is unknown — it answered a hello at this wrap.
+
+## §149. THE PLAN'S RENDERS ARE NOT COMMITTED — his "b" (2026-10-05, Opus; journal D16)
+
+**What prompted it:** the a / b put to him at checkpoint #8 (§148) — a: keep sending the rendered effect files to GitHub (about 95 MB an evening like this one) · b: stop; they stay on his disk and are re-made from the presets; only the captured impulses and the workshop stages go up. **His word: *"b"*.**
+
+**Done:**
+- `.gitignore` — `bank/samples/*~*-*.wav`, with its reason. The pattern was checked on names before anything was untracked: a plan's variant (`bfl-impulse-1~icy2-tail.wav`) IGNORED · a workshop stage (`bfl-impulse-1~1.wav` — no hyphen after the `~`) NOT · a captured impulse NOT · the index NOT.
+- **The 234 variants already tracked were UNTRACKED** (`git rm --cached`, the list taken from `git ls-files -i -c --exclude-standard`: exactly 234, all in `bank/samples/`, all with a `~`). This goes one step past what the checkpoint block had written ("the 234 already tracked left as they are") — the AI's call, said to him in one line, his to reverse (`git add -f`): left tracked AND ignored, each would show as modified at its next render, 31 of them already did, and every later wrap would have had to step around them. **Nothing was deleted from his disk** — 886 `.wav` in `bank/samples/` before and after — and the history keeps every version that was ever pushed.
+- Tracked in `bank/samples/` now: **52** — the 30 captured impulses · the 21 workshop stages · `index.json`.
+
+**What it means for the record (the paper):** the sounds of an evening's throws are no longer archived by a commit — and, as §148 says, they never were a stable record: a variant's file is re-made at every pass with fresh draws. What IS kept of a deal is its casting (the shelf's `deals`, the frozen scores) and the presets it drew from. An exact take, if ever wanted, is a build of its own.

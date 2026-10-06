@@ -49,6 +49,10 @@ research/audio/*.flac
 # THE ELECTRONICS' BANK (PLAN 1.1 · 6.3b): the whole recordings stay on this machine, kept for a re-crop;
 # the cropped samples (bank/samples/*.wav) and the index ARE committed — the samples are the piece's (DEC-1)
 bank/samples/raw/
+# THE PLAN'S RENDERS are NOT committed (his word "b", 2026-10-05, journal D16 · RUNNING_LOG §149): a variant of the processed return,
+# <sample>~<key>-<env>.wav, is re-made from bank/presets.json at every pass and every "render all planned" — an evening of
+# throws made 632 of them, 95 MB. They stay on his disk. A workshop stage, <root>~<n>.wav (no hyphen after the ~), IS committed.
+bank/samples/*~*-*.wav
 
 # OS noise
 Thumbs.db
