@@ -58,7 +58,8 @@ if (CLEAR) {
   dealt.forEach((z) => namesOf(z.elec).forEach((name) => plays.push({ z, name })));
   if (!plays.length) { console.error('no return brick with a named sample starts in [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') of ' + NAME); process.exit(4); }
   // THE PRESETS, round robin: one shuffle; a lap uses every preset once
-  const pool = CLASS ? P.presets.filter((p) => p.class === CLASS) : P.presets;
+  const dealable = P.presets.filter((p) => p.deal !== false);   // an audition's presets (`deal: false`, RUNNING_LOG §151) are never dealt
+  const pool = CLASS ? dealable.filter((p) => p.class === CLASS) : dealable;
   if (!pool.length) { console.error('no preset of class "' + CLASS + '" in bank/presets.json — the classes: ' + Object.keys(P.classes || {}).join(' · ')); process.exit(2); }
   const order = shuffled(pool, mulberry32(SEED * 7919 + 3));
   // THE ENVELOPES, by the mix: exact shares of the plays (the largest remainders round it), shuffled — or the ONE envelope asked for

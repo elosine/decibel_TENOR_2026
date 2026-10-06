@@ -58,7 +58,7 @@ presets.slice(0, 13).forEach((p) => console.log('  ' + p.key.padEnd(12) + p.name
 if (N > 13) console.log('  …');
 if (DRY) { console.log('(dry — nothing written)'); process.exit(0); }
 P.generated = { seed: SEED, n: N, effects: EFFECTS, when: new Date().toISOString().slice(0, 16), command: 'node tools/gen_presets.js --seed ' + SEED + ' --n ' + N + ' --effects ' + EFFECTS.join(',') };
-P.presets = presets;
+P.presets = presets.concat((P.presets || []).filter((p) => p.deal === false));   // an audition's presets (`deal: false`, RUNNING_LOG §151) are not a generation's: they stay
 delete P.kept;   // a new generation is no one's keepers (RUNNING_LOG §130)
 fs.writeFileSync(FILE, JSON.stringify(P, null, 1) + '\n');
 console.log(path.relative(ROOT, FILE) + ' written — ' + N + ' presets, seed ' + SEED + '. Rebuild the audition: node tools/build_audition.js --name audition-' + N + '-s' + SEED);

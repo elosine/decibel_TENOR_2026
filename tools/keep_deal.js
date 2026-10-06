@@ -41,10 +41,11 @@ const plays = bricks.reduce((n, z) => n + Object.keys(z.elec.variants).length, 0
 const C = JSON.parse(fs.readFileSync(SHELF, 'utf8'));
 C.deals = Array.isArray(C.deals) ? C.deals : [];
 if (C.deals.some((d) => d.score === NAME && d.seed === SEED)) { console.error('seed ' + SEED + ' of ' + NAME + ' is on the shelf already'); process.exit(3); }
-const tally = {}; for (const p of P.presets || []) tally[p.effect] = (tally[p.effect] || 0) + 1;
+const DEALT = (P.presets || []).filter((p) => p.deal !== false);   // what a deal draws from — not an audition's presets (RUNNING_LOG §151)
+const tally = {}; for (const p of DEALT) tally[p.effect] = (tally[p.effect] || 0) + 1;
 C.deals.push({
   n: C.deals.length + 1, kept: new Date().toISOString().slice(0, 16), score: NAME, seed: SEED, command: deal.command,
-  presets: 'bank/presets.json as it was — ' + (P.presets || []).length + ' presets: ' + Object.entries(tally).map(([e, n]) => e + ' ' + n).join(' · ') + (P.kept && P.kept.what ? ' (' + String(P.kept.what).slice(0, 200) + ')' : ''),
+  presets: 'bank/presets.json as it was — ' + DEALT.length + ' presets: ' + Object.entries(tally).map(([e, n]) => e + ' ' + n).join(' · ') + (P.kept && P.kept.what ? ' (' + String(P.kept.what).slice(0, 200) + ')' : ''),
   frozen: path.relative(ROOT, FROZEN).replace(/\\/g, '/'), bricks: bricks.length, plays,
   heard: HEARD, remark: REMARK, note: '', variants,
 });

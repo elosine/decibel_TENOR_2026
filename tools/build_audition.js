@@ -33,7 +33,8 @@ const zone = (layer, start, end, elec) => ({
   performanceNotes: '', properties: {}, elec,
 });
 const objects = [], rows = [];
-const LIST = EFFECT ? P.presets.filter((p) => p.effect === EFFECT) : P.presets;
+const DEALT = P.presets.filter((p) => p.deal !== false);   // the presets of the dealing — an audition's own (`deal: false`, RUNNING_LOG §151) have their own scores
+const LIST = EFFECT ? DEALT.filter((p) => p.effect === EFFECT) : DEALT;
 if (!LIST.length) { console.error('no preset of effect "' + EFFECT + '" in bank/presets.json — the effects: ' + [...new Set(P.presets.map((p) => p.effect))].join(' · ')); process.exit(2); }
 LIST.forEach((p, i) => {
   const smp = impulses[i % impulses.length], t = 1 + i * GAP;
