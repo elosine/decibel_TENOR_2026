@@ -477,9 +477,9 @@ further down disagree with this block, THIS BLOCK WINS.**
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **Step 10 — HIS EAR ON THE RE-DEAL (§131: the main score from the 49 — seed 3 · time · ring; F5 · Reload · play). A reseed at his word (another `--seed`; he saves first). THEN HIS GROUP 5: the pattern brick → Effects → `a preset for every impact` (DEC-28, 10.11) → his rhythm → Generate; a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
-| — | THE RHYTHM PANEL (DEC-24) — a talk: what is not working in the pattern brick; the 20 s acceleration as the probe (`length by: steep`); the Impulses boxes that list workshop renders | Fable (the talk) · Opus (the build) | — |
-| — | Group 5 — its rhythm (an acceleration, his), then its effects (all enveloped, perc · expodec only — a deal `--from 22.5` once its bricks name their samples), then group 6 | Fable (the talk) · Opus (the build) | — |
+| **►** | **Step 10 — HIS EAR ON THE SIX GROUPS (§132: groups 5 · 6 all flocking, the whole score on seed 4 — Reload · play from 0 with the engine up). A reseed at his word (`deal_variants.js --score piece-sec01-a --seed N --env tail --class time --render`; he saves first); "all" widens the pool to the 49; a fault → SWEEP_LIST** | **Fable** (what he hears) · Opus (a fix, a wrap) | — |
+| — | THE RHYTHM PANEL (DEC-24) — if it is still "not quite working" after DEC-28's Effects row and the raw-only boxes: a talk; the 20 s acceleration as the probe (`length by: steep`) | Fable (the talk) · Opus (the build) | — |
+| — | His next notes beyond group 6 — a row 7 in `bank/impulses.json` when he places them (`impulse.js --n 7`; `shuffle` for another order) | Fable | — |
 | — | Step 10.1 — HIS EAR on the workshop (§103) — he is in it; the shelf grows (§113) | Fable (the talk) · Opus (a fix) | — |
 | — | Step 10.2 … 10.4 — the granular voices · the pedals of resonance (Q7) · the cascade — each a talk, then a build | Fable (the talk) · Opus (the build) | — |
 | — | Step 9 — HIS EAR on the four behaviours (§97 · §98): a letter A … I for the rolled ones (`bank/elec_route.json` `return.ar` · `return.chain`); a brick → Behaviour → pattern for the composed one. A fault → `docs/SWEEP_LIST.md` | Fable (the talk) · Opus (a fix) | — |
