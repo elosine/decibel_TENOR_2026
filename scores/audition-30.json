@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T00:33:33.366Z",
-  "modified": "2026-10-06T00:33:33.366Z",
+  "created": "2026-10-06T01:47:51.345Z",
+  "modified": "2026-10-06T01:47:51.346Z",
   "note": "THE AUDITION (RUNNING_LOG §125): the 30 presets of bank/presets.json, one return each, in the file's order, every 2.5 s from 1 s, each on a different captured impulse, as its tail version. Written by tools/build_audition.js; the engine renders the variants from the bank when the plan is sent (the tool sends it; a return brick's \"render all planned\" sends it again). His from then on."
  },
  "objects": [
@@ -78,7 +78,7 @@
    "elec": {
     "name": "bcl-impulse-1",
     "variants": {
-     "bcl-impulse-1": "crush4-tail"
+     "bcl-impulse-1": "crush6-tail"
     }
    }
   },
@@ -222,7 +222,7 @@
    "elec": {
     "name": "vc-impulse-1",
     "variants": {
-     "vc-impulse-1": "jp-tail"
+     "vc-impulse-1": "diodeB-tail"
     }
    }
   },
@@ -258,7 +258,7 @@
    "elec": {
     "name": "bcl-impulse-2",
     "variants": {
-     "bcl-impulse-2": "bloom-tail"
+     "bcl-impulse-2": "diodeC-tail"
     }
    }
   },
@@ -294,7 +294,7 @@
    "elec": {
     "name": "bfl-impulse-2",
     "variants": {
-     "bfl-impulse-2": "stutter-tail"
+     "bfl-impulse-2": "diodeD-tail"
     }
    }
   },
@@ -330,7 +330,7 @@
    "elec": {
     "name": "perc-impulse-2",
     "variants": {
-     "perc-impulse-2": "od-tail"
+     "perc-impulse-2": "diodeE-tail"
     }
    }
   },
@@ -366,7 +366,7 @@
    "elec": {
     "name": "va-impulse-2",
     "variants": {
-     "va-impulse-2": "fuzz-tail"
+     "va-impulse-2": "jp-tail"
     }
    }
   },
@@ -402,7 +402,7 @@
    "elec": {
     "name": "vc-impulse-2",
     "variants": {
-     "vc-impulse-2": "oct-tail"
+     "vc-impulse-2": "bloom-tail"
     }
    }
   },
@@ -438,7 +438,7 @@
    "elec": {
     "name": "bcl-impulse-3",
     "variants": {
-     "bcl-impulse-3": "cheby-tail"
+     "bcl-impulse-3": "stutter-tail"
     }
    }
   },
@@ -474,7 +474,7 @@
    "elec": {
     "name": "bfl-impulse-3",
     "variants": {
-     "bfl-impulse-3": "squiz-tail"
+     "bfl-impulse-3": "fuzz-tail"
     }
    }
   },
@@ -510,7 +510,7 @@
    "elec": {
     "name": "perc-impulse-3",
     "variants": {
-     "perc-impulse-3": "loss-tail"
+     "perc-impulse-3": "oct-tail"
     }
    }
   },
@@ -546,7 +546,7 @@
    "elec": {
     "name": "va-impulse-3",
     "variants": {
-     "va-impulse-3": "tape-tail"
+     "va-impulse-3": "squiz-tail"
     }
    }
   },
@@ -582,7 +582,7 @@
    "elec": {
     "name": "vc-impulse-3",
     "variants": {
-     "vc-impulse-3": "comb-tail"
+     "vc-impulse-3": "tape-tail"
     }
    }
   },
@@ -618,7 +618,7 @@
    "elec": {
     "name": "bcl-impulse-4",
     "variants": {
-     "bcl-impulse-4": "string-tail"
+     "bcl-impulse-4": "comb-tail"
     }
    }
   },
@@ -654,7 +654,7 @@
    "elec": {
     "name": "bfl-impulse-4",
     "variants": {
-     "bfl-impulse-4": "shift-tail"
+     "bfl-impulse-4": "string-tail"
     }
    }
   },
