@@ -2958,6 +2958,1666 @@
    },
    "deal": false,
    "audition": "petals"
+  },
+  {
+   "key": "da01",
+   "name": "A1 THE REFERENCE — his icy live (2015), looping from 0 · pace 1/30 · window 0.6 s · 17 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da02",
+   "name": "A2 overlaps 2 (the reference has 17) · pace 1/30 · window 0.6 s · 2 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 2,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da03",
+   "name": "A3 overlaps 4 (the reference has 17) · pace 1/30 · window 0.6 s · 4 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 4,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da04",
+   "name": "A4 overlaps 8 (the reference has 17) · pace 1/30 · window 0.6 s · 8 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 8,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da05",
+   "name": "A5 overlaps 40 (the reference has 17) · pace 1/30 · window 0.6 s · 40 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 40,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da06",
+   "name": "A6 rand 0 (the reference has 0.2) · pace 1/30 · window 0.6 s · 17 overlaps · rand 0 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da07",
+   "name": "A7 rand 0.1 (the reference has 0.2) · pace 1/30 · window 0.6 s · 17 overlaps · rand 0.1 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.1,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da08",
+   "name": "A8 rand 0.3 (the reference has 0.2) · pace 1/30 · window 0.6 s · 17 overlaps · rand 0.3 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.3,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da09",
+   "name": "A9 rand 0.6 (the reference has 0.2) · pace 1/30 · window 0.6 s · 17 overlaps · rand 0.6 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.6,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da10",
+   "name": "A10 rand 1 (the reference has 0.2) · pace 1/30 · window 0.6 s · 17 overlaps · rand 1 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 1,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "da11",
+   "name": "A11 THE SEAM — the reference at pace ½ for 30 s: the loop joins at about 10 and 20 s · pace 1/2 · window 0.6 s · 17 overlaps · rand 0.2 · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 28208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.5,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr01",
+   "name": "B1 bfl-mp-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr02",
+   "name": "B2 bfl-mp-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr03",
+   "name": "B3 bfl-mp-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr04",
+   "name": "B4 bfl-mp-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr05",
+   "name": "B5 bfl-mp-1 · pace 1/30 · window 0.15 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr06",
+   "name": "B6 bfl-mp-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr07",
+   "name": "B7 bfl-mp-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr08",
+   "name": "B8 bfl-mp-1 · pace 1/100 · window 0.5 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14362,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr09",
+   "name": "B9 bcl-mp-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr10",
+   "name": "B10 bcl-mp-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr11",
+   "name": "B11 bcl-mp-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr12",
+   "name": "B12 bcl-mp-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr13",
+   "name": "B13 bcl-mp-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr14",
+   "name": "B14 bcl-mp-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr15",
+   "name": "B15 bcl-mp-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr16",
+   "name": "B16 bcl-mp-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 18208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr17",
+   "name": "B17 perc-china-bow-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr18",
+   "name": "B18 perc-china-bow-1 · pace 1/4 · window 1.2 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr19",
+   "name": "B19 perc-china-bow-1 · pace 1/10 · window 0.15 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr20",
+   "name": "B20 perc-china-bow-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr21",
+   "name": "B21 perc-china-bow-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr22",
+   "name": "B22 perc-china-bow-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr23",
+   "name": "B23 perc-china-bow-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr24",
+   "name": "B24 perc-china-bow-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14782,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr25",
+   "name": "B25 perc-susp-bow-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr26",
+   "name": "B26 perc-susp-bow-1 · pace 1/4 · window 1.2 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr27",
+   "name": "B27 perc-susp-bow-1 · pace 1/10 · window 0.15 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr28",
+   "name": "B28 perc-susp-bow-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr29",
+   "name": "B29 perc-susp-bow-1 · pace 1/30 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr30",
+   "name": "B30 perc-susp-bow-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr31",
+   "name": "B31 perc-susp-bow-1 · pace 1/100 · window 0.5 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr32",
+   "name": "B32 perc-susp-bow-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14376,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr33",
+   "name": "B33 perc-crot-bow-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr34",
+   "name": "B34 perc-crot-bow-1 · pace 1/4 · window 1.2 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr35",
+   "name": "B35 perc-crot-bow-1 · pace 1/10 · window 0.15 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr36",
+   "name": "B36 perc-crot-bow-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr37",
+   "name": "B37 perc-crot-bow-1 · pace 1/30 · window 0.15 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr38",
+   "name": "B38 perc-crot-bow-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr39",
+   "name": "B39 perc-crot-bow-1 · pace 1/100 · window 0.5 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr40",
+   "name": "B40 perc-crot-bow-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14619,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr41",
+   "name": "B41 va-op-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr42",
+   "name": "B42 va-op-1 · pace 1/4 · window 1.2 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr43",
+   "name": "B43 va-op-1 · pace 1/10 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr44",
+   "name": "B44 va-op-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr45",
+   "name": "B45 va-op-1 · pace 1/30 · window 0.15 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr46",
+   "name": "B46 va-op-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr47",
+   "name": "B47 va-op-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr48",
+   "name": "B48 va-op-1 · pace 1/100 · window 0.5 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 15549,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr49",
+   "name": "B49 va-sp-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr50",
+   "name": "B50 va-sp-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr51",
+   "name": "B51 va-sp-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr52",
+   "name": "B52 va-sp-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr53",
+   "name": "B53 va-sp-1 · pace 1/30 · window 0.15 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr54",
+   "name": "B54 va-sp-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr55",
+   "name": "B55 va-sp-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr56",
+   "name": "B56 va-sp-1 · pace 1/100 · window 0.5 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14263,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr57",
+   "name": "B57 vc-op-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr58",
+   "name": "B58 vc-op-1 · pace 1/4 · window 0.5 s · 17 overlaps · rand 0.2 · hanning · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 7,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr59",
+   "name": "B59 vc-op-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr60",
+   "name": "B60 vc-op-1 · pace 1/10 · window 1.2 s · 17 overlaps · rand 0.2 · quasi-gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 8,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr61",
+   "name": "B61 vc-op-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr62",
+   "name": "B62 vc-op-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr63",
+   "name": "B63 vc-op-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · Hamming · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 6,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr64",
+   "name": "B64 vc-op-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 17410,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr65",
+   "name": "B65 vc-sp-1 · pace 1/4 · window 0.15 s · 17 overlaps · rand 0.2 · Blackman · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 2,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr66",
+   "name": "B66 vc-sp-1 · pace 1/4 · window 1.2 s · 17 overlaps · rand 0.2 · rexpodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.25,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 9,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr67",
+   "name": "B67 vc-sp-1 · pace 1/10 · window 0.15 s · 17 overlaps · rand 0.2 · tri · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 10,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr68",
+   "name": "B68 vc-sp-1 · pace 1/10 · window 0.5 s · 17 overlaps · rand 0.2 · Blackman-Harris · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.1,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 3,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr69",
+   "name": "B69 vc-sp-1 · pace 1/30 · window 0.5 s · 17 overlaps · rand 0.2 · Hann (built in) · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.5,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 0,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr70",
+   "name": "B70 vc-sp-1 · pace 1/30 · window 1.2 s · 17 overlaps · rand 0.2 · expodec · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr71",
+   "name": "B71 vc-sp-1 · pace 1/100 · window 0.15 s · 17 overlaps · rand 0.2 · gauss · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 0.15,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 5,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
+  },
+  {
+   "key": "dr72",
+   "name": "B72 vc-sp-1 · pace 1/100 · window 1.2 s · 17 overlaps · rand 0.2 · 3-stage linear · looping from 0",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 14126,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.01,
+    "icFromMs": 0,
+    "icWin": 1.2,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 1,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "drones"
   }
  ],
  "generated": {
@@ -3062,6 +4722,12 @@
    "what": "the feedback on his 54 chord shapes (bank/harmonies.json), the other dials the shelf's row 7, the cap 12000 ms",
    "command": "node tools/build_chord_feedback.js --name audition-feedback-chords --base 7 --gap 10 --cap 12000",
    "when": "2026-10-06T12:57"
+  },
+  "drones": {
+   "n": 83,
+   "what": "the drone auditions — A: icy's other dials on one input (11 bricks); B: the nine held sounds × grain window × grain size × pace (72 bricks)",
+   "command": "node tools/build_drone_auditions.js --a audition-stretch-dials --b audition-drones --input bcl-mp-1 --len 20000 --gap 2",
+   "when": "2026-10-06T19:21"
   }
  }
 }
