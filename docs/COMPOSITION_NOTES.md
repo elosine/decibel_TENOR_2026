@@ -540,3 +540,21 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 > *"Also, just make a note that I want to address the rhythms. I'm not, or the, the new panel's not quite working for me. Actually, let's try something now. What if I wanted to have a gradual acceleration over, say, 20 seconds? What would I put in so we can test to see if it works? And otherwise, that needs to revise too."*
 
 *(The AI's reading, marked: what "not quite working" means is his to say at the next session — the test of a 20 s acceleration (RUNNING_LOG §123 has the numbers) is the first probe; one thing seen in his screenshot: the Impulses boxes list the workshop renders (`2~1` …) among the impulses. Logged, not acted on.)*
+
+### DEC-25 · 2026-10-05 — THE RING VERSIONS: the returns of the first groups left to ring, a random ring time 950 … 1350 ms
+
+> *"Okay, let's try the versions for the first four groupings of just letting them ring. And we'll put just a random ring time somewhere from 950 milliseconds to 1350. Then just re-render it, please."* — then, of what rang: *"just the time effects, drop the colour ones and reshuffle/reseed different set of effects pls"* — and of the seeds: *"is there a way I can reseed myself and then save the seeds … let's keep that last one or just know which one it was."*
+
+*(Done: RUNNING_LOG §118 · §119 — the `tail` ending with its cut drawn per variant; the deal by class; every deal recorded in the score. The AI's reading of "the first four groupings": the dealt bricks, groups 2 … 4 — group 1 has no returns; his to correct.)*
+
+### DEC-26 · 2026-10-05 — THE FREEZE HE WANTS IS A STRETCH — his own `icy` of 2015 … 2016
+
+> *"can we look at the freeze algorithm? There's it, it repeats. There's a oscillation. … if there could be, I guess, longer windows maybe and more overlap so that it's more of a sustained freeze rather than a repeated type of effect."* — of the granular cloud built for it: *"freeze still isn't quite what I'm looking for, the granular freeze. So I'm thinking of the classic time stretching algorithms, like the kind you find in the amazing slow downer or any really spectral freeze."* — *"can you look in my repo … I have written some freeze algorithms that I think work well."* — of the port: *"One thing is it's quiet. … there's an attack and then there's a little bit of a gap and then there's a frozen sustain. Or even just suppress the attack altogether."*
+
+*(Done: RUNNING_LOG §120 · §122 · §124 — the cloud; then `icy`, Warp1 from his repo `freeze`, with his numbers; then the gate taken out so the stretch swells in from the start.)*
+
+### DEC-27 · 2026-10-05 — THE SET: no freezes of the old kind, several `icy` (rougher, smoother), no pitch shift on them; what he took out; the thirteen effects; a hundred, seeded
+
+> *"let's take out all the previous freeze kind and replace several with the IC, several different versions of the IC one. A couple rougher ones, maybe a couple smoother ones. … no pitch shift at all on the freeze ones. … let's increase the number. Let's make it 30. And let me just hear all 30 with a different impulse in a row."* — after hearing them: *"the ones that are crushed, overdrive, wave loss, chevy, and shift. Let's take those out of there. Here's a replacement for the crushed one* [mix 1 · 6 bits · 4000 Hz]*. Can you make a few more of the diode ring modulation? Just random carriers from 70 to 500 hertz."* — then: *"let's expand the list. And these are the effects I want you to limit yourself to. The buffer override, the fuzz, and the octave fuzz. Feedback. Bit crushing. Diode ring modulation, squeeze, comb, icy, gray hole, and JP verb. complex resonator. string. Can you generate 100 and do the same thing, make an audition file for me, please? And then can you seed it? In case I want to hear a different generation."*
+
+*(Done: RUNNING_LOG §125 … §127. What he REJECTED by ear, for the paper: the spectral freeze (it repeats) · the held cloud · crush at 4 bits · overdrive · waveloss · the Chebyshev shaper · the frequency shift · and, by leaving them off his list of thirteen, tape · the resonator bank · the filter · ring modulation · diffusion.)*

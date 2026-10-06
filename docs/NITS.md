@@ -195,3 +195,9 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
   (`~le[\planWidth]`, two) · a pattern brick's samples take a variant in the message but its panel has no rows for them (group 5's talk) ·
   an opening renamed does not carry a return's variant (keyed by the sample's name); the impulses are named by the tool · the fourteen
   presets of the AI's and the three shelf settings changed for a return are unheard (`bank/presets.json`).
+- **The generations and the deals (RUNNING_LOG §117 … §127), deferred:** every deal and every generation leaves its variants in the bank and the
+  index (a hundred `~` files a generation) — no tool removes those no brick asks for · a score dealt from one preset set names keys another set
+  does not have: the page says "not in the presets: raw" and the engine plays the EARLIER render — nothing warns at the deal that the set
+  changed under a score · `audition-30` matches `bank/presets_hand_30.json`, not the generated file · `gen_presets.js`'s bounds are the hints'
+  usual ranges copied by hand (a third place the dial ranges live) · the three `icy` presets' speeds on the catalogue row are the AI's reading
+  of his `rate` maps (`Freezer.scd`'s is inverted and scaled) · a brick whose name moved (`~6` → `~7`) keeps no pointer to its old render.
