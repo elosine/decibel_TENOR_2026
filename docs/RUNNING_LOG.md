@@ -3939,3 +3939,9 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **His words:** *"You can keep three and five and then reseed again, please."* — after `audition-comb`. For the paper: of the four combs (all a pitch drawn 83 … 333 Hz) he kept the middle ring times — comb3 (1.05 s) · comb5 (1.15 s) — and dropped the shortest (comb2, 0.7 s) and the longest (comb6, 1.35 s).
 
 **Done:** `bank/presets.json` 43 → **41** (`kept.dropped` grows by comb2 · comb6): feedback 7 · icy 7 · diode 5 · greyhole 4 · jpverb 4 · crush 3 · cres 3 · octave 3 · fuzz 2 · comb 2 · override 1. Then `node tools/deal_variants.js --score piece-sec01-a --seed 12 --env tail --render`: 41 presets · 75 plays · colour 29 · time 46 · 75 variants, the plan sent. NOT heard. Seeds: … · **7 kept** · 8 · 9 · **10 kept** · **11 kept** · 12 (41).
+
+## §144. BUFFER OVERRIDE OUT — 40 presets; seed 13 (2026-10-05, Fable)
+
+**His words:** *"Okay, get rid of any of the buffer overrides and um, seed again, please."* — after seed 12. For the paper: the clone of Buffer Override (§106, DEC-17 — his own side project of the workshop day) survived the hundred as ONE preset of eight (§130) and is out of the deal now; the effect stays in the catalogue for a process brick.
+
+**Done:** `bank/presets.json` 41 → **40** (override7 out; `kept.dropped` names it): feedback 7 · icy 7 · diode 5 · greyhole 4 · jpverb 4 · crush 3 · cres 3 · octave 3 · fuzz 2 · comb 2. Then `node tools/deal_variants.js --score piece-sec01-a --seed 13 --env tail --render`: 40 presets · 75 plays · time 48 · colour 27 · 74 variants, the plan sent. NOT heard. Seeds: … · **10 kept** · **11 kept** · 12 · 13 (40).

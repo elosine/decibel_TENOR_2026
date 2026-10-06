@@ -657,21 +657,6 @@
    }
   },
   {
-   "key": "override7",
-   "name": "buffer override — buffer 297 ms, the pitch drawn",
-   "effect": "override",
-   "class": "colour",
-   "args": {
-    "ovrMix": 1,
-    "ovrBuf": 297,
-    "ovrDiv": [
-     12,
-     48
-    ],
-    "ovrSmooth": 0.19
-   }
-  },
-  {
    "key": "diode7",
    "name": "diode ring — a carrier drawn 70 … 500 Hz · mix 0.95",
    "effect": "diode",
@@ -833,7 +818,7 @@
   "command": "node tools/gen_presets.js --seed 1 --n 100 --effects override,fuzz,octave,feedback,crush,diode,squiz,comb,icy,greyhole,jpverb,cres,string"
  },
  "kept": {
-  "n": 41,
+  "n": 40,
   "from": "bank/presets_gen_s1_100.json — the generation of seed 1, the hundred whole",
   "rows": [
    4,
@@ -887,7 +872,7 @@
    97
   ],
   "when": "2026-10-06T02:19",
-  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 2026-10-05 (RUNNING_LOG §139): every squiz preset taken out at his ear — squiz1 squiz2 squiz4 squiz5 squiz6 squiz7 (49 → 43) · 2026-10-05 (RUNNING_LOG §143): comb2 comb6 out at his ear after audition-comb — \"keep three and five\" (43 → 41)",
+  "what": "his keepers at his ear, named by brick number in the score audition-100-s1-numbered (brick N = row N of the hundred); the keys are unchanged, so the numbers no longer match the rows of THIS file · 2026-10-05 (RUNNING_LOG §139): every squiz preset taken out at his ear — squiz1 squiz2 squiz4 squiz5 squiz6 squiz7 (49 → 43) · 2026-10-05 (RUNNING_LOG §143): comb2 comb6 out at his ear after audition-comb — \"keep three and five\" (43 → 41) · 2026-10-05 (RUNNING_LOG §144): override7 out at his ear — \"get rid of any of the buffer overrides\" (41 → 40)",
   "dropped": [
    "squiz1",
    "squiz2",
@@ -896,7 +881,8 @@
    "squiz6",
    "squiz7",
    "comb2",
-   "comb6"
+   "comb6",
+   "override7"
   ]
  }
 }
