@@ -4063,3 +4063,16 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 - **The proof:** PROCESS_TEST PASS — case `~12`, the cleaned path, 2089 ms (1657 ms before, on the same source: struck harder, it falls under −60 dB later; each render's draws move it too).
 - **HIS:** the engine restarted (the stage is code) · `audition-petals` → a purple brick → render all planned · play from 0. If he had not yet restarted since §151, it is the same one restart.
 - **NOT CLAIMED:** his ear.
+
+## §153. CHECKPOINT #9 OF SESSION 2 — the two auditions built, unheard; the handoff (2026-10-06, Opus; his `/checkpoint`)
+
+**What the stretch since checkpoint #8 was** (§150 … §152; Fable for the lay-out, Opus for the build — no clear between them, at his word): his ask for two things to sample from — his petals of resonance ported, the original beside a cleaned path, and the guitar feedback on his chord shapes — laid out as PLAN 10.3 · 10.12 in one turn of the planning method (three questions, his one-line answer), built as one, and one follow-up at his word (the fade-in dropped from the cleaned petals).
+
+**The state at the wrap, read off the bank (`bank/samples/index.json`, 940 rows):** NO petals variant is in it; the 54 chord variants are still the FIRST kind (made 08:50, 1.3 … 7.2 s long — the ones that do not sing). So, as far as the bank says, **he has rendered neither audition yet**: his steps (the engine restarted · F5 · render all planned in each score) are still ahead of him. His engine answered a hello at the wrap; whether it has been restarted since the build is not known.
+
+**What the AI takes from the build, marked as its own:**
+- **A set of sound PRESETS is not proven by its stage's test.** The feedback's test passed and 54 chord presets built on it were dead: the test's source sat on the one pair of strings that agree. What caught it was reading the first renders' NUMBERS (length · level a second in) before reporting — nothing in the plan asked for that look. For a batch of presets, one real render measured IS the one proof (D13 read with this).
+- **A port is a reading of behaviour, not of text.** `rrand(ringL1, ringL2)` read as "a ring per resonator" — to the AI at the lay-out too, which told him so — and does the opposite; only running the server told. A claim about what someone's code DOES is a confidence claim: measured, or not made.
+- **A builder must not render through an engine older than what it builds for** — the wrong sound lands under the right name and nothing says so. Both builders now send nothing unless told.
+
+**Record:** committed and pushed at every step (`286faa5` the lay-out · `693cb23` the build · `e4f966d` the fade-in · this wrap); the engine's repo in step (`e3a116b`).

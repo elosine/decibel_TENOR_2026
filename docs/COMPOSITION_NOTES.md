@@ -590,3 +590,11 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 > *(his answers to the three questions:)* *"A the flower, petals, B. Let's do several different impulses for both. And can you make say about 20 of the petals 20 pairs with different settings? And then the chord shapes all of them in order. That's fine"*
 
 *(The AI's reading, marked as such: **Q7 is answered — PETALS, the flower**; the catalogue row is `petals`, the folder's spelling was right. "My harmonies, the chord shapes" = `bank/harmonies.json` `banks.chordShapes`, the 54 chord shapes of the two-pianos piece — confirmed by "all of them in order". A "sample file" / "save file" = an audition SCORE he plays through with the engine up and samples from, not a wav. "Several different impulses" = the bricks rotate through the bank's captured impulses; a petals pair keeps both members on one impulse, or it is no comparison. Laid out as PLAN.md 10.3 and 10.12; the reasoning RUNNING_LOG §150.)*
+
+### DEC-32b · 2026-10-06 — the build, and the cleaned petals without the fade-in
+
+> *"Please go ahead and build."*
+
+> *(on the one offer at the build's wrap — his microphone's 20 ms fade-in, kept on the input of both petals, softens the impulse:)* *"Go ahead and drop 20ms fade from cleaned petals"*
+
+*(The AI's reading, marked as such: the cleaned path takes the impulse as it is — no rise on its input; the fall over the input length stays. His original keeps the rise, as his. Done: RUNNING_LOG §151 · §152. What the build found and he has not yet answered or heard: in his original the 26 partials sink as one (the ring time is redrawn many times a second), in the cleaned path each partial has its own ring; and the feedback could not sing a chord that shares no harmonic, so it has a second way — every string sings.)*
