@@ -3945,3 +3945,7 @@ The tool found NO working copy of `piece-sec01-a` (he has saved since checkpoint
 **His words:** *"Okay, get rid of any of the buffer overrides and um, seed again, please."* — after seed 12. For the paper: the clone of Buffer Override (§106, DEC-17 — his own side project of the workshop day) survived the hundred as ONE preset of eight (§130) and is out of the deal now; the effect stays in the catalogue for a process brick.
 
 **Done:** `bank/presets.json` 41 → **40** (override7 out; `kept.dropped` names it): feedback 7 · icy 7 · diode 5 · greyhole 4 · jpverb 4 · crush 3 · cres 3 · octave 3 · fuzz 2 · comb 2. Then `node tools/deal_variants.js --score piece-sec01-a --seed 13 --env tail --render`: 40 presets · 75 plays · time 48 · colour 27 · 74 variants, the plan sent. NOT heard. Seeds: … · **10 kept** · **11 kept** · 12 · 13 (40).
+
+## §145. "RESEED AGAIN" — seed 14 (2026-10-05, Fable)
+
+**His words:** *"reseed again"* — seed 13 heard and passed over. `node tools/deal_variants.js --score piece-sec01-a --seed 14 --env tail --render`: the 40 · 75 plays · colour 27 · time 48 · 74 variants, the plan sent. NOT heard. Seeds: … · **10 kept** · **11 kept** · 12 · 13 · 14 (40).

@@ -41,16 +41,16 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T03:39:41.389Z",
-  "modified": "2026-10-06T03:40:09.081Z",
+  "created": "2026-10-06T03:41:56.206Z",
+  "modified": "2026-10-06T03:42:05.551Z",
   "deal": {
-   "seed": 13,
+   "seed": 14,
    "env": "tail",
    "class": "all",
    "from": 0,
    "to": null,
-   "when": "2026-10-06T03:40",
-   "command": "node tools/deal_variants.js --score piece-sec01-a --seed 13 --env tail"
+   "when": "2026-10-06T03:42",
+   "command": "node tools/deal_variants.js --score piece-sec01-a --seed 14 --env tail"
   }
  },
  "objects": [
@@ -1389,7 +1389,7 @@
     "name": "va-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "va-impulse-1": "feedback4-tail"
+     "va-impulse-1": "crush1-tail"
     }
    }
   },
@@ -1461,7 +1461,7 @@
     "name": "perc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "perc-impulse-1": "feedback8-tail"
+     "perc-impulse-1": "diode2-tail"
     }
    }
   },
@@ -1533,7 +1533,7 @@
     "name": "bfl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bfl-impulse-1": "crush8-tail"
+     "bfl-impulse-1": "feedback4-tail"
     }
    }
   },
@@ -1605,7 +1605,7 @@
     "name": "vc-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "vc-impulse-1": "crush4-tail"
+     "vc-impulse-1": "greyhole4-tail"
     }
    }
   },
@@ -1677,7 +1677,7 @@
     "name": "bcl-impulse-1",
     "behaviour": "ar",
     "variants": {
-     "bcl-impulse-1": "feedback6-tail"
+     "bcl-impulse-1": "jpverb2-tail"
     }
    }
   },
@@ -1753,8 +1753,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-1": "cres1-tail",
-     "perc-impulse-2": "cres7-tail"
+     "perc-impulse-1": "feedback3-tail",
+     "perc-impulse-2": "greyhole5-tail"
     }
    }
   },
@@ -1830,8 +1830,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-1": "icy7-tail",
-     "bfl-impulse-2": "icy5-tail"
+     "bfl-impulse-1": "jpverb3-tail",
+     "bfl-impulse-2": "octave5-tail"
     }
    }
   },
@@ -1907,8 +1907,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "octave5-tail",
-     "va-impulse-2": "crush1-tail"
+     "va-impulse-1": "diode1-tail",
+     "va-impulse-2": "cres5-tail"
     }
    }
   },
@@ -1984,8 +1984,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-1": "greyhole2-tail",
-     "vc-impulse-2": "feedback3-tail"
+     "vc-impulse-1": "icy1-tail",
+     "vc-impulse-2": "icy2-tail"
     }
    }
   },
@@ -2061,8 +2061,8 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-1": "feedback5-tail",
-     "bcl-impulse-2": "diode2-tail"
+     "bcl-impulse-1": "feedback1-tail",
+     "bcl-impulse-2": "greyhole2-tail"
     }
    }
   },
@@ -2217,9 +2217,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "vc-impulse-1": "comb5-tail",
-     "vc-impulse-2": "diode1-tail",
-     "vc-impulse-3": "jpverb1-tail"
+     "vc-impulse-1": "octave8-tail",
+     "vc-impulse-2": "jpverb6-tail",
+     "vc-impulse-3": "fuzz2-tail"
     }
    }
   },
@@ -2296,9 +2296,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "va-impulse-1": "fuzz2-tail",
-     "va-impulse-2": "octave6-tail",
-     "va-impulse-3": "feedback2-tail"
+     "va-impulse-1": "feedback8-tail",
+     "va-impulse-2": "icy5-tail",
+     "va-impulse-3": "cres7-tail"
     }
    }
   },
@@ -2375,9 +2375,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bfl-impulse-1": "icy1-tail",
-     "bfl-impulse-2": "icy6-tail",
-     "bfl-impulse-3": "fuzz8-tail"
+     "bfl-impulse-1": "crush8-tail",
+     "bfl-impulse-2": "feedback2-tail",
+     "bfl-impulse-3": "diode8-tail"
     }
    }
   },
@@ -2454,9 +2454,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "bcl-impulse-1": "comb3-tail",
-     "bcl-impulse-2": "icy3-tail",
-     "bcl-impulse-3": "icy4-tail"
+     "bcl-impulse-1": "octave6-tail",
+     "bcl-impulse-2": "jpverb1-tail",
+     "bcl-impulse-3": "comb3-tail"
     }
    }
   },
@@ -2533,9 +2533,9 @@
     ],
     "behaviour": "arChain",
     "variants": {
-     "perc-impulse-1": "feedback1-tail",
-     "perc-impulse-2": "jpverb3-tail",
-     "perc-impulse-3": "greyhole5-tail"
+     "perc-impulse-1": "greyhole1-tail",
+     "perc-impulse-2": "diode4-tail",
+     "perc-impulse-3": "comb5-tail"
     }
    }
   },
@@ -2753,10 +2753,10 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-1": "jpverb6-tail",
-     "va-impulse-3": "diode4-tail",
-     "va-impulse-2": "greyhole1-tail",
-     "va-impulse-4": "greyhole4-tail"
+     "va-impulse-1": "feedback6-tail",
+     "va-impulse-3": "icy6-tail",
+     "va-impulse-2": "feedback5-tail",
+     "va-impulse-4": "cres1-tail"
     }
    }
   },
@@ -2799,10 +2799,10 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-3": "cres5-tail",
-     "perc-impulse-1": "icy2-tail",
-     "perc-impulse-4": "jpverb2-tail",
-     "perc-impulse-2": "diode7-tail"
+     "perc-impulse-3": "icy7-tail",
+     "perc-impulse-1": "icy3-tail",
+     "perc-impulse-4": "crush4-tail",
+     "perc-impulse-2": "fuzz8-tail"
     }
    }
   },
@@ -2845,10 +2845,10 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-2": "diode8-tail",
-     "bfl-impulse-1": "octave8-tail",
-     "bfl-impulse-4": "feedback4-tail",
-     "bfl-impulse-3": "feedback8-tail"
+     "bfl-impulse-2": "diode7-tail",
+     "bfl-impulse-1": "icy4-tail",
+     "bfl-impulse-4": "crush1-tail",
+     "bfl-impulse-3": "diode2-tail"
     }
    }
   },
@@ -2891,10 +2891,10 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-4": "crush8-tail",
-     "vc-impulse-1": "crush4-tail",
-     "vc-impulse-2": "feedback6-tail",
-     "vc-impulse-3": "cres1-tail"
+     "vc-impulse-4": "feedback4-tail",
+     "vc-impulse-1": "greyhole4-tail",
+     "vc-impulse-2": "jpverb2-tail",
+     "vc-impulse-3": "feedback3-tail"
     }
    }
   },
@@ -2937,10 +2937,10 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-3": "cres7-tail",
-     "bcl-impulse-1": "icy7-tail",
-     "bcl-impulse-4": "icy5-tail",
-     "bcl-impulse-2": "octave5-tail"
+     "bcl-impulse-3": "greyhole5-tail",
+     "bcl-impulse-1": "jpverb3-tail",
+     "bcl-impulse-4": "octave5-tail",
+     "bcl-impulse-2": "diode1-tail"
     }
    }
   },
@@ -3019,11 +3019,11 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "perc-impulse-5": "crush1-tail",
-     "perc-impulse-4": "greyhole2-tail",
-     "perc-impulse-1": "feedback3-tail",
-     "perc-impulse-2": "feedback5-tail",
-     "perc-impulse-3": "diode2-tail"
+     "perc-impulse-5": "cres5-tail",
+     "perc-impulse-4": "icy1-tail",
+     "perc-impulse-1": "icy2-tail",
+     "perc-impulse-2": "feedback1-tail",
+     "perc-impulse-3": "greyhole2-tail"
     }
    }
   },
@@ -3102,11 +3102,11 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "va-impulse-3": "comb5-tail",
-     "va-impulse-4": "diode1-tail",
-     "va-impulse-1": "jpverb1-tail",
-     "va-impulse-2": "fuzz2-tail",
-     "va-impulse-5": "octave6-tail"
+     "va-impulse-3": "octave8-tail",
+     "va-impulse-4": "jpverb6-tail",
+     "va-impulse-1": "fuzz2-tail",
+     "va-impulse-2": "feedback8-tail",
+     "va-impulse-5": "icy5-tail"
     }
    }
   },
@@ -3185,11 +3185,11 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bfl-impulse-1": "feedback2-tail",
-     "bfl-impulse-2": "icy1-tail",
-     "bfl-impulse-3": "icy6-tail",
-     "bfl-impulse-5": "fuzz8-tail",
-     "bfl-impulse-4": "comb3-tail"
+     "bfl-impulse-1": "cres7-tail",
+     "bfl-impulse-2": "crush8-tail",
+     "bfl-impulse-3": "feedback2-tail",
+     "bfl-impulse-5": "diode8-tail",
+     "bfl-impulse-4": "octave6-tail"
     }
    }
   },
@@ -3268,11 +3268,11 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "vc-impulse-4": "icy3-tail",
-     "vc-impulse-3": "icy4-tail",
-     "vc-impulse-1": "feedback1-tail",
-     "vc-impulse-5": "jpverb3-tail",
-     "vc-impulse-2": "greyhole5-tail"
+     "vc-impulse-4": "jpverb1-tail",
+     "vc-impulse-3": "comb3-tail",
+     "vc-impulse-1": "greyhole1-tail",
+     "vc-impulse-5": "diode4-tail",
+     "vc-impulse-2": "comb5-tail"
     }
    }
   },
@@ -3351,11 +3351,11 @@
     ],
     "behaviour": "chain",
     "variants": {
-     "bcl-impulse-3": "jpverb6-tail",
-     "bcl-impulse-4": "diode4-tail",
-     "bcl-impulse-1": "greyhole1-tail",
-     "bcl-impulse-5": "greyhole4-tail",
-     "bcl-impulse-2": "cres5-tail"
+     "bcl-impulse-3": "feedback6-tail",
+     "bcl-impulse-4": "icy6-tail",
+     "bcl-impulse-1": "feedback5-tail",
+     "bcl-impulse-5": "cres1-tail",
+     "bcl-impulse-2": "icy7-tail"
     }
    }
   }
