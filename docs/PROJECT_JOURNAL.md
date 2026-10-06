@@ -121,7 +121,7 @@ takes is his (D5).
     *(as laid out, 2026-10-06 — §154 … §159; DEC-33; D17:)* the defaults, his "a": the dynamic `as played`, the drive `normalized`, a mark
     overrides. **Done when:** a return brick written `mf` sounds at a player's mf whatever was captured; a hairpin on a brick is heard; the
     master is the engine's bus with a meter; a hall's microphones are taken through a venue file.
-12. ◐ **THE SINE TONES — a GENERATED electronics voice the players beat against** — **BUILT 2026-10-06, 12.1 … 12.7, DONE BUT FOR HIS EAR** (RUNNING_LOG §177 … §181; PLAN.md § 1.5, an AS BUILT line on each item; journal §2's first block is his way in). OPENED 2026-10-06 by DEC-35 · 35b; the top line of
+12. ◐ **THE SINE TONES — a GENERATED electronics voice the players beat against** — **BUILT 2026-10-06, 12.1 … 12.7, DONE BUT FOR HIS EAR — ITS AUDITION PARKED AT HIS WORD (§182: on the list of things to audition, journal §2's first block)** (RUNNING_LOG §177 … §181; PLAN.md § 1.5, an AS BUILT line on each item; journal §2's first block is his way in). OPENED 2026-10-06 by DEC-35 · 35b; the top line of
     seven approved by him the same day ("good"; RUNNING_LOG §173 · §174; PLAN.md § 1.5): 12.1 the sine voice in the engine · 12.2 the sine
     brick in the composer score · 12.3 the crescendo from a curve lane · 12.4 the performer simulation · 12.5 the GO (selected played notes
     + a take → sine bricks and simulated parts) · 12.6 the demo score · 12.7 the record. NOT the beating tool (his word). **THE WHOLE PLAN
@@ -187,7 +187,28 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
-**► STEP 12 IS BUILT — THE SINE TONES; HIS EAR IS NEXT — 2026-10-06, Opus (RUNNING_LOG §177 … §181; the engine's §47 · §48; PLAN.md § 1.5, an AS BUILT line on each of 12.1 … 12.7). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
+**► CHECKPOINT #12 OF SESSION 2 (mid-session checkpoint) — 2026-10-06, Opus (RUNNING_LOG §182); the stretch since checkpoint #11 was Fable's plan (§173 … §176) and Opus's build (§177 … §181). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
+
+- **POSITION:** running order step 12 of 13, THE SINE TONES — BUILT (12.1 … 12.7), and **ITS AUDITION PARKED AT HIS WORD**: *"also add this to list of things to audition"* (his `/checkpoint`, directly after the build's wrap). So the block below's "NEXT CONCRETE STEP — HIS EAR" is NOT put to him: no steps presented, no "what did you hear". **Nothing is in hand. Everything built since the opening waits on his ear, on ONE list.**
+- **THE LIST OF THINGS TO AUDITION — presented ONLY when he asks for it** (his words of three resumes: *"I'll ask to see what needs todo when i am ready"* · *"I'll ask for the list on demand"* · *"also add this to list"*). When he asks: the BARE LIST first (one line an item, in this order, nothing else), then the item he names, whole, with its steps:
+  1. **THE LEVEL** (step 11) — the electronics scored ppp … fff, the drive, the bus. His page: `docs/LEVEL_NOTE.md`, presented whole. Steps: checkpoint #10's block.
+  2. **THE PETALS OF RESONANCE** (10.3) — `audition-petals`, twenty pairs. Steps: checkpoint #9's block.
+  3. **THE FEEDBACK ON HIS CHORD SHAPES** (10.12) — `audition-feedback-chords`, his 54. Steps: the same block.
+  4. **THE DRONES** (10.13, the multiphonic freeze) — `audition-stretch-dials` (11 bricks) · `audition-drones` (72). NEITHER RENDERED. Steps: checkpoint #11's block.
+  5. **THE SINE TONES** (step 12) — `sine-demo`; then the GO on his own notes (select → `take ▾` → `∿ sines`) and `S`. Steps: the block "STEP 12 IS BUILT" just below.
+  6. **THE THROWS** — the opening's deals: five kept (7 · 10 · 11 · 14 · 15), the next unused seed 16. Checkpoint #8's block.
+  *Beside the list, his when he offers them:* the three notation calls (container 6) · the rhythm panel (DEC-24), a talk.
+- **ONE RESTART SERVES THEM ALL — say it with the list, once:** his engine is still the one started 2026-10-06 15:10:53 (looked at, at this checkpoint: a hello answered, `sclang` 15:10:53). It has NEITHER the drones' loop (committed 15:26) NOR the sine (§177). Items 4 and 5 need the restart BEFORE anything is rendered or played; items 1 … 3 run on it as it is. The restart: the engine's window closed · double-click `C:\Users\jwloy\GitHub\decibel_TENOR_2026\start_electronics.bat` · then F5 in the composer page. A fault at that start: a SCREENSHOT of the engine's window first — `sinePlay` · `sineLetGo` have never run on a server.
+- **THE LATEST DELIVERABLE:** `scores/sine-demo.json` and the sample take `take-01-sine-demo` (`node tools/build_sine_demo.js`); behind them `electronics/sc/sine.scd` · `electronics/score/le_sine.js` · `score/public/sine_go.js` · `sine_sim.js` · `bank/sine_behaviours.json`. All committed and pushed (`168cd0b`; the engine's repo `9361bda`, the mirror pulled).
+- **THE NEXT CONCRETE STEP — after the playback and HIS WORD: ASK, IN ONE LINE, WHAT IS NEXT** — a new object or section of the piece, or the list of things to audition. Offer nothing else. If he names an item of the list: that item's block, its steps whole (memory: hand steps all at once, explicit). If he brings a new idea: the sketch pad verbatim first (`docs/COMPOSITION_NOTES.md`, the next is DEC-36), then the planning method — and a rich tool near his idea is offered in ONE line, never made the plan's base (memory; §174).
+- **`Resume reads:` nothing beyond this §2.**
+- **PENDING HIM, when he offers them:** his ear on all six · the numbers each may move (the ladder's `reference` · the presets · the drones' settings · `bank/sine_behaviours.json`) · where the sines and the drones sit in the piece (his sections) · the bass flute's voice without vibrato · a sweep of the crotales' tuning.
+- **DELIBERATELY UNCOMMITTED: nothing of the session's.** `git status --short` at this checkpoint: ONE line — `scores/temp01new_cello_bass_flute_perc_25.72.json`, HIS temp save of 2026-10-05, untracked, untouched, not the AI's to commit. **The page holds unsaved working copies of three scores** (`node tools/unsaved_check.js`): `audition-100-s1` · `audition-30` · `workshop-bfl-slap` — gitignored, his, as at checkpoints #9 … #11; `sine-demo` has none (the AI's look at it was on the throwaway server, every write stubbed).
+- **LEFT RUNNING — ALL HIS, none touched:** Reaper · the score server on 5500 (no restart needed: no server line changed) · his engine, UP, the one of 15:10:53 · loopMIDI · the composer page. Nothing of the AI's: the throwaway server on 5501 was stopped.
+- **RESUME ON: Fable** — the next thing is his to name, a talk. **Opus** for a build from a written plan, a number, a fault at the engine's start.
+
+
+*(kept for its detail — CHECKPOINT #12 above wins: this block's "NEXT CONCRETE STEP — HIS EAR" is PARKED; its steps are item 5 of the list)* **► STEP 12 IS BUILT — THE SINE TONES; HIS EAR IS NEXT — 2026-10-06, Opus (RUNNING_LOG §177 … §181; the engine's §47 · §48; PLAN.md § 1.5, an AS BUILT line on each of 12.1 … 12.7). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
 
 - **POSITION:** running order step 12 of 13, THE SINE TONES — built, ► his ear. The parked list (the level · the petals · the feedback on his chords · the drones · the throws) is presented only when he asks.
 - **WHAT EXISTS, in his words' order** (*"I play. bricks appear … I make a take for this ensemble, I select played notes in composer, select a take, press go"*):
