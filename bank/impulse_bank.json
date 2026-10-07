@@ -69,7 +69,7 @@
    { "n": 11, "technique": "pizz_vel", "key": 72, "label": "pizzicato, middle" },
    { "n": 12, "technique": "pizz_vel", "key": 88, "label": "pizzicato, high" },
    { "n": 13, "technique": "spicc_vel", "key": 52, "label": "spiccato, low" },
-   { "n": 14, "technique": "sp_spicc_vel", "key": 84, "label": "sul ponticello spiccato, high" },
+   { "n": 14, "technique": "sp_spicc_vel", "key": 68, "label": "sul ponticello spiccato, upper middle (84 was SILENT at his retake of 2026-10-06 — past the zone; his impulse 3 at 62 sounded)" },
    { "n": 15, "technique": "col_legno_vel", "key": 58, "label": "col legno, low" },
    { "n": 16, "technique": "col_legno_vel", "key": 75, "label": "col legno, high" },
    { "n": 17, "technique": "marcato_sfz_vel", "key": 61, "label": "marcato sfz" },
@@ -84,7 +84,7 @@
    { "n": 12, "technique": "pizz_vel", "key": 76, "label": "pizzicato, high" },
    { "n": 13, "technique": "gettato_vel", "key": 45, "label": "gettato, low" },
    { "n": 14, "technique": "spicc_vel", "key": 54, "label": "spiccato, middle" },
-   { "n": 15, "technique": "sp_spicc_vel", "key": 72, "label": "sul ponticello spiccato, high" },
+   { "n": 15, "technique": "sp_spicc_vel", "key": 57, "label": "sul ponticello spiccato, upper middle (72 was SILENT at his retake of 2026-10-06 — past the zone)" },
    { "n": 16, "technique": "col_legno_vel", "key": 38, "label": "col legno, low" },
    { "n": 17, "technique": "col_legno_vel", "key": 63, "label": "col legno, high" },
    { "n": 18, "technique": "bow_op_stac_vel", "key": 47, "label": "bow overpressure staccato, low" }
