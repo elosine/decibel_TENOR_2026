@@ -90,7 +90,13 @@ for (let i = 0; i < most; i++) for (const p of order) {
 }
 
 if (RETAKE) {   // only what the bank does not hold yet
-  const ix = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'samples', 'index.json'), 'utf8')).samples || []; } catch (e) { return []; } })();
+  // the index is written by the engine after every capture and render — read it with a few tries, and REFUSE rather than take a
+  // half-written file for an empty bank (RUNNING_LOG §196: one such read made a retake of all 68)
+  const ix = (() => {
+    const p = path.join(ROOT, 'bank', 'samples', 'index.json');
+    for (let i = 0; i < 6; i++) { try { return JSON.parse(fs.readFileSync(p, 'utf8')).samples || []; } catch (e) { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 300); } }
+    console.error('the bank\'s index could not be read (the engine was writing it?) — nothing written; try again'); process.exit(4);
+  })();
   const before = rows.length;
   rows = rows.filter((r) => !ix.some((x) => x.name === r.name && x.kind !== 'processed'));
   console.log('--retake: ' + rows.length + ' of ' + before + ' impulses are not in the bank yet — those only, no part two');

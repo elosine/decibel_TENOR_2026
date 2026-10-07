@@ -50,8 +50,9 @@ research/audio/*.flac
 # the cropped samples (bank/samples/*.wav) and the index WERE committed — the samples are the piece's (DEC-1) — UNTIL 2026-10-06:
 # THE COMPOSING BANK IS NOT COMMITTED (his word, journal D18 · RUNNING_LOG §193: "keep a bank of samples just uncommitted here
 # in the repo"): every sample under bank/samples/ stays on his disk from here on — the batch of DEC-37 and whatever he captures
-# while composing; the index IS committed (the record of what the bank held). The 60 already tracked stay tracked as they are
-# (nothing untracked, nothing deleted). The concert's bank is the recording session's, a decision of its own then.
+# while composing; the index IS committed (the record of what the bank held). The 60 that were tracked are untracked too
+# (RUNNING_LOG §196: his passes re-capture them — on his disk still, in the history still; `git add -f` brings one back).
+# The concert's bank is the recording session's, a decision of its own then.
 bank/samples/*.wav
 bank/samples/raw/
 # THE PLAN'S RENDERS are NOT committed (his word "b", 2026-10-05, journal D16 · RUNNING_LOG §149): a variant of the processed return,
