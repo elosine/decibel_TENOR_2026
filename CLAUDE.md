@@ -87,6 +87,8 @@ Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are th
 
 **► THEN (Fable, RUNNING_LOG §205; the engine's §54): the second real renders — the petals' loop breaks, its ring was cut at hold + 3 (the fade sits at hold + ring-to now; the builder's cap hold + ring-to + 2) · cs-001 STILL dead: THE LOOP IS A COMB AT 1/PATH (gain × cos 2π f·path — B1 at 0.84 periods: 0.54 of the gain) → with `fbRes` 1 EACH PARTIAL CARRIES ITS OWN LOOP DELAY (the whole number of its periods nearest the path; the common path at its floor): every tuned pitch in phase, the strongest wins by its excitation (~17: F2). PASS. His engine of 00:49 has neither. ► NEXT: his restart · "up" → both builders `--replace --render` · his ear on `audition-petals-loop` · `audition-feedback-rings`.**
 
+**► THEN (Fable, RUNNING_LOG §206): his third "up" — the 26 rendered on the engine of 01:02:51 and MEASURED as designed (the loop holds then rings down whole; cs-001's low partials bloom over 3 s, hold, fall). The three rounds are closed. ► NEXT: his ear — F5 · `audition-petals-loop` · `audition-feedback-rings` from 0; then his word on which route carries the piece's resonant tails.**
+
 ## READ FIRST — how to work here
 
 **`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,

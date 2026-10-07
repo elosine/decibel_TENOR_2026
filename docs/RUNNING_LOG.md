@@ -4991,3 +4991,9 @@ So in the numbers: a distortion on a decaying ring COMPRESSES its top — the su
 **What the three rounds of §203 … §205 say for the record:** the engine's small test proved each stage COMPILES AND BEHAVES ON ITS OWN NUMBERS; only the piece's renders — his set line, his chord shapes — found the break that never broke, the high-pass, the comb of the path. A stage for this piece is proven on THIS PIECE'S settings (§204's rule), and the first audition IS that proof.
 
 **His, once more — the engine of 00:49 has neither this alignment nor the fade:** (1) the engine's window: close it · double-click `C:\Users\jwloy\GitHub\decibel_TENOR_2026\start_electronics.bat` · (2) "up" — the AI sends both plans (`--replace --render`; the 26 replaced by name) · (3) F5 · File ▾ → Experiments → `audition-petals-loop` · play from 0 · the same for `audition-feedback-rings`.
+
+## §206
+
+### 2026-10-07 — his third "up": the 26 rendered on the engine of 01:02:51 — both auditions behave as designed, measured; his ear is next (Fable)
+
+Both plans sent (`--replace --render`), 26 renders in 39 s. MEASURED (RMS per second): **the loop around the petals** — L2 (bloom 2 · drive 6 · hold 8): −16 dB flat for 10 s, then the bank's own ring down over 12 s to −76 (21.9 s); the eight run 12 … 29 s (L6's hold of 15 s: 28.6). **The strings as partials** — cs-001 (B1 73 Hz · C#2 139 Hz), the shape that died twice: in the one loop it BLOOMS from nothing over the three seconds the base row says (−76 −57 −37 −22 −17), holds, breaks, falls — 8.5 s; with the strings ringing 6 s a slower fall to the cap (14.4 s); each string singing 7.5 s. Every shape the same lengths: 8.3 … 8.5 · 14.3 … 14.5 · 7.4 … 7.5. The three rounds (§203 … §205) are closed: both stages do on his numbers what they were built to do. NOT heard. His: F5 · File ▾ → Experiments → `audition-petals-loop` · play from 0 · the same for `audition-feedback-rings`.
