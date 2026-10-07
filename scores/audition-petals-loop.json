@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-07T04:42:26.496Z",
-  "modified": "2026-10-07T04:42:26.496Z",
+  "created": "2026-10-07T04:51:02.182Z",
+  "modified": "2026-10-07T04:51:02.182Z",
   "builtBy": "tools/build_petals_loop.js",
   "note": "THE PETALS-LOOP AUDITION (DEC-40 · RUNNING_LOG §201 route (c) · §203): his petals of resonance (the original, his set line) with THE LOOP AROUND THE BANK — an amp in a loop with his 26 partials as the string: the bloom (s to lift 60 dB), the amp's drive, the hold (s, then the loop is broken and the bank rings down). Eight bricks 3 s apart on bcl-impulse-1 — the tails overlap. Every brick asks for bcl-impulse-1~pl<NN>-tail; the engine renders them from the bank when the plan is sent with render — ONLY an engine started after 2026-10-07 §203 knows the loop. The sheet: docs/auditions/audition-petals-loop.md. Written by tools/build_petals_loop.js; his from then on."
  },

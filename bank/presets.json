@@ -5593,13 +5593,13 @@
    "n": 8,
    "what": "his petals (the original, his set line) with the loop around the bank — eight settings of bloom · drive · hold, all on bcl-impulse-1",
    "command": "node tools/build_petals_loop.js --name audition-petals-loop --impulse bcl-impulse-1 --gap 3",
-   "when": "2026-10-07T04:42"
+   "when": "2026-10-07T04:51"
   },
   "feedback-rings": {
    "n": 18,
    "what": "the feedback with its strings as ringing partials on 6 chord shapes, three ways each; the other dials the shelf's row 7, the cap 14000 ms",
    "command": "node tools/build_feedback_rings.js --name audition-feedback-rings --n 6 --base 7 --gap 3 --cap 14000",
-   "when": "2026-10-07T04:42"
+   "when": "2026-10-07T04:51"
   }
  }
 }

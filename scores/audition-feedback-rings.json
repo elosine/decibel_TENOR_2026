@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-07T04:42:26.577Z",
-  "modified": "2026-10-07T04:42:26.577Z",
+  "created": "2026-10-07T04:51:02.351Z",
+  "modified": "2026-10-07T04:51:02.351Z",
   "builtBy": "tools/build_feedback_rings.js",
   "note": "THE FEEDBACK-RINGS AUDITION (DEC-40 · RUNNING_LOG §201 route (b) · §203): the feedback with its strings as RINGING PARTIALS (fbRes 1) on 6 of his chord shapes, three ways each — the one loop with the strings ringing 1.5 s (the strongest wins) · the one loop ringing 6 s · each string singing (a chord of clipped partials); the other dials the shelf's row 7. Bricks 3 s apart — the tails overlap. Every brick asks for <impulse>~fr<NNN><a|b|c>-tail; the engine renders them when the plan is sent with render — ONLY an engine started after 2026-10-07 §203 knows fbRes. The sheet: docs/auditions/audition-feedback-rings.md. Written by tools/build_feedback_rings.js; his from then on."
  },
