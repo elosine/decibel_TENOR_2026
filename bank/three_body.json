@@ -1,0 +1,59 @@
+{
+  "_what": "THE THREE BODY PROBLEM — the section's numbers (PLAN.md § 1.6, 14.2 … 14.5; docs/THREE_BODY.md; DEC-36 … 36e; RUNNING_LOG §183 … §192). HIS DATA: a tool reads this file and never writes it. One orbit per player — far apart · change · approaching · change · close pass · change · break-and-rejoin · change · far apart — each container's length rolled by a hexagram (three coins a line, six lines; the King Wen number 1 … 64 read across the container's range). After a change here:  node tools/build_three_body.js --seed N --replace  then File ▾ → Reload in the page. Nothing here needs an engine restart: the rules travel in the score.",
+
+  "endCapS": 20,
+  "lengthS": 0,
+  "_endCapS": "THE END CAP (his word: 'end cap with free'): the section ends this many seconds after the LAST player has come back to far apart; every player's last container runs to that end. lengthS: a whole length to hold the section to at the least — 0 = none, the rolls decide (about 2:30 with these ranges). His word: under three minutes is better, judged from the simulation and its sound.",
+
+  "states": ["far", "change", "approaching", "change", "closePass", "change", "breakRejoin", "change", "far"],
+  "_states": "the series every player runs once. A change is its own container (his word): inside it the player moves from the state before to the state after, in their own time.",
+
+  "rangesS": {
+    "far": [20, 35],
+    "change": [5, 12],
+    "changeToBreak": [4, 8],
+    "approaching": [20, 35],
+    "closePass": [10, 20],
+    "breakSilence": [4, 8],
+    "breakRejoin": [8, 16]
+  },
+  "_rangesS": "seconds, [shortest, longest], for each rolled container. far = the FIRST far apart (the last runs to the end). changeToBreak = the change out of the close pass (the fling is quick). break-and-rejoin is two rolls: its silence, then its rejoining. The eight rolled containers sum to 81 … 158 s.",
+
+  "constraint": { "kind": "company", "overlapS": 3, "tries": 200 },
+  "_constraint": "his 'b' (2026-10-06): a roll is kept only if every player's close pass overlaps another player's close pass or approaching by at least overlapS seconds; otherwise the next seed, up to `tries`. kind 'free' = no constraint.",
+
+  "players": [
+    { "name": "bfl", "label": "bass flute", "lanes": ["bass_flute"] },
+    { "name": "bcl", "label": "bass clarinet", "lanes": ["bass_clarinet"] },
+    { "name": "perc", "label": "percussion", "lanes": ["percussion", "bowed_vibraphone"] },
+    { "name": "va", "label": "viola", "lanes": ["viola"] },
+    { "name": "vc", "label": "cello", "lanes": ["cello"] }
+  ],
+  "_players": "the five. name = the engine's player (bank/elec_route.json players). lanes = the composer score's lanes the player plays on, by instKey; the containers are drawn on the first.",
+
+  "computer": [
+    { "id": "e1", "label": "the winds' samples", "from": ["bfl", "bcl"], "lane": "bass_clarinet" },
+    { "id": "e2", "label": "the percussion's samples", "from": ["perc"], "lane": "bowed_vibraphone" },
+    { "id": "e3", "label": "the strings' samples", "from": ["va", "vc"], "lane": "cello" }
+  ],
+  "_computer": "the electronics' THREE PLAYERS (his word: 'consider them just three players, drawing on the available impulses plus effects'). from = whose captured impulses a computer player's sounds are made of — the AI's grouping, by family: winds · percussion · strings. lane = where its containers are drawn (the bottom of that lane).",
+
+  "rules": {
+    "pace": { "gapMs": [2500, 6000], "jitter": 0.08 },
+    "approaching": { "beatMs": [300, 900], "holdMs": 400, "depth": 3, "waitMs": [2500, 6000] },
+    "closePass": { "tightMs": [60, 150], "betMs": [40, 120], "missMs": 250, "beforeShare": 0.5, "selfMs": 150, "depth": 2, "waitMs": [900, 2400], "predictMs": [150, 3000] },
+    "breakRejoin": { "windowMs": 1500, "count": 3, "breakGapMs": 450, "enterMs": [40, 220] },
+    "guardMs": 25
+  },
+  "_rules": "WHAT EACH STATE DOES — the same rules for the simulated five and for the three computer players (the AI's numbers, his to move by ear). pace (far apart): its own gap, drawn once per far container from gapMs, kept within ± jitter — a clock. approaching: on the target's onset wait a beat (beatMs), then one sound; never within holdMs of its own last; depth = how many answers-to-answers it joins; waitMs = how long it listens to silence before it plays unprompted. closePass: just AFTER an onset by tightMs, or (beforeShare of the time) a BET — the next onset predicted from the last two, played betMs before the prediction; a prediction more than missMs wrong is a miss, an air shot; never within selfMs of its own last; predictMs = the gaps a prediction is made from. guardMs: never WITH — a sound that would land inside it is moved to just after. breakRejoin: silence, then it watches: `count` onsets inside windowMs is a cluster; when one has been there and nothing follows for breakGapMs, it enters within enterMs — or, with no cluster, at the last third.",
+
+  "sim": { "noteMs": 150, "dyn": "f", "source": "piece-sec01-a", "stepMs": 5 },
+  "_sim": "THE SIMULATED FIVE (14.5). Each onset is a NOTE: noteMs long, at the dynamic `dyn` on the lane's own ladder, its technique and key one of the player's own impulse sounds — read from the notes of the score `source`.",
+
+  "electronics": { "mark": "mf", "paletteSize": 18, "envelopes": ["tail"], "ear": "sim" },
+  "_electronics": "THE THREE COMPUTER PLAYERS (14.4). mark = their dynamic on the ladder (bank/elec_route.json level). paletteSize = how many PROCESSED impulses each one holds — drawn, seeded, from the renders already in the bank (bank/samples/index.json: the variants of the players named in `from`, under the presets of bank/presets.json that are dealt, under these envelopes). ear = how they hear the players: 'sim' — the page tells the engine each simulated note (the composing road) · 'mic' — the engine listens to each player's microphone (the concert's road; in simulation that microphone is the rack's send, so it can be heard at home).",
+
+  "labels": { "far": "far apart", "change": "change", "approaching": "approaching", "closePass": "close pass", "breakRejoin": "break and rejoin" },
+  "colors": { "far": "#9E9E9E", "change": "#B0BEC5", "approaching": "#1E88E5", "closePass": "#E53935", "breakRejoin": "#8E24AA" },
+  "_labels": "the ROUGH symbols (his word: rough for now) — a container drawn with its name and its colour. The drawn kind comes with the notation."
+}
