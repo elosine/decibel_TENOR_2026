@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-07T05:14:38.337Z",
-  "modified": "2026-10-07T05:14:38.337Z",
+  "created": "2026-10-07T12:17:03.978Z",
+  "modified": "2026-10-07T12:17:03.978Z",
   "builtBy": "tools/build_petals_spectrum.js",
   "note": "THE PETALS-SPECTRUM AUDITION (DEC-41 · RUNNING_LOG §207): 56 settings of his petals of resonance (the original), the fundamental running up the spectrum from 25 to 400 Hz in order, the other dials drawn (seed 1); about half clean, the rest through one of the four grits he kept (overdrive mild · overdrive hard · fuzz · the one loop), round robin; a brick every 6 s, each on another captured impulse. Every brick asks for <impulse>~ps<NN>-tail; the engine renders them when the plan is sent with render. The sheet: docs/auditions/audition-petals-spectrum.md. Written by tools/build_petals_spectrum.js; his from then on."
  },
@@ -78,7 +78,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-1",
-    "label": "S01 26 Hz · overdrive mild",
+    "label": "1 · 26 Hz · overdrive mild",
     "variants": {
      "bcl-impulse-1": "ps01-tail"
     }
@@ -115,7 +115,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-2",
-    "label": "S02 27 Hz",
+    "label": "2 · 27 Hz",
     "variants": {
      "bcl-impulse-2": "ps02-tail"
     }
@@ -152,7 +152,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-3",
-    "label": "S03 28 Hz",
+    "label": "3 · 28 Hz",
     "variants": {
      "bcl-impulse-3": "ps03-tail"
     }
@@ -189,7 +189,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-4",
-    "label": "S04 30 Hz · overdrive hard",
+    "label": "4 · 30 Hz · overdrive hard",
     "variants": {
      "bcl-impulse-4": "ps04-tail"
     }
@@ -226,7 +226,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-5",
-    "label": "S05 31 Hz",
+    "label": "5 · 31 Hz",
     "variants": {
      "bcl-impulse-5": "ps05-tail"
     }
@@ -263,7 +263,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-6",
-    "label": "S06 32 Hz",
+    "label": "6 · 32 Hz",
     "variants": {
      "bcl-impulse-6": "ps06-tail"
     }
@@ -300,7 +300,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-7",
-    "label": "S07 35 Hz",
+    "label": "7 · 35 Hz",
     "variants": {
      "bcl-impulse-7": "ps07-tail"
     }
@@ -337,7 +337,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-8",
-    "label": "S08 36 Hz · fuzz",
+    "label": "8 · 36 Hz · fuzz",
     "variants": {
      "bcl-impulse-8": "ps08-tail"
     }
@@ -374,7 +374,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-9",
-    "label": "S09 38 Hz · → one loop",
+    "label": "9 · 38 Hz · → one loop",
     "variants": {
      "bcl-impulse-9": "ps09-tail"
     }
@@ -411,7 +411,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-10",
-    "label": "S10 40 Hz · overdrive mild",
+    "label": "10 · 40 Hz · overdrive mild",
     "variants": {
      "bcl-impulse-10": "ps10-tail"
     }
@@ -448,7 +448,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-11",
-    "label": "S11 42 Hz",
+    "label": "11 · 42 Hz",
     "variants": {
      "bcl-impulse-11": "ps11-tail"
     }
@@ -485,7 +485,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-12",
-    "label": "S12 44 Hz · overdrive hard",
+    "label": "12 · 44 Hz · overdrive hard",
     "variants": {
      "bcl-impulse-12": "ps12-tail"
     }
@@ -522,7 +522,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-13",
-    "label": "S13 47 Hz",
+    "label": "13 · 47 Hz",
     "variants": {
      "bcl-impulse-13": "ps13-tail"
     }
@@ -559,7 +559,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-14",
-    "label": "S14 49 Hz · fuzz",
+    "label": "14 · 49 Hz · fuzz",
     "variants": {
      "bcl-impulse-14": "ps14-tail"
     }
@@ -596,7 +596,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-15",
-    "label": "S15 52 Hz",
+    "label": "15 · 52 Hz",
     "variants": {
      "bcl-impulse-15": "ps15-tail"
     }
@@ -633,7 +633,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-16",
-    "label": "S16 55 Hz · → one loop",
+    "label": "16 · 55 Hz · → one loop",
     "variants": {
      "bcl-impulse-16": "ps16-tail"
     }
@@ -670,7 +670,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-17",
-    "label": "S17 57 Hz",
+    "label": "17 · 57 Hz",
     "variants": {
      "bcl-impulse-17": "ps17-tail"
     }
@@ -707,7 +707,7 @@
    "properties": {},
    "elec": {
     "name": "bcl-impulse-18",
-    "label": "S18 60 Hz · overdrive mild",
+    "label": "18 · 60 Hz · overdrive mild",
     "variants": {
      "bcl-impulse-18": "ps18-tail"
     }
@@ -744,7 +744,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-19",
-    "label": "S19 63 Hz · overdrive hard",
+    "label": "19 · 63 Hz · overdrive hard",
     "variants": {
      "perc-impulse-19": "ps19-tail"
     }
@@ -781,7 +781,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-24",
-    "label": "S20 65 Hz · fuzz",
+    "label": "20 · 65 Hz · fuzz",
     "variants": {
      "perc-impulse-24": "ps20-tail"
     }
@@ -818,7 +818,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-1",
-    "label": "S21 69 Hz",
+    "label": "21 · 69 Hz",
     "variants": {
      "perc-impulse-1": "ps21-tail"
     }
@@ -855,7 +855,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-2",
-    "label": "S22 74 Hz",
+    "label": "22 · 74 Hz",
     "variants": {
      "perc-impulse-2": "ps22-tail"
     }
@@ -892,7 +892,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-3",
-    "label": "S23 75 Hz",
+    "label": "23 · 75 Hz",
     "variants": {
      "perc-impulse-3": "ps23-tail"
     }
@@ -929,7 +929,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-4",
-    "label": "S24 79 Hz · → one loop",
+    "label": "24 · 79 Hz · → one loop",
     "variants": {
      "perc-impulse-4": "ps24-tail"
     }
@@ -966,7 +966,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-5",
-    "label": "S25 83 Hz",
+    "label": "25 · 83 Hz",
     "variants": {
      "perc-impulse-5": "ps25-tail"
     }
@@ -1003,7 +1003,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-6",
-    "label": "S26 87 Hz · overdrive mild",
+    "label": "26 · 87 Hz · overdrive mild",
     "variants": {
      "perc-impulse-6": "ps26-tail"
     }
@@ -1040,7 +1040,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-7",
-    "label": "S27 93 Hz · overdrive hard",
+    "label": "27 · 93 Hz · overdrive hard",
     "variants": {
      "perc-impulse-7": "ps27-tail"
     }
@@ -1077,7 +1077,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-8",
-    "label": "S28 98 Hz · fuzz",
+    "label": "28 · 98 Hz · fuzz",
     "variants": {
      "perc-impulse-8": "ps28-tail"
     }
@@ -1114,7 +1114,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-9",
-    "label": "S29 104 Hz",
+    "label": "29 · 104 Hz",
     "variants": {
      "perc-impulse-9": "ps29-tail"
     }
@@ -1151,7 +1151,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-10",
-    "label": "S30 108 Hz",
+    "label": "30 · 108 Hz",
     "variants": {
      "perc-impulse-10": "ps30-tail"
     }
@@ -1188,7 +1188,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-11",
-    "label": "S31 114 Hz",
+    "label": "31 · 114 Hz",
     "variants": {
      "perc-impulse-11": "ps31-tail"
     }
@@ -1225,7 +1225,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-12",
-    "label": "S32 118 Hz · → one loop",
+    "label": "32 · 118 Hz · → one loop",
     "variants": {
      "perc-impulse-12": "ps32-tail"
     }
@@ -1262,7 +1262,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-13",
-    "label": "S33 125 Hz · overdrive mild",
+    "label": "33 · 125 Hz · overdrive mild",
     "variants": {
      "perc-impulse-13": "ps33-tail"
     }
@@ -1299,7 +1299,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-14",
-    "label": "S34 131 Hz · overdrive hard",
+    "label": "34 · 131 Hz · overdrive hard",
     "variants": {
      "perc-impulse-14": "ps34-tail"
     }
@@ -1336,7 +1336,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-15",
-    "label": "S35 138 Hz · fuzz",
+    "label": "35 · 138 Hz · fuzz",
     "variants": {
      "perc-impulse-15": "ps35-tail"
     }
@@ -1373,7 +1373,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-16",
-    "label": "S36 145 Hz · → one loop",
+    "label": "36 · 145 Hz · → one loop",
     "variants": {
      "perc-impulse-16": "ps36-tail"
     }
@@ -1410,7 +1410,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-17",
-    "label": "S37 152 Hz",
+    "label": "37 · 152 Hz",
     "variants": {
      "perc-impulse-17": "ps37-tail"
     }
@@ -1447,7 +1447,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-18",
-    "label": "S38 158 Hz",
+    "label": "38 · 158 Hz",
     "variants": {
      "perc-impulse-18": "ps38-tail"
     }
@@ -1484,7 +1484,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-21",
-    "label": "S39 168 Hz",
+    "label": "39 · 168 Hz",
     "variants": {
      "perc-impulse-21": "ps39-tail"
     }
@@ -1521,7 +1521,7 @@
    "properties": {},
    "elec": {
     "name": "perc-impulse-26",
-    "label": "S40 177 Hz",
+    "label": "40 · 177 Hz",
     "variants": {
      "perc-impulse-26": "ps40-tail"
     }
@@ -1558,7 +1558,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-1",
-    "label": "S41 184 Hz",
+    "label": "41 · 184 Hz",
     "variants": {
      "vc-impulse-1": "ps41-tail"
     }
@@ -1595,7 +1595,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-2",
-    "label": "S42 196 Hz",
+    "label": "42 · 196 Hz",
     "variants": {
      "vc-impulse-2": "ps42-tail"
     }
@@ -1632,7 +1632,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-3",
-    "label": "S43 202 Hz",
+    "label": "43 · 202 Hz",
     "variants": {
      "vc-impulse-3": "ps43-tail"
     }
@@ -1669,7 +1669,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-4",
-    "label": "S44 216 Hz · overdrive mild",
+    "label": "44 · 216 Hz · overdrive mild",
     "variants": {
      "vc-impulse-4": "ps44-tail"
     }
@@ -1706,7 +1706,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-5",
-    "label": "S45 228 Hz · overdrive hard",
+    "label": "45 · 228 Hz · overdrive hard",
     "variants": {
      "vc-impulse-5": "ps45-tail"
     }
@@ -1743,7 +1743,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-6",
-    "label": "S46 240 Hz · fuzz",
+    "label": "46 · 240 Hz · fuzz",
     "variants": {
      "vc-impulse-6": "ps46-tail"
     }
@@ -1780,7 +1780,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-7",
-    "label": "S47 252 Hz",
+    "label": "47 · 252 Hz",
     "variants": {
      "vc-impulse-7": "ps47-tail"
     }
@@ -1817,7 +1817,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-8",
-    "label": "S48 263 Hz",
+    "label": "48 · 263 Hz",
     "variants": {
      "vc-impulse-8": "ps48-tail"
     }
@@ -1854,7 +1854,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-9",
-    "label": "S49 278 Hz",
+    "label": "49 · 278 Hz",
     "variants": {
      "vc-impulse-9": "ps49-tail"
     }
@@ -1891,7 +1891,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-10",
-    "label": "S50 286 Hz · → one loop",
+    "label": "50 · 286 Hz · → one loop",
     "variants": {
      "vc-impulse-10": "ps50-tail"
     }
@@ -1928,7 +1928,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-11",
-    "label": "S51 307 Hz",
+    "label": "51 · 307 Hz",
     "variants": {
      "vc-impulse-11": "ps51-tail"
     }
@@ -1965,7 +1965,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-12",
-    "label": "S52 318 Hz · overdrive mild",
+    "label": "52 · 318 Hz · overdrive mild",
     "variants": {
      "vc-impulse-12": "ps52-tail"
     }
@@ -2002,7 +2002,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-13",
-    "label": "S53 334 Hz",
+    "label": "53 · 334 Hz",
     "variants": {
      "vc-impulse-13": "ps53-tail"
     }
@@ -2039,7 +2039,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-14",
-    "label": "S54 352 Hz · overdrive hard",
+    "label": "54 · 352 Hz · overdrive hard",
     "variants": {
      "vc-impulse-14": "ps54-tail"
     }
@@ -2076,7 +2076,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-15",
-    "label": "S55 373 Hz",
+    "label": "55 · 373 Hz",
     "variants": {
      "vc-impulse-15": "ps55-tail"
     }
@@ -2113,7 +2113,7 @@
    "properties": {},
    "elec": {
     "name": "vc-impulse-16",
-    "label": "S56 389 Hz · fuzz",
+    "label": "56 · 389 Hz · fuzz",
     "variants": {
      "vc-impulse-16": "ps56-tail"
     }

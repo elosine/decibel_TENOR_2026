@@ -50,7 +50,7 @@ const lowest = (s) => Math.round(s.fund * s.first), highest = (s) => Math.round(
 const args = (s) => Object.assign({ poMix: 1, poFund: s.fund, poFirst: s.first, poSpread: s.spread, poOffset: s.offset, poRingLo: s.ringLo, poRingHi: s.ringHi, poInLen: 1 }, s.grit ? s.grit.args : {});
 
 // THE PRESETS
-const presets = settings.map((s, i) => ({ key: 'ps' + nn(i), name: 'S' + nn(i) + (s.grit ? ' ' + s.grit.short.toUpperCase() : ' CLEAN') + ' — petals · ' + dials(s) + ' (partials ' + lowest(s) + ' … ' + highest(s) + ' Hz)', effect: 'petalsOrig', class: 'time', capMs: CAP_MS, args: args(s) }));
+const presets = settings.map((s, i) => ({ key: 'ps' + nn(i), name: (i + 1) + ' · ' + (s.grit ? s.grit.short.toUpperCase() : 'CLEAN') + ' — petals · ' + dials(s) + ' (partials ' + lowest(s) + ' … ' + highest(s) + ' Hz)', effect: 'petalsOrig', class: 'time', capMs: CAP_MS, args: args(s) }));
 
 // THE SCORE: in order up the spectrum, every GAP seconds, each on another impulse (or the one pinned)
 const all = K.impulses(), pinned = IMP ? all.find((r) => r.name === IMP) : null;
@@ -58,7 +58,7 @@ if (IMP && !pinned) { console.error('no captured impulse named ' + IMP + ' in th
 const pick = K.spread(all), Z = K.zoneMaker(), objects = [], rows = [];
 settings.forEach((s, i) => {
   const smp = pinned || pick(i), t = 1 + i * GAP;
-  objects.push(Z.zone(smp.lane >= 0 ? smp.lane : 0, t, { name: smp.name, label: 'S' + nn(i) + ' ' + Math.round(s.fund) + ' Hz' + (s.grit ? ' · ' + s.grit.short : ''), variants: { [smp.name]: 'ps' + nn(i) + '-tail' } }));
+  objects.push(Z.zone(smp.lane >= 0 ? smp.lane : 0, t, { name: smp.name, label: (i + 1) + ' · ' + Math.round(s.fund) + ' Hz' + (s.grit ? ' · ' + s.grit.short : ''), variants: { [smp.name]: 'ps' + nn(i) + '-tail' } }));
   rows.push({ i, s, smp, t });
 });
 const END = 1 + (N - 1) * GAP + CAP_MS / 1000 + 1;
@@ -79,11 +79,11 @@ const sheet = [
   '',
   '| brick | at | fund Hz | partials Hz | first partial | spread | bank B + st | ring s | after the petals | impulse | preset |',
   '|---|---|---|---|---|---|---|---|---|---|---|',
-].concat(rows.map((r) => '| **S' + nn(r.i) + '** | ' + K.clock(r.t) + ' (' + r.t + ' s) | ' + r.s.fund + ' | ' + lowest(r.s) + ' … ' + highest(r.s) + ' | ' + r.s.first + ' | ' + r.s.spread + ' | ' + r.s.offset + ' | ' + r.s.ringLo + ' … ' + r.s.ringHi + ' | ' + (r.s.grit ? r.s.grit.short : 'clean') + ' | `' + r.smp.name + '` — ' + (K.PLAYERS[r.smp.player] || r.smp.player) + ' | `ps' + nn(r.i) + '` |'))
-  .concat(['', '**To keep one:** its row in `bank/presets.json` (`ps<NN>`) onto the shelf at your word, or a return brick anywhere → Processed as → `S<NN> …`, envelope `tail`. The "partials" column is the lowest partial of bank A to the highest of bank B.', '']).join('\n');
+].concat(rows.map((r) => '| **' + (r.i + 1) + '** | ' + K.clock(r.t) + ' (' + r.t + ' s) | ' + r.s.fund + ' | ' + lowest(r.s) + ' … ' + highest(r.s) + ' | ' + r.s.first + ' | ' + r.s.spread + ' | ' + r.s.offset + ' | ' + r.s.ringLo + ' … ' + r.s.ringHi + ' | ' + (r.s.grit ? r.s.grit.short : 'clean') + ' | `' + r.smp.name + '` — ' + (K.PLAYERS[r.smp.player] || r.smp.player) + ' | `ps' + nn(r.i) + '` |'))
+  .concat(['', '**To keep one:** its row in `bank/presets.json` (`ps<NN>`) onto the shelf at your word, or a return brick anywhere → Processed as → `<number> · …`, envelope `tail`. The "partials" column is the lowest partial of bank A to the highest of bank B.', '']).join('\n');
 const sheetFile = K.writeSheet(NAME, sheet);
 
-rows.forEach((r) => console.log('S' + nn(r.i) + '  ' + String(r.t).padStart(4) + ' s  ' + String(r.s.fund).padStart(6) + ' Hz  ' + (r.s.grit ? r.s.grit.short : 'clean').padEnd(15) + r.smp.name.padEnd(16) + ' partials ' + lowest(r.s) + ' … ' + highest(r.s)));
+rows.forEach((r) => console.log(String(r.i + 1).padStart(2) + '  ' + String(r.t).padStart(4) + ' s  ' + String(r.s.fund).padStart(6) + ' Hz  ' + (r.s.grit ? r.s.grit.short : 'clean').padEnd(15) + r.smp.name.padEnd(16) + ' partials ' + lowest(r.s) + ' … ' + highest(r.s)));
 console.log(K.rel(file) + ' written — ' + N + ' return bricks, ' + rows.filter((r) => !r.s.grit).length + ' clean · ' + rows.filter((r) => r.s.grit).length + ' with a grit, ' + K.clock(END) + ' long · ' + K.rel(sheetFile) + ' · File ▾ → Experiments → ' + NAME);
 if (K.flag('render')) K.sendPlan(K.planLines(objects, P), PORT);
 else console.log('the plan was NOT sent (no --render): in the page, a purple brick → "render all planned".');

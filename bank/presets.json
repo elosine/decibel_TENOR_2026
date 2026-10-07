@@ -5475,7 +5475,7 @@
   },
   {
    "key": "ps01",
-   "name": "S01 OVERDRIVE MILD — petals · fund 26 Hz · first partial 1.06 · spread 0.87 · bank B +4.32 st · ring 9.8 … 14.7 s (partials 28 … 384 Hz)",
+   "name": "1 · OVERDRIVE MILD — petals · fund 26 Hz · first partial 1.06 · spread 0.87 · bank B +4.32 st · ring 9.8 … 14.7 s (partials 28 … 384 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5497,7 +5497,7 @@
   },
   {
    "key": "ps02",
-   "name": "S02 CLEAN — petals · fund 27.1 Hz · first partial 4.87 · spread 0.51 · bank B +7.83 st · ring 7.9 … 10.4 s (partials 132 … 468 Hz)",
+   "name": "2 · CLEAN — petals · fund 27.1 Hz · first partial 4.87 · spread 0.51 · bank B +7.83 st · ring 7.9 … 10.4 s (partials 132 … 468 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5516,7 +5516,7 @@
   },
   {
    "key": "ps03",
-   "name": "S03 CLEAN — petals · fund 28.1 Hz · first partial 2.4 · spread 0.86 · bank B +6.06 st · ring 8.6 … 10.8 s (partials 67 … 507 Hz)",
+   "name": "3 · CLEAN — petals · fund 28.1 Hz · first partial 2.4 · spread 0.86 · bank B +6.06 st · ring 8.6 … 10.8 s (partials 67 … 507 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5535,7 +5535,7 @@
   },
   {
    "key": "ps04",
-   "name": "S04 OVERDRIVE HARD — petals · fund 29.7 Hz · first partial 4.47 · spread 0.59 · bank B +7.92 st · ring 7.3 … 11 s (partials 133 … 542 Hz)",
+   "name": "4 · OVERDRIVE HARD — petals · fund 29.7 Hz · first partial 4.47 · spread 0.59 · bank B +7.92 st · ring 7.3 … 11 s (partials 133 … 542 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5557,7 +5557,7 @@
   },
   {
    "key": "ps05",
-   "name": "S05 CLEAN — petals · fund 31.3 Hz · first partial 2.39 · spread 0.6 · bank B +2.56 st · ring 9.1 … 11.5 s (partials 75 … 348 Hz)",
+   "name": "5 · CLEAN — petals · fund 31.3 Hz · first partial 2.39 · spread 0.6 · bank B +2.56 st · ring 9.1 … 11.5 s (partials 75 … 348 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5576,7 +5576,7 @@
   },
   {
    "key": "ps06",
-   "name": "S06 CLEAN — petals · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s (partials 118 … 734 Hz)",
+   "name": "6 · CLEAN — petals · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s (partials 118 … 734 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5595,7 +5595,7 @@
   },
   {
    "key": "ps07",
-   "name": "S07 CLEAN — petals · fund 34.9 Hz · first partial 3.95 · spread 0.98 · bank B +5.19 st · ring 9.7 … 11.3 s (partials 138 … 740 Hz)",
+   "name": "7 · CLEAN — petals · fund 34.9 Hz · first partial 3.95 · spread 0.98 · bank B +5.19 st · ring 9.7 … 11.3 s (partials 138 … 740 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5614,7 +5614,7 @@
   },
   {
    "key": "ps08",
-   "name": "S08 FUZZ — petals · fund 36.1 Hz · first partial 1.2 · spread 0.92 · bank B +4.27 st · ring 9.7 … 11.8 s (partials 43 … 565 Hz)",
+   "name": "8 · FUZZ — petals · fund 36.1 Hz · first partial 1.2 · spread 0.92 · bank B +4.27 st · ring 9.7 … 11.8 s (partials 43 … 565 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5637,7 +5637,7 @@
   },
   {
    "key": "ps09",
-   "name": "S09 → ONE LOOP — petals · fund 37.8 Hz · first partial 3.48 · spread 0.68 · bank B +5.59 st · ring 9.7 … 14 s (partials 132 … 608 Hz)",
+   "name": "9 · → ONE LOOP — petals · fund 37.8 Hz · first partial 3.48 · spread 0.68 · bank B +5.59 st · ring 9.7 … 14 s (partials 132 … 608 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5671,7 +5671,7 @@
   },
   {
    "key": "ps10",
-   "name": "S10 OVERDRIVE MILD — petals · fund 39.7 Hz · first partial 4.39 · spread 1 · bank B +4.25 st · ring 7.9 … 12 s (partials 174 … 832 Hz)",
+   "name": "10 · OVERDRIVE MILD — petals · fund 39.7 Hz · first partial 4.39 · spread 1 · bank B +4.25 st · ring 7.9 … 12 s (partials 174 … 832 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5693,7 +5693,7 @@
   },
   {
    "key": "ps11",
-   "name": "S11 CLEAN — petals · fund 42.3 Hz · first partial 1.41 · spread 0.55 · bank B +2.49 st · ring 8.7 … 11.6 s (partials 60 … 391 Hz)",
+   "name": "11 · CLEAN — petals · fund 42.3 Hz · first partial 1.41 · spread 0.55 · bank B +2.49 st · ring 8.7 … 11.6 s (partials 60 … 391 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5712,7 +5712,7 @@
   },
   {
    "key": "ps12",
-   "name": "S12 OVERDRIVE HARD — petals · fund 44.2 Hz · first partial 2.6 · spread 0.52 · bank B +5 st · ring 9.5 … 13.3 s (partials 115 … 522 Hz)",
+   "name": "12 · OVERDRIVE HARD — petals · fund 44.2 Hz · first partial 2.6 · spread 0.52 · bank B +5 st · ring 9.5 … 13.3 s (partials 115 … 522 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5734,7 +5734,7 @@
   },
   {
    "key": "ps13",
-   "name": "S13 CLEAN — petals · fund 46.7 Hz · first partial 4.97 · spread 1.17 · bank B +2.6 st · ring 7.4 … 11.7 s (partials 232 … 1032 Hz)",
+   "name": "13 · CLEAN — petals · fund 46.7 Hz · first partial 4.97 · spread 1.17 · bank B +2.6 st · ring 7.4 … 11.7 s (partials 232 … 1032 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5753,7 +5753,7 @@
   },
   {
    "key": "ps14",
-   "name": "S14 FUZZ — petals · fund 49 Hz · first partial 1.12 · spread 0.61 · bank B +7.05 st · ring 7.6 … 11.7 s (partials 55 … 621 Hz)",
+   "name": "14 · FUZZ — petals · fund 49 Hz · first partial 1.12 · spread 0.61 · bank B +7.05 st · ring 7.6 … 11.7 s (partials 55 … 621 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5776,7 +5776,7 @@
   },
   {
    "key": "ps15",
-   "name": "S15 CLEAN — petals · fund 51.9 Hz · first partial 3.08 · spread 0.42 · bank B +7.77 st · ring 8.8 … 12.1 s (partials 160 … 660 Hz)",
+   "name": "15 · CLEAN — petals · fund 51.9 Hz · first partial 3.08 · spread 0.42 · bank B +7.77 st · ring 8.8 … 12.1 s (partials 160 … 660 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5795,7 +5795,7 @@
   },
   {
    "key": "ps16",
-   "name": "S16 → ONE LOOP — petals · fund 54.5 Hz · first partial 2.14 · spread 1.2 · bank B +5.66 st · ring 9.2 … 12.1 s (partials 117 … 1250 Hz)",
+   "name": "16 · → ONE LOOP — petals · fund 54.5 Hz · first partial 2.14 · spread 1.2 · bank B +5.66 st · ring 9.2 … 12.1 s (partials 117 … 1250 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5829,7 +5829,7 @@
   },
   {
    "key": "ps17",
-   "name": "S17 CLEAN — petals · fund 57.1 Hz · first partial 4.03 · spread 0.55 · bank B +6.44 st · ring 7.1 … 9.3 s (partials 230 … 880 Hz)",
+   "name": "17 · CLEAN — petals · fund 57.1 Hz · first partial 4.03 · spread 0.55 · bank B +6.44 st · ring 7.1 … 9.3 s (partials 230 … 880 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5848,7 +5848,7 @@
   },
   {
    "key": "ps18",
-   "name": "S18 OVERDRIVE MILD — petals · fund 59.9 Hz · first partial 1.64 · spread 1.21 · bank B +6.8 st · ring 7.1 … 8.9 s (partials 98 … 1434 Hz)",
+   "name": "18 · OVERDRIVE MILD — petals · fund 59.9 Hz · first partial 1.64 · spread 1.21 · bank B +6.8 st · ring 7.1 … 8.9 s (partials 98 … 1434 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5870,7 +5870,7 @@
   },
   {
    "key": "ps19",
-   "name": "S19 OVERDRIVE HARD — petals · fund 62.8 Hz · first partial 1.44 · spread 0.79 · bank B +6.2 st · ring 8.8 … 12.7 s (partials 90 … 981 Hz)",
+   "name": "19 · OVERDRIVE HARD — petals · fund 62.8 Hz · first partial 1.44 · spread 0.79 · bank B +6.2 st · ring 8.8 … 12.7 s (partials 90 … 981 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5892,7 +5892,7 @@
   },
   {
    "key": "ps20",
-   "name": "S20 FUZZ — petals · fund 65 Hz · first partial 4.62 · spread 1.11 · bank B +7.39 st · ring 9 … 12.4 s (partials 300 … 1787 Hz)",
+   "name": "20 · FUZZ — petals · fund 65 Hz · first partial 4.62 · spread 1.11 · bank B +7.39 st · ring 9 … 12.4 s (partials 300 … 1787 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5915,7 +5915,7 @@
   },
   {
    "key": "ps21",
-   "name": "S21 CLEAN — petals · fund 69.4 Hz · first partial 2.31 · spread 0.55 · bank B +2.71 st · ring 9.8 … 12.6 s (partials 160 … 723 Hz)",
+   "name": "21 · CLEAN — petals · fund 69.4 Hz · first partial 2.31 · spread 0.55 · bank B +2.71 st · ring 9.8 … 12.6 s (partials 160 … 723 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5934,7 +5934,7 @@
   },
   {
    "key": "ps22",
-   "name": "S22 CLEAN — petals · fund 73.5 Hz · first partial 4.64 · spread 0.59 · bank B +5.77 st · ring 7.7 … 12.6 s (partials 341 … 1202 Hz)",
+   "name": "22 · CLEAN — petals · fund 73.5 Hz · first partial 4.64 · spread 0.59 · bank B +5.77 st · ring 7.7 … 12.6 s (partials 341 … 1202 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5953,7 +5953,7 @@
   },
   {
    "key": "ps23",
-   "name": "S23 CLEAN — petals · fund 75.1 Hz · first partial 3.04 · spread 0.71 · bank B +7.79 st · ring 9.4 … 11.6 s (partials 228 … 1361 Hz)",
+   "name": "23 · CLEAN — petals · fund 75.1 Hz · first partial 3.04 · spread 0.71 · bank B +7.79 st · ring 9.4 … 11.6 s (partials 228 … 1361 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -5972,7 +5972,7 @@
   },
   {
    "key": "ps24",
-   "name": "S24 → ONE LOOP — petals · fund 79.1 Hz · first partial 4.34 · spread 0.39 · bank B +5.62 st · ring 7.2 … 8.7 s (partials 343 … 987 Hz)",
+   "name": "24 · → ONE LOOP — petals · fund 79.1 Hz · first partial 4.34 · spread 0.39 · bank B +5.62 st · ring 7.2 … 8.7 s (partials 343 … 987 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6006,7 +6006,7 @@
   },
   {
    "key": "ps25",
-   "name": "S25 CLEAN — petals · fund 83.4 Hz · first partial 4.41 · spread 0.38 · bank B +5.39 st · ring 7.5 … 12.1 s (partials 368 … 1021 Hz)",
+   "name": "25 · CLEAN — petals · fund 83.4 Hz · first partial 4.41 · spread 0.38 · bank B +5.39 st · ring 7.5 … 12.1 s (partials 368 … 1021 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6025,7 +6025,7 @@
   },
   {
    "key": "ps26",
-   "name": "S26 OVERDRIVE MILD — petals · fund 87.1 Hz · first partial 3.81 · spread 0.44 · bank B +6.69 st · ring 7.9 … 11.9 s (partials 332 … 1165 Hz)",
+   "name": "26 · OVERDRIVE MILD — petals · fund 87.1 Hz · first partial 3.81 · spread 0.44 · bank B +6.69 st · ring 7.9 … 11.9 s (partials 332 … 1165 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6047,7 +6047,7 @@
   },
   {
    "key": "ps27",
-   "name": "S27 OVERDRIVE HARD — petals · fund 92.6 Hz · first partial 2.63 · spread 0.56 · bank B +4.03 st · ring 8.5 … 10.9 s (partials 244 … 1093 Hz)",
+   "name": "27 · OVERDRIVE HARD — petals · fund 92.6 Hz · first partial 2.63 · spread 0.56 · bank B +4.03 st · ring 8.5 … 10.9 s (partials 244 … 1093 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6069,7 +6069,7 @@
   },
   {
    "key": "ps28",
-   "name": "S28 FUZZ — petals · fund 98.1 Hz · first partial 3.85 · spread 0.89 · bank B +5.45 st · ring 7.8 … 10.9 s (partials 378 … 1953 Hz)",
+   "name": "28 · FUZZ — petals · fund 98.1 Hz · first partial 3.85 · spread 0.89 · bank B +5.45 st · ring 7.8 … 10.9 s (partials 378 … 1953 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6092,7 +6092,7 @@
   },
   {
    "key": "ps29",
-   "name": "S29 CLEAN — petals · fund 103.5 Hz · first partial 4.69 · spread 1 · bank B +7.82 st · ring 8.3 … 10.1 s (partials 485 … 2714 Hz)",
+   "name": "29 · CLEAN — petals · fund 103.5 Hz · first partial 4.69 · spread 1 · bank B +7.82 st · ring 8.3 … 10.1 s (partials 485 … 2714 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6111,7 +6111,7 @@
   },
   {
    "key": "ps30",
-   "name": "S30 CLEAN — petals · fund 108.1 Hz · first partial 1.36 · spread 1.15 · bank B +4.19 st · ring 9.8 … 11.3 s (partials 147 … 2088 Hz)",
+   "name": "30 · CLEAN — petals · fund 108.1 Hz · first partial 1.36 · spread 1.15 · bank B +4.19 st · ring 9.8 … 11.3 s (partials 147 … 2088 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6130,7 +6130,7 @@
   },
   {
    "key": "ps31",
-   "name": "S31 CLEAN — petals · fund 114.4 Hz · first partial 4.38 · spread 0.39 · bank B +3 st · ring 9.4 … 14.1 s (partials 501 … 1233 Hz)",
+   "name": "31 · CLEAN — petals · fund 114.4 Hz · first partial 4.38 · spread 0.39 · bank B +3 st · ring 9.4 … 14.1 s (partials 501 … 1233 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6149,7 +6149,7 @@
   },
   {
    "key": "ps32",
-   "name": "S32 → ONE LOOP — petals · fund 117.8 Hz · first partial 2.11 · spread 1.28 · bank B +5.93 st · ring 7.3 … 10.3 s (partials 249 … 2899 Hz)",
+   "name": "32 · → ONE LOOP — petals · fund 117.8 Hz · first partial 2.11 · spread 1.28 · bank B +5.93 st · ring 7.3 … 10.3 s (partials 249 … 2899 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6183,7 +6183,7 @@
   },
   {
    "key": "ps33",
-   "name": "S33 OVERDRIVE MILD — petals · fund 124.5 Hz · first partial 4.66 · spread 0.44 · bank B +5.05 st · ring 7.6 … 10.5 s (partials 580 … 1657 Hz)",
+   "name": "33 · OVERDRIVE MILD — petals · fund 124.5 Hz · first partial 4.66 · spread 0.44 · bank B +5.05 st · ring 7.6 … 10.5 s (partials 580 … 1657 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6205,7 +6205,7 @@
   },
   {
    "key": "ps34",
-   "name": "S34 OVERDRIVE HARD — petals · fund 130.8 Hz · first partial 2.6 · spread 0.91 · bank B +3.19 st · ring 9.1 … 11 s (partials 340 … 2126 Hz)",
+   "name": "34 · OVERDRIVE HARD — petals · fund 130.8 Hz · first partial 2.6 · spread 0.91 · bank B +3.19 st · ring 9.1 … 11 s (partials 340 … 2126 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6227,7 +6227,7 @@
   },
   {
    "key": "ps35",
-   "name": "S35 FUZZ — petals · fund 137.7 Hz · first partial 4.71 · spread 0.84 · bank B +2.54 st · ring 7.6 … 10.9 s (partials 649 … 2358 Hz)",
+   "name": "35 · FUZZ — petals · fund 137.7 Hz · first partial 4.71 · spread 0.84 · bank B +2.54 st · ring 7.6 … 10.9 s (partials 649 … 2358 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6250,7 +6250,7 @@
   },
   {
    "key": "ps36",
-   "name": "S36 → ONE LOOP — petals · fund 144.8 Hz · first partial 4.51 · spread 1.28 · bank B +4.95 st · ring 7.5 … 9.1 s (partials 653 … 3829 Hz)",
+   "name": "36 · → ONE LOOP — petals · fund 144.8 Hz · first partial 4.51 · spread 1.28 · bank B +4.95 st · ring 7.5 … 9.1 s (partials 653 … 3829 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6284,7 +6284,7 @@
   },
   {
    "key": "ps37",
-   "name": "S37 CLEAN — petals · fund 152 Hz · first partial 3.8 · spread 0.97 · bank B +7.21 st · ring 9.7 … 11.8 s (partials 578 … 3559 Hz)",
+   "name": "37 · CLEAN — petals · fund 152 Hz · first partial 3.8 · spread 0.97 · bank B +7.21 st · ring 9.7 … 11.8 s (partials 578 … 3559 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6303,7 +6303,7 @@
   },
   {
    "key": "ps38",
-   "name": "S38 CLEAN — petals · fund 158.1 Hz · first partial 3.15 · spread 0.65 · bank B +7.83 st · ring 7.3 … 11.3 s (partials 498 … 2721 Hz)",
+   "name": "38 · CLEAN — petals · fund 158.1 Hz · first partial 3.15 · spread 0.65 · bank B +7.83 st · ring 7.3 … 11.3 s (partials 498 … 2721 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6322,7 +6322,7 @@
   },
   {
    "key": "ps39",
-   "name": "S39 CLEAN — petals · fund 168.4 Hz · first partial 2.93 · spread 1.19 · bank B +6.72 st · ring 9.2 … 12.1 s (partials 493 … 4273 Hz)",
+   "name": "39 · CLEAN — petals · fund 168.4 Hz · first partial 2.93 · spread 1.19 · bank B +6.72 st · ring 9.2 … 12.1 s (partials 493 … 4273 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6341,7 +6341,7 @@
   },
   {
    "key": "ps40",
-   "name": "S40 CLEAN — petals · fund 176.8 Hz · first partial 2.39 · spread 0.51 · bank B +6.91 st · ring 9.9 … 13.8 s (partials 423 … 2243 Hz)",
+   "name": "40 · CLEAN — petals · fund 176.8 Hz · first partial 2.39 · spread 0.51 · bank B +6.91 st · ring 9.9 … 13.8 s (partials 423 … 2243 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6360,7 +6360,7 @@
   },
   {
    "key": "ps41",
-   "name": "S41 CLEAN — petals · fund 183.7 Hz · first partial 1.8 · spread 0.35 · bank B +7.87 st · ring 8.7 … 12.5 s (partials 331 … 1737 Hz)",
+   "name": "41 · CLEAN — petals · fund 183.7 Hz · first partial 1.8 · spread 0.35 · bank B +7.87 st · ring 8.7 … 12.5 s (partials 331 … 1737 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6379,7 +6379,7 @@
   },
   {
    "key": "ps42",
-   "name": "S42 CLEAN — petals · fund 196.2 Hz · first partial 3.27 · spread 0.7 · bank B +4 st · ring 8.2 … 12.1 s (partials 642 … 2885 Hz)",
+   "name": "42 · CLEAN — petals · fund 196.2 Hz · first partial 3.27 · spread 0.7 · bank B +4 st · ring 8.2 … 12.1 s (partials 642 … 2885 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6398,7 +6398,7 @@
   },
   {
    "key": "ps43",
-   "name": "S43 CLEAN — petals · fund 202.4 Hz · first partial 1.51 · spread 1.05 · bank B +2.27 st · ring 7.6 … 12 s (partials 306 … 3256 Hz)",
+   "name": "43 · CLEAN — petals · fund 202.4 Hz · first partial 1.51 · spread 1.05 · bank B +2.27 st · ring 7.6 … 12 s (partials 306 … 3256 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6417,7 +6417,7 @@
   },
   {
    "key": "ps44",
-   "name": "S44 OVERDRIVE MILD — petals · fund 216.3 Hz · first partial 1.12 · spread 0.52 · bank B +2.17 st · ring 8.3 … 12.8 s (partials 242 … 1805 Hz)",
+   "name": "44 · OVERDRIVE MILD — petals · fund 216.3 Hz · first partial 1.12 · spread 0.52 · bank B +2.17 st · ring 8.3 … 12.8 s (partials 242 … 1805 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6439,7 +6439,7 @@
   },
   {
    "key": "ps45",
-   "name": "S45 OVERDRIVE HARD — petals · fund 227.9 Hz · first partial 2.11 · spread 0.41 · bank B +2.66 st · ring 7.7 … 10.2 s (partials 481 … 1868 Hz)",
+   "name": "45 · OVERDRIVE HARD — petals · fund 227.9 Hz · first partial 2.11 · spread 0.41 · bank B +2.66 st · ring 7.7 … 10.2 s (partials 481 … 1868 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6461,7 +6461,7 @@
   },
   {
    "key": "ps46",
-   "name": "S46 FUZZ — petals · fund 239.6 Hz · first partial 3.39 · spread 0.61 · bank B +6.11 st · ring 9.8 … 12.5 s (partials 812 … 3652 Hz)",
+   "name": "46 · FUZZ — petals · fund 239.6 Hz · first partial 3.39 · spread 0.61 · bank B +6.11 st · ring 9.8 … 12.5 s (partials 812 … 3652 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6484,7 +6484,7 @@
   },
   {
    "key": "ps47",
-   "name": "S47 CLEAN — petals · fund 252.2 Hz · first partial 1.87 · spread 0.8 · bank B +4.92 st · ring 9.5 … 13 s (partials 472 … 3844 Hz)",
+   "name": "47 · CLEAN — petals · fund 252.2 Hz · first partial 1.87 · spread 0.8 · bank B +4.92 st · ring 9.5 … 13 s (partials 472 … 3844 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6503,7 +6503,7 @@
   },
   {
    "key": "ps48",
-   "name": "S48 CLEAN — petals · fund 263.4 Hz · first partial 1.18 · spread 0.97 · bank B +4.25 st · ring 7 … 9.6 s (partials 311 … 4316 Hz)",
+   "name": "48 · CLEAN — petals · fund 263.4 Hz · first partial 1.18 · spread 0.97 · bank B +4.25 st · ring 7 … 9.6 s (partials 311 … 4316 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6522,7 +6522,7 @@
   },
   {
    "key": "ps49",
-   "name": "S49 CLEAN — petals · fund 277.9 Hz · first partial 3.9 · spread 0.88 · bank B +2.43 st · ring 9.1 … 12.2 s (partials 1084 … 4624 Hz)",
+   "name": "49 · CLEAN — petals · fund 277.9 Hz · first partial 3.9 · spread 0.88 · bank B +2.43 st · ring 9.1 … 12.2 s (partials 1084 … 4624 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6541,7 +6541,7 @@
   },
   {
    "key": "ps50",
-   "name": "S50 → ONE LOOP — petals · fund 286.2 Hz · first partial 4.72 · spread 1.2 · bank B +6.66 st · ring 8 … 10 s (partials 1351 … 8040 Hz)",
+   "name": "50 · → ONE LOOP — petals · fund 286.2 Hz · first partial 4.72 · spread 1.2 · bank B +6.66 st · ring 8 … 10 s (partials 1351 … 8040 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6575,7 +6575,7 @@
   },
   {
    "key": "ps51",
-   "name": "S51 CLEAN — petals · fund 307.4 Hz · first partial 4.19 · spread 0.86 · bank B +7.37 st · ring 9.1 … 13.8 s (partials 1288 … 6827 Hz)",
+   "name": "51 · CLEAN — petals · fund 307.4 Hz · first partial 4.19 · spread 0.86 · bank B +7.37 st · ring 9.1 … 13.8 s (partials 1288 … 6827 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6594,7 +6594,7 @@
   },
   {
    "key": "ps52",
-   "name": "S52 OVERDRIVE MILD — petals · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s (partials 1451 … 7295 Hz)",
+   "name": "52 · OVERDRIVE MILD — petals · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s (partials 1451 … 7295 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6616,7 +6616,7 @@
   },
   {
    "key": "ps53",
-   "name": "S53 CLEAN — petals · fund 333.5 Hz · first partial 3.27 · spread 1 · bank B +2.36 st · ring 8.5 … 11.6 s (partials 1091 … 5836 Hz)",
+   "name": "53 · CLEAN — petals · fund 333.5 Hz · first partial 3.27 · spread 1 · bank B +2.36 st · ring 8.5 … 11.6 s (partials 1091 … 5836 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6635,7 +6635,7 @@
   },
   {
    "key": "ps54",
-   "name": "S54 OVERDRIVE HARD — petals · fund 352.3 Hz · first partial 3.07 · spread 0.69 · bank B +6.74 st · ring 9.5 … 11.2 s (partials 1082 … 5902 Hz)",
+   "name": "54 · OVERDRIVE HARD — petals · fund 352.3 Hz · first partial 3.07 · spread 0.69 · bank B +6.74 st · ring 9.5 … 11.2 s (partials 1082 … 5902 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6657,7 +6657,7 @@
   },
   {
    "key": "ps55",
-   "name": "S55 CLEAN — petals · fund 372.6 Hz · first partial 4.85 · spread 1.05 · bank B +7.24 st · ring 7.4 … 10.4 s (partials 1807 … 9878 Hz)",
+   "name": "55 · CLEAN — petals · fund 372.6 Hz · first partial 4.85 · spread 1.05 · bank B +7.24 st · ring 7.4 … 10.4 s (partials 1807 … 9878 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6676,7 +6676,7 @@
   },
   {
    "key": "ps56",
-   "name": "S56 FUZZ — petals · fund 389 Hz · first partial 4.48 · spread 0.47 · bank B +5.83 st · ring 8.2 … 11.6 s (partials 1743 … 5513 Hz)",
+   "name": "56 · FUZZ — petals · fund 389 Hz · first partial 4.48 · spread 0.47 · bank B +5.83 st · ring 8.2 … 11.6 s (partials 1743 … 5513 Hz)",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -6829,7 +6829,7 @@
    "n": 56,
    "what": "his petals (the original) across the spectrum — 56 settings, the fundamental 25 … 400 Hz in order, about half with one of the four kept grits (seed 1)",
    "command": "node tools/build_petals_spectrum.js --name audition-petals-spectrum --n 56 --gap 6 --seed 1 --flo 25 --fhi 400 --clean 0.5",
-   "when": "2026-10-07T05:14"
+   "when": "2026-10-07T12:17"
   }
  }
 }
