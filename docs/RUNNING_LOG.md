@@ -5009,3 +5009,15 @@ Both plans sent (`--replace --render`), 26 renders in 39 s. MEASURED (RMS per se
 **The shelf:** rows 8 … 11 of `bank/candidates.json` — G1 overdrive mild · G2 overdrive hard · G3 fuzz · G5 the ring into the one loop, each the petals' set line with the grit's dials (a STACK: two mixes in one preset); `docs/CANDIDATES.md` rendered (16 rows).
 
 **His, when he can:** F5 · File ▾ → Experiments → `audition-petals-spectrum` · play from 0 (the brick's label: `S<NN> <fund> Hz · <grit>`).
+
+## §208
+
+### 2026-10-07 — his 26 keepers of the spectrum, his proportions for the grits, THE PETALS ROLL: `bank/petals_bank.json` · `tools/build_petals_roll.js` · `audition-petals-roll` (Fable; DEC-42)
+
+**What prompted it:** DEC-42, whole — 26 numbers of `audition-petals-spectrum` (*"the frequency settings I would like to use"*), the proportions as preferences (*"mostly … non-overdriven … the overdrive hard … the one loop as a more rare effect … the fuzz once in a while … the overdrive mild as a subset of the overdrive hard"*), *"to dial in the precise ratios … when we actually make the work"*, and *"generate a algorithm … mixing up the frequencies, just random roll is fine … applying the effects roughly in the way I described … make a save file"*.
+
+**THE BANK — `bank/petals_bank.json` (HIS data):** the 26 settings by their spectrum numbers with the exact drawn dials (fund · first partial · spread · bank B offset · ring from … to; `heardWith` the grit each was heard under): the fundamentals 26 27 28 31 32 35 36 38 42 52 55 69 83 87 93 98 118 138 145 184 196 202 216 278 286 318 Hz — his keepers lean LOW (19 of 26 under 150 Hz; nothing of the 56's top 330 … 400). `effects`: `cleanShare` 0.65 · `weights` od-hard 0.55 · od-mild 0.15 · loop 0.2 · fuzz 0.1 · `dials` the four grits as kept (the shelf's rows 8 … 11) — the AI's first numbers for his words, his to move.
+
+**THE ALGORITHM — `roll(bank, n, seed)` in `tools/build_petals_roll.js` (exported; pure):** a seeded shuffle of the settings dealt in turn, none twice until all are used (a new shuffle then); for each a coin against `cleanShare`, else a weighted draw among the grits. **THE FILE — `node tools/build_petals_roll.js --render` → `scores/audition-petals-roll.json`:** 40 bricks every 6 s (4:12), seed 1: 27 clean · 7 overdrive hard · 1 mild · 2 one loop · 3 fuzz — the roll's own proportions this once (another seed is another deal; `--n` · `--gap` · `--seed` · `--impulse`); each on another captured impulse; the label `<number> · #<setting> <fund> Hz · <grit>`; presets `pr01` … `pr40` (`audition: petals-roll`, `deal: false`); the sheet `docs/auditions/audition-petals-roll.md`. Rendered by his engine: 40 in 57 s.
+
+**His, when he can:** F5 · File ▾ → Experiments → `audition-petals-roll` · play from 0.

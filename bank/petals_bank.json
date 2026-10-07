@@ -1,0 +1,312 @@
+{
+  "_about": "HIS petals of resonance for the piece (DEC-42, 2026-10-07; RUNNING_LOG §208): the filter-bank settings he kept from audition-petals-spectrum (seed 1), by their brick numbers, with the exact drawn dials; and his PROPORTIONS for what follows the petals — preferences, to be dialled in when the music is made. A setting is the petalsOrig stage: fund · first partial · spread · bank B offset (st) · ring from … to (s); inLen 1. The roll that deals them: tools/build_petals_roll.js.",
+  "effects": {
+    "_doc": "the grit after the petals — his words: \"mostly non-affected\"; when affected, \"the overdrive hard as the main effect, the one loop as a more rare effect, the fuzz once in a while, the overdrive mild as a subset of the overdrive hard — for every few overdrives one of them is a mild\". cleanShare is the share of bricks with NO grit; the weights divide the rest.",
+    "cleanShare": 0.65,
+    "weights": {
+      "od-hard": 0.55,
+      "od-mild": 0.15,
+      "loop": 0.2,
+      "fuzz": 0.1
+    },
+    "dials": {
+      "od-hard": {
+        "odMix": 1,
+        "odDrive": 20,
+        "odTone": 2500
+      },
+      "od-mild": {
+        "odMix": 1,
+        "odDrive": 4,
+        "odTone": 3000
+      },
+      "fuzz": {
+        "fzMix": 1,
+        "fzGain": 30,
+        "fzBias": 0.2,
+        "fzTone": 3000
+      },
+      "loop": {
+        "fbMix": 1,
+        "fbOwn": 0,
+        "fbBloom": 1,
+        "fbHold": 6,
+        "fbDrive": 6,
+        "fbTone": 2500,
+        "fbPath": 12,
+        "fbClimb": 0.3,
+        "fbWobble": 0.4,
+        "fbS1": 0,
+        "fbS2": 0,
+        "fbS3": 0,
+        "fbS4": 0,
+        "fbS5": 0,
+        "fbS6": 0
+      }
+    }
+  },
+  "source": "audition-petals-spectrum · seed 1 · node tools/build_petals_spectrum.js --n 56 --gap 6 --seed 1 --flo 25 --fhi 400 --clean 0.5",
+  "kept": "2026-10-07 — his list: 1 2 3 5 6 7 8 9 11 15 16 21 25 26 27 28 32 35 36 41 42 43 44 49 50 52",
+  "settings": [
+    {
+      "n": 1,
+      "fund": 26,
+      "first": 1.06,
+      "spread": 0.87,
+      "offset": 4.32,
+      "ringLo": 9.8,
+      "ringHi": 14.7,
+      "heardWith": "overdrive mild"
+    },
+    {
+      "n": 2,
+      "fund": 27.1,
+      "first": 4.87,
+      "spread": 0.51,
+      "offset": 7.83,
+      "ringLo": 7.9,
+      "ringHi": 10.4,
+      "heardWith": "clean"
+    },
+    {
+      "n": 3,
+      "fund": 28.1,
+      "first": 2.4,
+      "spread": 0.86,
+      "offset": 6.06,
+      "ringLo": 8.6,
+      "ringHi": 10.8,
+      "heardWith": "clean"
+    },
+    {
+      "n": 5,
+      "fund": 31.3,
+      "first": 2.39,
+      "spread": 0.6,
+      "offset": 2.56,
+      "ringLo": 9.1,
+      "ringHi": 11.5,
+      "heardWith": "clean"
+    },
+    {
+      "n": 6,
+      "fund": 32.4,
+      "first": 3.63,
+      "spread": 1.1,
+      "offset": 5.14,
+      "ringLo": 7.8,
+      "ringHi": 10.1,
+      "heardWith": "clean"
+    },
+    {
+      "n": 7,
+      "fund": 34.9,
+      "first": 3.95,
+      "spread": 0.98,
+      "offset": 5.19,
+      "ringLo": 9.7,
+      "ringHi": 11.3,
+      "heardWith": "clean"
+    },
+    {
+      "n": 8,
+      "fund": 36.1,
+      "first": 1.2,
+      "spread": 0.92,
+      "offset": 4.27,
+      "ringLo": 9.7,
+      "ringHi": 11.8,
+      "heardWith": "fuzz"
+    },
+    {
+      "n": 9,
+      "fund": 37.8,
+      "first": 3.48,
+      "spread": 0.68,
+      "offset": 5.59,
+      "ringLo": 9.7,
+      "ringHi": 14,
+      "heardWith": "one loop"
+    },
+    {
+      "n": 11,
+      "fund": 42.3,
+      "first": 1.41,
+      "spread": 0.55,
+      "offset": 2.49,
+      "ringLo": 8.7,
+      "ringHi": 11.6,
+      "heardWith": "clean"
+    },
+    {
+      "n": 15,
+      "fund": 51.9,
+      "first": 3.08,
+      "spread": 0.42,
+      "offset": 7.77,
+      "ringLo": 8.8,
+      "ringHi": 12.1,
+      "heardWith": "clean"
+    },
+    {
+      "n": 16,
+      "fund": 54.5,
+      "first": 2.14,
+      "spread": 1.2,
+      "offset": 5.66,
+      "ringLo": 9.2,
+      "ringHi": 12.1,
+      "heardWith": "one loop"
+    },
+    {
+      "n": 21,
+      "fund": 69.4,
+      "first": 2.31,
+      "spread": 0.55,
+      "offset": 2.71,
+      "ringLo": 9.8,
+      "ringHi": 12.6,
+      "heardWith": "clean"
+    },
+    {
+      "n": 25,
+      "fund": 83.4,
+      "first": 4.41,
+      "spread": 0.38,
+      "offset": 5.39,
+      "ringLo": 7.5,
+      "ringHi": 12.1,
+      "heardWith": "clean"
+    },
+    {
+      "n": 26,
+      "fund": 87.1,
+      "first": 3.81,
+      "spread": 0.44,
+      "offset": 6.69,
+      "ringLo": 7.9,
+      "ringHi": 11.9,
+      "heardWith": "overdrive mild"
+    },
+    {
+      "n": 27,
+      "fund": 92.6,
+      "first": 2.63,
+      "spread": 0.56,
+      "offset": 4.03,
+      "ringLo": 8.5,
+      "ringHi": 10.9,
+      "heardWith": "overdrive hard"
+    },
+    {
+      "n": 28,
+      "fund": 98.1,
+      "first": 3.85,
+      "spread": 0.89,
+      "offset": 5.45,
+      "ringLo": 7.8,
+      "ringHi": 10.9,
+      "heardWith": "fuzz"
+    },
+    {
+      "n": 32,
+      "fund": 117.8,
+      "first": 2.11,
+      "spread": 1.28,
+      "offset": 5.93,
+      "ringLo": 7.3,
+      "ringHi": 10.3,
+      "heardWith": "one loop"
+    },
+    {
+      "n": 35,
+      "fund": 137.7,
+      "first": 4.71,
+      "spread": 0.84,
+      "offset": 2.54,
+      "ringLo": 7.6,
+      "ringHi": 10.9,
+      "heardWith": "fuzz"
+    },
+    {
+      "n": 36,
+      "fund": 144.8,
+      "first": 4.51,
+      "spread": 1.28,
+      "offset": 4.95,
+      "ringLo": 7.5,
+      "ringHi": 9.1,
+      "heardWith": "one loop"
+    },
+    {
+      "n": 41,
+      "fund": 183.7,
+      "first": 1.8,
+      "spread": 0.35,
+      "offset": 7.87,
+      "ringLo": 8.7,
+      "ringHi": 12.5,
+      "heardWith": "clean"
+    },
+    {
+      "n": 42,
+      "fund": 196.2,
+      "first": 3.27,
+      "spread": 0.7,
+      "offset": 4,
+      "ringLo": 8.2,
+      "ringHi": 12.1,
+      "heardWith": "clean"
+    },
+    {
+      "n": 43,
+      "fund": 202.4,
+      "first": 1.51,
+      "spread": 1.05,
+      "offset": 2.27,
+      "ringLo": 7.6,
+      "ringHi": 12,
+      "heardWith": "clean"
+    },
+    {
+      "n": 44,
+      "fund": 216.3,
+      "first": 1.12,
+      "spread": 0.52,
+      "offset": 2.17,
+      "ringLo": 8.3,
+      "ringHi": 12.8,
+      "heardWith": "overdrive mild"
+    },
+    {
+      "n": 49,
+      "fund": 277.9,
+      "first": 3.9,
+      "spread": 0.88,
+      "offset": 2.43,
+      "ringLo": 9.1,
+      "ringHi": 12.2,
+      "heardWith": "clean"
+    },
+    {
+      "n": 50,
+      "fund": 286.2,
+      "first": 4.72,
+      "spread": 1.2,
+      "offset": 6.66,
+      "ringLo": 8,
+      "ringHi": 10,
+      "heardWith": "one loop"
+    },
+    {
+      "n": 52,
+      "fund": 318.3,
+      "first": 4.56,
+      "spread": 1.04,
+      "offset": 5.13,
+      "ringLo": 9.5,
+      "ringHi": 12.6,
+      "heardWith": "overdrive mild"
+    }
+  ]
+}
