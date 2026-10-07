@@ -4903,3 +4903,45 @@ The plan's Sines panel in Panels ▾, its take menu and its "nearest to the play
 **Logged, not fixed (SWEEP_LIST #9):** an unrendered variant is INVISIBLE in the page — the brick's label names the preset, the sound is the raw impulse, and only the engine's window says `late`. He could not tell the renders had never been made.
 
 **His, to hear them — F5 is enough: the page must re-read both files (the impulses changed):** F5 · File ▾ → Experiments → `audition-petals` · play from 0 (a pair = the same setting twice, original then cleaned, 16 s each; 9:09) · File ▾ → Experiments → `audition-feedback-chords` · play from 0 (a chord every 10 s; 9:01). No restart, no render.
+
+## §201
+
+### 2026-10-07 — the analysis he asked for: original or cleaned petals; what the chords are and what guitar feedback is; three ways to a gritty ring (Fable; DEC-40)
+
+**What prompted it:** DEC-40, whole — *"Is there a particular reason why we would use the original or the clean version … I think the original sounds fine … what I'm looking for with the feedback one is probably something more similar to the pedals where the impulse is causing it to ring … slightly more gritty guitar feedback than … the distorted overtone series … either we keep the pedals and then play some sort of analog grid … or we make the feedback ones out of resonant filters or combine them."* An analysis, no build (his ask).
+
+**1. Original or cleaned — read from the code (`process.scd` 172 … 224), not re-rendered:**
+- **Compute is no reason.** Both render OFFLINE (a 16 s render in about a second, §200), in simulation and in concert alike (the plan renders right after a capture). The original is 26 `DynKlank`s of one partial, a scramble, a limiter and a fade; the cleaned one `Ringz` bank of 26. Neither costs anything that matters.
+- **The audible difference is the ring's shape:** in the original `rrand(ringL1, ringL2)` on two controls is re-drawn every control block, so all 26 partials sink at ONE effective time (about 10.5 s on his set line) — a plateau, then the chord sinking whole (§200: −23 −23 −23 −25 −28 …); the cleaned path draws each partial's ring once, so the chord thins partial by partial from the first second (−25 −27 −29 …). His ear: comparable. His word: the original. **So: `petalsOrig` is the voice; `petals` stays in the catalogue at no cost, dropped at his word.** For the paper the original is the better story — his 2015 instrument, UGen for UGen.
+
+**2. Why the chords are "a distorted overtone series" and guitar feedback is not — the physics, from the code (`process.scd` 250 … 295):**
+- `fbOwn 1` (every string sings) is NOT a loop: six combs (a comb at 1/f passes EVERY harmonic of f), each with its own gain rising to a tanh knee, summed, HELD FLAT for `fbHold`, released. Nothing interacts; nothing moves. A tanh on a comb's output adds odd harmonics of a full harmonic series → a static, buzzing chord — his phrase is exact.
+- Guitar feedback is ONE LOOP: a resonator (the string) → the amp's saturation → the speaker and the air (a delay, a colour) → the string again, loop gain a hair above 1. Four things follow that the chords lack: a SWELL (the bloom, from the resonator's own ring up into sustain) · COMPRESSION (the tanh holds the level, so the loudest partial wins) · a CLIMB (the loop favours whichever partial has the highest round-trip gain — the 2nd or 3rd harmonic takes over) · an END only when the loop is broken (his "enveloped off"). `fbOwn 0` (the one loop) HAS this structure — with combs as the strings; six combs in parallel in one loop fight, and only a shared harmonic takes off (§151) — which is why the chords did not bloom there.
+- The petals are the resonator half alone: 26 ringing partials, no amp, no loop — a ring that only decays. "The impulse causes it to ring" is exactly a resonator; the grit and the sustain are the loop's.
+
+**3. Three ways, what each would sound like, what each costs — the chain is ONE SynthDef, the stages in a fixed order, EVERY stage with a mix (line 60), the petals BEFORE the drive, the pedals (overdrive · fuzz · octave · cab, "stacked by the JSON box", line 238), the feedback and the reverbs:**
+- **(a) the petals through an analog grit — NO CODE.** A preset with `poMix 1` and `odMix`/`fzMix` (and `cabMix`) on: the ring goes through the overdrive or the fuzz as it decays. The sound: a fuzzed inharmonic chord, dense with intermodulation at the top, that CLEANS UP as the ring decays (a fuzz pedal on a dying chord) — gritty, but it still only decays; no swell, no climb. The single-effect rule (DEC-21) was a choice for the dealt variety, not a limit of the chain. Heard in a minute: a small audition, six bricks on his set line (overdrive mild · hard · fuzz · fuzz + cab · petals → the one loop with no strings · petals → greyhole).
+- **(b) the feedback rebuilt on resonant filters — a switch on the feedback stage** (`fbRes`: a string is a `Ringz` partial with its own ring instead of a comb), in the ONE-LOOP mode. The sound: each note of the chord blooms by itself (a partial in a loop takes off alone), the amp's grit, the climb; held and released by `fbHold`. The feedback's dials stay. Code: the stage and its row (the ranges live twice), `process_test.scd`, his restart.
+- **(c) an amp behind the petals — a loop INSIDE the petals stage** (`poFb` · `poDrive` · `poHold`: the bank's output through a tanh and the path delay back into its input). The sound: his instrument as it is, then the ring SWELLS instead of dying where the loop gain passes 1, the grit from the tanh, the partials pulled toward the strongest, ended by the hold. This is the guitar's physics on his flower. Code: three dials in the original's stage (his SynthDef gains a loop around it — a line in the stage's comment saying so), the row, the test, his restart.
+
+**The AI's recommendation (his to reverse):** (a) first — it costs nothing and tells in ten minutes whether grit on a decaying ring is already it; then (c) if he wants the swell and the climb (the loop is what makes "feedback" feedback), (b) only if he wants the CHORD SHAPES (his 54) as the loop's notes rather than the petals' spread. Not built: his ask was analysis.
+
+## §202
+
+### 2026-10-07 — route (a) built and rendered: `audition-petals-grit` — his set line stacked with the chain's later stages, seven bricks, measured (Fable; his word "let's hear A first")
+
+**What prompted it:** his word on §201 — *"Okay, let's hear A first, and then, if necessary, we'll move to C and B."*
+
+**Built — `tools/build_petals_grit.js` (`--impulse` · `--replace` · `--render`; the frame of `build_petals.js`):** seven presets `pg01` … `pg07` (`effect: petalsOrig`, class `time`, cap 16 s, `deal: false`, `audition: petals-grit`), each HIS SET LINE (fund 35 · first 5 · spread 1.33 · offset 8.1 · ring 7 … 15 · inLen 1) plus ONE later stage's mix and dials in the same args: G0 nothing · G1 overdrive drive 4 tone 3000 · G2 overdrive drive 20 tone 2500 · G3 fuzz gain 30 bias 0.2 tone 3000 · G4 the fuzz (tone 4000) + cabinet low 80 presence +3 high 5000 · G5 the one-loop feedback with no strings (`fbOwn 0`, `fbS1 … 6` 0 — the "found" row: bloom 1 s · hold 6 s · drive 6 · tone 2500 · path 12 ms · climb 0.3 · wobble 0.4) · G6 greyhole time 0.4 size 1 diff 0.7 fb 0.7 mod 0.1 @ 2 Hz mix 0.7. `scores/audition-petals-grit.json`: seven return bricks on `bcl-impulse-1` (the impulse his set line was first heard on), 17 s apart, 2:00; the sheet `docs/auditions/audition-petals-grit.md`. **Why one preset is a stack, verified in the code before the build:** the chain is one SynthDef, every stage with a mix (`process.scd` line 60), the petals (172 … 224) BEFORE the drive (227), the pedals (238 … 249), the feedback (250 …) and the reverbs (383); the engine reads `effect` only as a label (438 · 518 · 619) — the args are the controls. No engine change; no restart.
+
+**Rendered by his engine (23:17:19) in 6 s; measured — RMS per second, every file's peak −14.6 dBFS (a render copies its source's peak):**
+- G0 reference: −23 −24 −29 −35 −41 −46 … — the ring falls ~6 dB a second from the first second (12.0 s).
+- G1 overdrive mild: −20 −20 −24 −29 −35 … (13.0 s) — a touch flatter.
+- G2 overdrive hard: −17 −17 −18 −20 −23 −27 −33 … (15.1 s) — the clip HOLDS the top three seconds, then the fall.
+- G3 fuzz: −17 −17 −18 −20 −23 −27 … (15.2 s) — the same shape.
+- G4 fuzz + cabinet: −19 −19 −19 −20 −20 −23 −27 … (15.1 s) — the flattest: five seconds of hold before the fall.
+- G5 the one loop: −20 −21 −22 −27 −25 −27 −37 −46 … (14.0 s) — held with a dip until the loop is broken at 6 s (`fbHold`), then a faster fall.
+- G6 greyhole: −26 −25 −28 −30 −35 −40 … −71 (16.5 s) — the longest tail, the reverb's.
+So in the numbers: a distortion on a decaying ring COMPRESSES its top — the sustain he asked for appears for 3 … 5 s without any loop — and the ring still ends on its own. Whether the grit is the guitar's: his ear.
+
+**His, to hear it:** F5 · File ▾ → Experiments → `audition-petals-grit` · play from 0 (G0 at 1 s, then every 17 s). No restart, no render.

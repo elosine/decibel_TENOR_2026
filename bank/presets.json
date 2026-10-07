@@ -4618,6 +4618,180 @@
    },
    "deal": false,
    "audition": "feedback-chords"
+  },
+  {
+   "key": "pg01",
+   "name": "G0 REFERENCE — the petals alone, his set line",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg02",
+   "name": "G1 OVERDRIVE MILD — the ring through a Tube-Screamer-like clip, drive 4, tone 3 kHz",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "odMix": 1,
+    "odDrive": 4,
+    "odTone": 3000
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg03",
+   "name": "G2 OVERDRIVE HARD — the same clip, drive 20, tone 2.5 kHz",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "odMix": 1,
+    "odDrive": 20,
+    "odTone": 2500
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg04",
+   "name": "G3 FUZZ — a biased hard clip (a transistor fuzz), gain 30, bias 0.2, tone 3 kHz",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "fzMix": 1,
+    "fzGain": 30,
+    "fzBias": 0.2,
+    "fzTone": 3000
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg05",
+   "name": "G4 FUZZ + CABINET — the fuzz, then a speaker: low 80 Hz, presence +3 dB, roll-off 5 kHz",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "fzMix": 1,
+    "fzGain": 30,
+    "fzBias": 0.2,
+    "fzTone": 4000,
+    "cabMix": 1,
+    "cabLow": 80,
+    "cabPres": 3,
+    "cabHigh": 5000
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg06",
+   "name": "G5 THE RING INTO THE ONE-LOOP FEEDBACK, no strings — the loop sustains the petals' own spectrum through the amp; bloom 1 s, held 6 s, drive 6, climb 0.3, wobble 0.4",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "fbMix": 1,
+    "fbOwn": 0,
+    "fbBloom": 1,
+    "fbHold": 6,
+    "fbDrive": 6,
+    "fbTone": 2500,
+    "fbPath": 12,
+    "fbClimb": 0.3,
+    "fbWobble": 0.4,
+    "fbS1": 0,
+    "fbS2": 0,
+    "fbS3": 0,
+    "fbS4": 0,
+    "fbS5": 0,
+    "fbS6": 0
+   },
+   "deal": false,
+   "audition": "petals-grit"
+  },
+  {
+   "key": "pg07",
+   "name": "G6 THE RING INTO GREYHOLE — 0.4 s, size 1, feedback 0.7, 70 % wet",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "ghMix": 0.7,
+    "ghTime": 0.4,
+    "ghDamp": 0.2,
+    "ghSize": 1,
+    "ghDiff": 0.7,
+    "ghFb": 0.7,
+    "ghModDepth": 0.1,
+    "ghModFreq": 2
+   },
+   "deal": false,
+   "audition": "petals-grit"
   }
  ],
  "generated": {
@@ -4728,6 +4902,12 @@
    "what": "the drone auditions — A: icy's other dials on one input (11 bricks); B: the nine held sounds × grain window × grain size × pace (72 bricks)",
    "command": "node tools/build_drone_auditions.js --a audition-stretch-dials --b audition-drones --input bcl-mp-1 --len 20000 --gap 2",
    "when": "2026-10-06T19:21"
+  },
+  "petals-grit": {
+   "n": 7,
+   "what": "his petals (the original, his set line) stacked with a later stage of the chain — seven, all on bcl-impulse-1",
+   "command": "node tools/build_petals_grit.js --name audition-petals-grit --impulse bcl-impulse-1",
+   "when": "2026-10-07T04:19"
   }
  }
 }
