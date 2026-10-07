@@ -106,6 +106,15 @@ function engineEnv() {
     const env = { LE_PLAYERS: CFG.players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_SOURCE: dirs[m.load], LE_BANK: dirs[m.write], LE_RECORD: m.record ? '1' : '0' };
     fs.mkdirSync(env.LE_SOURCE, { recursive: true }); fs.mkdirSync(env.LE_BANK, { recursive: true });
     if (crop) env.LE_CROP = crop;
+    // REMOTE (RUNNING_LOG §209): `start --remote` — the engine on a Windows device (bank/elec_route.json `remote`: inDevice · outDevice; the
+    // Windows default by MME when absent) instead of ReaRoute, so Chrome Remote Desktop carries its sound with Reaper's on WASAPI.
+    // The microphones are gone with ReaRoute: an opening captures nothing; the bank and the renders play.
+    if (process.argv.includes('--remote')) {
+        const R = CFG.remote || {};
+        env.LE_MODE = 'remote';
+        if (R.inDevice) env.LE_DEVICE_IN = R.inDevice;
+        if (R.outDevice) env.LE_DEVICE_OUT = R.outDevice;
+    }
     // §78: the return behaviour's dials (bank/elec_route.json return.ar, lettered A · B · C) flattened to the engine's names (sc/bank.scd arDefaults)
     const ar = (CFG.return && CFG.return.ar) || {}, arB = ar.B_rangesMs || {}, arC = ar.C_miss || {}, flat = Object.assign({}, ar.A_shares || {});
     for (const k of ['after', 'before', 'lazy', 'far', 'unison']) if (Array.isArray(arB[k])) { flat[k + 'Lo'] = arB[k][0]; flat[k + 'Hi'] = arB[k][1]; }   // far: the fifth tier (DEC-30)
@@ -237,6 +246,7 @@ async function readPeaks(waitMs) {
 
     if (cmd === 'start') {
         console.log(modeLine());
+        if (process.argv.includes('--remote')) console.log('REMOTE     the engine on a Windows device, not ReaRoute — Reaper on WASAPI; the microphones are off (an opening captures nothing); the bank and the renders play. docs/REMOTE_LISTENING.md');
         { const V = venueOf(); console.log('VENUE      ' + (V ? V.name + ' — bank/venue/' + V.name + '.json: each microphone\'s trim, high-pass and EQ' : 'none — every microphone flat (the simulation)')); }
         const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: engineEnv(), onLine: (l) => {
             const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: nothing is shown. A route check's pairing (an onset with its sound) is kept; a capture's row is in the bank's index
