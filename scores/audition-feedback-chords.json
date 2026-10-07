@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T12:57:09.405Z",
-  "modified": "2026-10-06T12:57:09.405Z",
+  "created": "2026-10-07T03:39:18.240Z",
+  "modified": "2026-10-07T03:39:18.240Z",
   "builtBy": "tools/build_chord_feedback.js",
   "note": "THE FEEDBACK ON HIS CHORD SHAPES (DEC-32 · PLAN 10.12 · RUNNING_LOG §151): the 54 chord shapes of bank/harmonies.json, in the bank's order, one return each every 10 s from 1 s — the feedback's six strings tuned to the shape's pitches as he voiced them (the lowest six of a larger shape), every other dial the shelf's row 7 (\"this is slow bloom\"), each on another captured impulse. Every brick asks for <impulse>~cs<NNN>-tail; the engine renders them from the bank when the plan is sent with render (a purple brick → render all planned). The sheet: docs/auditions/audition-feedback-chords.md. Written by tools/build_chord_feedback.js; his from then on."
  },
@@ -87,7 +87,7 @@
   {
    "id": "zn-2",
    "type": "zone",
-   "layer": 3,
+   "layer": 1,
    "startTime": 11,
    "endTime": 11.5,
    "player": "",
@@ -114,17 +114,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-2",
+    "name": "bcl-impulse-2",
     "label": "cs-002 m2 P5 [0,1,7]",
     "variants": {
-     "perc-impulse-2": "cs002-tail"
+     "bcl-impulse-2": "cs002-tail"
     }
    }
   },
   {
    "id": "zn-3",
    "type": "zone",
-   "layer": 5,
+   "layer": 1,
    "startTime": 21,
    "endTime": 21.5,
    "player": "",
@@ -151,17 +151,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-3",
+    "name": "bcl-impulse-3",
     "label": "cs-003 m2 M2 m3 M3 [0,1,2,3,4]",
     "variants": {
-     "vc-impulse-3": "cs003-tail"
+     "bcl-impulse-3": "cs003-tail"
     }
    }
   },
   {
    "id": "zn-4",
    "type": "zone",
-   "layer": 0,
+   "layer": 1,
    "startTime": 31,
    "endTime": 31.5,
    "player": "",
@@ -188,17 +188,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-5",
+    "name": "bcl-impulse-4",
     "label": "cs-004 m7 M7 [0,10,11]",
     "variants": {
-     "bfl-impulse-5": "cs004-tail"
+     "bcl-impulse-4": "cs004-tail"
     }
    }
   },
   {
    "id": "zn-5",
    "type": "zone",
-   "layer": 4,
+   "layer": 1,
    "startTime": 41,
    "endTime": 41.5,
    "player": "",
@@ -225,10 +225,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-6",
+    "name": "bcl-impulse-5",
     "label": "cs-005 m2 m3 P5 [0,1,3,7]",
     "variants": {
-     "va-impulse-6": "cs005-tail"
+     "bcl-impulse-5": "cs005-tail"
     }
    }
   },
@@ -262,17 +262,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-2",
+    "name": "bcl-impulse-6",
     "label": "cs-006 P4 TT M7 [0,5,6,11]",
     "variants": {
-     "bcl-impulse-2": "cs006-tail"
+     "bcl-impulse-6": "cs006-tail"
     }
    }
   },
   {
    "id": "zn-7",
    "type": "zone",
-   "layer": 2,
+   "layer": 1,
    "startTime": 61,
    "endTime": 61.5,
    "player": "",
@@ -299,17 +299,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-3",
+    "name": "bcl-impulse-7",
     "label": "cs-007 m7 M7 P8 [0,10,11,12]",
     "variants": {
-     "perc-impulse-3": "cs007-tail"
+     "bcl-impulse-7": "cs007-tail"
     }
    }
   },
   {
    "id": "zn-8",
    "type": "zone",
-   "layer": 5,
+   "layer": 1,
    "startTime": 71,
    "endTime": 71.5,
    "player": "",
@@ -336,17 +336,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-4",
+    "name": "bcl-impulse-8",
     "label": "cs-008 M6+3oct [0,45]",
     "variants": {
-     "vc-impulse-4": "cs008-tail"
+     "bcl-impulse-8": "cs008-tail"
     }
    }
   },
   {
    "id": "zn-9",
    "type": "zone",
-   "layer": 0,
+   "layer": 1,
    "startTime": 81,
    "endTime": 81.5,
    "player": "",
@@ -373,17 +373,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-6",
+    "name": "bcl-impulse-9",
     "label": "cs-009 M7+2oct [0,35]",
     "variants": {
-     "bfl-impulse-6": "cs009-tail"
+     "bcl-impulse-9": "cs009-tail"
     }
    }
   },
   {
    "id": "zn-10",
    "type": "zone",
-   "layer": 4,
+   "layer": 1,
    "startTime": 91,
    "endTime": 91.5,
    "player": "",
@@ -410,10 +410,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-1",
+    "name": "bcl-impulse-10",
     "label": "cs-010 m3+2oct M3+2oct P4+2oct [0,27,28,29]",
     "variants": {
-     "va-impulse-1": "cs010-tail"
+     "bcl-impulse-10": "cs010-tail"
     }
    }
   },
@@ -447,17 +447,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-3",
+    "name": "bcl-impulse-11",
     "label": "cs-011 M2+3oct [0,38]",
     "variants": {
-     "bcl-impulse-3": "cs011-tail"
+     "bcl-impulse-11": "cs011-tail"
     }
    }
   },
   {
    "id": "zn-12",
    "type": "zone",
-   "layer": 3,
+   "layer": 1,
    "startTime": 111,
    "endTime": 111.5,
    "player": "",
@@ -484,17 +484,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-4",
+    "name": "bcl-impulse-12",
     "label": "cs-012 m2 M2 m3 M3 P4 TT [0,1,2,3,4,5,6]",
     "variants": {
-     "perc-impulse-4": "cs012-tail"
+     "bcl-impulse-12": "cs012-tail"
     }
    }
   },
   {
    "id": "zn-13",
    "type": "zone",
-   "layer": 5,
+   "layer": 1,
    "startTime": 121,
    "endTime": 121.5,
    "player": "",
@@ -521,17 +521,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-5",
+    "name": "bcl-impulse-13",
     "label": "cs-013 6 notes [0 … 41]",
     "variants": {
-     "vc-impulse-5": "cs013-tail"
+     "bcl-impulse-13": "cs013-tail"
     }
    }
   },
   {
    "id": "zn-14",
    "type": "zone",
-   "layer": 0,
+   "layer": 1,
    "startTime": 131,
    "endTime": 131.5,
    "player": "",
@@ -558,17 +558,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-1",
+    "name": "bcl-impulse-14",
     "label": "cs-014 5 notes [0 … 55]",
     "variants": {
-     "bfl-impulse-1": "cs014-tail"
+     "bcl-impulse-14": "cs014-tail"
     }
    }
   },
   {
    "id": "zn-15",
    "type": "zone",
-   "layer": 4,
+   "layer": 1,
    "startTime": 141,
    "endTime": 141.5,
    "player": "",
@@ -595,10 +595,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-2",
+    "name": "bcl-impulse-15",
     "label": "cs-015 M3 P4 [0,4,5]",
     "variants": {
-     "va-impulse-2": "cs015-tail"
+     "bcl-impulse-15": "cs015-tail"
     }
    }
   },
@@ -632,17 +632,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-4",
+    "name": "bcl-impulse-16",
     "label": "cs-016 m2 P4 [0,1,5]",
     "variants": {
-     "bcl-impulse-4": "cs016-tail"
+     "bcl-impulse-16": "cs016-tail"
     }
    }
   },
   {
    "id": "zn-17",
    "type": "zone",
-   "layer": 2,
+   "layer": 1,
    "startTime": 161,
    "endTime": 161.5,
    "player": "",
@@ -669,17 +669,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-5",
+    "name": "bcl-impulse-17",
     "label": "cs-017 m2 [0,1]",
     "variants": {
-     "perc-impulse-5": "cs017-tail"
+     "bcl-impulse-17": "cs017-tail"
     }
    }
   },
   {
    "id": "zn-18",
    "type": "zone",
-   "layer": 5,
+   "layer": 1,
    "startTime": 171,
    "endTime": 171.5,
    "player": "",
@@ -706,17 +706,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-6",
+    "name": "bcl-impulse-18",
     "label": "cs-018 m2 M2 [0,1,2]",
     "variants": {
-     "vc-impulse-6": "cs018-tail"
+     "bcl-impulse-18": "cs018-tail"
     }
    }
   },
   {
    "id": "zn-19",
    "type": "zone",
-   "layer": 0,
+   "layer": 3,
    "startTime": 181,
    "endTime": 181.5,
    "player": "",
@@ -743,17 +743,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-2",
+    "name": "perc-impulse-19",
     "label": "cs-019 m9 M9 [0,13,14]",
     "variants": {
-     "bfl-impulse-2": "cs019-tail"
+     "perc-impulse-19": "cs019-tail"
     }
    }
   },
   {
    "id": "zn-20",
    "type": "zone",
-   "layer": 4,
+   "layer": 3,
    "startTime": 191,
    "endTime": 191.5,
    "player": "",
@@ -780,17 +780,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-3",
+    "name": "perc-impulse-24",
     "label": "cs-020 m2 M7 [0,1,11]",
     "variants": {
-     "va-impulse-3": "cs020-tail"
+     "perc-impulse-24": "cs020-tail"
     }
    }
   },
   {
    "id": "zn-21",
    "type": "zone",
-   "layer": 1,
+   "layer": 2,
    "startTime": 201,
    "endTime": 201.5,
    "player": "",
@@ -817,17 +817,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-5",
+    "name": "perc-impulse-1",
     "label": "cs-021 M7 m9 [0,11,13]",
     "variants": {
-     "bcl-impulse-5": "cs021-tail"
+     "perc-impulse-1": "cs021-tail"
     }
    }
   },
   {
    "id": "zn-22",
    "type": "zone",
-   "layer": 2,
+   "layer": 3,
    "startTime": 211,
    "endTime": 211.5,
    "player": "",
@@ -854,17 +854,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-6",
+    "name": "perc-impulse-2",
     "label": "cs-022 P8 m9 [0,12,13]",
     "variants": {
-     "perc-impulse-6": "cs022-tail"
+     "perc-impulse-2": "cs022-tail"
     }
    }
   },
   {
    "id": "zn-23",
    "type": "zone",
-   "layer": 5,
+   "layer": 2,
    "startTime": 221,
    "endTime": 221.5,
    "player": "",
@@ -891,17 +891,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-1",
+    "name": "perc-impulse-3",
     "label": "cs-023 M7 P8 [0,11,12]",
     "variants": {
-     "vc-impulse-1": "cs023-tail"
+     "perc-impulse-3": "cs023-tail"
     }
    }
   },
   {
    "id": "zn-24",
    "type": "zone",
-   "layer": 0,
+   "layer": 3,
    "startTime": 231,
    "endTime": 231.5,
    "player": "",
@@ -928,17 +928,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-3",
+    "name": "perc-impulse-4",
     "label": "cs-024 M6 m7 [0,9,10]",
     "variants": {
-     "bfl-impulse-3": "cs024-tail"
+     "perc-impulse-4": "cs024-tail"
     }
    }
   },
   {
    "id": "zn-25",
    "type": "zone",
-   "layer": 4,
+   "layer": 2,
    "startTime": 241,
    "endTime": 241.5,
    "player": "",
@@ -965,17 +965,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-4",
+    "name": "perc-impulse-5",
     "label": "cs-025 m6 M6 [0,8,9]",
     "variants": {
-     "va-impulse-4": "cs025-tail"
+     "perc-impulse-5": "cs025-tail"
     }
    }
   },
   {
    "id": "zn-26",
    "type": "zone",
-   "layer": 1,
+   "layer": 2,
    "startTime": 251,
    "endTime": 251.5,
    "player": "",
@@ -1002,10 +1002,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-6",
+    "name": "perc-impulse-6",
     "label": "cs-026 P5 m6 [0,7,8]",
     "variants": {
-     "bcl-impulse-6": "cs026-tail"
+     "perc-impulse-6": "cs026-tail"
     }
    }
   },
@@ -1039,17 +1039,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-1",
+    "name": "perc-impulse-7",
     "label": "cs-027 TT P5 [0,6,7]",
     "variants": {
-     "perc-impulse-1": "cs027-tail"
+     "perc-impulse-7": "cs027-tail"
     }
    }
   },
   {
    "id": "zn-28",
    "type": "zone",
-   "layer": 5,
+   "layer": 2,
    "startTime": 271,
    "endTime": 271.5,
    "player": "",
@@ -1076,17 +1076,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-2",
+    "name": "perc-impulse-8",
     "label": "cs-028 m2 P8 [0,1,12]",
     "variants": {
-     "vc-impulse-2": "cs028-tail"
+     "perc-impulse-8": "cs028-tail"
     }
    }
   },
   {
    "id": "zn-29",
    "type": "zone",
-   "layer": 0,
+   "layer": 2,
    "startTime": 281,
    "endTime": 281.5,
    "player": "",
@@ -1113,17 +1113,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-4",
+    "name": "perc-impulse-9",
     "label": "cs-029 m2 m7 [0,1,10]",
     "variants": {
-     "bfl-impulse-4": "cs029-tail"
+     "perc-impulse-9": "cs029-tail"
     }
    }
   },
   {
    "id": "zn-30",
    "type": "zone",
-   "layer": 4,
+   "layer": 2,
    "startTime": 291,
    "endTime": 291.5,
    "player": "",
@@ -1150,17 +1150,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-5",
+    "name": "perc-impulse-10",
     "label": "cs-030 m2 M6 [0,1,9]",
     "variants": {
-     "va-impulse-5": "cs030-tail"
+     "perc-impulse-10": "cs030-tail"
     }
    }
   },
   {
    "id": "zn-31",
    "type": "zone",
-   "layer": 1,
+   "layer": 2,
    "startTime": 301,
    "endTime": 301.5,
    "player": "",
@@ -1187,17 +1187,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-1",
+    "name": "perc-impulse-11",
     "label": "cs-031 m2 m6 [0,1,8]",
     "variants": {
-     "bcl-impulse-1": "cs031-tail"
+     "perc-impulse-11": "cs031-tail"
     }
    }
   },
   {
    "id": "zn-32",
    "type": "zone",
-   "layer": 3,
+   "layer": 2,
    "startTime": 311,
    "endTime": 311.5,
    "player": "",
@@ -1224,17 +1224,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-2",
+    "name": "perc-impulse-12",
     "label": "cs-032 m2 TT [0,1,6]",
     "variants": {
-     "perc-impulse-2": "cs032-tail"
+     "perc-impulse-12": "cs032-tail"
     }
    }
   },
   {
    "id": "zn-33",
    "type": "zone",
-   "layer": 5,
+   "layer": 2,
    "startTime": 321,
    "endTime": 321.5,
    "player": "",
@@ -1261,17 +1261,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-3",
+    "name": "perc-impulse-13",
     "label": "cs-033 m2 M3 [0,1,4]",
     "variants": {
-     "vc-impulse-3": "cs033-tail"
+     "perc-impulse-13": "cs033-tail"
     }
    }
   },
   {
    "id": "zn-34",
    "type": "zone",
-   "layer": 0,
+   "layer": 2,
    "startTime": 331,
    "endTime": 331.5,
    "player": "",
@@ -1298,17 +1298,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-5",
+    "name": "perc-impulse-14",
     "label": "cs-034 m2 m3 [0,1,3]",
     "variants": {
-     "bfl-impulse-5": "cs034-tail"
+     "perc-impulse-14": "cs034-tail"
     }
    }
   },
   {
    "id": "zn-35",
    "type": "zone",
-   "layer": 4,
+   "layer": 2,
    "startTime": 341,
    "endTime": 341.5,
    "player": "",
@@ -1335,17 +1335,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-6",
+    "name": "perc-impulse-15",
     "label": "cs-035 P4 TT [0,5,6]",
     "variants": {
-     "va-impulse-6": "cs035-tail"
+     "perc-impulse-15": "cs035-tail"
     }
    }
   },
   {
    "id": "zn-36",
    "type": "zone",
-   "layer": 1,
+   "layer": 2,
    "startTime": 351,
    "endTime": 351.5,
    "player": "",
@@ -1372,10 +1372,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-2",
+    "name": "perc-impulse-16",
     "label": "cs-036 m3 M3 [0,3,4]",
     "variants": {
-     "bcl-impulse-2": "cs036-tail"
+     "perc-impulse-16": "cs036-tail"
     }
    }
   },
@@ -1409,17 +1409,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-3",
+    "name": "perc-impulse-17",
     "label": "cs-037 M2 m3 [0,2,3]",
     "variants": {
-     "perc-impulse-3": "cs037-tail"
+     "perc-impulse-17": "cs037-tail"
     }
    }
   },
   {
    "id": "zn-38",
    "type": "zone",
-   "layer": 5,
+   "layer": 2,
    "startTime": 371,
    "endTime": 371.5,
    "player": "",
@@ -1446,17 +1446,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-4",
+    "name": "perc-impulse-18",
     "label": "cs-038 M6 m7 M7 [0,9,10,11]",
     "variants": {
-     "vc-impulse-4": "cs038-tail"
+     "perc-impulse-18": "cs038-tail"
     }
    }
   },
   {
    "id": "zn-39",
    "type": "zone",
-   "layer": 0,
+   "layer": 3,
    "startTime": 381,
    "endTime": 381.5,
    "player": "",
@@ -1483,17 +1483,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-6",
+    "name": "perc-impulse-21",
     "label": "cs-039 m6 M6 m7 [0,8,9,10]",
     "variants": {
-     "bfl-impulse-6": "cs039-tail"
+     "perc-impulse-21": "cs039-tail"
     }
    }
   },
   {
    "id": "zn-40",
    "type": "zone",
-   "layer": 4,
+   "layer": 3,
    "startTime": 391,
    "endTime": 391.5,
    "player": "",
@@ -1520,17 +1520,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-1",
+    "name": "perc-impulse-26",
     "label": "cs-040 P5 m6 M6 [0,7,8,9]",
     "variants": {
-     "va-impulse-1": "cs040-tail"
+     "perc-impulse-26": "cs040-tail"
     }
    }
   },
   {
    "id": "zn-41",
    "type": "zone",
-   "layer": 1,
+   "layer": 5,
    "startTime": 401,
    "endTime": 401.5,
    "player": "",
@@ -1557,17 +1557,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-3",
+    "name": "vc-impulse-1",
     "label": "cs-041 TT P5 m6 [0,6,7,8]",
     "variants": {
-     "bcl-impulse-3": "cs041-tail"
+     "vc-impulse-1": "cs041-tail"
     }
    }
   },
   {
    "id": "zn-42",
    "type": "zone",
-   "layer": 3,
+   "layer": 5,
    "startTime": 411,
    "endTime": 411.5,
    "player": "",
@@ -1594,10 +1594,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-4",
+    "name": "vc-impulse-2",
     "label": "cs-042 P4 TT P5 [0,5,6,7]",
     "variants": {
-     "perc-impulse-4": "cs042-tail"
+     "vc-impulse-2": "cs042-tail"
     }
    }
   },
@@ -1631,17 +1631,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-5",
+    "name": "vc-impulse-3",
     "label": "cs-043 m2 M2 M7 [0,1,2,11]",
     "variants": {
-     "vc-impulse-5": "cs043-tail"
+     "vc-impulse-3": "cs043-tail"
     }
    }
   },
   {
    "id": "zn-44",
    "type": "zone",
-   "layer": 0,
+   "layer": 5,
    "startTime": 431,
    "endTime": 431.5,
    "player": "",
@@ -1668,17 +1668,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-1",
+    "name": "vc-impulse-4",
     "label": "cs-044 m2 M2 m7 [0,1,2,10]",
     "variants": {
-     "bfl-impulse-1": "cs044-tail"
+     "vc-impulse-4": "cs044-tail"
     }
    }
   },
   {
    "id": "zn-45",
    "type": "zone",
-   "layer": 4,
+   "layer": 5,
    "startTime": 441,
    "endTime": 441.5,
    "player": "",
@@ -1705,17 +1705,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-2",
+    "name": "vc-impulse-5",
     "label": "cs-045 m2 M2 M6 [0,1,2,9]",
     "variants": {
-     "va-impulse-2": "cs045-tail"
+     "vc-impulse-5": "cs045-tail"
     }
    }
   },
   {
    "id": "zn-46",
    "type": "zone",
-   "layer": 1,
+   "layer": 5,
    "startTime": 451,
    "endTime": 451.5,
    "player": "",
@@ -1742,17 +1742,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-4",
+    "name": "vc-impulse-6",
     "label": "cs-046 m2 M2 m6 [0,1,2,8]",
     "variants": {
-     "bcl-impulse-4": "cs046-tail"
+     "vc-impulse-6": "cs046-tail"
     }
    }
   },
   {
    "id": "zn-47",
    "type": "zone",
-   "layer": 2,
+   "layer": 5,
    "startTime": 461,
    "endTime": 461.5,
    "player": "",
@@ -1779,10 +1779,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-5",
+    "name": "vc-impulse-7",
     "label": "cs-047 m2 M2 P5 [0,1,2,7]",
     "variants": {
-     "perc-impulse-5": "cs047-tail"
+     "vc-impulse-7": "cs047-tail"
     }
    }
   },
@@ -1816,17 +1816,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-6",
+    "name": "vc-impulse-8",
     "label": "cs-048 m2 M2 TT [0,1,2,6]",
     "variants": {
-     "vc-impulse-6": "cs048-tail"
+     "vc-impulse-8": "cs048-tail"
     }
    }
   },
   {
    "id": "zn-49",
    "type": "zone",
-   "layer": 0,
+   "layer": 5,
    "startTime": 481,
    "endTime": 481.5,
    "player": "",
@@ -1853,17 +1853,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-2",
+    "name": "vc-impulse-9",
     "label": "cs-049 m2 M2 P4 [0,1,2,5]",
     "variants": {
-     "bfl-impulse-2": "cs049-tail"
+     "vc-impulse-9": "cs049-tail"
     }
    }
   },
   {
    "id": "zn-50",
    "type": "zone",
-   "layer": 4,
+   "layer": 5,
    "startTime": 491,
    "endTime": 491.5,
    "player": "",
@@ -1890,17 +1890,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "va-impulse-3",
+    "name": "vc-impulse-10",
     "label": "cs-050 m2 M2 M3 [0,1,2,4]",
     "variants": {
-     "va-impulse-3": "cs050-tail"
+     "vc-impulse-10": "cs050-tail"
     }
    }
   },
   {
    "id": "zn-51",
    "type": "zone",
-   "layer": 1,
+   "layer": 5,
    "startTime": 501,
    "endTime": 501.5,
    "player": "",
@@ -1927,17 +1927,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bcl-impulse-5",
+    "name": "vc-impulse-11",
     "label": "cs-051 8 notes [0 … 7]",
     "variants": {
-     "bcl-impulse-5": "cs051-tail"
+     "vc-impulse-11": "cs051-tail"
     }
    }
   },
   {
    "id": "zn-52",
    "type": "zone",
-   "layer": 2,
+   "layer": 5,
    "startTime": 511,
    "endTime": 511.5,
    "player": "",
@@ -1964,10 +1964,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "perc-impulse-6",
+    "name": "vc-impulse-12",
     "label": "cs-052 m2 M2 m3 [0,1,2,3]",
     "variants": {
-     "perc-impulse-6": "cs052-tail"
+     "vc-impulse-12": "cs052-tail"
     }
    }
   },
@@ -2001,17 +2001,17 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "vc-impulse-1",
+    "name": "vc-impulse-13",
     "label": "cs-053 13 notes [0 … 12]",
     "variants": {
-     "vc-impulse-1": "cs053-tail"
+     "vc-impulse-13": "cs053-tail"
     }
    }
   },
   {
    "id": "zn-54",
    "type": "zone",
-   "layer": 0,
+   "layer": 5,
    "startTime": 531,
    "endTime": 531.5,
    "player": "",
@@ -2038,10 +2038,10 @@
    "performanceNotes": "",
    "properties": {},
    "elec": {
-    "name": "bfl-impulse-3",
+    "name": "vc-impulse-14",
     "label": "cs-054 5 notes [0 … 40]",
     "variants": {
-     "bfl-impulse-3": "cs054-tail"
+     "vc-impulse-14": "cs054-tail"
     }
    }
   }
