@@ -4769,3 +4769,36 @@ The plan's Sines panel in Panels ▾, its take menu and its "nearest to the play
 **What a reader of the paper should take:** the section's length was tuned by ear from the simulation in one exchange — the composer named the containers to shorten and the target, and the fit made the target a property of the data rather than a cut to the containers he liked; the variety of the electronics' material was widened by a generated batch (two or three pitches per technique, every short technique of each instrument's recipe) rather than by more dictation — the recording session will do with real players what the rack does here.
 
 **Committed and pushed:** this entry · `bank/impulse_bank.json` · `tools/build_impulse_bank.js` · `scores/impulse-bank.json` · `bank/three_body.json` · `tools/build_three_body.js` · `score/public/three_body_roll.js` (`rollFit`) · `tools/three_body_check.js` · `scores/three-body.json` (seed 165) · `.gitignore` · PLAN.md 14.7 · `docs/THREE_BODY.md` · COMPOSITION_NOTES DEC-37 · PERFORMANCE_NOTES row 12 · journal §2 · D18 · the PLANNER's NOW line · CLAUDE.md. Nothing under `electronics/`: no subtree push.
+
+## §194
+
+### 2026-10-06 — HIS PASS OF THE IMPULSE BANK: 20 of 68 banked · ten windows that opened on sound · one silent key · the pass's windows stop at 44 s · the renders taken OUT of the capture pass · a retake score of the 48 (Fable; SWEEP_LIST #8)
+
+**What prompted it — his word, after the pass:** *"built there were some silent ones but I couldn't keep track"*.
+
+**Looked at — the disk only; the engine's window is his and was not seen.** A scratch script (`raw_peaks.js`) read every opening of `scores/impulse-bank.json` against `bank/samples/raw/<zone id>.wav`, `bank/samples/<name>.wav` and the index: the raw window's peak, its length, where its first sound lies, the file's time. Four classes came out:
+
+| class | how many | which | what the disk says |
+|---|---|---|---|
+| **banked** | 20 | bfl 7 8 9 10 12 13 · bcl 11 12 · perc 8 9 10 11 · va 7 8 10 · vc 7 8 9 10 12 | the attack ~200 ms into the window (the 100 ms pre-roll + the ~114 ms lead), peaks −2.4 … −41.4 dB; 57 of their 60 variants rendered |
+| **recorded, NOT banked — the window opened on sound** | 10 | bcl 7 8 9 10 · perc 7 12 · bfl 11 · va 11 12 · vc 11 | the first sound at 0 … 32 ms of the window, peaks −2.4 … −34.5 dB; no crop, no row |
+| **silent in the room** | 1 | va-impulse-9 (Bartók pizzicato, key 80) | the raw window exact zeros |
+| **never recorded** | 37 | every opening 45.3 … 69.1 s and 77.5 … 95.7 s | no raw window at all: the pass's recordings STOP after bfl-impulse-13 at 43.9 s |
+| **recorded an hour later, NOT banked** | 5 | vc 16 · bfl 17 · bcl 17 · perc 17 · va 17 (70.5 … 76.1 s) | raw windows written 71 minutes after the pass's, the attack at ~200 ms as in a good one — and no crop, no row |
+
+**The ten that opened on sound are the ENGINE'S ROOM RULE doing its job** (`electronics/sc/bank.scd` § the room, 11.7 c): the first 60 ms of a recording are THE ROOM; the crop's attack must stand 6 dB over it; a window whose sound is already there at 0 ms has no attack over its room → *"nothing to crop · <name> — no attack in the window over the room; the sample was not saved"*. Correct by its rule. **Why the window opened on sound is NOT KNOWN from the disk.** The AI's reading, unverified: the engine opened the window LATE — its renders (two at a time, right after every capture, with captures 1.4 s apart and three variants a sample) are the only load that differs from the opening's passes, and SWEEP_LIST #7 already suspects them for the blips; a late window finds the note's sound already in its first 60 ms. The other reading — the note sounded early — has nothing for it: the good windows have the attack at ~200 ms. **Both are settled by the engine's window** (a `late` on the opening, the time between *captured · raw* lines) — a screenshot asked of him. **The question this raises for the ENGINE** (its lab journal, when the cause is known): the live design renders right after each capture DURING the performance (§114 · §116); if a render can delay the next window, a dense passage in concert meets this same fault — `planWidth` 1, a lower priority for the render, or the renders deferred while a window is due.
+
+**The silent one** — the viola's Bartók pizzicato at key 80: the recipe's range is the instrument's (48 … 93), the preset's zone is not (the cello's Bartók ends at 71, measured in piece #5's map); 72 now in `bank/impulse_bank.json`, with the note.
+
+**The stop at 44 s and the five of an hour later: NOT KNOWN.** Whether the engine stopped (the rack plays on — he hears the notes; the recordings stop) or the page; what the engine said when those five came in with an attack and were not banked (an index that could not be read — `LE_ERROR … will NOT be written over` — or a row not made, bank.scd 290, would each say so). The screenshot first (his standing method, §71 · memory).
+
+**What was changed, so the next pass is clean whatever the cause:**
+- **The renders are OUT of the capture pass.** `node tools/deal_variants.js --score impulse-bank --clear` — the 204 return bricks carry no variant now, so a pass through `impulse-bank` sends an empty plan: captures only. The renders come AFTER the pass, from the bank, by the deal with `--render` (the same 204; the tool sends the plan when the samples are there; two at a time with no window in flight). Part two of the score then plays them.
+- **A retake score** — `node tools/build_impulse_bank.js --retake` → `scores/impulse-bank-retake.json`: only the rows the bank does not hold (48: bfl 6 · bcl 10 · perc 16 · va 9 · vc 7), re-timed from 2 s, 1.4 s apart, 68 s, no part two. The samples' names are the same, so `impulse-bank` stays the three body section's source.
+- The three body section was NOT rebuilt: its computer players would draw on the 20 samples' renders; the batch first.
+
+**His steps, after the screenshot:** F5 · File ▾ → Experiments → `impulse-bank-retake` · play from 0 with the engine up (68 s). Then the AI: the deal with `--render` on `impulse-bank` (the 204 from the bank) · `node tools/build_three_body.js --replace` · his ear.
+
+**For the paper:** a capture road has to be quiet while it records — the room rule, built for a hall's bleed, caught a window that its own engine had let open on sound; and the first measurement of a fault was the raw windows on disk, read against the index, before anyone's memory of what sounded.
+
+**Committed and pushed:** this entry · SWEEP_LIST #8 · `bank/impulse_bank.json` (va-9) · `tools/build_impulse_bank.js` (`--retake`) · `scores/impulse-bank.json` (cleared) · `scores/impulse-bank-retake.json` · `bank/samples/index.json` (his bank at work: the 20 and their 57 renders) · journal §2 · CLAUDE.md · the PLANNER's NOW line · one line in the engine's NITS (the render-during-capture question), the subtree pushed.
