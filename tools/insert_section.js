@@ -4,7 +4,9 @@
 // computer players' bricks — is copied into the piece score with NEW ids (from the piece's nextId) and its times moved by `at`;
 // each copy is tagged  properties.section = { name, at }  so the whole insertion can be taken out again (--replace: the earlier
 // insertion of the same section is removed first — a re-roll, a new length, then the same command). The piece's own objects are
-// not touched. The insertion is recorded in  metadata.sections  (name · at · lengthS · seed · the command).
+// not touched. The insertion is recorded in  metadata.sections  (name · at · lengthS · seed · the command) — BUT the page's own save
+// drops custom metadata (as it drops metadata.deal, RUNNING_LOG §199): the RECORD that lasts is the objects' properties.section tags,
+// and --replace works from them.
 //
 //   node tools/insert_section.js --from three-body --into piece-sec01-b --at 39 [--replace] [--dry] [--unsaved-ok]
 //
