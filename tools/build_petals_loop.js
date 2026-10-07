@@ -32,7 +32,7 @@ const SET = [
   { key: 'pl07', short: 'L6 long hold 15 s', bloom: 2, drive: 10, hold: 15, what: '60 dB in 2 s · the amp at 10 · held 15 s, then the ring' },
   { key: 'pl08', short: 'L7 fast · hard · short', bloom: 0.5, drive: 20, hold: 5, what: '60 dB in half a second · the amp at 20 · held 5 s' },
 ];
-const capOf = (s) => (s.bloom > 0 ? Math.max(PETALS.poRingHi, s.hold + 3) + 2 : PETALS.poRingHi + 1) * 1000;
+const capOf = (s) => (s.bloom > 0 ? s.hold + PETALS.poRingHi + 2 : PETALS.poRingHi + 1) * 1000;   // the hold, then the bank's whole ring (his fade sits at hold + ring-to)
 
 // THE PRESETS
 const presets = SET.map((s) => ({ key: s.key, name: s.short.replace(/^L\d /, (m) => m) + ' — petals, his set line, THE LOOP: bloom ' + s.bloom + ' s · drive ' + s.drive + ' · hold ' + s.hold + ' s', effect: 'petalsOrig', class: 'time', capMs: capOf(s),

@@ -85,6 +85,8 @@ Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are th
 
 **► THEN (Fable, RUNNING_LOG §204; the engine's §53): "no fx" — the plans had not been sent; sent, THE FIRST REAL RENDERS FOUND TWO FAULTS the test's small numbers hid: the petals' loop never broke on his set line (a quarter of a gain of 6.5 is above unity — THE BREAK GOES TO NOTHING now) · a partial under 120 Hz was killed by the loop's high-pass (cs-001 at B1 · C#2 — 20 Hz when the strings are partials). Fixed; `process_test.scd` re-made on the piece's numbers (~16 bloom 0.25 · ~17 a low chord E2 · F2 · A2), PASS. THE RULE: a stage is proven on the PIECE'S OWN NUMBERS. His engine of 00:49 has neither fix. ► NEXT: his restart · "up" → both builders `--replace --render` · his ear.**
 
+**► THEN (Fable, RUNNING_LOG §205; the engine's §54): the second real renders — the petals' loop breaks, its ring was cut at hold + 3 (the fade sits at hold + ring-to now; the builder's cap hold + ring-to + 2) · cs-001 STILL dead: THE LOOP IS A COMB AT 1/PATH (gain × cos 2π f·path — B1 at 0.84 periods: 0.54 of the gain) → with `fbRes` 1 EACH PARTIAL CARRIES ITS OWN LOOP DELAY (the whole number of its periods nearest the path; the common path at its floor): every tuned pitch in phase, the strongest wins by its excitation (~17: F2). PASS. His engine of 00:49 has neither. ► NEXT: his restart · "up" → both builders `--replace --render` · his ear on `audition-petals-loop` · `audition-feedback-rings`.**
+
 ## READ FIRST — how to work here
 
 **`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,

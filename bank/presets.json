@@ -4794,182 +4794,6 @@
    "audition": "petals-grit"
   },
   {
-   "key": "pl01",
-   "name": "L0 reference — petals, his set line, THE LOOP: bloom 0 s · drive 6 · hold 0 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 0,
-    "poDrive": 6,
-    "poHold": 0
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl02",
-   "name": "L1 bloom 4 · drive 6 — petals, his set line, THE LOOP: bloom 4 s · drive 6 · hold 8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 4,
-    "poDrive": 6,
-    "poHold": 8
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl03",
-   "name": "L2 bloom 2 · drive 6 — petals, his set line, THE LOOP: bloom 2 s · drive 6 · hold 8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 2,
-    "poDrive": 6,
-    "poHold": 8
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl04",
-   "name": "L3 bloom 1 · drive 6 — petals, his set line, THE LOOP: bloom 1 s · drive 6 · hold 8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 1,
-    "poDrive": 6,
-    "poHold": 8
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl05",
-   "name": "L4 bloom 2 · drive 15 — petals, his set line, THE LOOP: bloom 2 s · drive 15 · hold 8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 2,
-    "poDrive": 15,
-    "poHold": 8
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl06",
-   "name": "L5 bloom 2 · drive 30 — petals, his set line, THE LOOP: bloom 2 s · drive 30 · hold 8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 2,
-    "poDrive": 30,
-    "poHold": 8
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl07",
-   "name": "L6 long hold 15 s — petals, his set line, THE LOOP: bloom 2 s · drive 10 · hold 15 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 20000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 2,
-    "poDrive": 10,
-    "poHold": 15
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
-   "key": "pl08",
-   "name": "L7 fast · hard · short — petals, his set line, THE LOOP: bloom 0.5 s · drive 20 · hold 5 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 17000,
-   "args": {
-    "poMix": 1,
-    "poFund": 35,
-    "poFirst": 5,
-    "poSpread": 1.33,
-    "poOffset": 8.1,
-    "poRingLo": 7,
-    "poRingHi": 15,
-    "poInLen": 1,
-    "poBloom": 0.5,
-    "poDrive": 20,
-    "poHold": 5
-   },
-   "deal": false,
-   "audition": "petals-loop"
-  },
-  {
    "key": "fr001a",
    "name": "cs-001 M7 [0,11] — ONE LOOP, the strings as partials ringing 1.5 s — the strongest wins · on D2 C#3 · bloom 3 s · hold 6 s · drive 4 · tone 1800 Hz",
    "effect": "feedback",
@@ -5472,6 +5296,182 @@
    },
    "deal": false,
    "audition": "feedback-rings"
+  },
+  {
+   "key": "pl01",
+   "name": "L0 reference — petals, his set line, THE LOOP: bloom 0 s · drive 6 · hold 0 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 0,
+    "poDrive": 6,
+    "poHold": 0
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl02",
+   "name": "L1 bloom 4 · drive 6 — petals, his set line, THE LOOP: bloom 4 s · drive 6 · hold 8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 25000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 4,
+    "poDrive": 6,
+    "poHold": 8
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl03",
+   "name": "L2 bloom 2 · drive 6 — petals, his set line, THE LOOP: bloom 2 s · drive 6 · hold 8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 25000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 2,
+    "poDrive": 6,
+    "poHold": 8
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl04",
+   "name": "L3 bloom 1 · drive 6 — petals, his set line, THE LOOP: bloom 1 s · drive 6 · hold 8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 25000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 1,
+    "poDrive": 6,
+    "poHold": 8
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl05",
+   "name": "L4 bloom 2 · drive 15 — petals, his set line, THE LOOP: bloom 2 s · drive 15 · hold 8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 25000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 2,
+    "poDrive": 15,
+    "poHold": 8
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl06",
+   "name": "L5 bloom 2 · drive 30 — petals, his set line, THE LOOP: bloom 2 s · drive 30 · hold 8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 25000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 2,
+    "poDrive": 30,
+    "poHold": 8
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl07",
+   "name": "L6 long hold 15 s — petals, his set line, THE LOOP: bloom 2 s · drive 10 · hold 15 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 32000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 2,
+    "poDrive": 10,
+    "poHold": 15
+   },
+   "deal": false,
+   "audition": "petals-loop"
+  },
+  {
+   "key": "pl08",
+   "name": "L7 fast · hard · short — petals, his set line, THE LOOP: bloom 0.5 s · drive 20 · hold 5 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 22000,
+   "args": {
+    "poMix": 1,
+    "poFund": 35,
+    "poFirst": 5,
+    "poSpread": 1.33,
+    "poOffset": 8.1,
+    "poRingLo": 7,
+    "poRingHi": 15,
+    "poInLen": 1,
+    "poBloom": 0.5,
+    "poDrive": 20,
+    "poHold": 5
+   },
+   "deal": false,
+   "audition": "petals-loop"
   }
  ],
  "generated": {
@@ -5593,13 +5593,13 @@
    "n": 8,
    "what": "his petals (the original, his set line) with the loop around the bank — eight settings of bloom · drive · hold, all on bcl-impulse-1",
    "command": "node tools/build_petals_loop.js --name audition-petals-loop --impulse bcl-impulse-1 --gap 3",
-   "when": "2026-10-07T04:51"
+   "when": "2026-10-07T05:00"
   },
   "feedback-rings": {
    "n": 18,
    "what": "the feedback with its strings as ringing partials on 6 chord shapes, three ways each; the other dials the shelf's row 7, the cap 14000 ms",
    "command": "node tools/build_feedback_rings.js --name audition-feedback-rings --n 6 --base 7 --gap 3 --cap 14000",
-   "when": "2026-10-07T04:51"
+   "when": "2026-10-07T04:57"
   }
  }
 }

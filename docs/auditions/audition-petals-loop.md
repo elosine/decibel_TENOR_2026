@@ -4,7 +4,7 @@
 
 **What it is:** eight bricks, ALL on `bcl-impulse-1`, your petals set line every time (fund 35 Hz · first partial 5 · spread 1.33 · bank B +8.1 st · ring 7 … 15 s), with THE LOOP: the bank's sound goes through an amp (a soft clip) and back into the bank — a guitar's feedback with your 26 partials as the string. **Bloom** is how long the loop takes to lift the ring 60 dB; **drive** is the amp's clipping (the ceiling the bloom meets, and the grit); **hold** is how long the loop is held from the start — then it is broken and the bank rings down on its own. L0 has no loop. The bricks are 3 s apart, so the tails overlap.
 
-**To hear it:** the engine RESTARTED (it must be one started after 2026-10-07 — the loop is new code) · F5 · File ▾ → Experiments → `audition-petals-loop` · play from 0 (the renders are in the bank when the plan was sent with render; else a purple brick → **render all planned**). The score is 0:43 long.
+**To hear it:** the engine RESTARTED (it must be one started after 2026-10-07 — the loop is new code) · F5 · File ▾ → Experiments → `audition-petals-loop` · play from 0 (the renders are in the bank when the plan was sent with render; else a purple brick → **render all planned**). The score is 0:55 long.
 
 | brick | at | bloom s | drive | hold s | preset |
 |---|---|---|---|---|---|
