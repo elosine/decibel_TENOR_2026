@@ -4848,3 +4848,17 @@ The plan's Sines panel in Panels ▾, its take menu and its "nearest to the play
 **What is now true, against the brief of §193:** the section at 110 s (far apart and approaching shortened, the rest as he found them) ✓ · a bigger batch of impulses with a wider pitch variety — 68, each short technique at two or three pitches ✓ · the section regenerated from them for both the live attacks (the five's notes) and the effects (the computer players' palettes) ✓ · the recording session's extra samples noted ✓ · the composing bank uncommitted ✓. **NOT heard:** the section with the batch; his verdict on the earlier run (§195) unsaid. His step: F5 · File ▾ → Reload (or Experiments → `three-body`) · play from 0 with the engine up.
 
 **For the record:** the day's thread was one brief, four of his words ("built" · the paste · "done va14 and vc 15 dont sound" · "done"), two faults of the engine found under the first real load and fixed between them, and the bank grown from 30 impulses to 98 — the engine held 1,276 rows (samples and renders) at the end with no error.
+
+## §198
+
+### 2026-10-06 — "that is good": the three body section INSERTED INTO THE PIECE — `piece-sec01-b` at 39 s, by a new tool (Fable; PLAN.md 14.7)
+
+**His words:** *"that is good can you insert into the score piece-sec01-b at 39 seconds, please."* — the verdict on the section with the batch (110 s at seed 165; the five's attacks and the computer players' sounds from the 68), and the first placing of a section in the piece. `scores/piece-sec01-b.json` was HIS: a copy of the opening saved at 23:08, the same 85 objects as `piece-sec01-a`, no working copy.
+
+**The tool — `tools/insert_section.js`** (the "tool that rolls it INTO the piece's score" foreseen at checkpoint #13): every object of a built section's score copied into the piece score — new ids from the piece's `nextId` (the prefix kept: `wc-` · `zn-`), the times moved by `at` (a note's `startSeconds` · `endSeconds`, a zone's `startTime` · `endTime`), each copy tagged `properties.section = { name, at }`; `--replace` removes the earlier insertion of the same section first (so a re-roll in `three-body`, then the same command, replaces it whole); `metadata.sections` records name · at · lengthS · the seeds · the command; the piece's own objects are not touched; the working-copy refusal of the other tools; a check that no two ids collide; a reference by id inside a copy would follow the new ids (none in this section). It writes the piece score in place.
+
+**Done:** `node tools/insert_section.js --from three-body --into piece-sec01-b --at 39` → 273 objects (45 containers · 201 notes · 27 performer bricks) over 39.00 … 148.95 s; the opening's 85 end at 36.90 s — a gap of 2.10 s; 358 objects, nextId 383, every id unique (read back). The section's own score `three-body` stays as it is.
+
+**What this settles for the form:** the piece now has TWO sections in one score — the opening (0 … 37 s) and the three body problem (39 … 149 s) — and a way to place a section that is a built thing (rolled, simulated, its electronics in bricks) rather than notes written by hand: the section score is the WORKSHOP, the piece score the PLACE; a section is replaced whole, never patched in the piece. Where the join at 39 s wants anything (a longer gap, an overlap, the opening's last return reaching into the section's first far apart) is his ear's next word.
+
+**His step:** F5 · File ▾ → Experiments → `piece-sec01-b` (File ▾ → Reload if it is open) · play from 0 with the engine up.
