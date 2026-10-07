@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-06T19:21:54.411Z",
-  "modified": "2026-10-06T19:21:54.411Z",
+  "created": "2026-10-07T19:27:53.915Z",
+  "modified": "2026-10-07T19:27:53.915Z",
   "builtBy": "tools/build_drone_auditions.js",
   "note": "FILE A OF THE DRONES (DEC-34 · 34b; PLAN 10.13; RUNNING_LOG §171): his icy on ONE input, bcl-mp-1 — the reference (his icy live of 2015, looping from 0), then one dial changed at a time: overlaps 2 · 4 · 8 · 40, rand 0 · 0.1 · 0.3 · 0.6 · 1, and the seam (pace ½, 30 s). Every brick asks for bcl-mp-1~da<NN>-tail; the engine renders them from the bank when the plan is sent (a purple brick → render all planned, with an engine started after the loop went in). The sheet: docs/auditions/audition-stretch-dials.md. Written by tools/build_drone_auditions.js; his from then on."
  },
