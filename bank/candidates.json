@@ -188,6 +188,139 @@
       "render": "2377 ms · peak −15 dB",
       "remark": "this is slow bloom",
       "note": "the preset slow bloom on the viola's impulse 3; the peak NOT matched (his box unticked); the cap 1.7 s — the panel said its settings had changed since that render: kept as shown"
+    },
+    {
+      "n": 8,
+      "kept": "2026-10-07T01:20",
+      "heardOn": "bcl-impulse-1",
+      "out": "bcl-impulse-1~pg02-tail",
+      "label": "G1 overdrive mild",
+      "effect": "petalsOrig",
+      "from": "audition-petals-grit",
+      "setting": {
+        "effect": "petalsOrig",
+        "args": {
+          "poMix": 1,
+          "poFund": 35,
+          "poFirst": 5,
+          "poSpread": 1.33,
+          "poOffset": 8.1,
+          "poRingLo": 7,
+          "poRingHi": 15,
+          "poInLen": 1,
+          "odMix": 1,
+          "odDrive": 4,
+          "odTone": 3000
+        },
+        "end": "tail",
+        "capMs": 16000
+      },
+      "render": "the audition's render, 2026-10-07",
+      "remark": "let me keep the overdrive mild and the overdrive hard. We'll have the fuzz and the one loop.",
+      "note": "the petals (his set line) through the overdrive, drive 4, tone 3 kHz — a STACK: a preset whose args turn on two mixes (the petals, then the grit); DEC-41, RUNNING_LOG §207"
+    },
+    {
+      "n": 9,
+      "kept": "2026-10-07T01:20",
+      "heardOn": "bcl-impulse-1",
+      "out": "bcl-impulse-1~pg03-tail",
+      "label": "G2 overdrive hard",
+      "effect": "petalsOrig",
+      "from": "audition-petals-grit",
+      "setting": {
+        "effect": "petalsOrig",
+        "args": {
+          "poMix": 1,
+          "poFund": 35,
+          "poFirst": 5,
+          "poSpread": 1.33,
+          "poOffset": 8.1,
+          "poRingLo": 7,
+          "poRingHi": 15,
+          "poInLen": 1,
+          "odMix": 1,
+          "odDrive": 20,
+          "odTone": 2500
+        },
+        "end": "tail",
+        "capMs": 16000
+      },
+      "render": "the audition's render, 2026-10-07",
+      "remark": "let me keep the overdrive mild and the overdrive hard. We'll have the fuzz and the one loop.",
+      "note": "the petals (his set line) through the overdrive, drive 20, tone 2.5 kHz — a STACK: a preset whose args turn on two mixes (the petals, then the grit); DEC-41, RUNNING_LOG §207"
+    },
+    {
+      "n": 10,
+      "kept": "2026-10-07T01:20",
+      "heardOn": "bcl-impulse-1",
+      "out": "bcl-impulse-1~pg04-tail",
+      "label": "G3 fuzz",
+      "effect": "petalsOrig",
+      "from": "audition-petals-grit",
+      "setting": {
+        "effect": "petalsOrig",
+        "args": {
+          "poMix": 1,
+          "poFund": 35,
+          "poFirst": 5,
+          "poSpread": 1.33,
+          "poOffset": 8.1,
+          "poRingLo": 7,
+          "poRingHi": 15,
+          "poInLen": 1,
+          "fzMix": 1,
+          "fzGain": 30,
+          "fzBias": 0.2,
+          "fzTone": 3000
+        },
+        "end": "tail",
+        "capMs": 16000
+      },
+      "render": "the audition's render, 2026-10-07",
+      "remark": "let me keep the overdrive mild and the overdrive hard. We'll have the fuzz and the one loop.",
+      "note": "the petals (his set line) through the fuzz, gain 30, bias 0.2, tone 3 kHz — a STACK: a preset whose args turn on two mixes (the petals, then the grit); DEC-41, RUNNING_LOG §207"
+    },
+    {
+      "n": 11,
+      "kept": "2026-10-07T01:20",
+      "heardOn": "bcl-impulse-1",
+      "out": "bcl-impulse-1~pg06-tail",
+      "label": "G5 the ring into the one loop",
+      "effect": "petalsOrig",
+      "from": "audition-petals-grit",
+      "setting": {
+        "effect": "petalsOrig",
+        "args": {
+          "poMix": 1,
+          "poFund": 35,
+          "poFirst": 5,
+          "poSpread": 1.33,
+          "poOffset": 8.1,
+          "poRingLo": 7,
+          "poRingHi": 15,
+          "poInLen": 1,
+          "fbMix": 1,
+          "fbOwn": 0,
+          "fbBloom": 1,
+          "fbHold": 6,
+          "fbDrive": 6,
+          "fbTone": 2500,
+          "fbPath": 12,
+          "fbClimb": 0.3,
+          "fbWobble": 0.4,
+          "fbS1": 0,
+          "fbS2": 0,
+          "fbS3": 0,
+          "fbS4": 0,
+          "fbS5": 0,
+          "fbS6": 0
+        },
+        "end": "tail",
+        "capMs": 16000
+      },
+      "render": "the audition's render, 2026-10-07",
+      "remark": "let me keep the overdrive mild and the overdrive hard. We'll have the fuzz and the one loop.",
+      "note": "the petals (his set line) into the one-loop feedback with no strings: bloom 1 s, held 6 s, drive 6, climb 0.3, wobble 0.4 — a STACK: a preset whose args turn on two mixes (the petals, then the grit); DEC-41, RUNNING_LOG §207"
     }
   ],
   "deals": [
