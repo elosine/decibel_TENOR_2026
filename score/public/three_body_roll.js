@@ -96,6 +96,15 @@ function company(rolled, overlapS) {
     }
     return { ok: lonely.length === 0, lonely };
 }
+// THE FIT (DEC-37, 2026-10-06 — his "let's try 110 seconds"): from `seed` on, the KEPT roll whose length lands nearest `fitS` seconds,
+// among cfg.constraint.tries kept rolls (200); the ranges stay as written — only the seed is chosen. seedAsked stays the seed given.
+function rollFit(cfg, names, seed, fitS) {
+    let best = rollKept(cfg, names, seed), s = best.seedUsed + 1;
+    const tries = Math.max(1, Math.round(+((cfg.constraint || {}).tries) || 200));
+    for (let n = 1; n < tries; n++) { const r = rollKept(cfg, names, s); if (Math.abs(r.lengthS - fitS) < Math.abs(best.lengthS - fitS)) best = r; s = r.seedUsed + 1; }
+    return Object.assign(best, { seedAsked: Math.max(1, Math.round(+seed) || 1), fitS: +fitS });
+}
+
 function rollKept(cfg, names, seed) {
     const k = cfg.constraint || {}, tries = k.kind === 'company' ? Math.max(1, +k.tries || 200) : 1, s0 = Math.max(1, Math.round(+seed) || 1);
     for (let i = 0; i < tries; i++) {
@@ -146,5 +155,5 @@ function table(rolled) {
     return out;
 }
 
-return { STATES, NAMES, KING_WEN, TRIGRAMS, mulberry32, hexagram, across, roll, company, rollKept, targets, table, overlap };
+return { STATES, NAMES, KING_WEN, TRIGRAMS, mulberry32, hexagram, across, roll, company, rollKept, rollFit, targets, table, overlap };
 }));

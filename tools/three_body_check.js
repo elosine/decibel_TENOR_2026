@@ -82,7 +82,7 @@ for (const seed of [1, 2, 3]) {
 console.log('THREE_BODY_CHECK the score ' + NAME + ':');
 if (!fs.existsSync(FILE)) { console.log('  FAIL scores/' + NAME + '.json is not there — node tools/build_three_body.js'); console.log('THREE_BODY_CHECK FAIL'); process.exit(1); }
 const save = JSON.parse(fs.readFileSync(FILE, 'utf8')), M = save.metadata.threeBody, objs = save.objects;
-const rolled = Roll.rollKept(CFG, ALL, M.seedAsked);
+const rolled = M.fitS > 0 ? Roll.rollFit(CFG, ALL, M.seedAsked, M.fitS) : Roll.rollKept(CFG, ALL, M.seedAsked);   // the fit re-rolled as the builder rolled it (DEC-37)
 Roll.targets(rolled, HUMANS, HUMANS, rolled.seedUsed); Roll.targets(rolled, COMPUTER, ALL, rolled.seedUsed + 1);
 const by = Object.fromEntries(rolled.players.map((p) => [p.name, p]));
 const tableNow = rolled.players.flatMap((p) => p.containers.map((c) => [p.name, c.index, c.state, c.from || '', c.to || '', c.start, c.end, c.hex || 0, c.hexSilence || 0, c.silenceS || 0, c.target || '', c.targetFrom || '']));
@@ -156,7 +156,8 @@ const K = Sim.rulesOf(CFG.rules);
         sim.onsets.length + ' onsets simulated again · ' + Object.entries(sim.counts).map(([k, v]) => k + ' ' + v).join(' · '));
     // the arch: the densest ten seconds lie in the middle, where the close passes are
     const bins = []; for (const n of notes) { const b = Math.floor(n.startSeconds / 10); bins[b] = (bins[b] || 0) + 1; }
-    const peak = bins.indexOf(Math.max(...bins.map((v) => v || 0))), cps = rolled.players.filter((p) => HUMANS.includes(p.name)).map((p) => p.containers[4]);
+    for (let b = 0; b < bins.length; b++) bins[b] = bins[b] || 0;   // a ten seconds with no note (every break's silence at once — seed 165, DEC-37) is a 0, not a hole: a hole made the peak NaN
+    const peak = bins.indexOf(Math.max(...bins)), cps = rolled.players.filter((p) => HUMANS.includes(p.name)).map((p) => p.containers[4]);
     check('the densest ten seconds are where the close passes are', peak * 10 + 10 > Math.min(...cps.map((c) => c.start)) && peak * 10 < Math.max(...cps.map((c) => c.end)),
         'notes per 10 s: ' + Array.from(bins, (v) => v || 0).join(' ') + ' · the close passes ' + Math.min(...cps.map((c) => c.start)).toFixed(0) + ' … ' + Math.max(...cps.map((c) => c.end)).toFixed(0) + ' s');
 }
