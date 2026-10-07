@@ -112,6 +112,7 @@ function engineEnv() {
     if (process.argv.includes('--remote')) {
         const R = CFG.remote || {};
         env.LE_MODE = 'remote';
+        env.LE_RECORD = '0';   // THE GUARD (RUNNING_LOG §212): in this mode the engine's inputs are the WINDOWS input, not the rack — an opening must change nothing (the bank is not in git, D18)
         if (R.inDevice) env.LE_DEVICE_IN = R.inDevice;
         if (R.outDevice) env.LE_DEVICE_OUT = R.outDevice;
     }
@@ -246,7 +247,7 @@ async function readPeaks(waitMs) {
 
     if (cmd === 'start') {
         console.log(modeLine());
-        if (process.argv.includes('--remote')) console.log('REMOTE     the engine on a Windows device, not ReaRoute — Reaper on WASAPI; the microphones are off (an opening captures nothing); the bank and the renders play. docs/REMOTE_LISTENING.md');
+        if (process.argv.includes('--remote')) console.log('REMOTE     the engine on a Windows device, not ReaRoute — Reaper on WASAPI; OPENINGS DO NOT RECORD here, whatever the MODE line says (the Windows input is not the rack: the bank is safe); the bank and the renders play. docs/REMOTE_LISTENING.md');
         { const V = venueOf(); console.log('VENUE      ' + (V ? V.name + ' — bank/venue/' + V.name + '.json: each microphone\'s trim, high-pass and EQ' : 'none — every microphone flat (the simulation)')); }
         const p = sc.start(SCD('session.scd'), { timeoutS: 86400, env: engineEnv(), onLine: (l) => {
             const m = /^LE_RESULT\s+(.*)$/.exec(l);   // a tool's line, not his: nothing is shown. A route check's pairing (an onset with its sound) is kept; a capture's row is in the bank's index

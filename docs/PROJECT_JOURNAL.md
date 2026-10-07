@@ -114,6 +114,7 @@ takes is his (D5).
     spelling to confirm: "petals" in the folder's name, "pedals" in his words) · a SERIES of these developed for the piece · a freeze ·
     a set per language type — trills and multiphonics recorded as samples first, each with its effects. **Done when:** one window
     excites the filter bank and the chord is heard from the composer score; the series grows by need.
+    **► 2026-10-07 (RUNNING_LOG §200 … §210; DEC-39 … 42): 10.3 ☑ HEARD — the ORIGINAL petals are the voice; seven grit stacks, FOUR KEPT; the petals across the spectrum, 26 KEPT → `bank/petals_bank.json` with his proportions, and the roll (`audition-petals-roll`, UNHEARD) · 10.12 HEARD as built — not it ("a distorted overtone series"); a loop around the petals and the feedback's strings as ringing partials built for a hearing (`audition-petals-loop` · `audition-feedback-rings` — his verdict unsaid) · 10.13 the drones RENDERED (§210), played in part, unsaid.**
 11. ◐ **THE LEVEL — the electronics scored ppp … fff, with player agency** — **BUILT 2026-10-06, DONE BUT FOR HIS EAR** (RUNNING_LOG §161 … §166;
     the engine's §42 … §45; PLAN.md § 1.4, an AS BUILT line on each item; `docs/LEVEL_NOTE.md` is his way in): 11.1 ☑ the measure · 11.2 ☑ the ladder ·
     11.3 ☑ the dynamic on the brick · 11.4 ☑ the drive · 11.5 ☑ the impulses' own dynamics · 11.6 ☑ the bus · 11.7 ☑ the house (its real proof at
@@ -121,6 +122,7 @@ takes is his (D5).
     *(as laid out, 2026-10-06 — §154 … §159; DEC-33; D17:)* the defaults, his "a": the dynamic `as played`, the drive `normalized`, a mark
     overrides. **Done when:** a return brick written `mf` sounds at a player's mf whatever was captured; a hairpin on a brick is heard; the
     master is the engine's bus with a meter; a hall's microphones are taken through a venue file.
+    **► 2026-10-07 (RUNNING_LOG §211): TOUCHED BY HIS EAR ONCE — the ladder's `reference` −29.54 → −17.54 at his "a" (the sines played 20 dB under everything); the rest of the level still unheard.**
 12. ◐ **THE SINE TONES — a GENERATED electronics voice the players beat against** — **BUILT 2026-10-06, 12.1 … 12.7, DONE BUT FOR HIS EAR — ITS AUDITION PARKED AT HIS WORD (§182: on the list of things to audition, journal §2's first block)** (RUNNING_LOG §177 … §181; PLAN.md § 1.5, an AS BUILT line on each item; journal §2's first block is his way in). OPENED 2026-10-06 by DEC-35 · 35b; the top line of
     seven approved by him the same day ("good"; RUNNING_LOG §173 · §174; PLAN.md § 1.5): 12.1 the sine voice in the engine · 12.2 the sine
     brick in the composer score · 12.3 the crescendo from a curve lane · 12.4 the performer simulation · 12.5 the GO (selected played notes
@@ -128,6 +130,7 @@ takes is his (D5).
     WRITTEN 2026-10-06 at his word ("write the whole plan no need to see sub steps") — PLAN.md § 1.5, every item with its sub-steps and its
     one proof (RUNNING_LOG §175); NOTHING BUILT. ► NEXT: the build, 12.1 → 12.6 as one — here or Opus after a clear, his word.** **Done when:** he plays notes in, makes a take, selects, presses GO, and hears sines
     and a rough simulated player beating against them from the composer score, the crescendo from a curve he drew.
+    **► 2026-10-07 (RUNNING_LOG §211): `sine-demo` PLAYED on his engine — every sine received and sounding, too quiet; the ladder's reference raised 12 dB. ► his word at the new level (journal §2, checkpoint #15).**
 13. **The record, as the work happens** (not a step he sees): this RUNNING_LOG · the engine's RUNNING_LOG for what is the engine's ·
     the sketch pad · PERFORMANCE_NOTES a row per glyph · the sweep list · `git subtree push` at every wrap (D7).
 
@@ -188,6 +191,34 @@ question, not by habit.)*
 - **Not done, and not claimed:** HIS EAR on the first object and on the crop's numbers · his three notation calls.
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
+
+**► CHECKPOINT #15 OF SESSION 2 (mid-session checkpoint) — 2026-10-07, Opus (RUNNING_LOG §212); the stretch since checkpoint #14 was Fable's whole, §200 … §211. THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS. The block under it ("THE TWO AUDITIONS RENDERED AT LAST", with its UPDATE bullets) is the record of the stretch, in order.**
+
+- **POSITION:** running order step 10, the processing ► — its items 10.3 the petals and 10.12 the feedback, picked up by him at the postclear and DEVELOPED: the petals are now a voice with a bank of his own settings. Steps 11 (the level) and 12 (the sines) were touched once by his ear. **IN HAND: ONE THING — his word on `sine-demo` at the ladder's new reference.** Everything else waits on his ear, unasked.
+- **WHAT THE STRETCH MADE (one line each; RUNNING_LOG §200 … §211):**
+  · three auditions had NEVER been rendered (the petals · the feedback on his chords · the drones): an unrendered variant plays its sample RAW and the page shows nothing (SWEEP_LIST #9, open) — all rendered from here.
+  · HIS VERDICTS: the ORIGINAL petals are the voice (`petalsOrig`) · the feedback on chords as built is *"a distorted overtone series"*, not it · the seven grit stacks *"all pretty good"*, FOUR KEPT (overdrive mild · overdrive hard · fuzz · the ring into the one loop — the shelf's rows 8 … 11) · the petals sat too high → 26 KEPT of 56 across the spectrum.
+  · THE ENGINE gained (its §52 … §55): a LOOP around the petals (`poBloom` · `poDrive` · `poHold`) · the feedback's strings as RINGING PARTIALS (`fbRes` · `fbRing`; each partial its own loop delay) · the chain's SynthDef loaded BY FILE (it outgrew an OSC message) · a REMOTE mode.
+  · HIS DATA: **`bank/petals_bank.json`** — the 26 settings with their dials, and his proportions for the grit after them (`effects`: `cleanShare` 0.65 · od-hard 0.55 · od-mild 0.15 · loop 0.2 · fuzz 0.1 — the AI's numbers for his words, his to move); the algorithm `roll()` exported by `tools/build_petals_roll.js`.
+  · THE LADDER'S REFERENCE −29.54 → **−17.54** (his "a", §211): the sines of `sine-demo` played 20 dB under everything.
+- **THE SCORES OF THE STRETCH (File ▾ → Experiments) — ALL RENDERED:** `audition-petals` · `audition-feedback-chords` · `audition-petals-grit` (7) — heard · `audition-petals-spectrum` (56, numbered) — heard, 26 kept · **`audition-petals-roll` (40) — UNHEARD** · `audition-petals-loop` (8) · `audition-feedback-rings` (18) — HIS VERDICT UNSAID (*"I just want to hear what the other options are"*; he went on to the spectrum) · `audition-drones` (72) · `audition-stretch-dials` (11) — rendered 15:30, played by him in part, unsaid · `sine-demo` — its sines played, too quiet.
+- **THE NEXT CONCRETE STEP — after the playback and HIS WORD: ASK, IN ONE LINE, WHAT HE HEARD IN `sine-demo` NOW** (the reference −17.54; his engine was restarted at 15:46:58, after the change). Then, by what he says — each is small:
+  · *still too quiet · too loud* → `bank/elec_route.json` `level.reference` (ONE number; higher = louder; every WRITTEN dynamic moves with it, the "as played" returns do not) → his engine restarted → F5.
+  · *the petals into the piece* → a talk first (where · how many · on which openings — his design, DEC-39: a 250 ms opening excites a long tail); then `bank/petals_bank.json` + `roll()`; a return brick's `elec.variants` takes a preset.
+  · *a proportion* → the bank's `effects` → `node tools/build_petals_roll.js --seed N --replace --render`.
+  · *a verdict on the loop · the partials · the drones* → the block below, its "by what he says" lists (§203 · §205 · §171).
+  · *"what's left"* → the BARE list: the six of checkpoint #12 as they stand — the level (touched: one number moved) · the petals (DONE to a bank) · the feedback on his chords (not it as built; the partials unsaid) · the drones (rendered, unsaid) · the sines (in hand) · the throws (untouched) — then his three notation calls, then the piece.
+- **`Resume reads:` nothing beyond this §2.** Only for the number: `bank/elec_route.json` (`level`). Only for the petals' data: `bank/petals_bank.json`. Only for a remote session: `docs/REMOTE_LISTENING.md`.
+- **⚠ WHAT WILL SURPRISE A COLD SESSION:**
+  · **HIS ENGINE IS THE REMOTE ONE** (`node tools\elec.js start --remote`; `sclang` 2026-10-07 15:46:58; Reaper on WASAPI): it plays to the Windows default device, NOT through ReaRoute. Back in the studio: Reaper → ASIO · `start_electronics.bat`.
+  · **THAT ENGINE PREDATES THE REMOTE GUARD** (§212: `start --remote` sets `LE_RECORD=0` from this checkpoint on). On it, a mic opening on the BASS CLARINET's or the BASS FLUTE's lane RECORDS THE WINDOWS INPUT over the banked impulse (its two inputs are live, up to −8 dB in his paste; the composing bank is not in git, D18). Nothing was lost (0 captures since the first remote start, checked). **Until he restarts it: no score with mic openings on it — `piece-sec01-b` and `piece-sec02-a1` have 30 each.** Said to him at the wrap; say it again if the engine's start is still 15:46:58 (`Get-Process sclang`).
+  · **AN AUDITION IS HANDED OVER RENDERED** — the builder with `--render` on a current engine, the count said; never "render all planned" left to him.
+  · **Once the one proof passes: send, and two lines** — his words, §206: *"too much double checking? can we move on?"* A render is measured only when he reports a fault.
+  · a stage is proven on THE PIECE'S OWN NUMBERS (§204 · §205) · the drones' keys: `da…` = stretch-dials, `dr…` = drones · `bank/presets.json` = the dealt 40 + some three hundred `deal: false` audition rows · in the composer score `=` / `+` zoom in, `-` out (Remote Desktop swallows ALT + wheel).
+- **PENDING HIM, when he offers them:** `sine-demo` at the new reference · `audition-petals-roll` · the loop and the partials · the drones · where the petals go in the piece · `piece-sec02-a1` (below) · his three notation calls.
+- **DELIBERATELY UNCOMMITTED:** **`scores/piece-sec02-a1.json` — HIS, NEW, untracked** (saved 2026-10-07; 358 objects, 1.4 … 149 s, 30 mic openings — the count of `piece-sec01-b`: it reads as his copy to begin section 2 in; not opened further; not the AI's to add without his word — offered at the wrap) · `scores/temp01new_cello_bass_flute_perc_25.72.json` — his temp save of 2026-10-05 · the page's working copies of `audition-100-s1` · `audition-30` · `workshop-bfl-slap` (gitignored, his). **IN this checkpoint's commit, his live work:** `scores/audition-petals-spectrum.json` · `scores/piece-sec01-b.json` — his saves from the page, the objects IDENTICAL to the last commit (checked id by id), only the stamp and the page's dropped metadata.
+- **LEFT RUNNING — ALL HIS, none touched:** Reaper (WASAPI) · the score server on 5500 (no restart needed: no server line changed in the stretch) · his engine, REMOTE, 15:46:58 · loopMIDI · the composer page. Nothing of the AI's. The engine's repo is in step (`b08c243`; nothing under `electronics/` changed since).
+- **RESUME ON: Fable** — what he heard, and the petals into the piece, are talks. **Opus** for a number, a builder's re-run, a build from a written plan.
 
 **► THE TWO AUDITIONS RENDERED AT LAST — THEY HAD NEVER BEEN; HIS EAR IS NEXT, THEN THE LONG-TAIL TALK — 2026-10-06, Fable, at the postclear (RUNNING_LOG §200; DEC-39; SWEEP_LIST #9). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS. Checkpoint #14 below stays the record of step 14.**
 

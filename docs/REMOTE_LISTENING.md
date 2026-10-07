@@ -23,8 +23,11 @@ remote session only. Piece #4's `docs/REMOTE_AUDITION.md` is the ancestor (Reape
 
 ## What you lose remotely
 
-- **The microphones.** The engine hears nothing from the rack: a mic opening records silence (`nothing to crop … over the room` in its
-  window — right). Everything BANKED and RENDERED plays: the auditions, the opening's returns, the three body section's computer players.
+- **The microphones.** In this mode an opening RECORDS NOTHING: the start sets the engine's record switch off (`LE_RECORD=0`), so a mic
+  opening changes nothing and the bank is safe. (The engine's two inputs are then the Windows default input — a webcam's microphone, the
+  room — not the rack; before 2026-10-07's guard an opening on the bass clarinet's or the bass flute's lane would have recorded that over
+  a banked impulse. **An engine window opened before the guard: close it and start the remote bat again before playing the piece.**)
+  Everything BANKED and RENDERED plays: the auditions, the opening's returns, the three body section's computer players.
 - **Renders still work** (they are offline: no device). "Render all planned" and the builders with `--render` are fine.
 - The engine's output is its own master straight to Windows, not Reaper's `ELEC RETURN` track: Reaper's master fader does not touch it.
 - MME latency is high (tens of ms): the returns land a little late. For listening, not for judging placement.
@@ -35,12 +38,16 @@ remote session only. Piece #4's `docs/REMOTE_AUDITION.md` is the ancestor (Reape
 
 ## Gotchas
 
+- **Zoom without the wheel** (Remote Desktop swallows ALT + wheel): with the score focused, **`=` or `+`** zooms in, **`-`** zooms out,
+  one step a press.
+- **The electronics too quiet against the players?** That is the ladder's one number, not the remote route: `bank/elec_route.json`
+  `level.reference` (raised to −17.54 on 2026-10-07), then the engine restarted.
 - **Nothing changes in SuperCollider's code for the switch** — the mode is the start file's. The device names are
   `bank/elec_route.json` `remote` (`inDevice` · `outDevice`); the **Microsoft Sound Mapper IS the Windows default**, whichever it is
   at the time (CRD swaps the default when sessions cycle — the Sound Mapper follows). A fixed device instead: a name as
   `node electronics/tools/sc.js devices` prints it, or `devices_all` in the engine's record (§55).
-- **If the engine's start line complains about the device** (the sample rate, a channel count): paste it — that is the one thing not
-  yet run on a server (built 2026-10-07 beside a living engine; the first run is yours, remote).
+- **If the engine's start line complains about the device** (the sample rate, a channel count): paste it. (The mode's first runs were his, 2026-10-07 15:18 and 15:46:
+  it opened the Sound Mapper at 44100 Hz and played the bank, the renders and the sines.)
 - **After reconnecting CRD**, if Reaper's sound dies: Options → Reset all MIDI/audio devices. If the engine's dies: its window closed, the
   bat again.
 - ⚠ **Reset all MIDI/audio devices re-opens MIDI inputs** — keep the Keystation input disabled in Reaper (piece #4's rule).
