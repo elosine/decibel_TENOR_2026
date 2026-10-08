@@ -131,4 +131,4 @@ console.log(out.join('\n'));
 if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
 save.metadata = save.metadata || {}; save.metadata.modified = new Date().toISOString();
 fs.writeFileSync(file, JSON.stringify(save, null, 1) + '\n');
-console.log('written: ' + path.relative(ROOT, file) + ' — in the page: File ▾ → Reload; a pass with the engine up captures the hit and renders its petals (the first pass plays it raw, the second the petals).');
+console.log('written: ' + path.relative(ROOT, file) + ' — in the page: F5 (NOT Reload: the page reads bank/presets.json only at its load, and a preset it does not know is left out of the plan — §217); a pass with the engine up captures the hit and renders its petals (the first pass plays it raw, the second the petals).');
