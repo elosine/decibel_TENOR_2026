@@ -7543,69 +7543,6 @@
    "audition": "piece-petals"
   },
   {
-   "key": "pp02",
-   "name": "petal hit 2 · CLEAN — petals #8 · fund 36.1 Hz · first partial 1.2 · spread 0.92 · bank B +4.27 st · ring 9.7 … 11.8 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 36.1,
-    "poFirst": 1.2,
-    "poSpread": 0.92,
-    "poOffset": 4.27,
-    "poRingLo": 9.7,
-    "poRingHi": 11.8,
-    "poInLen": 1
-   },
-   "deal": false,
-   "audition": "piece-petals"
-  },
-  {
-   "key": "pp03",
-   "name": "petal hit 3 · OVERDRIVE HARD — petals #6 · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 32.4,
-    "poFirst": 3.63,
-    "poSpread": 1.1,
-    "poOffset": 5.14,
-    "poRingLo": 7.8,
-    "poRingHi": 10.1,
-    "poInLen": 1,
-    "odMix": 1,
-    "odDrive": 20,
-    "odTone": 2500
-   },
-   "deal": false,
-   "audition": "piece-petals"
-  },
-  {
-   "key": "pp04",
-   "name": "petal hit 4 · OVERDRIVE HARD — petals #52 · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s",
-   "effect": "petalsOrig",
-   "class": "time",
-   "capMs": 16000,
-   "args": {
-    "poMix": 1,
-    "poFund": 318.3,
-    "poFirst": 4.56,
-    "poSpread": 1.04,
-    "poOffset": 5.13,
-    "poRingLo": 9.5,
-    "poRingHi": 12.6,
-    "poInLen": 1,
-    "odMix": 1,
-    "odDrive": 20,
-    "odTone": 2500
-   },
-   "deal": false,
-   "audition": "piece-petals"
-  },
-  {
    "key": "pp05",
    "name": "petal hit 5 · CLEAN — petals #28 · fund 98.1 Hz · first partial 3.85 · spread 0.89 · bank B +5.45 st · ring 7.8 … 10.9 s",
    "effect": "petalsOrig",
@@ -7639,6 +7576,81 @@
     "poRingLo": 8.5,
     "poRingHi": 10.9,
     "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp02",
+   "name": "petal hit 2 · CLEAN — petals #8 · fund 36.1 Hz · first partial 1.2 · spread 0.92 · bank B +4.27 st · ring 9.7 … 11.8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 36.1,
+    "poFirst": 1.2,
+    "poSpread": 0.92,
+    "poOffset": 4.27,
+    "poRingLo": 9.7,
+    "poRingHi": 11.8,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp04",
+   "name": "petal hit 4 · OVERDRIVE MILD — petals #52 · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 318.3,
+    "poFirst": 4.56,
+    "poSpread": 1.04,
+    "poOffset": 5.13,
+    "poRingLo": 9.5,
+    "poRingHi": 12.6,
+    "poInLen": 1,
+    "odMix": 1,
+    "odDrive": 4,
+    "odTone": 3000
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp03",
+   "name": "petal hit 3 · → ONE LOOP — petals #6 · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 32.4,
+    "poFirst": 3.63,
+    "poSpread": 1.1,
+    "poOffset": 5.14,
+    "poRingLo": 7.8,
+    "poRingHi": 10.1,
+    "poInLen": 1,
+    "fbMix": 1,
+    "fbOwn": 0,
+    "fbBloom": 1,
+    "fbHold": 6,
+    "fbDrive": 6,
+    "fbTone": 2500,
+    "fbPath": 12,
+    "fbClimb": 0.3,
+    "fbWobble": 0.4,
+    "fbS1": 0,
+    "fbS2": 0,
+    "fbS3": 0,
+    "fbS4": 0,
+    "fbS5": 0,
+    "fbS6": 0
    },
    "deal": false,
    "audition": "piece-petals"
@@ -7786,8 +7798,8 @@
   "piece-petals": {
    "n": 6,
    "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
-   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-438 --player auto --dyn ff --level fff --unsaved-ok",
-   "when": "2026-10-08T01:06"
+   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-434 --player va --k 3 --dyn ff --level fff",
+   "when": "2026-10-08T01:18"
   }
  }
 }

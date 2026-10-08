@@ -23,6 +23,7 @@
 //                own loudness, step 11.3); absent = as played, the render's own level. "the filter too quiet" → --level ff (his word, §218)
 //   node tools/petal_hit.js --score <name> --at <seconds> --player bcl …                 at a time instead
 //   node tools/petal_hit.js --score <name> --off <k>                                      hit k out again (its three objects and its preset)
+//   … --k <n>                                                                            re-place slot n of the sequence (its roll, its preset key) after --off n
 //
 // THE RENDER: the engine renders the capture's petals variant right after the capture (the plan the page sends at a pass's first
 // frame). On the FIRST pass through a new hit the return plays the capture RAW (the render is being made, `late` in the engine's
@@ -117,17 +118,23 @@ if (arg('off') != null) {
     const inst = INSTRUMENTS[TRACKS[lane].instKey];
     const techKey = arg('tech', (defaultHit(player) || {}).tech || 'slap'), tech = (inst.techniques || []).find((q) => q.key === techKey);
     if (!tech) die(TRACKS[lane].label + ' has no technique "' + techKey + '" — one of: ' + (inst.techniques || []).map((q) => q.key).join(', '));
-    const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
+    // THE ZONE a technique really sounds in, where the recipe's range is the instrument's whole: the Xsample slap presets (SWEEP_LIST #3:
+    // the bass flute's measured 48 … 64 — and 64 gave a silent capture on 2026-10-07, §221, so 63); a key outside is a FUNCTION KEY
+    const ZONES = { bass_flute: { slap: [48, 63] } };
+    const zn = (ZONES[TRACKS[lane].instKey] || {})[tech.key];
+    const lo = zn ? zn[0] : tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = zn ? zn[1] : tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
     // THE PITCH (§220, his word: "more varied pitches and across the range of that instrument"): the technique's range cut into five
     // BANDS; a player's successive hits take the bands in a seeded order, none twice until all five are used, and a seeded key inside
     // the band — so one player's hits walk the whole range. `--note <key>` says it outright; `--note mid` the middle (as before).
-    const prevAll = hits(), prevMine = prevAll.filter((h) => ((h.properties.petalHit.player) || String(h.elec && h.elec.name || '').split('-')[0]) === player).length;
+    const prevAll = hits(), kSlot = arg('k') != null ? Math.round(+arg('k')) : (prevAll.length ? prevAll[prevAll.length - 1].properties.petalHit.k + 1 : 1);
+    const mine = prevAll.filter((h) => ((h.properties.petalHit.player) || String(h.elec && h.elec.name || '').split('-')[0]) === player).map((h) => h.properties.petalHit.k).concat([kSlot]).sort((x, y) => x - y);
+    const prevMine = mine.indexOf(kSlot);   // this slot's place among the player's slots: the band walks the range in that order; the key inside is the SLOT's (a re-placed slot draws its own, never another slot's — §221)
     const spreadKey = () => {
         const BANDS = 5, seed0 = (prevAll.length ? prevAll[0].properties.petalHit.seed : Math.max(1, Math.round(+arg('seed', 1))));
         const rnd = K.mulberry32(seed0 * 7919 + ROUTE.players.findIndex((p) => p.name === player) * 101 + Math.floor(prevMine / BANDS) * 13);
         const order = [...Array(BANDS).keys()]; for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
         const band = order[prevMine % BANDS], w = (hi - lo + 1) / BANDS;
-        const r2 = K.mulberry32(seed0 * 7919 + prevMine * 31 + ROUTE.players.findIndex((p) => p.name === player) * 101 + 1);
+        const r2 = K.mulberry32(seed0 * 7919 + kSlot * 31 + ROUTE.players.findIndex((p) => p.name === player) * 101 + 1);
         return Math.min(hi, Math.max(lo, Math.round(lo + band * w + r2() * (w - 1))));
     };
     let note = arg('note') != null ? (arg('note') === 'mid' ? Math.round((lo + hi) / 2) : +arg('note')) : spreadKey();
@@ -139,7 +146,8 @@ if (arg('off') != null) {
     const level = arg('level', '');
     if (level && !MARKS.includes(level)) die('--level: a mark (' + MARKS.join(' ') + ')');
     // THE ROLL: the k-th of the piece's sequence; the seed is the first hit's
-    const prev = hits(), k = prev.length ? prev[prev.length - 1].properties.petalHit.k + 1 : 1;
+    const prev = hits(), k = arg('k') != null ? Math.round(+arg('k')) : (prev.length ? prev[prev.length - 1].properties.petalHit.k + 1 : 1);   // --k: re-place THIS slot of the sequence (after --off k)
+    if (prev.some((h) => h.properties.petalHit.k === k)) die('petal hit ' + k + ' exists — --off ' + k + ' first');
     const seed = prev.length ? prev[0].properties.petalHit.seed : Math.max(1, Math.round(+arg('seed', 1)));
     if (prev.length && arg('seed') != null && +arg('seed') !== seed) die('the piece\'s petals sequence runs on seed ' + seed + ' since hit 1 — --seed changes nothing after it (--off every hit to start over)');
     const d = roll(BANK, k, seed)[k - 1];
