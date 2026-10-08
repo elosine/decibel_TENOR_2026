@@ -154,10 +154,12 @@ if (arg('off') != null) {
     if (prev.length && arg('seed') != null && +arg('seed') !== seed) die('the piece\'s petals sequence runs on seed ' + seed + ' since hit 1 — --seed changes nothing after it (--off every hit to start over)');
     // slot k of the sequence — unless the score already uses that setting (the pool changed under earlier hits: #52 retired 2026-10-08,
     // and the shuffle shifted): then the first setting after it in the sequence that no hit has yet — none twice, whatever the pool did
-    const used = new Set(prev.filter((h) => h.properties.petalHit.k !== k).map((h) => h.properties.petalHit.setting));
-    const seq = roll(BANK, BANK.settings.length, seed);
+    // (a LAP is the pool's length: past it the sequence starts over, as the roll does — "none twice" holds within a lap)
+    const lap = Math.floor((k - 1) / BANK.settings.length), lapK = (h) => Math.floor((h.properties.petalHit.k - 1) / BANK.settings.length);
+    const used = new Set(prev.filter((h) => h.properties.petalHit.k !== k && lapK(h) === lap).map((h) => h.properties.petalHit.setting));
+    const seq = roll(BANK, Math.max(k, BANK.settings.length * (lap + 1)), seed);
     let d = seq[k - 1];
-    if (used.has(d.setting.n)) { const alt = seq.slice(k).find((x) => !used.has(x.setting.n)) || seq.find((x) => !used.has(x.setting.n)); if (alt) { console.log('slot ' + k + ' rolled petals #' + d.setting.n + ', already in the piece — the next unused of the sequence taken: #' + alt.setting.n); d = alt; } }
+    if (used.has(d.setting.n)) { const lapSeq = seq.slice(lap * BANK.settings.length, (lap + 1) * BANK.settings.length); const alt = lapSeq.slice((k - 1) % BANK.settings.length + 1).find((x) => !used.has(x.setting.n)) || lapSeq.find((x) => !used.has(x.setting.n)); if (alt) { console.log('slot ' + k + ' rolled petals #' + d.setting.n + ', already in the piece — the next unused of the sequence taken: #' + alt.setting.n); d = alt; } }
     const key = 'pp' + String(k).padStart(2, '0');
     const args = Object.assign({ poMix: 1, poFund: d.setting.fund, poFirst: d.setting.first, poSpread: d.setting.spread, poOffset: d.setting.offset, poRingLo: d.setting.ringLo, poRingHi: d.setting.ringHi, poInLen: 1 }, d.effect === 'clean' ? {} : BANK.effects.dials[d.effect]);
     const preset = { key, name: 'petal hit ' + k + ' · ' + NAMES[d.effect].toUpperCase() + ' — petals #' + d.setting.n + ' · fund ' + d.setting.fund + ' Hz · first partial ' + d.setting.first + ' · spread ' + d.setting.spread + ' · bank B +' + d.setting.offset + ' st · ring ' + d.setting.ringLo + ' … ' + d.setting.ringHi + ' s', effect: 'petalsOrig', class: 'time', capMs: CAP_MS, args };

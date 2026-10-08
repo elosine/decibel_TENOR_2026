@@ -7731,6 +7731,367 @@
    },
    "deal": false,
    "audition": "piece-petals"
+  },
+  {
+   "key": "pp12",
+   "name": "petal hit 12 · CLEAN — petals #44 · fund 216.3 Hz · first partial 1.12 · spread 0.52 · bank B +2.17 st · ring 8.3 … 12.8 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 216.3,
+    "poFirst": 1.12,
+    "poSpread": 0.52,
+    "poOffset": 2.17,
+    "poRingLo": 8.3,
+    "poRingHi": 12.8,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp13",
+   "name": "petal hit 13 · CLEAN — petals #2 · fund 27.1 Hz · first partial 4.87 · spread 0.51 · bank B +7.83 st · ring 7.9 … 10.4 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 27.1,
+    "poFirst": 4.87,
+    "poSpread": 0.51,
+    "poOffset": 7.83,
+    "poRingLo": 7.9,
+    "poRingHi": 10.4,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp14",
+   "name": "petal hit 14 · CLEAN — petals #21 · fund 69.4 Hz · first partial 2.31 · spread 0.55 · bank B +2.71 st · ring 9.8 … 12.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 69.4,
+    "poFirst": 2.31,
+    "poSpread": 0.55,
+    "poOffset": 2.71,
+    "poRingLo": 9.8,
+    "poRingHi": 12.6,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp15",
+   "name": "petal hit 15 · CLEAN — petals #25 · fund 83.4 Hz · first partial 4.41 · spread 0.38 · bank B +5.39 st · ring 7.5 … 12.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 83.4,
+    "poFirst": 4.41,
+    "poSpread": 0.38,
+    "poOffset": 5.39,
+    "poRingLo": 7.5,
+    "poRingHi": 12.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp16",
+   "name": "petal hit 16 · CLEAN — petals #32 · fund 117.8 Hz · first partial 2.11 · spread 1.28 · bank B +5.93 st · ring 7.3 … 10.3 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 117.8,
+    "poFirst": 2.11,
+    "poSpread": 1.28,
+    "poOffset": 5.93,
+    "poRingLo": 7.3,
+    "poRingHi": 10.3,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp17",
+   "name": "petal hit 17 · CLEAN — petals #36 · fund 144.8 Hz · first partial 4.51 · spread 1.28 · bank B +4.95 st · ring 7.5 … 9.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 144.8,
+    "poFirst": 4.51,
+    "poSpread": 1.28,
+    "poOffset": 4.95,
+    "poRingLo": 7.5,
+    "poRingHi": 9.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp18",
+   "name": "petal hit 18 · CLEAN — petals #35 · fund 137.7 Hz · first partial 4.71 · spread 0.84 · bank B +2.54 st · ring 7.6 … 10.9 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 137.7,
+    "poFirst": 4.71,
+    "poSpread": 0.84,
+    "poOffset": 2.54,
+    "poRingLo": 7.6,
+    "poRingHi": 10.9,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp19",
+   "name": "petal hit 19 · CLEAN — petals #16 · fund 54.5 Hz · first partial 2.14 · spread 1.2 · bank B +5.66 st · ring 9.2 … 12.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 54.5,
+    "poFirst": 2.14,
+    "poSpread": 1.2,
+    "poOffset": 5.66,
+    "poRingLo": 9.2,
+    "poRingHi": 12.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp20",
+   "name": "petal hit 20 · CLEAN — petals #43 · fund 202.4 Hz · first partial 1.51 · spread 1.05 · bank B +2.27 st · ring 7.6 … 12 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 202.4,
+    "poFirst": 1.51,
+    "poSpread": 1.05,
+    "poOffset": 2.27,
+    "poRingLo": 7.6,
+    "poRingHi": 12,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp21",
+   "name": "petal hit 21 · CLEAN — petals #42 · fund 196.2 Hz · first partial 3.27 · spread 0.7 · bank B +4 st · ring 8.2 … 12.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 196.2,
+    "poFirst": 3.27,
+    "poSpread": 0.7,
+    "poOffset": 4,
+    "poRingLo": 8.2,
+    "poRingHi": 12.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp22",
+   "name": "petal hit 22 · CLEAN — petals #26 · fund 87.1 Hz · first partial 3.81 · spread 0.44 · bank B +6.69 st · ring 7.9 … 11.9 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 87.1,
+    "poFirst": 3.81,
+    "poSpread": 0.44,
+    "poOffset": 6.69,
+    "poRingLo": 7.9,
+    "poRingHi": 11.9,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp23",
+   "name": "petal hit 23 · CLEAN — petals #9 · fund 37.8 Hz · first partial 3.48 · spread 0.68 · bank B +5.59 st · ring 9.7 … 14 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 37.8,
+    "poFirst": 3.48,
+    "poSpread": 0.68,
+    "poOffset": 5.59,
+    "poRingLo": 9.7,
+    "poRingHi": 14,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp24",
+   "name": "petal hit 24 · CLEAN — petals #49 · fund 277.9 Hz · first partial 3.9 · spread 0.88 · bank B +2.43 st · ring 9.1 … 12.2 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 277.9,
+    "poFirst": 3.9,
+    "poSpread": 0.88,
+    "poOffset": 2.43,
+    "poRingLo": 9.1,
+    "poRingHi": 12.2,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp25",
+   "name": "petal hit 25 · CLEAN — petals #50 · fund 286.2 Hz · first partial 4.72 · spread 1.2 · bank B +6.66 st · ring 8 … 10 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 286.2,
+    "poFirst": 4.72,
+    "poSpread": 1.2,
+    "poOffset": 6.66,
+    "poRingLo": 8,
+    "poRingHi": 10,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp26",
+   "name": "petal hit 26 · CLEAN — petals #43 · fund 202.4 Hz · first partial 1.51 · spread 1.05 · bank B +2.27 st · ring 7.6 … 12 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 202.4,
+    "poFirst": 1.51,
+    "poSpread": 1.05,
+    "poOffset": 2.27,
+    "poRingLo": 7.6,
+    "poRingHi": 12,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp27",
+   "name": "petal hit 27 · CLEAN — petals #49 · fund 277.9 Hz · first partial 3.9 · spread 0.88 · bank B +2.43 st · ring 9.1 … 12.2 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 277.9,
+    "poFirst": 3.9,
+    "poSpread": 0.88,
+    "poOffset": 2.43,
+    "poRingLo": 9.1,
+    "poRingHi": 12.2,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp28",
+   "name": "petal hit 28 · CLEAN — petals #16 · fund 54.5 Hz · first partial 2.14 · spread 1.2 · bank B +5.66 st · ring 9.2 … 12.1 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 54.5,
+    "poFirst": 2.14,
+    "poSpread": 1.2,
+    "poOffset": 5.66,
+    "poRingLo": 9.2,
+    "poRingHi": 12.1,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp29",
+   "name": "petal hit 29 · CLEAN — petals #11 · fund 42.3 Hz · first partial 1.41 · spread 0.55 · bank B +2.49 st · ring 8.7 … 11.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 42.3,
+    "poFirst": 1.41,
+    "poSpread": 0.55,
+    "poOffset": 2.49,
+    "poRingLo": 8.7,
+    "poRingHi": 11.6,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
+  },
+  {
+   "key": "pp30",
+   "name": "petal hit 30 · CLEAN — petals #27 · fund 92.6 Hz · first partial 2.63 · spread 0.56 · bank B +4.03 st · ring 8.5 … 10.9 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 92.6,
+    "poFirst": 2.63,
+    "poSpread": 0.56,
+    "poOffset": 4.03,
+    "poRingLo": 8.5,
+    "poRingHi": 10.9,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
   }
  ],
  "generated": {
@@ -7873,10 +8234,10 @@
    "when": "2026-10-07T12:28"
   },
   "piece-petals": {
-   "n": 11,
+   "n": 30,
    "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
-   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-513 --player vc --k 11 --dyn ff --level fff",
-   "when": "2026-10-08T14:25"
+   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-536 --player vc --dyn ff --level fff",
+   "when": "2026-10-08T14:48"
   }
  }
 }
