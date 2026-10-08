@@ -1,5 +1,16 @@
 #!/usr/bin/env node
-// trill_notes.js — HIS BRICKS BECOME TRILLS, EACH WITH ITS OWN CURVE (composer 2026-10-07: "turn these into trills … keep these
+// trill_notes.js — HIS BRICKS BECOME TRILLS, EACH WITH ITS OWN CURVE.
+//
+// THE STANDARD (his word 2026-10-07, RUNNING_LOG §222: "let's see if we can't get the trills a little bit more standardized so we
+// don't have to go through this every time"): a trill here is made EXACTLY as the trills of piece #5 (Scattered Substance, at 1:16)
+// — the page's trill zone, its notes laid from HIS PLAYED TRILLS (bank/trill_timing_db.json: the viola's and the cello's own
+// playing; the winds and the mallets on his cello playing, as the septet's flute and bass clarinet were), the loudness from the
+// curve's height, anchor velocity 65 … 127 through the remap (velMode 'curve'), level 0.5 · smooth 0.7 · stretch 1 · speed 1 ·
+// seed 1 · roles · eat — and TWO things of this piece: NO ACCENTED FIRST STRIKE (his word: no sforzando; `--accent` puts the
+// septet's back) and the curve a SURGE 2 → 10 (the crescendo tool's 5×, never from silence) in a curve window, his to bend.
+// One command per trill; nothing else to decide.
+//
+// (composer 2026-10-07: "turn these into trills … keep these
 // pitches … minor second … the surge style curve … I like the tools in the curve lanes … and then I can adjust the curves").
 //
 // For every note named: a TRILL zone over the note's own span (the page's own model — midiModel 'trill', `trill` block as
