@@ -1457,6 +1457,7 @@ const META_LAYERS = [6];
 const META_NAMES = { 6: 'META' };
 const META_COLORS = { 6: '#2E8B57' };
 const CURVE_LAYERS = [7, 8, 9];
+const AUTO_OPEN_CURVE_WINS = false;   // a curve window holding a curve opened itself at load until 2026-10-07 (§226, his word: off); the A / B / C buttons open them
 const TRILL_EAT_PRE_S = 0.06;      // a note starting within this BEFORE a trill is its attack and is eaten too (the strike window; RUNNING_LOG §112)
 const HELD_LO = 65, HELD_HI = 127;   // a drawn sustained note's dynamic scale (1g item 5, §120): the ensemble's, as the trill's default
 const TRILL_SWITCH_LEAD_MS = 12;   // a plain note's CC0 next to a sounding trill on the same slot goes this late (= the engine's switch-back lead)
@@ -3321,7 +3322,9 @@ const Composer = {
                 // scores that carry META shapes open the META window on load
                 // (otherwise the shapes exist but are invisible)
                 // META stays closed at load (composer 2026-09-05: 'meta panel closed by default') — the META button opens it
-                CURVE_LAYERS.forEach(L => { if (this.objects.some(o => (o.type === 'waveCurve' || o.type === 'curveDot') && o.layer === L)) this.openCurveWin(L); });
+                // THE CURVE WINDOWS STAY CLOSED AT LOAD TOO (composer 2026-10-07, RUNNING_LOG §226: "can you start it with curve lanes off? So when
+                // I reload or restart, can the curve lanes be off?") — before, a window holding a curve opened itself; the A / B / C buttons open them
+                if (AUTO_OPEN_CURVE_WINS) CURVE_LAYERS.forEach(L => { if (this.objects.some(o => (o.type === 'waveCurve' || o.type === 'curveDot') && o.layer === L)) this.openCurveWin(L); });
                 this.isDirty = false;
                 this.saveStatus.textContent = `Loaded: ${name}`;
                 localStorage.setItem('composerLastSession', this.pieceBase(name));
