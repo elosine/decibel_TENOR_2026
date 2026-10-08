@@ -97,6 +97,8 @@ Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are th
 
 **► THEN (Fable, RUNNING_LOG §206): his third "up" — the 26 rendered on the engine of 01:02:51 and MEASURED as designed (the loop holds then rings down whole; cs-001's low partials bloom over 3 s, hold, fall). The three rounds are closed. ► NEXT: his ear — F5 · `audition-petals-loop` · `audition-feedback-rings` from 0; then his word on which route carries the piece's resonant tails.**
 
+**► 2026-10-07 (Fable, RUNNING_LOG §213; DEC-43): HE IS COMPOSING SECTION 2 in `scores/piece-sec02-a1.json` (HIS, untracked) — the parked auditions stay parked. THE BRICKS AT 152.3 BECOME TRILLS, each with ITS OWN CURVE: `node tools/trill_notes.js --score <name> --ids a,b | --from s --to s [--lanes] [--interval 1] [--shape surge|bloom|arch|line|saw] [--off] [--dry]` — a trill zone over the note's own span (pitch kept, the interval UP, the lane's ordinary voice, velocity from the curve) and a stamp-shaped curve on the player's lane that the trill reads (`curveRef 'lane'` + `curveId` — the page's own mode; the note muted under it, never changed). The first made: the bass flute's D#3 at 152.34 s (`zn-422` reads `wc-423`); nine bricks wait on his ear. A lane curve has the LANE's kit (dots · diamonds · wheel); the curve WINDOWS' kit is gated by `CURVE_LAYERS` — a page change if he wants it there. ► NEXT: his ear — File ▾ → Reload · play from 150 s.**
+
 ## READ FIRST — how to work here
 
 **`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,
