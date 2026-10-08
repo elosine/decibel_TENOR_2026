@@ -1,0 +1,134 @@
+#!/usr/bin/env node
+// petal_hit.js — THE PETAL HIT (his pattern, 2026-10-07, DEC-44 · RUNNING_LOG §216): a trill runs to its end; AT ITS END another
+// player plays a short note INTO THE MICROPHONE, and that capture comes back through ONE OF THE PETALS OF RESONANCE — a setting of
+// his bank (bank/petals_bank.json), ROLLED EXHAUSTIVELY by the petals roll's own algorithm (tools/build_petals_roll.js `roll`: a
+// seeded shuffle, none twice until all 26 are used; the grit after it in his proportions). Notated precisely: a cue at the trill's end.
+//
+// What ONE hit is in the score (three objects on the player's lane, as tools/impulse.js makes an impulse):
+//   · the NOTE — the player's impulse technique (the bass clarinet's slap), the technique's middle key, 150 ms, the dynamic's velocity
+//     (mf by default, through the ladder); in the real piece the live instrument
+//   · the MIC OPENING over it — 100 ms before, 500 ms long; the sample named <player>-petal-<k>, category impulse
+//   · the RETURN at the note (`--gap` s after it) — plain behaviour, the sample processed as preset pp<k> under the `tail` envelope: the
+//     k-th roll of the piece's petals sequence (seed fixed by the FIRST hit; every later hit continues it — exhaustive by construction)
+//   The preset pp<k> is written into bank/presets.json (`deal: false`, `audition: piece-petals`): never dealt, kept by a generation.
+//   The record: `properties.petalHit` on the three objects (k · the seed · the roll's setting and grit · what it follows · the command).
+//
+//   node tools/petal_hit.js --score <name> --after <trill zone id | note id> --player bcl [--tech slap] [--dyn mf] [--gap 0] [--seed 1] [--dry]
+//   node tools/petal_hit.js --score <name> --at <seconds> --player bcl …                 at a time instead
+//   node tools/petal_hit.js --score <name> --off <k>                                      hit k out again (its three objects and its preset)
+//
+// THE RENDER: the engine renders the capture's petals variant right after the capture (the plan the page sends at a pass's first
+// frame). On the FIRST pass through a new hit the return plays the capture RAW (the render is being made, `late` in the engine's
+// window); from the second pass it plays the petals at the brick. A concert has one pass: the gap, or a real-time petals path, is a
+// design point (docs/NITS.md).
+// IT WRITES THE SCORE. The working copy's guard compares the objects WITHOUT the page's live stamps (a trill's `midiSnippet`, a
+// note's `mutedBy`) — those are the page's, not his edits; anything else unsaved refuses the tool (CTRL+S or File ▾ → Reload first;
+// `--unsaved-ok` at his word only). THE SORTING: the piece's (its lanes, its save, its route table, its bank); the roll is the piece's too.
+'use strict';
+const fs = require('fs'), path = require('path'), vm = require('vm');
+const ROOT = path.resolve(__dirname, '..');
+const K = require('./audition_kit.js');
+const { roll } = require('./build_petals_roll.js');
+const has = (k) => process.argv.includes('--' + k);
+const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 && process.argv[i + 1] != null && !/^--/.test(process.argv[i + 1]) ? process.argv[i + 1] : d; };
+const die = (msg, code) => { console.error(msg); process.exit(code || 2); };
+const MARKS = ['ppp', 'pp', 'p', 'mp', 'mf', 'f', 'ff', 'fff'];
+const TAG = 'piece-petals', CAP_MS = 16000, LEN_S = 0.150, BEFORE_S = 0.1, WINDOW_S = 0.5;   // the impulse standard (tools/impulse.js) and the petals' cap (build_petals_roll.js)
+const NAMES = { 'od-hard': 'overdrive hard', 'od-mild': 'overdrive mild', fuzz: 'fuzz', loop: '→ one loop', clean: 'clean' };
+
+const name = arg('score');
+if (!name) die('usage: node tools/petal_hit.js --score <name> (--after <id> | --at <s>) --player bcl [--tech slap] [--dyn mf] [--gap 0] [--seed 1] [--dry] | --off <k>');
+const file = path.join(ROOT, 'scores', name.replace(/\.json$/, '') + '.json');
+if (!fs.existsSync(file)) die('no such score: ' + path.relative(ROOT, file));
+const save = JSON.parse(fs.readFileSync(file, 'utf8'));
+const TRACKS = save.tracks;
+const INSTRUMENTS = vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'sandbox', 'instruments.js'), 'utf8') + '\n;INSTRUMENTS;', {});
+const ROUTE = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'elec_route.json'), 'utf8'));
+const BANK = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'petals_bank.json'), 'utf8'));
+const TextureDyn = require(path.join(ROOT, 'score', 'public', 'texture_dyn.js'));
+const REMAP = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'velocity_remap.json'), 'utf8'));
+
+// the page's working copy — his unsaved edits are not written over; the page's own live stamps are not edits
+const working = file.replace(/\.json$/, '-work.json');
+if (!has('unsaved-ok') && fs.existsSync(working)) {
+    const strip = (o) => { const c = Object.assign({}, o); delete c.midiSnippet; delete c.mutedBy; Object.keys(c).forEach((k) => { if (k[0] === '_') delete c[k]; }); return c; };
+    const essence = (s) => { try { const o = JSON.parse(s); return JSON.stringify((o.objects || []).map(strip)); } catch (e) { return s; } };
+    const same = essence(fs.readFileSync(working, 'utf8')) === essence(fs.readFileSync(file, 'utf8'));
+    if (!same && !has('dry')) die('the page holds a working copy of ' + path.basename(file) + ' with UNSAVED changes — Save (CTRL+S) or Reload there first (or --unsaved-ok at his word).', 3);
+    console.log(same ? '(the working copy differs from the save only by the page\'s own stamps, if at all; Reload in the page after this)' : '(THE PAGE HOLDS UNSAVED CHANGES — this dry run is of the SAVE, not of what the page shows)');
+}
+
+const hits = () => save.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecPlay' && o.properties && o.properties.petalHit).sort((a, b) => a.properties.petalHit.k - b.properties.petalHit.k);
+const out = [], command = 'node tools/petal_hit.js ' + process.argv.slice(2).filter((x) => x !== '--dry').join(' ');
+
+if (arg('off') != null) {
+    const k = +arg('off');
+    const gone = save.objects.filter((o) => o.properties && o.properties.petalHit && o.properties.petalHit.k === k);
+    if (!gone.length) die('no petal hit ' + k + ' in ' + name + ' (' + hits().length + ' hits: ' + hits().map((h) => h.properties.petalHit.k).join(', ') + ')', 1);
+    save.objects = save.objects.filter((o) => !gone.includes(o));
+    out.push('petal hit ' + k + ' off: ' + gone.map((o) => o.id + ' ' + (o.midiModel || o.type)).join(' · '));
+    if (!has('dry')) {   // its preset too — the tag's rows re-written without it
+        const P = K.readJson(K.PRESETS), rows = P.presets.filter((p) => p.audition === TAG && p.key !== 'pp' + String(k).padStart(2, '0')).map((p) => { const c = Object.assign({}, p); delete c.deal; delete c.audition; return c; });
+        K.writePresets(TAG, rows, 'the piece\'s petal hits — the petals of resonance rolled exhaustively at the trills\' ends (DEC-44)', command);
+    }
+} else {
+    // WHEN: the end of what it follows, or a time
+    let T, follows = null;
+    if (arg('after')) {
+        follows = save.objects.find((o) => o.id === arg('after'));
+        if (!follows) die('no object ' + arg('after') + ' in the score');
+        T = follows.type === 'zone' ? follows.endTime : follows.endSeconds;
+        if (T == null) die(arg('after') + ' has no end');
+    } else if (arg('at') != null) T = +arg('at');
+    else die('--after <id> or --at <seconds>');
+    T = Math.round(T * 1000) / 1000;
+    // WHO: the player, by the route's name, his short name or the lane
+    const who = String(arg('player', 'bcl')).toLowerCase();
+    const lane = TRACKS.findIndex((t) => [t.id, t.short, t.label, t.instKey].map((x) => String(x || '').toLowerCase()).includes(who) || (ROUTE.players.find((p) => p.name === who) || {}).port === (INSTRUMENTS[t.instKey] || {}).port);
+    if (lane < 0) die('--player: no lane for "' + who + '" (' + TRACKS.map((t) => t.short).join(', ') + ')');
+    const inst = INSTRUMENTS[TRACKS[lane].instKey];
+    const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';
+    if (!player) die(TRACKS[lane].label + ' has no microphone in bank/elec_route.json');
+    const techKey = arg('tech', 'slap'), tech = (inst.techniques || []).find((q) => q.key === techKey);
+    if (!tech) die(TRACKS[lane].label + ' has no technique "' + techKey + '" — one of: ' + (inst.techniques || []).map((q) => q.key).join(', '));
+    const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
+    let note = arg('note') != null ? +arg('note') : Math.round((lo + hi) / 2);
+    if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((q) => q.midi === note)) note = tech.keys[Math.floor(tech.keys.length / 2)].midi;
+    const dyn = arg('dyn', 'mf');
+    if (!MARKS.includes(dyn)) die('--dyn: a mark (' + MARKS.join(' ') + ')');
+    const vel = Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, TRACKS[lane].instKey, note, MARKS.indexOf(dyn) / (MARKS.length - 1)))));
+    const gap = +arg('gap', 0);
+    // THE ROLL: the k-th of the piece's sequence; the seed is the first hit's
+    const prev = hits(), k = prev.length ? prev[prev.length - 1].properties.petalHit.k + 1 : 1;
+    const seed = prev.length ? prev[0].properties.petalHit.seed : Math.max(1, Math.round(+arg('seed', 1)));
+    if (prev.length && arg('seed') != null && +arg('seed') !== seed) die('the piece\'s petals sequence runs on seed ' + seed + ' since hit 1 — --seed changes nothing after it (--off every hit to start over)');
+    const d = roll(BANK, k, seed)[k - 1];
+    const key = 'pp' + String(k).padStart(2, '0');
+    const args = Object.assign({ poMix: 1, poFund: d.setting.fund, poFirst: d.setting.first, poSpread: d.setting.spread, poOffset: d.setting.offset, poRingLo: d.setting.ringLo, poRingHi: d.setting.ringHi, poInLen: 1 }, d.effect === 'clean' ? {} : BANK.effects.dials[d.effect]);
+    const preset = { key, name: 'petal hit ' + k + ' · ' + NAMES[d.effect].toUpperCase() + ' — petals #' + d.setting.n + ' · fund ' + d.setting.fund + ' Hz · first partial ' + d.setting.first + ' · spread ' + d.setting.spread + ' · bank B +' + d.setting.offset + ' st · ring ' + d.setting.ringLo + ' … ' + d.setting.ringHi + ' s', effect: 'petalsOrig', class: 'time', capMs: CAP_MS, args };
+    // THE OBJECTS
+    let nextId = Math.max(+save.nextId || 1, 1 + save.objects.reduce((m, o) => { const q = /-(\d+)$/.exec(String(o.id || '')); return q ? Math.max(m, +q[1]) : m; }, 0));
+    const smp = player + '-petal-' + k;
+    const rec = { k, seed, setting: d.setting.n, fund: d.setting.fund, effect: d.effect, preset: key, sample: smp, after: follows ? follows.id : null, at: T, command };
+    const y = Math.max(1, Math.round((vel / 127) * 100) / 10);
+    const noteObj = { id: 'wc-' + (nextId++), type: 'waveCurve', layer: lane, startSeconds: T, endSeconds: Math.round((T + LEN_S) * 1000) / 1000,
+        nodes: [{ pos: 0, y, smooth: 0.25 }, { pos: 1, y, smooth: 0.25 }], segments: [{ model: 'power', slope: 0 }], color: '#607D8B', fillMode: 'bottom', opacity: 0.55,
+        performanceNotes: 'petal hit ' + k + ' — into the microphone, at the end of the trill', properties: { petalHit: rec }, sonifyNote: note, technique: tech.key, sonifyMode: 'plain', recVel: vel };
+    const zone = (start, end, elec, model, yOffset) => ({ id: 'zn-' + (nextId++), type: 'zone', layer: lane, startTime: Math.round(start * 1000) / 1000, endTime: Math.round(end * 1000) / 1000, player: '', instrument: '', zoneFunction: 'elec', midiModel: model,
+        ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [], ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
+        color: model === 'elecPlay' ? '#8E24AA' : '#00897B', opacity: 0.35, yOffset, zoneHeight: 0.2, performanceNotes: '', properties: { petalHit: rec }, elec });
+    const open = zone(Math.max(0, T - BEFORE_S), T - BEFORE_S + WINDOW_S, { name: smp, category: 'impulse', player }, 'elecOpen', 0);
+    const ret = zone(T + gap, T + gap + 0.5, { name: smp, label: 'petal ' + k + ' · #' + d.setting.n + ' ' + Math.round(d.setting.fund) + ' Hz' + (d.effect === 'clean' ? '' : ' · ' + NAMES[d.effect]), variants: { [smp]: key + '-tail' } }, 'elecPlay', 1);
+    save.objects.push(noteObj, open, ret);
+    save.nextId = nextId;
+    out.push('petal hit ' + k + (follows ? ' after ' + follows.id + (follows.trill ? ' (the trill)' : '') : '') + ' at ' + T.toFixed(3) + ' s — ' + TRACKS[lane].label + ' ' + tech.label + ' key ' + note + ' vel ' + vel + ' (' + dyn + ') 150 ms · mic ' + smp + ' (' + open.startTime + ' → ' + open.endTime + ') · return ' + ret.id + ' at ' + ret.startTime + ' s: ' + key + ' = petals #' + d.setting.n + ' ' + d.setting.fund + ' Hz · ' + NAMES[d.effect] + ' · seed ' + seed);
+    if (!has('dry')) {
+        const P = K.readJson(K.PRESETS), rows = P.presets.filter((p) => p.audition === TAG && p.key !== key).map((p) => { const c = Object.assign({}, p); delete c.deal; delete c.audition; return c; }).concat([preset]);
+        K.writePresets(TAG, rows, 'the piece\'s petal hits — the petals of resonance rolled exhaustively at the trills\' ends (DEC-44); seed ' + seed, command);
+    }
+}
+console.log(out.join('\n'));
+if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
+save.metadata = save.metadata || {}; save.metadata.modified = new Date().toISOString();
+fs.writeFileSync(file, JSON.stringify(save, null, 1) + '\n');
+console.log('written: ' + path.relative(ROOT, file) + ' — in the page: File ▾ → Reload; a pass with the engine up captures the hit and renders its petals (the first pass plays it raw, the second the petals).');

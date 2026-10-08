@@ -7522,6 +7522,25 @@
    },
    "deal": false,
    "audition": "drones"
+  },
+  {
+   "key": "pp01",
+   "name": "petal hit 1 · CLEAN — petals #11 · fund 42.3 Hz · first partial 1.41 · spread 0.55 · bank B +2.49 st · ring 8.7 … 11.6 s",
+   "effect": "petalsOrig",
+   "class": "time",
+   "capMs": 16000,
+   "args": {
+    "poMix": 1,
+    "poFund": 42.3,
+    "poFirst": 1.41,
+    "poSpread": 0.55,
+    "poOffset": 2.49,
+    "poRingLo": 8.7,
+    "poRingHi": 11.6,
+    "poInLen": 1
+   },
+   "deal": false,
+   "audition": "piece-petals"
   }
  ],
  "generated": {
@@ -7662,6 +7681,12 @@
    "what": "the petals roll — his 26 kept settings dealt at random, the grit in his proportions (seed 1, 40 bricks)",
    "command": "node tools/build_petals_roll.js --name audition-petals-roll --n 40 --gap 6 --seed 1",
    "when": "2026-10-07T12:28"
+  },
+  "piece-petals": {
+   "n": 1,
+   "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
+   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-424 --player bcl",
+   "when": "2026-10-08T00:51"
   }
  }
 }
