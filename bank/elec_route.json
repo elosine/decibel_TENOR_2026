@@ -126,6 +126,11 @@
       "H_follow": 1,
       "I_order": "shuffled",
       "_page": "the brick starts at the live note and runs 0.5 s per sample"
+    },
+    "live": {
+      "_what": "THE PETALS LIVE (PLAN 10.14; RUNNING_LOG §232; electronics/sc/petals_live.scd): a return that sits AT its own mic opening and is processed by a petals preset (effect petalsOrig, the ring version) is made LIVE — the player's microphone straight into the bank of resonators as the note is played; no buffer. on: 1 | 0 (0 = such a return plays its earlier render, as before 2026-10-07). windowMs: how far after the opening's START the return may sit and still be live (the note is 100 ms into an opening made with M, so 300 = up to 200 ms after the note). Read at the engine's START (tools/elec.js start → LE_LIVE).",
+      "on": 1,
+      "windowMs": 300
     }
   },
   "latencyLoop": {

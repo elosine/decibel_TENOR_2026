@@ -129,6 +129,9 @@ function engineEnv() {
     if (ch.I_order != null) chFlat.shuffle = ch.I_order === 'shuffled' ? 1 : 0;
     const chSpec = Object.entries(chFlat).filter(([k, v]) => typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
     if (chSpec) env.LE_CHAIN = chSpec;
+    // PLAN 10.14: THE PETALS LIVE (bank/elec_route.json return.live) — on · windowMs, the engine's own names (electronics/sc/petals_live.scd liveDefaults)
+    const lvLive = Object.entries((CFG.return && CFG.return.live) || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
+    if (lvLive) env.LE_LIVE = lvLive;
     // PLAN 1.4 · 11.2: THE LADDER OF MARKS (bank/elec_route.json level) — reference = the LUFS of the electronics' fff, the step, the lift's cap, the floor;
     // driveRef (11.4) and bleedDb (11.7) ride with it. Flat numbers, the engine's own names (electronics/sc/level.scd levelDefaults).
     const lvSpec = Object.entries(CFG.level || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
