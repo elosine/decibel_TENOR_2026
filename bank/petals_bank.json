@@ -2,10 +2,8 @@
  "_about": "HIS petals of resonance for the piece (DEC-42, 2026-10-07; RUNNING_LOG §208): the filter-bank settings he kept from audition-petals-spectrum (seed 1), by their brick numbers, with the exact drawn dials; and his PROPORTIONS for what follows the petals — preferences, to be dialled in when the music is made. A setting is the petalsOrig stage: fund · first partial · spread · bank B offset (st) · ring from … to (s); inLen 1. The roll that deals them: tools/build_petals_roll.js.",
  "effects": {
   "_doc": "the grit after the petals — his words: \"mostly non-affected\"; when affected, \"the overdrive hard as the main effect, the one loop as a more rare effect, the fuzz once in a while, the overdrive mild as a subset of the overdrive hard — for every few overdrives one of them is a mild\". cleanShare is the share of bricks with NO grit; the weights divide the rest.",
-  "cleanShare": 0.65,
-  "weights": {
-   "loop": 0.2
-  },
+  "cleanShare": 1,
+  "weights": {},
   "dials": {
    "od-hard": {
     "odMix": 1,
@@ -44,9 +42,11 @@
   "retired": {
    "od-hard": 0.55,
    "fuzz": 0.1,
-   "_doc": "OUT OF THE POOL at his word 2026-10-07 (RUNNING_LOG §221): \"let us take the hard overdrive and any of the fuzz out of the available pool of pedals of resonance. We will keep the soft overdrives and the loop ones for now.\" The dials stay below; a weight moved back here puts a grit back in the roll. AND the mild overdrive, the same evening: \"Let us even take the mild overdrive ones out.\"",
-   "od-mild": 0.15
-  }
+   "_doc": "OUT OF THE POOL at his word 2026-10-07 (RUNNING_LOG §221): \"let us take the hard overdrive and any of the fuzz out of the available pool of pedals of resonance. We will keep the soft overdrives and the loop ones for now.\" The dials stay below; a weight moved back here puts a grit back in the roll. AND the mild overdrive, the same evening: \"Let us even take the mild overdrive ones out.\" AND the loop, the same evening — ALL GRIT OUT: \"let us take all the distorted ones out. Let us just have the straight pedals of resonance.\" cleanShare 1 (was 0.65, kept as cleanShareWas); the settings sequence of the roll is unchanged.",
+   "od-mild": 0.15,
+   "loop": 0.2
+  },
+  "cleanShareWas": 0.65
  },
  "source": "audition-petals-spectrum · seed 1 · node tools/build_petals_spectrum.js --n 56 --gap 6 --seed 1 --flo 25 --fhi 400 --clean 0.5",
  "kept": "2026-10-07 — his list: 1 2 3 5 6 7 8 9 11 15 16 21 25 26 27 28 32 35 36 41 42 43 44 49 50 52",

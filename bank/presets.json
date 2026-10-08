@@ -7601,7 +7601,7 @@
   },
   {
    "key": "pp03",
-   "name": "petal hit 3 · → ONE LOOP — petals #6 · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s",
+   "name": "petal hit 3 · CLEAN — petals #6 · fund 32.4 Hz · first partial 3.63 · spread 1.1 · bank B +5.14 st · ring 7.8 … 10.1 s",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -7613,29 +7613,14 @@
     "poOffset": 5.14,
     "poRingLo": 7.8,
     "poRingHi": 10.1,
-    "poInLen": 1,
-    "fbMix": 1,
-    "fbOwn": 0,
-    "fbBloom": 1,
-    "fbHold": 6,
-    "fbDrive": 6,
-    "fbTone": 2500,
-    "fbPath": 12,
-    "fbClimb": 0.3,
-    "fbWobble": 0.4,
-    "fbS1": 0,
-    "fbS2": 0,
-    "fbS3": 0,
-    "fbS4": 0,
-    "fbS5": 0,
-    "fbS6": 0
+    "poInLen": 1
    },
    "deal": false,
    "audition": "piece-petals"
   },
   {
    "key": "pp04",
-   "name": "petal hit 4 · → ONE LOOP — petals #52 · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s",
+   "name": "petal hit 4 · CLEAN — petals #52 · fund 318.3 Hz · first partial 4.56 · spread 1.04 · bank B +5.13 st · ring 9.5 … 12.6 s",
    "effect": "petalsOrig",
    "class": "time",
    "capMs": 16000,
@@ -7647,22 +7632,7 @@
     "poOffset": 5.13,
     "poRingLo": 9.5,
     "poRingHi": 12.6,
-    "poInLen": 1,
-    "fbMix": 1,
-    "fbOwn": 0,
-    "fbBloom": 1,
-    "fbHold": 6,
-    "fbDrive": 6,
-    "fbTone": 2500,
-    "fbPath": 12,
-    "fbClimb": 0.3,
-    "fbWobble": 0.4,
-    "fbS1": 0,
-    "fbS2": 0,
-    "fbS3": 0,
-    "fbS4": 0,
-    "fbS5": 0,
-    "fbS6": 0
+    "poInLen": 1
    },
    "deal": false,
    "audition": "piece-petals"
@@ -7811,7 +7781,7 @@
    "n": 6,
    "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
    "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-436 --player vc --k 4 --dyn ff --level fff --unsaved-ok",
-   "when": "2026-10-08T01:37"
+   "when": "2026-10-08T01:40"
   }
  }
 }

@@ -5233,3 +5233,6 @@ His word after hearing the petals at the brick. TWO LEVERS, both set: **the play
 **THE POOL, narrower (DEC-45, the addendum):** the mild overdrive retired too — `bank/petals_bank.json` `effects.weights` = { loop 0.2 } (cleanShare 0.65: two of three hits clean, the third through the one loop). **Hit 4 (the cello's) redone** (`--off 4` · `--k 4`): `pp04` petals #52 318.3 Hz → **the one loop** (key 36). His page's copy held no edit of his (checked; behind the save by the AI's writes — `--unsaved-ok`).
 
 **NOT HEARD.** His steps: File ▾ → Reload · play 152 … 167 s (the cello trill at 155 s; the cello's hit at 162.3 s re-captures and re-renders — twice for that one).
+
+## §225
+**2026-10-07 — *"let's take all the distorted ones out. Let's just have the straight pedals of resonance."*** — the loop retired too: `bank/petals_bank.json` `effects.weights` {} and `cleanShare` 1 (0.65 kept as `cleanShareWas`; the three grits' dials under `retired`, one word puts any back). The roll's settings sequence is unchanged (the deck is shuffled before the first coin; a clean coin draws no second number). Hits 3 (viola, 161.378) and 4 (cello, 162.317) redone clean: `pp03` #6 32.4 Hz · `pp04` #52 318.3 Hz — all six clean now. His page's copy held no edit of his (checked). NOT HEARD; his step: File ▾ → Reload · play 152 … 167 s.
