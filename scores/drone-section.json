@@ -42,9 +42,9 @@
  "assets": {},
  "metadata": {
   "created": "2026-10-08T19:29:08.303Z",
-  "modified": "2026-10-08T20:17:09.264Z",
+  "modified": "2026-10-08T20:36:48.061Z",
   "builtBy": "tools/build_drone_section.js",
-  "note": "THE DRONE SECTION (PLAN.md § 1.7; DEC-48 … DEC-54): 15 recordings (the entries his, from drone-start-mics) and 40 drones from seed 1. Written by tools/build_drone_section.js; his from then on. Each drone asks for <player>-drone-<k>~dn<NN>-shape; the sheet: docs/DRONE_SECTION.md.",
+  "note": "THE DRONE SECTION (PLAN.md § 1.7; DEC-48 … DEC-54): 15 recordings (the entries his, from drone-start-mics) and 37 drones from seed 1. Written by tools/build_drone_section.js; his from then on. Each drone asks for <player>-drone-<k>~dn<NN>-shape; the sheet: docs/DRONE_SECTION.md.",
   "droneSection": {
    "seedAsked": 1,
    "seedUsed": 1,
@@ -53,13 +53,13 @@
    "entry": "his",
    "from": "drone-start-mics",
    "command": "node tools/build_drone_section.js --score drone-section --from drone-start-mics --seed 1 --replace",
-   "made": "2026-10-08T20:17:09.264Z",
+   "made": "2026-10-08T20:36:48.061Z",
    "recordings": 15,
-   "drones": 40,
+   "drones": 37,
    "density": {
     "max": 5,
     "mean": 3.11,
-    "line": "000000012234453345544455455553444453455344433434444455"
+    "line": "000000012234453345544455553454334444444333454334555555"
    }
   }
  },
@@ -586,6 +586,8 @@
     "drone": {
      "player": "bfl",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 1,
      "i": 1,
      "key": "dn01",
@@ -753,6 +755,8 @@
     "drone": {
      "player": "bcl",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 1,
      "i": 2,
      "key": "dn02",
@@ -917,6 +921,8 @@
     "drone": {
      "player": "vc",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 1,
      "i": 3,
      "key": "dn03",
@@ -1166,6 +1172,8 @@
     "drone": {
      "player": "va",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 1,
      "i": 4,
      "key": "dn04",
@@ -1333,6 +1341,8 @@
     "drone": {
      "player": "perc",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 1,
      "i": 5,
      "key": "dn05",
@@ -1412,6 +1422,8 @@
     "drone": {
      "player": "bcl",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 1,
      "i": 7,
      "key": "dn07",
@@ -1661,6 +1673,8 @@
     "drone": {
      "player": "bfl",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 1,
      "i": 8,
      "key": "dn08",
@@ -1740,6 +1754,8 @@
     "drone": {
      "player": "vc",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 1,
      "i": 10,
      "key": "dn10",
@@ -1822,6 +1838,8 @@
     "drone": {
      "player": "perc",
      "rec": 1,
+     "src": 1,
+     "last": false,
      "n": 2,
      "i": 6,
      "key": "dn06",
@@ -1901,6 +1919,8 @@
     "drone": {
      "player": "bfl",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 2,
      "i": 9,
      "key": "dn09",
@@ -2068,6 +2088,8 @@
     "drone": {
      "player": "perc",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 1,
      "i": 11,
      "key": "dn11",
@@ -2147,6 +2169,8 @@
     "drone": {
      "player": "va",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 1,
      "i": 13,
      "key": "dn13",
@@ -2311,6 +2335,8 @@
     "drone": {
      "player": "bcl",
      "rec": 3,
+     "src": 3,
+     "last": false,
      "n": 1,
      "i": 14,
      "key": "dn14",
@@ -2362,11 +2388,11 @@
    }
   },
   {
-   "id": "zn-133",
+   "id": "zn-132",
    "type": "zone",
    "layer": 0,
    "startTime": 107.18,
-   "endTime": 118.2,
+   "endTime": 126.75,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2393,46 +2419,51 @@
     "drone": {
      "player": "bfl",
      "rec": 3,
+     "src": 3,
+     "last": false,
      "n": 1,
-     "i": 20,
-     "key": "dn20",
-     "lengthS": 11.02,
-     "fadeInS": 1.32,
-     "fadeOutS": 3.63,
+     "i": 19,
+     "key": "dn19",
+     "lengthS": 19.57,
+     "fadeInS": 1.31,
+     "fadeOutS": 1.94,
      "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
+      "name": "3-stage linear",
+      "icEnv": 1,
+      "set": "smooth"
      },
      "pace": {
       "band": [
-       82.5,
-       100
+       47.5,
+       65
       ],
-      "factor": 94.25,
-      "speed": 0.0106
+      "factor": 59.25,
+      "speed": 0.0169
      },
      "overlaps": {
       "band": [
-       17,
-       22
+       27,
+       33
       ],
-      "n": 18
+      "n": 28
      },
      "size": {
-      "mode": "arch",
-      "from": 0.49,
-      "to": 1.84,
-      "line": "0.49@0,1.84@5509,0.49@11017"
+      "mode": "steady",
+      "band": [
+       0.12,
+       0.3
+      ],
+      "name": "rough",
+      "s": 0.24
      },
-     "startFrac": 0.66
+     "startFrac": 0.79
     }
    },
    "elec": {
     "name": "bfl-drone-3",
-    "label": "D1 · expodec · 1/94 · ov 18 · arch 0.49 → 1.84 s",
+    "label": "D1 · 3-stage linear · 1/59 · ov 28 · rough 0.24 s",
     "variants": {
-     "bfl-drone-3": "dn20-shape"
+     "bfl-drone-3": "dn19-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -2472,6 +2503,8 @@
     "drone": {
      "player": "perc",
      "rec": 2,
+     "src": 2,
+     "last": false,
      "n": 2,
      "i": 12,
      "key": "dn12",
@@ -2523,11 +2556,11 @@
    }
   },
   {
-   "id": "zn-140",
+   "id": "zn-137",
    "type": "zone",
    "layer": 5,
    "startTime": 110.68,
-   "endTime": 145.35,
+   "endTime": 126.83,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2554,46 +2587,51 @@
     "drone": {
      "player": "vc",
      "rec": 3,
+     "src": 3,
+     "last": false,
      "n": 1,
-     "i": 27,
-     "key": "dn27",
-     "lengthS": 34.67,
-     "fadeInS": 1.62,
-     "fadeOutS": 1.48,
+     "i": 24,
+     "key": "dn24",
+     "lengthS": 16.15,
+     "fadeInS": 1.59,
+     "fadeOutS": 5.92,
      "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
+      "name": "Hann",
+      "icEnv": 0,
       "set": "smooth"
      },
      "pace": {
       "band": [
-       47.5,
-       65
+       30,
+       47.5
       ],
-      "factor": 56.45,
-      "speed": 0.0177
+      "factor": 36.58,
+      "speed": 0.0273
      },
      "overlaps": {
       "band": [
        17,
        22
       ],
-      "n": 19
+      "n": 20
      },
      "size": {
-      "mode": "rising",
-      "from": 0.07,
-      "to": 1.55,
-      "line": "0.07@0,1.55@34668"
+      "mode": "steady",
+      "band": [
+       0.3,
+       0.8
+      ],
+      "name": "tone",
+      "s": 0.56
      },
-     "startFrac": 0.78
+     "startFrac": 0.4
     }
    },
    "elec": {
     "name": "vc-drone-3",
-    "label": "D1 · 3-stage linear · 1/56 · ov 19 · rising 0.07 → 1.55 s",
+    "label": "D1 · Hann · 1/37 · ov 20 · tone 0.56 s",
     "variants": {
-     "vc-drone-3": "dn27-shape"
+     "vc-drone-3": "dn24-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -2602,11 +2640,11 @@
    }
   },
   {
-   "id": "zn-144",
+   "id": "zn-142",
    "type": "zone",
    "layer": 4,
    "startTime": 126.88,
-   "endTime": 159.25,
+   "endTime": 157.85,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2633,24 +2671,26 @@
     "drone": {
      "player": "va",
      "rec": 3,
+     "src": 3,
+     "last": false,
      "n": 1,
-     "i": 31,
-     "key": "dn31",
-     "lengthS": 32.37,
-     "fadeInS": 2.39,
-     "fadeOutS": 1.33,
+     "i": 29,
+     "key": "dn29",
+     "lengthS": 30.97,
+     "fadeInS": 1.1,
+     "fadeOutS": 1.39,
      "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
-      "set": "smooth"
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
      },
      "pace": {
       "band": [
-       65,
-       82.5
+       30,
+       47.5
       ],
-      "factor": 74.3,
-      "speed": 0.0135
+      "factor": 43.05,
+      "speed": 0.0232
      },
      "overlaps": {
       "band": [
@@ -2660,19 +2700,19 @@
       "n": 12
      },
      "size": {
-      "mode": "rising",
-      "from": 0.1,
-      "to": 1.07,
-      "line": "0.1@0,1.07@32367"
+      "mode": "arch",
+      "from": 0.4,
+      "to": 1.43,
+      "line": "0.4@0,1.43@15484,0.4@30967"
      },
-     "startFrac": 0.04
+     "startFrac": 0.17
     }
    },
    "elec": {
     "name": "va-drone-3",
-    "label": "D1 · 3-stage linear · 1/74 · ov 12 · rising 0.1 → 1.07 s",
+    "label": "D1 · expodec · 1/43 · ov 12 · arch 0.4 → 1.43 s",
     "variants": {
-     "va-drone-3": "dn31-shape"
+     "va-drone-3": "dn29-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -2681,90 +2721,11 @@
    }
   },
   {
-   "id": "zn-134",
-   "type": "zone",
-   "layer": 0,
-   "startTime": 127.61,
-   "endTime": 140.66,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bfl",
-     "rec": 3,
-     "n": 2,
-     "i": 21,
-     "key": "dn21",
-     "lengthS": 13.05,
-     "fadeInS": 1.41,
-     "fadeOutS": 1.92,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       30,
-       47.5
-      ],
-      "factor": 40.85,
-      "speed": 0.0245
-     },
-     "overlaps": {
-      "band": [
-       27,
-       33
-      ],
-      "n": 31
-     },
-     "size": {
-      "mode": "falling",
-      "from": 0.08,
-      "to": 1.09,
-      "line": "1.09@0,0.08@13050"
-     },
-     "startFrac": 0.01
-    }
-   },
-   "elec": {
-    "name": "bfl-drone-3",
-    "label": "D2 · Hann · 1/41 · ov 31 · falling 0.08 → 1.09 s",
-    "variants": {
-     "bfl-drone-3": "dn21-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-148",
+   "id": "zn-146",
    "type": "zone",
    "layer": 2,
    "startTime": 130.75,
-   "endTime": 146.71,
+   "endTime": 140.92,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2791,49 +2752,129 @@
     "drone": {
      "player": "perc",
      "rec": 3,
+     "src": 3,
+     "last": false,
      "n": 1,
-     "i": 35,
-     "key": "dn35",
-     "lengthS": 15.96,
-     "fadeInS": 1.87,
-     "fadeOutS": 1.92,
+     "i": 33,
+     "key": "dn33",
+     "lengthS": 10.17,
+     "fadeInS": 4.56,
+     "fadeOutS": 1.58,
      "window": {
-      "name": "Hann",
-      "icEnv": 0,
+      "name": "3-stage linear",
+      "icEnv": 1,
       "set": "smooth"
      },
      "pace": {
       "band": [
-       65,
-       82.5
+       47.5,
+       65
       ],
-      "factor": 66.28,
-      "speed": 0.0151
+      "factor": 50.98,
+      "speed": 0.0196
      },
      "overlaps": {
       "band": [
        27,
        33
       ],
-      "n": 32
+      "n": 29
      },
      "size": {
-      "mode": "steady",
-      "band": [
-       0.3,
-       0.8
-      ],
-      "name": "tone",
-      "s": 0.62
+      "mode": "rising",
+      "from": 0.05,
+      "to": 1.55,
+      "line": "0.05@0,1.55@10171"
      },
-     "startFrac": 0.62
+     "startFrac": 0.68
     }
    },
    "elec": {
     "name": "perc-drone-3",
-    "label": "D1 · Hann · 1/66 · ov 32 · tone 0.62 s",
+    "label": "D1 · 3-stage linear · 1/51 · ov 29 · rising 0.05 → 1.55 s",
     "variants": {
-     "perc-drone-3": "dn35-shape"
+     "perc-drone-3": "dn33-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-138",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 134.67,
+   "endTime": 146.71,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "vc",
+     "rec": 3,
+     "src": 2,
+     "last": false,
+     "n": 2,
+     "i": 25,
+     "key": "dn25",
+     "lengthS": 12.04,
+     "fadeInS": 1.61,
+     "fadeOutS": 1.65,
+     "window": {
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
+     },
+     "pace": {
+      "band": [
+       65,
+       82.5
+      ],
+      "factor": 78.99,
+      "speed": 0.0127
+     },
+     "overlaps": {
+      "band": [
+       17,
+       22
+      ],
+      "n": 19
+     },
+     "size": {
+      "mode": "rising",
+      "from": 0.31,
+      "to": 1.41,
+      "line": "0.31@0,1.41@12040"
+     },
+     "startFrac": 0.35
+    }
+   },
+   "elec": {
+    "name": "vc-drone-2",
+    "label": "D2 ← REC2 · expodec · 1/79 · ov 19 · rising 0.31 → 1.41 s",
+    "variants": {
+     "vc-drone-2": "dn25-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -2873,6 +2914,8 @@
     "drone": {
      "player": "bcl",
      "rec": 3,
+     "src": 2,
+     "last": false,
      "n": 2,
      "i": 15,
      "key": "dn15",
@@ -2905,14 +2948,14 @@
       "to": 1.55,
       "line": "1.55@0,0.48@31070"
      },
-     "startFrac": 0.21
+     "startFrac": 0.94
     }
    },
    "elec": {
-    "name": "bcl-drone-3",
-    "label": "D2 · expodec · 1/58 · ov 14 · falling 0.48 → 1.55 s",
+    "name": "bcl-drone-2",
+    "label": "D2 ← REC2 · expodec · 1/58 · ov 14 · falling 0.48 → 1.55 s",
     "variants": {
-     "bcl-drone-3": "dn15-shape"
+     "bcl-drone-2": "dn15-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -2921,11 +2964,11 @@
    }
   },
   {
-   "id": "zn-135",
+   "id": "zn-133",
    "type": "zone",
    "layer": 0,
-   "startTime": 150.73,
-   "endTime": 174.54,
+   "startTime": 140,
+   "endTime": 164.11,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -2952,12 +2995,179 @@
     "drone": {
      "player": "bfl",
      "rec": 3,
+     "src": 1,
+     "last": false,
+     "n": 2,
+     "i": 20,
+     "key": "dn20",
+     "lengthS": 24.11,
+     "fadeInS": 2.41,
+     "fadeOutS": 1.41,
+     "window": {
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
+     },
+     "pace": {
+      "band": [
+       65,
+       82.5
+      ],
+      "factor": 81.03,
+      "speed": 0.0123
+     },
+     "overlaps": {
+      "band": [
+       22,
+       27
+      ],
+      "n": 24
+     },
+     "size": {
+      "mode": "steady",
+      "band": [
+       0.6,
+       1.2
+      ],
+      "name": "tremolo",
+      "s": 1.15
+     },
+     "startFrac": 0.2
+    }
+   },
+   "elec": {
+    "name": "bfl-drone-1",
+    "label": "D2 ← REC1 · expodec · 1/81 · ov 24 · tremolo 1.15 s",
+    "variants": {
+     "bfl-drone-1": "dn20-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-147",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 158.23,
+   "endTime": 195.89,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "perc",
+     "rec": 3,
+     "src": 1,
+     "last": false,
+     "n": 2,
+     "i": 34,
+     "key": "dn34",
+     "lengthS": 37.66,
+     "fadeInS": 3.26,
+     "fadeOutS": 1.05,
+     "window": {
+      "name": "3-stage linear",
+      "icEnv": 1,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       65,
+       82.5
+      ],
+      "factor": 76.95,
+      "speed": 0.013
+     },
+     "overlaps": {
+      "band": [
+       17,
+       22
+      ],
+      "n": 21
+     },
+     "size": {
+      "mode": "falling",
+      "from": 0.07,
+      "to": 1.29,
+      "line": "1.29@0,0.07@37660"
+     },
+     "startFrac": 0.13
+    }
+   },
+   "elec": {
+    "name": "perc-drone-1",
+    "label": "D2 ← REC1 · 3-stage linear · 1/77 · ov 21 · falling 0.07 → 1.29 s",
+    "variants": {
+     "perc-drone-1": "dn34-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-139",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 163.49,
+   "endTime": 199.3,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "vc",
+     "rec": 3,
+     "src": 1,
+     "last": false,
      "n": 3,
-     "i": 22,
-     "key": "dn22",
-     "lengthS": 23.81,
-     "fadeInS": 1.8,
-     "fadeOutS": 2.75,
+     "i": 26,
+     "key": "dn26",
+     "lengthS": 35.81,
+     "fadeInS": 1.39,
+     "fadeOutS": 1.06,
      "window": {
       "name": "Hann",
       "icEnv": 0,
@@ -2968,31 +3178,685 @@
        82.5,
        100
       ],
-      "factor": 89.05,
-      "speed": 0.0112
+      "factor": 85.63,
+      "speed": 0.0117
+     },
+     "overlaps": {
+      "band": [
+       12,
+       17
+      ],
+      "n": 15
+     },
+     "size": {
+      "mode": "falling",
+      "from": 0.09,
+      "to": 1.73,
+      "line": "1.73@0,0.09@35810"
+     },
+     "startFrac": 0.82
+    }
+   },
+   "elec": {
+    "name": "vc-drone-1",
+    "label": "D3 ← REC1 · Hann · 1/86 · ov 15 · falling 0.09 → 1.73 s",
+    "variants": {
+     "vc-drone-1": "dn26-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-143",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 168.48,
+   "endTime": 180.09,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "va",
+     "rec": 3,
+     "src": 3,
+     "last": false,
+     "n": 2,
+     "i": 30,
+     "key": "dn30",
+     "lengthS": 11.61,
+     "fadeInS": 1.07,
+     "fadeOutS": 1.33,
+     "window": {
+      "name": "Hann",
+      "icEnv": 0,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       82.5,
+       100
+      ],
+      "factor": 89.74,
+      "speed": 0.0111
+     },
+     "overlaps": {
+      "band": [
+       27,
+       33
+      ],
+      "n": 29
+     },
+     "size": {
+      "mode": "rising",
+      "from": 0.1,
+      "to": 1.07,
+      "line": "0.1@0,1.07@11610"
+     },
+     "startFrac": 0.55
+    }
+   },
+   "elec": {
+    "name": "va-drone-3",
+    "label": "D2 · Hann · 1/90 · ov 29 · rising 0.1 → 1.07 s",
+    "variants": {
+     "va-drone-3": "dn30-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-134",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 176.88,
+   "endTime": 205.48,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "bfl",
+     "rec": 3,
+     "src": 2,
+     "last": false,
+     "n": 3,
+     "i": 21,
+     "key": "dn21",
+     "lengthS": 28.6,
+     "fadeInS": 1.59,
+     "fadeOutS": 1.45,
+     "window": {
+      "name": "Hann",
+      "icEnv": 0,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       65,
+       82.5
+      ],
+      "factor": 79.16,
+      "speed": 0.0126
+     },
+     "overlaps": {
+      "band": [
+       27,
+       33
+      ],
+      "n": 32
+     },
+     "size": {
+      "mode": "falling",
+      "from": 0.08,
+      "to": 1.95,
+      "line": "1.95@0,0.08@28600"
+     },
+     "startFrac": 0.65
+    }
+   },
+   "elec": {
+    "name": "bfl-drone-2",
+    "label": "D3 ← REC2 · Hann · 1/79 · ov 32 · falling 0.08 → 1.95 s",
+    "variants": {
+     "bfl-drone-2": "dn21-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-129",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 183.5,
+   "endTime": 194.89,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "bcl",
+     "rec": 3,
+     "src": 3,
+     "last": false,
+     "n": 3,
+     "i": 16,
+     "key": "dn16",
+     "lengthS": 11.39,
+     "fadeInS": 1.6,
+     "fadeOutS": 1.59,
+     "window": {
+      "name": "3-stage linear",
+      "icEnv": 1,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       82.5,
+       100
+      ],
+      "factor": 99.2,
+      "speed": 0.0101
      },
      "overlaps": {
       "band": [
        17,
        22
       ],
-      "n": 22
+      "n": 18
+     },
+     "size": {
+      "mode": "rising",
+      "from": 0.09,
+      "to": 1.38,
+      "line": "0.09@0,1.38@11390"
+     },
+     "startFrac": 0
+    }
+   },
+   "elec": {
+    "name": "bcl-drone-3",
+    "label": "D3 · 3-stage linear · 1/99 · ov 18 · rising 0.09 → 1.38 s",
+    "variants": {
+     "bcl-drone-3": "dn16-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-144",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 199.62,
+   "endTime": 233.68,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "va",
+     "rec": 3,
+     "src": 2,
+     "last": false,
+     "n": 3,
+     "i": 31,
+     "key": "dn31",
+     "lengthS": 34.06,
+     "fadeInS": 3.55,
+     "fadeOutS": 1.64,
+     "window": {
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
+     },
+     "pace": {
+      "band": [
+       47.5,
+       65
+      ],
+      "factor": 60.63,
+      "speed": 0.0165
+     },
+     "overlaps": {
+      "band": [
+       22,
+       27
+      ],
+      "n": 26
      },
      "size": {
       "mode": "steady",
       "band": [
-       0.3,
-       0.8
+       1.2,
+       2
       ],
-      "name": "tone",
-      "s": 0.63
+      "name": "pulse",
+      "s": 1.88
      },
-     "startFrac": 0.52
+     "startFrac": 0.83
+    }
+   },
+   "elec": {
+    "name": "va-drone-2",
+    "label": "D3 ← REC2 · expodec · 1/61 · ov 26 · pulse 1.88 s",
+    "variants": {
+     "va-drone-2": "dn31-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-140",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 201,
+   "endTime": 237.29,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "vc",
+     "rec": 3,
+     "src": 3,
+     "last": false,
+     "n": 4,
+     "i": 27,
+     "key": "dn27",
+     "lengthS": 36.29,
+     "fadeInS": 1.55,
+     "fadeOutS": 1.35,
+     "window": {
+      "name": "3-stage linear",
+      "icEnv": 1,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       30,
+       47.5
+      ],
+      "factor": 45.31,
+      "speed": 0.0221
+     },
+     "overlaps": {
+      "band": [
+       22,
+       27
+      ],
+      "n": 25
+     },
+     "size": {
+      "mode": "steady",
+      "band": [
+       0.05,
+       0.12
+      ],
+      "name": "breath",
+      "s": 0.09
+     },
+     "startFrac": 0.85
+    }
+   },
+   "elec": {
+    "name": "vc-drone-3",
+    "label": "D4 · 3-stage linear · 1/45 · ov 25 · breath 0.09 s",
+    "variants": {
+     "vc-drone-3": "dn27-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-130",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 207.55,
+   "endTime": 218.53,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "bcl",
+     "rec": 3,
+     "src": 1,
+     "last": false,
+     "n": 4,
+     "i": 17,
+     "key": "dn17",
+     "lengthS": 10.98,
+     "fadeInS": 1.79,
+     "fadeOutS": 1.59,
+     "window": {
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
+     },
+     "pace": {
+      "band": [
+       30,
+       47.5
+      ],
+      "factor": 36.86,
+      "speed": 0.0271
+     },
+     "overlaps": {
+      "band": [
+       12,
+       17
+      ],
+      "n": 16
+     },
+     "size": {
+      "mode": "falling",
+      "from": 0.51,
+      "to": 1.39,
+      "line": "1.39@0,0.51@10980"
+     },
+     "startFrac": 0.16
+    }
+   },
+   "elec": {
+    "name": "bcl-drone-1",
+    "label": "D4 ← REC1 · expodec · 1/37 · ov 16 · falling 0.51 → 1.39 s",
+    "variants": {
+     "bcl-drone-1": "dn17-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-148",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 211.42,
+   "endTime": 224.13,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "perc",
+     "rec": 3,
+     "src": 2,
+     "last": false,
+     "n": 3,
+     "i": 35,
+     "key": "dn35",
+     "lengthS": 12.71,
+     "fadeInS": 1.56,
+     "fadeOutS": 1.36,
+     "window": {
+      "name": "Hann",
+      "icEnv": 0,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       82.5,
+       100
+      ],
+      "factor": 85.39,
+      "speed": 0.0117
+     },
+     "overlaps": {
+      "band": [
+       12,
+       17
+      ],
+      "n": 12
+     },
+     "size": {
+      "mode": "steady",
+      "band": [
+       0.8,
+       2
+      ],
+      "name": "glass",
+      "s": 1.03
+     },
+     "startFrac": 0.41
+    }
+   },
+   "elec": {
+    "name": "perc-drone-2",
+    "label": "D3 ← REC2 · Hann · 1/85 · ov 12 · glass 1.03 s",
+    "variants": {
+     "perc-drone-2": "dn35-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-135",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 215.78,
+   "endTime": 240.31,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "bfl",
+     "rec": 3,
+     "src": 3,
+     "last": false,
+     "n": 4,
+     "i": 22,
+     "key": "dn22",
+     "lengthS": 24.53,
+     "fadeInS": 1.04,
+     "fadeOutS": 1.4,
+     "window": {
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
+     },
+     "pace": {
+      "band": [
+       47.5,
+       65
+      ],
+      "factor": 48.16,
+      "speed": 0.0208
+     },
+     "overlaps": {
+      "band": [
+       12,
+       17
+      ],
+      "n": 15
+     },
+     "size": {
+      "mode": "arch",
+      "from": 0.4,
+      "to": 1.65,
+      "line": "0.4@0,1.65@12265,0.4@24530"
+     },
+     "startFrac": 0.23
     }
    },
    "elec": {
     "name": "bfl-drone-3",
-    "label": "D3 · Hann · 1/89 · ov 22 · tone 0.63 s",
+    "label": "D4 · expodec · 1/48 · ov 15 · arch 0.4 → 1.65 s",
     "variants": {
      "bfl-drone-3": "dn22-shape"
     },
@@ -3006,8 +3870,8 @@
    "id": "zn-149",
    "type": "zone",
    "layer": 2,
-   "startTime": 152.99,
-   "endTime": 164.6,
+   "startTime": 235.26,
+   "endTime": 249.4,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -3034,1085 +3898,48 @@
     "drone": {
      "player": "perc",
      "rec": 3,
-     "n": 2,
+     "src": 3,
+     "last": false,
+     "n": 4,
      "i": 36,
      "key": "dn36",
-     "lengthS": 11.61,
-     "fadeInS": 5.24,
-     "fadeOutS": 1.19,
+     "lengthS": 14.14,
+     "fadeInS": 1.95,
+     "fadeOutS": 1.34,
      "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
-      "set": "smooth"
+      "name": "expodec",
+      "icEnv": 4,
+      "set": "expodec"
      },
      "pace": {
       "band": [
-       82.5,
-       100
+       30,
+       47.5
       ],
-      "factor": 94.45,
-      "speed": 0.0106
+      "factor": 30.05,
+      "speed": 0.0333
      },
      "overlaps": {
       "band": [
-       17,
-       22
+       22,
+       27
       ],
-      "n": 21
+      "n": 25
      },
      "size": {
-      "mode": "steady",
-      "band": [
-       0.12,
-       0.3
-      ],
-      "name": "rough",
-      "s": 0.22
-     },
-     "startFrac": 0.36
-    }
-   },
-   "elec": {
-    "name": "perc-drone-3",
-    "label": "D2 · 3-stage linear · 1/94 · ov 21 · rough 0.22 s",
-    "variants": {
-     "perc-drone-3": "dn36-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-141",
-   "type": "zone",
-   "layer": 5,
-   "startTime": 161.71,
-   "endTime": 174.26,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "vc",
-     "rec": 3,
-     "n": 2,
-     "i": 28,
-     "key": "dn28",
-     "lengthS": 12.55,
-     "fadeInS": 1.88,
-     "fadeOutS": 1.55,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       65,
-       82.5
-      ],
-      "factor": 73.95,
-      "speed": 0.0135
-     },
-     "overlaps": {
-      "band": [
-       12,
-       17
-      ],
-      "n": 14
-     },
-     "size": {
-      "mode": "steady",
-      "band": [
-       0.8,
-       2
-      ],
-      "name": "glass",
-      "s": 1.23
-     },
-     "startFrac": 0.82
-    }
-   },
-   "elec": {
-    "name": "vc-drone-3",
-    "label": "D2 · Hann · 1/74 · ov 14 · glass 1.23 s",
-    "variants": {
-     "vc-drone-3": "dn28-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-150",
-   "type": "zone",
-   "layer": 2,
-   "startTime": 167.9,
-   "endTime": 180.82,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "perc",
-     "rec": 3,
-     "n": 3,
-     "i": 37,
-     "key": "dn37",
-     "lengthS": 12.92,
-     "fadeInS": 1.19,
-     "fadeOutS": 1.33,
-     "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       65,
-       82.5
-      ],
-      "factor": 69.04,
-      "speed": 0.0145
-     },
-     "overlaps": {
-      "band": [
-       12,
-       17
-      ],
-      "n": 16
-     },
-     "size": {
-      "mode": "falling",
-      "from": 0.09,
-      "to": 1.1,
-      "line": "1.1@0,0.09@12920"
+      "mode": "rising",
+      "from": 0.47,
+      "to": 1.4,
+      "line": "0.47@0,1.4@14140"
      },
      "startFrac": 0.89
     }
    },
    "elec": {
     "name": "perc-drone-3",
-    "label": "D3 · 3-stage linear · 1/69 · ov 16 · falling 0.09 → 1.1 s",
+    "label": "D4 · expodec · 1/30 · ov 25 · rising 0.47 → 1.4 s",
     "variants": {
-     "perc-drone-3": "dn37-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-145",
-   "type": "zone",
-   "layer": 4,
-   "startTime": 172.36,
-   "endTime": 198.87,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "va",
-     "rec": 3,
-     "n": 2,
-     "i": 32,
-     "key": "dn32",
-     "lengthS": 26.51,
-     "fadeInS": 1.98,
-     "fadeOutS": 1.64,
-     "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       47.5,
-       65
-      ],
-      "factor": 48.75,
-      "speed": 0.0205
-     },
-     "overlaps": {
-      "band": [
-       17,
-       22
-      ],
-      "n": 20
-     },
-     "size": {
-      "mode": "arch",
-      "from": 0.41,
-      "to": 1.41,
-      "line": "0.41@0,1.41@13255,0.41@26510"
-     },
-     "startFrac": 0.75
-    }
-   },
-   "elec": {
-    "name": "va-drone-3",
-    "label": "D2 · expodec · 1/49 · ov 20 · arch 0.41 → 1.41 s",
-    "variants": {
-     "va-drone-3": "dn32-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-129",
-   "type": "zone",
-   "layer": 1,
-   "startTime": 173.46,
-   "endTime": 211.61,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bcl",
-     "rec": 3,
-     "n": 3,
-     "i": 16,
-     "key": "dn16",
-     "lengthS": 38.15,
-     "fadeInS": 1.65,
-     "fadeOutS": 1.05,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       82.5,
-       100
-      ],
-      "factor": 85.24,
-      "speed": 0.0117
-     },
-     "overlaps": {
-      "band": [
-       17,
-       22
-      ],
-      "n": 18
-     },
-     "size": {
-      "mode": "falling",
-      "from": 0.07,
-      "to": 1.97,
-      "line": "1.97@0,0.07@38150"
-     },
-     "startFrac": 0.63
-    }
-   },
-   "elec": {
-    "name": "bcl-drone-3",
-    "label": "D3 · Hann · 1/85 · ov 18 · falling 0.07 → 1.97 s",
-    "variants": {
-     "bcl-drone-3": "dn16-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-151",
-   "type": "zone",
-   "layer": 2,
-   "startTime": 181.96,
-   "endTime": 194.3,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "perc",
-     "rec": 3,
-     "n": 4,
-     "i": 38,
-     "key": "dn38",
-     "lengthS": 12.34,
-     "fadeInS": 1.06,
-     "fadeOutS": 1.4,
-     "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       82.5,
-       100
-      ],
-      "factor": 96.98,
-      "speed": 0.0103
-     },
-     "overlaps": {
-      "band": [
-       17,
-       22
-      ],
-      "n": 20
-     },
-     "size": {
-      "mode": "rising",
-      "from": 0.39,
-      "to": 1.49,
-      "line": "0.39@0,1.49@12340"
-     },
-     "startFrac": 0.45
-    }
-   },
-   "elec": {
-    "name": "perc-drone-3",
-    "label": "D4 · expodec · 1/97 · ov 20 · rising 0.39 → 1.49 s",
-    "variants": {
-     "perc-drone-3": "dn38-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-136",
-   "type": "zone",
-   "layer": 0,
-   "startTime": 184.23,
-   "endTime": 195.45,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bfl",
-     "rec": 3,
-     "n": 4,
-     "i": 23,
-     "key": "dn23",
-     "lengthS": 11.22,
-     "fadeInS": 1.4,
-     "fadeOutS": 1.19,
-     "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       65,
-       82.5
-      ],
-      "factor": 74.64,
-      "speed": 0.0134
-     },
-     "overlaps": {
-      "band": [
-       12,
-       17
-      ],
-      "n": 12
-     },
-     "size": {
-      "mode": "rising",
-      "from": 0.47,
-      "to": 1.47,
-      "line": "0.47@0,1.47@11220"
-     },
-     "startFrac": 0.56
-    }
-   },
-   "elec": {
-    "name": "bfl-drone-3",
-    "label": "D4 · expodec · 1/75 · ov 12 · rising 0.47 → 1.47 s",
-    "variants": {
-     "bfl-drone-3": "dn23-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-142",
-   "type": "zone",
-   "layer": 5,
-   "startTime": 185.56,
-   "endTime": 221.03,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "vc",
-     "rec": 3,
-     "n": 3,
-     "i": 29,
-     "key": "dn29",
-     "lengthS": 35.47,
-     "fadeInS": 2.88,
-     "fadeOutS": 1.89,
-     "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       82.5,
-       100
-      ],
-      "factor": 88.94,
-      "speed": 0.0112
-     },
-     "overlaps": {
-      "band": [
-       22,
-       27
-      ],
-      "n": 25
-     },
-     "size": {
-      "mode": "falling",
-      "from": 0.44,
-      "to": 1.47,
-      "line": "1.47@0,0.44@35470"
-     },
-     "startFrac": 0.71
-    }
-   },
-   "elec": {
-    "name": "vc-drone-3",
-    "label": "D3 · expodec · 1/89 · ov 25 · falling 0.44 → 1.47 s",
-    "variants": {
-     "vc-drone-3": "dn29-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-137",
-   "type": "zone",
-   "layer": 0,
-   "startTime": 199.99,
-   "endTime": 214.16,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bfl",
-     "rec": 3,
-     "n": 5,
-     "i": 24,
-     "key": "dn24",
-     "lengthS": 14.17,
-     "fadeInS": 1.27,
-     "fadeOutS": 1.31,
-     "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       47.5,
-       65
-      ],
-      "factor": 52.59,
-      "speed": 0.019
-     },
-     "overlaps": {
-      "band": [
-       22,
-       27
-      ],
-      "n": 25
-     },
-     "size": {
-      "mode": "steady",
-      "band": [
-       0.12,
-       0.3
-      ],
-      "name": "rough",
-      "s": 0.15
-     },
-     "startFrac": 0.78
-    }
-   },
-   "elec": {
-    "name": "bfl-drone-3",
-    "label": "D5 · 3-stage linear · 1/53 · ov 25 · rough 0.15 s",
-    "variants": {
-     "bfl-drone-3": "dn24-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-152",
-   "type": "zone",
-   "layer": 2,
-   "startTime": 201.98,
-   "endTime": 229.73,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "perc",
-     "rec": 3,
-     "n": 5,
-     "i": 39,
-     "key": "dn39",
-     "lengthS": 27.75,
-     "fadeInS": 3.9,
-     "fadeOutS": 1.74,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       47.5,
-       65
-      ],
-      "factor": 59.69,
-      "speed": 0.0168
-     },
-     "overlaps": {
-      "band": [
-       27,
-       33
-      ],
-      "n": 31
-     },
-     "size": {
-      "mode": "arch",
-      "from": 0.05,
-      "to": 1.33,
-      "line": "0.05@0,1.33@13875,0.05@27750"
-     },
-     "startFrac": 0.42
-    }
-   },
-   "elec": {
-    "name": "perc-drone-3",
-    "label": "D5 · Hann · 1/60 · ov 31 · arch 0.05 → 1.33 s",
-    "variants": {
-     "perc-drone-3": "dn39-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-146",
-   "type": "zone",
-   "layer": 4,
-   "startTime": 216.52,
-   "endTime": 236.53,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "va",
-     "rec": 3,
-     "n": 3,
-     "i": 33,
-     "key": "dn33",
-     "lengthS": 20.01,
-     "fadeInS": 1.76,
-     "fadeOutS": 1.89,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       30,
-       47.5
-      ],
-      "factor": 45.71,
-      "speed": 0.0219
-     },
-     "overlaps": {
-      "band": [
-       22,
-       27
-      ],
-      "n": 26
-     },
-     "size": {
-      "mode": "falling",
-      "from": 0.05,
-      "to": 1.1,
-      "line": "1.1@0,0.05@20010"
-     },
-     "startFrac": 0.84
-    }
-   },
-   "elec": {
-    "name": "va-drone-3",
-    "label": "D3 · Hann · 1/46 · ov 26 · falling 0.05 → 1.1 s",
-    "variants": {
-     "va-drone-3": "dn33-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-130",
-   "type": "zone",
-   "layer": 1,
-   "startTime": 221.21,
-   "endTime": 231.29,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bcl",
-     "rec": 3,
-     "n": 4,
-     "i": 17,
-     "key": "dn17",
-     "lengthS": 10.08,
-     "fadeInS": 1.63,
-     "fadeOutS": 1.65,
-     "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       30,
-       47.5
-      ],
-      "factor": 43.73,
-      "speed": 0.0229
-     },
-     "overlaps": {
-      "band": [
-       12,
-       17
-      ],
-      "n": 16
-     },
-     "size": {
-      "mode": "rising",
-      "from": 0.42,
-      "to": 1.81,
-      "line": "0.42@0,1.81@10080"
-     },
-     "startFrac": 0.72
-    }
-   },
-   "elec": {
-    "name": "bcl-drone-3",
-    "label": "D4 · expodec · 1/44 · ov 16 · rising 0.42 → 1.81 s",
-    "variants": {
-     "bcl-drone-3": "dn17-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-138",
-   "type": "zone",
-   "layer": 0,
-   "startTime": 224.94,
-   "endTime": 241.09,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bfl",
-     "rec": 3,
-     "n": 6,
-     "i": 25,
-     "key": "dn25",
-     "lengthS": 16.15,
-     "fadeInS": 1.59,
-     "fadeOutS": 5.92,
-     "window": {
-      "name": "Hann",
-      "icEnv": 0,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       82.5,
-       100
-      ],
-      "factor": 91.26,
-      "speed": 0.011
-     },
-     "overlaps": {
-      "band": [
-       27,
-       33
-      ],
-      "n": 27
-     },
-     "size": {
-      "mode": "arch",
-      "from": 0.07,
-      "to": 0.9,
-      "line": "0.07@0,0.9@8075,0.07@16150"
-     },
-     "startFrac": 0.63
-    }
-   },
-   "elec": {
-    "name": "bfl-drone-3",
-    "label": "D6 · Hann · 1/91 · ov 27 · arch 0.07 → 0.9 s",
-    "variants": {
-     "bfl-drone-3": "dn25-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-143",
-   "type": "zone",
-   "layer": 5,
-   "startTime": 235.01,
-   "endTime": 270,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "vc",
-     "rec": 3,
-     "n": 4,
-     "i": 30,
-     "key": "dn30",
-     "lengthS": 34.99,
-     "fadeInS": 1.39,
-     "fadeOutS": 1.66,
-     "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
-      "set": "smooth"
-     },
-     "pace": {
-      "band": [
-       30,
-       47.5
-      ],
-      "factor": 36.71,
-      "speed": 0.0272
-     },
-     "overlaps": {
-      "band": [
-       27,
-       33
-      ],
-      "n": 30
-     },
-     "size": {
-      "mode": "steady",
-      "band": [
-       0.05,
-       0.12
-      ],
-      "name": "breath",
-      "s": 0.08
-     },
-     "startFrac": 0.71
-    }
-   },
-   "elec": {
-    "name": "vc-drone-3",
-    "label": "D4 · 3-stage linear · 1/37 · ov 30 · breath 0.08 s",
-    "variants": {
-     "vc-drone-3": "dn30-shape"
+     "perc-drone-3": "dn36-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -4124,8 +3951,8 @@
    "id": "zn-131",
    "type": "zone",
    "layer": 1,
-   "startTime": 236.13,
-   "endTime": 250.91,
+   "startTime": 236.38,
+   "endTime": 270,
    "player": "",
    "instrument": "",
    "zoneFunction": "elec",
@@ -4152,49 +3979,48 @@
     "drone": {
      "player": "bcl",
      "rec": 3,
+     "src": 1,
+     "last": true,
      "n": 5,
      "i": 18,
      "key": "dn18",
-     "lengthS": 14.78,
-     "fadeInS": 5.57,
-     "fadeOutS": 1.38,
+     "lengthS": 33.62,
+     "fadeInS": 1.95,
+     "fadeOutS": 11,
      "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
+      "name": "Hann",
+      "icEnv": 0,
       "set": "smooth"
      },
      "pace": {
       "band": [
-       65,
-       82.5
+       82.5,
+       100
       ],
-      "factor": 81.68,
-      "speed": 0.0122
+      "factor": 93.74,
+      "speed": 0.0107
      },
      "overlaps": {
       "band": [
-       22,
-       27
+       17,
+       22
       ],
-      "n": 25
+      "n": 19
      },
      "size": {
-      "mode": "steady",
-      "band": [
-       0.12,
-       0.3
-      ],
-      "name": "rough",
-      "s": 0.24
+      "mode": "arch",
+      "from": 0.06,
+      "to": 1.71,
+      "line": "0.06@0,1.71@16810,0.06@33620"
      },
-     "startFrac": 0.43
+     "startFrac": 0.12
     }
    },
    "elec": {
-    "name": "bcl-drone-3",
-    "label": "D5 · 3-stage linear · 1/82 · ov 25 · rough 0.24 s",
+    "name": "bcl-drone-1",
+    "label": "D5 ← REC1 · Hann · 1/94 · ov 19 · arch 0.06 → 1.71 s · out 11 s",
     "variants": {
-     "bcl-drone-3": "dn18-shape"
+     "bcl-drone-1": "dn18-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -4203,10 +4029,10 @@
    }
   },
   {
-   "id": "zn-153",
+   "id": "zn-141",
    "type": "zone",
-   "layer": 2,
-   "startTime": 238.17,
+   "layer": 5,
+   "startTime": 241.69,
    "endTime": 270,
    "player": "",
    "instrument": "",
@@ -4232,14 +4058,16 @@
    "performanceNotes": "",
    "properties": {
     "drone": {
-     "player": "perc",
+     "player": "vc",
      "rec": 3,
-     "n": 6,
-     "i": 40,
-     "key": "dn40",
-     "lengthS": 31.83,
-     "fadeInS": 5.64,
-     "fadeOutS": 1.17,
+     "src": 3,
+     "last": true,
+     "n": 5,
+     "i": 28,
+     "key": "dn28",
+     "lengthS": 28.31,
+     "fadeInS": 3.66,
+     "fadeOutS": 11,
      "window": {
       "name": "3-stage linear",
       "icEnv": 1,
@@ -4247,36 +4075,36 @@
      },
      "pace": {
       "band": [
-       30,
-       47.5
+       47.5,
+       65
       ],
-      "factor": 38.2,
-      "speed": 0.0262
+      "factor": 53.15,
+      "speed": 0.0188
      },
      "overlaps": {
       "band": [
-       22,
-       27
+       27,
+       33
       ],
-      "n": 23
+      "n": 31
      },
      "size": {
       "mode": "steady",
       "band": [
-       0.8,
-       2
+       0.3,
+       0.8
       ],
-      "name": "glass",
-      "s": 1.55
+      "name": "tone",
+      "s": 0.48
      },
-     "startFrac": 0.06
+     "startFrac": 0.34
     }
    },
    "elec": {
-    "name": "perc-drone-3",
-    "label": "D6 · 3-stage linear · 1/38 · ov 23 · glass 1.55 s",
+    "name": "vc-drone-3",
+    "label": "D5 · 3-stage linear · 1/53 · ov 31 · tone 0.48 s · out 11 s",
     "variants": {
-     "perc-drone-3": "dn40-shape"
+     "vc-drone-3": "dn28-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -4285,10 +4113,10 @@
    }
   },
   {
-   "id": "zn-147",
+   "id": "zn-145",
    "type": "zone",
    "layer": 4,
-   "startTime": 249.04,
+   "startTime": 242.48,
    "endTime": 270,
    "player": "",
    "instrument": "",
@@ -4316,131 +4144,48 @@
     "drone": {
      "player": "va",
      "rec": 3,
+     "src": 1,
+     "last": true,
      "n": 4,
-     "i": 34,
-     "key": "dn34",
-     "lengthS": 20.96,
-     "fadeInS": 1.01,
-     "fadeOutS": 4.56,
+     "i": 32,
+     "key": "dn32",
+     "lengthS": 27.52,
+     "fadeInS": 1.22,
+     "fadeOutS": 11,
      "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
-     },
-     "pace": {
-      "band": [
-       47.5,
-       65
-      ],
-      "factor": 51.49,
-      "speed": 0.0194
-     },
-     "overlaps": {
-      "band": [
-       12,
-       17
-      ],
-      "n": 12
-     },
-     "size": {
-      "mode": "steady",
-      "band": [
-       0.6,
-       1.2
-      ],
-      "name": "tremolo",
-      "s": 1.03
-     },
-     "startFrac": 0.07
-    }
-   },
-   "elec": {
-    "name": "va-drone-3",
-    "label": "D4 · expodec · 1/51 · ov 12 · tremolo 1.03 s",
-    "variants": {
-     "va-drone-3": "dn34-shape"
-    },
-    "dyn": {
-     "mode": "mark",
-     "mark": "f"
-    }
-   }
-  },
-  {
-   "id": "zn-132",
-   "type": "zone",
-   "layer": 1,
-   "startTime": 253.14,
-   "endTime": 270,
-   "player": "",
-   "instrument": "",
-   "zoneFunction": "elec",
-   "midiModel": "elecPlay",
-   "ostinatoParams": {
-    "smooth": 0.7,
-    "speed": 1,
-    "stretch": 1.5
-   },
-   "chordMarkers": [],
-   "ratioMarkers": [],
-   "ratioSourceZoneId": "",
-   "ratioGroup": "",
-   "responseDelayMs": 0,
-   "jitterMs": 8,
-   "driftFactor": 0.02,
-   "midiSnippet": null,
-   "color": "#8E24AA",
-   "opacity": 0.35,
-   "yOffset": 1,
-   "zoneHeight": 0.2,
-   "performanceNotes": "",
-   "properties": {
-    "drone": {
-     "player": "bcl",
-     "rec": 3,
-     "n": 6,
-     "i": 19,
-     "key": "dn19",
-     "lengthS": 16.86,
-     "fadeInS": 1.63,
-     "fadeOutS": 1.77,
-     "window": {
-      "name": "3-stage linear",
-      "icEnv": 1,
+      "name": "Hann",
+      "icEnv": 0,
       "set": "smooth"
      },
      "pace": {
       "band": [
-       47.5,
-       65
+       65,
+       82.5
       ],
-      "factor": 61.26,
-      "speed": 0.0163
+      "factor": 77.88,
+      "speed": 0.0128
      },
      "overlaps": {
       "band": [
-       27,
-       33
+       17,
+       22
       ],
-      "n": 32
+      "n": 17
      },
      "size": {
-      "mode": "steady",
-      "band": [
-       0.05,
-       0.12
-      ],
-      "name": "breath",
-      "s": 0.07
+      "mode": "arch",
+      "from": 0.07,
+      "to": 1.81,
+      "line": "0.07@0,1.81@13760,0.07@27520"
      },
-     "startFrac": 0.32
+     "startFrac": 0.63
     }
    },
    "elec": {
-    "name": "bcl-drone-3",
-    "label": "D6 · 3-stage linear · 1/61 · ov 32 · breath 0.07 s",
+    "name": "va-drone-1",
+    "label": "D4 ← REC1 · Hann · 1/78 · ov 17 · arch 0.07 → 1.81 s · out 11 s",
     "variants": {
-     "bcl-drone-3": "dn19-shape"
+     "va-drone-1": "dn32-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -4449,10 +4194,10 @@
    }
   },
   {
-   "id": "zn-139",
+   "id": "zn-136",
    "type": "zone",
    "layer": 0,
-   "startTime": 260.85,
+   "startTime": 243.09,
    "endTime": 270,
    "player": "",
    "instrument": "",
@@ -4480,46 +4225,135 @@
     "drone": {
      "player": "bfl",
      "rec": 3,
-     "n": 7,
-     "i": 26,
-     "key": "dn26",
-     "lengthS": 9.15,
-     "fadeInS": 1.48,
-     "fadeOutS": 1.8,
+     "src": 3,
+     "last": true,
+     "n": 5,
+     "i": 23,
+     "key": "dn23",
+     "lengthS": 26.91,
+     "fadeInS": 1.31,
+     "fadeOutS": 11,
      "window": {
-      "name": "expodec",
-      "icEnv": 4,
-      "set": "expodec"
+      "name": "3-stage linear",
+      "icEnv": 1,
+      "set": "smooth"
      },
      "pace": {
       "band": [
-       30,
-       47.5
+       82.5,
+       100
       ],
-      "factor": 38.62,
-      "speed": 0.0259
+      "factor": 93.51,
+      "speed": 0.0107
      },
      "overlaps": {
       "band": [
        22,
        27
       ],
-      "n": 22
+      "n": 25
      },
      "size": {
-      "mode": "arch",
-      "from": 0.55,
-      "to": 1.89,
-      "line": "0.55@0,1.89@4575,0.55@9150"
+      "mode": "steady",
+      "band": [
+       0.05,
+       0.12
+      ],
+      "name": "breath",
+      "s": 0.06
      },
-     "startFrac": 0.39
+     "startFrac": 0.78
     }
    },
    "elec": {
     "name": "bfl-drone-3",
-    "label": "D7 · expodec · 1/39 · ov 22 · arch 0.55 → 1.89 s",
+    "label": "D5 · 3-stage linear · 1/94 · ov 25 · breath 0.06 s · out 11 s",
     "variants": {
-     "bfl-drone-3": "dn26-shape"
+     "bfl-drone-3": "dn23-shape"
+    },
+    "dyn": {
+     "mode": "mark",
+     "mark": "f"
+    }
+   }
+  },
+  {
+   "id": "zn-150",
+   "type": "zone",
+   "layer": 2,
+   "startTime": 250.54,
+   "endTime": 270,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecPlay",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#8E24AA",
+   "opacity": 0.35,
+   "yOffset": 1,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "drone": {
+     "player": "perc",
+     "rec": 3,
+     "src": 2,
+     "last": true,
+     "n": 5,
+     "i": 37,
+     "key": "dn37",
+     "lengthS": 19.46,
+     "fadeInS": 1.06,
+     "fadeOutS": 11,
+     "window": {
+      "name": "Hann",
+      "icEnv": 0,
+      "set": "smooth"
+     },
+     "pace": {
+      "band": [
+       65,
+       82.5
+      ],
+      "factor": 78,
+      "speed": 0.0128
+     },
+     "overlaps": {
+      "band": [
+       22,
+       27
+      ],
+      "n": 25
+     },
+     "size": {
+      "mode": "steady",
+      "band": [
+       0.12,
+       0.3
+      ],
+      "name": "rough",
+      "s": 0.25
+     },
+     "startFrac": 0.42
+    }
+   },
+   "elec": {
+    "name": "perc-drone-2",
+    "label": "D5 ← REC2 · Hann · 1/78 · ov 25 · rough 0.25 s · out 11 s",
+    "variants": {
+     "perc-drone-2": "dn37-shape"
     },
     "dyn": {
      "mode": "mark",
@@ -4534,7 +4368,7 @@
   "sets": [],
   "cells": []
  },
- "nextId": 154,
+ "nextId": 151,
  "viewport": {
   "pixelsPerSecond": 32.63909272788267,
   "scrollOffset": 1268.2362682007251

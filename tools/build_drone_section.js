@@ -66,6 +66,11 @@ const REC_LAST = +R.lastStartS || LEN;   // every recording's opening begins bef
 if (!(REC_LAST > REC_GAP[0] && REC_LAST <= LEN)) fail('recording.lastStartS must be inside the section and past one gap');
 if (!(D.firstAfterEndS != null)) fail('drone.firstAfterEndS (the time from a window\'s END to its first drone — firstAfterOpenS, from the START, is gone since 2026-10-08)');
 const DR_LEN = range(D.lengthS, 'drone.lengthS'), DR_REST = range(D.restS, 'drone.restS'), DR_FIRST = +D.firstAfterEndS || 30, FADE = range(D.fadeS, 'drone.fadeS'), FADE_MAX = +D.fadeMaxS || FADE[1], FADE_LONG = +(D.fadeLongShare != null ? D.fadeLongShare : 0.2);
+// DEC-56 (his word of 2026-10-08): after the first drone of a player's LAST recording the sources are rolled among the player's recordings;
+// the LAST drone of each part runs to the end with a long fade out
+const ANY_SRC = (D.afterLastRecording || 'own') === 'any', LAST_FADE = +(D.lastFadeOutS || 0);
+if (!['own', 'any'].includes(D.afterLastRecording || 'own')) fail("drone.afterLastRecording must be 'own' or 'any'");
+if (!(LAST_FADE >= 0)) fail('drone.lastFadeOutS');
 if (!MARKS.includes(D.level)) fail('drone.level must be a mark');
 const PACE = (CFG.pace && CFG.pace.bands) || [], OV = (CFG.overlaps && CFG.overlaps.bands) || [], WINS = CFG.windows || [];
 if (!PACE.length || !OV.length || WINS.length < 1) fail('pace.bands, overlaps.bands and windows are needed');
@@ -142,9 +147,13 @@ function roll(seed, entries) {
     recs.forEach((r) => { r.name = r.player.name + '-drone-' + r.k; });
     // THE DRONES: a string per recording
     const drones = [];
+    const sizeLine = (mode, a, z, ms) => mode === 'rising' ? a + '@0,' + z + '@' + ms : mode === 'falling' ? z + '@0,' + a + '@' + ms : a + '@0,' + z + '@' + Math.round(ms / 2) + ',' + a + '@' + ms;
+    // THE SOURCE ROLL (DEC-56): after the first drone of a player's LAST recording, each further drone takes ANY of the player's
+    // recordings — an exhaustive round robin per player, none twice before all; before that a string plays its own recording
+    const srcRobin = Object.fromEntries(PLAYERS.map((p) => [p.name, Robin(recs.filter((q) => q.player === p), rnd)]));
     let gi = 0;
     for (const r of recs) {
-        const mine = recs.filter((q) => q.player === r.player).sort((a, b) => a.k - b.k), next = mine.find((q) => q.k === r.k + 1);
+        const mine = recs.filter((q) => q.player === r.player).sort((a, b) => a.k - b.k), next = mine.find((q) => q.k === r.k + 1), last = !next;
         // the string begins DR_FIRST after the window ENDS and runs until the player's NEXT recording is rendered (its window end + DR_FIRST)
         const limit = Math.min(LEN, next ? next.openS + next.windowS + DR_FIRST : LEN);
         let t = r.openS + r.windowS + DR_FIRST, n = 0;
@@ -153,6 +162,7 @@ function roll(seed, entries) {
             const fin = r2(robins.fade.next() === 'long' ? U(rnd, FADE[1], FADE_MAX) : U(rnd, FADE[0], FADE[1]));
             const fout = r2(robins.fade.next() === 'long' ? U(rnd, FADE[1], FADE_MAX) : U(rnd, FADE[0], FADE[1]));
             if (end - t < fin + fout + 1) break;
+            if (last && LAST_FADE > 0 && LEN - t < fin + LAST_FADE + 1) break;   // no room left for the last drone's long fade: the one before is the last
             const w = robins.window.next(), pi = robins.pace.next(), oi = robins.overlaps.next();
             const factor = r2(U(rnd, PACE[pi][0], PACE[pi][1])), speed = Math.round(10000 / factor) / 10000, overlaps = Math.round(U(rnd, OV[oi][0], OV[oi][1]));
             const set = SETS[w.set], mode = robins.mode.next();
@@ -160,11 +170,17 @@ function roll(seed, entries) {
             if (mode === 'steady') { const si = robins.size[w.set].next(), b = set[si]; size = { mode, band: b.band, name: b.name, s: r2(U(rnd, b.band[0], b.band[1])) }; }
             else {
                 const lo = set[0].band, hi = set[set.length - 1].band, a = r2(U(rnd, lo[0], lo[1])), z = r2(U(rnd, hi[0], hi[1])), ms = Math.round((end - t) * 1000);
-                const line = mode === 'rising' ? a + '@0,' + z + '@' + ms : mode === 'falling' ? z + '@0,' + a + '@' + ms : a + '@0,' + z + '@' + Math.round(ms / 2) + ',' + a + '@' + ms;
-                size = { mode, from: a, to: z, line };
+                size = { mode, from: a, to: z, line: sizeLine(mode, a, z, ms) };
             }
-            drones.push({ rec: r, n: ++n, i: ++gi, start: r2(t), end, lengthS: r2(end - t), fadeInS: fin, fadeOutS: fout, window: w, paceBand: pi, factor, speed, ovBand: oi, overlaps, size, startFrac: r2(rnd()) });
+            const src = (last && ANY_SRC && n > 0) ? srcRobin[r.player.name].next() : r;
+            drones.push({ rec: r, src, n: ++n, i: ++gi, start: r2(t), end, lengthS: r2(end - t), fadeInS: fin, fadeOutS: fout, window: w, paceBand: pi, factor, speed, ovBand: oi, overlaps, size, startFrac: r2(rnd()) });
             t = r2(end + U(rnd, DR_REST[0], DR_REST[1]));
+        }
+        // THE LAST DRONE OF THE PART (DEC-56): it runs to the section's end and fades out LAST_FADE — longer than drawn if the end is further
+        if (last && LAST_FADE > 0 && n > 0) {
+            const d = drones[drones.length - 1];
+            d.end = LEN; d.lengthS = r2(LEN - d.start); d.fadeOutS = LAST_FADE; d.last = true;
+            if (d.size.mode !== 'steady') d.size.line = sizeLine(d.size.mode, d.size.from, d.size.to, Math.round(d.lengthS * 1000));
         }
     }
     // THE DENSITY: parts sounding, read every second
@@ -239,11 +255,12 @@ for (const r of rolled.recs) {
 for (const d of rolled.drones) {
     const key = 'dn' + nn(d.i), ms = Math.round(d.lengthS * 1000);
     const args = Object.assign({}, CFG.stage, { icSpeed: d.speed, icFromMs: CFG.regions && CFG.regions.spanInside === false ? Math.round(d.startFrac * d.rec.windowS * 1000) : 'region@' + d.startFrac, icWin: d.size.mode === 'steady' ? d.size.s : d.size.line, icOverlaps: d.overlaps, icEnv: d.window.icEnv });
-    presets.push({ key, name: (CFG.labels.drone || 'D') + d.n + ' of ' + d.rec.name + ' · ' + d.window.name + ' · ' + paceOf(d) + ' · ov ' + d.overlaps + ' · ' + sizeOf(d) + ' · ' + d.lengthS + ' s, in ' + d.fadeInS + ' out ' + d.fadeOutS,
+    const src = d.src || d.rec, from = src === d.rec ? '' : ' ← ' + (CFG.labels.recording || 'REC') + src.k;   // the source, when rolled (DEC-56)
+    presets.push({ key, name: (CFG.labels.drone || 'D') + d.n + ' of ' + d.rec.name + (src === d.rec ? '' : ' from ' + src.name) + ' · ' + d.window.name + ' · ' + paceOf(d) + ' · ov ' + d.overlaps + ' · ' + sizeOf(d) + ' · ' + d.lengthS + ' s, in ' + d.fadeInS + ' out ' + d.fadeOutS + (d.last ? ' (the last of the part)' : ''),
         effect: 'icy', class: 'time', end: 'shape', atkMs: Math.round(d.fadeInS * 1000), durMs: ms, relMs: Math.round(d.fadeOutS * 1000), curve: +D.curve || 0, args });
     objects.push(zone('zn-' + (nextId++), 'elecPlay', d.rec.player.lane, d.start, d.end, CFG.colors.drone, 1,
-        { name: d.rec.name, label: (CFG.labels.drone || 'D') + d.n + ' · ' + d.window.name + ' · ' + paceOf(d) + ' · ov ' + d.overlaps + ' · ' + sizeOf(d), variants: { [d.rec.name]: key + '-shape' }, dyn: { mode: 'mark', mark: D.level } },
-        { drone: { player: d.rec.player.name, rec: d.rec.k, n: d.n, i: d.i, key, lengthS: d.lengthS, fadeInS: d.fadeInS, fadeOutS: d.fadeOutS, window: { name: d.window.name, icEnv: d.window.icEnv, set: d.window.set },
+        { name: src.name, label: (CFG.labels.drone || 'D') + d.n + from + ' · ' + d.window.name + ' · ' + paceOf(d) + ' · ov ' + d.overlaps + ' · ' + sizeOf(d) + (d.last ? ' · out ' + d.fadeOutS + ' s' : ''), variants: { [src.name]: key + '-shape' }, dyn: { mode: 'mark', mark: D.level } },
+        { drone: { player: d.rec.player.name, rec: d.rec.k, src: src.k, last: !!d.last, n: d.n, i: d.i, key, lengthS: d.lengthS, fadeInS: d.fadeInS, fadeOutS: d.fadeOutS, window: { name: d.window.name, icEnv: d.window.icEnv, set: d.window.set },
             pace: { band: PACE[d.paceBand], factor: d.factor, speed: d.speed }, overlaps: { band: OV[d.ovBand], n: d.overlaps }, size: d.size, startFrac: d.startFrac } }));
 }
 objects.sort((a, b) => (a.startTime != null ? a.startTime : a.startSeconds) - (b.startTime != null ? b.startTime : b.startSeconds));
@@ -255,7 +272,7 @@ for (const p of PLAYERS) {
     const mine = rolled.recs.filter((r) => r.player === p);
     console.log('  ' + p.label.padEnd(14) + mine.map((r) => (CFG.labels.recording || 'REC') + r.k + ' ' + (r.entry === 'his' ? 'HIS' : 'key ' + r.key) + ' @ ' + r.openS.toFixed(1) + ' s (' + r.windowS + ' s)').join(' · '));
 }
-for (const d of rolled.drones) console.log('  D' + String(d.i).padStart(2) + '  ' + d.rec.name.padEnd(14) + String(d.start.toFixed(1)).padStart(6) + ' → ' + String(d.end.toFixed(1)).padStart(6) + ' s  ' + d.window.name.padEnd(15) + paceOf(d).padEnd(6) + 'ov ' + String(d.overlaps).padEnd(3) + sizeOf(d).padEnd(26) + 'fade ' + d.fadeInS + '/' + d.fadeOutS + '  start ' + d.startFrac);
+for (const d of rolled.drones) console.log('  D' + String(d.i).padStart(2) + '  ' + (d.src === d.rec ? d.rec.name : d.rec.name + ' ← ' + d.src.k).padEnd(14) + String(d.start.toFixed(1)).padStart(6) + ' → ' + String(d.end.toFixed(1)).padStart(6) + ' s  ' + d.window.name.padEnd(15) + paceOf(d).padEnd(6) + 'ov ' + String(d.overlaps).padEnd(3) + sizeOf(d).padEnd(26) + 'fade ' + d.fadeInS + '/' + d.fadeOutS + '  start ' + d.startFrac);
 console.log('  the density, the most parts in each 5 s: ' + rolled.density.line);
 if (DRY) { console.log('(--dry: nothing written)'); process.exit(0); }
 
@@ -272,7 +289,7 @@ const sheet = [
     '',
     '*Written by `' + command + '` — rendered from the tool, never edited by hand (PLAN.md § 1.7; DEC-48 … DEC-54; RUNNING_LOG §249).*',
     '',
-    '**What it is:** ' + LEN + ' s. Each player records a multiphonic ' + REC_N + ' times — the first ' + (ENTRY === 'his' ? 'HIS (the note you played in `' + (FROM || NAME) + '`, kept as it is)' : 'rolled, a stand-in') + ', the others at rolled times ' + REC_GAP[0] + ' … ' + REC_GAP[1] + ' s apart, every opening before ' + REC_LAST + ' s, a note of the multiphonic as long as its window (the DURATION LINE in the part); a microphone opens over each for ' + REC_LEN[0] + ' … ' + REC_LEN[1] + ' s. Every recording becomes a string of DRONES on its lane with your `icy` — read in order from a start drawn inside the recording\'s longest sounding region, looping, no pitch change — each ' + DR_LEN[0] + ' … ' + DR_LEN[1] + ' s with a fade of ' + FADE[0] + ' … ' + FADE[1] + ' s (one in five up to ' + FADE_MAX + ' s), then a rest of ' + DR_REST[0] + ' … ' + DR_REST[1] + ' s; the first ' + DR_FIRST + ' s after its window ends (the render), the string going on until the player\'s next recording is rendered. Every dial its own exhaustive round robin: the window (' + WINS.map((w) => w.name).join(' · ') + ') · the pace (' + PACE.map((b) => '1/' + b[0] + ' … 1/' + b[1]).join(' · ') + ') · the overlaps (' + OV.map((b) => b[0] + ' … ' + b[1]).join(' · ') + ') · the grain size, steady in a band of the window\'s set or a shape over the drone. Written `' + D.level + '`. The seed is kept because the density reaches ' + rolled.density.max + ' parts and averages ' + rolled.density.mean + ' (the rule: ≥ ' + KEEP.reachParts + ' once, mean ≤ ' + KEEP.meanPartsMax + ').',
+    '**What it is:** ' + LEN + ' s. Each player records a multiphonic ' + REC_N + ' times — the first ' + (ENTRY === 'his' ? 'HIS (the note you played in `' + (FROM || NAME) + '`, kept as it is)' : 'rolled, a stand-in') + ', the others at rolled times ' + REC_GAP[0] + ' … ' + REC_GAP[1] + ' s apart, every opening before ' + REC_LAST + ' s, a note of the multiphonic as long as its window (the DURATION LINE in the part); a microphone opens over each for ' + REC_LEN[0] + ' … ' + REC_LEN[1] + ' s. Every recording becomes a string of DRONES on its lane with your `icy` — read in order from a start drawn inside the recording\'s longest sounding region, looping, no pitch change — each ' + DR_LEN[0] + ' … ' + DR_LEN[1] + ' s with a fade of ' + FADE[0] + ' … ' + FADE[1] + ' s (one in five up to ' + FADE_MAX + ' s), then a rest of ' + DR_REST[0] + ' … ' + DR_REST[1] + ' s; the first ' + DR_FIRST + ' s after its window ends (the render), the string going on until the player\'s next recording is rendered' + (ANY_SRC ? '; after the first drone of a player\'s last recording, each further drone takes any of the player\'s recordings (a round robin, none twice before all)' : '') + (LAST_FADE > 0 ? '; the last drone of each part runs to the end and fades out ' + LAST_FADE + ' s' : '') + '. Every dial its own exhaustive round robin: the window (' + WINS.map((w) => w.name).join(' · ') + ') · the pace (' + PACE.map((b) => '1/' + b[0] + ' … 1/' + b[1]).join(' · ') + ') · the overlaps (' + OV.map((b) => b[0] + ' … ' + b[1]).join(' · ') + ') · the grain size, steady in a band of the window\'s set or a shape over the drone. Written `' + D.level + '`. The seed is kept because the density reaches ' + rolled.density.max + ' parts and averages ' + rolled.density.mean + ' (the rule: ≥ ' + KEEP.reachParts + ' once, mean ≤ ' + KEEP.meanPartsMax + ').',
     '',
     '**To play it:** the engine restarted after 2026-10-08 (the regions, the shaped row, the buffer as long as the source) · F5 · File ▾ → Experiments → `' + NAME + '` · play from 0 with the engine up — the recordings land (the window: `regions ·` lines), the drones render after each (`process ·` lines with `the start … of the longest region`); then play from 0 again: the drones. A drone asked for before its render plays NOTHING (said in the window), never the recording.',
     '',
@@ -282,7 +299,7 @@ const sheet = [
     '|---|' + '---|'.repeat(REC_N),
 ].concat(PLAYERS.map((p) => '| ' + p.label + ' | ' + rolled.recs.filter((r) => r.player === p).map((r) => K.clock(r.openS) + ' (' + r.openS.toFixed(1) + ' s) · ' + r.windowS + ' s · ' + (r.entry === 'his' ? 'HIS' : 'key ' + r.key + ' ' + K.noteName(r.key))).join(' | ') + ' |'))
     .concat(['', '**The drones:**', '', '| # | recording | from → to | window | pace | overlaps | grain size | fades | start |', '|---|---|---|---|---|---|---|---|---|'])
-    .concat(rolled.drones.map((d) => '| D' + d.i + ' | `' + d.rec.name + '` | ' + K.clock(d.start) + ' → ' + K.clock(d.end) + ' (' + d.lengthS + ' s) | ' + d.window.name + ' | ' + paceOf(d) + ' | ' + d.overlaps + ' | ' + sizeOf(d) + ' | ' + d.fadeInS + ' / ' + d.fadeOutS + ' s | ' + d.startFrac + ' of the region |'))
+    .concat(rolled.drones.map((d) => '| D' + d.i + (d.last ? ' (last)' : '') + ' | `' + d.rec.name + '`' + (d.src === d.rec ? '' : ' ← `' + d.src.name + '`') + ' | ' + K.clock(d.start) + ' → ' + K.clock(d.end) + ' (' + d.lengthS + ' s) | ' + d.window.name + ' | ' + paceOf(d) + ' | ' + d.overlaps + ' | ' + sizeOf(d) + ' | ' + d.fadeInS + ' / ' + d.fadeOutS + ' s | ' + d.startFrac + ' of the region |'))
     .concat(['', '**The density** (the most parts sounding in each 5 s): `' + rolled.density.line + '`', '', '**To change it:** a number in `bank/drone_section.json`, then `' + command + '`, then File ▾ → Reload. Another seed: `--seed N`. The free multiphonics between the recordings are yours, in post (DEC-53).', '']).join('\n');
 const sheetFile = path.join(ROOT, 'docs', 'DRONE_SECTION.md');
 fs.writeFileSync(sheetFile, sheet.replace(/\r\n/g, '\n'));

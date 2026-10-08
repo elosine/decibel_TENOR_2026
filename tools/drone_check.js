@@ -3,7 +3,9 @@
 // against bank/drone_section.json and bank/presets.json —
 //     three recordings a player (four at the layout; his word of 2026-10-08, §251), the first his (when his entries were read) · the
 //     later ones 25 … 45 s after the previous, no two players' openings within 3 s, every opening before recording.lastStartS (120 s) ·
-//     the first drone ≥ 30 s after its window ENDS (drone.firstAfterEndS) · one drone a lane at a time · every band of
+//     the first drone ≥ 30 s after its window ENDS (drone.firstAfterEndS) · one drone a lane at a time · after the first drone of a
+//     player's last recording the sources rolled among the player's recordings, none twice before all (DEC-56) · the last drone of
+//     each part to the section's end with its long fade out (drone.lastFadeOutS) · every band of
 //     every dial used before any repeats (the window · the pace band · the overlaps band) · the fades and lengths in range · the
 //     density reaches 5 and averages ≤ 3.5 · every drone's preset present, ended by a shape, its absolute length the drone's, its
 //     start a fraction of a region · the plan's line for a drone as the kit sends it: thirteen fields, "<ms>ms", the fraction whole.
@@ -50,7 +52,21 @@ check('the first drone of a recording ≥ ' + D.firstAfterEndS + ' s after its w
 let overlapOnLane = 0;
 for (const p of CFG.players) { const mine = drones.filter((d) => d.player === p.name).sort((a, b) => a.z.startTime - b.z.startTime); for (let i = 1; i < mine.length; i++) if (mine[i].z.startTime < mine[i - 1].z.endTime - 0.001) overlapOnLane++; }
 check('one drone a lane at a time', overlapOnLane === 0, overlapOnLane + ' overlaps');
-check('every drone ' + D.lengthS[0] + ' … ' + D.lengthS[1] + ' s (a cut one shorter), fades ' + D.fadeS[0] + ' … ' + D.fadeMaxS + ' s, inside the section', drones.every((d) => d.lengthS >= d.fadeInS + d.fadeOutS + 1 && d.lengthS <= D.lengthS[1] + 0.01 && d.fadeInS >= D.fadeS[0] && d.fadeInS <= D.fadeMaxS && d.fadeOutS >= D.fadeS[0] && d.fadeOutS <= D.fadeMaxS && d.z.endTime <= LEN + 0.01), drones.map((d) => d.lengthS).join(' '));
+// DEC-56: the source roll after the first drone of a player's last recording; the last drone of each part
+const LAST_FADE = +(D.lastFadeOutS || 0), ANY = (D.afterLastRecording || 'own') === 'any';
+const srcOk = [], lastOk = [];
+for (const p of CFG.players) {
+    const mine = drones.filter((d) => d.player === p.name).sort((a, b) => a.z.startTime - b.z.startTime), lastK = Math.max(...byPlayer[p.name].map((r) => r.k));
+    const tail = mine.filter((d) => d.rec === lastK), before = mine.filter((d) => d.rec !== lastK);
+    const own = before.every((d) => (d.src || d.rec) === d.rec) && (!tail.length || (tail[0].src || tail[0].rec) === lastK);
+    const rolled = tail.slice(1).map((d) => d.src || d.rec), lap = rolled.slice(0, R.perPlayer);
+    srcOk.push(own && (!ANY ? rolled.every((k) => k === lastK) : new Set(lap).size === Math.min(R.perPlayer, lap.length)));
+    const L = mine[mine.length - 1];
+    lastOk.push(LAST_FADE <= 0 || (L && L.last && Math.abs(L.z.endTime - LEN) < 0.01 && Math.abs(L.fadeOutS - LAST_FADE) < 0.01 && L.lengthS >= L.fadeInS + LAST_FADE + 1 - 0.01 && mine.filter((d) => d.last).length === 1));
+}
+check((ANY ? 'after the first drone of a player\'s last recording the sources are rolled — every recording of the player before any repeats; before it, its own' : 'every drone plays its own recording'), srcOk.every(Boolean), CFG.players.map((p) => p.name + ' ' + drones.filter((d) => d.player === p.name).sort((a, b) => a.z.startTime - b.z.startTime).map((d) => d.src || d.rec).join('')).join(' · '));
+check('the last drone of each part runs to the section\'s end and fades out ' + LAST_FADE + ' s (one a part)', lastOk.every(Boolean), drones.filter((d) => d.last).map((d) => d.player + ' ' + d.lengthS + ' s, out ' + d.fadeOutS).join(' · '));
+check('every drone ' + D.lengthS[0] + ' … ' + D.lengthS[1] + ' s (a cut one shorter; the last of a part longer, to the end), fades ' + D.fadeS[0] + ' … ' + D.fadeMaxS + ' s, inside the section', drones.every((d) => d.lengthS >= d.fadeInS + d.fadeOutS + 1 && (d.last || d.lengthS <= D.lengthS[1] + 0.01) && d.fadeInS >= D.fadeS[0] && d.fadeInS <= D.fadeMaxS && d.fadeOutS >= D.fadeS[0] && (d.last || d.fadeOutS <= D.fadeMaxS) && d.z.endTime <= LEN + 0.01), drones.map((d) => d.lengthS).join(' '));
 const rests = [];
 for (const p of CFG.players) { const mine = drones.filter((d) => d.player === p.name).sort((a, b) => a.z.startTime - b.z.startTime); for (let i = 1; i < mine.length; i++) if (mine[i].rec === mine[i - 1].rec) rests.push(r2(mine[i].z.startTime - mine[i - 1].z.endTime)); }
 check('a rest of ' + D.restS[0] + ' … ' + D.restS[1] + ' s between a recording\'s drones', rests.every((g) => g >= D.restS[0] - 0.01 && g <= D.restS[1] + 0.01), rests.join(' ') || 'no two drones of one recording');
@@ -73,7 +89,7 @@ check('the density reaches ' + CFG.keep.reachParts + ' and averages ≤ ' + CFG.
 // the presets and the bricks
 const pre = drones.map((d) => ({ d, p: P.presets.find((x) => x.key === d.key) }));
 check('every drone has its preset: icy, ended by a shape, the drone\'s own absolute length and fades, the start a fraction of a region', pre.every(({ d, p }) => p && p.effect === 'icy' && p.end === 'shape' && p.audition === 'drone-section' && p.deal === false && Math.abs(p.durMs - d.lengthS * 1000) < 1 && Math.abs(p.atkMs - d.fadeInS * 1000) < 1 && Math.abs(p.relMs - d.fadeOutS * 1000) < 1 && String(p.args.icFromMs).startsWith('region@') && p.args.icLoop === 1 && p.args.icMix === 1 && p.args.icPitch === 0 && p.args.icEnv === d.window.icEnv), pre.filter(({ p }) => !p).map(({ d }) => d.key).join(' ') || 'all ' + pre.length);
-check('every drone brick asks for its recording through its preset, written ' + D.level, drones.every((d) => d.z.midiModel === 'elecPlay' && d.z.elec && d.z.elec.name === d.player + '-drone-' + d.rec && d.z.elec.variants && d.z.elec.variants[d.z.elec.name] === d.key + '-shape' && d.z.elec.dyn && d.z.elec.dyn.mode === 'mark' && d.z.elec.dyn.mark === D.level && d.z.layer === recOf(d).z.layer), drones.slice(0, 3).map((d) => d.z.elec.name + '~' + d.z.elec.variants[d.z.elec.name]).join(' · '));
+check('every drone brick asks for its source recording through its preset, written ' + D.level, drones.every((d) => d.z.midiModel === 'elecPlay' && d.z.elec && d.z.elec.name === d.player + '-drone-' + (d.src || d.rec) && d.z.elec.variants && d.z.elec.variants[d.z.elec.name] === d.key + '-shape' && d.z.elec.dyn && d.z.elec.dyn.mode === 'mark' && d.z.elec.dyn.mark === D.level && d.z.layer === recOf(d).z.layer), drones.slice(0, 3).map((d) => d.z.elec.name + '~' + d.z.elec.variants[d.z.elec.name]).join(' · '));
 check('the envelope "shape" is in bank/presets.json', !!(P.envelopes && P.envelopes.shape), JSON.stringify(P.envelopes && P.envelopes.shape && Object.keys(P.envelopes.shape)));
 // the plan's line, as the kit sends it
 const lines = K.planLines(drones.map((d) => d.z), P), f = (lines[0] || '').split(';');
