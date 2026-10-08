@@ -95,8 +95,11 @@ function planLines(objects, P) {
   const draw = (v) => (Array.isArray(v) && v.length === 2 ? Math.round((Math.min(+v[0], +v[1]) + Math.random() * Math.abs(+v[1] - +v[0])) * 100) / 100 : +v);
   return objects.map((z) => {
     const name = z.elec.name, v = z.elec.variants[name], i = v.lastIndexOf('-'), key = v.slice(0, i), env = v.slice(i + 1), p = P.presets.find((x) => x.key === key), E = P.envelopes[env], cls = (P.classes || {})[p.class] || {};
-    const args = Object.keys(p.args || {}).filter((k) => /^[A-Za-z][A-Za-z0-9]*$/.test(k)).map((k) => { const x = draw(p.args[k]); return Number.isFinite(x) ? k + ':' + x : null; }).filter(Boolean).join(',');
-    return [name, v, String(p.effect || '').replace(/[^A-Za-z0-9 _+-]/g, '').slice(0, 40), env === 'tail' ? 'tail' : env, +E.atkMs || 0, +(p.durX || cls.durX || 1), p.match === 0 ? 0 : 1, z.startTime, env === 'tail' ? Math.round(draw(p.capMs || E.capMs || 4000)) : 0, args].join(';');
+    const isLine = (x) => typeof x === 'string' && /@/.test(x);   // a dial as a LINE (value@ms, …) or the drone section's icFromMs:region@F — sent whole
+    const args = Object.keys(p.args || {}).filter((k) => /^[A-Za-z][A-Za-z0-9]*$/.test(k)).map((k) => { if (isLine(p.args[k])) return k + ':' + String(p.args[k]).replace(/\s+/g, ''); const x = draw(p.args[k]); return Number.isFinite(x) ? k + ':' + x : null; }).filter(Boolean).join(',');
+    // 15.2 d (the drone section): a `shape` envelope carries the preset's rise, its ABSOLUTE length ("<ms>ms" in the durX field), its fall and its curve (fields 12 · 13)
+    const shape = env === 'shape', pick = (k, d) => (p[k] != null ? +p[k] : E[k] != null ? +E[k] : d), durMs = shape ? pick('durMs', 0) : 0;
+    return [name, v, String(p.effect || '').replace(/[^A-Za-z0-9 _+-]/g, '').slice(0, 40), env === 'tail' ? 'tail' : env, pick('atkMs', 0) || 0, durMs > 0 ? Math.round(durMs) + 'ms' : +(p.durX || cls.durX || 1), p.match === 0 ? 0 : 1, z.startTime, env === 'tail' ? Math.round(draw(p.capMs || E.capMs || 4000)) : 0, args, 'normalized'].concat(shape ? [pick('relMs', 1500), pick('curve', 0)] : []).join(';');
   });
 }
 async function sendPlan(lines, port) {

@@ -149,6 +149,13 @@
       "fadeOutMs": 80,
       "fadeInMs": 3,
       "_fade": "2026-10-05 (DEC-13, his word): a standard short release on every cropped sample — the window cuts the ring and a 10 ms fade clicked; 80 ms out, 3 ms in; applies to every capture from the engine's next start (a re-take re-crops)"
+    },
+    "regions": {
+      "_what": "THE REGIONS of a capture (PLAN 15.2 a, the drone section; RUNNING_LOG §249): where a long recording SOUNDS, so a drone never starts its read in a breath. On the cropped sample: the level in blocks of blockMs; a GAP is a run under gateDb (dB under the loudest block) at least gapMs long; a REGION is a sounding run between gaps at least minMs long. The engine writes them in the index row as regions (\"0-2340,2910-6100\", ms); a plan row's icFromMs:region@0.37 is resolved along the longest. Read at the engine's START (tools/elec.js start → LE_REGIONS).",
+      "blockMs": 20,
+      "gateDb": -40,
+      "gapMs": 150,
+      "minMs": 500
     }
   },
   "_level": "THE LEVEL (PLAN 1.4, step 11; RUNNING_LOG §154 … §161; D17): THE LADDER the electronics are scored on — the players' own law (docs/DYNAMICS_LAW.md Rule 2). reference = the loudness, in LUFS, of the electronics' fff: the AI'S START is the trims' per-voice target (bank/trims.json, −29.54 — the electronics as the tenth voice); HIS EAR MOVES THIS ONE NUMBER and the whole ladder moves with it. stepDb = one written step (4). So mf = reference − 12, ppp = reference − 28. liftCapDb = a sample is never raised by more than this (a whisper is not lifted into the room's noise). floorDb = a sample quieter than this is never raised at all. driveRef (11.4) = the loudness a sample is brought to BEFORE an effect when its drive is 'normalized'. bleedDb (11.7) = how far over the room a capture's attack must stand, in concert. Read at the engine's START (tools/elec.js start → LE_LEVEL).",
@@ -189,5 +196,8 @@
   "_return_chain": "THE RETURN'S BEHAVIOUR 'chain' — his FLOCKING redesigned as a chain, \"Chinese whispers\" (DEC-10 · 10b; RUNNING_LOG §82). A return brick with behaviour chain names its samples; the engine rolls which sample follows the LIVE note (the brick's start) and the rest follow the sample before them, each link with the listening player's imprecision — the error accumulates. G: a follower's stances (no before: you cannot follow what has not sounded). H: whom a link listens to — 1 = the sample just before it, always (his chain); 0 = the live note (a fan); between = a coin per link (piece #2's cascade was 0.5). I: the order — shuffled at every roll (his word) or as named. The ranges and the draw are ar's B; no miss (the lazy band is the fumbled reaction). Used from the engine's next start (LE_CHAIN).",
   "_return_arChain": "THE RETURN'S BEHAVIOUR 'arChain' (DEC-11; RUNNING_LOG §87): ONE sample anticipates or reacts to the LIVE note (an ar roll, A · B · C), the others chain after IT (G · H · I) — which sample takes the ar role is rolled (I shuffled). The brick: a region from 400 ms before the live note to 400 ms after it plus 0.5 s per further sample.",
   "_remote": "LISTENING FROM AFAR (RUNNING_LOG §209): `node tools/elec.js start --remote` (start_electronics_remote.bat) puts the engine on these Windows devices instead of ReaRoute, so Chrome Remote Desktop carries its sound beside Reaper's (Reaper then on WASAPI shared, its output the Windows default). The names as `node electronics/tools/sc.js devices` prints them; the Microsoft Sound Mapper IS the Windows default, whatever it is. The microphones are off in this mode.",
-  "remote": { "inDevice": "MME : Microsoft Sound Mapper - Input", "outDevice": "MME : Microsoft Sound Mapper - Output" }
+  "remote": {
+    "inDevice": "MME : Microsoft Sound Mapper - Input",
+    "outDevice": "MME : Microsoft Sound Mapper - Output"
+  }
 }

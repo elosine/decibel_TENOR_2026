@@ -1,0 +1,102 @@
+{
+ "_what": "THE DRONE SECTION — every number of the section in one place (PLAN.md § 1.7, 15.3; DEC-48 … DEC-54; RUNNING_LOG §240 … §249). HIS DATA: tools/build_drone_section.js reads this file and never writes it; it refuses a file that does not add up. Each player records a multiphonic FOUR times (the first HIS, played into the score; three more by a roll, a duration line in the part); every recording becomes a STRING OF DRONES with his `icy` — a stretch read in order from a start drawn inside a sounding region, no pitch change — one drone a lane at a time, the room 1 … 5 parts, an ebb and flow by rule, not by arc. After a change here:  node tools/build_drone_section.js --seed N --replace  then File ▾ → Reload in the page. Nothing here needs an engine restart: the dials travel in the presets and the plan.",
+
+ "lengthS": 165,
+ "seed": 1,
+ "_lengthS": "the section's length in seconds, to start (his word: ~165). No recording begins later than lengthS less its window; no drone runs past the end. seed: the default seed; --seed N on the command line overrides.",
+
+ "players": [
+  { "name": "bfl", "label": "bass flute", "lane": "bass_flute" },
+  { "name": "bcl", "label": "bass clarinet", "lane": "bass_clarinet" },
+  { "name": "perc", "label": "percussion", "lane": "percussion" },
+  { "name": "va", "label": "viola", "lane": "viola" },
+  { "name": "vc", "label": "cello", "lane": "cello" }
+ ],
+ "_players": "the five. name = the engine's player (bank/elec_route.json players — the microphone); lane = the composer score's lane the recordings and the drones sit on, by instKey (sandbox/instruments.js). The percussionist's bowed metal is on the percussion lane; the mallets lane (bowed crotales) is his too, by the same microphone.",
+
+ "sources": {
+  "bfl": { "inst": "bass_flute", "technique": "mp_short", "keys": [48, 49, 51, 53, 54, 56], "vel": 100, "label": "bass flute · multiphonics (velocity, #11) — C2 · C#2 · D#2 · F2 · F#2 · G#2 of the Kontakt octave, hit about 100" },
+  "bcl": { "inst": "bass_clarinet", "technique": "mp_short", "keys": [34, 38, 39, 46], "vel": 100, "label": "bass clarinet · multiphonics (velocity, #10) — Bb0 · D1 · D#1 · Bb1; the velocity does not matter" },
+  "perc": { "inst": "percussion", "technique": "china_cymbals_bow", "keys": [57], "vel": "mf", "label": "China cymbal · long continuous bowing (the bow patch's top key)" },
+  "va": { "inst": "viola", "technique": "sp_vel", "keys": [50, 55, 59, 64, 68, 73, 77, 82], "vel": "mf", "label": "viola · sul ponticello (velocity, #46) — a variety of pitches" },
+  "vc": { "inst": "cello", "technique": "sp_vel", "keys": [38, 43, 47, 52, 56, 61, 65, 70], "vel": "mf", "label": "cello · sul ponticello (velocity, #46) — a variety of pitches" }
+ },
+ "_sources": "THE MULTIPHONIC PER PLAYER — the simulated note of the three ROLLED recordings (the first recording is the note HE played). HIS DICTATION of 2026-10-08 (DEC-54): the flute's six keys of the Kontakt octave (C3 = 60 there, so C2 = 48) at about velocity 100 · the bass clarinet's four, the velocity no matter · the China cymbal's long continuous bowing · viola and cello sul ponticello VELOCITY, a variety of pitches — the spreads here are the AI's picks across each range, his to change. inst = the lane's recipe key · technique = the recipe's technique key · keys = the MIDI keys a rolled recording draws from, a round robin, none twice before all · vel = a velocity, or a mark (ppp … fff) on the lane's ladder. A key outside the technique's range refuses the builder.",
+
+ "recording": {
+  "lengthS": [6, 9],
+  "perPlayer": 4,
+  "laterGapS": [25, 45],
+  "minApartS": 3,
+  "entry": "his",
+  "entryScore": "drone-start-mics",
+  "preMs": 100,
+  "category": "drone-rec"
+ },
+ "_recording": "lengthS: a mic opening's length, drawn in this range for every recording (the player holds the multiphonic through it — the duration line in the part). perPlayer: recordings a player makes, the entry among them. laterGapS: a rolled recording begins this long after the previous recording's start, drawn. minApartS: no two players' openings begin within this of each other (the roll draws again until they do not). entry: 'his' — the FIRST note on each player's lane in entryScore (his score; --from on the command line) is his entry, kept as he played it, a microphone opened over it; 'rolled' — the entry too is rolled and simulated (the stand-in of a proof). preMs: an opening begins this many ms before its note. category: the openings' category in the bank's rows.",
+
+ "drone": {
+  "lengthS": [10, 40],
+  "restS": [0, 20],
+  "firstAfterOpenS": 20,
+  "fadeS": [1, 2],
+  "fadeMaxS": 6,
+  "fadeLongShare": 0.2,
+  "level": "mp",
+  "curve": 0
+ },
+ "_drone": "a recording's drones, a STRING on the lane: the first begins firstAfterOpenS after its opening STARTS (the window, the engine's 6 s hold before a render, the render itself — §246: not a musical choice); each lengthS long, drawn; then a rest restS, drawn; then the next — until the player's next string begins (the next recording's opening + firstAfterOpenS: one drone a lane at a time), and never past the section's end. fadeS: every drone rises and falls this long, drawn — one in fadeLongShare of them drawn up to fadeMaxS instead ('longer allowed'); never abrupt. level: the written mark on every drone (the engine levels each to the mark against its own loudness — equal by construction; the gain structure of the whole piece is a later pass, NITS). curve: the fall's curve (0 a straight line; −4 a struck fall).",
+
+ "stage": { "icMix": 1, "icRand": 0.2, "icPitch": 0, "icLoop": 1 },
+ "_stage": "the icy stage's FIXED dials (DEC-48 · 49): the stretch alone (mix 1) · rand 0.2 (a fraction of the grain size; one number, his) · no pitch change · read in order from the drawn start, looping at the end. The varying dials are below.",
+
+ "windows": [
+  { "name": "Hann", "icEnv": 0, "set": "smooth", "weight": 1 },
+  { "name": "3-stage linear", "icEnv": 1, "set": "smooth", "weight": 1 },
+  { "name": "expodec", "icEnv": 4, "set": "expodec", "weight": 1 }
+ ],
+ "_windows": "the grain windows (DEC-49): icEnv as the stage numbers them (0 Warp1's own Hann · 1 … 10 his ten in sc/grainEnv/, name order: 1 3-stage linear · 4 expodec). set = which grain-size set the window draws from (below). weight: how many times the window comes in one lap of the round robin (a whole number); all 1 = the plain round robin.",
+
+ "pace": {
+  "bands": [[30, 47.5], [47.5, 65], [65, 82.5], [82.5, 100]],
+  "weights": [1, 1, 1, 1]
+ },
+ "_pace": "the stretch factor, 1/30 … 1/100 (DEC-49), in four equal bands — a band by the round robin, a value drawn inside it; icSpeed = 1 ÷ the factor. weights: how many times a band comes in one lap; all 1 = even, his to weight later.",
+
+ "overlaps": {
+  "bands": [[12, 17], [17, 22], [22, 27], [27, 33]],
+  "weights": [1, 1, 1, 1]
+ },
+ "_overlaps": "how many grains sound at once, 12 … 33 (DEC-50), the same scheme; the value drawn inside the band is rounded to a whole number.",
+
+ "grainSize": {
+  "sets": {
+   "smooth": [
+    { "name": "breath", "band": [0.05, 0.12], "weight": 1 },
+    { "name": "rough", "band": [0.12, 0.3], "weight": 1 },
+    { "name": "tone", "band": [0.3, 0.8], "weight": 1 },
+    { "name": "glass", "band": [0.8, 2], "weight": 1 }
+   ],
+   "expodec": [
+    { "name": "rattle", "band": [0.3, 0.6], "weight": 1 },
+    { "name": "tremolo", "band": [0.6, 1.2], "weight": 1 },
+    { "name": "pulse", "band": [1.2, 2], "weight": 1 }
+   ]
+  },
+  "modes": { "steady": 2, "rising": 1, "falling": 1, "arch": 1 }
+ },
+ "_grainSize": "the grain size (icWin, seconds) in TWO SETS by window (DEC-50): the smooth windows (Hann · 3-stage) four bands, expodec three. A drone's size is STEADY (a band by the round robin, a value drawn inside it) or a SHAPE over its whole length — rising: a value in the set's lowest band to one in its highest · falling: the reverse · arch: low → high → low — written as icWin on a LINE (value@ms). modes: how many times each comes in one lap of the round robin (steady twice as often as any shape).",
+
+ "roll": { "scheme": "exhaustive" },
+ "_roll": "every dial its OWN seeded round robin through its bands or options — none twice before all have been used, the next lap in another order (DEC-49): the window · the pace band · the overlaps band · the size band or shape · the key of a rolled recording · the fade (one lap = five draws, one of them long). A value is drawn inside the band chosen.",
+
+ "keep": { "reachParts": 5, "meanPartsMax": 3.5, "tries": 200 },
+ "_keep": "a seed is KEPT only if the density (parts sounding, read every second over the section) reaches reachParts at least once and its mean stays at or under meanPartsMax; else the next seed, up to tries (DEC-52, the three body's way). The seed kept is written in the score's metadata and in the sheet.",
+
+ "regions": { "spanInside": true },
+ "_regions": "spanInside: a drone's start is written as a FRACTION, icFromMs:region@F, and the engine resolves it at the render so that start + the drone's read span (its length × its speed) stays inside the recording's longest sounding region (electronics/sc/process.scd regionStart; the regions by bank.scd regionsFind at the capture — bank/elec_route.json bank.regions). false: a start in ms drawn along the whole window, the regions unused.",
+
+ "labels": { "recording": "REC", "drone": "D" },
+ "colors": { "recording": "#00897B", "drone": "#8E24AA" },
+ "_labels": "the openings' and the drones' labels and colours in the page: a recording's opening says REC<n> · <window> s; a drone D<n> · <window> · 1/<pace> · ov <n> · <size or shape>."
+}
