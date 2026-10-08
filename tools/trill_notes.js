@@ -21,6 +21,7 @@
 //       [--interval 1]   semitones UP from the note's pitch (1 = the minor second — his word for this passage; the page's own default is 2)
 //       [--shape surge]  surge (slow → fast, exponential) · bloom (fast early, then level) · arch · line · saw
 //       [--curve window] window (A / B / C, the first free) · lane (on the player's lane)
+//       [--accent]       the page's accented first strike (velocity 127) — OFF by default here (§220); the shapes have a floor of 2 (p), not 0
 //       [--voice <key>]  the trill's technique outright; else the lane's ordinary voice — except that a note whose own technique has a
 //                        family with a `main` patch on the lane (a glockenspiel roll → glock_main_hard) trills in that family (§219)
 //       [--off]          take the trills this tool made off those notes (the zone and its curve gone; the note untouched)
@@ -36,7 +37,10 @@ const has = (k) => process.argv.includes('--' + k);
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 && process.argv[i + 1] != null && !/^--/.test(process.argv[i + 1]) ? process.argv[i + 1] : d; };
 const die = (msg, code) => { console.error(msg); process.exit(code || 2); };
 
-// the page's stamp shapes (composer.html, the STAMPS table): y 0 … 10 = the trill's level 0 … 1
+// the page's stamp shapes (composer.html, the STAMPS table): y 0 … 10 = the trill's level 0 … 1 — with a FLOOR (§220, his word on the
+// cello: "starts very quiet, like almost inaudible, and then it kicks in like a sudden jump"): a trill's level is its speed AND its
+// loudness, and an exponential from 0 is near-silent for most of its span; the floor is 2 = the crescendo tool's surge 5× (2 → 10)
+const FLOOR = 2;
 const SHAPES = {
     surge: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'exponential', slope: 0.4 }] },
     bloom: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'logarithmic', slope: -0.29 }] },
@@ -129,14 +133,15 @@ if (has('off')) {
             curveRef = WIN_NAME[L]; curveId = ''; color = WIN_COLOR[L]; opacity = 0.45; fillMode = 'line'; where = 'window ' + curveRef + ' (' + cid + ')';
         }
         const curve = { id: cid, type: 'waveCurve', layer: L, startSeconds: start, endSeconds: end,
-            nodes: sh.nodes.map((n) => Object.assign({}, n)), segments: sh.segments.map((s) => Object.assign({}, s)),
+            nodes: sh.nodes.map((n) => Object.assign({}, n, { y: Math.max(FLOOR, n.y) })), segments: sh.segments.map((s) => Object.assign({}, s)),
             color, fillMode, opacity, performanceNotes: 'trill curve · ' + shape + ' · ' + note.id, properties: { trillCurve: zid } };
         const zone = { id: zid, type: 'zone', layer: note.layer, startTime: start, endTime: end, player: '', instrument: '',
             zoneFunction: 'midiPreview', midiModel: 'trill', ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [],
             ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
             color: '#F04B00', opacity: 0.16, yOffset: 0.5, zoneHeight: 0.96, performanceNotes: 'trill',
             properties: { trillFrom: { note: note.id, shape, interval, at: new Date().toISOString(), command } },
-            trill: { pitch: note.sonifyNote, interval, technique: voice, accent: true, attackVel: 127, attackTech: '', attackDurMs: null,
+            // the ACCENT (the page's default: the first strike at velocity 127) is OFF here — a trill rising from quiet must start at the curve's level (§220: "the first strike is loud"); --accent puts it back
+            trill: { pitch: note.sonifyNote, interval, technique: voice, accent: has('accent'), attackVel: 127, attackTech: '', attackDurMs: null,
                 curveId, curveRef, level: 0.5, eat: true, smooth: 0.7, stretch: 1, speed: 1, seed: 1, roles: true, launchedFrom: note.id,
                 velMode: 'curve', velLo: 65, velHi: 127 } };
         save.objects.push(curve, zone);

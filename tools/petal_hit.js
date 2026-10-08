@@ -16,6 +16,8 @@
 //   node tools/petal_hit.js --score <name> --after <trill zone id | note id> [--player auto | bcl] [--tech slap] [--dyn mf] [--level ff] [--gap 0] [--seed 1] [--dry]
 //       --player auto (the default): a free player — with a microphone, not the one whose trill just ended, nothing of his sounding
 //                from the hit to 0.6 s after; among the free the one whose last hit is the oldest. His impulse technique (impulses.json row 1).
+//       --note   the hit's key outright, or `mid` (the technique's middle); absent: SPREAD across the technique's range — five bands in
+//                a seeded order per player, a seeded key inside the band (§220: "more varied pitches and across the range")
 //       --dyn    the PLAYER's mark: how hard the note is hit (the ladder's velocity for the technique)
 //       --level  the ELECTRONICS' mark: the return's written dynamic (elec.dyn — the petals played at that mark against the render's
 //                own loudness, step 11.3); absent = as played, the render's own level. "the filter too quiet" → --level ff (his word, §218)
@@ -116,8 +118,20 @@ if (arg('off') != null) {
     const techKey = arg('tech', (defaultHit(player) || {}).tech || 'slap'), tech = (inst.techniques || []).find((q) => q.key === techKey);
     if (!tech) die(TRACKS[lane].label + ' has no technique "' + techKey + '" — one of: ' + (inst.techniques || []).map((q) => q.key).join(', '));
     const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
-    let note = arg('note') != null ? +arg('note') : Math.round((lo + hi) / 2);
-    if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((q) => q.midi === note)) note = tech.keys[Math.floor(tech.keys.length / 2)].midi;
+    // THE PITCH (§220, his word: "more varied pitches and across the range of that instrument"): the technique's range cut into five
+    // BANDS; a player's successive hits take the bands in a seeded order, none twice until all five are used, and a seeded key inside
+    // the band — so one player's hits walk the whole range. `--note <key>` says it outright; `--note mid` the middle (as before).
+    const prevAll = hits(), prevMine = prevAll.filter((h) => ((h.properties.petalHit.player) || String(h.elec && h.elec.name || '').split('-')[0]) === player).length;
+    const spreadKey = () => {
+        const BANDS = 5, seed0 = (prevAll.length ? prevAll[0].properties.petalHit.seed : Math.max(1, Math.round(+arg('seed', 1))));
+        const rnd = K.mulberry32(seed0 * 7919 + ROUTE.players.findIndex((p) => p.name === player) * 101 + Math.floor(prevMine / BANDS) * 13);
+        const order = [...Array(BANDS).keys()]; for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+        const band = order[prevMine % BANDS], w = (hi - lo + 1) / BANDS;
+        const r2 = K.mulberry32(seed0 * 7919 + prevMine * 31 + ROUTE.players.findIndex((p) => p.name === player) * 101 + 1);
+        return Math.min(hi, Math.max(lo, Math.round(lo + band * w + r2() * (w - 1))));
+    };
+    let note = arg('note') != null ? (arg('note') === 'mid' ? Math.round((lo + hi) / 2) : +arg('note')) : spreadKey();
+    if (Array.isArray(tech.keys) && tech.keys.length && !tech.keys.some((q) => q.midi === note)) note = tech.keys.reduce((b, q) => (Math.abs(q.midi - note) < Math.abs(b.midi - note) ? q : b), tech.keys[0]).midi;   // a by-key voice: the nearest key it has
     const dyn = arg('dyn', 'mf');
     if (!MARKS.includes(dyn)) die('--dyn: a mark (' + MARKS.join(' ') + ')');
     const vel = Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, TRACKS[lane].instKey, note, MARKS.indexOf(dyn) / (MARKS.length - 1)))));
