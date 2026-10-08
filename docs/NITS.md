@@ -214,3 +214,7 @@ A check that reads another piece's pages needs them STAGED — the recipe is `to
 - **A `/le/play` that overtakes its `/le/open`** (a playhead started inside the window, the two messages racing) takes the buffer's road for that one hit.
 - **Only a PLAIN return is live** — a chain · ar · pattern return at its own opening is still the buffer's; only `petalsOrig` under `tail`, alone: a stack (petals into a pedal) is not.
 - **The ring cannot come before the note:** it follows it by the rack's round trip and the bus's look-ahead (~17 ms) — unmeasured on his machine.
+
+## THE GAIN STRUCTURE OF THE WHOLE PIECE — his note, 2026-10-08 (DEC-52)
+
+*"make a note that we're going to have to resolve the whole value, volume, sort of gain structure of the entire piece. Maybe there's probably going to be a notation pass and then like a electronics pass after that. So taken up there."* — The balance of the electronics against the players and of the electronics' objects against each other is resolved in a pass of its own AFTER the notation pass: the ladder's one number, the marks on every brick, the bus, the house (step 11 — built, unheard; `docs/LEVEL_NOTE.md`). Until then every section is a demo at a pragmatic, trouble-free level: every return written a mark (the engine levels each sample to it against its own loudness), no extremes, nothing masking.
