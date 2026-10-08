@@ -718,3 +718,5 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"let's take the hard overdrive and any of the fuzz out of the available pool of pedals of resonance. We'll keep the soft overdrives and the um, loop ones for now."*
 
 *(The AI's reading, marked as such: `bank/petals_bank.json` `effects.weights` = od-mild 0.15 · loop 0.2 — the two retired weights (od-hard 0.55 · fuzz 0.1) kept under `effects.retired` with their dials, so one word puts them back; `cleanShare` 0.65 unchanged — most hits still clean. The roll's settings sequence is unchanged by this (the same count of draws); only a grit that fell on a retired one falls on the loop or the mild now. Hits 3 and 4 of section 2 redone from it. RUNNING_LOG §221.)*
+
+*(DEC-45, the same evening — his word:)* *"Let's even take the mild overdrive ones out. So if you can replace that cello one."* — the pool is the LOOP alone now beside the clean petals (`bank/petals_bank.json` `effects.weights` { loop 0.2 }; the three retired grits keep their dials under `retired`). Hit 4 redone: the loop. RUNNING_LOG §224.

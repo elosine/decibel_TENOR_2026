@@ -53,6 +53,12 @@ const die = (msg, code) => { console.error(msg); process.exit(code || 2); };
 // loudness, and an exponential from 0 is near-silent for most of its span; the floor was 2 (the crescendo tool's surge 5×) for a few
 // hours — HIS WORD the same evening (§223): "drop the trill curves back down to from zero to the top" → 0. His to move.
 const FLOOR = 0;
+// THE CELLO'S LAYER STEP (§224, his "around 157.2 volume jumps"): Xsample's cello senza_vel jumps ~10 dB between velocity ~64 and ~80
+// (two layers; the septet's finer card, 64: −38.5 → 80: −28.4 dB); the remap's 4-point card here is linear across it, so a swell from
+// anchor 65 crosses the step two thirds of the way up. The viola's library has no such step in the trill's range. SAME METHOD, one
+// number: the cello's trill starts at anchor 95 (velocity ~68) so the crossing falls in the first second, where it reads as the
+// swell's beginning. Measured by ear once: his. The real cure is a finer cello card (container 5) — his to ask.
+const VEL_LO = { cello: 95 };
 const SHAPES = {
     surge: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'exponential', slope: 0.4 }] },
     bloom: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'logarithmic', slope: -0.29 }] },
@@ -155,7 +161,7 @@ if (has('off')) {
             // the ACCENT (the page's default: the first strike at velocity 127) is OFF here — a trill rising from quiet must start at the curve's level (§220: "the first strike is loud"); --accent puts it back
             trill: { pitch: note.sonifyNote, interval, technique: voice, accent: has('accent'), attackVel: 127, attackTech: '', attackDurMs: null,
                 curveId, curveRef, level: 0.5, eat: true, smooth: 0.7, stretch: 1, speed: 1, seed: 1, roles: true, launchedFrom: note.id,
-                velMode: 'curve', velLo: 65, velHi: 127 } };
+                velMode: 'curve', velLo: VEL_LO[tr.instKey] != null ? VEL_LO[tr.instKey] : 65, velHi: 127 } };
         save.objects.push(curve, zone);
         made++;
         out.push('  ' + note.id + ' ' + (tr.short || note.layer) + ' ' + pn(note.sonifyNote) + ' → trill ' + pn(note.sonifyNote) + '–' + pn(note.sonifyNote + interval) + ' · ' + start.toFixed(2) + ' → ' + end.toFixed(2) + ' s · ' + shape + ' · ' + zid + ' reads ' + where + ' · voice ' + (zone.trill.technique || '(the lane\'s ordinary)'));

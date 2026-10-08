@@ -4,7 +4,6 @@
   "_doc": "the grit after the petals — his words: \"mostly non-affected\"; when affected, \"the overdrive hard as the main effect, the one loop as a more rare effect, the fuzz once in a while, the overdrive mild as a subset of the overdrive hard — for every few overdrives one of them is a mild\". cleanShare is the share of bricks with NO grit; the weights divide the rest.",
   "cleanShare": 0.65,
   "weights": {
-   "od-mild": 0.15,
    "loop": 0.2
   },
   "dials": {
@@ -45,7 +44,8 @@
   "retired": {
    "od-hard": 0.55,
    "fuzz": 0.1,
-   "_doc": "OUT OF THE POOL at his word 2026-10-07 (RUNNING_LOG §221): \"let us take the hard overdrive and any of the fuzz out of the available pool of pedals of resonance. We will keep the soft overdrives and the loop ones for now.\" The dials stay below; a weight moved back here puts a grit back in the roll."
+   "_doc": "OUT OF THE POOL at his word 2026-10-07 (RUNNING_LOG §221): \"let us take the hard overdrive and any of the fuzz out of the available pool of pedals of resonance. We will keep the soft overdrives and the loop ones for now.\" The dials stay below; a weight moved back here puts a grit back in the roll. AND the mild overdrive, the same evening: \"Let us even take the mild overdrive ones out.\"",
+   "od-mild": 0.15
   }
  },
  "source": "audition-petals-spectrum · seed 1 · node tools/build_petals_spectrum.js --n 56 --gap 6 --seed 1 --flo 25 --fhi 400 --clean 0.5",
