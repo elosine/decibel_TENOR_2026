@@ -21,6 +21,8 @@
 //       [--interval 1]   semitones UP from the note's pitch (1 = the minor second — his word for this passage; the page's own default is 2)
 //       [--shape surge]  surge (slow → fast, exponential) · bloom (fast early, then level) · arch · line · saw
 //       [--curve window] window (A / B / C, the first free) · lane (on the player's lane)
+//       [--voice <key>]  the trill's technique outright; else the lane's ordinary voice — except that a note whose own technique has a
+//                        family with a `main` patch on the lane (a glockenspiel roll → glock_main_hard) trills in that family (§219)
 //       [--off]          take the trills this tool made off those notes (the zone and its curve gone; the note untouched)
 //       [--dry]          say what would happen, write nothing
 //
@@ -56,10 +58,12 @@ const TRACKS = save.tracks;
 // the page's working copy (scores/<name>-work.json — tools/unsaved_check.js's comparison): his unsaved edits are not written over
 const working = file.replace(/\.json$/, '-work.json');
 if (!has('unsaved-ok') && fs.existsSync(working)) {
-    const essence = (s) => { try { const o = JSON.parse(s); if (o && o.metadata) { delete o.metadata.modified; delete o.metadata.created; } if (o) delete o.viewport; return JSON.stringify(o); } catch (e) { return s; } };
+    // the page's own live stamps (a trill's midiSnippet · a note's mutedBy · _fields) are not his edits (§214 · §219)
+    const strip = (o) => { const c = Object.assign({}, o); delete c.midiSnippet; delete c.mutedBy; Object.keys(c).forEach((k) => { if (k[0] === '_') delete c[k]; }); return c; };
+    const essence = (s) => { try { const o = JSON.parse(s); return JSON.stringify((o.objects || []).map(strip)); } catch (e) { return s; } };
     const same = essence(fs.readFileSync(working, 'utf8')) === essence(fs.readFileSync(file, 'utf8'));
     if (!same && !has('dry')) die('the page holds a working copy of ' + path.basename(file) + ' with UNSAVED changes — Save (CTRL+S) or Reload there first (or --unsaved-ok at his word).', 3);
-    console.log(same ? '(the working copy is identical to the save: nothing unsaved; Reload in the page after this)' : '(THE PAGE HOLDS UNSAVED CHANGES — this dry run is of the SAVE, not of what the page shows)');
+    console.log(same ? '(the working copy differs from the save only by the page\'s own stamps, if at all; Reload in the page after this)' : '(THE PAGE HOLDS UNSAVED CHANGES — this dry run is of the SAVE, not of what the page shows)');
 }
 
 const shape = arg('shape', 'surge');
@@ -106,6 +110,15 @@ if (has('off')) {
         const already = save.objects.find((o) => o.type === 'zone' && o.midiModel === 'trill' && o.properties && o.properties.trillFrom && o.properties.trillFrom.note === note.id);
         if (already) { out.push('  ' + note.id + ': has a trill of this tool already (' + already.id + ') — left as it is; --off first to redo'); continue; }
         const tr = TRACKS[note.layer], inst = INSTRUMENTS[tr.instKey] || {};
+        // THE VOICE: the lane's ordinary — except where the note's own technique has a FAMILY with a `main` patch on this lane (the
+        // mallets: a glockenspiel roll trills on glock_main_hard, not on the lane's crotales — §219); `--voice <key>` says it outright
+        const voice = (() => {
+            if (arg('voice')) return arg('voice');
+            const fam = String(note.technique || '').split('_')[0], techs = inst.techniques || [];
+            const mains = fam && fam !== String(inst.ordinary || '').split('_')[0] ? techs.filter((q) => q.key.startsWith(fam + '_main')) : [];
+            const pick = mains.find((q) => /_hard$/.test(q.key)) || mains[0];
+            return pick ? pick.key : (inst.ordinary || note.technique || '');
+        })();
         const start = Math.round(note.startSeconds * 1000) / 1000, end = Math.round(note.endSeconds * 1000) / 1000;
         const zid = 'zn-' + (nextId++), cid = 'wc-' + (nextId++);
         const sh = SHAPES[shape];
@@ -123,7 +136,7 @@ if (has('off')) {
             ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
             color: '#F04B00', opacity: 0.16, yOffset: 0.5, zoneHeight: 0.96, performanceNotes: 'trill',
             properties: { trillFrom: { note: note.id, shape, interval, at: new Date().toISOString(), command } },
-            trill: { pitch: note.sonifyNote, interval, technique: inst.ordinary || note.technique || '', accent: true, attackVel: 127, attackTech: '', attackDurMs: null,
+            trill: { pitch: note.sonifyNote, interval, technique: voice, accent: true, attackVel: 127, attackTech: '', attackDurMs: null,
                 curveId, curveRef, level: 0.5, eat: true, smooth: 0.7, stretch: 1, speed: 1, seed: 1, roles: true, launchedFrom: note.id,
                 velMode: 'curve', velLo: 65, velHi: 127 } };
         save.objects.push(curve, zone);

@@ -13,7 +13,9 @@
 //   The preset pp<k> is written into bank/presets.json (`deal: false`, `audition: piece-petals`): never dealt, kept by a generation.
 //   The record: `properties.petalHit` on the three objects (k · the seed · the roll's setting and grit · what it follows · the command).
 //
-//   node tools/petal_hit.js --score <name> --after <trill zone id | note id> --player bcl [--tech slap] [--dyn mf] [--level ff] [--gap 0] [--seed 1] [--dry]
+//   node tools/petal_hit.js --score <name> --after <trill zone id | note id> [--player auto | bcl] [--tech slap] [--dyn mf] [--level ff] [--gap 0] [--seed 1] [--dry]
+//       --player auto (the default): a free player — with a microphone, not the one whose trill just ended, nothing of his sounding
+//                from the hit to 0.6 s after; among the free the one whose last hit is the oldest. His impulse technique (impulses.json row 1).
 //       --dyn    the PLAYER's mark: how hard the note is hit (the ladder's velocity for the technique)
 //       --level  the ELECTRONICS' mark: the return's written dynamic (elec.dyn — the petals played at that mark against the render's
 //                own loudness, step 11.3); absent = as played, the render's own level. "the filter too quiet" → --level ff (his word, §218)
@@ -85,14 +87,33 @@ if (arg('off') != null) {
     } else if (arg('at') != null) T = +arg('at');
     else die('--after <id> or --at <seconds>');
     T = Math.round(T * 1000) / 1000;
-    // WHO: the player, by the route's name, his short name or the lane
-    const who = String(arg('player', 'bcl')).toLowerCase();
-    const lane = TRACKS.findIndex((t) => [t.id, t.short, t.label, t.instKey].map((x) => String(x || '').toLowerCase()).includes(who) || (ROUTE.players.find((p) => p.name === who) || {}).port === (INSTRUMENTS[t.instKey] || {}).port);
-    if (lane < 0) die('--player: no lane for "' + who + '" (' + TRACKS.map((t) => t.short).join(', ') + ')');
+    // WHO: the player — by the route's name, his short name or the lane; or AUTO (his word, §219: "just choose an available player"):
+    // a player with a microphone who is NOT the one whose trill just ended and has nothing sounding from the hit to 0.6 s after it
+    // (a note or a trill on any of his lanes — the percussionist owns two); among the free, the one whose last hit is the oldest.
+    // Each player's hit is his IMPULSE technique (bank/impulses.json row 1, his dictation: slap · slap · taiko sticks · Bartók · gettato).
+    const IMP1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'impulses.json'), 'utf8'))['1'] || [];
+    const laneOfInst = (instKey) => TRACKS.findIndex((t) => t.instKey === instKey);
+    const playerOfLane = (L) => { const inst = INSTRUMENTS[TRACKS[L].instKey] || {}; return (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || ''; };
+    const defaultHit = (pl) => { const slot = IMP1.find((q) => laneOfInst(q.lane) >= 0 && playerOfLane(laneOfInst(q.lane)) === pl); return slot ? { lane: laneOfInst(slot.lane), tech: slot.tech } : null; };
+    const who = String(arg('player', 'auto')).toLowerCase();
+    let lane, player, chosen = '';
+    if (who === 'auto') {
+        const a = T + 0.01, b = T + 0.6;
+        const busyLane = (L) => save.objects.some((o) => o.layer === L && ((o.type === 'waveCurve' && o.sonifyNote != null && o.endSeconds > a && o.startSeconds < b) || (o.type === 'zone' && o.midiModel === 'trill' && o.endTime > a && o.startTime < b)));
+        const trilling = follows ? playerOfLane(follows.layer) : '';
+        const lastUse = {}; hits().forEach((h) => { lastUse[(h.properties.petalHit.player) || String(h.elec && h.elec.name || '').split('-')[0]] = h.properties.petalHit.k; });
+        const cands = ROUTE.players.map((p) => p.name).filter((n) => n !== trilling && defaultHit(n)).filter((n) => !TRACKS.some((t, L) => playerOfLane(L) === n && busyLane(L)));
+        if (!cands.length) die('no player is free at ' + T.toFixed(3) + ' s (' + (trilling ? trilling + ' trilling; ' : '') + 'every other microphone busy)');
+        cands.sort((x, y) => (lastUse[x] || 0) - (lastUse[y] || 0));
+        player = cands[0]; lane = defaultHit(player).lane; chosen = ' (free: ' + cands.join(' ') + ')';
+    } else {
+        lane = TRACKS.findIndex((t) => [t.id, t.short, t.label, t.instKey].map((x) => String(x || '').toLowerCase()).includes(who) || (ROUTE.players.find((p) => p.name === who) || {}).port === (INSTRUMENTS[t.instKey] || {}).port);
+        if (lane < 0) die('--player: no lane for "' + who + '" (auto, or one of ' + TRACKS.map((t) => t.short).join(', ') + ')');
+        player = playerOfLane(lane);
+        if (!player) die(TRACKS[lane].label + ' has no microphone in bank/elec_route.json');
+    }
     const inst = INSTRUMENTS[TRACKS[lane].instKey];
-    const player = (ROUTE.players.find((p) => (p.ports || [p.port]).includes(inst.port)) || {}).name || '';
-    if (!player) die(TRACKS[lane].label + ' has no microphone in bank/elec_route.json');
-    const techKey = arg('tech', 'slap'), tech = (inst.techniques || []).find((q) => q.key === techKey);
+    const techKey = arg('tech', (defaultHit(player) || {}).tech || 'slap'), tech = (inst.techniques || []).find((q) => q.key === techKey);
     if (!tech) die(TRACKS[lane].label + ' has no technique "' + techKey + '" — one of: ' + (inst.techniques || []).map((q) => q.key).join(', '));
     const lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
     let note = arg('note') != null ? +arg('note') : Math.round((lo + hi) / 2);
@@ -114,7 +135,7 @@ if (arg('off') != null) {
     // THE OBJECTS
     let nextId = Math.max(+save.nextId || 1, 1 + save.objects.reduce((m, o) => { const q = /-(\d+)$/.exec(String(o.id || '')); return q ? Math.max(m, +q[1]) : m; }, 0));
     const smp = player + '-petal-' + k;
-    const rec = { k, seed, setting: d.setting.n, fund: d.setting.fund, effect: d.effect, preset: key, sample: smp, after: follows ? follows.id : null, at: T, command };
+    const rec = { k, seed, player, setting: d.setting.n, fund: d.setting.fund, effect: d.effect, preset: key, sample: smp, after: follows ? follows.id : null, at: T, command };
     const y = Math.max(1, Math.round((vel / 127) * 100) / 10);
     const noteObj = { id: 'wc-' + (nextId++), type: 'waveCurve', layer: lane, startSeconds: T, endSeconds: Math.round((T + LEN_S) * 1000) / 1000,
         nodes: [{ pos: 0, y, smooth: 0.25 }, { pos: 1, y, smooth: 0.25 }], segments: [{ model: 'power', slope: 0 }], color: '#607D8B', fillMode: 'bottom', opacity: 0.55,
@@ -126,7 +147,7 @@ if (arg('off') != null) {
     const ret = zone(T + gap, T + gap + 0.5, Object.assign({ name: smp, label: 'petal ' + k + ' · #' + d.setting.n + ' ' + Math.round(d.setting.fund) + ' Hz' + (d.effect === 'clean' ? '' : ' · ' + NAMES[d.effect]), variants: { [smp]: key + '-tail' } }, level ? { dyn: { mode: 'mark', mark: level } } : {}), 'elecPlay', 1);
     save.objects.push(noteObj, open, ret);
     save.nextId = nextId;
-    out.push('petal hit ' + k + (follows ? ' after ' + follows.id + (follows.trill ? ' (the trill)' : '') : '') + ' at ' + T.toFixed(3) + ' s — ' + TRACKS[lane].label + ' ' + tech.label + ' key ' + note + ' vel ' + vel + ' (' + dyn + ') 150 ms · mic ' + smp + ' (' + open.startTime + ' → ' + open.endTime + ') · return ' + ret.id + ' at ' + ret.startTime + ' s: ' + key + ' = petals #' + d.setting.n + ' ' + d.setting.fund + ' Hz · ' + NAMES[d.effect] + (level ? ' · played ' + level : ' · as played') + ' · seed ' + seed);
+    out.push('petal hit ' + k + (follows ? ' after ' + follows.id + (follows.trill ? ' (the trill)' : '') : '') + ' at ' + T.toFixed(3) + ' s — ' + TRACKS[lane].label + chosen + ' ' + tech.label + ' key ' + note + ' vel ' + vel + ' (' + dyn + ') 150 ms · mic ' + smp + ' (' + open.startTime + ' → ' + open.endTime + ') · return ' + ret.id + ' at ' + ret.startTime + ' s: ' + key + ' = petals #' + d.setting.n + ' ' + d.setting.fund + ' Hz · ' + NAMES[d.effect] + (level ? ' · played ' + level : ' · as played') + ' · seed ' + seed);
     if (!has('dry')) {
         const P = K.readJson(K.PRESETS), rows = P.presets.filter((p) => p.audition === TAG && p.key !== key).map((p) => { const c = Object.assign({}, p); delete c.deal; delete c.audition; return c; }).concat([preset]);
         K.writePresets(TAG, rows, 'the piece\'s petal hits — the petals of resonance rolled exhaustively at the trills\' ends (DEC-44); seed ' + seed, command);
