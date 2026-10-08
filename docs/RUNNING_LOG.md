@@ -5217,3 +5217,6 @@ His word after hearing the petals at the brick. TWO LEVERS, both set: **the play
 **What went wrong, then (the AI's reading):** TWO NUMBERS, not the method — the curve from 0 (an exponential from silence) and the page's accented first strike — both fixed in the save at §220 (the six trills patched in place) and in the tool. Whether he heard the §220 version before this message is not known: his message came minutes after "Reload · play twice". **THE STANDARD from here, written into `tools/trill_notes.js`'s header: one command makes a trill the septet's way** — his played-trill tables, the loudness from the curve 65 … 127 through the remap, level 0.5, no accent (`--accent` for the septet's sfz), the surge 2 → 10 in a curve window (A / B / C dealt), the interval asked. Nothing else to decide per trill.
 
 **Open, said in one line:** the mallets have no velocity remap (the anchor passes through) and no trill table of their own; a glock trill is the cello's rhythm at raw velocities. His to say if it matters.
+
+## §223
+**2026-10-07 — *"can you drop the trill curves back down to from zero to the top?"*** — the floor of §220 was the AI's number; his word takes the surge back to 0 → 10. `trill_notes.js` `FLOOR` 2 → 0; the six curves in the save: each first node at 2 (the floor's own value, nothing hand-bent) → 0. No accent, as before. His step: File ▾ → Reload.
