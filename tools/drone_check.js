@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // drone_check.js — THE DRONE SECTION'S ONE CHECK (PLAN.md § 1.7, 15.4 g; RUNNING_LOG §249): on a score tools/build_drone_section.js made,
 // against bank/drone_section.json and bank/presets.json —
-//     four recordings a player, the first his (when his entries were read) · the later ones 25 … 45 s after the previous, no two
-//     players' openings within 3 s · the first drone ≥ 20 s after its opening starts · one drone a lane at a time · every band of
+//     three recordings a player (four at the layout; his word of 2026-10-08, §251), the first his (when his entries were read) · the
+//     later ones 25 … 45 s after the previous, no two players' openings within 3 s, every opening before recording.lastStartS (120 s) ·
+//     the first drone ≥ 30 s after its window ENDS (drone.firstAfterEndS) · one drone a lane at a time · every band of
 //     every dial used before any repeats (the window · the pace band · the overlaps band) · the fades and lengths in range · the
 //     density reaches 5 and averages ≤ 3.5 · every drone's preset present, ended by a shape, its absolute length the drone's, its
 //     start a fraction of a region · the plan's line for a drone as the kit sends it: thirteen fields, "<ms>ms", the fraction whole.
@@ -44,7 +45,8 @@ check('a rolled recording\'s note is its player\'s multiphonic on a key of his l
 
 // the drones
 const recOf = (d) => recs.find((r) => r.player === d.player && r.k === d.rec);
-check('the first drone of a recording ≥ ' + D.firstAfterOpenS + ' s after its opening starts', drones.every((d) => { const r = recOf(d); return r && d.z.startTime >= r.openS + D.firstAfterOpenS - 0.01; }), drones.filter((d) => d.n === 1).map((d) => r2(d.z.startTime - recOf(d).openS)).join(' '));
+check('every opening begins before ' + R.lastStartS + ' s (his line: all the recordings before it)', R.lastStartS == null || recs.every((r) => r.openS <= +R.lastStartS), 'the last at ' + Math.max(...recs.map((r) => r.openS)).toFixed(1) + ' s');
+check('the first drone of a recording ≥ ' + D.firstAfterEndS + ' s after its window ends (the render)', drones.every((d) => { const r = recOf(d); return r && d.z.startTime >= r.openS + r.windowS + D.firstAfterEndS - 0.01; }), drones.filter((d) => d.n === 1).map((d) => r2(d.z.startTime - recOf(d).openS - recOf(d).windowS)).join(' '));
 let overlapOnLane = 0;
 for (const p of CFG.players) { const mine = drones.filter((d) => d.player === p.name).sort((a, b) => a.z.startTime - b.z.startTime); for (let i = 1; i < mine.length; i++) if (mine[i].z.startTime < mine[i - 1].z.endTime - 0.001) overlapOnLane++; }
 check('one drone a lane at a time', overlapOnLane === 0, overlapOnLane + ' overlaps');
