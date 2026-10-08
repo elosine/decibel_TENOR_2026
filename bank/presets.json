@@ -7685,8 +7685,8 @@
   "piece-petals": {
    "n": 1,
    "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
-   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-424 --player bcl",
-   "when": "2026-10-08T00:51"
+   "command": "node tools/petal_hit.js --score piece-sec02-a1 --after zn-424 --player bcl --dyn ff --level ff",
+   "when": "2026-10-08T01:01"
   }
  }
 }

@@ -13,7 +13,10 @@
 //   The preset pp<k> is written into bank/presets.json (`deal: false`, `audition: piece-petals`): never dealt, kept by a generation.
 //   The record: `properties.petalHit` on the three objects (k · the seed · the roll's setting and grit · what it follows · the command).
 //
-//   node tools/petal_hit.js --score <name> --after <trill zone id | note id> --player bcl [--tech slap] [--dyn mf] [--gap 0] [--seed 1] [--dry]
+//   node tools/petal_hit.js --score <name> --after <trill zone id | note id> --player bcl [--tech slap] [--dyn mf] [--level ff] [--gap 0] [--seed 1] [--dry]
+//       --dyn    the PLAYER's mark: how hard the note is hit (the ladder's velocity for the technique)
+//       --level  the ELECTRONICS' mark: the return's written dynamic (elec.dyn — the petals played at that mark against the render's
+//                own loudness, step 11.3); absent = as played, the render's own level. "the filter too quiet" → --level ff (his word, §218)
 //   node tools/petal_hit.js --score <name> --at <seconds> --player bcl …                 at a time instead
 //   node tools/petal_hit.js --score <name> --off <k>                                      hit k out again (its three objects and its preset)
 //
@@ -98,6 +101,8 @@ if (arg('off') != null) {
     if (!MARKS.includes(dyn)) die('--dyn: a mark (' + MARKS.join(' ') + ')');
     const vel = Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, TRACKS[lane].instKey, note, MARKS.indexOf(dyn) / (MARKS.length - 1)))));
     const gap = +arg('gap', 0);
+    const level = arg('level', '');
+    if (level && !MARKS.includes(level)) die('--level: a mark (' + MARKS.join(' ') + ')');
     // THE ROLL: the k-th of the piece's sequence; the seed is the first hit's
     const prev = hits(), k = prev.length ? prev[prev.length - 1].properties.petalHit.k + 1 : 1;
     const seed = prev.length ? prev[0].properties.petalHit.seed : Math.max(1, Math.round(+arg('seed', 1)));
@@ -118,10 +123,10 @@ if (arg('off') != null) {
         ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [], ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
         color: model === 'elecPlay' ? '#8E24AA' : '#00897B', opacity: 0.35, yOffset, zoneHeight: 0.2, performanceNotes: '', properties: { petalHit: rec }, elec });
     const open = zone(Math.max(0, T - BEFORE_S), T - BEFORE_S + WINDOW_S, { name: smp, category: 'impulse', player }, 'elecOpen', 0);
-    const ret = zone(T + gap, T + gap + 0.5, { name: smp, label: 'petal ' + k + ' · #' + d.setting.n + ' ' + Math.round(d.setting.fund) + ' Hz' + (d.effect === 'clean' ? '' : ' · ' + NAMES[d.effect]), variants: { [smp]: key + '-tail' } }, 'elecPlay', 1);
+    const ret = zone(T + gap, T + gap + 0.5, Object.assign({ name: smp, label: 'petal ' + k + ' · #' + d.setting.n + ' ' + Math.round(d.setting.fund) + ' Hz' + (d.effect === 'clean' ? '' : ' · ' + NAMES[d.effect]), variants: { [smp]: key + '-tail' } }, level ? { dyn: { mode: 'mark', mark: level } } : {}), 'elecPlay', 1);
     save.objects.push(noteObj, open, ret);
     save.nextId = nextId;
-    out.push('petal hit ' + k + (follows ? ' after ' + follows.id + (follows.trill ? ' (the trill)' : '') : '') + ' at ' + T.toFixed(3) + ' s — ' + TRACKS[lane].label + ' ' + tech.label + ' key ' + note + ' vel ' + vel + ' (' + dyn + ') 150 ms · mic ' + smp + ' (' + open.startTime + ' → ' + open.endTime + ') · return ' + ret.id + ' at ' + ret.startTime + ' s: ' + key + ' = petals #' + d.setting.n + ' ' + d.setting.fund + ' Hz · ' + NAMES[d.effect] + ' · seed ' + seed);
+    out.push('petal hit ' + k + (follows ? ' after ' + follows.id + (follows.trill ? ' (the trill)' : '') : '') + ' at ' + T.toFixed(3) + ' s — ' + TRACKS[lane].label + ' ' + tech.label + ' key ' + note + ' vel ' + vel + ' (' + dyn + ') 150 ms · mic ' + smp + ' (' + open.startTime + ' → ' + open.endTime + ') · return ' + ret.id + ' at ' + ret.startTime + ' s: ' + key + ' = petals #' + d.setting.n + ' ' + d.setting.fund + ' Hz · ' + NAMES[d.effect] + (level ? ' · played ' + level : ' · as played') + ' · seed ' + seed);
     if (!has('dry')) {
         const P = K.readJson(K.PRESETS), rows = P.presets.filter((p) => p.audition === TAG && p.key !== key).map((p) => { const c = Object.assign({}, p); delete c.deal; delete c.audition; return c; }).concat([preset]);
         K.writePresets(TAG, rows, 'the piece\'s petal hits — the petals of resonance rolled exhaustively at the trills\' ends (DEC-44); seed ' + seed, command);
