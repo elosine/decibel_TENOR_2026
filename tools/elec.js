@@ -11,6 +11,7 @@
 //   node tools/elec.js start      # the engine up and listening — what start_electronics.bat runs
 //   node tools/elec.js selftest   # the engine's own test, no hardware, no sound
 //   node tools/elec.js bus        # THE BUS (the master: high-pass · low-pass · the glue · the limiter): its dials shown; with words — bus glue=off lpf=6000 — moved on the LIVING engine, by a message
+//   node tools/elec.js calibrate --venue <name> --sine-bleed   # THE SINE'S BLEED (16.1 e): NO ONE PLAYS — per player the room in the band at their sine's pitch, then the sine alone at fff in it; written to the venue (roomBandDb · sineBleedDb). The tool's own engine (his must be down); IT SOUNDS  [--score beating-section | --pitches bcl=63,bfl=76] [--player bcl] [--dry]
 //   node tools/elec.js calibrate --venue <name>   # THE SOUND CHECK (11.7 b): each player one mf on cue; the engine reads it and the venue's trims are written — the tool's own engine (his must be down)  [--seconds 6] [--mark mf] [--player bcl] [--sim: the rack plays the notes; it SOUNDS] [--dry]
 //   node tools/elec.js tone       # the house's line-up tone from the LIVING engine: 1 kHz at −18 dBFS for 10 s, past the bus — it SOUNDS  [--seconds N] [--db -18] [--hz 1000]
 //   node tools/elec.js env        # LOOK ONLY: what the engine is started with (the players, the bank, the crop, the rolls, the ladder, the bus, the venue)
@@ -96,6 +97,10 @@ function venueSpec(V) {
         if (num(p.trimDb)) f.push('trimDb=' + p.trimDb);
         if (num(p.hpfHz) && p.hpfHz > 0) f.push('hpfHz=' + p.hpfHz);
         (Array.isArray(p.eq) ? p.eq : []).slice(0, 2).forEach((e, k) => { if (e && num(e.hz) && num(e.db)) f.push('eq' + (k + 1) + '=' + e.hz + '/' + e.db + '/' + (num(e.q) ? e.q : 1)); });
+        // PLAN 1.8 · 16.1 e: what the tracker reads of a hall (electronics/sc/track.scd trackThr · trackGuard) — the room in the player's band and the sine's bleed
+        // into it (calibrate --sine-bleed), a broadband room figure where one was written by hand, and whether this microphone's trim was calibrated
+        for (const k of ['roomBandDb', 'roomDb', 'sineBleedDb']) if (num(p[k])) f.push(k + '=' + p[k]);
+        if (V.doc.calibrated && num(p.trimDb)) f.push('cal=1');
         return f.join(':');
     };
     return 'name=' + String(V.name).replace(/[^A-Za-z0-9_-]/g, '') + ';' + CFG.players.map((p) => one(p.name)).join(',');
@@ -135,6 +140,11 @@ function engineEnv() {
     // PLAN 10.14: THE PETALS LIVE (bank/elec_route.json return.live) — on · windowMs, the engine's own names (electronics/sc/petals_live.scd liveDefaults)
     const lvLive = Object.entries((CFG.return && CFG.return.live) || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
     if (lvLive) env.LE_LIVE = lvLive;
+    // PLAN 1.8 · 16.1: THE TRACKER (bank/elec_route.json sine.track) — the engine's own names (electronics/sc/track.scd trackDefaults); ear sim | mic goes as earSim 1 | 0
+    const trk = Object.assign({}, (CFG.sine && CFG.sine.track) || {});
+    if (trk.ear === 'sim' || trk.ear === 'mic') trk.earSim = trk.ear === 'sim' ? 1 : 0;
+    const trSpec = Object.entries(trk).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
+    if (trSpec) env.LE_TRACK = trSpec;
     // PLAN 1.4 · 11.2: THE LADDER OF MARKS (bank/elec_route.json level) — reference = the LUFS of the electronics' fff, the step, the lift's cap, the floor;
     // driveRef (11.4) and bleedDb (11.7) ride with it. Flat numbers, the engine's own names (electronics/sc/level.scd levelDefaults).
     const lvSpec = Object.entries(CFG.level || {}).filter(([k, v]) => !k.startsWith('_') && typeof v === 'number').map(([k, v]) => k + '=' + v).join(',');
@@ -366,6 +376,43 @@ async function readPeaks(waitMs) {
         const E = engineEnv(), env = { LE_PLAYERS: players.map((p) => p.name + ':' + (p.engineIn - 1)).join(','), LE_VENUE: venueSpec(V), LE_CAL_SECONDS: String(secs), LE_CAL_MARK: mark, LE_CAL_GAP: sim ? '2' : '4' };
         if (E.LE_LEVEL) env.LE_LEVEL = E.LE_LEVEL;
         if (!sim && process.env.LE_DEVICE) env.LE_MODE = 'live';
+        // PLAN 1.8 · 16.1 e: THE SINE'S BLEED — with NO ONE PLAYING: for each player the room in the band at their sine's pitch, then the sine alone at fff in it.
+        // The pitches: --pitches bcl=63,bfl=76,…  or the first sine brick on each player's lanes in --score (beating-section). IT SOUNDS (the sine, through the master).
+        if (flags.includes('--sine-bleed')) {
+            const pitches = {}, said = flagValue(flags, '--pitches');
+            if (said) for (const kv of said.split(',')) { const b = kv.split('='); if (b.length === 2 && Number.isFinite(+b[1])) pitches[b[0]] = +b[1]; }
+            else {
+                const score = flagValue(flags, '--score') || 'beating-section', file = path.join(ROOT, 'scores', score + '.json');
+                if (!fs.existsSync(file)) { console.error('no such score: scores/' + score + '.json — or say the pitches:  --pitches bcl=63,bfl=76,…'); process.exit(2); }
+                const S = JSON.parse(fs.readFileSync(file, 'utf8')), INSTR = require('vm').runInNewContext(fs.readFileSync(path.join(ROOT, 'sandbox', 'instruments.js'), 'utf8') + '\n;INSTRUMENTS;', {});
+                for (const z of (S.objects || []).filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.elec).sort((a, b) => a.startTime - b.startTime)) {
+                    const port = String(((INSTR[((S.tracks || [])[z.layer] || {}).instKey] || {}).port) || '').toLowerCase();
+                    const p = players.find((x) => (x.ports || [x.port]).some((q) => String(q || '').toLowerCase() === port));
+                    if (p && pitches[p.name] == null && Number.isFinite(+z.elec.midi)) pitches[p.name] = +z.elec.midi;
+                }
+            }
+            const who = players.filter((p) => pitches[p.name] != null);
+            if (!who.length) { console.error('no pitch for any player — --pitches bcl=63,bfl=76,…'); process.exit(2); }
+            env.LE_CAL_SINE = who.map((p) => p.name + ':' + pitches[p.name]).join(',');
+            if (E.LE_TRACK) env.LE_TRACK = E.LE_TRACK;
+            if (E.LE_MASTER) env.LE_MASTER = E.LE_MASTER;
+            console.log('THE SINE\'S BLEED  venue ' + V.name + ' · ' + who.map((p) => p.name + ' at ' + pitches[p.name]).join(' · ') + ' · NO ONE PLAYS · the sine sounds at fff, 3 s a player' + (dry ? ' · dry: the file is not written' : ''));
+            const read = [];
+            const runB = sc.start(SCD('calibrate.scd'), { timeoutS: 60 + who.length * 12, env, onLine: (l) => {
+                const m = /^LE_RESULT\s+(.*)$/.exec(l);
+                if (m) { try { const o = JSON.parse(m[1]); if (o.msg === 'bleed') read.push(o); } catch (e) { /* not a line of ours */ } return; }
+                if (/^LE_/.test(l)) console.log(l.replace(/^LE_(INFO|READY)\s*/, '').replace(/^LE_ERROR\s*/, 'STOPPED: '));
+            } });
+            await runB.done;
+            if (!read.length) { console.log('NOTHING WAS READ — the venue\'s file is as it was.'); process.exit(1); }
+            V.doc.players = V.doc.players || {};
+            for (const o of read) V.doc.players[o.player] = Object.assign({ trimDb: 0, hpfHz: 0, eq: [] }, V.doc.players[o.player], { roomBandDb: o.roomBandDb, sineBleedDb: o.sineBleedDb, sineBleedMidi: o.midi });
+            V.doc.sineBleed = { when: new Date().toISOString(), readings: read };
+            console.log(read.map((o) => '  ' + o.player.padEnd(5) + ' the room in its band ' + o.roomBandDb + ' dB · the sine in it ' + o.sineBleedDb + ' dB (' + Math.round((o.sineBleedDb - o.roomBandDb) * 10) / 10 + ' over)').join('\n'));
+            if (dry) console.log('(dry — bank/venue/' + V.name + '.json not written)');
+            else { fs.writeFileSync(V.file, JSON.stringify(V.doc, null, 2) + '\n'); console.log('written: bank/venue/' + V.name + '.json — used from the engine\'s next start: each microphone\'s threshold is its own room + the gate, and one that hears the sine too well follows nothing (said in the window)'); }
+            return;
+        }
         console.log('CALIBRATION  venue ' + V.name + ' · ' + players.map((p) => p.name).join(' · ') + ' · one ' + mark + ' each, ' + secs + ' s' + (sim ? ' · THE RACK PLAYS THE NOTES (it sounds)' : ' · the players play on the cue NOW') + (dry ? ' · dry: the file is not written' : ''));
         const got = [];
         const run = sc.start(SCD('calibrate.scd'), { timeoutS: 90 + players.length * (secs + 10), env, onLine: (l) => {

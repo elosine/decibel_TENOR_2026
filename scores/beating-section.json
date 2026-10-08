@@ -1,0 +1,10230 @@
+{
+ "version": 1,
+ "layoutVersion": 8,
+ "tracks": [
+  {
+   "id": "bass_flute",
+   "label": "Bass Flute",
+   "short": "BFl",
+   "instKey": "bass_flute"
+  },
+  {
+   "id": "bass_clarinet",
+   "label": "Bass Clar.",
+   "short": "BCl",
+   "instKey": "bass_clarinet"
+  },
+  {
+   "id": "percussion",
+   "label": "Percussion",
+   "short": "Perc",
+   "instKey": "percussion"
+  },
+  {
+   "id": "vibraphone",
+   "label": "Mallets",
+   "short": "Mal",
+   "instKey": "bowed_vibraphone"
+  },
+  {
+   "id": "viola",
+   "label": "Viola",
+   "short": "Va",
+   "instKey": "viola"
+  },
+  {
+   "id": "cello",
+   "label": "Cello",
+   "short": "Vc",
+   "instKey": "cello"
+  }
+ ],
+ "assets": {},
+ "metadata": {
+  "created": "2026-10-08T23:41:39.192Z",
+  "modified": "2026-10-08T23:41:39.192Z",
+  "builtBy": "tools/build_beating_section.js",
+  "note": "THE BEATING SECTION (PLAN.md § 1.8; DEC-58 … 58c): `sine-demo` as the start (0 … 40 s), then 21 phrases of breathed notes on the take \"take-01-sine-demo\", one sine brick a phrase, every brick a window (Follow on), 2 crescendo phrases — seed 79. Written by tools/build_beating_section.js; the sheet: docs/BEATING_SECTION.md.",
+  "beatingSection": {
+   "seedAsked": 1,
+   "seedUsed": 79,
+   "tries": 79,
+   "lengthS": 180,
+   "start": "sine-demo",
+   "startToS": 40,
+   "take": "take-01-sine-demo",
+   "command": "node tools/build_beating_section.js --seed 1 --replace",
+   "made": "2026-10-08T23:41:39.192Z",
+   "phrases": 21,
+   "notes": 71,
+   "crescendos": 2,
+   "density": {
+    "max": 5,
+    "mean": 3.49,
+    "line": "1555455455444554543445554232",
+    "fromS": 40
+   }
+  }
+ },
+ "objects": [
+  {
+   "id": "wc-31",
+   "type": "waveCurve",
+   "layer": 7,
+   "startSeconds": 0,
+   "endSeconds": 40,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 2,
+     "smooth": 0
+    },
+    {
+     "pos": 0.55,
+     "y": 8.5,
+     "smooth": 0
+    },
+    {
+     "pos": 1,
+     "y": 2.5,
+     "smooth": 0
+    }
+   ],
+   "segments": [
+    {
+     "model": "bezier",
+     "slope": 0
+    },
+    {
+     "model": "bezier",
+     "slope": 0
+    }
+   ],
+   "color": "#C2410C",
+   "fillMode": "line",
+   "opacity": 0.45,
+   "performanceNotes": "the sines' swell — the bricks that follow curve A read their level from it",
+   "properties": {
+    "start": "sine-demo"
+   },
+   "curveName": "A"
+  },
+  {
+   "id": "wc-1",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 2,
+   "endSeconds": 8.5,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-16",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 40.1,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     40.1
+    ],
+    [
+     4.552,
+     0
+    ],
+    [
+     6.5,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-16",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 2,
+   "endTime": 8.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-1"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-10",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 3,
+   "endSeconds": 9,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-17",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": 46.3,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.856,
+     0
+    ],
+    [
+     2.892,
+     2.9
+    ],
+    [
+     3.928,
+     11.6
+    ],
+    [
+     4.964,
+     26
+    ],
+    [
+     6,
+     46.3
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-17",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 3,
+   "endTime": 9,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-10"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-4",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 4,
+   "endSeconds": 11,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-18",
+     "who": "player",
+     "kind": "through",
+     "cents": -48.8,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -48.8
+    ],
+    [
+     1.75,
+     -4
+    ],
+    [
+     3.5,
+     14.5
+    ],
+    [
+     5.25,
+     28.8
+    ],
+    [
+     7,
+     40.8
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-18",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 4,
+   "endTime": 11,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-4"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-13",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 5,
+   "endSeconds": 13.5,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-19",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -37.8,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -37.8
+    ],
+    [
+     7.598,
+     0
+    ],
+    [
+     8.5,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-19",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 5,
+   "endTime": 13.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-13"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-7",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 6,
+   "endSeconds": 14,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-20",
+     "who": "sine",
+     "kind": "to",
+     "cents": -10.5,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 72,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-20",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 6,
+   "endTime": 14,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-7"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "to",
+     "from": -10.5,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-11",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 12,
+   "endSeconds": 19.5,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-21",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": -45.2,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     0.891,
+     0
+    ],
+    [
+     2.543,
+     -22.6
+    ],
+    [
+     4.195,
+     -32
+    ],
+    [
+     5.848,
+     -39.1
+    ],
+    [
+     7.5,
+     -45.2
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-21",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 12,
+   "endTime": 19.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-11"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-2",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 14,
+   "endSeconds": 21,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-22",
+     "who": "player",
+     "kind": "through",
+     "cents": 19.5,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     19.5
+    ],
+    [
+     1.75,
+     17.5
+    ],
+    [
+     3.5,
+     11.3
+    ],
+    [
+     5.25,
+     1.1
+    ],
+    [
+     7,
+     -13.3
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-22",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 14,
+   "endTime": 21,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-2"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-5",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 16.5,
+   "endSeconds": 22.5,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-23",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -30.8,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -30.8
+    ],
+    [
+     1.181,
+     -28.9
+    ],
+    [
+     2.362,
+     -23.1
+    ],
+    [
+     3.543,
+     -13.5
+    ],
+    [
+     4.725,
+     0
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-23",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 16.5,
+   "endTime": 22.5,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-5"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-14",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 18,
+   "endSeconds": 25,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-24",
+     "who": "player",
+     "kind": "hold",
+     "cents": -14.6,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -14.6
+    ],
+    [
+     7,
+     -14.6
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-24",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 18,
+   "endTime": 25,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-14"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-8",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 20,
+   "endSeconds": 26,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-25",
+     "who": "sine",
+     "kind": "from",
+     "cents": 3.7,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 72,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-25",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 20,
+   "endTime": 26,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-8"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "from",
+     "from": 0,
+     "to": 3.7
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-12",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 24,
+   "endSeconds": 32,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-26",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 26.1,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     26.1
+    ],
+    [
+     5.559,
+     0
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-26",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 24,
+   "endTime": 32,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-12"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-3",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 27,
+   "endSeconds": 35,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-27",
+     "who": "player",
+     "kind": "through",
+     "cents": -21.8,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -21.8
+    ],
+    [
+     8,
+     21.1
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-27",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 27,
+   "endTime": 35,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-3"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-15",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 28,
+   "endSeconds": 37,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-28",
+     "who": "player",
+     "kind": "through",
+     "cents": 32.5,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     32.5
+    ],
+    [
+     2.25,
+     29.4
+    ],
+    [
+     4.5,
+     19.9
+    ],
+    [
+     6.75,
+     4.2
+    ],
+    [
+     9,
+     -17.9
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-28",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 28,
+   "endTime": 37,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-15"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-6",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 29.5,
+   "endSeconds": 36,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-29",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 16.7,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 48,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     16.7
+    ],
+    [
+     1.011,
+     15.7
+    ],
+    [
+     2.021,
+     12.5
+    ],
+    [
+     3.032,
+     7.3
+    ],
+    [
+     4.042,
+     0
+    ],
+    [
+     6.5,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-29",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 29.5,
+   "endTime": 36,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-6"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-9",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 31,
+   "endSeconds": 38,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 10,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "TAKE · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "sine": {
+     "brick": "zn-30",
+     "who": "sine",
+     "kind": "to",
+     "cents": 7.2,
+     "seed": 1,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    },
+    "start": "sine-demo"
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 72,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "TAKE"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-30",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 31,
+   "endTime": 38,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "note": "wc-9"
+    },
+    "start": "sine-demo"
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "to",
+     "from": 7.2,
+     "to": 0
+    },
+    "level": {
+     "mode": "curve",
+     "mark": "mf",
+     "curveRef": "A"
+    },
+    "label": "",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-32",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 41.52,
+   "endSeconds": 48.042,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 1 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 1,
+     "player": "bass_flute",
+     "n": 1,
+     "k": 1,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-35",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -30.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 1 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -30.2
+    ],
+    [
+     4.311,
+     0
+    ],
+    [
+     6.522,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-35",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 41.52,
+   "endTime": 59.96,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-32",
+      "wc-33",
+      "wc-34"
+     ],
+     "phrase": 1
+    },
+    "phrase": {
+     "i": 1,
+     "player": "bass_flute",
+     "n": 1,
+     "startS": 41.52,
+     "endS": 59.96,
+     "notes": 3,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 3.8,
+     "ceilingS": 8,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P1",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-36",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 44.72,
+   "endSeconds": 52.453,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 2,
+     "player": "viola",
+     "n": 1,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-38",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -26.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -26.1
+    ],
+    [
+     4.901,
+     0
+    ],
+    [
+     7.733,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-38",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 44.72,
+   "endTime": 60.81,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-36",
+      "wc-37"
+     ],
+     "phrase": 2
+    },
+    "phrase": {
+     "i": 2,
+     "player": "viola",
+     "n": 1,
+     "startS": 44.72,
+     "endS": 60.81,
+     "notes": 2,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 8.66,
+     "ceilingS": 12,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P1",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-39",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 46.53,
+   "endSeconds": 53.69,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 1 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 3,
+     "player": "bowed_vibraphone",
+     "n": 1,
+     "k": 1,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-42",
+     "who": "sine",
+     "kind": "from",
+     "cents": -2.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 1 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-42",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 46.53,
+   "endTime": 63.6,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-39",
+      "wc-40",
+      "wc-41"
+     ],
+     "phrase": 3
+    },
+    "phrase": {
+     "i": 3,
+     "player": "bowed_vibraphone",
+     "n": 1,
+     "startS": 46.53,
+     "endS": 63.6,
+     "notes": 3,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 5.69,
+     "ceilingS": 8,
+     "gapS": 0.6,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "from",
+     "from": 0,
+     "to": -2.2,
+     "overS": 5.8
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P1",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-33",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 48.792,
+   "endSeconds": 54.312,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 2 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 1,
+     "player": "bass_flute",
+     "n": 1,
+     "k": 2,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-35",
+     "who": "player",
+     "kind": "through",
+     "cents": -24.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 2 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -24.7
+    ],
+    [
+     1.38,
+     -22.4
+    ],
+    [
+     2.76,
+     -15.4
+    ],
+    [
+     4.14,
+     -3.8
+    ],
+    [
+     5.52,
+     12.5
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-43",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 49.05,
+   "endSeconds": 57.17,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 1 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 4,
+     "player": "cello",
+     "n": 1,
+     "k": 1,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-47",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 30.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 1 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     30.1
+    ],
+    [
+     6.303,
+     0
+    ],
+    [
+     8.12,
+     0
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-47",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 49.05,
+   "endTime": 88.37,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-43",
+      "wc-44",
+      "wc-45",
+      "wc-46"
+     ],
+     "phrase": 4
+    },
+    "phrase": {
+     "i": 4,
+     "player": "cello",
+     "n": 1,
+     "startS": 49.05,
+     "endS": 88.37,
+     "notes": 4,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 10.54,
+     "ceilingS": 15,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P1",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-48",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 49.23,
+   "endSeconds": 55.401,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 1 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 5,
+     "player": "bass_clarinet",
+     "n": 1,
+     "k": 1,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-51",
+     "who": "player",
+     "kind": "waver",
+     "cents": -19.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 1 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.543,
+     -19.7
+    ],
+    [
+     3.086,
+     15.8
+    ],
+    [
+     4.628,
+     -9.8
+    ],
+    [
+     6.171,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-51",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 49.23,
+   "endTime": 73.76,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-48",
+      "wc-49",
+      "wc-50"
+     ],
+     "phrase": 5
+    },
+    "phrase": {
+     "i": 5,
+     "player": "bass_clarinet",
+     "n": 1,
+     "startS": 49.23,
+     "endS": 73.76,
+     "notes": 3,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 6.72,
+     "ceilingS": 12,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P1",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-37",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 52.453,
+   "endSeconds": 60.81,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 2,
+     "player": "viola",
+     "n": 1,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-38",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -48.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -48.8
+    ],
+    [
+     1.772,
+     -24.4
+    ],
+    [
+     3.544,
+     -14.3
+    ],
+    [
+     5.316,
+     -6.5
+    ],
+    [
+     7.087,
+     0
+    ],
+    [
+     8.357,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-40",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 54.29,
+   "endSeconds": 58.6,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 2 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 3,
+     "player": "bowed_vibraphone",
+     "n": 1,
+     "k": 2,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-42",
+     "who": "sine",
+     "kind": "through",
+     "cents": -6.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 2 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-34",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 55.062,
+   "endSeconds": 59.96,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 3 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 1,
+     "player": "bass_flute",
+     "n": 1,
+     "k": 3,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-35",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 31.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 3 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     31.4
+    ],
+    [
+     3.747,
+     0
+    ],
+    [
+     4.898,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-49",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 56.151,
+   "endSeconds": 66.574,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 2 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 5,
+     "player": "bass_clarinet",
+     "n": 1,
+     "k": 2,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-51",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -28.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 2 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -28.2
+    ],
+    [
+     1.582,
+     -14.1
+    ],
+    [
+     3.164,
+     -8.3
+    ],
+    [
+     4.747,
+     -3.8
+    ],
+    [
+     6.329,
+     0
+    ],
+    [
+     10.423,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-44",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 57.17,
+   "endSeconds": 72.17,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 2 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 4,
+     "player": "cello",
+     "n": 1,
+     "k": 2,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-47",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 36.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 2 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     36.3
+    ],
+    [
+     2.597,
+     18.2
+    ],
+    [
+     5.193,
+     10.6
+    ],
+    [
+     7.79,
+     4.9
+    ],
+    [
+     10.387,
+     0
+    ],
+    [
+     15,
+     0
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-41",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 59.2,
+   "endSeconds": 63.6,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 3 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 3,
+     "player": "bowed_vibraphone",
+     "n": 1,
+     "k": 3,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-42",
+     "who": "sine",
+     "kind": "from",
+     "cents": 3.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 3 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-52",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 63.76,
+   "endSeconds": 70.668,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 1 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 6,
+     "player": "bass_flute",
+     "n": 2,
+     "k": 1,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-56",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -29.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 1 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -29.1
+    ],
+    [
+     5.812,
+     0
+    ],
+    [
+     6.908,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-56",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 63.76,
+   "endTime": 86.85,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-52",
+      "wc-53",
+      "wc-54",
+      "wc-55"
+     ],
+     "phrase": 6
+    },
+    "phrase": {
+     "i": 6,
+     "player": "bass_flute",
+     "n": 2,
+     "startS": 63.76,
+     "endS": 86.85,
+     "notes": 4,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 6.41,
+     "ceilingS": 8,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P2",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-50",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 67.324,
+   "endSeconds": 73.76,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 3 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 5,
+     "player": "bass_clarinet",
+     "n": 1,
+     "k": 3,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-51",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": -22.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 3 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     0.706,
+     0
+    ],
+    [
+     6.436,
+     -22.3
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-57",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 69.29,
+   "endSeconds": 73.143,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 1 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "k": 1,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-62",
+     "who": "sine",
+     "kind": "around",
+     "cents": 9.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 1 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-62",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 69.29,
+   "endTime": 96.29,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-57",
+      "wc-58",
+      "wc-59",
+      "wc-60",
+      "wc-61"
+     ],
+     "phrase": 7
+    },
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "startS": 69.29,
+     "endS": 96.29,
+     "notes": 5,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 9.66,
+     "ceilingS": 8,
+     "gapS": 0.6,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "around",
+     "from": 9.4,
+     "to": 0,
+     "overS": 5.8
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P2",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-63",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 69.47,
+   "endSeconds": 77.547,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 1 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 8,
+     "player": "viola",
+     "n": 2,
+     "k": 1,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-67",
+     "who": "player",
+     "kind": "through",
+     "cents": 22.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 80,
+      "cc7Abs": {
+       "lo": 59,
+       "hi": 66
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2.7
+     ]
+    ]
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 1 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 59,
+    "hi": 66
+   },
+   "morphBend": [
+    [
+     0,
+     22.2
+    ],
+    [
+     2.019,
+     19.6
+    ],
+    [
+     4.038,
+     12
+    ],
+    [
+     6.058,
+     -0.8
+    ],
+    [
+     8.077,
+     -18.7
+    ]
+   ]
+  },
+  {
+   "id": "zn-67",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 69.47,
+   "endTime": 104.22,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-63",
+      "wc-64",
+      "wc-65",
+      "wc-66"
+     ],
+     "phrase": 8
+    },
+    "phrase": {
+     "i": 8,
+     "player": "viola",
+     "n": 2,
+     "startS": 69.47,
+     "endS": 104.22,
+     "notes": 4,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 3.93,
+     "ceilingS": 12,
+     "gapS": 0,
+     "cresc": {
+      "from": "p",
+      "to": "f"
+     }
+    }
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P2 cresc",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-53",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 71.418,
+   "endSeconds": 77.615,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 2 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 6,
+     "player": "bass_flute",
+     "n": 2,
+     "k": 2,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-56",
+     "who": "player",
+     "kind": "waver",
+     "cents": -20.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 2 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.549,
+     -20.5
+    ],
+    [
+     3.098,
+     16.4
+    ],
+    [
+     4.648,
+     -10.2
+    ],
+    [
+     6.197,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-45",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 72.17,
+   "endSeconds": 83.57,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 3 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 4,
+     "player": "cello",
+     "n": 1,
+     "k": 3,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-47",
+     "who": "player",
+     "kind": "through",
+     "cents": 33.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 3 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     33.1
+    ],
+    [
+     11.4,
+     -31.2
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-58",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 73.743,
+   "endSeconds": 79.003,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 2 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "k": 2,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-62",
+     "who": "sine",
+     "kind": "to",
+     "cents": -2.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 2 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-64",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 77.547,
+   "endSeconds": 87.441,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 2 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 8,
+     "player": "viola",
+     "n": 2,
+     "k": 2,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-67",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": -11.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 80,
+      "cc7Abs": {
+       "lo": 66,
+       "hi": 75
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      2.7
+     ],
+     [
+      1,
+      3.55
+     ]
+    ]
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 2 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 66,
+    "hi": 75
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     3.832,
+     0
+    ],
+    [
+     9.894,
+     -11.9
+    ]
+   ]
+  },
+  {
+   "id": "wc-54",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 78.365,
+   "endSeconds": 81.976,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 3 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 6,
+     "player": "bass_flute",
+     "n": 2,
+     "k": 3,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-56",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": 44.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 3 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     0.709,
+     0
+    ],
+    [
+     1.434,
+     22.1
+    ],
+    [
+     2.16,
+     31.2
+    ],
+    [
+     2.885,
+     38.2
+    ],
+    [
+     3.611,
+     44.1
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-59",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 79.603,
+   "endSeconds": 86.083,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 3 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "k": 3,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-62",
+     "who": "sine",
+     "kind": "from",
+     "cents": -14.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 3 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-68",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 80.48,
+   "endSeconds": 86.053,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 1 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 9,
+     "player": "bass_clarinet",
+     "n": 2,
+     "k": 1,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-72",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 15.6,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 1 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     15.6
+    ],
+    [
+     0.931,
+     14.6
+    ],
+    [
+     1.862,
+     11.7
+    ],
+    [
+     2.793,
+     6.8
+    ],
+    [
+     3.725,
+     0
+    ],
+    [
+     5.573,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-72",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 80.48,
+   "endTime": 113.56,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-68",
+      "wc-69",
+      "wc-70",
+      "wc-71"
+     ],
+     "phrase": 9
+    },
+    "phrase": {
+     "i": 9,
+     "player": "bass_clarinet",
+     "n": 2,
+     "startS": 80.48,
+     "endS": 113.56,
+     "notes": 4,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 10.47,
+     "ceilingS": 12,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P2",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-55",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 82.726,
+   "endSeconds": 86.85,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 4 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 6,
+     "player": "bass_flute",
+     "n": 2,
+     "k": 4,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-56",
+     "who": "player",
+     "kind": "hold",
+     "cents": -20.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 4 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -20.9
+    ],
+    [
+     4.124,
+     -20.9
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-46",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 83.57,
+   "endSeconds": 88.37,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P1 · 4 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 4,
+     "player": "cello",
+     "n": 1,
+     "k": 4,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-47",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 25,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P1 · 4 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     25
+    ],
+    [
+     0.952,
+     23.4
+    ],
+    [
+     1.904,
+     18.8
+    ],
+    [
+     2.856,
+     10.9
+    ],
+    [
+     3.808,
+     0
+    ],
+    [
+     4.8,
+     0
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-60",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 86.683,
+   "endSeconds": 90.68,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 4 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "k": 4,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-62",
+     "who": "sine",
+     "kind": "to",
+     "cents": -16.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 4 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-69",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 86.803,
+   "endSeconds": 95.33,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 2 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 9,
+     "player": "bass_clarinet",
+     "n": 2,
+     "k": 2,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-72",
+     "who": "player",
+     "kind": "hold",
+     "cents": -14.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 2 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -14.3
+    ],
+    [
+     8.527,
+     -14.3
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-65",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 87.441,
+   "endSeconds": 94.251,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 3 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 8,
+     "player": "viola",
+     "n": 2,
+     "k": 3,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-67",
+     "who": "player",
+     "kind": "hold",
+     "cents": 18.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 80,
+      "cc7Abs": {
+       "lo": 75,
+       "hi": 82
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      3.55
+     ],
+     [
+      1,
+      4.14
+     ]
+    ]
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 3 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 75,
+    "hi": 82
+   },
+   "morphBend": [
+    [
+     0,
+     18.7
+    ],
+    [
+     6.81,
+     18.7
+    ]
+   ]
+  },
+  {
+   "id": "wc-61",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 91.28,
+   "endSeconds": 96.29,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 5 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 7,
+     "player": "bowed_vibraphone",
+     "n": 2,
+     "k": 5,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-62",
+     "who": "sine",
+     "kind": "from",
+     "cents": 2.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 5 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-73",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 93.26,
+   "endSeconds": 100.51,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 1 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 1,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 26.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 1 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     26.7
+    ],
+    [
+     5.572,
+     0
+    ],
+    [
+     7.25,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-79",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 93.26,
+   "endTime": 129.26,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-73",
+      "wc-74",
+      "wc-75",
+      "wc-76",
+      "wc-77",
+      "wc-78"
+     ],
+     "phrase": 10
+    },
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "startS": 93.26,
+     "endS": 129.26,
+     "notes": 6,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 9,
+     "ceilingS": 8,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P3",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-66",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 94.251,
+   "endSeconds": 104.22,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 4 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 8,
+     "player": "viola",
+     "n": 2,
+     "k": 4,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-67",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 37.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 80,
+      "cc7Abs": {
+       "lo": 82,
+       "hi": 94
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      4.14
+     ],
+     [
+      1,
+      5
+     ]
+    ]
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 4 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 82,
+    "hi": 94
+   },
+   "morphBend": [
+    [
+     0,
+     37.5
+    ],
+    [
+     1.539,
+     18.8
+    ],
+    [
+     3.078,
+     11
+    ],
+    [
+     4.617,
+     5
+    ],
+    [
+     6.156,
+     0
+    ],
+    [
+     9.969,
+     0
+    ]
+   ]
+  },
+  {
+   "id": "wc-70",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 96.08,
+   "endSeconds": 101.656,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 3 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 9,
+     "player": "bass_clarinet",
+     "n": 2,
+     "k": 3,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-72",
+     "who": "player",
+     "kind": "waver",
+     "cents": -20.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 3 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.394,
+     -20.2
+    ],
+    [
+     2.788,
+     16.2
+    ],
+    [
+     4.182,
+     -10.1
+    ],
+    [
+     5.576,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-80",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 98.91,
+   "endSeconds": 111.131,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 1 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 11,
+     "player": "cello",
+     "n": 2,
+     "k": 1,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-83",
+     "who": "player",
+     "kind": "through",
+     "cents": 46,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 1 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     46
+    ],
+    [
+     3.055,
+     40.6
+    ],
+    [
+     6.111,
+     24.2
+    ],
+    [
+     9.166,
+     -3
+    ],
+    [
+     12.221,
+     -41.2
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-83",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 98.91,
+   "endTime": 130.51,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-80",
+      "wc-81",
+      "wc-82"
+     ],
+     "phrase": 11
+    },
+    "phrase": {
+     "i": 11,
+     "player": "cello",
+     "n": 2,
+     "startS": 98.91,
+     "endS": 130.51,
+     "notes": 3,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 11.78,
+     "ceilingS": 15,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P2",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-74",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 101.26,
+   "endSeconds": 107.02,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 2 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 2,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "through",
+     "cents": -21.6,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 2 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -21.6
+    ],
+    [
+     1.44,
+     -19.3
+    ],
+    [
+     2.88,
+     -12.5
+    ],
+    [
+     4.32,
+     -1.2
+    ],
+    [
+     5.76,
+     14.6
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-71",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 102.406,
+   "endSeconds": 113.56,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 4 of 4 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 9,
+     "player": "bass_clarinet",
+     "n": 2,
+     "k": 4,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-72",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": 39.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 4 of 4"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     4.096,
+     0
+    ],
+    [
+     5.861,
+     2.5
+    ],
+    [
+     7.625,
+     9.9
+    ],
+    [
+     9.39,
+     22.2
+    ],
+    [
+     11.154,
+     39.5
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-84",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 105.95,
+   "endSeconds": 112.878,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 1 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 1,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "from",
+     "cents": 5.6,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 1 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-91",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 105.95,
+   "endTime": 145.67,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-84",
+      "wc-85",
+      "wc-86",
+      "wc-87",
+      "wc-88",
+      "wc-89",
+      "wc-90"
+     ],
+     "phrase": 12
+    },
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "startS": 105.95,
+     "endS": 145.67,
+     "notes": 7,
+     "lengthBand": [
+      31,
+      40
+     ],
+     "restAfterS": 3.59,
+     "ceilingS": 8,
+     "gapS": 0.6,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "from",
+     "from": 0,
+     "to": 5.6,
+     "overS": 5.8
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P3",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-75",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 107.77,
+   "endSeconds": 113.292,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 3 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 3,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "hold",
+     "cents": 11.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 3 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     11.4
+    ],
+    [
+     5.522,
+     11.4
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-92",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 108.15,
+   "endSeconds": 117.05,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 13,
+     "player": "viola",
+     "n": 3,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-94",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 47.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     47.3
+    ],
+    [
+     1.445,
+     44.3
+    ],
+    [
+     2.89,
+     35.5
+    ],
+    [
+     4.335,
+     20.7
+    ],
+    [
+     5.78,
+     0
+    ],
+    [
+     8.9,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-94",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 108.15,
+   "endTime": 125.06,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-92",
+      "wc-93"
+     ],
+     "phrase": 13
+    },
+    "phrase": {
+     "i": 13,
+     "player": "viola",
+     "n": 3,
+     "startS": 108.15,
+     "endS": 125.06,
+     "notes": 2,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 10.73,
+     "ceilingS": 12,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P3",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-81",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 111.131,
+   "endSeconds": 125.35,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 2 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 11,
+     "player": "cello",
+     "n": 2,
+     "k": 2,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-83",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -25.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 2 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -25.2
+    ],
+    [
+     10.015,
+     0
+    ],
+    [
+     14.219,
+     0
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-85",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 113.478,
+   "endSeconds": 118.085,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 2 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 2,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "through",
+     "cents": 17.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 2 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-76",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 114.042,
+   "endSeconds": 118.312,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 4 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 4,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": 20.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 4 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.309,
+     0
+    ],
+    [
+     2.049,
+     1.3
+    ],
+    [
+     2.79,
+     5.1
+    ],
+    [
+     3.53,
+     11.4
+    ],
+    [
+     4.27,
+     20.3
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-93",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 117.05,
+   "endSeconds": 125.06,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 13,
+     "player": "viola",
+     "n": 3,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-94",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -44.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -44.9
+    ],
+    [
+     5.296,
+     0
+    ],
+    [
+     8.01,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-86",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 118.685,
+   "endSeconds": 123.136,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 3 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 3,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "to",
+     "cents": 7.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 3 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-77",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 119.062,
+   "endSeconds": 125.95,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 5 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 5,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -24.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 5 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -24.9
+    ],
+    [
+     1.177,
+     -23.3
+    ],
+    [
+     2.354,
+     -18.7
+    ],
+    [
+     3.531,
+     -10.9
+    ],
+    [
+     4.708,
+     0
+    ],
+    [
+     6.888,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-87",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 123.736,
+   "endSeconds": 129.768,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 4 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 4,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "from",
+     "cents": -7.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 4 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-95",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 124.03,
+   "endSeconds": 133.868,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 14,
+     "player": "bass_clarinet",
+     "n": 3,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-97",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 29.2,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     29.2
+    ],
+    [
+     1.706,
+     27.4
+    ],
+    [
+     3.411,
+     21.9
+    ],
+    [
+     5.117,
+     12.8
+    ],
+    [
+     6.822,
+     0
+    ],
+    [
+     9.838,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-97",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 124.03,
+   "endTime": 140.99,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-95",
+      "wc-96"
+     ],
+     "phrase": 14
+    },
+    "phrase": {
+     "i": 14,
+     "player": "bass_clarinet",
+     "n": 3,
+     "startS": 124.03,
+     "endS": 140.99,
+     "notes": 2,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 5.37,
+     "ceilingS": 12,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P3",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-82",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 125.35,
+   "endSeconds": 130.51,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P2 · 3 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 11,
+     "player": "cello",
+     "n": 2,
+     "k": 3,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-83",
+     "who": "player",
+     "kind": "through",
+     "cents": 49.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P2 · 3 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     49.1
+    ],
+    [
+     1.29,
+     12
+    ],
+    [
+     2.58,
+     -3.4
+    ],
+    [
+     3.87,
+     -15.2
+    ],
+    [
+     5.16,
+     -25.1
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-78",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 126.7,
+   "endSeconds": 129.26,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 6 of 6 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 10,
+     "player": "bass_flute",
+     "n": 3,
+     "k": 6,
+     "of": 6
+    },
+    "sine": {
+     "brick": "zn-79",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -46.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 6 of 6"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -46.8
+    ],
+    [
+     0.429,
+     -43.9
+    ],
+    [
+     0.859,
+     -35.1
+    ],
+    [
+     1.288,
+     -20.5
+    ],
+    [
+     1.718,
+     0
+    ],
+    [
+     2.56,
+     0
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-88",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 130.368,
+   "endSeconds": 136.246,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 5 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 5,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "around",
+     "cents": -12.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 5 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-96",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 134.618,
+   "endSeconds": 140.99,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 14,
+     "player": "bass_clarinet",
+     "n": 3,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-97",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": 13.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     13.1
+    ],
+    [
+     1.23,
+     12.3
+    ],
+    [
+     2.461,
+     9.8
+    ],
+    [
+     3.691,
+     5.7
+    ],
+    [
+     4.922,
+     0
+    ],
+    [
+     6.372,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-98",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 135.79,
+   "endSeconds": 145.123,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 1 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 15,
+     "player": "viola",
+     "n": 4,
+     "k": 1,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-101",
+     "who": "player",
+     "kind": "through",
+     "cents": 26,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 1 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     26
+    ],
+    [
+     9.333,
+     -17.8
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-101",
+   "type": "zone",
+   "layer": 4,
+   "startTime": 135.79,
+   "endTime": 164.46,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-98",
+      "wc-99",
+      "wc-100"
+     ],
+     "phrase": 15
+    },
+    "phrase": {
+     "i": 15,
+     "player": "viola",
+     "n": 4,
+     "startS": 135.79,
+     "endS": 164.46,
+     "notes": 3,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 10.44,
+     "ceilingS": 12,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 77,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P4",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-89",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 136.846,
+   "endSeconds": 140.948,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 6 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 6,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "around",
+     "cents": 14.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 6 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-102",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 138.26,
+   "endSeconds": 143.978,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 1 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 16,
+     "player": "bass_flute",
+     "n": 4,
+     "k": 1,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-106",
+     "who": "player",
+     "kind": "waver",
+     "cents": -15.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 68,
+      "cc7Abs": {
+       "lo": 59,
+       "hi": 67
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2.79
+     ]
+    ]
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 1 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 59,
+    "hi": 67
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.43,
+     -15.9
+    ],
+    [
+     2.859,
+     12.7
+    ],
+    [
+     4.289,
+     -7.9
+    ],
+    [
+     5.718,
+     0
+    ]
+   ]
+  },
+  {
+   "id": "zn-106",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 138.26,
+   "endTime": 160.11,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-102",
+      "wc-103",
+      "wc-104",
+      "wc-105"
+     ],
+     "phrase": 16
+    },
+    "phrase": {
+     "i": 16,
+     "player": "bass_flute",
+     "n": 4,
+     "startS": 138.26,
+     "endS": 160.11,
+     "notes": 4,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 9.45,
+     "ceilingS": 8,
+     "gapS": 0.75,
+     "cresc": {
+      "from": "p",
+      "to": "f"
+     }
+    }
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P4 cresc",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-90",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 141.548,
+   "endSeconds": 145.67,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 7 of 7 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 12,
+     "player": "bowed_vibraphone",
+     "n": 3,
+     "k": 7,
+     "of": 7
+    },
+    "sine": {
+     "brick": "zn-91",
+     "who": "sine",
+     "kind": "through",
+     "cents": 10.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 7 of 7"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-107",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 142.29,
+   "endSeconds": 151.634,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 17,
+     "player": "cello",
+     "n": 3,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-109",
+     "who": "player",
+     "kind": "through",
+     "cents": 13.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     13.9
+    ],
+    [
+     9.344,
+     -13.3
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-109",
+   "type": "zone",
+   "layer": 5,
+   "startTime": 142.29,
+   "endTime": 165.69,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-107",
+      "wc-108"
+     ],
+     "phrase": 17
+    },
+    "phrase": {
+     "i": 17,
+     "player": "cello",
+     "n": 3,
+     "startS": 142.29,
+     "endS": 165.69,
+     "notes": 2,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 8.52,
+     "ceilingS": 15,
+     "gapS": 0,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 38,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P3",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-103",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 144.728,
+   "endSeconds": 151.031,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 2 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 16,
+     "player": "bass_flute",
+     "n": 4,
+     "k": 2,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-106",
+     "who": "player",
+     "kind": "hold",
+     "cents": -20.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 68,
+      "cc7Abs": {
+       "lo": 68,
+       "hi": 78
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      2.89
+     ],
+     [
+      1,
+      3.75
+     ]
+    ]
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 2 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 68,
+    "hi": 78
+   },
+   "morphBend": [
+    [
+     0,
+     -20.4
+    ],
+    [
+     6.303,
+     -20.4
+    ]
+   ]
+  },
+  {
+   "id": "wc-99",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 145.123,
+   "endSeconds": 152.849,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 2 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 15,
+     "player": "viola",
+     "n": 4,
+     "k": 2,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-101",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -28.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 2 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -28.9
+    ],
+    [
+     1.631,
+     -27.1
+    ],
+    [
+     3.263,
+     -21.7
+    ],
+    [
+     4.894,
+     -12.6
+    ],
+    [
+     6.526,
+     0
+    ],
+    [
+     7.726,
+     0
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-110",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 146.36,
+   "endSeconds": 152.689,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 18,
+     "player": "bass_clarinet",
+     "n": 4,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-112",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -25.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -25.7
+    ],
+    [
+     1.282,
+     -24.1
+    ],
+    [
+     2.564,
+     -19.3
+    ],
+    [
+     3.846,
+     -11.2
+    ],
+    [
+     5.128,
+     0
+    ],
+    [
+     6.329,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-112",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 146.36,
+   "endTime": 164.76,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-110",
+      "wc-111"
+     ],
+     "phrase": 18
+    },
+    "phrase": {
+     "i": 18,
+     "player": "bass_clarinet",
+     "n": 4,
+     "startS": 146.36,
+     "endS": 164.76,
+     "notes": 2,
+     "lengthBand": [
+      15,
+      23
+     ],
+     "restAfterS": 6.57,
+     "ceilingS": 12,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P4",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-113",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 149.26,
+   "endSeconds": 154.766,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 1 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "k": 1,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-118",
+     "who": "sine",
+     "kind": "from",
+     "cents": 10.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 1 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "zn-118",
+   "type": "zone",
+   "layer": 3,
+   "startTime": 149.26,
+   "endTime": 173.34,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-113",
+      "wc-114",
+      "wc-115",
+      "wc-116",
+      "wc-117"
+     ],
+     "phrase": 19
+    },
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "startS": 149.26,
+     "endS": 173.34,
+     "notes": 5,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 6.34,
+     "ceilingS": 8,
+     "gapS": 0.6,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 102.17,
+    "gliss": {
+     "kind": "from",
+     "from": 0,
+     "to": 10.7,
+     "overS": 5.8
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P4",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-108",
+   "type": "waveCurve",
+   "layer": 5,
+   "startSeconds": 151.634,
+   "endSeconds": 165.69,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P3 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 17,
+     "player": "cello",
+     "n": 3,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-109",
+     "who": "player",
+     "kind": "through",
+     "cents": -18,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 38,
+   "technique": "senza_vel",
+   "recVel": 71,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P3 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 38,
+    "cents": 0,
+    "dealt": {
+     "midi": 38,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -18
+    ],
+    [
+     14.056,
+     7.3
+    ]
+   ],
+   "velAbs": 71,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-104",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 151.781,
+   "endSeconds": 156.8,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 3 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 16,
+     "player": "bass_flute",
+     "n": 4,
+     "k": 3,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-106",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": 36.8,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 68,
+      "cc7Abs": {
+       "lo": 80,
+       "hi": 88
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      3.86
+     ],
+     [
+      1,
+      4.55
+     ]
+    ]
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 3 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 80,
+    "hi": 88
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     1.767,
+     0
+    ],
+    [
+     2.58,
+     18.4
+    ],
+    [
+     3.393,
+     26
+    ],
+    [
+     4.206,
+     31.9
+    ],
+    [
+     5.019,
+     36.8
+    ]
+   ]
+  },
+  {
+   "id": "wc-100",
+   "type": "waveCurve",
+   "layer": 4,
+   "startSeconds": 152.849,
+   "endSeconds": 164.46,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 3 of 3 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 15,
+     "player": "viola",
+     "n": 4,
+     "k": 3,
+     "of": 3
+    },
+    "sine": {
+     "brick": "zn-101",
+     "who": "player",
+     "kind": "fromUnison",
+     "cents": -40.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 77,
+   "technique": "senza_vel",
+   "recVel": 80,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 3 of 3"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 77,
+    "cents": 0,
+    "dealt": {
+     "midi": 77,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     0
+    ],
+    [
+     2.721,
+     0
+    ],
+    [
+     4.943,
+     -2.6
+    ],
+    [
+     7.166,
+     -10.2
+    ],
+    [
+     9.388,
+     -23
+    ],
+    [
+     11.611,
+     -40.9
+    ]
+   ],
+   "velAbs": 80,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-111",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 153.439,
+   "endSeconds": 164.76,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 18,
+     "player": "bass_clarinet",
+     "n": 4,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-112",
+     "who": "player",
+     "kind": "through",
+     "cents": -39.4,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -39.4
+    ],
+    [
+     11.321,
+     15.2
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "wc-114",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 155.366,
+   "endSeconds": 158.708,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 2 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "k": 2,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-118",
+     "who": "sine",
+     "kind": "around",
+     "cents": 2.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 2 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-105",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 157.55,
+   "endSeconds": 160.11,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 0.05,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 10,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#8E6BB0",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 4 of 4 · p → f across the phrase · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 16,
+     "player": "bass_flute",
+     "n": 4,
+     "k": 4,
+     "of": 4
+    },
+    "sine": {
+     "brick": "zn-106",
+     "who": "player",
+     "kind": "hold",
+     "cents": -11.3,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": null,
+      "velAbs": 68,
+      "cc7Abs": {
+       "lo": 90,
+       "hi": 94
+      }
+     }
+    },
+    "simLevel": [
+     [
+      0,
+      4.65
+     ],
+     [
+      1,
+      5
+     ]
+    ]
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 4 of 4 · p → f across the phrase"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 90,
+    "hi": 94
+   },
+   "morphBend": [
+    [
+     0,
+     -11.3
+    ],
+    [
+     2.56,
+     -11.3
+    ]
+   ]
+  },
+  {
+   "id": "wc-115",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 159.308,
+   "endSeconds": 162.498,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 3 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "k": 3,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-118",
+     "who": "sine",
+     "kind": "to",
+     "cents": -6.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 3 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-116",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 163.098,
+   "endSeconds": 167.544,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 4 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "k": 4,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-118",
+     "who": "sine",
+     "kind": "to",
+     "cents": -10.7,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 4 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-117",
+   "type": "waveCurve",
+   "layer": 3,
+   "startSeconds": 168.144,
+   "endSeconds": 173.34,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P4 · 5 of 5 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 19,
+     "player": "bowed_vibraphone",
+     "n": 4,
+     "k": 5,
+     "of": 5
+    },
+    "sine": {
+     "brick": "zn-118",
+     "who": "sine",
+     "kind": "around",
+     "cents": -11.9,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "crot_main_metal",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 78,
+   "technique": "crot_bowed",
+   "sonifyMode": "plain",
+   "recVel": 100,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P4 · 5 of 5"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 78,
+    "cents": 0,
+    "dealt": {
+     "midi": 78,
+     "partial": null
+    }
+   }
+  },
+  {
+   "id": "wc-119",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 169.56,
+   "endSeconds": 176.324,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P5 · 1 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 20,
+     "player": "bass_flute",
+     "n": 5,
+     "k": 1,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-121",
+     "who": "player",
+     "kind": "hold",
+     "cents": 22.5,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P5 · 1 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     22.5
+    ],
+    [
+     6.764,
+     22.5
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-121",
+   "type": "zone",
+   "layer": 0,
+   "startTime": 169.56,
+   "endTime": 180,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-119",
+      "wc-120"
+     ],
+     "phrase": 20
+    },
+    "phrase": {
+     "i": 20,
+     "player": "bass_flute",
+     "n": 5,
+     "startS": 169.56,
+     "endS": 180,
+     "notes": 2,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 5.06,
+     "ceilingS": 8,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 76,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P5",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-122",
+   "type": "waveCurve",
+   "layer": 1,
+   "startSeconds": 171.33,
+   "endSeconds": 180,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P5 · 1 of 1 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 21,
+     "player": "bass_clarinet",
+     "n": 5,
+     "k": 1,
+     "of": 1
+    },
+    "sine": {
+     "brick": "zn-123",
+     "who": "player",
+     "kind": "toUnison",
+     "cents": -32,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "senza_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 63,
+   "technique": "senza_vel",
+   "recVel": 104,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P5 · 1 of 1"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 63,
+    "cents": 0,
+    "dealt": {
+     "midi": 63,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     -32
+    ],
+    [
+     1.925,
+     -16
+    ],
+    [
+     3.849,
+     -9.4
+    ],
+    [
+     5.774,
+     -4.3
+    ],
+    [
+     7.698,
+     0
+    ],
+    [
+     8.67,
+     0
+    ]
+   ],
+   "velAbs": 104,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  },
+  {
+   "id": "zn-123",
+   "type": "zone",
+   "layer": 1,
+   "startTime": 171.33,
+   "endTime": 180,
+   "player": "",
+   "instrument": "",
+   "zoneFunction": "elec",
+   "midiModel": "elecSine",
+   "ostinatoParams": {
+    "smooth": 0.7,
+    "speed": 1,
+    "stretch": 1.5
+   },
+   "chordMarkers": [],
+   "ratioMarkers": [],
+   "ratioSourceZoneId": "",
+   "ratioGroup": "",
+   "responseDelayMs": 0,
+   "jitterMs": 8,
+   "driftFactor": 0.02,
+   "midiSnippet": null,
+   "color": "#1E88E5",
+   "opacity": 0.35,
+   "yOffset": 0.75,
+   "zoneHeight": 0.2,
+   "performanceNotes": "",
+   "properties": {
+    "sine": {
+     "notes": [
+      "wc-122"
+     ],
+     "phrase": 21
+    },
+    "phrase": {
+     "i": 21,
+     "player": "bass_clarinet",
+     "n": 5,
+     "startS": 171.33,
+     "endS": 180,
+     "notes": 1,
+     "lengthBand": [
+      23,
+      31
+     ],
+     "restAfterS": 4.14,
+     "ceilingS": 12,
+     "gapS": 0.75,
+     "cresc": null
+    }
+   },
+   "elec": {
+    "midi": 63,
+    "gliss": {
+     "kind": "none",
+     "from": 0,
+     "to": 0
+    },
+    "level": {
+     "mode": "flat",
+     "mark": "mf"
+    },
+    "label": "P5",
+    "track": {
+     "on": true
+    }
+   }
+  },
+  {
+   "id": "wc-120",
+   "type": "waveCurve",
+   "layer": 0,
+   "startSeconds": 177.074,
+   "endSeconds": 180,
+   "nodes": [
+    {
+     "pos": 0,
+     "y": 5.71,
+     "smooth": 0.25
+    },
+    {
+     "pos": 1,
+     "y": 5.71,
+     "smooth": 0.25
+    }
+   ],
+   "segments": [
+    {
+     "model": "power",
+     "slope": 0
+    }
+   ],
+   "color": "#607D8B",
+   "fillMode": "bottom",
+   "opacity": 0.55,
+   "performanceNotes": "P5 · 2 of 2 · ← take \"take-01-sine-demo\"",
+   "properties": {
+    "phrase": {
+     "i": 20,
+     "player": "bass_flute",
+     "n": 5,
+     "k": 2,
+     "of": 2
+    },
+    "sine": {
+     "brick": "zn-121",
+     "who": "player",
+     "kind": "through",
+     "cents": 15.1,
+     "seed": 79,
+     "take": "take-01-sine-demo",
+     "was": {
+      "technique": "vib_vel",
+      "morphBend": null,
+      "sonifyMode": "plain",
+      "velAbs": null,
+      "cc7Abs": null
+     }
+    }
+   },
+   "sonifyNote": 76,
+   "technique": "vib_vel",
+   "recVel": 68,
+   "hq": {
+    "was": {
+     "sonifyNote": 60,
+     "morphBend": null,
+     "sonifyMode": "plain",
+     "velAbs": null,
+     "cc7Abs": null,
+     "performanceNotes": "P5 · 2 of 2"
+    },
+    "take": "take-01-sine-demo",
+    "midi": 76,
+    "cents": 0,
+    "dealt": {
+     "midi": 76,
+     "partial": null
+    }
+   },
+   "morphBend": [
+    [
+     0,
+     15.1
+    ],
+    [
+     0.731,
+     13.3
+    ],
+    [
+     1.463,
+     7.7
+    ],
+    [
+     2.194,
+     -1.5
+    ],
+    [
+     2.926,
+     -14.4
+    ]
+   ],
+   "velAbs": 68,
+   "cc7Abs": {
+    "lo": 127,
+    "hi": 127
+   }
+  }
+ ],
+ "markers": [],
+ "databases": {},
+ "nextId": 124,
+ "viewport": {
+  "pixelsPerSecond": 30,
+  "scrollOffset": 0
+ }
+}

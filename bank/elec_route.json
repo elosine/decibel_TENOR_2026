@@ -199,5 +199,22 @@
   "remote": {
     "inDevice": "MME : Microsoft Sound Mapper - Input",
     "outDevice": "MME : Microsoft Sound Mapper - Output"
+  },
+  "_sine_track": "THE TRACKER (PLAN 1.8 · 16.1; RUNNING_LOG §260; electronics/sc/track.scd): a sine brick whose Follow is ON is a WINDOW on its player — armed for its span, silent until the player sounds at the written pitch, in with them at the written dynamic, FOLLOWING their rise and fall, held through a breath, gone when they stop. THE NUMBERS ARE THE AI'S START — HIS EAR MOVES THEM; read at the engine's START (tools/elec.js start → LE_TRACK; `node tools/elec.js env` shows it). ear: who the engine listens to when a brick does not say — sim = the score TELLS it each simulated note and its dynamic (the simulation) · mic = the player's microphone (the concert; in the simulation, the rack's own sound coming in where the microphone would). follow: how much of the player's CHANGE the sine takes — 1 all · 0.5 half · 0 none (the sine enters and leaves with the player and never moves: the fixed level). capDb: the most it moves, either way. holdMs: how long the player may be silent before the sine leaves (a re-breath is 750 ms). refMs: how long after their entry their level is taken as the reference the change is counted from. attackMs · releaseMs: how quickly the follower takes a rise · a fall. riseMs · fallMs: the sine's own fade in · out. floorDb: for a MICROPHONE with nothing measured — the level in the band at the written pitch over which the player is taken to be sounding (the rack's tracks are digital silence when no note plays; a hall measures its own: the sound check, `node tools/elec.js calibrate --sine-bleed`). gateDb · bandRelDb: how far over a measured room the threshold stands · the band's share of a broadband room figure. The rest are the engine's (track.scd trackDefaults): rq · openMs · downDb · dropDbS · backMs · reMs · glissLeadMs · bleedUnderDb · bleedOverRoomDb.",
+  "sine": {
+    "track": {
+      "ear": "sim",
+      "follow": 1,
+      "capDb": 8,
+      "holdMs": 1500,
+      "refMs": 300,
+      "attackMs": 100,
+      "releaseMs": 500,
+      "riseMs": 50,
+      "fallMs": 300,
+      "floorDb": -60,
+      "gateDb": 10,
+      "bandRelDb": -20
+    }
   }
 }

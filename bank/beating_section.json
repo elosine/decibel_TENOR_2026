@@ -1,0 +1,35 @@
+{
+ "_doc": "THE BEATING SECTION — running order step 16 (PLAN.md § 1.8, 16.2; DEC-58 · 58b · 58c; RUNNING_LOG §255 … §260). HIS DATA: every number here is the AI's start, his ear's to move. Read by tools/build_beating_section.js, which writes scores/beating-section.json and docs/BEATING_SECTION.md from it and never writes this file; tools/beating_check.js checks the score against it. A number changed here is heard after  node tools/build_beating_section.js --replace  and File ▾ → Reload — no engine restart. What the section is: the players hold long tones against sines and bend until the pair beats; each sine brick is a WINDOW (the tracker, bank/elec_route.json sine.track): silent until its player sounds, in with them, following them, out with them.",
+ "_lengthS": "how long the whole section is, in seconds — the start included.",
+ "lengthS": 180,
+ "seed": 1,
+ "_start": "THE START, his word (DEC-58: 'I'll keep that as the start'): the score named here is COPIED as it is up to toS seconds — its notes, its sine bricks, its curve — and every one of its bricks is made a window (Follow on). The score itself is never written.",
+ "start": { "from": "sine-demo", "toS": 40 },
+ "_take": "the take of the Strikes drawer whose pitches the rolled part plays — one pitch a player (bank/panel_snapshots.json). His takes by range come after (PLAN 16.4): select the notes of a range → take ▾ → ∿ sines, or tools/sine_go.js --from … --to … --take ….",
+ "take": "take-01-sine-demo",
+ "_players": "who has a part, by the lane's instrument (the unpitched percussion has none: no pitch to beat against). A player's breath or bow is the BREATH MODEL's (score/public/beating_calc.js CEILINGS: bass flute 8 s · bass clarinet 12 s · viola 12 s · cello 15 s at mf; a wind re-enters after 0.75 s, a bow changes without a gap). The model has no row for a bowed crotale — its three numbers are HERE and are the AI's guess: ceilingS = the longest one bowing sounds · targetS = the usual one · gapS = the bow off the bar between two.",
+ "players": [
+  { "lane": "bass_flute", "label": "bass flute" },
+  { "lane": "bass_clarinet", "label": "bass clarinet" },
+  { "lane": "bowed_vibraphone", "label": "crotales", "ceilingS": 8, "targetS": 5.8, "gapS": 0.6 },
+  { "lane": "viola", "label": "viola" },
+  { "lane": "cello", "label": "cello" }
+ ],
+ "_phrase": "A PHRASE = one sine brick, and under it the player's breathed (or bowed) notes. lengthBands · restBands: how long a phrase is and how long the player rests after it — each drawn inside a band, the bands dealt as an exhaustive round robin over the whole section (none twice before all have come), so the short, the middle and the long all come; move a band, or write one twice to have it more often. firstInS: each player's first phrase begins this long after the start's end. minS: a phrase cut by the section's end is kept only if this much of it is left.",
+ "phrase": {
+  "lengthBands": [[15, 23], [23, 31], [31, 40]],
+  "restBands": [[3, 6], [6, 9], [9, 12]],
+  "firstInS": [0, 10],
+  "minS": 8
+ },
+ "_breath": "how a phrase is cut into notes (beating_calc.js dealBreaths): each note about targetShare of the player's ceiling at the written dynamic, give or take jitter (0.35 = ±35 %), never past the ceiling.",
+ "breath": { "jitter": 0.35, "targetShare": 0.8 },
+ "_level": "the written dynamic — of the simulated players' notes and of every sine brick. THE BALANCE (PLAN 16.3) is this one mark on the sines: two tones beat fully at EQUAL loudness, and with the tracker in, the brick's mark is where the sine stands when its player enters. sineLevel moves the sines alone (absent: the same as level).",
+ "level": "mf",
+ "_crescendos": "THE TEST of the tracker (his: 'one or two crescendos'): n phrases whose notes rise from → to across the whole phrase, through its breaths — the sine under them should rise with them (as far as the tracker's cap). Chosen by the seed among the phrases of the players who bend (not the crotales), on different players. 0 = none.",
+ "crescendos": { "n": 2, "from": "p", "to": "f" },
+ "_density": "THE KEEP RULE, the drones' way: a seed is kept if, in the rolled part, the number of players sounding (read every second) reaches `reach` at least once and its mean is at most `meanMax`; else the next seed, up to `tries`.",
+ "density": { "reach": 5, "meanMax": 3.5, "tries": 200 },
+ "labels": { "phrase": "P" },
+ "colors": { "note": "#607D8B", "crescendo": "#8E6BB0" }
+}

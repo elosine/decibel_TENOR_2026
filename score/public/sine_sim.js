@@ -41,7 +41,8 @@ const centsFor = (m, b, sign) => { const f = hz(m); return sign >= 0 ? 1200 * Ma
 function config(file) {
     const f = file && typeof file === 'object' ? file : {};
     return { lanes: Object.assign({}, DEFAULTS.lanes, f.lanes || {}), player: Object.assign({}, DEFAULTS.player, f.player || {}),
-        sine: Object.assign({}, DEFAULTS.sine, f.sine || {}), level: f.level != null ? f.level : DEFAULTS.level };
+        sine: Object.assign({}, DEFAULTS.sine, f.sine || {}), level: f.level != null ? f.level : DEFAULTS.level,
+        track: f.track && typeof f.track === 'object' ? f.track : null };   // PLAN 1.8 · 16.1: what a NEW brick's Follow is (null: it sounds for its whole span)
 }
 // one name from { name: weight }
 function pick(weights, rnd) {

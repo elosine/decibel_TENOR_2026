@@ -26,5 +26,7 @@
   "kinds": { "to": 4, "from": 2, "through": 2, "around": 2 }
  },
  "_level": "the dynamic a new sine brick is given (the players' ladder, ppp … fff); a brick's own panel changes it — flat, a hairpin, or a drawn curve.",
- "level": "mf"
+ "level": "mf",
+ "_track": "THE WINDOW (PLAN 1.8 · 16.1; DEC-58c; RUNNING_LOG §260): what the GO gives a NEW sine brick's Follow. on true = the brick is a window on its player — silent until they sound at its pitch, in with them, following their rise and fall, held through a breath, gone when they stop; false = it sounds for its whole span, as before 2026-10-08. A brick's own panel changes it (Follow · how much · who it hears); a brick that is already there keeps what it has. The tracker's dials are bank/elec_route.json sine.track.",
+ "track": { "on": true }
 }

@@ -95,7 +95,7 @@ function sineZone(id, layer, start, end, elec, noteId) {
 // -> { done: [{ note, zone, draw, isNew }], skipped: [{ note, why }], lines: [what happened, a line a note] }
 function convert(notes, ctx) {
     const T = ctx.tracks, I = ctx.instruments, cfg = ctx.cfg, seed = Math.max(1, Math.round(+ctx.seed || 1));
-    const done = [], skipped = [], lines = [];
+    const done = [], skipped = [], lines = [], seen = new Set();   // seen: the phrase bricks already re-pitched in this GO
     notes.filter((o) => isNote(o, T.length)).sort((a, b) => a.startSeconds - b.startSeconds || a.layer - b.layer).forEach((o, i) => {
         const instKey = (T[o.layer] || {}).instKey, inst = I[instKey], L = cfg.lanes[instKey];
         const skip = (why) => { skipped.push({ note: o, why }); lines.push(shortOf(T, o.layer) + ' ' + o.startSeconds.toFixed(2) + ' s — left alone: ' + why); };
@@ -125,8 +125,18 @@ function convert(notes, ctx) {
         const have = o.properties && o.properties.sine && ctx.objects.find((z) => z.type === 'zone' && z.midiModel === 'elecSine' && z.id === o.properties.sine.brick);
         const gliss = d.gliss ? { kind: d.gliss.kind, from: d.gliss.from, to: d.gliss.to } : { kind: 'none', from: 0, to: 0 };
         let zone = have, isNew = false;
-        if (zone) { zone.layer = o.layer; zone.startTime = r3(o.startSeconds); zone.endTime = r3(o.endSeconds); zone.elec = Object.assign({}, zone.elec, { midi: d.sineMidi, gliss }); }
-        else { zone = sineZone(ctx.newId(), o.layer, o.startSeconds, o.endSeconds, { midi: d.sineMidi, gliss, level: { mode: 'flat', mark: cfg.level || 'mf' }, label: '' }, o.id); ctx.objects.push(zone); isNew = true; }
+        // PLAN 1.8 · 16.2 c: A PHRASE'S BRICK — one sine over several notes (the brick names them: properties.sine.notes). The GO on one of
+        // its notes RE-PITCHES that brick and leaves its span alone; the gliss is the first of its notes' in this GO (the engine begins it
+        // again at each entry), and how long one glide lasts (gliss.overS) is kept
+        const shared = !!(zone && zone.properties && zone.properties.sine && Array.isArray(zone.properties.sine.notes) && zone.properties.sine.notes.length > 1);
+        if (zone && zone.elec && zone.elec.gliss && zone.elec.gliss.overS != null && gliss.kind !== 'none') gliss.overS = zone.elec.gliss.overS;
+        if (shared) { if (!seen.has(zone.id)) { seen.add(zone.id); zone.elec = Object.assign({}, zone.elec, { midi: d.sineMidi, gliss }); } }
+        else if (zone) { zone.layer = o.layer; zone.startTime = r3(o.startSeconds); zone.endTime = r3(o.endSeconds); zone.elec = Object.assign({}, zone.elec, { midi: d.sineMidi, gliss }); }
+        else {
+            const elec = { midi: d.sineMidi, gliss, level: { mode: 'flat', mark: cfg.level || 'mf' }, label: '' };
+            if (cfg.track && cfg.track.on) elec.track = { on: true };   // PLAN 1.8 · 16.1: a new brick is a WINDOW where the piece says so (bank/sine_behaviours.json `track`)
+            zone = sineZone(ctx.newId(), o.layer, o.startSeconds, o.endSeconds, elec, o.id); ctx.objects.push(zone); isNew = true;
+        }
         o.properties = Object.assign({}, o.properties, { sine: { brick: zone.id, who: d.who, kind: d.kind, cents: d.cents, seed, take: (o.hq && o.hq.take) || ctx.take || '', was } });
         done.push({ note: o, zone, draw: d, isNew });
         lines.push(shortOf(T, o.layer) + ' ' + pn(pitch) + (d.sineMidi !== pitch ? ' (the sine ' + pn(d.sineMidi) + ')' : '') + ' · ' + d.say + ' · beats ' + d.beatsFrom + ' → ' + d.beatsTo + ' /s');
