@@ -4,16 +4,23 @@
 //
 // For every note named: a TRILL zone over the note's own span (the page's own model — midiModel 'trill', `trill` block as
 // composer.html createTrill makes it: the note's pitch, the interval UP, the lane's ordinary voice, the accent on, the loudness
-// from the curve), and A CURVE OF ITS OWN on the same lane, the shape asked for (the page's stamp shapes), which the trill reads
-// (`curveRef: 'lane'`, `curveId`) — so the trill's speed and loudness follow THAT curve, and he bends it in the page with the lane's
-// curve tools (drag a dot · double-click the line to add one · double-click or ALT-click a dot to remove it · the wheel on a dot for
-// the bend · the diamond). The note itself is NOT changed: the page mutes it under the trill at play time and draws it faint
-// (`eat`, `launchedFrom`); take the trill off and the note is as it was.
+// from the curve), and A CURVE OF ITS OWN in the shape asked for (the page's stamp shapes), which the trill reads — so the trill's
+// speed and loudness follow THAT curve, and he bends it in the page. WHERE THE CURVE GOES (his word 2026-10-07, RUNNING_LOG §214 —
+// "the curve controls aren't working … I like the tools in the curve lanes"):
+//   · `--curve window` (the default): in a CURVE WINDOW — A, B or C, the first one free over the trill's span (a trill reads a window
+//     over its own span only, so two trills share a window unless they overlap in time) — `curveRef: 'A' | 'B' | 'C'`; the window's
+//     dots-and-bend tools edit it (Points · Fill · drag a dot · hold the line and drag · double-click / ALT a dot); the trill's own
+//     fill on its lane mirrors the window's curve live; the lit 1 / 2 / 3 on the trill says which.
+//   · `--curve lane`: a curve on the player's lane under the trill (`curveRef: 'lane'`, `curveId`) — the lane's node kit; a trill
+//     zone drawn over it takes the clicks (§214), so this is for a curve he will not touch.
+// The note itself is NOT changed: the page mutes it under the trill at play time and draws it faint (`eat`, `launchedFrom`); take
+// the trill off and the note is as it was.
 //
 //   node tools/trill_notes.js --score <name> --ids wc-383[,wc-397,…]            the notes by id
 //   node tools/trill_notes.js --score <name> --from 152 --to 173 [--lanes bfl]   or every note whose START lies in a stretch
 //       [--interval 1]   semitones UP from the note's pitch (1 = the minor second — his word for this passage; the page's own default is 2)
 //       [--shape surge]  surge (slow → fast, exponential) · bloom (fast early, then level) · arch · line · saw
+//       [--curve window] window (A / B / C, the first free) · lane (on the player's lane)
 //       [--off]          take the trills this tool made off those notes (the zone and its curve gone; the note untouched)
 //       [--dry]          say what would happen, write nothing
 //
@@ -59,6 +66,11 @@ const shape = arg('shape', 'surge');
 if (!SHAPES[shape]) die('--shape: one of ' + Object.keys(SHAPES).join(', '));
 const interval = Math.round(+arg('interval', 1));
 if (!(interval >= 1 && interval <= 12)) die('--interval: 1 … 12 semitones up');
+const mode = arg('curve', 'window');
+if (!/^(window|lane)$/.test(mode)) die('--curve: window (a curve window A / B / C — the dots-and-bend tools) or lane (a curve on the player\'s lane)');
+// the curve windows (composer.html CURVE_LAYERS · CURVE_NAMES · CURVE_COLORS); a window is free over a span when no curve on it overlaps the span
+const WIN = [7, 8, 9], WIN_NAME = { 7: 'A', 8: 'B', 9: 'C' }, WIN_COLOR = { 7: '#C2410C', 8: '#1D6FA5', 9: '#6D3B9E' };
+const busy = (L, s, e) => save.objects.some((o) => o.type === 'waveCurve' && o.layer === L && o.endSeconds > s && o.startSeconds < e);
 const isNote = (o) => o.type === 'waveCurve' && o.sonifyNote != null && o.layer < TRACKS.length;
 let notes;
 if (arg('ids')) {
@@ -73,15 +85,15 @@ if (arg('ids')) {
     notes = save.objects.filter((o) => isNote(o) && o.startSeconds >= from && o.startSeconds <= to && (!lanes || lanes.includes(o.layer))).sort((a, b) => a.startSeconds - b.startSeconds);
 }
 if (!notes.length) die('no note there: nothing to do', 1);
+notes.sort((a, b) => a.startSeconds - b.startSeconds);   // in time order: the windows are dealt first-free as the trills come
 
 const out = [], command = 'node tools/trill_notes.js ' + process.argv.slice(2).filter((x) => x !== '--dry').join(' ');
 if (has('off')) {
     let n = 0;
     for (const note of notes) {
         const zones = save.objects.filter((o) => o.type === 'zone' && o.midiModel === 'trill' && o.properties && o.properties.trillFrom && o.properties.trillFrom.note === note.id);
-        for (const z of zones) {
-            const cid = z.trill && z.trill.curveId;
-            save.objects = save.objects.filter((o) => o !== z && !(cid && o.id === cid && o.properties && o.properties.trillCurve === z.id));
+        for (const z of zones) {   // the zone and the curve this tool made for it (on the lane or in a window), by the curve's own tag
+            save.objects = save.objects.filter((o) => o !== z && !(o.type === 'waveCurve' && o.properties && o.properties.trillCurve === z.id));
             n++;
         }
         out.push('  ' + note.id + ' ' + (TRACKS[note.layer].short || note.layer) + ' ' + pn(note.sonifyNote) + ' @ ' + note.startSeconds.toFixed(2) + ' s: ' + (zones.length ? zones.length + ' trill(s) off' : 'no trill of this tool on it'));
@@ -97,20 +109,26 @@ if (has('off')) {
         const start = Math.round(note.startSeconds * 1000) / 1000, end = Math.round(note.endSeconds * 1000) / 1000;
         const zid = 'zn-' + (nextId++), cid = 'wc-' + (nextId++);
         const sh = SHAPES[shape];
-        const curve = { id: cid, type: 'waveCurve', layer: note.layer, startSeconds: start, endSeconds: end,
+        let L = note.layer, curveRef = 'lane', curveId = cid, color = '#F04B00', opacity = 0.5, fillMode = 'bottom', where = cid + ' on the lane';
+        if (mode === 'window') {
+            L = WIN.find((K) => !busy(K, start, end));
+            if (L == null) die('no curve window is free over ' + start.toFixed(2) + ' → ' + end.toFixed(2) + ' s (A, B and C each hold a curve there): --curve lane for ' + note.id + ', or move a curve');
+            curveRef = WIN_NAME[L]; curveId = ''; color = WIN_COLOR[L]; opacity = 0.45; fillMode = 'line'; where = 'window ' + curveRef + ' (' + cid + ')';
+        }
+        const curve = { id: cid, type: 'waveCurve', layer: L, startSeconds: start, endSeconds: end,
             nodes: sh.nodes.map((n) => Object.assign({}, n)), segments: sh.segments.map((s) => Object.assign({}, s)),
-            color: '#F04B00', fillMode: 'bottom', opacity: 0.5, performanceNotes: 'trill curve · ' + shape, properties: { trillCurve: zid } };
+            color, fillMode, opacity, performanceNotes: 'trill curve · ' + shape + ' · ' + note.id, properties: { trillCurve: zid } };
         const zone = { id: zid, type: 'zone', layer: note.layer, startTime: start, endTime: end, player: '', instrument: '',
             zoneFunction: 'midiPreview', midiModel: 'trill', ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [],
             ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
             color: '#F04B00', opacity: 0.16, yOffset: 0.5, zoneHeight: 0.96, performanceNotes: 'trill',
             properties: { trillFrom: { note: note.id, shape, interval, at: new Date().toISOString(), command } },
             trill: { pitch: note.sonifyNote, interval, technique: inst.ordinary || note.technique || '', accent: true, attackVel: 127, attackTech: '', attackDurMs: null,
-                curveId: cid, curveRef: 'lane', level: 0.5, eat: true, smooth: 0.7, stretch: 1, speed: 1, seed: 1, roles: true, launchedFrom: note.id,
+                curveId, curveRef, level: 0.5, eat: true, smooth: 0.7, stretch: 1, speed: 1, seed: 1, roles: true, launchedFrom: note.id,
                 velMode: 'curve', velLo: 65, velHi: 127 } };
         save.objects.push(curve, zone);
         made++;
-        out.push('  ' + note.id + ' ' + (tr.short || note.layer) + ' ' + pn(note.sonifyNote) + ' → trill ' + pn(note.sonifyNote) + '–' + pn(note.sonifyNote + interval) + ' · ' + start.toFixed(2) + ' → ' + end.toFixed(2) + ' s · ' + shape + ' · ' + zid + ' reads ' + cid + ' · voice ' + (zone.trill.technique || '(the lane\'s ordinary)'));
+        out.push('  ' + note.id + ' ' + (tr.short || note.layer) + ' ' + pn(note.sonifyNote) + ' → trill ' + pn(note.sonifyNote) + '–' + pn(note.sonifyNote + interval) + ' · ' + start.toFixed(2) + ' → ' + end.toFixed(2) + ' s · ' + shape + ' · ' + zid + ' reads ' + where + ' · voice ' + (zone.trill.technique || '(the lane\'s ordinary)'));
     }
     save.nextId = nextId;
     out.unshift('trills made: ' + made + ' of ' + notes.length + ' notes (' + shape + ', +' + interval + ' semitone' + (interval > 1 ? 's' : '') + ')');
