@@ -175,6 +175,13 @@ if (arg('off') != null) {
         ostinatoParams: { smooth: 0.7, speed: 1.0, stretch: 1.5 }, chordMarkers: [], ratioMarkers: [], ratioSourceZoneId: '', ratioGroup: '', responseDelayMs: 0, jitterMs: 8, driftFactor: 0.02, midiSnippet: null,
         color: model === 'elecPlay' ? '#8E24AA' : '#00897B', opacity: 0.35, yOffset, zoneHeight: 0.2, performanceNotes: '', properties: { petalHit: rec }, elec });
     const open = zone(Math.max(0, T - BEFORE_S), T - BEFORE_S + WINDOW_S, { name: smp, category: 'impulse', player }, 'elecOpen', 0);
+    // THE OPENING NEVER OVERLAPS ITS PLAYER'S NEXT TRILL OR NEXT OPENING (his word 2026-10-08, RUNNING_LOG §237): the ring may run into the
+    // trill, the microphone may not — the opening ends 40 ms before whichever comes first, the note kept inside (never under 300 ms)
+    {
+        const myLanes = TRACKS.map((t, i) => i).filter((i) => playerOfLane(i) === player);
+        const nextStart = Math.min(...save.objects.filter((o) => o.type === 'zone' && (o.midiModel === 'trill' || o.midiModel === 'elecOpen') && myLanes.includes(o.layer) && o.startTime > open.startTime && o.startTime < open.endTime).map((o) => o.startTime));
+        if (Number.isFinite(nextStart)) { const end = Math.round(Math.max(open.startTime + 0.3, nextStart - 0.04) * 1000) / 1000; if (end < open.endTime) { out.push('  the mic opening shortened to ' + Math.round((end - open.startTime) * 1000) + ' ms: the ' + player + '\'s next trill or opening begins at ' + nextStart + ' s'); open.endTime = end; } }
+    }
     const ret = zone(T + gap, T + gap + 0.5, Object.assign({ name: smp, label: 'petal ' + k + ' · #' + d.setting.n + ' ' + Math.round(d.setting.fund) + ' Hz' + (d.effect === 'clean' ? '' : ' · ' + NAMES[d.effect]), variants: { [smp]: key + '-tail' } }, level ? { dyn: { mode: 'mark', mark: level } } : {}), 'elecPlay', 1);
     save.objects.push(noteObj, open, ret);
     save.nextId = nextId;

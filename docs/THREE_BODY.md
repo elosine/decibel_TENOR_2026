@@ -41,6 +41,8 @@ Each player is always in ONE of these. The score shows which (§ 3).
 
 → then FAR APART again.
 
+*(His word 2026-10-08, DEC-47 — for notation time, nothing in the score now: the silence of the break and the CHANGE that follows it are ONE thing in the part — the player is silent as long as they want, then goes straight into FAR APART; no separate transition time.)*
+
 *(The AI's note, marked: "a beat" in APPROACHING is the player's own — no tempo is given. "A type of sound" lets a player be pulled by a sound rather than a person — a bowed metal, a slap — which includes the electronics' voices. The CLOSE PASS is piece #2's instruction with the guess made honest: before OR after, the player's choice each time, unison forbidden.)*
 
 ---
