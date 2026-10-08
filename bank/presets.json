@@ -8168,6 +8168,246 @@
    },
    "deal": false,
    "audition": "piece-petals"
+  },
+  {
+   "key": "dg01",
+   "name": "G1 overlaps 4 · rand 0 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 4,
+    "icRand": 0,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg02",
+   "name": "G2 overlaps 4 · rand 0.2 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 4,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg03",
+   "name": "G3 overlaps 4 · rand 0.5 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 4,
+    "icRand": 0.5,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg04",
+   "name": "G4 overlaps 8 · rand 0 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 8,
+    "icRand": 0,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg05",
+   "name": "G5 overlaps 8 · rand 0.2 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 8,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg06",
+   "name": "G6 overlaps 8 · rand 0.5 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 8,
+    "icRand": 0.5,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg07",
+   "name": "G7 overlaps 17 · rand 0 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg08",
+   "name": "G8 overlaps 17 · rand 0.2 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg09",
+   "name": "G9 overlaps 17 · rand 0.5 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 17,
+    "icRand": 0.5,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg10",
+   "name": "G10 overlaps 40 · rand 0 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 40,
+    "icRand": 0,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg11",
+   "name": "G11 overlaps 40 · rand 0.2 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 40,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
+  },
+  {
+   "key": "dg12",
+   "name": "G12 overlaps 40 · rand 0.5 · pace 1/30 · window 0.6 s · expodec · looping from 0 · on bcl-mp-1",
+   "effect": "icy",
+   "class": "time",
+   "capMs": 3208,
+   "args": {
+    "icMix": 1,
+    "icSpeed": 0.0333,
+    "icFromMs": 0,
+    "icWin": 0.6,
+    "icOverlaps": 40,
+    "icRand": 0.5,
+    "icPitch": 0,
+    "icEnv": 4,
+    "icLoop": 1
+   },
+   "deal": false,
+   "audition": "stretch-grid"
   }
  ],
  "generated": {
@@ -8314,6 +8554,12 @@
    "what": "the piece's petal hits — the petals of resonance rolled exhaustively at the trills' ends (DEC-44); seed 1",
    "command": "node tools/petal_hit.js --score piece-sec02-a1 --at 223.6 --player va --k 34 --note 70 --dyn ff --level fff",
    "when": "2026-10-08T14:59"
+  },
+  "stretch-grid": {
+   "n": 12,
+   "what": "the stretch grid — overlaps × rand on one held sound (12 bricks)",
+   "command": "node tools/build_stretch_grid.js --name audition-stretch-grid --input bcl-mp-1 --len 5000 --gap 1 --overlaps 4,8,17,40 --rand 0,0.2,0.5",
+   "when": "2026-10-08T15:36"
   }
  }
 }
