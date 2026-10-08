@@ -50,8 +50,9 @@ const die = (msg, code) => { console.error(msg); process.exit(code || 2); };
 
 // the page's stamp shapes (composer.html, the STAMPS table): y 0 … 10 = the trill's level 0 … 1 — with a FLOOR (§220, his word on the
 // cello: "starts very quiet, like almost inaudible, and then it kicks in like a sudden jump"): a trill's level is its speed AND its
-// loudness, and an exponential from 0 is near-silent for most of its span; the floor is 2 = the crescendo tool's surge 5× (2 → 10)
-const FLOOR = 2;
+// loudness, and an exponential from 0 is near-silent for most of its span; the floor was 2 (the crescendo tool's surge 5×) for a few
+// hours — HIS WORD the same evening (§223): "drop the trill curves back down to from zero to the top" → 0. His to move.
+const FLOOR = 0;
 const SHAPES = {
     surge: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'exponential', slope: 0.4 }] },
     bloom: { nodes: [{ pos: 0, y: 0, smooth: 0.25 }, { pos: 1, y: 10, smooth: 0.25 }], segments: [{ model: 'logarithmic', slope: -0.29 }] },
