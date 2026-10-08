@@ -122,7 +122,7 @@ if (arg('off') != null) {
     // the bass flute's measured 48 … 64 — and 64 gave a silent capture on 2026-10-07, §221, so 63); a key outside is a FUNCTION KEY
     // … and the viola's Bartók pizzicato (§229: key 93, the recipe's top, captured 80 ms at −56 LUFS — no sound; the impulse bank's keys were
     // 50 · 65 · 80, and hit 6 at 51 captured −26 LUFS): 50 … 80
-    const ZONES = { bass_flute: { slap: [48, 63] }, viola: { bartok_vel: [50, 80] } };
+    const ZONES = { bass_flute: { slap: [48, 63] }, viola: { bartok_vel: [50, 79] } };
     const zn = (ZONES[TRACKS[lane].instKey] || {})[tech.key];
     const lo = zn ? zn[0] : tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = zn ? zn[1] : tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
     // THE PITCH (§220, his word: "more varied pitches and across the range of that instrument"): the technique's range cut into five
