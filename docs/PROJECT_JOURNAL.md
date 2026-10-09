@@ -160,8 +160,11 @@ next, where we are; reorganizations only on his approval.
   noteheads in a rectangle, `SOL_yellow`.** FOUR BADGES CHOSEN; four colours taken (the format's blue · white · SOL_yellow · SOL_red).
   ► AUDIBLE BEATS in hand: seven candidates on the page, the waves real, two tones white and the added wave in the colour (a the
   diagram stacked · b overlaid · c the added wave alone · d the bumps · e the bumps with the two tones · f two lines closing ·
-  g two ripples crossing). Open: his sign and colour · where the accented long tones are in the piece (the petal hits?) · the marcatos
-  by hand or by the font · then scattered strikes. What is left after the badges: PLAN.md 2.3's last paragraph.
+  g two ripples crossing). **(§313 · §314, DEC-95) A CORRECTION: SHORT ATTACKS = BRAXTON'S THREE OPEN TRIANGLES in `SOL_red`** — his
+  "c" of DEC-91 (the scattered marcato) was not what he meant; read every earlier line by this one. For the beats, five more
+  candidates from the picture he sent: h the wave as in his picture · i THE BOW TIE · j straight-edged · k with its wave · l two
+  pinches. Open: his sign and colour for the audible beats · where the accented long tones are in the piece (the petal hits?) · then
+  scattered strikes. What is left after the badges: PLAN.md 2.3's last paragraph.
 - **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

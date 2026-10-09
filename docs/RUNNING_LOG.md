@@ -6467,3 +6467,23 @@ The AI's note: a and b are the truest and the finest-grained — at 36 px the wh
 **What was done — NOTHING CHANGED, the page reopened:** `language.json` the type `shortAttacks` gains `reopen` (a sentence); the page shows its badge as "chosen so far, REOPENED" and under it EVERY candidate again (a Braxton's own · b the marcato · c the marcato, scattered — marked *the one chosen so far* · d the staccatissimo, scattered · e staccato dots · f the marcato scattered in the notation font), each in all eight colours, its own colour labelled "its colour so far" rather than "taken". **http://localhost:5500/language/index.html#shortAttacks** (the page's headings carry an id each now). The choice is rewritten at his word, and DEC-91 corrected by a NEW entry.
 
 **Read in the AI's pane:** the six candidates listed in order, c marked (the DOM read; the pane's screenshot timed out — the window was behind another).
+
+## §314. THE SHORT ATTACKS CORRECTED — Braxton's triangles, SOL_red (DEC-95) · THE AUDIBLE BEATS: the wave as in his picture, and the bow tie, five more candidates (2026-10-09, Opus)
+
+**What prompted it (DEC-95, verbatim):** a picture and *"and try the bow tie shape"*; then, on the reopened page of §313, *"yes I wanted the braxton triangles in the same color"*.
+
+**CORRECTED (his):** **SHORT ATTACKS = Braxton's own sign, the three small open triangles, in `SOL_red`** (`symbol: braxton`; the `reopen` taken off). DEC-91's "c" — the marcato, three, scattered — is superseded by DEC-95; §308's sentence about his having passed over Braxton's triangles for the multiplied marcato describes a choice he did not mean. The four badges as they stand: short attacks — Braxton's triangles, SOL_red · trills — `tr` and its wavy line, the format's blue · accented long tones — Braxton's wedge and line, white · multiphonics — the chord of open noteheads in a rectangle, SOL_yellow. Two are Braxton's, two the staff's. *(The hand-or-font question about the marcato is void with it.)*
+
+**HIS PICTURE, described** (a small diagram, red on white, axes labelled Amplitude and Time): one wave, about seventeen cycles, whose height is FULL at the left edge, falls to nothing at about a quarter of the way, is full again at the middle, nothing again at three quarters, full at the right edge. The added wave of two tones, in the phase where it BEGINS loud — §312's curves were the same two tones in the other phase (silent at the edges and the middle).
+
+**The curves, real again:** his picture = cos(2π · 5u) + cos(2π · 7u), halved = cos(2π · 6u) · cos(2πu): the outline |cos(2πu)|, full at 0 · ½ · 1, nothing at ¼ · ¾ (six cycles drawn where his has seventeen: at 36 px seventeen would be a grey bar). ONE pinch: cos(2π · 5.5u) + cos(2π · 6.5u), halved = cos(2π · 6u) · cos(πu), the outline |cos(πu)| — full at both edges, nothing in the middle. **THE BOW TIE is that outline**: the shape of the wave around the instant the two tones cancel.
+
+**FIVE MORE CANDIDATES, appended** (h … l; a … g keep their letters; **http://localhost:5500/language/index.html#beats**), each in all eight colours:
+- **h — the added wave, as in his picture**: the curve in the colour, its time axis a thin white line.
+- **i — the bow tie**: the true outline with one pinch, filled.
+- **j — the bow tie, straight-edged**: two triangles meeting at a point — an actual bow tie; crisper, no longer a wave's real outline.
+- **k — the bow tie, with its wave**: the outline thin and white, the added wave inside it in the colour.
+- **l — his picture's outline, filled**: two pinches — it is d (the bumps) moved a quarter-turn, so that the badge begins and ends loud.
+The AI's note: i and j are the two that are a SIGN — one shape, legible at 36 px, unlike anything else in the set; i is true to the wave, j is the cleaner drawing. A coincidence to weigh: j is two triangles, and the short attacks are now three triangles.
+
+**Made:** `bank/language/language.json` (the correction · `candidates.beats` twelve now). Seen in the AI's pane: the table's first badge reads "Braxton's own · SOL_red"; h … l draw at both sizes.

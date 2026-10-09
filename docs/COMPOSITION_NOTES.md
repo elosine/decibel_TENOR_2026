@@ -1053,3 +1053,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"g and yellow; audible beats try actual wave diagram 2 in white and the added wave in all the colors and I'll take other suggestions as well"*
 
 *(The AI's reading, marked as such: (1) the badge of the MULTIPHONICS is candidate g of §311 — the chord of three open noteheads at their full size with the rectangle drawn outside them — in `SOL_yellow` (the yellow offered on the page; his own `clr` yellow is another colour). The frame was his own idea (§311). (2) For the AUDIBLE BEATS he names the design himself: a real wave diagram, TWO waves in white and the wave they ADD UP TO in the colour, shown in every colour; and he invites other ideas. RUNNING_LOG §312.)*
+
+### DEC-95 · 2026-10-09 — A CORRECTION OF DEC-91: SHORT ATTACKS are BRAXTON'S TRIANGLES, in SOL_red · the audible beats: a picture of the wave he means, and "the bow tie shape"
+
+*(His words, verbatim — Opus; three messages:)* *"can i see the short attacks options again, I don't think that is the one I wanted, I wanted the braxton triangles but let me see the page"* — then, with a picture of a beating wave (amplitude against time: loud at the left, pinched to nothing, loud, pinched, loud at the right): *"and try the bow tie shape"* — then: *"yes I wanted the braxton triangles in the same color"*.
+
+*(The AI's reading, marked as such: (1) DEC-91's "c" was not what he meant. The badge of the SHORT ATTACKS is Braxton's own sign — three small open triangles, two pointing left and one up — in `SOL_red`. So two of the four badges are Braxton's (short attacks · accented long tones) and two the staff's (trills · the multiphonics' chord). (2) For the AUDIBLE BEATS his reference is the textbook picture of two tones added — and the shape he wants tried is its OUTLINE where the wave pinches: a bow tie. RUNNING_LOG §313 · §314.)*
