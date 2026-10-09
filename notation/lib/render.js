@@ -285,6 +285,18 @@
         const yOf = h => (MO.place === 'laneMiddle' || MO.align === 'centre') ? ry + (rh - h) / 2 : MO.place === 'laneBottom' ? ry + rh - h : ry;
         return { h: mh, y: yOf(mh), yOf };
       };
+      // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE ELECTRONICS' ROW of this lane (rules.json objects.elecReturn: place · gapSs · perSoundFrac ·
+      // capSounds · minSs; objects.elecBadge: sizeSs) — the presentation view's own row, the mirror of the mic's: where a return brick stands,
+      // and the electronics' badge with it. laneBottom by his word ('purple at the bottom': the mic at the top — into the microphone above,
+      // out of the speakers below) · laneMiddle · laneTop. As tall as the tallest thing that may stand in it (a brick of capSounds sounds, or the
+      // badge); its 'align' as the mic row's: 'edge' = hung from the row's own edge, 'centre' = centred.
+      const elecRow = ER => {
+        const bh = Math.max(ER.minSs * ssPx, (lane.yBotPx - lane.yTopPx) * ER.perSoundFrac * ER.capSounds), gp = ER.gapSs * ssPx;
+        const rh = Math.max(bh, E.elecBadge ? E.elecBadge.sizeSs * ssPx : bh);
+        const ry = ER.place === 'laneTop' ? lane.yTopPx + gp : ER.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - rh) / 2 : lane.yBotPx - gp - rh;
+        const yOf = h => (ER.place === 'laneMiddle' || ER.align === 'centre') ? ry + (rh - h) / 2 : ER.place === 'laneTop' ? ry : ry + rh - h;
+        return { yOf };
+      };
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
       let curShift = 0;
@@ -975,13 +987,32 @@
           // and the colour are rows of rules.json `language`: his choices). It stands in the mic's row: `place` 'before' = its right edge the
           // badge's gap before x(t) (a badge before its mic opening) · 'at' = its left edge on x(t). A POINT kind: drawn once, whole, on the
           // page that owns its time; on a tiled screen page never left of the page's own start (edge class `clamp`).
-          const BG = E.badge, LG = E.language, MO = E.micOpening, ty = LG && LG.types && LG.types[it.type];
-          if (!BG || !ty || !MO || !owns(it.t)) continue;
-          const bs = BG.sizeSs * ssPx, row = micRow(MO), u = LG.format.viewUnits;
+          // [§335, DEC-111] A badge whose 'row' is 'elec' is THE ELECTRONICS' badge (rules.json electronics.badges · objects.elecBadge): the same
+          // format, drawn in the lane's electronics' row — the presentation view's layer.
+          const elec = it.row === 'elec';
+          const BG = elec ? E.elecBadge : E.badge, LG = E.language, MO = E.micOpening, ER = E.elecReturn;
+          const TB = elec ? (E.electronics && E.electronics.badges) : (LG && LG.types), ty = TB && TB[it.type];
+          if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO)) continue;
+          const bs = BG.sizeSs * ssPx, row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
           let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
             '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
+        } else if (it.k === 'elecret') {
+          // [decibel PLAN 2.7 — RUNNING_LOG §335; DEC-111; rules.json objects.elecReturn → engraving.render.elecReturn] THE ELECTRONICS' RETURN, the
+          // presentation view's hint: a brick over the region the engine answers in — the mic opening's own recipe (a rounded rectangle, a pale
+          // fill, a solid outline) in the electronics' purple, in the lane's electronics' row; its LENGTH the region, its HEIGHT the number of
+          // sounds it carries (perSoundFrac of the lane a sound, capped at capSounds — the whole bank is drawn at the cap). No sign on it. A
+          // LONG kind, cut like paper at a page turn (edge class 'cut'). No row in the registry = no ink.
+          const ER = E.elecReturn;
+          if (!ER || !crosses(it.t0, it.t1)) continue;
+          const whole = cutMark >= 0, row = elecRow(ER);
+          const n = it.all ? ER.capSounds : Math.max(1, Math.min(it.count || 1, ER.capSounds));
+          const h = Math.max(ER.minSs * ssPx, (lane.yBotPx - lane.yTopPx) * ER.perSoundFrac * n);
+          const xa = view.xOfSeconds(whole ? it.t0 : Math.max(it.t0, w0)), xb = view.xOfSeconds(whole ? it.t1 : Math.min(it.t1, wInk));
+          parts.push('<rect class="elec-return" x="' + xa.toFixed(2) + '" y="' + row.yOf(h).toFixed(2) + '" width="' + Math.max(1, xb - xa).toFixed(2) + '" height="' + h.toFixed(2) +
+            '" rx="' + (ER.cornerSs * ssPx).toFixed(2) + '" fill="' + ER.colour + '" fill-opacity="' + ER.fillOpacity + '" stroke="' + ER.colour +
+            '" stroke-width="' + (ER.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + ER.strokeOpacity + '"/>');
         } else if (it.k === 'brick') {
           if (o.hideBricks) continue;   // day 22: the bricks toggle
           if (!crosses(it.t0, it.t1)) continue;
@@ -1067,7 +1098,7 @@
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
     'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
-  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic'];   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
+  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret'];   // [§335] the electronics' return brick spans its region   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket
   // belongs to a beam group and the splicer is stamp-atomic — no cut severs a

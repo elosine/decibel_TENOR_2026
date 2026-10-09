@@ -4,7 +4,7 @@
 > (with its basis and its §), regenerate, commit both. `node tools/check_rules.js` fails when the page and the tables disagree.
 > The rules for a NEW notation begin with a DEVICE SHEET (`docs/PLANNING_METHOD.md`); `docs/NOTATION_STANDARDS.md` is the history.
 
-LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 285 registry pointers compile from these tables.
+LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 299 registry pointers compile from these tables.
 
 **How to read a row:** the value · `→` the registry key(s) it is compiled into (what the layout and the renderer read) · the basis
 (`lilypond` · `gould` · `composer` · `AI` · `census` = what drew when the tables were built) · the ref (the § or the day). A field
@@ -188,6 +188,10 @@ LAYER 3 — THE OBJECTS (§421 · §422 · §427 · §428): one row per drawn ob
   - draws `mic`
 - **badge** — sizeSs **6.835** → `render.badge.sizeSs` · gapSs **1.52** → `render.badge.gapSs` · row **mic** · *composer* · decibel RUNNING_LOG §307 (DEC-90: the badge format of pieces #1 · #2 — 36 px at the 1080 frame) · §321 … §323 (DEC-100 … DEC-102: a badge announces a section; where the openings stand alone each carries its own) · §325 (the device sheet: it stands in the mic's row; before its mic opening, `gapSs` from it — the AI's 6 px, his to move). The signs and their colours: the table `language` · §328 (DEC-105, his numbers: '50% bigger' — sizeSs 4.557 → 6.835, 54 px · the gap to its mic opening doubled — 0.76 → 1.52, 12 px; the badge is now the taller of the two, so the mic's row is as tall as the badge and both are centred in it)
   - draws `badge`
+- **elecReturn** — colour **elecPurple #5F4296** → `render.elecReturn.colour` · fillOpacity **0.18** → `render.elecReturn.fillOpacity` · strokeOpacity **1** → `render.elecReturn.strokeOpacity` · strokeSs **0.19** → `render.elecReturn.strokeSs` · cornerSs **0.38** → `render.elecReturn.cornerSs` · place **laneBottom** → `render.elecReturn.place` · align **edge** → `render.elecReturn.align` · gapSs **1** → `render.elecReturn.gapSs` · perSoundFrac **0.028** → `render.elecReturn.perSoundFrac` · capSounds **5** → `render.elecReturn.capSounds` · minSs **0.5** → `render.elecReturn.minSs` · *composer* · decibel RUNNING_LOG §333 · §334 (DEC-110 · DEC-111: 'a, purple at the bottom' — the PRESENTATION VIEW's hint of the electronics in section 1, never on a player's page: a brick over each stretch the returns fall in, the mic opening's own recipe (objects.micOpening: the corners, the fill at 18 %, the outline solid) in the electronics' purple; its LENGTH the region the engine rolls the sounds' times inside, its HEIGHT the number of sounds the brick carries — perSoundFrac of the lane a sound, 0.028 = the mic opening's heightFrac 0.14 over capSounds 5, so five sounds stand as tall as the mic opening and the whole bank is drawn at the cap; place laneBottom — the mic at the top: into the microphone above, out of the speakers below — · laneMiddle · laneTop, one word; align as the mic's; gapSs the standard gap) · §335 (the build; the numbers the AI's first, his to move)
+  - draws `elecret`
+- **elecBadge** — sizeSs **4.557** → `render.elecBadge.sizeSs` · gapSs **1.52** → `render.elecBadge.gapSs` · row **elec** · *composer* · decibel RUNNING_LOG §334 (DEC-111: 'flocking badge but smaller' — the electronics' badge, piece #1's flocking badge, in the electronics' row: 4.557 ss = 36 px at the 1080 frame, the format's own size and two thirds of the language badges' 54; gapSs 1.52 = 12 px before the lane's first return brick, as the announcing badge stands before its mic) · §335 (the build). Its sign and colour: the table electronics
+  - draws `badge`
 - **beatBall** — colour **navyBlue #1C4879** · colours **[@colours.navyBlue.value, @colours.olive.value]** → `animated.beatBall.colours` · coloursRef **§578 — the ball takes its FRAME's colour, the frames alternating navy · olive on a part (objects.tick.gridColours, the same pair); `colour` stays the single-colour fallback** · opacity **0.3 (= ringBar.opacity)** · radiusPx **5** · *composer* · §567 (2026-09-29, his LG-145): THE SHOWN BEAT's ball — the tuba's GC ball (piece #1's physics, the 5 px ball) in the duration line's navyBlue at its opacity, one in flight over a beat grid (the beatGrid overlay) and nowhere else; the style engraving.animated.beatBall
   - draws `anim:beatBall`
 
@@ -272,8 +276,9 @@ THE COLOURS (§427 · §428): ink #111 for every music mark — EXCEPT the durat
 - **SOL_yellow** `#F7C40A` — the multiphonics' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the multiphonics §312 (DEC-94)
 - **SOL_green** `#219D4C` — the scattered strikes' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the scattered strikes §318 (DEC-97)
 - **SOL_blue** `#186DBF` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
-- **SOL_purple** `#5F4296` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
+- **SOL_purple** `#5F4296` — the electronics' colour (through elecPurple) · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
 - **SOL_black** `#151415` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
+- **elecPurple** `#5F4296` — the electronics' own colour — the return brick and the flocking badge of the presentation view · *composer* · decibel RUNNING_LOG §334 (DEC-111: 'purple at the bottom' — SOL_purple as offered in §333, the one SOL colour no language type had taken; the composer score's own return brick is #8E24AA at 35 % — 'as the composer score', the one-word alternative, here) · §335 (the build)
 
 THE FACES (§428): Crimson Pro Light upright / Light Italic for words and numbers; Emmentaler (LilyPond 2.24.4) for music. `emPerSs` is the text's em in staff spaces (render's textScale): a text item's size × emPerSs = its em.
 
@@ -324,6 +329,7 @@ Every drawn kind names what happens at a page edge: on SCREEN `cut` (clipped lik
 | `clef` | furniture | furniture |
 | `mic` | cut | stub |
 | `badge` | clamp | whole |
+| `elecret` | cut | stub |
 | `anim:cursor` | atomic | none |
 | `anim:gc` | cut | none |
 | `anim:beatBall` | cut | none |
@@ -362,6 +368,7 @@ Every `engraving` overlay on an event (the per-event hands: `stemDir` · `dxSs` 
 files the picker lists. A rung-8 override carries five fields (the object · the property · the value · the rung · his § and date).
 
 - `approaching-opening` — 30 override(s): device ×30
+- `approaching-opening-elec` — 30 override(s): device ×30
 
 ---
 

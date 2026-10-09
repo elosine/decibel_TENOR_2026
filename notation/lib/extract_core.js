@@ -648,6 +648,18 @@
       .map(o => ({ id: 'ov-mic-' + o.id, kind: 'micOpening', target: { part: o.layer, span: [+o.startTime.toFixed(4), +Math.min(o.endTime, w1).toFixed(4)] },
         value: { source: o.id, sample: (o.elec && o.elec.name) || null }, provenance: 'authored' }));
 
+    // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] with options.elec: THE ELECTRONICS' RETURNS, for the presentation view — the composer
+    // score's zones 'elecPlay' that begin in the window, on the parts extracted, as 'elecReturn' overlays: target { part, span }, value
+    // { source: the zone's id, behaviour, count: the number of sounds the brick carries, all: true for '*' (the whole bank) }. The brick's span
+    // is the REGION the engine rolls the sounds' times inside (the score is a plan — the times differ at every performance); the count is
+    // what is fixed: a pattern's onsets · a chain's length · a brick's variants · 1 for a plain or an 'ar' return. Clipped to the window's end.
+    const elecCount = e => !e ? 1 : (Array.isArray(e.pattern) && e.pattern.length) ? e.pattern.length : (Array.isArray(e.chain) && e.chain.length) ? e.chain.length : (e.variants && Object.keys(e.variants).length) || 1;
+    const elecOverlays = !opt.elec ? [] : (score.objects || [])
+      .filter(o => o.type === 'zone' && o.midiModel === 'elecPlay' && o.startTime >= w0 && o.startTime < w1 && parts.includes(o.layer) && Math.min(o.endTime, w1) > o.startTime)
+      .sort((a, b) => a.startTime - b.startTime || a.layer - b.layer)
+      .map(o => ({ id: 'ov-elec-' + o.id, kind: 'elecReturn', target: { part: o.layer, span: [+o.startTime.toFixed(4), +Math.min(o.endTime, w1).toFixed(4)] },
+        value: { source: o.id, behaviour: (o.elec && o.elec.behaviour) || 'plain', count: elecCount(o.elec), all: !!(o.elec && o.elec.name === '*') }, provenance: 'authored' }));
+
     return {
       doc: {
         irVersion: '0.1',
@@ -659,11 +671,12 @@
           tool: toolName || 'extract_core',
           notes: 'Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL ' + opt.TOL + ' s. Regenerable; authored content belongs in overlays only.'
             + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + flatN + ' trill(s) read a flat level.' : '')
-            + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : ''),
+            + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : '')
+            + (opt.elec ? ' THE ELECTRONICS (decibel PLAN 2.7): ' + elecOverlays.length + ' zone(s) elecPlay as elecReturn overlays.' : ''),
         },
         events,
         chunks,
-        overlays: micOverlays,
+        overlays: micOverlays.concat(elecOverlays),
       },
       warnings,
     };

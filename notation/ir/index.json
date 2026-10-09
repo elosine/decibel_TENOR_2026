@@ -30,6 +30,16 @@
     460
    ],
    "profile": "trance"
+  },
+  {
+   "id": "approaching-opening-elec",
+   "label": "Approaching — the opening, with the electronics (0 … 37 s)",
+   "score": "piece-3BodyRedo",
+   "window": [
+    0,
+    37
+   ],
+   "profile": "trance"
   }
  ]
 }

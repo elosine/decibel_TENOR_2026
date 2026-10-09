@@ -5,7 +5,7 @@ decisions: what is decided, what is open, in the order they will be settled. It 
 how each was reached is `RUNNING_LOG.md` §299 … and `COMPOSITION_NOTES.md` DEC-87 … — his words are quoted there, not here.
 The plan items are `PLAN.md` § 2. Marked **(AI)** = the AI's reading or suggestion, not yet his.)*
 
-**To see it — IN THE NOTATION SCORE:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325).
+**To see it — IN THE NOTATION SCORE:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325). **The presentation view:** `ir`: *Approaching — the opening, with the electronics (0 … 37 s)* — the same page plus the electronics' layer (§335).
 The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`place`: laneTop · laneMiddle · laneBottom; `gapSs`) and `objects.badge` — change a row, reload the app. *(The earlier working drawing: http://localhost:5500/signs/layout.html.)*
 
 ---
@@ -58,7 +58,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
 - **Open:** nothing, but for his eye on the new sizes.
-- **Presentation view (DEC-111):** the flocking badge, small and purple, once a lane at the lane's bottom; then a purple brick at the bottom over each stretch the electronics answer in — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(The sheet's numbers, the AI's: RUNNING_LOG §334 — not yet built.)*
+- **Presentation view (DEC-111):** the flocking badge, small and purple, once a lane at the lane's bottom; then a purple brick at the bottom over each stretch the electronics answer in — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
 - **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
@@ -132,7 +132,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 | section | the hint | status |
 |---|---|---|
-| 1 the opening | the flocking badge once a lane at the bottom, small; a purple brick at the bottom over each stretch of returns, its thickness the count one → five | decided (DEC-111); the sheet's numbers RUNNING_LOG §334; **not built** |
+| 1 the opening | the flocking badge once a lane at the bottom, small; a purple brick at the bottom over each stretch of returns, its thickness the count one → five | decided (DEC-111); **BUILT (§335)** — the page *Approaching — the opening, with the electronics*; his eye |
 | 2 the three body problem | the three computer players — open | to discuss at its turn |
 | 3 trills and accented long tones | the petals' ring (about ten seconds after the mic) — open | to discuss |
 | 4 the drones | the drones, up to five at once — open | to discuss |
@@ -149,5 +149,5 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top) and DEC-107 · DEC-108 (its fill 18 %, its outline solid).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
-4. The conductor's / presentation view — section 1 decided (DEC-111): the build at his go; then its sections 2 … 6, each at its turn with the players' signs.
+4. The conductor's / presentation view — section 1 BUILT (§335): his eye; then its sections 2 … 6, each at its turn with the players' signs.
 5. To confirm: pitch and percussion instrument are the player's choice.

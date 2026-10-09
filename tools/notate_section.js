@@ -280,9 +280,9 @@ const SEQ_GROUPS = [];
 process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) SEQ_GROUPS.push(process.argv[i + 1]); });
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
-  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
+  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
   date: new Date().toISOString().slice(0, 10),
-  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
+  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
 });
 // [§400] THE RANGE ALERT AT BUILD TIME: a technique whose registry `written`
 // entry carries a range (the flute's tongue ram: written = sounding + 11,
@@ -1343,6 +1343,12 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
 //                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
 //   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
+// [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE PRESENTATION VIEW'S OWN LAYER — the hint of the electronics, never on a player's page:
+//   --elec                     (an extraction option, above) every return brick of the composer score in the window, as `elecReturn` overlays
+//                              (its span the region the engine rolls the sounds inside; its count the sounds it carries) — drawn in the
+//                              lane's electronics' row (rules.json objects.elecReturn)
+//   --elecBadge type:t0:t1[:start]   THE ELECTRONICS' BADGE — a row of rules.json electronics.badges (`flocking`), once in each lane: before
+//                              that lane's first return brick in [t0, t1); with :start, at t0 on every lane instead. In the electronics' row.
 // All repeatable. Written at extraction, so a re-extract with the same flags gives the same page.
 {
   const argsOf = name => { const out = []; process.argv.forEach((a, i) => { if (a === '--' + name) out.push(String(process.argv[i + 1] || '')); }); return out; };
@@ -1360,10 +1366,13 @@ for (let i = 0; i < process.argv.length; i++) {
     }
     console.log('  silent ' + a + ': ' + members.length + ' note(s) draw nothing');
   }
-  const wantBadges = argsOf('announce').length + argsOf('micBadge').length;
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length;
   if (wantBadges) {
-    const LANG = (require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT).language || {}).types || {};
+    const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
+    const LANG = (RULES.language || {}).types || {};
+    const ELEC = (RULES.electronics || {}).badges || {};   // [§335] the electronics' own badges (the presentation view's)
     const mics = doc.overlays.filter(o => o.kind === 'micOpening').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
+    const rets = doc.overlays.filter(o => o.kind === 'elecReturn').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
     // a lane = a part, or the parts the ensemble joins in one lane (the percussionist's two)
     const laneKey = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
     const read = (name, a) => {
@@ -1371,7 +1380,8 @@ for (let i = 0; i < process.argv.length; i++) {
       if (!LANG[f[0]] || !(t1 > t0)) { console.error('--' + name + ' needs type:t0:t1 with a type of rules.json language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
       return { type: f[0], t0, t1, mode: f[3] || null, mics: mics.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9) };
     };
-    const addBadge = (part, t, type, place, why) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: { type, place }, provenance: 'authored' });
+    // [§335] a badge's `row`: absent = the mic's row (a language badge) · 'elec' = the electronics' row (the presentation view's badge)
+    const addBadge = (part, t, type, place, why, row) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: Object.assign({ type, place }, row ? { row } : {}), provenance: 'authored' });
     for (const a of argsOf('announce')) {
       const s = read('announce', a);
       if (s.mode === 'start') {
@@ -1390,6 +1400,24 @@ for (let i = 0; i < process.argv.length; i++) {
       const s = read('micBadge', a);
       for (const o of s.mics) addBadge(o.target.part, o.target.span[0], s.type, 'before', 'mic');
       console.log('  micBadge ' + a + ': ' + s.mics.length + ' opening(s)');
+    }
+    // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] --elecBadge: the electronics' badge once a lane, in the electronics' row — before the lane's
+    // first return brick of the span, or at t0 with :start. Its type is a row of rules.json electronics.badges, not of the language.
+    for (const a of argsOf('elecBadge')) {
+      const f = a.split(':'), t0 = parseFloat(f[1]), t1 = parseFloat(f[2]), mode = f[3] || null;
+      if (!ELEC[f[0]] || !(t1 > t0)) { console.error('--elecBadge needs type:t0:t1[:start] with a type of rules.json electronics.badges (' + Object.keys(ELEC).join(' · ') + ') — got ' + a); process.exit(2); }
+      const inSpan = rets.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9);
+      if (mode === 'start') {
+        const seen = new Set();
+        for (const p of parts) { const k = laneKey(p); if (!seen.has(k)) { seen.add(k); addBadge(p, t0, f[0], 'at', 'elec', 'elec'); } }
+        console.log('  elecBadge ' + a + ': ' + seen.size + ' lane(s), at ' + t0 + ' s');
+      } else {
+        const first = new Map();
+        for (const o of inSpan) { const k = laneKey(o.target.part); if (!first.has(k)) first.set(k, o); }
+        if (!first.size) { console.error('--elecBadge ' + a + ': no return brick in the span (is --elec given?) — add :start to place it at t0'); process.exit(2); }
+        for (const o of first.values()) addBadge(o.target.part, o.target.span[0], f[0], 'before', 'elec', 'elec');
+        console.log('  elecBadge ' + a + ': ' + first.size + ' lane(s), each before its first return brick');
+      }
     }
   }
 }
