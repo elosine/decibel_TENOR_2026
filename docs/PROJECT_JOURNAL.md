@@ -167,6 +167,11 @@ wants it, or the sine breathing with the bow (the tracker)? · *(answered: Q4 th
 **SINCE THE SESSION END (2026-10-09, RUNNING_LOG §290 · §291; DEC-81):** his 60 marimba strikes (`scores/strikes.json`, his) are in
 the strike bank — `bank/scattered_strikes.json`, by `node tools/strike_db.js --score strikes`; the Strikes drawer reads it live
 (its `↻ db`). Not seen in the running page by the AI.
+**THEN (RUNNING_LOG §292; DEC-82): SECTION 5 BEGUN AS AN EXPERIMENT — `scores/sec05-strikes-a.json`** (his, untracked, made at his
+word): his take `strikes01` at 2.0 s, in the STACCATO set, written `f` — by the new `node tools/strike_take.js` (the drawer's own
+code, run without the page; CLAUDE.md § Apps, HIS STRIKES). He has twenty takes `strikes01 … strikes20`; 01 … 14 were saved in the
+ordinario set — the tool presses staccato at the insert, his takes are untouched. **Read as ONE take (his "Strikes 1"); the other
+nineteen at his word.** Not opened in the page by the AI.
 
 **DELIBERATELY UNCOMMITTED — NONE since 2026-10-09 (RUNNING_LOG §291), at his word *"can you commit and push"*:** the thirteen that
 were his and unstaged are IN GIT as he had saved them — `scores/strikes.json` · `scores/piece-3BodyRedo.json` (THE PIECE) ·
@@ -174,7 +179,7 @@ were his and unstaged are IN GIT as he had saved them — `scores/strikes.json` 
 `scores/sec04-a-beating.json` · `scores/drone-start-mics.json` · `scores/curve_practice.json` ·
 `scores/temp01new_cello_bass_flute_perc_25.72.json` · `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` ·
 `reaper/decibel_rack.rpp`. **The rule is unchanged: a file he saves AFTER this is his again — dirty at a resume is his live work, and
-it is committed at his word, never swept in.** The five working copies of `unsaved_check.js` stand as they were (gitignored; his to
+it is committed at his word, never swept in.** Untracked since: `scores/sec05-strikes-a.json` (his section 5 experiment, §292). The five working copies of `unsaved_check.js` stand as they were (gitignored; his to
 Save or Reload).
 
 **Standing warnings for this repo:** never bind **5400 / 4900** (piece #6's) or **5300 / 4800** (piece #5's) · piece #6 holds

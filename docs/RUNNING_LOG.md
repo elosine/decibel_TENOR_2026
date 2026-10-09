@@ -6007,3 +6007,33 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 - **Saved by him since the wrap, seen by their times:** `piece-3BodyRedo` 07:44 · `strikes` and `bank/panel_snapshots.json` 07:57 — the strikes save again AFTER §290's ingest (07:50). The tool's census on the newer save is the same line for line (429 notes · 60 strikes · the same spans), so the bank stands; not re-ingested.
 - **What went in:** ten scores (`strikes` · `piece-3BodyRedo` — THE PIECE · `piece-sec04-01a` · `piece-sec03-a2` · `piece-sec03-a1` · `piece-sec02-a1` · `sec04-a-beating` · `drone-start-mics` · `curve_practice` · `temp01new_cello_bass_flute_perc_25.72`) · `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` · `reaper/decibel_rack.rpp` (17 MB, his Reaper's save, committed unread as at the checkpoints of 2026-10-05).
 - **The rule as it stands after:** nothing is deliberately uncommitted; a file he saves from here on is his again, committed at his word.
+
+## §292
+**2026-10-09 — SECTION 5 BEGUN AS AN EXPERIMENT: HIS TAKE `strikes01` INTO A NEW SCORE, STACCATO, `f` — AND A TOOL THAT RUNS THE STRIKES DRAWER WITHOUT THE PAGE (Opus; DEC-82).** His words are DEC-82, verbatim.
+
+**What he had made since §290 (read from `bank/panel_snapshots.json`, his):** twenty takes of the Strikes drawer, `strikes01 … strikes20`, saved 07:53 → 07:57 — each ONE of his sixty strikes dealt to the players (the pitches of the chord as played, the rhythm as played, the voicing original; the shuffle seed advanced take by take, 24 … 53). The strikes chosen, in his order: #3 · 51 · 49 · 42 · 59 · 58 · 57 · 55 · 45 · 41 · 36 · 31 · 24 · 25 · 21 · 49 · 48 · 46 · 41 · 35 (#49 and #41 twice). **Takes 01 … 14 are in the articulation set `ordinario`** (bass flute `vib_vel` · bass clarinet, viola, cello `senza_vel` · the mallets `crot_main_metal`), **15 … 20 in `staccato`** (`stac_vel` on the four · the mallets `crot_main_felt`) — his *"I forgot to choose the staccato orchestration for some of those"*. A chord with more pitches than players leaves the rest unplayed (strikes01: A4).
+
+**The question was how to insert a take with no page.** The drawer is 1,630 lines and a dozen mixins wrap its notes on the way out (the sound at an onset · the long tone · the dynamic ppp … fff · the second mallet seat · the harmonic series' cents); a second implementation in a tool would drift from it. Read first, in this repo (the lineage's own way): `tools/sequence_check.js` already loads `dyn_ui.js` against a fake drawer in a `vm` box. **Decided: load the REAL drawer the same way, whole** — `tools/strike_take.js`:
+- the page's lanes (`TRACKS` · `META_LAYER`, cut from `composer.html`) and `sandbox/instruments.js` into one `vm` context; then `strike_chords.js … spectrum_ui.js` in the order of the page's own `<script>` tags, with the pure modules they read before them;
+- every DOM call falls on a stub; the outermost `render` · `writeFields` · `save` · `setStatus` are silenced (painting only — the state is `cfg` · `voices` · `rowKeys`); `fetch` serves `/bank/*.json` and `/api/snapshots` from disk, GET only — nothing is ever posted, so his takes cannot be written;
+- then the drawer's own four gestures: `await D.loadTake(name)` · `D.applyArtSet(art)` · `D.cfg.dyn = mark` · `D.insert()` against a stand-in `Composer` holding the score's objects.
+- Two things met on the way: `loadTake` is ASYNC since the harmony sources (the first run selected nothing) · the base `writeFields` writes into fields that are not there.
+
+**The one proof (dry runs, nothing written):** his own staccato take `strikes15` untouched comes out `stac_vel` on viola · cello · bass flute and `crot_main_felt` on the mallets, percussion `main`; `strikes01` as saved comes out `senza_vel` · `vib_vel` · `crot_main_metal`; **`strikes01` with `--art staccato` comes out in exactly the voices of his own staccato takes.** The set leaves the percussion row alone (the drawer's rule, 1m.4.3).
+
+**Done:** `node tools/strike_take.js --score sec05-strikes-a --take strikes01 --art staccato --dyn f --new` → `scores/sec05-strikes-a.json`, a new score from the day-one empty one with the page's six lanes: seven objects, the group `grp-strike-3-20` at 2.000 s —
+
+| start → end (s) | lane | pitch | voice |
+|---|---|---|---|
+| 2.000 → 2.146 | mallets (the second seat — a drawn note) | G#5 | `crot_main_felt` |
+| 2.098 → 2.208 | viola | F#5 | `stac_vel` |
+| 2.157 → 2.220 | cello | G4 | `stac_vel` |
+| 2.191 → 2.254 | percussion | C5 | `main` |
+| 2.237 → 2.410 | bass flute | A#3 | `stac_vel` |
+| 2.397 → 2.464 | mallets | F#4 | `crot_main_felt` |
+
++ the group bar on META (2.000 → 2.464). Every note at the anchor 109 = `f` on the score's written scale (65 … 127; height 7.1), `recVel` 109. The bass clarinet has no note in this take. The start at 2.0 s is the AI's (a new score has no playhead); the group bar moves the strike.
+
+**Read as ONE take.** "The tape Strikes 1" is singular; "some of those" and "them all" could mean the twenty. One went in; the tool takes a list (`--take strikes01,strikes02,… --every 4`), so the rest are one command at his word. **His takes are unchanged** — staccato is pressed at the insert, not saved back into the fourteen.
+
+**Not checked, so not claimed:** the score opened in the page; any sound.

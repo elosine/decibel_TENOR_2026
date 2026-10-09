@@ -975,3 +975,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"there is a new save file called strikes. Can we make all of these part of the strikes drawer in the Harmony Fund?"*
 
 *(The AI's reading, marked as such: `scores/strikes.json`, saved by him at 07:48 — sixty chords he played on the mallets lane, the marimba's voice; "Harmony Fund" is taken as the dictation of the harmony bank the Strikes drawer reads — the bank `strikes`, `bank/scattered_strikes.json`, empty since the port. "All of these" = every strike, the repeated ones too. RUNNING_LOG §290.)*
+
+### DEC-82 · 2026-10-09 — section 5 begun: the first strike take into a new score, staccato, f
+
+*"Let's start a new save file experiments and call it Section 5 Strikes A. Then can you insert the tape Strikes 1? And can you use the staccato? I forgot to choose the staccato orchestration for some of those. So if you could do that. And let's have them all go in as F."*
+
+*(The AI's reading, marked as such: a NEW score for experiments, named `sec05-strikes-a` after his `sec04-a-beating`; "the tape Strikes 1" = his take `strikes01` of the Strikes drawer — ONE take, the others at his word; "the staccato orchestration" = the drawer's articulation set `staccato`, which he had on for takes 15 … 20 and not for 01 … 14; "as F" = the drawer's dynamic `f`. His takes themselves are left as he saved them. RUNNING_LOG §292.)*
