@@ -6767,3 +6767,26 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **What was done:** the working page is regenerated at every choice, so its first state lives only in the history. It was taken from the commit that opened the language (`b839341`, 13:59 — §307) with `git show b839341:score/public/language/index.html` and saved, byte for byte, beside the current page: http://localhost:5500/language/short_attacks_original.html. On it, as he first saw them: the badge's format, the six types, and the FIVE candidates for the short attacks — a Braxton's own three open triangles · b the marcato · c the marcato, scattered · d the staccatissimo, scattered · e staccato dots, scattered — each in eight colours (the format's blue · white · SOL yellow · orange · red · green · blue · purple), 82 badges; then Braxton's twelve types for reference. Seen once in the page.
 
 **For the record of the choice:** his first letter was "c" in SOL_red (DEC-91); what he meant was a, Braxton's triangles (DEC-95). The current page is http://localhost:5500/language/index.html. Any other moment of that page comes back the same way — its thirteen states are thirteen commits of that one file.
+
+## §328. HIS NUMBERS ON SECTION 1 — the badge 54 px and 12 px before its mic; the mic opening 29 px tall at 28 %; the row as tall as the badge (2026-10-09, Opus)
+
+**What prompted it (DEC-105, verbatim in COMPOSITION_NOTES):** *"let's make the badges 50% bigger … the gap between the badge and the first mic opening double … the mic openings 30% shorter. Recenter the two circles … take it down a little bit, like 20% more transparent."* His first look at section 1 in the notation score.
+
+**What changed — four numbers of two rows (`notation/registry/rules.json`), nothing re-cut:**
+
+| row | field | was | is | on the 1080 frame |
+|---|---|---|---|---|
+| `objects.badge` | `sizeSs` | 4.557 | 6.835 | 36 → 54 px |
+| `objects.badge` | `gapSs` | 0.76 | 1.52 | 6 → 12 px |
+| `objects.micOpening` | `heightFrac` | 0.2 | 0.14 | 41.9 → 29.3 px |
+| `objects.micOpening` | `fillOpacity` · `strokeOpacity` | 0.35 · 0.7 | 0.28 · 0.56 | each × 0.8 |
+
+**Two readings the AI made, both said to him:** "shorter" = less TALL — the brick's length is the opening's time, drawn to scale, and stays · "20 % more transparent" applied to the fill AND the outline, so the composer score's two-to-one proportion holds.
+
+**The one thing the numbers forced — the row.** At 54 px the badge is taller than the 29 px mic opening. Centred on the opening, as §325 drew it, the badge's top would have stood 4.4 px ABOVE its lane's top edge — over the dividing line. So the renderer's row (`render.js` `micRow`) is now AS TALL AS THE TALLEST THING THAT MAY STAND IN IT, the badge or the opening; the row keeps the standard gap under the dividing line and both are centred in it. Because the row's height comes from the registry, not from whether a badge happens to be there, the mic opening is still at ONE height everywhere (his rule, DEC-102). His to reverse — the other way is both hung from the same top edge.
+
+**A lane, top to bottom, now (px from its top):** the gap 0 … 7.9 · THE ROW 7.9 … 61.9 (the badge fills it; the mic opening 20.2 … 49.6, its two circles on the row's centre line at 34.9) · free 61.9 … 89 · the staff 89 … 120.6.
+
+**Decided by the way:** he adjusted the announcing badge rather than moving or dropping it — it stands, before each lane's first mic opening (§325's a · b · c: a).
+
+**Proven once, in the running app** (the notation app, `approaching-opening`, page 1, the first lane): the badge 54 px, its top 7.9 px under the lane's top · 12 px between the badge and its mic opening · the opening 29.34 px tall at 0.28 / 0.56 · the centres of the badge, the opening and the circles all at y 42.9. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated. No layout change: the items are the same, only their drawing.

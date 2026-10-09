@@ -31,7 +31,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 
 ## 2 · The signs chosen
 
-**The six badges** — a 36 px rounded square, dark slate, the sign in its colour (`bank/language/language.json`; http://localhost:5500/language/index.html)
+**The six badges** — a rounded square, dark slate, the sign in its colour; 54 px in the score (DEC-105) (`bank/language/language.json`; http://localhost:5500/language/index.html)
 
 | type | sign | colour |
 |---|---|---|
@@ -42,7 +42,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | audible beats | the added wave inside its two-pinch outline | SOL_orange |
 | scattered strikes | nine solid triangles diving at a ground line | SOL_green |
 
-**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 35 %, an outline in the same
+**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 28 % (a fifth more transparent than the composer score's, and 29 px tall — DEC-105), an outline in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
 **Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·
@@ -53,10 +53,10 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 ## 3 · Section by section — what a player sees
 
 ### 1 · The opening (0 … 37 s) — short attacks — IN THE NOTATION SCORE
-- **Announced by:** the short attacks' badge, once in each lane **(AI's reading of "opening no badge": none on the openings; the one announcement stays — to confirm)**.
+- **Announced by:** the short attacks' badge, once in each lane, before that player's first mic opening (kept and resized by him, DEC-105).
 - **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
-- **Open:** where the announcing badge stands — (a) just left of each lane's first mic opening — as the score draws it now — or (b) all five in a column where the section begins (one word of the cut).
+- **Open:** nothing, but for his eye on the new sizes.
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
 - **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
@@ -98,8 +98,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 | | px |
 |---|---|
 | the gap under the dividing line — the size a first number **(AI)** | 0 … 8 |
-| **the mic opening**, and a badge in the same row | 8 … 50 |
-| free | 50 … 89 |
+| **the mic's row** — a badge fills it (54 px); the mic opening is centred in it (29 px tall, at 20 … 50) | 8 … 62 |
+| free | 62 … 89 |
 | the staff, where it shows | 89 … 121 |
 | free | 121 … 202 |
 | the gap above the next dividing line | 202 … 210 |
@@ -116,7 +116,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 2. **► the badge and its mic** — the announcing badge is drawn two ways; a badge ON an opening comes with the drones.
 3. the three body problem's line wedge, and its state signs.
 4. the standard gap — its size (8 px drawn).
-5. the badges' size (36 px drawn).
+5. ✓ the badges' size — 54 px, 12 px before the mic opening: his numbers (DEC-105).
 
 ---
 
@@ -131,8 +131,8 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience.
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 in the notation score: the mic's row at the top · the announcing badge before the first mic (a, drawn) or in a column at the start (b).
+1. ► His eye on section 1 with his numbers of DEC-105 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, at 28 %).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's view.
-5. To confirm: pitch and percussion instrument are the player's choice · the opening keeps one announcing badge.
+5. To confirm: pitch and percussion instrument are the player's choice.

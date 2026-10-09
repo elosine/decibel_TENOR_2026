@@ -1134,3 +1134,14 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus; his answer to the working page of §324:)* *"no lets actually start laying out the notation in the presentation/notation score"*
 
 *(The AI's reading, marked as such: the layout is to be made IN the notation app — the real score, the one the film and the print are drawn from — not on a page beside it. So the mic opening and the badge become things the notation engine draws from the save, by its own rules, and section 1 is laid out there first. Taken as his go for the build; the device sheet is written with it. RUNNING_LOG §325.)*
+
+### DEC-105 · 2026-10-09 — section 1 seen in the notation score: the badges 50 % bigger and twice as far from the first mic opening; the mic openings 30 % shorter, the two circles recentred, 20 % more transparent
+
+*(His words, verbatim — Opus; spoken, after looking at section 1 in the notation score:)* *"Okay, let's make the badges 50% bigger. Let's make the gap between the badge and the first mic opening double. So you're moving the badges to the left. Let's make the mic openings 30% shorter. Recenter the two circles. And can we take the transparency down? Um, I don't know what it is now, but take it down a little bit, like 20% more transparent."*
+
+*(The AI's reading, marked as such:*
+- *The badge: 36 → 54 px. Its gap to its mic opening: 6 → 12 px; the badge moves left, the opening stays on its time.*
+- *"30 % shorter" — read as LESS TALL (42 → 29 px): a mic opening's length is its time and is not his to shorten by a look. "Recenter the two circles" then means: keep them in the middle of the lower brick. If he meant the length, it is one number back.*
+- *"20 % more transparent": the fill 35 → 28 %, the outline 70 → 56 % — both, so the brick keeps the composer score's proportion of fill to outline.*
+- *BY ADJUSTING THE BADGE HE KEEPS IT: the announcing badge of the opening stands, before each lane's first mic opening (§325's question a · b · c is answered: a).*
+- *A consequence the AI settled, his to reverse: the badge is now TALLER than the mic opening. The row is as tall as the badge and keeps the standard gap under the dividing line; the mic opening is centred in it. RUNNING_LOG §328.)*

@@ -274,7 +274,12 @@
       // opening stands, and a badge with it — laneTop (under the dividing line by the standard gap) · laneMiddle · laneBottom
       const micRow = MO => {
         const mh = Math.max(MO.minSs * ssPx, (lane.yBotPx - lane.yTopPx) * MO.heightFrac), gp = MO.gapSs * ssPx;
-        return { h: mh, y: MO.place === 'laneBottom' ? lane.yBotPx - gp - mh : MO.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - mh) / 2 : lane.yTopPx + gp };
+        // [§328, DEC-105] THE ROW IS AS TALL AS THE TALLEST THING THAT MAY STAND IN IT — the mic opening, or a badge beside it (his badge is the taller
+        // since §328). The row keeps the standard gap; the mic opening and the badge are both centred in it. So the mic is at ONE height whether
+        // or not a badge stands beside it (his rule, DEC-102), and a badge never crosses the dividing line.
+        const rh = Math.max(mh, E.badge ? E.badge.sizeSs * ssPx : mh);
+        const ry = MO.place === 'laneBottom' ? lane.yBotPx - gp - rh : MO.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - rh) / 2 : lane.yTopPx + gp;
+        return { h: mh, y: ry + (rh - mh) / 2 };
       };
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
