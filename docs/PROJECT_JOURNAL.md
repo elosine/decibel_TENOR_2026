@@ -133,6 +133,49 @@ next, where we are; reorganizations only on his approval.
 Ask, in ONE line, what he wants: his ear on `piece-3BodyRedo`, or the notation. Do not present the parked list. Do not re-give steps
 he has had (open the score · File ▾ → Reload · play).
 
+### CHECKPOINT #1 OF SESSION 3 *(2026-10-09, Fable — mid-session checkpoint; written for a session that has never seen this chat)*
+
+**His word at the checkpoint:** *"I'll listen and give feedback when I get back to desktop, just take note on workflow to finishing section
+that I can call on when I am ready to resume"* — so: NOTHING IS IN HAND until he is at the desk and has heard the rig. Then the
+workflow below, step by step, on his word.
+
+- **The task and its state:** section 5, THE STRIKES — PLAN.md § 1.9, running order step 17. **17.1 THE RIG IS BUILT** (RUNNING_LOG
+  §297; the engine's §63) — done but for his ear; NO ENGINE HAS RUN `electronics/sc/strike.scd` (his engine predates it).
+- **The latest deliverable:** `scores/strike-rig.json` (tracked — the builder's) + `docs/STRIKE_RIG.md` (what is heard when) · the
+  catalogue `bank/strike_responses.json` (HIS numbers from the first one he changes) · the brick `W` · the tools
+  `tools/build_strike_rig.js` · `tools/strike_check.js` · `tools/strike_take.js`.
+- **THE NEXT CONCRETE STEP — HIS, at the desk:** close the engine's window · `start_electronics.bat` · F5 in the composer page ·
+  open `strike-rig` · play from 0 with the engine up. The engine's window says each answer (`strike · W3 · 6 onsets heard … →`).
+  **Then the AI asks, in ONE line, what he heard.** A fault = his screen first (the engine's window), never "restart it".
+- **Resume reads:** `docs/STRIKE_RIG.md` (the table of what he heard when — to read his feedback against it). Nothing else beyond §2;
+  the build's record is RUNNING_LOG §297 and goes there by a question only.
+
+**THE WORKFLOW TO FINISHING SECTION 5 — his note to call on (the running order's 17.2 … 17.6; PLAN.md § 1.9):**
+
+1. **His ear on the rig** (above). His feedback per window: keep · drop · a knob. Knobs: a number in `bank/strike_responses.json` →
+   `node tools/build_strike_rig.js --replace` → File ▾ → Reload (no engine restart); one window's own knobs in its panel (Rhythm ·
+   Timing · Seed · Gap · Level · Deal · Processed · Players · Samples). A second rig on other takes or another seed: `--seed N` ·
+   `--takes …` · `--every N`.
+2. **17.2 THE CATALOGUE DECIDED — a talk (Fable):** what he keeps, drops, renames; his own transformations and timings added; the
+   file his. The AI writes the item's sub-steps as the talk goes (the planning method), then builds the knobs on Opus if any.
+3. **17.3 THE SECTION SIMULATED — a talk, then a build:** the come-backs — the field `answerOf` is already on the brick and in the
+   engine (an earlier strike's rhythm at a later window's time); to decide: the rule for WHICH earlier strike comes back and WHEN
+   ("density or something", his; once or more than once; a loud one returning after a soft one); the windows notated or free (what
+   "GCs" are — his word, unresolved); the section rolled from a seed (a builder on the pattern of `build_strike_rig.js`: his takes or
+   new strikes, the windows, the come-backs), `--replace` · a check · a sheet; heard; re-rolled.
+4. **17.4 INTO THE PIECE:** `node tools/insert_section.js --from <section> --into piece-3BodyRedo --at <s>` — where it sits his;
+   then `tools/shift_after.js` if something must move.
+5. **17.5 THE CONCERT SIDE — later, with the live-electronics discussion (`docs/NITS.md`):** the attack detector on the pooled
+   microphones (the probe hears a rise out of silence only) · the recording module (each player records their impulses before the
+   concert; the hundred the backup).
+6. **17.6 THE RECORD:** PERFORMANCE_NOTES — a row for the window (strike here, once, freely or as written; the electronics answers after
+   you; it may bring an earlier strike back) · the device sheet when the notation comes.
+
+**Decisions pending him:** what he heard · "GCs" · 17.3's come-back rule.
+
+**DELIBERATELY UNCOMMITTED — one, his:** `scores/sec05-strikes-a.json` (his section 5 experiment of the morning: `strikes01`, staccato,
+`f`; untracked, his to commit).
+
 ### OPEN AT SESSION END *(S2, 2026-10-09, Opus — written for a session that has never seen this chat)*
 
 - **The three body problem in `piece-3BodyRedo` is a NEW TAKE** (seed 165, the ranges scaled — `bank/three_body.json`; 84.3 s, 177
@@ -162,7 +205,7 @@ he has had (open the score · File ▾ → Reload · play).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **HIS EAR on `strike-rig` (the engine restarted · F5 · from 0); ask what he heard; then 17.2 THE CATALOGUE DECIDED (a talk)** | **Fable** (the talk) · Opus (a fault in the engine's window, a knob) | — |
+| **►** | **HIS EAR on `strike-rig` (the engine restarted · F5 · from 0) — at the desk, his time; ask what he heard; then THE WORKFLOW above, 17.2 first (a talk)** | **Fable** (the talk) · Opus (a fault in the engine's window, a knob, a builder) | a new session, or after this checkpoint's clear |
 | — | his ear on `piece-3BodyRedo` (the three body's new take, 39 → 125 s; the whole piece) — at his word | Fable | — |
 | — | THE NOTATION — container 6's three calls (his), then a DEVICE SHEET per sign (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET; `docs/PERFORMANCE_NOTES.md`, a row per glyph): the mic opening · the return · the petals · the drones' duration line · the sine's window · the three body's containers | Fable (the design) · Opus (the builds) | clear between sheets |
 | — | THE LIVE-ELECTRONICS DISCUSSION — after the notation, his order (`docs/NITS.md`, its blocks) | Fable | clear |

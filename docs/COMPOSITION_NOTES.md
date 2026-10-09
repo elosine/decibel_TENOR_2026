@@ -999,3 +999,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"The steps are good, but we'll have the discussion about the algorithms and the response timing and type at some point, right? I think I want to build a testing rig so that we can use some of those. Those strikes, takes, and I can hear various responses to those. And then we can build out a section to a simulated one that, where we can talk about how, you know, like the density or other things like that, how they come back, or if they come back more than once. But I like to have a stage where we simulate that and I can hear the proposals and then decide which ones to use."*
 
 *(The AI's reading, marked as such: the plan reordered — the RIG comes first (his strike takes in a score, every proposed transformation and timing heard on them, the catalogue decided from what he keeps), THEN the simulated section (the come-backs: density, once or more), then the piece. His method as always: build → hear → the knobs → the library. RUNNING_LOG §295.)*
+
+### DEC-86 · 2026-10-09 — the rig waits for the desk; a workflow to call on
+
+*"I'll listen and give feedback when I get back to desktop, just take note on workflow to finishing section that I can call on when I am ready to resume"*
+
+*(The AI's reading, marked as such: nothing in hand until his ear; the workflow — his ear → 17.2 the catalogue decided → 17.3 the come-backs simulated → 17.4 into the piece → 17.5 the concert side later — is journal §2's checkpoint block. RUNNING_LOG §298.)*
