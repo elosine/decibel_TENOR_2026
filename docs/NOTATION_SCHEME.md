@@ -18,7 +18,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | the staff | 0.25 s of lines at the very start; back for the beating section's pages; the clef only with it | decided, built |
 | pitches | on a staff only in the beating section | decided |
 | the electronics' returns | NOT shown to the players | decided |
-| the electronics' hint | in the PRESENTATION VIEW only — a layer on the players' page, at the lane's BOTTOM (the mic at the top: into the microphone above, out of the speakers below). THE WINDOW says "electronics": a plain see-through slate-grey rectangle, its outline stronger than its fill, a very subtle grain, over the lane's whole stretch of electronics — the badges and the bricks (DEC-112). The return brick PURPLE (DEC-111). The flocking badge of piece #1 in the quartet's own colours (slate ground, light-blue birds), 36 px, before EVERY brick | decided for section 1 (DEC-111 · DEC-112), built; the rule for the rest **(AI)** |
+| the electronics' hint | in the PRESENTATION VIEW only — a layer on the players' page, at the lane's BOTTOM (the mic at the top: into the microphone above, out of the speakers below). THE WINDOW says "electronics": a plain see-through slate-grey rectangle, its outline stronger than its fill, a very subtle grain, LOCAL — one round each return brick and the badge before it (DEC-112 · DEC-114). The return brick PURPLE (DEC-111). The flocking badge of piece #1 in the quartet's own colours (slate ground, light-blue birds), 36 px, before EVERY brick | decided for section 1 (DEC-111 · DEC-112), built; the rule for the rest **(AI)** |
 | dynamics | none in the lanes | decided |
 | words | none in the lanes — a badge says what to play, the performance notes say how | decided |
 | which pitch · which percussion instrument | the player's choice, within the type **(AI — to confirm)** | open |
@@ -46,7 +46,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 **The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 18 % (the composer score's is 35 %; 29 px tall, from the top — DEC-105 … DEC-109), the yellow lying OVER the two circles, a solid outline in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
-**The electronics' signs (the presentation view only)** — the WINDOW: a plain slate-grey rectangle (#708090), fill 10 %, outline 55 %, a grain at 6 %, 4 px round the electronics' row, over the lane's stretch from the first badge to the last brick · the RETURN BRICK: the mic opening's recipe in purple (#5F4296), its length the region, its height the count (5.8 px a sound, five = the mic opening's height) · the FLOCKING BADGE: piece #1's, slate #2d3748 with the birds in its light blue #5b9bf5, 36 px, 12 px before each brick (`rules.json` `objects.elecWindow` · `objects.elecReturn` · `objects.elecBadge` · the table `electronics`).
+**The electronics' signs (the presentation view only)** — the WINDOW: a plain slate-grey rectangle (#708090), fill 10 %, outline 55 %, a grain at 6 %, 4 px round the electronics' row, one round each brick and its badge (DEC-114) · the RETURN BRICK: the mic opening's recipe in purple (#5F4296), its length the region, its height the count (5.8 px a sound, five = the mic opening's height) · the FLOCKING BADGE: piece #1's, slate #2d3748 with the birds in its light blue #5b9bf5, 36 px, 12 px before each brick (`rules.json` `objects.elecWindow` · `objects.elecReturn` · `objects.elecBadge` · the table `electronics`).
 
 **Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·
 the pie dial on a drone's opening (the stack has one: piece #6's breath's clock).
@@ -60,7 +60,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
 - **Open:** nothing, but for his eye on the new sizes.
-- **Presentation view (DEC-111 · DEC-112):** at the lane's bottom, a see-through slate-grey WINDOW over the lane's whole stretch of electronics; in it, before each of the player's five return bricks, the flocking badge (the quartet's colours), and the purple brick — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
+- **Presentation view (DEC-111 · DEC-112 · DEC-114):** at the lane's bottom, for each of the player's five return bricks a see-through slate-grey WINDOW round the pair: the flocking badge (the quartet's colours), then the purple brick — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
 - **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
@@ -130,11 +130,11 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 **The principle (AI, unopposed):** draw as fact only what is true at every performance — the REGION, the COUNT, the KIND; an onset is true only of one realisation.
 
-**The electronics' "italics" — how their signs are told from the players' (DEC-111 · DEC-112):** THE WINDOW — a plain see-through slate-grey rectangle with a subtle grain over the lane's whole stretch of electronics (his "something to identify that these are electronics") · the place, the lane's BOTTOM · the brick PURPLE · their badge the quartet's flocking badge, smaller than the language badges, before every brick.
+**The electronics' "italics" — how their signs are told from the players' (DEC-111 · DEC-112):** THE WINDOW — a plain see-through slate-grey rectangle with a subtle grain round each brick and its badge (his "something to identify that these are electronics"; "just local", DEC-114) · the place, the lane's BOTTOM · the brick PURPLE · their badge the quartet's flocking badge, smaller than the language badges, before every brick.
 
 | section | the hint | status |
 |---|---|---|
-| 1 the opening | the grey window over the lane's electronics; the flocking badge before each return brick; a purple brick over each stretch of returns, its thickness the count one → five | decided (DEC-111 · DEC-112); **BUILT (§335 · §336)** — the page *Approaching — the opening, with the electronics*; his eye |
+| 1 the opening | for each return brick a grey window round the flocking badge and the purple brick, the brick's thickness the count one → five | decided (DEC-111 · DEC-112 · DEC-114); **BUILT (§335 … §338)** — the page *Approaching — the opening, with the electronics*; his eye |
 | 2 the three body problem | the three computer players — open | to discuss at its turn |
 | 3 trills and accented long tones | the petals' ring (about ten seconds after the mic) — open | to discuss |
 | 4 the drones | the drones, up to five at once — open | to discuss |

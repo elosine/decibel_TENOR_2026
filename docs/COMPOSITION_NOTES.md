@@ -1197,3 +1197,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable, mid-turn, answering §337's one decision: a — perc + expodec, the two that keep the attack · b — all four:)* *"a on the envelopes and go and build"*
 
 *(The AI's reading, marked as such: the replies' processed versions on `perc` and `expodec` only; the build as proposed — the engine's deck filtered by ending, the short versions rendered for every impulse capture, the rig rebuilt. RUNNING_LOG §337.)*
+
+### DEC-114 · 2026-10-09 — the electronics window LOCAL: round the badge and one line each time
+
+*(His words, verbatim — Fable, on seeing §336's band along the lane:)* *"the electronics window just local around the badge and one line each time"*
+
+*(The AI's reading, marked as such: not one pane over the lane's whole stretch — one small pane round EACH return brick and the flocking badge before it, 25 in section 1. Built: RUNNING_LOG §338.)*

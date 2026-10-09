@@ -1350,8 +1350,9 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --elecBadge type:t0:t1[:start|:each]   THE ELECTRONICS' BADGE — a row of rules.json electronics.badges (`flocking`), once in each lane: before
 //                              that lane's first return brick in [t0, t1); with :start, at t0 on every lane instead; with :each, before EVERY
 //                              return brick of the span (DEC-112: 'repeat the flocking badge for each line of electronics'). In the electronics' row.
-//   --elecWindow t0:t1         THE ELECTRONICS' WINDOW (DEC-112) — once a lane, the see-through grey pane over the lane's whole stretch of
-//                              electronics in [t0, t1): from the badge before its first return brick to its last brick's end (`elecWindow` overlays)
+//   --elecWindow t0:t1[:lane]  THE ELECTRONICS' WINDOW (DEC-112 · DEC-114) — the see-through grey pane round EACH return brick of [t0, t1) and the
+//                              badge before it ('just local around the badge and one line each time'); with :lane, one pane a lane over the
+//                              lane's whole stretch instead, from the first badge to the last brick's end (`elecWindow` overlays)
 // All repeatable. Written at extraction, so a re-extract with the same flags gives the same page.
 {
   const argsOf = name => { const out = []; process.argv.forEach((a, i) => { if (a === '--' + name) out.push(String(process.argv[i + 1] || '')); }); return out; };
@@ -1430,9 +1431,15 @@ for (let i = 0; i < process.argv.length; i++) {
     // bricks in [t0, t1), from the first brick's start to the last brick's end; `badgeLeft` when a badge stands before the first brick, so the
     // window reaches left to it. The overlay sits on the lane's FIRST part (the percussionist's two parts are one lane).
     for (const a of argsOf('elecWindow')) {
-      const f = a.split(':'), t0 = parseFloat(f[0]), t1 = parseFloat(f[1]);
-      if (!(t1 > t0)) { console.error('--elecWindow needs t0:t1 — got ' + a); process.exit(2); }
+      const f = a.split(':'), t0 = parseFloat(f[0]), t1 = parseFloat(f[1]), mode = f[2] || 'each';
+      if (!(t1 > t0) || !['each', 'lane'].includes(mode)) { console.error('--elecWindow needs t0:t1[:lane] — got ' + a); process.exit(2); }
       const inSpan = rets.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9);
+      if (mode === 'each') {   // [DEC-114, §338] one window round each brick and its badge — the default
+        if (!inSpan.length) { console.error('--elecWindow ' + a + ': no return brick in the span (is --elec given?)'); process.exit(2); }
+        for (const o of inSpan) doc.overlays.push({ id: 'ov-elecwin-' + o.target.part + '-' + Math.round(o.target.span[0] * 1000), kind: 'elecWindow', target: { part: o.target.part, span: o.target.span.slice() }, value: { badgeLeft: elecBefore.has(o.target.part + '@' + o.target.span[0]) }, provenance: 'authored' });
+        console.log('  elecWindow ' + a + ': ' + inSpan.length + ' window(s), one round each brick' + (inSpan.every(o => elecBefore.has(o.target.part + '@' + o.target.span[0])) ? ' and its badge' : ''));
+        continue;
+      }
       const lanes = new Map();
       for (const o of inSpan) { const k = laneKey(o.target.part); const g = lanes.get(k) || { parts: new Set(), t0: Infinity, t1: -Infinity }; g.parts.add(o.target.part); g.t0 = Math.min(g.t0, o.target.span[0]); g.t1 = Math.max(g.t1, o.target.span[1]); lanes.set(k, g); }
       if (!lanes.size) { console.error('--elecWindow ' + a + ': no return brick in the span (is --elec given?)'); process.exit(2); }

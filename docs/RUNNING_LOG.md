@@ -6934,3 +6934,13 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 - **The rig** `scores/strike-rig.json` rebuilt in place (`--replace`, seed 1 — the same twenty windows); `docs/STRIKE_RIG.md` says: their endings perc · expodec only, the short ones; the captures of category impulse only.
 
 **HIS STEPS, in order:** (1) let the renders finish — the engine's window stops saying `render ·` (a restart under them loses the rest; `node tools/deal_strike_variants.js --render` sends them again) · (2) the engine RESTARTED — its window closed · `start_electronics.bat` (the filter is in the new `strike.scd`; his engine of today predates it) · (3) F5 in the composer page · (4) `strike-rig` from 0. **NOT heard.** The composer page reads the catalogue at F5.
+
+## §338. THE ELECTRONICS' WINDOW MADE LOCAL — one pane round each return brick and its badge (DEC-114) (2026-10-09, Fable)
+
+**What prompted it (DEC-114, verbatim):** *"the electronics window just local around the badge and one line each time"* — §336 had drawn one band a lane over the whole stretch.
+
+**Built:** the cutter's `--elecWindow t0:t1[:lane]` — the default now ONE `elecWindow` overlay PER BRICK (its span the brick's; `badgeLeft` when a badge stands before it); `:lane` keeps the band over the lane's whole stretch as a word. The renderer, the layout, the rows: unchanged (a window draws its span, reaching left over the badge's room and padSs round). The page re-cut: 25 windows, one round each brick and its badge; VALID; `check_rules` 31 of 32 (§45's red) · the shield 20 of 21 identical (the new page the one moved) · `check_screen_edges` PASS.
+
+**Seen in the running app (the throwaway on 5501), page 2:** 11 windows round 11 bricks, each 44 px tall, from 52 px before its brick (the badge 36 + the gap 12 + the pad 4) to 4 px past its end — a one-sound brick 118 px long sits in a pane 174 px wide, a three-sound brick (265 px) in one of 321. **One brick on page 2 shows a pane with no badge in it — by design, not a fault:** the bass flute's brick at 7.85 … 8.65 s is CUT at the page turn at 8 s; its badge stands on page 1, where the brick begins (a point kind, owned by the page that owns its time), and on page 2 the brick and its pane go on from the page's edge, like a mic opening cut at a turn. Screenshot seen.
+
+**His lever:** `--elecWindow 0:37` (round each) · `--elecWindow 0:37:lane` (the band) — a re-cut; the pane's look stays `objects.elecWindow`.
