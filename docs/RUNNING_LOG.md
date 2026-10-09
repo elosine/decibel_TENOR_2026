@@ -6163,3 +6163,50 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 **What the pages show that is NOT decided yet (for 2.2 … 2.5):** the players' notes as the stack draws them by default — the pitched impulses as GC strike units with a cue head and ledgers at their pitch on a lane with no staff, the unpitched and the mallets as small heads with a brick; in the beating section white heads with a duration line. None of it is this piece's design: their signs come with the device sheets. The clef stands in the gutter LEFT of the snippet, with no lines under it — how this stack has always drawn a clef. The presentation view is in C: the bass clarinet's beating pitch is on a bass clef (container 6's carry, his to reverse). The electronics' bricks, the three body's containers: not drawn (no rows).
 
 **Not done, said:** print and video not run (container 8; the lane line and the rule reach them through the same renderer) · the shield (needs an approved page) · the rule's range is ABSOLUTE SECONDS of the piece's main score — a section moved in the piece moves the number; a page cut from a section's own file shows no staff (NITS).
+
+## §303. THE COLOUR PALETTE OPENED — DEC-89: his `clr` colours found (24, in pieces #1 and #2); LeWitt's late acrylic period read up; a method for taking colours from photographs proposed (2026-10-09, Opus)
+
+**What prompted it (DEC-89, verbatim in COMPOSITION_NOTES):** *"plan to have an official palette for all pieces; I have a number of colors in the repo somewhere starting with clr like clr_limeGreen; those will be part of the pallett, I want to extract colors from paintings of sol lewitt, lets figure out the best way … I tried looking at images online and using an rgb detector with mixed results, lets see if we cant do color reading or something of the like"*. PLAN.md 2.2, taken up at his word (it was held).
+
+**The data — his `clr` colours (LINEAGE FIRST):** CSS custom properties `--clr-<name>` in piece #1's page (`string_quartet_no1-composer/public/index.html` · `svg-composer.html`) and piece #2's (`composition_for_two_pianos_and_two_percussion/public/index.html`); none in pieces #3 … #7 under that prefix. TWENTY-FOUR names:
+
+| name | value | name | value |
+|---|---|---|---|
+| limeGreen | rgb(153, 255, 0) | brightBlue | rgb(56, 126, 211) |
+| brightGreen | #31d196 | navyBlue | rgb(28, 72, 121) |
+| green | rgb(0, 147, 92) | blueGrey | #708090 |
+| lightGreen | #85b068 | lightGrey | #adadb7 |
+| yellow | rgb(254, 213, 0) | lavander | rgb(162, 126, 198) |
+| mustard | rgb(244, 182, 0) | mauve | rgb(155, 130, 165) |
+| brightOrange | rgb(240, 75, 0) | mediumPurple | rgb(125, 85, 145) |
+| brightOrange2 | #ea4607 | violet | rgb(138, 100, 215) |
+| brightRed | rgb(229, 42, 25) | royalPurple | rgb(105, 50, 155) |
+| brightRed2 | #dc3f3d | plum | rgb(82, 44, 85) |
+| darkRed | #a60701 | neonMagenta | rgb(255, 21, 160) |
+| darkRed2 | #9a0504 | | |
+
+(`lavander` is his spelling in the code.) **This stack already carries six of them by value** in `notation/registry/rules.json` `colours`: limeGreen #99FF00 · brightOrange #F04B00 · navyBlue #1C4879 · the GC and the cursor = neonMagenta (#FF15A0) · pie #607D8B (near blueGrey). Its other colours are not `clr` names: ink #111 · muted #8a8a8a · paper #fff · brick #4E7A9B · alert #c00 · goLine #333 · envFollower #2E8B57 · lineWedge #8a6d3b · olive #6B8E23.
+
+**LeWitt, looked up (two standard searches; the sources below):**
+- "Splat" = **Wall Drawing 958**, November 2000, acrylic paint, LeWitt Collection, at MASS MoCA; first made at PaceWildenstein alongside the Whitney retrospective; its shape drawn from a projection of a sketch (MASS MoCA · Cuseum).
+- **1997: he moves from India ink washes to ACRYLIC and the palette gains the secondaries** — purple, orange, green beside red, yellow, blue; before that the secondaries came from layering three primaries and grey (MASS MoCA's text on 958).
+- The works that state the whole set: Wall Drawing 1112 (2003, "all the primary and secondary colors") · 1081 ("the six hues only") · 1136 (2004, the six with grey).
+- **The paint: LASCAUX acrylic** — Artforum's essay on the MASS MoCA retrospective names it as the brand he preferred. The SHADE NAMES were not found.
+- **The application: ten to twelve coats a colour**, the last five or six thinned, brushed in crossing strokes, razored between coats (MASS MoCA · Cuseum).
+- **The gloss is a variable, not a constant:** 958's finish is not stated in what was found; Wall Drawing 901 has flat stripes and a GLOSSY blob; 824 is about gloss against matte; 821A's matte and glossy bands are both varnished at MASS MoCA.
+
+**Why a colour picker on web images gives mixed results (the AI's analysis):** a pixel is not the paint. It is the paint × the gallery's light × the camera's white balance and exposure × what the glossy surface reflects of the room × JPEG's colour compression × the screen. One pixel also sits on an edge, a highlight or a noise speck as often as on the field. Two photographs of one wall give two reds; two pixels of one photograph give two reds.
+
+**The method proposed (not run):** many pixels, several photographs, one reference —
+1. several good photographs of each work (the museum's own are the most even);
+2. per photograph, the flat fields found by CLUSTERING the pixels (these drawings are a handful of flat colours — they separate cleanly), each field's colour its MEDIAN, which ignores glare, edges and the brush;
+3. each photograph corrected by its OWN WHITE — the gallery wall or the white in the drawing is a neutral: the cast removed, the exposure set;
+4. each colour averaged across the photographs in a perceptual space (Lab), its SPREAD kept — the spread says how sure a colour is;
+5. his eye on a swatch page — his 24 beside LeWitt's six or seven — and the names; the result is a colour DERIVED FROM LeWitt, a starting value, never a measurement of the paint.
+A second, independent reading if the shade names can be found: the manufacturer's own chart for the Lascaux colours. The tools are on the machine (Python 3.14 with PIL 12.3). "Reading" a colour by the AI's eye from an image is not offered: it is less exact than the picker he already tried.
+
+**Where the palette lives (the AI's placing, his to reverse):** an official palette for all the pieces is not this piece's — its home is `composition-system`, as data (a name, a value, where it came from); each piece's `rules.json` `colours` takes its rows from it. Written there at his word, when the colours exist.
+
+**Sources:** massmoca.org/event/walldrawing958 · app.cuseum.com/art/sol-lewitt-wall-drawing-958 · massmoca.org/event/walldrawing1112 · app.cuseum.com/art/sol-lewitt-wall-drawing-1081 · nationalgalleries.org/art-and-artists/89028/wall-drawing-1136 · massmoca.org/event/walldrawing901 · massmoca.org/event/walldrawing824 · app.cuseum.com/art/sol-lewitt-wall-drawing-821a · artforum.com (Prudence Peiffer on Sol LeWitt at MASS MoCA).
+
+**The question put to him:** which photographs — the museum's, fetched at his word, or his own.
