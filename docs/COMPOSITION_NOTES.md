@@ -1203,3 +1203,15 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable, on seeing §336's band along the lane:)* *"the electronics window just local around the badge and one line each time"*
 
 *(The AI's reading, marked as such: not one pane over the lane's whole stretch — one small pane round EACH return brick and the flocking badge before it, 25 in section 1. Built: RUNNING_LOG §338.)*
+
+### DEC-115 · 2026-10-09 — HIS VERDICT ON THE STRIKES RIG: "those strikes are good, those envelopes are good"; the way to insert strike takes directly into the composer score
+
+*(His words, verbatim — Fable, mid-turn, after his restart and his pass of `strike-rig` with the short endings:)* *"and those strikes are good, those envelopes are good, is there a way to, I think we already built a way so I can insert strikes, takes, directly into the composer score. If you can see about that, look into that for me."*
+
+*(The AI's reading, marked as such: 17.1 THE RIG IS HEARD AND GOOD — the replies as built, and the two short endings (perc · expodec, DEC-113) kept. Not said: which transformations and timings he keeps (17.2, the catalogue). The second half is a question about a tool, answered from what exists — RUNNING_LOG §339. Read from the machine, not from him: at 18:25 he saved a copy of the piece as `scores/piece-sec05-a.json` (the same 732 objects, 668.1 s, no strike in it yet) — as it reads, the file section 5 goes into.)*
+
+### DEC-116 · 2026-10-09 — "is the notation score the same page width as the previous two pieces? It seems cropped"
+
+*(His words, verbatim — Fable:)* *"And is the notation score the same page width as the previous two pieces? It seems cropped."*
+
+*(The AI's reading, marked as such: a question about the notation app's page. Measured against pieces #5 and #6: the same in every number that sets it. Two things that can look like a crop put to him; which page and which view he sees it on is NOT yet said — open. RUNNING_LOG §339.)*
