@@ -19,6 +19,8 @@
 //     --from · --to   the beating at the note's START and at its DESTINATION (0 = the unison); there at --at of the length, held
 // RE-LEVEL — the pairs already on a lane take new marks, nothing rolled:
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --relevel --sine mp --note mp
+// RE-GAP — the pairs on a lane stay as they are, every gap between two of them rolled again (the rules' gapS, or --gap lo,hi):
+//   node tools/beat_pair.js --score sec04-a-beating --lane mal --regap
 // ALL:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
 //     --sine · --note   the written marks; without them the lane's own (bank/beat_shapes.json `levels.lanes`), else the rules' default
@@ -128,6 +130,33 @@ if (has('replace')) {
     const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
     s.objects = s.objects.filter((o) => !bricks.includes(o) && !under.includes(o));
     out.push('--replace: ' + bricks.length + ' sine bricks and ' + under.length + ' notes under them taken off the ' + TRACKS[lane].label + ' lane');
+}
+if (has('regap')) {
+    // --regap: the pairs on the lane keep their shapes, lengths and pitches; every GAP between two of them is rolled again in the
+    // rules' range (or --gap lo,hi) and the later pairs move as blocks. The lane's first entry stays where it is.
+    const gR = range(arg('gap', RULES.gapS.join(',')), 'gap');
+    const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane).sort((a, b) => a.startTime - b.startTime);
+    const notesOf = (z) => s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.properties && o.properties.sine && o.properties.sine.brick === z.id);
+    const loose = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && !bricks.some((z) => o.properties && o.properties.sine && o.properties.sine.brick === z.id)).length;
+    let prevEnd = null; const gaps = [];
+    bricks.forEach((z, i) => {
+        if (i > 0) {
+            const gap = r1(gR[0] + Math.random() * (gR[1] - gR[0])), shift = r3(prevEnd + gap - z.startTime);
+            notesOf(z).forEach((o) => { o.startSeconds = r3(o.startSeconds + shift); o.endSeconds = r3(o.endSeconds + shift); });
+            z.startTime = r3(z.startTime + shift); z.endTime = r3(z.endTime + shift);
+            if (z.properties && z.properties.beat) z.properties.beat.gapS = gap;
+            gaps.push(gap);
+        }
+        prevEnd = z.endTime;
+    });
+    console.log(out.concat(TRACKS[lane].label + ' — ' + bricks.length + ' pairs, ' + gaps.length + ' gaps rolled again in ' + gR.join(' … ') + ' s: ' + gaps.join(' · ') + ' → ' + bricks.map((z) => z.startTime + '–' + z.endTime).join(' · ')
+        + (loose ? ' · (' + loose + ' notes on the lane belong to no pair: not moved)' : '')).join('\n'));
+    if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
+    s.objects.sort((a, b) => startOf(a) - startOf(b));
+    s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
+    fs.writeFileSync(file, JSON.stringify(s));
+    console.log('written: scores/' + name + '.json · File ▾ → Reload in the page');
+    process.exit(0);
 }
 let nextId = +s.nextId || 1;
 

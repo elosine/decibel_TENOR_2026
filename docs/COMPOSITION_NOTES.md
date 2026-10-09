@@ -909,3 +909,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"roll two more each from the take beating02"*
 
 *(The AI's reading, marked as such: as DEC-68 with his second take — each player's pitch in `beating02` (his blast S002): bass flute F3 · bass clarinet F#2 · crotales C#5, sounding C#7 · viola C5 · cello A#2; two pairs a lane after a rolled gap from the lane's last pair. The viola and the cello keep their pitch of `beating01`. RUNNING_LOG §278.)*
+
+### DEC-71 · 2026-10-08 — the gap 6 … 11 s, every gap rolled again · two more pairs a lane from the take `beating03`
+
+*"What is the gap range?"* (answered: 4 to 7 seconds, a plain roll) — *"Okay, let's do six to 11 seconds. And can you re-roll all the gaps and then roll another two from beating three?"*
+
+*(The AI's reading, marked as such: the silence between two pairs on a lane is now a plain roll in 6 … 11 s; every existing gap rolled again in it, the pairs themselves — shapes, lengths, pitches — untouched and moved as blocks; each lane's FIRST entry left where it is (an entry, not a gap; the cello's 4.0 s is his own word). Then the fourth chord: each player's pitch in his take `beating03` (blast S037) — bass flute D#3 · bass clarinet F#2 · crotales A5, sounding A7 · viola G#4 · cello C#2 — two pairs a lane. RUNNING_LOG §279.)*

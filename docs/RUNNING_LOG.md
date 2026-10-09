@@ -5834,3 +5834,29 @@ Bends: the clarinet's 62 and 83 c at F2 (inside its semitone), the cello's 48 an
 | | | | 184.7 → 205.1 s (gap 5.0) | up + hold 3.4 (16.1 s · 4.3 s) |
 
 Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the crotales and the viola six. **The third chord enters between 145.7 s (the clarinet) and 161.5 s (the flute)** — sixteen seconds across the five, tighter than the second (27 s), because the lanes' lengths had been evened by §277. Six of these ten are "down + hold" — a pair that BEGINS at its peak, beating at once: the texture's onsets sharpen in this chord by chance of the roll. The crotales alone run past 205 s (their second pair ends at 233.1): the section's tail is one bowed crotale and its sine.
+
+## §279
+**2026-10-08, late — THE GAP 6 … 11 s, EVERY GAP ROLLED AGAIN; THE FOURTH CHORD FROM `beating03` (Opus; DEC-71).** Verbatim in DEC-71. `bank/beat_shapes.json` `gapS` [4, 7] → **[6, 11]**. **A new mode, `--regap`** (`tools/beat_pair.js`): the pairs on a lane keep their shapes, lengths and pitches; each gap between two is rolled again and the later pairs move as blocks; the lane's first entry stays (the cello's 4.0 s is his word; the others' first entries are entries, not gaps — said to him). Run on the five lanes (the base his save of 23:45; a plain roll, unseeded — the gaps are kept on each brick, `properties.beat.gapS`):
+| lane | the gaps now (s) | the pairs now |
+|---|---|---|
+| bass flute | 6.9 · 8.0 · 7.4 · 9.8 · 6.1 · 10.2 | 4.7–25.1 · 32.0–67.1 · 75.1–107.9 · 115.3–135.4 · 145.2–163.8 · 169.9–189.1 · 199.3–210.0 |
+| bass clarinet | 6.8 · 9.3 · 9.9 · 8.5 · 7.0 | 6.8–20.6 · 27.4–82.6 · 91.9–100.8 · 110.7–152.5 · 161.0–171.6 · 178.6–207.7 |
+| crotales | 6.4 · 8.4 · 6.8 · 10.9 · 6.1 | 6.8–46.0 · 52.4–80.5 · 88.9–133.1 · 139.9–158.9 · 169.8–213.1 · 219.2–246.4 |
+| viola | 10.8 · 9.7 · 10.0 · 6.9 · 6.3 | 6.4–31.7 · 42.5–95.3 · 105.0–128.2 · 138.2–164.9 · 171.8–186.3 · 192.6–209.2 |
+| cello | 10.8 · 9.2 · 6.7 · 8.9 · 6.2 · 10.5 | 4.0–22.4 · 33.2–48.5 · 57.7–108.9 · 115.6–130.5 · 139.4–166.6 · 172.8–194.2 · 204.7–225.1 |
+
+**Then the fourth chord — the take `beating03`** (his blast `S037`; one pitch a player: **bass flute D#3 (51) · bass clarinet F#2 (42) · crotales A5 (81), sounding A7 · viola G#4 (68) · cello C#2 (37)**; five more voices on no lane), two pairs a lane, the gaps in the new range:
+| lane | pitch | seed | when | shape |
+|---|---|---|---|---|
+| bass flute | D#3 (156 Hz) | 2853 | 219.4 → 248.8 s (gap 9.4) | up + hold 5.1 (20.3 s · 9.1 s) — the peak under 9 |
+| | | | 257.1 → 275.9 s (gap 8.3) | up + hold 3.3 (15.0 s · 3.8 s) |
+| bass clarinet | F#2 (92 Hz) | 18733 | 218.0 → 248.7 s (gap 10.3) | up + plateau + down 4.2 → 1 — under 5.3 |
+| | | | 257.9 → 295.5 s (gap 9.2) | up + plateau + down 4.6 → 2.2 — under 5.3 |
+| crotales | sounding A7 +17 c (3555 Hz), key A5 | 28021 | 255.1 → 276.8 s (gap 8.7) | up + hold 3.2, the bar re-bowed ×3 |
+| | | | 287.6 → 345.6 s (gap 10.8) | up + plateau + down 8.1 → 1.6 (58 s), ×9 |
+| viola | G#4 (415 Hz) | 54015 | 219.9 → 239.9 s (gap 10.7) | down + hold 4.9 → 1.8 |
+| | | | 250.0 → 281.5 s (gap 10.1) | up + hold 7.9 (27.4 s · 4.1 s) |
+| cello | C#2 (69 Hz) | 81135 | 232.7 → 280.0 s (gap 7.6) | up + plateau + down 4.2 → 1.1 — a bend of 101.9 c, played on D2 with the wheel re-based |
+| | | | 290.8 → 329.8 s (gap 10.8) | up + plateau + down 3.5 → 1.2 |
+
+**The score: forty-two pairs in four chords, 119 objects, 4.0 → 345.6 s — 5 min 46 s** (the flute and the cello nine pairs, the others eight). **The chords' entries across the five:** the second 88.9 … 115.6 s · the third 161.0 … 172.8 s · the fourth 218.0 … 255.1 s (the crotales last, 23 s after the cello). The bass flute's reach now caps too: a semitone at D#3 is 9 beats a second. **The tail again the crotales':** everyone else is out by 329.8 s; the last crotale pair is 58 s on a 3.5 kHz sine and runs to 345.6. Wider gaps and four chords: the texture thins — at 6 … 11 s a lane is silent about a quarter of the time. His ear's.
