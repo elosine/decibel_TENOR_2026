@@ -27,19 +27,20 @@ function withGlyphs(svg) {
 }
 // a badge: the rounded square, the sign in it in `colour`, at `px` across
 const badge = (svg, colour, px) => '<svg class="bdg" width="' + px + '" height="' + px + '" viewBox="0 0 36 36" style="color:' + colour + '"><rect width="36" height="36" rx="' + B.cornerPx + '" ry="' + B.cornerPx + '" fill="' + B.ground + '"/>' + withGlyphs(svg).replace(/'/g, '"') + '</svg>';
-const colourOf = n => { const c = SOL.colours.find(c => c.name === n) || CLR.colours.find(c => c.name === n || 'clr_' + c.name === n); if (!c) throw new Error('language page: no colour "' + n + '"'); return c.value; };
+const colourOf = n => { if (n === B.colourName) return B.icon;   // the format's own blue, a name a type may take (language.json badge.colourName)
+  const c = SOL.colours.find(c => c.name === n) || CLR.colours.find(c => c.name === n || 'clr_' + c.name === n); if (!c) throw new Error('language page: no colour "' + n + '"'); return c.value; };
 const cand = (t, id) => ((L.candidates || {})[t.id] || []).find(c => c.id === id);
 const chosen = L.types.filter(t => t.symbol && t.colour);
 const takenBy = {}; for (const t of chosen) takenBy[t.colour] = t.name;
 // the colours a sign is tried in: the format's own blue, white, and the SOL colours
-const TRY = [['the format’s blue', B.icon, null], ['white', '#FFFFFF', null]].concat(['SOL_yellow', 'SOL_orange', 'SOL_red', 'SOL_green', 'SOL_blue', 'SOL_purple'].map(n => [n, colourOf(n), takenBy[n] || null]));
+const TRY = [['the format’s blue', B.icon, takenBy[B.colourName] || null], ['white', '#FFFFFF', null]].concat(['SOL_yellow', 'SOL_orange', 'SOL_red', 'SOL_green', 'SOL_blue', 'SOL_purple'].map(n => [n, colourOf(n), takenBy[n] || null]));
 
 let types = '';
 for (const t of L.types) {
   const c = t.symbol && cand(t, t.symbol);
   types += '<tr><td class="tn">' + esc(t.name) + (t.nameOptions ? '<div class="opt">' + t.nameOptions.map(esc).join(' · ') + '</div>' : '') + (t.nameFrom ? '<div class="opt">' + esc(t.nameFrom) + '</div>' : '') + '</td>' +
     '<td>' + (t.braxton ? 'Braxton ' + t.braxton.n + ', ' + esc(t.braxton.name.toLowerCase()) + '<div class="opt">his sign: ' + esc(t.braxton.sign) + '</div>' : '<span class="opt">not one of Braxton’s twelve — the piece’s own</span>') + '</td>' +
-    '<td>' + esc(t.inThePiece) + '</td><td>' + (c ? '<div class="pick">' + badge(c.svg, colourOf(t.colour), 72) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="opt">' + esc(c.name) + '<br>' + esc(t.colour) + '</div></div>' : '<span class="opt">—</span>') + '</td></tr>';
+    '<td>' + esc(t.inThePiece) + '</td><td>' + (c ? '<div class="pick">' + badge(c.svg, colourOf(t.colour), 72) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="opt">' + esc(c.name) + '<br>' + esc(t.colour === B.colourName ? 'the format’s blue' : t.colour) + '</div></div>' : '<span class="opt">—</span>') + '</td></tr>';
 }
 
 let sections = '';
@@ -49,7 +50,7 @@ for (const t of L.types) {
     // CHOSEN: its badge, and any candidate marked as the same sign in another drawing, beside it for his eye
     const c = cand(t, t.symbol), also = cands.filter(x => x.id !== t.symbol && x.id.indexOf(t.symbol) === 0);
     sections += '<h2>' + esc(t.name) + ' — chosen</h2><div class="tries" style="margin-left:0">' +
-      '<div class="try">' + badge(c.svg, colourOf(t.colour), 96) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="tl"><b>' + esc(c.name) + '</b> · ' + esc(t.colour) + '</div></div>' +
+      '<div class="try">' + badge(c.svg, colourOf(t.colour), 96) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="tl"><b>' + esc(c.name) + '</b> · ' + esc(t.colour === B.colourName ? 'the format’s blue' : t.colour) + '</div></div>' +
       also.map(x => '<div class="try">' + badge(x.svg, colourOf(t.colour), 96) + badge(x.svg, colourOf(t.colour), B.sizePx) + '<div class="tl">' + esc(x.name) + '</div></div>').join('') + '</div>' +
       (also.length ? '<p class="note">The second is the same sign drawn by the notation font. Say which you want; the first stands until you do.</p>' : '');
     continue;

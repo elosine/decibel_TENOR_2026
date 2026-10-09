@@ -155,9 +155,10 @@ next, where we are; reorganizations only on his approval.
   trills · accented long tones · multiphonics · the acoustic beats (a name wanted) · scattered strikes — ONE AT A TIME. The working page
   **http://localhost:5500/language/index.html** (`bank/language/language.json` → `node tools/language/build_page.js`): five candidate
   signs for the short attacks, each in eight colours. **CHOSEN (§308, DEC-91): short attacks = the marcato, three, scattered,
-  `SOL_red` · the fifth type is AUDIBLE BEATS.** ► TRILLS in hand: six candidates on the page (a Braxton's wave · b the notation
-  font's `tr` · c `tr` + wavy line · d `tr` + Braxton's wave · e the wavy line · f the cross). Open: his sign and colour for the
-  trills · the chosen marcato drawn by hand or by the font · then accented long tones.
+  `SOL_red` · the fifth type is AUDIBLE BEATS.** **(§309, DEC-92): trills = the notation font's `tr` with its wavy line, in the format's blue.**
+  ► ACCENTED LONG TONES in hand: five candidates on the page (a Braxton's wedge into a line · b the wedge, solid · c the font's accent,
+  then a line · d accent over tenuto · e `fp`). Open: his sign and colour · where the type is in the piece (the petal hits?) · then
+  multiphonics · audible beats · scattered strikes.
 - **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

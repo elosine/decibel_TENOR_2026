@@ -1035,3 +1035,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"c, SOL_red; audible beats; same survey for trills, include the tr in the font we use for notation"*
 
 *(The AI's reading, marked as such: three decisions and one ask. (1) The badge of the SHORT ATTACKS is candidate c of §307 — the marcato wedge three times at uneven heights — in `SOL_red`. (2) The fifth type is named AUDIBLE BEATS, Lucier's own phrase. (3) The same survey for the TRILLS — Braxton's sign, what else is in use, the candidates as badges — and one of them must be the `tr` of the font the score itself is set in. RUNNING_LOG §308.)*
+
+### DEC-92 · 2026-10-09 — TRILLS: `tr` with its wavy line, in the format's blue · the accented long tone next
+
+*(His words, verbatim — Opus:)* *"c formats blue; accented long tone next"*
+
+*(The AI's reading, marked as such: the badge of the TRILLS is candidate c of §308 — the notation font's `tr` followed by its standard wavy line — in the light blue of the badge format itself (#5b9bf5, piece #1's flocking badge). He did not say "font" for the short attacks' marcato: the hand-drawn one stands. The same survey now for the ACCENTED LONG TONE. RUNNING_LOG §309.)*

@@ -710,7 +710,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §308 (DEC-91):** ☑ **SHORT ATTACKS = the marcato, three, scattered, in `SOL_red`** (a font-drawn twin shown beside it for his eye) · ☑ the fifth type is **AUDIBLE BEATS** · ► **TRILLS** surveyed — six candidates on the page, each in eight colours: a Braxton's wave · b the `tr` of the notation's own font (Emmentaler, `glyphs.json` `articulation.trill`) · c `tr` with its wavy line · d `tr` with Braxton's wave · e the wavy line alone · f the cross. The page builder draws a glyph BY NAME from the notation font, so a badge and the staff share one outline.
 
-**Open, his:** the trills' sign and colour · the short attacks drawn by hand or by the font · then the next type (accented long tones). **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
+**SINCE §309 (DEC-92):** ☑ **TRILLS = the font's `tr` with its wavy line, in the format's blue** (`symbol: trLine` · `colour: formatBlue`) · ► **ACCENTED LONG TONES** surveyed — five candidates on the page: a Braxton's wedge running on as a line · b the wedge, solid · c the font's accent, then a line · d accent over tenuto · e `fp`.
+
+**Open, his:** the accented long tones' sign and colour · WHERE they are in the piece (the petal hits of section 2 — a short note the electronics ring out — or new material) · then multiphonics. **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
 ### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
 
