@@ -5999,3 +5999,11 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 **Not checked, so not claimed:** the drawer in the running page. The page fetches `bank/scattered_strikes.json` uncached (`strike_drawer.js` · `beating_panel.js` · `strike_chords_ui.js`), and the drawer has its own `↻ db` — no server restart is in the path as read.
 
 **Git:** the bank and the three docs committed; `scores/strikes.json` is his and stays untracked, as his scores do — the bank names a source that is on his disk only (said to him).
+
+## §291
+**2026-10-09 — HIS FILES COMMITTED AT HIS WORD (Opus).** His word, straight after §290's report that `strikes.json` stayed untracked: *"can you commit and push"*. Read as his word on what the session end had left with him (§289: *the piece is in no commit … his word to commit them*) — all thirteen, not the one.
+
+- **Before the commit, the check the piece names for it:** `node tools/unsaved_check.js` — five working copies hold edits their files do not, the same five as at the wrap (`audition-100-s1` · `audition-30` · `curve_practice` · `workshop-bfl-slap`, and `sec04-beating-a`, never saved); none is the piece, none is `strikes`. The files went in AS SAVED.
+- **Saved by him since the wrap, seen by their times:** `piece-3BodyRedo` 07:44 · `strikes` and `bank/panel_snapshots.json` 07:57 — the strikes save again AFTER §290's ingest (07:50). The tool's census on the newer save is the same line for line (429 notes · 60 strikes · the same spans), so the bank stands; not re-ingested.
+- **What went in:** ten scores (`strikes` · `piece-3BodyRedo` — THE PIECE · `piece-sec04-01a` · `piece-sec03-a2` · `piece-sec03-a1` · `piece-sec02-a1` · `sec04-a-beating` · `drone-start-mics` · `curve_practice` · `temp01new_cello_bass_flute_perc_25.72`) · `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` · `reaper/decibel_rack.rpp` (17 MB, his Reaper's save, committed unread as at the checkpoints of 2026-10-05).
+- **The rule as it stands after:** nothing is deliberately uncommitted; a file he saves from here on is his again, committed at his word.

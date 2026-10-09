@@ -64,7 +64,7 @@ reads. Start only on his word. *(At `/session-start`: orient, agree the agenda, 
 blocks of session 2 are kept VERBATIM in `docs/PROJECT_JOURNAL_ARCHIVE.md` — go there by a question, not by habit. The map of every
 tool and app is CLAUDE.md § Apps; how each thing was made is `docs/RUNNING_LOG.md`.)*
 
-- **THE PIECE IS ASSEMBLED END TO END — `scores/piece-3BodyRedo.json`** (HIS, UNTRACKED: it exists on his disk only) — **0 → 668.1 s,
+- **THE PIECE IS ASSEMBLED END TO END — `scores/piece-3BodyRedo.json`** (HIS; in git since 2026-10-09, §291, as saved at 07:44) — **0 → 668.1 s,
   11 min 8 s, five sections:** the opening 0 → 36.9 (six groups of impulses, every return processed) · **the three body problem
   39.0 → 123.3** (shortened 2026-10-09: a NEW TAKE on the same form, UNHEARD) · section 2, the trills and the live petal hits, from
   125.4 · **the drones 210.6 → 414.8** (their end cut by him; a long fade on each track's last drone) · **the beating section
@@ -164,17 +164,18 @@ wants it, or the sine breathing with the bow (the tracker)? · *(answered: Q4 th
 
 **Blockers:** none.
 
-**SINCE THE SESSION END (2026-10-09, RUNNING_LOG §290; DEC-81):** his 60 marimba strikes (`scores/strikes.json`, his, untracked) are in
+**SINCE THE SESSION END (2026-10-09, RUNNING_LOG §290 · §291; DEC-81):** his 60 marimba strikes (`scores/strikes.json`, his) are in
 the strike bank — `bank/scattered_strikes.json`, by `node tools/strike_db.js --score strikes`; the Strikes drawer reads it live
 (its `↻ db`). Not seen in the running page by the AI.
 
-**DELIBERATELY UNCOMMITTED — thirteen, all his, none staged:** `scores/strikes.json` (his 60 strikes; the strike bank's source) ·
-`scores/piece-3BodyRedo.json` (THE PIECE) · `scores/piece-sec04-01a.json` ·
-`scores/piece-sec03-a2.json` · `scores/piece-sec03-a1.json` · `scores/piece-sec02-a1.json` · `scores/sec04-a-beating.json` ·
-`scores/drone-start-mics.json` (his entries; the drone builder reads it) · `scores/curve_practice.json` ·
-`scores/temp01new_cello_bass_flute_perc_25.72.json` · `bank/panel_snapshots.json` (his four takes `beating01 … 04`) ·
-`bank/samples/index.json` (his bank at work) · `reaper/decibel_rack.rpp` (his Reaper's save; not read). **The piece and his takes
-are in no commit: said to him at this wrap; his word to commit them.**
+**DELIBERATELY UNCOMMITTED — NONE since 2026-10-09 (RUNNING_LOG §291), at his word *"can you commit and push"*:** the thirteen that
+were his and unstaged are IN GIT as he had saved them — `scores/strikes.json` · `scores/piece-3BodyRedo.json` (THE PIECE) ·
+`scores/piece-sec04-01a.json` · `scores/piece-sec03-a2.json` · `scores/piece-sec03-a1.json` · `scores/piece-sec02-a1.json` ·
+`scores/sec04-a-beating.json` · `scores/drone-start-mics.json` · `scores/curve_practice.json` ·
+`scores/temp01new_cello_bass_flute_perc_25.72.json` · `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` ·
+`reaper/decibel_rack.rpp`. **The rule is unchanged: a file he saves AFTER this is his again — dirty at a resume is his live work, and
+it is committed at his word, never swept in.** The five working copies of `unsaved_check.js` stand as they were (gitignored; his to
+Save or Reload).
 
 **Standing warnings for this repo:** never bind **5400 / 4900** (piece #6's) or **5300 / 4800** (piece #5's) · piece #6 holds
 uncommitted files that are his — never stage, move or edit anything there · this repo is PUBLIC — nothing personal lands
