@@ -1,0 +1,1081 @@
+{
+ "irVersion": "0.1",
+ "id": "approaching-opening",
+ "source": {
+  "score": "piece-3BodyRedo",
+  "window": [
+   0,
+   37
+  ],
+  "parts": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "provenance": {
+  "createdBy": "tools/notate_section.js (profile trance)",
+  "date": "2026-10-09",
+  "tool": "tools/notate_section.js (profile trance)",
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only.",
+  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening --label \"Approaching — the opening (0 … 37 s)\""
+ },
+ "events": [
+  {
+   "id": "ev-wc-19",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-19"
+   },
+   "onset": 1.525,
+   "duration": 0.1499999999999999,
+   "pitch": {
+    "midi": 59,
+    "spelled": {
+     "step": "B",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "slap",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-20",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-20"
+   },
+   "onset": 2.669,
+   "duration": 0.1499999999999999,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "slap",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-21",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-21"
+   },
+   "onset": 4.145,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 43,
+    "spelled": {
+     "step": "G",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "shime_daiko_taiko_sticks",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-22",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-22"
+   },
+   "onset": 4.48,
+   "duration": 0.818,
+   "pitch": {
+    "midi": 71,
+    "spelled": {
+     "step": "B",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "bartok_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-23",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-23"
+   },
+   "onset": 5.212,
+   "duration": 1.033,
+   "pitch": {
+    "midi": 56,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "gettato_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-52",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-52"
+   },
+   "onset": 6.639,
+   "duration": 0.14999999999999947,
+   "pitch": {
+    "midi": 51,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "marcato_sfz_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-25",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-25"
+   },
+   "onset": 6.991,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 70,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "glock_shorts_hard",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-26",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-26"
+   },
+   "onset": 8.251,
+   "duration": 1.22,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "stac_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-27",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-27"
+   },
+   "onset": 9.9,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 44,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "bow_op_x_marcato_sfz_mw_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-28",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-28"
+   },
+   "onset": 10.137,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 34,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 1
+    }
+   },
+   "technique": "flutter_vel_mwinv",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-29",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-29"
+   },
+   "onset": 11.222,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 60,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "china_cymbals_scrape",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-30",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-30"
+   },
+   "onset": 12.182,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 61,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "voice_breath_4th",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-31",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-31"
+   },
+   "onset": 13.373,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 62,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "sp_spicc_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-32",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-32"
+   },
+   "onset": 14.942,
+   "duration": 0.15000000000000036,
+   "pitch": {
+    "midi": 44,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "col_legno_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-33",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-33"
+   },
+   "onset": 16.353,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 52,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "secco",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-34",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-34"
+   },
+   "onset": 17.818,
+   "duration": 0.88,
+   "pitch": {
+    "midi": 36,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "bartok_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-35",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-35"
+   },
+   "onset": 18.099,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "bow_op_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-36",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-36"
+   },
+   "onset": 18.862,
+   "duration": 0.15000000000000213,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "jet_slap",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-37",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-37"
+   },
+   "onset": 20.794,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 37,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-38",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-38"
+   },
+   "onset": 22.261,
+   "duration": 0.15000000000000213,
+   "pitch": {
+    "midi": 81,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_main_metal_damped",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-39",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-39"
+   },
+   "onset": 22.991,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 51,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "marcato_sfz_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-40",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-40"
+   },
+   "onset": 24.595,
+   "duration": 0.15000000000000213,
+   "pitch": {
+    "midi": 36,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "wood_blocks_hard_mallets",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-41",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-41"
+   },
+   "onset": 25.825,
+   "duration": 0.15000000000000213,
+   "pitch": {
+    "midi": 54,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "pseudo_cb_vel_mwinv",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-42",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-42"
+   },
+   "onset": 26.17,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 61,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "nh_sul1_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-43",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-43"
+   },
+   "onset": 27.413,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 34,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 1
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-44",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-44"
+   },
+   "onset": 29.85,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 36,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "bass_drum_alt_sticks",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-45",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-45"
+   },
+   "onset": 31.3,
+   "duration": 0.835,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "bartok_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-46",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-46"
+   },
+   "onset": 32.5,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 56,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "jet_slap",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-73",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-73"
+   },
+   "onset": 33,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 49,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "bow_op_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-74",
+   "source": {
+    "score": "piece-3BodyRedo",
+    "objectId": "wc-74"
+   },
+   "onset": 34.4,
+   "duration": 0.14999999999999858,
+   "pitch": {
+    "midi": 36,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "slap",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  }
+ ],
+ "chunks": [
+  {
+   "id": "ch-0-wc-19",
+   "part": 0,
+   "span": [
+    1.525,
+    8.251
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-19"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-26",
+   "part": 0,
+   "span": [
+    8.251,
+    12.182
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-26"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-30",
+   "part": 0,
+   "span": [
+    12.182,
+    18.862
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-30"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-36",
+   "part": 0,
+   "span": [
+    18.862,
+    25.825
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-36"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-41",
+   "part": 0,
+   "span": [
+    25.825,
+    32.5
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-41"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-46",
+   "part": 0,
+   "span": [
+    32.5,
+    37
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-46"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-20",
+   "part": 1,
+   "span": [
+    2.669,
+    10.137
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-20"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-28",
+   "part": 1,
+   "span": [
+    10.137,
+    16.353
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-28"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-33",
+   "part": 1,
+   "span": [
+    16.353,
+    20.794
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-33"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-37",
+   "part": 1,
+   "span": [
+    20.794,
+    27.413
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-37"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-43",
+   "part": 1,
+   "span": [
+    27.413,
+    34.4
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-43"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-74",
+   "part": 1,
+   "span": [
+    34.4,
+    37
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-74"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-21",
+   "part": 2,
+   "span": [
+    4.145,
+    11.222
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-21"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-29",
+   "part": 2,
+   "span": [
+    11.222,
+    24.595
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-29"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-40",
+   "part": 2,
+   "span": [
+    24.595,
+    29.85
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-40"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-44",
+   "part": 2,
+   "span": [
+    29.85,
+    37
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-44"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-25",
+   "part": 3,
+   "span": [
+    6.991,
+    22.261
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-25"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-38",
+   "part": 3,
+   "span": [
+    22.261,
+    37
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-38"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-22",
+   "part": 4,
+   "span": [
+    4.48,
+    6.639
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-22"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-52",
+   "part": 4,
+   "span": [
+    6.639,
+    13.373
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-52"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-31",
+   "part": 4,
+   "span": [
+    13.373,
+    18.099
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-31"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-35",
+   "part": 4,
+   "span": [
+    18.099,
+    22.991
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-35"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-39",
+   "part": 4,
+   "span": [
+    22.991,
+    31.3
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-39"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-45",
+   "part": 4,
+   "span": [
+    31.3,
+    37
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-45"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-23",
+   "part": 5,
+   "span": [
+    5.212,
+    9.9
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-23"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-27",
+   "part": 5,
+   "span": [
+    9.9,
+    14.942
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-27"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-32",
+   "part": 5,
+   "span": [
+    14.942,
+    17.818
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-32"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-34",
+   "part": 5,
+   "span": [
+    17.818,
+    26.17
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-34"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-42",
+   "part": 5,
+   "span": [
+    26.17,
+    33
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-42"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-73",
+   "part": 5,
+   "span": [
+    33,
+    37
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-73"
+   ],
+   "provenance": "derived"
+  }
+ ],
+ "overlays": []
+}

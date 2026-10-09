@@ -10,6 +10,16 @@
    ],
    "profile": "trance",
    "exp": true
+  },
+  {
+   "id": "approaching-opening",
+   "label": "Approaching — the opening (0 … 37 s)",
+   "score": "piece-3BodyRedo",
+   "window": [
+    0,
+    37
+   ],
+   "profile": "trance"
   }
  ]
 }
