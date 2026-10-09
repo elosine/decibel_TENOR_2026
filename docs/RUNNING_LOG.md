@@ -6824,3 +6824,13 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **What changed:** `notation/registry/rules.json` `objects.micOpening.fillOpacity` 0.15 → **0.18**. The outline stays solid. The fill's road is now 35 → 28 → 21 → 15 → 18 %: he overshot at 15 and came back — the value was found by eye, between 15 and 21.
 
 **Proven once, in the running app** (`approaching-opening`, page 1): the seven openings read fill 0.18, outline 1. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.
+
+## §332. THE YELLOW OVER THE TWO CIRCLES — the mic opening's sign under its fill (2026-10-09, Opus)
+
+**What prompted it (DEC-109, verbatim):** *"and on top of the black circles"* — the end of "fill to 18" (§331), sent while that was being built.
+
+**What changed:** the order of drawing. `notation/registry/rules.json` `objects.micOpening.sign.layer`: **`under`** — the two circles are drawn first and the yellow brick over them · `over` (or absent) — the circles on top, as §325 had it and as the composer score has its label. `notation/lib/render.js`: the brick and the sign are made as two strings and pushed in the row's order.
+
+**What it does to the look, computed:** the circles are #333 and the fill is 18 % of #FFFF00, so under the yellow they read about #58582A — a dark olive instead of a near black; the outline, at the brick's edge, does not cross them. It is the highlighter's own logic: the mark lies on the print. If the circles should stay black under the yellow, that is a blend ("multiply"), a further word — not built, his to ask.
+
+**Proven once, in the running app** (`approaching-opening`, page 1): in each of the seven openings the two circles stand BEFORE the brick in the drawing; fill 0.18, outline 1. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.

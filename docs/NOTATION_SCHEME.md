@@ -42,7 +42,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | audible beats | the added wave inside its two-pinch outline | SOL_orange |
 | scattered strikes | nine solid triangles diving at a ground line | SOL_green |
 
-**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 18 % (the composer score's is 35 %; 29 px tall, from the top — DEC-105 … DEC-108), a solid outline in the same
+**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 18 % (the composer score's is 35 %; 29 px tall, from the top — DEC-105 … DEC-109), the yellow lying OVER the two circles, a solid outline in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
 **Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·

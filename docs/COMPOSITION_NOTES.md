@@ -1167,3 +1167,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"fill to 18"*
 
 *(The AI's reading, marked as such: the fill 15 → 18 %, the outline left solid. RUNNING_LOG §331.)*
+
+### DEC-109 · 2026-10-09 — the mic opening's fill goes on top of the black circles
+
+*(His words, verbatim — Opus; sent while the AI was setting the fill to 18 %, as the end of that sentence:)* *"and on top of the black circles"*
+
+*(The AI's reading, marked as such: with "fill to 18" — the yellow fill is to lie OVER the two circles, where until now the circles were drawn on top of the yellow. As a highlighter goes over print. One word of the row, so it turns back. RUNNING_LOG §332.)*

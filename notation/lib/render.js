@@ -956,15 +956,19 @@
           if (!MO || !crosses(it.t0, it.t1)) continue;
           const whole = cutMark >= 0, row = micRow(MO);
           const xa = view.xOfSeconds(whole ? it.t0 : Math.max(it.t0, w0)), xb = view.xOfSeconds(whole ? it.t1 : Math.min(it.t1, wInk));
-          parts.push('<rect class="mic-open" x="' + xa.toFixed(2) + '" y="' + row.y.toFixed(2) + '" width="' + Math.max(1, xb - xa).toFixed(2) + '" height="' + row.h.toFixed(2) +
+          const micRect = ('<rect class="mic-open" x="' + xa.toFixed(2) + '" y="' + row.y.toFixed(2) + '" width="' + Math.max(1, xb - xa).toFixed(2) + '" height="' + row.h.toFixed(2) +
             '" rx="' + (MO.cornerSs * ssPx).toFixed(2) + '" fill="' + MO.colour + '" fill-opacity="' + MO.fillOpacity + '" stroke="' + MO.colour +
             '" stroke-width="' + (MO.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + MO.strokeOpacity + '"/>');
           const SG = MO.sign;
+          let micSign = '';
           if (SG && (whole || it.t0 >= w0 - 1e-9)) {   // the sign stands at the opening's own start
             const sx = view.xOfSeconds(it.t0) + SG.insetSs * ssPx, sy = row.y + row.h / 2;
-            parts.push('<circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.ringSs * ssPx).toFixed(2) + '" fill="none" stroke="' + SG.colour +
+            micSign = ('<circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.ringSs * ssPx).toFixed(2) + '" fill="none" stroke="' + SG.colour +
               '" stroke-width="' + (SG.ringStrokeSs * ssPx).toFixed(2) + '"/><circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.dotSs * ssPx).toFixed(2) + '" fill="' + SG.colour + '"/>');
           }
+          // [§332, DEC-109 — his 'and on top of the black circles'] THE SIGN'S LAYER (objects.micOpening.sign.layer): 'under' = the yellow is drawn
+          // OVER the two circles, as a highlighter goes over print · 'over' (or absent) = the circles on top of the yellow
+          parts.push(SG && SG.layer === 'under' ? micSign + micRect : micRect + micSign);
         } else if (it.k === 'badge') {
           // [decibel PLAN 2.3 · 2.6 — RUNNING_LOG §325; rules.json objects.badge · the table `language` → engraving.render.badge · .language]
           // A LANGUAGE BADGE: what KIND of sound — a rounded square of the format's ground, the type's sign in the type's colour (the drawing
