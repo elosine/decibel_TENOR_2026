@@ -2211,7 +2211,7 @@ const Composer = {
             if (isOn) {
                 r.out.send([0xB0 | r.ch, 7, 127]);
                 if (r.tech.cc0 != null) r.out.send([0xB0 | r.ch, 0, r.tech.cc0]);
-                if (r.tech.loud === 'mw') r.out.send([0xB0 | r.ch, 1, d2]);   // §69: a wheel-loudness preset is heard at the velocity he played — with no wheel sent it sits at the wheel's last value, often 0
+                if (r.tech.loud === 'mw' || r.tech.cc1 === 'vel') r.out.send([0xB0 | r.ch, 1, d2]);   // §69: a wheel-loudness preset is heard at the velocity he played — with no wheel sent it sits at the wheel's last value, often 0 (decibel §273: `cc1: 'vel'` — the Ricotti bowed patches)
             }
             r.out.send([(isOn ? 0x90 : 0x80) | r.ch, d1, isOn ? d2 : 0]);
         }
@@ -11291,6 +11291,9 @@ const Composer = {
             const ksMode = (wc.sonifyMode === 'ks' && wc.ksNote != null) || wc.sonifyMode === 'plain';
             const preArm = (at) => {
                 if (tech && tech.cc0 != null) output.send([0xB0 | ch, 0, tech.cc0], at);
+                // decibel §273 — A PATCH WHOSE DYNAMIC IS THE MOD WHEEL (the recipe's `cc1: 'vel'`: the Ricotti bowed crotales): the velocity
+                // alone changes nothing there, so the wheel is sent at the note's own velocity (the note-on's expression, below) before it
+                if (tech && tech.cc1 === 'vel') output.send([0xB0 | ch, 1, Math.max(1, Math.min(127, Math.round(wc.velAbs != null ? wc.velAbs : ((wc.sonifyMode === 'plain' && wc.recVel != null) ? wc.recVel : 100))))], at);
                 if (wc.sonifyMode === 'ks' && wc.ksNote != null) {
                     output.send([0x90 | ch, wc.ksNote, 100], at);   // latch the keyswitch
                     output.send([0x80 | ch, wc.ksNote, 0], at + 1);

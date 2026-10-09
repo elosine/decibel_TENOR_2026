@@ -44,7 +44,9 @@
      "channel": 6,
      "label": "Bowed",
      "slot": "Crotales - Bowed",
-     "file": "_Individual patches_/c - Crotales - Bowed.nki"
+     "file": "_Individual patches_/c - Crotales - Bowed.nki",
+     "cc1": "vel",
+     "cc1Note": "2026-10-08 (RUNNING_LOG §273): this patch takes its DYNAMIC from CC1, the mod wheel, not from the velocity (the library's manual: the bowed patches, rolls and tremolos, 'as it is with the longs') — he changed a note's dynamic and heard no change. cc1: vel = the page sends CC1 at the note's own velocity with every note (playback and the live keyboard), so the written dynamic is heard."
     },
     {
      "channel": 7,

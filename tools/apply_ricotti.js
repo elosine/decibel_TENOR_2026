@@ -33,6 +33,9 @@ for (const I of CAT.instruments) {
     const q = { key, label: I.name + ' · ' + p.label, port: I.port, channel: p.channel, rangeLow: r.low, rangeHigh: r.high };
     if (p.byKey) { q.kind = 'key'; q.loud = 'vel'; q.keys = 'pending'; q.rangeLow = 36; q.rangeHigh = 107; }   // the glisses: blocks across the keyboard, unmapped at his word
     else { q.kind = 'pitched'; q.loud = 'vel'; }
+    // a patch whose DYNAMIC is the mod wheel (the bowed patches — the catalog's `cc1: "vel"`, §273): the page sends CC1 at the note's own
+    // velocity with every note. `loud` stays `vel` — the written dynamic is still the velocity; nothing that reads `loud` changes.
+    if (p.cc1 === 'vel') q.cc1 = 'vel';
     techs.push(q);
   }
   insts.push({ slug: I.slug, name: I.name, port: I.port, track: I.track, rangeLow: I.range.low, rangeHigh: I.range.high, patches: I.patches.length });
