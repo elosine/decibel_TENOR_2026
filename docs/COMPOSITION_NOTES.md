@@ -951,3 +951,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"What are the pitches counting up from the cello um, for the pent ultimate beating? Is that beating three?"* — *"Sorry, I mean in order of the parts. So cello, viola, um, mallets, bass clarinet."* (answered: cello C#2 · viola G#4 · crotales A7, the bar A5 · bass clarinet F#2 · bass flute D#3) — then: *"I think there might have been more or less just one statement of that one. So I'm looking at the cello 174.88 and then the viola G sharp at 180.28 and then the A7 at the crotale is at 177.08 and then the bass clarinet at 188.28 and the bass flute at 201.2, something like that, around there. If we can take all those out and then push the rest forward."*
 
 *(The AI's reading, marked as such: the five pairs that BEGIN at those times — one a player — taken out, and on each lane the later pairs (`beating01`) moved earlier to close the hole, each keeping its own gap. Those five are the cello's and the crotales' only `beating03` pair and the viola's, the clarinet's and the flute's SECOND one; the three FIRST `beating03` pairs (viola G#4 from 150.3 s, clarinet F#2 from 148.1, flute D#3 from 163.5) were not named and stand — said to him. RUNNING_LOG §285.)*
+
+### DEC-78 · 2026-10-09 — THE BEATING SECTION INTO THE PIECE, at 445 s, in `piece-sec04-01a`
+
+*"insert beating into main score at 445  piece-sec04-01a"*
+
+*(The AI's reading, marked as such: his hand-built beating section, `sec04-a-beating` as he last saved it (thirty-five pairs), copied into `scores/piece-sec04-01a.json` — his new copy of the piece after the drones' cut, saved by him a minute before — with its time 0 at 445 s, as the three body problem went in at 39 s. The piece: opening · three body problem · section 2 (trills and petals) · the drones (to 440.5 s) · the beating section 449.0 → 693.8 s. RUNNING_LOG §286.)*

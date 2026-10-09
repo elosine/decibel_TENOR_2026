@@ -55,6 +55,16 @@ for (const o of src.objects || []) {
 }
 for (const c of copies) {   // a reference by id inside a copy follows the new ids (none in the three body section; kept for any section)
   for (const k of ['ratioSourceZoneId', 'groupId', 'sourceZoneId']) if (c[k] && map.has(c[k])) c[k] = map.get(c[k]);
+  // a sine and its notes know each other by id (properties.sine: a note's brick · a brick's note and notes · a re-keyed chain and its
+  // first — sine_go.js, tools/beat_pair.js): the copies must know each other, not objects of the piece that happen to bear the old ids (§286)
+  const sn = c.properties && c.properties.sine;
+  if (sn) {
+    const m = (id) => (map.has(id) ? map.get(id) : id), t = Object.assign({}, sn);
+    for (const k of ['brick', 'note']) if (t[k]) t[k] = m(t[k]);
+    for (const k of ['notes', 'chain']) if (Array.isArray(t[k])) t[k] = t[k].map(m);
+    if (t.segment && t.segment.of) t.segment = Object.assign({}, t.segment, { of: m(t.segment.of) });
+    c.properties.sine = t;
+  }
 }
 const ends = copies.map((c) => (c.type === 'waveCurve' ? c.endSeconds : c.endTime)).filter(Number.isFinite);
 const starts = copies.map((c) => (c.type === 'waveCurve' ? c.startSeconds : c.startTime)).filter(Number.isFinite);
