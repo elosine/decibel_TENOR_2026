@@ -6487,3 +6487,13 @@ The AI's note: a and b are the truest and the finest-grained — at 36 px the wh
 The AI's note: i and j are the two that are a SIGN — one shape, legible at 36 px, unlike anything else in the set; i is true to the wave, j is the cleaner drawing. A coincidence to weigh: j is two triangles, and the short attacks are now three triangles.
 
 **Made:** `bank/language/language.json` (the correction · `candidates.beats` twelve now). Seen in the AI's pane: the table's first badge reads "Braxton's own · SOL_red"; h … l draw at both sizes.
+
+## §315. THE AUDIBLE BEATS — "k's lines, but l's shape": his picture's outline with its wave, candidate m (2026-10-09, Opus)
+
+**What prompted it (his words, verbatim):** *"k's lines, but l's shape pls"* — on §314's candidates.
+
+**Read as:** k's DRAWING — the outline a thin white line, the added wave inside it in the colour — on l's SHAPE — the two-pinch outline of the picture he sent, |cos(2πu)|, full at the edges and the middle. Not k's single-pinch bow tie.
+
+**Drawn** (`candidates.beats`, appended as **m**, `pictureOutlineWave`; **http://localhost:5500/language/index.html#beats**): the outline of cos(2π · 6u) · cos(2πu) at 0.8 px in white, the wave itself at 1.6 px in the colour — k's two line weights, unchanged; in all eight colours, large and at 36 px. It is his picture whole: the tone, and the envelope that pinches it twice. Seen in the AI's pane.
+
+**The path here, for the paper:** his own design narrowed in three steps — "an actual wave diagram, two in white and the added wave in the colour" (§312) → a picture of the added wave alone and "the bow tie shape" (§314) → the wave inside its own outline (this). The two white component waves of his first idea are gone; what stays white is the envelope. Nothing chosen: the colour is not said.
