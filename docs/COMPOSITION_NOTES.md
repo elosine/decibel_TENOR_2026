@@ -903,3 +903,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Okay, let's reduce the first one by one roll in the bass clarinet. So the bass clarinet just has the two and the mallets just have the two. And viola. And then just push the beating one over for all of them, please."*
 
 *(The AI's reading, marked as such: "the first one" = the first chord's group of three pairs; on the bass clarinet, the crotales and the viola it becomes TWO — the THIRD pair taken out (his word does not say which of the three; the last is the one whose removal lets the next chord move over); "the beating one" = the pairs from the take `beating01`, moved EARLIER on those three lanes to follow the second pair after the gap they were rolled with — moved, not re-rolled. The cello and the bass flute keep three and are untouched. RUNNING_LOG §277.)*
+
+### DEC-70 · 2026-10-08 — two more pairs on every lane from the take `beating02`
+
+*"roll two more each from the take beating02"*
+
+*(The AI's reading, marked as such: as DEC-68 with his second take — each player's pitch in `beating02` (his blast S002): bass flute F3 · bass clarinet F#2 · crotales C#5, sounding C#7 · viola C5 · cello A#2; two pairs a lane after a rolled gap from the lane's last pair. The viola and the cello keep their pitch of `beating01`. RUNNING_LOG §278.)*

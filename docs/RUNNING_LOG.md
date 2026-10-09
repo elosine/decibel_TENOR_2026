@@ -5817,3 +5817,20 @@ Bends: the clarinet's 62 and 83 c at F2 (inside its semitone), the cello's 48 an
 | cello (untouched) | — | — | D#2 · D2 · D#2 to 99.7 · A#2 105.5 → 120.4 · A#2 125.7 → 152.9 |
 
 60 objects; **the section 4.0 → 154.7 s** (was 204.1). **The change of chord is now within 27 s across the five** — the crotales at 83.3, the clarinet 85.3, the viola 95.7, the cello 105.5, the flute 110.1 (it had run 105 … 149) — and the three lanes with two pairs change FIRST. Which of the three first-chord pairs to drop he did not say; the third was taken, said to him. The times moved are whole objects' starts and ends; a bend and a gliss are relative to their note and brick, so nothing else changed.
+
+## §278
+**2026-10-08, late — THE THIRD CHORD: TWO MORE PAIRS A LANE FROM `beating02` (Opus; DEC-70).** His word: *"roll two more each from the take beating02"*. The take (his blast `S002`; `SineGo.takeChord`): **bass flute F3 (53) · bass clarinet F#2 (30, folded an octave up: 42) · crotales C#5 (85 folded down: key 73, sounding C#7) · viola C5 (72) · cello A#2 (46)** — the viola and the cello on the same pitch as in `beating01`; a sixth voice (98) on no lane. `node tools/beat_pair.js --score sec04-a-beating --roll --take beating02 --n 2 --lane <each>` (89 objects; **the section 4.0 → 233.1 s**; the base his save of 23:43):
+| lane | pitch | seed | when | shape |
+|---|---|---|---|---|
+| bass flute | F3 (175 Hz) | 27147 | 161.5 → 180.7 s (gap 6.8) | up + hold 4.3 (13.8 s · 5.4 s) |
+| | | | 187.6 → 198.3 s (gap 6.9) | down + hold 3 → 1.3 (5.7 s · 5.0 s) |
+| bass clarinet | F#2 (92 Hz) | 12797 | 145.7 → 156.3 s (gap 5.1) | down + hold 4.1 → 1.5 (7.5 s · 3.1 s) — under 5.3 |
+| | | | 162.4 → 191.5 s (gap 6.1) | up + hold 5.2 (22.6 s · 6.5 s) — under 5.3, a bend of 94.7 c |
+| crotales | sounding C#7 +17 c (2239 Hz), key C#5 | 25819 | 158.0 → 201.3 s (gap 6.6) | up + plateau + down 6.9 → 2, the bar re-bowed ×7 |
+| | | | 205.9 → 233.1 s (gap 4.6) | up + hold 6.2, ×4 |
+| viola | C5 (523 Hz) | 9428 | 156.6 → 171.1 s (gap 4.3) | down + hold 3.9 → 1.5 (8.9 s · 5.6 s) |
+| | | | 176.3 → 192.9 s (gap 5.2) | down + hold 4.4 → 1 (10.7 s · 5.9 s) |
+| cello | A#2 (117 Hz) | 68116 | 158.3 → 179.7 s (gap 5.4) | down + hold 5.9 → 1.6 (13.7 s · 7.7 s) |
+| | | | 184.7 → 205.1 s (gap 5.0) | up + hold 3.4 (16.1 s · 4.3 s) |
+
+Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the crotales and the viola six. **The third chord enters between 145.7 s (the clarinet) and 161.5 s (the flute)** — sixteen seconds across the five, tighter than the second (27 s), because the lanes' lengths had been evened by §277. Six of these ten are "down + hold" — a pair that BEGINS at its peak, beating at once: the texture's onsets sharpen in this chord by chance of the roll. The crotales alone run past 205 s (their second pair ends at 233.1): the section's tail is one bowed crotale and its sine.
