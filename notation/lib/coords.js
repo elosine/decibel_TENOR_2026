@@ -80,7 +80,7 @@
     for (const g of (ens && ens.groups) || []) {
       if (!g.joined || !Array.isArray(g.parts) || g.parts.length < 2) continue;
       const members = g.parts.map(p => ({ key: p, halfSs: staffHalfSs((ens.parts || []).find(q => q.part === p)) }));
-      out[g.parts[0]] = { members, gapSs: g.gapSs > 0 ? g.gapSs : 6 };
+      out[g.parts[0]] = Object.assign({ members, gapSs: g.gapSs > 0 ? g.gapSs : 6 }, g.overlay ? { overlay: true } : {});
     }
     return out;
   }
@@ -94,6 +94,10 @@
   function joinedSystems(s, j) {
     const out = [Object.assign({}, s, { part: j.members.map(m => m.key).join('+'), joinedLane: true })];
     const laneSs = s.laneFrac1 - s.laneFrac0, fracPerSs = s.ssPerSystem > 0 ? laneSs / s.ssPerSystem : 0;
+    // [decibel PLAN 2.1 — RUNNING_LOG §302] AN OVERLAID GROUP (registry groups[].overlay): the members share ONE staff position — every
+    // member's band is the whole lane and its middle line the lane's middle. The percussionist's unpitched part rides the mallets' staff
+    // (his word, DEC-88: "no non pitched perc staff, just the single staff for pitched percussion"). Absent = the stacked join, unchanged.
+    if (j.overlay) return out.concat(j.members.map((m, i) => Object.assign({}, s, { part: m.key, lane: s.part, staff: i, midFrac: (s.laneFrac0 + s.laneFrac1) / 2 })));
     if (!(fracPerSs > 0)) return out.concat(j.members.map((m, i) => Object.assign({}, s, { part: m.key, lane: s.part, staff: i })));
     // staff middles, ss below the first staff's middle: p0 = 0, p_i = p_(i-1) + half_(i-1) + gap + half_i
     const pos = [];

@@ -137,7 +137,7 @@ if (R.vibMarks) {
 }
 // [2i.1] a lined staff's visibility (rules.json staffLines)
 if (R.staffLines) {
-  P('### A lined staff\'s visibility (`staffLines`)');
+  P('### A staff\'s visibility (`staffLines`)');   // [decibel PLAN 2.1] every staff's now — the row `ensemble`; `percussion` is piece #6's lined-staff rule
   P('');
   P(R.staffLines._doc);
   P('');

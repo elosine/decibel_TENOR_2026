@@ -153,6 +153,21 @@
     parts.push('<svg xmlns="http://www.w3.org/2000/svg" width="' + view.widthPx + '" height="' + view.heightPx +
       '" viewBox="0 0 ' + view.widthPx + ' ' + view.heightPx + '" style="background:' + o.paper + '">');
     parts.push('<rect x="0" y="0" width="' + view.widthPx + '" height="' + view.heightPx + '" fill="' + o.paper + '"/>');
+    // [decibel PLAN 2.1 — RUNNING_LOG §300 · §302; rules.json objects.laneLine → engraving.render.laneLine] THE LANE LINE (his "a" — the string
+    // quartet's look: the lanes white, a thin grey line between them): one line at the middle of the gap between adjacent LANES — page
+    // furniture, under every mark. The lanes are read from the view's own bands: a staff of a grand staff and a member of a joined lane lie
+    // inside their lane's band, so merging the overlapping bands gives the lanes whatever the ensemble. `outer`: also at the frame's first and
+    // last lane edge. ABSENT from the registry = no line — every earlier page unchanged.
+    if (E.laneLine && E.laneLine.thickSs > 0 && Array.isArray(view.systems) && view.systems.length) {
+      const bands = view.systems.map(s => [s.yTopPx, s.yBotPx, s.ssPx]).sort((a, b) => a[0] - b[0] || b[1] - a[1]);
+      const lanesY = [];
+      for (const b of bands) { const L = lanesY[lanesY.length - 1]; if (L && b[0] < L[1] - 1e-6) L[1] = Math.max(L[1], b[1]); else lanesY.push(b.slice()); }
+      const th = E.laneLine.thickSs * lanesY[0][2], xa = view.marginLeftPx || 0, xb = view.widthPx - (view.marginRightPx || 0), ys = [];
+      for (let i = 0; i + 1 < lanesY.length; i++) ys.push((lanesY[i][1] + lanesY[i + 1][0]) / 2);
+      if (E.laneLine.outer) { ys.unshift(lanesY[0][0]); ys.push(lanesY[lanesY.length - 1][1]); }
+      if (ys.length) parts.push('<g class="lane-lines" fill="' + E.laneLine.colour + '">' + ys.map(y => '<rect x="' + xa.toFixed(2) + '" y="' + (y - th / 2).toFixed(2) +
+        '" width="' + (xb - xa).toFixed(2) + '" height="' + th.toFixed(2) + '"/>').join('') + '</g>');
+    }
 
     const [w0, w1] = view.window;
     // Page ownership is HALF-OPEN at the right edge (an event exactly on a
@@ -334,7 +349,7 @@
           if (!lab || sysModel.staffLines[i] === undefined) return;
           parts.push('<text x="' + (ML + E.partLabel.xPx) + '" y="' + (Y(sysModel.staffLines[i]) + below).toFixed(1) + '" font-size="' + sz.toFixed(1) + '"' + fontAttr + ' fill="' + o.muted + '">' + esc(lab) + '</text>');
         });
-      } else if (!(sysModel.staff > 0)) {
+      } else if (!(sysModel.staff > 0) && !(pcfg && pcfg.noLabel)) {   // [decibel 2.1] `noLabel`: a member of an overlaid lane the lane's one label stands for
         let ly = sys.yTopPx + E.partLabel.yOffsetSs * ssPx;
         if (ENS) {
           let lane = sys;
@@ -385,6 +400,14 @@
               '" height="' + (stds.staff.lineThickness * ssPx).toFixed(2) + '"/>');
           }
         } else if (it.k === 'clef') {
+          // [decibel PLAN 2.1 — RUNNING_LOG §301 · §302; rules.json staffLines.ensemble.clefWithStaff] THE CLEF ONLY WHERE THE STAFF IS: a clef the
+          // layout marks `withStaff` draws only on a page whose left edge a staff segment of this system covers. "Covers" as the staff branch
+          // above DRAWS it: with staffFull a segment that begins at the laid-out window's start is stretched back to the page's edge (a page cut
+          // from the middle of a staffed stretch — found on the beating section's window, whose staff begins at 423 on a page that begins at 416)
+          if (it.withStaff) {
+            const mwC = model.window || [w0, w1], fullC = (opts && opts.staffFull) || !!E.staffFull;
+            if (!sysModel.items.some(s => s.k === 'staff' && s.t1 > w0 + 1e-9 && (s.t0 <= w0 + 1e-9 || (fullC && s.t0 <= mwC[0] + 1e-9 && s.t1 >= mwC[0] - 1e-9)))) continue;
+          }
           // with a prefatory gutter the clef lives IN the dead space,
           // right-aligned toward the music start (A21c — it must never sit
           // over the first notes); without one it pins to the view's left

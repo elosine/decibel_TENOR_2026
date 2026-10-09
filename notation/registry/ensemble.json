@@ -32,62 +32,27 @@
    "id": "percussion",
    "short": "Perc",
    "clef": "treble",
-   "weight": 1.888,
    "staff": {
-    "gapSs": 2,
     "noClef": true,
+    "hidden": true,
     "lines": [
      {
-      "short": "Coil",
-      "match": "small_metals_spring_coil",
-      "instrument": "spring coil"
-     },
-     {
-      "short": "Bgo",
-      "match": "bongos",
-      "instrument": "bongos"
-     },
-     {
-      "short": "SusCym",
-      "match": "susp_cymbals_bright",
-      "instrument": "suspended cymbal (16\", bright)"
-     },
-     {
-      "short": "Shime",
-      "match": "shime_daiko",
-      "instrument": "shime daiko (or a snare drum — PERFORMANCE_NOTES #5)"
-     },
-     {
-      "short": "China",
-      "match": "china_cymbals",
-      "instrument": "China cymbal"
-     },
-     {
-      "short": "Toms",
-      "match": "toms_high",
-      "instrument": "toms"
-     },
-     {
-      "short": "WB",
-      "match": "wood_blocks",
-      "instrument": "wood blocks"
-     },
-     {
-      "short": "BD",
-      "match": "bass_drum_alt",
-      "instrument": "bass drum"
+      "short": "Perc",
+      "match": "*",
+      "instrument": "every unpitched instrument — NO STAFF (DEC-88): one hidden line at the lane's middle"
      }
     ]
    },
-   "_staffNote": "THE UNPITCHED STAFF, piece #6's type (after Ferneyhough's Bone Alphabet — one line per instrument, 2 ss apart, no clef, the short names in the gutter, a note ON the line of its instrument by its technique key's prefix): EIGHT lines here, for his TENTATIVE list of 2026-10-04 (COMPOSITION_NOTES DEC-6). THE ORDER IS PROVISIONAL AND THE AI'S — his rule of piece #6 applied as far as eight instruments allow (\"high to low, no two neighbours of one material\"): metal · skin · metal · skin · metal · skin · wood · skin. A staff type's design is HIS (the protocol's 6.2): put to him; reordering is this list.",
-   "_weightNote": "The lane weight by piece #6's arithmetic: the brace [2, 3] is a JOINED group — one lane holding 14 ss (this staff) + 6 ss (the gap) + 4 ss (the mallets' staff) = 24 ss; extra = 20 ss over a unit lane; five lanes, A = (1080 − 16 − 4 × 4) / 7.9 = 132.66 ss, u = (A − 20) / 5 = 22.53, w = 1 + 20 / u = 1.888. Computed, not yet looked at on the page."
+   "_staffNote": "NO UNPITCHED STAFF (his word 2026-10-09, COMPOSITION_NOTES DEC-88: \"no non pitched perc staff, just the single staff for pitched percussion and re adjust all the lane heights\"; RUNNING_LOG §300 · §302). The eight-line staff of container 6 (§45, after piece #6's Bone Alphabet staff) is OUT. The part keeps a LINED staff of ONE line, `hidden` — never drawn, no line name in the gutter — so the extractor still treats it as unpitched (a note sits on the line, at the lane's middle, never at a pitch) until its graphic signs are designed (PLAN 2.3). `lines` stays a LIST: the stack tells an unpitched part by it (tools/notate_section.js · tools/check_rules.js); `match` \"*\" takes every technique."
   },
   {
    "part": 3,
    "id": "vibraphone",
    "short": "Mal",
    "clef": "treble",
-   "_clefNote": "THE MALLETS — crotales · glockenspiel · xylophone · marimba, all four on this ONE five-line staff (his word, DEC-5). Treble clef, NO transposition in the registry: the Ricotti library maps every one of the four at its WRITTEN pitch (crotales C4–C6 · glockenspiel G3–C6 · xylophone F3–B6 · marimba C2–C7 as keyed), so the key the score sends IS the note to write — the crotales and the glockenspiel SOUND two octaves higher, the xylophone one, the marimba as written. Which instrument a note is for, and two at once (\"opposite beaming or something like that\"), is a DEVICE SHEET when the music reaches it (6.7). The marimba below middle C wants a bass clef; he is unlikely to use it. The part id is still \"vibraphone\" and the recipe key \"bowed_vibraphone\" — piece #6's, kept (docs/NAMING.md § 1)."
+   "_clefNote": "THE MALLETS — crotales · glockenspiel · xylophone · marimba, all four on this ONE five-line staff (his word, DEC-5). Treble clef, NO transposition in the registry: the Ricotti library maps every one of the four at its WRITTEN pitch (crotales C4–C6 · glockenspiel G3–C6 · xylophone F3–B6 · marimba C2–C7 as keyed), so the key the score sends IS the note to write — the crotales and the glockenspiel SOUND two octaves higher, the xylophone one, the marimba as written. Which instrument a note is for, and two at once (\"opposite beaming or something like that\"), is a DEVICE SHEET when the music reaches it (6.7). The marimba below middle C wants a bass clef; he is unlikely to use it. The part id is still \"vibraphone\" and the recipe key \"bowed_vibraphone\" — piece #6's, kept (docs/NAMING.md § 1).",
+   "noLabel": true,
+   "_labelNote": "The percussionist's lane carries ONE label, the percussion part's \"Perc\" (the lead of the overlaid group); `noLabel` keeps this part's \"Mal\" out of the gutter. Its `short` stays the score's (tools/notate_section.js checks it against tracks[3])."
   },
   {
    "part": 4,
@@ -113,13 +78,13 @@
    ]
   },
   {
-   "kind": "brace",
+   "kind": "lane",
    "parts": [
     2,
     3
    ],
    "joined": true,
-   "gapSs": 6
+   "overlay": true
   },
   {
    "kind": "bracket",
@@ -129,5 +94,5 @@
    ]
   }
  ],
- "_groupsNote": "Score order top to bottom: the two winds in a bracket · the ONE percussionist's two parts (Percussion, Mallets) in a BRACE, joined into one lane of the frame, 6 ss apart (piece #6's D12 and its 2a) · the two strings in a bracket. NO STAFF FOR THE ELECTRONICS (journal D8): every electronic sound is drawn on the staff of the player it comes from."
+ "_groupsNote": "Score order top to bottom: the two winds in a bracket · the ONE percussionist's two parts (Percussion, Mallets) JOINED AND OVERLAID — one lane of the frame, one staff position, the mallets' treble staff, the unpitched part on its hidden line at the same middle (PLAN 2.1, RUNNING_LOG §302; kind \"lane\" draws no bracket and no brace) · the two strings in a bracket. FIVE LANES, all of weight 1. NO STAFF FOR THE ELECTRONICS (journal D8): every electronic sound is drawn on the lane of the player it comes from."
 }

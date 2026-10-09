@@ -131,18 +131,21 @@ next, where we are; reorganizations only on his approval.
 ### THE NOTATION OPENED — 2026-10-09 (Fable; RUNNING_LOG §299 … §301; DEC-87 · DEC-88; PLAN.md § 2)
 
 - **The title: *Approaching*, tentative** (DEC-87). The strikes (step 17) stand where checkpoint #1 left them — his ear on `strike-rig` when he is at the desk.
-- **DECIDED, RECORDED, NOT BUILT — PLAN.md 2.1 THE LOOK:** (a) the percussion ONE lane, the eight-line staff out, six equal lanes · (b) the lanes
-  white with a thin grey line between them (his "a") · (c) the staff a 0.25 s snippet at the start, then back for the beating section's whole
-  pages (416 s → the end), the clef only with the staff, no other range (his "all defaults"). The build: Opus, after a clear, one chunk; then
-  his eye on the first page.
-- **The first page for his eye:** `notation/ir/approaching-opening` (0 … 37 s, 30 notes) in the notation app on his 5500 — the look as the
-  registry stands TODAY (the old staff everywhere); the electronics bricks not drawn (no rows).
+- **BUILT 2026-10-09 (Opus, RUNNING_LOG §302), DONE BUT FOR HIS EYE — PLAN.md 2.1 THE LOOK:** (a) the percussionist ONE lane, the eight-line
+  staff out — FIVE equal lanes (BFl · BCl · Perc · Va · Vc; "six" was the AI's slip) · (b) the lanes white with a thin grey line between them
+  (his "a") · (c) the staff a 0.25 s snippet at the start, then back for the beating section's whole pages (416 s → the end), the clef only
+  with the staff, no other range (his "all defaults"). Seen in the running app by the AI; `check_rules` 31 of 32 (the old red).
+- **The two pages for his eye** (the notation app on his 5500, the page picker): **Approaching — the opening (0 … 37 s)** ·
+  **Approaching — the beating section (423 … 460 s)**. The notes on them are the stack's DEFAULT signs (GC strike units, heads with a brick,
+  white heads with a duration line) — not this piece's design; the electronics bricks are not drawn (no rows).
+- **His levers, a number each** (PLAN 2.1's AS BUILT line): the line's thickness and colour · the snippet's length · the staff's range.
 - **HELD at his word, in his order:** 2.2 the colour palette · 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the
   sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
 
-The build of PLAN.md 2.1 on Opus after a clear, at his word; then his eye on the re-extracted first page. Do not present the parked list.
+His eye on the two pages (2.1 as built); then, in his order and at his word, 2.2 the colour palette · 2.3 the language · 2.4 the mic opening —
+each a talk, then a device sheet. Do not present the parked list.
 
 ### CHECKPOINT #1 OF SESSION 3 *(2026-10-09, Fable — mid-session checkpoint; written for a session that has never seen this chat)*
 
@@ -216,8 +219,8 @@ workflow below, step by step, on his word.
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **THE BUILD OF PLAN.md 2.1 THE LOOK — (a) one percussion lane · (b) the lane line · (c) the staff shown only where it plays, all six parts, the clef with it · (d) the two pages re-extracted and looked at** | **Opus** | **yes — a checkpoint, then clear** |
-| — | his eye on the first page as built; then 2.2 the colour palette · 2.3 the language · 2.4 the mic opening, in his order (each a talk, a device sheet) | Fable | — |
+| ☑ | PLAN.md 2.1 THE LOOK — built 2026-10-09 (§302): five lanes · the lane line · the staff only where it plays · the clef with it | Opus | — |
+| **►** | **HIS EYE on the two pages (the opening · the beating section); a number moved if he says so; then 2.2 the colour palette · 2.3 the language · 2.4 the mic opening, in his order (each a talk, then a device sheet)** | **Fable** (the talks, the sheets) · Opus (a number, a build from a sheet) | a clear before the first talk is cheap: the docs carry everything |
 | — | his ear on `strike-rig` (the engine restarted · F5 · from 0) — at the desk, his time; then 17.2 (journal §2's checkpoint #1 block) | Fable (the talk) · Opus (a fault, a knob) | — |
 | — | his ear on `piece-3BodyRedo` (the three body's new take, 39 → 125 s; the whole piece) — at his word | Fable | — |
 | — | THE NOTATION — container 6's three calls (his), then a DEVICE SHEET per sign (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET; `docs/PERFORMANCE_NOTES.md`, a row per glyph): the mic opening · the return · the petals · the drones' duration line · the sine's window · the three body's containers | Fable (the design) · Opus (the builds) | clear between sheets |

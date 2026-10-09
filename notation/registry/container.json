@@ -101,7 +101,7 @@
    "pitchPicture": { "edgeCents": "@pitchPicture.edgeCents", "signs": "@pitchPicture.signs" },
    "accGapColumn": "@objects.accidental.besideUnit",
    "accNaturalInColumn": "@objects.accidental.naturalInColumn",
-   "staffShown": "@staffLines.percussion",
+   "staffShown": "@staffLines.ensemble",
    "partialForm": "@objects.number.partialForm",
    "destPartial": "@objects.number.destPartial",
    "centsZero": "@objects.number.centsZero",
@@ -773,6 +773,7 @@
    "muted": "@colours.muted.value",
    "brick": "@colours.brick.value",
    "paper": "@colours.paper.value",
+   "laneLine": { "colour": "@objects.laneLine.colour", "thickSs": "@objects.laneLine.thickSs", "outer": "@objects.laneLine.outer" },
    "fontFamily": "@faces.text.family",
    "partLabel": {
     "xPx": 4,

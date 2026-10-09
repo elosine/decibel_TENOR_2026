@@ -117,13 +117,15 @@
     const n = list ? list.length : ((st.lines > 0) ? st.lines : 5);
     const gap = st.gapSs > 0 ? st.gapSs : 1;
     const offsets = []; for (let i = 0; i < n; i++) offsets.push((n - 1) / 2 * gap - i * gap);
-    const labels = list ? list.map(l => l.short || '') : null;
+    const labels = (list && !st.hidden) ? list.map(l => l.short || '') : null;   // [decibel 2.1] a HIDDEN staff names no line in the gutter — its part's short name stands
     const offsetOf = technique => {
       if (!list) return 0;
-      const i = list.findIndex(l => l.match && typeof technique === 'string' && technique.startsWith(l.match));
+      const i = list.findIndex(l => l.match === '*' || (l.match && typeof technique === 'string' && technique.startsWith(l.match)));   // [decibel 2.1] `*` = every technique (a one-line staff)
       return i < 0 ? null : offsets[i];
     };
-    return { n, gapSs: gap, offsets, labels, noClef: !!st.noClef, lined: list !== null || n !== 5 || gap !== 1, offsetOf };
+    // [decibel PLAN 2.1 — RUNNING_LOG §302] `hidden`: the staff's lines are NEVER drawn (the unpitched percussion has no staff, DEC-88) — the part
+    // keeps a lined staff's placement rules, on one line at the lane's middle, until its graphic signs are designed
+    return { n, gapSs: gap, offsets, labels, noClef: !!st.noClef, hidden: !!st.hidden, lined: list !== null || n !== 5 || gap !== 1, offsetOf };
   }
   // a diatonic stand-in whose staffPos on the given clef IS the offset, alter 0 — so the unit, the column and the chord
   // code run unchanged and no accidental is drawn; a half-step offset rounds to the nearest line
@@ -822,7 +824,24 @@
       // vibraphone's top row rises into the space (the marks pass, `liftWhen`). The rule's spans are absolute seconds; an authored
       // `staff: off` overlay still adds to them. Returns null for a part the rule does not name.
       const staffShownOf = p => {
-        const SH = o.staffShown; if (!SH || SH.part !== p) return null;
+        const SH = o.staffShown; if (!SH) return null;
+        // [decibel PLAN 2.1 — RUNNING_LOG §300 · §301 · §302; rules.json staffLines.ensemble] THE RULE FOR THE WHOLE ENSEMBLE (his word, DEC-88:
+        // pitches on a staff only where they matter — "show a little bit of staff at the beginning and bring back the staff during the beating
+        // section"): `parts` 'all' or a list · the opening snippet as piece #6's · `ranges` [{ fromS, to: seconds | 'end' }], whole pages when
+        // `wholePages`. A row WITHOUT `parts` is piece #6's one-part rule, below, unchanged.
+        if (SH.parts !== undefined) {
+          if (SH.parts !== 'all' && !(Array.isArray(SH.parts) && SH.parts.includes(p))) return null;
+          const P = SH.pageS || 12, LD = SH.pageLeadInS || 0, pageStart = t => Math.floor((t + LD) / P) * P - LD, pageEnd = t => Math.ceil((t + LD) / P) * P - LD;
+          const s0 = SH.openingFrom === 'pageStart' ? -LD : 0;
+          const spans = [[s0, s0 + (SH.openingS || 0)]];
+          for (const r of SH.ranges || []) {
+            const from = SH.wholePages ? pageStart(+r.fromS) : +r.fromS;
+            const toRaw = r.to === 'end' ? Infinity : +r.to, to = (SH.wholePages && isFinite(toRaw)) ? pageEnd(toRaw) : toRaw;
+            if (to > from) spans.push([from, to]);
+          }
+          return spans.filter(s => s[1] > s[0]);
+        }
+        if (SH.part !== p) return null;
         const ids = new Set((ir.chunks || []).filter(c => c.part === p).flatMap(c => c.events || []));
         const evs = (ir.events || []).filter(e => ids.has(e.id));
         const last = evs.length ? Math.max(...evs.map(e => e.onset + (e.duration || 0))) : null;
@@ -836,7 +855,7 @@
         const spans = [[s0, s0 + (SH.openingS || 0)]]; if (to != null && to > from) spans.push([from, to]);
         return spans.filter(s => s[1] > s[0]);
       };
-      const shownHere = staffShownOf(part);
+      const shownHere = (spec.staffInfo && spec.staffInfo.hidden) ? [] : staffShownOf(part);   // [decibel 2.1] a hidden staff: shown nowhere
       if (shownHere) {
         let c0 = w0;
         for (const [a, b] of shownHere.slice().sort((p, q) => p[0] - q[0])) { if (a > c0) offs.push([c0, Math.min(a, w1)]); c0 = Math.max(c0, b); }
@@ -851,7 +870,9 @@
         cur = Math.max(cur, b);
       }
       if (cur < w1) items.push({ k: 'staff', t0: cur, t1: w1 });
-      if (!(spec.staffInfo && spec.staffInfo.noClef)) items.push({ k: 'clef', t: w0 });   // [2a] a lined staff may carry none
+      // [decibel PLAN 2.1 — §301, his "all defaults"] THE CLEF ONLY WHERE THE STAFF IS (rules.json staffLines.ensemble.clefWithStaff): the clef of a
+      // part the rule governs is marked `withStaff` — the renderer draws it only on a page whose left edge a staff segment covers
+      if (!(spec.staffInfo && spec.staffInfo.noClef)) items.push(Object.assign({ k: 'clef', t: w0 }, (shownHere && o.staffShown && o.staffShown.clefWithStaff) ? { withStaff: true } : {}));   // [2a] a lined staff may carry none
       for (const g of glissCurves) if (g.part === part && first)
         items.push(Object.assign({ k: 'glisscurve', t0: g.span[0], t1: g.span[1], samples: g.samples }, g.scale ? { scale: g.scale } : {}));
       for (const cc of crescCurves) if (cc.part === part && first)
