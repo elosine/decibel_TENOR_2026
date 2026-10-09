@@ -9,7 +9,7 @@
 ## §1 Quick-Start
 
 - **The piece:** for the Decibel ensemble — bass flute · bass clarinet · viola · cello · percussion · electronics, NOT
-  FINAL (D2) · written for the TENOR conference's call (the AI has not read it) · the title: see the names below
+  FINAL (D2) · written for the TENOR conference's call (the AI has not read it) · **the title: _Approaching_, TENTATIVE** (2026-10-09, DEC-87); the file names below unchanged
 - **Lineage:** composition #7. Follows #6 `septet_LGMF_2026` (_Recombination_).
 - **The profile** (the protocol's 2.1, v1): copy-forward from piece #6 · both layers · the animated scrolling score (D1)
 - **The stack:** HERE and this piece's (container 3 done, 2026-10-04): piece #6's engine copied byte-exact (`c90b768`), proven
@@ -212,7 +212,7 @@ workflow below, step by step, on his word.
 | — | THE PAPER — his; the record is the two logs | — | — |
 | — | The parked list — only at his ask, the bare list first | Fable (the talk) · Opus (a knob) | — |
 
-**Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title ·
+**Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title: *Approaching*, TENTATIVE since 2026-10-09 (DEC-87; the cover takes it at 8.6) ·
 Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
 DEC-4) · Q5 — the three notation calls of container 6 · **Q8 — a wind's bend in the beating section:** the recipe gives a wind one
 semitone (the bass clarinet at F2 tops at 5 beats a second) and the simulation bends UP where a wind lips DOWN — for the notation

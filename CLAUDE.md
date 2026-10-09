@@ -1,6 +1,6 @@
 # decibel TENOR 2026 — the Decibel piece
 
-**Title: none yet** (his word 2026-10-04; the protocol's 2.3 — it may come later).
+**Title: _Approaching_ — TENTATIVE** (his word 2026-10-09, DEC-87; the file names stay `decibel`; the cover's words take it at container 8). *(None until then — his word 2026-10-04; the protocol's 2.3.)*
 
 Composition #7 in the custom-composition-system lineage
 (#1 `string_quartet_no1-composer` → #2 `composition_for_two_pianos_and_two_percussion`

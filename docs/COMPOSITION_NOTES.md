@@ -1005,3 +1005,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"I'll listen and give feedback when I get back to desktop, just take note on workflow to finishing section that I can call on when I am ready to resume"*
 
 *(The AI's reading, marked as such: nothing in hand until his ear; the workflow — his ear → 17.2 the catalogue decided → 17.3 the come-backs simulated → 17.4 into the piece → 17.5 the concert side later — is journal §2's checkpoint block. RUNNING_LOG §298.)*
+
+### DEC-87 · 2026-10-09 — THE TENTATIVE TITLE: *Approaching*; the notation opened
+
+*(His words, verbatim — Fable, at a postclear:)* *"the tentative title will be Approaching. I want to move on to building the notation / presentation score. can you give me an update on where things are with the port of those components?"*
+
+*(The AI's reading, marked as such: the title is the three body problem's second state — his own word of DEC-36c (*"far apart, approaching, close pass …"*), the one state the AI's first dictionary of §184 and his list share unchanged. TENTATIVE — the protocol's 2.3 names stay (`decibel` · `piece-…`); the cover's words (`print/cover/cover.json`, still piece #6's *Recombination*) take it at container 8's 8.6. The notation pass begins at his word; the state of containers 6 and 8 given in RUNNING_LOG §299.)*
