@@ -1118,3 +1118,13 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 - *ASKED: whether the badge and the mic each get their own height, or the badge stands to the LEFT of its mic in one row.*
 - *ASKED OF THE AI: keep these notes, in a more organised version → `docs/NOTATION_SCHEME.md`.*
 - *Unclear, flagged: "opening no badge" — read as no badge ON the openings; whether the one announcing badge at the section's start stays (DEC-100) is put to him. RUNNING_LOG §323.)*
+
+### DEC-103 · 2026-10-09 — the mics at the TOP, for now; "let me see it" — the layout of section 1 up to the three body problem; the conductor's electronics after; the multiphonics' openings get a pie dial for their duration
+
+*(His words, verbatim — Opus:)* *"lets do mics at top for now let me see it; layout s1 up to 3body pls, we'll discuss electronics for conductor after; note for multiphonics, have pie dial for duration of opening"*
+
+*(The AI's reading, marked as such:*
+- *DECIDED, FOR NOW: the mic opening sits at the TOP of its lane. (The AI had recommended the middle, RUNNING_LOG §323; his choice stands, and "for now" keeps it open to his eye.)*
+- *ASKED: to SEE the layout of section 1, the opening, up to the three body problem → drawn on the notation's own frame, http://localhost:5500/signs/layout.html.*
+- *THE ORDER: the conductor's hint of the electronics is discussed AFTER the layout.*
+- *A NOTE FOR THE DRONES: each multiphonic's mic opening carries a PIE DIAL showing the duration of the opening. The stack has one already — the breath's clock of piece #6 (`motivePie` with `countdown`, after piece #2's `_drawMotivePie`): a pie at the lane's top, at the cursor, the remaining time filled. Not drawn now; at the drones' turn. RUNNING_LOG §324.)*

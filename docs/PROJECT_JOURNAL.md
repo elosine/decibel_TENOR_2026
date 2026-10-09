@@ -202,6 +202,7 @@ next, where we are; reorganizations only on his approval.
   their badge · THE OPENING HAS NO BADGE ON ITS OPENINGS AND NO ARCS · **THE MIC AT ONE HEIGHT, ALWAYS** · the three body's badge large,
   the short attacks' small · the wedge changes colour and thickness per state (a sign per state: to discuss). ► IN HAND: THE MIC'S
   HEIGHT — top, middle or bottom (the AI recommends the middle, the badge to its left) — then the rest SECTION BY SECTION, his order.
+- **(§324, DEC-103) THE MIC AT THE TOP, FOR NOW — SECTION 1's LAYOUT IS DRAWN:** http://localhost:5500/signs/layout.html (`bank/signs/layout.json` → `node tools/signs/build_layout.js`: the notation's own page with the section's notes dropped, the mic openings from the save and the announcing badge added — a working drawing, not yet the engine's). The conductor's hint AFTER the layout; a PIE DIAL on each of the drones' openings (the stack has one: `motivePie`). ► IN HAND NOW: his eye on that page — the mic's row · the announcing badge beside each lane's first mic (a) or in a column (b); then the three body problem.
 - **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
