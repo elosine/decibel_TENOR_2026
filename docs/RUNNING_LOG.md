@@ -6564,3 +6564,30 @@ Five SOL colours and the format's blue are used; SOL_blue · SOL_purple · SOL_b
 **Not decided, not asked yet:** whether the notation's brick carries the sample's NAME after the ◉ (the composer's does; he listed the circles, not the name — drawn without) · its height and place in the lane beside the badges (the composer's fifth-of-a-lane at the top is drawn) · the yellow's name once chosen. The choice becomes an `objects` row of `notation/registry/rules.json` by a device sheet, and the extractor's first electronics kind.
 
 **Sources:** en.wikipedia.org/wiki/Lemon_(color) · color.fandom.com/wiki/Electric_Lime · colorxs.com (Laser Lemon · #CFFF00) · visily.ai/blog/yellow-color · madegooddesigns.com/stabilo-brand-guidelines.
+
+## §319. THE MIC OPENING'S COLOUR CHOSEN — #FFFF00, the composer's recipe · THE LANE'S VERTICAL MAP OPENED (PLAN 2.6): the lane in numbers, his rules, and what else needs room (2026-10-09, Opus)
+
+**What prompted it (DEC-98, verbatim in COMPOSITION_NOTES):** *"a as the composer score; lets map out the vert real estate; most objects will have padding top and bottom so standard gap between dividing line and top of highest object and same with bottom; badges at top, we'll need to decide size and horiz placement. we need vert lane for mics, trill curves take up whole lane, gc whole lane, lets do a line wedge for 3body, but we'll discuss, needs vert lane, pitches with probably duration lines for beating sines, so those will already have vert placement, anything else?"*
+
+**Decided (his):** **THE MIC OPENING = plain yellow #FFFF00, exactly as the composer score** — the fill at 35 %, the outline the same yellow 1.5 px at 70 %, corners 3 px, the sign ◉ dark grey (`bank/signs/mic_opening.json` `chosen`; the signs page shows it first). The faintest of the three recipes on white: he took the composer's look whole.
+
+**THE LANE IN NUMBERS** (read from `notation/registry/container.json` · `rules.json`; the 1080 frame, five lanes): the frame's pads 8 px top and bottom, 4 px between lanes with the grey line in the middle of it · **a lane 209.6 px = 26.5 staff spaces** (1 ss = 7.9 px) · **the staff 31.6 px, centred** — its top line 89 px under the lane's top, as much under its bottom line · the rows the stack already has, counted from the staff's middle line: tempo + 4.6 ss · tag + 3.5 · tick + 3 · dynamic − 4.6 (36 px under the middle) · sign − 5.95 · **the GC is "lane" geometry: its apex at the lane's top, its impact at the lane's bottom** · a curve is a 2 px line over a 30 % fill · the composer's mic brick a fifth of the lane = 41.9 px, at the top · a badge 36 px.
+
+**HIS RULES, as read back:** (1) a standard gap between the dividing line and the highest object, the same at the bottom · (2) the badges at the top — size and horizontal place open · (3) a band for the mics · (4) the trill's curve the whole lane · (5) the GC the whole lane · (6) a LINE WEDGE for the three body problem, a band, to be talked through · (7) the beating section's pitches and duration lines on the staff — placed already.
+
+**A first clash, visible in the numbers:** the badge (36 px) and the mic brick (42 px) both want the top of the lane. One of them moves, or they sit side by side, or the brick thins.
+
+**"ANYTHING ELSE?" — the AI's list, from the piece's own save** (`piece-3BodyRedo`: 79 mic openings · 85 returns · 35 sine bricks · 27 performer bricks · 45 three-body containers · 34 trills · 34 petal hits):
+1. **THE RETURNS** — what the electronics play back: the plain ones, the rolled and chained ones, the processed ones, the drones (10 … 40 s each, up to five at once), the live petals' ring. 85 bricks, the largest thing with no place. Whether the players SEE them is the open question Q3 of 2026-10-04 (DEC-4: "in the parts, or only in the conductor's … I'm not sure"). In the composer score they sit at the lane's bottom.
+2. **DYNAMICS** — a row for marks and hairpins. The stack's is 36 px under the staff's middle; with no staff it needs a home of its own.
+3. **WORDS** — a technique or an instruction ("multiphonics, freely" in the drones; "re-bow at will").
+4. **DURATION LINES off the staff** — the drone recording's 6 … 9 s line (PERFORMANCE_NOTES row 15); the accented long tone's.
+5. **THE STRIKE WINDOW** (section 5) — the pooled microphones open over a strike; it can share the mics' band.
+6. **THE COMPUTER PLAYERS** of the three body problem (e1 … e3, 27 bricks) — shown to the players, or not.
+7. **THE BEATING PAIR'S EXTRAS** — the sine's own mark, the beat rate's numbers, the bend's curve: around the staff, not on it.
+8. **THE STAFF ITSELF** when it shows (the snippet; the beating pages) — the fixed middle, 31.6 px, with room for a ledger line or two.
+9. *(not the lane's:)* the page's markers along the frame's top; the cursor, full height; the animated meter and pie, which ride on a curve.
+
+**The question put to him — the one that sizes the map:** do the players see the electronics' returns in their lanes?
+
+**PLAN.md 2.6 opened** — THE LANE'S VERTICAL MAP: phase 1, state and restate; no layout proposed yet. Next: the lane drawn with its bands, on the signs page, from his answer.

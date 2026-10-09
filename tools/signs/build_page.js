@@ -44,6 +44,10 @@ function strip(colour) {
 // the composer's own brick, for reference: its teal, its recipe
 const ref = (() => { const rc = M.recipes[0], c = M.composer.colour.slice(0, 7); return '<svg width="380" height="70" viewBox="0 0 380 70"><rect width="380" height="70" fill="#fff"/><rect x="0" y="8" width="380" height="1" fill="' + LINE + '"/>' + brick(14, 11, SHORT, c, rc) + brick(14 + SHORT + 26, 11, 232, c, rc) + '</svg>'; })();
 
+// CHOSEN (bank/signs/mic_opening.json `chosen`): the one strip, first on the page
+const CH = M.chosen && { y: M.yellows.find(y => y.id === M.chosen.yellow), rc: M.recipes.find(x => x.id === M.chosen.recipe) };
+const chosenHtml = CH && CH.y && CH.rc ? (() => { const rc = CH.rc, c = CH.y.value; let g = '<svg width="420" height="152" viewBox="0 0 420 152"><rect width="420" height="152" fill="#fff"/><rect x="0" y="' + (TOP - 1) + '" width="420" height="1" fill="' + LINE + '"/>' + brick(14, TOP + 2, SHORT, c, rc) + brick(14 + SHORT + 26, TOP + 2, 280, c, rc) + (badge ? '<g transform="translate(' + r(14 + LEAD) + ',' + r(TOP + 2 + BH + 20) + ')">' + badge + '</g>' : '') + '</svg>';
+  return '<h2>The mic opening — chosen</h2><p><b>' + esc(CH.y.name) + ', ' + esc(CH.y.value) + ' — ' + esc(rc.name) + '.</b> ' + esc(M.chosen.reads) + '</p>' + g; })() : '';
 const facts = ['shape', 'fill', 'outline', 'height', 'place', 'sign', 'length'].map(k => '<li><b>' + k + ':</b> ' + esc(M.composer[k]) + '</li>').join('');
 const blocks = M.yellows.map((y, i) => '<section class="y"><div class="yh"><span class="letter">' + String.fromCharCode(97 + i) + '</span><span class="sw" style="background:' + y.value + '"></span><span class="yn">' + esc(y.name) + '</span><span class="hx">' + esc(y.value) + '</span></div>' +
   '<div class="from">' + esc(y.from) + '</div>' + strip(y.value) + '</section>').join('');
@@ -65,11 +69,13 @@ const html = `<!doctype html>
 <h1>The signs — working page</h1>
 <p>The mic opening first. Everything is drawn at the score's own scale: one pixel here is one pixel of the score.</p>
 
+${chosenHtml}
+
 <h2>The mic opening — as the composer score draws it</h2>
 <div class="refrow"><div>${ref}<div class="note">its colour there, ${esc(M.composer.colour)} — a short opening and the start of a long one</div></div>
 <ul>${facts}</ul></div>
 
-<h2>The mic opening — in highlighter yellow</h2>
+<h2>The mic opening — the yellows tried</h2>
 <p>The same elements: the rounded rectangle, the two circles, the outline, the see-through fill. Five yellows, each drawn three ways.</p>
 <ol>${M.recipes.map(rc => '<li><b>' + esc(rc.name) + '.</b> ' + esc(rc.note) + '</li>').join('')}</ol>
 <p class="note">In each strip: the grey line is the top of the lane. The short brick is an impulse's opening, half a second, with the short attacks' badge under it where its note falls. The long one is the start of a drone's opening.</p>

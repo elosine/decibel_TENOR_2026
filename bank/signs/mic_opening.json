@@ -11,17 +11,79 @@
   "colour": "#00897B (a teal)",
   "length": "an impulse's opening is 500 ms, from 100 ms before its note; a drone's is 6 … 9 s"
  },
- "frame": { "laneHeightPx": 209.6, "pxPerSecond": 154, "_note": "the notation's video frame: 1080 px, five lanes, 12 s a page across 1848 px — so one fifth of a lane is 42 px, and 500 ms is 77 px" },
+ "frame": {
+  "laneHeightPx": 209.6,
+  "pxPerSecond": 154,
+  "_note": "the notation's video frame: 1080 px, five lanes, 12 s a page across 1848 px — so one fifth of a lane is 42 px, and 500 ms is 77 px"
+ },
  "yellows": [
-  { "id": "screenYellow", "value": "#FFFF00", "name": "plain screen yellow", "from": "the convention: what most design references mean by highlighter yellow — red and green full, no blue" },
-  { "id": "laserLemon", "value": "#FFFF66", "name": "Laser Lemon", "from": "a Crayola fluorescent crayon colour (Wikipedia's list) — a paler, softer highlighter" },
-  { "id": "neonLemon", "value": "#E9FF36", "name": "a neon lemon", "from": "listed among the lemon shades on Wikipedia — a yellow leaning a little to green, as a real highlighter's ink does" },
-  { "id": "electricLime", "value": "#CCFF00", "name": "fluorescent yellow · Electric Lime", "from": "the best-sourced value for fluorescent yellow (Crayola's fluorescent Electric Lime). Close to his own limeGreen #99FF00, which the score already uses for a curve" },
-  { "id": "bossYellow", "value": "#E6D53A", "name": "a Stabilo Boss yellow, as printed", "from": "Stabilo publishes no hex; this is one design site's reading of the pen's yellow — the ink as it looks once dry on paper, not glowing" }
+  {
+   "id": "screenYellow",
+   "value": "#FFFF00",
+   "name": "plain screen yellow",
+   "from": "the convention: what most design references mean by highlighter yellow — red and green full, no blue"
+  },
+  {
+   "id": "laserLemon",
+   "value": "#FFFF66",
+   "name": "Laser Lemon",
+   "from": "a Crayola fluorescent crayon colour (Wikipedia's list) — a paler, softer highlighter"
+  },
+  {
+   "id": "neonLemon",
+   "value": "#E9FF36",
+   "name": "a neon lemon",
+   "from": "listed among the lemon shades on Wikipedia — a yellow leaning a little to green, as a real highlighter's ink does"
+  },
+  {
+   "id": "electricLime",
+   "value": "#CCFF00",
+   "name": "fluorescent yellow · Electric Lime",
+   "from": "the best-sourced value for fluorescent yellow (Crayola's fluorescent Electric Lime). Close to his own limeGreen #99FF00, which the score already uses for a curve"
+  },
+  {
+   "id": "bossYellow",
+   "value": "#E6D53A",
+   "name": "a Stabilo Boss yellow, as printed",
+   "from": "Stabilo publishes no hex; this is one design site's reading of the pen's yellow — the ink as it looks once dry on paper, not glowing"
+  }
  ],
  "recipes": [
-  { "id": "asComposer", "name": "exactly as the composer score", "fillOpacity": 0.35, "strokeOpacity": 0.7, "strokeWidth": 1.5, "strokeShade": 1, "sign": "#333333", "note": "the fill at 35 %, the outline the same yellow at 70 %, the sign dark grey — the composer's numbers, only the colour changed" },
-  { "id": "denser", "name": "a denser fill", "fillOpacity": 0.6, "strokeOpacity": 0.95, "strokeWidth": 1.5, "strokeShade": 1, "sign": "#333333", "note": "yellow is faint on white: the fill at 60 %, the outline nearly solid" },
-  { "id": "darkOutline", "name": "the outline a shade darker", "fillOpacity": 0.45, "strokeOpacity": 1, "strokeWidth": 1.5, "strokeShade": 0.7, "sign": "shade", "note": "the fill at 45 %; the outline and the sign in the same yellow darkened by three tenths, so the brick has an edge on white paper" }
- ]
+  {
+   "id": "asComposer",
+   "name": "exactly as the composer score",
+   "fillOpacity": 0.35,
+   "strokeOpacity": 0.7,
+   "strokeWidth": 1.5,
+   "strokeShade": 1,
+   "sign": "#333333",
+   "note": "the fill at 35 %, the outline the same yellow at 70 %, the sign dark grey — the composer's numbers, only the colour changed"
+  },
+  {
+   "id": "denser",
+   "name": "a denser fill",
+   "fillOpacity": 0.6,
+   "strokeOpacity": 0.95,
+   "strokeWidth": 1.5,
+   "strokeShade": 1,
+   "sign": "#333333",
+   "note": "yellow is faint on white: the fill at 60 %, the outline nearly solid"
+  },
+  {
+   "id": "darkOutline",
+   "name": "the outline a shade darker",
+   "fillOpacity": 0.45,
+   "strokeOpacity": 1,
+   "strokeWidth": 1.5,
+   "strokeShade": 0.7,
+   "sign": "shade",
+   "note": "the fill at 45 %; the outline and the sign in the same yellow darkened by three tenths, so the brick has an edge on white paper"
+  }
+ ],
+ "chosen": {
+  "yellow": "screenYellow",
+  "recipe": "asComposer",
+  "when": "2026-10-09 — his \"a as the composer score\" (DEC-98)",
+  "reads": "plain yellow #FFFF00 · the fill at 35 % · the outline the same yellow, 1.5 px at 70 % · corners 3 px · the sign ◉ dark grey — the composer score's brick, the colour alone changed"
+ }
 }

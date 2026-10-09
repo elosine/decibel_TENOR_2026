@@ -175,7 +175,14 @@ next, where we are; reorganizations only on his approval.
 - **2.4 THE MIC OPENING — OPEN (DEC-97; RUNNING_LOG §318):** to be drawn AS THE COMPOSER SCORE DRAWS IT (a rounded rectangle at the
   lane's top, a see-through fill, an outline in the same colour, the sign ◉) in a HIGHLIGHTER YELLOW. Five yellows × three recipes at
   the notation's own scale: **http://localhost:5500/signs/index.html** (`bank/signs/mic_opening.json` → `node tools/signs/build_page.js`).
-  Open: his yellow and recipe · the sample's name after the ◉ or not · then a device sheet (the extractor's first electronics kind).
+  **CHOSEN (§319, DEC-98): plain yellow #FFFF00, exactly as the composer score.** Open: the sample's name after the ◉ or not · then a
+  device sheet (the extractor's first electronics kind).
+- **2.6 THE LANE'S VERTICAL MAP — OPEN, phase 1 (DEC-98; RUNNING_LOG §319; PLAN.md 2.6):** his rules — a standard gap under the
+  dividing line and above the next · badges at the top · a band for the mics · the trill's curve and the GC the whole lane · a LINE WEDGE
+  for the three body problem (to discuss) · the beating pitches on the staff. The AI's list of what else needs room: the RETURNS (do the
+  players see them? Q3) · dynamics · words · duration lines off the staff · the strike window · the computer players · the beating pair's
+  extras · the staff. A lane is 209.6 px; the badge (36) and the mic brick (42) both want its top. ► NEXT: his answer on the returns,
+  then the lane DRAWN with its bands on the signs page.
 - **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

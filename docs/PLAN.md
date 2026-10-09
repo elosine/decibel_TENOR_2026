@@ -732,7 +732,23 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Where it stands:** the composer score's brick READ from its code — a rectangle, corners 3 px, its colour at 35 %, an outline in the same colour 1.5 px at 70 %, a fifth of the lane tall at the lane's top, the sign ◉ (a dot in a ring: "the 2 circles"), teal #00897B · five highlighter yellows found (#FFFF00 · #FFFF66 Laser Lemon · #E9FF36 · #CCFF00 fluorescent yellow · #E6D53A a Stabilo Boss reading) · each drawn three ways (exactly as the composer score · a denser fill · the outline a shade darker) at the notation's own scale, the short attacks' badge under the short opening: **http://localhost:5500/signs/index.html** (`bank/signs/mic_opening.json` → `node tools/signs/build_page.js`).
 
-**Open, his:** the yellow and the recipe · the sample's NAME after the ◉, or the sign alone (drawn alone) · its height and place beside a badge. **Then, the AI's:** a DEVICE SHEET for the opening as the extractor's first electronics kind — its `objects` row in `rules.json`, its edge class, the zone `elecOpen` read into the IR.
+**SINCE §319 (DEC-98):** ☑ **THE MIC OPENING = plain yellow #FFFF00, EXACTLY AS THE COMPOSER SCORE** (fill 35 % · outline the same yellow 1.5 px at 70 % · corners 3 px · the sign ◉ dark grey; `bank/signs/mic_opening.json` `chosen`).
+
+**Open, his:** the sample's NAME after the ◉, or the sign alone (drawn alone) · its height and place in the lane — with the lane's vertical map, 2.6. **Then, the AI's:** a DEVICE SHEET for the opening as the extractor's first electronics kind — its `objects` row in `rules.json`, its edge class, the zone `elecOpen` read into the IR.
+
+### 2.6 THE LANE'S VERTICAL MAP — what sits where in a lane, top to bottom — `doing` 2026-10-09 (opened at his word, DEC-98; RUNNING_LOG §319) — PHASE 1, state and restate
+
+**Why:** the piece is graphic; a lane holds badges, bricks, curves, a conductor's arc, sometimes a staff. Each needs its height, and they must not fight.
+
+**The lane in numbers** (the 1080 frame, five lanes): 209.6 px = 26.5 staff spaces · the staff 31.6 px, centred (89 px above and below it) · 4 px and the grey line between lanes · the GC from the lane's top to its bottom · a badge 36 px · the composer's mic brick 41.9 px.
+
+**HIS RULES (DEC-98):** a STANDARD GAP between the dividing line and the highest object, the same at the bottom · BADGES AT THE TOP (size and horizontal place to decide) · a band for the MICS · the TRILL'S CURVE the whole lane · the GC the whole lane · a LINE WEDGE for the three body problem, a band, to be discussed · the beating section's pitches and duration lines on the staff — placed already.
+
+**WHAT ELSE NEEDS ROOM (the AI's list, §319):** the RETURNS (85 bricks — do the players see them? Q3, open since DEC-4) · DYNAMICS · WORDS · DURATION LINES off the staff · the STRIKE WINDOW (with the mics) · the COMPUTER PLAYERS (shown or not) · the beating pair's extras (the sine's mark, the beat rate, the bend) · the STAFF when it shows.
+
+**A first clash:** the badge and the mic brick both want the lane's top.
+
+**Next:** his answer on the returns → the lane DRAWN with its bands on the signs page → his eye → the bands as rows of `rules.json` (a device sheet each kind).
 
 ### 2.5 THE SINE — the beating pair — `parked` (the sheet drafted from the lineage, RUNNING_LOG §301; his word: "the sine tone notation will be different, but we'll figure out this when we get there")
 
