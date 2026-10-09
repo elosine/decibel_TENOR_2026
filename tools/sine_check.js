@@ -35,7 +35,8 @@ const players = Object.keys(cfg.lanes).filter((k) => cfg.lanes[k].who === 'playe
 check('every lane of the file is a lane of the score, and names a voice its instrument has',
     Object.keys(cfg.lanes).every((k) => laneOf(k) >= 0 && INSTRUMENTS[k] && INSTRUMENTS[k].techniques.some((t) => t.key === cfg.lanes[k].voice)),
     Object.keys(cfg.lanes).map((k) => TRACKS[laneOf(k)].short + ' ' + cfg.lanes[k].voice + ' (' + cfg.lanes[k].who + ')').join(' · '));
-check('four players bend; on the mallets the sine moves; the unpitched lane has no part', players.length === 4 && sines.join() === 'bowed_vibraphone' && !cfg.lanes.percussion, players.join(' · ') + ' | ' + sines.join(' · '));
+check('three players bend; on the mallets and the cello the sine moves (the cello since §262: its sampler bends 100 cents, 4 beats a second on a D2); the unpitched lane has no part',
+    players.length === 3 && sines.join() === 'bowed_vibraphone,cello' && !cfg.lanes.percussion, players.join(' · ') + ' | ' + sines.join(' · '));
 
 console.log('SINE_CHECK the draw:');
 const MID = { bass_flute: 64, bass_clarinet: 50, viola: 65, cello: 50, bowed_vibraphone: 67 };
@@ -68,6 +69,16 @@ check('the crotales: the SINE moves, two octaves and 17 cents above the key, its
     sBad.length ? sBad.slice(0, 5).join(', ') : '200 draws over the 25 keys: ' + JSON.stringify(sk) + ' · the farthest beating ' + bMin + ' … ' + bMax + ' /s');
 check('30 beats a second is fewer cents the higher the crotale', Math.abs(SineSim.centsFor(84.17, 30, 1) - 48.4) < 0.5 && Math.abs(SineSim.centsFor(108.17, 30, 1) - 12.3) < 0.3,
     'at the lowest key (sounding C6) ' + SineSim.centsFor(84.17, 30, 1).toFixed(1) + ' c · at the highest (sounding C8) ' + SineSim.centsFor(108.17, 30, 1).toFixed(1) + ' c');
+// the cello (§262): the sine moves, on the cello's own pitch, ABOVE it, its farthest beating in the row's band — at a D2 that is a tritone
+const ck = {}; let cBad = [], cMin = 99, cMax = 0, cCents = [];
+for (let s = 1; s <= 200; s++) {
+    const key = 36 + (s % 13), d = SineSim.draw(cfg, 'cello', key, 12, SineSim.mulberry32(s * 173), { limitCents: 100 });
+    ck[d.gliss.kind] = (ck[d.gliss.kind] || 0) + 1;
+    const far = Math.max(d.beatsFrom, d.beatsTo), band = cfg.lanes.cello.beatHz; cMin = Math.min(cMin, far); cMax = Math.max(cMax, far); if (key === 38) cCents.push(Math.abs(d.cents));
+    if (d.who !== 'sine' || d.bend || d.sineMidi !== key || far < band[0] - 0.6 || far > band[1] + 0.6 || d.cents < 0 || Math.min(d.gliss.from, d.gliss.to) < 0) cBad.push('#' + s + ' ' + d.kind + ' ' + far + ' ' + d.cents);
+}
+check('the cello: the SINE moves, on the cello\'s pitch, always ABOVE it (never through), its farthest beating inside ' + cfg.lanes.cello.beatHz.join(' … ') + ' a second', cBad.length === 0 && ['to', 'from', 'around'].every((x) => ck[x] > 0) && !ck.through,
+    cBad.length ? cBad.slice(0, 5).join(', ') : '200 draws over C2 … C3: ' + JSON.stringify(ck) + ' · the farthest beating ' + cMin + ' … ' + cMax + ' /s · on a D2 that is ' + Math.min(...cCents) + ' … ' + Math.max(...cCents) + ' cents');
 const one = (s) => JSON.stringify(SineSim.draw(cfg, 'viola', 65, 5, SineSim.mulberry32(s), { limitCents: 100 }));
 check('the same seed, the same draw; another seed, another', one(7) === one(7) && [1, 2, 3, 4, 5].some((s) => one(s) !== one(7)), JSON.parse(one(7)).say);
 
@@ -105,14 +116,17 @@ check('six notes of pitched lanes become six sines; the unpitched one is left al
     r.done.length + ' sines · left alone: ' + r.skipped.map((s) => s.note.id + ' (' + s.why + ')').join());
 const inRange = r.done.every((d) => { const I = INSTRUMENTS[TRACKS[d.note.layer].instKey], t = I.techniques.find((x) => x.key === d.note.technique); return d.note.technique === cfg.lanes[TRACKS[d.note.layer].instKey].voice && d.note.sonifyNote >= t.rangeLow && d.note.sonifyNote <= t.rangeHigh; });
 check('each note takes its lane\'s voice, its pitch inside that voice\'s range', inRange, r.done.map((d) => TRACKS[d.note.layer].short + ' ' + d.note.technique + ' ' + SineGo.pn(d.note.sonifyNote)).join(' · '));
-const pl = r.done.filter((d) => d.draw.who === 'player'), cr = r.done.filter((d) => d.draw.who === 'sine');
+const pl = r.done.filter((d) => d.draw.who === 'player'), cr = r.done.filter((d) => d.draw.who === 'sine' && TRACKS[d.note.layer].instKey === 'bowed_vibraphone'), vc = r.done.filter((d) => d.draw.who === 'sine' && TRACKS[d.note.layer].instKey === 'cello');
 check('a player\'s bend is ON the note, the note drawn with its struck sound kept — and its brick holds the pitch',
-    pl.length === 5 && pl.every((d) => Array.isArray(d.note.morphBend) && d.note.morphBend.length >= 2 && !('sonifyMode' in d.note) && d.note.velAbs === 88 && d.note.cc7Abs.lo === 127 && d.note.cc7Abs.hi === 127
+    pl.length === 4 && pl.every((d) => Array.isArray(d.note.morphBend) && d.note.morphBend.length >= 2 && !('sonifyMode' in d.note) && d.note.velAbs === 88 && d.note.cc7Abs.lo === 127 && d.note.cc7Abs.hi === 127
         && d.zone.elec.gliss.kind === 'none' && d.zone.elec.midi === d.note.sonifyNote && d.note.morphBend[d.note.morphBend.length - 1][0] <= d.note.endSeconds - d.note.startSeconds + 1e-9),
     pl.map((d) => TRACKS[d.note.layer].short + ' ' + d.draw.kind + ' ' + d.draw.cents + 'c').join(' · '));
 check('the crotale HOLDS — no bend, still as it was struck — and its brick glisses, two octaves and 17 cents above the key',
     cr.length === 1 && !('morphBend' in cr[0].note) && cr[0].note.sonifyMode === 'plain' && !('velAbs' in cr[0].note) && cr[0].zone.elec.gliss.kind !== 'none' && Math.abs(cr[0].zone.elec.midi - (78 + 24.17)) < 1e-6,
     cr.length ? 'key ' + SineGo.pn(cr[0].note.sonifyNote) + ' · the sine ' + SineGo.pn(cr[0].zone.elec.midi) + ' · ' + JSON.stringify(cr[0].zone.elec.gliss) + ' · ' + cr[0].draw.say : '(none)');
+check('the cello HOLDS too — no bend — and its brick glisses on the cello\'s own pitch, from above (§262)',
+    vc.length === 1 && !('morphBend' in vc[0].note) && vc[0].note.sonifyMode === 'plain' && vc[0].zone.elec.gliss.kind !== 'none' && vc[0].zone.elec.midi === vc[0].note.sonifyNote && Math.min(vc[0].zone.elec.gliss.from, vc[0].zone.elec.gliss.to) >= 0,
+    vc.length ? 'key ' + SineGo.pn(vc[0].note.sonifyNote) + ' · the sine ' + SineGo.pn(vc[0].zone.elec.midi) + ' · ' + JSON.stringify(vc[0].zone.elec.gliss) + ' · ' + vc[0].draw.say : '(none)');
 check('a brick lies over its note, on its lane, and each knows the other', r.done.every((d) => d.zone.layer === d.note.layer && d.zone.startTime === d.note.startSeconds && d.zone.endTime === d.note.endSeconds && d.zone.midiModel === 'elecSine'
     && d.zone.zoneFunction === 'elec' && d.zone.properties.sine.note === d.note.id && d.note.properties.sine.brick === d.zone.id && d.zone.elec.level.mark === 'mf'), bricks.map((z) => z.id + '←' + z.properties.sine.note).join(' · '));
 const o2 = fresh(); SineGo.applyChord(o2, chord, 'demo'); run(1, o2);
@@ -137,7 +151,7 @@ const ctx = vm.createContext({ window: win, LE: win.LE, document: doc, fetch: ()
 for (const f of ['le_objects.js', 'le_sine.js']) vm.runInContext(fs.readFileSync(path.join(ROOT, 'electronics', 'score', f), 'utf8'), ctx, { filename: f });
 const LEO = win.LEObjects;
 objs = fresh(); SineGo.applyChord(objs, chord, 'demo'); r = run(1, objs);
-const cz = r.done.find((d) => d.draw.who === 'sine').zone, pz = r.done.find((d) => d.draw.who === 'player').zone;
+const cz = r.done.find((d) => d.draw.who === 'sine' && TRACKS[d.note.layer].instKey === 'bowed_vibraphone').zone, pz = r.done.find((d) => d.draw.who === 'player').zone;
 const cm = LEO.sineMessage(cz, null, 0), pm = LEO.sineMessage(pz, null, 0);
 check('what the GO wrote is a brick the engine\'s module reads: the crotale\'s message has its pitch, its length and its gliss; a player\'s holds', LEO.is(cz) && cm.midi === 102.17 && cm.lengthMs === 8000 && /^0:-?\d/.test(cm.gliss || '') && cm.level === '4'
     && pm.midi === pz.elec.midi && !('gliss' in pm) && cz.color === LEO.MODELS.elecSine.color && cz.yOffset === LEO.MODELS.elecSine.yOffset, JSON.stringify(cm) + ' | ' + LEO.sineLabel(cz) + ' | ' + LEO.sineLabel(pz));

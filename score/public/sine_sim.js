@@ -14,6 +14,10 @@
 //   who 'sine'     the player holds; `gliss` is the SINE BRICK's — { kind: to | from | through | around, from, to } in cents
 //                  (electronics/score/le_sine.js)
 //   sineMidi       the sine's pitch: the note's key, plus the lane's sineOctave and sineCents (a crotale sounds two octaves above its key)
+//   A lane whose `who` is 'sine' draws its farthest beating from `beatHz` (beats a second → cents AT THAT PITCH: the same beat is
+//   more cents the lower the note — 30 a second is 48 c on a C6 crotale and 590 c on the cello's D2); `side` 'over' | 'under' fixes
+//   the side (absent: a coin) and then the sine never crosses the pitch — no `through`. The cello is such a lane since 2026-10-08 (RUNNING_LOG §262): its sampler bends 100 cents at the most,
+//   4 beats a second on a D2 — so in the SIMULATION the sine moves; in concert the cellist bends.
 // The numbers are the piece's — bank/sine_behaviours.json, read through config(); DEFAULTS below is the same file's shape, so the
 // module stands without it. The same seed, the same draw: a save reproduces what he heard.
 //   node tools/sine_check.js   checks it.
@@ -84,9 +88,12 @@ function draw(cfg, instKey, midi, lenS, rnd, opts) {
     if (!L) return null;
     const limit = Math.max(1, (opts && opts.limitCents != null ? +opts.limitCents : 100) - 2);
     const sineMidi = Math.round((+midi + (+L.sineOctave || 0) + (+L.sineCents || 0) / 100) * 10000) / 10000;
-    const sign = rnd() < 0.5 ? -1 : 1, where = sign < 0 ? 'under' : 'over';
+    // above or below: a coin — unless the lane says `side` (the cello, 2026-10-08: 30 beats a second UNDER a D2 would put the sine near 40 Hz)
+    const sign = L.side === 'over' ? 1 : L.side === 'under' ? -1 : (rnd() < 0.5 ? -1 : 1), where = sign < 0 ? 'under' : 'over';
     if (L.who === 'sine') {
-        const kind = pick(cfg.sine.kinds, rnd) || 'to';
+        // a lane with a `side` keeps the sine on that side: no `through` (a crossing would take the cello's sine far under its D2)
+        const kindsOf = L.side ? Object.fromEntries(Object.entries(cfg.sine.kinds).filter(([k]) => k !== 'through')) : cfg.sine.kinds;
+        const kind = pick(kindsOf, rnd) || 'to';
         const b = Math.max(0.2, between(L.beatHz || [3, 30], rnd)), c = r1(centsFor(sineMidi, b, sign)), far = 0.3 + 0.7 * rnd();
         const gliss = kind === 'to' ? { kind, from: c, to: 0 } : kind === 'from' ? { kind, from: 0, to: c } : kind === 'through' ? { kind, from: c, to: r1(-c * far) } : { kind: 'around', from: c, to: 0 };
         const ends = kind === 'to' ? [c, 0] : kind === 'from' ? [0, c] : kind === 'through' ? [c, gliss.to] : [0, c];

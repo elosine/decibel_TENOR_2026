@@ -83,7 +83,11 @@ function load() {
         const cand = chord.filter((n) => n.lane === lane);
         if (!cand.length) fail('the take "' + CFG.take + '" holds no pitch for ' + p.lane);
         const lo = tech.rangeLow != null ? tech.rangeLow : I.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : I.rangeHigh;
-        return { inst: p.lane, label: p.label || p.lane, lane, who: L.who, voice: L.voice, range: [lo, hi], ordinary: I.ordinary, ceilingS: p.ceilingS, targetS: p.targetS, gapS: p.gapS };
+        if (p.sineLevel != null && !MARKS.includes(p.sineLevel)) fail('player ' + p.lane + ': sineLevel must be a mark');
+        // bends: the INSTRUMENT can bend (a crescendo phrase is drawn among these) — not `who`: the cello's sine moves in the simulation
+        // (bank/sine_behaviours.json, its row) and the cellist bends in concert; the crescendo candidates stay the same, the seed's picks hold
+        return { inst: p.lane, label: p.label || p.lane, lane, who: L.who, bends: +I.playerBendSt > 0, voice: L.voice, range: [lo, hi], ordinary: I.ordinary,
+            ceilingS: p.ceilingS, targetS: p.targetS, gapS: p.gapS, sineLevel: p.sineLevel != null ? p.sineLevel : null };
     });
     if (!PLAYERS.length) fail('players');
     return { CFG, INSTRUMENTS, TRACKS, REMAP, cfg, chord, PLAYERS, LEN, START, LB, RB, FIRST, MIN, JIT, SHARE, SINE_LEVEL, C, D };
@@ -126,7 +130,7 @@ function roll(S, seed) {
     phrases.sort((a, b) => a.start - b.start || a.player.lane - b.player.lane).forEach((ph, i) => { ph.i = i + 1; });
     // THE CRESCENDO PHRASES: among the players who bend, on different players, by the seed
     const want = Math.max(0, Math.round(+S.C.n || 0)), took = new Set();
-    for (const ph of shuffled(phrases.filter((ph) => ph.player.who === 'player' && ph.end - ph.start >= 12), rnd)) {
+    for (const ph of shuffled(phrases.filter((ph) => ph.player.bends && ph.end - ph.start >= 12), rnd)) {
         if (took.size >= want) break;
         if (took.has(ph.player.inst)) continue;
         took.add(ph.player.inst); ph.cresc = { from: S.C.from, to: S.C.to };
@@ -180,7 +184,7 @@ function make(S, rolled) {
         // the phrase's ONE brick — a window over the whole phrase; the crotales' says how long one glide lasts
         const gliss = { kind: 'none', from: 0, to: 0 };
         if (p.who === 'sine') gliss.overS = ph.target;
-        const z = SineGo.sineZone('zn-' + (nextId++), p.lane, ph.start, ph.end, { midi: 60, gliss, level: { mode: 'flat', mark: S.SINE_LEVEL }, label: label + (ph.cresc ? ' cresc' : ''), track: { on: true } }, mine[0].id);
+        const z = SineGo.sineZone('zn-' + (nextId++), p.lane, ph.start, ph.end, { midi: 60, gliss, level: { mode: 'flat', mark: p.sineLevel || S.SINE_LEVEL }, label: label + (ph.cresc ? ' cresc' : ''), track: { on: true } }, mine[0].id);
         z.properties = { sine: { notes: mine.map((o) => o.id), phrase: ph.i },
             phrase: { i: ph.i, player: p.inst, n: ph.n, startS: ph.start, endS: ph.end, notes: mine.length, lengthBand: S.LB[ph.lenBand], restAfterS: ph.restAfter, ceilingS: ph.ceil, gapS: ph.gapS, cresc: ph.cresc || null } };
         for (const o of mine) o.properties.sine = { brick: z.id };
@@ -219,7 +223,7 @@ function sheet(S, rolled, made, name, command) {
         '',
         '*Written by `' + command + '` — rendered from the tool, never edited by hand (PLAN.md § 1.8; DEC-58 … 58c; RUNNING_LOG §255 … §260).*',
         '',
-        '**What it is:** ' + S.LEN + ' s. The players hold long tones against sines and bend until the pair beats. It begins with `' + C.start.from + '` as it is (0 … ' + S.START + ' s — your word: "I\'ll keep that as the start"); from there each player plays PHRASES on the take `' + C.take + '`: a phrase ' + S.LB[0][0] + ' … ' + S.LB[S.LB.length - 1][1] + ' s, then a rest ' + S.RB[0][0] + ' … ' + S.RB[S.RB.length - 1][1] + ' s. Inside a phrase the player re-breathes (or re-bows) by the breath model — ' + S.PLAYERS.map((p) => { const ph = rolled.phrases.find((x) => x.player === p); return p.label + ' ≤ ' + (ph ? ph.ceil : '?') + ' s' + (ph && ph.gapS ? ', ' + ph.gapS + ' s between' : ''); }).join(' · ') + '. Over each phrase lies ONE sine brick, written `' + S.SINE_LEVEL + '` — and every brick is a WINDOW: the sine is silent until its player sounds, comes in with them, follows their rise and fall, holds through a breath and goes when they stop. The crotales hold their pitch and their SINE glides, again at each bowing.',
+        '**What it is:** ' + S.LEN + ' s. The players hold long tones against sines and bend until the pair beats. It begins with `' + C.start.from + '` as it is (0 … ' + S.START + ' s — your word: "I\'ll keep that as the start"); from there each player plays PHRASES on the take `' + C.take + '`: a phrase ' + S.LB[0][0] + ' … ' + S.LB[S.LB.length - 1][1] + ' s, then a rest ' + S.RB[0][0] + ' … ' + S.RB[S.RB.length - 1][1] + ' s. Inside a phrase the player re-breathes (or re-bows) by the breath model — ' + S.PLAYERS.map((p) => { const ph = rolled.phrases.find((x) => x.player === p); return p.label + ' ≤ ' + (ph ? ph.ceil : '?') + ' s' + (ph && ph.gapS ? ', ' + ph.gapS + ' s between' : ''); }).join(' · ') + '. Over each phrase lies ONE sine brick, written `' + S.SINE_LEVEL + '`' + (S.PLAYERS.some((p) => p.sineLevel) ? ' (' + S.PLAYERS.filter((p) => p.sineLevel).map((p) => 'the ' + p.label + '\'s `' + p.sineLevel + '`').join(', ') + ')' : '') + ' — and every brick is a WINDOW: the sine is silent until its player sounds, comes in with them, follows their rise and fall, holds through a breath and goes when they stop. The crotales hold their pitch and their SINE glides, again at each bowing.',
         '',
         '**The test — the crescendo phrases:** ' + (rolled.phrases.filter((ph) => ph.cresc).map((ph) => ph.player.label + ' ' + (C.labels.phrase || 'P') + ph.n + ' at ' + K.clock(ph.start) + ' … ' + K.clock(ph.end) + ' (' + ph.start.toFixed(1) + ' … ' + ph.end.toFixed(1) + ' s), ' + ph.cresc.from + ' → ' + ph.cresc.to).join(' · ') || 'none') + '. The player\'s notes rise across the whole phrase; the sine under them should rise with them (the tracker moves it by at most ±8 dB — `bank/elec_route.json` `sine.track.capDb`).',
         '',
@@ -231,7 +235,7 @@ function sheet(S, rolled, made, name, command) {
         '|---|---|---|---|---|',
     ].concat(rolled.phrases.map((ph) => '| ' + (C.labels.phrase || 'P') + ph.n + (ph.cresc ? ' cresc' : '') + ' | ' + ph.player.label + ' | ' + K.clock(ph.start) + ' → ' + K.clock(ph.end) + ' (' + r2(ph.end - ph.start) + ' s) | ' + paceOf(ph) + ' | ' + how(ph) + ' |'))
         .concat(['', '**The density** (the most players sounding in each 5 s, from ' + dens.fromS + ' s): `' + dens.line + '` — up to ' + dens.max + ', mean ' + dens.mean + ' (the rule: ≥ ' + S.D.reach + ' once, mean ≤ ' + S.D.meanMax + ').',
-            '', '**To change it:** a number in `bank/beating_section.json`, then `' + command + '`, then File ▾ → Reload. Another seed: `--seed N`. The balance of the sines against the players is the one mark `level` (or `sineLevel`, the sines alone). Your takes by range: select the notes of a range → `take ▾` → `∿ sines`, or `node tools/sine_go.js --score ' + name + ' --from 40 --to 75 --take <name>` — a phrase\'s brick is re-pitched, not replaced.', '']).join('\n');
+            '', '**To change it:** a number in `bank/beating_section.json`, then `' + command + '`, then File ▾ → Reload. Another seed: `--seed N`. The balance of the sines against the players is the one mark `level` (or `sineLevel`, the sines alone; a player\'s own `sineLevel` on its row, that player\'s sines alone). How far a pair beats: `bank/sine_behaviours.json` — a bending player\'s `cents`, a gliding sine\'s `beatHz` (beats a second, by the pitch). Your takes by range: select the notes of a range → `take ▾` → `∿ sines`, or `node tools/sine_go.js --score ' + name + ' --from 40 --to 75 --take <name>` — a phrase\'s brick is re-pitched, not replaced.', '']).join('\n');
 }
 
 function main() {

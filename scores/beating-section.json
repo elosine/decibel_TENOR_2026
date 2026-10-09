@@ -41,8 +41,8 @@
  ],
  "assets": {},
  "metadata": {
-  "created": "2026-10-08T23:41:39.192Z",
-  "modified": "2026-10-08T23:41:39.192Z",
+  "created": "2026-10-09T01:27:39.197Z",
+  "modified": "2026-10-09T01:27:39.197Z",
   "builtBy": "tools/build_beating_section.js",
   "note": "THE BEATING SECTION (PLAN.md § 1.8; DEC-58 … 58c): `sine-demo` as the start (0 … 40 s), then 21 phrases of breathed notes on the take \"take-01-sine-demo\", one sine brick a phrase, every brick a window (Follow on), 2 crescendo phrases — seed 79. Written by tools/build_beating_section.js; the sheet: docs/BEATING_SECTION.md.",
   "beatingSection": {
@@ -54,7 +54,7 @@
    "startToS": 40,
    "take": "take-01-sine-demo",
    "command": "node tools/build_beating_section.js --seed 1 --replace",
-   "made": "2026-10-08T23:41:39.192Z",
+   "made": "2026-10-09T01:27:39.197Z",
    "phrases": 21,
    "notes": 71,
    "crescendos": 2,
@@ -2791,9 +2791,9 @@
     },
     "sine": {
      "brick": "zn-47",
-     "who": "player",
-     "kind": "toUnison",
-     "cents": 30.1,
+     "who": "sine",
+     "kind": "from",
+     "cents": 548.6,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -2807,6 +2807,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -2824,25 +2825,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     30.1
-    ],
-    [
-     6.303,
-     0
-    ],
-    [
-     8.12,
-     0
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -2903,13 +2885,14 @@
    "elec": {
     "midi": 38,
     "gliss": {
-     "kind": "none",
+     "kind": "from",
      "from": 0,
-     "to": 0
+     "to": 548.6,
+     "overS": 12
     },
     "level": {
      "mode": "flat",
-     "mark": "mf"
+     "mark": "ff"
     },
     "label": "P1",
     "track": {
@@ -3500,9 +3483,9 @@
     },
     "sine": {
      "brick": "zn-47",
-     "who": "player",
-     "kind": "toUnison",
-     "cents": 36.3,
+     "who": "sine",
+     "kind": "around",
+     "cents": 526.7,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -3516,6 +3499,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -3533,37 +3517,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     36.3
-    ],
-    [
-     2.597,
-     18.2
-    ],
-    [
-     5.193,
-     10.6
-    ],
-    [
-     7.79,
-     4.9
-    ],
-    [
-     10.387,
-     0
-    ],
-    [
-     15,
-     0
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -4369,9 +4322,9 @@
     },
     "sine": {
      "brick": "zn-47",
-     "who": "player",
-     "kind": "through",
-     "cents": 33.1,
+     "who": "sine",
+     "kind": "around",
+     "cents": 610.7,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -4385,6 +4338,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -4402,21 +4356,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     33.1
-    ],
-    [
-     11.4,
-     -31.2
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -5077,9 +5016,9 @@
     },
     "sine": {
      "brick": "zn-47",
-     "who": "player",
-     "kind": "toUnison",
-     "cents": 25,
+     "who": "sine",
+     "kind": "around",
+     "cents": 532.3,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -5093,6 +5032,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -5110,37 +5050,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     25
-    ],
-    [
-     0.952,
-     23.4
-    ],
-    [
-     1.904,
-     18.8
-    ],
-    [
-     2.856,
-     10.9
-    ],
-    [
-     3.808,
-     0
-    ],
-    [
-     4.8,
-     0
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -5899,9 +5808,9 @@
     },
     "sine": {
      "brick": "zn-83",
-     "who": "player",
-     "kind": "through",
-     "cents": 46,
+     "who": "sine",
+     "kind": "around",
+     "cents": 641.3,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -5915,6 +5824,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -5932,33 +5842,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     46
-    ],
-    [
-     3.055,
-     40.6
-    ],
-    [
-     6.111,
-     24.2
-    ],
-    [
-     9.166,
-     -3
-    ],
-    [
-     12.221,
-     -41.2
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -6018,13 +5901,14 @@
    "elec": {
     "midi": 38,
     "gliss": {
-     "kind": "none",
-     "from": 0,
-     "to": 0
+     "kind": "around",
+     "from": 641.3,
+     "to": 0,
+     "overS": 12
     },
     "level": {
      "mode": "flat",
-     "mark": "mf"
+     "mark": "ff"
     },
     "label": "P2",
     "track": {
@@ -6686,9 +6570,9 @@
     },
     "sine": {
      "brick": "zn-83",
-     "who": "player",
-     "kind": "toUnison",
-     "cents": -25.2,
+     "who": "sine",
+     "kind": "to",
+     "cents": 516.6,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -6702,6 +6586,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -6719,25 +6604,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     -25.2
-    ],
-    [
-     10.015,
-     0
-    ],
-    [
-     14.219,
-     0
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -7474,9 +7340,9 @@
     },
     "sine": {
      "brick": "zn-83",
-     "who": "player",
-     "kind": "through",
-     "cents": 49.1,
+     "who": "sine",
+     "kind": "around",
+     "cents": 632.8,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -7490,6 +7356,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -7507,33 +7374,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     49.1
-    ],
-    [
-     1.29,
-     12
-    ],
-    [
-     2.58,
-     -3.4
-    ],
-    [
-     3.87,
-     -15.2
-    ],
-    [
-     5.16,
-     -25.1
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -8350,9 +8190,9 @@
     },
     "sine": {
      "brick": "zn-109",
-     "who": "player",
-     "kind": "through",
-     "cents": 13.9,
+     "who": "sine",
+     "kind": "from",
+     "cents": 639,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -8366,6 +8206,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -8383,21 +8224,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     13.9
-    ],
-    [
-     9.344,
-     -13.3
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {
@@ -8456,13 +8282,14 @@
    "elec": {
     "midi": 38,
     "gliss": {
-     "kind": "none",
+     "kind": "from",
      "from": 0,
-     "to": 0
+     "to": 639,
+     "overS": 12
     },
     "level": {
      "mode": "flat",
-     "mark": "mf"
+     "mark": "ff"
     },
     "label": "P3",
     "track": {
@@ -9034,9 +8861,9 @@
     },
     "sine": {
      "brick": "zn-109",
-     "who": "player",
-     "kind": "through",
-     "cents": -18,
+     "who": "sine",
+     "kind": "to",
+     "cents": 625,
      "seed": 79,
      "take": "take-01-sine-demo",
      "was": {
@@ -9050,6 +8877,7 @@
    },
    "sonifyNote": 38,
    "technique": "senza_vel",
+   "sonifyMode": "plain",
    "recVel": 71,
    "hq": {
     "was": {
@@ -9067,21 +8895,6 @@
      "midi": 38,
      "partial": null
     }
-   },
-   "morphBend": [
-    [
-     0,
-     -18
-    ],
-    [
-     14.056,
-     7.3
-    ]
-   ],
-   "velAbs": 71,
-   "cc7Abs": {
-    "lo": 127,
-    "hi": 127
    }
   },
   {

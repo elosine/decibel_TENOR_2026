@@ -13,7 +13,7 @@
 // THE SORTING: the piece's (its score, its data).
 'use strict';
 const fs = require('fs'), path = require('path');
-const K = require('./audition_kit.js'), B = require('./build_beating_section.js');
+const K = require('./audition_kit.js'), B = require('./build_beating_section.js'), SineSim = require(path.join(K.ROOT, 'score', 'public', 'sine_sim.js'));
 const ROOT = K.ROOT, NAME = K.arg('score', 'beating-section');
 const file = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(file)) { console.error('no such score: ' + K.rel(file)); process.exit(2); }
@@ -75,6 +75,12 @@ check('ONE sine brick a phrase: every note bound to it, and it names them', boun
 check('every sine brick is a WINDOW (Follow on) — the start\'s too', sines.every((z) => z.elec && z.elec.track && z.elec.track.on === true), sines.filter((z) => z.elec && z.elec.track && z.elec.track.on).length + ' of ' + sines.length);
 check('the crotales\' brick says how long one glide lasts; a bending player\'s sine holds its pitch', bricks.every((z) => { const p = S.PLAYERS.find((q) => q.inst === z.properties.phrase.player); return p.who === 'sine' ? (z.elec.gliss.kind !== 'none' && z.elec.gliss.overS > 0) : z.elec.gliss.kind === 'none'; }),
     bricks.filter((z) => z.elec.gliss.kind !== 'none').map((z) => z.elec.gliss.kind + ' ' + z.elec.gliss.from + '→' + z.elec.gliss.to + ' over ' + z.elec.gliss.overS + ' s').slice(0, 3).join(' · '));
+check('every phrase\'s brick is written at its player\'s own mark, else the section\'s', bricks.every((z) => { const p = S.PLAYERS.find((q) => q.inst === z.properties.phrase.player); return z.elec.level && z.elec.level.mode === 'flat' && z.elec.level.mark === (p.sineLevel || S.SINE_LEVEL); }),
+    S.PLAYERS.map((p) => p.label + ' ' + (p.sineLevel || S.SINE_LEVEL)).join(' · '));
+// a gliding sine's farthest beating, in beats a second, inside its lane's band — by the brick's own pitch (the same beat is more cents the lower the note)
+const glides = bricks.filter((z) => S.cfg.lanes[z.properties.phrase.player].who === 'sine'), beatOff = [];
+for (const z of glides) { const L = S.cfg.lanes[z.properties.phrase.player], band = L.beatHz || [3, 30], far = Math.max(Math.abs(z.elec.gliss.from), Math.abs(z.elec.gliss.to)), b = r2(SineSim.beats(z.elec.midi, far)); if (b < band[0] - 0.6 || b > band[1] + 0.6 || (L.side === 'over' && Math.min(z.elec.gliss.from, z.elec.gliss.to) < 0) || (L.side === 'under' && Math.max(z.elec.gliss.from, z.elec.gliss.to) > 0)) beatOff.push(z.properties.phrase.player + ' ' + z.id + ' ' + b + '/s'); }
+check('a gliding sine beats inside its lane\'s band of beats a second, on the side its lane says', beatOff.length === 0, beatOff.join(' · ') || glides.map((z) => z.properties.phrase.player + ' ' + K.noteName(Math.round(z.elec.midi)) + ' ' + Math.max(Math.abs(z.elec.gliss.from), Math.abs(z.elec.gliss.to)) + ' c = ' + r2(SineSim.beats(z.elec.midi, Math.max(Math.abs(z.elec.gliss.from), Math.abs(z.elec.gliss.to)))) + '/s').join(' · '));
 
 // the pitches: the take's
 const pc = (m) => ((Math.round(m) % 12) + 12) % 12;
@@ -92,7 +98,7 @@ const rises = cres.every((z) => {
     return Math.abs(line[0][0][1] - m0) < 0.02 && Math.abs(line[line.length - 1][1][1] - m1) < 0.02 && line.every((l, k) => l[1][1] >= l[0][1] && (k === 0 || l[0][1] >= line[k - 1][1][1] - 0.001));
 });
 check(want + ' crescendo phrases, on different players who bend: every note shaped (struck at mf, the fader between its two written dynamics), rising across the phrase, and saying so',
-    cres.length === want && new Set(cres.map((z) => z.properties.phrase.player)).size === cres.length && rises && cres.every((z) => S.PLAYERS.find((p) => p.inst === z.properties.phrase.player).who === 'player'),
+    cres.length === want && new Set(cres.map((z) => z.properties.phrase.player)).size === cres.length && rises && cres.every((z) => S.PLAYERS.find((p) => p.inst === z.properties.phrase.player).bends),
     cres.map((z) => z.properties.phrase.player + ' ' + z.startTime + ' … ' + z.endTime + ' s: ' + notesOf(z).map((o) => o.properties.simLevel.map((x) => x[1]).join('→')).join(' | ') + ' · CC7 ' + notesOf(z).map((o) => o.cc7Abs.lo + '–' + o.cc7Abs.hi).join(' ')).join(' ‖ ') || 'none');
 check('the other notes are struck at the written dynamic and say nothing (a steady level)', notes.filter((o) => !bricks.find((z) => z.id === o.properties.sine.brick).properties.phrase.cresc).every((o) => o.recVel > 0 && !o.properties.simLevel), 'written ' + CFG.level);
 

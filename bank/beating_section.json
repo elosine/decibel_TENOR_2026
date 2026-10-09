@@ -13,7 +13,8 @@
   { "lane": "bass_clarinet", "label": "bass clarinet" },
   { "lane": "bowed_vibraphone", "label": "crotales", "ceilingS": 8, "targetS": 5.8, "gapS": 0.6 },
   { "lane": "viola", "label": "viola" },
-  { "lane": "cello", "label": "cello" }
+  { "lane": "cello", "label": "cello", "sineLevel": "ff",
+    "_sineLevel": "HIS, 2026-10-08 (RUNNING_LOG §262): the cello's sines two steps over the players' mf — 'they are particularly hidden'. A player's own sineLevel is the mark its sine bricks are written at; absent: the section's level (or sineLevel)." }
  ],
  "_phrase": "A PHRASE = one sine brick, and under it the player's breathed (or bowed) notes. lengthBands · restBands: how long a phrase is and how long the player rests after it — each drawn inside a band, the bands dealt as an exhaustive round robin over the whole section (none twice before all have come), so the short, the middle and the long all come; move a band, or write one twice to have it more often. firstInS: each player's first phrase begins this long after the start's end. minS: a phrase cut by the section's end is kept only if this much of it is left.",
  "phrase": {
@@ -24,7 +25,7 @@
  },
  "_breath": "how a phrase is cut into notes (beating_calc.js dealBreaths): each note about targetShare of the player's ceiling at the written dynamic, give or take jitter (0.35 = ±35 %), never past the ceiling.",
  "breath": { "jitter": 0.35, "targetShare": 0.8 },
- "_level": "the written dynamic — of the simulated players' notes and of every sine brick. THE BALANCE (PLAN 16.3) is this one mark on the sines: two tones beat fully at EQUAL loudness, and with the tracker in, the brick's mark is where the sine stands when its player enters. sineLevel moves the sines alone (absent: the same as level).",
+ "_level": "the written dynamic — of the simulated players' notes and of every sine brick. THE BALANCE (PLAN 16.3) is this one mark on the sines: two tones beat fully at EQUAL loudness, and with the tracker in, the brick's mark is where the sine stands when its player enters. sineLevel moves the sines alone (absent: the same as level); a player's own sineLevel on its row (players[]) moves that player's sines alone.",
  "level": "mf",
  "_crescendos": "THE TEST of the tracker (his: 'one or two crescendos'): n phrases whose notes rise from → to across the whole phrase, through its breaths — the sine under them should rise with them (as far as the tracker's cap). Chosen by the seed among the phrases of the players who bend (not the crotales), on different players. 0 = none.",
  "crescendos": { "n": 2, "from": "p", "to": "f" },
