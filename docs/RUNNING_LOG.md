@@ -6745,3 +6745,17 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Not done, said:** the film and the print were not rendered (they draw from the same renderer) · page 4 shows a vertical bar at 37 s — the end of THIS cut, not of the piece · §324's working page (`score/public/signs/layout.html`) stands as it was, superseded for section 1.
 
 **A slip, for the record:** a comment written through `node -e "…"` lost a backticked word to the shell (the machine's known trap); found at once and repaired from a script file.
+
+## §326. CHECKPOINT #2 OF SESSION 3 — the notation in hand: section 1 laid out in the notation score, unseen by him; the three body problem's signs next, a talk (2026-10-09, Opus)
+
+**His word:** `/checkpoint`, straight after §325's hand-over — he has not yet said what he saw.
+
+**Where the notation stands (PLAN.md § 2):** 2.1 the look built · 2.2 the seven SOL colours named · 2.3 the six badges chosen · 2.4 the mic opening chosen and BUILT in the engine with the badge · section 1 laid out in the notation score (`approaching-opening`). Open with him: the announcing badge (before each lane's first mic · a column at the start · none) · the mic's row, "top for now" · the gap. Next in his order: the three body problem's signs — the line wedge, a sign per state, its badge.
+
+**What this stretch taught, for whoever writes the paper or resumes the work:**
+- **How he designs a notation.** Sign by sign, by eye, from drawn candidates: a survey of what exists (Braxton's own handout, the engraving font, the earlier pieces), five to twelve candidates on a working page, one letter back — and a choice may be reopened (the short attacks: his letter was not what he meant, DEC-95). Then the LAYOUT, which he will not judge on a mock-up: "no lets actually start laying out the notation in the presentation/notation score" (DEC-104). The working page was the right tool for choosing a sign and the wrong one for placing it.
+- **What that costs the engine, and what it buys.** A sign he has chosen needs a row, an edge class, an overlay kind in the schema, an item, a drawing branch — the first lane-owned mark took all five (§325). In return a place said "for now" is one word of a row (`objects.micOpening.place`), and the film and the print get the sign with no further work.
+- **The schema gate bit again.** The validator refused the first cut: an overlay kind outside the schema's enum, and a provenance the schema does not allow on an overlay. The schema's own notes count four earlier bites. A new overlay kind goes into `notation/schema/ir_v0.schema.json` FIRST.
+- **The machine's traps, both met again:** a Bash command past about 8 KB fails with a false quote error (five times in §324 … §326 — long text goes out in pieces, or through a script file) · a backticked word inside `node -e "…"` is run by the shell (one comment lost a word; repaired).
+
+**Committed with this entry:** the journal's checkpoint block, its next-steps table, the planner's NOW line, the project file's state line, this log. `scores/sec05-strikes-a.json` stays untracked — his.

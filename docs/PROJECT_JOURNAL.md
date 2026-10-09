@@ -208,8 +208,51 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-His eye on the palette page (2.2) and on the two score pages (2.1 as built); then, in his order and at his word, 2.3 the language · 2.4 the
-mic opening — each a talk, then a device sheet. Do not present the parked list.
+**► CHECKPOINT #2 OF SESSION 3, just below, IS THE COLD-START BLOCK (2026-10-09).** His eye on section 1 in the notation score and his letter on the announcing badge; then, in his order and at his word, the three body problem's signs — a talk, then built in the score. *(Before it, done: the palette's names, the six badges, the
+mic opening.)* Do not present the parked list.
+
+### CHECKPOINT #2 OF SESSION 3 *(2026-10-09, Opus — mid-session checkpoint; written for a session that has never seen this chat; RUNNING_LOG §326)*
+
+- **The task and its state:** THE NOTATION (PLAN.md § 2) — the players' page, laid out IN THE NOTATION SCORE, section by section, at his
+  eye. DONE: 2.1 the look (five white lanes, the staff only where it plays) · 2.2 the SOL colours named · 2.3 the six badges chosen ·
+  2.4 the mic opening chosen AND BUILT in the notation engine, with the badge (§325) · **SECTION 1, THE OPENING, IS LAID OUT IN THE
+  NOTATION SCORE** — not yet seen by him. The sections after it are NOT laid out: their signs are not decided.
+- **HIS METHOD FOR THIS WORK (three rules, each learned the hard way today):** (1) a section's signs are DISCUSSED FIRST — nothing drawn
+  until he asks to see · (2) once he asks, what is decided is BUILT IN THE NOTATION APP ITSELF, never on a side page (DEC-104; a side
+  page is only for choosing among candidate signs) · (3) a place said "for now" is made ONE WORD OF A ROW, so moving it is a reload.
+- **The latest deliverable:** the page `approaching-opening` — http://localhost:5500/notation/app/notation.html → the menu `ir`:
+  *Approaching — the opening (0 … 37 s)* → the menu `view`: video → RIGHT ARROW for pages 2 … 4. On it: 30 mic openings (yellow
+  bricks) at the TOP of their lanes · the notes silent (no arc, no head, no brick) · the short attacks' badge before each lane's first
+  opening. It was cut by:
+  `node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening --label "Approaching — the opening (0 … 37 s)" --mics --silent 0-37 --announce shortAttacks:0:37`
+- **THE NEXT CONCRETE STEP:** ask him, in ONE line, what he saw on section 1 in the notation score, and his letter on the announcing
+  badge — **a** as drawn (before each lane's first mic opening) · **b** all five in a column where the section begins (the same cut with
+  `--announce shortAttacks:0:37:start`) · **c** none in the opening (the same cut without `--announce`). A change he asks of the mic's row =
+  ONE WORD: `notation/registry/rules.json` `objects.micOpening.place` (`laneTop` · `laneMiddle` · `laneBottom`), then a reload of the app —
+  no re-cut. A size = `gapSs` there, or `objects.badge` `sizeSs` · `gapSs`. After any row change: `node tools/gen_engraving_rules.js`
+  · `node tools/check_rules.js` (31 of 32 is green here — the one red is §45's).
+- **THEN, at his word, the next section in HIS order — THE THREE BODY PROBLEM (39 … 123.3 s): a TALK first.** To settle, from
+  `docs/NOTATION_SCHEME.md` § 3: its LINE WEDGE (he wants its colour and thickness to change with the player's state) · a simple sign
+  per state (an abbreviation? a number?) · its own badge, large, with the short attacks' small beside it · where they sit in the lane
+  (no mics in that section). **LINEAGE FIRST, before proposing a look:** the stack already has an animated line wedge
+  (`rules.json` `objects.lineWedge`, `anim:lineWedge` — marked "#4 D48 (disabled)") and piece #2 has a three body badge (three discs on
+  orbits, no square); the five players' containers are plain zones in the save (`zoneFunction: 'tb'`, `properties.tb` — `docs/THREE_BODY.md`).
+  After it: section 2 (the arc of an accented long tone meeting its mic at the lane's top) → the drones (a badge and a PIE DIAL on each
+  opening — the stack's `motivePie`; the cutter's `--micBadge multiphonics:t0:t1` is built) → the beating section → the strikes.
+- **Resume reads:** `docs/NOTATION_SCHEME.md` — the scheme as it stands, decided and open, by section; the next step is a talk about it.
+  Nothing else. The device sheet and the build are RUNNING_LOG §325; they are read at a question, not by habit.
+- **Decisions pending him:** the announcing badge, a · b · c · whether the top works for the mic · the gap's size (7.9 px, the AI's
+  first number) · pitch and percussion instrument as the player's choice (the AI's reading, unconfirmed) · THE CONDUCTOR'S VIEW —
+  HELD by him until after the layout (his idea for section 1: the flocking badge and a duration line or line wedge, marked as the
+  electronics' by "an italics equivalent"). **Still waiting from before, never raised unless he asks:** his ear on `strike-rig`
+  (checkpoint #1, below) · his eye on the palette page · the parked list.
+- **Not done, so not claimed:** the film and the print were not rendered since the build (they draw from the same renderer) · page 4
+  of the opening shows a bar at 37 s — the end of that CUT, not of the piece · §324's working page (`/signs/layout.html`) is superseded
+  for section 1 and left standing.
+- **Model:** this stretch ran on Opus at his word (talks and builds alike, no clear). By THE RHYTHM: the three body TALK is Fable's; a
+  build from what the talk decides is Opus's. He chooses.
+- **Deliberately uncommitted:** `scores/sec05-strikes-a.json` — HIS experiment score (untracked since §292), never staged without his word.
+  Nothing else: the tree is clean.
 
 ### CHECKPOINT #1 OF SESSION 3 *(2026-10-09, Fable — mid-session checkpoint; written for a session that has never seen this chat)*
 
@@ -284,7 +327,8 @@ workflow below, step by step, on his word.
 | # | Step | Model | Clear first? |
 |---|---|---|---|
 | ☑ | PLAN.md 2.1 THE LOOK — built 2026-10-09 (§302): five lanes · the lane line · the staff only where it plays · the clef with it | Opus | — |
-| **►** | **HIS EYE on the two pages (the opening · the beating section); a number moved if he says so; then 2.2 the colour palette · 2.3 the language · 2.4 the mic opening, in his order (each a talk, then a device sheet)** | **Fable** (the talks, the sheets) · Opus (a number, a build from a sheet) | a clear before the first talk is cheap: the docs carry everything |
+| ☑ | 2.2 the SOL colours named (§307) · 2.3 the six badges chosen (§318) · 2.4 the mic opening chosen (§319) and BUILT in the notation engine with the badge (§325) · SECTION 1 laid out in the notation score (`approaching-opening`) | Opus | — |
+| **►** | **HIS EYE on section 1 in the notation score, and his letter on the announcing badge (a · b · c — journal §2, checkpoint #2 of session 3); then THE THREE BODY PROBLEM's signs: a talk (the line wedge · a sign per state · its badge), then built in the score; then section 2 · the drones · the beating section · the strikes, in his order** | **Fable** (the talks, the sheets) · Opus (a number, a build from a sheet) | a clear before the first talk is cheap: the docs carry everything |
 | — | his ear on `strike-rig` (the engine restarted · F5 · from 0) — at the desk, his time; then 17.2 (journal §2's checkpoint #1 block) | Fable (the talk) · Opus (a fault, a knob) | — |
 | — | his ear on `piece-3BodyRedo` (the three body's new take, 39 → 125 s; the whole piece) — at his word | Fable | — |
 | — | THE NOTATION — container 6's three calls (his), then a DEVICE SHEET per sign (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET; `docs/PERFORMANCE_NOTES.md`, a row per glyph): the mic opening · the return · the petals · the drones' duration line · the sine's window · the three body's containers | Fable (the design) · Opus (the builds) | clear between sheets |
@@ -293,7 +337,7 @@ workflow below, step by step, on his word.
 | — | The parked list — only at his ask, the bare list first | Fable (the talk) · Opus (a knob) | — |
 
 **Open questions:** Q1 — the ensemble: the call has not announced the final instrumentation (his to check; D2) · Q2 — the title: *Approaching*, TENTATIVE since 2026-10-09 (DEC-87; the cover takes it at 8.6) ·
-Q3 — section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
+Q3 — CLOSED 2026-10-09 (DEC-99: the players do not see what the electronics play back; a hint only in the conductor's / presentation view, PLAN.md 2.7, held) — it asked: section 3's electronics (the stacks): in the parts, or only in the conductor's and the presentation score? (*"I'm not sure"*,
 DEC-4) · Q5 — the three notation calls of container 6 · **Q8 — a wind's bend in the beating section:** the recipe gives a wind one
 semitone (the bass clarinet at F2 tops at 5 beats a second) and the simulation bends UP where a wind lips DOWN — for the notation
 and the performance notes, his · **Q9 — the bowed crotales:** re-bowed every ~6 s under a sine that sounds through the gaps — as he
