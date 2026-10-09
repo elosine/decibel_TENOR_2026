@@ -42,7 +42,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | audible beats | the added wave inside its two-pinch outline | SOL_orange |
 | scattered strikes | nine solid triangles diving at a ground line | SOL_green |
 
-**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 21 % (lighter than the composer score's 35 %; 29 px tall, from the top — DEC-105 · DEC-106), an outline at 70 % in the same
+**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 15 % (the composer score's is 35 %; 29 px tall, from the top — DEC-105 … DEC-107), a solid outline in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
 **Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·
@@ -131,7 +131,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience.
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top; its fill 21 %, its outline 70 %).
+1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top) and DEC-107 (its fill 15 %, its outline solid).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's view.

@@ -6806,3 +6806,13 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Proven once, in the running app** (`approaching-opening`, page 1, the first lane): the opening's top 7.9 px under the lane's top, 29.34 px tall · fill 0.21, outline 0.7 · the badge's top at the same 7.9 px, 54 px, 12 px before its mic · the circles on the opening's own centre. `check_rules` 31 of 32 (§45's red).
 
 **The lesson, kept (memory `resize-keeps-its-place`):** a change of SIZE does not move a thing — it keeps the edge he gave it; and a property is changed on the part he named, no wider. Where a number forces a second change (here: a badge taller than its neighbour), the second change is put to him, not made for him.
+
+## §330. THE MIC OPENING — OUTLINE 100 %, FILL 15 % (2026-10-09, Opus)
+
+**What prompted it (DEC-107, verbatim):** *"mic border 100 and fill 15% pls"*
+
+**What changed:** `notation/registry/rules.json` `objects.micOpening` — `strokeOpacity` 0.7 → **1** · `fillOpacity` 0.21 → **0.15**. Nothing else.
+
+**The fill's road, for the record of how the look was found:** 35 % (the composer score's own, §319) → 28 % (§328, "20 % more transparent") → 21 % (§329, "that much again") → 15 % (his number). The outline: 70 % (the composer score's) → 56 % (§328, the AI's reading — wrong) → 70 % (§329) → 100 % (his number). So the notation's brick has left the composer score's recipe in both parts: a solid yellow outline around a much paler fill — on a white page the outline carries the shape and the fill only tints it.
+
+**Proven once, in the running app** (`approaching-opening`, page 1): all seven openings read fill 0.15, outline 1; their place and height unchanged (7.9 px under the lane's top, 29.34 px). `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.

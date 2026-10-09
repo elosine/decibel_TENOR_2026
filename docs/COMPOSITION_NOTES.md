@@ -1155,3 +1155,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 - *THE FILL: down by the same amount again — it went 35 → 28 %, seven points; now 28 → 21 %.*
 - *THE MIC OPENING: its TOP EDGE stays where it was, under the standard gap; "30 % shorter" takes the height off the BOTTOM. The AI had centred it on the badge and so moved it down.*
 - *The badge was not mentioned: it stays 54 px, 12 px before its mic, its top under the same gap — the two now hang from one top edge. RUNNING_LOG §329.)*
+
+### DEC-107 · 2026-10-09 — the mic opening: its border at 100 %, its fill at 15 %
+
+*(His words, verbatim — Opus:)* *"mic border 100 and fill 15% pls"*
+
+*(The AI's reading, marked as such: two numbers, given outright after two rounds of "a little more" — the outline solid yellow, the fill 15 %. Nothing else touched. RUNNING_LOG §330.)*
