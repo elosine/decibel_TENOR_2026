@@ -5784,3 +5784,24 @@ The bends 27.6 · 40.8 · 52.1 c — each one plain note, inside a clarinettist'
 | 3 | E5 | up + plateau + down | 71.6 → 104.4 s (32.8 s), gap 5.0 s | rise 0 → 4.8 in 13.3 s (2.77) · plateau 4.2 s · fall 4.8 → 1.1 in 10.4 s (2.81) · hold 4.9 s |
 
 Bends 8.9 · 8.4 · 12.6 c; notes his p (37), sines `f` (the default; volume is parked). **Other pitches with the SAME shapes and times:** the same command with `--replace --seed 37916` (the shape's roll does not depend on the pitch). **Known, said to him:** the bass flute's long-tone voice here is `vib_vel` — it HAS vibrato (no Xsample bass flute preset sustains without; NITS, §179), so its beating is blurred by the vibrato's own wobble; and at a peak of 3.4 beats a second the vibrato may be the faster of the two.
+
+## §276
+**2026-10-08, late — THE FLUTE RE-LEVELLED; TWO MORE PAIRS ON EVERY LANE FROM HIS TAKE `beating01` (Opus; DEC-68).** Verbatim in DEC-68. **The flute:** `levels.lanes.bass_flute` = `{ sine: mf, note: pp }`; `--relevel` → three sine bricks `mf`, three notes `pp` (velocity 18). The stand-in pitches E5 · F5 · E5 of §275 drew no word from him — they stand.
+
+**The take, read as the drawer stores it** (`bank/panel_snapshots.json` `panels.strikes.beating01`, his blast `S001`; `SineGo.takeChord`): one pitch a player — **bass flute C4 (60) · bass clarinet F2 (41) · crotales D5 (the voice at 86, folded an octave down: key 74 — sounding D7) · viola C5 (72) · cello A#2 (46)**; five more voices of the blast sit on no lane (26 · 61 · 97 · 98 · 102). Two pairs a lane, both on the lane's one pitch. **Made for it in `tools/beat_pair.js`:** `--take <name> [--n 2]` (this lane's pitch in a take, round robin where it has several, brought into the voice by octaves; on a lane whose sine moves the take's pitch is the KEY) · **the peak is rolled under what the PLAYER can reach at the pitch** — the recipe's `playerBendSt`: a clarinet's semitone at F2 (87 Hz) is 5.0 beats a second, and a roll toward 10 would have asked for 187 cents; without the cap the tool refused the pair. The cello's reach is an octave (no cap); a gliding sine has none.
+
+**The rolls** (each lane its own seed; 72 objects now, the section **4.0 → 204.1 s**):
+| lane | pitch | seed | pair | when | shape |
+|---|---|---|---|---|---|
+| bass flute | C4 (262 Hz) | 18907 | 4 | 110.1 → 130.2 s (gap 5.7) | down + hold 4.6 → 2 (14.4 s · 5.7 s) |
+| | | | 5 | 136.1 → 154.7 s (gap 5.9) | up + hold 5.5 (14.8 s · 3.8 s) |
+| bass clarinet | F2 (87 Hz) | 26758 | 4 | 148.8 → 157.7 s (gap 4.1) | down + hold 3.2 → 1.2 (5.9 s · 3.0 s) — the peak under 5 |
+| | | | 5 | 162.3 → 204.1 s (gap 4.6) | up + plateau + down 4.3 → 1.8 (23.4 · 4.1 · 8.9 · 5.4 s) — the peak under 5 |
+| crotales | sounding D7 +17 c (2372 Hz), key D5 | 63670 | 4 | 133.0 → 177.2 s (gap 4.8) | up + plateau + down 4.5 → 0.9, the bar re-bowed ×7 |
+| | | | 5 | 182.1 → 201.1 s (gap 4.9) | down + hold 4.6 → 0.7, ×3 |
+| viola | C5 (523 Hz) | 33446 | 4 | 138.4 → 161.6 s (gap 5.3) | up + hold 4.3 (15.8 s · 7.4 s) |
+| | | | 5 | 168.3 → 195.0 s (gap 6.7) | down + hold 6.3 → 0.8 (21.4 s · 5.3 s) |
+| cello | A#2 (117 Hz) | 77490 | 4 | 105.5 → 120.4 s (gap 5.8) | up + hold 3.3 (10.7 s · 4.2 s) |
+| | | | 5 | 125.7 → 152.9 s (gap 5.3) | up + hold 6.3 (23.6 s · 3.6 s) |
+
+Bends: the clarinet's 62 and 83 c at F2 (inside its semitone), the cello's 48 and 91 c at A#2 (one note each, no re-key), the flute's 30 · 36 c, the viola's 14 · 21 c, the crotales' sine 3.3 c. Levels by each lane's own rule (cello fff / p · viola mf / pp · flute mf / pp · crotales mp / mp · clarinet f / p — the clarinet's still the default). **A shape to hear:** with a second chord the lanes' entries stagger by what came before — the cello and the flute change harmony at 105 … 110 s while the clarinet's D#4 holds until 144.7 s and the crotales' F#7 until 128.2 s: the two chords OVERLAP for forty seconds. No rule ties the lanes; whether that cross-fade of harmonies is wanted or a common change is, is his ear's.

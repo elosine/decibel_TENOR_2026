@@ -9,6 +9,8 @@
 //     per pitch: a GAP (a plain roll) · a SHAPE (upHold · downHold · upPlateauDown) · a PEAK (leaning low) · where a descent ENDS ·
 //     each part's length = its minimum + an extra that leans short (the smaller of two rolls). The pair's length is the SUM of its
 //     parts — never rolled; past maxLengthS it is rolled again. The beating never changes faster than the fastest pace.
+//     --take <name> [--n 2]   instead of --pitches: this lane's pitch in a TAKE of the Strikes drawer, --n pairs of it
+//     the PEAK is rolled under what the PLAYER can reach at the pitch (the recipe's playerBendSt: a clarinet's semitone at F2 = 5 Hz)
 //     --start   where the first pair begins (else after the last object on the lane, a gap rolled)
 //     --replace the pairs already on the lane (sine bricks and the notes under them) are taken out first — a RE-ROLL
 //     --seed    the same seed, the same roll (printed, and kept on every brick)
@@ -51,11 +53,14 @@ const RULES = Object.assign({ levels: { sine: 'fff', note: 'p' }, gapS: [4, 7], 
     paceSPerHz: [2.5, 6], holdMinS: 2.5, holdExtraMaxS: 8, maxLengthS: 60 }, fs.existsSync(path.join(ROOT, 'bank', 'beat_shapes.json')) ? readJson('bank/beat_shapes.json') : {});
 
 // ---- ONE SHAPE, ROLLED: -> { shape, peakHz, endHz, parts: [{ kind, fromHz, toHz, s, paceSPerHz? }], lengthS, tries } ----------------
-function rollShape(rnd, R) {
+// capHz: the fastest beating THIS PLAYER can reach at THIS pitch (the recipe's playerBendSt — a clarinettist's semitone at F2 is 5 beats
+// a second); the peak is rolled under it (§276). null: no cap (the cello's reach is an octave; a gliding sine has none).
+function rollShape(rnd, R, capHz) {
     const lean = () => Math.min(rnd(), rnd());   // the smaller of two rolls: short and low are common, long and high rare
     const pick = (w) => { const ks = Object.keys(w).filter((k) => +w[k] > 0); let x = rnd() * ks.reduce((a, k) => a + +w[k], 0); for (const k of ks) { x -= +w[k]; if (x < 0) return k; } return ks[ks.length - 1]; };
+    const hiP = capHz != null ? Math.min(R.peakHz[1], capHz) : R.peakHz[1], loP = Math.min(R.peakHz[0], hiP);
     for (let tries = 1; tries <= 500; tries++) {
-        const shape = pick(R.shapes), peak = r1(R.peakHz[0] + (R.peakHz[1] - R.peakHz[0]) * lean());
+        const shape = pick(R.shapes), peak = Math.min(hiP, r1(loP + (hiP - loP) * lean()));
         const end = r1(R.floorHz + Math.max(0, peak * R.endMaxShare - R.floorHz) * rnd());
         const parts = [];
         const ramp = (kind, a, b) => { const pace = R.paceSPerHz[0] + (R.paceSPerHz[1] - R.paceSPerHz[0]) * lean(), s = up10(Math.abs(b - a) * pace); parts.push({ kind, fromHz: a, toHz: b, s, paceSPerHz: r2(s / Math.abs(b - a)) }); };
@@ -185,20 +190,33 @@ function pair(pitch, start, line, beat, rnd) {
 
 if (has('roll')) {
     // ---- ROLLED: a gap, a shape, per pitch ----
-    const pitches = String(arg('pitches', arg('pitch', '')) || '').split(',').map((x) => x.trim()).filter(Boolean).map(keyOf);
-    if (!pitches.length) die('--roll wants --pitches D#2,D2,… (his, by hand)');
+    let pitches;
+    if (arg('take')) {
+        // --take <name> [--n 2]: the pitches from a TAKE of the Strikes drawer (bank/panel_snapshots.json) — this lane's pitch in it, round
+        // robin where the take gives the lane several, --n pairs; brought into the voice's range by octaves. On a lane whose sine moves the
+        // take's pitch is the KEY the player plays (the sounding pitch = that + sineOctave).
+        const snaps = readJson('bank/panel_snapshots.json'), t = snaps.panels && snaps.panels.strikes && snaps.panels.strikes[arg('take')];
+        if (!t) die('no take named "' + arg('take') + '" — the Strikes drawer\'s: ' + (Object.keys((snaps.panels && snaps.panels.strikes) || {}).join(', ') || '(none)'));
+        const mine = SineGo.takeChord(t.state, TRACKS).filter((c) => c.lane === lane).map((c) => SineGo.fit(c.midi, lo, hi));
+        if (!mine.length || mine.some((x) => x == null)) die('the take "' + arg('take') + '" holds no pitch for the ' + TRACKS[lane].label + ' inside ' + L.voice);
+        pitches = Array.from({ length: Math.max(1, Math.round(+arg('n', mine.length))) }, (_, i) => mine[i % mine.length] + SOCT);
+        out.push('the take "' + arg('take') + '": ' + TRACKS[lane].label + ' ' + mine.map((x) => SineGo.pn(x) + (SOCT ? ' (sounding ' + SineGo.pn(x + SOCT) + ')' : '')).join(' · '));
+    } else pitches = String(arg('pitches', arg('pitch', '')) || '').split(',').map((x) => x.trim()).filter(Boolean).map(keyOf);
+    if (!pitches.length) die('--roll wants --pitches D#2,D2,… (his, by hand) or --take <name> [--n 2]');
+    const reachC = 100 * (inst.playerBendSt != null ? inst.playerBendSt : 1) - 2;
     const seed = Math.max(1, Math.round(+arg('seed', 1 + Math.floor(Math.random() * 99999)))), gapR = range(arg('gap', RULES.gapS.join(',')), 'gap');
     let at = arg('start') != null ? +arg('start') : null, lastEnd = Math.max(0, ...s.objects.filter((o) => o.layer === lane).map(endOf));
     out.push('seed ' + seed + ' · the rules: bank/beat_shapes.json');
     pitches.forEach((midi, i) => {
         const rnd = SineSim.mulberry32((Math.imul(seed, 2654435761) + Math.imul(i + 1, 40503)) >>> 0);
         const gap = at != null && i === 0 ? null : r1(gapR[0] + rnd() * (gapR[1] - gapR[0]));
-        const start = r3(gap == null ? at : lastEnd + gap), sh = rollShape(rnd, RULES);
+        const cap = WHO === 'player' ? Math.floor(SineSim.beats(midi - SOCT, reachC) * 10) / 10 : null, capped = cap != null && cap < RULES.peakHz[1];
+        const start = r3(gap == null ? at : lastEnd + gap), sh = rollShape(rnd, RULES, capped ? cap : null);
         const p = pair(midi, start, lineOf(sh.parts), { shape: sh.shape, peakHz: sh.peakHz, endHz: sh.endHz, parts: sh.parts, gapS: gap, seed, n: i + 1 }, rnd);
         lastEnd = p.end;
         out.push((i + 1) + ' · ' + SineGo.pn(midi) + ' · ' + SHAPE_SAY[sh.shape].toUpperCase() + ' · peak ' + sh.peakHz + (sh.endHz != null ? ', ends at ' + sh.endHz : '') + ' beats/s · ' + (gap != null ? 'gap ' + gap + ' s · ' : '') + p.start + ' → ' + p.end + ' s (' + p.len + ' s)',
             '    ' + sh.parts.map((q) => q.kind + ' ' + (q.fromHz === q.toHz ? 'at ' + q.toHz : q.fromHz + ' → ' + q.toHz) + ' · ' + q.s + ' s' + (q.paceSPerHz ? ' (' + q.paceSPerHz + ' s per Hz)' : '')).join('  |  '),
-            '    ' + p.say);
+            '    ' + p.say + (capped ? ' · THE PEAK ROLLED UNDER ' + cap + ' beats/s — the player\'s reach (' + inst.playerBendSt + ' st) at this pitch' : ''));
     });
 } else {
     // ---- DICTATED: from → to, there at --at, held ----

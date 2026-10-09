@@ -891,3 +891,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Okay, can you take the viola down uh, both the signs and the notes down one notch? So I guess that would be MF for the signs, and PP for the notes. And then can you roll three bass flute ones? Uh,"*
 
 *(The AI's reading, marked as such: the viola's three sine bricks f → mf and its three notes p → pp; three rolled pairs on the bass flute's lane — he gave NO pitches (the message ends there): E5 · F5 · E5 were taken by the AI — the flute's E5 is its pitch in his chord of the sine demo (cs-054: cello D2 · bass clarinet D#4 · bass flute E5 · viola F5 · crotales F#5), and each other lane alternates with a semitone neighbour; the neighbour F is a guess, said to him. RUNNING_LOG §275.)*
+
+### DEC-68 · 2026-10-08 — the flute's sines mf, its notes pp · TWO MORE PAIRS ON EVERY LANE, after a standard gap, the pitches from his take `beating01`
+
+*"flute sine mf and flute notes pp And then can you generate three more each? Just a standard gap after the last entry. And can you do, take the notes from Actually, let's do two more each. And then take the notes from the take called Beating Zero One."*
+
+*(The AI's reading, marked as such: the bass flute's three sine bricks f → mf, its notes p → pp; on each of the five lanes two more rolled pairs, each lane's first after a plain rolled gap (4 … 7 s) from that lane's last pair; the pitches = each player's pitch in his take `beating01` of the Strikes drawer (his blast S001) — one pitch a player, so both pairs on it: bass flute C4 · bass clarinet F2 · crotales D5, sounding D7 · viola C5 · cello A#2. The first use of a take in the hand-built section — 16.4 his own way. RUNNING_LOG §276.)*
