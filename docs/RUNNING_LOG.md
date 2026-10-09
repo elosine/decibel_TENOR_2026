@@ -6497,3 +6497,23 @@ The AI's note: i and j are the two that are a SIGN — one shape, legible at 36 
 **Drawn** (`candidates.beats`, appended as **m**, `pictureOutlineWave`; **http://localhost:5500/language/index.html#beats**): the outline of cos(2π · 6u) · cos(2πu) at 0.8 px in white, the wave itself at 1.6 px in the colour — k's two line weights, unchanged; in all eight colours, large and at 36 px. It is his picture whole: the tone, and the envelope that pinches it twice. Seen in the AI's pane.
 
 **The path here, for the paper:** his own design narrowed in three steps — "an actual wave diagram, two in white and the added wave in the colour" (§312) → a picture of the added wave alone and "the bow tie shape" (§314) → the wave inside its own outline (this). The two white component waves of his first idea are gone; what stays white is the envelope. Nothing chosen: the colour is not said.
+
+## §316. THE FIFTH BADGE CHOSEN — audible beats: his picture's outline with its wave, SOL_orange · THE SCATTERED STRIKES: his diving triangles two ways, and five other suggestions (2026-10-09, Opus)
+
+**What prompted it (DEC-96, verbatim):** *"m orange; next ss, maybe like flocking but with triangles diving in a tight formation like a bunch of projectiles about to hit the ground in a scattared strikes formation, and other suggestions ty"*.
+
+**Decided (his):** **AUDIBLE BEATS = the outline of the wave in his picture as a thin white line, the added wave inside it in `SOL_orange`** (`symbol: pictureOutlineWave`; the curve cos(2π · 6u) · cos(2πu), its envelope |cos(2πu)| — §314 · §315). His own design from first idea to last (§315's three steps). FIVE BADGES: short attacks — Braxton's triangles, SOL_red · trills — `tr` and its wavy line, the format's blue · accented long tones — Braxton's wedge and line, white · multiphonics — the boxed chord, SOL_yellow · audible beats — the wave in its outline, SOL_orange. Five colours taken; free: SOL_green · SOL_blue · SOL_purple and his own 23.
+
+**THE SCATTERED STRIKES — no survey asked, none made** (the type is the piece's own; in the lineage the word is his: `bank/scattered_strikes.json`, the Strikes drawer, piece #5's *Scattered Substance*). What the lineage does hold, and two candidates use: THE TRIANGLE of piece #1's flocking badge (the path `M2,0 -1.2,1.2 V-1.2 Z`, §307) — and the score's own sign for a strike, the conductor's falling curve landing on its moment (the GC; `rules.json` `devices.byEnv.strike`).
+
+**THE SEVEN CANDIDATES** (`candidates.scatteredStrikes`; **http://localhost:5500/language/index.html#scatteredStrikes**), each large and at 36 px in eight colours:
+- **a — the dive, straight down** (his idea): seven of the flocking badge's triangles pointing down over a line of ground, at uneven heights — the lowest lands first.
+- **b — the flock, diving** (his idea, nearest his words): the flocking badge's NINE triangles in a tight echelon aimed down and across at 62°, the leader at the ground line.
+- **c — the strike itself, in time**: six strokes standing on a line at the REAL onsets of his take `strikes01` (0 · 98 · 157 · 191 · 237 · 397 ms — `docs/STRIKE_RIG.md`), to scale across the badge. Not a picture of a strike: one of his.
+- **d — conductor curves, landing apart**: five of the score's falling curves, each landing on its own dot on one line.
+- **e — a burst**: nine rays of uneven length from a point.
+- **f — marcatos, scattered**: the font-drawn marcatos made for the short attacks and set aside there (DEC-95) — a struck, marked attack, several, apart; offered where it may belong.
+- **g — a chord pulled apart**: five of the font's filled noteheads slipping down a slope, unevenly.
+The AI's note: a and b are his; b is the one that keeps the kinship with piece #1 he asked for, and reads as one gesture made of many — which is what a scattered strike is. c is the only one that is DATA. e says one hit where the type is several. A thing to weigh across the set: with b, three of the six badges would be made of small triangles or wedges (short attacks — open, standing apart; accented long tones — one wedge; scattered strikes — solid, in formation); they differ in fill, count and direction.
+
+**Made:** `bank/language/language.json` (the choice · `candidates.scatteredStrikes`). Seen in the AI's pane: the table's five badges; a … g draw at both sizes.

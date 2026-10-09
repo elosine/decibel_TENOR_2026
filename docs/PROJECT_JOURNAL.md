@@ -163,8 +163,13 @@ next, where we are; reorganizations only on his approval.
   g two ripples crossing). **(§313 · §314, DEC-95) A CORRECTION: SHORT ATTACKS = BRAXTON'S THREE OPEN TRIANGLES in `SOL_red`** — his
   "c" of DEC-91 (the scattered marcato) was not what he meant; read every earlier line by this one. For the beats, five more
   candidates from the picture he sent: h the wave as in his picture · i THE BOW TIE · j straight-edged · k with its wave · l two
-  pinches. Open: his sign and colour for the audible beats · where the accented long tones are in the piece (the petal hits?) · then
-  scattered strikes. What is left after the badges: PLAN.md 2.3's last paragraph.
+  pinches. **(§315 · §316, DEC-96): audible beats = the outline of the wave in his picture, thin and white, the added
+  wave inside it in `SOL_orange`.** FIVE BADGES CHOSEN: short attacks (Braxton's triangles, SOL_red) · trills (`tr` + wavy line, the
+  format's blue) · accented long tones (Braxton's wedge and line, white) · multiphonics (the boxed chord, SOL_yellow) · audible beats
+  (the wave in its outline, SOL_orange). ► SCATTERED STRIKES in hand, THE LAST: seven candidates on the page (a the dive straight down ·
+  b the flock diving · c his own strike in time · d conductor curves landing · e a burst · f marcatos scattered · g a chord pulled
+  apart). Open: his sign and colour · where the accented long tones are in the piece (the petal hits?). What is left after the badges:
+  PLAN.md 2.3's last paragraph.
 - **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
