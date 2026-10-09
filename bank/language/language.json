@@ -260,6 +260,21 @@
     "from": "the diamond notehead — the sign of a harmonic — three times, stacked",
     "for": "Fits the strings, whose multiphonics are found at harmonic nodes. Risk: a diamond means different things on different instruments, and here it would read as harmonics.",
     "svg": "<g fill='none' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'><polygon points='13.2,7.4 18,3.7 22.8,7.4 18,11.1'/><polygon points='13.2,15.6 18,11.9 22.8,15.6 18,19.3'/><polygon points='13.2,27.2 18,23.5 22.8,27.2 18,30.9'/></g>"
+   },
+   {
+    "id": "chordBoxed",
+    "name": "the chord, boxed — the box where the heads were",
+    "from": "his ask: a rectangle around the noteheads with a little padding, the noteheads shrunk so that the rectangle takes exactly the space the three heads take in b",
+    "for": "A frame makes the three heads ONE object — one sound of several pitches — and a box is how scores mark material to be held or repeated freely. The cost: the heads are about half their size.",
+    "svg": "<g fill='currentColor'><glyph name='notehead.open' x='15.9' y='7.2' h='3.41'/><glyph name='notehead.open' x='15.9' y='13.89' h='3.41'/><glyph name='notehead.open' x='15.9' y='24.79' h='3.41'/></g><rect x='14.45' y='5.75' width='7.17' height='23.9' fill='none' stroke='currentColor' stroke-width='1.1'/>",
+    "_geometry": "the rectangle's outer edge = b's footprint (8.27 × 25 px at 13.9, 5.2); line 1.1 px, padding 0.9 px; heads 3.41 px tall (b: 6.6)"
+   },
+   {
+    "id": "chordBoxOutside",
+    "name": "the chord, boxed — the heads as they were",
+    "from": "for comparison: the same three heads at their size in b, the rectangle drawn outside them with the same padding",
+    "for": "The heads stay readable at 36 px; the badge's sign grows a little wider and taller than b.",
+    "svg": "<g fill='currentColor'><glyph name='notehead.open' x='13.9' y='5.2' h='6.6'/><glyph name='notehead.open' x='13.9' y='12.2' h='6.6'/><glyph name='notehead.open' x='13.9' y='23.6' h='6.6'/></g><rect x='12.45' y='3.75' width='11.17' height='27.9' fill='none' stroke='currentColor' stroke-width='1.1'/>"
    }
   ]
  }

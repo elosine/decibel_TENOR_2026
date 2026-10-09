@@ -6421,3 +6421,17 @@ The red did not move (two units). The green, the blue and the purple came out DA
 **Made:** `bank/language/language.json` (the choice · `badge.plainColours` · `candidates.multiphonics`, the chord drawn with the notation font's open notehead) · `tools/language/build_page.js` (white as a name, greyed as taken). Seen in the AI's pane: three badges in the table, five candidates under them.
 
 **Sources:** en.wikipedia.org/wiki/Multiphonic · userpages.umbc.edu/~emrich (Richards, *The Clarinet of the Twenty-First Century*) · cambridge.org *Tempo*, "The Art of the String Multiphonic" · tricentricfoundation.org (on Echo Echo Mirror House Music) · blogs.loc.gov/music (Braxton's Language Types).
+
+## §311. THE MULTIPHONIC'S CHORD, BOXED — his variant of candidate b, drawn two ways (2026-10-09, Opus)
+
+**What prompted it (his words, verbatim):** *"can you draw a rectangle around the noteheads, a little padding and let me see those, but shringk the noteheads so the rect is taking up the same space as current noteheads"* — on candidate b of §310, the chord of three open noteheads.
+
+**His idea, as read:** a FRAME around the three heads, so they read as one object; the frame must not make the sign bigger — it takes the heads' present footprint and the heads shrink inside it.
+
+**Drawn** (`bank/language/language.json` `candidates.multiphonics`, APPENDED so a … e keep their letters; the page, candidates f · g):
+- **f — as asked.** Candidate b's three heads cover 8.27 × 25 px of the 36 px badge. The rectangle's OUTER edge is exactly that footprint; its line 1.1 px, the padding inside it 0.9 px; the heads, the font's own open notehead, shrunk to fit the clear width — 3.41 px tall where b's are 6.6 — and their uneven spacing kept in proportion (the top head at the top of the clear space, the bottom one at its bottom).
+- **g — for comparison, unasked, said as such:** the heads at b's size, the same rectangle drawn OUTSIDE them. The arithmetic of f halves the heads (a footprint 8.27 px wide leaves 4.27 px for a head once a line and a padding stand on each side); g is what the frame looks like if the heads keep their size and the sign grows by 2 px each way instead.
+
+**What the frame says, for the record:** a box round material is the sign scores use for something to be held or repeated freely (frame or box notation — Lutosławski's and many since; from the AI's knowledge, not looked up); a rectangle between two pitches is the tone-cluster's sign. Either reading suits a held multiphonic.
+
+**Nothing chosen.** Seen in the AI's pane: both draw, large and at 36 px.
