@@ -6,23 +6,127 @@
  "_level": "mimic — each answer onset at the level of the strike onset it came from (the ladder's marks) · or a mark (ppp … fff) — every onset at it",
  "deal": "robin",
  "_deal": "robin — the players in turn over the answer's onsets, a sample an onset (a strike of six onsets: one player twice) · all — every player at every onset, a chord each",
- "samples": { "processed": true, "_processed": "the processed versions of the impulses are rolled beside the raw captures; a player's deck is shuffled when empty, none twice until all are used" },
+ "samples": {
+  "processed": true,
+  "_processed": "the processed versions of the impulses are rolled beside the raw captures; a player's deck is shuffled when empty, none twice until all are used",
+  "envs": [
+   "perc",
+   "expodec"
+  ],
+  "_envs": "DEC-113 (RUNNING_LOG §337), his 'a': the ENDINGS a processed version must have to be in a reply's deck (bank/presets.json envelopes) — perc · expodec, the two SHORT ones that keep the attack (3 ms up then down · instant then an exponential fall; as long as the sample, or 1.75× for a time preset). Empty = any ending: the 1,415 ring versions (tail, median 1.5 s, up to 30 s) and the drones' stretches (shape, 10 … 20 s) would be dealt — what the first rig drew from. The engine reads the index row's `end`.",
+  "categories": [
+   "impulse"
+  ],
+  "_categories": "the CATEGORIES a capture must have to be in a deck (the index row's `category`): impulse — the drone recordings (drone-rec, 6 … 9 s) and the multiphonic sources (drone) are out; a processed version goes by its source's category. Empty = every capture of the player.",
+  "deal": {
+   "date": "2026-10-09 22:43",
+   "seed": 1,
+   "envs": [
+    "perc",
+    "expodec"
+   ],
+   "players": [
+    "bfl",
+    "bcl",
+    "perc",
+    "va",
+    "vc"
+   ],
+   "captures": 133,
+   "variants": 266,
+   "presets": 40,
+   "rendered": true,
+   "command": "node tools/deal_strike_variants.js --envs perc,expodec --seed 1 --render",
+   "_doc": "the last deal of short processed versions for the replies (tools/deal_strike_variants.js): every impulse capture × each ending, a preset round robin through the dealt set, seeded; sent as a plan with render 1 when rendered"
+  }
+ },
  "transformations": {
-  "asPlayed":   { "_doc": "the strike's rhythm as it was" },
-  "retrograde": { "_doc": "the rhythm reversed — the levels travel with their onsets" },
-  "invert":     { "_doc": "the gaps mirrored: each gap becomes (longest + shortest) − itself, long ↔ short; the onsets keep their order and levels" },
-  "spread":     { "range": [1.5, 3], "_doc": "every gap × one draw in range" },
-  "compress":   { "range": [0.3, 0.7], "_doc": "every gap × one draw in range" },
-  "scramble":   { "_doc": "the gaps shuffled by the window's seed; the levels stay in the onsets' order" },
-  "rotate":     { "_doc": "the gaps rotated by a draw of 1 … n−1" },
-  "thin":       { "share": [0.3, 0.5], "_doc": "a share of the onsets dropped (drawn in share), never the first" },
-  "thicken":    { "share": [0.3, 0.5], "copyMs": [40, 120], "_doc": "a share of the onsets doubled, each copy copyMs after its original, at its level" }
+  "asPlayed": {
+   "_doc": "the strike's rhythm as it was"
+  },
+  "retrograde": {
+   "_doc": "the rhythm reversed — the levels travel with their onsets"
+  },
+  "invert": {
+   "_doc": "the gaps mirrored: each gap becomes (longest + shortest) − itself, long ↔ short; the onsets keep their order and levels"
+  },
+  "spread": {
+   "range": [
+    1.5,
+    3
+   ],
+   "_doc": "every gap × one draw in range"
+  },
+  "compress": {
+   "range": [
+    0.3,
+    0.7
+   ],
+   "_doc": "every gap × one draw in range"
+  },
+  "scramble": {
+   "_doc": "the gaps shuffled by the window's seed; the levels stay in the onsets' order"
+  },
+  "rotate": {
+   "_doc": "the gaps rotated by a draw of 1 … n−1"
+  },
+  "thin": {
+   "share": [
+    0.3,
+    0.5
+   ],
+   "_doc": "a share of the onsets dropped (drawn in share), never the first"
+  },
+  "thicken": {
+   "share": [
+    0.3,
+    0.5
+   ],
+   "copyMs": [
+    40,
+    120
+   ],
+   "_doc": "a share of the onsets doubled, each copy copyMs after its original, at its level"
+  }
  },
  "timings": {
-  "rightAfter":    { "rangeS": [0.3, 0.8], "_doc": "the answer's first onset this many seconds after the strike's last onset" },
-  "aBeatLater":    { "rangeS": [1, 2] },
-  "callResponse":  { "ofStrike": [0.8, 1.2], "minMs": 300, "_doc": "after the strike's own length × a draw in ofStrike — a strike of one onset counts as minMs long" },
-  "muchLater":     { "rangeS": [6, 15] },
-  "inLaterWindow": { "rangeS": [10, 15], "offsetS": [0, 0.5], "_doc": "17.3's: at the start of a later window + a draw in offsetS; with no later window known (the rig) it reads rangeS as muchLater does" }
+  "rightAfter": {
+   "rangeS": [
+    0.3,
+    0.8
+   ],
+   "_doc": "the answer's first onset this many seconds after the strike's last onset"
+  },
+  "aBeatLater": {
+   "rangeS": [
+    1,
+    2
+   ]
+  },
+  "callResponse": {
+   "ofStrike": [
+    0.8,
+    1.2
+   ],
+   "minMs": 300,
+   "_doc": "after the strike's own length × a draw in ofStrike — a strike of one onset counts as minMs long"
+  },
+  "muchLater": {
+   "rangeS": [
+    6,
+    15
+   ]
+  },
+  "inLaterWindow": {
+   "rangeS": [
+    10,
+    15
+   ],
+   "offsetS": [
+    0,
+    0.5
+   ],
+   "_doc": "17.3's: at the start of a later window + a draw in offsetS; with no later window known (the rig) it reads rangeS as muchLater does"
+  }
  }
 }

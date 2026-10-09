@@ -21,7 +21,7 @@
   "date": "2026-10-09",
   "tool": "tools/notate_section.js (profile trance) --mics --elec",
   "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. MIC OPENINGS (decibel PLAN 2.4): 30 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 25 zone(s) elecPlay as elecReturn overlays.",
-  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening-elec --label \"Approaching — the opening, with the electronics (0 … 37 s)\" --mics --silent 0-37 --announce shortAttacks:0:37 --elec --elecBadge flocking:0:37"
+  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening-elec --label \"Approaching — the opening, with the electronics (0 … 37 s)\" --mics --silent 0-37 --announce shortAttacks:0:37 --elec --elecBadge flocking:0:37:each --elecWindow 0:37"
  },
  "events": [
   {
@@ -2830,6 +2830,361 @@
     "type": "flocking",
     "place": "before",
     "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-11222",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 11.222
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-12182",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 12.182
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-13373",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 13.373
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-14942",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 14.942
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-16353",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 16.353
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-17418",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 17.418
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-17699",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 17.699
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-18462",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 18.462
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-20394",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 20.394
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-3-21900",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 21.9
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-22991",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 22.991
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-24595",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 24.595
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-25825",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 25.825
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-26170",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 26.17
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-27413",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 27.413
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-29850",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 29.85
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-31300",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 31.3
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-32500",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 32.5
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-33000",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 33
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-34400",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 34.4
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-P4-6239",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     6.239,
+     33.8
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-L2-6591",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     6.591,
+     32.35
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-P0-7851",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     7.851,
+     35
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-P5-9500",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     9.5,
+     35.5
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-P1-9737",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     9.737,
+     36.9
+    ]
+   },
+   "value": {
+    "badgeLeft": true
    },
    "provenance": "authored"
   }

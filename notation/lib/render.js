@@ -295,8 +295,9 @@
         const rh = Math.max(bh, E.elecBadge ? E.elecBadge.sizeSs * ssPx : bh);
         const ry = ER.place === 'laneTop' ? lane.yTopPx + gp : ER.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - rh) / 2 : lane.yBotPx - gp - rh;
         const yOf = h => (ER.place === 'laneMiddle' || ER.align === 'centre') ? ry + (rh - h) / 2 : ER.place === 'laneTop' ? ry : ry + rh - h;
-        return { yOf };
+        return { yOf, ry, rh };
       };
+      let elecGrainDefined = false;   // [§336] the window's grain filter is defined once a sheet
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
       let curShift = 0;
@@ -998,6 +999,26 @@
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
             '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
+        } else if (it.k === 'elecwin') {
+          // [decibel PLAN 2.7 — RUNNING_LOG §336; DEC-112; rules.json objects.elecWindow → engraving.render.elecWindow] THE ELECTRONICS' WINDOW: a
+          // see-through slate-grey pane over a lane's whole electronics' row for the stretch — the badge and the bricks lie ON it — that says
+          // "these are the electronics": a plain rectangle (no corners), a pale fill, a stronger outline, and a very subtle grain (an SVG
+          // fractal-noise filter, defined once a sheet, laid over the pane at grain.opacity; 0 = none). It reaches left to the badge before
+          // the first brick when the overlay says so. A LONG kind, cut like paper at a page turn. No row in the registry = no ink.
+          const EW = E.elecWindow, ER = E.elecReturn, BG = E.elecBadge;
+          if (!EW || !ER || !crosses(it.t0, it.t1)) continue;
+          const whole = cutMark >= 0, row = elecRow(ER), pad = EW.padSs * ssPx;
+          const xa0 = view.xOfSeconds(it.t0) - (it.badgeLeft && BG ? (BG.gapSs + BG.sizeSs) * ssPx : 0) - pad, xb0 = view.xOfSeconds(it.t1) + pad;
+          const xa = whole ? xa0 : Math.max(xa0, view.xOfSeconds(w0)), xb = whole ? xb0 : Math.min(xb0, view.xOfSeconds(wInk));
+          const wy = row.ry - pad, wh = row.rh + 2 * pad, ww = Math.max(1, xb - xa);
+          const G = EW.grain || {}, grain = G.opacity > 0;
+          if (grain && !elecGrainDefined) {
+            elecGrainDefined = true;
+            parts.push('<defs><filter id="elecGrain" x="0" y="0" width="1" height="1"><feTurbulence type="fractalNoise" baseFrequency="' + (G.freq || 0.9) + '" numOctaves="' + (G.octaves || 1) + '" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter></defs>');
+          }
+          parts.push('<rect class="elec-window" x="' + xa.toFixed(2) + '" y="' + wy.toFixed(2) + '" width="' + ww.toFixed(2) + '" height="' + wh.toFixed(2) +
+            '" fill="' + EW.colour + '" fill-opacity="' + EW.fillOpacity + '" stroke="' + EW.colour + '" stroke-width="' + (EW.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + EW.strokeOpacity + '"/>' +
+            (grain ? '<rect class="elec-grain" x="' + xa.toFixed(2) + '" y="' + wy.toFixed(2) + '" width="' + ww.toFixed(2) + '" height="' + wh.toFixed(2) + '" filter="url(#elecGrain)" opacity="' + G.opacity + '"/>' : ''));
         } else if (it.k === 'elecret') {
           // [decibel PLAN 2.7 — RUNNING_LOG §335; DEC-111; rules.json objects.elecReturn → engraving.render.elecReturn] THE ELECTRONICS' RETURN, the
           // presentation view's hint: a brick over the region the engine answers in — the mic opening's own recipe (a rounded rectangle, a pale
@@ -1098,7 +1119,7 @@
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
     'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
-  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret'];   // [§335] the electronics' return brick spans its region   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
+  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket
   // belongs to a beam group and the splicer is stamp-atomic — no cut severs a

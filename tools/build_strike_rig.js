@@ -75,7 +75,7 @@ const typeOrder = SC.shuffle(TYPES.slice(), rnd), timingOrder = SC.shuffle(TIMIN
         'His strike takes (`bank/panel_snapshots.json`, the Strikes drawer), each in the **' + ART + '** set at **' + DYN + '**, ' + EVERY + ' s apart, each under a STRIKE WINDOW brick (`W`, the electronics\' sixth object). Played from 0 with the engine up, the engine hears every note inside a window (the simulated ear), waits ' + (elecGap(CAT)) + ' ms of silence, and ANSWERS: the rhythm transformed, placed after the strike\'s last note, one banked sample a player, each onset at the strike\'s loudness. The catalogue: `bank/strike_responses.json`. What is heard when:', '',
         '| at (s) | take | strike # | notes | long (ms) | rhythm | timing | the answer (ms from its first) | answers from (s) |', '|---|---|---|---|---|---|---|---|---|']
         .concat(rows.map((r) => '| ' + r.at.toFixed(1) + ' | ' + r.take + ' | ' + r.strike + ' | ' + r.n + ' | ' + r.lenMs + ' | **' + SC.TYPE_NAME[r.type] + '** | **' + SC.TIMING_NAME[r.timing] + '** (+' + (r.afterMs / 1000).toFixed(2) + ' s) | ' + r.onsets.join(' · ') + ' | ' + r.answerAt.toFixed(2) + ' |'))
-        .concat(['', 'The samples are rolled by the engine at each answer (a deck a player, none twice until all are used; the processed versions ' + (elecProc(CAT) ? 'among them' : 'left out') + ') — its window says which. The transformations: ' + TYPES.map((t) => SC.TYPE_NAME[t]).join(' · ') + '. The timings: ' + TIMINGS.map((t) => SC.TIMING_NAME[t]).join(' · ') + '. Each appears ' + Math.floor(takes.length / TYPES.length) + ' … ' + Math.ceil(takes.length / TYPES.length) + ' and ' + Math.floor(takes.length / TIMINGS.length) + ' … ' + Math.ceil(takes.length / TIMINGS.length) + ' times.', '',
+        .concat(['', 'The samples are rolled by the engine at each answer (a deck a player, none twice until all are used; the processed versions ' + (elecProc(CAT) ? 'among them' + envsNote(CAT) : 'left out') + ') — its window says which. The transformations: ' + TYPES.map((t) => SC.TYPE_NAME[t]).join(' · ') + '. The timings: ' + TIMINGS.map((t) => SC.TIMING_NAME[t]).join(' · ') + '. Each appears ' + Math.floor(takes.length / TYPES.length) + ' … ' + Math.ceil(takes.length / TYPES.length) + ' and ' + Math.floor(takes.length / TIMINGS.length) + ' … ' + Math.ceil(takes.length / TIMINGS.length) + ' times.', '',
             'A number changed in the catalogue: the builder with `--replace`, then File ▾ → Reload in the page (the numbers travel in the bricks — no engine restart). A knob on ONE window: its panel (Rhythm · Timing · Seed · Gap · Level · Deal · Processed · Players · Samples).']);
     const out = ['the rig: ' + takes.length + ' takes, ' + score.objects.length + ' objects, ' + r3(rows[rows.length - 1].answerAt).toFixed(1) + ' s to the last answer', ''].concat(lines, ['', 'window · take · strike · rhythm · timing · the answer from']).concat(rows.map((r) => '  ' + r.id.padEnd(4) + r.take.padEnd(10) + ('#' + r.strike).padEnd(5) + SC.TYPE_NAME[r.type].padEnd(12) + SC.TIMING_NAME[r.timing].padEnd(20) + r.answerAt.toFixed(2) + ' s'));
     if (DRY) { out.push('(dry — nothing written)'); console.log(out.join('\n')); return; }
@@ -87,3 +87,10 @@ const typeOrder = SC.shuffle(TYPES.slice(), rnd), timingOrder = SC.shuffle(TIMIN
 
 function elecGap(C) { return +C.gapMs || SC.DEFAULTS.gapMs; }
 function elecProc(C) { return !!((C.samples || SC.DEFAULTS.samples).processed); }
+// [§337, DEC-113] the deck's filters, said on the sheet: the endings a processed version may have · the categories a capture may have
+function envsNote(C) {
+    const S = C.samples || {};
+    const e = Array.isArray(S.envs) && S.envs.length ? ' — their endings ' + S.envs.join(' · ') + ' only, the short ones' : '';
+    const c = Array.isArray(S.categories) && S.categories.length ? '; the captures of category ' + S.categories.join(' · ') + ' only' : '';
+    return e + c;
+}

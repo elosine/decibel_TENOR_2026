@@ -4,7 +4,7 @@
 > (with its basis and its §), regenerate, commit both. `node tools/check_rules.js` fails when the page and the tables disagree.
 > The rules for a NEW notation begin with a DEVICE SHEET (`docs/PLANNING_METHOD.md`); `docs/NOTATION_STANDARDS.md` is the history.
 
-LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 299 registry pointers compile from these tables.
+LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 305 registry pointers compile from these tables.
 
 **How to read a row:** the value · `→` the registry key(s) it is compiled into (what the layout and the renderer read) · the basis
 (`lilypond` · `gould` · `composer` · `AI` · `census` = what drew when the tables were built) · the ref (the § or the day). A field
@@ -192,6 +192,8 @@ LAYER 3 — THE OBJECTS (§421 · §422 · §427 · §428): one row per drawn ob
   - draws `elecret`
 - **elecBadge** — sizeSs **4.557** → `render.elecBadge.sizeSs` · gapSs **1.52** → `render.elecBadge.gapSs` · row **elec** · *composer* · decibel RUNNING_LOG §334 (DEC-111: 'flocking badge but smaller' — the electronics' badge, piece #1's flocking badge, in the electronics' row: 4.557 ss = 36 px at the 1080 frame, the format's own size and two thirds of the language badges' 54; gapSs 1.52 = 12 px before the lane's first return brick, as the announcing badge stands before its mic) · §335 (the build). Its sign and colour: the table electronics
   - draws `badge`
+- **elecWindow** — colour **elecWindow #708090** → `render.elecWindow.colour` · fillOpacity **0.1** → `render.elecWindow.fillOpacity` · strokeOpacity **0.55** → `render.elecWindow.strokeOpacity` · strokeSs **0.19** → `render.elecWindow.strokeSs` · padSs **0.5** → `render.elecWindow.padSs` · grain **{opacity: 0.06, freq: 0.9, octaves: 1}** → `render.elecWindow.grain` · *composer* · decibel RUNNING_LOG §336 (DEC-112: 'a kind of a general electronics window … a rectangle, not rounded … a gray … an outline with fill, a more opaque outline … a transparent, maybe even slightly grainy window … cover the whole of the electronics, so the badge and the line … like a slate gray, even like a grain to it, but very subtle'): a see-through pane over a lane's whole electronics' row for a stretch — from the badge before the first return brick to the last brick's end, padSs around — a plain rectangle (no corners), the fill at fillOpacity, the outline at strokeOpacity (stronger), and a grain: an SVG fractal-noise filter (freq · octaves) laid over it at grain.opacity — 0 turns it off. Its colour the row colours.elecWindow (slate grey). Drawn under the badge and the bricks. The numbers the AI's first, his to move
+  - draws `elecwin`
 - **beatBall** — colour **navyBlue #1C4879** · colours **[@colours.navyBlue.value, @colours.olive.value]** → `animated.beatBall.colours` · coloursRef **§578 — the ball takes its FRAME's colour, the frames alternating navy · olive on a part (objects.tick.gridColours, the same pair); `colour` stays the single-colour fallback** · opacity **0.3 (= ringBar.opacity)** · radiusPx **5** · *composer* · §567 (2026-09-29, his LG-145): THE SHOWN BEAT's ball — the tuba's GC ball (piece #1's physics, the 5 px ball) in the duration line's navyBlue at its opacity, one in flight over a beat grid (the beatGrid overlay) and nowhere else; the style engraving.animated.beatBall
   - draws `anim:beatBall`
 
@@ -279,6 +281,7 @@ THE COLOURS (§427 · §428): ink #111 for every music mark — EXCEPT the durat
 - **SOL_purple** `#5F4296` — the electronics' colour (through elecPurple) · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
 - **SOL_black** `#151415` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
 - **elecPurple** `#5F4296` — the electronics' own colour — the return brick and the flocking badge of the presentation view · *composer* · decibel RUNNING_LOG §334 (DEC-111: 'purple at the bottom' — SOL_purple as offered in §333, the one SOL colour no language type had taken; the composer score's own return brick is #8E24AA at 35 % — 'as the composer score', the one-word alternative, here) · §335 (the build)
+- **elecWindow** `#708090` — the electronics' window — the see-through slate-grey pane over a lane's electronics' row · *composer* · decibel RUNNING_LOG §336 (DEC-112: 'like a slate gray' — the CSS slategray, #708090, the AI's first pick; the badge ground #2d3748 is the dark slate of the format)
 
 THE FACES (§428): Crimson Pro Light upright / Light Italic for words and numbers; Emmentaler (LilyPond 2.24.4) for music. `emPerSs` is the text's em in staff spaces (render's textScale): a text item's size × emPerSs = its em.
 
@@ -330,6 +333,7 @@ Every drawn kind names what happens at a page edge: on SCREEN `cut` (clipped lik
 | `mic` | cut | stub |
 | `badge` | clamp | whole |
 | `elecret` | cut | stub |
+| `elecwin` | cut | stub |
 | `anim:cursor` | atomic | none |
 | `anim:gc` | cut | none |
 | `anim:beatBall` | cut | none |

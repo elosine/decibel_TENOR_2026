@@ -1,6 +1,6 @@
 # THE STRIKE RIG — `scores/strike-rig.json`
 
-*Built 2026-10-09 14:04 by `node tools/build_strike_rig.js` (PLAN.md 1.9 · 17.1 d). Regenerated at every build — do not edit.*
+*Built 2026-10-09 22:43 by `node tools/build_strike_rig.js` (PLAN.md 1.9 · 17.1 d). Regenerated at every build — do not edit.*
 
 His strike takes (`bank/panel_snapshots.json`, the Strikes drawer), each in the **staccato** set at **f**, 12 s apart, each under a STRIKE WINDOW brick (`W`, the electronics' sixth object). Played from 0 with the engine up, the engine hears every note inside a window (the simulated ear), waits 500 ms of silence, and ANSWERS: the rhythm transformed, placed after the strike's last note, one banked sample a player, each onset at the strike's loudness. The catalogue: `bank/strike_responses.json`. What is heard when:
 
@@ -27,6 +27,6 @@ His strike takes (`bank/panel_snapshots.json`, the Strikes drawer), each in the 
 | 218.0 | strikes19 | 41 | 7 | 190 | **as played** | **call and response** (+0.26 s) | 0 · 92 · 116 · 161 · 167 · 174 · 190 | 218.45 |
 | 230.0 | strikes20 | 35 | 5 | 173 | **compressed** | **right after** (+0.64 s) | 0 · 39 · 39 · 42 · 70 | 230.81 |
 
-The samples are rolled by the engine at each answer (a deck a player, none twice until all are used; the processed versions among them) — its window says which. The transformations: as played · retrograde · inverted · spread · compressed · scrambled · rotated · thinned · thickened. The timings: right after · a beat later · call and response · much later · in a later window. Each appears 2 … 3 and 4 … 4 times.
+The samples are rolled by the engine at each answer (a deck a player, none twice until all are used; the processed versions among them — their endings perc · expodec only, the short ones; the captures of category impulse only) — its window says which. The transformations: as played · retrograde · inverted · spread · compressed · scrambled · rotated · thinned · thickened. The timings: right after · a beat later · call and response · much later · in a later window. Each appears 2 … 3 and 4 … 4 times.
 
 A number changed in the catalogue: the builder with `--replace`, then File ▾ → Reload in the page (the numbers travel in the bricks — no engine restart). A knob on ONE window: its panel (Rhythm · Timing · Seed · Gap · Level · Deal · Processed · Players · Samples).

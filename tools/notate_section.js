@@ -1347,8 +1347,11 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --elec                     (an extraction option, above) every return brick of the composer score in the window, as `elecReturn` overlays
 //                              (its span the region the engine rolls the sounds inside; its count the sounds it carries) — drawn in the
 //                              lane's electronics' row (rules.json objects.elecReturn)
-//   --elecBadge type:t0:t1[:start]   THE ELECTRONICS' BADGE — a row of rules.json electronics.badges (`flocking`), once in each lane: before
-//                              that lane's first return brick in [t0, t1); with :start, at t0 on every lane instead. In the electronics' row.
+//   --elecBadge type:t0:t1[:start|:each]   THE ELECTRONICS' BADGE — a row of rules.json electronics.badges (`flocking`), once in each lane: before
+//                              that lane's first return brick in [t0, t1); with :start, at t0 on every lane instead; with :each, before EVERY
+//                              return brick of the span (DEC-112: 'repeat the flocking badge for each line of electronics'). In the electronics' row.
+//   --elecWindow t0:t1         THE ELECTRONICS' WINDOW (DEC-112) — once a lane, the see-through grey pane over the lane's whole stretch of
+//                              electronics in [t0, t1): from the badge before its first return brick to its last brick's end (`elecWindow` overlays)
 // All repeatable. Written at extraction, so a re-extract with the same flags gives the same page.
 {
   const argsOf = name => { const out = []; process.argv.forEach((a, i) => { if (a === '--' + name) out.push(String(process.argv[i + 1] || '')); }); return out; };
@@ -1366,13 +1369,14 @@ for (let i = 0; i < process.argv.length; i++) {
     }
     console.log('  silent ' + a + ': ' + members.length + ' note(s) draw nothing');
   }
-  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length;
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length;
   if (wantBadges) {
     const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
     const LANG = (RULES.language || {}).types || {};
     const ELEC = (RULES.electronics || {}).badges || {};   // [§335] the electronics' own badges (the presentation view's)
     const mics = doc.overlays.filter(o => o.kind === 'micOpening').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
     const rets = doc.overlays.filter(o => o.kind === 'elecReturn').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
+    const elecBefore = new Set();   // [§336] 'part@t' of every electronics' badge placed BEFORE a brick — the window reaches left to it
     // a lane = a part, or the parts the ensemble joins in one lane (the percussionist's two)
     const laneKey = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
     const read = (name, a) => {
@@ -1411,13 +1415,32 @@ for (let i = 0; i < process.argv.length; i++) {
         const seen = new Set();
         for (const p of parts) { const k = laneKey(p); if (!seen.has(k)) { seen.add(k); addBadge(p, t0, f[0], 'at', 'elec', 'elec'); } }
         console.log('  elecBadge ' + a + ': ' + seen.size + ' lane(s), at ' + t0 + ' s');
+      } else if (mode === 'each') {   // [DEC-112, §336] a badge before EVERY return brick of the span
+        for (const o of inSpan) { addBadge(o.target.part, o.target.span[0], f[0], 'before', 'elec', 'elec'); elecBefore.add(o.target.part + '@' + o.target.span[0]); }
+        console.log('  elecBadge ' + a + ': ' + inSpan.length + ' brick(s), a badge before each');
       } else {
         const first = new Map();
         for (const o of inSpan) { const k = laneKey(o.target.part); if (!first.has(k)) first.set(k, o); }
         if (!first.size) { console.error('--elecBadge ' + a + ': no return brick in the span (is --elec given?) — add :start to place it at t0'); process.exit(2); }
-        for (const o of first.values()) addBadge(o.target.part, o.target.span[0], f[0], 'before', 'elec', 'elec');
+        for (const o of first.values()) { addBadge(o.target.part, o.target.span[0], f[0], 'before', 'elec', 'elec'); elecBefore.add(o.target.part + '@' + o.target.span[0]); }
         console.log('  elecBadge ' + a + ': ' + first.size + ' lane(s), each before its first return brick');
       }
+    }
+    // [decibel PLAN 2.7, RUNNING_LOG §336 — DEC-112] --elecWindow t0:t1: THE ELECTRONICS' WINDOW once a lane — over the lane's stretch of return
+    // bricks in [t0, t1), from the first brick's start to the last brick's end; `badgeLeft` when a badge stands before the first brick, so the
+    // window reaches left to it. The overlay sits on the lane's FIRST part (the percussionist's two parts are one lane).
+    for (const a of argsOf('elecWindow')) {
+      const f = a.split(':'), t0 = parseFloat(f[0]), t1 = parseFloat(f[1]);
+      if (!(t1 > t0)) { console.error('--elecWindow needs t0:t1 — got ' + a); process.exit(2); }
+      const inSpan = rets.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9);
+      const lanes = new Map();
+      for (const o of inSpan) { const k = laneKey(o.target.part); const g = lanes.get(k) || { parts: new Set(), t0: Infinity, t1: -Infinity }; g.parts.add(o.target.part); g.t0 = Math.min(g.t0, o.target.span[0]); g.t1 = Math.max(g.t1, o.target.span[1]); lanes.set(k, g); }
+      if (!lanes.size) { console.error('--elecWindow ' + a + ': no return brick in the span (is --elec given?)'); process.exit(2); }
+      for (const [k, g] of lanes) {
+        const first = [...g.parts].sort((x, y) => x - y)[0], badgeLeft = [...g.parts].some(p => elecBefore.has(p + '@' + g.t0));
+        doc.overlays.push({ id: 'ov-elecwin-' + k + '-' + Math.round(g.t0 * 1000), kind: 'elecWindow', target: { part: first, span: [+g.t0.toFixed(4), +g.t1.toFixed(4)] }, value: { badgeLeft }, provenance: 'authored' });
+      }
+      console.log('  elecWindow ' + a + ': ' + lanes.size + ' lane(s), each over its bricks' + ([...lanes.values()].every(g => [...g.parts].some(p => elecBefore.has(p + '@' + g.t0))) ? ', reaching left to the badge' : ''));
     }
   }
 }

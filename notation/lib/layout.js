@@ -356,6 +356,7 @@
     const freeRests = [];        // [§550] {part, t, dur} — a free-standing rest (the `rest` overlay), drawn at x(t) on its part
     const micOpens = [], badges = [];   // [decibel §325] {part, span} · {part, t, type, place} — the lane's own marks (the `micOpening` · `badge` overlays)
     const elecRets = [];         // [decibel §335] {part, span, count, all} — the electronics' return bricks (the `elecReturn` overlay; the presentation view's layer)
+    const elecWins = [];         // [decibel §336] {part, span, badgeLeft} — the electronics' window over a lane's stretch (the `elecWindow` overlay)
     const beatGrids = [];        // [§564] {part, span, unit, beatEvery, phase} — the shown beat's grid (the `beatGrid` overlay), ticks on the tick row
     const sequences = [];        // [LGMF 2d.2] {part, span, v} — one part's line of a sequence (the `sequence` overlay, IR amendment 10)
     const vibBowOf = new Map();  // [LGMF 2g.3] event id → its bow of a `vibBows` overlay {chain, voice, t0, t1, midi, marks, …, part}
@@ -376,6 +377,7 @@
       if (ov.kind === 'badge' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.type) { badges.push(Object.assign({ part: tgt.part, t: tgt.t, type: ov.value.type, place: ov.value.place || 'before' }, ov.value.row ? { row: ov.value.row } : {})); continue; }
       // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE ELECTRONICS' RETURN (the `elecReturn` overlay): the region the engine answers in, and how many sounds
       if (ov.kind === 'elecReturn' && tgt.part !== undefined && tgt.span) { elecRets.push({ part: tgt.part, span: tgt.span, count: (ov.value && ov.value.count) || 1, all: !!(ov.value && ov.value.all) }); continue; }
+      if (ov.kind === 'elecWindow' && tgt.part !== undefined && tgt.span) { elecWins.push({ part: tgt.part, span: tgt.span, badgeLeft: !!(ov.value && ov.value.badgeLeft) }); continue; }
       if (ov.kind === 'rest' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.dur) { freeRests.push({ part: tgt.part, t: tgt.t, dur: ov.value.dur }); continue; }
       if (ov.kind === 'beatGrid' && tgt.part !== undefined && tgt.span && ov.value && ov.value.unit > 0) { beatGrids.push(Object.assign({ part: tgt.part, span: tgt.span }, ov.value)); continue; }
       if (ov.kind === 'staff' && ov.value === 'off' && tgt.part !== undefined && tgt.span) {
@@ -3363,6 +3365,8 @@
       // [§550, LG-129] THE FREE RESTS (the `rest` overlay) — bespoke, no device
       // [decibel §325] THE MIC OPENINGS and THE BADGES of this part — placed by the renderer in the lane's mic row (rules.json objects.micOpening · badge)
       if (!(spec.staff > 0)) {
+        // [decibel §336] THE ELECTRONICS' WINDOW first, so the row's badges and bricks are drawn over it
+        for (const w of elecWins) if (w.part === spec.part) items.push({ k: 'elecwin', t0: w.span[0], t1: w.span[1], badgeLeft: w.badgeLeft });
         for (const m of micOpens) if (m.part === spec.part) items.push({ k: 'mic', t0: m.span[0], t1: m.span[1] });
         for (const b of badges) if (b.part === spec.part) items.push(Object.assign({ k: 'badge', t: b.t, type: b.type, place: b.place }, b.row ? { row: b.row } : {}));   // [§335] `row` only on the electronics' badge — a language badge's item is as it was
         // [decibel §335] THE ELECTRONICS' RETURNS of this part — placed by the renderer in the lane's electronics' row (rules.json objects.elecReturn)

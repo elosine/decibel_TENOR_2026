@@ -779,6 +779,7 @@
    "language": { "format": "@language.format", "types": "@language.types" },
    "elecReturn": { "colour": "@objects.elecReturn.colour", "fillOpacity": "@objects.elecReturn.fillOpacity", "strokeOpacity": "@objects.elecReturn.strokeOpacity", "strokeSs": "@objects.elecReturn.strokeSs", "cornerSs": "@objects.elecReturn.cornerSs", "place": "@objects.elecReturn.place", "align": "@objects.elecReturn.align", "gapSs": "@objects.elecReturn.gapSs", "perSoundFrac": "@objects.elecReturn.perSoundFrac", "capSounds": "@objects.elecReturn.capSounds", "minSs": "@objects.elecReturn.minSs" },
    "elecBadge": { "sizeSs": "@objects.elecBadge.sizeSs", "gapSs": "@objects.elecBadge.gapSs" },
+   "elecWindow": { "colour": "@objects.elecWindow.colour", "fillOpacity": "@objects.elecWindow.fillOpacity", "strokeOpacity": "@objects.elecWindow.strokeOpacity", "strokeSs": "@objects.elecWindow.strokeSs", "padSs": "@objects.elecWindow.padSs", "grain": "@objects.elecWindow.grain" },
    "electronics": { "badges": "@electronics.badges" },
    "fontFamily": "@faces.text.family",
    "partLabel": {
