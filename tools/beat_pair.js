@@ -1,110 +1,170 @@
 #!/usr/bin/env node
-// beat_pair.js — ONE BEATING PAIR INTO A SCORE, FROM HIS DICTATION (RUNNING_LOG §265 … §268; DEC-60 · 61): a player's long note
-// and a STATIC SINE BRICK over it at the same pitch, the note BENT so that the pair beats as he says — in BEATS A SECOND (Hz),
-// turned into cents at the note's own pitch. His words: *"Let's start over … just give me one note"* — the beating section built
-// up by hand, one pair at a time, the data points kept ON the objects (properties.beat) until the algorithm is worked out.
+// beat_pair.js — BEATING PAIRS INTO A SCORE (RUNNING_LOG §265 … §270; DEC-60 · 61 · 62): a player's long note and a STATIC SINE
+// BRICK over it at the same pitch, the note BENT so that the pair beats along a line said in BEATS A SECOND (Hz), turned into cents
+// at the note's own pitch. His words: *"Let's start over … just give me one note"* — the beating section built up by hand, pair by
+// pair, in his own score; then *"help me organize and then devise a way to roll"* — the three SHAPES of bank/beat_shapes.json.
 //
-//   node tools/beat_pair.js --score sec04-a-beating --pitch D2 --from 12 --to 2
-//        [--lane cello] [--start s | --gap 4,7] [--dur 16,25] [--at 0.667] [--side over|under] [--sine fff] [--note p] [--dry]
-//     --pitch   a note name (D2 · D#2 · Eb2) or a MIDI key
-//     --from · --to   the beating at the note's START and at its DESTINATION, beats a second (0 = the unison)
-//     --at      the fraction of the note at which the destination is reached; held from there to the end (his two thirds)
-//     --start   where the note begins, seconds — or --gap lo,hi: ROLLED after the end of the last object on that lane
-//     --dur     lo,hi: the length ROLLED in that range (or one number)
+// ROLLED — his rules (bank/beat_shapes.json, a _doc line on every number):
+//   node tools/beat_pair.js --score sec04-a-beating --roll --pitches D#2,D2,D#2 [--start 4] [--replace] [--seed N]
+//     per pitch: a GAP (a plain roll) · a SHAPE (upHold · downHold · upPlateauDown) · a PEAK (leaning low) · where a descent ENDS ·
+//     each part's length = its minimum + an extra that leans short (the smaller of two rolls). The pair's length is the SUM of its
+//     parts — never rolled; past maxLengthS it is rolled again. The beating never changes faster than the fastest pace.
+//     --start   where the first pair begins (else after the last object on the lane, a gap rolled)
+//     --replace the pairs already on the lane (sine bricks and the notes under them) are taken out first — a RE-ROLL
+//     --seed    the same seed, the same roll (printed, and kept on every brick)
+// DICTATED — one pair, said outright:
+//   node tools/beat_pair.js --score sec04-a-beating --pitch D2 --from 12 --to 2 [--at 0.667] [--dur 16,25] [--start s | --gap 4,7]
+//     --from · --to   the beating at the note's START and at its DESTINATION (0 = the unison); there at --at of the length, held
+// BOTH:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
-//     --sine · --note   the written dynamics: the sine brick's mark, the player's note
-//     --vel     the note's velocity outright; without it the note is AS LOUD AS HIS LAST NOTE ON THE LANE (the sound he judged),
-//               and only on an empty lane the ladder's velocity for --note
+//     --vel     the note's velocity outright; without it the note is AS LOUD AS HIS LAST NOTE ON THE LANE (the sound he judged —
+//               §268: the page's own p is velocity 37, the calibrated ladder's 57); the ladder's for --note only on an empty lane
 // The note is the lane's long-tone voice (bank/sine_behaviours.json), DRAWN (its own curve channel), its struck sound kept
 // (velAbs · cc7Abs — the GO's rule). A bend past the sampler's measured range is RE-KEYED — the string quartet's rule,
-// score/public/sine_go.js rekeyChain: a chain of notes, the key moved, the bend re-based, 5 ms overlaps. The note and its segments
-// carry properties.sine as the GO writes it (∿ off makes one plain note again); the brick carries properties.beat — what was
-// dictated and what was rolled. The sine brick: flat, no gliss, Follow off (it sounds for its whole span).
+// score/public/sine_go.js rekeyChain: the key moved, the bend re-based, a chain with 5 ms overlaps where one key cannot hold it.
+// The notes carry properties.sine as the GO writes it (∿ off makes one plain note again); the brick carries properties.beat —
+// the shape, its parts, the line, the seed. The sine brick: flat, no gliss, Follow off (it sounds for its whole span).
 // THE PAGE: the base is the NEWER of the save and the page's working copy (his unsaved edits kept); the result is written as the
-// save — File ▾ → Reload shows it. THE SORTING: the piece's (his score, his dictation).
+// save — File ▾ → Reload shows it. THE SORTING: the piece's (his score, his rules).
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const ROOT = path.resolve(__dirname, '..');
 const SineSim = require(path.join(ROOT, 'score', 'public', 'sine_sim.js')), SineGo = require(path.join(ROOT, 'score', 'public', 'sine_go.js'));
 const TextureDyn = require(path.join(ROOT, 'score', 'public', 'texture_dyn.js'));
-const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i >= 0 && process.argv[i + 1] != null ? process.argv[i + 1] : d; };
+const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i >= 0 && process.argv[i + 1] != null && !String(process.argv[i + 1]).startsWith('--') ? process.argv[i + 1] : d; };
 const has = (k) => process.argv.includes('--' + k);
 const die = (m, c) => { console.error(m); process.exit(c || 2); };
-const r1 = (x) => Math.round(x * 10) / 10, r3 = (x) => Math.round(x * 1000) / 1000;
+const r1 = (x) => Math.round(x * 10) / 10, r2 = (x) => Math.round(x * 100) / 100, r3 = (x) => Math.round(x * 1000) / 1000, up10 = (x) => Math.ceil(x * 10 - 1e-9) / 10;
+const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const MARKS = ['ppp', 'pp', 'p', 'mp', 'mf', 'f', 'ff', 'fff'];
 const range = (t, what) => { const a = String(t).split(',').map(Number); if (a.some((x) => !Number.isFinite(x)) || a.length > 2) die('--' + what + ' wants a number or lo,hi'); return a.length === 1 ? [a[0], a[0]] : a; };
-const roll = (r) => r1(r[0] + Math.random() * (r[1] - r[0]));
-const keyOf = (t) => { if (Number.isFinite(+t)) return Math.round(+t); const m = /^([A-Ga-g])([#b]?)(-?\d)$/.exec(String(t).trim()); if (!m) die('--pitch: a note name (D2 · D#2 · Eb2) or a MIDI key'); return { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }[m[1].toUpperCase()] + (m[2] === '#' ? 1 : m[2] === 'b' ? -1 : 0) + 12 * (+m[3] + 1); };
+const keyOf = (t) => { if (Number.isFinite(+t)) return Math.round(+t); const m = /^([A-Ga-g])([#b]?)(-?\d)$/.exec(String(t).trim()); if (!m) die('a pitch is a note name (D2 · D#2 · Eb2) or a MIDI key: ' + t); return { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 }[m[1].toUpperCase()] + (m[2] === '#' ? 1 : m[2] === 'b' ? -1 : 0) + 12 * (+m[3] + 1); };
+const SHAPE_SAY = { upHold: 'up + hold', downHold: 'down + hold', upPlateauDown: 'up + plateau + down', dictated: 'dictated' };
 
+const RULES = Object.assign({ levels: { sine: 'fff', note: 'p' }, gapS: [4, 7], shapes: { upHold: 1, downHold: 1, upPlateauDown: 1 }, peakHz: [3, 10], floorHz: 0.6, endMaxShare: 0.5,
+    paceSPerHz: [2.5, 6], holdMinS: 2.5, holdExtraMaxS: 8, maxLengthS: 60 }, fs.existsSync(path.join(ROOT, 'bank', 'beat_shapes.json')) ? readJson('bank/beat_shapes.json') : {});
+
+// ---- ONE SHAPE, ROLLED: -> { shape, peakHz, endHz, parts: [{ kind, fromHz, toHz, s, paceSPerHz? }], lengthS, tries } ----------------
+function rollShape(rnd, R) {
+    const lean = () => Math.min(rnd(), rnd());   // the smaller of two rolls: short and low are common, long and high rare
+    const pick = (w) => { const ks = Object.keys(w).filter((k) => +w[k] > 0); let x = rnd() * ks.reduce((a, k) => a + +w[k], 0); for (const k of ks) { x -= +w[k]; if (x < 0) return k; } return ks[ks.length - 1]; };
+    for (let tries = 1; tries <= 500; tries++) {
+        const shape = pick(R.shapes), peak = r1(R.peakHz[0] + (R.peakHz[1] - R.peakHz[0]) * lean());
+        const end = r1(R.floorHz + Math.max(0, peak * R.endMaxShare - R.floorHz) * rnd());
+        const parts = [];
+        const ramp = (kind, a, b) => { const pace = R.paceSPerHz[0] + (R.paceSPerHz[1] - R.paceSPerHz[0]) * lean(), s = up10(Math.abs(b - a) * pace); parts.push({ kind, fromHz: a, toHz: b, s, paceSPerHz: r2(s / Math.abs(b - a)) }); };
+        const flat = (kind, h) => parts.push({ kind, fromHz: h, toHz: h, s: up10(R.holdMinS + R.holdExtraMaxS * lean()) });
+        if (shape === 'upHold') { ramp('rise', 0, peak); flat('hold', peak); }
+        else if (shape === 'downHold') { ramp('fall', peak, end); flat('hold', end); }
+        else { ramp('rise', 0, peak); flat('plateau', peak); ramp('fall', peak, end); flat('hold', end); }
+        const lengthS = r1(parts.reduce((a, q) => a + q.s, 0));
+        if (lengthS <= R.maxLengthS) return { shape, peakHz: peak, endHz: shape === 'upHold' ? null : end, parts, lengthS, tries };
+    }
+    die('no shape under ' + R.maxLengthS + ' s in 500 rolls — bank/beat_shapes.json');
+}
+const lineOf = (parts) => { let t = 0; const line = [[0, parts[0].fromHz]]; for (const q of parts) { t = r3(t + q.s); line.push([t, q.toHz]); } return line; };
+
+// ---- the stack ------------------------------------------------------------------------------------------------------------------
 const name = arg('score'); if (!name) die('--score <name>');
 const file = path.join(ROOT, 'scores', name + '.json'), work = path.join(ROOT, 'scores', name + '-work.json');
 if (!fs.existsSync(file)) die('no such score: scores/' + name + '.json');
 const INSTRUMENTS = vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'sandbox', 'instruments.js'), 'utf8') + '\n;INSTRUMENTS;', {});
 const TRACKS = vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'score', 'public', 'composer.html'), 'utf8').match(/const TRACKS = (\[[\s\S]*?\]);/)[1], {});
-const REMAP = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'velocity_remap.json'), 'utf8'));
-const LANES = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'sine_behaviours.json'), 'utf8')).lanes;
-
+const REMAP = readJson('bank/velocity_remap.json'), LANES = readJson('bank/sine_behaviours.json').lanes;
 const laneArg = String(arg('lane', 'cello')).toLowerCase();
 const lane = TRACKS.findIndex((t, k) => [String(k), t.id, t.short, t.label, t.instKey].some((x) => String(x || '').toLowerCase() === laneArg));
 if (lane < 0) die('--lane: none of ' + TRACKS.map((t) => t.short || t.id).join(', '));
 const instKey = TRACKS[lane].instKey, inst = INSTRUMENTS[instKey], L = LANES[instKey];
 if (!inst || !L) die('the lane ' + laneArg + ' has no part in the sines (bank/sine_behaviours.json)');
 const tech = inst.techniques.find((t) => t.key === L.voice), lo = tech.rangeLow != null ? tech.rangeLow : inst.rangeLow, hi = tech.rangeHigh != null ? tech.rangeHigh : inst.rangeHigh;
-const midi = keyOf(arg('pitch') != null ? arg('pitch') : die('--pitch'));
-if (midi < lo || midi > hi) die(SineGo.pn(midi) + ' is outside ' + L.voice + ' (' + SineGo.pn(lo) + ' … ' + SineGo.pn(hi) + ')');
-const fromHz = +arg('from', 0), toHz = +arg('to', 0), at = Math.max(0.05, Math.min(1, +arg('at', 2 / 3)));
-if (!(fromHz >= 0) || !(toHz >= 0)) die('--from and --to: beats a second, 0 or more');
 const sign = arg('side', 'over') === 'under' ? -1 : 1;
-const sineMark = arg('sine', 'fff'), noteMark = arg('note', 'p');
+const sineMark = arg('sine', RULES.levels.sine), noteMark = arg('note', RULES.levels.note);
 if (!MARKS.includes(sineMark) || !MARKS.includes(noteMark)) die('--sine and --note: one of ' + MARKS.join(' '));
+const rangeC = 100 * (inst.bendRangeSt > 0 ? inst.bendRangeSt : 1);
 
 // the base: the newer of the save and the page's working copy — his unsaved edits are kept
 const useWork = fs.existsSync(work) && fs.statSync(work).mtimeMs > fs.statSync(file).mtimeMs;
 const s = JSON.parse(fs.readFileSync(useWork ? work : file, 'utf8'));
-const endOf = (o) => (o.endTime != null ? o.endTime : o.endSeconds);
-const lastEnd = Math.max(0, ...s.objects.filter((o) => o.layer === lane).map(endOf));
-const gap = arg('start') != null ? null : roll(range(arg('gap', '4,7'), 'gap'));
-const start = r3(arg('start') != null ? +arg('start') : lastEnd + gap), len = roll(range(arg('dur', '16,25'), 'dur')), end = r3(start + len);
-
-// the bend: from → to in beats a second, as cents at this pitch; there at `at`, held
-const c0 = fromHz ? r1(SineSim.centsFor(midi, fromHz, sign)) : 0, c1 = toHz ? r1(SineSim.centsFor(midi, toHz, sign)) : 0, tAt = r3(len * at);
-const bend = at >= 1 ? [[0, c0], [len, c1]] : [[0, c0], [tAt, c1], [len, c1]];
-const far = Math.max(Math.abs(c0), Math.abs(c1));
-if (far > 100 * (inst.playerBendSt != null ? inst.playerBendSt : 1)) die(far + ' c is past the player\'s reach (' + inst.playerBendSt + ' st, sandbox/instruments.js)');
-const rangeC = 100 * (inst.bendRangeSt > 0 ? inst.bendRangeSt : 1), segs = SineGo.rekeyChain(bend, len, rangeC);
-const off = segs.find((sg) => midi + sg.keyOffset < lo || midi + sg.keyOffset > hi);
-if (off) die('the re-key would need ' + SineGo.pn(midi + off.keyOffset) + ', outside ' + L.voice + ' (' + SineGo.pn(lo) + ' … ' + SineGo.pn(hi) + ')');
-
-// the note's loudness: --vel says the velocity outright; else AS HIS LAST NOTE ON THIS LANE (the sound he judged — §268: the page's own
-// "p" on his first note is velocity 37, the calibrated ladder's p for the cello is 57; his ear set the first); else the ladder's for the mark
+const startOf = (o) => (o.startTime != null ? o.startTime : o.startSeconds), endOf = (o) => (o.endTime != null ? o.endTime : o.endSeconds);
+// the note's loudness, read BEFORE anything is taken out: as his last note on the lane
 const m = MARKS.indexOf(noteMark);
 const prev = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.sonifyNote != null && (o.velAbs != null || o.recVel != null)).sort((a, b) => endOf(b) - endOf(a))[0];
-const vel = arg('vel') != null ? Math.max(1, Math.min(127, Math.round(+arg('vel')))) : prev ? Math.round(prev.velAbs != null ? prev.velAbs : prev.recVel)
-    : Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, instKey, midi, m / 7))));
+const vel = arg('vel') != null ? Math.max(1, Math.min(127, Math.round(+arg('vel')))) : prev ? Math.round(prev.velAbs != null ? prev.velAbs : prev.recVel) : null;
 const y = arg('vel') == null && prev && prev.nodes && prev.nodes[0] ? prev.nodes[0].y : Math.round(m / 7 * 1000) / 100;
+const out = [useWork ? '(the base: HIS working copy — unsaved edits kept)' : '(the base: the save)'];
+if (has('replace')) {
+    const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane);
+    const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
+    s.objects = s.objects.filter((o) => !bricks.includes(o) && !under.includes(o));
+    out.push('--replace: ' + bricks.length + ' sine bricks and ' + under.length + ' notes under them taken off the ' + TRACKS[lane].label + ' lane');
+}
 let nextId = +s.nextId || 1;
-const firstId = 'wc-' + (nextId++), ids = segs.slice(1).map(() => 'wc-' + (nextId++)), zid = 'zn-' + (nextId++);
-const beat = { pitch: midi, hz: Math.round(SineSim.hz(midi) * 100) / 100, fromHz, toHz, fromCents: c0, toCents: c1, at: r3(at), side: sign > 0 ? 'over' : 'under', lengthS: len, gapS: gap, sine: sineMark, note: noteMark };
-const say = SineGo.pn(midi) + ' · ' + fromHz + ' → ' + toHz + ' beats/s (' + c0 + ' → ' + c1 + ' c), there at ' + Math.round(at * 100) + ' %, held · ' + noteMark;
-const was = { technique: L.voice, morphBend: null, sonifyMode: 'plain', velAbs: null, cc7Abs: null, endSeconds: end };
-const notes = segs.map((sg, k) => ({ id: k === 0 ? firstId : ids[k - 1], type: 'waveCurve', layer: lane,
-    startSeconds: r3(start + sg.startS), endSeconds: r3(start + sg.endS + (k < segs.length - 1 ? SineGo.REKEY_OVERLAP_S : 0)),
-    nodes: [{ pos: 0, y, smooth: 0.25 }, { pos: 1, y, smooth: 0.25 }], segments: [{ model: 'power', slope: 0 }], color: '#607D8B', fillMode: 'bottom', opacity: 0.55,
-    performanceNotes: say + (segs.length > 1 ? ' · key ' + (k + 1) + ' of ' + segs.length : ''),
-    properties: { sine: Object.assign({ brick: zid, who: 'player', kind: 'dictated', cents: Math.abs(c0) >= Math.abs(c1) ? c0 : c1, seed: null, take: '', was, keyOffset: sg.keyOffset },
-        segs.length > 1 ? { segment: { of: firstId, k: k + 1, n: segs.length } } : {}, k === 0 && segs.length > 1 ? { chain: ids } : {}) },
-    sonifyNote: midi + sg.keyOffset, technique: L.voice, recVel: vel, velAbs: vel, cc7Abs: { lo: 127, hi: 127 }, morphBend: sg.bend }));
-const zone = SineGo.sineZone(zid, lane, start, end, { midi, gliss: { kind: 'none', from: 0, to: 0 }, level: { mode: 'flat', mark: sineMark }, label: '' }, firstId);
-zone.properties.beat = beat;
 
-console.log((useWork ? '(the base: HIS working copy — unsaved edits kept)' : '(the base: the save)') + '\n'
-    + TRACKS[lane].label + ' ' + SineGo.pn(midi) + ' (' + beat.hz + ' Hz) · ' + start + ' → ' + end + ' s (' + len + ' s rolled' + (gap != null ? ', after a gap of ' + gap + ' s rolled' : '') + ')\n'
-    + '  the note ' + noteMark + ' (velocity ' + vel + ') · the bend ' + c0 + ' → ' + c1 + ' c = ' + fromHz + ' → ' + toHz + ' beats/s, there at ' + r3(start + tAt) + ' s, held to the end\n'
-    + '  ' + (segs.length > 1 ? 'RE-KEYED ×' + segs.length + ' (the sampler ±' + r3(rangeC / 100) + ' st): ' + notes.map((n) => SineGo.pn(n.sonifyNote) + ' ' + n.startSeconds + '…' + n.endSeconds).join(' · ')
-        : segs[0].keyOffset ? 'one note, RE-KEYED: played on ' + SineGo.pn(midi + segs[0].keyOffset) + ', the wheel ' + segs[0].bend[0][1] + ' → ' + segs[0].bend[segs[0].bend.length - 1][1] + ' c'
-        : 'one note, inside the sampler\'s ±' + r3(rangeC / 100) + ' st') + '\n'
-    + '  the sine brick ' + zid + ': ' + SineGo.pn(midi) + ' static · ' + sineMark + ' · Follow off');
+// ---- ONE PAIR's objects from a line of [seconds, beats a second] -------------------------------------------------------------------
+function pair(midi, start, line, beat) {
+    if (midi < lo || midi > hi) die(SineGo.pn(midi) + ' is outside ' + L.voice + ' (' + SineGo.pn(lo) + ' … ' + SineGo.pn(hi) + ')');
+    const len = line[line.length - 1][0], end = r3(start + len);
+    // beats a second -> cents at this pitch; a moving part is sampled every 0.25 s (straight in Hz is a curve in cents)
+    const cents = (b) => (b > 0 ? r1(SineSim.centsFor(midi, b, sign)) : 0), bend = [];
+    line.forEach(([t, h], i) => {
+        if (i > 0) { const [t0, h0] = line[i - 1]; if (h0 !== h) for (let x = t0 + 0.25; x < t - 1e-6; x += 0.25) bend.push([r3(x), cents(h0 + (h - h0) * (x - t0) / (t - t0))]); }
+        bend.push([r3(t), cents(h)]);
+    });
+    const far = Math.max(...bend.map((p) => Math.abs(p[1])));
+    if (far > 100 * (inst.playerBendSt != null ? inst.playerBendSt : 1)) die(far + ' c is past the player\'s reach (' + inst.playerBendSt + ' st, sandbox/instruments.js)');
+    const segs = SineGo.rekeyChain(bend, len, rangeC), off = segs.find((sg) => midi + sg.keyOffset < lo || midi + sg.keyOffset > hi);
+    if (off) die('the re-key would need ' + SineGo.pn(midi + off.keyOffset) + ', outside ' + L.voice + ' (' + SineGo.pn(lo) + ' … ' + SineGo.pn(hi) + ')');
+    const v = vel != null ? vel : Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(REMAP, instKey, midi, m / 7))));
+    const firstId = 'wc-' + (nextId++), ids = segs.slice(1).map(() => 'wc-' + (nextId++)), zid = 'zn-' + (nextId++);
+    const say = SineGo.pn(midi) + ' · ' + SHAPE_SAY[beat.shape] + ' · ' + line.map((p) => p[1]).join(' → ') + ' beats/s · ' + noteMark;
+    const was = { technique: L.voice, morphBend: null, sonifyMode: 'plain', velAbs: null, cc7Abs: null, endSeconds: end };
+    const notes = segs.map((sg, k) => ({ id: k === 0 ? firstId : ids[k - 1], type: 'waveCurve', layer: lane,
+        startSeconds: r3(start + sg.startS), endSeconds: r3(start + sg.endS + (k < segs.length - 1 ? SineGo.REKEY_OVERLAP_S : 0)),
+        nodes: [{ pos: 0, y, smooth: 0.25 }, { pos: 1, y, smooth: 0.25 }], segments: [{ model: 'power', slope: 0 }], color: '#607D8B', fillMode: 'bottom', opacity: 0.55,
+        performanceNotes: say + (segs.length > 1 ? ' · key ' + (k + 1) + ' of ' + segs.length : ''),
+        properties: { sine: Object.assign({ brick: zid, who: 'player', kind: beat.shape, cents: sign * far, seed: beat.seed != null ? beat.seed : null, take: '', was, keyOffset: sg.keyOffset },
+            segs.length > 1 ? { segment: { of: firstId, k: k + 1, n: segs.length } } : {}, k === 0 && segs.length > 1 ? { chain: ids } : {}) },
+        sonifyNote: midi + sg.keyOffset, technique: L.voice, recVel: v, velAbs: v, cc7Abs: { lo: 127, hi: 127 }, morphBend: sg.bend }));
+    const zone = SineGo.sineZone(zid, lane, start, end, { midi, gliss: { kind: 'none', from: 0, to: 0 }, level: { mode: 'flat', mark: sineMark }, label: '' }, firstId);
+    zone.properties.beat = Object.assign({ pitch: midi, hz: r2(SineSim.hz(midi)), side: sign > 0 ? 'over' : 'under', line, lengthS: len, farCents: far, sine: sineMark, note: noteMark, velocity: v }, beat);
+    s.objects.push(...notes, zone);
+    const keys = segs.length > 1 ? 're-keyed ×' + segs.length + ' (' + notes.map((n) => SineGo.pn(n.sonifyNote)).join(' → ') + ', seams at ' + notes.slice(1).map((n) => n.startSeconds).join(' · ') + ' s)'
+        : segs[0].keyOffset ? 'one note, played on ' + SineGo.pn(midi + segs[0].keyOffset) + ' (the wheel ' + segs[0].bend[0][1] + ' → ' + segs[0].bend[segs[0].bend.length - 1][1] + ' c)' : 'one note, inside the sampler\'s ±' + r3(rangeC / 100) + ' st';
+    return { start, end, len, far, keys, v };
+}
+
+if (has('roll')) {
+    // ---- ROLLED: a gap, a shape, per pitch ----
+    const pitches = String(arg('pitches', arg('pitch', '')) || '').split(',').map((x) => x.trim()).filter(Boolean).map(keyOf);
+    if (!pitches.length) die('--roll wants --pitches D#2,D2,… (his, by hand)');
+    const seed = Math.max(1, Math.round(+arg('seed', 1 + Math.floor(Math.random() * 99999)))), gapR = range(arg('gap', RULES.gapS.join(',')), 'gap');
+    let at = arg('start') != null ? +arg('start') : null, lastEnd = Math.max(0, ...s.objects.filter((o) => o.layer === lane).map(endOf));
+    out.push('seed ' + seed + ' · the rules: bank/beat_shapes.json');
+    pitches.forEach((midi, i) => {
+        const rnd = SineSim.mulberry32((Math.imul(seed, 2654435761) + Math.imul(i + 1, 40503)) >>> 0);
+        const gap = at != null && i === 0 ? null : r1(gapR[0] + rnd() * (gapR[1] - gapR[0]));
+        const start = r3(gap == null ? at : lastEnd + gap), sh = rollShape(rnd, RULES);
+        const p = pair(midi, start, lineOf(sh.parts), { shape: sh.shape, peakHz: sh.peakHz, endHz: sh.endHz, parts: sh.parts, gapS: gap, seed, n: i + 1 });
+        lastEnd = p.end;
+        out.push((i + 1) + ' · ' + SineGo.pn(midi) + ' · ' + SHAPE_SAY[sh.shape].toUpperCase() + ' · peak ' + sh.peakHz + (sh.endHz != null ? ', ends at ' + sh.endHz : '') + ' beats/s · ' + (gap != null ? 'gap ' + gap + ' s · ' : '') + p.start + ' → ' + p.end + ' s (' + p.len + ' s)',
+            '    ' + sh.parts.map((q) => q.kind + ' ' + (q.fromHz === q.toHz ? 'at ' + q.toHz : q.fromHz + ' → ' + q.toHz) + ' · ' + q.s + ' s' + (q.paceSPerHz ? ' (' + q.paceSPerHz + ' s per Hz)' : '')).join('  |  '),
+            '    the bend up to ' + p.far + ' c · ' + p.keys + ' · velocity ' + p.v + ' · sine ' + sineMark);
+    });
+} else {
+    // ---- DICTATED: from → to, there at --at, held ----
+    const midi = keyOf(arg('pitch') != null ? arg('pitch') : die('--pitch (or --roll --pitches …)'));
+    const fromHz = +arg('from', 0), toHz = +arg('to', 0), at = Math.max(0.05, Math.min(1, +arg('at', 2 / 3)));
+    if (!(fromHz >= 0) || !(toHz >= 0)) die('--from and --to: beats a second, 0 or more');
+    const lastEnd = Math.max(0, ...s.objects.filter((o) => o.layer === lane).map(endOf)), gR = range(arg('gap', RULES.gapS.join(',')), 'gap'), dR = range(arg('dur', '16,25'), 'dur');
+    const gap = arg('start') != null ? null : r1(gR[0] + Math.random() * (gR[1] - gR[0]));
+    const start = r3(arg('start') != null ? +arg('start') : lastEnd + gap), len = r1(dR[0] + Math.random() * (dR[1] - dR[0])), tAt = r3(len * at);
+    const p = pair(midi, start, at >= 1 ? [[0, fromHz], [len, toHz]] : [[0, fromHz], [tAt, toHz], [len, toHz]], { shape: 'dictated', fromHz, toHz, at: r3(at), gapS: gap });
+    out.push(TRACKS[lane].label + ' ' + SineGo.pn(midi) + ' · ' + p.start + ' → ' + p.end + ' s (' + p.len + ' s rolled' + (gap != null ? ', after a gap of ' + gap + ' s rolled' : '') + ')',
+        '    ' + fromHz + ' → ' + toHz + ' beats/s, there at ' + r3(start + tAt) + ' s, held · the bend up to ' + p.far + ' c · ' + p.keys + ' · velocity ' + p.v + ' · sine ' + sineMark);
+}
+console.log(out.join('\n'));
 if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
-s.objects.push(...notes, zone); s.nextId = nextId; s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
+s.objects.sort((a, b) => startOf(a) - startOf(b));
+s.nextId = nextId; s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
 fs.writeFileSync(file, JSON.stringify(s));
 console.log('written: scores/' + name + '.json — ' + s.objects.length + ' objects · File ▾ → Reload in the page');
