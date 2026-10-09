@@ -5877,3 +5877,16 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | | | | 321.8 → 330.5 s (gap 7.5) | down + hold 3.8 → 1.5 |
 
 **The score: fifty pairs in five chords, 132 objects, 4.0 → 353.1 s — 5 min 49 s** (the flute eleven pairs, the clarinet, the viola and the cello ten, the crotales nine). The fifth chord enters 282.9 … 302.0 s, the clarinet last (its fourth-chord pair runs to 295.5). **The end now:** the lanes close at 330.5 (cello) · 338.4 (flute) · 339.6 (crotales) · 343.8 (viola) · 353.1 (clarinet) — a staggered exit over 23 s, the clarinet's falling pair (3.6 → 0.8 beats a second on F#2) the last sound. No pair of this chord is the long shape but one; six of ten begin at their peak.
+
+## §281
+**2026-10-08, late — THE CHORDS RE-ORDERED: `beating01` TO THE END (Opus; DEC-73).** Verbatim in DEC-73; his first sentence names `beating02`, his last corrects it — *"after the first opening, we'll be beating two … and then beating one goes to the end"*. **Done by hand script on the save of 23:55, nothing rolled:** on every lane the pairs were told apart by the order they were made in (the opening's 3 · 2 · 2 · 2 · 3 for flute · clarinet · crotales · viola · cello, then two a take — one for `beating03` on the crotales and the cello since §280), checked against `beating01`'s known key on each lane, and each brick now SAYS its chord — `properties.beat.take` (`opening` · `beating01` … `04`); the tool writes it from now on. Then each lane re-sequenced **opening · beating02 · beating03 · beating04 · beating01**, every pair keeping its own shape, length, pitch AND the gap that stood before it; the lane's first entry and its end do not move (the same pairs, the same gaps, another order).
+
+| lane | `beating02` | `beating03` | `beating04` | `beating01` | ends |
+|---|---|---|---|---|---|
+| bass flute | 114.0 (F3) | 163.5 (D#3) | 227.9 (D#3) | 289.9 (C4) | 338.4 |
+| bass clarinet | 91.1 (F#2) | 148.1 (F#2) | 232.1 (F#2) | 292.5 (F2) | 353.1 |
+| crotales | 91.4 (C#7) | 176.7 (A7) | 204.5 (F#7) | 269.6 (D7) | 339.6 |
+| viola | 102.2 (C5) | 150.3 (G#4) | 218.5 (D#4) | 283.9 (C5) | 343.8 |
+| cello | 115.1 (A#2) | 175.0 (C#2) | 229.9 (G2) | 279.5 (A#2) | 330.5 |
+
+**The chords enter:** `beating02` 91.1 … 115.1 s · `beating03` 148.1 … 176.7 s · `beating04` 204.5 … 232.1 s · `beating01` 269.6 … 292.5 s — each spread over 23 … 29 s, wider than before the move (16 … 37): a gap carried with its pair no longer answers the pair it now follows. 132 objects, 4.0 → 353.1 s, unchanged. **What the new order does to the harmony, read from the takes:** the bass clarinet now sits on F#2 through three chords in a row (91 … 285 s) and steps DOWN to F2 for the last; the flute's D#3 holds through two (163 … 282 s) and it ends on C4; the viola and the cello return at the end to the C5 and A#2 they held right after the opening — the last chord is the one that used to follow the opening, so the section closes where its second chord began.

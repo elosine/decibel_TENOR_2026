@@ -921,3 +921,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Okay, drop the last one from the crotales and the last one from the cello. And then roll two more from beating four, please."*
 
 *(The AI's reading, marked as such: the fourth chord's SECOND pair taken out on the crotales (A7, 287.6 → 345.6 s — the 58-second one) and on the cello (C#2, 290.8 → 329.8 s) — the two that ran alone at the section's end; then the fifth chord: each player's pitch in his take `beating04` (blast S025) — bass flute D#3 · bass clarinet F#2 · crotales F#5, sounding F#7 · viola D#4 · cello G2 — two pairs a lane after a rolled gap (6 … 11 s) from the lane's last pair. RUNNING_LOG §280.)*
+
+### DEC-73 · 2026-10-08 — the order of the chords: after the opening, `beating02`; `beating01` goes to the end; everything moves up
+
+*"Okay, can you take the two for beating two and move them all to the end? And then move everything up. So I don't, you probably won't need to re-roll anything or maybe a gap or something like that. But anyways, let, let's see if we can do that. So after the first opening, we'll be beating two, I'm sorry, beating two, and then beating one goes to the end."*
+
+*(The AI's reading, marked as such: he corrects himself mid-message — it is the pairs of `beating01` that go to the END; after the opening comes `beating02`. The order of the five chords becomes opening · beating02 · beating03 · beating04 · beating01; nothing re-rolled — every pair and the gap before it kept, the pairs re-sequenced on each lane. RUNNING_LOG §281.)*

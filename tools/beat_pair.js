@@ -256,7 +256,7 @@ if (has('roll')) {
         const gap = at != null && i === 0 ? null : r1(gapR[0] + rnd() * (gapR[1] - gapR[0]));
         const cap = WHO === 'player' ? Math.floor(SineSim.beats(midi - SOCT, reachC) * 10) / 10 : null, capped = cap != null && cap < RULES.peakHz[1];
         const start = r3(gap == null ? at : lastEnd + gap), sh = rollShape(rnd, RULES, capped ? cap : null);
-        const p = pair(midi, start, lineOf(sh.parts), { shape: sh.shape, peakHz: sh.peakHz, endHz: sh.endHz, parts: sh.parts, gapS: gap, seed, n: i + 1 }, rnd);
+        const p = pair(midi, start, lineOf(sh.parts), { shape: sh.shape, peakHz: sh.peakHz, endHz: sh.endHz, parts: sh.parts, gapS: gap, seed, n: i + 1, take: arg('take') || 'opening' }, rnd);   // take: which chord the pair belongs to (§281 — the chords are moved as groups by it)
         lastEnd = p.end;
         out.push((i + 1) + ' · ' + SineGo.pn(midi) + ' · ' + SHAPE_SAY[sh.shape].toUpperCase() + ' · peak ' + sh.peakHz + (sh.endHz != null ? ', ends at ' + sh.endHz : '') + ' beats/s · ' + (gap != null ? 'gap ' + gap + ' s · ' : '') + p.start + ' → ' + p.end + ' s (' + p.len + ' s)',
             '    ' + sh.parts.map((q) => q.kind + ' ' + (q.fromHz === q.toHz ? 'at ' + q.toHz : q.fromHz + ' → ' + q.toHz) + ' · ' + q.s + ' s' + (q.paceSPerHz ? ' (' + q.paceSPerHz + ' s per Hz)' : '')).join('  |  '),
