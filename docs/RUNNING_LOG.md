@@ -5930,3 +5930,15 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | mallets | nothing of the drones | — | — |
 
 **Rendered at once, measured on disk** (the hand-over rule of §212 — an audition is handed over rendered): the four files `bank/samples/<sample>~dl<nn>-shape.wav` written by his engine 00:22:04 … 00:22:09 with their index rows, the lengths 28.6 · 11.39 · 37.66 · 35.81 s — the drones' own, unchanged. Not heard. **The close of the passage as it now reads:** the viola out at 423.8, then four drones falling together through their last eleven seconds — the clarinet gone at 429.9, the percussion 430.9, the cello 434.3, the flute last at 440.5. A re-cut that leaves other drones last: the tool again (a `dl` row is replaced, never doubled). His F5 is needed once: the page reads the presets only then.
+
+## §285
+**2026-10-09 — FIVE PAIRS OF `beating03` TAKEN OUT BY THE TIMES HE READ OFF THE PAGE (Opus; DEC-77).** Verbatim in DEC-77. His five times, against the save of 00:10 (no working copy): the cello's C#2 at **175.0** (he read 174.88) · the viola's G#4 at **180.4** (180.28) · the crotales' A7 at **176.7** (177.08) · the bass clarinet's F#2 at **188.0** (188.28) · the bass flute's D#3 at **201.2** — each within 0.4 s of a pair's start, each a `beating03` pair. **A new mode, `--dropat <seconds>`** (`tools/beat_pair.js`: the one pair on the lane beginning nearest the time, within 4 s; it says which before it takes it; the later pairs close up with their own gaps, as `--droptake`):
+| lane | taken out | the lane after the opening, now |
+|---|---|---|
+| cello | C#2 175.0 → 222.3 s (up + plateau + down — its only `beating03`) | A#2 115.1–136.5 · 147.0–167.4 · **A#2 174.1–189.0 · 197.9–225.1** |
+| viola | G#4 180.4 → 211.9 s (up + hold — its second) | C5 102.2–116.7 · 123.0–139.6 · G#4 150.3–170.3 · **C5 180.0–203.2 · 213.2–239.9** |
+| crotales | A7 176.7 → 198.4 s (up + hold, three bowings — its only) | C#7 91.4–134.7 · 140.8–168.0 · **D7 176.4–220.6 · 227.4–246.4** |
+| bass clarinet | F#2 188.0 → 225.6 s (up + plateau + down — its second) | F#2 91.1–101.7 · 108.7–137.8 · F#2 148.1–178.8 · **F2 188.1–197.0 · 206.9–248.7** |
+| bass flute | D#3 201.2 → 220.0 s (up + hold — its second) | F3 114.0–133.2 · 143.4–154.1 · D#3 163.5–192.9 · **C4 200.3–220.4 · 230.2–248.8** |
+
+**The score: thirty-five pairs, 95 objects, 4.0 → 248.8 s — 4 min 5 s.** What is left of `beating03`: ONE pair each on the viola (G#4, 150.3 → 170.3), the clarinet (F#2, 148.1 → 178.8) and the flute (D#3, 163.5 → 192.9) — the cello and the crotales pass from `beating02` straight to `beating01`, and since the cello's A#2 is the same in both takes it now holds A#2 from 115 s to the end. The last chord enters 174.1 … 200.3 s (cello · crotales · viola · clarinet · flute). The ends: cello 225.1 · viola 239.9 · crotales 246.4 · clarinet 248.7 · flute 248.8.

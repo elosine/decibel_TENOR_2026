@@ -25,6 +25,7 @@
 // the take it was rolled from), the later pairs closing up with their own gaps:
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --droplast
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --droptake beating04
+//   node tools/beat_pair.js --score sec04-a-beating --lane mal --dropat 177.08        (the one pair beginning nearest that time)
 // ALL:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
 //     --sine · --note   the written marks; without them the lane's own (bank/beat_shapes.json `levels.lanes`), else the rules' default
@@ -135,13 +136,17 @@ if (has('replace')) {
     s.objects = s.objects.filter((o) => !bricks.includes(o) && !under.includes(o));
     out.push('--replace: ' + bricks.length + ' sine bricks and ' + under.length + ' notes under them taken off the ' + TRACKS[lane].label + ' lane');
 }
-if (arg('droptake')) {
+if (arg('droptake') || arg('dropat') != null) {
     // --droptake <chord>: every pair of that chord (properties.beat.take: opening · a take's name) is taken off the lane, and the pairs
     // after it CLOSE UP — each keeps its shape, its length, its pitch and the gap that stood before it; the lane's first entry stays
-    const chord = arg('droptake');
+    // --dropat <seconds>: the ONE pair that begins nearest that time (within 4 s) — he reads a time off the page — the same closing up
+    const chord = arg('droptake') || ('the pair at ' + arg('dropat') + ' s');
     const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane).sort((a, b) => a.startTime - b.startTime);
     if (bricks.some((z) => !(z.properties && z.properties.beat && z.properties.beat.take))) die('a pair on the ' + TRACKS[lane].label + ' lane does not say its chord (properties.beat.take) — the page may hold an older state: File ▾ → Reload, then again');
-    const dead = bricks.filter((z) => z.properties.beat.take === chord), keep = bricks.filter((z) => !dead.includes(z));
+    const near = arg('dropat') != null ? bricks.slice().sort((a, b) => Math.abs(a.startTime - +arg('dropat')) - Math.abs(b.startTime - +arg('dropat')))[0] : null;
+    if (arg('dropat') != null && (!near || Math.abs(near.startTime - +arg('dropat')) > 4)) die('no pair on the ' + TRACKS[lane].label + ' lane begins within 4 s of ' + arg('dropat') + ' s (the nearest: ' + (near ? near.startTime : 'none') + ')');
+    const dead = near ? [near] : bricks.filter((z) => z.properties.beat.take === chord), keep = bricks.filter((z) => !dead.includes(z));
+    if (near) out.push('at ' + arg('dropat') + ' s: ' + SineGo.pn(Math.round(near.elec.midi)) + ' ' + near.startTime + ' → ' + near.endTime + ' s (' + near.properties.beat.take + ', ' + SHAPE_SAY[near.properties.beat.shape] + ')');
     const notesOf = (z) => s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.properties && o.properties.sine && o.properties.sine.brick === z.id);
     const gone = dead.reduce((a, z) => a.concat(z, notesOf(z)), []);
     s.objects = s.objects.filter((o) => !gone.includes(o));
