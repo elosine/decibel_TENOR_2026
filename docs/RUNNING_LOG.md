@@ -5890,3 +5890,16 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | cello | 115.1 (A#2) | 175.0 (C#2) | 229.9 (G2) | 279.5 (A#2) | 330.5 |
 
 **The chords enter:** `beating02` 91.1 … 115.1 s · `beating03` 148.1 … 176.7 s · `beating04` 204.5 … 232.1 s · `beating01` 269.6 … 292.5 s — each spread over 23 … 29 s, wider than before the move (16 … 37): a gap carried with its pair no longer answers the pair it now follows. 132 objects, 4.0 → 353.1 s, unchanged. **What the new order does to the harmony, read from the takes:** the bass clarinet now sits on F#2 through three chords in a row (91 … 285 s) and steps DOWN to F2 for the last; the flute's D#3 holds through two (163 … 282 s) and it ends on C4; the viola and the cello return at the end to the C5 and A#2 they held right after the opening — the last chord is the one that used to follow the opening, so the section closes where its second chord began.
+
+## §282
+**2026-10-09 — `beating04` OUT, `beating01` UP: FOUR CHORDS (Opus; DEC-74).** His word: *"Let's take out beating four and move beating one up."* **A new mode, `--droptake <chord>`** (`tools/beat_pair.js`: every pair that says that chord — `properties.beat.take`, written at §281 — is taken off the lane and the later pairs close up, each keeping the gap that stood before it; it refuses a lane where a pair does not say its chord). Run on the five lanes (the base his save of 00:01): ten pairs out (two a lane; fifteen notes), 107 objects left.
+
+| lane | `beating02` | `beating03` | `beating01` | ends |
+|---|---|---|---|---|
+| bass flute | 114.0 (F3) | 163.5 (D#3) | 227.4 (C4) | 275.9 |
+| bass clarinet | 91.1 (F#2) | 148.1 (F#2) | 234.9 (F2) | 295.5 |
+| crotales | 91.4 (C#7) | 176.7 (A7) | 206.8 (D7) | 276.8 |
+| viola | 102.2 (C5) | 150.3 (G#4) | 221.6 (C5) | 281.5 |
+| cello | 115.1 (A#2) | 175.0 (C#2) | 229.0 (A#2) | 280.0 |
+
+**The score: forty pairs in four chords, 4.0 → 295.5 s — 4 min 51 s.** The chords enter 91.1 … 115.1 · 148.1 … 176.7 · 206.8 … 234.9 s. The lanes end 275.9 (flute) · 276.8 (crotales) · 280.0 (cello) · 281.5 (viola) within six seconds — and the clarinet fourteen seconds after them, alone on F2 to 295.5 s (its last pair the long shape, 41.8 s). The take `beating04` is unused again; its pairs' rolls are in §280 if he wants them back (the seeds 26822 · 97467 · 80886 · 49844 · 90342).

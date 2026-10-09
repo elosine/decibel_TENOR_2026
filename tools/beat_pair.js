@@ -21,8 +21,10 @@
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --relevel --sine mp --note mp
 // RE-GAP — the pairs on a lane stay as they are, every gap between two of them rolled again (the rules' gapS, or --gap lo,hi):
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --regap
-// DROP — the lane's last pair taken out:
+// DROP — the lane's last pair taken out · or a whole CHORD's pairs (a pair says its chord: properties.beat.take — `opening`, or
+// the take it was rolled from), the later pairs closing up with their own gaps:
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --droplast
+//   node tools/beat_pair.js --score sec04-a-beating --lane mal --droptake beating04
 // ALL:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
 //     --sine · --note   the written marks; without them the lane's own (bank/beat_shapes.json `levels.lanes`), else the rules' default
@@ -132,6 +134,33 @@ if (has('replace')) {
     const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
     s.objects = s.objects.filter((o) => !bricks.includes(o) && !under.includes(o));
     out.push('--replace: ' + bricks.length + ' sine bricks and ' + under.length + ' notes under them taken off the ' + TRACKS[lane].label + ' lane');
+}
+if (arg('droptake')) {
+    // --droptake <chord>: every pair of that chord (properties.beat.take: opening · a take's name) is taken off the lane, and the pairs
+    // after it CLOSE UP — each keeps its shape, its length, its pitch and the gap that stood before it; the lane's first entry stays
+    const chord = arg('droptake');
+    const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane).sort((a, b) => a.startTime - b.startTime);
+    if (bricks.some((z) => !(z.properties && z.properties.beat && z.properties.beat.take))) die('a pair on the ' + TRACKS[lane].label + ' lane does not say its chord (properties.beat.take) — the page may hold an older state: File ▾ → Reload, then again');
+    const dead = bricks.filter((z) => z.properties.beat.take === chord), keep = bricks.filter((z) => !dead.includes(z));
+    const notesOf = (z) => s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.properties && o.properties.sine && o.properties.sine.brick === z.id);
+    const gone = dead.reduce((a, z) => a.concat(z, notesOf(z)), []);
+    s.objects = s.objects.filter((o) => !gone.includes(o));
+    let prevEnd = null;
+    keep.forEach((z) => {
+        if (prevEnd != null) {
+            const gap = z.properties.beat.gapS != null ? z.properties.beat.gapS : r1(RULES.gapS[0] + Math.random() * (RULES.gapS[1] - RULES.gapS[0])), shift = r3(prevEnd + gap - z.startTime);
+            if (shift) { notesOf(z).forEach((o) => { o.startSeconds = r3(o.startSeconds + shift); o.endSeconds = r3(o.endSeconds + shift); }); z.startTime = r3(z.startTime + shift); z.endTime = r3(z.endTime + shift); }
+        }
+        prevEnd = z.endTime;
+    });
+    const firstOf = {}; keep.forEach((z) => { if (firstOf[z.properties.beat.take] == null) firstOf[z.properties.beat.take] = z.startTime; });
+    console.log(out.concat(TRACKS[lane].label + ' — ' + dead.length + ' pairs of ' + chord + ' taken out (' + (gone.length - dead.length) + ' notes) · ' + keep.length + ' pairs left: ' + Object.keys(firstOf).map((k) => k + ' ' + firstOf[k]).join(' · ') + ' · ends ' + (prevEnd != null ? prevEnd : 0)).join('\n'));
+    if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
+    s.objects.sort((a, b) => startOf(a) - startOf(b));
+    s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
+    fs.writeFileSync(file, JSON.stringify(s));
+    console.log('written: scores/' + name + '.json · File ▾ → Reload in the page');
+    process.exit(0);
 }
 if (has('droplast')) {
     // --droplast: the lane's LAST pair is taken out — its sine brick and the notes bound to it

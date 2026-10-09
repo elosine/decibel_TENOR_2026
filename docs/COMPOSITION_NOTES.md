@@ -927,3 +927,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Okay, can you take the two for beating two and move them all to the end? And then move everything up. So I don't, you probably won't need to re-roll anything or maybe a gap or something like that. But anyways, let, let's see if we can do that. So after the first opening, we'll be beating two, I'm sorry, beating two, and then beating one goes to the end."*
 
 *(The AI's reading, marked as such: he corrects himself mid-message — it is the pairs of `beating01` that go to the END; after the opening comes `beating02`. The order of the five chords becomes opening · beating02 · beating03 · beating04 · beating01; nothing re-rolled — every pair and the gap before it kept, the pairs re-sequenced on each lane. RUNNING_LOG §281.)*
+
+### DEC-74 · 2026-10-09 — `beating04` taken out, `beating01` moved up
+
+*"Let's take out beating four and move beating one up."*
+
+*(The AI's reading, marked as such: the chord of the take `beating04` removed from every lane; `beating01`, the last chord, moved earlier to follow `beating03` — each of its pairs keeping its own gap. Four chords: opening · beating02 · beating03 · beating01. RUNNING_LOG §282.)*
