@@ -746,9 +746,19 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **WHAT ELSE NEEDS ROOM (the AI's list, §319):** the RETURNS (85 bricks — do the players see them? Q3, open since DEC-4) · DYNAMICS · WORDS · DURATION LINES off the staff · the STRIKE WINDOW (with the mics) · the COMPUTER PLAYERS (shown or not) · the beating pair's extras (the sine's mark, the beat rate, the bend) · the STAFF when it shows.
 
-**A first clash:** the badge and the mic brick both want the lane's top.
+**SINCE §320 (DEC-99) — HIS ANSWERS:** THE ENSEMBLE DOES NOT SEE THE RETURNS (Q3 closed) · NO DYNAMICS · NO WORDS (the badges, and the performance notes) · the drone's duration line IS the mic brick · the strike window is a mic brick · no clashes raised yet — the step is the list.
 
-**Next:** his answer on the returns → the lane DRAWN with its bands on the signs page → his eye → the bands as rows of `rules.json` (a device sheet each kind).
+**THE LIST — what a player's lane must place (seven):** 1 the standard gap, top and bottom · 2 the badges, at the top (size and horizontal place open) · 3 the mics — one band for every opening (an impulse's, a drone's 6 … 9 s, a petal hit's, a strike's window) · 4 the conductor's arc (GC), the whole lane · 5 the trill's curve, the whole lane · 6 the three body problem's line wedge, a band (the sign to discuss) · 7 the staff where it shows, the middle (the snippet; the beating pitches and their duration lines). *Not in a player's lane:* the returns · dynamics · words. *To settle with the conductor's view (2.7):* the computer players · the sine's own mark and the beat rate. *Not in the piece yet:* the accented long tones.
+
+**Next:** his word on the list → heights and order (the lane DRAWN with its bands on the signs page) → his eye → the bands as rows of `rules.json` (a device sheet each kind).
+
+### 2.7 THE CONDUCTOR'S / PRESENTATION VIEW — a generic hint of the electronics, section by section — `doing` 2026-10-09 (opened at his word, DEC-99; RUNNING_LOG §320)
+
+**Why:** the players do not see what the electronics play back; a conductor, a jury or an audience watching the presentation score may need a hint of it.
+
+**What the electronics do** (`bank/signs/conductor.json`): 1 the opening — each new attack shadowed by the player's earlier attacks, one then two … five, their times rolled live · 2 the three body problem — three computer players, deciding live · 3 trills and petal hits — a short note rung on ten seconds · 4 the drones — recordings back as long drones, up to five · 5 the beating section — a pure tone at the player's pitch · 6 the strikes — an answer after the strike.
+
+**► SECTION 1, the opening — five options drawn on the piece's own events** (8 … 20 s; **http://localhost:5500/signs/conductor.html**, `node tools/signs/build_conductor.js`): a echo triangles · b a pale bar · c echo arcs · d a lane of its own · e nothing drawn. **Open, his:** the option. Then sections 2 … 6, one at a time, the same way.
 
 ### 2.5 THE SINE — the beating pair — `parked` (the sheet drafted from the lineage, RUNNING_LOG §301; his word: "the sine tone notation will be different, but we'll figure out this when we get there")
 

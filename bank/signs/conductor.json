@@ -1,0 +1,25 @@
+{
+ "_doc": "THE CONDUCTOR'S / PRESENTATION VIEW — how the electronics are hinted at, section by section (decibel PLAN 2.7; RUNNING_LOG §320; DEC-99: 'not showing ensemble the returns, maybe a generic hint for conductor/presentation score, lets discuss, with visual options … section by section'). `sections`: the piece's sections in order — `does` is what the electronics do there, in plain words; a section with `options` is the one in hand: its `window` (seconds of the piece, one page of 12) and the ways of hinting, each a `kind` the builder knows (echoTriangles · band · echoArcs · lane · none). A section's `chosen` (an option's id) when he has said. tools/signs/build_conductor.js draws the page from the piece's own save.",
+ "score": "piece-3BodyRedo",
+ "sections": [
+  {
+   "id": "opening",
+   "name": "1 · The opening (0 … 37 s)",
+   "does": "Each player's short attack is recorded. From the second round on, every new attack is shadowed by that player's EARLIER attacks, transformed: first one of them, then two, three, four, five. They fall a little before, around or after the live note, never exactly with it, and the engine rolls their exact times at each performance.",
+   "window": [8, 20],
+   "windowNote": "Its second page: here the returns grow from one sound to two, then three.",
+   "options": [
+    { "id": "echoTriangles", "kind": "echoTriangles", "name": "echo triangles", "what": "One small grey open triangle for each returning sound, set loosely across the stretch they come back in.", "for": "The short attacks' own sign, greyed: it reads as \"that attack, echoed\". You see the count grow from one to five." },
+    { "id": "band", "kind": "band", "name": "a pale bar", "what": "A pale bar at the bottom of the lane over the stretch, with a dot for each returning sound.", "for": "Closest to the composer score's own return brick. Exact about the stretch; says nothing false about when each sound falls inside it." },
+    { "id": "echoArcs", "kind": "echoArcs", "name": "echo arcs", "what": "Sound-wave arcs just after the attack, one for each returning sound.", "for": "The most compact, and the most generic: \"this attack echoes, this many times\". It takes almost no room in the lane." },
+    { "id": "lane", "kind": "lane", "name": "a lane of its own", "what": "A thin sixth lane under the five. A bar for each return, on the row of the player whose sound it is.", "for": "The five lanes stay exactly as the players see them: the conductor's score is the players' score plus one strip. The lanes each lose a few pixels of height." },
+    { "id": "none", "kind": "none", "name": "nothing drawn", "what": "The page as the players see it. The performance notes say what the electronics do.", "for": "The cleanest. A conductor learns the section's behaviour once, from the notes." }
+   ]
+  },
+  { "id": "threeBody", "name": "2 · The three body problem (39 … 123 s)", "does": "Three computer players join the five. They move through the same four states as the players — far apart, approaching, close pass, break and rejoin — listen to them, and decide each sound live, from the transformed attacks." },
+  { "id": "trills", "name": "3 · Trills and petal hits (125 … 210 s)", "does": "At the end of each trill another player plays one short note into an open microphone, and the electronics ring it on as a long resonant tail of about ten seconds. Thirty-four of them." },
+  { "id": "drones", "name": "4 · The drones (211 … 415 s)", "does": "Each player's held multiphonic is recorded three times. Each recording comes back stretched into drones of 10 to 40 seconds, up to five at once, until a long fade at the end." },
+  { "id": "beating", "name": "5 · The beating section (423 … 668 s)", "does": "The electronics hold a pure tone at the player's pitch. The player bends against it, so the pair beats. Thirty-five pairs." },
+  { "id": "strikes", "name": "6 · The strikes (not yet in the piece)", "does": "The ensemble strikes. The electronics answer after the strike, with its rhythm transformed, on the recorded attacks." }
+ ]
+}

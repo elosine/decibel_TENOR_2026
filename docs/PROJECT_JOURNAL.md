@@ -181,8 +181,14 @@ next, where we are; reorganizations only on his approval.
   dividing line and above the next · badges at the top · a band for the mics · the trill's curve and the GC the whole lane · a LINE WEDGE
   for the three body problem (to discuss) · the beating pitches on the staff. The AI's list of what else needs room: the RETURNS (do the
   players see them? Q3) · dynamics · words · duration lines off the staff · the strike window · the computer players · the beating pair's
-  extras · the staff. A lane is 209.6 px; the badge (36) and the mic brick (42) both want its top. ► NEXT: his answer on the returns,
-  then the lane DRAWN with its bands on the signs page.
+  extras · the staff. **(§320, DEC-99) HIS ANSWERS: the ensemble does NOT see the returns (Q3 closed) · NO dynamics · NO words (the
+  badges and the performance notes) · the drone's line and the strike window ARE the mic brick · no clashes raised yet.** THE LIST TO
+  PLACE, seven: the standard gap · the badges (top) · the mics (one band) · the GC (whole lane) · the trill's curve (whole lane) · the
+  three body's line wedge (a band, to discuss) · the staff where it shows. ► NEXT: his word on the list, then heights and order drawn.
+- **2.7 THE CONDUCTOR'S / PRESENTATION VIEW — OPEN (DEC-99; RUNNING_LOG §320; PLAN.md 2.7):** a generic hint of the electronics, SECTION
+  BY SECTION. ► Section 1 drawn five ways on the piece's own events: **http://localhost:5500/signs/conductor.html**
+  (`bank/signs/conductor.json` → `node tools/signs/build_conductor.js`): a echo triangles · b a pale bar · c echo arcs · d a lane of its
+  own · e nothing. Open: his option; then sections 2 … 6 one at a time.
 - **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

@@ -6591,3 +6591,34 @@ Five SOL colours and the format's blue are used; SOL_blue · SOL_purple · SOL_b
 **The question put to him — the one that sizes the map:** do the players see the electronics' returns in their lanes?
 
 **PLAN.md 2.6 opened** — THE LANE'S VERTICAL MAP: phase 1, state and restate; no layout proposed yet. Next: the lane drawn with its bands, on the signs page, from his answer.
+
+## §320. Q3 ANSWERED — the players do not see the returns · THE LIST OF WHAT A PLAYER'S LANE MUST PLACE: six things · THE CONDUCTOR'S VIEW opened (PLAN 2.7), section 1 drawn five ways on the piece's own events (2026-10-09, Opus)
+
+**What prompted it (DEC-99, verbatim in COMPOSITION_NOTES):** *"not showing ensemble the returns, maybe a generic hint for conductor/presentation score, lets discuss, with visual options; no dynamics; no words, using the language music badges and description in perf notes. drone recording line is just the mic; strike window - mic; no clashes yet, we are deciding where things belong vertically now, so make the list of things we need to place vertically, and lets discuss how/what to show conductor/presentation, section by section"*.
+
+**Decided (his):**
+- **Q3 — open since DEC-4 — is closed: THE ENSEMBLE DOES NOT SEE THE RETURNS.** A conductor's or presentation score may carry a GENERIC hint; how, section by section, with drawn options.
+- **NO DYNAMICS and NO WORDS in the lanes.** The badge says what to play; the performance notes say how (`docs/PERFORMANCE_NOTES.md` gains a row per badge at the notes' turn).
+- **The drone recording's duration line IS the mic brick** — its length is the duration (PERFORMANCE_NOTES row 15's "duration line" and the mic opening are one object). **The strike window is a mic brick.**
+- **A correction of the AI's §319:** it raised a clash (badge against mic brick). *"no clashes yet, we are deciding where things belong vertically now"* — the step in hand is the LIST; heights and collisions come after.
+
+**THE LIST — what a player's lane must place** (§319's eight, less what he struck out):
+1. **the standard gap** — under the dividing line, and above the next;
+2. **the badges** — at the top (his); their size and their place along the time axis to decide;
+3. **the mics** — one band for every opening: an impulse's half second, a drone's 6 … 9 s, a petal hit's, a strike's window;
+4. **the conductor's arc (the GC)** — the whole lane;
+5. **the trill's curve** — the whole lane;
+6. **the three body problem's line wedge** — a band; the sign itself still to be talked through;
+7. **the staff, where it shows** — the middle: the opening's snippet, and the beating section's pitches with their duration lines.
+*Struck out by him:* the returns · dynamics · words · the drone's own line · the strike's own window. *Not in a player's lane, to settle with the conductor's view:* the computer players of the three body problem · the sine's own mark and the beat rate. *Still unplaced because not yet in the piece:* the accented long tones.
+
+**THE CONDUCTOR'S VIEW — what the electronics do, section by section** (from the save and the logs; `bank/signs/conductor.json` `sections[].does`): 1 the opening — every new attack shadowed by the player's EARLIER attacks, transformed: one, then two, three, four, five, around the live note, their times rolled at each performance · 2 the three body problem — three computer players on the same four states, deciding each sound live · 3 trills and petal hits — a short note into an open microphone rung on for about ten seconds, thirty-four times · 4 the drones — each recording back as drones of 10 … 40 s, up to five at once · 5 the beating section — a pure tone held at the player's pitch, thirty-five pairs · 6 the strikes — an answer after the strike, its rhythm transformed.
+
+**SECTION 1, read from the save for the drawing** (`piece-3BodyRedo`, 0 … 37 s: 30 attacks, 30 openings, 25 returns): six rounds of five attacks. Round 1 has no return (nothing is captured yet). Round 2: one earlier sound around each attack (`ar`). Round 3: two, chained after it. Round 4: three (`arChain`). Round 5: four. Round 6: five. The one fact a hint can show truthfully is therefore WHICH player's sound returns, over WHAT stretch, and HOW MANY — never when each falls: the engine rolls that live (D15).
+
+**FIVE OPTIONS, drawn on the piece's second page (8 … 20 s — one, then two, then three returning sounds)** — `node tools/signs/build_conductor.js` → **http://localhost:5500/signs/conductor.html**, each on the whole 1920 × 1080 frame from the save's own times: **a — echo triangles:** one small grey open triangle per returning sound, loose across the stretch (the short attacks' own sign, greyed) · **b — a pale bar:** at the lane's bottom over the stretch, a dot per sound (nearest the composer score's return brick) · **c — echo arcs:** sound-wave arcs just after the attack, one per sound (the most compact and the most generic) · **d — a lane of its own:** a thin sixth lane under the five, a bar per return on the row of the player whose sound it is (the five lanes stay exactly the players') · **e — nothing drawn:** the notes say it.
+The AI's note: a and c are HINTS in his sense — they claim no timing; b and d are closer to a record of the composer score. d is the only one that keeps "the conductor's score = the players' score, plus something", which matters if the two are one file with a switch.
+
+**On the frames, said on the page:** the players' own signs (the yellow mic brick, the red badge, the pink arc) stand where the composer score has them or where nothing is decided — PROVISIONAL; the lane's map (PLAN 2.6) places them.
+
+**Made:** `bank/signs/conductor.json` · `tools/signs/build_conductor.js` · `score/public/signs/conductor.html`. Seen in the AI's pane: four frames draw from the save (the fifth option draws none).
