@@ -156,9 +156,11 @@ next, where we are; reorganizations only on his approval.
   **http://localhost:5500/language/index.html** (`bank/language/language.json` → `node tools/language/build_page.js`): five candidate
   signs for the short attacks, each in eight colours. **CHOSEN (§308, DEC-91): short attacks = the marcato, three, scattered,
   `SOL_red` · the fifth type is AUDIBLE BEATS.** **(§309, DEC-92): trills = the notation font's `tr` with its wavy line, in the format's blue.**
-  ► ACCENTED LONG TONES in hand: five candidates on the page (a Braxton's wedge into a line · b the wedge, solid · c the font's accent,
-  then a line · d accent over tenuto · e `fp`). Open: his sign and colour · where the type is in the piece (the petal hits?) · then
-  multiphonics · audible beats · scattered strikes.
+  **(§310, DEC-93): accented long tones = Braxton's own wedge into a line, in white.** THREE BADGES CHOSEN.
+  ► MULTIPHONICS in hand: five candidates on the page (a Braxton's three little houses · b a chord of open noteheads · c three lines,
+  stacked · d M in a circle · e a stack of diamonds). Open: his sign and colour · where the accented long tones are in the piece
+  (the petal hits?) · the marcatos by hand or by the font · then audible beats · scattered strikes. What is left after the badges:
+  PLAN.md 2.3's last paragraph.
 - **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

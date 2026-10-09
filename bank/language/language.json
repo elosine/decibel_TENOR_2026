@@ -9,7 +9,11 @@
   "exampleSvg": "<g fill='currentColor'><path transform='translate(21.4,12.7) rotate(144)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.2,8.1) rotate(138)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,14.5) rotate(105)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(24.7,13.6) rotate(99)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,10.3) rotate(92)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(28.6,9.5) rotate(104)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.4,16.6) rotate(116)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(26.1,16.6) rotate(132)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(27.7,14.4) rotate(119)' d='M2,0 -1.2,1.2 V-1.2 Z'/></g>",
   "exampleNote": "the flocking badge of piece #1, its nine triangles at his own positions and turns (flocking_badge.svg)",
   "colourName": "formatBlue",
-  "_colourNote": "`formatBlue` = the badge format's own light blue (`icon`, #5b9bf5, piece #1's flocking badge) — a colour name a type may take, beside the SOL and clr names"
+  "_colourNote": "`formatBlue` = the badge format's own light blue (`icon`, #5b9bf5, piece #1's flocking badge) — a colour name a type may take, beside the SOL and clr names",
+  "plainColours": {
+   "white": "#FFFFFF"
+  },
+  "_plainNote": "`plainColours`: colour names a type may take that belong to no palette — white"
  },
  "types": [
   {
@@ -47,8 +51,9 @@
     "sign": "a narrow closed wedge that runs on as a line — the accent, then the long sound"
    },
    "inThePiece": "not placed yet — his",
-   "symbol": null,
-   "colour": null
+   "symbol": "braxton",
+   "colour": "white",
+   "chosen": "2026-10-09 — his \"a white\" (DEC-93)"
   },
   {
    "id": "multiphonics",
@@ -218,6 +223,43 @@
     "from": "the forte-piano of the score's own font: suddenly loud, at once soft, and held",
     "for": "Says the DYNAMIC shape exactly. Risk: it reads as a dynamic to obey on one note, not as the name of a kind of sound.",
     "svg": "<g fill='currentColor'><glyph name='dynamic.fp' x='7.2' y='9' h='18'/></g>"
+   }
+  ],
+  "multiphonics": [
+   {
+    "id": "braxton",
+    "name": "Braxton's own",
+    "from": "Language Type 6, his handout: three small five-sided shapes, like little houses — one upright, two upside down",
+    "for": "The sign of the language the piece varies. Abstract: it does not look like the sound, so it must be learned once.",
+    "svg": "<g fill='none' stroke='currentColor' stroke-width='1.6' stroke-linejoin='round'><polygon points='4.8,22.2 4.8,17 8.2,13.2 11.6,17 11.6,22.2'/><polygon points='14.6,13.8 14.6,19 18,22.8 21.4,19 21.4,13.8'/><polygon points='24.4,13.8 24.4,19 27.8,22.8 31.2,19 31.2,13.8'/></g>"
+   },
+   {
+    "id": "chord",
+    "name": "a chord of open noteheads",
+    "from": "the commonest way a multiphonic is written: its sounding pitches as a chord — here three open heads of the score's own font, unevenly spaced",
+    "for": "What a player already sees over a multiphonic. Says: several pitches at once, from one instrument.",
+    "svg": "<g fill='currentColor'><glyph name='notehead.open' x='13.9' y='5.2' h='6.6'/><glyph name='notehead.open' x='13.9' y='12.2' h='6.6'/><glyph name='notehead.open' x='13.9' y='23.6' h='6.6'/></g>"
+   },
+   {
+    "id": "lines3",
+    "name": "three lines, stacked",
+    "from": "Braxton's long-sound line, three times, one above another — several long sounds at once",
+    "for": "A picture of the piece's multiphonics, which are HELD: recorded for 6 to 9 seconds and stretched into drones. Sits beside the accented long tone's wedge-and-line.",
+    "svg": "<g fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round'><line x1='5' y1='11' x2='31' y2='11'/><line x1='5' y1='18' x2='24' y2='18'/><line x1='5' y1='25' x2='29' y2='25'/></g>"
+   },
+   {
+    "id": "circledM",
+    "name": "M in a circle",
+    "from": "a marking some composers use: an encircled M over the note (guitar scores); cellists label a multiphonic M with its partials",
+    "for": "Short and unmistakable once known. A letter, though, where every other badge so far is a sign.",
+    "svg": "<g fill='none' stroke='currentColor'><circle cx='18' cy='18' r='12.6' stroke-width='1.6'/><polyline points='11.6,24.6 11.6,11.6 18,20.6 24.4,11.6 24.4,24.6' stroke-width='2.1' stroke-linejoin='miter' stroke-linecap='round'/></g>"
+   },
+   {
+    "id": "diamonds",
+    "name": "a stack of diamonds",
+    "from": "the diamond notehead — the sign of a harmonic — three times, stacked",
+    "for": "Fits the strings, whose multiphonics are found at harmonic nodes. Risk: a diamond means different things on different instruments, and here it would read as harmonics.",
+    "svg": "<g fill='none' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'><polygon points='13.2,7.4 18,3.7 22.8,7.4 18,11.1'/><polygon points='13.2,15.6 18,11.9 22.8,15.6 18,19.3'/><polygon points='13.2,27.2 18,23.5 22.8,27.2 18,30.9'/></g>"
    }
   ]
  }

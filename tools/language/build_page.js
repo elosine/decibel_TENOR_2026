@@ -27,13 +27,13 @@ function withGlyphs(svg) {
 }
 // a badge: the rounded square, the sign in it in `colour`, at `px` across
 const badge = (svg, colour, px) => '<svg class="bdg" width="' + px + '" height="' + px + '" viewBox="0 0 36 36" style="color:' + colour + '"><rect width="36" height="36" rx="' + B.cornerPx + '" ry="' + B.cornerPx + '" fill="' + B.ground + '"/>' + withGlyphs(svg).replace(/'/g, '"') + '</svg>';
-const colourOf = n => { if (n === B.colourName) return B.icon;   // the format's own blue, a name a type may take (language.json badge.colourName)
+const colourOf = n => { if (n === B.colourName) return B.icon; if (B.plainColours && B.plainColours[n]) return B.plainColours[n];   // … and white   // the format's own blue, a name a type may take (language.json badge.colourName)
   const c = SOL.colours.find(c => c.name === n) || CLR.colours.find(c => c.name === n || 'clr_' + c.name === n); if (!c) throw new Error('language page: no colour "' + n + '"'); return c.value; };
 const cand = (t, id) => ((L.candidates || {})[t.id] || []).find(c => c.id === id);
 const chosen = L.types.filter(t => t.symbol && t.colour);
 const takenBy = {}; for (const t of chosen) takenBy[t.colour] = t.name;
 // the colours a sign is tried in: the format's own blue, white, and the SOL colours
-const TRY = [['the format’s blue', B.icon, takenBy[B.colourName] || null], ['white', '#FFFFFF', null]].concat(['SOL_yellow', 'SOL_orange', 'SOL_red', 'SOL_green', 'SOL_blue', 'SOL_purple'].map(n => [n, colourOf(n), takenBy[n] || null]));
+const TRY = [['the format’s blue', B.icon, takenBy[B.colourName] || null], ['white', '#FFFFFF', takenBy.white || null]].concat(['SOL_yellow', 'SOL_orange', 'SOL_red', 'SOL_green', 'SOL_blue', 'SOL_purple'].map(n => [n, colourOf(n), takenBy[n] || null]));
 
 let types = '';
 for (const t of L.types) {

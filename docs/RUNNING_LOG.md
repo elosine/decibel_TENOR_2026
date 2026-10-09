@@ -6394,3 +6394,30 @@ The red did not move (two units). The green, the blue and the purple came out DA
 **Made:** `bank/language/language.json` (the choice · `badge.colourName` · `candidates.accentedLongTones`, three of the five drawn from the notation font's own accent, tenuto and fp) · `tools/language/build_page.js` (the format's blue as a name; taken by the trills, greyed). Seen in the AI's pane.
 
 **Sources:** en.wikipedia.org/wiki/Accent_(music) · sonicdictionary.duke.edu/items/fortepiano-dynamic-marking.html · en.wikipedia.org/wiki/Spectromorphology · vocalconstructivists.com (on Braxton's language types and Falling River Music).
+
+## §310. THE THIRD BADGE CHOSEN — accented long tones: Braxton's wedge into a line, white · THE MULTIPHONICS surveyed: five candidate signs · what is left, listed (2026-10-09, Opus)
+
+**What prompted it (DEC-93, verbatim):** *"a white; next multiphonics, and pls list whats left"*.
+
+**Decided (his):** **ACCENTED LONG TONES = Braxton's own sign — the narrow outlined wedge that runs on as a line — in WHITE** (`symbol: braxton` · `colour: white`; white a plain colour name, `badge.plainColours`). Three badges now: short attacks (three marcatos, SOL_red — the staff's sign, multiplied) · trills (`tr` and its line, the format's blue — the staff's sign whole) · accented long tones (Braxton's, white). So the AI's question of §309 is answered by the choice: no rule that the signs are the staff's — where standard notation HAS a sign he took it, where it has only instructions (accent, tenuto, fp) he took Braxton's picture.
+
+**Still open, his:** where the accented long tones are in the piece (§309's question — the petal hits of section 2, or new material).
+
+**LINEAGE FIRST — multiphonics in the earlier pieces:** no drawn sign anywhere. Piece #3 (bass clarinet, harp, accordion) names them in seven docs and leaves the notation to "match by ear / spectra to external catalogs at notation time"; pieces #5 · #6 mention them as techniques. This piece's `PERFORMANCE_NOTES.md` rows 15 · 16 (DEC-51): in the drone section the part shows a DURATION LINE, 6 … 9 s, through which the player holds a multiphonic into the open microphone; between recordings "play along freely … multiphonics, in their own time — a text instruction, no rhythm, no pitches given beyond the kind of sound". So the badge is what tells the player the KIND; no pitch is asked.
+
+**THE SURVEY — the multiphonic's signs:**
+- **Braxton, Language Type 6, MULTIPHONICS** ("Multiphonics or Mass Sound Logics" on the Library of Congress's description): three small five-sided shapes, one upright and two inverted. The system he built on it: Echo Echo Mirror House Music.
+- **Standard notation has no sign for it at all** — "a wide range of notation used to designate multiphonics, with several individual composers preferring notations not in common use" (Wikipedia). What recurs: **the sounding pitches written as a CHORD**, with **the FINGERING under it** on a woodwind (Bartolozzi's *New Sounds for Woodwind*, Oxford 1967, put multiphonics into fingering charts; E. Michael Richards for the clarinet: the fingering at every occurrence, filled heads for the pitches that may or may not speak) · **an M** — an encircled M over the note in Thierry Blondeau's guitar writing, "M [3+11+8]" labelling a cello multiphonic by its partials (*Tempo*'s issue on the string multiphonic) · **the DIAMOND** notehead, which means a harmonic's touch-point on strings and something else again on other instruments (sung notes on the trombone, in one 2025 score).
+- **Conduction and Soundpainting:** nothing for it.
+
+**THE FIVE CANDIDATES, as badges** (`candidates.multiphonics`; **http://localhost:5500/language/index.html**), each large and at 36 px in eight colours, three of them greyed as taken: **a** Braxton's own, the three little houses · **b** a chord of three open noteheads, the score's own font, unevenly spaced · **c** three lines, stacked — Braxton's long-sound line three times, several long sounds at once · **d** M in a circle · **e** a stack of three diamonds. The AI's note: the piece's multiphonics are HELD and then stretched into drones, so c is a picture of them and sits beside the accented long tone's wedge-and-line; b is what a player already sees over a multiphonic in other scores; d is a letter where the other badges are signs; e would read as harmonics.
+
+**WHAT IS LEFT — as listed to him (the bare list):**
+- *of the six badges:* multiphonics (in hand) · audible beats · scattered strikes;
+- *small things open on the badges:* where the accented long tones are in the piece · the short attacks' marcatos drawn by hand or by the font;
+- *then the notation's other signs, one sheet each:* the microphone opening (held, 2.4) · the return · the petal hit · the drone's duration line · the beating pair and its sine (parked, 2.5) · the three body problem's containers · the computer players;
+- *then:* the badge placed in the score as a drawn kind (where it sits on a lane, at what size) · the palette written into the shared home · the two calls left from the set-up (the pitch form · the short names) · the lock, then audio, film, notes page, print.
+
+**Made:** `bank/language/language.json` (the choice · `badge.plainColours` · `candidates.multiphonics`, the chord drawn with the notation font's open notehead) · `tools/language/build_page.js` (white as a name, greyed as taken). Seen in the AI's pane: three badges in the table, five candidates under them.
+
+**Sources:** en.wikipedia.org/wiki/Multiphonic · userpages.umbc.edu/~emrich (Richards, *The Clarinet of the Twenty-First Century*) · cambridge.org *Tempo*, "The Art of the String Multiphonic" · tricentricfoundation.org (on Echo Echo Mirror House Music) · blogs.loc.gov/music (Braxton's Language Types).

@@ -712,7 +712,11 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §309 (DEC-92):** ☑ **TRILLS = the font's `tr` with its wavy line, in the format's blue** (`symbol: trLine` · `colour: formatBlue`) · ► **ACCENTED LONG TONES** surveyed — five candidates on the page: a Braxton's wedge running on as a line · b the wedge, solid · c the font's accent, then a line · d accent over tenuto · e `fp`.
 
-**Open, his:** the accented long tones' sign and colour · WHERE they are in the piece (the petal hits of section 2 — a short note the electronics ring out — or new material) · then multiphonics. **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
+**SINCE §310 (DEC-93):** ☑ **ACCENTED LONG TONES = Braxton's own wedge running on as a line, in white** (`symbol: braxton` · `colour: white`) · ► **MULTIPHONICS** surveyed — five candidates on the page: a Braxton's three little houses · b a chord of three open noteheads (the font's) · c three lines, stacked · d M in a circle · e a stack of diamonds. Standard notation has NO sign for a multiphonic; the earlier pieces drew none.
+
+**Open, his:** the multiphonics' sign and colour · WHERE the accented long tones are in the piece (the petal hits of section 2 — a short note the electronics ring out — or new material) · the short attacks' marcatos by hand or by the font · then audible beats · scattered strikes.
+
+**WHAT IS LEFT after the six badges (listed to him, §310):** the notation's other signs, a sheet each — the microphone opening (2.4) · the return · the petal hit · the drone's duration line · the beating pair and its sine (2.5) · the three body problem's containers · the computer players · then the badge placed in the score as a drawn kind · the palette into `composition-system` · the two set-up calls (pitch form · short names) · the lock and the deliverables (container 8). **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
 ### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
 

@@ -1041,3 +1041,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"c formats blue; accented long tone next"*
 
 *(The AI's reading, marked as such: the badge of the TRILLS is candidate c of §308 — the notation font's `tr` followed by its standard wavy line — in the light blue of the badge format itself (#5b9bf5, piece #1's flocking badge). He did not say "font" for the short attacks' marcato: the hand-drawn one stands. The same survey now for the ACCENTED LONG TONE. RUNNING_LOG §309.)*
+
+### DEC-93 · 2026-10-09 — ACCENTED LONG TONES: Braxton's own wedge-into-a-line, in white · the multiphonics next · "list what's left"
+
+*(His words, verbatim — Opus:)* *"a white; next multiphonics, and pls list whats left"*
+
+*(The AI's reading, marked as such: the badge of the ACCENTED LONG TONES is candidate a of §309 — Braxton's own sign, the outlined wedge running on as a line — in white. The first of the three badges to take Braxton's sign rather than the staff's: so there is no rule "the signs are the staff's" (the AI had asked). WHERE the type is in the piece — the petal hits, or new material — he did not say; it stays open. The same survey for the MULTIPHONICS, and a bare list of what remains. RUNNING_LOG §310.)*
