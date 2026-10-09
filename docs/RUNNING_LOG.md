@@ -6347,3 +6347,29 @@ The red did not move (two units). The green, the blue and the purple came out DA
 **Made:** `bank/palette/sol.json` · `bank/language/language.json` (the format · his six types with their Braxton source and their place in the piece · the twelve in words · the candidates as drawn icons) · `tools/language/build_page.js` · `score/public/language/index.html` · the palette page's new first section. Both pages seen in the AI's pane.
 
 **Sources:** blogs.loc.gov/music/2025/12/the-musical-language-of-anthony-braxton · soundamerican16anthonybraxton.bandcamp.com · daily.redbullmusicacademy.com/2016/05/mapping-the-systems-of-anthony-braxton-s-sound · dramonline.org (Lucier, *Crossings* · *Still Lives* notes) · tate.org.uk/intermediaart/alvin_lucier.shtm · en.wikipedia.org/wiki/Soundpainting · soundpainting.com · pointofdeparture.org (The Art of Conduction) · londonimprovisersorchestra.co.uk/lexicon.html.
+
+## §308. THE FIRST BADGE CHOSEN — short attacks: the marcato, three, scattered, SOL_red · the fifth type named AUDIBLE BEATS · THE TRILLS surveyed: six candidate signs, the `tr` drawn from the notation's own font (2026-10-09, Opus)
+
+**What prompted it (DEC-91, verbatim):** *"c, SOL_red; audible beats; same survey for trills, include the tr in the font we use for notation"*.
+
+**Decided (his):**
+- **SHORT ATTACKS = the marcato wedge, three times, scattered, in `SOL_red`** (#D11520 on the badge's #2d3748). Of the five put to him he took neither Braxton's own triangles nor the single marcato he had named as a candidate, but the marcato MULTIPLIED: the known sign, saying several irregular attacks. `bank/language/language.json`: `symbol: marcato3` · `colour: SOL_red`.
+- **THE FIFTH TYPE IS "AUDIBLE BEATS"** — Lucier's phrase (§307), over "beats" (the acoustics word, which collides with rhythmic beats), "interference patterns" and "beating".
+
+**One thing the AI added to the chosen badge, for his eye, not a change:** his marcatos were drawn by hand (two plain strokes). The notation's font HAS a marcato (`notation/lib/glyphs.json` `articulation.marcato`, extracted from LilyPond). The same badge with the font's own marcato, three, at the same places, is shown beside the chosen one — engraved, one stroke heavier. The first stands until he says.
+
+**THE FONT WE USE FOR NOTATION — read, not assumed:** `notation/lib/glyphs.json` `articulation.trill` = *"LilyPond 2.24.4 emmentaler-20.otf scripts.trill"* (its own provenance line; ported 2026-09-13 with the septet's trill device, piece #5) — an outline in staff spaces, 2.396 × 2.204 ss. It is THE `tr` the staff draws over a trilled note in this stack (`rules.json` `objects.techSymbol`). The page builder now takes a glyph BY NAME from that file (`<glyph name='articulation.trill' x y h/>` in a candidate's drawing): the badge and the staff cannot drift apart.
+
+**THE SURVEY — the trill's signs:**
+- **Braxton, Language Type 3, TRILLS:** a line of tall, deep waves (his handout, §307). His system built on it: Diamond Curtain Wall Music (trills or ornamentation).
+- **Standard notation:** `tr` above the note, in use since the early 1700s, often with a wavy line after it for as long as the trill lasts — both needed when a trill runs over several or tied notes (Wikipedia, *Trill*; *Classical Music* magazine).
+- **The wavy line alone — the CHEVRON:** in Baroque and early Classical scores the wavy line often stood with no `tr` (the same).
+- **The cross, +:** French Baroque; it stood for nearly any ornament, the trill among them — and today it means a stopped note or a left-hand pizzicato.
+- **The English SHAKE:** oblique strokes through the note's stem, c. 1530 … 1650, the double stroke read as a form of shake (Desmond Hunter's survey of the virginalists, by way of the search). A sign ON a stem — it has no stem to sit on in a badge; not drawn.
+- **Conduction and Soundpainting:** hand signs, as for the short attacks; nothing drawn to borrow.
+
+**THE SIX CANDIDATES, as badges** (`candidates.trills`; **http://localhost:5500/language/index.html**), each large and at 36 px in eight colours, `SOL_red` greyed as TAKEN: **a** Braxton's own wave · **b** the font's `tr`, alone · **c** `tr` with its standard wavy line · **d** `tr` with Braxton's wave in place of the standard line (both languages in one badge) · **e** the wavy line alone, the chevron · **f** the cross, in the font's own plus — shown for the record, with its wrong modern reading said. The AI's note: the piece's trills are LONG (thirty of them, each running into a petal hit), so a form with a line after the `tr` says more than the `tr` alone; at 36 px the `tr` alone is the most legible.
+
+**Made:** `bank/language/language.json` (the choice · the name · `candidates.trills` · a font-drawn twin of the chosen marcato) · `tools/language/build_page.js` rewritten: glyphs by name from the notation font, a CHOSEN type shows its badge in the table and in a block of its own, a colour already taken is greyed and says by which type. Seen in the AI's pane.
+
+**Sources:** en.wikipedia.org/wiki/Trill_(music) · en.wikipedia.org/wiki/Ornament_(music) · classical-music.com/features/musical-terms/trill · artsjournal.spbu.ru (Performing Ornaments in English Harpsichord Music).

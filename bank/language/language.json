@@ -1,5 +1,5 @@
 {
- "_doc": "THE LANGUAGE OF THE PIECE (decibel PLAN 2.3; RUNNING_LOG §307; DEC-90: 'the piece uses a variation of anthony braxton's language musics, we will use the badges from p1&2, that format and then come up with a symbal for each and a color'). `badge`: the format, read from piece #1's flocking badge (string_quartet_no1-composer/docs/notation_instructions/images/flocking_badge.svg). `types`: HIS six, in his order — each the piece's own sound type, the Braxton Language Type it varies (his handout's number, name and sign, described in words; the handout itself is at the Library of Congress), and where it is in the piece. A type's `symbol` and `colour` are EMPTY until he chooses. `candidates.<type>`: signs put to him — each an icon drawn in a 36 × 36 box (`svg`, in currentColor), where it comes from, what speaks for it. tools/language/build_page.js draws them as badges on score/public/language/index.html.",
+ "_doc": "THE LANGUAGE OF THE PIECE (decibel PLAN 2.3; RUNNING_LOG §307; DEC-90: 'the piece uses a variation of anthony braxton's language musics, we will use the badges from p1&2, that format and then come up with a symbal for each and a color'). `badge`: the format, read from piece #1's flocking badge (string_quartet_no1-composer/docs/notation_instructions/images/flocking_badge.svg). `types`: HIS six, in his order — each the piece's own sound type, the Braxton Language Type it varies (his handout's number, name and sign, described in words; the handout itself is at the Library of Congress), and where it is in the piece. A type's `symbol` and `colour` are EMPTY until he chooses. `candidates.<type>`: signs put to him — each an icon drawn in a 36 × 36 box (`svg`, in currentColor), where it comes from, what speaks for it. tools/language/build_page.js draws them as badges on score/public/language/index.html. A candidate's `svg` may hold `<glyph name='articulation.trill' x='..' y='..' h='..'/>`: the builder replaces it with THAT glyph's outline from notation/lib/glyphs.json — the notation's own font (LilyPond's Emmentaler) — its top-left at x, y, scaled to the height h. A type with a `symbol` (a candidate's id) and a `colour` (a name of sol.json or clr.json) is CHOSEN: the page shows its badge and no longer its candidates.",
  "badge": {
   "sizePx": 36,
   "cornerPx": 4,
@@ -19,8 +19,9 @@
     "sign": "three small open triangles, apart — two pointing left, one up"
    },
    "inThePiece": "the opening's impulses · the three body problem",
-   "symbol": null,
-   "colour": null
+   "symbol": "marcato3",
+   "colour": "SOL_red",
+   "chosen": "2026-10-09 — his \"c, SOL_red\" (DEC-91)"
   },
   {
    "id": "trills",
@@ -60,17 +61,12 @@
   },
   {
    "id": "beats",
-   "name": "‹a name wanted›",
+   "name": "audible beats",
    "braxton": null,
    "inThePiece": "the beating section — a held note against a sine",
-   "nameOptions": [
-    "beats",
-    "audible beats",
-    "interference patterns",
-    "beating"
-   ],
    "symbol": null,
-   "colour": null
+   "colour": null,
+   "nameFrom": "his choice 2026-10-09 (DEC-91) — Alvin Lucier's own phrase: \"their oscillations periodically coincide to produce audible beats of sound\" (Crossings)"
   },
   {
    "id": "scatteredStrikes",
@@ -131,6 +127,57 @@
     "from": "the staccato dot, three times",
     "for": "The plainest. Risk: three dots read as an ellipsis, or as nothing, at this size.",
     "svg": "<g fill='currentColor'><circle cx='8' cy='20' r='2.7'/><circle cx='18' cy='13' r='2.7'/><circle cx='28' cy='23' r='2.7'/></g>"
+   },
+   {
+    "id": "marcato3font",
+    "name": "marcato, scattered — the notation font's own",
+    "from": "the marcato of the score's font (LilyPond's Emmentaler), three times, where the chosen sign has its three",
+    "for": "The same sign he chose, drawn by the font the staff uses: thicker on one stroke, as engraved.",
+    "svg": "<g fill='currentColor'><glyph name='articulation.marcato' x='4.2' y='12.6' h='9.6'/><glyph name='articulation.marcato' x='13.7' y='18.6' h='9.6'/><glyph name='articulation.marcato' x='23.2' y='8.1' h='9.6'/></g>"
+   }
+  ],
+  "trills": [
+   {
+    "id": "braxton",
+    "name": "Braxton's own",
+    "from": "Language Type 3, his handout: a line of tall, deep waves",
+    "for": "The sign of the language the piece varies. It also LOOKS like the sound: a line shaking.",
+    "svg": "<path fill='none' stroke='currentColor' stroke-width='1.9' stroke-linecap='round' d='M4,18 c1.6,-12 4,-12 5.6,0 s4,12 5.6,0 s4,-12 5.6,0 s4,12 5.6,0 s4,-12 5.6,0'/>"
+   },
+   {
+    "id": "tr",
+    "name": "tr",
+    "from": "the trill sign of the score's own font (LilyPond's Emmentaler, scripts.trill) — the tr every player has read since the early 1700s",
+    "for": "His ask. Unmistakable, and the SAME glyph the staff shows over a trilled note.",
+    "svg": "<g fill='currentColor'><glyph name='articulation.trill' x='7.1' y='8' h='20'/></g>"
+   },
+   {
+    "id": "trLine",
+    "name": "tr with its wavy line",
+    "from": "the standard full form: tr, then the wavy line that runs for as long as the trill lasts",
+    "for": "Says a trill that LASTS — the piece's trills are long, each into a petal hit.",
+    "svg": "<g fill='currentColor'><glyph name='articulation.trill' x='2.6' y='10.6' h='14.5'/></g><path fill='none' stroke='currentColor' stroke-width='1.9' stroke-linecap='round' d='M19.6,19.6 q1.1,-3.6 2.25,0 t2.25,0 2.25,0 2.25,0 2.25,0 2.25,0'/>"
+   },
+   {
+    "id": "trBraxton",
+    "name": "tr with Braxton's wave",
+    "from": "the font's tr, then Braxton's tall deep wave in place of the standard wavy line",
+    "for": "Both languages in one badge: the sign players know, the wave of the language the piece varies.",
+    "svg": "<g fill='currentColor'><glyph name='articulation.trill' x='2.2' y='10.6' h='14.5'/></g><path fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' d='M19.2,18 c1.2,-9.5 3.4,-9.5 4.6,0 s3.4,9.5 4.6,0 s3.4,-9.5 4.6,0'/>"
+   },
+   {
+    "id": "chevron",
+    "name": "the wavy line alone",
+    "from": "the Baroque trill sign, the chevron — a short wavy line over the note, with no tr",
+    "for": "One stroke, the oldest form. Risk: at this size it can read as vibrato, or as plain decoration.",
+    "svg": "<path fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' d='M4.8,18 q1.65,-5.4 3.3,0 t3.3,0 3.3,0 3.3,0 3.3,0 3.3,0 3.3,0 3.3,0'/>"
+   },
+   {
+    "id": "plus",
+    "name": "the cross",
+    "from": "the + of French Baroque scores, drawn with the font's own plus",
+    "for": "Shown for the record. It stood for almost any ornament then, and today it means a stopped note or a left-hand pizzicato — the wrong reading for these players.",
+    "svg": "<g fill='currentColor'><glyph name='articulation.plus' x='9' y='9' h='18'/></g>"
    }
   ]
  }

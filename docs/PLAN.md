@@ -708,7 +708,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Where it stands:** the format read from piece #1's flocking badge — a 36 px rounded square, #2d3748, the sign in a colour · Braxton's twelve read from his own handout (Library of Congress) · the conduction systems are hand signs, no drawn glyph to borrow · FIVE CANDIDATE SIGNS for the short attacks drawn as badges, each in eight colours: a Braxton's three open triangles · b the marcato · c the marcato, three, scattered · d the staccatissimo wedge, three, scattered · e staccato dots — **http://localhost:5500/language/index.html** (`bank/language/language.json` → `node tools/language/build_page.js`). The colours to draw from: `bank/palette/sol.json` (the SOL seven, named) and his 23 `clr`.
 
-**Open, his:** the short attacks' sign and colour · the beats' name · then the next type. **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
+**SINCE §308 (DEC-91):** ☑ **SHORT ATTACKS = the marcato, three, scattered, in `SOL_red`** (a font-drawn twin shown beside it for his eye) · ☑ the fifth type is **AUDIBLE BEATS** · ► **TRILLS** surveyed — six candidates on the page, each in eight colours: a Braxton's wave · b the `tr` of the notation's own font (Emmentaler, `glyphs.json` `articulation.trill`) · c `tr` with its wavy line · d `tr` with Braxton's wave · e the wavy line alone · f the cross. The page builder draws a glyph BY NAME from the notation font, so a badge and the staff share one outline.
+
+**Open, his:** the trills' sign and colour · the short attacks drawn by hand or by the font · then the next type (accented long tones). **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
 ### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
 

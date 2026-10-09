@@ -1,40 +1,64 @@
-// tools/language/build_page.js — THE LANGUAGE'S WORKING PAGE (decibel PLAN 2.3; RUNNING_LOG §307).
+// tools/language/build_page.js — THE LANGUAGE'S WORKING PAGE (decibel PLAN 2.3; RUNNING_LOG §307 · §308).
 //
 //   node tools/language/build_page.js
 //
-// Reads bank/language/language.json (his six sound types, the badge format, the candidate signs) and bank/palette/sol.json · clr.json
-// (the colours) and writes score/public/language/index.html — served at http://localhost:5500/language/index.html. For each type that
-// has candidates: every candidate sign as a BADGE in the format of pieces #1 and #2, large and at its true 36 px, in each colour — for
-// his eye. Regenerated at will; a candidate, a colour or a type is a row of the JSON.
+// Reads bank/language/language.json (his six sound types, the badge format, the candidate signs), bank/palette/sol.json · clr.json (the
+// colours) and notation/lib/glyphs.json (the notation's own font) and writes score/public/language/index.html — served at
+// http://localhost:5500/language/index.html. A type he has CHOSEN (`symbol` + `colour`) shows its badge; the type in hand shows every
+// candidate sign as a BADGE in the format of pieces #1 and #2, large and at its true 36 px, in each colour — for his eye.
+// A candidate's `<glyph name='articulation.trill' x y h/>` is drawn from the notation font's own outline (LilyPond's Emmentaler).
+// Regenerated at will; a candidate, a colour, a choice or a type is a row of the JSON.
 'use strict';
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const rd = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
-const L = rd('bank/language/language.json'), SOL = rd('bank/palette/sol.json'), CLR = rd('bank/palette/clr.json');
+const L = rd('bank/language/language.json'), SOL = rd('bank/palette/sol.json'), CLR = rd('bank/palette/clr.json'), G = rd('notation/lib/glyphs.json');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const B = L.badge;
 
+// the notation font's glyph, by its key in glyphs.json — top-left at x, y, scaled to the height h (the paths are in staff spaces, y down)
+function withGlyphs(svg) {
+  return svg.replace(/<glyph\s+name='([\w.]+)'\s+x='([-\d.]+)'\s+y='([-\d.]+)'\s+h='([\d.]+)'\s*\/>/g, (m, name, x, y, h) => {
+    const g = name.split('.').reduce((o, k) => (o ? o[k] : undefined), G);
+    if (!g || !g.path || !(g.hSs > 0)) throw new Error('language page: no glyph "' + name + '" in notation/lib/glyphs.json');
+    const s = +h / g.hSs;
+    return "<path transform='translate(" + x + ',' + y + ') scale(' + s.toFixed(4) + ")' d='" + g.path + "'/>";
+  });
+}
 // a badge: the rounded square, the sign in it in `colour`, at `px` across
-const badge = (svg, colour, px) => '<svg class="bdg" width="' + px + '" height="' + px + '" viewBox="0 0 36 36" style="color:' + colour + '"><rect width="36" height="36" rx="' + B.cornerPx + '" ry="' + B.cornerPx + '" fill="' + B.ground + '"/>' + svg.replace(/'/g, '"') + '</svg>';
-const sol = n => SOL.colours.find(c => c.name === n).value;
-// the colours a sign is tried in: the format's own blue, white, and the SOL colours that stand out on the dark ground
-const TRY = [['the format’s blue', B.icon], ['white', '#FFFFFF'], ['SOL_yellow', sol('SOL_yellow')], ['SOL_orange', sol('SOL_orange')], ['SOL_red', sol('SOL_red')], ['SOL_green', sol('SOL_green')], ['SOL_blue', sol('SOL_blue')], ['SOL_purple', sol('SOL_purple')]];
+const badge = (svg, colour, px) => '<svg class="bdg" width="' + px + '" height="' + px + '" viewBox="0 0 36 36" style="color:' + colour + '"><rect width="36" height="36" rx="' + B.cornerPx + '" ry="' + B.cornerPx + '" fill="' + B.ground + '"/>' + withGlyphs(svg).replace(/'/g, '"') + '</svg>';
+const colourOf = n => { const c = SOL.colours.find(c => c.name === n) || CLR.colours.find(c => c.name === n || 'clr_' + c.name === n); if (!c) throw new Error('language page: no colour "' + n + '"'); return c.value; };
+const cand = (t, id) => ((L.candidates || {})[t.id] || []).find(c => c.id === id);
+const chosen = L.types.filter(t => t.symbol && t.colour);
+const takenBy = {}; for (const t of chosen) takenBy[t.colour] = t.name;
+// the colours a sign is tried in: the format's own blue, white, and the SOL colours
+const TRY = [['the format’s blue', B.icon, null], ['white', '#FFFFFF', null]].concat(['SOL_yellow', 'SOL_orange', 'SOL_red', 'SOL_green', 'SOL_blue', 'SOL_purple'].map(n => [n, colourOf(n), takenBy[n] || null]));
 
 let types = '';
 for (const t of L.types) {
-  types += '<tr><td class="tn">' + esc(t.name) + (t.nameOptions ? '<div class="opt">' + t.nameOptions.map(esc).join(' · ') + '</div>' : '') + '</td>' +
+  const c = t.symbol && cand(t, t.symbol);
+  types += '<tr><td class="tn">' + esc(t.name) + (t.nameOptions ? '<div class="opt">' + t.nameOptions.map(esc).join(' · ') + '</div>' : '') + (t.nameFrom ? '<div class="opt">' + esc(t.nameFrom) + '</div>' : '') + '</td>' +
     '<td>' + (t.braxton ? 'Braxton ' + t.braxton.n + ', ' + esc(t.braxton.name.toLowerCase()) + '<div class="opt">his sign: ' + esc(t.braxton.sign) + '</div>' : '<span class="opt">not one of Braxton’s twelve — the piece’s own</span>') + '</td>' +
-    '<td>' + esc(t.inThePiece) + '</td><td>' + (t.symbol ? esc(t.symbol) : '<span class="opt">—</span>') + '</td></tr>';
+    '<td>' + esc(t.inThePiece) + '</td><td>' + (c ? '<div class="pick">' + badge(c.svg, colourOf(t.colour), 72) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="opt">' + esc(c.name) + '<br>' + esc(t.colour) + '</div></div>' : '<span class="opt">—</span>') + '</td></tr>';
 }
 
 let sections = '';
 for (const t of L.types) {
   const cands = (L.candidates || {})[t.id]; if (!cands) continue;
+  if (t.symbol && t.colour) {
+    // CHOSEN: its badge, and any candidate marked as the same sign in another drawing, beside it for his eye
+    const c = cand(t, t.symbol), also = cands.filter(x => x.id !== t.symbol && x.id.indexOf(t.symbol) === 0);
+    sections += '<h2>' + esc(t.name) + ' — chosen</h2><div class="tries" style="margin-left:0">' +
+      '<div class="try">' + badge(c.svg, colourOf(t.colour), 96) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="tl"><b>' + esc(c.name) + '</b> · ' + esc(t.colour) + '</div></div>' +
+      also.map(x => '<div class="try">' + badge(x.svg, colourOf(t.colour), 96) + badge(x.svg, colourOf(t.colour), B.sizePx) + '<div class="tl">' + esc(x.name) + '</div></div>').join('') + '</div>' +
+      (also.length ? '<p class="note">The second is the same sign drawn by the notation font. Say which you want; the first stands until you do.</p>' : '');
+    continue;
+  }
   let rows = '';
   cands.forEach((c, i) => {
     rows += '<div class="cand"><div class="chead"><span class="letter">' + String.fromCharCode(97 + i) + '</span><span class="cname">' + esc(c.name) + '</span></div>' +
       '<div class="cwhy"><div>' + esc(c.from) + '</div><div class="for">' + esc(c.for) + '</div></div>' +
-      '<div class="tries">' + TRY.map(([label, col]) => '<div class="try">' + badge(c.svg, col, 96) + badge(c.svg, col, B.sizePx) + '<div class="tl">' + esc(label) + '</div></div>').join('') + '</div></div>';
+      '<div class="tries">' + TRY.map(([label, col, taken]) => '<div class="try' + (taken ? ' taken' : '') + '">' + badge(c.svg, col, 96) + badge(c.svg, col, B.sizePx) + '<div class="tl">' + esc(label) + (taken ? '<br><i>taken: ' + esc(taken) + '</i>' : '') + '</div></div>').join('') + '</div></div>';
   });
   sections += '<h2>' + esc(t.name) + ' — the candidates</h2>' +
     (t.braxton ? '<p>Braxton’s Language Type ' + t.braxton.n + '. His sign: ' + esc(t.braxton.sign) + '.</p>' : '') +
@@ -50,22 +74,23 @@ const html = `<!doctype html>
  p { margin: 4px 0 10px; max-width: 780px; } .note { color: #555; font-size: 13.5px; }
  table { border-collapse: collapse; margin: 10px 0 0; } td, th { text-align: left; vertical-align: top; padding: 9px 22px 9px 0; border-bottom: 1px solid #ddd; font-size: 14.5px; }
  th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .07em; color: #555; } .tn { font-weight: 600; white-space: nowrap; } .opt { color: #666; font-size: 13px; font-weight: 400; white-space: normal; max-width: 340px; }
+ .pick { display: flex; align-items: flex-end; gap: 8px; }
  .cand { padding: 20px 0 22px; border-bottom: 1px solid #ddd; }
  .chead { display: flex; align-items: baseline; gap: 12px; } .letter { font: 700 20px Consolas, monospace; } .cname { font-size: 18px; font-weight: 600; }
  .cwhy { margin: 2px 0 12px 32px; max-width: 760px; color: #333; } .for { color: #555; font-size: 14px; }
  .tries { display: flex; flex-wrap: wrap; gap: 14px 20px; margin-left: 32px; } .try { display: flex; flex-direction: column; align-items: flex-start; }
- .try .bdg:first-child { margin-bottom: 8px; } .tl { font-size: 12px; color: #555; margin-top: 4px; }
+ .try .bdg:first-child { margin-bottom: 8px; } .tl { font-size: 12px; color: #555; margin-top: 4px; } .try.taken { opacity: .45; }
  .fmt { display: flex; align-items: center; gap: 18px; margin: 10px 0; }
  ol { margin: 6px 0 0 20px; padding: 0; columns: 2; max-width: 900px; } li { margin: 0 0 3px; font-size: 14px; }
 </style></head><body><main>
 <h1>The language — working page</h1>
-<p>The piece's sound types, after Anthony Braxton's Language Music. Each type gets a badge: a sign and a colour. One type at a time; the short attacks first.</p>
+<p>The piece's sound types, after Anthony Braxton's Language Music. Each type gets a badge: a sign and a colour. One type at a time.</p>
 
 <h2>The badge</h2>
 <div class="fmt">${badge(B.exampleSvg, B.icon, 96)}${badge(B.exampleSvg, B.icon, 36)}<div><b>The format of pieces 1 and 2.</b><br>${esc(B.from)}<br><span class="note">Shown: the string quartet's flocking badge as drawn there, large and at 36 px.</span></div></div>
 
 <h2>The six types</h2>
-<table><tr><th>the type</th><th>after</th><th>in the piece</th><th>its sign</th></tr>${types}</table>
+<table><tr><th>the type</th><th>after</th><th>in the piece</th><th>its badge</th></tr>${types}</table>
 
 ${sections}
 
@@ -73,10 +98,10 @@ ${sections}
 <p class="note">From his own handout, in the Anthony Braxton Papers at the Library of Congress. The signs are described here in words; the handout is on the Library's site.</p>
 <ol>${L.braxtonTwelve.map(x => '<li>' + esc(x.replace(/^\d+\s/, '')) + '</li>').join('')}</ol>
 
-<p class="note" style="margin-top:48px">Generated ${new Date().toISOString().slice(0, 16).replace('T', ' ')} by node tools/language/build_page.js from bank/language/language.json and bank/palette/sol.json. ${CLR.colours.length} named colours of his own are on the palette page.</p>
+<p class="note" style="margin-top:48px">Generated ${new Date().toISOString().slice(0, 16).replace('T', ' ')} by node tools/language/build_page.js from bank/language/language.json, bank/palette/sol.json and the notation font (notation/lib/glyphs.json). ${CLR.colours.length} named colours of his own are on the palette page.</p>
 </main></body></html>
 `;
 const out = path.join(ROOT, 'score', 'public', 'language', 'index.html');
 fs.mkdirSync(path.dirname(out), { recursive: true });
 fs.writeFileSync(out, html);
-console.log('wrote score/public/language/index.html —', L.types.length, 'types,', Object.values(L.candidates || {}).reduce((a, c) => a + c.length, 0), 'candidate signs,', TRY.length, 'colours each');
+console.log('wrote score/public/language/index.html —', L.types.length, 'types,', chosen.length, 'chosen;', L.types.filter(t => (L.candidates || {})[t.id] && !(t.symbol && t.colour)).map(t => t.name + ': ' + L.candidates[t.id].length + ' candidates').join(' · '));
