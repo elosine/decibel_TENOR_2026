@@ -6759,3 +6759,11 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 - **The machine's traps, both met again:** a Bash command past about 8 KB fails with a false quote error (five times in §324 … §326 — long text goes out in pieces, or through a script file) · a backticked word inside `node -e "…"` is run by the shell (one comment lost a word; repaired).
 
 **Committed with this entry:** the journal's checkpoint block, its next-steps table, the planner's NOW line, the project file's state line, this log. `scores/sec05-strikes-a.json` stays untracked — his.
+
+## §327. THE FIRST SHORT-ATTACKS PAGE, RECOVERED AT HIS ASK — `score/public/language/short_attacks_original.html` (2026-10-09, Opus)
+
+**What prompted it (verbatim):** *"Can you produce for me the page when we were trying to decide about the short attacks, all the options, the original one?"*
+
+**What was done:** the working page is regenerated at every choice, so its first state lives only in the history. It was taken from the commit that opened the language (`b839341`, 13:59 — §307) with `git show b839341:score/public/language/index.html` and saved, byte for byte, beside the current page: http://localhost:5500/language/short_attacks_original.html. On it, as he first saw them: the badge's format, the six types, and the FIVE candidates for the short attacks — a Braxton's own three open triangles · b the marcato · c the marcato, scattered · d the staccatissimo, scattered · e staccato dots, scattered — each in eight colours (the format's blue · white · SOL yellow · orange · red · green · blue · purple), 82 badges; then Braxton's twelve types for reference. Seen once in the page.
+
+**For the record of the choice:** his first letter was "c" in SOL_red (DEC-91); what he meant was a, Braxton's triangles (DEC-95). The current page is http://localhost:5500/language/index.html. Any other moment of that page comes back the same way — its thirteen states are thirteen commits of that one file.
