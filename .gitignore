@@ -95,3 +95,5 @@ score/public/crop_test/
 # the museums' photographs the palette is read from (tools/palette/lewitt_read.py; the addresses are in bank/palette/lewitt_sources.json)
 # — other people's pictures, never committed (a public repo); fetched again from the list at will
 bank/palette/photos/
+# the maker's colour chart the readings are matched against (tools/palette/lascaux_match.py) — Lascaux's own document, never committed
+bank/palette/lascaux_chart/

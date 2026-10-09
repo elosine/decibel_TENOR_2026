@@ -6286,3 +6286,37 @@ The red did not move (two units). The green, the blue and the purple came out DA
 **Made:** `bank/palette/lewitt_sources.json` (880's two files, two samples; the blown-out partition noted) · the bridge in `lewitt_read.py` · the page with TWO large swatches a family (white-wall photographs · all photographs, evened) and a line naming the paint. Seen in the AI's pane.
 
 **Sources:** lascaux.ch/en/references/the-zurich-project (and its German page) · lascaux.ch/en/products/colours/lascaux-artist · massmoca.org/event/walldrawing880 · massmoca.org/event/walldrawing365 · artic.edu/articles/81/video-installing-sol-lewitt · antiquesandthearts.com (the retrospective's review) · usaartnews.com (Hogan) · adp.menil.org adp2019b_lewitt_jh_index.pdf · cool.culturalheritage.org cdl/2008/0921 · 0954.
+
+## §306. A NAMED GUESS — the readings against Lascaux's own chart of its Artist range: the yellow named, the red and the green narrowed to three, the orange, the blue and the purple NOT on the chart (2026-10-09, Opus)
+
+**What prompted it (his words):** *"a, yes go ahead and download"* — on §305's one decision: the maker's colour chart, each reading matched to its nearest catalogue shade, "candidate names … marked clearly as guesses".
+
+**What was fetched:** ONE file — `https://lascaux.ch/dbFile/8943/u-ce4c/Lascaux_Artist_EN_2026.pdf`, 496 KB, two pages (edition 51000.02 – 01.26) — into `bank/palette/lascaux_chart/`, GITIGNORED (the maker's document). Its second page is the chart: 54 shades, each a number, a name, its PIGMENTS by Colour Index code, a price series, lightfastness stars, an opacity mark, and a printed swatch in two halves — FULL SHADE and TINT. And a sentence of its own that governs everything below: *"The brilliance of the Lascaux Artist does not reproduce well in this printing method."*
+
+**How it was read** (`tools/palette/lascaux_match.py` → `bank/palette/lascaux_match.json`): the page rendered at 200 dpi; each swatch found as the picture that ends just above its number; the median of the middle of its left half = the full shade (52 of 54 read — the two whites have no picture); into Lab by the same maths as the photographs. A distance with LIGHTNESS COUNTED AT HALF: the photographs' exposure and the chart's ink are both unsure of it; the hue and the chroma are what a guess can rest on.
+
+**What was tried and thrown out:** ranking against the two MEANS of §305. It put three REDS at the head of the orange — the mean is carried by one warm photograph (two of the orange's five samples). So THE EVIDENCE IS EACH PHOTOGRAPH: a shade's score is its MEDIAN distance over the family's samples (a white-wall one as read, a ceiling one evened, never a family the photograph was evened by), and each photograph VOTES for its own nearest shade. "Firm" = the first shade leads the second by 3 or more AND most photographs vote for it.
+
+**The result:**
+
+| family | photographs | the nearest shades (median distance) | the votes | verdict |
+|---|---|---|---|---|
+| yellow | 5 | **113 Cadmium yellow medium, PY35** (5.1) · 114 Diarylide yellow, PY139 (8.5) · 111 Hansa yellow (18.0) | 113 × 4 · 114 × 1 | **FIRM** |
+| red | 9 | 125 Cadmium red light, PR108 (6.5) · 127 Cadmium red medium, PR108 (7.9) · 126 Pyrrole red, PR254 (8.2) | 125 × 3 · 126 × 3 · 127 × 2 · 128 × 1 | near — not separated |
+| green | 7 | 161 Cobalt nickel green, PG50 (4.9) · 154 Phthalo green light, PG36 PW6 (5.3) · 156 Cadmium green medium, PG7 PY35 (6.1) | 154 × 4 · 161 × 2 · 156 × 1 | near — not separated |
+| orange | 5 | 125 Cadmium red light (7.0) · 127 Cadmium red medium (8.3) · 171 Transoxide red (10.7) · 124 Cadmium orange deep, PR108 (11.7) | 171 × 2 · 124 · 126 · 127 | roughly near — not separated |
+| purple | 9 | 141 Indanthrone blue, PB60 (8.2) · 145 Phthalo blue deep (8.6) · 136 Dioxazine violet deep, PV23 (9.8) · 135 Dioxazine violet light (10.8) | 141 × 4 · 142 × 3 · 145 × 2 | roughly near — not separated |
+| blue | 9 | 146 Phthalo blue medium, PB15:1 PW6 (13.1) · 144 Cobalt blue cerulean (15.7) · 143 Cobalt blue, PB28 (16.6) | 146 × 6 · 143 × 3 | **no shade of the chart is near** |
+
+**What it says, plainly:**
+- **One name:** the yellow is, as far as photographs and a printed chart can say, **113 Cadmium yellow medium**. The lemon yellows (111 · 112) are far off; only the Diarylide comes near.
+- **The red is a cadmium-red-light-to-medium or a pyrrole red** — three shades within two units of each other on the chart itself (hues 38.4° · 37.6° · 32.9°); nine photographs split 3 · 3 · 2 among them. Not separable this way.
+- **The orange: the chart's ORANGES are not it.** 121 and 122 (Cadmium orange light · medium, hues 69° · 57°) are a different colour altogether; what the photographs show sits among the chart's RED-ORANGES — 125 Cadmium red light (38°), 124 Cadmium orange deep (42°), 123 Pyrrole orange (44°). By hue alone the cleanest samples (880 as photographed, 42 … 43°; 1112-a, 41°) fall on 124 · 123; by the scored distance the evened, darker 880 samples pull toward the reds. Three candidates, no winner — and if the orange is 125, the red is not.
+- **The blue is not on the chart.** Its nearest shade is 13 units off and 13° of hue greener (146); the cobalt (143) is as far the other way and much darker. The reading sits BETWEEN them. Either a mix, or the "materials especially manufactured" of Hogan's remark (§305), or the comparison's limit — a glossy many-coated wall against a printed swatch.
+- **The purple likewise:** the range has two violets, both dioxazine, and their printed full shades are redder and darker than what nine photographs show; two BLUES score nearer. The purple on the walls is bluer and lighter than either violet as printed — a violet with blue or white in it would do it; that is a guess about a guess.
+
+**What this is worth:** it turns "six of fifty-four" into a short list a person who knows could confirm in one sentence — and it shows where the catalogue stops matching, which is itself a small finding for the paper: a studio that says its paint is now made for it, and three of six colours that no chart shade fits.
+
+**Made:** `tools/palette/lascaux_match.py` · `bank/palette/lascaux_match.json` (the 54 shades with their pigments and both swatch readings — a table of use beyond LeWitt) · the page's new section 3, *A named guess*: each reading beside its three nearest shades, a one-line verdict each. Seen in the AI's pane. `.gitignore`: `bank/palette/lascaux_chart/`.
+
+**Sources:** lascaux.ch/dbFile/8943/u-ce4c/Lascaux_Artist_EN_2026.pdf (the chart) · lascaux.ch/en/products/colours/lascaux-artist.

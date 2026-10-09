@@ -144,9 +144,10 @@ next, where we are; reorganizations only on his approval.
   photographs gitignored in `bank/palette/photos/`, their addresses in `bank/palette/lewitt_sources.json`); the working page
   **http://localhost:5500/palette/index.html**. NOTHING IS NAMED OR CHOSEN: the palette is his. **§305:** Loopy Doopy (880) read too —
   the orange is a red-orange, about #E04424, his `brightOrange` inside its range; the reading is given two ways (white-wall photographs ·
-  all photographs, evened); THE PAINT IS LASCAUX ARTIST (the maker's own page), its six shade names NOT PUBLISHED. Open: his eye on the
-  page · the maker's colour chart matched to the readings (a PDF, a download — his yes) · then the palette as data in
-  `composition-system`, at his word.
+  all photographs, evened); THE PAINT IS LASCAUX ARTIST (the maker's own page), its six shade names NOT PUBLISHED. **§306:** the readings matched
+  against the maker's chart — the yellow named (113 Cadmium yellow medium, firm), the red and the green narrowed to three each, the
+  orange a red-orange and not the chart's oranges, the blue and the purple on no chart shade (the page's section 3). Open: his eye on
+  the page · then the palette as data in `composition-system`, at his word.
 - **HELD at his word, in his order:** 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet
   (drafted from the lineage, §301 — "will be different").
 

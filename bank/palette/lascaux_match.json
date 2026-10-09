@@ -1,0 +1,2067 @@
+{
+ "_doc": "A NAMED GUESS — the colours read from the photographs (lewitt_reading.json) against the maker's chart of Lascaux Artist (decibel PLAN 2.2; RUNNING_LOG §306). `chart`: the 54 shades — number, name, pigments, price series, lightfastness stars — and the FULL SHADE and TINT swatches as the chart PDF renders them on a screen (the chart: \"The brilliance of the Lascaux Artist does not reproduce well in this printing method\"). `match.<family>.nearest`: the chart's nearest full shades, each scored by its MEDIAN distance over the family's photographs (`distance`, lightness counted at 0.5; `nearestSample` its distance to the closest one; `dHue` in degrees, `dLightness`, `dChroma` against the photographs' median); `votes`: which shade each photograph is nearest to; `firm`: the first is 3 or more ahead of the second AND most photographs vote for it. Which six shades LeWitt's studio used is NOT published: this names candidates, it identifies nothing.",
+ "source": {
+  "file": "bank/palette/lascaux_chart/Lascaux_Artist_EN_2026.pdf",
+  "url": "https://lascaux.ch/dbFile/8943/u-ce4c/Lascaux_Artist_EN_2026.pdf",
+  "page": "https://lascaux.ch/en/products/colours/lascaux-artist",
+  "edition": "51000.02 – 01.26"
+ },
+ "lWeight": 0.5,
+ "chart": [
+  {
+   "number": "111",
+   "series": 2,
+   "lightfast": "**",
+   "name": "Hansa yellow",
+   "pigments": [
+    "PY3"
+   ],
+   "fullShade": {
+    "hex": "#FFE800",
+    "lab": [
+     91.22,
+     -10.42,
+     90.19
+    ],
+    "hue": 96.6,
+    "chroma": 90.8
+   },
+   "tint": {
+    "hex": "#FFF267",
+    "lab": [
+     94.2,
+     -12.07,
+     66.88
+    ],
+    "hue": 100.2,
+    "chroma": 68.0
+   }
+  },
+  {
+   "number": "112",
+   "series": 4,
+   "lightfast": "**",
+   "name": "Cadmium yellow light",
+   "pigments": [
+    "PY35"
+   ],
+   "fullShade": {
+    "hex": "#FBE800",
+    "lab": [
+     90.88,
+     -12.1,
+     89.79
+    ],
+    "hue": 97.7,
+    "chroma": 90.6
+   },
+   "tint": {
+    "hex": "#FFF04A",
+    "lab": [
+     93.48,
+     -12.69,
+     77.34
+    ],
+    "hue": 99.3,
+    "chroma": 78.4
+   }
+  },
+  {
+   "number": "113",
+   "series": 4,
+   "lightfast": "**",
+   "name": "Cadmium yellow medium",
+   "pigments": [
+    "PY35"
+   ],
+   "fullShade": {
+    "hex": "#FFD000",
+    "lab": [
+     85.19,
+     1.63,
+     85.91
+    ],
+    "hue": 88.9,
+    "chroma": 85.9
+   },
+   "tint": {
+    "hex": "#FFDA04",
+    "lab": [
+     87.69,
+     -3.41,
+     87.33
+    ],
+    "hue": 92.2,
+    "chroma": 87.4
+   }
+  },
+  {
+   "number": "114",
+   "series": 2,
+   "lightfast": "**",
+   "name": "Diarylide yellow",
+   "pigments": [
+    "PY139"
+   ],
+   "fullShade": {
+    "hex": "#FAB500",
+    "lab": [
+     78.1,
+     13.46,
+     80.78
+    ],
+    "hue": 80.5,
+    "chroma": 81.9
+   },
+   "tint": {
+    "hex": "#FEC600",
+    "lab": [
+     82.63,
+     6.34,
+     84.08
+    ],
+    "hue": 85.7,
+    "chroma": 84.3
+   }
+  },
+  {
+   "number": "121",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium orange light",
+   "pigments": [
+    "PO20"
+   ],
+   "fullShade": {
+    "hex": "#F39200",
+    "lab": [
+     69.2,
+     28.85,
+     74.52
+    ],
+    "hue": 68.8,
+    "chroma": 79.9
+   },
+   "tint": {
+    "hex": "#F59A41",
+    "lab": [
+     71.49,
+     26.95,
+     58.73
+    ],
+    "hue": 65.3,
+    "chroma": 64.6
+   }
+  },
+  {
+   "number": "122",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium orange medium",
+   "pigments": [
+    "PO20"
+   ],
+   "fullShade": {
+    "hex": "#ED6E01",
+    "lab": [
+     60.93,
+     44.7,
+     68.89
+    ],
+    "hue": 57.0,
+    "chroma": 82.1
+   },
+   "tint": {
+    "hex": "#F18568",
+    "lab": [
+     66.89,
+     38.59,
+     33.85
+    ],
+    "hue": 41.3,
+    "chroma": 51.3
+   }
+  },
+  {
+   "number": "123",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Pyrrole orange",
+   "pigments": [
+    "PO73"
+   ],
+   "fullShade": {
+    "hex": "#E63C08",
+    "lab": [
+     51.93,
+     63.19,
+     61.83
+    ],
+    "hue": 44.4,
+    "chroma": 88.4
+   },
+   "tint": {
+    "hex": "#F08377",
+    "lab": [
+     66.59,
+     40.46,
+     25.18
+    ],
+    "hue": 31.9,
+    "chroma": 47.7
+   }
+  },
+  {
+   "number": "124",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium orange deep",
+   "pigments": [
+    "PR108"
+   ],
+   "fullShade": {
+    "hex": "#E12F0B",
+    "lab": [
+     49.58,
+     65.64,
+     59.33
+    ],
+    "hue": 42.1,
+    "chroma": 88.5
+   },
+   "tint": {
+    "hex": "#EF777E",
+    "lab": [
+     64.21,
+     46.74,
+     17.99
+    ],
+    "hue": 21.0,
+    "chroma": 50.1
+   }
+  },
+  {
+   "number": "125",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium red light",
+   "pigments": [
+    "PR108"
+   ],
+   "fullShade": {
+    "hex": "#D21410",
+    "lab": [
+     44.58,
+     67.26,
+     53.3
+    ],
+    "hue": 38.4,
+    "chroma": 85.8
+   },
+   "tint": {
+    "hex": "#EA5863",
+    "lab": [
+     57.44,
+     57.12,
+     24.23
+    ],
+    "hue": 23.0,
+    "chroma": 62.1
+   }
+  },
+  {
+   "number": "126",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Pyrrole red",
+   "pigments": [
+    "PR254"
+   ],
+   "fullShade": {
+    "hex": "#DB0C25",
+    "lab": [
+     46.26,
+     70.87,
+     45.81
+    ],
+    "hue": 32.9,
+    "chroma": 84.4
+   },
+   "tint": {
+    "hex": "#EB546F",
+    "lab": [
+     57.23,
+     60.01,
+     16.96
+    ],
+    "hue": 15.8,
+    "chroma": 62.4
+   }
+  },
+  {
+   "number": "127",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium red medium",
+   "pigments": [
+    "PR108"
+   ],
+   "fullShade": {
+    "hex": "#C61714",
+    "lab": [
+     42.27,
+     63.67,
+     48.96
+    ],
+    "hue": 37.6,
+    "chroma": 80.3
+   },
+   "tint": {
+    "hex": "#DF5562",
+    "lab": [
+     55.15,
+     54.72,
+     21.44
+    ],
+    "hue": 21.4,
+    "chroma": 58.8
+   }
+  },
+  {
+   "number": "128",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium red deep",
+   "pigments": [
+    "PR108"
+   ],
+   "fullShade": {
+    "hex": "#B1221F",
+    "lab": [
+     38.89,
+     55.53,
+     39.0
+    ],
+    "hue": 35.1,
+    "chroma": 67.9
+   },
+   "tint": {
+    "hex": "#CC5B61",
+    "lab": [
+     53.15,
+     45.37,
+     18.83
+    ],
+    "hue": 22.5,
+    "chroma": 49.1
+   }
+  },
+  {
+   "number": "129",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cadmium red bordeaux",
+   "pigments": [
+    "PR108"
+   ],
+   "fullShade": {
+    "hex": "#6D2A26",
+    "lab": [
+     26.87,
+     29.53,
+     17.73
+    ],
+    "hue": 31.0,
+    "chroma": 34.4
+   },
+   "tint": {
+    "hex": "#A26971",
+    "lab": [
+     50.66,
+     23.94,
+     5.02
+    ],
+    "hue": 11.8,
+    "chroma": 24.5
+   }
+  },
+  {
+   "number": "131",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Quinacridone crimson",
+   "pigments": [
+    "PR202",
+    "PV19"
+   ],
+   "fullShade": {
+    "hex": "#6D1F29",
+    "lab": [
+     24.93,
+     35.12,
+     13.22
+    ],
+    "hue": 20.6,
+    "chroma": 37.5
+   },
+   "tint": {
+    "hex": "#D44980",
+    "lab": [
+     52.2,
+     58.97,
+     -0.79
+    ],
+    "hue": 359.2,
+    "chroma": 59.0
+   }
+  },
+  {
+   "number": "132",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Quinacridone rose light",
+   "pigments": [
+    "PV19",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#E13866",
+    "lab": [
+     51.61,
+     66.5,
+     14.31
+    ],
+    "hue": 12.1,
+    "chroma": 68.0
+   },
+   "tint": {
+    "hex": "#EF81AE",
+    "lab": [
+     67.36,
+     47.22,
+     -4.71
+    ],
+    "hue": 354.3,
+    "chroma": 47.5
+   }
+  },
+  {
+   "number": "133",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Quinacridone rose deep",
+   "pigments": [
+    "PR122"
+   ],
+   "fullShade": {
+    "hex": "#B61B4E",
+    "lab": [
+     40.05,
+     60.96,
+     11.92
+    ],
+    "hue": 11.1,
+    "chroma": 62.1
+   },
+   "tint": {
+    "hex": "#E265A4",
+    "lab": [
+     60.03,
+     55.27,
+     -10.09
+    ],
+    "hue": 349.7,
+    "chroma": 56.2
+   }
+  },
+  {
+   "number": "134",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Quinacridone magenta",
+   "pigments": [
+    "PR122",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#C2086C",
+    "lab": [
+     42.35,
+     69.03,
+     -3.42
+    ],
+    "hue": 357.2,
+    "chroma": 69.1
+   },
+   "tint": {
+    "hex": "#E368A4",
+    "lab": [
+     60.71,
+     54.19,
+     -9.07
+    ],
+    "hue": 350.5,
+    "chroma": 54.9
+   }
+  },
+  {
+   "number": "135",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Dioxazine violet light",
+   "pigments": [
+    "PR122",
+    "PV23",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#5B2D86",
+    "lab": [
+     28.96,
+     38.7,
+     -41.89
+    ],
+    "hue": 312.7,
+    "chroma": 57.0
+   },
+   "tint": {
+    "hex": "#8A5BA3",
+    "lab": [
+     46.35,
+     32.7,
+     -31.49
+    ],
+    "hue": 316.1,
+    "chroma": 45.4
+   }
+  },
+  {
+   "number": "136",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Dioxazine violet deep",
+   "pigments": [
+    "PV23"
+   ],
+   "fullShade": {
+    "hex": "#532B82",
+    "lab": [
+     27.24,
+     36.87,
+     -42.22
+    ],
+    "hue": 311.1,
+    "chroma": 56.1
+   },
+   "tint": {
+    "hex": "#714594",
+    "lab": [
+     37.67,
+     34.48,
+     -36.39
+    ],
+    "hue": 313.5,
+    "chroma": 50.1
+   }
+  },
+  {
+   "number": "141",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Indanthrone blue",
+   "pigments": [
+    "PB60"
+   ],
+   "fullShade": {
+    "hex": "#403A8D",
+    "lab": [
+     29.51,
+     26.85,
+     -45.48
+    ],
+    "hue": 300.6,
+    "chroma": 52.8
+   },
+   "tint": {
+    "hex": "#4F80BA",
+    "lab": [
+     52.56,
+     0.91,
+     -35.46
+    ],
+    "hue": 271.5,
+    "chroma": 35.5
+   }
+  },
+  {
+   "number": "142",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Ultramarine blue",
+   "pigments": [
+    "PB29"
+   ],
+   "fullShade": {
+    "hex": "#442582",
+    "lab": [
+     24.2,
+     37.02,
+     -47.23
+    ],
+    "hue": 308.1,
+    "chroma": 60.0
+   },
+   "tint": {
+    "hex": "#7F94CC",
+    "lab": [
+     61.7,
+     6.43,
+     -31.2
+    ],
+    "hue": 281.6,
+    "chroma": 31.9
+   }
+  },
+  {
+   "number": "143",
+   "series": 4,
+   "lightfast": "***",
+   "name": "Cobalt blue",
+   "pigments": [
+    "PB28"
+   ],
+   "fullShade": {
+    "hex": "#314394",
+    "lab": [
+     31.36,
+     20.49,
+     -46.84
+    ],
+    "hue": 293.6,
+    "chroma": 51.1
+   },
+   "tint": {
+    "hex": "#98A5D2",
+    "lab": [
+     68.2,
+     5.54,
+     -24.38
+    ],
+    "hue": 282.8,
+    "chroma": 25.0
+   }
+  },
+  {
+   "number": "144",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Cobalt blue cerulean",
+   "pigments": [
+    "PB29",
+    "PB15:3",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#0086CD",
+    "lab": [
+     53.44,
+     -4.23,
+     -45.01
+    ],
+    "hue": 264.6,
+    "chroma": 45.2
+   },
+   "tint": {
+    "hex": "#3CA5DE",
+    "lab": [
+     64.28,
+     -11.36,
+     -37.43
+    ],
+    "hue": 253.1,
+    "chroma": 39.1
+   }
+  },
+  {
+   "number": "145",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo blue deep",
+   "pigments": [
+    "PB15:1"
+   ],
+   "fullShade": {
+    "hex": "#3C377E",
+    "lab": [
+     27.29,
+     22.91,
+     -39.74
+    ],
+    "hue": 300.0,
+    "chroma": 45.9
+   },
+   "tint": {
+    "hex": "#3988CA",
+    "lab": [
+     54.8,
+     -2.21,
+     -41.11
+    ],
+    "hue": 266.9,
+    "chroma": 41.2
+   }
+  },
+  {
+   "number": "146",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo blue medium",
+   "pigments": [
+    "PB15:1",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#0379BE",
+    "lab": [
+     48.77,
+     -2.16,
+     -43.86
+    ],
+    "hue": 267.2,
+    "chroma": 43.9
+   },
+   "tint": {
+    "hex": "#418FCE",
+    "lab": [
+     57.29,
+     -3.71,
+     -39.43
+    ],
+    "hue": 264.6,
+    "chroma": 39.6
+   }
+  },
+  {
+   "number": "147",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo turquoise blue",
+   "pigments": [
+    "PB15:3",
+    "PY3",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#008AB5",
+    "lab": [
+     53.5,
+     -15.54,
+     -31.25
+    ],
+    "hue": 243.6,
+    "chroma": 34.9
+   },
+   "tint": {
+    "hex": "#55B8DF",
+    "lab": [
+     70.55,
+     -17.43,
+     -28.2
+    ],
+    "hue": 238.3,
+    "chroma": 33.1
+   }
+  },
+  {
+   "number": "151",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo turquoise green",
+   "pigments": [
+    "PG7",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#00A69A",
+    "lab": [
+     61.31,
+     -38.51,
+     -4.04
+    ],
+    "hue": 186.0,
+    "chroma": 38.7
+   },
+   "tint": {
+    "hex": "#41B9B6",
+    "lab": [
+     68.89,
+     -33.35,
+     -8.28
+    ],
+    "hue": 193.9,
+    "chroma": 34.4
+   }
+  },
+  {
+   "number": "152",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo green deep",
+   "pigments": [
+    "PG7"
+   ],
+   "fullShade": {
+    "hex": "#015C33",
+    "lab": [
+     33.77,
+     -34.5,
+     17.07
+    ],
+    "hue": 153.7,
+    "chroma": 38.5
+   },
+   "tint": {
+    "hex": "#009E87",
+    "lab": [
+     58.23,
+     -40.47,
+     2.17
+    ],
+    "hue": 176.9,
+    "chroma": 40.5
+   }
+  },
+  {
+   "number": "153",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Phthalo green medium",
+   "pigments": [
+    "PY53",
+    "PG7"
+   ],
+   "fullShade": {
+    "hex": "#006248",
+    "lab": [
+     36.37,
+     -31.91,
+     7.9
+    ],
+    "hue": 166.1,
+    "chroma": 32.9
+   },
+   "tint": {
+    "hex": "#00977D",
+    "lab": [
+     55.7,
+     -40.25,
+     4.2
+    ],
+    "hue": 174.0,
+    "chroma": 40.5
+   }
+  },
+  {
+   "number": "154",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Phthalo green light",
+   "pigments": [
+    "PG36",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#1DA450",
+    "lab": [
+     59.33,
+     -53.14,
+     33.8
+    ],
+    "hue": 147.5,
+    "chroma": 63.0
+   },
+   "tint": {
+    "hex": "#5EB98E",
+    "lab": [
+     68.77,
+     -37.34,
+     13.6
+    ],
+    "hue": 160.0,
+    "chroma": 39.7
+   }
+  },
+  {
+   "number": "155",
+   "series": 3,
+   "lightfast": "**",
+   "name": "Cadmium green deep",
+   "pigments": [
+    "PG7",
+    "PY35",
+    "PY74"
+   ],
+   "fullShade": {
+    "hex": "#006035",
+    "lab": [
+     35.25,
+     -35.75,
+     17.81
+    ],
+    "hue": 153.5,
+    "chroma": 39.9
+   },
+   "tint": {
+    "hex": "#00A273",
+    "lab": [
+     59.04,
+     -47.32,
+     14.58
+    ],
+    "hue": 162.9,
+    "chroma": 49.5
+   }
+  },
+  {
+   "number": "156",
+   "series": 3,
+   "lightfast": "**",
+   "name": "Cadmium green medium",
+   "pigments": [
+    "PG7",
+    "PY35"
+   ],
+   "fullShade": {
+    "hex": "#088B38",
+    "lab": [
+     50.45,
+     -50.04,
+     35.07
+    ],
+    "hue": 145.0,
+    "chroma": 61.1
+   },
+   "tint": {
+    "hex": "#01A96B",
+    "lab": [
+     61.17,
+     -51.73,
+     21.88
+    ],
+    "hue": 157.1,
+    "chroma": 56.2
+   }
+  },
+  {
+   "number": "157",
+   "series": 3,
+   "lightfast": "**",
+   "name": "Cadmium green light",
+   "pigments": [
+    "PG7",
+    "PY35"
+   ],
+   "fullShade": {
+    "hex": "#72B128",
+    "lab": [
+     65.88,
+     -41.17,
+     58.9
+    ],
+    "hue": 125.0,
+    "chroma": 71.9
+   },
+   "tint": {
+    "hex": "#83BF65",
+    "lab": [
+     71.57,
+     -35.76,
+     39.19
+    ],
+    "hue": 132.4,
+    "chroma": 53.1
+   }
+  },
+  {
+   "number": "158",
+   "series": 3,
+   "lightfast": "**",
+   "name": "Cadmium green yellow",
+   "pigments": [
+    "PG7",
+    "PY35"
+   ],
+   "fullShade": {
+    "hex": "#97C115",
+    "lab": [
+     72.74,
+     -34.79,
+     70.41
+    ],
+    "hue": 116.3,
+    "chroma": 78.5
+   },
+   "tint": {
+    "hex": "#ACCD5A",
+    "lab": [
+     77.98,
+     -28.23,
+     52.69
+    ],
+    "hue": 118.2,
+    "chroma": 59.8
+   }
+  },
+  {
+   "number": "161",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Cobalt nickel green",
+   "pigments": [
+    "PG50"
+   ],
+   "fullShade": {
+    "hex": "#008C43",
+    "lab": [
+     50.87,
+     -49.18,
+     29.96
+    ],
+    "hue": 148.7,
+    "chroma": 57.6
+   },
+   "tint": {
+    "hex": "#AAD4AE",
+    "lab": [
+     81.12,
+     -21.11,
+     14.34
+    ],
+    "hue": 145.8,
+    "chroma": 25.5
+   }
+  },
+  {
+   "number": "162",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Chrome oxide green",
+   "pigments": [
+    "PG17"
+   ],
+   "fullShade": {
+    "hex": "#568D3C",
+    "lab": [
+     53.33,
+     -33.68,
+     37.02
+    ],
+    "hue": 132.3,
+    "chroma": 50.1
+   },
+   "tint": {
+    "hex": "#99AC7F",
+    "lab": [
+     67.88,
+     -14.73,
+     21.02
+    ],
+    "hue": 125.0,
+    "chroma": 25.7
+   }
+  },
+  {
+   "number": "163",
+   "series": 2,
+   "lightfast": "**",
+   "name": "Chrome oxide olive green",
+   "pigments": [
+    "PG17",
+    "PY3"
+   ],
+   "fullShade": {
+    "hex": "#729D2B",
+    "lab": [
+     59.77,
+     -32.03,
+     51.91
+    ],
+    "hue": 121.7,
+    "chroma": 61.0
+   },
+   "tint": {
+    "hex": "#B2BB6C",
+    "lab": [
+     73.6,
+     -15.19,
+     38.87
+    ],
+    "hue": 111.3,
+    "chroma": 41.7
+   }
+  },
+  {
+   "number": "164",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Oxide olive brown",
+   "pigments": [
+    "PY42",
+    "PBk11"
+   ],
+   "fullShade": {
+    "hex": "#4B433A",
+    "lab": [
+     28.94,
+     1.68,
+     6.71
+    ],
+    "hue": 76.0,
+    "chroma": 6.9
+   },
+   "tint": {
+    "hex": "#72685F",
+    "lab": [
+     44.67,
+     2.28,
+     6.5
+    ],
+    "hue": 70.6,
+    "chroma": 6.9
+   }
+  },
+  {
+   "number": "165",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Oxide yellow",
+   "pigments": [
+    "PY42"
+   ],
+   "fullShade": {
+    "hex": "#DB8805",
+    "lab": [
+     63.9,
+     24.09,
+     68.88
+    ],
+    "hue": 70.7,
+    "chroma": 73.0
+   },
+   "tint": {
+    "hex": "#E2B059",
+    "lab": [
+     74.79,
+     8.75,
+     50.69
+    ],
+    "hue": 80.2,
+    "chroma": 51.4
+   }
+  },
+  {
+   "number": "166",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Transoxide yellow",
+   "pigments": [
+    "PY42"
+   ],
+   "fullShade": {
+    "hex": "#E79406",
+    "lab": [
+     68.16,
+     22.81,
+     72.32
+    ],
+    "hue": 72.5,
+    "chroma": 75.8
+   },
+   "tint": {
+    "hex": "#F2CF8D",
+    "lab": [
+     84.7,
+     3.58,
+     37.32
+    ],
+    "hue": 84.5,
+    "chroma": 37.5
+   }
+  },
+  {
+   "number": "167",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Oxide red",
+   "pigments": [
+    "PY154",
+    "PO36",
+    "PBk7"
+   ],
+   "fullShade": {
+    "hex": "#AA461F",
+    "lab": [
+     42.81,
+     38.97,
+     42.29
+    ],
+    "hue": 47.3,
+    "chroma": 57.5
+   },
+   "tint": {
+    "hex": "#D89872",
+    "lab": [
+     68.22,
+     19.58,
+     29.54
+    ],
+    "hue": 56.5,
+    "chroma": 35.4
+   }
+  },
+  {
+   "number": "168",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Oxide red light",
+   "pigments": [
+    "PR101"
+   ],
+   "fullShade": {
+    "hex": "#9A282A",
+    "lab": [
+     35.12,
+     46.86,
+     27.21
+    ],
+    "hue": 30.1,
+    "chroma": 54.2
+   },
+   "tint": {
+    "hex": "#B15651",
+    "lab": [
+     47.75,
+     36.55,
+     20.35
+    ],
+    "hue": 29.1,
+    "chroma": 41.8
+   }
+  },
+  {
+   "number": "171",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Transoxide red",
+   "pigments": [
+    "PR101"
+   ],
+   "fullShade": {
+    "hex": "#C13519",
+    "lab": [
+     44.17,
+     54.21,
+     47.83
+    ],
+    "hue": 41.4,
+    "chroma": 72.3
+   },
+   "tint": {
+    "hex": "#E5956C",
+    "lab": [
+     68.92,
+     25.85,
+     33.98
+    ],
+    "hue": 52.7,
+    "chroma": 42.7
+   }
+  },
+  {
+   "number": "172",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Oxide red deep",
+   "pigments": [
+    "PR101"
+   ],
+   "fullShade": {
+    "hex": "#6B3134",
+    "lab": [
+     28.3,
+     26.15,
+     10.38
+    ],
+    "hue": 21.7,
+    "chroma": 28.1
+   },
+   "tint": {
+    "hex": "#A5717D",
+    "lab": [
+     53.27,
+     22.32,
+     1.74
+    ],
+    "hue": 4.5,
+    "chroma": 22.4
+   }
+  },
+  {
+   "number": "173",
+   "series": 3,
+   "lightfast": "***",
+   "name": "Perylene maroon",
+   "pigments": [
+    "PR179"
+   ],
+   "fullShade": {
+    "hex": "#79253C",
+    "lab": [
+     28.68,
+     38.32,
+     5.98
+    ],
+    "hue": 8.9,
+    "chroma": 38.8
+   },
+   "tint": {
+    "hex": "#CE394C",
+    "lab": [
+     47.72,
+     58.93,
+     24.22
+    ],
+    "hue": 22.3,
+    "chroma": 63.7
+   }
+  },
+  {
+   "number": "174",
+   "series": 2,
+   "lightfast": "***",
+   "name": "Oxide brown medium",
+   "pigments": [
+    "PBr6"
+   ],
+   "fullShade": {
+    "hex": "#5E312A",
+    "lab": [
+     25.99,
+     19.54,
+     13.49
+    ],
+    "hue": 34.6,
+    "chroma": 23.7
+   },
+   "tint": {
+    "hex": "#7E534A",
+    "lab": [
+     39.78,
+     16.76,
+     12.6
+    ],
+    "hue": 36.9,
+    "chroma": 21.0
+   }
+  },
+  {
+   "number": "175",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Transoxide brown",
+   "pigments": [
+    "PR101",
+    "PBk28"
+   ],
+   "fullShade": {
+    "hex": "#774127",
+    "lab": [
+     33.67,
+     20.89,
+     25.81
+    ],
+    "hue": 51.0,
+    "chroma": 33.2
+   },
+   "tint": {
+    "hex": "#CBA284",
+    "lab": [
+     69.62,
+     10.94,
+     21.36
+    ],
+    "hue": 62.9,
+    "chroma": 24.0
+   }
+  },
+  {
+   "number": "176",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Oxide brown deep",
+   "pigments": [
+    "PBr6",
+    "PBk28"
+   ],
+   "fullShade": {
+    "hex": "#5D4131",
+    "lab": [
+     30.23,
+     9.91,
+     14.58
+    ],
+    "hue": 55.8,
+    "chroma": 17.6
+   },
+   "tint": {
+    "hex": "#B7A9A9",
+    "lab": [
+     70.39,
+     5.04,
+     1.82
+    ],
+    "hue": 19.9,
+    "chroma": 5.4
+   }
+  },
+  {
+   "number": "181",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Carbon black",
+   "pigments": [
+    "PBk7"
+   ],
+   "fullShade": {
+    "hex": "#1A313B",
+    "lab": [
+     18.94,
+     -5.68,
+     -9.13
+    ],
+    "hue": 238.1,
+    "chroma": 10.8
+   },
+   "tint": {
+    "hex": "#464448",
+    "lab": [
+     29.12,
+     1.52,
+     -2.19
+    ],
+    "hue": 304.8,
+    "chroma": 2.7
+   }
+  },
+  {
+   "number": "182",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Mars black",
+   "pigments": [
+    "PBk11"
+   ],
+   "fullShade": {
+    "hex": "#454344",
+    "lab": [
+     28.63,
+     1.06,
+     -0.31
+    ],
+    "hue": 343.9,
+    "chroma": 1.1
+   },
+   "tint": {
+    "hex": "#5A5559",
+    "lab": [
+     36.73,
+     2.86,
+     -1.59
+    ],
+    "hue": 330.8,
+    "chroma": 3.3
+   }
+  },
+  {
+   "number": "183",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Transoxide black",
+   "pigments": [
+    "PBk28"
+   ],
+   "fullShade": {
+    "hex": "#433D3D",
+    "lab": [
+     26.35,
+     2.58,
+     0.93
+    ],
+    "hue": 19.9,
+    "chroma": 2.7
+   },
+   "tint": {
+    "hex": "#B5B4BA",
+    "lab": [
+     73.55,
+     1.48,
+     -2.92
+    ],
+    "hue": 296.9,
+    "chroma": 3.3
+   }
+  },
+  {
+   "number": "184",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Grey",
+   "pigments": [
+    "PBk7",
+    "PW6"
+   ],
+   "fullShade": {
+    "hex": "#AFA9A6",
+    "lab": [
+     69.64,
+     1.6,
+     2.31
+    ],
+    "hue": 55.3,
+    "chroma": 2.8
+   },
+   "tint": {
+    "hex": "#BCB8B9",
+    "lab": [
+     75.12,
+     1.59,
+     -0.01
+    ],
+    "hue": 359.7,
+    "chroma": 1.6
+   }
+  },
+  {
+   "number": "191",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Titanium white",
+   "pigments": [
+    "PW6"
+   ]
+  },
+  {
+   "number": "192",
+   "series": 1,
+   "lightfast": "***",
+   "name": "Tint white",
+   "pigments": [
+    "PW6",
+    "PW5"
+   ]
+  }
+ ],
+ "match": {
+  "red": {
+   "readings": {
+    "wallOnly": "#CF1824",
+    "wallAndBridged": "#D11520"
+   },
+   "samples": 9,
+   "nearest": [
+    {
+     "number": "125",
+     "name": "Cadmium red light",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#D21410",
+     "tintHex": "#EA5863",
+     "distance": 6.5,
+     "nearestSample": 1.4,
+     "dHue": 2.7,
+     "dLightness": 1.2,
+     "dChroma": 2.8
+    },
+    {
+     "number": "127",
+     "name": "Cadmium red medium",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#C61714",
+     "tintHex": "#DF5562",
+     "distance": 7.9,
+     "nearestSample": 5.1,
+     "dHue": 1.9,
+     "dLightness": -1.1,
+     "dChroma": -2.7
+    },
+    {
+     "number": "126",
+     "name": "Pyrrole red",
+     "pigments": [
+      "PR254"
+     ],
+     "hex": "#DB0C25",
+     "tintHex": "#EB546F",
+     "distance": 8.2,
+     "nearestSample": 3.0,
+     "dHue": -2.8,
+     "dLightness": 2.9,
+     "dChroma": 1.4
+    },
+    {
+     "number": "124",
+     "name": "Cadmium orange deep",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#E12F0B",
+     "tintHex": "#EF777E",
+     "distance": 12.1,
+     "nearestSample": 6.6,
+     "dHue": 6.4,
+     "dLightness": 6.2,
+     "dChroma": 5.5
+    }
+   ],
+   "votes": {
+    "125": [
+     "958-a",
+     "1081-b",
+     "901-b"
+    ],
+    "126": [
+     "1112-a",
+     "1152",
+     "901-a"
+    ],
+    "127": [
+     "958-b",
+     "1081-a"
+    ],
+    "128": [
+     "1112-b"
+    ]
+   },
+   "gapToSecond": 1.4,
+   "firm": false
+  },
+  "orange": {
+   "readings": {
+    "wallOnly": "#DF3123",
+    "wallAndBridged": "#DC3821"
+   },
+   "samples": 5,
+   "nearest": [
+    {
+     "number": "125",
+     "name": "Cadmium red light",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#D21410",
+     "tintHex": "#EA5863",
+     "distance": 7.0,
+     "nearestSample": 5.6,
+     "dHue": -0.8,
+     "dLightness": -4.4,
+     "dChroma": 5.3
+    },
+    {
+     "number": "127",
+     "name": "Cadmium red medium",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#C61714",
+     "tintHex": "#DF5562",
+     "distance": 8.3,
+     "nearestSample": 2.9,
+     "dHue": -1.6,
+     "dLightness": -6.7,
+     "dChroma": -0.2
+    },
+    {
+     "number": "171",
+     "name": "Transoxide red",
+     "pigments": [
+      "PR101"
+     ],
+     "hex": "#C13519",
+     "tintHex": "#E5956C",
+     "distance": 10.7,
+     "nearestSample": 5.2,
+     "dHue": 2.2,
+     "dLightness": -4.8,
+     "dChroma": -8.2
+    },
+    {
+     "number": "124",
+     "name": "Cadmium orange deep",
+     "pigments": [
+      "PR108"
+     ],
+     "hex": "#E12F0B",
+     "tintHex": "#EF777E",
+     "distance": 11.7,
+     "nearestSample": 6.4,
+     "dHue": 2.9,
+     "dLightness": 0.6,
+     "dChroma": 8.0
+    }
+   ],
+   "votes": {
+    "171": [
+     "880-a",
+     "880-b"
+    ],
+    "124": [
+     "1112-a"
+    ],
+    "126": [
+     "1112-b"
+    ],
+    "127": [
+     "1152"
+    ]
+   },
+   "gapToSecond": 1.3,
+   "firm": false
+  },
+  "yellow": {
+   "readings": {
+    "wallOnly": "#F7C40A",
+    "wallAndBridged": "#F7C40A"
+   },
+   "samples": 5,
+   "nearest": [
+    {
+     "number": "113",
+     "name": "Cadmium yellow medium",
+     "pigments": [
+      "PY35"
+     ],
+     "hex": "#FFD000",
+     "tintHex": "#FFDA04",
+     "distance": 5.1,
+     "nearestSample": 3.8,
+     "dHue": 2.7,
+     "dLightness": 3.4,
+     "dChroma": 3.1
+    },
+    {
+     "number": "114",
+     "name": "Diarylide yellow",
+     "pigments": [
+      "PY139"
+     ],
+     "hex": "#FAB500",
+     "tintHex": "#FEC600",
+     "distance": 8.5,
+     "nearestSample": 6.7,
+     "dHue": -5.7,
+     "dLightness": -3.7,
+     "dChroma": -0.9
+    },
+    {
+     "number": "111",
+     "name": "Hansa yellow",
+     "pigments": [
+      "PY3"
+     ],
+     "hex": "#FFE800",
+     "tintHex": "#FFF267",
+     "distance": 18.0,
+     "nearestSample": 14.6,
+     "dHue": 10.4,
+     "dLightness": 9.4,
+     "dChroma": 8.0
+    },
+    {
+     "number": "112",
+     "name": "Cadmium yellow light",
+     "pigments": [
+      "PY35"
+     ],
+     "hex": "#FBE800",
+     "tintHex": "#FFF04A",
+     "distance": 19.4,
+     "nearestSample": 15.7,
+     "dHue": 11.5,
+     "dLightness": 9.1,
+     "dChroma": 7.8
+    }
+   ],
+   "votes": {
+    "113": [
+     "958-a",
+     "1112-a",
+     "1112-b",
+     "1152"
+    ],
+    "114": [
+     "958-b"
+    ]
+   },
+   "gapToSecond": 3.4,
+   "firm": true
+  },
+  "green": {
+   "readings": {
+    "wallOnly": "#38AA54",
+    "wallAndBridged": "#219D4C"
+   },
+   "samples": 7,
+   "nearest": [
+    {
+     "number": "161",
+     "name": "Cobalt nickel green",
+     "pigments": [
+      "PG50"
+     ],
+     "hex": "#008C43",
+     "tintHex": "#AAD4AE",
+     "distance": 4.9,
+     "nearestSample": 2.7,
+     "dHue": 1.1,
+     "dLightness": -7.0,
+     "dChroma": -2.8
+    },
+    {
+     "number": "154",
+     "name": "Phthalo green light",
+     "pigments": [
+      "PG36",
+      "PW6"
+     ],
+     "hex": "#1DA450",
+     "tintHex": "#5EB98E",
+     "distance": 5.3,
+     "nearestSample": 2.2,
+     "dHue": -0.1,
+     "dLightness": 1.4,
+     "dChroma": 2.6
+    },
+    {
+     "number": "156",
+     "name": "Cadmium green medium",
+     "pigments": [
+      "PG7",
+      "PY35"
+     ],
+     "hex": "#088B38",
+     "tintHex": "#01A96B",
+     "distance": 6.1,
+     "nearestSample": 2.2,
+     "dHue": -2.6,
+     "dLightness": -7.4,
+     "dChroma": 0.7
+    },
+    {
+     "number": "162",
+     "name": "Chrome oxide green",
+     "pigments": [
+      "PG17"
+     ],
+     "hex": "#568D3C",
+     "tintHex": "#99AC7F",
+     "distance": 18.6,
+     "nearestSample": 16.0,
+     "dHue": -15.3,
+     "dLightness": -4.6,
+     "dChroma": -10.3
+    }
+   ],
+   "votes": {
+    "154": [
+     "1112-a",
+     "1152",
+     "1081-a",
+     "901-a"
+    ],
+    "161": [
+     "1112-b",
+     "1081-b"
+    ],
+    "156": [
+     "901-b"
+    ]
+   },
+   "gapToSecond": 0.4,
+   "firm": false
+  },
+  "blue": {
+   "readings": {
+    "wallOnly": "#2479CC",
+    "wallAndBridged": "#186DBF"
+   },
+   "samples": 9,
+   "nearest": [
+    {
+     "number": "146",
+     "name": "Phthalo blue medium",
+     "pigments": [
+      "PB15:1",
+      "PW6"
+     ],
+     "hex": "#0379BE",
+     "tintHex": "#418FCE",
+     "distance": 13.1,
+     "nearestSample": 4.3,
+     "dHue": -12.7,
+     "dLightness": 4.8,
+     "dChroma": -6.4
+    },
+    {
+     "number": "144",
+     "name": "Cobalt blue cerulean",
+     "pigments": [
+      "PB29",
+      "PB15:3",
+      "PW6"
+     ],
+     "hex": "#0086CD",
+     "tintHex": "#3CA5DE",
+     "distance": 15.7,
+     "nearestSample": 7.3,
+     "dHue": -15.3,
+     "dLightness": 9.5,
+     "dChroma": -5.1
+    },
+    {
+     "number": "143",
+     "name": "Cobalt blue",
+     "pigments": [
+      "PB28"
+     ],
+     "hex": "#314394",
+     "tintHex": "#98A5D2",
+     "distance": 16.6,
+     "nearestSample": 12.0,
+     "dHue": 13.7,
+     "dLightness": -12.6,
+     "dChroma": 0.8
+    },
+    {
+     "number": "141",
+     "name": "Indanthrone blue",
+     "pigments": [
+      "PB60"
+     ],
+     "hex": "#403A8D",
+     "tintHex": "#4F80BA",
+     "distance": 22.5,
+     "nearestSample": 18.5,
+     "dHue": 20.7,
+     "dLightness": -14.5,
+     "dChroma": 2.5
+    }
+   ],
+   "votes": {
+    "146": [
+     "958-a",
+     "958-b",
+     "1112-a",
+     "1152",
+     "1081-b",
+     "901-a"
+    ],
+    "143": [
+     "1112-b",
+     "1081-a",
+     "901-b"
+    ]
+   },
+   "gapToSecond": 2.6,
+   "firm": false
+  },
+  "purple": {
+   "readings": {
+    "wallOnly": "#67469C",
+    "wallAndBridged": "#5F4296"
+   },
+   "samples": 9,
+   "nearest": [
+    {
+     "number": "141",
+     "name": "Indanthrone blue",
+     "pigments": [
+      "PB60"
+     ],
+     "hex": "#403A8D",
+     "tintHex": "#4F80BA",
+     "distance": 8.2,
+     "nearestSample": 3.5,
+     "dHue": -5.5,
+     "dLightness": -3.1,
+     "dChroma": 1.3
+    },
+    {
+     "number": "145",
+     "name": "Phthalo blue deep",
+     "pigments": [
+      "PB15:1"
+     ],
+     "hex": "#3C377E",
+     "tintHex": "#3988CA",
+     "distance": 8.6,
+     "nearestSample": 6.0,
+     "dHue": -6.1,
+     "dLightness": -5.3,
+     "dChroma": -5.6
+    },
+    {
+     "number": "136",
+     "name": "Dioxazine violet deep",
+     "pigments": [
+      "PV23"
+     ],
+     "hex": "#532B82",
+     "tintHex": "#714594",
+     "distance": 9.8,
+     "nearestSample": 5.6,
+     "dHue": 5.0,
+     "dLightness": -5.4,
+     "dChroma": 4.6
+    },
+    {
+     "number": "135",
+     "name": "Dioxazine violet light",
+     "pigments": [
+      "PR122",
+      "PV23",
+      "PW6"
+     ],
+     "hex": "#5B2D86",
+     "tintHex": "#8A5BA3",
+     "distance": 10.8,
+     "nearestSample": 5.9,
+     "dHue": 6.6,
+     "dLightness": -3.7,
+     "dChroma": 5.5
+    }
+   ],
+   "votes": {
+    "141": [
+     "958-b",
+     "1112-b",
+     "1081-b",
+     "901-a"
+    ],
+    "142": [
+     "958-a",
+     "1152",
+     "1081-a"
+    ],
+    "145": [
+     "1112-a",
+     "901-b"
+    ]
+   },
+   "gapToSecond": 0.4,
+   "firm": false
+  }
+ }
+}

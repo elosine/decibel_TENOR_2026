@@ -57,6 +57,21 @@ let mine = '';
 for (const name of ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey', 'magenta'])
   mine += (byFam[name] || []).map(c => big(c.value, c.name, c.inThisStack ? 'in this piece\'s score today' : '')).join('');
 
+// A NAMED GUESS (RUNNING_LOG §306): the maker's chart, each family's nearest shades — only when tools/palette/lascaux_match.py has run
+let MATCH = null; try { MATCH = rd('bank/palette/lascaux_match.json'); } catch (e) { /* no chart read yet */ }
+let guess = '';
+if (MATCH) for (const name of ['red', 'orange', 'yellow', 'green', 'blue', 'purple']) {
+  const m = MATCH.match[name], f = fam[name]; if (!m || !f) continue;
+  const lwc = f.wallAndBridged || f.wallOnly, top = m.nearest.slice(0, 3), d = top[0].distance;
+  const word = m.firm ? 'One shade stands out: ' + top[0].number + ' ' + top[0].name + '.'
+    : d <= 6.5 ? 'Near, but the photographs cannot tell these apart.'
+    : d <= 10 ? 'Only roughly near. The photographs cannot tell these apart.'
+    : 'No shade of the chart is near. A mix, a special make, or the limit of the comparison.';
+  guess += '<div class="siderow"><div class="sidename">' + esc(name) + '</div>' +
+    '<div class="sidesw lw" style="background:' + lwc.hex + ';color:' + ink(lwc.hex) + '">LeWitt, read<br>' + esc(lwc.hex) + '</div>' +
+    top.map(c => '<div class="sidesw" style="background:' + c.hex + ';color:' + ink(c.hex) + '">' + esc(c.number + ' ' + c.name) + '<br>' + esc(c.pigments.join(' ')) + '</div>').join('') +
+    '</div><p class="verdict">' + esc(word) + '</p>';
+}
 const works = [...new Set(LW.samples.map(s => s.id + ' = Wall Drawing ' + s.work))].join(' · ');
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>The palette — working page</title>
@@ -77,6 +92,7 @@ const html = `<!doctype html>
  .sidesw { width: 150px; height: 96px; box-sizing: border-box; padding: 8px 10px; font: 12.5px/1.35 Consolas, monospace; display: flex; align-items: flex-end; }
  .sidesw.lw { width: 190px; font-weight: 700; }
  .grid { display: flex; flex-wrap: wrap; gap: 22px 26px; }
+ .verdict { margin: -6px 0 22px 90px; color: #333; font-size: 14px; }
 </style></head><body><main>
 <h1>The palette — working page</h1>
 <p>Your named colours, and LeWitt's late acrylic colours as photographs of four wall drawings at MASS MoCA give them. Under each large swatch: the colour as a thin line and as a pale tint, the two ways a score uses a colour.</p>
@@ -92,7 +108,11 @@ ${lewitt}
 <p>The swatches touch, so a difference shows at the join.</p>
 ${side}
 
-<h2>3 · Your named colours</h2>
+${guess ? `<h2>3 · A named guess — the nearest shades of the maker's chart</h2>
+<p>LeWitt's paint was Lascaux Artist, a range of 54 shades. Which six he used is not published. Here each reading sits beside the three chart shades nearest to it. The chart's swatches are printed approximations, so this names candidates and identifies nothing.</p>
+${guess}` : ''}
+
+<h2>${guess ? '4' : '3'} · Your named colours</h2>
 <p>${CLR.colours.length} colours, as written in the string quartet's page and the two pianos piece.</p>
 <div class="grid">${mine}</div>
 
