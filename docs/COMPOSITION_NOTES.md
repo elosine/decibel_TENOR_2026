@@ -939,3 +939,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"piece-sec03-a2 In this piece, can you take out basically the ending of the drone passage? I'll just call it out by track. So from the cello from about 435.2 on, just take all that out. For the viola from about 433.9. For the percussion from about 440.6. And then for the bass clarinet, 436.1. And the bass flute from about 444 on. Just take all of that out. It's like cutting out the end. And the, that's fine. You can just save it back as that piece, section 3, A2, the same, same name. It's fine."*
 
 *(The AI's reading, marked as such: in his new copy of the piece (`scores/piece-sec03-a2.json`, saved by him at 00:16 beside `piece-sec03-a1`) everything that BEGINS at or after his time on each of the five lanes is taken out — the drone bricks and the players' notes alike — and the score saved under the same name; `piece-sec03-a1` is the piece before the cut. The drone passage, 236 → 505 s, now ends at 440.5 s. RUNNING_LOG §283.)*
+
+### DEC-76 · 2026-10-09 — the long fades on the last thing in each track, if it is a drone
+
+*"Yes, could you please put the long fades on the last thing in each track if it's a drone?"*
+
+*(The AI's reading, marked as such: in `piece-sec03-a2`, after the cut of DEC-75 — on each track the object that ENDS last; where that is a drone, its fade-out becomes the section's long one, 11 s (DEC-56). A track whose last thing is a note is left: the viola's. RUNNING_LOG §284.)*

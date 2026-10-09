@@ -9302,6 +9302,102 @@
    },
    "deal": false,
    "audition": "drone-section"
+  },
+  {
+   "key": "dl21",
+   "name": "D3 of bfl-drone-3 from bfl-drone-2 · Hann · 1/79 · ov 32 · falling 0.08 → 1.95 s · 28.6 s, in 1.59 out 1.45 · LONG OUT 11 s (the piece's last drone on its track)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1590,
+   "durMs": 28600,
+   "relMs": 11000,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0126,
+    "icFromMs": "region@0.65",
+    "icWin": "1.95@0,0.08@28600",
+    "icOverlaps": 32,
+    "icEnv": 0
+   },
+   "deal": false,
+   "audition": "piece-drones"
+  },
+  {
+   "key": "dl16",
+   "name": "D3 of bcl-drone-3 · 3-stage linear · 1/99 · ov 18 · rising 0.09 → 1.38 s · 11.39 s, in 1.6 out 1.59 · LONG OUT 8.79 s (the piece's last drone on its track)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1600,
+   "durMs": 11390,
+   "relMs": 8790,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0101,
+    "icFromMs": "region@0",
+    "icWin": "0.09@0,1.38@11390",
+    "icOverlaps": 18,
+    "icEnv": 1
+   },
+   "deal": false,
+   "audition": "piece-drones"
+  },
+  {
+   "key": "dl34",
+   "name": "D2 of perc-drone-3 from perc-drone-1 · 3-stage linear · 1/77 · ov 21 · falling 0.07 → 1.29 s · 37.66 s, in 3.26 out 1.05 · LONG OUT 11 s (the piece's last drone on its track)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 3260,
+   "durMs": 37660,
+   "relMs": 11000,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.013,
+    "icFromMs": "region@0.13",
+    "icWin": "1.29@0,0.07@37660",
+    "icOverlaps": 21,
+    "icEnv": 1
+   },
+   "deal": false,
+   "audition": "piece-drones"
+  },
+  {
+   "key": "dl26",
+   "name": "D3 of vc-drone-3 from vc-drone-1 · Hann · 1/86 · ov 15 · falling 0.09 → 1.73 s · 35.81 s, in 1.39 out 1.06 · LONG OUT 11 s (the piece's last drone on its track)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1390,
+   "durMs": 35810,
+   "relMs": 11000,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0117,
+    "icFromMs": "region@0.82",
+    "icWin": "1.73@0,0.09@35810",
+    "icOverlaps": 15,
+    "icEnv": 0
+   },
+   "deal": false,
+   "audition": "piece-drones"
   }
  ],
  "generated": {
@@ -9460,6 +9556,12 @@
    "what": "the drone section — a preset per drone: the icy stage, a start as a fraction of the recording's longest region, ended by a shape (37 drones, seed 1)",
    "command": "node tools/build_drone_section.js --score drone-section --from drone-start-mics --seed 1 --replace",
    "when": "2026-10-08T20:36"
+  },
+  "piece-drones": {
+   "n": 4,
+   "what": "the piece's last drone on each track with a long fade-out — copies of the drone section's presets (tools/drone_fade.js)",
+   "command": "node tools/drone_fade.js --score piece-sec03-a2 --fade 11",
+   "when": "2026-10-09T04:21"
   }
  }
 }

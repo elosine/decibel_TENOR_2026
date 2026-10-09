@@ -5915,3 +5915,18 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | bass flute | 444 | 7 — 2 bricks (`bfl-drone-3` ×2), 5 notes | 445.59 | 440.48 (`bfl-drone-2`) |
 
 **44 objects out — 11 drone bricks and 33 notes** (his free multiphonics between the recordings, played in post, went with them; no mic opening lay in the cut — every recording is before 330 s); 705 → 661; **the piece now ends at 440.48 s** (was 505.0): the drone passage 236.3 → 440.5 s, 204 s of the 269. The five lanes end 423.8 … 440.5 s — the staggered close his times drew: viola, clarinet, percussion, cello, and the bass flute's drone last. The mallets' lane and the curve lanes hold nothing there. **Among what went: the five last drones with their 11-second fade-outs (§252)** — the passage now ends on drones that stop with their ordinary 1 … 2 s fades; said to him. Saved under the same name, as he said; a safety copy of the file as it was is in the session's scratchpad (outside the repo), and `piece-sec03-a1` is untouched. No working copy stood beside the save.
+
+## §284
+**2026-10-09 — THE LONG FADE ON EACH TRACK'S LAST DRONE, IN THE CUT PIECE (Opus; DEC-76).** His word: *"Yes, could you please put the long fades on the last thing in each track if it's a drone?"* — the answer to §283's remark that the five drones with the 11-second fade-outs had gone with the cut. **Where a drone's fade lives:** in its PRESET — a `shape` ending, `atkMs` · `durMs` · `relMs` (`bank/presets.json`, the section's `dn01 … dn37`, `audition: drone-section`); the brick only names it (`elec.variants { <sample>: 'dn21-shape' }`). Those presets are shared with `drone-section` and with `piece-sec03-a1`, so changing a `relMs` in place would have lengthened fades there too. **Made — `tools/drone_fade.js`, new:** per track the last-ENDING object; if it is a drone brick, a COPY of its preset with the long fall (key `dl<nn>`, audition `piece-drones`, written by the kit's `writePresets` — the builder's own rows untouched) and the brick pointed at it; the fall never longer than what the drone holds after its rise and one second at level; `--render` sends the plan for the changed bricks to the engine.
+
+`node tools/drone_fade.js --score piece-sec03-a2 --render` (the base his save; his engine up — a `ping` through the score server answered):
+| track | the last thing | the fall | preset |
+|---|---|---|---|
+| bass flute | drone `bfl-drone-2`, 411.88 → 440.48 s (28.6 s) | 1.45 → **11 s** | dn21 → `dl21` |
+| bass clarinet | drone `bcl-drone-3`, 418.50 → 429.89 s (11.39 s) | 1.59 → **8.79 s** — the drone is 11.4 s with a 1.6 s rise: rise, a second at level, then the fall | dn16 → `dl16` |
+| percussion | drone `perc-drone-1`, 393.23 → 430.89 s (37.66 s) | 1.05 → **11 s** | dn34 → `dl34` |
+| cello | drone `vc-drone-1`, 398.49 → 434.30 s (35.81 s) | 1.06 → **11 s** | dn26 → `dl26` |
+| viola | a NOTE (sul ponticello, 417.91 → 423.84 s) — its last drone ends earlier, 415.09 s | LEFT, by his "if it's a drone"; said to him | — |
+| mallets | nothing of the drones | — | — |
+
+**Rendered at once, measured on disk** (the hand-over rule of §212 — an audition is handed over rendered): the four files `bank/samples/<sample>~dl<nn>-shape.wav` written by his engine 00:22:04 … 00:22:09 with their index rows, the lengths 28.6 · 11.39 · 37.66 · 35.81 s — the drones' own, unchanged. Not heard. **The close of the passage as it now reads:** the viola out at 423.8, then four drones falling together through their last eleven seconds — the clarinet gone at 429.9, the percussion 430.9, the cello 434.3, the flute last at 440.5. A re-cut that leaves other drones last: the tool again (a `dl` row is replaced, never doubled). His F5 is needed once: the page reads the presets only then.
