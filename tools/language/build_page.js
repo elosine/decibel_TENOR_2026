@@ -80,7 +80,7 @@ const html = `<!doctype html>
  .chead { display: flex; align-items: baseline; gap: 12px; } .letter { font: 700 20px Consolas, monospace; } .cname { font-size: 18px; font-weight: 600; }
  .cwhy { margin: 2px 0 12px 32px; max-width: 760px; color: #333; } .for { color: #555; font-size: 14px; }
  .tries { display: flex; flex-wrap: wrap; gap: 14px 20px; margin-left: 32px; } .try { display: flex; flex-direction: column; align-items: flex-start; }
- .try .bdg:first-child { margin-bottom: 8px; } .tl { font-size: 12px; color: #555; margin-top: 4px; } .try.taken { opacity: .45; }
+ .try .bdg:first-child { margin-bottom: 8px; } .tl { font-size: 12px; color: #555; margin-top: 4px; } .try.taken .tl { color: #999; }
  .fmt { display: flex; align-items: center; gap: 18px; margin: 10px 0; }
  ol { margin: 6px 0 0 20px; padding: 0; columns: 2; max-width: 900px; } li { margin: 0 0 3px; font-size: 14px; }
 </style></head><body><main>

@@ -1047,3 +1047,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"a white; next multiphonics, and pls list whats left"*
 
 *(The AI's reading, marked as such: the badge of the ACCENTED LONG TONES is candidate a of §309 — Braxton's own sign, the outlined wedge running on as a line — in white. The first of the three badges to take Braxton's sign rather than the staff's: so there is no rule "the signs are the staff's" (the AI had asked). WHERE the type is in the piece — the petal hits, or new material — he did not say; it stays open. The same survey for the MULTIPHONICS, and a bare list of what remains. RUNNING_LOG §310.)*
+
+### DEC-94 · 2026-10-09 — MULTIPHONICS: the boxed chord, heads at full size, in SOL_yellow · AUDIBLE BEATS: an actual wave diagram — the two waves in white, the added wave in the colour
+
+*(His words, verbatim — Opus:)* *"g and yellow; audible beats try actual wave diagram 2 in white and the added wave in all the colors and I'll take other suggestions as well"*
+
+*(The AI's reading, marked as such: (1) the badge of the MULTIPHONICS is candidate g of §311 — the chord of three open noteheads at their full size with the rectangle drawn outside them — in `SOL_yellow` (the yellow offered on the page; his own `clr` yellow is another colour). The frame was his own idea (§311). (2) For the AUDIBLE BEATS he names the design himself: a real wave diagram, TWO waves in white and the wave they ADD UP TO in the colour, shown in every colour; and he invites other ideas. RUNNING_LOG §312.)*

@@ -6435,3 +6435,25 @@ The red did not move (two units). The green, the blue and the purple came out DA
 **What the frame says, for the record:** a box round material is the sign scores use for something to be held or repeated freely (frame or box notation — Lutosławski's and many since; from the AI's knowledge, not looked up); a rectangle between two pitches is the tone-cluster's sign. Either reading suits a held multiphonic.
 
 **Nothing chosen.** Seen in the AI's pane: both draw, large and at 36 px.
+
+## §312. THE FOURTH BADGE CHOSEN — multiphonics: the boxed chord, SOL_yellow · THE AUDIBLE BEATS drawn from real waves: his diagram two ways, and five other suggestions (2026-10-09, Opus)
+
+**What prompted it (DEC-94, verbatim):** *"g and yellow; audible beats try actual wave diagram 2 in white and the added wave in all the colors and I'll take other suggestions as well"*.
+
+**Decided (his):** **MULTIPHONICS = the chord of three open noteheads in a rectangle, the heads at their full size, in `SOL_yellow`** (`symbol: chordBoxOutside` · `colour: SOL_yellow`). The sign is his own making across two turns: the AI offered the bare chord (b), he asked for a frame (§311), and of the two framings he took the one that keeps the heads legible. Four badges: short attacks (three marcatos, SOL_red) · trills (`tr` and its line, the format's blue) · accented long tones (Braxton's wedge and line, white) · multiphonics (the boxed chord, SOL_yellow).
+
+**THE AUDIBLE BEATS — the waves are REAL, not drawn by eye.** Across the badge's 28 px: wave 1 = sin(2π · 5u), wave 2 = −sin(2π · 7u), and their sum halved = −cos(2π · 6u) · sin(2πu) — a tone of 6 cycles whose loudness swells and dies TWICE, silent at both edges and in the middle. Five and seven cycles: the difference, two, is the number of beats — the identity the beating section runs on (a beat a second per hertz of difference, §262). 113 points a curve. The two components are fixed WHITE in the drawing; only the added wave takes the type's colour — the first badge in two tones (`language.json` `_doc`).
+
+**THE SEVEN CANDIDATES** (`candidates.beats`; **http://localhost:5500/language/index.html**), each large and at 36 px, the added wave in all eight colours:
+- **a — the wave diagram, stacked** (his ask): the two white waves one above the other, the added wave under them in the colour. The textbook's picture; three rows in 36 px, each small.
+- **b — the wave diagram, overlaid** (his ask, the other way): the same three curves on one line, the white ones faint behind, the added wave over them at the badge's full height.
+- **c — the added wave alone**: what is heard; plainest at 36 px; no longer says "two tones".
+- **d — the bumps**: the added wave's outline, filled — two swells. Lucier's own words for it: "audible beats — bumps of sound as the sound waves coincide" (§307).
+- **e — the bumps, with the two tones**: d, and through it two thin white lines a hair apart.
+- **f — two lines closing**: a straight white line (the sine) and a line in the colour that starts apart and bends in to meet it (the player) — the piece's own gesture: what the player DOES, where a … e show what is heard.
+- **g — two ripples crossing**: rings from two points, one set white, one in the colour — an interference pattern drawn literally (Lucier's other word for the beats).
+The AI's note: a and b are the truest and the finest-grained — at 36 px the white waves are a texture more than two readable waves; d and e are the ones that survive any size; f is the only one that is an instruction.
+
+**A change to the page at his "in all the colors":** a colour another type has taken was shown faded; it is shown at full strength now, with only its label saying who took it — four of the eight are taken (the format's blue · white · SOL_yellow · SOL_red), and he asked to see them all. Free for the two types left: SOL_orange · SOL_green · SOL_blue · SOL_purple, and his own 23.
+
+**Made:** `bank/language/language.json` (the choice · `candidates.beats`) · `tools/language/build_page.js` (the taken colours unfaded). Seen in the AI's pane: every drawing renders at both sizes.
