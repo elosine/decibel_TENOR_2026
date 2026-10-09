@@ -6816,3 +6816,11 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **The fill's road, for the record of how the look was found:** 35 % (the composer score's own, §319) → 28 % (§328, "20 % more transparent") → 21 % (§329, "that much again") → 15 % (his number). The outline: 70 % (the composer score's) → 56 % (§328, the AI's reading — wrong) → 70 % (§329) → 100 % (his number). So the notation's brick has left the composer score's recipe in both parts: a solid yellow outline around a much paler fill — on a white page the outline carries the shape and the fill only tints it.
 
 **Proven once, in the running app** (`approaching-opening`, page 1): all seven openings read fill 0.15, outline 1; their place and height unchanged (7.9 px under the lane's top, 29.34 px). `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.
+
+## §331. THE MIC OPENING'S FILL — 18 % (2026-10-09, Opus)
+
+**What prompted it (DEC-108, verbatim):** *"fill to 18"* — after seeing 15 %.
+
+**What changed:** `notation/registry/rules.json` `objects.micOpening.fillOpacity` 0.15 → **0.18**. The outline stays solid. The fill's road is now 35 → 28 → 21 → 15 → 18 %: he overshot at 15 and came back — the value was found by eye, between 15 and 21.
+
+**Proven once, in the running app** (`approaching-opening`, page 1): the seven openings read fill 0.18, outline 1. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.

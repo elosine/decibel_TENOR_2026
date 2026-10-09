@@ -1161,3 +1161,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"mic border 100 and fill 15% pls"*
 
 *(The AI's reading, marked as such: two numbers, given outright after two rounds of "a little more" — the outline solid yellow, the fill 15 %. Nothing else touched. RUNNING_LOG §330.)*
+
+### DEC-108 · 2026-10-09 — the mic opening's fill at 18 %
+
+*(His words, verbatim — Opus:)* *"fill to 18"*
+
+*(The AI's reading, marked as such: the fill 15 → 18 %, the outline left solid. RUNNING_LOG §331.)*
