@@ -196,7 +196,12 @@ next, where we are; reorganizations only on his approval.
   the mic at its own height (= the petal hits)** · sines: perhaps a pitch header and a full-lane swatch · strikes: the badge, and a mic
   opening to say when. A badge per instance: only the three body's STATES (the AI's answer). Left to place vertically: the sectional
   badges (lane or GUTTER) · the mic band · the accented long tone's mic · the line wedge · the gap. **HIS METHOD HERE: DISCUSS FIRST —
-  NOTHING DRAWN UNTIL HE ASKS.** ► NEXT: his word on the three body's two badges and on the gutter.
+  NOTHING DRAWN UNTIL HE ASKS.**
+- **THE ORGANISED NOTES: `docs/NOTATION_SCHEME.md`** (§323, DEC-102 — his ask; READ IT FIRST for the notation's scheme: what holds
+  everywhere · the signs · section by section · the lane's map · what is open, in order). Since it: the drones' openings each carry
+  their badge · THE OPENING HAS NO BADGE ON ITS OPENINGS AND NO ARCS · **THE MIC AT ONE HEIGHT, ALWAYS** · the three body's badge large,
+  the short attacks' small · the wedge changes colour and thickness per state (a sign per state: to discuss). ► IN HAND: THE MIC'S
+  HEIGHT — top, middle or bottom (the AI recommends the middle, the badge to its left) — then the rest SECTION BY SECTION, his order.
 - **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

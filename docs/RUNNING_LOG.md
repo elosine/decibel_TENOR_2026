@@ -6671,3 +6671,29 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **The alternatives kept in view, put to him:** every mic opening carries its badge, everywhere (one rule, no doubt; sixty-four more badges in the opening and section 2) · sectional only, with the gutter (the cleanest lanes; the drones' openings then say only "record").
 
 **Nothing drawn.**
+
+## §323. NO ARCS IN THE OPENING · THE MIC AT ONE HEIGHT ALWAYS · THE NOTES ORGANISED (`docs/NOTATION_SCHEME.md`) · the mic's height put to him: top, middle or bottom (2026-10-09, Opus)
+
+**What prompted it (DEC-102, verbatim in COMPOSITION_NOTES):** *"ok for multiphonic badges and opening no badge, but clarification no gcs in opening either; … I think mic should always have same vert position … lets decide on vert location of mic and then decide rest by section, keep these notes pls, more organized version; mic top? middle? bottom?"*
+
+**Decided (his):**
+- **The drones:** every mic opening carries the multiphonics badge (§322's rule, taken for this section).
+- **The opening:** no badge on its openings — **and NO CONDUCTOR'S ARCS.** An event there is a mic opening, alone. *(A correction of the AI's picture: §320's frames drew an arc and a badge on every attack of the opening, from the stack's default strike unit. The arc belongs, in his scheme, to the accented long tones only — DEC-100.)*
+- **THE MIC IS AT ONE HEIGHT, ALWAYS** — DEC-100's "in its own vert position" for the accented long tone's mic is superseded by it: one mic row for every section.
+- **The three body problem's two badges:** the method large, the material small — the AI's suggestion, taken.
+- **The three body's wedge** changes colour and thickness per state; a simple sign per state (an abbreviation, a number) is to be discussed, at that section's turn. No mics there.
+- **The order:** the mic's height first; then the rest, section by section.
+
+**"KEEP THESE NOTES PLS, MORE ORGANIZED VERSION" → `docs/NOTATION_SCHEME.md`** (new; rewritten freely as decisions land, the logs staying the record): § 1 what holds everywhere, a row a rule with its status · § 2 the signs chosen · § 3 section by section — announced by / each event / open · § 4 the lane's vertical map — what places itself, what is to place and in which order · § 5 the conductor's view, held · § 6 the open questions in the order to settle. Two things in it are the AI's reading and marked so: pitch and percussion instrument as the player's choice; the opening keeping one announcing badge.
+
+**THE MIC'S HEIGHT — the facts, and what each place means:**
+*What ever shares a lane with a mic opening, in his scheme:* in the opening, nothing · in section 2, the conductor's arc of an accented long tone (the trills' curves never coincide with a mic in one lane — the placing tool kept them apart, §233 … §239) · in the drones and the strikes, its own badge. The three body problem and the beating section have no mics. So the mic's place is constrained by exactly two neighbours: THE ARC and THE BADGE.
+- **TOP** — where the composer score has it. The arc's landing, as the stack draws it, is at the lane's bottom: the brick would sit at the arc's start, the full height of the lane from the moment it marks.
+- **MIDDLE** — the row the staff takes when it shows. The lane then has ONE row to watch in every section: the mic brick there, the staff there in the beating section, and room for the three body's wedge there too. The arc can land ON the brick from above: the stack already lands an arc on a staff's top line (`notation/lib/layout.js`, a device's `gcGeom: staffTop`). A badge to the brick's left stands where a clef stands before a staff.
+- **BOTTOM** — where the arc lands today. "A mic opening over the impact spot" (DEC-100) becomes literal: the ball lands in the brick. The staff's row and the mic's row are then two different heights.
+
+**The AI's recommendation: THE MIDDLE, the badge to the left of its mic in the same row** — one row for "what, and when" in every section; the model is the one he named at the start (§300: the string quartet — a header, a little staff, then graphics): name · badge where the clef goes · the brick where the notes go. Second choice: the bottom, for the arc's sake.
+
+**On his other question — own row, or left of the mic:** left of it, same row. A badge above its mic means two heights to read and a second band to keep free in every lane; beside it, the pair is one object and the brick's left edge — the instant the microphone opens — stays exact and uncovered. The announcing badge of a section stands at that same height, before the first opening.
+
+**Nothing drawn, at his word (§321).**

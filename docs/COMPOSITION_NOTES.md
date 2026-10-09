@@ -1106,3 +1106,15 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus; sent while the AI was writing up DEC-100:)* *"multiphonics, maybe each mic opening needs its own badge; does the open section need short attacks badge? each mic opening?"*
 
 *(The AI's reading, marked as such: DEC-100's rule — a badge announces a section once — is being tested against two sections. In the DRONES he leans to a badge on EVERY mic opening. For the OPENING he asks both ways: whether the short attacks' badge is needed there at all, and whether it belongs on each opening. A question, not a decision. RUNNING_LOG §322.)*
+
+### DEC-102 · 2026-10-09 — the drones' openings each carry the multiphonics badge; the opening: no badge on its openings AND NO ARCS; the mic always at one height — top, middle or bottom?; the three body's wedge changes colour and thickness per state, perhaps a simple sign per state; the two-badge suggestion taken; "keep these notes, more organized"
+
+*(His words, verbatim — Opus:)* *"ok for multiphonic badges and opening no badge, but clarification no gcs in opening either; so placement of badge and mic, should they have their own vert real estate or does the badge come before to the left of mic; 3body, line wedge will change color and thickness per section but lets dicuss maybe having a simple sign per section, abbreviations? number? 3body 2 badges suggestion good; I think mic should always have same vert position, 4. 3body line wedge + potential badges per section , need decision, no mics in this section so no conflect. lets decide on vert location of mic and then decide rest by section, keep these notes pls, more organized version; mic top? middle? bottom?"*
+
+*(The AI's reading, marked as such:*
+- *DECIDED: each mic opening of the DRONES carries the multiphonics badge · the OPENING's mic openings carry none · **the opening has NO conductor's arcs either** — an event there is a mic opening and nothing else · **THE MIC SITS AT ONE HEIGHT, ALWAYS**, in every section · for the three body problem, the method's badge large and the material's small (the AI's suggestion of §321, taken).*
+- *STATED, TO DISCUSS AT ITS TURN: the three body's LINE WEDGE changes COLOUR AND THICKNESS from state to state ("per section" — read as: per stretch of a state); and perhaps a SIMPLE SIGN per state as well — an abbreviation, a number. "Need decision." No mics in that section, so nothing to collide with.*
+- *THE ORDER HE SETS: first the mic's vertical place — top, middle or bottom; then everything else, section by section.*
+- *ASKED: whether the badge and the mic each get their own height, or the badge stands to the LEFT of its mic in one row.*
+- *ASKED OF THE AI: keep these notes, in a more organised version → `docs/NOTATION_SCHEME.md`.*
+- *Unclear, flagged: "opening no badge" — read as no badge ON the openings; whether the one announcing badge at the section's start stays (DEC-100) is put to him. RUNNING_LOG §323.)*

@@ -756,7 +756,11 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **HIS METHOD FOR THIS ITEM (§321): DISCUSS FIRST — nothing is drawn until he asks to see.**
 
-**Next:** his word on the two badges of the three body problem and on the gutter → then heights, at his word → a drawing when he asks → the bands as rows of `rules.json` (a device sheet each kind).
+**SINCE §322 · §323 (DEC-101 · DEC-102) — THE ORGANISED NOTES ARE `docs/NOTATION_SCHEME.md`** (his ask: "keep these notes pls, more organized version" — READ IT FIRST for this item; it is rewritten as decisions land). Decided: the drones' mic openings each carry the multiphonics badge · the opening's carry none, AND THE OPENING HAS NO CONDUCTOR'S ARCS (an event there is a mic opening alone; the arc belongs to the accented long tones) · **THE MIC IS AT ONE HEIGHT, ALWAYS** · the three body problem: its badge large, the short attacks' small · the three body's wedge changes colour and thickness per state, a simple sign per state to discuss at its turn. **HIS ORDER: the mic's height first — top, middle or bottom — then the rest SECTION BY SECTION.**
+
+**► IN HAND: the mic's height.** The AI's recommendation (§323): THE MIDDLE — the row the staff takes when it shows, so one row to watch in every section; the badge to the LEFT of its mic in the same row, where a clef stands; the arc can land on the brick from above (the stack's `gcGeom: staffTop`). Second: the bottom, where the arc lands today.
+
+**Next:** his word on the mic's height and on the badge beside it → then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 → the drones → the beating section → the strikes → the gap and the sizes → a drawing when he asks → the rows of `rules.json` (a device sheet each kind).
 
 ### 2.7 THE CONDUCTOR'S / PRESENTATION VIEW — a generic hint of the electronics, section by section — `doing` 2026-10-09 (opened at his word, DEC-99; RUNNING_LOG §320)
 
