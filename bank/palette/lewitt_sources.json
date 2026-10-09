@@ -1,0 +1,29 @@
+{
+ "_doc": "THE PHOTOGRAPHS THE LEWITT COLOURS ARE READ FROM (decibel PLAN 2.2 — RUNNING_LOG §303 · §304; DEC-89). Fetched 2026-10-09 at his word ('a, yes go ahead and download') from MASS MoCA's and Cuseum's own pages of four late acrylic wall drawings; kept in bank/palette/photos/ (gitignored — other people's pictures, a public repo). `photos`: each file, where it came from, what it shows. `samples`: the regions read by tools/palette/lewitt_read.py — a REGION is a rectangle that holds only the painted wall (fractions of the picture: x0, y0, x1, y1), a WHITE is the rectangle its white reference is looked for in, `ref` says how good that white is: `wall` = the white wall the drawing itself is on, in the same light (the best) · `ceiling` = white-painted beams elsewhere in the room (a guess at the light on the work). Four more files are the same photographs again at another size (listed under `duplicates`) and are not read.",
+ "photos": {
+  "cu_958.jpg": { "url": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2022/iphone_processed_Wall_Drawing_958.jpg", "page": "https://app.cuseum.com/art/sol-lewitt-wall-drawing-958", "shows": "Wall Drawing 958, Splat (2000) — from its left end, the white wall around it" },
+  "mm_view_958.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/sol_lewitt_958-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing958/", "shows": "Wall Drawing 958, Splat — the whole wall, from its right end" },
+  "mm_work_1112.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/1112.jpg", "page": "https://massmoca.org/event/walldrawing1112/", "shows": "Wall Drawing 1112 (2003) — square on, on its white wall" },
+  "mm_view_1112-1152.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/1112-1152-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing1112/", "shows": "Wall Drawing 1112 at the left, Wall Drawing 1152, Whirls and twirls, across the right" },
+  "cu_1081.jpg": { "url": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2028/iphone_processed_Wall_Drawing_1081.jpg", "page": "https://app.cuseum.com/art/sol-lewitt-wall-drawing-1081", "shows": "Wall Drawing 1081, Planes of color — the painted wall, floor to ceiling" },
+  "cu_901.jpg": { "url": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2019/iphone_processed_Wall_Drawing_901.jpg", "page": "https://app.cuseum.com/art/sol-lewitt-wall-drawing-901", "shows": "Wall Drawing 901 — flat stripes, the glossy black form over them" },
+  "mm_view_901-1081.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/sol_lewitt_901-1081-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing901", "shows": "Wall Drawing 901 at the left, Wall Drawing 1081 across the right" }
+ },
+ "duplicates": {
+  "mm_work_958.jpg": "https://massmoca.org/wp-content/uploads/2015/12/958.jpg — the photograph of cu_958.jpg, smaller",
+  "mm_work_1081.jpg": "https://massmoca.org/wp-content/uploads/2015/12/1081.jpg — the photograph of cu_1081.jpg, smaller",
+  "mm_work_901.jpg": "https://massmoca.org/wp-content/uploads/2015/12/901.jpg — the photograph of cu_901.jpg, smaller",
+  "cu_1112.jpg": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2031/iphone_processed_Wall_Drawing_1112.jpg — the photograph of mm_work_1112.jpg, smaller"
+ },
+ "samples": [
+  { "id": "958-a", "work": "958 Splat", "file": "cu_958.jpg", "region": [0.02, 0.12, 0.70, 0.80], "white": [0.02, 0.12, 0.70, 0.80], "ref": "wall" },
+  { "id": "958-b", "work": "958 Splat", "file": "mm_view_958.jpg", "region": [0.05, 0.08, 1.00, 0.60], "white": [0.30, 0.08, 1.00, 0.60], "ref": "wall" },
+  { "id": "1112-a", "work": "1112", "file": "mm_work_1112.jpg", "region": [0.225, 0.215, 0.835, 0.795], "white": [0.08, 0.15, 0.97, 0.90], "ref": "wall" },
+  { "id": "1112-b", "work": "1112", "file": "mm_view_1112-1152.jpg", "region": [0.035, 0.24, 0.205, 0.66], "white": [0.0, 0.16, 0.26, 0.72], "ref": "wall" },
+  { "id": "1152", "work": "1152 Whirls and twirls", "file": "mm_view_1112-1152.jpg", "region": [0.50, 0.05, 1.00, 0.65], "white": [0.26, 0.05, 1.00, 0.95], "ref": "wall" },
+  { "id": "1081-a", "work": "1081 Planes of color", "file": "cu_1081.jpg", "region": [0.20, 0.36, 0.86, 0.66], "white": [0.0, 0.0, 1.0, 0.30], "ref": "ceiling" },
+  { "id": "1081-b", "work": "1081 Planes of color", "file": "mm_view_901-1081.jpg", "region": [0.46, 0.13, 1.00, 0.70], "white": [0.0, 0.0, 0.60, 0.10], "ref": "ceiling" },
+  { "id": "901-a", "work": "901", "file": "cu_901.jpg", "region": [0.23, 0.14, 0.86, 0.78], "white": [0.20, 0.0, 1.0, 0.12], "ref": "ceiling" },
+  { "id": "901-b", "work": "901", "file": "mm_view_901-1081.jpg", "region": [0.0, 0.16, 0.29, 0.68], "white": [0.0, 0.0, 0.60, 0.10], "ref": "ceiling" }
+ ]
+}

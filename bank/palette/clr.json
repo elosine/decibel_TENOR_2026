@@ -1,0 +1,28 @@
+{
+ "_doc": "HIS NAMED COLOURS — the `clr` set (decibel PLAN 2.2; RUNNING_LOG §303; DEC-89: 'I have a number of colors in the repo somewhere starting with clr like clr_limeGreen; those will be part of the pallett'). Found 2026-10-09 as CSS custom properties `--clr-<name>` in piece #1's page (string_quartet_no1-composer/public/index.html · svg-composer.html) and piece #2's (composition_for_two_pianos_and_two_percussion/public/index.html); none under that prefix in pieces #3 … #7. The values are as written there (an alpha of 255 dropped); `lavander` is his spelling in the code. `family` is the AI's grouping for the swatch page, nothing more. `inThisStack`: the row of notation/registry/rules.json `colours` that carries the same value today.",
+ "colours": [
+  { "name": "limeGreen", "value": "#99FF00", "family": "green", "inThisStack": "limeGreen" },
+  { "name": "brightGreen", "value": "#31D196", "family": "green" },
+  { "name": "green", "value": "#00935C", "family": "green" },
+  { "name": "lightGreen", "value": "#85B068", "family": "green" },
+  { "name": "yellow", "value": "#FED500", "family": "yellow" },
+  { "name": "mustard", "value": "#F4B600", "family": "yellow" },
+  { "name": "brightOrange", "value": "#F04B00", "family": "orange", "inThisStack": "brightOrange" },
+  { "name": "brightOrange2", "value": "#EA4607", "family": "orange" },
+  { "name": "brightRed", "value": "#E52A19", "family": "red" },
+  { "name": "brightRed2", "value": "#DC3F3D", "family": "red" },
+  { "name": "darkRed", "value": "#A60701", "family": "red" },
+  { "name": "darkRed2", "value": "#9A0504", "family": "red" },
+  { "name": "brightBlue", "value": "#387ED3", "family": "blue" },
+  { "name": "navyBlue", "value": "#1C4879", "family": "blue", "inThisStack": "navyBlue" },
+  { "name": "blueGrey", "value": "#708090", "family": "grey" },
+  { "name": "lightGrey", "value": "#ADADB7", "family": "grey" },
+  { "name": "lavander", "value": "#A27EC6", "family": "purple" },
+  { "name": "mauve", "value": "#9B82A5", "family": "purple" },
+  { "name": "mediumPurple", "value": "#7D5591", "family": "purple" },
+  { "name": "violet", "value": "#8A64D7", "family": "purple" },
+  { "name": "royalPurple", "value": "#69329B", "family": "purple" },
+  { "name": "plum", "value": "#522C55", "family": "purple" },
+  { "name": "neonMagenta", "value": "#FF15A0", "family": "magenta", "inThisStack": "cursor · gc" }
+ ]
+}

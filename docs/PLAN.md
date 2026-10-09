@@ -688,7 +688,13 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **(d) The proof:** `notate_section` re-run on the opening (0 … 37 s) and on one window of the beating section (e.g. 423 … 460 s); both looked at by the AI in the app (no error, the lanes and the staff as decided), then HIS EYE — the one proof. The shield waits for an approved page.
 - **The build:** Opus, after a clear; one chunk; `docs/ENGRAVING_RULES.md` regenerated; the sheet line on `staffLines` and the new row.
 
-### 2.2 THE COLOUR PALETTE — `held` (his word 2026-10-09: "hold for now")
+### 2.2 THE COLOUR PALETTE — `doing` 2026-10-09 (opened at his word, DEC-89; RUNNING_LOG §303 · §304)
+
+**Why:** ONE official palette for all the pieces (his word) — his own named `clr` colours in it, and colours drawn from Sol LeWitt's late glossy acrylic wall drawings ("like Splat at MASS MoCA"); a colour picker on web images gave him mixed results.
+
+**Where it stands:** his 23 `clr` colours found and listed (`bank/palette/clr.json`) · LeWitt's six hues and a black READ from seven museum photographs of Wall Drawings 958 · 1112 · 1152 · 1081 · 901 (`tools/palette/lewitt_read.py` → `bank/palette/lewitt_reading.json`; the method and the numbers in §304) · the working page **http://localhost:5500/palette/index.html** (`node tools/palette/build_page.js`). The reading: red #CF1824 · orange #DF3123 · yellow #F7C40A · green #38AA54 · blue #2479CC · purple #67469C · black #1A191A — the yellow sure, the blue and the purple plainly different from one photograph to the next, the orange the least sure.
+
+**Open, his:** his eye on the page — which value of each hue, and its name · whether to settle the orange from one more work (Wall Drawing 880, Loopy Doopy — a download, his yes) · then THE PALETTE ITSELF: which colours are in it, their names, and which sign of the score takes which (with 2.3). **Then, the AI's:** the palette written as data in `composition-system` (its home — every piece's `rules.json` `colours` takes its rows from it), at his word.
 
 ### 2.3 THE LANGUAGE — the music badges and the symbols — `held` (his word 2026-10-09)
 

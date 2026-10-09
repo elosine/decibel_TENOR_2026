@@ -6210,3 +6210,41 @@ A second, independent reading if the shade names can be found: the manufacturer'
 **Sources:** massmoca.org/event/walldrawing958 · app.cuseum.com/art/sol-lewitt-wall-drawing-958 · massmoca.org/event/walldrawing1112 · app.cuseum.com/art/sol-lewitt-wall-drawing-1081 · nationalgalleries.org/art-and-artists/89028/wall-drawing-1136 · massmoca.org/event/walldrawing901 · massmoca.org/event/walldrawing824 · app.cuseum.com/art/sol-lewitt-wall-drawing-821a · artforum.com (Prudence Peiffer on Sol LeWitt at MASS MoCA).
 
 **The question put to him:** which photographs — the museum's, fetched at his word, or his own.
+
+## §304. LEWITT'S COLOURS READ FROM THE PHOTOGRAPHS — seven photographs of five wall drawings, nine regions, six hues and a black; a swatch page beside his own colours (2026-10-09, Opus)
+
+**What prompted it (his words):** *"a, yes go ahead and download"* — on §303's one decision (the museums' own images of 958 · 1112 · 1081 · 901).
+
+**A CORRECTION of §303: his `clr` colours are TWENTY-THREE, not twenty-four.** The table there has 23 names and one empty cell; the AI counted the cells. `bank/palette/clr.json` holds the 23.
+
+**What was fetched:** the eight pages (MASS MoCA's and Cuseum's for each work), then ELEVEN JPEGs, 38 … 308 KB — from `massmoca.org/wp-content/uploads/2015/12/` and `spotzer-prod.cuseum.com`. Looked at as a contact sheet: they are SEVEN photographs (four came twice, at two sizes — their readings agreed to the digit, which is a check of the method's repeatability and nothing more). Wall Drawing 1152 (Whirls and twirls) is in one of them beside 1112 — a fifth work, unasked, read too. The addresses, what each shows and the regions read: `bank/palette/lewitt_sources.json`. The files: `bank/palette/photos/`, GITIGNORED (other people's pictures; a public repo) — fetched again from the list at will.
+
+**What was tried, in order:**
+1. **The whole picture, the hue histogram of its saturated pixels** (the scratch pass). The six hues stood out at once — and so did the WOODEN FLOOR, an orange-brown of chroma 40 … 55 that fell into "orange" and "yellow" in every photograph that shows it; and the white was taken from anywhere in the frame (on 901, a shaded partition: the red came out brighter than a screen can show). Rejected: a photograph is not the wall.
+2. **Regions and a local white — the tool as built**, `tools/palette/lewitt_read.py`: per sample a RECTANGLE holding only the painted wall (read off a gridded print of each photograph), and a rectangle its WHITE is looked for in — the wall the drawing is on where there is one (`ref: wall`: 958 ×2 · 1112 ×2 · 1152), else the white-painted ceiling beams (`ref: ceiling`: 1081 ×2 · 901 ×2). Then: the photograph corrected by its white (the cast out; the exposure set so the white reads as a wall of 88 % reflectance) · the INTERIOR pixels kept (each within 4.5 dE of its neighbours at 1 and 2 px — edges, JPEG ringing and the mixing between small bricks fall away; on 1112 only 9 % of the region survives, on a large field 60 … 90 %) · the saturated ones (C* > 30) clustered in Lab (k-means, 10, a farthest-point start, no dice) and clusters within 7 dE merged · a field = its cluster's MEDIAN · a family by its hue.
+3. **Red against orange.** A fixed hue boundary put his orange in "red": in these photographs the orange is a RED-ORANGE only 5 … 7 degrees of hue from the red (1112-a: 34.4° and 41.1°; 1152: 30.9° and 36.2°). Told now INSIDE one photograph: where a region's two largest warm fields are 4° or more apart, the lower is the red, the higher the orange; where they are not (958-b: 34.4° · 35.5°; 1081-a: three within 1.1°) they are one paint in two lights.
+
+**The reading** (`bank/palette/lewitt_reading.json`; the mean in Lab of the samples whose white is THE WALL, and how far they lie from it — 2 dE is a just-seen difference, 10 a plain one):
+
+| family | the mean | from | spread, mean · max | each wall sample | the ceiling samples (not in the mean) |
+|---|---|---|---|---|---|
+| red | **#CF1824** | 5 | 7.7 · 10.4 | 958-a #D81713 · 958-b #C72324 · 1112-a #E52027 · 1112-b #C1122D · 1152 #C60726 | #E7222C · #F40011 · #FF242E · #F40011 |
+| orange | **#DF3123** | 3 | 5.0 · 7.2 | 1112-a #ED4625 · 1112-b #DB2023 · 1152 #D62722 | — |
+| yellow | **#F7C40A** | 5 | 2.5 · 4.6 | #FBC90E · #F3BC11 · #FBC60C · #FAC403 · #F2C601 | #FFE610 · #FFF500 · #FFEC1B · #FFE801 |
+| green | **#38AA54** | 3 | 6.0 · 8.9 | 1112-a #4EB24A · 1112-b #20A45A · 1152 #30AA57 | #01BB63 · #00A347 · #01BD60 · #029E44 |
+| blue | **#2479CC** | 5 | 9.2 · 14.0 | 958-a #2788EC · 958-b #006CB2 · 1112-a #3B7EBB · 1112-b #1A74D2 · 1152 #2077D2 | #0574D9 · #0978CE · #0173D3 · #0166BE |
+| purple | **#67469C** | 5 | 11.0 · 18.2 | 958-a #7051C2 · 958-b #654A98 · 1112-a #885592 · 1112-b #463589 · 1152 #5C3B9A | #5548B8 · #6E4CA8 · #674CAC · #64489B |
+| black | #1A191A | 2 (901) | 3.2 | — | 901-a #141213 · 901-b #1F1F20 |
+
+**What the numbers say:**
+- **The yellow is sure** — five photographs within 2.5 dE: a deep, warm yellow, between his own `yellow` #FED500 and `mustard` #F4B600.
+- **The blue and the purple are not** — and the reason is in the table: 958-a and 958-b are TWO PHOTOGRAPHS OF THE SAME WALL and give #2788EC and #006CB2, a lightness of 56 against 44. That is the whole of his "mixed results" with a picker, measured: no pixel of either photograph is wrong, the photographs disagree. The mean sits between; his eye chooses.
+- **The orange is the least sure** — three samples, two of them from one photograph, and a red-orange so near the red that a camera's handling of saturated reds could move it. 1112-a, the square-on photograph, shows it best: #ED4625 — within a breath of his own `brightOrange` #F04B00. A work that is orange and little else would settle it (Wall Drawing 880, Loopy Doopy, orange and green) — not fetched; offered.
+- **The ceiling is a poor white** — with it the yellow of 901 and 1081 comes out LIGHTER than the white itself and off the screen's range (#FFF500): the beams are in less light than the wall, so the correction over-brightens. Those four samples are shown and left out of the mean. Their HUES agree with the wall samples' (green 146 … 151° against 139 … 150°), which is what they are good for.
+- **1112-a's green, blue and purple are paler** (#4EB24A · #3B7EBB · #885592) — its bricks are ~10 px across in a 487 px picture: the JPEG's colour is stored at half resolution and bleeds between neighbours even inside a brick. Kept in the mean, said here.
+
+**What was made:** `bank/palette/clr.json` (his 23, with where they came from and which the stack uses) · `bank/palette/lewitt_sources.json` · `bank/palette/lewitt_reading.json` · `tools/palette/lewitt_read.py` (`python -I tools/palette/lewitt_read.py [--diag]` — `-I` so no code is loaded from beside the photographs) · `tools/palette/build_page.js` → `score/public/palette/index.html`, **http://localhost:5500/palette/index.html**: (1) LeWitt's seven, the mean large with the colour as a thin line and a 30 % tint under it, each photograph's own reading small beside it · (2) side by side with his colours of the same family, touching · (3) his 23. Seen in the AI's pane on his server: it loads and draws. No photograph is on the page.
+
+**Not done, said:** the Lascaux shade names (the maker's chart would be a second, independent reading) · nothing is NAMED or CHOSEN — the palette itself is his; no row of `rules.json` `colours` was touched · the official palette's home is `composition-system` (§303) — these files move there at his word.
+
+**For the paper:** the method is the engine-side of nothing — it is this piece's, and the palette's; the finding worth a sentence is the pair 958-a / 958-b: one wall, two photographs, twelve units of lightness apart.

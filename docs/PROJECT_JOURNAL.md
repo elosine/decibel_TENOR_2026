@@ -139,13 +139,18 @@ next, where we are; reorganizations only on his approval.
   **Approaching — the beating section (423 … 460 s)**. The notes on them are the stack's DEFAULT signs (GC strike units, heads with a brick,
   white heads with a duration line) — not this piece's design; the electronics bricks are not drawn (no rows).
 - **His levers, a number each** (PLAN 2.1's AS BUILT line): the line's thickness and colour · the snippet's length · the staff's range.
-- **HELD at his word, in his order:** 2.2 the colour palette · 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the
-  sine's sheet (drafted from the lineage, §301 — "will be different").
+- **2.2 THE COLOUR PALETTE — OPEN (DEC-89; RUNNING_LOG §303 · §304):** an official palette for ALL the pieces. His 23 `clr` colours found
+  (`bank/palette/clr.json`); LeWitt's six hues and a black read from seven museum photographs (`tools/palette/lewitt_read.py`; the
+  photographs gitignored in `bank/palette/photos/`, their addresses in `bank/palette/lewitt_sources.json`); the working page
+  **http://localhost:5500/palette/index.html**. NOTHING IS NAMED OR CHOSEN: the palette is his. Open: his eye on the page · the orange
+  (one more work, a download — his yes) · then the palette as data in `composition-system`, at his word.
+- **HELD at his word, in his order:** 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet
+  (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
 
-His eye on the two pages (2.1 as built); then, in his order and at his word, 2.2 the colour palette · 2.3 the language · 2.4 the mic opening —
-each a talk, then a device sheet. Do not present the parked list.
+His eye on the palette page (2.2) and on the two score pages (2.1 as built); then, in his order and at his word, 2.3 the language · 2.4 the
+mic opening — each a talk, then a device sheet. Do not present the parked list.
 
 ### CHECKPOINT #1 OF SESSION 3 *(2026-10-09, Fable — mid-session checkpoint; written for a session that has never seen this chat)*
 

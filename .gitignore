@@ -92,3 +92,6 @@ bank/backup/raw/
 bank/live/
 # the crop test's page and sounds (node tools/elec.js croptest) — regenerated at will
 score/public/crop_test/
+# the museums' photographs the palette is read from (tools/palette/lewitt_read.py; the addresses are in bank/palette/lewitt_sources.json)
+# — other people's pictures, never committed (a public repo); fetched again from the list at will
+bank/palette/photos/
