@@ -15,10 +15,13 @@
 // DICTATED — one pair, said outright:
 //   node tools/beat_pair.js --score sec04-a-beating --pitch D2 --from 12 --to 2 [--at 0.667] [--dur 16,25] [--start s | --gap 4,7]
 //     --from · --to   the beating at the note's START and at its DESTINATION (0 = the unison); there at --at of the length, held
-// BOTH:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
+// RE-LEVEL — the pairs already on a lane take new marks, nothing rolled:
+//   node tools/beat_pair.js --score sec04-a-beating --lane mal --relevel --sine mp --note mp
+// ALL:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
-//     --vel     the note's velocity outright; without it the note is AS LOUD AS HIS LAST NOTE ON THE LANE (the sound he judged —
-//               §268: the page's own p is velocity 37, the calibrated ladder's 57); the ladder's for --note only on an empty lane
+//     --sine · --note   the written marks; without them the lane's own (bank/beat_shapes.json `levels.lanes`), else the rules' default
+//     --vel     the note's velocity outright; without it THE PAGE'S OWN RULE for the mark (p 37 · mp 55 — what his hand makes in the
+//               page; §268 · §274: the calibrated ladder's p is 57 for the cello, not used here)
 // A LANE WHOSE SINE MOVES (bank/sine_behaviours.json `who: sine` — the bowed crotales, --lane mal): the same shapes, but the bar
 // holds and is RE-BOWED under the brick (bowings of about targetS, never past ceilingS, gapS between — bank/beating_section.json's
 // row for the lane) and the SINE glides (the brick's gliss, a line). There a pitch is the SOUNDING one (F#7 = the key F#5).
@@ -96,15 +99,25 @@ const rangeC = 100 * (inst.bendRangeSt > 0 ? inst.bendRangeSt : 1);
 const useWork = fs.existsSync(work) && fs.statSync(work).mtimeMs > fs.statSync(file).mtimeMs;
 const s = JSON.parse(fs.readFileSync(useWork ? work : file, 'utf8'));
 const startOf = (o) => (o.startTime != null ? o.startTime : o.startSeconds), endOf = (o) => (o.endTime != null ? o.endTime : o.endSeconds);
-// the note's loudness, read BEFORE anything is taken out: as his last note on the lane
-const m = MARKS.indexOf(noteMark);
-const loud = (o) => o.type === 'waveCurve' && o.sonifyNote != null && (o.velAbs != null || o.recVel != null);
-// … and on a lane with no note yet: as the last note of a PAIR on any lane (his p, §271 — the same written dynamic across the players)
-const prev = s.objects.filter((o) => loud(o) && o.layer === lane).sort((a, b) => endOf(b) - endOf(a))[0]
-    || s.objects.filter((o) => loud(o) && o.properties && o.properties.sine).sort((a, b) => endOf(b) - endOf(a))[0];
-const vel = arg('vel') != null ? Math.max(1, Math.min(127, Math.round(+arg('vel')))) : prev ? Math.round(prev.velAbs != null ? prev.velAbs : prev.recVel) : null;
-const y = arg('vel') == null && prev && prev.nodes && prev.nodes[0] ? prev.nodes[0].y : Math.round(m / 7 * 1000) / 100;
+// THE NOTE'S LOUDNESS IS THE PAGE'S OWN RULE FOR A WRITTEN MARK (§274): the height the page gives the mark (p 2.9 · mp 4.3 — a tenth of
+// 10 × mark / 7) and, for a plain note, velocity = height / 10 × 127 (p 37 · mp 55). It is what HIS hand makes when he sets a note's
+// dynamic in the page — his ear set the pairs with it (§268; the calibrated ladder's p for the cello is 57, not used here).
+const m = MARKS.indexOf(noteMark), y = Math.round(m / 7 * 100) / 10;
+const vel = arg('vel') != null ? Math.max(1, Math.min(127, Math.round(+arg('vel')))) : Math.max(1, Math.min(127, Math.round(y / 10 * 127)));
 const out = [useWork ? '(the base: HIS working copy — unsaved edits kept)' : '(the base: the save)'];
+if (has('relevel')) {
+    // --relevel: the pairs ALREADY on the lane take --sine and --note (else the lane's own marks, bank/beat_shapes.json); nothing is rolled
+    const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane);
+    const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.sonifyNote != null && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
+    bricks.forEach((z) => { z.elec.level = Object.assign({}, z.elec.level, { mode: 'flat', mark: sineMark }); delete z.elec.level.to; if (z.properties && z.properties.beat) z.properties.beat.sine = sineMark; });
+    under.forEach((o) => { o.recVel = vel; if (o.velAbs != null) o.velAbs = vel; (o.nodes || []).forEach((n) => { n.y = y; }); });
+    console.log(out.concat(TRACKS[lane].label + ' — ' + bricks.length + ' sine bricks now ' + sineMark + ' · ' + under.length + ' notes now ' + noteMark + ' (velocity ' + vel + ')').join('\n'));
+    if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
+    s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
+    fs.writeFileSync(file, JSON.stringify(s));
+    console.log('written: scores/' + name + '.json · File ▾ → Reload in the page');
+    process.exit(0);
+}
 if (has('replace')) {
     const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane);
     const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
