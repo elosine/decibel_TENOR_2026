@@ -5903,3 +5903,15 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | cello | 115.1 (A#2) | 175.0 (C#2) | 229.0 (A#2) | 280.0 |
 
 **The score: forty pairs in four chords, 4.0 → 295.5 s — 4 min 51 s.** The chords enter 91.1 … 115.1 · 148.1 … 176.7 · 206.8 … 234.9 s. The lanes end 275.9 (flute) · 276.8 (crotales) · 280.0 (cello) · 281.5 (viola) within six seconds — and the clarinet fourteen seconds after them, alone on F2 to 295.5 s (its last pair the long shape, 41.8 s). The take `beating04` is unused again; its pairs' rolls are in §280 if he wants them back (the seeds 26822 · 97467 · 80886 · 49844 · 90342).
+
+## §283
+**2026-10-09 — THE END OF THE DRONE PASSAGE CUT IN `piece-sec03-a2` (Opus; DEC-75).** Verbatim in DEC-75. `scores/piece-sec03-a2.json` is HIS, untracked, saved by him at 00:16 one minute after `piece-sec03-a1` (the same 705 objects — a copy to cut in). **Looked at first, lane by lane, everything reaching past 425 s** (the before-you-delete rule): his five "about" times each fall in a silence 0.7 … 1.7 s before the first object to go, and NOTHING straddles a cut — no brick or note begins before its lane's time and runs past it. So the rule is exact: on each named lane, every object whose start is at or after his time.
+| lane | his time | out | the first out | the lane now ends |
+|---|---|---|---|---|
+| cello | 435.2 | 8 — 2 drone bricks (`vc-drone-3` ×2), 6 notes | 436.00 | 434.30 (`vc-drone-1`) |
+| viola | 433.9 | 9 — 2 bricks (`va-drone-2` · `va-drone-1`), 7 notes | 434.62 | 423.84 |
+| percussion | 440.6 | 8 — 3 bricks (`perc-drone-2` ×2 · `perc-drone-3`), 5 bowed-cymbal notes | 441.84 | 430.89 (`perc-drone-1`) |
+| bass clarinet | 436.1 | 12 — 2 bricks (`bcl-drone-1` ×2), 10 notes | 437.77 | 429.89 (`bcl-drone-3`) |
+| bass flute | 444 | 7 — 2 bricks (`bfl-drone-3` ×2), 5 notes | 445.59 | 440.48 (`bfl-drone-2`) |
+
+**44 objects out — 11 drone bricks and 33 notes** (his free multiphonics between the recordings, played in post, went with them; no mic opening lay in the cut — every recording is before 330 s); 705 → 661; **the piece now ends at 440.48 s** (was 505.0): the drone passage 236.3 → 440.5 s, 204 s of the 269. The five lanes end 423.8 … 440.5 s — the staggered close his times drew: viola, clarinet, percussion, cello, and the bass flute's drone last. The mallets' lane and the curve lanes hold nothing there. **Among what went: the five last drones with their 11-second fade-outs (§252)** — the passage now ends on drones that stop with their ordinary 1 … 2 s fades; said to him. Saved under the same name, as he said; a safety copy of the file as it was is in the session's scratchpad (outside the repo), and `piece-sec03-a1` is untouched. No working copy stood beside the save.

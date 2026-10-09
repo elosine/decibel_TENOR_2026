@@ -933,3 +933,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Let's take out beating four and move beating one up."*
 
 *(The AI's reading, marked as such: the chord of the take `beating04` removed from every lane; `beating01`, the last chord, moved earlier to follow `beating03` — each of its pairs keeping its own gap. Four chords: opening · beating02 · beating03 · beating01. RUNNING_LOG §282.)*
+
+### DEC-75 · 2026-10-09 — the END OF THE DRONE PASSAGE CUT, in `piece-sec03-a2`: from about 435.2 s (cello) · 433.9 (viola) · 440.6 (percussion) · 436.1 (bass clarinet) · 444 (bass flute) on
+
+*"piece-sec03-a2 In this piece, can you take out basically the ending of the drone passage? I'll just call it out by track. So from the cello from about 435.2 on, just take all that out. For the viola from about 433.9. For the percussion from about 440.6. And then for the bass clarinet, 436.1. And the bass flute from about 444 on. Just take all of that out. It's like cutting out the end. And the, that's fine. You can just save it back as that piece, section 3, A2, the same, same name. It's fine."*
+
+*(The AI's reading, marked as such: in his new copy of the piece (`scores/piece-sec03-a2.json`, saved by him at 00:16 beside `piece-sec03-a1`) everything that BEGINS at or after his time on each of the five lanes is taken out — the drone bricks and the players' notes alike — and the score saved under the same name; `piece-sec03-a1` is the piece before the cut. The drone passage, 236 → 505 s, now ends at 440.5 s. RUNNING_LOG §283.)*
