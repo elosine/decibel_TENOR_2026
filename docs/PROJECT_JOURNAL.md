@@ -188,7 +188,15 @@ next, where we are; reorganizations only on his approval.
 - **2.7 THE CONDUCTOR'S / PRESENTATION VIEW — OPEN (DEC-99; RUNNING_LOG §320; PLAN.md 2.7):** a generic hint of the electronics, SECTION
   BY SECTION. ► Section 1 drawn five ways on the piece's own events: **http://localhost:5500/signs/conductor.html**
   (`bank/signs/conductor.json` → `node tools/signs/build_conductor.js`): a echo triangles · b a pale bar · c echo arcs · d a lane of its
-  own · e nothing. Open: his option; then sections 2 … 6 one at a time.
+  own · e nothing. **HELD (DEC-100): his own idea — the flocking badge + a duration line or line wedge, marked as electronics by an
+  "italics equivalent".**
+- **(§321, DEC-100) THE BADGES ARE SECTIONAL — HIS SCHEME:** a badge announces a section once, before its first mic opening · the
+  three body problem carries two (its own + the short attacks'; smaller or side by side — open) · section 2: trills + accented long
+  tones; a trill = its curve with `tr` in its upper left corner; **an accented long tone = an arc with a mic opening over its impact,
+  the mic at its own height (= the petal hits)** · sines: perhaps a pitch header and a full-lane swatch · strikes: the badge, and a mic
+  opening to say when. A badge per instance: only the three body's STATES (the AI's answer). Left to place vertically: the sectional
+  badges (lane or GUTTER) · the mic band · the accented long tone's mic · the line wedge · the gap. **HIS METHOD HERE: DISCUSS FIRST —
+  NOTHING DRAWN UNTIL HE ASKS.** ► NEXT: his word on the three body's two badges and on the gutter.
 - **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP

@@ -50,7 +50,7 @@
     "name": "ACCENTED LONG SOUND",
     "sign": "a narrow closed wedge that runs on as a line — the accent, then the long sound"
    },
-   "inThePiece": "not placed yet — his",
+   "inThePiece": "section 2 — the petal hits: a player's one short note into the open microphone, rung on by the electronics (his word, DEC-100: a conductor's arc with a mic opening over its impact spot)",
    "symbol": "braxton",
    "colour": "white",
    "chosen": "2026-10-09 — his \"a white\" (DEC-93)"
@@ -460,5 +460,31 @@
     }
    }
   ]
+ },
+ "usage": {
+  "_doc": "HOW THE BADGES ARE USED (DEC-100): a badge is SECTIONAL — it announces a section once, before its first mic opening; it is not stamped on each event.",
+  "sections": {
+   "opening": [
+    "shortAttacks"
+   ],
+   "threeBody": [
+    "‹the three body badge — a METHOD, to draw›",
+    "shortAttacks"
+   ],
+   "trillsAndAccents": [
+    "trills",
+    "accentedLongTones"
+   ],
+   "drones": [
+    "multiphonics"
+   ],
+   "beating": [
+    "beats"
+   ],
+   "strikes": [
+    "scatteredStrikes"
+   ]
+  },
+  "open": "how the three body badge and the short attacks badge stand together (the material smaller, or side by side) · whether the section's badge is repeated in the gutter on every page"
  }
 }

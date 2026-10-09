@@ -6622,3 +6622,52 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **On the frames, said on the page:** the players' own signs (the yellow mic brick, the red badge, the pink arc) stand where the composer score has them or where nothing is decided — PROVISIONAL; the lane's map (PLAN 2.6) places them.
 
 **Made:** `bank/signs/conductor.json` · `tools/signs/build_conductor.js` · `score/public/signs/conductor.html`. Seen in the AI's pane: four frames draw from the save (the fifth option draws none).
+
+## §321. THE BADGES ARE SECTIONAL — his scheme read back; where a badge per instance is needed (the three body's states, only); a grammar for two badges together proposed; NOTHING DRAWN at his word (2026-10-09, Opus)
+
+**What prompted it (DEC-100, verbatim in COMPOSITION_NOTES):** his two messages — *"1st vertical placement; just the badges and mic line left to place? …"* (with section 1's conductor idea, *"hold on this"*) and, stopping the AI as it began to draw: *"no dont draw yet, discuss first; badges are mostly sectional … any where we'll need badge per instance?"*
+
+**A correction of the AI's method, his:** it had started on a drawn page of lane arrangements before the scheme was talked through. *"no dont draw yet, discuss first."* The planning method's own order — state and restate, then the top line, then a step — applies to the look too: a drawing comes when he asks to see.
+
+**DECIDED / STATED (his):**
+- **A badge is SECTIONAL** — one announcement before the section's first mic opening, not a stamp on each event.
+- **The accented long tones are the petal hits' kind** (§309's open question, closed): a conductor's arc with a mic opening over its impact spot, the mic at a vertical position of its own.
+- **A trill** = its curve, `tr` in the curve's upper left corner, as the composer score has it.
+- **The scattered strikes** = their badge to announce, a mic opening to say when.
+- **The sines** — a first thought, not fixed: a pitch in a header, then a full-lane-height swatch or curve over the active stretch.
+- **The three body problem** = two badges, its own and the short attacks'; their relation open (see below).
+- **HELD:** section 1's electronics for the conductor — the flocking badge + a duration line or line wedge, told apart as electronics by place, size, transparency or colour, "an italics equivalent".
+
+**"ANYWHERE WE'LL NEED BADGE PER INSTANCE?" — the AI's answer, section by section:**
+- *1 the opening:* no. One type; every event is an arc and a mic.
+- *2 the three body problem:* **YES, in effect — not a language badge but the STATE.** Each player moves through far apart · approaching · close pass · break and rejoin, with a change between each, at their own times (nine stretches a player, 45 in all). Whatever tells a player which state they are in recurs per stretch. If the line wedge carries it by its shape, nothing more is needed; if it cannot say all four, a small sign per stretch is.
+- *3 trills and accented long tones:* no. Two types alternate in one lane, but each instance IS its own sign — a curve with `tr`, or an arc with a mic. This holds only because the accented long tone's mic sits at its own height: that height is what tells it from a short attack, which is also an arc and a mic.
+- *4 the drones:* no. The badge; then each long mic opening is a recording; between them, free.
+- *5 the beating section:* no. Each pair carries its own pitch.
+- *6 the scattered strikes:* no, as he describes it. (If some strikes are written out and some free — PLAN 1.9 left that open — the two would need telling apart.)
+
+**TWO THINGS RAISED WITH IT:**
+- **A sectional badge scrolls away.** The score moves; twelve seconds after a section starts its badge is off the page, and a player looking up mid-section sees none. Suggested: THE GUTTER holds the section's badge(s) beside the player's short name, as a staff holds its clef — drawn on every page of the section. Then a badge is never needed per instance, and the badges take no height from the lane at all.
+- **Nothing in a lane names a pitch or, for the percussionist, an instrument** (no staff outside the beating section, no words). Read as: the player's own choice within the type. Put to him to confirm.
+
+**THE THREE BODY'S TWO BADGES — a grammar proposed (the AI's):** the badges are of two KINDS. The six language types are MATERIAL — what kind of sound. The three body problem is a METHOD — how the players relate; so is the electronics' flocking. A rule that would hold for every section: **method large, its material small beside it** (a subscript: "three body, on short attacks") · **two materials side by side, equal** (section 2: trills and accented long tones) · **an electronics behaviour in the electronics' own style** (his "italics equivalent", held). Side by side at one size would say "do both"; the smaller badge says "of". Lineage: piece #2 HAS a three-body badge (three black discs on drawn orbits, on white, no square — §307); a version in the square format is to draw when its turn comes.
+
+**WHAT IS LEFT TO PLACE VERTICALLY — his question of the first message, answered from his scheme:** the whole-lane things place themselves (the arc · the trill's curve with its `tr` · the sine's swatch) and the staff is the middle. Left: **(1) the sectional badges** — in the lane at the section's start, or in the gutter; **(2) the mic band** — short attacks, drones, strikes; **(3) the accented long tone's mic**, at its own height over the arc's impact; **(4) the three body's line wedge**; and the standard gap's size.
+
+**Nothing drawn, nothing built.** `bank/signs/conductor.json`: section 1 marked HELD with his idea.
+
+## §322. A BADGE ON EACH MIC OPENING? — the two sections measured; a rule by how often the openings come, proposed (2026-10-09, Opus)
+
+**What prompted it (DEC-101, verbatim):** *"multiphonics, maybe each mic opening needs its own badge; does the open section need short attacks badge? each mic opening?"*
+
+**The two sections, from the save** (`piece-3BodyRedo`): THE OPENING — 30 mic openings in 37 s, one every 1.2 s on the page, each 0.5 s long (77 px), three pages in all. THE DRONES — 15 openings in the section's first 95 s of 205, each 6 … 9 s long (900 … 1 400 px), seventeen pages; between them the players play multiphonics freely.
+
+**The AI's answer:**
+- **The drones: yes, each mic opening its own badge.** An opening there is a rare, separate instruction arriving out of free playing — "now hold one into the microphone, this long". The section's announcement is seventeen pages back. And a 36 px badge at the head of a brick a thousand pixels long costs nothing.
+- **The opening: the badge once, not on each.** Thirty openings a second apart would be thirty identical badges; each is 36 px on a 77 px brick. The arc and the short yellow brick already say "one short attack, now"; what they do not say is WHICH kind of sound, and that does not change inside the section. So the badge is needed — once, where the section starts.
+- **The rule that falls out, proposed:** *a mic opening carries its badge when it stands alone — long, or far from the last; a run of short ones is announced once.* By it: the scattered strikes (a window every ten seconds or so) carry theirs on each; section 2 needs none (a trill is its curve with `tr`, an accented long tone is its arc and mic at its own height — each instance is its own sign).
+- **What it does to §321's suggestion:** the gutter was offered against the badge scrolling away. Where every opening carries its badge that worry is gone; it remains for the dense sections only (the opening is three pages; the three body problem seven, with no mic openings at all).
+
+**The alternatives kept in view, put to him:** every mic opening carries its badge, everywhere (one rule, no doubt; sixty-four more badges in the opening and section 2) · sectional only, with the gutter (the cleanest lanes; the drones' openings then say only "record").
+
+**Nothing drawn.**

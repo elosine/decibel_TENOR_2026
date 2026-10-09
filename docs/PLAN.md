@@ -750,7 +750,13 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE LIST — what a player's lane must place (seven):** 1 the standard gap, top and bottom · 2 the badges, at the top (size and horizontal place open) · 3 the mics — one band for every opening (an impulse's, a drone's 6 … 9 s, a petal hit's, a strike's window) · 4 the conductor's arc (GC), the whole lane · 5 the trill's curve, the whole lane · 6 the three body problem's line wedge, a band (the sign to discuss) · 7 the staff where it shows, the middle (the snippet; the beating pitches and their duration lines). *Not in a player's lane:* the returns · dynamics · words. *To settle with the conductor's view (2.7):* the computer players · the sine's own mark and the beat rate. *Not in the piece yet:* the accented long tones.
 
-**Next:** his word on the list → heights and order (the lane DRAWN with its bands on the signs page) → his eye → the bands as rows of `rules.json` (a device sheet each kind).
+**SINCE §321 (DEC-100) — HIS SCHEME, the badges SECTIONAL:** a badge ANNOUNCES A SECTION, once, before its first mic opening — it is not stamped on each event · the opening: the short attacks' badge; each event a conductor's arc and a mic opening · THE THREE BODY PROBLEM: its own badge AND the short attacks' — the relation open (the material smaller, or side by side) · section 2: the trills' and the accented long tones' badges; a TRILL = its curve with `tr` in the curve's upper left corner (as the composer score); **AN ACCENTED LONG TONE = a conductor's arc with a mic opening over its impact spot, the mic at a height of its own — i.e. the petal hits** (§309's question closed) · the SINES: perhaps a pitch in a header, then a full-lane-height swatch or curve over the active stretch · the SCATTERED STRIKES: their badge, and a mic opening to say when. **A badge per instance? — the AI's answer: only the three body problem's STATES** (per player, per stretch; the line wedge may carry them).
+
+**WHAT IS LEFT TO PLACE VERTICALLY, from his scheme:** the whole-lane things place themselves (the arc · the trill's curve · the sine's swatch), the staff is the middle. LEFT: (1) the sectional badges — in the lane at the section's start, or in the GUTTER beside the short name on every page (the AI's suggestion: a badge scrolls away in twelve seconds) · (2) the mic band — short attacks, drones, strikes · (3) the accented long tone's mic, at its own height over the arc's impact · (4) the three body's line wedge · the standard gap's size.
+
+**HIS METHOD FOR THIS ITEM (§321): DISCUSS FIRST — nothing is drawn until he asks to see.**
+
+**Next:** his word on the two badges of the three body problem and on the gutter → then heights, at his word → a drawing when he asks → the bands as rows of `rules.json` (a device sheet each kind).
 
 ### 2.7 THE CONDUCTOR'S / PRESENTATION VIEW — a generic hint of the electronics, section by section — `doing` 2026-10-09 (opened at his word, DEC-99; RUNNING_LOG §320)
 
@@ -758,7 +764,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **What the electronics do** (`bank/signs/conductor.json`): 1 the opening — each new attack shadowed by the player's earlier attacks, one then two … five, their times rolled live · 2 the three body problem — three computer players, deciding live · 3 trills and petal hits — a short note rung on ten seconds · 4 the drones — recordings back as long drones, up to five · 5 the beating section — a pure tone at the player's pitch · 6 the strikes — an answer after the strike.
 
-**► SECTION 1, the opening — five options drawn on the piece's own events** (8 … 20 s; **http://localhost:5500/signs/conductor.html**, `node tools/signs/build_conductor.js`): a echo triangles · b a pale bar · c echo arcs · d a lane of its own · e nothing drawn. **Open, his:** the option. Then sections 2 … 6, one at a time, the same way.
+**► SECTION 1, the opening — five options drawn on the piece's own events** (8 … 20 s; **http://localhost:5500/signs/conductor.html**, `node tools/signs/build_conductor.js`): a echo triangles · b a pale bar · c echo arcs · d a lane of its own · e nothing drawn. **HELD at his word (DEC-100, §321) — his own idea for it: the FLOCKING badge and a duration line or line wedge over the stretch, told apart as ELECTRONICS behaviour by a constant difference (place in the lane · size · transparency or colour · "an italics equivalent"). Suggestions asked, then held: none given.** Then sections 2 … 6, one at a time.
 
 ### 2.5 THE SINE — the beating pair — `parked` (the sheet drafted from the lineage, RUNNING_LOG §301; his word: "the sine tone notation will be different, but we'll figure out this when we get there")
 

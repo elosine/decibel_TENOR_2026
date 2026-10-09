@@ -1083,3 +1083,26 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"not showing ensemble the returns, maybe a generic hint for conductor/presentation score, lets discuss, with visual options; no dynamics; no words, using the language music badges and description in perf notes. drone recording line is just the mic; strike window - mic; no clashes yet, we are deciding where things belong vertically now, so make the list of things we need to place vertically, and lets discuss how/what to show conductor/presentation, section by section"*
 
 *(The AI's reading, marked as such: Q3 — open since DEC-4 — is ANSWERED: the ensemble's parts do NOT show the electronics' returns. A conductor's or presentation score MAY carry a generic hint of them — to be discussed with drawn options, one section at a time. NO DYNAMICS and NO WORDS in the players' lanes: a language type's badge says what to play, the performance notes say how. The drone recording's duration line is the mic brick itself (its length is the duration); the strike window is a mic brick too. The AI is not to raise clashes yet — the present step is only to decide WHAT has to be placed vertically. Asked for: that list; and the conductor's view, section by section. RUNNING_LOG §320.)*
+
+### DEC-100 · 2026-10-09 — THE BADGES ARE SECTIONAL: his scheme for every section · the accented long tones ARE the petal hits' kind — a conductor's arc with a mic opening over its impact · section 1's electronics for the conductor: the flocking badge and a duration line or line wedge — HELD
+
+*(His words, verbatim — Opus; two messages, the first stopped by him before the AI drew anything:)*
+
+*"1st vertical placement; just the badges and mic line left to place? section 1 up to 3body; so we could use the flocking badge and some sort of duration line or line-wedge, but lets distinguish that this is electronics behavior; suggestions? place in lane, size, transparancy or color, italics equivalent; hold on this"*
+
+*"no dont draw yet, discuss first; badges are mostly sectional, so a badge before beginning mic opening to denote that this entire section uses short attacks from the ensemble, 3body will have 3body badge and short attacks badge, lets design this is sa subed to 3b, so smaller  or are they just side by side images say: 'use 3-body performance algorithim using short attacks as material'. for trills section a tr badge / accented long tones badge to announce section; tr curves just have tr in upper left corner of curve like composer score; accented long tones are simply a gc with mic opening over the impact spot but in its own vert position; sines maybe like curves with a pitch in the header and then just a full lane height curve/swatch for active area; ss will announce with badge and have mic opening to show when to play; any where we'll need badge per instance?"*
+
+*(The AI's reading, marked as such:*
+- *A BADGE ANNOUNCES A SECTION, once, before its first mic opening: "this whole section uses short attacks". It is not stamped on every event.*
+- *THE THREE BODY PROBLEM carries TWO badges: its own (the performance algorithm) and the short attacks' (the material). Their relation is the design question he poses — the material SUBORDINATE, so smaller; or the two side by side as equals. The sentence the pair must say: "use the three-body performance algorithm, with short attacks as material."*
+- *SECTION 2 is announced by two: the trills' and the accented long tones'. A TRILL is its curve with `tr` in the curve's upper left corner, as the composer score labels it. AN ACCENTED LONG TONE is a conductor's arc (GC) with a mic opening over its impact spot, the mic at a height of its own — which answers the question open since §309: THE ACCENTED LONG TONES ARE WHAT THE SCORE HAS CALLED THE PETAL HITS (the player's one short note; the electronics ring it long — the accent is the player's, the long tone the electronics').*
+- *THE SINES (the beating section): perhaps as curves are drawn — a PITCH in a header, then a swatch or curve the full height of the lane over the stretch the sine is active.*
+- *THE SCATTERED STRIKES: announced by their badge; a mic opening shows when to strike.*
+- *SECTION 1 FOR THE CONDUCTOR (HELD at his word): the FLOCKING badge and a duration line or a line wedge, marked as ELECTRONICS behaviour by some constant difference — its place in the lane, its size, a transparency or a colour, "an italics equivalent".*
+- *The question he asks: is a badge needed PER INSTANCE anywhere? RUNNING_LOG §321.)*
+
+### DEC-101 · 2026-10-09 — a second thought on the sectional badge: in the multiphonics, maybe each mic opening carries its own; does the opening need the short attacks' badge at all — on each mic opening?
+
+*(His words, verbatim — Opus; sent while the AI was writing up DEC-100:)* *"multiphonics, maybe each mic opening needs its own badge; does the open section need short attacks badge? each mic opening?"*
+
+*(The AI's reading, marked as such: DEC-100's rule — a badge announces a section once — is being tested against two sections. In the DRONES he leans to a badge on EVERY mic opening. For the OPENING he asks both ways: whether the short attacks' badge is needed there at all, and whether it belongs on each opening. A question, not a decision. RUNNING_LOG §322.)*
