@@ -6533,3 +6533,34 @@ The AI's note: a and b are his; b is the one that keeps the kinship with piece #
 The AI's note: h is nearest his words (a TINY bit, SLIGHTLY); i and j are there so the edge of "too loose" can be seen — past it the nine stop reading as one formation, which was the point of b.
 
 **Nothing changed in the record:** the type has no `symbol` yet. Seen in the AI's pane: the three draw at both sizes.
+
+## §318. THE SIX BADGES CHOSEN — scattered strikes: the flock diving, take j, SOL_green · THE MIC OPENING OPENED (PLAN 2.4): the composer score's brick read from its code, five highlighter yellows found, each drawn three ways at the score's own scale (2026-10-09, Opus)
+
+**What prompted it (DEC-97, verbatim):** *"j and green; for the mic opening just like composer score, all those elements rounded corners, the 2 circles the outline and transparent fill, but can you find a highlghter yellow and let me see a few versions"*.
+
+**Decided (his):** **SCATTERED STRIKES = the flock, diving — take j** (§317: spread × 1.2 · jitter 1.5 px · turn ± 9° · seed 80) **in `SOL_green`** (`symbol: diveFlock4`).
+
+**THE LANGUAGE'S SIX BADGES, all chosen** (`bank/language/language.json`; the table at the top of http://localhost:5500/language/index.html):
+
+| the type | the sign | the colour | whose sign |
+|---|---|---|---|
+| short attacks | three small open triangles | SOL_red | Braxton's (Language Type 7) |
+| trills | `tr` with its wavy line, the notation font's | the format's blue | the staff's |
+| accented long tones | a narrow wedge running on as a line | white | Braxton's (Type 2) |
+| multiphonics | three open noteheads in a rectangle | SOL_yellow | the staff's chord, his frame |
+| audible beats | the added wave inside its two-pinch outline | SOL_orange (the outline white) | his — from a picture he sent |
+| scattered strikes | nine solid triangles diving at a ground line | SOL_green | his — piece #1's flocking badge, turned to attack |
+
+Five SOL colours and the format's blue are used; SOL_blue · SOL_purple · SOL_black and all 23 of his own are free. Still his to say: where the accented long tones are in the piece.
+
+**THE MIC OPENING — LINEAGE FIRST, the composer score's own drawing, read from its code** (`score/public/composer.html` `renderZone`; `electronics/score/le_objects.js` `MODELS.elecOpen` and its `make`): a rectangle with corners rounded at **3 px** · filled with its colour at **35 %** · outlined in the same colour, **1.5 px at 70 %** · **one fifth of the lane** tall (never under 16 px), at the **top** of its lane (`yOffset: 0`) · its label "◉ name" 6 px in, 11 px, #333 — **"the 2 circles" is the sign ◉, a dot in a ring** · the colour **#00897B**, a teal. An impulse's opening is 500 ms from 100 ms before its note; a drone's 6 … 9 s.
+
+**"FIND A HIGHLIGHTER YELLOW" — what there is** (one search): no standard hex. Five kept, with where each comes from: **#FFFF00** the plain screen yellow most references mean · **#FFFF66** Laser Lemon, a Crayola fluorescent (Wikipedia) · **#E9FF36** a neon lemon, leaning to green as real ink does · **#CCFF00** the best-sourced "fluorescent yellow" (Crayola's Electric Lime) — close to his own limeGreen #99FF00, which the score already uses for the level curve · **#E6D53A** one design site's reading of a Stabilo Boss yellow as printed (Stabilo publishes none).
+
+**The problem a yellow has, and the three recipes:** on white paper yellow is the faintest of colours; the composer's recipe was tuned for a teal. So each yellow is drawn (1) EXACTLY AS THE COMPOSER SCORE — fill 35 %, outline 70 %, the sign dark grey · (2) A DENSER FILL — 60 %, the outline nearly solid · (3) THE OUTLINE A SHADE DARKER — fill 45 %, outline and sign in the same yellow darkened by three tenths, so the brick has an edge.
+
+**The page** (`bank/signs/mic_opening.json` → `node tools/signs/build_page.js` → **http://localhost:5500/signs/index.html**): the composer's teal brick for reference with its seven facts; then five yellows × three recipes AT THE NOTATION'S OWN SCALE (the 1080 frame, five lanes: a lane 209.6 px, the brick 41.9 px, half a second 77 px) on a white lane under its grey line — a short opening with THE SHORT ATTACKS' BADGE under it where its note falls (100 ms in), and the start of a long one. The ◉ is drawn as two circles, a ring and a dot. `tools/language/badge_lib.js` (new): a type's chosen badge as an svg for any page.
+
+**Not decided, not asked yet:** whether the notation's brick carries the sample's NAME after the ◉ (the composer's does; he listed the circles, not the name — drawn without) · its height and place in the lane beside the badges (the composer's fifth-of-a-lane at the top is drawn) · the yellow's name once chosen. The choice becomes an `objects` row of `notation/registry/rules.json` by a device sheet, and the extractor's first electronics kind.
+
+**Sources:** en.wikipedia.org/wiki/Lemon_(color) · color.fandom.com/wiki/Electric_Lime · colorxs.com (Laser Lemon · #CFFF00) · visily.ai/blog/yellow-color · madegooddesigns.com/stabilo-brand-guidelines.

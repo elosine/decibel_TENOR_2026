@@ -1,0 +1,27 @@
+{
+ "_doc": "THE MIC OPENING'S SIGN — candidates (decibel PLAN 2.4; RUNNING_LOG §318; DEC-97: 'for the mic opening just like composer score, all those elements rounded corners, the 2 circles the outline and transparent fill, but can you find a highlghter yellow and let me see a few versions'). `composer`: how the composer score draws the brick today, READ from its code — the recipe to keep. `yellows`: the highlighter yellows found, each with where it comes from. `recipes`: ways of applying a yellow to a WHITE page (the composer's own recipe first). tools/signs/build_page.js draws every yellow in every recipe on score/public/signs/index.html. When he chooses, the choice becomes a row of notation/registry/rules.json (an `objects` row for the opening) by a device sheet — not this file.",
+ "composer": {
+  "from": "score/public/composer.html renderZone · electronics/score/le_objects.js MODELS.elecOpen",
+  "shape": "a rectangle, corners rounded at 3 px",
+  "fill": "the brick's colour at 35 % opacity",
+  "outline": "the same colour, 1.5 px, at 70 % opacity",
+  "height": "one fifth of the lane (never under 16 px)",
+  "place": "the top of its lane",
+  "sign": "◉ — a dot in a ring, the two circles — then the sample's name, 11 px, dark grey #333, 6 px in from the left",
+  "colour": "#00897B (a teal)",
+  "length": "an impulse's opening is 500 ms, from 100 ms before its note; a drone's is 6 … 9 s"
+ },
+ "frame": { "laneHeightPx": 209.6, "pxPerSecond": 154, "_note": "the notation's video frame: 1080 px, five lanes, 12 s a page across 1848 px — so one fifth of a lane is 42 px, and 500 ms is 77 px" },
+ "yellows": [
+  { "id": "screenYellow", "value": "#FFFF00", "name": "plain screen yellow", "from": "the convention: what most design references mean by highlighter yellow — red and green full, no blue" },
+  { "id": "laserLemon", "value": "#FFFF66", "name": "Laser Lemon", "from": "a Crayola fluorescent crayon colour (Wikipedia's list) — a paler, softer highlighter" },
+  { "id": "neonLemon", "value": "#E9FF36", "name": "a neon lemon", "from": "listed among the lemon shades on Wikipedia — a yellow leaning a little to green, as a real highlighter's ink does" },
+  { "id": "electricLime", "value": "#CCFF00", "name": "fluorescent yellow · Electric Lime", "from": "the best-sourced value for fluorescent yellow (Crayola's fluorescent Electric Lime). Close to his own limeGreen #99FF00, which the score already uses for a curve" },
+  { "id": "bossYellow", "value": "#E6D53A", "name": "a Stabilo Boss yellow, as printed", "from": "Stabilo publishes no hex; this is one design site's reading of the pen's yellow — the ink as it looks once dry on paper, not glowing" }
+ ],
+ "recipes": [
+  { "id": "asComposer", "name": "exactly as the composer score", "fillOpacity": 0.35, "strokeOpacity": 0.7, "strokeWidth": 1.5, "strokeShade": 1, "sign": "#333333", "note": "the fill at 35 %, the outline the same yellow at 70 %, the sign dark grey — the composer's numbers, only the colour changed" },
+  { "id": "denser", "name": "a denser fill", "fillOpacity": 0.6, "strokeOpacity": 0.95, "strokeWidth": 1.5, "strokeShade": 1, "sign": "#333333", "note": "yellow is faint on white: the fill at 60 %, the outline nearly solid" },
+  { "id": "darkOutline", "name": "the outline a shade darker", "fillOpacity": 0.45, "strokeOpacity": 1, "strokeWidth": 1.5, "strokeShade": 0.7, "sign": "shade", "note": "the fill at 45 %; the outline and the sign in the same yellow darkened by three tenths, so the brick has an edge on white paper" }
+ ]
+}

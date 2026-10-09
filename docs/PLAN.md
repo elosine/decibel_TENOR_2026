@@ -720,11 +720,19 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §315 · §316 (DEC-96):** ☑ **AUDIBLE BEATS = the outline of the wave in his picture, thin and white, the added wave inside it in `SOL_orange`** (`symbol: pictureOutlineWave`; the one badge in two tones) · FIVE BADGES CHOSEN · ► **SCATTERED STRIKES** — seven candidates on the page: a the dive, straight down · b the flock, diving (both his idea: the flocking badge's triangles as projectiles about to land) · c the strike itself in time (the real onsets of his take `strikes01`) · d conductor curves landing apart · e a burst · f marcatos, scattered · g a chord pulled apart. Free colours: SOL_green · SOL_blue · SOL_purple, his own 23.
 
-**Open, his:** the scattered strikes' sign and colour — THE LAST BADGE · WHERE the accented long tones are in the piece (the petal hits of section 2 — a short note the electronics ring out — or new material).
+**SINCE §317 · §318 (DEC-97) — THE SIX BADGES ARE CHOSEN:** ☑ **SCATTERED STRIKES = the flock, diving — the looser take j, in `SOL_green`** (`symbol: diveFlock4`; seed 80). The set: short attacks — Braxton's three open triangles, SOL_red · trills — `tr` + wavy line, the format's blue · accented long tones — Braxton's wedge and line, white · multiphonics — three open noteheads in a rectangle, SOL_yellow · audible beats — the added wave in its two-pinch outline, SOL_orange · scattered strikes — nine solid triangles diving at a ground line, SOL_green. `tools/language/badge_lib.js` gives any page a type's chosen badge.
+
+**Open, his:** WHERE the accented long tones are in the piece (the petal hits of section 2 — a short note the electronics ring out — or new material). **Then, the AI's, at the notation's turn:** the badge as a DRAWN KIND of the score — a device sheet (where it sits on a lane, at what size, on which events), its row in `rules.json`, the extractor.
 
 **WHAT IS LEFT after the six badges (listed to him, §310):** the notation's other signs, a sheet each — the microphone opening (2.4) · the return · the petal hit · the drone's duration line · the beating pair and its sine (2.5) · the three body problem's containers · the computer players · then the badge placed in the score as a drawn kind · the palette into `composition-system` · the two set-up calls (pitch form · short names) · the lock and the deliverables (container 8). **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
-### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
+### 2.4 THE MIC OPENING — its notation — `doing` 2026-10-09 (opened at his word, DEC-97; RUNNING_LOG §318)
+
+**His word:** *"just like composer score, all those elements rounded corners, the 2 circles the outline and transparent fill, but can you find a highlghter yellow and let me see a few versions"*.
+
+**Where it stands:** the composer score's brick READ from its code — a rectangle, corners 3 px, its colour at 35 %, an outline in the same colour 1.5 px at 70 %, a fifth of the lane tall at the lane's top, the sign ◉ (a dot in a ring: "the 2 circles"), teal #00897B · five highlighter yellows found (#FFFF00 · #FFFF66 Laser Lemon · #E9FF36 · #CCFF00 fluorescent yellow · #E6D53A a Stabilo Boss reading) · each drawn three ways (exactly as the composer score · a denser fill · the outline a shade darker) at the notation's own scale, the short attacks' badge under the short opening: **http://localhost:5500/signs/index.html** (`bank/signs/mic_opening.json` → `node tools/signs/build_page.js`).
+
+**Open, his:** the yellow and the recipe · the sample's NAME after the ◉, or the sign alone (drawn alone) · its height and place beside a badge. **Then, the AI's:** a DEVICE SHEET for the opening as the extractor's first electronics kind — its `objects` row in `rules.json`, its edge class, the zone `elecOpen` read into the IR.
 
 ### 2.5 THE SINE — the beating pair — `parked` (the sheet drafted from the lineage, RUNNING_LOG §301; his word: "the sine tone notation will be different, but we'll figure out this when we get there")
 

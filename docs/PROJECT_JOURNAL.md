@@ -170,7 +170,13 @@ next, where we are; reorganizations only on his approval.
   b the flock diving · c his own strike in time · d conductor curves landing · e a burst · f marcatos scattered · g a chord pulled
   apart). Open: his sign and colour · where the accented long tones are in the piece (the petal hits?). What is left after the badges:
   PLAN.md 2.3's last paragraph.
-- **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
+- **(§317 · §318, DEC-97) THE SIX BADGES ARE CHOSEN** — scattered strikes = the flock diving, take j, `SOL_green`. The set is PLAN.md
+  2.3's last "SINCE" paragraph and the table at the top of the language page. Open on it: where the accented long tones are in the piece.
+- **2.4 THE MIC OPENING — OPEN (DEC-97; RUNNING_LOG §318):** to be drawn AS THE COMPOSER SCORE DRAWS IT (a rounded rectangle at the
+  lane's top, a see-through fill, an outline in the same colour, the sign ◉) in a HIGHLIGHTER YELLOW. Five yellows × three recipes at
+  the notation's own scale: **http://localhost:5500/signs/index.html** (`bank/signs/mic_opening.json` → `node tools/signs/build_page.js`).
+  Open: his yellow and recipe · the sample's name after the ◉ or not · then a device sheet (the extractor's first electronics kind).
+- **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
 
