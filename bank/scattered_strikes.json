@@ -2,13 +2,11416 @@
  "type": "scattered_strike_db",
  "version": 1,
  "created": "2026-10-04",
- "description": "The strike bank — EMPTY. In piece #5 this held the composer's own recorded piano strikes, the seed of that piece's opening. This piece has no piano and no recording yet; the drawer and tools/strike_db.js read this file and work from an empty bank.",
+ "description": "The strike bank — THIS PIECE'S since 2026-10-09: the composer's 60 strikes, played by him on the mallets lane (marimba) and saved as scores/strikes.json, ingested by tools/strike_db.js (RUNNING_LOG §290). In piece #5 this held his recorded piano strikes, the seed of that piece's opening. The Strikes drawer and the harmony bank 'strikes' read this file live.",
  "_provenance": "Skeleton written by the port from piece #6 (septet_LGMF_2026 @ 0d70fda), 2026-10-04 — the new-piece protocol's 3.4. The strike bank is EMPTY, as it was there; the shape is piece #5's. Recorded strikes are a piece's own.",
  "defaults": {
   "strikeGapMs": 500,
   "simultaneityMs": 60
  },
- "ingestions": [],
- "sequences": {},
- "strikes": {}
+ "ingestions": [
+  {
+   "timestamp": "2026-10-09T11:50:40.509Z",
+   "source": "strikes",
+   "window": [
+    0,
+    null
+   ],
+   "strikeGapMs": 500,
+   "simultaneityMs": 60,
+   "notes": 429,
+   "strikes": 60,
+   "redacted": 235,
+   "sequenceId": "seq-strikes-0-end",
+   "strikeIds": [
+    "ss-strikes-wc-1221",
+    "ss-strikes-wc-1227",
+    "ss-strikes-wc-1232",
+    "ss-strikes-wc-1237",
+    "ss-strikes-wc-1244",
+    "ss-strikes-wc-1253",
+    "ss-strikes-wc-1257",
+    "ss-strikes-wc-1264",
+    "ss-strikes-wc-1270",
+    "ss-strikes-wc-1275",
+    "ss-strikes-wc-1279",
+    "ss-strikes-wc-1284",
+    "ss-strikes-wc-1291",
+    "ss-strikes-wc-1299",
+    "ss-strikes-wc-1305",
+    "ss-strikes-wc-1309",
+    "ss-strikes-wc-1315",
+    "ss-strikes-wc-1319",
+    "ss-strikes-wc-1324",
+    "ss-strikes-wc-1329",
+    "ss-strikes-wc-1345",
+    "ss-strikes-wc-1351",
+    "ss-strikes-wc-1356",
+    "ss-strikes-wc-1370",
+    "ss-strikes-wc-1379",
+    "ss-strikes-wc-1390",
+    "ss-strikes-wc-1401",
+    "ss-strikes-wc-1408",
+    "ss-strikes-wc-1413",
+    "ss-strikes-wc-1419",
+    "ss-strikes-wc-1424",
+    "ss-strikes-wc-1429",
+    "ss-strikes-wc-1435",
+    "ss-strikes-wc-1441",
+    "ss-strikes-wc-1447",
+    "ss-strikes-wc-1452",
+    "ss-strikes-wc-1457",
+    "ss-strikes-wc-1463",
+    "ss-strikes-wc-1467",
+    "ss-strikes-wc-1472",
+    "ss-strikes-wc-1479",
+    "ss-strikes-wc-1488",
+    "ss-strikes-wc-1498",
+    "ss-strikes-wc-1507",
+    "ss-strikes-wc-1515",
+    "ss-strikes-wc-1528",
+    "ss-strikes-wc-1540",
+    "ss-strikes-wc-1555",
+    "ss-strikes-wc-1556",
+    "ss-strikes-wc-1565",
+    "ss-strikes-wc-1575",
+    "ss-strikes-wc-1580",
+    "ss-strikes-wc-1587",
+    "ss-strikes-wc-1596",
+    "ss-strikes-wc-1601",
+    "ss-strikes-wc-1611",
+    "ss-strikes-wc-1619",
+    "ss-strikes-wc-1625",
+    "ss-strikes-wc-1631",
+    "ss-strikes-wc-1638"
+   ],
+   "label": "his 60 marimba strikes, played into the page 2026-10-09"
+  }
+ ],
+ "sequences": {
+  "seq-strikes-0-end": {
+   "id": "seq-strikes-0-end",
+   "source": "strikes",
+   "window": [
+    0,
+    null
+   ],
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "strikeIds": [
+    "ss-strikes-wc-1221",
+    "ss-strikes-wc-1227",
+    "ss-strikes-wc-1232",
+    "ss-strikes-wc-1237",
+    "ss-strikes-wc-1244",
+    "ss-strikes-wc-1253",
+    "ss-strikes-wc-1257",
+    "ss-strikes-wc-1264",
+    "ss-strikes-wc-1270",
+    "ss-strikes-wc-1275",
+    "ss-strikes-wc-1279",
+    "ss-strikes-wc-1284",
+    "ss-strikes-wc-1291",
+    "ss-strikes-wc-1299",
+    "ss-strikes-wc-1305",
+    "ss-strikes-wc-1309",
+    "ss-strikes-wc-1315",
+    "ss-strikes-wc-1319",
+    "ss-strikes-wc-1324",
+    "ss-strikes-wc-1329",
+    "ss-strikes-wc-1345",
+    "ss-strikes-wc-1351",
+    "ss-strikes-wc-1356",
+    "ss-strikes-wc-1370",
+    "ss-strikes-wc-1379",
+    "ss-strikes-wc-1390",
+    "ss-strikes-wc-1401",
+    "ss-strikes-wc-1408",
+    "ss-strikes-wc-1413",
+    "ss-strikes-wc-1419",
+    "ss-strikes-wc-1424",
+    "ss-strikes-wc-1429",
+    "ss-strikes-wc-1435",
+    "ss-strikes-wc-1441",
+    "ss-strikes-wc-1447",
+    "ss-strikes-wc-1452",
+    "ss-strikes-wc-1457",
+    "ss-strikes-wc-1463",
+    "ss-strikes-wc-1467",
+    "ss-strikes-wc-1472",
+    "ss-strikes-wc-1479",
+    "ss-strikes-wc-1488",
+    "ss-strikes-wc-1498",
+    "ss-strikes-wc-1507",
+    "ss-strikes-wc-1515",
+    "ss-strikes-wc-1528",
+    "ss-strikes-wc-1540",
+    "ss-strikes-wc-1555",
+    "ss-strikes-wc-1556",
+    "ss-strikes-wc-1565",
+    "ss-strikes-wc-1575",
+    "ss-strikes-wc-1580",
+    "ss-strikes-wc-1587",
+    "ss-strikes-wc-1596",
+    "ss-strikes-wc-1601",
+    "ss-strikes-wc-1611",
+    "ss-strikes-wc-1619",
+    "ss-strikes-wc-1625",
+    "ss-strikes-wc-1631",
+    "ss-strikes-wc-1638"
+   ],
+   "t0": [
+    4.203,
+    7.911,
+    12.165,
+    15.986,
+    21.162,
+    25.17,
+    30.014,
+    34.628,
+    37.879,
+    43.199,
+    47.143,
+    49.238,
+    51.606,
+    54.105,
+    57.556,
+    60.494,
+    62.194,
+    63.504,
+    65.066,
+    67.292,
+    69.931,
+    71.157,
+    73.08,
+    76.055,
+    79.856,
+    83.073,
+    86.131,
+    89.955,
+    93.346,
+    96.679,
+    99.477,
+    102.943,
+    104.66,
+    106.676,
+    108.227,
+    109.424,
+    112.287,
+    113.561,
+    114.969,
+    116.31,
+    118.155,
+    120.095,
+    121.724,
+    123.481,
+    125.029,
+    126.241,
+    127.683,
+    130.024,
+    130.764,
+    131.688,
+    132.579,
+    134.606,
+    136.026,
+    137.06,
+    138.168,
+    140.261,
+    142.431,
+    143.51,
+    144.984,
+    146.445
+   ],
+   "interStrike": {
+    "absMs": [
+     3708,
+     4254,
+     3821,
+     5176,
+     4008,
+     4844,
+     4614,
+     3251,
+     5320,
+     3944,
+     2095,
+     2368,
+     2499,
+     3451,
+     2938,
+     1700,
+     1310,
+     1562,
+     2226,
+     2639,
+     1226,
+     1923,
+     2975,
+     3801,
+     3217,
+     3058,
+     3824,
+     3391,
+     3333,
+     2798,
+     3466,
+     1717,
+     2016,
+     1551,
+     1197,
+     2863,
+     1274,
+     1408,
+     1341,
+     1845,
+     1940,
+     1629,
+     1757,
+     1548,
+     1212,
+     1442,
+     2341,
+     740,
+     924,
+     891,
+     2027,
+     1420,
+     1034,
+     1108,
+     2093,
+     2170,
+     1079,
+     1474,
+     1461
+    ],
+    "normSpan": [
+     0.026,
+     0.03,
+     0.027,
+     0.036,
+     0.028,
+     0.034,
+     0.032,
+     0.023,
+     0.037,
+     0.028,
+     0.015,
+     0.017,
+     0.018,
+     0.024,
+     0.021,
+     0.012,
+     0.009,
+     0.011,
+     0.016,
+     0.019,
+     0.009,
+     0.014,
+     0.021,
+     0.027,
+     0.023,
+     0.021,
+     0.027,
+     0.024,
+     0.023,
+     0.02,
+     0.024,
+     0.012,
+     0.014,
+     0.011,
+     0.008,
+     0.02,
+     0.009,
+     0.01,
+     0.009,
+     0.013,
+     0.014,
+     0.011,
+     0.012,
+     0.011,
+     0.009,
+     0.01,
+     0.016,
+     0.005,
+     0.006,
+     0.006,
+     0.014,
+     0.01,
+     0.007,
+     0.008,
+     0.015,
+     0.015,
+     0.008,
+     0.01,
+     0.01
+    ],
+    "unitsMedian": [
+     1.772,
+     2.032,
+     1.826,
+     2.473,
+     1.915,
+     2.314,
+     2.204,
+     1.553,
+     2.542,
+     1.884,
+     1.001,
+     1.131,
+     1.194,
+     1.649,
+     1.404,
+     0.812,
+     0.626,
+     0.746,
+     1.064,
+     1.261,
+     0.586,
+     0.919,
+     1.421,
+     1.816,
+     1.537,
+     1.461,
+     1.827,
+     1.62,
+     1.592,
+     1.337,
+     1.656,
+     0.82,
+     0.963,
+     0.741,
+     0.572,
+     1.368,
+     0.609,
+     0.673,
+     0.641,
+     0.882,
+     0.927,
+     0.778,
+     0.839,
+     0.74,
+     0.579,
+     0.689,
+     1.118,
+     0.354,
+     0.441,
+     0.426,
+     0.968,
+     0.678,
+     0.494,
+     0.529,
+     1,
+     1.037,
+     0.516,
+     0.704,
+     0.698
+    ],
+    "medianMs": 2093
+   },
+   "gapPrevEndMs": [
+    3346,
+    4013,
+    3575,
+    4779,
+    3826,
+    4665,
+    4195,
+    2938,
+    5082,
+    3736,
+    1847,
+    2067,
+    2411,
+    3383,
+    2808,
+    1551,
+    1208,
+    1287,
+    2067,
+    2220,
+    1055,
+    1769,
+    2415,
+    3585,
+    2912,
+    2820,
+    3370,
+    2908,
+    2901,
+    2156,
+    2731,
+    1085,
+    1769,
+    1444,
+    1099,
+    2690,
+    1105,
+    1359,
+    1064,
+    1742,
+    1672,
+    1439,
+    1601,
+    1358,
+    1023,
+    1243,
+    2157,
+    718,
+    801,
+    726,
+    1944,
+    1250,
+    856,
+    994,
+    1840,
+    2073,
+    932,
+    1330,
+    1175
+   ],
+   "spanMs": 142242
+  }
+ },
+ "strikes": {
+  "ss-strikes-wc-1221": {
+   "id": "ss-strikes-wc-1221",
+   "source": "strikes",
+   "index": 0,
+   "t0": 4.203,
+   "tLast": 4.565,
+   "spanMs": 362,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1221",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 53,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 173,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1222",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 130,
+     "dtMs": 133,
+     "dtNorm": 0.367,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1223",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 169,
+     "dtMs": 148,
+     "dtNorm": 0.409,
+     "dtUnits": 1.113
+    },
+    {
+     "objectId": "wc-1224",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 134,
+     "dtMs": 286,
+     "dtNorm": 0.79,
+     "dtUnits": 2.15
+    },
+    {
+     "objectId": "wc-1225",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 131,
+     "dtMs": 341,
+     "dtNorm": 0.942,
+     "dtUnits": 2.564
+    },
+    {
+     "objectId": "wc-1226",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 114,
+     "dtMs": 362,
+     "dtNorm": 1,
+     "dtUnits": 2.722
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     53,
+     61,
+     64,
+     74,
+     77,
+     78
+    ],
+    "pcs": [
+     1,
+     2,
+     4,
+     5,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     133,
+     286,
+     362
+    ],
+    "onsetsNorm": [
+     0,
+     0.367,
+     0.79,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     2.15,
+     2.722
+    ],
+    "gapsMs": [
+     133,
+     153,
+     76
+    ],
+    "medianGapMs": 133,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1221"
+      ]
+     },
+     {
+      "dtMs": 133,
+      "objectIds": [
+       "wc-1222",
+       "wc-1223"
+      ]
+     },
+     {
+      "dtMs": 286,
+      "objectIds": [
+       "wc-1224",
+       "wc-1225"
+      ]
+     },
+     {
+      "dtMs": 362,
+      "objectIds": [
+       "wc-1226"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 4,
+    "redactedCount": 2,
+    "midi": {
+     "min": 53,
+     "max": 78
+    },
+    "vel": {
+     "avg": 99,
+     "min": 78,
+     "max": 109
+    }
+   }
+  },
+  "ss-strikes-wc-1227": {
+   "id": "ss-strikes-wc-1227",
+   "source": "strikes",
+   "index": 1,
+   "t0": 7.911,
+   "tLast": 8.152,
+   "spanMs": 241,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1227",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 112,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1228",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 135,
+     "dtMs": 78,
+     "dtNorm": 0.324,
+     "dtUnits": 0.862
+    },
+    {
+     "objectId": "wc-1230",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 132,
+     "dtMs": 181,
+     "dtNorm": 0.751,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1229",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 60,
+     "durMs": 91,
+     "dtMs": 195,
+     "dtNorm": 0.809,
+     "dtUnits": 2.155
+    },
+    {
+     "objectId": "wc-1231",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 82,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 124,
+     "dtMs": 241,
+     "dtNorm": 1,
+     "dtUnits": 2.663
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     60,
+     68,
+     71,
+     77,
+     82
+    ],
+    "pcs": [
+     0,
+     5,
+     8,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     78,
+     181
+    ],
+    "onsetsNorm": [
+     0,
+     0.324,
+     0.751
+    ],
+    "onsetsUnits": [
+     0,
+     0.862,
+     2
+    ],
+    "gapsMs": [
+     78,
+     103
+    ],
+    "medianGapMs": 90.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1227"
+      ]
+     },
+     {
+      "dtMs": 78,
+      "objectIds": [
+       "wc-1228"
+      ]
+     },
+     {
+      "dtMs": 181,
+      "objectIds": [
+       "wc-1230",
+       "wc-1229",
+       "wc-1231"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 60,
+     "max": 82
+    },
+    "vel": {
+     "avg": 87,
+     "min": 60,
+     "max": 109
+    }
+   }
+  },
+  "ss-strikes-wc-1232": {
+   "id": "ss-strikes-wc-1232",
+   "source": "strikes",
+   "index": 2,
+   "t0": 12.165,
+   "tLast": 12.411,
+   "spanMs": 246,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1232",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 45,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 173,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1234",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 69,
+     "durMs": 145,
+     "dtMs": 123,
+     "dtNorm": 0.5,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1233",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 119,
+     "durMs": 109,
+     "dtMs": 126,
+     "dtNorm": 0.512,
+     "dtUnits": 1.024
+    },
+    {
+     "objectId": "wc-1235",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 155,
+     "dtMs": 161,
+     "dtNorm": 0.654,
+     "dtUnits": 1.309
+    },
+    {
+     "objectId": "wc-1236",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 114,
+     "dtMs": 246,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     45,
+     57,
+     67,
+     70,
+     73
+    ],
+    "pcs": [
+     1,
+     7,
+     9,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     123,
+     246
+    ],
+    "onsetsNorm": [
+     0,
+     0.5,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     2
+    ],
+    "gapsMs": [
+     123,
+     123
+    ],
+    "medianGapMs": 123,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1232"
+      ]
+     },
+     {
+      "dtMs": 123,
+      "objectIds": [
+       "wc-1234",
+       "wc-1233",
+       "wc-1235"
+      ]
+     },
+     {
+      "dtMs": 246,
+      "objectIds": [
+       "wc-1236"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 45,
+     "max": 73
+    },
+    "vel": {
+     "avg": 98,
+     "min": 69,
+     "max": 119
+    }
+   }
+  },
+  "ss-strikes-wc-1237": {
+   "id": "ss-strikes-wc-1237",
+   "source": "strikes",
+   "index": 3,
+   "t0": 15.986,
+   "tLast": 16.383,
+   "spanMs": 397,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1237",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 146,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1238",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 110,
+     "dtMs": 98,
+     "dtNorm": 0.247,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1240",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 92,
+     "dtMs": 156,
+     "dtNorm": 0.393,
+     "dtUnits": 1.592
+    },
+    {
+     "objectId": "wc-1239",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 63,
+     "dtMs": 157,
+     "dtNorm": 0.395,
+     "dtUnits": 1.602
+    },
+    {
+     "objectId": "wc-1241",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 57,
+     "durMs": 63,
+     "dtMs": 191,
+     "dtNorm": 0.481,
+     "dtUnits": 1.949
+    },
+    {
+     "objectId": "wc-1242",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 173,
+     "dtMs": 237,
+     "dtNorm": 0.597,
+     "dtUnits": 2.418
+    },
+    {
+     "objectId": "wc-1243",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 67,
+     "dtMs": 397,
+     "dtNorm": 1,
+     "dtUnits": 4.051
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     58,
+     66,
+     67,
+     69,
+     72,
+     78,
+     80
+    ],
+    "pcs": [
+     0,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     98,
+     191,
+     397
+    ],
+    "onsetsNorm": [
+     0,
+     0.247,
+     0.481,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     1.949,
+     4.051
+    ],
+    "gapsMs": [
+     98,
+     93,
+     206
+    ],
+    "medianGapMs": 98,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1237"
+      ]
+     },
+     {
+      "dtMs": 98,
+      "objectIds": [
+       "wc-1238",
+       "wc-1240",
+       "wc-1239"
+      ]
+     },
+     {
+      "dtMs": 191,
+      "objectIds": [
+       "wc-1241",
+       "wc-1242"
+      ]
+     },
+     {
+      "dtMs": 397,
+      "objectIds": [
+       "wc-1243"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 4,
+    "redactedCount": 3,
+    "midi": {
+     "min": 58,
+     "max": 80
+    },
+    "vel": {
+     "avg": 87,
+     "min": 57,
+     "max": 104
+    }
+   }
+  },
+  "ss-strikes-wc-1244": {
+   "id": "ss-strikes-wc-1244",
+   "source": "strikes",
+   "index": 4,
+   "t0": 21.162,
+   "tLast": 21.344,
+   "spanMs": 182,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1244",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 78,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1248",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 160,
+     "dtMs": 24,
+     "dtNorm": 0.132,
+     "dtUnits": 0.264
+    },
+    {
+     "objectId": "wc-1247",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 123,
+     "dtMs": 31,
+     "dtNorm": 0.17,
+     "dtUnits": 0.341
+    },
+    {
+     "objectId": "wc-1245",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 80,
+     "dtMs": 33,
+     "dtNorm": 0.181,
+     "dtUnits": 0.363
+    },
+    {
+     "objectId": "wc-1246",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 50,
+     "dtMs": 110,
+     "dtNorm": 0.604,
+     "dtUnits": 1.209
+    },
+    {
+     "objectId": "wc-1250",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 85,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 115,
+     "dtMs": 110,
+     "dtNorm": 0.604,
+     "dtUnits": 1.209
+    },
+    {
+     "objectId": "wc-1249",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 88,
+     "dtMs": 127,
+     "dtNorm": 0.698,
+     "dtUnits": 1.396
+    },
+    {
+     "objectId": "wc-1251",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 123,
+     "dtMs": 127,
+     "dtNorm": 0.698,
+     "dtUnits": 1.396
+    },
+    {
+     "objectId": "wc-1252",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 89,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 68,
+     "dtMs": 182,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 9,
+    "midis": [
+     64,
+     67,
+     70,
+     72,
+     73,
+     74,
+     81,
+     85,
+     89
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     4,
+     5,
+     7,
+     9,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     110,
+     182
+    ],
+    "onsetsNorm": [
+     0,
+     0.604,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.209,
+     2
+    ],
+    "gapsMs": [
+     110,
+     72
+    ],
+    "medianGapMs": 91,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1244",
+       "wc-1248",
+       "wc-1247",
+       "wc-1245"
+      ]
+     },
+     {
+      "dtMs": 110,
+      "objectIds": [
+       "wc-1246",
+       "wc-1250",
+       "wc-1249",
+       "wc-1251"
+      ]
+     },
+     {
+      "dtMs": 182,
+      "objectIds": [
+       "wc-1252"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 9,
+    "keptCount": 3,
+    "redactedCount": 6,
+    "midi": {
+     "min": 64,
+     "max": 89
+    },
+    "vel": {
+     "avg": 91,
+     "min": 68,
+     "max": 110
+    }
+   }
+  },
+  "ss-strikes-wc-1253": {
+   "id": "ss-strikes-wc-1253",
+   "source": "strikes",
+   "index": 5,
+   "t0": 25.17,
+   "tLast": 25.349,
+   "spanMs": 179,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1253",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 167,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1254",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 102,
+     "dtMs": 130,
+     "dtNorm": 0.726,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1255",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 103,
+     "dtMs": 133,
+     "dtNorm": 0.743,
+     "dtUnits": 1.023
+    },
+    {
+     "objectId": "wc-1256",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 110,
+     "dtMs": 179,
+     "dtNorm": 1,
+     "dtUnits": 1.377
+    }
+   ],
+   "harmony": {
+    "count": 4,
+    "midis": [
+     52,
+     64,
+     72,
+     75
+    ],
+    "pcs": [
+     0,
+     3,
+     4
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     130
+    ],
+    "onsetsNorm": [
+     0,
+     0.726
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     130
+    ],
+    "medianGapMs": 130,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1253"
+      ]
+     },
+     {
+      "dtMs": 130,
+      "objectIds": [
+       "wc-1254",
+       "wc-1255",
+       "wc-1256"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 4,
+    "keptCount": 2,
+    "redactedCount": 2,
+    "midi": {
+     "min": 52,
+     "max": 75
+    },
+    "vel": {
+     "avg": 97,
+     "min": 91,
+     "max": 105
+    }
+   }
+  },
+  "ss-strikes-wc-1257": {
+   "id": "ss-strikes-wc-1257",
+   "source": "strikes",
+   "index": 6,
+   "t0": 30.014,
+   "tLast": 30.433,
+   "spanMs": 419,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1257",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 204,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1260",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 137,
+     "dtMs": 149,
+     "dtNorm": 0.356,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1258",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 66,
+     "dtMs": 155,
+     "dtNorm": 0.37,
+     "dtUnits": 1.04
+    },
+    {
+     "objectId": "wc-1259",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 93,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 100,
+     "dtMs": 156,
+     "dtNorm": 0.372,
+     "dtUnits": 1.047
+    },
+    {
+     "objectId": "wc-1261",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 79,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 222,
+     "dtMs": 160,
+     "dtNorm": 0.382,
+     "dtUnits": 1.074
+    },
+    {
+     "objectId": "wc-1262",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 85,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 184,
+     "dtMs": 270,
+     "dtNorm": 0.644,
+     "dtUnits": 1.812
+    },
+    {
+     "objectId": "wc-1263",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 93,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 96,
+     "dtMs": 419,
+     "dtNorm": 1,
+     "dtUnits": 2.812
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     57,
+     67,
+     69,
+     79,
+     85,
+     93
+    ],
+    "pcs": [
+     1,
+     7,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     149,
+     270,
+     419
+    ],
+    "onsetsNorm": [
+     0,
+     0.356,
+     0.644,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     1.812,
+     2.812
+    ],
+    "gapsMs": [
+     149,
+     121,
+     149
+    ],
+    "medianGapMs": 149,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1257"
+      ]
+     },
+     {
+      "dtMs": 149,
+      "objectIds": [
+       "wc-1260",
+       "wc-1258",
+       "wc-1259",
+       "wc-1261"
+      ]
+     },
+     {
+      "dtMs": 270,
+      "objectIds": [
+       "wc-1262"
+      ]
+     },
+     {
+      "dtMs": 419,
+      "objectIds": [
+       "wc-1263"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 4,
+    "redactedCount": 3,
+    "midi": {
+     "min": 57,
+     "max": 93
+    },
+    "vel": {
+     "avg": 93,
+     "min": 71,
+     "max": 117
+    }
+   }
+  },
+  "ss-strikes-wc-1264": {
+   "id": "ss-strikes-wc-1264",
+   "source": "strikes",
+   "index": 7,
+   "t0": 34.628,
+   "tLast": 34.941,
+   "spanMs": 313,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1264",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 186,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1265",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 132,
+     "dtMs": 120,
+     "dtNorm": 0.383,
+     "dtUnits": 1.165
+    },
+    {
+     "objectId": "wc-1266",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 67,
+     "durMs": 131,
+     "dtMs": 206,
+     "dtNorm": 0.658,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1267",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 49,
+     "durMs": 112,
+     "dtMs": 244,
+     "dtNorm": 0.78,
+     "dtUnits": 2.369
+    },
+    {
+     "objectId": "wc-1269",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 98,
+     "dtMs": 309,
+     "dtNorm": 0.987,
+     "dtUnits": 3
+    },
+    {
+     "objectId": "wc-1268",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 91,
+     "dtMs": 313,
+     "dtNorm": 1,
+     "dtUnits": 3.039
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     48,
+     60,
+     72,
+     75,
+     83,
+     84
+    ],
+    "pcs": [
+     0,
+     3,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     120,
+     206,
+     309
+    ],
+    "onsetsNorm": [
+     0,
+     0.383,
+     0.658,
+     0.987
+    ],
+    "onsetsUnits": [
+     0,
+     1.165,
+     2,
+     3
+    ],
+    "gapsMs": [
+     120,
+     86,
+     103
+    ],
+    "medianGapMs": 103,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1264"
+      ]
+     },
+     {
+      "dtMs": 120,
+      "objectIds": [
+       "wc-1265"
+      ]
+     },
+     {
+      "dtMs": 206,
+      "objectIds": [
+       "wc-1266",
+       "wc-1267"
+      ]
+     },
+     {
+      "dtMs": 309,
+      "objectIds": [
+       "wc-1269",
+       "wc-1268"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 4,
+    "redactedCount": 2,
+    "midi": {
+     "min": 48,
+     "max": 84
+    },
+    "vel": {
+     "avg": 82,
+     "min": 49,
+     "max": 108
+    }
+   }
+  },
+  "ss-strikes-wc-1270": {
+   "id": "ss-strikes-wc-1270",
+   "source": "strikes",
+   "index": 8,
+   "t0": 37.879,
+   "tLast": 38.117,
+   "spanMs": 238,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1270",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 147,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1271",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 128,
+     "dtMs": 115,
+     "dtNorm": 0.483,
+     "dtUnits": 0.966
+    },
+    {
+     "objectId": "wc-1272",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 140,
+     "dtMs": 138,
+     "dtNorm": 0.58,
+     "dtUnits": 1.16
+    },
+    {
+     "objectId": "wc-1273",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 85,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 88,
+     "dtMs": 238,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 4,
+    "midis": [
+     59,
+     69,
+     81,
+     85
+    ],
+    "pcs": [
+     1,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     115,
+     238
+    ],
+    "onsetsNorm": [
+     0,
+     0.483,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.966,
+     2
+    ],
+    "gapsMs": [
+     115,
+     123
+    ],
+    "medianGapMs": 119,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1270"
+      ]
+     },
+     {
+      "dtMs": 115,
+      "objectIds": [
+       "wc-1271",
+       "wc-1272"
+      ]
+     },
+     {
+      "dtMs": 238,
+      "objectIds": [
+       "wc-1273"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 4,
+    "keptCount": 3,
+    "redactedCount": 1,
+    "midi": {
+     "min": 59,
+     "max": 85
+    },
+    "vel": {
+     "avg": 91,
+     "min": 78,
+     "max": 104
+    }
+   }
+  },
+  "ss-strikes-wc-1275": {
+   "id": "ss-strikes-wc-1275",
+   "source": "strikes",
+   "index": 9,
+   "t0": 43.199,
+   "tLast": 43.407,
+   "spanMs": 208,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1275",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 207,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1274",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 144,
+     "dtMs": 55,
+     "dtNorm": 0.264,
+     "dtUnits": 0.529
+    },
+    {
+     "objectId": "wc-1277",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 171,
+     "dtMs": 98,
+     "dtNorm": 0.471,
+     "dtUnits": 0.942
+    },
+    {
+     "objectId": "wc-1276",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 135,
+     "dtMs": 118,
+     "dtNorm": 0.567,
+     "dtUnits": 1.135
+    },
+    {
+     "objectId": "wc-1278",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 81,
+     "dtMs": 208,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     52,
+     62,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     4,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     98,
+     208
+    ],
+    "onsetsNorm": [
+     0,
+     0.471,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.942,
+     2
+    ],
+    "gapsMs": [
+     98,
+     110
+    ],
+    "medianGapMs": 104,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1275",
+       "wc-1274"
+      ]
+     },
+     {
+      "dtMs": 98,
+      "objectIds": [
+       "wc-1277",
+       "wc-1276"
+      ]
+     },
+     {
+      "dtMs": 208,
+      "objectIds": [
+       "wc-1278"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 52,
+     "max": 78
+    },
+    "vel": {
+     "avg": 92,
+     "min": 76,
+     "max": 107
+    }
+   }
+  },
+  "ss-strikes-wc-1279": {
+   "id": "ss-strikes-wc-1279",
+   "source": "strikes",
+   "index": 10,
+   "t0": 47.143,
+   "tLast": 47.391,
+   "spanMs": 248,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1279",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 96,
+     "durMs": 181,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1280",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 49,
+     "durMs": 134,
+     "dtMs": 80,
+     "dtNorm": 0.323,
+     "dtUnits": 0.976
+    },
+    {
+     "objectId": "wc-1281",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 77,
+     "dtMs": 162,
+     "dtNorm": 0.653,
+     "dtUnits": 1.976
+    },
+    {
+     "objectId": "wc-1282",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 108,
+     "dtMs": 165,
+     "dtNorm": 0.665,
+     "dtUnits": 2.012
+    },
+    {
+     "objectId": "wc-1283",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 57,
+     "dtMs": 248,
+     "dtNorm": 1,
+     "dtUnits": 3.024
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     66,
+     69,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     3,
+     6,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     80,
+     162,
+     248
+    ],
+    "onsetsNorm": [
+     0,
+     0.323,
+     0.653,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.976,
+     1.976,
+     3.024
+    ],
+    "gapsMs": [
+     80,
+     82,
+     86
+    ],
+    "medianGapMs": 82,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1279"
+      ]
+     },
+     {
+      "dtMs": 80,
+      "objectIds": [
+       "wc-1280"
+      ]
+     },
+     {
+      "dtMs": 162,
+      "objectIds": [
+       "wc-1281",
+       "wc-1282"
+      ]
+     },
+     {
+      "dtMs": 248,
+      "objectIds": [
+       "wc-1283"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 4,
+    "redactedCount": 1,
+    "midi": {
+     "min": 66,
+     "max": 78
+    },
+    "vel": {
+     "avg": 86,
+     "min": 49,
+     "max": 100
+    }
+   }
+  },
+  "ss-strikes-wc-1284": {
+   "id": "ss-strikes-wc-1284",
+   "source": "strikes",
+   "index": 11,
+   "t0": 49.238,
+   "tLast": 49.539,
+   "spanMs": 301,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1284",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 112,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1287",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 160,
+     "dtMs": 107,
+     "dtNorm": 0.355,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1286",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 104,
+     "dtMs": 149,
+     "dtNorm": 0.495,
+     "dtUnits": 1.393
+    },
+    {
+     "objectId": "wc-1285",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 63,
+     "durMs": 66,
+     "dtMs": 158,
+     "dtNorm": 0.525,
+     "dtUnits": 1.477
+    },
+    {
+     "objectId": "wc-1289",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 169,
+     "dtMs": 192,
+     "dtNorm": 0.638,
+     "dtUnits": 1.794
+    },
+    {
+     "objectId": "wc-1288",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 50,
+     "dtMs": 246,
+     "dtNorm": 0.817,
+     "dtUnits": 2.299
+    },
+    {
+     "objectId": "wc-1290",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 104,
+     "dtMs": 301,
+     "dtNorm": 1,
+     "dtUnits": 2.813
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     58,
+     62,
+     65,
+     67,
+     68,
+     73
+    ],
+    "pcs": [
+     1,
+     2,
+     5,
+     7,
+     8,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     107,
+     192,
+     301
+    ],
+    "onsetsNorm": [
+     0,
+     0.355,
+     0.638,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     1.794,
+     2.813
+    ],
+    "gapsMs": [
+     107,
+     85,
+     109
+    ],
+    "medianGapMs": 107,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1284"
+      ]
+     },
+     {
+      "dtMs": 107,
+      "objectIds": [
+       "wc-1287",
+       "wc-1286",
+       "wc-1285"
+      ]
+     },
+     {
+      "dtMs": 192,
+      "objectIds": [
+       "wc-1289",
+       "wc-1288"
+      ]
+     },
+     {
+      "dtMs": 301,
+      "objectIds": [
+       "wc-1290"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 4,
+    "redactedCount": 3,
+    "midi": {
+     "min": 58,
+     "max": 73
+    },
+    "vel": {
+     "avg": 85,
+     "min": 63,
+     "max": 100
+    }
+   }
+  },
+  "ss-strikes-wc-1291": {
+   "id": "ss-strikes-wc-1291",
+   "source": "strikes",
+   "index": 12,
+   "t0": 51.606,
+   "tLast": 51.694,
+   "spanMs": 88,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1291",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 99,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1293",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 67,
+     "durMs": 70,
+     "dtMs": 40,
+     "dtNorm": 0.455,
+     "dtUnits": 0.656
+    },
+    {
+     "objectId": "wc-1292",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 66,
+     "durMs": 58,
+     "dtMs": 47,
+     "dtNorm": 0.534,
+     "dtUnits": 0.77
+    },
+    {
+     "objectId": "wc-1294",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 63,
+     "durMs": 68,
+     "dtMs": 61,
+     "dtNorm": 0.693,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1295",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 70,
+     "dtMs": 62,
+     "dtNorm": 0.705,
+     "dtUnits": 1.016
+    },
+    {
+     "objectId": "wc-1296",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 69,
+     "durMs": 90,
+     "dtMs": 66,
+     "dtNorm": 0.75,
+     "dtUnits": 1.082
+    },
+    {
+     "objectId": "wc-1297",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 79,
+     "dtMs": 88,
+     "dtNorm": 1,
+     "dtUnits": 1.443
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     61,
+     65,
+     71,
+     72,
+     74,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     3,
+     5,
+     6,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     61
+    ],
+    "onsetsNorm": [
+     0,
+     0.693
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     61
+    ],
+    "medianGapMs": 61,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1291",
+       "wc-1293",
+       "wc-1292"
+      ]
+     },
+     {
+      "dtMs": 61,
+      "objectIds": [
+       "wc-1294",
+       "wc-1295",
+       "wc-1296",
+       "wc-1297"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 2,
+    "redactedCount": 5,
+    "midi": {
+     "min": 61,
+     "max": 78
+    },
+    "vel": {
+     "avg": 81,
+     "min": 63,
+     "max": 104
+    }
+   }
+  },
+  "ss-strikes-wc-1299": {
+   "id": "ss-strikes-wc-1299",
+   "source": "strikes",
+   "index": 13,
+   "t0": 54.105,
+   "tLast": 54.173,
+   "spanMs": 68,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1299",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 103,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1301",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 116,
+     "dtMs": 3,
+     "dtNorm": 0.044,
+     "dtUnits": 0.044
+    },
+    {
+     "objectId": "wc-1300",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 89,
+     "dtMs": 22,
+     "dtNorm": 0.324,
+     "dtUnits": 0.324
+    },
+    {
+     "objectId": "wc-1298",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 56,
+     "dtMs": 27,
+     "dtNorm": 0.397,
+     "dtUnits": 0.397
+    },
+    {
+     "objectId": "wc-1302",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 75,
+     "dtMs": 68,
+     "dtNorm": 1,
+     "dtUnits": 1
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     54,
+     59,
+     64,
+     66,
+     70
+    ],
+    "pcs": [
+     4,
+     6,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     68
+    ],
+    "onsetsNorm": [
+     0,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     68
+    ],
+    "medianGapMs": 68,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1299",
+       "wc-1301",
+       "wc-1300",
+       "wc-1298"
+      ]
+     },
+     {
+      "dtMs": 68,
+      "objectIds": [
+       "wc-1302"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 2,
+    "redactedCount": 3,
+    "midi": {
+     "min": 54,
+     "max": 70
+    },
+    "vel": {
+     "avg": 98,
+     "min": 74,
+     "max": 109
+    }
+   }
+  },
+  "ss-strikes-wc-1305": {
+   "id": "ss-strikes-wc-1305",
+   "source": "strikes",
+   "index": 14,
+   "t0": 57.556,
+   "tLast": 57.686,
+   "spanMs": 130,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1305",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 152,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1304",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 130,
+     "dtMs": 21,
+     "dtNorm": 0.162,
+     "dtUnits": 0.247
+    },
+    {
+     "objectId": "wc-1307",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 95,
+     "dtMs": 85,
+     "dtNorm": 0.654,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1303",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 50,
+     "dtMs": 102,
+     "dtNorm": 0.785,
+     "dtUnits": 1.2
+    },
+    {
+     "objectId": "wc-1306",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 121,
+     "durMs": 50,
+     "dtMs": 121,
+     "dtNorm": 0.931,
+     "dtUnits": 1.424
+    },
+    {
+     "objectId": "wc-1308",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 61,
+     "dtMs": 130,
+     "dtNorm": 1,
+     "dtUnits": 1.529
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     60,
+     61,
+     64,
+     67,
+     70,
+     73
+    ],
+    "pcs": [
+     0,
+     1,
+     4,
+     7,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     85
+    ],
+    "onsetsNorm": [
+     0,
+     0.654
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     85
+    ],
+    "medianGapMs": 85,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1305",
+       "wc-1304"
+      ]
+     },
+     {
+      "dtMs": 85,
+      "objectIds": [
+       "wc-1307",
+       "wc-1303",
+       "wc-1306",
+       "wc-1308"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 2,
+    "redactedCount": 4,
+    "midi": {
+     "min": 60,
+     "max": 73
+    },
+    "vel": {
+     "avg": 94,
+     "min": 71,
+     "max": 121
+    }
+   }
+  },
+  "ss-strikes-wc-1309": {
+   "id": "ss-strikes-wc-1309",
+   "source": "strikes",
+   "index": 15,
+   "t0": 60.494,
+   "tLast": 60.643,
+   "spanMs": 149,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1309",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 98,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1311",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 117,
+     "dtMs": 73,
+     "dtNorm": 0.49,
+     "dtUnits": 0.98
+    },
+    {
+     "objectId": "wc-1310",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 90,
+     "dtMs": 88,
+     "dtNorm": 0.591,
+     "dtUnits": 1.181
+    },
+    {
+     "objectId": "wc-1312",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 99,
+     "dtMs": 99,
+     "dtNorm": 0.664,
+     "dtUnits": 1.329
+    },
+    {
+     "objectId": "wc-1313",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 53,
+     "durMs": 87,
+     "dtMs": 149,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     63,
+     65,
+     71,
+     73,
+     78
+    ],
+    "pcs": [
+     1,
+     3,
+     5,
+     6,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     73,
+     149
+    ],
+    "onsetsNorm": [
+     0,
+     0.49,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.98,
+     2
+    ],
+    "gapsMs": [
+     73,
+     76
+    ],
+    "medianGapMs": 74.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1309"
+      ]
+     },
+     {
+      "dtMs": 73,
+      "objectIds": [
+       "wc-1311",
+       "wc-1310",
+       "wc-1312"
+      ]
+     },
+     {
+      "dtMs": 149,
+      "objectIds": [
+       "wc-1313"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 63,
+     "max": 78
+    },
+    "vel": {
+     "avg": 81,
+     "min": 53,
+     "max": 97
+    }
+   }
+  },
+  "ss-strikes-wc-1315": {
+   "id": "ss-strikes-wc-1315",
+   "source": "strikes",
+   "index": 16,
+   "t0": 62.194,
+   "tLast": 62.296,
+   "spanMs": 102,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1315",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 102,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1314",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 93,
+     "dtMs": 2,
+     "dtNorm": 0.02,
+     "dtUnits": 0.02
+    },
+    {
+     "objectId": "wc-1316",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 115,
+     "dtMs": 24,
+     "dtNorm": 0.235,
+     "dtUnits": 0.235
+    },
+    {
+     "objectId": "wc-1318",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 133,
+     "dtMs": 43,
+     "dtNorm": 0.422,
+     "dtUnits": 0.422
+    },
+    {
+     "objectId": "wc-1317",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 69,
+     "dtMs": 102,
+     "dtNorm": 1,
+     "dtUnits": 1
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     66,
+     69,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     3,
+     6,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     102
+    ],
+    "onsetsNorm": [
+     0,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     102
+    ],
+    "medianGapMs": 102,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1315",
+       "wc-1314",
+       "wc-1316",
+       "wc-1318"
+      ]
+     },
+     {
+      "dtMs": 102,
+      "objectIds": [
+       "wc-1317"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 2,
+    "redactedCount": 3,
+    "midi": {
+     "min": 66,
+     "max": 78
+    },
+    "vel": {
+     "avg": 96,
+     "min": 87,
+     "max": 103
+    }
+   }
+  },
+  "ss-strikes-wc-1319": {
+   "id": "ss-strikes-wc-1319",
+   "source": "strikes",
+   "index": 17,
+   "t0": 63.504,
+   "tLast": 63.779,
+   "spanMs": 275,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1319",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 138,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1320",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 92,
+     "dtMs": 122,
+     "dtNorm": 0.444,
+     "dtUnits": 0.887
+    },
+    {
+     "objectId": "wc-1321",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 81,
+     "dtMs": 143,
+     "dtNorm": 0.52,
+     "dtUnits": 1.04
+    },
+    {
+     "objectId": "wc-1322",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 148,
+     "dtMs": 150,
+     "dtNorm": 0.545,
+     "dtUnits": 1.091
+    },
+    {
+     "objectId": "wc-1323",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 50,
+     "dtMs": 275,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     56,
+     60,
+     65,
+     68,
+     72
+    ],
+    "pcs": [
+     0,
+     5,
+     8
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     122,
+     275
+    ],
+    "onsetsNorm": [
+     0,
+     0.444,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.887,
+     2
+    ],
+    "gapsMs": [
+     122,
+     153
+    ],
+    "medianGapMs": 137.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1319"
+      ]
+     },
+     {
+      "dtMs": 122,
+      "objectIds": [
+       "wc-1320",
+       "wc-1321",
+       "wc-1322"
+      ]
+     },
+     {
+      "dtMs": 275,
+      "objectIds": [
+       "wc-1323"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 56,
+     "max": 72
+    },
+    "vel": {
+     "avg": 84,
+     "min": 73,
+     "max": 99
+    }
+   }
+  },
+  "ss-strikes-wc-1324": {
+   "id": "ss-strikes-wc-1324",
+   "source": "strikes",
+   "index": 18,
+   "t0": 65.066,
+   "tLast": 65.225,
+   "spanMs": 159,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1324",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 117,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1325",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 87,
+     "dtMs": 83,
+     "dtNorm": 0.522,
+     "dtUnits": 1.044
+    },
+    {
+     "objectId": "wc-1326",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 99,
+     "dtMs": 98,
+     "dtNorm": 0.616,
+     "dtUnits": 1.233
+    },
+    {
+     "objectId": "wc-1327",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 100,
+     "dtMs": 100,
+     "dtNorm": 0.629,
+     "dtUnits": 1.258
+    },
+    {
+     "objectId": "wc-1328",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 71,
+     "dtMs": 159,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     61,
+     64,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     1,
+     3,
+     4,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     83,
+     159
+    ],
+    "onsetsNorm": [
+     0,
+     0.522,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.044,
+     2
+    ],
+    "gapsMs": [
+     83,
+     76
+    ],
+    "medianGapMs": 79.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1324"
+      ]
+     },
+     {
+      "dtMs": 83,
+      "objectIds": [
+       "wc-1325",
+       "wc-1326",
+       "wc-1327"
+      ]
+     },
+     {
+      "dtMs": 159,
+      "objectIds": [
+       "wc-1328"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 61,
+     "max": 78
+    },
+    "vel": {
+     "avg": 100,
+     "min": 88,
+     "max": 109
+    }
+   }
+  },
+  "ss-strikes-wc-1329": {
+   "id": "ss-strikes-wc-1329",
+   "source": "strikes",
+   "index": 19,
+   "t0": 67.292,
+   "tLast": 67.711,
+   "spanMs": 419,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1329",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 105,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1331",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 49,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 66,
+     "dtMs": 151,
+     "dtNorm": 0.36,
+     "dtUnits": 1.83
+    },
+    {
+     "objectId": "wc-1333",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 145,
+     "dtMs": 152,
+     "dtNorm": 0.363,
+     "dtUnits": 1.842
+    },
+    {
+     "objectId": "wc-1330",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 58,
+     "dtMs": 156,
+     "dtNorm": 0.372,
+     "dtUnits": 1.891
+    },
+    {
+     "objectId": "wc-1332",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 60,
+     "durMs": 50,
+     "dtMs": 222,
+     "dtNorm": 0.53,
+     "dtUnits": 2.691
+    },
+    {
+     "objectId": "wc-1334",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 77,
+     "dtMs": 252,
+     "dtNorm": 0.601,
+     "dtUnits": 3.055
+    },
+    {
+     "objectId": "wc-1335",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 78,
+     "dtMs": 253,
+     "dtNorm": 0.604,
+     "dtUnits": 3.067
+    },
+    {
+     "objectId": "wc-1336",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 60,
+     "dtMs": 316,
+     "dtNorm": 0.754,
+     "dtUnits": 3.83
+    },
+    {
+     "objectId": "wc-1337",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 54,
+     "dtMs": 381,
+     "dtNorm": 0.909,
+     "dtUnits": 4.618
+    },
+    {
+     "objectId": "wc-1339",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 64,
+     "dtMs": 385,
+     "dtNorm": 0.919,
+     "dtUnits": 4.667
+    },
+    {
+     "objectId": "wc-1338",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 50,
+     "dtMs": 389,
+     "dtNorm": 0.928,
+     "dtUnits": 4.715
+    },
+    {
+     "objectId": "wc-1340",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 65,
+     "dtMs": 413,
+     "dtNorm": 0.986,
+     "dtUnits": 5.006
+    },
+    {
+     "objectId": "wc-1341",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 77,
+     "dtMs": 419,
+     "dtNorm": 1,
+     "dtUnits": 5.079
+    }
+   ],
+   "harmony": {
+    "count": 13,
+    "midis": [
+     49,
+     54,
+     56,
+     59,
+     60,
+     62,
+     71,
+     72,
+     74,
+     83,
+     84
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     6,
+     8,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     151,
+     222,
+     316,
+     381
+    ],
+    "onsetsNorm": [
+     0,
+     0.36,
+     0.53,
+     0.754,
+     0.909
+    ],
+    "onsetsUnits": [
+     0,
+     1.83,
+     2.691,
+     3.83,
+     4.618
+    ],
+    "gapsMs": [
+     151,
+     71,
+     94,
+     65
+    ],
+    "medianGapMs": 82.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1329"
+      ]
+     },
+     {
+      "dtMs": 151,
+      "objectIds": [
+       "wc-1331",
+       "wc-1333",
+       "wc-1330"
+      ]
+     },
+     {
+      "dtMs": 222,
+      "objectIds": [
+       "wc-1332",
+       "wc-1334",
+       "wc-1335"
+      ]
+     },
+     {
+      "dtMs": 316,
+      "objectIds": [
+       "wc-1336"
+      ]
+     },
+     {
+      "dtMs": 381,
+      "objectIds": [
+       "wc-1337",
+       "wc-1339",
+       "wc-1338",
+       "wc-1340",
+       "wc-1341"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 13,
+    "keptCount": 5,
+    "redactedCount": 8,
+    "midi": {
+     "min": 49,
+     "max": 84
+    },
+    "vel": {
+     "avg": 89,
+     "min": 60,
+     "max": 111
+    }
+   }
+  },
+  "ss-strikes-wc-1345": {
+   "id": "ss-strikes-wc-1345",
+   "source": "strikes",
+   "index": 20,
+   "t0": 69.931,
+   "tLast": 70.102,
+   "spanMs": 171,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1345",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 123,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1342",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 78,
+     "dtMs": 6,
+     "dtNorm": 0.035,
+     "dtUnits": 0.035
+    },
+    {
+     "objectId": "wc-1343",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 78,
+     "dtMs": 7,
+     "dtNorm": 0.041,
+     "dtUnits": 0.041
+    },
+    {
+     "objectId": "wc-1344",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 119,
+     "durMs": 83,
+     "dtMs": 24,
+     "dtNorm": 0.14,
+     "dtUnits": 0.14
+    },
+    {
+     "objectId": "wc-1346",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 114,
+     "dtMs": 37,
+     "dtNorm": 0.216,
+     "dtUnits": 0.216
+    },
+    {
+     "objectId": "wc-1347",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 75,
+     "dtMs": 171,
+     "dtNorm": 1,
+     "dtUnits": 1
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     62,
+     67,
+     72,
+     74,
+     76,
+     80
+    ],
+    "pcs": [
+     0,
+     2,
+     4,
+     7,
+     8
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     171
+    ],
+    "onsetsNorm": [
+     0,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     171
+    ],
+    "medianGapMs": 171,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1345",
+       "wc-1342",
+       "wc-1343",
+       "wc-1344",
+       "wc-1346"
+      ]
+     },
+     {
+      "dtMs": 171,
+      "objectIds": [
+       "wc-1347"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 2,
+    "redactedCount": 4,
+    "midi": {
+     "min": 62,
+     "max": 80
+    },
+    "vel": {
+     "avg": 96,
+     "min": 77,
+     "max": 119
+    }
+   }
+  },
+  "ss-strikes-wc-1351": {
+   "id": "ss-strikes-wc-1351",
+   "source": "strikes",
+   "index": 21,
+   "t0": 71.157,
+   "tLast": 71.311,
+   "spanMs": 154,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1351",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 98,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1348",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 56,
+     "dtMs": 6,
+     "dtNorm": 0.039,
+     "dtUnits": 0.078
+    },
+    {
+     "objectId": "wc-1350",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 85,
+     "dtMs": 6,
+     "dtNorm": 0.039,
+     "dtUnits": 0.078
+    },
+    {
+     "objectId": "wc-1352",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 111,
+     "dtMs": 13,
+     "dtNorm": 0.084,
+     "dtUnits": 0.169
+    },
+    {
+     "objectId": "wc-1349",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 52,
+     "durMs": 73,
+     "dtMs": 17,
+     "dtNorm": 0.11,
+     "dtUnits": 0.221
+    },
+    {
+     "objectId": "wc-1353",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 82,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 50,
+     "dtMs": 87,
+     "dtNorm": 0.565,
+     "dtUnits": 1.13
+    },
+    {
+     "objectId": "wc-1354",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 50,
+     "dtMs": 112,
+     "dtNorm": 0.727,
+     "dtUnits": 1.455
+    },
+    {
+     "objectId": "wc-1355",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 72,
+     "dtMs": 154,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 8,
+    "midis": [
+     62,
+     64,
+     65,
+     66,
+     67,
+     76,
+     78,
+     82
+    ],
+    "pcs": [
+     2,
+     4,
+     5,
+     6,
+     7,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     87,
+     154
+    ],
+    "onsetsNorm": [
+     0,
+     0.565,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.13,
+     2
+    ],
+    "gapsMs": [
+     87,
+     67
+    ],
+    "medianGapMs": 77,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1351",
+       "wc-1348",
+       "wc-1350",
+       "wc-1352",
+       "wc-1349"
+      ]
+     },
+     {
+      "dtMs": 87,
+      "objectIds": [
+       "wc-1353",
+       "wc-1354"
+      ]
+     },
+     {
+      "dtMs": 154,
+      "objectIds": [
+       "wc-1355"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 8,
+    "keptCount": 3,
+    "redactedCount": 5,
+    "midi": {
+     "min": 62,
+     "max": 82
+    },
+    "vel": {
+     "avg": 86,
+     "min": 52,
+     "max": 109
+    }
+   }
+  },
+  "ss-strikes-wc-1356": {
+   "id": "ss-strikes-wc-1356",
+   "source": "strikes",
+   "index": 22,
+   "t0": 73.08,
+   "tLast": 73.64,
+   "spanMs": 560,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1356",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 96,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1357",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 114,
+     "dtMs": 28,
+     "dtNorm": 0.05,
+     "dtUnits": 0.371
+    },
+    {
+     "objectId": "wc-1358",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 84,
+     "dtMs": 71,
+     "dtNorm": 0.127,
+     "dtUnits": 0.94
+    },
+    {
+     "objectId": "wc-1359",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 69,
+     "dtMs": 132,
+     "dtNorm": 0.236,
+     "dtUnits": 1.748
+    },
+    {
+     "objectId": "wc-1360",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 54,
+     "dtMs": 212,
+     "dtNorm": 0.379,
+     "dtUnits": 2.808
+    },
+    {
+     "objectId": "wc-1361",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 183,
+     "dtMs": 212,
+     "dtNorm": 0.379,
+     "dtUnits": 2.808
+    },
+    {
+     "objectId": "wc-1362",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 119,
+     "durMs": 95,
+     "dtMs": 367,
+     "dtNorm": 0.655,
+     "dtUnits": 4.861
+    },
+    {
+     "objectId": "wc-1364",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 109,
+     "dtMs": 399,
+     "dtNorm": 0.712,
+     "dtUnits": 5.285
+    },
+    {
+     "objectId": "wc-1363",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 64,
+     "dtMs": 411,
+     "dtNorm": 0.734,
+     "dtUnits": 5.444
+    },
+    {
+     "objectId": "wc-1366",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 127,
+     "dtMs": 431,
+     "dtNorm": 0.77,
+     "dtUnits": 5.709
+    },
+    {
+     "objectId": "wc-1365",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 79,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 97,
+     "dtMs": 456,
+     "dtNorm": 0.814,
+     "dtUnits": 6.04
+    },
+    {
+     "objectId": "wc-1369",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 89,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 102,
+     "dtMs": 515,
+     "dtNorm": 0.92,
+     "dtUnits": 6.821
+    },
+    {
+     "objectId": "wc-1368",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 88,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 68,
+     "dtMs": 517,
+     "dtNorm": 0.923,
+     "dtUnits": 6.848
+    },
+    {
+     "objectId": "wc-1367",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 86,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 50,
+     "dtMs": 560,
+     "dtNorm": 1,
+     "dtUnits": 7.417
+    }
+   ],
+   "harmony": {
+    "count": 14,
+    "midis": [
+     48,
+     50,
+     52,
+     55,
+     59,
+     60,
+     61,
+     65,
+     76,
+     79,
+     80,
+     86,
+     88,
+     89
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     4,
+     5,
+     7,
+     8,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     71,
+     132,
+     212,
+     367,
+     431,
+     515
+    ],
+    "onsetsNorm": [
+     0,
+     0.127,
+     0.236,
+     0.379,
+     0.655,
+     0.77,
+     0.92
+    ],
+    "onsetsUnits": [
+     0,
+     0.94,
+     1.748,
+     2.808,
+     4.861,
+     5.709,
+     6.821
+    ],
+    "gapsMs": [
+     71,
+     61,
+     80,
+     155,
+     64,
+     84
+    ],
+    "medianGapMs": 75.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1356",
+       "wc-1357"
+      ]
+     },
+     {
+      "dtMs": 71,
+      "objectIds": [
+       "wc-1358"
+      ]
+     },
+     {
+      "dtMs": 132,
+      "objectIds": [
+       "wc-1359"
+      ]
+     },
+     {
+      "dtMs": 212,
+      "objectIds": [
+       "wc-1360",
+       "wc-1361"
+      ]
+     },
+     {
+      "dtMs": 367,
+      "objectIds": [
+       "wc-1362",
+       "wc-1364",
+       "wc-1363"
+      ]
+     },
+     {
+      "dtMs": 431,
+      "objectIds": [
+       "wc-1366",
+       "wc-1365"
+      ]
+     },
+     {
+      "dtMs": 515,
+      "objectIds": [
+       "wc-1369",
+       "wc-1368",
+       "wc-1367"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 14,
+    "keptCount": 7,
+    "redactedCount": 7,
+    "midi": {
+     "min": 48,
+     "max": 89
+    },
+    "vel": {
+     "avg": 95,
+     "min": 72,
+     "max": 119
+    }
+   }
+  },
+  "ss-strikes-wc-1370": {
+   "id": "ss-strikes-wc-1370",
+   "source": "strikes",
+   "index": 23,
+   "t0": 76.055,
+   "tLast": 76.271,
+   "spanMs": 216,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1370",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 45,
+     "technique": "mar_main",
+     "vel": 69,
+     "durMs": 54,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1376",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 119,
+     "durMs": 163,
+     "dtMs": 80,
+     "dtNorm": 0.37,
+     "dtUnits": 1.096
+    },
+    {
+     "objectId": "wc-1374",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 105,
+     "dtMs": 81,
+     "dtNorm": 0.375,
+     "dtUnits": 1.11
+    },
+    {
+     "objectId": "wc-1373",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 75,
+     "durMs": 96,
+     "dtMs": 87,
+     "dtNorm": 0.403,
+     "dtUnits": 1.192
+    },
+    {
+     "objectId": "wc-1372",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 88,
+     "dtMs": 87,
+     "dtNorm": 0.403,
+     "dtUnits": 1.192
+    },
+    {
+     "objectId": "wc-1371",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 50,
+     "dtMs": 136,
+     "dtNorm": 0.63,
+     "dtUnits": 1.863
+    },
+    {
+     "objectId": "wc-1375",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 54,
+     "durMs": 99,
+     "dtMs": 143,
+     "dtNorm": 0.662,
+     "dtUnits": 1.959
+    },
+    {
+     "objectId": "wc-1377",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 55,
+     "dtMs": 195,
+     "dtNorm": 0.903,
+     "dtUnits": 2.671
+    },
+    {
+     "objectId": "wc-1378",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 50,
+     "dtMs": 216,
+     "dtNorm": 1,
+     "dtUnits": 2.959
+    }
+   ],
+   "harmony": {
+    "count": 9,
+    "midis": [
+     45,
+     55,
+     56,
+     57,
+     65,
+     67,
+     68,
+     72
+    ],
+    "pcs": [
+     0,
+     5,
+     7,
+     8,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     80,
+     143,
+     216
+    ],
+    "onsetsNorm": [
+     0,
+     0.37,
+     0.662,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.096,
+     1.959,
+     2.959
+    ],
+    "gapsMs": [
+     80,
+     63,
+     73
+    ],
+    "medianGapMs": 73,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1370"
+      ]
+     },
+     {
+      "dtMs": 80,
+      "objectIds": [
+       "wc-1376",
+       "wc-1374",
+       "wc-1373",
+       "wc-1372",
+       "wc-1371"
+      ]
+     },
+     {
+      "dtMs": 143,
+      "objectIds": [
+       "wc-1375",
+       "wc-1377"
+      ]
+     },
+     {
+      "dtMs": 216,
+      "objectIds": [
+       "wc-1378"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 9,
+    "keptCount": 4,
+    "redactedCount": 5,
+    "midi": {
+     "min": 45,
+     "max": 72
+    },
+    "vel": {
+     "avg": 89,
+     "min": 54,
+     "max": 119
+    }
+   }
+  },
+  "ss-strikes-wc-1379": {
+   "id": "ss-strikes-wc-1379",
+   "source": "strikes",
+   "index": 24,
+   "t0": 79.856,
+   "tLast": 80.161,
+   "spanMs": 305,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1379",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 76,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1380",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 53,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 118,
+     "dtMs": 34,
+     "dtNorm": 0.111,
+     "dtUnits": 0.466
+    },
+    {
+     "objectId": "wc-1381",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 64,
+     "durMs": 83,
+     "dtMs": 76,
+     "dtNorm": 0.249,
+     "dtUnits": 1.041
+    },
+    {
+     "objectId": "wc-1382",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 68,
+     "dtMs": 127,
+     "dtNorm": 0.416,
+     "dtUnits": 1.74
+    },
+    {
+     "objectId": "wc-1385",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 110,
+     "dtMs": 173,
+     "dtNorm": 0.567,
+     "dtUnits": 2.37
+    },
+    {
+     "objectId": "wc-1384",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 77,
+     "dtMs": 175,
+     "dtNorm": 0.574,
+     "dtUnits": 2.397
+    },
+    {
+     "objectId": "wc-1383",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 66,
+     "durMs": 50,
+     "dtMs": 176,
+     "dtNorm": 0.577,
+     "dtUnits": 2.411
+    },
+    {
+     "objectId": "wc-1387",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 70,
+     "durMs": 76,
+     "dtMs": 235,
+     "dtNorm": 0.77,
+     "dtUnits": 3.219
+    },
+    {
+     "objectId": "wc-1388",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 115,
+     "dtMs": 245,
+     "dtNorm": 0.803,
+     "dtUnits": 3.356
+    },
+    {
+     "objectId": "wc-1386",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 50,
+     "dtMs": 277,
+     "dtNorm": 0.908,
+     "dtUnits": 3.795
+    },
+    {
+     "objectId": "wc-1389",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 59,
+     "dtMs": 305,
+     "dtNorm": 1,
+     "dtUnits": 4.178
+    }
+   ],
+   "harmony": {
+    "count": 11,
+    "midis": [
+     53,
+     54,
+     56,
+     58,
+     59,
+     60,
+     62,
+     67,
+     70,
+     74,
+     75
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     5,
+     6,
+     7,
+     8,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     76,
+     173,
+     235,
+     305
+    ],
+    "onsetsNorm": [
+     0,
+     0.249,
+     0.567,
+     0.77,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.041,
+     2.37,
+     3.219,
+     4.178
+    ],
+    "gapsMs": [
+     76,
+     97,
+     62,
+     70
+    ],
+    "medianGapMs": 73,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1379",
+       "wc-1380"
+      ]
+     },
+     {
+      "dtMs": 76,
+      "objectIds": [
+       "wc-1381",
+       "wc-1382"
+      ]
+     },
+     {
+      "dtMs": 173,
+      "objectIds": [
+       "wc-1385",
+       "wc-1384",
+       "wc-1383"
+      ]
+     },
+     {
+      "dtMs": 235,
+      "objectIds": [
+       "wc-1387",
+       "wc-1388",
+       "wc-1386"
+      ]
+     },
+     {
+      "dtMs": 305,
+      "objectIds": [
+       "wc-1389"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 11,
+    "keptCount": 5,
+    "redactedCount": 6,
+    "midi": {
+     "min": 53,
+     "max": 75
+    },
+    "vel": {
+     "avg": 84,
+     "min": 64,
+     "max": 110
+    }
+   }
+  },
+  "ss-strikes-wc-1390": {
+   "id": "ss-strikes-wc-1390",
+   "source": "strikes",
+   "index": 25,
+   "t0": 83.073,
+   "tLast": 83.311,
+   "spanMs": 238,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1390",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 115,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1392",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 109,
+     "durMs": 56,
+     "dtMs": 111,
+     "dtNorm": 0.466,
+     "dtUnits": 1.187
+    },
+    {
+     "objectId": "wc-1391",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 50,
+     "dtMs": 112,
+     "dtNorm": 0.471,
+     "dtUnits": 1.198
+    },
+    {
+     "objectId": "wc-1395",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 129,
+     "dtMs": 124,
+     "dtNorm": 0.521,
+     "dtUnits": 1.326
+    },
+    {
+     "objectId": "wc-1394",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 66,
+     "dtMs": 128,
+     "dtNorm": 0.538,
+     "dtUnits": 1.369
+    },
+    {
+     "objectId": "wc-1393",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 53,
+     "dtMs": 135,
+     "dtNorm": 0.567,
+     "dtUnits": 1.444
+    },
+    {
+     "objectId": "wc-1397",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 76,
+     "dtMs": 187,
+     "dtNorm": 0.786,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1396",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 71,
+     "dtMs": 191,
+     "dtNorm": 0.803,
+     "dtUnits": 2.043
+    },
+    {
+     "objectId": "wc-1398",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 66,
+     "dtMs": 200,
+     "dtNorm": 0.84,
+     "dtUnits": 2.139
+    },
+    {
+     "objectId": "wc-1399",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 49,
+     "durMs": 50,
+     "dtMs": 232,
+     "dtNorm": 0.975,
+     "dtUnits": 2.481
+    },
+    {
+     "objectId": "wc-1400",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 56,
+     "dtMs": 238,
+     "dtNorm": 1,
+     "dtUnits": 2.545
+    }
+   ],
+   "harmony": {
+    "count": 11,
+    "midis": [
+     55,
+     56,
+     58,
+     59,
+     60,
+     62,
+     69,
+     71,
+     72,
+     75,
+     76
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     4,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     111,
+     187
+    ],
+    "onsetsNorm": [
+     0,
+     0.466,
+     0.786
+    ],
+    "onsetsUnits": [
+     0,
+     1.187,
+     2
+    ],
+    "gapsMs": [
+     111,
+     76
+    ],
+    "medianGapMs": 93.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1390"
+      ]
+     },
+     {
+      "dtMs": 111,
+      "objectIds": [
+       "wc-1392",
+       "wc-1391",
+       "wc-1395",
+       "wc-1394",
+       "wc-1393"
+      ]
+     },
+     {
+      "dtMs": 187,
+      "objectIds": [
+       "wc-1397",
+       "wc-1396",
+       "wc-1398",
+       "wc-1399",
+       "wc-1400"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 11,
+    "keptCount": 3,
+    "redactedCount": 8,
+    "midi": {
+     "min": 55,
+     "max": 76
+    },
+    "vel": {
+     "avg": 90,
+     "min": 49,
+     "max": 110
+    }
+   }
+  },
+  "ss-strikes-wc-1401": {
+   "id": "ss-strikes-wc-1401",
+   "source": "strikes",
+   "index": 26,
+   "t0": 86.131,
+   "tLast": 86.585,
+   "spanMs": 454,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1401",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 170,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1402",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 120,
+     "dtMs": 126,
+     "dtNorm": 0.278,
+     "dtUnits": 1.096
+    },
+    {
+     "objectId": "wc-1403",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 112,
+     "dtMs": 230,
+     "dtNorm": 0.507,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1405",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 74,
+     "technique": "mar_main",
+     "vel": 39,
+     "durMs": 79,
+     "dtMs": 327,
+     "dtNorm": 0.72,
+     "dtUnits": 2.843
+    },
+    {
+     "objectId": "wc-1404",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 43,
+     "durMs": 72,
+     "dtMs": 331,
+     "dtNorm": 0.729,
+     "dtUnits": 2.878
+    },
+    {
+     "objectId": "wc-1406",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 145,
+     "dtMs": 351,
+     "dtNorm": 0.773,
+     "dtUnits": 3.052
+    },
+    {
+     "objectId": "wc-1407",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 86,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 130,
+     "dtMs": 454,
+     "dtNorm": 1,
+     "dtUnits": 3.948
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     50,
+     58,
+     62,
+     72,
+     74,
+     78,
+     86
+    ],
+    "pcs": [
+     0,
+     2,
+     6,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     126,
+     230,
+     327,
+     454
+    ],
+    "onsetsNorm": [
+     0,
+     0.278,
+     0.507,
+     0.72,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.096,
+     2,
+     2.843,
+     3.948
+    ],
+    "gapsMs": [
+     126,
+     104,
+     97,
+     127
+    ],
+    "medianGapMs": 115,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1401"
+      ]
+     },
+     {
+      "dtMs": 126,
+      "objectIds": [
+       "wc-1402"
+      ]
+     },
+     {
+      "dtMs": 230,
+      "objectIds": [
+       "wc-1403"
+      ]
+     },
+     {
+      "dtMs": 327,
+      "objectIds": [
+       "wc-1405",
+       "wc-1404",
+       "wc-1406"
+      ]
+     },
+     {
+      "dtMs": 454,
+      "objectIds": [
+       "wc-1407"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 5,
+    "redactedCount": 2,
+    "midi": {
+     "min": 50,
+     "max": 86
+    },
+    "vel": {
+     "avg": 84,
+     "min": 39,
+     "max": 112
+    }
+   }
+  },
+  "ss-strikes-wc-1408": {
+   "id": "ss-strikes-wc-1408",
+   "source": "strikes",
+   "index": 27,
+   "t0": 89.955,
+   "tLast": 90.438,
+   "spanMs": 483,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1408",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 47,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 233,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1409",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 108,
+     "dtMs": 159,
+     "dtNorm": 0.329,
+     "dtUnits": 1.209
+    },
+    {
+     "objectId": "wc-1410",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 67,
+     "durMs": 156,
+     "dtMs": 273,
+     "dtNorm": 0.565,
+     "dtUnits": 2.076
+    },
+    {
+     "objectId": "wc-1411",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 209,
+     "dtMs": 334,
+     "dtNorm": 0.692,
+     "dtUnits": 2.54
+    },
+    {
+     "objectId": "wc-1412",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 90,
+     "durMs": 112,
+     "dtMs": 483,
+     "dtNorm": 1,
+     "dtUnits": 3.673
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     47,
+     59,
+     69,
+     73,
+     75
+    ],
+    "pcs": [
+     1,
+     3,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     159,
+     273,
+     334,
+     483
+    ],
+    "onsetsNorm": [
+     0,
+     0.329,
+     0.565,
+     0.692,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.209,
+     2.076,
+     2.54,
+     3.673
+    ],
+    "gapsMs": [
+     159,
+     114,
+     61,
+     149
+    ],
+    "medianGapMs": 131.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1408"
+      ]
+     },
+     {
+      "dtMs": 159,
+      "objectIds": [
+       "wc-1409"
+      ]
+     },
+     {
+      "dtMs": 273,
+      "objectIds": [
+       "wc-1410"
+      ]
+     },
+     {
+      "dtMs": 334,
+      "objectIds": [
+       "wc-1411"
+      ]
+     },
+     {
+      "dtMs": 483,
+      "objectIds": [
+       "wc-1412"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 5,
+    "redactedCount": 0,
+    "midi": {
+     "min": 47,
+     "max": 75
+    },
+    "vel": {
+     "avg": 88,
+     "min": 67,
+     "max": 101
+    }
+   }
+  },
+  "ss-strikes-wc-1413": {
+   "id": "ss-strikes-wc-1413",
+   "source": "strikes",
+   "index": 28,
+   "t0": 93.346,
+   "tLast": 93.778,
+   "spanMs": 432,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1413",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 186,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1414",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 106,
+     "durMs": 106,
+     "dtMs": 122,
+     "dtNorm": 0.282,
+     "dtUnits": 1.258
+    },
+    {
+     "objectId": "wc-1415",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 49,
+     "durMs": 111,
+     "dtMs": 194,
+     "dtNorm": 0.449,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1416",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 63,
+     "durMs": 125,
+     "dtMs": 262,
+     "dtNorm": 0.606,
+     "dtUnits": 2.701
+    },
+    {
+     "objectId": "wc-1417",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 82,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 168,
+     "dtMs": 317,
+     "dtNorm": 0.734,
+     "dtUnits": 3.268
+    },
+    {
+     "objectId": "wc-1418",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 89,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 112,
+     "dtMs": 432,
+     "dtNorm": 1,
+     "dtUnits": 4.454
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     48,
+     56,
+     60,
+     77,
+     82,
+     89
+    ],
+    "pcs": [
+     0,
+     5,
+     8,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     122,
+     194,
+     262,
+     432
+    ],
+    "onsetsNorm": [
+     0,
+     0.282,
+     0.449,
+     0.606,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.258,
+     2,
+     2.701,
+     4.454
+    ],
+    "gapsMs": [
+     122,
+     72,
+     68,
+     170
+    ],
+    "medianGapMs": 97,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1413"
+      ]
+     },
+     {
+      "dtMs": 122,
+      "objectIds": [
+       "wc-1414"
+      ]
+     },
+     {
+      "dtMs": 194,
+      "objectIds": [
+       "wc-1415"
+      ]
+     },
+     {
+      "dtMs": 262,
+      "objectIds": [
+       "wc-1416",
+       "wc-1417"
+      ]
+     },
+     {
+      "dtMs": 432,
+      "objectIds": [
+       "wc-1418"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 5,
+    "redactedCount": 1,
+    "midi": {
+     "min": 48,
+     "max": 89
+    },
+    "vel": {
+     "avg": 85,
+     "min": 49,
+     "max": 108
+    }
+   }
+  },
+  "ss-strikes-wc-1419": {
+   "id": "ss-strikes-wc-1419",
+   "source": "strikes",
+   "index": 29,
+   "t0": 96.679,
+   "tLast": 97.321,
+   "spanMs": 642,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1419",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 229,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1420",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 153,
+     "dtMs": 168,
+     "dtNorm": 0.262,
+     "dtUnits": 1.057
+    },
+    {
+     "objectId": "wc-1421",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 213,
+     "dtMs": 299,
+     "dtNorm": 0.466,
+     "dtUnits": 1.881
+    },
+    {
+     "objectId": "wc-1422",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 223,
+     "dtMs": 449,
+     "dtNorm": 0.699,
+     "dtUnits": 2.824
+    },
+    {
+     "objectId": "wc-1423",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 86,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 151,
+     "dtMs": 642,
+     "dtNorm": 1,
+     "dtUnits": 4.038
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     52,
+     64,
+     76,
+     80,
+     86
+    ],
+    "pcs": [
+     2,
+     4,
+     8
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     168,
+     299,
+     449,
+     642
+    ],
+    "onsetsNorm": [
+     0,
+     0.262,
+     0.466,
+     0.699,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.057,
+     1.881,
+     2.824,
+     4.038
+    ],
+    "gapsMs": [
+     168,
+     131,
+     150,
+     193
+    ],
+    "medianGapMs": 159,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1419"
+      ]
+     },
+     {
+      "dtMs": 168,
+      "objectIds": [
+       "wc-1420"
+      ]
+     },
+     {
+      "dtMs": 299,
+      "objectIds": [
+       "wc-1421"
+      ]
+     },
+     {
+      "dtMs": 449,
+      "objectIds": [
+       "wc-1422"
+      ]
+     },
+     {
+      "dtMs": 642,
+      "objectIds": [
+       "wc-1423"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 5,
+    "redactedCount": 0,
+    "midi": {
+     "min": 52,
+     "max": 86
+    },
+    "vel": {
+     "avg": 95,
+     "min": 80,
+     "max": 108
+    }
+   }
+  },
+  "ss-strikes-wc-1424": {
+   "id": "ss-strikes-wc-1424",
+   "source": "strikes",
+   "index": 30,
+   "t0": 99.477,
+   "tLast": 100.212,
+   "spanMs": 735,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1424",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 188,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1425",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 145,
+     "dtMs": 177,
+     "dtNorm": 0.241,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1426",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 55,
+     "durMs": 232,
+     "dtMs": 352,
+     "dtNorm": 0.479,
+     "dtUnits": 1.989
+    },
+    {
+     "objectId": "wc-1427",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 245,
+     "dtMs": 529,
+     "dtNorm": 0.72,
+     "dtUnits": 2.989
+    },
+    {
+     "objectId": "wc-1428",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 88,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 284,
+     "dtMs": 735,
+     "dtNorm": 1,
+     "dtUnits": 4.153
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     48,
+     60,
+     76,
+     80,
+     88
+    ],
+    "pcs": [
+     0,
+     4,
+     8
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     177,
+     352,
+     529,
+     735
+    ],
+    "onsetsNorm": [
+     0,
+     0.241,
+     0.479,
+     0.72,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     1.989,
+     2.989,
+     4.153
+    ],
+    "gapsMs": [
+     177,
+     175,
+     177,
+     206
+    ],
+    "medianGapMs": 177,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1424"
+      ]
+     },
+     {
+      "dtMs": 177,
+      "objectIds": [
+       "wc-1425"
+      ]
+     },
+     {
+      "dtMs": 352,
+      "objectIds": [
+       "wc-1426"
+      ]
+     },
+     {
+      "dtMs": 529,
+      "objectIds": [
+       "wc-1427"
+      ]
+     },
+     {
+      "dtMs": 735,
+      "objectIds": [
+       "wc-1428"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 5,
+    "redactedCount": 0,
+    "midi": {
+     "min": 48,
+     "max": 88
+    },
+    "vel": {
+     "avg": 84,
+     "min": 55,
+     "max": 107
+    }
+   }
+  },
+  "ss-strikes-wc-1429": {
+   "id": "ss-strikes-wc-1429",
+   "source": "strikes",
+   "index": 31,
+   "t0": 102.943,
+   "tLast": 103.575,
+   "spanMs": 632,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1429",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 106,
+     "durMs": 128,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1430",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 163,
+     "dtMs": 151,
+     "dtNorm": 0.239,
+     "dtUnits": 1.013
+    },
+    {
+     "objectId": "wc-1431",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 204,
+     "dtMs": 298,
+     "dtNorm": 0.472,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1432",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 208,
+     "dtMs": 434,
+     "dtNorm": 0.687,
+     "dtUnits": 2.913
+    },
+    {
+     "objectId": "wc-1434",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 90,
+     "dtMs": 588,
+     "dtNorm": 0.93,
+     "dtUnits": 3.946
+    },
+    {
+     "objectId": "wc-1433",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 62,
+     "durMs": 50,
+     "dtMs": 632,
+     "dtNorm": 1,
+     "dtUnits": 4.242
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     61,
+     64,
+     69,
+     73,
+     75,
+     76
+    ],
+    "pcs": [
+     1,
+     3,
+     4,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     151,
+     298,
+     434,
+     588
+    ],
+    "onsetsNorm": [
+     0,
+     0.239,
+     0.472,
+     0.687,
+     0.93
+    ],
+    "onsetsUnits": [
+     0,
+     1.013,
+     2,
+     2.913,
+     3.946
+    ],
+    "gapsMs": [
+     151,
+     147,
+     136,
+     154
+    ],
+    "medianGapMs": 149,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1429"
+      ]
+     },
+     {
+      "dtMs": 151,
+      "objectIds": [
+       "wc-1430"
+      ]
+     },
+     {
+      "dtMs": 298,
+      "objectIds": [
+       "wc-1431"
+      ]
+     },
+     {
+      "dtMs": 434,
+      "objectIds": [
+       "wc-1432"
+      ]
+     },
+     {
+      "dtMs": 588,
+      "objectIds": [
+       "wc-1434",
+       "wc-1433"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 5,
+    "redactedCount": 1,
+    "midi": {
+     "min": 61,
+     "max": 76
+    },
+    "vel": {
+     "avg": 92,
+     "min": 62,
+     "max": 112
+    }
+   }
+  },
+  "ss-strikes-wc-1435": {
+   "id": "ss-strikes-wc-1435",
+   "source": "strikes",
+   "index": 32,
+   "t0": 104.66,
+   "tLast": 104.907,
+   "spanMs": 247,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1435",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 98,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1437",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 103,
+     "dtMs": 107,
+     "dtNorm": 0.433,
+     "dtUnits": 1.065
+    },
+    {
+     "objectId": "wc-1436",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 98,
+     "dtMs": 110,
+     "dtNorm": 0.445,
+     "dtUnits": 1.095
+    },
+    {
+     "objectId": "wc-1438",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 62,
+     "durMs": 120,
+     "dtMs": 124,
+     "dtNorm": 0.502,
+     "dtUnits": 1.234
+    },
+    {
+     "objectId": "wc-1439",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 89,
+     "durMs": 91,
+     "dtMs": 201,
+     "dtNorm": 0.814,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1440",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 79,
+     "dtMs": 247,
+     "dtNorm": 1,
+     "dtUnits": 2.458
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     61,
+     64,
+     65,
+     69,
+     73,
+     75
+    ],
+    "pcs": [
+     1,
+     3,
+     4,
+     5,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     107,
+     201
+    ],
+    "onsetsNorm": [
+     0,
+     0.433,
+     0.814
+    ],
+    "onsetsUnits": [
+     0,
+     1.065,
+     2
+    ],
+    "gapsMs": [
+     107,
+     94
+    ],
+    "medianGapMs": 100.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1435"
+      ]
+     },
+     {
+      "dtMs": 107,
+      "objectIds": [
+       "wc-1437",
+       "wc-1436",
+       "wc-1438"
+      ]
+     },
+     {
+      "dtMs": 201,
+      "objectIds": [
+       "wc-1439",
+       "wc-1440"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 3,
+    "redactedCount": 3,
+    "midi": {
+     "min": 61,
+     "max": 75
+    },
+    "vel": {
+     "avg": 85,
+     "min": 62,
+     "max": 102
+    }
+   }
+  },
+  "ss-strikes-wc-1441": {
+   "id": "ss-strikes-wc-1441",
+   "source": "strikes",
+   "index": 33,
+   "t0": 106.676,
+   "tLast": 106.783,
+   "spanMs": 107,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1441",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 92,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1442",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 75,
+     "durMs": 96,
+     "dtMs": 13,
+     "dtNorm": 0.121,
+     "dtUnits": 0.151
+    },
+    {
+     "objectId": "wc-1444",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 97,
+     "dtMs": 32,
+     "dtNorm": 0.299,
+     "dtUnits": 0.372
+    },
+    {
+     "objectId": "wc-1443",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 82,
+     "dtMs": 40,
+     "dtNorm": 0.374,
+     "dtUnits": 0.465
+    },
+    {
+     "objectId": "wc-1445",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 50,
+     "dtMs": 86,
+     "dtNorm": 0.804,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1446",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 106,
+     "durMs": 65,
+     "dtMs": 107,
+     "dtNorm": 1,
+     "dtUnits": 1.244
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     61,
+     64,
+     69,
+     72,
+     73,
+     75
+    ],
+    "pcs": [
+     0,
+     1,
+     3,
+     4,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     86
+    ],
+    "onsetsNorm": [
+     0,
+     0.804
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     86
+    ],
+    "medianGapMs": 86,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1441",
+       "wc-1442",
+       "wc-1444",
+       "wc-1443"
+      ]
+     },
+     {
+      "dtMs": 86,
+      "objectIds": [
+       "wc-1445",
+       "wc-1446"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 2,
+    "redactedCount": 4,
+    "midi": {
+     "min": 61,
+     "max": 75
+    },
+    "vel": {
+     "avg": 93,
+     "min": 75,
+     "max": 106
+    }
+   }
+  },
+  "ss-strikes-wc-1447": {
+   "id": "ss-strikes-wc-1447",
+   "source": "strikes",
+   "index": 34,
+   "t0": 108.227,
+   "tLast": 108.325,
+   "spanMs": 98,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1447",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 79,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1449",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 106,
+     "durMs": 84,
+     "dtMs": 25,
+     "dtNorm": 0.255,
+     "dtUnits": 0.255
+    },
+    {
+     "objectId": "wc-1448",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 66,
+     "dtMs": 34,
+     "dtNorm": 0.347,
+     "dtUnits": 0.347
+    },
+    {
+     "objectId": "wc-1450",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 94,
+     "dtMs": 39,
+     "dtNorm": 0.398,
+     "dtUnits": 0.398
+    },
+    {
+     "objectId": "wc-1451",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 52,
+     "dtMs": 98,
+     "dtNorm": 1,
+     "dtUnits": 1
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     61,
+     64,
+     69,
+     73,
+     75
+    ],
+    "pcs": [
+     1,
+     3,
+     4,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     98
+    ],
+    "onsetsNorm": [
+     0,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     98
+    ],
+    "medianGapMs": 98,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1447",
+       "wc-1449",
+       "wc-1448",
+       "wc-1450"
+      ]
+     },
+     {
+      "dtMs": 98,
+      "objectIds": [
+       "wc-1451"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 2,
+    "redactedCount": 3,
+    "midi": {
+     "min": 61,
+     "max": 75
+    },
+    "vel": {
+     "avg": 84,
+     "min": 68,
+     "max": 106
+    }
+   }
+  },
+  "ss-strikes-wc-1452": {
+   "id": "ss-strikes-wc-1452",
+   "source": "strikes",
+   "index": 35,
+   "t0": 109.424,
+   "tLast": 109.597,
+   "spanMs": 173,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1452",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 112,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1454",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 95,
+     "dtMs": 98,
+     "dtNorm": 0.566,
+     "dtUnits": 1.133
+    },
+    {
+     "objectId": "wc-1453",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 95,
+     "dtMs": 98,
+     "dtNorm": 0.566,
+     "dtUnits": 1.133
+    },
+    {
+     "objectId": "wc-1455",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 96,
+     "dtMs": 104,
+     "dtNorm": 0.601,
+     "dtUnits": 1.202
+    },
+    {
+     "objectId": "wc-1456",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 64,
+     "dtMs": 173,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     61,
+     64,
+     69,
+     73,
+     75
+    ],
+    "pcs": [
+     1,
+     3,
+     4,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     98,
+     173
+    ],
+    "onsetsNorm": [
+     0,
+     0.566,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.133,
+     2
+    ],
+    "gapsMs": [
+     98,
+     75
+    ],
+    "medianGapMs": 86.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1452"
+      ]
+     },
+     {
+      "dtMs": 98,
+      "objectIds": [
+       "wc-1454",
+       "wc-1453",
+       "wc-1455"
+      ]
+     },
+     {
+      "dtMs": 173,
+      "objectIds": [
+       "wc-1456"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 61,
+     "max": 75
+    },
+    "vel": {
+     "avg": 85,
+     "min": 71,
+     "max": 95
+    }
+   }
+  },
+  "ss-strikes-wc-1457": {
+   "id": "ss-strikes-wc-1457",
+   "source": "strikes",
+   "index": 36,
+   "t0": 112.287,
+   "tLast": 112.456,
+   "spanMs": 169,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1457",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 73,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1459",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 81,
+     "durMs": 121,
+     "dtMs": 45,
+     "dtNorm": 0.266,
+     "dtUnits": 0.533
+    },
+    {
+     "objectId": "wc-1458",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 94,
+     "dtMs": 70,
+     "dtNorm": 0.414,
+     "dtUnits": 0.828
+    },
+    {
+     "objectId": "wc-1460",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 90,
+     "dtMs": 106,
+     "dtNorm": 0.627,
+     "dtUnits": 1.254
+    },
+    {
+     "objectId": "wc-1461",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 63,
+     "dtMs": 169,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     63,
+     65,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     3,
+     5,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     70,
+     169
+    ],
+    "onsetsNorm": [
+     0,
+     0.414,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.828,
+     2
+    ],
+    "gapsMs": [
+     70,
+     99
+    ],
+    "medianGapMs": 84.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1457",
+       "wc-1459"
+      ]
+     },
+     {
+      "dtMs": 70,
+      "objectIds": [
+       "wc-1458",
+       "wc-1460"
+      ]
+     },
+     {
+      "dtMs": 169,
+      "objectIds": [
+       "wc-1461"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 3,
+    "redactedCount": 2,
+    "midi": {
+     "min": 63,
+     "max": 78
+    },
+    "vel": {
+     "avg": 89,
+     "min": 81,
+     "max": 100
+    }
+   }
+  },
+  "ss-strikes-wc-1463": {
+   "id": "ss-strikes-wc-1463",
+   "source": "strikes",
+   "index": 37,
+   "t0": 113.561,
+   "tLast": 113.61,
+   "spanMs": 49,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1463",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 79,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1462",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 59,
+     "dtMs": 9,
+     "dtNorm": 0.184,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1464",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 91,
+     "dtMs": 10,
+     "dtNorm": 0.204,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1465",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 81,
+     "dtMs": 20,
+     "dtNorm": 0.408,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1466",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 70,
+     "dtMs": 49,
+     "dtNorm": 1,
+     "dtUnits": null
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     63,
+     65,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     3,
+     5,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0
+    ],
+    "onsetsNorm": [
+     0
+    ],
+    "onsetsUnits": [
+     null
+    ],
+    "gapsMs": [],
+    "medianGapMs": null,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1463",
+       "wc-1462",
+       "wc-1464",
+       "wc-1465",
+       "wc-1466"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 1,
+    "redactedCount": 4,
+    "midi": {
+     "min": 63,
+     "max": 78
+    },
+    "vel": {
+     "avg": 89,
+     "min": 72,
+     "max": 102
+    }
+   }
+  },
+  "ss-strikes-wc-1467": {
+   "id": "ss-strikes-wc-1467",
+   "source": "strikes",
+   "index": 38,
+   "t0": 114.969,
+   "tLast": 115.246,
+   "spanMs": 277,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1467",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 98,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1468",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 95,
+     "dtMs": 129,
+     "dtNorm": 0.466,
+     "dtUnits": 1.613
+    },
+    {
+     "objectId": "wc-1469",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 101,
+     "dtMs": 170,
+     "dtNorm": 0.614,
+     "dtUnits": 2.125
+    },
+    {
+     "objectId": "wc-1470",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 95,
+     "dtMs": 209,
+     "dtNorm": 0.755,
+     "dtUnits": 2.613
+    },
+    {
+     "objectId": "wc-1471",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 68,
+     "dtMs": 277,
+     "dtNorm": 1,
+     "dtUnits": 3.463
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     63,
+     65,
+     72,
+     75,
+     78
+    ],
+    "pcs": [
+     0,
+     3,
+     5,
+     6
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     129,
+     209,
+     277
+    ],
+    "onsetsNorm": [
+     0,
+     0.466,
+     0.755,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.613,
+     2.613,
+     3.463
+    ],
+    "gapsMs": [
+     129,
+     80,
+     68
+    ],
+    "medianGapMs": 80,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1467"
+      ]
+     },
+     {
+      "dtMs": 129,
+      "objectIds": [
+       "wc-1468",
+       "wc-1469"
+      ]
+     },
+     {
+      "dtMs": 209,
+      "objectIds": [
+       "wc-1470"
+      ]
+     },
+     {
+      "dtMs": 277,
+      "objectIds": [
+       "wc-1471"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 4,
+    "redactedCount": 1,
+    "midi": {
+     "min": 63,
+     "max": 78
+    },
+    "vel": {
+     "avg": 95,
+     "min": 83,
+     "max": 111
+    }
+   }
+  },
+  "ss-strikes-wc-1472": {
+   "id": "ss-strikes-wc-1472",
+   "source": "strikes",
+   "index": 39,
+   "t0": 116.31,
+   "tLast": 116.413,
+   "spanMs": 103,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1472",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 78,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1473",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 58,
+     "durMs": 69,
+     "dtMs": 27,
+     "dtNorm": 0.262,
+     "dtUnits": 0.351
+    },
+    {
+     "objectId": "wc-1476",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 101,
+     "dtMs": 31,
+     "dtNorm": 0.301,
+     "dtUnits": 0.403
+    },
+    {
+     "objectId": "wc-1474",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 50,
+     "dtMs": 77,
+     "dtNorm": 0.748,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1477",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 105,
+     "dtMs": 85,
+     "dtNorm": 0.825,
+     "dtUnits": 1.104
+    },
+    {
+     "objectId": "wc-1475",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 50,
+     "dtMs": 87,
+     "dtNorm": 0.845,
+     "dtUnits": 1.13
+    },
+    {
+     "objectId": "wc-1478",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 119,
+     "durMs": 98,
+     "dtMs": 103,
+     "dtNorm": 1,
+     "dtUnits": 1.338
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     54,
+     58,
+     63,
+     72,
+     75,
+     78,
+     84
+    ],
+    "pcs": [
+     0,
+     3,
+     6,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     77
+    ],
+    "onsetsNorm": [
+     0,
+     0.748
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     77
+    ],
+    "medianGapMs": 77,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1472",
+       "wc-1473",
+       "wc-1476"
+      ]
+     },
+     {
+      "dtMs": 77,
+      "objectIds": [
+       "wc-1474",
+       "wc-1477",
+       "wc-1475",
+       "wc-1478"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 2,
+    "redactedCount": 5,
+    "midi": {
+     "min": 54,
+     "max": 84
+    },
+    "vel": {
+     "avg": 92,
+     "min": 58,
+     "max": 119
+    }
+   }
+  },
+  "ss-strikes-wc-1479": {
+   "id": "ss-strikes-wc-1479",
+   "source": "strikes",
+   "index": 40,
+   "t0": 118.155,
+   "tLast": 118.423,
+   "spanMs": 268,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1479",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 74,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1480",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 73,
+     "dtMs": 10,
+     "dtNorm": 0.037,
+     "dtUnits": 0.075
+    },
+    {
+     "objectId": "wc-1481",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 105,
+     "dtMs": 20,
+     "dtNorm": 0.075,
+     "dtUnits": 0.149
+    },
+    {
+     "objectId": "wc-1482",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 71,
+     "dtMs": 58,
+     "dtNorm": 0.216,
+     "dtUnits": 0.433
+    },
+    {
+     "objectId": "wc-1483",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 88,
+     "dtMs": 86,
+     "dtNorm": 0.321,
+     "dtUnits": 0.642
+    },
+    {
+     "objectId": "wc-1484",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 57,
+     "dtMs": 122,
+     "dtNorm": 0.455,
+     "dtUnits": 0.91
+    },
+    {
+     "objectId": "wc-1485",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 53,
+     "technique": "mar_main",
+     "vel": 90,
+     "durMs": 95,
+     "dtMs": 122,
+     "dtNorm": 0.455,
+     "dtUnits": 0.91
+    },
+    {
+     "objectId": "wc-1486",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 50,
+     "dtMs": 268,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 8,
+    "midis": [
+     52,
+     53,
+     56,
+     62,
+     64,
+     71,
+     75,
+     81
+    ],
+    "pcs": [
+     2,
+     3,
+     4,
+     5,
+     8,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     86,
+     268
+    ],
+    "onsetsNorm": [
+     0,
+     0.321,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.642,
+     2
+    ],
+    "gapsMs": [
+     86,
+     182
+    ],
+    "medianGapMs": 134,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1479",
+       "wc-1480",
+       "wc-1481",
+       "wc-1482"
+      ]
+     },
+     {
+      "dtMs": 86,
+      "objectIds": [
+       "wc-1483",
+       "wc-1484",
+       "wc-1485"
+      ]
+     },
+     {
+      "dtMs": 268,
+      "objectIds": [
+       "wc-1486"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 8,
+    "keptCount": 3,
+    "redactedCount": 5,
+    "midi": {
+     "min": 52,
+     "max": 81
+    },
+    "vel": {
+     "avg": 100,
+     "min": 83,
+     "max": 117
+    }
+   }
+  },
+  "ss-strikes-wc-1488": {
+   "id": "ss-strikes-wc-1488",
+   "source": "strikes",
+   "index": 41,
+   "t0": 120.095,
+   "tLast": 120.285,
+   "spanMs": 190,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1488",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 45,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 164,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1487",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 59,
+     "dtMs": 89,
+     "dtNorm": 0.468,
+     "dtUnits": 1.106
+    },
+    {
+     "objectId": "wc-1492",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 107,
+     "dtMs": 92,
+     "dtNorm": 0.484,
+     "dtUnits": 1.143
+    },
+    {
+     "objectId": "wc-1495",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 101,
+     "dtMs": 116,
+     "dtNorm": 0.611,
+     "dtUnits": 1.441
+    },
+    {
+     "objectId": "wc-1491",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 48,
+     "durMs": 69,
+     "dtMs": 126,
+     "dtNorm": 0.663,
+     "dtUnits": 1.565
+    },
+    {
+     "objectId": "wc-1489",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 50,
+     "dtMs": 145,
+     "dtNorm": 0.763,
+     "dtUnits": 1.801
+    },
+    {
+     "objectId": "wc-1490",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 50,
+     "dtMs": 161,
+     "dtNorm": 0.847,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1494",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 121,
+     "durMs": 50,
+     "dtMs": 167,
+     "dtNorm": 0.879,
+     "dtUnits": 2.075
+    },
+    {
+     "objectId": "wc-1496",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 70,
+     "dtMs": 174,
+     "dtNorm": 0.916,
+     "dtUnits": 2.161
+    },
+    {
+     "objectId": "wc-1493",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 50,
+     "dtMs": 190,
+     "dtNorm": 1,
+     "dtUnits": 2.36
+    }
+   ],
+   "harmony": {
+    "count": 10,
+    "midis": [
+     45,
+     54,
+     55,
+     57,
+     65,
+     67,
+     68,
+     70,
+     71,
+     77
+    ],
+    "pcs": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     89,
+     161
+    ],
+    "onsetsNorm": [
+     0,
+     0.468,
+     0.847
+    ],
+    "onsetsUnits": [
+     0,
+     1.106,
+     2
+    ],
+    "gapsMs": [
+     89,
+     72
+    ],
+    "medianGapMs": 80.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1488"
+      ]
+     },
+     {
+      "dtMs": 89,
+      "objectIds": [
+       "wc-1487",
+       "wc-1492",
+       "wc-1495",
+       "wc-1491",
+       "wc-1489"
+      ]
+     },
+     {
+      "dtMs": 161,
+      "objectIds": [
+       "wc-1490",
+       "wc-1494",
+       "wc-1496",
+       "wc-1493"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 10,
+    "keptCount": 3,
+    "redactedCount": 7,
+    "midi": {
+     "min": 45,
+     "max": 77
+    },
+    "vel": {
+     "avg": 95,
+     "min": 48,
+     "max": 121
+    }
+   }
+  },
+  "ss-strikes-wc-1498": {
+   "id": "ss-strikes-wc-1498",
+   "source": "strikes",
+   "index": 42,
+   "t0": 121.724,
+   "tLast": 121.88,
+   "spanMs": 156,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1498",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 104,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1499",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 97,
+     "dtMs": 12,
+     "dtNorm": 0.077,
+     "dtUnits": 0.095
+    },
+    {
+     "objectId": "wc-1501",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 96,
+     "durMs": 101,
+     "dtMs": 32,
+     "dtNorm": 0.205,
+     "dtUnits": 0.254
+    },
+    {
+     "objectId": "wc-1497",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 63,
+     "technique": "mar_main",
+     "vel": 102,
+     "durMs": 50,
+     "dtMs": 45,
+     "dtNorm": 0.288,
+     "dtUnits": 0.357
+    },
+    {
+     "objectId": "wc-1500",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 121,
+     "durMs": 84,
+     "dtMs": 46,
+     "dtNorm": 0.295,
+     "dtUnits": 0.365
+    },
+    {
+     "objectId": "wc-1502",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 57,
+     "dtMs": 126,
+     "dtNorm": 0.808,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1503",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 53,
+     "dtMs": 156,
+     "dtNorm": 1,
+     "dtUnits": 1.238
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     58,
+     61,
+     62,
+     63,
+     64,
+     72,
+     73
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     126
+    ],
+    "onsetsNorm": [
+     0,
+     0.808
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     126
+    ],
+    "medianGapMs": 126,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1498",
+       "wc-1499",
+       "wc-1501",
+       "wc-1497",
+       "wc-1500"
+      ]
+     },
+     {
+      "dtMs": 126,
+      "objectIds": [
+       "wc-1502",
+       "wc-1503"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 2,
+    "redactedCount": 5,
+    "midi": {
+     "min": 58,
+     "max": 73
+    },
+    "vel": {
+     "avg": 101,
+     "min": 80,
+     "max": 121
+    }
+   }
+  },
+  "ss-strikes-wc-1507": {
+   "id": "ss-strikes-wc-1507",
+   "source": "strikes",
+   "index": 43,
+   "t0": 123.481,
+   "tLast": 123.671,
+   "spanMs": 190,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1507",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 62,
+     "durMs": 140,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1504",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 53,
+     "technique": "mar_main",
+     "vel": 66,
+     "durMs": 50,
+     "dtMs": 36,
+     "dtNorm": 0.189,
+     "dtUnits": 0.396
+    },
+    {
+     "objectId": "wc-1505",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 63,
+     "durMs": 50,
+     "dtMs": 56,
+     "dtNorm": 0.295,
+     "dtUnits": 0.615
+    },
+    {
+     "objectId": "wc-1508",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 86,
+     "dtMs": 69,
+     "dtNorm": 0.363,
+     "dtUnits": 0.758
+    },
+    {
+     "objectId": "wc-1511",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 133,
+     "dtMs": 74,
+     "dtNorm": 0.389,
+     "dtUnits": 0.813
+    },
+    {
+     "objectId": "wc-1509",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 69,
+     "durMs": 100,
+     "dtMs": 75,
+     "dtNorm": 0.395,
+     "dtUnits": 0.824
+    },
+    {
+     "objectId": "wc-1510",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 122,
+     "dtMs": 81,
+     "dtNorm": 0.426,
+     "dtUnits": 0.89
+    },
+    {
+     "objectId": "wc-1506",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 50,
+     "dtMs": 90,
+     "dtNorm": 0.474,
+     "dtUnits": 0.989
+    },
+    {
+     "objectId": "wc-1513",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 77,
+     "dtMs": 182,
+     "dtNorm": 0.958,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1512",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 90,
+     "durMs": 50,
+     "dtMs": 190,
+     "dtNorm": 1,
+     "dtUnits": 2.088
+    }
+   ],
+   "harmony": {
+    "count": 10,
+    "midis": [
+     52,
+     53,
+     56,
+     59,
+     60,
+     62,
+     67,
+     68,
+     75,
+     77
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     69,
+     182
+    ],
+    "onsetsNorm": [
+     0,
+     0.363,
+     0.958
+    ],
+    "onsetsUnits": [
+     0,
+     0.758,
+     2
+    ],
+    "gapsMs": [
+     69,
+     113
+    ],
+    "medianGapMs": 91,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1507",
+       "wc-1504",
+       "wc-1505"
+      ]
+     },
+     {
+      "dtMs": 69,
+      "objectIds": [
+       "wc-1508",
+       "wc-1511",
+       "wc-1509",
+       "wc-1510",
+       "wc-1506"
+      ]
+     },
+     {
+      "dtMs": 182,
+      "objectIds": [
+       "wc-1513",
+       "wc-1512"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 10,
+    "keptCount": 3,
+    "redactedCount": 7,
+    "midi": {
+     "min": 52,
+     "max": 77
+    },
+    "vel": {
+     "avg": 82,
+     "min": 62,
+     "max": 112
+    }
+   }
+  },
+  "ss-strikes-wc-1515": {
+   "id": "ss-strikes-wc-1515",
+   "source": "strikes",
+   "index": 44,
+   "t0": 125.029,
+   "tLast": 125.218,
+   "spanMs": 189,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1515",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 108,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1514",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 50,
+     "dtMs": 76,
+     "dtNorm": 0.402,
+     "dtUnits": 0.822
+    },
+    {
+     "objectId": "wc-1516",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 61,
+     "durMs": 50,
+     "dtMs": 79,
+     "dtNorm": 0.418,
+     "dtUnits": 0.854
+    },
+    {
+     "objectId": "wc-1523",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 168,
+     "dtMs": 82,
+     "dtNorm": 0.434,
+     "dtUnits": 0.886
+    },
+    {
+     "objectId": "wc-1521",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 116,
+     "dtMs": 109,
+     "dtNorm": 0.577,
+     "dtUnits": 1.178
+    },
+    {
+     "objectId": "wc-1520",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 113,
+     "dtMs": 111,
+     "dtNorm": 0.587,
+     "dtUnits": 1.2
+    },
+    {
+     "objectId": "wc-1518",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 76,
+     "durMs": 68,
+     "dtMs": 120,
+     "dtNorm": 0.635,
+     "dtUnits": 1.297
+    },
+    {
+     "objectId": "wc-1517",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 54,
+     "durMs": 50,
+     "dtMs": 124,
+     "dtNorm": 0.656,
+     "dtUnits": 1.341
+    },
+    {
+     "objectId": "wc-1519",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 95,
+     "dtMs": 128,
+     "dtNorm": 0.677,
+     "dtUnits": 1.384
+    },
+    {
+     "objectId": "wc-1524",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 105,
+     "dtMs": 185,
+     "dtNorm": 0.979,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1522",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 37,
+     "durMs": 50,
+     "dtMs": 189,
+     "dtNorm": 1,
+     "dtUnits": 2.043
+    }
+   ],
+   "harmony": {
+    "count": 11,
+    "midis": [
+     50,
+     52,
+     54,
+     58,
+     59,
+     60,
+     69,
+     71,
+     72,
+     75,
+     81
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     4,
+     6,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     76,
+     185
+    ],
+    "onsetsNorm": [
+     0,
+     0.402,
+     0.979
+    ],
+    "onsetsUnits": [
+     0,
+     0.822,
+     2
+    ],
+    "gapsMs": [
+     76,
+     109
+    ],
+    "medianGapMs": 92.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1515"
+      ]
+     },
+     {
+      "dtMs": 76,
+      "objectIds": [
+       "wc-1514",
+       "wc-1516",
+       "wc-1523",
+       "wc-1521",
+       "wc-1520",
+       "wc-1518",
+       "wc-1517",
+       "wc-1519"
+      ]
+     },
+     {
+      "dtMs": 185,
+      "objectIds": [
+       "wc-1524",
+       "wc-1522"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 11,
+    "keptCount": 3,
+    "redactedCount": 8,
+    "midi": {
+     "min": 50,
+     "max": 81
+    },
+    "vel": {
+     "avg": 74,
+     "min": 37,
+     "max": 103
+    }
+   }
+  },
+  "ss-strikes-wc-1528": {
+   "id": "ss-strikes-wc-1528",
+   "source": "strikes",
+   "index": 45,
+   "t0": 126.241,
+   "tLast": 126.44,
+   "spanMs": 199,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1528",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 56,
+     "durMs": 88,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1530",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 114,
+     "durMs": 95,
+     "dtMs": 36,
+     "dtNorm": 0.181,
+     "dtUnits": 0.369
+    },
+    {
+     "objectId": "wc-1529",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 74,
+     "dtMs": 39,
+     "dtNorm": 0.196,
+     "dtUnits": 0.4
+    },
+    {
+     "objectId": "wc-1532",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 114,
+     "durMs": 118,
+     "dtMs": 47,
+     "dtNorm": 0.236,
+     "dtUnits": 0.482
+    },
+    {
+     "objectId": "wc-1526",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 54,
+     "durMs": 50,
+     "dtMs": 53,
+     "dtNorm": 0.266,
+     "dtUnits": 0.544
+    },
+    {
+     "objectId": "wc-1527",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 59,
+     "durMs": 50,
+     "dtMs": 55,
+     "dtNorm": 0.276,
+     "dtUnits": 0.564
+    },
+    {
+     "objectId": "wc-1525",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 50,
+     "dtMs": 57,
+     "dtNorm": 0.286,
+     "dtUnits": 0.585
+    },
+    {
+     "objectId": "wc-1531",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 50,
+     "dtMs": 129,
+     "dtNorm": 0.648,
+     "dtUnits": 1.323
+    },
+    {
+     "objectId": "wc-1534",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 123,
+     "durMs": 50,
+     "dtMs": 159,
+     "dtNorm": 0.799,
+     "dtUnits": 1.631
+    },
+    {
+     "objectId": "wc-1533",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 80,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 50,
+     "dtMs": 170,
+     "dtNorm": 0.854,
+     "dtUnits": 1.744
+    },
+    {
+     "objectId": "wc-1536",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 68,
+     "dtMs": 173,
+     "dtNorm": 0.869,
+     "dtUnits": 1.774
+    },
+    {
+     "objectId": "wc-1537",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 51,
+     "technique": "mar_main",
+     "vel": 106,
+     "durMs": 98,
+     "dtMs": 195,
+     "dtNorm": 0.98,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1535",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 50,
+     "dtMs": 199,
+     "dtNorm": 1,
+     "dtUnits": 2.041
+    }
+   ],
+   "harmony": {
+    "count": 13,
+    "midis": [
+     51,
+     54,
+     57,
+     58,
+     59,
+     60,
+     61,
+     72,
+     73,
+     78,
+     80,
+     81,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     3,
+     6,
+     8,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     129,
+     195
+    ],
+    "onsetsNorm": [
+     0,
+     0.648,
+     0.98
+    ],
+    "onsetsUnits": [
+     0,
+     1.323,
+     2
+    ],
+    "gapsMs": [
+     129,
+     66
+    ],
+    "medianGapMs": 97.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1528",
+       "wc-1530",
+       "wc-1529",
+       "wc-1532",
+       "wc-1526",
+       "wc-1527",
+       "wc-1525"
+      ]
+     },
+     {
+      "dtMs": 129,
+      "objectIds": [
+       "wc-1531",
+       "wc-1534",
+       "wc-1533",
+       "wc-1536"
+      ]
+     },
+     {
+      "dtMs": 195,
+      "objectIds": [
+       "wc-1537",
+       "wc-1535"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 13,
+    "keptCount": 3,
+    "redactedCount": 10,
+    "midi": {
+     "min": 51,
+     "max": 83
+    },
+    "vel": {
+     "avg": 90,
+     "min": 54,
+     "max": 123
+    }
+   }
+  },
+  "ss-strikes-wc-1540": {
+   "id": "ss-strikes-wc-1540",
+   "source": "strikes",
+   "index": 46,
+   "t0": 127.683,
+   "tLast": 127.867,
+   "spanMs": 184,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1540",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 47,
+     "technique": "mar_main",
+     "vel": 75,
+     "durMs": 140,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1542",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 107,
+     "dtMs": 47,
+     "dtNorm": 0.255,
+     "dtUnits": 0.734
+    },
+    {
+     "objectId": "wc-1545",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 165,
+     "dtMs": 50,
+     "dtNorm": 0.272,
+     "dtUnits": 0.781
+    },
+    {
+     "objectId": "wc-1538",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 68,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 50,
+     "dtMs": 64,
+     "dtNorm": 0.348,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1539",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 49,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 58,
+     "dtMs": 66,
+     "dtNorm": 0.359,
+     "dtUnits": 1.031
+    },
+    {
+     "objectId": "wc-1541",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 114,
+     "durMs": 50,
+     "dtMs": 128,
+     "dtNorm": 0.696,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1543",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 53,
+     "dtMs": 133,
+     "dtNorm": 0.723,
+     "dtUnits": 2.078
+    },
+    {
+     "objectId": "wc-1546",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 120,
+     "dtMs": 134,
+     "dtNorm": 0.728,
+     "dtUnits": 2.094
+    },
+    {
+     "objectId": "wc-1544",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 50,
+     "dtMs": 178,
+     "dtNorm": 0.967,
+     "dtUnits": 2.781
+    },
+    {
+     "objectId": "wc-1547",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 79,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 87,
+     "dtMs": 184,
+     "dtNorm": 1,
+     "dtUnits": 2.875
+    }
+   ],
+   "harmony": {
+    "count": 10,
+    "midis": [
+     47,
+     48,
+     49,
+     50,
+     55,
+     57,
+     68,
+     69,
+     73,
+     79
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     7,
+     8,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     64,
+     128
+    ],
+    "onsetsNorm": [
+     0,
+     0.348,
+     0.696
+    ],
+    "onsetsUnits": [
+     0,
+     1,
+     2
+    ],
+    "gapsMs": [
+     64,
+     64
+    ],
+    "medianGapMs": 64,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1540",
+       "wc-1542",
+       "wc-1545"
+      ]
+     },
+     {
+      "dtMs": 64,
+      "objectIds": [
+       "wc-1538",
+       "wc-1539"
+      ]
+     },
+     {
+      "dtMs": 128,
+      "objectIds": [
+       "wc-1541",
+       "wc-1543",
+       "wc-1546",
+       "wc-1544",
+       "wc-1547"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 10,
+    "keptCount": 3,
+    "redactedCount": 7,
+    "midi": {
+     "min": 47,
+     "max": 79
+    },
+    "vel": {
+     "avg": 89,
+     "min": 71,
+     "max": 114
+    }
+   }
+  },
+  "ss-strikes-wc-1555": {
+   "id": "ss-strikes-wc-1555",
+   "source": "strikes",
+   "index": 47,
+   "t0": 130.024,
+   "tLast": 130.046,
+   "spanMs": 22,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1555",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 72,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1552",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 59,
+     "dtMs": 2,
+     "dtNorm": 0.091,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1551",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 51,
+     "dtMs": 7,
+     "dtNorm": 0.318,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1553",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 127,
+     "durMs": 55,
+     "dtMs": 9,
+     "dtNorm": 0.409,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1554",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 57,
+     "dtMs": 11,
+     "dtNorm": 0.5,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1550",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 88,
+     "durMs": 50,
+     "dtMs": 14,
+     "dtNorm": 0.636,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1549",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 51,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 50,
+     "dtMs": 16,
+     "dtNorm": 0.727,
+     "dtUnits": null
+    },
+    {
+     "objectId": "wc-1548",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 50,
+     "dtMs": 22,
+     "dtNorm": 1,
+     "dtUnits": null
+    }
+   ],
+   "harmony": {
+    "count": 8,
+    "midis": [
+     50,
+     51,
+     54,
+     57,
+     59,
+     72,
+     73,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     3,
+     6,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0
+    ],
+    "onsetsNorm": [
+     0
+    ],
+    "onsetsUnits": [
+     null
+    ],
+    "gapsMs": [],
+    "medianGapMs": null,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1555",
+       "wc-1552",
+       "wc-1551",
+       "wc-1553",
+       "wc-1554",
+       "wc-1550",
+       "wc-1549",
+       "wc-1548"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 8,
+    "keptCount": 1,
+    "redactedCount": 7,
+    "midi": {
+     "min": 50,
+     "max": 83
+    },
+    "vel": {
+     "avg": 100,
+     "min": 88,
+     "max": 127
+    }
+   }
+  },
+  "ss-strikes-wc-1556": {
+   "id": "ss-strikes-wc-1556",
+   "source": "strikes",
+   "index": 48,
+   "t0": 130.764,
+   "tLast": 130.887,
+   "spanMs": 123,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1556",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 89,
+     "durMs": 50,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1560",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 107,
+     "durMs": 79,
+     "dtMs": 7,
+     "dtNorm": 0.057,
+     "dtUnits": 0.058
+    },
+    {
+     "objectId": "wc-1558",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 83,
+     "durMs": 63,
+     "dtMs": 9,
+     "dtNorm": 0.073,
+     "dtUnits": 0.075
+    },
+    {
+     "objectId": "wc-1557",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 81,
+     "durMs": 59,
+     "dtMs": 11,
+     "dtNorm": 0.089,
+     "dtUnits": 0.092
+    },
+    {
+     "objectId": "wc-1559",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 110,
+     "durMs": 69,
+     "dtMs": 11,
+     "dtNorm": 0.089,
+     "dtUnits": 0.092
+    },
+    {
+     "objectId": "wc-1561",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 120,
+     "dtMs": 29,
+     "dtNorm": 0.236,
+     "dtUnits": 0.242
+    },
+    {
+     "objectId": "wc-1562",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 137,
+     "dtMs": 120,
+     "dtNorm": 0.976,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1563",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 81,
+     "durMs": 135,
+     "dtMs": 123,
+     "dtNorm": 1,
+     "dtUnits": 1.025
+    }
+   ],
+   "harmony": {
+    "count": 8,
+    "midis": [
+     50,
+     60,
+     62,
+     71,
+     72,
+     73,
+     81,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     120
+    ],
+    "onsetsNorm": [
+     0,
+     0.976
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     120
+    ],
+    "medianGapMs": 120,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1556",
+       "wc-1560",
+       "wc-1558",
+       "wc-1557",
+       "wc-1559",
+       "wc-1561"
+      ]
+     },
+     {
+      "dtMs": 120,
+      "objectIds": [
+       "wc-1562",
+       "wc-1563"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 8,
+    "keptCount": 2,
+    "redactedCount": 6,
+    "midi": {
+     "min": 50,
+     "max": 83
+    },
+    "vel": {
+     "avg": 94,
+     "min": 81,
+     "max": 110
+    }
+   }
+  },
+  "ss-strikes-wc-1565": {
+   "id": "ss-strikes-wc-1565",
+   "source": "strikes",
+   "index": 49,
+   "t0": 131.688,
+   "tLast": 131.853,
+   "spanMs": 165,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1565",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 101,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1564",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 50,
+     "dtMs": 24,
+     "dtNorm": 0.145,
+     "dtUnits": 0.353
+    },
+    {
+     "objectId": "wc-1567",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 74,
+     "dtMs": 53,
+     "dtNorm": 0.321,
+     "dtUnits": 0.779
+    },
+    {
+     "objectId": "wc-1566",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 53,
+     "dtMs": 58,
+     "dtNorm": 0.352,
+     "dtUnits": 0.853
+    },
+    {
+     "objectId": "wc-1568",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 100,
+     "durMs": 75,
+     "dtMs": 65,
+     "dtNorm": 0.394,
+     "dtUnits": 0.956
+    },
+    {
+     "objectId": "wc-1571",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 66,
+     "durMs": 102,
+     "dtMs": 101,
+     "dtNorm": 0.612,
+     "dtUnits": 1.485
+    },
+    {
+     "objectId": "wc-1572",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 55,
+     "durMs": 127,
+     "dtMs": 102,
+     "dtNorm": 0.618,
+     "dtUnits": 1.5
+    },
+    {
+     "objectId": "wc-1569",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 51,
+     "durMs": 80,
+     "dtMs": 103,
+     "dtNorm": 0.624,
+     "dtUnits": 1.515
+    },
+    {
+     "objectId": "wc-1570",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 64,
+     "dtMs": 136,
+     "dtNorm": 0.824,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1573",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 109,
+     "dtMs": 162,
+     "dtNorm": 0.982,
+     "dtUnits": 2.382
+    },
+    {
+     "objectId": "wc-1574",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 108,
+     "dtMs": 165,
+     "dtNorm": 1,
+     "dtUnits": 2.426
+    }
+   ],
+   "harmony": {
+    "count": 11,
+    "midis": [
+     52,
+     54,
+     55,
+     58,
+     61,
+     62,
+     64,
+     71,
+     72,
+     81,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     4,
+     6,
+     7,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     65,
+     136
+    ],
+    "onsetsNorm": [
+     0,
+     0.394,
+     0.824
+    ],
+    "onsetsUnits": [
+     0,
+     0.956,
+     2
+    ],
+    "gapsMs": [
+     65,
+     71
+    ],
+    "medianGapMs": 68,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1565",
+       "wc-1564",
+       "wc-1567",
+       "wc-1566"
+      ]
+     },
+     {
+      "dtMs": 65,
+      "objectIds": [
+       "wc-1568",
+       "wc-1571",
+       "wc-1572",
+       "wc-1569"
+      ]
+     },
+     {
+      "dtMs": 136,
+      "objectIds": [
+       "wc-1570",
+       "wc-1573",
+       "wc-1574"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 11,
+    "keptCount": 3,
+    "redactedCount": 8,
+    "midi": {
+     "min": 52,
+     "max": 83
+    },
+    "vel": {
+     "avg": 79,
+     "min": 51,
+     "max": 105
+    }
+   }
+  },
+  "ss-strikes-wc-1575": {
+   "id": "ss-strikes-wc-1575",
+   "source": "strikes",
+   "index": 50,
+   "t0": 132.579,
+   "tLast": 132.662,
+   "spanMs": 83,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1575",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 59,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 99,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1578",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 65,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 176,
+     "dtMs": 35,
+     "dtNorm": 0.422,
+     "dtUnits": 0.486
+    },
+    {
+     "objectId": "wc-1576",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 102,
+     "dtMs": 40,
+     "dtNorm": 0.482,
+     "dtUnits": 0.556
+    },
+    {
+     "objectId": "wc-1577",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 77,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 119,
+     "dtMs": 72,
+     "dtNorm": 0.867,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1579",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 85,
+     "technique": "mar_main",
+     "vel": 80,
+     "durMs": 164,
+     "dtMs": 83,
+     "dtNorm": 1,
+     "dtUnits": 1.153
+    }
+   ],
+   "harmony": {
+    "count": 5,
+    "midis": [
+     59,
+     64,
+     65,
+     77,
+     85
+    ],
+    "pcs": [
+     1,
+     4,
+     5,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     72
+    ],
+    "onsetsNorm": [
+     0,
+     0.867
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     72
+    ],
+    "medianGapMs": 72,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1575",
+       "wc-1578",
+       "wc-1576"
+      ]
+     },
+     {
+      "dtMs": 72,
+      "objectIds": [
+       "wc-1577",
+       "wc-1579"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 5,
+    "keptCount": 2,
+    "redactedCount": 3,
+    "midi": {
+     "min": 59,
+     "max": 85
+    },
+    "vel": {
+     "avg": 88,
+     "min": 73,
+     "max": 103
+    }
+   }
+  },
+  "ss-strikes-wc-1580": {
+   "id": "ss-strikes-wc-1580",
+   "source": "strikes",
+   "index": 51,
+   "t0": 134.606,
+   "tLast": 134.776,
+   "spanMs": 170,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1580",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 45,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 125,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1581",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 126,
+     "dtMs": 61,
+     "dtNorm": 0.359,
+     "dtUnits": 0.91
+    },
+    {
+     "objectId": "wc-1584",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 146,
+     "dtMs": 77,
+     "dtNorm": 0.453,
+     "dtUnits": 1.149
+    },
+    {
+     "objectId": "wc-1583",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 78,
+     "durMs": 79,
+     "dtMs": 134,
+     "dtNorm": 0.788,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1582",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 98,
+     "durMs": 62,
+     "dtMs": 149,
+     "dtNorm": 0.876,
+     "dtUnits": 2.224
+    },
+    {
+     "objectId": "wc-1585",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 79,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 98,
+     "dtMs": 170,
+     "dtNorm": 1,
+     "dtUnits": 2.537
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     45,
+     55,
+     57,
+     70,
+     73,
+     79
+    ],
+    "pcs": [
+     1,
+     7,
+     9,
+     10
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     61,
+     134
+    ],
+    "onsetsNorm": [
+     0,
+     0.359,
+     0.788
+    ],
+    "onsetsUnits": [
+     0,
+     0.91,
+     2
+    ],
+    "gapsMs": [
+     61,
+     73
+    ],
+    "medianGapMs": 67,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1580"
+      ]
+     },
+     {
+      "dtMs": 61,
+      "objectIds": [
+       "wc-1581",
+       "wc-1584"
+      ]
+     },
+     {
+      "dtMs": 134,
+      "objectIds": [
+       "wc-1583",
+       "wc-1582",
+       "wc-1585"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 3,
+    "redactedCount": 3,
+    "midi": {
+     "min": 45,
+     "max": 79
+    },
+    "vel": {
+     "avg": 95,
+     "min": 78,
+     "max": 105
+    }
+   }
+  },
+  "ss-strikes-wc-1587": {
+   "id": "ss-strikes-wc-1587",
+   "source": "strikes",
+   "index": 52,
+   "t0": 136.026,
+   "tLast": 136.204,
+   "spanMs": 178,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1587",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 113,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1592",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 191,
+     "dtMs": 34,
+     "dtNorm": 0.191,
+     "dtUnits": 0.393
+    },
+    {
+     "objectId": "wc-1586",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 60,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 50,
+     "dtMs": 38,
+     "dtNorm": 0.213,
+     "dtUnits": 0.439
+    },
+    {
+     "objectId": "wc-1589",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 82,
+     "durMs": 93,
+     "dtMs": 67,
+     "dtNorm": 0.376,
+     "dtUnits": 0.775
+    },
+    {
+     "objectId": "wc-1591",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 126,
+     "dtMs": 74,
+     "dtNorm": 0.416,
+     "dtUnits": 0.855
+    },
+    {
+     "objectId": "wc-1588",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 55,
+     "dtMs": 78,
+     "dtNorm": 0.438,
+     "dtUnits": 0.902
+    },
+    {
+     "objectId": "wc-1590",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 93,
+     "dtMs": 98,
+     "dtNorm": 0.551,
+     "dtUnits": 1.133
+    },
+    {
+     "objectId": "wc-1594",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 81,
+     "durMs": 84,
+     "dtMs": 173,
+     "dtNorm": 0.972,
+     "dtUnits": 2
+    },
+    {
+     "objectId": "wc-1593",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 78,
+     "dtMs": 178,
+     "dtNorm": 1,
+     "dtUnits": 2.058
+    }
+   ],
+   "harmony": {
+    "count": 9,
+    "midis": [
+     52,
+     60,
+     61,
+     62,
+     72,
+     75,
+     78,
+     83,
+     84
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     6,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     67,
+     173
+    ],
+    "onsetsNorm": [
+     0,
+     0.376,
+     0.972
+    ],
+    "onsetsUnits": [
+     0,
+     0.775,
+     2
+    ],
+    "gapsMs": [
+     67,
+     106
+    ],
+    "medianGapMs": 86.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1587",
+       "wc-1592",
+       "wc-1586"
+      ]
+     },
+     {
+      "dtMs": 67,
+      "objectIds": [
+       "wc-1589",
+       "wc-1591",
+       "wc-1588",
+       "wc-1590"
+      ]
+     },
+     {
+      "dtMs": 173,
+      "objectIds": [
+       "wc-1594",
+       "wc-1593"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 9,
+    "keptCount": 3,
+    "redactedCount": 6,
+    "midi": {
+     "min": 52,
+     "max": 84
+    },
+    "vel": {
+     "avg": 83,
+     "min": 73,
+     "max": 94
+    }
+   }
+  },
+  "ss-strikes-wc-1596": {
+   "id": "ss-strikes-wc-1596",
+   "source": "strikes",
+   "index": 53,
+   "t0": 137.06,
+   "tLast": 137.174,
+   "spanMs": 114,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1596",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 53,
+     "technique": "mar_main",
+     "vel": 84,
+     "durMs": 119,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1599",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 139,
+     "dtMs": 58,
+     "dtNorm": 0.509,
+     "dtUnits": 0.967
+    },
+    {
+     "objectId": "wc-1598",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 117,
+     "dtMs": 60,
+     "dtNorm": 0.526,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1595",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 56,
+     "technique": "mar_main",
+     "vel": 47,
+     "durMs": 50,
+     "dtMs": 80,
+     "dtNorm": 0.702,
+     "dtUnits": 1.333
+    },
+    {
+     "objectId": "wc-1600",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 81,
+     "durMs": 119,
+     "dtMs": 110,
+     "dtNorm": 0.965,
+     "dtUnits": 1.833
+    },
+    {
+     "objectId": "wc-1597",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 60,
+     "durMs": 50,
+     "dtMs": 114,
+     "dtNorm": 1,
+     "dtUnits": 1.9
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     53,
+     56,
+     64,
+     72,
+     75,
+     84
+    ],
+    "pcs": [
+     0,
+     3,
+     4,
+     5,
+     8
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     60
+    ],
+    "onsetsNorm": [
+     0,
+     0.526
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     60
+    ],
+    "medianGapMs": 60,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1596",
+       "wc-1599"
+      ]
+     },
+     {
+      "dtMs": 60,
+      "objectIds": [
+       "wc-1598",
+       "wc-1595",
+       "wc-1600",
+       "wc-1597"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 2,
+    "redactedCount": 4,
+    "midi": {
+     "min": 53,
+     "max": 84
+    },
+    "vel": {
+     "avg": 79,
+     "min": 47,
+     "max": 108
+    }
+   }
+  },
+  "ss-strikes-wc-1601": {
+   "id": "ss-strikes-wc-1601",
+   "source": "strikes",
+   "index": 54,
+   "t0": 138.168,
+   "tLast": 138.421,
+   "spanMs": 253,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1601",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 45,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 107,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1602",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 47,
+     "technique": "mar_main",
+     "vel": 59,
+     "durMs": 50,
+     "dtMs": 71,
+     "dtNorm": 0.281,
+     "dtUnits": 0.959
+    },
+    {
+     "objectId": "wc-1605",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 101,
+     "durMs": 170,
+     "dtMs": 111,
+     "dtNorm": 0.439,
+     "dtUnits": 1.5
+    },
+    {
+     "objectId": "wc-1604",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 155,
+     "dtMs": 112,
+     "dtNorm": 0.443,
+     "dtUnits": 1.514
+    },
+    {
+     "objectId": "wc-1603",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 50,
+     "dtMs": 145,
+     "dtNorm": 0.573,
+     "dtUnits": 1.959
+    },
+    {
+     "objectId": "wc-1608",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 79,
+     "durMs": 104,
+     "dtMs": 189,
+     "dtNorm": 0.747,
+     "dtUnits": 2.554
+    },
+    {
+     "objectId": "wc-1606",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 69,
+     "technique": "mar_main",
+     "vel": 85,
+     "durMs": 92,
+     "dtMs": 190,
+     "dtNorm": 0.751,
+     "dtUnits": 2.568
+    },
+    {
+     "objectId": "wc-1609",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 70,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 109,
+     "dtMs": 203,
+     "dtNorm": 0.802,
+     "dtUnits": 2.743
+    },
+    {
+     "objectId": "wc-1610",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 79,
+     "technique": "mar_main",
+     "vel": 71,
+     "durMs": 108,
+     "dtMs": 240,
+     "dtNorm": 0.949,
+     "dtUnits": 3.243
+    },
+    {
+     "objectId": "wc-1607",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 50,
+     "dtMs": 253,
+     "dtNorm": 1,
+     "dtUnits": 3.419
+    }
+   ],
+   "harmony": {
+    "count": 10,
+    "midis": [
+     45,
+     47,
+     54,
+     55,
+     57,
+     67,
+     69,
+     70,
+     79
+    ],
+    "pcs": [
+     6,
+     7,
+     9,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     71,
+     145,
+     240
+    ],
+    "onsetsNorm": [
+     0,
+     0.281,
+     0.573,
+     0.949
+    ],
+    "onsetsUnits": [
+     0,
+     0.959,
+     1.959,
+     3.243
+    ],
+    "gapsMs": [
+     71,
+     74,
+     95
+    ],
+    "medianGapMs": 74,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1601"
+      ]
+     },
+     {
+      "dtMs": 71,
+      "objectIds": [
+       "wc-1602",
+       "wc-1605",
+       "wc-1604"
+      ]
+     },
+     {
+      "dtMs": 145,
+      "objectIds": [
+       "wc-1603",
+       "wc-1608",
+       "wc-1606",
+       "wc-1609"
+      ]
+     },
+     {
+      "dtMs": 240,
+      "objectIds": [
+       "wc-1610",
+       "wc-1607"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 10,
+    "keptCount": 4,
+    "redactedCount": 6,
+    "midi": {
+     "min": 45,
+     "max": 79
+    },
+    "vel": {
+     "avg": 86,
+     "min": 59,
+     "max": 112
+    }
+   }
+  },
+  "ss-strikes-wc-1611": {
+   "id": "ss-strikes-wc-1611",
+   "source": "strikes",
+   "index": 55,
+   "t0": 140.261,
+   "tLast": 140.358,
+   "spanMs": 97,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1611",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 47,
+     "technique": "mar_main",
+     "vel": 90,
+     "durMs": 64,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1612",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 48,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 64,
+     "dtMs": 2,
+     "dtNorm": 0.021,
+     "dtUnits": 0.024
+    },
+    {
+     "objectId": "wc-1613",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 114,
+     "durMs": 107,
+     "dtMs": 31,
+     "dtNorm": 0.32,
+     "dtUnits": 0.365
+    },
+    {
+     "objectId": "wc-1617",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 91,
+     "dtMs": 85,
+     "dtNorm": 0.876,
+     "dtUnits": 1
+    },
+    {
+     "objectId": "wc-1614",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 97,
+     "durMs": 56,
+     "dtMs": 87,
+     "dtNorm": 0.897,
+     "dtUnits": 1.024
+    },
+    {
+     "objectId": "wc-1615",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 60,
+     "dtMs": 88,
+     "dtNorm": 0.907,
+     "dtUnits": 1.035
+    },
+    {
+     "objectId": "wc-1616",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 105,
+     "durMs": 77,
+     "dtMs": 97,
+     "dtNorm": 1,
+     "dtUnits": 1.141
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     47,
+     48,
+     55,
+     71,
+     72,
+     73,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     7,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     85
+    ],
+    "onsetsNorm": [
+     0,
+     0.876
+    ],
+    "onsetsUnits": [
+     0,
+     1
+    ],
+    "gapsMs": [
+     85
+    ],
+    "medianGapMs": 85,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1611",
+       "wc-1612",
+       "wc-1613"
+      ]
+     },
+     {
+      "dtMs": 85,
+      "objectIds": [
+       "wc-1617",
+       "wc-1614",
+       "wc-1615",
+       "wc-1616"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 2,
+    "redactedCount": 5,
+    "midi": {
+     "min": 47,
+     "max": 83
+    },
+    "vel": {
+     "avg": 98,
+     "min": 90,
+     "max": 114
+    }
+   }
+  },
+  "ss-strikes-wc-1619": {
+   "id": "ss-strikes-wc-1619",
+   "source": "strikes",
+   "index": 56,
+   "t0": 142.431,
+   "tLast": 142.578,
+   "spanMs": 147,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1619",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 61,
+     "technique": "mar_main",
+     "vel": 95,
+     "durMs": 164,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1618",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 64,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 50,
+     "dtMs": 84,
+     "dtNorm": 0.571,
+     "dtUnits": 1.143
+    },
+    {
+     "objectId": "wc-1622",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 99,
+     "durMs": 109,
+     "dtMs": 128,
+     "dtNorm": 0.871,
+     "dtUnits": 1.741
+    },
+    {
+     "objectId": "wc-1620",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 63,
+     "dtMs": 135,
+     "dtNorm": 0.918,
+     "dtUnits": 1.837
+    },
+    {
+     "objectId": "wc-1623",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 93,
+     "technique": "mar_main",
+     "vel": 112,
+     "durMs": 97,
+     "dtMs": 142,
+     "dtNorm": 0.966,
+     "dtUnits": 1.932
+    },
+    {
+     "objectId": "wc-1621",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 81,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 80,
+     "dtMs": 147,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 6,
+    "midis": [
+     61,
+     64,
+     71,
+     72,
+     81,
+     93
+    ],
+    "pcs": [
+     0,
+     1,
+     4,
+     9,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     84,
+     147
+    ],
+    "onsetsNorm": [
+     0,
+     0.571,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.143,
+     2
+    ],
+    "gapsMs": [
+     84,
+     63
+    ],
+    "medianGapMs": 73.5,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1619"
+      ]
+     },
+     {
+      "dtMs": 84,
+      "objectIds": [
+       "wc-1618",
+       "wc-1622",
+       "wc-1620",
+       "wc-1623"
+      ]
+     },
+     {
+      "dtMs": 147,
+      "objectIds": [
+       "wc-1621"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 6,
+    "keptCount": 3,
+    "redactedCount": 3,
+    "midi": {
+     "min": 61,
+     "max": 93
+    },
+    "vel": {
+     "avg": 94,
+     "min": 74,
+     "max": 112
+    }
+   }
+  },
+  "ss-strikes-wc-1625": {
+   "id": "ss-strikes-wc-1625",
+   "source": "strikes",
+   "index": 57,
+   "t0": 143.51,
+   "tLast": 143.654,
+   "spanMs": 144,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1625",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 80,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1624",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 93,
+     "durMs": 50,
+     "dtMs": 24,
+     "dtNorm": 0.167,
+     "dtUnits": 0.333
+    },
+    {
+     "objectId": "wc-1626",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 77,
+     "durMs": 50,
+     "dtMs": 67,
+     "dtNorm": 0.465,
+     "dtUnits": 0.931
+    },
+    {
+     "objectId": "wc-1629",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 73,
+     "technique": "mar_main",
+     "vel": 87,
+     "durMs": 98,
+     "dtMs": 92,
+     "dtNorm": 0.639,
+     "dtUnits": 1.278
+    },
+    {
+     "objectId": "wc-1627",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 83,
+     "dtMs": 104,
+     "dtNorm": 0.722,
+     "dtUnits": 1.444
+    },
+    {
+     "objectId": "wc-1628",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 69,
+     "durMs": 81,
+     "dtMs": 106,
+     "dtNorm": 0.736,
+     "dtUnits": 1.472
+    },
+    {
+     "objectId": "wc-1630",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 83,
+     "technique": "mar_main",
+     "vel": 96,
+     "durMs": 106,
+     "dtMs": 144,
+     "dtNorm": 1,
+     "dtUnits": 2
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     50,
+     54,
+     55,
+     71,
+     72,
+     73,
+     83
+    ],
+    "pcs": [
+     0,
+     1,
+     2,
+     6,
+     7,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     67,
+     144
+    ],
+    "onsetsNorm": [
+     0,
+     0.465,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     0.931,
+     2
+    ],
+    "gapsMs": [
+     67,
+     77
+    ],
+    "medianGapMs": 72,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1625",
+       "wc-1624"
+      ]
+     },
+     {
+      "dtMs": 67,
+      "objectIds": [
+       "wc-1626",
+       "wc-1629",
+       "wc-1627",
+       "wc-1628"
+      ]
+     },
+     {
+      "dtMs": 144,
+      "objectIds": [
+       "wc-1630"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 3,
+    "redactedCount": 4,
+    "midi": {
+     "min": 50,
+     "max": 83
+    },
+    "vel": {
+     "avg": 82,
+     "min": 69,
+     "max": 96
+    }
+   }
+  },
+  "ss-strikes-wc-1631": {
+   "id": "ss-strikes-wc-1631",
+   "source": "strikes",
+   "index": 58,
+   "t0": 144.984,
+   "tLast": 145.27,
+   "spanMs": 286,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1631",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 57,
+     "technique": "mar_main",
+     "vel": 91,
+     "durMs": 102,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1632",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 67,
+     "technique": "mar_main",
+     "vel": 117,
+     "durMs": 101,
+     "dtMs": 117,
+     "dtNorm": 0.409,
+     "dtUnits": 1.245
+    },
+    {
+     "objectId": "wc-1633",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 66,
+     "technique": "mar_main",
+     "vel": 111,
+     "durMs": 104,
+     "dtMs": 125,
+     "dtNorm": 0.437,
+     "dtUnits": 1.33
+    },
+    {
+     "objectId": "wc-1634",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 76,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 80,
+     "dtMs": 181,
+     "dtNorm": 0.633,
+     "dtUnits": 1.926
+    },
+    {
+     "objectId": "wc-1635",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 104,
+     "durMs": 81,
+     "dtMs": 184,
+     "dtNorm": 0.643,
+     "dtUnits": 1.957
+    },
+    {
+     "objectId": "wc-1636",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 88,
+     "technique": "mar_main",
+     "vel": 75,
+     "durMs": 50,
+     "dtMs": 275,
+     "dtNorm": 0.962,
+     "dtUnits": 2.926
+    },
+    {
+     "objectId": "wc-1637",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 86,
+     "technique": "mar_main",
+     "vel": 68,
+     "durMs": 50,
+     "dtMs": 286,
+     "dtNorm": 1,
+     "dtUnits": 3.043
+    }
+   ],
+   "harmony": {
+    "count": 7,
+    "midis": [
+     57,
+     66,
+     67,
+     76,
+     78,
+     86,
+     88
+    ],
+    "pcs": [
+     2,
+     4,
+     6,
+     7,
+     9
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     117,
+     181,
+     275
+    ],
+    "onsetsNorm": [
+     0,
+     0.409,
+     0.633,
+     0.962
+    ],
+    "onsetsUnits": [
+     0,
+     1.245,
+     1.926,
+     2.926
+    ],
+    "gapsMs": [
+     117,
+     64,
+     94
+    ],
+    "medianGapMs": 94,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1631"
+      ]
+     },
+     {
+      "dtMs": 117,
+      "objectIds": [
+       "wc-1632",
+       "wc-1633"
+      ]
+     },
+     {
+      "dtMs": 181,
+      "objectIds": [
+       "wc-1634",
+       "wc-1635"
+      ]
+     },
+     {
+      "dtMs": 275,
+      "objectIds": [
+       "wc-1636",
+       "wc-1637"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 7,
+    "keptCount": 4,
+    "redactedCount": 3,
+    "midi": {
+     "min": 57,
+     "max": 88
+    },
+    "vel": {
+     "avg": 96,
+     "min": 68,
+     "max": 117
+    }
+   }
+  },
+  "ss-strikes-wc-1638": {
+   "id": "ss-strikes-wc-1638",
+   "source": "strikes",
+   "index": 59,
+   "t0": 146.445,
+   "tLast": 146.83,
+   "spanMs": 385,
+   "label": "his 60 marimba strikes, played into the page 2026-10-09",
+   "notes": [
+    {
+     "objectId": "wc-1638",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 50,
+     "technique": "mar_main",
+     "vel": 108,
+     "durMs": 116,
+     "dtMs": 0,
+     "dtNorm": 0,
+     "dtUnits": 0
+    },
+    {
+     "objectId": "wc-1640",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 52,
+     "technique": "mar_main",
+     "vel": 66,
+     "durMs": 95,
+     "dtMs": 46,
+     "dtNorm": 0.119,
+     "dtUnits": 0.489
+    },
+    {
+     "objectId": "wc-1639",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 54,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 70,
+     "dtMs": 55,
+     "dtNorm": 0.143,
+     "dtUnits": 0.585
+    },
+    {
+     "objectId": "wc-1642",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 58,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 117,
+     "dtMs": 107,
+     "dtNorm": 0.278,
+     "dtUnits": 1.138
+    },
+    {
+     "objectId": "wc-1641",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 55,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 50,
+     "dtMs": 139,
+     "dtNorm": 0.361,
+     "dtUnits": 1.479
+    },
+    {
+     "objectId": "wc-1643",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 62,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 120,
+     "dtMs": 197,
+     "dtNorm": 0.512,
+     "dtUnits": 2.096
+    },
+    {
+     "objectId": "wc-1644",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 72,
+     "technique": "mar_main",
+     "vel": 72,
+     "durMs": 73,
+     "dtMs": 287,
+     "dtNorm": 0.745,
+     "dtUnits": 3.053
+    },
+    {
+     "objectId": "wc-1645",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 71,
+     "technique": "mar_main",
+     "vel": 73,
+     "durMs": 68,
+     "dtMs": 293,
+     "dtNorm": 0.761,
+     "dtUnits": 3.117
+    },
+    {
+     "objectId": "wc-1647",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 75,
+     "technique": "mar_main",
+     "vel": 94,
+     "durMs": 107,
+     "dtMs": 300,
+     "dtNorm": 0.779,
+     "dtUnits": 3.191
+    },
+    {
+     "objectId": "wc-1649",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 84,
+     "technique": "mar_main",
+     "vel": 103,
+     "durMs": 117,
+     "dtMs": 327,
+     "dtNorm": 0.849,
+     "dtUnits": 3.479
+    },
+    {
+     "objectId": "wc-1646",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 78,
+     "technique": "mar_main",
+     "vel": 74,
+     "durMs": 51,
+     "dtMs": 334,
+     "dtNorm": 0.868,
+     "dtUnits": 3.553
+    },
+    {
+     "objectId": "wc-1648",
+     "layer": 3,
+     "instKey": "bowed_vibraphone",
+     "midi": 82,
+     "technique": "mar_main",
+     "vel": 58,
+     "durMs": 50,
+     "dtMs": 385,
+     "dtNorm": 1,
+     "dtUnits": 4.096
+    }
+   ],
+   "harmony": {
+    "count": 12,
+    "midis": [
+     50,
+     52,
+     54,
+     55,
+     58,
+     62,
+     71,
+     72,
+     75,
+     78,
+     82,
+     84
+    ],
+    "pcs": [
+     0,
+     2,
+     3,
+     4,
+     6,
+     7,
+     10,
+     11
+    ],
+    "instKeys": [
+     "bowed_vibraphone"
+    ]
+   },
+   "rhythm": {
+    "simultaneityMs": 60,
+    "onsetsMs": [
+     0,
+     107,
+     197,
+     287,
+     385
+    ],
+    "onsetsNorm": [
+     0,
+     0.278,
+     0.512,
+     0.745,
+     1
+    ],
+    "onsetsUnits": [
+     0,
+     1.138,
+     2.096,
+     3.053,
+     4.096
+    ],
+    "gapsMs": [
+     107,
+     90,
+     90,
+     98
+    ],
+    "medianGapMs": 94,
+    "groups": [
+     {
+      "dtMs": 0,
+      "objectIds": [
+       "wc-1638",
+       "wc-1640",
+       "wc-1639"
+      ]
+     },
+     {
+      "dtMs": 107,
+      "objectIds": [
+       "wc-1642",
+       "wc-1641"
+      ]
+     },
+     {
+      "dtMs": 197,
+      "objectIds": [
+       "wc-1643"
+      ]
+     },
+     {
+      "dtMs": 287,
+      "objectIds": [
+       "wc-1644",
+       "wc-1645",
+       "wc-1647",
+       "wc-1649",
+       "wc-1646"
+      ]
+     },
+     {
+      "dtMs": 385,
+      "objectIds": [
+       "wc-1648"
+      ]
+     }
+    ]
+   },
+   "stats": {
+    "noteCount": 12,
+    "keptCount": 5,
+    "redactedCount": 7,
+    "midi": {
+     "min": 50,
+     "max": 84
+    },
+    "vel": {
+     "avg": 84,
+     "min": 58,
+     "max": 108
+    }
+   }
+  }
+ },
+ "updated": "2026-10-09T11:50:40.509Z"
 }

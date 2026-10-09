@@ -164,7 +164,12 @@ wants it, or the sine breathing with the bow (the tracker)? · *(answered: Q4 th
 
 **Blockers:** none.
 
-**DELIBERATELY UNCOMMITTED — twelve, all his, none staged:** `scores/piece-3BodyRedo.json` (THE PIECE) · `scores/piece-sec04-01a.json` ·
+**SINCE THE SESSION END (2026-10-09, RUNNING_LOG §290; DEC-81):** his 60 marimba strikes (`scores/strikes.json`, his, untracked) are in
+the strike bank — `bank/scattered_strikes.json`, by `node tools/strike_db.js --score strikes`; the Strikes drawer reads it live
+(its `↻ db`). Not seen in the running page by the AI.
+
+**DELIBERATELY UNCOMMITTED — thirteen, all his, none staged:** `scores/strikes.json` (his 60 strikes; the strike bank's source) ·
+`scores/piece-3BodyRedo.json` (THE PIECE) · `scores/piece-sec04-01a.json` ·
 `scores/piece-sec03-a2.json` · `scores/piece-sec03-a1.json` · `scores/piece-sec02-a1.json` · `scores/sec04-a-beating.json` ·
 `scores/drone-start-mics.json` (his entries; the drone builder reads it) · `scores/curve_practice.json` ·
 `scores/temp01new_cello_bass_flute_perc_25.72.json` · `bank/panel_snapshots.json` (his four takes `beating01 … 04`) ·

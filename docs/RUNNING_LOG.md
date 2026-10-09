@@ -5978,3 +5978,24 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 **Said to him at the wrap, his to decide:** THE PIECE IS IN NO COMMIT — `piece-3BodyRedo` and the four files before it, `sec04-a-beating`, and his four takes (`bank/panel_snapshots.json`) are untracked or uncommitted, on his disk only (the standing rule: his scores are not the AI's to stage without his word; the repo is public) · a tag for the milestone (the piece assembled) · CLAUDE.md's "State of the piece" has grown to a hundred paragraphs loaded in every session — a rewrite to a page offered, not done.
 
 **For the paper — how the last evening went:** the generated beating section (§260) was right by its plan and wrong to his ear within a minute; what replaced it was not a better generator but a conversation — one note, then one sine, then one bend to four hertz, then *"hold on to these data points"*, then the rules said aloud as constraints he could hear (a pace, a minimum hold, a floor, three shapes), and only then a roller. The algorithm of DEC-62 was dictated AFTER four objects had been placed by hand, and every later number (the gap, a lane's level, a chord's order, a pair dropped by the time read off the page) was a correction made by ear to a thing already sounding. The tool that grew under it (`beat_pair.js`: seven modes in four hours) is a transcript of those corrections.
+
+## §290
+**2026-10-09 — HIS SIXTY STRIKES ARE IN THE STRIKE BANK (Opus; DEC-81). The first material of this piece in the Strikes drawer that is his own playing.** His word, after a `/postclear`: *"there is a new save file called strikes. Can we make all of these part of the strikes drawer in the Harmony Fund?"* ("Harmony Fund" read as the harmony bank — the AI's reading, DEC-81.)
+
+**What the save is (read, not changed):** `scores/strikes.json`, HIS, untracked, saved 2026-10-09 07:48 — 429 notes, every one on the mallets lane (layer 3) in the marimba's ordinary voice (`mar_main`), each with a recorded velocity (`recVel`) and the note `TAKE`: played by him into the page, not drawn. 4.20 → 146.88 s. No working copy beside it.
+
+**How it was done — the lineage's own way, nothing new built:** piece #5's strike database, carried here by the port with an EMPTY bank (`bank/scattered_strikes.json`: *"This piece has no piano and no recording yet"*). `node tools/strike_db.js --score strikes --dry` first (the census read), then the same without `--dry`, the tool's defaults untouched: a strike = the notes up to a silence of more than 500 ms between onsets; within a strike an onset closer than 60 ms to the last kept one is redacted from the RHYTHM, never from the harmony.
+
+**The census, as the tool printed it:**
+- 429 notes · **60 strikes** · notes a strike 4 / 6 / 14 (min / median / max)
+- rhythmic onsets kept 194 (a strike 1 / 3 / 7) · redacted 235
+- a strike's own span 22 / 190 / 735 ms · strike to strike 740 / 2093 / 5320 ms · the sequence 142.24 s
+- pitch MIDI 45 … 93 (A2 … A6) · one instrument key, `bowed_vibraphone` (the mallets lane's internal name)
+
+**In the bank now:** one ingestion · one sequence `seq-strikes-0-end` · sixty strikes `ss-strikes-<the first note's id>` (`ss-strikes-wc-1221` the first: 53 61 64 74 77 78). The ids are functions of the source, so the same command again REPLACES these sixty. The bank's `description` said EMPTY and was rewritten by hand to say what it holds.
+
+**Seen in the census, not acted on (his word was "all"):** some strikes are the same chord struck again — #32 … #35 (61 … 75, pitch classes 1 3 4 9; #32 · #33 with one more) · #36 … #38 (63 … 78, 0 3 5 6) · #10 and #16 (66 … 78, 0 3 6 9) · #47 · #48 (50 … 83). All sixty kept; a repeat is a row of its own, with its own rhythm.
+
+**Not checked, so not claimed:** the drawer in the running page. The page fetches `bank/scattered_strikes.json` uncached (`strike_drawer.js` · `beating_panel.js` · `strike_chords_ui.js`), and the drawer has its own `↻ db` — no server restart is in the path as read.
+
+**Git:** the bank and the three docs committed; `scores/strikes.json` is his and stays untracked, as his scores do — the bank names a source that is on his disk only (said to him).
