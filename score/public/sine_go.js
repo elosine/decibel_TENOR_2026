@@ -97,8 +97,9 @@ function rebaseLevel(target, base, a, b) {
 }
 // a chain's first note back to one note: its segments gone, its end and its key restored (a GO again, or ∿ off)
 function dissolve(o, ctx) {
-    const s = o && o.properties && o.properties.sine; if (!s || !Array.isArray(s.chain)) return [];
+    const s = o && o.properties && o.properties.sine; if (!s || (!Array.isArray(s.chain) && !s.keyOffset)) return [];
     const gone = [];
+    if (!Array.isArray(s.chain)) s.chain = [];   // ONE note at a moved key (a bend that fits a single neighbouring key): no segments, the key to restore
     s.chain.forEach((id) => { const x = ctx.objects.find((q) => q.id === id); if (!x) return; gone.push(x); if (ctx.removeNote) ctx.removeNote(x); else ctx.objects.splice(ctx.objects.indexOf(x), 1); });
     const z = ctx.objects.find((x) => x.type === 'zone' && x.midiModel === 'elecSine' && x.id === s.brick);
     if (z && z.properties && z.properties.sine && Array.isArray(z.properties.sine.notes)) z.properties.sine.notes = z.properties.sine.notes.filter((id) => !s.chain.includes(id));
@@ -211,6 +212,10 @@ function convert(notes, ctx) {
         // THE RE-KEY: a player's bend past the sampler's range → the note becomes a chain of notes, the first of them this one
         const segs = d.who === 'player' ? rekeyChain(o.morphBend, len, rangeC) : [];
         const segments = [];
+        // ONE key holds the whole bend, but not the written one (0 → 160 c: the key a semitone up, the wheel from full-flat — #1's
+        // own case): the note stays one note, at the moved key, its bend re-based (§268 — the first build left it at the written
+        // key and the sampler would have clipped it at its edge)
+        if (segs.length === 1 && segs[0].keyOffset) { o.sonifyNote = pitch + segs[0].keyOffset; o.morphBend = segs[0].bend; o.properties.sine.keyOffset = segs[0].keyOffset; }
         if (segs.length > 1) {
             const base = copy(o), n = segs.length, newNoteId = ctx.newNoteId || (() => String(ctx.newId()).replace(/^zn/, 'wc'));
             segs.forEach((sg, k) => {
@@ -230,7 +235,7 @@ function convert(notes, ctx) {
         }
         done.push({ note: o, zone, draw: d, isNew, segments });
         lines.push(shortOf(T, o.layer) + ' ' + pn(pitch) + (d.sineMidi !== pitch ? ' (the sine ' + pn(d.sineMidi) + ')' : '') + ' · ' + d.say + ' · beats ' + d.beatsFrom + ' → ' + d.beatsTo + ' /s'
-            + (segments.length ? ' · RE-KEYED ×' + segs.length + ' (the sampler ±' + (rangeC / 100) + ' st; keys ' + segs.map((s) => (s.keyOffset >= 0 ? '+' : '') + s.keyOffset).join(' ') + ')' : ''));
+            + (segments.length || (segs.length === 1 && segs[0].keyOffset) ? ' · RE-KEYED ×' + segs.length + ' (the sampler ±' + (rangeC / 100) + ' st; keys ' + segs.map((s) => (s.keyOffset >= 0 ? '+' : '') + s.keyOffset).join(' ') + ')' : ''));
     });
     return { done, skipped, lines };
 }

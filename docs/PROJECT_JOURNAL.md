@@ -196,6 +196,17 @@ question, not by habit.)*
 
 ### OPEN AT SESSION END *(S1, 2026-10-04, Opus — written for a session that has never seen this chat)*
 
+**► SINCE CHECKPOINT #22 — THE BEATING SECTION BEGUN AGAIN, BY HAND, ONE PAIR AT A TIME — 2026-10-08, late, Opus (RUNNING_LOG §265 … §268; DEC-60 · 61). THIS BLOCK WINS over checkpoint #22 below where they differ.**
+
+- **HIS WORD:** *"this isn't working. Let's start over"* — the generated `beating-section` and its re-keyed cello are SET ASIDE (untouched, unjudged in detail; what "this" names he did not say). The section is now built in **HIS score `scores/sec04-a-beating.json`** (untracked, his), one PAIR at a time from his dictation: a cello note + a STATIC sine brick at the same pitch, the cello bent so the pair beats as he says, in beats a second.
+- **WHAT IS IN HIS SCORE (five objects):** pair 1 — **D#2, 4.0 → 17.2 s**, the cello on the pitch then UP to **4 beats a second** (+86.8 c) at two thirds, held · a gap of 6.5 s · pair 2 — **D2, 23.7 → 42.1 s**, the cello from **12 beats a second** off DOWN to **2** at two thirds, held (re-keyed ×2: E2, then D2). Both sines `fff`, flat, Follow off; both cello notes at HIS p (velocity 37).
+- **HIS DATA POINTS — HELD FOR THE ALGORITHM, which is NOT made (*"I'll give you data and then we can work out the algorithm"*):** the sine **fff**, the cello's note **p** · a length rolled in **16 … 25 s** · a gap rolled in **4 … 7 s** · MODEL **ramp up**: from the unison to a destination over two thirds, held one third · MODEL **gliss down**: from far off down toward the unison over two thirds, held one third (12 → 2) · **the destination grows with the length**: one point so far — at 13.2 s *"about seven hertz"*; longer → faster.
+- **THE TOOL — every next pair is one command:** `node tools/beat_pair.js --score sec04-a-beating --pitch D2 --from 12 --to 2 [--gap 4,7] [--dur 16,25] [--at 0.667] [--start s] [--side over|under] [--sine fff] [--note p] [--vel N] [--lane cello] [--dry]` — it keeps his unsaved page edits (the base is the newer of the save and the working copy), rolls the gap and the length, re-keys past the sampler's range, takes the note's loudness from his last note on the lane; then **File ▾ → Reload**.
+- **THE NEXT CONCRETE STEP — his next dictation: a pair, a change, or a data point.** Do it with the tool, say what was rolled, log his words verbatim (COMPOSITION_NOTES) and the numbers (RUNNING_LOG). Do NOT work out the algorithm before he says; do NOT touch pair 1 (he said of the 7 Hz: *"just hang on to that"*).
+- **`Resume reads:` nothing beyond this block.** For the tool: its header.
+- **PENDING HIM:** what he hears in the two pairs · pair 1 to "about seven" or left · the next pairs · the law of destination against length.
+- **DELIBERATELY UNCOMMITTED — the same nine as checkpoint #22**, `scores/sec04-a-beating.json` now with his five objects.
+
 **► CHECKPOINT #22 OF SESSION 2 (mid-session checkpoint) — 16.3 THE BALANCE BEGUN AT HIS EAR, THE CELLO DONE AND UNHEARD — 2026-10-08, after 22:11, Opus (RUNNING_LOG §264); the stretch since checkpoint #21 was Fable's, §262 · §263 (DEC-59 · 59b). THIS IS THE COLD-START BLOCK; where the blocks below disagree with it, THIS BLOCK WINS.**
 
 - **POSITION:** running order **step 16 of 16 — THE BEATING SECTION: 16.1 ☑ · 16.2 ☑ · ► 16.3 THE BALANCE, PART BY PART AT HIS EAR — the cello done, UNHEARD as rebuilt; the other players next, his word · 16.4 his takes — he has begun, by hand (below) · 16.5 into the piece.**
