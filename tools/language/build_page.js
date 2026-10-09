@@ -49,19 +49,23 @@ for (const t of L.types) {
   if (t.symbol && t.colour) {
     // CHOSEN: its badge, and any candidate marked as the same sign in another drawing, beside it for his eye
     const c = cand(t, t.symbol), also = cands.filter(x => x.id !== t.symbol && x.id.indexOf(t.symbol) === 0);
-    sections += '<h2>' + esc(t.name) + ' — chosen</h2><div class="tries" style="margin-left:0">' +
+    sections += '<h2 id="' + t.id + '">' + esc(t.name) + (t.reopen ? ' — chosen so far, REOPENED' : ' — chosen') + '</h2><div class="tries" style="margin-left:0">' +
       '<div class="try">' + badge(c.svg, colourOf(t.colour), 96) + badge(c.svg, colourOf(t.colour), B.sizePx) + '<div class="tl"><b>' + esc(c.name) + '</b> · ' + esc(t.colour === B.colourName ? 'the format’s blue' : t.colour) + '</div></div>' +
       also.map(x => '<div class="try">' + badge(x.svg, colourOf(t.colour), 96) + badge(x.svg, colourOf(t.colour), B.sizePx) + '<div class="tl">' + esc(x.name) + '</div></div>').join('') + '</div>' +
-      (also.length ? '<p class="note">The second is the same sign drawn by the notation font. Say which you want; the first stands until you do.</p>' : '');
-    continue;
+      (also.length && !t.reopen ? '<p class="note">The second is the same sign drawn by the notation font. Say which you want; the first stands until you do.</p>' : '');
+    // [§313] `reopen`: a chosen type he wants to look at again — its badge above stands until he says; every candidate is shown below
+    if (!t.reopen) continue;
+    sections += '<p>' + esc(t.reopen) + '</p>';
   }
   let rows = '';
   cands.forEach((c, i) => {
-    rows += '<div class="cand"><div class="chead"><span class="letter">' + String.fromCharCode(97 + i) + '</span><span class="cname">' + esc(c.name) + '</span></div>' +
+    const mine = t.symbol === c.id;
+    rows += '<div class="cand"><div class="chead"><span class="letter">' + String.fromCharCode(97 + i) + '</span><span class="cname">' + esc(c.name) + '</span>' + (mine ? '<span class="now">the one chosen so far</span>' : '') + '</div>' +
       '<div class="cwhy"><div>' + esc(c.from) + '</div><div class="for">' + esc(c.for) + '</div></div>' +
-      '<div class="tries">' + TRY.map(([label, col, taken]) => '<div class="try' + (taken ? ' taken' : '') + '">' + badge(c.svg, col, 96) + badge(c.svg, col, B.sizePx) + '<div class="tl">' + esc(label) + (taken ? '<br><i>taken: ' + esc(taken) + '</i>' : '') + '</div></div>').join('') + '</div></div>';
+      '<div class="tries">' + TRY.map(([label, col, tk]) => { const taken = tk && tk !== t.name ? tk : null, own = tk === t.name;   // a type's own colour is not "taken" from it
+        return '<div class="try' + (taken ? ' taken' : '') + '">' + badge(c.svg, col, 96) + badge(c.svg, col, B.sizePx) + '<div class="tl">' + esc(label) + (taken ? '<br><i>taken: ' + esc(taken) + '</i>' : own ? '<br><i>its colour so far</i>' : '') + '</div></div>'; }).join('') + '</div></div>';
   });
-  sections += '<h2>' + esc(t.name) + ' — the candidates</h2>' +
+  sections += '<h2' + (t.symbol ? '' : ' id="' + t.id + '"') + '>' + esc(t.name) + ' — the candidates</h2>' +
     (t.braxton ? '<p>Braxton’s Language Type ' + t.braxton.n + '. His sign: ' + esc(t.braxton.sign) + '.</p>' : '') +
     '<p class="note">Each sign twice: large, and at its true size in the score, 36 px. The row of colours is the same for every sign.</p>' + rows;
 }
@@ -77,7 +81,7 @@ const html = `<!doctype html>
  th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .07em; color: #555; } .tn { font-weight: 600; white-space: nowrap; } .opt { color: #666; font-size: 13px; font-weight: 400; white-space: normal; max-width: 340px; }
  .pick { display: flex; align-items: flex-end; gap: 8px; }
  .cand { padding: 20px 0 22px; border-bottom: 1px solid #ddd; }
- .chead { display: flex; align-items: baseline; gap: 12px; } .letter { font: 700 20px Consolas, monospace; } .cname { font-size: 18px; font-weight: 600; }
+ .chead { display: flex; align-items: baseline; gap: 12px; } .now { font-size: 12.5px; font-weight: 600; color: #fff; background: #111; padding: 2px 8px; border-radius: 3px; } .letter { font: 700 20px Consolas, monospace; } .cname { font-size: 18px; font-weight: 600; }
  .cwhy { margin: 2px 0 12px 32px; max-width: 760px; color: #333; } .for { color: #555; font-size: 14px; }
  .tries { display: flex; flex-wrap: wrap; gap: 14px 20px; margin-left: 32px; } .try { display: flex; flex-direction: column; align-items: flex-start; }
  .try .bdg:first-child { margin-bottom: 8px; } .tl { font-size: 12px; color: #555; margin-top: 4px; } .try.taken .tl { color: #999; }

@@ -6457,3 +6457,13 @@ The AI's note: a and b are the truest and the finest-grained — at 36 px the wh
 **A change to the page at his "in all the colors":** a colour another type has taken was shown faded; it is shown at full strength now, with only its label saying who took it — four of the eight are taken (the format's blue · white · SOL_yellow · SOL_red), and he asked to see them all. Free for the two types left: SOL_orange · SOL_green · SOL_blue · SOL_purple, and his own 23.
 
 **Made:** `bank/language/language.json` (the choice · `candidates.beats`) · `tools/language/build_page.js` (the taken colours unfaded). Seen in the AI's pane: every drawing renders at both sizes.
+
+## §313. THE SHORT ATTACKS REOPENED — "I don't think that is the one I wanted" (2026-10-09, Opus)
+
+**What prompted it (his words, verbatim):** *"can i see the short attacks options again, I don't think that is the one I wanted, I wanted the braxton triangles but let me see the page"*.
+
+**What stands in the record:** DEC-91, his line *"c, SOL_red"* — candidate c of §307, the marcato, three, scattered. Braxton's triangles were candidate **a**. Whether c was a slip of the letter or a change of mind, the record is what he typed; he now says the triangles were what he meant.
+
+**What was done — NOTHING CHANGED, the page reopened:** `language.json` the type `shortAttacks` gains `reopen` (a sentence); the page shows its badge as "chosen so far, REOPENED" and under it EVERY candidate again (a Braxton's own · b the marcato · c the marcato, scattered — marked *the one chosen so far* · d the staccatissimo, scattered · e staccato dots · f the marcato scattered in the notation font), each in all eight colours, its own colour labelled "its colour so far" rather than "taken". **http://localhost:5500/language/index.html#shortAttacks** (the page's headings carry an id each now). The choice is rewritten at his word, and DEC-91 corrected by a NEW entry.
+
+**Read in the AI's pane:** the six candidates listed in order, c marked (the DOM read; the pane's screenshot timed out — the window was behind another).
