@@ -97,3 +97,5 @@ score/public/crop_test/
 bank/palette/photos/
 # the maker's colour chart the readings are matched against (tools/palette/lascaux_match.py) — Lascaux's own document, never committed
 bank/palette/lascaux_chart/
+# Python's cache beside tools/palette/*.py
+__pycache__/
