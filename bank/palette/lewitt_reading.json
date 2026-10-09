@@ -1,5 +1,5 @@
 {
- "_doc": "LeWitt's late acrylic colours read from photographs — tools/palette/lewitt_read.py (decibel PLAN 2.2, RUNNING_LOG §304). `families.<name>.all` = the mean of every sample; `wallOnly` = of the samples whose white is the wall the drawing is on (the better reference); `spread…DE` = how far the samples lie from the mean, in Lab dE (2 is a just-seen difference, 10 a plain one). A colour DERIVED FROM the photographs, not a measurement of the paint.",
+ "_doc": "LeWitt's late acrylic colours read from photographs — tools/palette/lewitt_read.py (decibel PLAN 2.2, RUNNING_LOG §304 · §305). `families.<name>.all` = the mean of every sample as read; `wallOnly` = of the samples whose white is the wall the drawing is on (the better reference); `wallAndBridged` = those plus the ceiling samples with their exposure set right through a shared paint (a sample's `bridge` · `bridgeK` · `bridgedHex`); `spread…DE` = how far the samples lie from the mean, in Lab dE (2 is a just-seen difference, 10 a plain one). A colour DERIVED FROM the photographs, not a measurement of the paint.",
  "method": {
   "whiteY": 0.88,
   "satMin": 30.0,
@@ -149,7 +149,15 @@
      "hex": "#E7222C",
      "chroma": 84.8,
      "hue": 33.1,
-     "share": 0.223
+     "share": 0.223,
+     "bridge": "yellow",
+     "bridgeK": 0.712,
+     "bridgedLab": [
+      42.81,
+      63.39,
+      41.37
+     ],
+     "bridgedHex": "#C71B24"
     },
     {
      "sample": "1081-b",
@@ -163,7 +171,15 @@
      "hex": "#F40011",
      "chroma": 98.4,
      "hue": 37.9,
-     "share": 0.46
+     "share": 0.46,
+     "bridge": "yellow",
+     "bridgeK": 0.654,
+     "bridgedLab": [
+      42.21,
+      67.39,
+      52.46
+     ],
+     "bridgedHex": "#CA000C"
     },
     {
      "sample": "901-a",
@@ -177,7 +193,15 @@
      "hex": "#FF242E",
      "chroma": 100.2,
      "hue": 34.7,
-     "share": 0.489
+     "share": 0.489,
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      49.62,
+      71.99,
+      49.85
+     ],
+     "bridgedHex": "#E81C25"
     },
     {
      "sample": "901-b",
@@ -191,22 +215,42 @@
      "hex": "#F40011",
      "chroma": 98.4,
      "hue": 37.9,
-     "share": 0.491
+     "share": 0.491,
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      44.13,
+      69.62,
+      54.19
+     ],
+     "bridgedHex": "#D3000D"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     44.49,
+     67.03,
+     46.24
+    ],
+    "hex": "#D11520",
+    "outOfGamut": false,
+    "n": 9,
+    "spreadMeanDE": 7.8,
+    "spreadMaxDE": 12.8
+   }
   },
   "orange": {
    "all": {
     "lab": [
-     49.51,
-     65.05,
-     49.92
+     52.21,
+     64.19,
+     53.11
     ],
-    "hex": "#DF3123",
+    "hex": "#E73B23",
     "outOfGamut": false,
-    "n": 3,
-    "spreadMeanDE": 5.0,
-    "spreadMaxDE": 7.2
+    "n": 5,
+    "spreadMeanDE": 6.7,
+    "spreadMaxDE": 9.1
    },
    "wallOnly": {
     "lab": [
@@ -262,8 +306,64 @@
      "chroma": 80.3,
      "hue": 36.2,
      "share": 0.14
+    },
+    {
+     "sample": "880-a",
+     "work": "880 Loopy Doopy",
+     "ref": "ceiling",
+     "lab": [
+      55.96,
+      60.88,
+      54.7
+     ],
+     "hex": "#F04D28",
+     "chroma": 81.8,
+     "hue": 41.9,
+     "share": 0.639,
+     "bridge": "green",
+     "bridgeK": 0.806,
+     "bridgedLab": [
+      50.98,
+      56.66,
+      50.91
+     ],
+     "bridgedHex": "#DA4523"
+    },
+    {
+     "sample": "880-b",
+     "work": "880 Loopy Doopy",
+     "ref": "ceiling",
+     "lab": [
+      56.54,
+      64.91,
+      61.1
+     ],
+     "hex": "#F7471A",
+     "chroma": 89.1,
+     "hue": 43.3,
+     "share": 0.575,
+     "bridge": "green",
+     "bridgeK": 0.718,
+     "bridgedLab": [
+      48.96,
+      58.13,
+      54.71
+     ],
+     "bridgedHex": "#D63C15"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     49.69,
+     61.99,
+     51.07
+    ],
+    "hex": "#DC3821",
+    "outOfGamut": false,
+    "n": 5,
+    "spreadMeanDE": 5.9,
+    "spreadMaxDE": 7.1
+   }
   },
   "yellow": {
    "all": {
@@ -373,7 +473,15 @@
      "hex": "#FFE610",
      "chroma": 91.5,
      "hue": 88.6,
-     "share": 0.174
+     "share": 0.174,
+     "bridge": "yellow",
+     "bridgeK": 0.712,
+     "bridgedLab": [
+      81.52,
+      1.93,
+      81.67
+     ],
+     "bridgedHex": "#F3C60C"
     },
     {
      "sample": "1081-b",
@@ -387,7 +495,15 @@
      "hex": "#FFF500",
      "chroma": 95.1,
      "hue": 95.1,
-     "share": 0.173
+     "share": 0.173,
+     "bridge": "yellow",
+     "bridgeK": 0.654,
+     "bridgedLab": [
+      81.52,
+      -7.32,
+      82.17
+     ],
+     "bridgedHex": "#E5CB00"
     },
     {
      "sample": "901-a",
@@ -401,7 +517,15 @@
      "hex": "#FFEC1B",
      "chroma": 92.3,
      "hue": 88.2,
-     "share": 0.056
+     "share": 0.056,
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      81.52,
+      2.46,
+      80.63
+     ],
+     "bridgedHex": "#F4C514"
     },
     {
      "sample": "901-b",
@@ -415,22 +539,42 @@
      "hex": "#FFE801",
      "chroma": 92.0,
      "hue": 91.4,
-     "share": 0.127
+     "share": 0.127,
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      81.52,
+      -2.04,
+      82.47
+     ],
+     "bridgedHex": "#EDC801"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     81.52,
+     4.59,
+     82.06
+    ],
+    "hex": "#F7C40A",
+    "outOfGamut": false,
+    "n": 5,
+    "spreadMeanDE": 2.5,
+    "spreadMaxDE": 4.6
+   }
   },
   "green": {
    "all": {
     "lab": [
-     62.24,
-     -54.76,
-     35.53
+     63.83,
+     -54.9,
+     38.88
     ],
-    "hex": "#23AC54",
+    "hex": "#30B151",
     "outOfGamut": false,
-    "n": 7,
-    "spreadMeanDE": 6.6,
-    "spreadMaxDE": 9.9
+    "n": 9,
+    "spreadMeanDE": 8.9,
+    "spreadMaxDE": 18.6
    },
    "wallOnly": {
     "lab": [
@@ -499,7 +643,15 @@
      "hex": "#01BB63",
      "chroma": 68.1,
      "hue": 150.8,
-     "share": 0.054
+     "share": 0.054,
+     "bridge": "yellow",
+     "bridgeK": 0.712,
+     "bridgedLab": [
+      57.89,
+      -53.04,
+      29.65
+     ],
+     "bridgedHex": "#01A054"
     },
     {
      "sample": "1081-b",
@@ -513,7 +665,15 @@
      "hex": "#00A347",
      "chroma": 67.5,
      "hue": 146.4,
-     "share": 0.073
+     "share": 0.073,
+     "bridge": "yellow",
+     "bridgeK": 0.654,
+     "bridgedLab": [
+      48.85,
+      -48.82,
+      32.39
+     ],
+     "bridgedHex": "#00863A"
     },
     {
      "sample": "901-a",
@@ -527,7 +687,15 @@
      "hex": "#01BD60",
      "chroma": 70.2,
      "hue": 149.6,
-     "share": 0.116
+     "share": 0.116,
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      56.85,
+      -52.94,
+      31.02
+     ],
+     "bridgedHex": "#019D4F"
     },
     {
      "sample": "901-b",
@@ -541,9 +709,73 @@
      "hex": "#029E44",
      "chroma": 66.2,
      "hue": 146.1,
-     "share": 0.196
+     "share": 0.196,
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      49.37,
+      -49.24,
+      33.08
+     ],
+     "bridgedHex": "#028839"
+    },
+    {
+     "sample": "880-a",
+     "work": "880 Loopy Doopy",
+     "ref": "ceiling",
+     "lab": [
+      67.76,
+      -53.93,
+      45.4
+     ],
+     "hex": "#4ABB4D",
+     "chroma": 70.5,
+     "hue": 139.9,
+     "share": 0.361,
+     "bridge": "green",
+     "bridgeK": 0.806,
+     "bridgedLab": [
+      61.96,
+      -50.2,
+      42.26
+     ],
+     "bridgedHex": "#43AA46"
+    },
+    {
+     "sample": "880-b",
+     "work": "880 Loopy Doopy",
+     "ref": "ceiling",
+     "lab": [
+      71.06,
+      -56.81,
+      55.86
+     ],
+     "hex": "#54C53E",
+     "chroma": 79.7,
+     "hue": 135.5,
+     "share": 0.412,
+     "bridge": "green",
+     "bridgeK": 0.718,
+     "bridgedLab": [
+      61.96,
+      -50.87,
+      50.02
+     ],
+     "bridgedHex": "#48AA34"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     56.98,
+     -50.89,
+     33.13
+    ],
+    "hex": "#219D4C",
+    "outOfGamut": false,
+    "n": 7,
+    "spreadMeanDE": 6.6,
+    "spreadMaxDE": 13.2
+   }
   },
   "blue": {
    "all": {
@@ -653,7 +885,15 @@
      "hex": "#0574D9",
      "chroma": 59.9,
      "hue": 281.0,
-     "share": 0.211
+     "share": 0.211,
+     "bridge": "yellow",
+     "bridgeK": 0.712,
+     "bridgedLab": [
+      41.95,
+      10.21,
+      -52.5
+     ],
+     "bridgedHex": "#0463BA"
     },
     {
      "sample": "1081-b",
@@ -667,7 +907,15 @@
      "hex": "#0978CE",
      "chroma": 52.1,
      "hue": 275.4,
-     "share": 0.216
+     "share": 0.216,
+     "bridge": "yellow",
+     "bridgeK": 0.654,
+     "bridgedLab": [
+      40.76,
+      4.24,
+      -45.06
+     ],
+     "bridgedHex": "#0662AA"
     },
     {
      "sample": "901-a",
@@ -681,7 +929,15 @@
      "hex": "#0173D3",
      "chroma": 57.5,
      "hue": 279.6,
-     "share": 0.115
+     "share": 0.115,
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      40.19,
+      8.4,
+      -49.52
+     ],
+     "bridgedHex": "#005FB0"
     },
     {
      "sample": "901-b",
@@ -695,9 +951,29 @@
      "hex": "#0166BE",
      "chroma": 54.0,
      "hue": 280.6,
-     "share": 0.119
+     "share": 0.119,
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      36.89,
+      8.88,
+      -47.62
+     ],
+     "bridgedHex": "#0157A4"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     45.5,
+     6.51,
+     -49.49
+    ],
+    "hex": "#186DBF",
+    "outOfGamut": false,
+    "n": 9,
+    "spreadMeanDE": 8.7,
+    "spreadMaxDE": 15.1
+   }
   },
   "purple": {
    "all": {
@@ -807,7 +1083,15 @@
      "hex": "#5548B8",
      "chroma": 68.0,
      "hue": 302.1,
-     "share": 0.028
+     "share": 0.028,
+     "bridge": "yellow",
+     "bridgeK": 0.712,
+     "bridgedLab": [
+      32.14,
+      32.26,
+      -51.48
+     ],
+     "bridgedHex": "#483D9E"
     },
     {
      "sample": "1081-b",
@@ -821,7 +1105,15 @@
      "hex": "#6E4CA8",
      "chroma": 56.6,
      "hue": 308.2,
-     "share": 0.034
+     "share": 0.034,
+     "bridge": "yellow",
+     "bridgeK": 0.654,
+     "bridgedLab": [
+      32.62,
+      30.35,
+      -38.59
+     ],
+     "bridgedHex": "#5A3D8A"
     },
     {
      "sample": "901-a",
@@ -835,7 +1127,15 @@
      "hex": "#674CAC",
      "chroma": 58.7,
      "hue": 305.7,
-     "share": 0.054
+     "share": 0.054,
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      32.62,
+      29.92,
+      -41.62
+     ],
+     "bridgedHex": "#553E8F"
     },
     {
      "sample": "901-b",
@@ -849,9 +1149,29 @@
      "hex": "#64489B",
      "chroma": 51.8,
      "hue": 306.9,
-     "share": 0.047
+     "share": 0.047,
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      31.85,
+      27.88,
+      -37.17
+     ],
+     "bridgedHex": "#563D86"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     35.1,
+     31.86,
+     -42.14
+    ],
+    "hex": "#5F4296",
+    "outOfGamut": false,
+    "n": 9,
+    "spreadMeanDE": 8.8,
+    "spreadMaxDE": 19.1
+   }
   },
   "black": {
    "all": {
@@ -877,7 +1197,15 @@
       1.28,
       -0.36
      ],
-     "hex": "#141213"
+     "hex": "#141213",
+     "bridge": "yellow",
+     "bridgeK": 0.667,
+     "bridgedLab": [
+      3.79,
+      0.85,
+      -0.24
+     ],
+     "bridgedHex": "#0F0D0E"
     },
     {
      "sample": "901-b",
@@ -888,9 +1216,29 @@
       0.21,
       -0.82
      ],
-     "hex": "#1F1F20"
+     "hex": "#1F1F20",
+     "bridge": "yellow",
+     "bridgeK": 0.72,
+     "bridgedLab": [
+      9.0,
+      0.19,
+      -0.74
+     ],
+     "bridgedHex": "#19191A"
     }
-   ]
+   ],
+   "wallAndBridged": {
+    "lab": [
+     6.39,
+     0.52,
+     -0.49
+    ],
+    "hex": "#151415",
+    "outOfGamut": false,
+    "n": 2,
+    "spreadMeanDE": 2.6,
+    "spreadMaxDE": 2.6
+   }
   }
  },
  "samples": [
@@ -2385,6 +2733,164 @@
     "hex": "#1F1F20",
     "share": 0.342
    }
+  },
+  {
+   "id": "880-a",
+   "work": "880 Loopy Doopy",
+   "file": "mm_work_880.jpg",
+   "ref": "ceiling",
+   "white": {
+    "asPhotographed": [
+     240,
+     235,
+     227
+    ],
+    "lab": [
+     93.23,
+     0.3,
+     4.47
+    ],
+    "pixels": 7176,
+    "gain": [
+     1.01,
+     1.059,
+     1.146
+    ],
+    "blownShare": 0.057
+   },
+   "region": {
+    "pixels": 26244,
+    "interiorShare": 0.056,
+    "paintPixels": 1472,
+    "paintClippedShare": 0.0
+   },
+   "fields": [
+    {
+     "family": "orange",
+     "hue": 41.9,
+     "chroma": 81.8,
+     "lab": [
+      55.96,
+      60.88,
+      54.7
+     ],
+     "iqr": [
+      1.3,
+      3.0,
+      1.6
+     ],
+     "share": 0.639,
+     "hex": "#F04D28",
+     "outOfGamut": false
+    },
+    {
+     "family": "green",
+     "hue": 139.9,
+     "chroma": 70.5,
+     "lab": [
+      67.76,
+      -53.93,
+      45.4
+     ],
+     "iqr": [
+      1.1,
+      2.3,
+      1.6
+     ],
+     "share": 0.361,
+     "hex": "#4ABB4D",
+     "outOfGamut": false
+    }
+   ],
+   "black": null
+  },
+  {
+   "id": "880-b",
+   "work": "880 Loopy Doopy",
+   "file": "mm_view_880.jpg",
+   "ref": "ceiling",
+   "white": {
+    "asPhotographed": [
+     225,
+     213,
+     198
+    ],
+    "lab": [
+     85.84,
+     1.62,
+     8.89
+    ],
+    "pixels": 22265,
+    "gain": [
+     1.169,
+     1.323,
+     1.558
+    ],
+    "blownShare": 0.045
+   },
+   "region": {
+    "pixels": 649728,
+    "interiorShare": 0.668,
+    "paintPixels": 434165,
+    "paintClippedShare": 0.0
+   },
+   "fields": [
+    {
+     "family": "orange",
+     "hue": 43.3,
+     "chroma": 89.1,
+     "lab": [
+      56.54,
+      64.91,
+      61.1
+     ],
+     "iqr": [
+      1.3,
+      2.7,
+      1.1
+     ],
+     "share": 0.575,
+     "hex": "#F7471A",
+     "outOfGamut": false
+    },
+    {
+     "family": "orange",
+     "hue": 45.3,
+     "chroma": 82.0,
+     "lab": [
+      59.73,
+      57.67,
+      58.29
+     ],
+     "iqr": [
+      0.9,
+      0.9,
+      1.3
+     ],
+     "share": 0.013,
+     "hex": "#F85C28",
+     "outOfGamut": false
+    },
+    {
+     "family": "green",
+     "hue": 135.5,
+     "chroma": 79.7,
+     "lab": [
+      71.06,
+      -56.81,
+      55.86
+     ],
+     "iqr": [
+      0.0,
+      0.1,
+      0.2
+     ],
+     "share": 0.412,
+     "hex": "#54C53E",
+     "outOfGamut": false
+    }
+   ],
+   "black": null
   }
  ]
 }

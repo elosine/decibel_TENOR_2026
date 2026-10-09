@@ -7,7 +7,9 @@
   "mm_view_1112-1152.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/1112-1152-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing1112/", "shows": "Wall Drawing 1112 at the left, Wall Drawing 1152, Whirls and twirls, across the right" },
   "cu_1081.jpg": { "url": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2028/iphone_processed_Wall_Drawing_1081.jpg", "page": "https://app.cuseum.com/art/sol-lewitt-wall-drawing-1081", "shows": "Wall Drawing 1081, Planes of color — the painted wall, floor to ceiling" },
   "cu_901.jpg": { "url": "https://spotzer-prod.cuseum.com/uploads/attachment/file/2019/iphone_processed_Wall_Drawing_901.jpg", "page": "https://app.cuseum.com/art/sol-lewitt-wall-drawing-901", "shows": "Wall Drawing 901 — flat stripes, the glossy black form over them" },
-  "mm_view_901-1081.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/sol_lewitt_901-1081-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing901", "shows": "Wall Drawing 901 at the left, Wall Drawing 1081 across the right" }
+  "mm_view_901-1081.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/sol_lewitt_901-1081-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing901", "shows": "Wall Drawing 901 at the left, Wall Drawing 1081 across the right" },
+  "mm_work_880.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/880.jpg", "page": "https://massmoca.org/event/walldrawing880/", "shows": "Wall Drawing 880, Loopy Doopy (orange and green), 1998 — the whole wall in its room, a white partition at its left end. Fetched 2026-10-09 at his second yes, to settle the orange (RUNNING_LOG §305)" },
+  "mm_view_880.jpg": { "url": "https://massmoca.org/wp-content/uploads/2015/12/sol_lewitt_880-1920x762.jpg", "page": "https://massmoca.org/event/walldrawing880/", "shows": "Wall Drawing 880 — the left two thirds of the SAME photograph as mm_work_880.jpg, four times larger; no white wall in it, only the ceiling" }
  },
  "duplicates": {
   "mm_work_958.jpg": "https://massmoca.org/wp-content/uploads/2015/12/958.jpg — the photograph of cu_958.jpg, smaller",
@@ -24,6 +26,8 @@
   { "id": "1081-a", "work": "1081 Planes of color", "file": "cu_1081.jpg", "region": [0.20, 0.36, 0.86, 0.66], "white": [0.0, 0.0, 1.0, 0.30], "ref": "ceiling" },
   { "id": "1081-b", "work": "1081 Planes of color", "file": "mm_view_901-1081.jpg", "region": [0.46, 0.13, 1.00, 0.70], "white": [0.0, 0.0, 0.60, 0.10], "ref": "ceiling" },
   { "id": "901-a", "work": "901", "file": "cu_901.jpg", "region": [0.23, 0.14, 0.86, 0.78], "white": [0.20, 0.0, 1.0, 0.12], "ref": "ceiling" },
-  { "id": "901-b", "work": "901", "file": "mm_view_901-1081.jpg", "region": [0.0, 0.16, 0.29, 0.68], "white": [0.0, 0.0, 0.60, 0.10], "ref": "ceiling" }
+  { "id": "901-b", "work": "901", "file": "mm_view_901-1081.jpg", "region": [0.0, 0.16, 0.29, 0.68], "white": [0.0, 0.0, 0.60, 0.10], "ref": "ceiling" },
+  { "id": "880-a", "work": "880 Loopy Doopy", "file": "mm_work_880.jpg", "region": [0.10, 0.34, 0.60, 0.60], "white": [0.20, 0.0, 1.0, 0.12], "ref": "ceiling", "_refNote": "the white partition at the wall's left end is BLOWN OUT in this photograph (red channel 255 on every pixel of it, measured) — no use as a reference; the ceiling it is" },
+  { "id": "880-b", "work": "880 Loopy Doopy", "file": "mm_view_880.jpg", "region": [0.0, 0.06, 0.60, 0.80], "white": [0.62, 0.0, 1.0, 0.12], "ref": "ceiling" }
  ]
 }

@@ -200,8 +200,29 @@ def main():
             hx, clipped = hex_of(m)
             return {'lab': [round(float(v), 2) for v in m], 'hex': hx, 'outOfGamut': clipped, 'n': len(rs), 'spreadMeanDE': round(float(de.mean()), 1), 'spreadMaxDE': round(float(de.max()), 1)}
         wall = [r for r in rows if r['ref'] == 'wall']
-        fam[name] = {'all': centre(rows), 'wallOnly': centre(wall) if wall else None, 'samples': rows}
-    out = {'_doc': 'LeWitt\'s late acrylic colours read from photographs — tools/palette/lewitt_read.py (decibel PLAN 2.2, RUNNING_LOG §304). `families.<name>.all` = the mean of every sample; `wallOnly` = of the samples whose white is the wall the drawing is on (the better reference); `spread…DE` = how far the samples lie from the mean, in Lab dE (2 is a just-seen difference, 10 a plain one). A colour DERIVED FROM the photographs, not a measurement of the paint.',
+        fam[name] = {'all': centre(rows), 'wallOnly': centre(wall) if wall else None, 'samples': rows, '_centre': centre}
+    # THE BRIDGE (RUNNING_LOG §305): a photograph whose only white is the ceiling has its EXPOSURE wrong (the beams are in other light than
+    # the wall: on 901 and 1081 the yellow came out lighter than the white). A paint it SHARES with the wall photographs sets it right: its
+    # exposure is scaled until that paint is as light as the wall photographs' mean of it — the YELLOW where it has one (the family they
+    # agree on best), else the GREEN (880 is orange and green only). One number per photograph; the hue and the cast are left as read.
+    # It assumes the shared paint is the same paint in both works. The bridge family's own row is not evidence (it was forced).
+    Y_of = lambda lab: ((lab[0] + 16) / 116) ** 3
+    for s in samples:
+        if s['ref'] == 'wall': continue
+        mine = {n: next((r for r in v['samples'] if r['sample'] == s['id']), None) for n, v in fam.items()}
+        via = next((b for b in ('yellow', 'green') if mine.get(b) and fam[b]['wallOnly']), None)
+        if not via: continue
+        k = Y_of(fam[via]['wallOnly']['lab']) / Y_of(mine[via]['lab'])
+        for n, r in mine.items():
+            if not r: continue
+            lab_b = lin_to_lab(lab_to_lin(np.array(r['lab'])) * k)
+            r['bridge'] = via; r['bridgeK'] = round(float(k), 3)
+            r['bridgedLab'] = [round(float(v), 2) for v in lab_b]; r['bridgedHex'] = hex_of(lab_b)[0]
+    for name, v in fam.items():
+        centre = v.pop('_centre')
+        rs = [{'lab': r['lab']} for r in v['samples'] if r['ref'] == 'wall'] + [{'lab': r['bridgedLab']} for r in v['samples'] if r.get('bridgedLab') and r.get('bridge') != name]
+        v['wallAndBridged'] = centre(rs) if rs else None
+    out = {'_doc': 'LeWitt\'s late acrylic colours read from photographs — tools/palette/lewitt_read.py (decibel PLAN 2.2, RUNNING_LOG §304 · §305). `families.<name>.all` = the mean of every sample as read; `wallOnly` = of the samples whose white is the wall the drawing is on (the better reference); `wallAndBridged` = those plus the ceiling samples with their exposure set right through a shared paint (a sample\'s `bridge` · `bridgeK` · `bridgedHex`); `spread…DE` = how far the samples lie from the mean, in Lab dE (2 is a just-seen difference, 10 a plain one). A colour DERIVED FROM the photographs, not a measurement of the paint.',
            'method': {'whiteY': WHITE_Y, 'satMin': SAT_MIN, 'interiorDE': INTERIOR_DE, 'k': K, 'mergeDE': MERGE_DE, 'minShare': MIN_SHARE, 'families': FAMILIES},
            'families': fam, 'samples': samples}
     with open(OUT, 'w', encoding='utf-8', newline='\n') as fh: json.dump(out, fh, indent=1, ensure_ascii=False); fh.write('\n')
@@ -211,6 +232,11 @@ def main():
         print('%-7s all %s (n %d, spread mean %.1f max %.1f)%s' % (name, a['hex'], a['n'], a['spreadMeanDE'], a['spreadMaxDE'],
               '   wall-only %s (n %d, spread mean %.1f max %.1f)' % (w['hex'], w['n'], w['spreadMeanDE'], w['spreadMaxDE']) if w else ''))
         print('        ' + '  '.join('%s %s' % (r['sample'], r['hex']) for r in v['samples']))
+        br = [r for r in v['samples'] if r.get('bridgedHex')]
+        if br:
+            b = v['wallAndBridged']
+            print('        bridged: ' + '  '.join('%s %s (via %s x%.2f)' % (r['sample'], r['bridgedHex'], r['bridge'], r['bridgeK']) for r in br))
+            if b: print('        wall + bridged %s (n %d, spread mean %.1f max %.1f)' % (b['hex'], b['n'], b['spreadMeanDE'], b['spreadMaxDE']))
     print('\nwrote', os.path.relpath(OUT, ROOT))
 
 if __name__ == '__main__': main()

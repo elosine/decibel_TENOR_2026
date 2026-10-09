@@ -27,12 +27,19 @@ const fam = LW.families;
 let lewitt = '';
 for (const name of ORDER) {
   const f = fam[name]; if (!f) continue;
-  const best = f.wallOnly || f.all;
+  // TWO large swatches where the two readings differ (§305): the photographs with the white wall beside the drawing, as read · every
+  // photograph, the ceiling-lit ones EVENED (their exposure set right through a paint they share with the wall photographs)
+  const wo = f.wallOnly, wb = f.wallAndBridged;
+  const plural = n => n + ' photograph' + (n > 1 ? 's' : '');
   const wall = f.samples.filter(s => s.ref === 'wall'), ceil = f.samples.filter(s => s.ref !== 'wall');
+  const evened = ceil.filter(s => s.bridgedHex && s.bridge !== name), forced = ceil.filter(s => s.bridge === name);
   lewitt += '<section class="fam"><h3>' + esc(name) + '</h3><div class="row">' +
-    big(best.hex, 'LeWitt ' + name, (f.wallOnly ? best.n + ' photograph' + (best.n > 1 ? 's' : '') + ' on a white wall' : best.n + ' photographs') + ' · ' + agree(best.spreadMeanDE)) +
-    '<div class="each"><div class="cap">each photograph, white wall beside the drawing</div><div class="smalls">' + (wall.length ? wall.map(s => small(s.hex, s.sample)).join('') : '<span class="none">none</span>') + '</div>' +
-    (ceil.length ? '<div class="cap dim">brighter photographs — their white is the ceiling, a weak reference; not in the mean</div><div class="smalls">' + ceil.map(s => small(s.hex, s.sample, 'dim')).join('') + '</div>' : '') +
+    (wo ? big(wo.hex, 'white-wall photographs', plural(wo.n) + ' · ' + agree(wo.spreadMeanDE)) : '') +
+    (wb && (!wo || wb.n > wo.n) ? big(wb.hex, 'all photographs, evened', plural(wb.n) + ' · ' + agree(wb.spreadMeanDE)) : '') +
+    (!wo && !wb ? big(f.all.hex, 'as photographed', plural(f.all.n)) : '') +
+    '<div class="each"><div class="cap">each photograph with a white wall beside the drawing</div><div class="smalls">' + (wall.length ? wall.map(s => small(s.hex, s.sample)).join('') : '<span class="none">none</span>') + '</div>' +
+    (evened.length ? '<div class="cap dim">the other photographs, evened through a paint they share (' + [...new Set(evened.map(s => s.bridge))].join(' · ') + ')</div><div class="smalls">' + evened.map(s => small(s.bridgedHex, s.sample, 'dim')).join('') + '</div>' : '') +
+    (forced.length ? '<div class="cap dim">the photographs evened BY this colour — shown as photographed, too bright; not evidence</div><div class="smalls">' + forced.map(s => small(s.hex, s.sample, 'dim')).join('') + '</div>' : '') +
     '</div></div></section>';
 }
 
@@ -40,9 +47,10 @@ const byFam = {};
 for (const c of CLR.colours) (byFam[c.family] = byFam[c.family] || []).push(c);
 let side = '';
 for (const name of ['red', 'orange', 'yellow', 'green', 'blue', 'purple']) {
-  const f = fam[name]; const best = f && (f.wallOnly || f.all);
+  const f = fam[name]; const wo = f && f.wallOnly, wb = f && f.wallAndBridged;
+  const lw = (c, label) => '<div class="sidesw lw" style="background:' + c.hex + ';color:' + ink(c.hex) + '">LeWitt · ' + label + '<br>' + esc(c.hex) + '</div>';
   side += '<div class="siderow"><div class="sidename">' + esc(name) + '</div>' +
-    (best ? '<div class="sidesw lw" style="background:' + best.hex + ';color:' + ink(best.hex) + '">LeWitt<br>' + esc(best.hex) + '</div>' : '') +
+    (wo ? lw(wo, 'white wall') : '') + (wb && (!wo || wb.n > wo.n) ? lw(wb, 'all, evened') : '') +
     (byFam[name] || []).map(c => '<div class="sidesw" style="background:' + c.value + ';color:' + ink(c.value) + '">' + esc(c.name) + '<br>' + esc(c.value) + '</div>').join('') + '</div>';
 }
 let mine = '';
@@ -75,7 +83,8 @@ const html = `<!doctype html>
 <p class="note">A colour here is DERIVED from photographs. It is not a measurement of the paint. Each one is a starting value for your eye.</p>
 
 <h2>1 · LeWitt, read from the photographs</h2>
-<p>The large swatch is the mean of the photographs in which the drawing sits on a white wall. The small ones are each photograph alone, so you can see how far they disagree.</p>
+<p>Two large swatches for each colour. The first is the mean of the photographs in which the drawing sits on a white wall. The second adds the other photographs, their brightness evened through a paint they share with the first group. The small ones are each photograph alone, so you can see how far they disagree.</p>
+<p class="note">The paint: Lascaux Artist acrylic, six colours, in layers — the maker's own page for LeWitt's Zurich murals of 2004 says so. Its shade names are not published.</p>
 <p class="note">${esc(works)}</p>
 ${lewitt}
 
