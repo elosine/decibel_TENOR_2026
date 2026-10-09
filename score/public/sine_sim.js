@@ -14,10 +14,12 @@
 //   who 'sine'     the player holds; `gliss` is the SINE BRICK's — { kind: to | from | through | around, from, to } in cents
 //                  (electronics/score/le_sine.js)
 //   sineMidi       the sine's pitch: the note's key, plus the lane's sineOctave and sineCents (a crotale sounds two octaves above its key)
-//   A lane whose `who` is 'sine' draws its farthest beating from `beatHz` (beats a second → cents AT THAT PITCH: the same beat is
-//   more cents the lower the note — 30 a second is 48 c on a C6 crotale and 590 c on the cello's D2); `side` 'over' | 'under' fixes
-//   the side (absent: a coin) and then the sine never crosses the pitch — no `through`. The cello is such a lane since 2026-10-08 (RUNNING_LOG §262): its sampler bends 100 cents at the most,
-//   4 beats a second on a D2 — so in the SIMULATION the sine moves; in concert the cellist bends.
+//   A lane may give its range as `beatHz` instead of `cents` — BEATS A SECOND, turned into cents at the note's own pitch (the same
+//   beat is more cents the lower the note — 30 a second is 48 c on a C6 crotale and 590 c on the cello's D2); for a bending player
+//   as for a gliding sine. `side` 'over' | 'under' fixes the side (absent: a coin); a gliding sine with a side never crosses the
+//   pitch (no `through`). The cello is `beatHz` [25, 35] over since 2026-10-08 (RUNNING_LOG §262 · §263): the CELLO bends, the
+//   sine static — a bend past the sampler's ±1 st is RE-KEYED by the GO (sine_go.js rekeyChain, the string quartet's rule), so the
+//   draw is capped by the PLAYER's limit only (opts.limitCents = playerBendSt × 100).
 // The numbers are the piece's — bank/sine_behaviours.json, read through config(); DEFAULTS below is the same file's shape, so the
 // module stands without it. The same seed, the same draw: a save reproduces what he heard.
 //   node tools/sine_check.js   checks it.
@@ -101,11 +103,17 @@ function draw(cfg, instKey, midi, lenS, rnd, opts) {
             through: 'the sine crosses from ' + Math.abs(c) + ' c ' + where + ' to ' + Math.abs(gliss.to) + ' c on the other side', around: 'the sine goes out to ' + Math.abs(c) + ' c ' + where + ' and back' }[kind];
         return { who: 'sine', voice: L.voice, kind, cents: c, sineMidi, bend: null, gliss, beatsFrom: r1(beats(sineMidi, ends[0])), beatsTo: r1(beats(sineMidi, ends[1])), say };
     }
-    const kind = pick(cfg.player.kinds, rnd) || 'toUnison';
-    const lo = +(L.cents || [8, 50])[0], hi = +(L.cents || [8, 50])[1];
+    // a sided player never crosses the pitch either (the cello bending UP from its D2: below is its C string) — no `through`
+    const pKinds = L.side ? Object.fromEntries(Object.entries(cfg.player.kinds).filter(([k]) => k !== 'through')) : cfg.player.kinds;
+    const kind = pick(pKinds, rnd) || 'toUnison';
+    // the range: `cents` as it was, or `beatHz` — BEATS A SECOND, turned into cents at this note's own pitch (§262 · §263: the same
+    // beat is more cents the lower the note — 30 a second is 590 c on the cello's D2, 48 c on a C6); the draws in the same order either way
+    const band = L.beatHz || L.cents || [8, 50], lo = +band[0], hi = +band[1];
     let c = lo + (hi - lo) * rnd();
-    if (kind === 'hold') c = lo + (hi - lo) * 0.35 * rnd();          // a steady offset is a small one
-    if (kind === 'waver') c = lo + (hi - lo) * 0.3 * rnd();
+    if (kind === 'hold') c = L.beatHz ? lo * (0.1 + 0.25 * rnd()) : lo + (hi - lo) * 0.35 * rnd();   // a steady offset is a small one (in beats: a tenth to a third of the band's floor)
+    if (kind === 'waver') c = L.beatHz ? lo * (0.1 + 0.2 * rnd()) : lo + (hi - lo) * 0.3 * rnd();
+    if (L.beatHz) c = Math.abs(centsFor(sineMidi, Math.max(0.2, c), sign));
+    // the limit is the PLAYER's (opts.limitCents = playerBendSt); the sampler's range is the re-key's business (sine_go.js rekeyChain)
     c = r1(Math.min(c, limit)) * sign;
     const o = { settle: between(cfg.player.settle, rnd), leave: between(cfg.player.leave, rnd), ease: pick(cfg.player.ease, rnd) || 'linear', far: 0.3 + 0.7 * rnd() };
     const bend = playerBend(kind, c, lenS, o), cs = bend.map((p) => p[1]);

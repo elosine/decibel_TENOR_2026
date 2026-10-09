@@ -90,7 +90,8 @@ function load() {
             ceilingS: p.ceilingS, targetS: p.targetS, gapS: p.gapS, sineLevel: p.sineLevel != null ? p.sineLevel : null };
     });
     if (!PLAYERS.length) fail('players');
-    return { CFG, INSTRUMENTS, TRACKS, REMAP, cfg, chord, PLAYERS, LEN, START, LB, RB, FIRST, MIN, JIT, SHARE, SINE_LEVEL, C, D };
+    const REDO = (CFG.start.redo || []).map((k) => { const p = PLAYERS.find((q) => q.inst === k); if (!p) fail('start.redo names ' + k + ', not one of players[]'); return p; });
+    return { CFG, INSTRUMENTS, TRACKS, REMAP, cfg, chord, PLAYERS, REDO, LEN, START, LB, RB, FIRST, MIN, JIT, SHARE, SINE_LEVEL, C, D };
 }
 
 // ---- a phrase cut into notes by the breath model -------------------------------------------------------------------------------
@@ -164,9 +165,18 @@ function make(S, rolled) {
     const objects = JSON.parse(JSON.stringify((base.objects || []).filter((o) => startOf(o) < S.START)));
     for (const o of objects) {
         o.properties = Object.assign({}, o.properties, { start: S.CFG.start.from });
-        if (o.type === 'zone' && o.midiModel === 'elecSine' && o.elec) o.elec.track = { on: true };
+        if (o.type === 'zone' && o.midiModel === 'elecSine' && o.elec) {
+            o.elec.track = { on: true };
+            const p = S.PLAYERS.find((q) => q.lane === o.layer);   // a player's own mark on its start bricks too (§263)
+            if (p && p.sineLevel) o.elec.level = Object.assign({}, o.elec.level, { mode: 'flat', mark: p.sineLevel });
+        }
     }
     let nextId = Math.max(+base.nextId || 1, ...objects.map((o) => (+String(o.id).replace(/^\D+/, '') || 0) + 1));
+    // THE START'S REDO (§263): these players' notes of the start go through the GO again — the current behaviours, this seed; a
+    // brick already there is re-pitched and keeps its span; a bend past the sampler's range is re-keyed (the chain's segments carry the start's tag)
+    const redoNotes = objects.filter((o) => o.type === 'waveCurve' && o.sonifyNote != null && S.REDO.some((p) => p.lane === o.layer) && !(o.properties.sine && o.properties.sine.segment && o.properties.sine.segment.of !== o.id));
+    const redo = redoNotes.length ? SineGo.convert(redoNotes, { objects, instruments: S.INSTRUMENTS, tracks: S.TRACKS, cfg: S.cfg, seed: rolled.seed, take: S.CFG.take, newId: () => 'zn-' + (nextId++), newNoteId: () => 'wc-' + (nextId++) }) : { done: [], skipped: [], lines: [] };
+    if (redo.done.length !== redoNotes.length) throw new Error('the start\'s redo made ' + redo.done.length + ' of ' + redoNotes.length + ': ' + redo.skipped.map((s) => s.why).join(' · '));
     const level = MARKS.indexOf(S.CFG.level), notes = [], bricks = [];
     const velFor = (inst, midi, mark) => Math.max(1, Math.min(127, Math.round(TextureDyn.ladderVel(S.REMAP, inst, midi, mark / 7))));
     for (const ph of rolled.phrases) {
@@ -208,22 +218,23 @@ function make(S, rolled) {
         } else o.recVel = velFor(p.inst, pitch, level);
         delete o._marks;
     }
-    const go = SineGo.convert(notes, { objects, instruments: S.INSTRUMENTS, tracks: S.TRACKS, cfg: S.cfg, seed: rolled.seed, take: S.CFG.take, newId: () => 'zn-' + (nextId++) });
+    const go = SineGo.convert(notes, { objects, instruments: S.INSTRUMENTS, tracks: S.TRACKS, cfg: S.cfg, seed: rolled.seed, take: S.CFG.take, newId: () => 'zn-' + (nextId++), newNoteId: () => 'wc-' + (nextId++) });
     if (go.done.length !== notes.length) throw new Error('the GO made ' + go.done.length + ' of ' + notes.length + ': ' + go.skipped.map((s) => s.why).join(' · '));
     objects.sort((a, b) => startOf(a) - startOf(b));
-    return { base, objects, nextId, notes, bricks, go };
+    return { base, objects, nextId, notes, bricks, go, redo };
 }
 
 const paceOf = (ph) => ph.notes.map(([a, b]) => r2(b - a).toFixed(1)).join(' ');
 function sheet(S, rolled, made, name, command) {
     const C = S.CFG, dens = rolled.density, brickOf = (ph) => made.bricks.find((z) => z.properties.phrase.i === ph.i);
-    const how = (ph) => { const z = brickOf(ph), n = made.notes.filter((o) => o.properties.phrase.i === ph.i), kinds = n.map((o) => o.properties.sine.kind); return ph.player.who === 'sine' ? 'the sine: ' + z.elec.gliss.kind + ' ' + z.elec.gliss.from + ' → ' + z.elec.gliss.to + ' c, each bowing' : kinds.join(' · '); };
+    const how = (ph) => { const z = brickOf(ph), n = made.notes.filter((o) => o.properties.phrase.i === ph.i), kinds = n.map((o) => o.properties.sine.kind + (o.properties.sine.chain ? ' (' + Math.abs(o.properties.sine.cents) + ' c, re-keyed ×' + (o.properties.sine.chain.length + 1) + ')' : '')); return ph.player.who === 'sine' ? 'the sine: ' + z.elec.gliss.kind + ' ' + z.elec.gliss.from + ' → ' + z.elec.gliss.to + ' c, each bowing' : kinds.join(' · '); };
+    const redoLine = S.REDO.length ? ' The start\'s ' + S.REDO.map((p) => p.label).join(' and ') + ' notes went through the GO again here (`start.redo`): ' + (made.redo.lines || []).join(' | ') + '.' : '';
     return [
         '# ' + name + ' — the beating section, seed ' + rolled.seed,
         '',
         '*Written by `' + command + '` — rendered from the tool, never edited by hand (PLAN.md § 1.8; DEC-58 … 58c; RUNNING_LOG §255 … §260).*',
         '',
-        '**What it is:** ' + S.LEN + ' s. The players hold long tones against sines and bend until the pair beats. It begins with `' + C.start.from + '` as it is (0 … ' + S.START + ' s — your word: "I\'ll keep that as the start"); from there each player plays PHRASES on the take `' + C.take + '`: a phrase ' + S.LB[0][0] + ' … ' + S.LB[S.LB.length - 1][1] + ' s, then a rest ' + S.RB[0][0] + ' … ' + S.RB[S.RB.length - 1][1] + ' s. Inside a phrase the player re-breathes (or re-bows) by the breath model — ' + S.PLAYERS.map((p) => { const ph = rolled.phrases.find((x) => x.player === p); return p.label + ' ≤ ' + (ph ? ph.ceil : '?') + ' s' + (ph && ph.gapS ? ', ' + ph.gapS + ' s between' : ''); }).join(' · ') + '. Over each phrase lies ONE sine brick, written `' + S.SINE_LEVEL + '`' + (S.PLAYERS.some((p) => p.sineLevel) ? ' (' + S.PLAYERS.filter((p) => p.sineLevel).map((p) => 'the ' + p.label + '\'s `' + p.sineLevel + '`').join(', ') + ')' : '') + ' — and every brick is a WINDOW: the sine is silent until its player sounds, comes in with them, follows their rise and fall, holds through a breath and goes when they stop. The crotales hold their pitch and their SINE glides, again at each bowing.',
+        '**What it is:** ' + S.LEN + ' s. The players hold long tones against sines and bend until the pair beats. It begins with `' + C.start.from + '` as it is (0 … ' + S.START + ' s — your word: "I\'ll keep that as the start"); from there each player plays PHRASES on the take `' + C.take + '`: a phrase ' + S.LB[0][0] + ' … ' + S.LB[S.LB.length - 1][1] + ' s, then a rest ' + S.RB[0][0] + ' … ' + S.RB[S.RB.length - 1][1] + ' s. Inside a phrase the player re-breathes (or re-bows) by the breath model — ' + S.PLAYERS.map((p) => { const ph = rolled.phrases.find((x) => x.player === p); return p.label + ' ≤ ' + (ph ? ph.ceil : '?') + ' s' + (ph && ph.gapS ? ', ' + ph.gapS + ' s between' : ''); }).join(' · ') + '. Over each phrase lies ONE sine brick, written `' + S.SINE_LEVEL + '`' + (S.PLAYERS.some((p) => p.sineLevel) ? ' (' + S.PLAYERS.filter((p) => p.sineLevel).map((p) => 'the ' + p.label + '\'s `' + p.sineLevel + '`').join(', ') + ')' : '') + ' — and every brick is a WINDOW: the sine is silent until its player sounds, comes in with them, follows their rise and fall, holds through a breath and goes when they stop. The crotales hold their pitch and their SINE glides, again at each bowing. A bend past the sampler\'s ±1 st is RE-KEYED (the string quartet\'s rule: the key moves, the bend re-based, a 5 ms overlap at the seam) — "re-keyed ×n" below.' + redoLine,
         '',
         '**The test — the crescendo phrases:** ' + (rolled.phrases.filter((ph) => ph.cresc).map((ph) => ph.player.label + ' ' + (C.labels.phrase || 'P') + ph.n + ' at ' + K.clock(ph.start) + ' … ' + K.clock(ph.end) + ' (' + ph.start.toFixed(1) + ' … ' + ph.end.toFixed(1) + ' s), ' + ph.cresc.from + ' → ' + ph.cresc.to).join(' · ') || 'none') + '. The player\'s notes rise across the whole phrase; the sine under them should rise with them (the tracker moves it by at most ±8 dB — `bank/elec_route.json` `sine.track.capDb`).',
         '',

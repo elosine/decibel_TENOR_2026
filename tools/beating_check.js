@@ -13,7 +13,7 @@
 // THE SORTING: the piece's (its score, its data).
 'use strict';
 const fs = require('fs'), path = require('path');
-const K = require('./audition_kit.js'), B = require('./build_beating_section.js'), SineSim = require(path.join(K.ROOT, 'score', 'public', 'sine_sim.js'));
+const K = require('./audition_kit.js'), B = require('./build_beating_section.js'), SineSim = require(path.join(K.ROOT, 'score', 'public', 'sine_sim.js')), SineGo = require(path.join(K.ROOT, 'score', 'public', 'sine_go.js'));
 const ROOT = K.ROOT, NAME = K.arg('score', 'beating-section');
 const file = path.join(ROOT, 'scores', NAME + '.json');
 if (!fs.existsSync(file)) { console.error('no such score: ' + K.rel(file)); process.exit(2); }
@@ -38,8 +38,10 @@ const base = K.readJson(path.join(ROOT, 'scores', CFG.start.from + '.json'));
 const startOf = (o) => (o.startTime != null ? o.startTime : o.startSeconds);
 const strip = (o) => { const c = JSON.parse(JSON.stringify(o)); if (c.elec) delete c.elec.track; if (c.properties) delete c.properties.start; delete c.midiSnippet; delete c.mutedBy; return JSON.stringify(c); };
 const wantStart = (base.objects || []).filter((o) => startOf(o) < S.START), haveStart = wantStart.map((o) => objects.find((x) => x.id === o.id));
-check('the start is `' + CFG.start.from + '` as it is, to ' + S.START + ' s — but for the window', haveStart.every(Boolean) && wantStart.every((o, i) => { const a = JSON.parse(strip(o)), b = JSON.parse(strip(haveStart[i])); delete a.midiSnippet; delete b.midiSnippet; return JSON.stringify(a) === JSON.stringify(b); }),
-    wantStart.length + ' objects of the start · ' + haveStart.filter(Boolean).length + ' found');
+const redoLane = (o) => S.REDO.some((p) => p.lane === o.layer);   // a redo player's start notes and bricks are the GO's again (§263): present, not compared
+check('the start is `' + CFG.start.from + '` as it is, to ' + S.START + ' s — but for the window' + (S.REDO.length ? ' and the ' + S.REDO.map((p) => p.label).join(' / ') + ' redo' : ''),
+    haveStart.every(Boolean) && wantStart.every((o, i) => { if (redoLane(o)) return true; const a = JSON.parse(strip(o)), b = JSON.parse(strip(haveStart[i])); delete a.midiSnippet; delete b.midiSnippet; return JSON.stringify(a) === JSON.stringify(b); }),
+    wantStart.length + ' objects of the start · ' + haveStart.filter(Boolean).length + ' found' + (S.REDO.length ? ' · ' + wantStart.filter(redoLane).length + ' of them redone' : ''));
 
 // the phrases
 const byPlayer = {};
@@ -60,7 +62,8 @@ for (const z of bricks) {
     ns.forEach((o, k) => {
         const L = o.endSeconds - o.startSeconds; longest = Math.max(longest, L);
         if (L > P.ceilingS + 0.002) badLen.push(o.id + ' ' + r2(L) + ' > ' + P.ceilingS);
-        if (k > 0) { const g = o.startSeconds - ns[k - 1].endSeconds; if (Math.abs(g - P.gapS) > 0.06 && !(g > P.gapS)) badGap.push(o.id + ' ' + r2(g)); if (P.gapS === 0 && Math.abs(g) > 0.002) badGap.push(o.id + ' ' + r2(g)); }
+        const seam = !!(o.properties.sine && o.properties.sine.segment && o.properties.sine.segment.of !== o.id);   // a re-keyed segment: the seam is checked below, not as a breath
+        if (k > 0 && !seam) { const g = o.startSeconds - ns[k - 1].endSeconds; if (Math.abs(g - P.gapS) > 0.06 && !(g > P.gapS)) badGap.push(o.id + ' ' + r2(g)); if (P.gapS === 0 && Math.abs(g) > 0.002) badGap.push(o.id + ' ' + r2(g)); }
     });
     if (!ns.length || Math.abs(ns[0].startSeconds - z.startTime) > 0.002 || Math.abs(ns[ns.length - 1].endSeconds - z.endTime) > 0.002) badSpan.push(z.id);
 }
@@ -84,8 +87,42 @@ check('a gliding sine beats inside its lane\'s band of beats a second, on the si
 
 // the pitches: the take's
 const pc = (m) => ((Math.round(m) % 12) + 12) % 12;
-const takeOk = notes.every((o) => S.chord.some((n) => n.lane === o.layer && pc(n.midi) === pc(o.sonifyNote))) && bricks.every((z) => { const ns = notesOf(z), L = S.cfg.lanes[z.properties.phrase.player]; return ns.length && Math.abs(z.elec.midi - (ns[0].sonifyNote + (+L.sineOctave || 0) + (+L.sineCents || 0) / 100)) < 0.0001; });
-check('every pitch is the take\'s, and every sine stands on its player\'s sounding pitch', takeOk, S.PLAYERS.map((p) => p.label + ' ' + K.noteName((notes.find((o) => o.layer === p.lane) || {}).sonifyNote || 0)).join(' · ') + ' (the take "' + CFG.take + '")');
+const keyOf = (o) => o.sonifyNote - ((o.properties.sine && o.properties.sine.keyOffset) || 0);   // a re-keyed segment's WRITTEN key (its MIDI key is moved, the bend re-based)
+const takeOk = notes.every((o) => S.chord.some((n) => n.lane === o.layer && pc(n.midi) === pc(keyOf(o)))) && bricks.every((z) => { const ns = notesOf(z), L = S.cfg.lanes[z.properties.phrase.player]; return ns.length && Math.abs(z.elec.midi - (keyOf(ns[0]) + (+L.sineOctave || 0) + (+L.sineCents || 0) / 100)) < 0.0001; });
+check('every pitch is the take\'s, and every sine stands on its player\'s sounding pitch', takeOk, S.PLAYERS.map((p) => p.label + ' ' + K.noteName(keyOf(notes.find((o) => o.layer === p.lane) || { sonifyNote: 0, properties: {} }))).join(' · ') + ' (the take "' + CFG.take + '")');
+// THE RE-KEY (§263 — the string quartet's rule): every chain in the score — the start's redo and the phrases' — its segments in order,
+// 5 ms overlaps, every bend inside the sampler's range, the SOUNDING pitch continuous at each seam, the brick over the whole chain
+const chains = objects.filter((o) => o.type === 'waveCurve' && o.properties && o.properties.sine && Array.isArray(o.properties.sine.chain));
+const chainBad = [];
+let seams = 0, worstSeam = 0, farthest = 0;
+for (const o of chains) {
+    const inst = S.INSTRUMENTS[S.TRACKS[o.layer].instKey], R = 100 * (inst.bendRangeSt || 1), segs = [o].concat(o.properties.sine.chain.map((id) => objects.find((x) => x.id === id)));
+    if (segs.some((x) => !x)) { chainBad.push(o.id + ' a segment missing'); continue; }
+    const z = objects.find((x) => x.id === o.properties.sine.brick), last = segs[segs.length - 1].endSeconds;
+    if (!z) chainBad.push(o.id + ' no brick');
+    else if (z.properties && z.properties.sine && Array.isArray(z.properties.sine.notes)) {   // a phrase's brick: over the whole phrase, and it names the segments
+        if (!segs.every((x) => z.properties.sine.notes.includes(x.id)) || z.startTime > o.startSeconds + 0.002 || z.endTime < last - 0.002) chainBad.push(o.id + ' the phrase\'s brick does not hold the chain');
+    } else if (Math.abs(z.startTime - o.startSeconds) > 0.002 || Math.abs(z.endTime - last) > 0.002) chainBad.push(o.id + ' the brick does not span the chain');
+    segs.forEach((x, k) => {
+        const bend = x.morphBend || [];
+        if (!bend.length || bend.some((p) => Math.abs(p[1]) > R + 1e-6)) chainBad.push(x.id + ' a bend past the sampler\'s ±' + R + ' c');
+        farthest = Math.max(farthest, ...bend.map((p) => Math.abs(p[1] + ((x.properties.sine.keyOffset || 0) - (o.properties.sine.keyOffset || 0)) * 100)));
+        if (k > 0) {
+            const p = segs[k - 1], ov = p.endSeconds - x.startSeconds; seams++;
+            if (Math.abs(ov - SineGo.REKEY_OVERLAP_S) > 0.0015) chainBad.push(x.id + ' overlap ' + r2(ov * 1000) + ' ms');
+            const before = (p.properties.sine.keyOffset || 0) * 100 + SineGo.bendAt(p.morphBend, x.startSeconds - p.startSeconds), after = (x.properties.sine.keyOffset || 0) * 100 + SineGo.bendAt(x.morphBend, 0);
+            worstSeam = Math.max(worstSeam, Math.abs(before - after));
+            if (Math.abs(before - after) > 1.5) chainBad.push(x.id + ' the pitch jumps ' + r2(before - after) + ' c at the seam');
+        }
+    });
+}
+check('every re-keyed chain: the brick over the whole, 5 ms overlaps, every bend inside the sampler\'s range, the sounding pitch continuous at each seam', chainBad.length === 0,
+    chainBad.slice(0, 4).join(' · ') || chains.length + ' chains · ' + seams + ' seams · the worst jump ' + r2(worstSeam) + ' c · the farthest bend ' + r2(farthest) + ' c from the written key');
+const bendBand = S.PLAYERS.filter((p) => p.who === 'player' && S.cfg.lanes[p.inst].beatHz).map((p) => { const L = S.cfg.lanes[p.inst], mine = objects.filter((o) => o.type === 'waveCurve' && o.layer === p.lane && o.properties && o.properties.sine && !(o.properties.sine.segment && o.properties.sine.segment.of !== o.id));
+    const off = mine.filter((o) => { const b = SineSim.beats(keyOf(o), Math.abs(o.properties.sine.cents)); return Math.abs(o.properties.sine.cents) > 1 && (b < L.beatHz[0] - 0.6 || b > L.beatHz[1] + 0.6) && !['hold', 'waver'].includes(o.properties.sine.kind) || (L.side === 'over' && o.properties.sine.cents < 0); });
+    return { p, mine, off }; });
+check('a bending player drawn in beats a second: its farthest offset inside its band at its own pitch, on its side', bendBand.every((b) => b.off.length === 0),
+    bendBand.map((b) => b.p.label + ': ' + b.mine.map((o) => Math.abs(o.properties.sine.cents) + ' c = ' + r2(SineSim.beats(keyOf(o), Math.abs(o.properties.sine.cents))) + '/s').join(', ') + (b.off.length ? ' OFF ' + b.off.map((o) => o.id).join(' ') : '')).join(' ‖ ') || 'none');
 check('every note is its lane\'s long-tone voice, bent or held as the GO drew it', notes.every((o) => { const p = S.PLAYERS.find((q) => q.lane === o.layer); return o.technique === p.voice && o.properties.sine.who === p.who && (p.who === 'player' ? Array.isArray(o.morphBend) && o.morphBend.length >= 2 : !o.morphBend); }), notes.length + ' notes');
 
 // the crescendo phrases

@@ -134,7 +134,7 @@ const INSTRUMENTS = {
   // name changes, and only because loopMIDI ports are machine-global (see the header).
   // The full Xsample roster is 88 presets, identical across the instruments except the string
   // names; CC#0 = preset − 1. Channels per D11: 1 main · 2–4 curve A/B/C.
-  cello: { balanceDb: -3.87, ordinary: "senza_vel", playerBendSt: 1, bendRangeSt: 2, label: "Cello", port: "DECCello", rangeLow: 36, rangeHigh: 83, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 36, 83) },
+  cello: { balanceDb: -3.87, ordinary: "senza_vel", playerBendSt: 12, /* the PLAYER's reach, his (2026-10-08, RUNNING_LOG §263): a cellist slides along the string — a tritone for the beating section; the sampler's ±1 st is re-keyed by the GO */ bendRangeSt: 2, label: "Cello", port: "DECCello", rangeLow: 36, rangeHigh: 83, mechanism: "cc0", channels: { main: 1, curve: [2, 3, 4] }, techniques: xsStringTechs(["C", "G", "D", "A"], 36, 83) },
 };
 
 // The composer's practice (R8): the VELOCITY presets by default — the MW ones "sound different" and are
