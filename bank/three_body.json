@@ -3,7 +3,8 @@
 
   "endCapS": 10,
   "lengthS": 0,
-  "fitS": 110,
+  "fitS": 0,
+  "seed": 165,
   "_endCapS": "THE END CAP (his word: 'end cap with free'): the section ends this many seconds after the LAST player has come back to far apart; every player's last container runs to that end — 20 until 2026-10-06, 10 since (DEC-37: the far parts shortened; the last far apart IS the cap). lengthS: a whole length to hold the section to at the least — 0 = none, the rolls decide. fitS: THE FIT (his 'let's try 110 seconds', DEC-37): from the seed asked on, the builder takes the kept roll whose length lands nearest this many seconds (within constraint.tries rolls) — the ranges stay as written, only the seed is chosen; 0 = the seed as it is; --fit N on the command line overrides. His word: under three minutes is better, judged from the simulation and its sound; then 110.",
 
   "states": ["far", "change", "approaching", "change", "closePass", "change", "breakRejoin", "change", "far"],
@@ -11,14 +12,14 @@
 
   "rangesS": {
     "far": [10, 18],
-    "change": [5, 12],
-    "changeToBreak": [4, 8],
-    "approaching": [16, 28],
+    "change": [2.5, 6],
+    "changeToBreak": [2, 4],
+    "approaching": [12.8, 22.4],
     "closePass": [10, 20],
-    "breakSilence": [4, 8],
-    "breakRejoin": [8, 16]
+    "breakSilence": [2.8, 5.6],
+    "breakRejoin": [5.6, 11.2]
   },
-  "_rangesS": "seconds, [shortest, longest], for each rolled container. far = the FIRST far apart (the last runs to the end). changeToBreak = the change out of the close pass (the fling is quick). break-and-rejoin is two rolls: its silence, then its rejoining. The eight rolled containers sum to 67 … 134 s. UNTIL 2026-10-06: far [20, 35] · approaching [20, 35] (the sum 81 … 158 s; 2:31 at seed 1); SINCE (DEC-37, his ear on seed 1: 'shorten the far apart sections by a fair bit, maybe by like a third … the initial approaching section might be a tiny bit long too … take it out of the far part and the approaching'): the far apart halved, the approaching cut by a fifth, the end cap halved — his third and his tenth alone left seed 1 at 2:07; 110 s needed these (RUNNING_LOG §193). The other containers as he found them: 'pretty good'.",
+  "_rangesS": "seconds, [shortest, longest], for each rolled container. far = the FIRST far apart (the last runs to the end). changeToBreak = the change out of the close pass (the fling is quick). break-and-rejoin is two rolls: its silence, then its rejoining. The eight rolled containers sum to 67 … 134 s. UNTIL 2026-10-06: far [20, 35] · approaching [20, 35] (the sum 81 … 158 s; 2:31 at seed 1); SINCE (DEC-37, his ear on seed 1: 'shorten the far apart sections by a fair bit, maybe by like a third … the initial approaching section might be a tiny bit long too … take it out of the far part and the approaching'): the far apart halved, the approaching cut by a fifth, the end cap halved — his third and his tenth alone left seed 1 at 2:07; 110 s needed these (RUNNING_LOG §193). The other containers as he found them: 'pretty good'. SINCE 2026-10-09 (DEC-79 · 80, RUNNING_LOG §287 · §288 — his word: 'the transition, I want to cut those in half … the blue approaching section, let's cut that by about 20% in each part … the break and rejoin, let's cut that by about 30%'): change [5, 12] → [2.5, 6] · changeToBreak [4, 8] → [2, 4] · approaching [16, 28] → [12.8, 22.4] · breakSilence [4, 8] → [2.8, 5.6] · breakRejoin [8, 16] → [5.6, 11.2]; far and closePass as they were. The SAME SEED, 165 (`seed` above — the roll he approved at 110 s; `fitS` 0 so the seed is taken as it is): a container's length is its hexagram's number read across its range, so every container is exactly its old length × the factor — 109.954 → 84.261 s.",
 
   "constraint": { "kind": "company", "overlapS": 3, "tries": 200 },
   "_constraint": "his 'b' (2026-10-06): a roll is kept only if every player's close pass overlaps another player's close pass or approaching by at least overlapS seconds; otherwise the next seed, up to `tries`. kind 'free' = no constraint.",

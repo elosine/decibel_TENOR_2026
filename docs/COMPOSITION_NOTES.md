@@ -963,3 +963,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"Can you look at the three body problem section and just give me an evaluation assessment of uh, if you if you're able to do this or how difficult or risky it is? But I want to shorten everything a little bit, so I want to shorten the all the change sections. Uh, the transition, I want to cut those in half. And then uh, the blue approaching section, let's cut that by about 20% in each part. And then the break and rejoin, let's cut that by about 30%. But just give me an assessment uh, of how easy or hard that is and then just you know if it's if we're going to do it then just move everything up keep everything as is and just move it up and just keep the gap between the last the end of the three body problem and the beginning of the trill And if we change it, we'll use this file. piece-3BodyRedo"*
 
 *(The AI's reading, marked as such: an assessment, nothing changed — the grey "change" containers × 0.5, the blue "approaching" × 0.8, the purple "break and rejoin" × 0.7, far apart and close pass as they are; the rest of the piece moved earlier by what is saved, the silence between the section's end and the first trill unchanged; the work, if he says go, in `scores/piece-3BodyRedo.json` (his copy of `piece-sec04-01a`, saved 00:49). RUNNING_LOG §287.)*
+
+### DEC-80 · 2026-10-09 — "ok go": the three body problem shortened, in `piece-3BodyRedo`
+
+*"ok go"* — to the assessment of DEC-79 (the same form on the same seed, every change container halved, approaching × 0.8, break and rejoin × 0.7; the notes played again by the same rules; everything after moved up, the gap to the first trill kept).
+
+*(RUNNING_LOG §288.)*

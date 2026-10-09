@@ -63,6 +63,7 @@ for (const c of copies) {   // a reference by id inside a copy follows the new i
     for (const k of ['brick', 'note']) if (t[k]) t[k] = m(t[k]);
     for (const k of ['notes', 'chain']) if (Array.isArray(t[k])) t[k] = t[k].map(m);
     if (t.segment && t.segment.of) t.segment = Object.assign({}, t.segment, { of: m(t.segment.of) });
+    if (t.was && t.was.endSeconds != null) t.was = Object.assign({}, t.was, { endSeconds: r3(+t.was.endSeconds + AT) });   // a time kept in a record moves with its note (§288)
     c.properties.sine = t;
   }
 }
