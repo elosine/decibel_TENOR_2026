@@ -128,10 +128,21 @@ next, where we are; reorganizations only on his approval.
   `docs/COMPOSITION_NOTES.md` DEC-1 … DEC-80).
 - *S1 · 2026-10-04 — the start finished (containers 3 · 4 · 5, 6 set up), the electronics' plumbing laid, the first object end to end.*
 
+### THE NOTATION OPENED — 2026-10-09 (Fable; RUNNING_LOG §299 … §301; DEC-87 · DEC-88; PLAN.md § 2)
+
+- **The title: *Approaching*, tentative** (DEC-87). The strikes (step 17) stand where checkpoint #1 left them — his ear on `strike-rig` when he is at the desk.
+- **DECIDED, RECORDED, NOT BUILT — PLAN.md 2.1 THE LOOK:** (a) the percussion ONE lane, the eight-line staff out, six equal lanes · (b) the lanes
+  white with a thin grey line between them (his "a") · (c) the staff a 0.25 s snippet at the start, then back for the beating section's whole
+  pages (416 s → the end), the clef only with the staff, no other range (his "all defaults"). The build: Opus, after a clear, one chunk; then
+  his eye on the first page.
+- **The first page for his eye:** `notation/ir/approaching-opening` (0 … 37 s, 30 notes) in the notation app on his 5500 — the look as the
+  registry stands TODAY (the old staff everywhere); the electronics bricks not drawn (no rows).
+- **HELD at his word, in his order:** 2.2 the colour palette · 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the
+  sine's sheet (drafted from the lineage, §301 — "will be different").
+
 ### NEXT UP
 
-Ask, in ONE line, what he wants: his ear on `piece-3BodyRedo`, or the notation. Do not present the parked list. Do not re-give steps
-he has had (open the score · File ▾ → Reload · play).
+The build of PLAN.md 2.1 on Opus after a clear, at his word; then his eye on the re-extracted first page. Do not present the parked list.
 
 ### CHECKPOINT #1 OF SESSION 3 *(2026-10-09, Fable — mid-session checkpoint; written for a session that has never seen this chat)*
 
@@ -205,7 +216,9 @@ workflow below, step by step, on his word.
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **HIS EAR on `strike-rig` (the engine restarted · F5 · from 0) — at the desk, his time; ask what he heard; then THE WORKFLOW above, 17.2 first (a talk)** | **Fable** (the talk) · Opus (a fault in the engine's window, a knob, a builder) | a new session, or after this checkpoint's clear |
+| **►** | **THE BUILD OF PLAN.md 2.1 THE LOOK — (a) one percussion lane · (b) the lane line · (c) the staff shown only where it plays, all six parts, the clef with it · (d) the two pages re-extracted and looked at** | **Opus** | **yes — a checkpoint, then clear** |
+| — | his eye on the first page as built; then 2.2 the colour palette · 2.3 the language · 2.4 the mic opening, in his order (each a talk, a device sheet) | Fable | — |
+| — | his ear on `strike-rig` (the engine restarted · F5 · from 0) — at the desk, his time; then 17.2 (journal §2's checkpoint #1 block) | Fable (the talk) · Opus (a fault, a knob) | — |
 | — | his ear on `piece-3BodyRedo` (the three body's new take, 39 → 125 s; the whole piece) — at his word | Fable | — |
 | — | THE NOTATION — container 6's three calls (his), then a DEVICE SHEET per sign (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET; `docs/PERFORMANCE_NOTES.md`, a row per glyph): the mic opening · the return · the petals · the drones' duration line · the sine's window · the three body's containers | Fable (the design) · Opus (the builds) | clear between sheets |
 | — | THE LIVE-ELECTRONICS DISCUSSION — after the notation, his order (`docs/NITS.md`, its blocks) | Fable | clear |

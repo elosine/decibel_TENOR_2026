@@ -670,9 +670,29 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **17.5 THE CONCERT SIDE — *deferred to the live-electronics discussion* (`docs/NITS.md`):** the attack detector on the POOLED microphones (one mix of the five into one ear; the engine's NITS: `\leOnset` hears a rise out of silence only — a strike of six onsets over ringing instruments needs a real detector: a spectral-flux onset or an envelope slope with a per-onset hold); the RECORDING MODULE (each player records their impulses before the concert — the mic opening and the bank as built, a score of openings per player; the pitches and techniques his); the level from the microphone to the ladder; the bleed.
 - **17.6 THE RECORD — PERFORMANCE_NOTES:** a row for the WINDOW — strike here, once, freely or as written; the electronics answers after you, with your rhythm changed; it may bring an earlier strike back later · COMPOSITION_NOTES DEC-83 … 85 · RUNNING_LOG §293 … §295, the build, the proof, his verdict · the engine's journal and state line for the sixth object; `git subtree push` at the wrap · PLANNER · journal §2 · CLAUDE.md's state line · this item's AS BUILT lines.
 
-## 2. Notate — `todo`
+## 2. Notate — `doing` 2026-10-09 (opened at his word, DEC-87 · DEC-88; the title *Approaching*, tentative)
 
-*To be laid out when we discuss it.*
+*The notation pass, his order: the look first, then one device sheet per sign as he names it. The loop of the protocol's 6.7: a decision → rows in the registries → the extractor → his eye on the page → the lock. Every sign below is a drawn kind the extractor has never seen; the players' notes draw today.*
+
+### 2.1 THE LOOK — the lanes and the staff — `decided 2026-10-09, NOT BUILT` (RUNNING_LOG §300 · §301; DEC-88)
+
+**Why:** the piece is mostly graphic (his word); the lanes must read as lanes without staves, and the staff must appear only where pitches matter.
+
+**Result when done:** the first page (`notation/ir/approaching-opening`, re-extracted) shows six equal lanes, white, a thin grey line between them, the short name and the bracket in the gutter, 0.25 s of staff lines at the very start and no staff after; a page of the beating section shows the staff on every lane with its clef.
+
+- **(a) The percussion is ONE lane** — `notation/registry/ensemble.json`: the eight-line unpitched staff OUT; the percussionist's part the mallets' treble staff; the brace gone (one part); weight 1 on every lane (the 1.888 of §45 gone). The unpitched instruments' notes draw as what their device sheets say later (graphic); until then they are the extractor's concern (a note on a lane with no unpitched staff — flag or hand, 6.7).
+- **(b) The lane line** — a rules row (`render.laneLine`: the `muted` grey, a thin stroke, print-safe) and a furniture kind drawn at every lane edge (`page_rules.edge` furniture / furniture); the GC's ball lands on it, as in piece #1.
+- **(c) The staff shown only where it plays, for all six parts** — `rules.json` `staffLines` from one part to all (the ranges explicit: the opening snippet [−4, −3.75] · the beating section's whole pages [416, end]); `layout.js` `staffShownOf` for every part; **the clef gated on the staff** (today pushed at every window start); `check_rules` and `gen_engraving_rules` follow; the written-pitch test green.
+- **(d) The proof:** `notate_section` re-run on the opening (0 … 37 s) and on one window of the beating section (e.g. 423 … 460 s); both looked at by the AI in the app (no error, the lanes and the staff as decided), then HIS EYE — the one proof. The shield waits for an approved page.
+- **The build:** Opus, after a clear; one chunk; `docs/ENGRAVING_RULES.md` regenerated; the sheet line on `staffLines` and the new row.
+
+### 2.2 THE COLOUR PALETTE — `held` (his word 2026-10-09: "hold for now")
+
+### 2.3 THE LANGUAGE — the music badges and the symbols — `held` (his word 2026-10-09)
+
+### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
+
+### 2.5 THE SINE — the beating pair — `parked` (the sheet drafted from the lineage, RUNNING_LOG §301; his word: "the sine tone notation will be different, but we'll figure out this when we get there")
 
 ## 3. The performance score — `todo`
 
