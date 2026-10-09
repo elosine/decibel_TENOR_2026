@@ -1,0 +1,28 @@
+{
+ "_doc": "THE CATALOGUE OF RESPONSE TYPES for the strikes section (PLAN.md 1.9 · 17.1 c; RUNNING_LOG §297, 2026-10-09) — HIS data from the moment he changes a number; every number the AI's start. A strike window brick (electronics/score/le_strike.js) reads this file at the page's load and sends the numbers its type and timing use IN ITS MESSAGE (dials), so the engine (electronics/sc/strike.scd) needs no file; the engine's own defaults mirror this file as written here. A range is drawn ONCE per window from the window's seed — the same draw in the page's preview and in the engine. After a change: F5 (the page reads it at load); a built score: the builder --replace, then File ▾ → Reload.",
+ "gapMs": 500,
+ "_gapMs": "the silence after the strike's last onset that says it is over; the answer is placed from the last onset. The window's end + gapMs ends it at the latest.",
+ "level": "mimic",
+ "_level": "mimic — each answer onset at the level of the strike onset it came from (the ladder's marks) · or a mark (ppp … fff) — every onset at it",
+ "deal": "robin",
+ "_deal": "robin — the players in turn over the answer's onsets, a sample an onset (a strike of six onsets: one player twice) · all — every player at every onset, a chord each",
+ "samples": { "processed": true, "_processed": "the processed versions of the impulses are rolled beside the raw captures; a player's deck is shuffled when empty, none twice until all are used" },
+ "transformations": {
+  "asPlayed":   { "_doc": "the strike's rhythm as it was" },
+  "retrograde": { "_doc": "the rhythm reversed — the levels travel with their onsets" },
+  "invert":     { "_doc": "the gaps mirrored: each gap becomes (longest + shortest) − itself, long ↔ short; the onsets keep their order and levels" },
+  "spread":     { "range": [1.5, 3], "_doc": "every gap × one draw in range" },
+  "compress":   { "range": [0.3, 0.7], "_doc": "every gap × one draw in range" },
+  "scramble":   { "_doc": "the gaps shuffled by the window's seed; the levels stay in the onsets' order" },
+  "rotate":     { "_doc": "the gaps rotated by a draw of 1 … n−1" },
+  "thin":       { "share": [0.3, 0.5], "_doc": "a share of the onsets dropped (drawn in share), never the first" },
+  "thicken":    { "share": [0.3, 0.5], "copyMs": [40, 120], "_doc": "a share of the onsets doubled, each copy copyMs after its original, at its level" }
+ },
+ "timings": {
+  "rightAfter":    { "rangeS": [0.3, 0.8], "_doc": "the answer's first onset this many seconds after the strike's last onset" },
+  "aBeatLater":    { "rangeS": [1, 2] },
+  "callResponse":  { "ofStrike": [0.8, 1.2], "minMs": 300, "_doc": "after the strike's own length × a draw in ofStrike — a strike of one onset counts as minMs long" },
+  "muchLater":     { "rangeS": [6, 15] },
+  "inLaterWindow": { "rangeS": [10, 15], "offsetS": [0, 0.5], "_doc": "17.3's: at the start of a later window + a draw in offsetS; with no later window known (the rig) it reads rangeS as muchLater does" }
+ }
+}

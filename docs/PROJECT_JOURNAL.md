@@ -95,22 +95,21 @@ next, where we are; reorganizations only on his approval.
   in the piece, shortened · 15 ☑ THE DRONES — in the piece, the end cut · **16 ☑ THE BEATING SECTION** — 16.1 the tracker built
   (unused by the section as it stands) · 16.2 the generated section SET ASIDE (*"this isn't working. Let's start over"*, DEC-60) ·
   16.3 the balance PARKED with volume · 16.4 his takes — done his way, by hand · 16.5 ☑ in the piece.
-- **► 17 THE STRIKES SECTION (section 5) — OPENED 2026-10-09, PLAN.md § 1.9:** 17.1 the rig ► (laid out, his "good" — THE BUILD NEXT) · 17.2 the
-  catalogue decided · 17.3 the section simulated · 17.4 into the piece · 17.5 the concert side (deferred) · 17.6 the record.
-- **► POSITION: STEP 17, THE STRIKES SECTION — 17.1 THE RIG, laid out and approved; THE BUILD on Opus after a clear.**
+- **► 17 THE STRIKES SECTION (section 5) — OPENED 2026-10-09, PLAN.md § 1.9:** 17.1 ☑ the rig BUILT (done but for his ear) · ► 17.2 the
+  catalogue decided — from his ear on the rig · 17.3 the section simulated · 17.4 into the piece · 17.5 the concert side (deferred) · 17.6 the record.
+- **► POSITION: STEP 17 — 17.1 BUILT; NEXT HIS EAR ON `strike-rig`, then 17.2, a talk.**
 
-### THE BUILD OF 17.1 — THE RIG (2026-10-09, Fable; the cold-start block for Opus)
+### 17.1 THE RIG IS BUILT (2026-10-09, Fable, at his *"go and build as much as possible independently"* — RUNNING_LOG §297)
 
-- **The instruction:** build PLAN.md § 1.9 · 17.1 (a) … (f) AS ONE, from the plan as written; one proof (`strike_test.scd` + `strike_check.js`),
-  then his ear. Where the engine's code says otherwise than the plan, follow the code and write an AS BUILT line.
-- **Resume reads:** `docs/PLAN.md` § 1.9 (the whole item) · `docs/COMPOSITION_NOTES.md` DEC-83 … DEC-85 · `electronics/score/le_performer.js`
-  (the pattern for a brick with its own tick and the simulated ear) · `electronics/sc/performer.scd` (how onsets reach a listener) ·
-  `electronics/sc/bank.scd` `patternOnsets` · the `pattern` branch of `samplePlay` (the play path) · `tools/strike_take.js` (to make
-  requirable) · `electronics/docs/SEAMS.md` (a new brick's one tag and two lines) · `tools/three_body_check.js` (the check's pattern).
-- **What the block does not know:** the free key for the sixth brick (M · R · E · S are taken; the AI picks) · whether a zone may sit on
-  META (the three body's containers are lane zones — a window on one lane, listening to all five, is the plan's reading) · how the page's
-  sim onset carries the velocity today (read `le_performer.js`; if it does not, add the mark to the existing message, absent = mf).
-- **His part at the end only:** the engine restarted · F5 · `strike-rig` from 0.
+- **What exists:** the STRIKE WINDOW brick (`W`; `electronics/score/le_strike.js`) · the engine's answer (`electronics/sc/strike.scd`) ·
+  the catalogue `bank/strike_responses.json` (HIS data from now) · the rig `scores/strike-rig.json` (his twenty takes, staccato, `f`,
+  12 s apart, a window each; every transformation on 2 … 3 strikes, every timing on 4) · the sheet `docs/STRIKE_RIG.md` (what is heard
+  when) · `node tools/build_strike_rig.js` · `node tools/strike_check.js` · `electronics/sc/strike_test.scd`. PLAN.md 17.1's AS BUILT line.
+- **HIS PART — the engine restarted (its window closed · `start_electronics.bat`; his engine predates `strike.scd`) · F5 · `strike-rig`
+  from 0 with the engine up.** Each strike is answered by the electronics: the engine's window says `strike · W3 · 6 onsets heard … →`
+  and what it played. Then: keep · drop · a knob — a number in `bank/strike_responses.json` → `node tools/build_strike_rig.js --replace`
+  → File ▾ → Reload; one window's own knobs in its panel.
+- **Not claimed:** a living engine has never run `strike.scd`; nothing heard; the page not opened by the AI.
 
 ### LAST SESSION — S2 · 2026-10-05 … 2026-10-09 (Claude Code — Fable for the talks and layouts, Opus for the builds and wraps; twenty-two checkpoints, one `/session-end`)
 
@@ -163,8 +162,7 @@ he has had (open the score · File ▾ → Reload · play).
 
 | # | Step | Model | Clear first? |
 |---|---|---|---|
-| **►** | **THE BUILD OF 17.1 THE RIG — PLAN.md § 1.9, (a) … (f) as one; the block THE BUILD OF 17.1 above** | **Opus** | **yes — clear first** |
-| — | his ear on `strike-rig`; then 17.2 the catalogue decided (a talk) | Fable | after the build |
+| **►** | **HIS EAR on `strike-rig` (the engine restarted · F5 · from 0); ask what he heard; then 17.2 THE CATALOGUE DECIDED (a talk)** | **Fable** (the talk) · Opus (a fault in the engine's window, a knob) | — |
 | — | his ear on `piece-3BodyRedo` (the three body's new take, 39 → 125 s; the whole piece) — at his word | Fable | — |
 | — | THE NOTATION — container 6's three calls (his), then a DEVICE SHEET per sign (`docs/PLANNING_METHOD.md` § THE DEVICE SHEET; `docs/PERFORMANCE_NOTES.md`, a row per glyph): the mic opening · the return · the petals · the drones' duration line · the sine's window · the three body's containers | Fable (the design) · Opus (the builds) | clear between sheets |
 | — | THE LIVE-ELECTRONICS DISCUSSION — after the notation, his order (`docs/NITS.md`, its blocks) | Fable | clear |
