@@ -6834,3 +6834,54 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **What it does to the look, computed:** the circles are #333 and the fill is 18 % of #FFFF00, so under the yellow they read about #58582A — a dark olive instead of a near black; the outline, at the brick's edge, does not cross them. It is the highlighter's own logic: the mark lies on the print. If the circles should stay black under the yellow, that is a blend ("multiply"), a further word — not built, his to ask.
 
 **Proven once, in the running app** (`approaching-opening`, page 1): in each of the seven openings the two circles stand BEFORE the brick in the drawing; fill 0.18, outline 1. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated.
+
+## §333. THE CONDUCTOR'S / PRESENTATION VIEW REOPENED — his notes on section 1 organised · the principle (what is TRUE of the electronics decides what is drawn) · five families of options · the "italics" · the badge (2026-10-09, Fable)
+
+**What prompted it (DEC-110, verbatim in COMPOSITION_NOTES):** at a `/postclear` — *"an analysis slash discussion about showing the live electronics … for the presentation score and or conductor score … lots of graphic scores, for example, Xenakis … have some graphic representation of what the electronics are doing … surface [my notes] about the first section … more organized … Should they be graphic symbols? Show the onsets, … just the region where things might happen. I think of them maybe as almost like footnotes. … am I using the anticipation reaction badge? Or … several different options."*
+
+**Read for it:** journal §2 · `docs/NOTATION_SCHEME.md` § 5 · `bank/signs/conductor.json` (section 1's `does`, the five options of §320, his idea HELD) · DEC-99 … DEC-103 · §320 … §323. Nothing of the code. Nothing drawn.
+
+**His notes on section 1, organised (given back to him):**
+- *What the electronics do there (the facts):* 30 mic openings 0 … 37 s, every short attack recorded · six groups of returns — 1 plain · 2 `ar` (rolled before · after · lazy · far around the live note, never with it) · 3 `chain` (one follows the live note, the rest follow the one before — his "flocking as Chinese whispers") · 4 `arChain` · 5 `*` (the whole bank) · 6 moved to 29.8 … 34.3 s; 75 plays, every one processed through a preset · **the count grows one → five** · **the exact times are rolled at every performance** — the score is a plan; the regions and the count are fixed, the onsets are not.
+- *His decisions that bind this view:* the players do NOT see the returns (DEC-99) · a GENERIC hint, section by section, with visual options (DEC-99) · in the opening no badge on the openings, no arcs (DEC-102) · the mic at the top (DEC-103) · discuss first, nothing drawn until asked (DEC-100) · the conductor's view after the layout (DEC-103).
+- *His idea, held (DEC-100):* the flocking badge + a duration line or line wedge over the stretch, told apart as ELECTRONICS by one constant difference — place in the lane · size · transparency · colour — "an italics equivalent".
+- *Drawn before his idea (§320):* echo triangles · a pale bar · echo arcs · a lane of its own · nothing (http://localhost:5500/signs/conductor.html).
+
+**THE PRINCIPLE put to him (the AI's):** draw as FACT only what is true at every performance — in section 1 the REGION (where a return may fall), the COUNT (one → five) and the KIND (the behaviour); an ONSET is true only of one realisation (the video's simulation) and false of the concert's roll. And: the presentation view is the players' page PLUS A LAYER (one file, a switch) — nothing moves for the players.
+
+**FIVE FAMILIES, one line each (the precedents named from general knowledge, not looked up — Stockhausen's *Kontakte* and Nono for a tape staff of its own · Boulez's *Anthèmes 2* and Saariaho for numbered cue boxes · Xenakis for the graphic as the sound · Wehinger's listening score of Ligeti's *Artikulation* for symbols with a key · Lucier and Cage for words only):**
+- **A — the region, his idea:** the flocking badge once a lane at the section's start, and over each stretch a line wedge whose THICKNESS grows with the count (one → five) — the wedge's growth IS the fact of section 1; the AI's place for it: the lane's BOTTOM, where the composer score keeps the returns and the lane is free (121 … 202 px), the mic at the top — the player above, the electronics below.
+- **B — footnotes, his word:** a small numbered mark at each stretch (or each group) and the explanation at the page's foot / in the performance notes; in the video, a running line at the frame's foot for the current section. Says nothing false about time; the reader looks down.
+- **C — the onsets of one realisation:** a small greyed sign (the echo triangles) at each returning sound's simulated time. True of the video, one roll of many in print.
+- **D — a lane of its own:** a thin sixth strip under the five (the tape-staff tradition), the returns on the row of their player. The players' lanes untouched in shape, shorter in height.
+- **E — nothing in the lanes:** the performance notes, and a title card before each section in the video.
+
+**THE "ITALICS" — telling an electronics sign from a player's, one constant difference:** (i) outline only, no fill — the same badge format drawn hollow · (ii) a transparency · (iii) a colour reserved for the electronics — SOL_purple is the one SOL colour no type has taken (the AI's suggestion) · (iv) a place — the lane's bottom · (v) a dashed outline.
+
+**THE BADGE:** "the anticipation reaction badge" read as piece #1's flocking badge (nine triangles), his word of DEC-100; `ar` and `chain` are both in section 1 and the distinction is not a reader's concern — one badge for the section's electronics (the AI's reading, to confirm).
+
+**Lineage in hand, offered in one line:** the stack has the line wedge already (`rules.json` `objects.lineWedge`, #4 D48, disabled) and the badge module — A is a row and a layer, not a new drawing kind.
+
+**Recommended:** A, in SOL_purple at the lane's bottom, B's numbered mark kept for later if the notes need an anchor. **Nothing drawn, nothing built; his decision awaited.**
+
+## §334. SECTION 1's ELECTRONICS HINT DECIDED — the region in purple at the lane's bottom, the flocking badge smaller (DEC-111); the save measured for it; the device sheet proposed; nothing drawn (2026-10-09, Fable)
+
+**What prompted it (DEC-111, verbatim):** *"a, purple at the bottom, flocking badge but smaller"* — his answer to §333's one decision.
+
+**Decided (his):** family A — the badge once a lane, a brick over each stretch of returns · the electronics' colour PURPLE (SOL_purple #5F4296 as offered — the composer score's own return brick is #8E24AA at 35 %, the "exactly as the composer score" alternative, one word of a row) · at the lane's BOTTOM (the mic at the top: into the microphone above, out of the speakers below) · the flocking badge of piece #1, SMALLER than the language badges.
+
+**The save measured for the sheet (`scores/piece-3BodyRedo.json`, the zones `elecPlay` before 37 s — one script, read only):**
+- 25 return bricks under 30 mic openings; behaviours: 5 `ar` · 15 `chain` · 5 `arChain`.
+- Per player FIVE bricks (the percussionist's five on two composer lanes: Perc 3 · Mal 2 — they merge on the notation's one Perc lane; two may touch near 22 … 24 s), each carrying **1 · 2 · 3 · 4 · 5 samples in that order**, each a region **0.80 · 1.00 · 1.80 · 2.00 · 2.50 s** long; extents BFl 7.9 → 35.0 · BCl 9.7 → 36.9 · Perc 6.6 → 32.4 · Va 6.2 → 33.8 · Vc 9.5 → 35.5 s; **no two bricks overlap on a lane.**
+- So "a wedge that grows one → five" is literally the save: one brick per return, its LENGTH the region the engine rolls inside, its THICKNESS the count. No envelope to invent. (The "75 plays" of the state line counted samples; the bricks are 25.)
+
+**THE DEVICE SHEET PROPOSED (the AI's first numbers, his to move — each a row of `notation/registry/rules.json` when built):**
+1. **The return brick** — `objects.elecReturn`: the mic opening's own recipe in purple — corners 3 px, the fill 18 %, the outline solid; `place` laneBottom, hung from the bottom under the standard gap (`align` edge, mirrored); its length the brick's span; **its height the count: 5.8 px a sample, so five samples = 29 px = the mic opening's height** (`heightPerSampleSs`, a cap at five); no sign, no number on it (a generic hint).
+2. **The badge** — `objects.elecBadge`: piece #1's flocking badge (its nine triangles; the SVG is in `string_quartet_no1-composer/docs/notation_instructions/images/flocking_badge.svg`, the murmuration tool beside it — the language page already redrew the nine at his positions), the sign in SOL_purple on the format's slate square, **36 px** (two thirds of the language badges' 54 — the format's own size), once a lane at the lane's bottom, 12 px before the lane's first return brick (the announcing badge's gap), in the same row as the bricks.
+3. **The row** — a BOTTOM row of the lane, as tall as the tallest thing in it (the badge), the mirror of the mic's row (`render.js` `micRow`).
+4. **The layer** — the presentation view is the players' page PLUS this layer: the cutter's `--elec` (as `--mics`) → overlays `elecReturn { part, span, count }` and the badge with `place: laneBottom` (the schema's enum grows by one) → the items → the bottom row. The players' cut has no `--elec`; the presentation cut has it. Two pages of the opening in the app, or one with the switch — the build decides and says.
+5. **The colour row** — `colours.elecPurple` = SOL_purple; the composer score's #8E24AA is the one-word alternative.
+
+**Lineage first:** the badge is piece #1's own drawing; the brick is the mic opening's own recipe; the row is the mic row mirrored. No new drawing kind.
+
+**Nothing drawn, nothing built.** The sheet goes into PLAN.md 2.7 at his go; the build is Opus's by the rhythm, or here at his word.

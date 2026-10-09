@@ -18,6 +18,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | the staff | 0.25 s of lines at the very start; back for the beating section's pages; the clef only with it | decided, built |
 | pitches | on a staff only in the beating section | decided |
 | the electronics' returns | NOT shown to the players | decided |
+| the electronics' hint | in the PRESENTATION VIEW only — a layer on the players' page; the electronics' colour is PURPLE, their place the lane's BOTTOM (the mic at the top: into the microphone above, out of the speakers below); their badge piece #1's flocking badge, smaller than the language badges | decided for section 1 (DEC-111); the rule for the rest **(AI)** |
 | dynamics | none in the lanes | decided |
 | words | none in the lanes — a badge says what to play, the performance notes say how | decided |
 | which pitch · which percussion instrument | the player's choice, within the type **(AI — to confirm)** | open |
@@ -57,6 +58,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
 - **Open:** nothing, but for his eye on the new sizes.
+- **Presentation view (DEC-111):** the flocking badge, small and purple, once a lane at the lane's bottom; then a purple brick at the bottom over each stretch the electronics answer in — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(The sheet's numbers, the AI's: RUNNING_LOG §334 — not yet built.)*
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
 - **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
@@ -120,11 +122,24 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 
 ---
 
-## 5 · The conductor's / presentation view — HELD, discussed after the layout (DEC-103)
+## 5 · The conductor's / presentation view — OPENED 2026-10-09 (DEC-110); section 1 DECIDED (DEC-111)
 
-A generic hint of what the electronics do, for a conductor, a jury, an audience. Section by section, later.
-- **Section 1, his idea:** the flocking badge, and a duration line or line wedge over the stretch — told apart as ELECTRONICS behaviour by one constant difference: its place in the lane, its size, a transparency or a colour, "an italics equivalent".
-- Five earlier options are drawn at http://localhost:5500/signs/conductor.html (before he gave his idea).
+A generic hint of what the electronics do, for a conductor, a jury, an audience — a LAYER on the players' page (one file, a switch), section by section.
+
+**The principle (AI, unopposed):** draw as fact only what is true at every performance — the REGION, the COUNT, the KIND; an onset is true only of one realisation.
+
+**The electronics' "italics" — how their signs are told from the players' (DEC-111):** the colour PURPLE (SOL_purple; the composer score's return brick is a purple too) · the place, the lane's BOTTOM · their badge smaller than the language badges.
+
+| section | the hint | status |
+|---|---|---|
+| 1 the opening | the flocking badge once a lane at the bottom, small; a purple brick at the bottom over each stretch of returns, its thickness the count one → five | decided (DEC-111); the sheet's numbers RUNNING_LOG §334; **not built** |
+| 2 the three body problem | the three computer players — open | to discuss at its turn |
+| 3 trills and accented long tones | the petals' ring (about ten seconds after the mic) — open | to discuss |
+| 4 the drones | the drones, up to five at once — open | to discuss |
+| 5 the beating section | the sine — the pitch header and swatch are already in the players' scheme; what else is the view's — open | to discuss |
+| 6 the strikes | the answer after the strike — open | to discuss |
+
+- The five options drawn before his idea: http://localhost:5500/signs/conductor.html (a side page for choosing; the build goes in the notation app).
 - What the electronics do in each section: `bank/signs/conductor.json`.
 
 ---
@@ -134,5 +149,5 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience.
 1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top) and DEC-107 · DEC-108 (its fill 18 %, its outline solid).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
-4. The conductor's view.
+4. The conductor's / presentation view — section 1 decided (DEC-111): the build at his go; then its sections 2 … 6, each at its turn with the players' signs.
 5. To confirm: pitch and percussion instrument are the player's choice.
