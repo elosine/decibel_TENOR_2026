@@ -59,6 +59,10 @@ for (const name of ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey'
 
 // A NAMED GUESS (RUNNING_LOG §306): the maker's chart, each family's nearest shades — only when tools/palette/lascaux_match.py has run
 let MATCH = null; try { MATCH = rd('bank/palette/lascaux_match.json'); } catch (e) { /* no chart read yet */ }
+// THE SOL COLOURS (RUNNING_LOG §307): the readings NAMED — bank/palette/sol.json, his to rename or move
+let SOLC = null; try { SOLC = rd('bank/palette/sol.json'); } catch (e) { /* not named yet */ }
+const solHtml = SOLC ? '<h2>The SOL colours</h2><p>The seven, named. Each value is one pick from the reading below; the line under it says what the maker\'s chart suggests.</p><div class="grid">' +
+  SOLC.colours.map(c => big(c.value, c.name, c.chart)).join('') + '</div>' : '';
 let guess = '';
 if (MATCH) for (const name of ['red', 'orange', 'yellow', 'green', 'blue', 'purple']) {
   const m = MATCH.match[name], f = fam[name]; if (!m || !f) continue;
@@ -97,6 +101,8 @@ const html = `<!doctype html>
 <h1>The palette — working page</h1>
 <p>Your named colours, and LeWitt's late acrylic colours as photographs of four wall drawings at MASS MoCA give them. Under each large swatch: the colour as a thin line and as a pale tint, the two ways a score uses a colour.</p>
 <p class="note">A colour here is DERIVED from photographs. It is not a measurement of the paint. Each one is a starting value for your eye.</p>
+
+${solHtml}
 
 <h2>1 · LeWitt, read from the photographs</h2>
 <p>Two large swatches for each colour. The first is the mean of the photographs in which the drawing sits on a white wall. The second adds the other photographs, their brightness evened through a paint they share with the first group. The small ones are each photograph alone, so you can see how far they disagree.</p>

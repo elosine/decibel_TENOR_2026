@@ -148,8 +148,15 @@ next, where we are; reorganizations only on his approval.
   against the maker's chart — the yellow named (113 Cadmium yellow medium, firm), the red and the green narrowed to three each, the
   orange a red-orange and not the chart's oranges, the blue and the purple on no chart shade (the page's section 3). Open: his eye on
   the page · then the palette as data in `composition-system`, at his word.
-- **HELD at his word, in his order:** 2.3 the language (badges and symbols) · 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet
-  (drafted from the lineage, §301 — "will be different").
+- **THE SOL COLOURS NAMED (§307, DEC-90):** `bank/palette/sol.json` — `SOL_red` #D11520 · `SOL_orange` #E04424 · `SOL_yellow` #F7C40A ·
+  `SOL_green` #219D4C · `SOL_blue` #186DBF · `SOL_purple` #5F4296 · `SOL_black` #151415; the AI's picks from the reading, his to move.
+- **2.3 THE LANGUAGE — OPEN (DEC-90; RUNNING_LOG §307):** the piece's material is a variation of Braxton's Language Music — a BADGE (the
+  format of piece #1's flocking badge: 36 px rounded square, #2d3748), a SYMBOL and a COLOUR for each of HIS SIX TYPES: ► short attacks ·
+  trills · accented long tones · multiphonics · the acoustic beats (a name wanted) · scattered strikes — ONE AT A TIME. The working page
+  **http://localhost:5500/language/index.html** (`bank/language/language.json` → `node tools/language/build_page.js`): five candidate
+  signs for the short attacks, each in eight colours. Open: his choice of sign and colour · the beats' name (Lucier: "beats" ·
+  "audible beats" · "interference patterns").
+- **HELD at his word:** 2.4 the mic opening. **PARKED:** 2.5 the sine's sheet (drafted from the lineage, §301 — "will be different").
 
 ### NEXT UP
 

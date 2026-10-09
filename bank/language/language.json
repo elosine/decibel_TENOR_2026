@@ -1,0 +1,137 @@
+{
+ "_doc": "THE LANGUAGE OF THE PIECE (decibel PLAN 2.3; RUNNING_LOG §307; DEC-90: 'the piece uses a variation of anthony braxton's language musics, we will use the badges from p1&2, that format and then come up with a symbal for each and a color'). `badge`: the format, read from piece #1's flocking badge (string_quartet_no1-composer/docs/notation_instructions/images/flocking_badge.svg). `types`: HIS six, in his order — each the piece's own sound type, the Braxton Language Type it varies (his handout's number, name and sign, described in words; the handout itself is at the Library of Congress), and where it is in the piece. A type's `symbol` and `colour` are EMPTY until he chooses. `candidates.<type>`: signs put to him — each an icon drawn in a 36 × 36 box (`svg`, in currentColor), where it comes from, what speaks for it. tools/language/build_page.js draws them as badges on score/public/language/index.html.",
+ "badge": {
+  "sizePx": 36,
+  "cornerPx": 4,
+  "ground": "#2d3748",
+  "icon": "#5b9bf5",
+  "from": "piece #1 (the flocking badge): a 36 px rounded square of dark slate, the sign in it in light blue. Piece #2's badge (the three orbits) is black discs and lines on white, no square.",
+  "exampleSvg": "<g fill='currentColor'><path transform='translate(21.4,12.7) rotate(144)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.2,8.1) rotate(138)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,14.5) rotate(105)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(24.7,13.6) rotate(99)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,10.3) rotate(92)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(28.6,9.5) rotate(104)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.4,16.6) rotate(116)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(26.1,16.6) rotate(132)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(27.7,14.4) rotate(119)' d='M2,0 -1.2,1.2 V-1.2 Z'/></g>",
+  "exampleNote": "the flocking badge of piece #1, its nine triangles at his own positions and turns (flocking_badge.svg)"
+ },
+ "types": [
+  {
+   "id": "shortAttacks",
+   "name": "short attacks",
+   "braxton": {
+    "n": 7,
+    "name": "SHORT ATTACKS",
+    "sign": "three small open triangles, apart — two pointing left, one up"
+   },
+   "inThePiece": "the opening's impulses · the three body problem",
+   "symbol": null,
+   "colour": null
+  },
+  {
+   "id": "trills",
+   "name": "trills",
+   "braxton": {
+    "n": 3,
+    "name": "TRILLS",
+    "sign": "a line of tall, deep waves"
+   },
+   "inThePiece": "section 2 — thirty trills, each into a petal hit",
+   "symbol": null,
+   "colour": null
+  },
+  {
+   "id": "accentedLongTones",
+   "name": "accented long tones",
+   "braxton": {
+    "n": 2,
+    "name": "ACCENTED LONG SOUND",
+    "sign": "a narrow closed wedge that runs on as a line — the accent, then the long sound"
+   },
+   "inThePiece": "not placed yet — his",
+   "symbol": null,
+   "colour": null
+  },
+  {
+   "id": "multiphonics",
+   "name": "multiphonics",
+   "braxton": {
+    "n": 6,
+    "name": "MULTIPHONICS",
+    "sign": "three small five-sided shapes, like little houses, one upright and two upside down"
+   },
+   "inThePiece": "the drones — each player's multiphonic, recorded and stretched",
+   "symbol": null,
+   "colour": null
+  },
+  {
+   "id": "beats",
+   "name": "‹a name wanted›",
+   "braxton": null,
+   "inThePiece": "the beating section — a held note against a sine",
+   "nameOptions": [
+    "beats",
+    "audible beats",
+    "interference patterns",
+    "beating"
+   ],
+   "symbol": null,
+   "colour": null
+  },
+  {
+   "id": "scatteredStrikes",
+   "name": "scattered strikes",
+   "braxton": null,
+   "inThePiece": "section 5 — the ensemble's strikes, the electronics answering",
+   "symbol": null,
+   "colour": null
+  }
+ ],
+ "braxtonTwelve": [
+  "1 Long sound — a straight line",
+  "2 Accented long sound — a narrow wedge that runs on as a line",
+  "3 Trills — a line of tall waves",
+  "4 Staccato line formings — a dashed line",
+  "5 Intervallic formings — a line that jumps up and down in square steps",
+  "6 Multiphonics — three small five-sided shapes",
+  "7 Short attacks — three small open triangles",
+  "8 Angular attacks — a chain of sharp Z shapes",
+  "9 Legato formings — a long smooth wave",
+  "10 Diatonic formings — a smooth wave with small strokes across it",
+  "11 Gradient formings — a smooth wave with arrowheads along it",
+  "12 Sub-identity formings — a small square, then a line"
+ ],
+ "candidates": {
+  "shortAttacks": [
+   {
+    "id": "braxton",
+    "name": "Braxton's own",
+    "from": "Language Type 7, his handout: three small open triangles, two pointing left and one up",
+    "for": "It IS the sign of the language the piece varies. A player who knows Braxton reads it at once.",
+    "svg": "<g fill='none' stroke='currentColor' stroke-width='1.6' stroke-linejoin='round'><polygon points='12,14 12,23 5,18.5'/><polygon points='21.5,13.5 21.5,22 15,17.8'/><polygon points='27.5,13.5 31.5,22.5 23.5,22.5'/></g>"
+   },
+   {
+    "id": "marcato",
+    "name": "marcato",
+    "from": "the standard sign for a marked, forceful attack — an open wedge over the note",
+    "for": "His candidate. Every player knows it. One clean shape, readable at 36 px.",
+    "svg": "<polyline points='9.5,26 18,9.5 26.5,26' fill='none' stroke='currentColor' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='miter'/>"
+   },
+   {
+    "id": "marcato3",
+    "name": "marcato, scattered",
+    "from": "the marcato wedge, three times, at uneven heights",
+    "for": "Says SEVERAL attacks, irregular — closer to what the type is than one accent; keeps the known sign.",
+    "svg": "<g fill='none' stroke='currentColor' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='miter'><polyline points='4,22 8.5,12.5 13,22'/><polyline points='13.5,28 18,18.5 22.5,28'/><polyline points='23,17.5 27.5,8 32,17.5'/></g>"
+   },
+   {
+    "id": "staccatissimo3",
+    "name": "staccatissimo, scattered",
+    "from": "the standard sign for the shortest note — a small solid wedge — three times",
+    "for": "It means SHORT, where the marcato means MARKED. A solid triangle: Braxton's shape, filled.",
+    "svg": "<g fill='currentColor'><path d='M5.6,10 L10.4,10 L8,21 Z'/><path d='M15.6,16 L20.4,16 L18,27 Z'/><path d='M25.6,8 L30.4,8 L28,19 Z'/></g>"
+   },
+   {
+    "id": "dots3",
+    "name": "staccato dots, scattered",
+    "from": "the staccato dot, three times",
+    "for": "The plainest. Risk: three dots read as an ellipsis, or as nothing, at this size.",
+    "svg": "<g fill='currentColor'><circle cx='8' cy='20' r='2.7'/><circle cx='18' cy='13' r='2.7'/><circle cx='28' cy='23' r='2.7'/></g>"
+   }
+  ]
+ }
+}

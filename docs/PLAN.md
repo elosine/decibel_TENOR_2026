@@ -700,7 +700,15 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Open, his:** his eye on the page — which value of each hue, and its name · then THE PALETTE ITSELF: which colours are in it, their names, and which sign of the score takes which (with 2.3). **Then, the AI's:** the palette written as data in `composition-system` (its home — every piece's `rules.json` `colours` takes its rows from it), at his word.
 
-### 2.3 THE LANGUAGE — the music badges and the symbols — `held` (his word 2026-10-09)
+### 2.3 THE LANGUAGE — the music badges and the symbols — `doing` 2026-10-09 (opened at his word, DEC-90; RUNNING_LOG §307)
+
+**Why:** the piece's material is a variation of Anthony Braxton's Language Music (his word): a small set of sound TYPES, each shown to the player by a BADGE in the format of pieces #1 and #2, with its own SYMBOL and COLOUR.
+
+**His six types, in his order — one at a time:** ► **short attacks** (Braxton 7) · trills (Braxton 3) · accented long tones (Braxton 2) · multiphonics (Braxton 6) · the acoustic beats — A NAME WANTED (Lucier's own words: "beats" · "audible beats" · "interference patterns") · scattered strikes.
+
+**Where it stands:** the format read from piece #1's flocking badge — a 36 px rounded square, #2d3748, the sign in a colour · Braxton's twelve read from his own handout (Library of Congress) · the conduction systems are hand signs, no drawn glyph to borrow · FIVE CANDIDATE SIGNS for the short attacks drawn as badges, each in eight colours: a Braxton's three open triangles · b the marcato · c the marcato, three, scattered · d the staccatissimo wedge, three, scattered · e staccato dots — **http://localhost:5500/language/index.html** (`bank/language/language.json` → `node tools/language/build_page.js`). The colours to draw from: `bank/palette/sol.json` (the SOL seven, named) and his 23 `clr`.
+
+**Open, his:** the short attacks' sign and colour · the beats' name · then the next type. **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
 ### 2.4 THE MIC OPENING — its notation — `held` (his word 2026-10-09)
 

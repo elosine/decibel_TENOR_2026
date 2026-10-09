@@ -1,0 +1,12 @@
+{
+ "_doc": "THE SOL COLOURS — the seven colours read from Sol LeWitt's late acrylic wall drawings, NAMED (decibel PLAN 2.2; RUNNING_LOG §307; DEC-90: 'ok lets just assign them resonable names SOL_'). The prefix as his own colours carry `clr`. The names are the AI's, plain hue names; the values the AI's pick from the reading (bank/palette/lewitt_reading.json) — `from` says which number and why. His to rename or move: edit a row, then `node tools/palette/build_page.js`. A colour DERIVED FROM photographs, never a measurement of the paint (§304).",
+ "colours": [
+  { "name": "SOL_red", "value": "#D11520", "from": "all photographs, evened (9) — the white-wall photographs alone give #CF1824, two units away", "chart": "nearest on the maker's chart: 125 Cadmium red light · 127 Cadmium red medium · 126 Pyrrole red — not separable" },
+  { "name": "SOL_orange", "value": "#E04424", "from": "the AI's reading of the clean evidence (§305): hue 42–43° in Loopy Doopy and in the square-on photograph of 1112. The two computed means (#DF3123 · #DC3821) carry one warm photograph and sit so near SOL_red that the pair would not read as two colours in a score", "chart": "a red-orange: 125 Cadmium red light · 124 Cadmium orange deep · 123 Pyrrole orange — not the chart's oranges" },
+  { "name": "SOL_yellow", "value": "#F7C40A", "from": "the white-wall photographs (5) — they agree within 2.5", "chart": "113 Cadmium yellow medium — firm" },
+  { "name": "SOL_green", "value": "#219D4C", "from": "all photographs, evened (7) — the white-wall photographs alone give a lighter, yellower #38AA54", "chart": "nearest: 154 Phthalo green light · 161 Cobalt nickel green · 156 Cadmium green medium" },
+  { "name": "SOL_blue", "value": "#186DBF", "from": "all photographs, evened (9) — the white-wall photographs alone give a lighter #2479CC; two photographs of ONE wall differ by twelve units of lightness", "chart": "no shade of the chart is near" },
+  { "name": "SOL_purple", "value": "#5F4296", "from": "all photographs, evened (9) — the white-wall photographs alone give #67469C", "chart": "bluer and lighter than either Dioxazine violet as printed" },
+  { "name": "SOL_black", "value": "#151415", "from": "Wall Drawing 901's glossy black form, two photographs, evened", "chart": "—" }
+ ]
+}
