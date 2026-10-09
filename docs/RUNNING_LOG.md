@@ -6517,3 +6517,19 @@ The AI's note: i and j are the two that are a SIGN — one shape, legible at 36 
 The AI's note: a and b are his; b is the one that keeps the kinship with piece #1 he asked for, and reads as one gesture made of many — which is what a scattered strike is. c is the only one that is DATA. e says one hit where the type is several. A thing to weigh across the set: with b, three of the six badges would be made of small triangles or wedges (short attacks — open, standing apart; accented long tones — one wedge; scattered strikes — solid, in formation); they differ in fill, count and direction.
 
 **Made:** `bank/language/language.json` (the choice · `candidates.scatteredStrikes`). Seen in the AI's pane: the table's five badges; a … g draw at both sizes.
+
+## §317. THE SCATTERED STRIKES — b, the flock diving, and "another pass": three looser, less regular takes (2026-10-09, Opus)
+
+**What prompted it (his words, verbatim):** *"b but can you try another pass, a tiny bit more space between triangles and a slightly more random formation"*.
+
+**Decided (his), as far as said:** the SIGN is b of §316 — the flocking badge's nine triangles diving at the ground. Not yet: which drawing of it, and the colour.
+
+**What b was:** an echelon the AI placed by hand — rows of one, two, three, two, one, every triangle at 62° — the nearest two 5.1 px apart. Regular, which is what he saw.
+
+**Three takes, appended** (`candidates.scatteredStrikes` h · i · j; **http://localhost:5500/language/index.html#scatteredStrikes**), made by THREE DIALS on b's own nine places and a seeded draw — the same seed draws the same badge: *spread* (the formation scaled about its centre) · *jitter* (each triangle moved up to so many px) · *turn* (each turned up to so many degrees off 62°). A take is kept only if every triangle stays inside the badge and no two centres are nearer than 5.6 px; then it is set down with its lowest tip 1.5 px above the ground line and centred.
+- **h — a little looser:** spread × 1.14 · jitter 0.9 px · turn ± 5° · seed 36 — nearest neighbours 5.8 px.
+- **i — looser, more scattered:** spread × 1.2 · jitter 1.5 px · turn ± 9° · the triangles a touch smaller (× 1.65 for × 1.75) · seed 36 — 5.7 px. The same throw as h, further.
+- **j — the same dials, another throw:** seed 80 — 6.3 px.
+The AI's note: h is nearest his words (a TINY bit, SLIGHTLY); i and j are there so the edge of "too loose" can be seen — past it the nine stop reading as one formation, which was the point of b.
+
+**Nothing changed in the record:** the type has no `symbol` yet. Seen in the AI's pane: the three draw at both sizes.
