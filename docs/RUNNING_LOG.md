@@ -5860,3 +5860,20 @@ Thirty-two pairs now: the bass flute and the cello seven each, the clarinet, the
 | | | | 290.8 → 329.8 s (gap 10.8) | up + plateau + down 3.5 → 1.2 |
 
 **The score: forty-two pairs in four chords, 119 objects, 4.0 → 345.6 s — 5 min 46 s** (the flute and the cello nine pairs, the others eight). **The chords' entries across the five:** the second 88.9 … 115.6 s · the third 161.0 … 172.8 s · the fourth 218.0 … 255.1 s (the crotales last, 23 s after the cello). The bass flute's reach now caps too: a semitone at D#3 is 9 beats a second. **The tail again the crotales':** everyone else is out by 329.8 s; the last crotale pair is 58 s on a 3.5 kHz sine and runs to 345.6. Wider gaps and four chords: the texture thins — at 6 … 11 s a lane is silent about a quarter of the time. His ear's.
+
+## §280
+**2026-10-08, late — TWO TAILS CUT; THE FIFTH CHORD FROM `beating04` (Opus; DEC-72).** Verbatim in DEC-72 — said after §279's remark that the crotales' last pair was 58 s and ran alone from 330 s. **A new mode, `--droplast`** (`tools/beat_pair.js`: the lane's last pair out — its brick and the notes bound to it): the crotales' A7 287.6 → 345.6 s (nine bowings) and the cello's C#2 290.8 → 329.8 s; the lanes then ended at 276.8 and 280.0 s. **The fifth chord — the take `beating04`** (his blast `S025`; one pitch a player: **bass flute D#3 (51) · bass clarinet F#2 (42) · crotales F#5 (78), sounding F#7 · viola D#4 (63) · cello G2 (31, folded an octave up: 43)**; five more voices on no lane) — the flute and the clarinet on the pitches they had in `beating03`, the crotales back on the F#7 they began with:
+| lane | pitch | seed | when | shape |
+|---|---|---|---|---|
+| bass flute | D#3 | 26822 | 283.8 → 301.2 s (gap 7.9) | up + hold 4.1 |
+| | | | 308.9 → 338.4 s (gap 7.7) | up + hold 5.3 |
+| bass clarinet | F#2 | 97467 | 302.0 → 331.1 s (gap 6.5) | up + plateau + down 3.7 → 0.7 |
+| | | | 340.3 → 353.1 s (gap 9.2) | down + hold 3.6 → 0.8 |
+| crotales | sounding F#7, key F#5 | 80886 | 282.9 → 307.3 s (gap 6.1) | down + hold 8.8 → 2.3, the bar re-bowed ×4 |
+| | | | 318.2 → 339.6 s (gap 10.9) | down + hold 6.1 → 1.7, ×3 |
+| viola | D#4 (311 Hz) | 49844 | 288.1 → 308.0 s (gap 6.6) | down + hold 5.1 → 2.5 |
+| | | | 314.9 → 343.8 s (gap 6.9) | down + hold 6.5 → 1.1 |
+| cello | G2 (98 Hz) | 90342 | 287.6 → 314.3 s (gap 7.6) | up + hold 5.8 — a bend of 99.5 c, one note |
+| | | | 321.8 → 330.5 s (gap 7.5) | down + hold 3.8 → 1.5 |
+
+**The score: fifty pairs in five chords, 132 objects, 4.0 → 353.1 s — 5 min 49 s** (the flute eleven pairs, the clarinet, the viola and the cello ten, the crotales nine). The fifth chord enters 282.9 … 302.0 s, the clarinet last (its fourth-chord pair runs to 295.5). **The end now:** the lanes close at 330.5 (cello) · 338.4 (flute) · 339.6 (crotales) · 343.8 (viola) · 353.1 (clarinet) — a staggered exit over 23 s, the clarinet's falling pair (3.6 → 0.8 beats a second on F#2) the last sound. No pair of this chord is the long shape but one; six of ten begin at their peak.

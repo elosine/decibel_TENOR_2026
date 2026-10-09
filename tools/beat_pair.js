@@ -21,6 +21,8 @@
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --relevel --sine mp --note mp
 // RE-GAP — the pairs on a lane stay as they are, every gap between two of them rolled again (the rules' gapS, or --gap lo,hi):
 //   node tools/beat_pair.js --score sec04-a-beating --lane mal --regap
+// DROP — the lane's last pair taken out:
+//   node tools/beat_pair.js --score sec04-a-beating --lane mal --droplast
 // ALL:  [--lane cello] [--side over|under] [--sine fff] [--note p] [--vel N] [--dry]
 //     --side    the player over (sharp of) the sine, or under — over by default (under a low cello note is below its C string)
 //     --sine · --note   the written marks; without them the lane's own (bank/beat_shapes.json `levels.lanes`), else the rules' default
@@ -130,6 +132,19 @@ if (has('replace')) {
     const under = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && bricks.some((z) => startOf(o) < z.endTime + 0.01 && endOf(o) > z.startTime - 0.01));
     s.objects = s.objects.filter((o) => !bricks.includes(o) && !under.includes(o));
     out.push('--replace: ' + bricks.length + ' sine bricks and ' + under.length + ' notes under them taken off the ' + TRACKS[lane].label + ' lane');
+}
+if (has('droplast')) {
+    // --droplast: the lane's LAST pair is taken out — its sine brick and the notes bound to it
+    const bricks = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecSine' && o.layer === lane).sort((a, b) => a.startTime - b.startTime);
+    if (!bricks.length) die('no pair on the ' + TRACKS[lane].label + ' lane');
+    const z = bricks[bricks.length - 1], gone = s.objects.filter((o) => o === z || (o.type === 'waveCurve' && o.layer === lane && o.properties && o.properties.sine && o.properties.sine.brick === z.id));
+    s.objects = s.objects.filter((o) => !gone.includes(o));
+    console.log(out.concat(TRACKS[lane].label + ' — the last pair taken out: ' + SineGo.pn(Math.round(z.elec.midi)) + ' ' + z.startTime + ' → ' + z.endTime + ' s (' + (gone.length - 1) + ' notes + its sine) · ' + (bricks.length - 1) + ' pairs left, the lane ends at ' + (bricks.length > 1 ? bricks[bricks.length - 2].endTime : 0) + ' s').join('\n'));
+    if (has('dry')) { console.log('(dry: nothing written)'); process.exit(0); }
+    s.metadata = s.metadata || {}; s.metadata.modified = new Date().toISOString();
+    fs.writeFileSync(file, JSON.stringify(s));
+    console.log('written: scores/' + name + '.json · File ▾ → Reload in the page');
+    process.exit(0);
 }
 if (has('regap')) {
     // --regap: the pairs on the lane keep their shapes, lengths and pitches; every GAP between two of them is rolled again in the
