@@ -897,3 +897,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *"flute sine mf and flute notes pp And then can you generate three more each? Just a standard gap after the last entry. And can you do, take the notes from Actually, let's do two more each. And then take the notes from the take called Beating Zero One."*
 
 *(The AI's reading, marked as such: the bass flute's three sine bricks f → mf, its notes p → pp; on each of the five lanes two more rolled pairs, each lane's first after a plain rolled gap (4 … 7 s) from that lane's last pair; the pitches = each player's pitch in his take `beating01` of the Strikes drawer (his blast S001) — one pitch a player, so both pairs on it: bass flute C4 · bass clarinet F2 · crotales D5, sounding D7 · viola C5 · cello A#2. The first use of a take in the hand-built section — 16.4 his own way. RUNNING_LOG §276.)*
+
+### DEC-69 · 2026-10-08 — the first chord reduced by one roll on the bass clarinet, the mallets and the viola (two pairs each) · the `beating01` pairs pushed over
+
+*"Okay, let's reduce the first one by one roll in the bass clarinet. So the bass clarinet just has the two and the mallets just have the two. And viola. And then just push the beating one over for all of them, please."*
+
+*(The AI's reading, marked as such: "the first one" = the first chord's group of three pairs; on the bass clarinet, the crotales and the viola it becomes TWO — the THIRD pair taken out (his word does not say which of the three; the last is the one whose removal lets the next chord move over); "the beating one" = the pairs from the take `beating01`, moved EARLIER on those three lanes to follow the second pair after the gap they were rolled with — moved, not re-rolled. The cello and the bass flute keep three and are untouched. RUNNING_LOG §277.)*

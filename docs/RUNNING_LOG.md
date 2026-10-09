@@ -5805,3 +5805,15 @@ Bends 8.9 · 8.4 · 12.6 c; notes his p (37), sines `f` (the default; volume is 
 | | | | 5 | 125.7 → 152.9 s (gap 5.3) | up + hold 6.3 (23.6 s · 3.6 s) |
 
 Bends: the clarinet's 62 and 83 c at F2 (inside its semitone), the cello's 48 and 91 c at A#2 (one note each, no re-key), the flute's 30 · 36 c, the viola's 14 · 21 c, the crotales' sine 3.3 c. Levels by each lane's own rule (cello fff / p · viola mf / pp · flute mf / pp · crotales mp / mp · clarinet f / p — the clarinet's still the default). **A shape to hear:** with a second chord the lanes' entries stagger by what came before — the cello and the flute change harmony at 105 … 110 s while the clarinet's D#4 holds until 144.7 s and the crotales' F#7 until 128.2 s: the two chords OVERLAP for forty seconds. No rule ties the lanes; whether that cross-fade of harmonies is wanted or a common change is, is his ear's.
+
+## §277
+**2026-10-08, late — THE FIRST CHORD CUT TO TWO PAIRS ON THREE LANES, THE SECOND CHORD PULLED OVER (Opus; DEC-69).** Verbatim in DEC-69 — said after §276's remark that the two chords overlapped for forty seconds, the clarinet changing last. **Done by hand script on the newer of the save and his working copy** (the save, 23:36), nothing re-rolled: on the bass clarinet, the crotales and the viola the THIRD pair of the first chord taken out (its sine brick and the notes bound to it) and the two `beating01` pairs moved earlier as a block, the first of them now a gap after the lane's second pair — the SAME gap it was rolled with after the third (4.1 · 4.8 · 5.3 s):
+| lane | taken out | moved by | the lane now |
+|---|---|---|---|
+| bass clarinet | D#4, 87.9 → 144.7 s | 63.5 s | D#4 6.8 → 20.6 · D4 26.0 → 81.2 · **F2 85.3 → 94.2 · F2 98.8 → 140.6** |
+| crotales | F#7, 84.5 → 128.2 s (seven bowings) | 49.7 s | F#7 6.8 → 46.0 · F7 50.4 → 78.5 · **D7 83.3 → 127.5 · D7 132.4 → 151.4** |
+| viola | F5, 94.9 → 133.1 s | 42.7 s | F5 6.4 → 31.7 · F#5 37.6 → 90.4 · **C5 95.7 → 118.9 · C5 125.6 → 152.3** |
+| bass flute (untouched) | — | — | E5 · F5 · E5 to 104.4 · C4 110.1 → 130.2 · C4 136.1 → 154.7 |
+| cello (untouched) | — | — | D#2 · D2 · D#2 to 99.7 · A#2 105.5 → 120.4 · A#2 125.7 → 152.9 |
+
+60 objects; **the section 4.0 → 154.7 s** (was 204.1). **The change of chord is now within 27 s across the five** — the crotales at 83.3, the clarinet 85.3, the viola 95.7, the cello 105.5, the flute 110.1 (it had run 105 … 149) — and the three lanes with two pairs change FIRST. Which of the three first-chord pairs to drop he did not say; the third was taken, said to him. The times moved are whole objects' starts and ends; a bend and a gliss are relative to their note and brick, so nothing else changed.
