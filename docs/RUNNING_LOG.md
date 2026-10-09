@@ -6790,3 +6790,19 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Decided by the way:** he adjusted the announcing badge rather than moving or dropping it — it stands, before each lane's first mic opening (§325's a · b · c: a).
 
 **Proven once, in the running app** (the notation app, `approaching-opening`, page 1, the first lane): the badge 54 px, its top 7.9 px under the lane's top · 12 px between the badge and its mic opening · the opening 29.34 px tall at 0.28 / 0.56 · the centres of the badge, the opening and the circles all at y 42.9. `check_rules` 31 of 32 (§45's red) · `docs/ENGRAVING_RULES.md` regenerated. No layout change: the items are the same, only their drawing.
+
+## §329. THE MIC OPENING HANGS FROM THE TOP; ITS OUTLINE BACK, ITS FILL LIGHTER AGAIN — his correction of §328's two readings (2026-10-09, Opus)
+
+**What prompted it (DEC-106, verbatim in COMPOSITION_NOTES):** *"I don't know if you reduce the transparency of the borders of the mic, but if you did put it back and then make the fill more transparent even more … whatever you reduced it by that time, reduce it that much again. And let's push the mic openings back up to the top. So by shorter, I meant from the bottom."*
+
+**The two readings of §328, corrected:**
+- **"Transparency" was the fill's.** §328 scaled the fill AND the outline (each × 0.8), to keep the composer score's proportion. He had named neither part; the AI chose both and said so. Now: `strokeOpacity` 0.56 → **0.7** (as the composer score) · `fillOpacity` 0.28 → **0.21** — "that much again" read as the same seven points, not the same ratio (0.224).
+- **"Shorter" was from the bottom.** §328 made the row as tall as the badge and CENTRED the mic opening in it, which moved the opening 12 px DOWN from the place he had given it (the top). He had resized it; he had not moved it. Now the row has an `align`: **`edge`** — a thing hangs from the row's own edge (its top under `laneTop`), so one made less tall loses height on the far side · `centre` — §328's reading, kept as the other word. The opening is back at 7.9 px under the lane's top; the badge hangs from the same edge.
+
+**A lane, top to bottom, now (px from its top):** the gap 0 … 7.9 · the mic opening 7.9 … 37.2 (its circles at 22.6) · the badge 7.9 … 61.9, 12 px before its mic · free under the badge 61.9 … 89 · the staff 89 … 120.6.
+
+**What changed:** `rules.json` `objects.micOpening` — `fillOpacity` · `strokeOpacity` · the new `align` (→ `container.json` `engraving.render.micOpening.align`) · `render.js` `micRow` gives where a thing of any height stands in the row (`yOf`), and the badge asks it.
+
+**Proven once, in the running app** (`approaching-opening`, page 1, the first lane): the opening's top 7.9 px under the lane's top, 29.34 px tall · fill 0.21, outline 0.7 · the badge's top at the same 7.9 px, 54 px, 12 px before its mic · the circles on the opening's own centre. `check_rules` 31 of 32 (§45's red).
+
+**The lesson, kept (memory `resize-keeps-its-place`):** a change of SIZE does not move a thing — it keeps the edge he gave it; and a property is changed on the part he named, no wider. Where a number forces a second change (here: a badge taller than its neighbour), the second change is put to him, not made for him.

@@ -275,11 +275,15 @@
       const micRow = MO => {
         const mh = Math.max(MO.minSs * ssPx, (lane.yBotPx - lane.yTopPx) * MO.heightFrac), gp = MO.gapSs * ssPx;
         // [§328, DEC-105] THE ROW IS AS TALL AS THE TALLEST THING THAT MAY STAND IN IT — the mic opening, or a badge beside it (his badge is the taller
-        // since §328). The row keeps the standard gap; the mic opening and the badge are both centred in it. So the mic is at ONE height whether
+        // since §328). The row keeps the standard gap; where the two stand in it is the row's `align` (just below). So the mic is at ONE height whether
         // or not a badge stands beside it (his rule, DEC-102), and a badge never crosses the dividing line.
         const rh = Math.max(mh, E.badge ? E.badge.sizeSs * ssPx : mh);
         const ry = MO.place === 'laneBottom' ? lane.yBotPx - gp - rh : MO.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - rh) / 2 : lane.yTopPx + gp;
-        return { h: mh, y: ry + (rh - mh) / 2 };
+        // [§329, DEC-106 — his "push the mic openings back up to the top … by shorter, I meant from the bottom"] WHERE A THING OF HEIGHT h STANDS IN
+        // THE ROW — the row's `align`: 'edge' = hung from the row's own edge (its top under laneTop, its bottom over laneBottom), so a thing made
+        // less tall loses height on the far side and its edge stays put · 'centre' = centred in the row. laneMiddle is centred either way.
+        const yOf = h => (MO.place === 'laneMiddle' || MO.align === 'centre') ? ry + (rh - h) / 2 : MO.place === 'laneBottom' ? ry + rh - h : ry;
+        return { h: mh, y: yOf(mh), yOf };
       };
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
@@ -972,7 +976,7 @@
           const bs = BG.sizeSs * ssPx, row = micRow(MO), u = LG.format.viewUnits;
           let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
-          parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + (row.y + (row.h - bs) / 2).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
+          parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
             '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
         } else if (it.k === 'brick') {
           if (o.hideBricks) continue;   // day 22: the bricks toggle

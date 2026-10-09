@@ -766,6 +766,8 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **§328 (DEC-105) — HE SAW SECTION 1 AND GAVE NUMBERS:** the badge 50 % bigger (`objects.badge.sizeSs` 6.835, 54 px) and twice as far from its mic (`gapSs` 1.52, 12 px) · the mic opening 30 % less tall (`heightFrac` 0.14, 29 px) and a fifth more transparent (0.28 · 0.56) · the circles centred. The badge is now the taller: THE MIC'S ROW IS AS TALL AS THE BADGE, keeps the standard gap, and both are centred in it (`render.js` `micRow`) — the mic still at one height everywhere. The announcing badge stands before each lane's first mic opening (he adjusted it, he did not move it). Seen in the running app.
 
+**§329 (DEC-106) — HIS CORRECTION OF §328:** 'by shorter, I meant from the bottom' — the mic opening hangs from the row's TOP under the standard gap (`objects.micOpening.align` edge; `centre` is §328's reading), the badge from the same edge · the outline back to 70 %, the fill down again by the same seven points, 21 %. Seen in the running app.
+
 **Next:** his eye on those numbers → then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 → the drones → the beating section → the strikes → the gap and the sizes → a drawing when he asks → the rows of `rules.json` (a device sheet each kind).
 
 ### 2.7 THE CONDUCTOR'S / PRESENTATION VIEW — a generic hint of the electronics, section by section — `doing` 2026-10-09 (opened at his word, DEC-99; RUNNING_LOG §320)

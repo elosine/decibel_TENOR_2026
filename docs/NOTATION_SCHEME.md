@@ -42,7 +42,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | audible beats | the added wave inside its two-pinch outline | SOL_orange |
 | scattered strikes | nine solid triangles diving at a ground line | SOL_green |
 
-**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 28 % (a fifth more transparent than the composer score's, and 29 px tall — DEC-105), an outline in the same
+**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 21 % (lighter than the composer score's 35 %; 29 px tall, from the top — DEC-105 · DEC-106), an outline at 70 % in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
 **Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·
@@ -98,7 +98,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 | | px |
 |---|---|
 | the gap under the dividing line — the size a first number **(AI)** | 0 … 8 |
-| **the mic's row** — a badge fills it (54 px); the mic opening is centred in it (29 px tall, at 20 … 50) | 8 … 62 |
+| **the mic's row** — the mic opening (29 px tall, at 8 … 37) and the badge (54 px) both hang from its top | 8 … 62 |
 | free | 62 … 89 |
 | the staff, where it shows | 89 … 121 |
 | free | 121 … 202 |
@@ -131,7 +131,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience.
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 with his numbers of DEC-105 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, at 28 %).
+1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top; its fill 21 %, its outline 70 %).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's view.

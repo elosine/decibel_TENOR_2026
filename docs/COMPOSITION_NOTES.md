@@ -1145,3 +1145,13 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 - *"20 % more transparent": the fill 35 → 28 %, the outline 70 → 56 % — both, so the brick keeps the composer score's proportion of fill to outline.*
 - *BY ADJUSTING THE BADGE HE KEEPS IT: the announcing badge of the opening stands, before each lane's first mic opening (§325's question a · b · c is answered: a).*
 - *A consequence the AI settled, his to reverse: the badge is now TALLER than the mic opening. The row is as tall as the badge and keeps the standard gap under the dividing line; the mic opening is centred in it. RUNNING_LOG §328.)*
+
+### DEC-106 · 2026-10-09 — a correction of §328's two readings: the mic's border back as it was, only the fill more transparent, and again by as much; the mic openings back up to the top — "by shorter, I meant from the bottom"
+
+*(His words, verbatim — Opus; spoken:)* *"So I don't know if you reduce the transparency of the borders of the mic, but if you did put it back and then make the fill more transparent even more. So like whatever you reduced it by that time, reduce it that much again. And let's push the mic openings back up to the top. So by shorter, I meant from the bottom."*
+
+*(The AI's reading, marked as such:*
+- *THE BORDER: back to the composer score's 70 %. "Transparency" meant the FILL alone; the AI had changed both.*
+- *THE FILL: down by the same amount again — it went 35 → 28 %, seven points; now 28 → 21 %.*
+- *THE MIC OPENING: its TOP EDGE stays where it was, under the standard gap; "30 % shorter" takes the height off the BOTTOM. The AI had centred it on the badge and so moved it down.*
+- *The badge was not mentioned: it stays 54 px, 12 px before its mic, its top under the same gap — the two now hang from one top edge. RUNNING_LOG §329.)*
