@@ -88,7 +88,10 @@ const s = JSON.parse(fs.readFileSync(useWork ? work : file, 'utf8'));
 const startOf = (o) => (o.startTime != null ? o.startTime : o.startSeconds), endOf = (o) => (o.endTime != null ? o.endTime : o.endSeconds);
 // the note's loudness, read BEFORE anything is taken out: as his last note on the lane
 const m = MARKS.indexOf(noteMark);
-const prev = s.objects.filter((o) => o.type === 'waveCurve' && o.layer === lane && o.sonifyNote != null && (o.velAbs != null || o.recVel != null)).sort((a, b) => endOf(b) - endOf(a))[0];
+const loud = (o) => o.type === 'waveCurve' && o.sonifyNote != null && (o.velAbs != null || o.recVel != null);
+// … and on a lane with no note yet: as the last note of a PAIR on any lane (his p, §271 — the same written dynamic across the players)
+const prev = s.objects.filter((o) => loud(o) && o.layer === lane).sort((a, b) => endOf(b) - endOf(a))[0]
+    || s.objects.filter((o) => loud(o) && o.properties && o.properties.sine).sort((a, b) => endOf(b) - endOf(a))[0];
 const vel = arg('vel') != null ? Math.max(1, Math.min(127, Math.round(+arg('vel')))) : prev ? Math.round(prev.velAbs != null ? prev.velAbs : prev.recVel) : null;
 const y = arg('vel') == null && prev && prev.nodes && prev.nodes[0] ? prev.nodes[0].y : Math.round(m / 7 * 1000) / 100;
 const out = [useWork ? '(the base: HIS working copy — unsaved edits kept)' : '(the base: the save)'];
