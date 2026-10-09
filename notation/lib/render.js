@@ -270,6 +270,12 @@
         } catch (e) { return sy; }
       };
       const lane = laneOf(sysModel, sys);
+      // [decibel PLAN 2.6, RUNNING_LOG §325] THE MIC'S ROW of this lane (rules.json objects.micOpening: place · gapSs · heightFrac · minSs): where a mic
+      // opening stands, and a badge with it — laneTop (under the dividing line by the standard gap) · laneMiddle · laneBottom
+      const micRow = MO => {
+        const mh = Math.max(MO.minSs * ssPx, (lane.yBotPx - lane.yTopPx) * MO.heightFrac), gp = MO.gapSs * ssPx;
+        return { h: mh, y: MO.place === 'laneBottom' ? lane.yBotPx - gp - mh : MO.place === 'laneMiddle' ? (lane.yTopPx + lane.yBotPx - mh) / 2 : lane.yTopPx + gp };
+      };
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
       let curShift = 0;
@@ -931,6 +937,38 @@
           } else
           parts.push('<rect x="' + x0.toFixed(2) + '" y="' + (yC - h / 2).toFixed(2) + '" width="' + Math.max(1, x1 - x0).toFixed(2) +
             '" height="' + h.toFixed(2) + '" fill="' + fillRB + '" opacity="' + RB.opacity + '"/>');
+        } else if (it.k === 'mic') {
+          // [decibel PLAN 2.4 · 2.6 — RUNNING_LOG §325; rules.json objects.micOpening → engraving.render.micOpening] THE MIC OPENING: when the
+          // player plays into the microphone, and for how long — the composer score's own brick (a rounded rectangle, its colour as a pale
+          // fill and a stronger outline, the sign of two circles at its start). It belongs to the LANE, not to the staff: in the lane's mic
+          // row. A LONG kind: on a tiled screen page it is drawn whole inside the page's clip (edge class `cut` — a long opening is cut like
+          // paper at the turn and goes on at the next page's start); elsewhere over the page's own span. No row in the registry = no ink.
+          const MO = E.micOpening;
+          if (!MO || !crosses(it.t0, it.t1)) continue;
+          const whole = cutMark >= 0, row = micRow(MO);
+          const xa = view.xOfSeconds(whole ? it.t0 : Math.max(it.t0, w0)), xb = view.xOfSeconds(whole ? it.t1 : Math.min(it.t1, wInk));
+          parts.push('<rect class="mic-open" x="' + xa.toFixed(2) + '" y="' + row.y.toFixed(2) + '" width="' + Math.max(1, xb - xa).toFixed(2) + '" height="' + row.h.toFixed(2) +
+            '" rx="' + (MO.cornerSs * ssPx).toFixed(2) + '" fill="' + MO.colour + '" fill-opacity="' + MO.fillOpacity + '" stroke="' + MO.colour +
+            '" stroke-width="' + (MO.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + MO.strokeOpacity + '"/>');
+          const SG = MO.sign;
+          if (SG && (whole || it.t0 >= w0 - 1e-9)) {   // the sign stands at the opening's own start
+            const sx = view.xOfSeconds(it.t0) + SG.insetSs * ssPx, sy = row.y + row.h / 2;
+            parts.push('<circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.ringSs * ssPx).toFixed(2) + '" fill="none" stroke="' + SG.colour +
+              '" stroke-width="' + (SG.ringStrokeSs * ssPx).toFixed(2) + '"/><circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.dotSs * ssPx).toFixed(2) + '" fill="' + SG.colour + '"/>');
+          }
+        } else if (it.k === 'badge') {
+          // [decibel PLAN 2.3 · 2.6 — RUNNING_LOG §325; rules.json objects.badge · the table `language` → engraving.render.badge · .language]
+          // A LANGUAGE BADGE: what KIND of sound — a rounded square of the format's ground, the type's sign in the type's colour (the drawing
+          // and the colour are rows of rules.json `language`: his choices). It stands in the mic's row: `place` 'before' = its right edge the
+          // badge's gap before x(t) (a badge before its mic opening) · 'at' = its left edge on x(t). A POINT kind: drawn once, whole, on the
+          // page that owns its time; on a tiled screen page never left of the page's own start (edge class `clamp`).
+          const BG = E.badge, LG = E.language, MO = E.micOpening, ty = LG && LG.types && LG.types[it.type];
+          if (!BG || !ty || !MO || !owns(it.t)) continue;
+          const bs = BG.sizeSs * ssPx, row = micRow(MO), u = LG.format.viewUnits;
+          let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs);
+          if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
+          parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + (row.y + (row.h - bs) / 2).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
+            '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
         } else if (it.k === 'brick') {
           if (o.hideBricks) continue;   // day 22: the bricks toggle
           if (!crosses(it.t0, it.t1)) continue;
@@ -1015,8 +1053,8 @@
   // the page, not to the music). check_print_edges reads these rather than
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
-    'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle'];   // [§550] the grace's stroke · [§557] the uneven group's
-  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur'];   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
+    'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
+  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic'];   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket
   // belongs to a beam group and the splicer is stamp-atomic — no cut severs a

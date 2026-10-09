@@ -726,7 +726,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **WHAT IS LEFT after the six badges (listed to him, §310):** the notation's other signs, a sheet each — the microphone opening (2.4) · the return · the petal hit · the drone's duration line · the beating pair and its sine (2.5) · the three body problem's containers · the computer players · then the badge placed in the score as a drawn kind · the palette into `composition-system` · the two set-up calls (pitch form · short names) · the lock and the deliverables (container 8). **Then, per type, the AI's:** its row in `language.json` (`symbol` · `colour`), and at the notation's turn a DEVICE SHEET for the badge as a drawn kind (`docs/PLANNING_METHOD.md`).
 
-### 2.4 THE MIC OPENING — its notation — `doing` 2026-10-09 (opened at his word, DEC-97; RUNNING_LOG §318)
+### 2.4 THE MIC OPENING — its notation — `built 2026-10-09 in the notation engine (RUNNING_LOG §325; the device sheet is there), his eye on it` (opened at his word, DEC-97; RUNNING_LOG §318)
 
 **His word:** *"just like composer score, all those elements rounded corners, the 2 circles the outline and transparent fill, but can you find a highlghter yellow and let me see a few versions"*.
 
@@ -762,7 +762,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **(Before his word — the AI's analysis of the mic's height.)** The AI's recommendation (§323): THE MIDDLE — the row the staff takes when it shows, so one row to watch in every section; the badge to the LEFT of its mic in the same row, where a clef stands; the arc can land on the brick from above (the stack's `gcGeom: staffTop`). Second: the bottom, where the arc lands today.
 
-**Next:** his eye on the layout page (the mic's row at the top · the announcing badge, a or b) → then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 → the drones → the beating section → the strikes → the gap and the sizes → a drawing when he asks → the rows of `rules.json` (a device sheet each kind).
+**SINCE §325 (DEC-104: 'no lets actually start laying out the notation in the presentation/notation score') — IN THE NOTATION SCORE ITSELF.** The engine draws the mic opening and the language badge from the save: the extractor's `mics` · the cutter's `--mics` · `--silent t0-t1[@part]` · `--announce type:t0:t1[:start]` · `--micBadge type:t0:t1` → the overlays `micOpening` · `badge` (the schema's `_kindNote6`) → the items `mic` · `badge` → the lane's MIC ROW (rules.json `objects.micOpening` — `place` laneTop · laneMiddle · laneBottom, `gapSs` · `objects.badge` · the table `language`, written from the bank by `node tools/language/to_rules.js`; `page_rules.edge.mic` · `.badge`). SECTION 1 IS LAID OUT THERE: the page `approaching-opening` — 30 mic openings, the notes silent, the short attacks' badge before each lane's first opening; seen in the running app, four pages. §324's working page is superseded for section 1.
+
+**Next:** his eye on section 1 in the notation score (the mic's row at the top · the announcing badge, before the first mic or at the section's start) → then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 → the drones → the beating section → the strikes → the gap and the sizes → a drawing when he asks → the rows of `rules.json` (a device sheet each kind).
 
 ### 2.7 THE CONDUCTOR'S / PRESENTATION VIEW — a generic hint of the electronics, section by section — `doing` 2026-10-09 (opened at his word, DEC-99; RUNNING_LOG §320)
 

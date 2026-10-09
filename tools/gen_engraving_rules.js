@@ -145,6 +145,16 @@ if (R.staffLines) {
     P('- **' + k + '** — ' + Object.entries(v).filter(([n]) => !META.has(n)).map(([n, x]) => n + ' **' + fmt(x) + '**').join(' · ') + ' · *' + v.basis + '* · ' + v.ref);
   P('');
 }
+// [decibel PLAN 2.3, RUNNING_LOG §325] the language's badges (rules.json language — written by tools/language/to_rules.js from the bank)
+if (R.language) {
+  P("### The language's badges (`language`)");
+  P('');
+  P(R.language._doc);
+  P('');
+  P('- **format** — ' + Object.entries(R.language.format).map(([n, x]) => n + ' **' + fmt(x) + '**').join(' · '));
+  for (const [k, v] of Object.entries(R.language.types || {})) P('- **' + k + '** — ' + v.name + ' · the sign `' + v.symbol + '` · colour **' + fmt(v.colour) + '**');
+  P('');
+}
 P('---');
 P('');
 P('## 4 · THE COLOURS AND THE FACES');

@@ -639,6 +639,15 @@
       }
     }
 
+    // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] with options.mics: THE MIC OPENINGS — the composer score's zones `elecOpen` that begin in the
+    // window, on the parts extracted, as `micOpening` overlays: target { part, span }, value { source: the zone's id, sample: the name it
+    // banks }. Regenerated at every extraction; `authored` is the schema's word for every overlay (he authored the opening, in his score). An opening that runs past the window's end is clipped to it — the window owns [w0, w1).
+    const micOverlays = !opt.mics ? [] : (score.objects || [])
+      .filter(o => o.type === 'zone' && o.midiModel === 'elecOpen' && o.startTime >= w0 && o.startTime < w1 && parts.includes(o.layer) && Math.min(o.endTime, w1) > o.startTime)
+      .sort((a, b) => a.startTime - b.startTime || a.layer - b.layer)
+      .map(o => ({ id: 'ov-mic-' + o.id, kind: 'micOpening', target: { part: o.layer, span: [+o.startTime.toFixed(4), +Math.min(o.endTime, w1).toFixed(4)] },
+        value: { source: o.id, sample: (o.elec && o.elec.name) || null }, provenance: 'authored' }));
+
     return {
       doc: {
         irVersion: '0.1',
@@ -649,11 +658,12 @@
           date: date || 'undated',
           tool: toolName || 'extract_core',
           notes: 'Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL ' + opt.TOL + ' s. Regenerable; authored content belongs in overlays only.'
-            + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + flatN + ' trill(s) read a flat level.' : ''),
+            + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + flatN + ' trill(s) read a flat level.' : '')
+            + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : ''),
         },
         events,
         chunks,
-        overlays: [],
+        overlays: micOverlays,
       },
       warnings,
     };

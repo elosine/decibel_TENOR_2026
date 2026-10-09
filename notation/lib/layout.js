@@ -354,6 +354,7 @@
     const tempos = [];           // {t, bpm} — a bar line + a tempo mark
     const headers = [];          // {part, t, endMark} — the section header block
     const freeRests = [];        // [§550] {part, t, dur} — a free-standing rest (the `rest` overlay), drawn at x(t) on its part
+    const micOpens = [], badges = [];   // [decibel §325] {part, span} · {part, t, type, place} — the lane's own marks (the `micOpening` · `badge` overlays)
     const beatGrids = [];        // [§564] {part, span, unit, beatEvery, phase} — the shown beat's grid (the `beatGrid` overlay), ticks on the tick row
     const sequences = [];        // [LGMF 2d.2] {part, span, v} — one part's line of a sequence (the `sequence` overlay, IR amendment 10)
     const vibBowOf = new Map();  // [LGMF 2g.3] event id → its bow of a `vibBows` overlay {chain, voice, t0, t1, midi, marks, …, part}
@@ -368,6 +369,10 @@
       }
       if (ov.kind === 'spelling' && tgt.event) { respell.set(tgt.event, ov.value); continue; }
       if (ov.kind === 'engraving' && tgt.event) { engrave.set(tgt.event, ov.value || {}); continue; }
+      // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS: a mic opening (the `micOpening` overlay — when the player plays into the
+      // microphone, and for how long) and a language badge (the `badge` overlay — what kind of sound). They belong to the LANE, not to a note.
+      if (ov.kind === 'micOpening' && tgt.part !== undefined && tgt.span) { micOpens.push({ part: tgt.part, span: tgt.span }); continue; }
+      if (ov.kind === 'badge' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.type) { badges.push({ part: tgt.part, t: tgt.t, type: ov.value.type, place: ov.value.place || 'before' }); continue; }
       if (ov.kind === 'rest' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.dur) { freeRests.push({ part: tgt.part, t: tgt.t, dur: ov.value.dur }); continue; }
       if (ov.kind === 'beatGrid' && tgt.part !== undefined && tgt.span && ov.value && ov.value.unit > 0) { beatGrids.push(Object.assign({ part: tgt.part, span: tgt.span }, ov.value)); continue; }
       if (ov.kind === 'staff' && ov.value === 'off' && tgt.part !== undefined && tgt.span) {
@@ -3353,6 +3358,11 @@
       // [2h.4, §477] the bow's head height and the bar's, for the FLUSH offset (the close rule) and the marks' push (the bars moved off
       // their heads are ink under the marks' row too)
       // [§550, LG-129] THE FREE RESTS (the `rest` overlay) — bespoke, no device
+      // [decibel §325] THE MIC OPENINGS and THE BADGES of this part — placed by the renderer in the lane's mic row (rules.json objects.micOpening · badge)
+      if (!(spec.staff > 0)) {
+        for (const m of micOpens) if (m.part === spec.part) items.push({ k: 'mic', t0: m.span[0], t1: m.span[1] });
+        for (const b of badges) if (b.part === spec.part) items.push({ k: 'badge', t: b.t, type: b.type, place: b.place });
+      }
       for (const r of freeRests) if (r.part === spec.part) items.push({ k: 'rest', dur: r.dur, t: r.t, dxSs: 0, units: 1 });
       // [§564, LG-142] THE BEAT GRID — his pick for a figure, drawn as the tuba pages' ticks on the tick row: a tick at every grid point of
       // the unit from the phase, the BEATS (every beatEvery-th) at the tick's full look, the subdivisions at subHSs (rules.json objects.tick)

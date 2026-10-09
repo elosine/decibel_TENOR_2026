@@ -1128,3 +1128,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 - *ASKED: to SEE the layout of section 1, the opening, up to the three body problem → drawn on the notation's own frame, http://localhost:5500/signs/layout.html.*
 - *THE ORDER: the conductor's hint of the electronics is discussed AFTER the layout.*
 - *A NOTE FOR THE DRONES: each multiphonic's mic opening carries a PIE DIAL showing the duration of the opening. The stack has one already — the breath's clock of piece #6 (`motivePie` with `countdown`, after piece #2's `_drawMotivePie`): a pie at the lane's top, at the cursor, the remaining time filled. Not drawn now; at the drones' turn. RUNNING_LOG §324.)*
+
+### DEC-104 · 2026-10-09 — not a working drawing: lay the notation out in the presentation / notation score itself
+
+*(His words, verbatim — Opus; his answer to the working page of §324:)* *"no lets actually start laying out the notation in the presentation/notation score"*
+
+*(The AI's reading, marked as such: the layout is to be made IN the notation app — the real score, the one the film and the print are drawn from — not on a page beside it. So the mic opening and the badge become things the notation engine draws from the save, by its own rules, and section 1 is laid out there first. Taken as his go for the build; the device sheet is written with it. RUNNING_LOG §325.)*

@@ -57,6 +57,9 @@
 //                            for the span (go line, GC + ball, notehead unit, dot, ring bar,
 //                            dynamic). @part optional — bare sweeps every lane by default.
 //                            Repeatable. Errors rather than blank a note that carries a figure.
+//   --mics · --silent t0-t1[@part] · --announce type:t0:t1[:start] · --micBadge type:t0:t1   [decibel §325] THE LANE'S OWN MARKS — the composer
+//                            score's mic openings drawn, the notes of a span drawing nothing, a section's badge, a badge on each opening
+//                            (the block after --bare's says each in full)
 //   --pattern                take the grid from the PATTERN analyser (D63: pattern before
 //                            grid — notation/lib/pattern_fit.js) instead of cluster_fit.
 //                            Tuplets it chose become bracket groups; no --tuplet needed.
@@ -277,9 +280,9 @@ const SEQ_GROUPS = [];
 process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) SEQ_GROUPS.push(process.argv[i + 1]); });
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
-  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
+  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
   date: new Date().toISOString().slice(0, 10),
-  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
+  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
 });
 // [§400] THE RANGE ALERT AT BUILD TIME: a technique whose registry `written`
 // entry carries a range (the flute's tongue ram: written = sounding + 11,
@@ -1330,6 +1333,64 @@ for (let i = 0; i < process.argv.length; i++) {
       console.log('  bare ' + label + ': ' + members.length + ' notes cleared to bricks (' +
         Object.keys(byPart).sort((a, b) => a - b).map(p => 'T' + (+p + 1) + ':' + byPart[p]).join(' ') + ')');
     });
+  }
+}
+
+// [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS — in this piece a player's page is mostly not notes:
+//   --mics                     (an extraction option, above) every mic opening of the composer score in the window, as `micOpening` overlays
+//   --silent t0-t1[@part]      the notes that begin in [t0, t1) DRAW NOTHING: --bare's switches, and the brick off as well. In his scheme an
+//                              event of such a section is its mic opening alone; the note stays in the IR (the save is the ground truth).
+//   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
+//                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
+//   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
+// All repeatable. Written at extraction, so a re-extract with the same flags gives the same page.
+{
+  const argsOf = name => { const out = []; process.argv.forEach((a, i) => { if (a === '--' + name) out.push(String(process.argv[i + 1] || '')); }); return out; };
+  const partOfEv = new Map();
+  for (const c of doc.chunks) for (const evId of c.events) partOfEv.set(evId, c.part);
+  const SILENT_OFF = { curve: false, cut: false, goLine: false, gc: false, nhUnit: false, nhDot: false, ringBar: false, dynMark: false, dynPair: false, dynBesideStem: false, brick: false };
+  for (const a of argsOf('silent')) {
+    const at = a.split('@'), ts = at[0].split('-').map(Number), part = at.length > 1 ? parseInt(at[1], 10) : null;
+    if (!(ts.length === 2 && ts[1] > ts[0]) || (part !== null && !(part >= 0))) { console.error('--silent needs t0-t1 or t0-t1@part (e.g. --silent 0-37)'); process.exit(2); }
+    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part));
+    for (const e of members) {
+      const existing = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id);
+      if (existing) existing.value.device = Object.assign({}, existing.value.device, SILENT_OFF);
+      else doc.overlays.push({ id: 'ov-silent-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, SILENT_OFF) }, provenance: 'authored' });
+    }
+    console.log('  silent ' + a + ': ' + members.length + ' note(s) draw nothing');
+  }
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length;
+  if (wantBadges) {
+    const LANG = (require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT).language || {}).types || {};
+    const mics = doc.overlays.filter(o => o.kind === 'micOpening').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
+    // a lane = a part, or the parts the ensemble joins in one lane (the percussionist's two)
+    const laneKey = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
+    const read = (name, a) => {
+      const f = a.split(':'), t0 = parseFloat(f[1]), t1 = parseFloat(f[2]);
+      if (!LANG[f[0]] || !(t1 > t0)) { console.error('--' + name + ' needs type:t0:t1 with a type of rules.json language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
+      return { type: f[0], t0, t1, mode: f[3] || null, mics: mics.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9) };
+    };
+    const addBadge = (part, t, type, place, why) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: { type, place }, provenance: 'authored' });
+    for (const a of argsOf('announce')) {
+      const s = read('announce', a);
+      if (s.mode === 'start') {
+        const seen = new Set();
+        for (const p of parts) { const k = laneKey(p); if (!seen.has(k)) { seen.add(k); addBadge(p, s.t0, s.type, 'at', 'announce'); } }
+        console.log('  announce ' + a + ': ' + seen.size + ' lane(s), at ' + s.t0 + ' s');
+      } else {
+        const first = new Map();
+        for (const o of s.mics) { const k = laneKey(o.target.part); if (!first.has(k)) first.set(k, o); }
+        if (!first.size) { console.error('--announce ' + a + ': no mic opening in the span (is --mics given?) — add :start to announce at t0'); process.exit(2); }
+        for (const o of first.values()) addBadge(o.target.part, o.target.span[0], s.type, 'before', 'announce');
+        console.log('  announce ' + a + ': ' + first.size + ' lane(s), each before its first mic opening');
+      }
+    }
+    for (const a of argsOf('micBadge')) {
+      const s = read('micBadge', a);
+      for (const o of s.mics) addBadge(o.target.part, o.target.span[0], s.type, 'before', 'mic');
+      console.log('  micBadge ' + a + ': ' + s.mics.length + ' opening(s)');
+    }
   }
 }
 // --dynSide t@part:above|below (day 33): DICTATE A ONE-SHOT MARK'S SIDE.

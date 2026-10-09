@@ -23,7 +23,7 @@ function load() {
     if (!c) throw new Error('badge_lib: no colour "' + n + '"'); return c.value;
   };
   const badge = (svg, colour, px) => '<svg class="bdg" width="' + px + '" height="' + px + '" viewBox="0 0 36 36" style="color:' + colour + '"><rect width="36" height="36" rx="' + B.cornerPx + '" ry="' + B.cornerPx + '" fill="' + B.ground + '"/>' + withGlyphs(svg).replace(/'/g, '"') + '</svg>';
-  return { L, B, colourOf, badge };
+  return { L, B, colourOf, badge, withGlyphs };
 }
 function chosenBadge(typeId, px) {
   const { L, colourOf, badge } = load();
@@ -32,4 +32,11 @@ function chosenBadge(typeId, px) {
   return badge(c.svg, colourOf(t.colour), px || 36);
 }
 function chosenTypes() { const { L } = load(); return L.types.filter(t => t.symbol && t.colour).map(t => ({ id: t.id, name: t.name, colour: t.colour })); }
-module.exports = { chosenBadge, chosenTypes, load };
+// [RUNNING_LOG §325] a chosen type as the notation registry takes it: its sign with every font glyph resolved to its outline (currentColor kept)
+function chosenSign(typeId) {
+  const { L, withGlyphs } = load();
+  const t = L.types.find(t => t.id === typeId); if (!t || !t.symbol || !t.colour) return null;
+  const c = ((L.candidates || {})[typeId] || []).find(c => c.id === t.symbol); if (!c) return null;
+  return { id: t.id, name: t.name, symbol: t.symbol, colour: t.colour, sign: withGlyphs(c.svg) };
+}
+module.exports = { chosenBadge, chosenTypes, chosenSign, load };

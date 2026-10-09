@@ -4,7 +4,7 @@
 > (with its basis and its §), regenerate, commit both. `node tools/check_rules.js` fails when the page and the tables disagree.
 > The rules for a NEW notation begin with a DEVICE SHEET (`docs/PLANNING_METHOD.md`); `docs/NOTATION_STANDARDS.md` is the history.
 
-LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 270 registry pointers compile from these tables.
+LGMF PLAN § `2e` (RUNNING_LOG §408 … §447 the design · §448 … the build). 284 registry pointers compile from these tables.
 
 **How to read a row:** the value · `→` the registry key(s) it is compiled into (what the layout and the renderer read) · the basis
 (`lilypond` · `gould` · `composer` · `AI` · `census` = what drew when the tables were built) · the ref (the § or the day). A field
@@ -184,6 +184,10 @@ LAYER 3 — THE OBJECTS (§421 · §422 · §427 · §428): one row per drawn ob
   - draws `cresccurve` `cresccurve[level]` · in: notation/lib/sequence_overlays.js — the extractor passes the row (tools/notate_section.js); the device's `level` names the producer (container.json byEnv.sequence "recipe" · byEnv.morph "arc")
 - **glissCurve** *(a variant of curve)* — colour **brightOrange #F04B00** · scale **travel** → `render.glissCurve.scale` · *composer* · D42 · #4 day 35 · §505 (scale travel — his B: the top half of the lane spans each part's OWN travel, the figure's heads say the extremes; #4's and #5's form)
   - draws `glisscurve`
+- **micOpening** — colour **micYellow #FFFF00** → `render.micOpening.colour` · fillOpacity **0.35** → `render.micOpening.fillOpacity` · strokeOpacity **0.7** → `render.micOpening.strokeOpacity` · strokeSs **0.19** → `render.micOpening.strokeSs` · cornerSs **0.38** → `render.micOpening.cornerSs` · place **laneTop** → `render.micOpening.place` · gapSs **1** → `render.micOpening.gapSs` · heightFrac **0.2** → `render.micOpening.heightFrac` · minSs **2** → `render.micOpening.minSs` · sign **{colour: @colours.micSign.value, insetSs: 1.46, ringSs: 0.67, ringStrokeSs: 0.165, dotSs: 0.29}** → `render.micOpening.sign` · *composer* · decibel RUNNING_LOG §318 · §319 (DEC-97 · DEC-98: 'just like composer score, all those elements rounded corners, the 2 circles the outline and transparent fill' in a highlighter yellow — the numbers are the composer score's own brick, 3 px corners · a 1.5 px outline at 70 % · the fill at 35 % · a fifth of the lane tall, written in staff spaces at the 1080 frame) · §324 (DEC-103: `place` laneTop — 'mics at top for now'; laneMiddle · laneBottom are the other two) · §325 (the device sheet; `gapSs` 1 = the standard gap between the dividing line and the object, his rule DEC-98, the size the AI's first number)
+  - draws `mic`
+- **badge** — sizeSs **4.557** → `render.badge.sizeSs` · gapSs **0.76** → `render.badge.gapSs` · row **mic** · *composer* · decibel RUNNING_LOG §307 (DEC-90: the badge format of pieces #1 · #2 — 36 px at the 1080 frame) · §321 … §323 (DEC-100 … DEC-102: a badge announces a section; where the openings stand alone each carries its own) · §325 (the device sheet: it stands in the mic's row; before its mic opening, `gapSs` from it — the AI's 6 px, his to move). The signs and their colours: the table `language`
+  - draws `badge`
 - **beatBall** — colour **navyBlue #1C4879** · colours **[@colours.navyBlue.value, @colours.olive.value]** → `animated.beatBall.colours` · coloursRef **§578 — the ball takes its FRAME's colour, the frames alternating navy · olive on a part (objects.tick.gridColours, the same pair); `colour` stays the single-colour fallback** · opacity **0.3 (= ringBar.opacity)** · radiusPx **5** · *composer* · §567 (2026-09-29, his LG-145): THE SHOWN BEAT's ball — the tuba's GC ball (piece #1's physics, the 5 px ball) in the duration line's navyBlue at its opacity, one in flight over a beat grid (the beatGrid overlay) and nowhere else; the style engraving.animated.beatBall
   - draws `anim:beatBall`
 
@@ -225,6 +229,18 @@ A STAFF'S VISIBILITY. THIS PIECE (decibel PLAN 2.1 — RUNNING_LOG §300 · §30
 - **percussion** — part **null** · _partNote **decibel TENOR 2026, container 6 (2026-10-04, RUNNING_LOG §45): NO PART — the rule is OFF. In piece #6 this named lane 4, its unpitched percussion, with that piece's own section time (288.91 s). Here lane 4 is the VIOLA: its staff lost its lines after the clef, found only by looking at the page (a lane NUMBER in a registry is invisible to a search for names). The Decibel percussion is lane 2 and its lines are drawn throughout until he says where they should show; then: part 2 and this piece's times.** · openingS **0.25** · sectionFromS **288.91** · sectionTo **lastNote** · wholePages **true** · pageS **12** · pageLeadInS **4** · openingFrom **pageStart** · *composer* · §489 (his eye on the snippet: 'just 0.25 seconds worth of introductory staff lines for the non-pitch percussion, please … they should be from the beginning, which I guess is negative four, and they should end at time equals negative 3.75'): the snippet runs from the FIRST PAGE'S START (−pageLeadInS) for openingS — [−4, −3.75] — not from 0 (which the renderer's full-staff furniture had stretched back to the page's edge, 4.25 s of lines) · §486 (his: 'just a small snippet, .25 s worth' · 'the middle section begins in the EH at 288.91, non-pitched lines should be on for the whole page … If ever the layout gets pushed so that there are some vibraphone notes on that page, then we'll revisit') · §488 (his eye at 284 s: 'the non-pitched percussion lines should begin on the page, same as all the other staff lines … the full staff line should fill that full page'): the screen's pages begin at −pageLeadInS (page_rules.leadInS, the 4 s lead-in of 2e.2) and run pageS each — a page starts at k · pageS − pageLeadInS; sectionTo `lastNote` = the end of the part's last note in the IR (406.86 s in Draft 01); wholePages: from the start of the page holding sectionFromS (284) to the end of the page holding sectionTo (416); pageS 12 = the trance profile's page (container timeScale.defaults.trance) — the presentation score's layout, his 'as the presentation score is laid out currently'
 - **ensemble** — parts **all** · openingS **0.25** · openingFrom **pageStart** · ranges **[{fromS: 423.3, to: end, what: the beating section}]** · wholePages **true** · pageS **12** · pageLeadInS **4** · clefWithStaff **true** · *composer* · decibel RUNNING_LOG §300 · §301 (DEC-88; his 'all defaults' on the four calls: the snippet 0.25 s as piece #6 · the return by whole pages · the clef only with the staff · no other range) · §302 (the build). `ranges` are ABSOLUTE SECONDS of the piece's main score — 423.3 s is the beating section's first pair in piece-3BodyRedo (the page holding it starts at 416): a section moved in the piece moves this number; a page cut from another score (a section's own file) shows no staff unless a range is written for it. `to` 'end' = to the end of the window laid out.
 
+### The language's badges (`language`)
+
+THE LANGUAGE'S BADGES (decibel PLAN 2.3; RUNNING_LOG §307 … §318 the choices, §325 the engine). The piece's material is a variation of Anthony Braxton's Language Music: a TYPE of sound is said by a badge — a rounded square of the format's ground, the type's sign in the type's colour. GENERATED from bank/language/language.json (his choice per type: a `symbol` and a `colour`) by `node tools/language/to_rules.js` — change the bank and run it, never this block. `format`: the drawing box of every sign (`viewUnits` square, the corner in the same units) and the ground. `types.<id>`: `sign` = the drawing inside that box (a font glyph already resolved to its outline from notation/lib/glyphs.json; `currentColor` = the type's colour; a part may fix its own colour) · `colour` = a pointer to the palette's row. The badge's SIZE on the page and its place are the row objects.badge.
+
+- **format** — viewUnits **36** · cornerUnits **4** · ground **badgeGround #2d3748**
+- **shortAttacks** — short attacks · the sign `braxton` · colour **SOL_red #D11520**
+- **trills** — trills · the sign `trLine` · colour **formatBlue #5b9bf5**
+- **accentedLongTones** — accented long tones · the sign `braxton` · colour **white #FFFFFF**
+- **multiphonics** — multiphonics · the sign `chordBoxOutside` · colour **SOL_yellow #F7C40A**
+- **beats** — audible beats · the sign `pictureOutlineWave` · colour **SOL_orange #E04424**
+- **scatteredStrikes** — scattered strikes · the sign `diveFlock4` · colour **SOL_green #219D4C**
+
 ---
 
 ## 4 · THE COLOURS AND THE FACES
@@ -246,6 +262,18 @@ THE COLOURS (§427 · §428): ink #111 for every music mark — EXCEPT the durat
 - **olive** `#6B8E23` — the SECOND seat's duration line (the ring bar) of the bowed vibraphone, at the bar's opacity 0.3 (→ #D2DEBD on white); the first seat keeps navyBlue — the marks of both seats stay ink · *composer* · §484 (his word 2026-09-28: 'ollive but keep the dynamics/hairpins black for both' — chosen from five shades shown at 0.3 beside the navy; his 'sometimes its unclear what lines/dynamics go with which pitch maybe we distinguish by color')
 - **navyBlue** `#1C4879` → `animated.beatBall.color` — the duration line (the ring bar), every part — THE DEFAULT for duration lines from 2026-09-28 · *composer* · §472 (his word 2026-09-28: piece #2's line wedge at 3:22 — the SQ1 ColorMap navyBlue, #2 composer.html; #2 draws its wedge at opacity 0.3, the ring bar keeps 0.65)
 - **pie** `#607D8B` → `animated.motivePie.color` — the breath pie · *AI* · LGMF 2d.4 (the AI's call, his to reverse)
+- **micYellow** `#FFFF00` — the mic opening — its fill and its outline · *composer* · decibel RUNNING_LOG §319 (DEC-98: plain screen yellow — his 'a as the composer score')
+- **micSign** `#333333` — the mic opening's sign — the two circles · *composer* · decibel RUNNING_LOG §318 · §319 (the dark grey the composer score writes on its brick)
+- **badgeGround** `#2d3748` — a language badge's ground · *composer* · decibel RUNNING_LOG §307 (DEC-90: the format of piece #1's flocking badge — a rounded square of dark slate)
+- **formatBlue** `#5b9bf5` — the badge format's own light blue — the trills' sign · *composer* · decibel RUNNING_LOG §309 (DEC-92: 'c formats blue') · piece #1's flocking badge
+- **white** `#FFFFFF` — a badge's sign in plain white — the accented long tones' · *composer* · decibel RUNNING_LOG §310 (DEC-93: 'a white')
+- **SOL_red** `#D11520` — the short attacks' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the short attacks §314 (DEC-95)
+- **SOL_orange** `#E04424` — the audible beats' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the audible beats §316 (DEC-96)
+- **SOL_yellow** `#F7C40A` — the multiphonics' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the multiphonics §312 (DEC-94)
+- **SOL_green** `#219D4C` — the scattered strikes' sign · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json) · chosen for the scattered strikes §318 (DEC-97)
+- **SOL_blue** `#186DBF` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
+- **SOL_purple** `#5F4296` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
+- **SOL_black** `#151415` — free · *AI* · decibel RUNNING_LOG §303 … §307 (DEC-89 · DEC-90: read from museum photographs of Sol LeWitt's late glossy wall drawings; the NAME his, the value the AI's pick, his to move — bank/palette/sol.json)
 
 THE FACES (§428): Crimson Pro Light upright / Light Italic for words and numbers; Emmentaler (LilyPond 2.24.4) for music. `emPerSs` is the text's em in staff spaces (render's textScale): a text item's size × emPerSs = its em.
 
@@ -294,6 +322,8 @@ Every drawn kind names what happens at a page edge: on SCREEN `cut` (clipped lik
 | `brick` | cut | stub |
 | `staff` | furniture | furniture |
 | `clef` | furniture | furniture |
+| `mic` | cut | stub |
+| `badge` | clamp | whole |
 | `anim:cursor` | atomic | none |
 | `anim:gc` | cut | none |
 | `anim:beatBall` | cut | none |
@@ -331,7 +361,7 @@ The size step: ×1.122462 (LilyPond's font-size step 2^(1/6) (§428)) · the com
 Every `engraving` overlay on an event (the per-event hands: `stemDir` · `dxSs` · `dySs` · `beamBreak` · `device` …) in the notation
 files the picker lists. A rung-8 override carries five fields (the object · the property · the value · the rung · his § and date).
 
-- none
+- `approaching-opening` — 30 override(s): device ×30
 
 ---
 

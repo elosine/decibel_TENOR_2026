@@ -5,8 +5,8 @@ decisions: what is decided, what is open, in the order they will be settled. It 
 how each was reached is `RUNNING_LOG.md` §299 … and `COMPOSITION_NOTES.md` DEC-87 … — his words are quoted there, not here.
 The plan items are `PLAN.md` § 2. Marked **(AI)** = the AI's reading or suggestion, not yet his.)*
 
-**To see it:** the layout, section by section, on the notation's own frame — http://localhost:5500/signs/layout.html
-(`node tools/signs/build_layout.js`; the places are rows of `bank/signs/layout.json`). Drawn so far: section 1.
+**To see it — IN THE NOTATION SCORE:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325).
+The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`place`: laneTop · laneMiddle · laneBottom; `gapSs`) and `objects.badge` — change a row, reload the app. *(The earlier working drawing: http://localhost:5500/signs/layout.html.)*
 
 ---
 
@@ -52,11 +52,11 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 
 ## 3 · Section by section — what a player sees
 
-### 1 · The opening (0 … 37 s) — short attacks — DRAWN
+### 1 · The opening (0 … 37 s) — short attacks — IN THE NOTATION SCORE
 - **Announced by:** the short attacks' badge, once in each lane **(AI's reading of "opening no badge": none on the openings; the one announcement stays — to confirm)**.
 - **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
-- **Open:** where the announcing badge stands — (a) just left of each lane's first mic opening, or (b) all five in a column where the section begins. Both are drawn.
+- **Open:** where the announcing badge stands — (a) just left of each lane's first mic opening — as the score draws it now — or (b) all five in a column where the section begins (one word of the cut).
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
 - **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
@@ -131,7 +131,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience.
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1's layout: the mic's row at the top · the announcing badge beside the first mic (a) or in a column (b).
+1. ► His eye on section 1 in the notation score: the mic's row at the top · the announcing badge before the first mic (a, drawn) or in a column at the start (b).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's view.
