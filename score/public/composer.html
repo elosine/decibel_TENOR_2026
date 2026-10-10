@@ -15073,6 +15073,17 @@ const Composer = {
                 }
                 this._activeZonePlayback[obj.id] = { nextEventIdx: startIdx, startedAtPerf: performance.now() - elapsedInZoneMs, enteredAtSec: zoneStart };
                 if (snippet.source === 'beating' && startIdx > 0) this.beatingCatchUp(snippet, startIdx);   // a start inside the zone: the latest articulation, CC7 and bend of each slot land now
+                // decibel §369 — ANY snippet started inside (a trill played from its own first note: the playhead is already past its 150 ms
+                // lead): the latest value of each controller before the start lands now. Without it the trill's preset (CC0) was never sent and
+                // it played on whatever its channel held — on a wind, the tongue slap of the lane's last petal hit.
+                else if (startIdx > 0) {
+                    const last = {};
+                    for (let i = 0; i < startIdx; i++) { const e = snippet.events[i]; if (e._cc != null) last[(e.port || snippet.port || '') + '|' + (e.channel || snippet.channel || 1) + '|' + e._cc] = e; }
+                    Object.values(last).forEach(e => {
+                        const out = this._zoneMidiOutputs[(e.port || snippet.port || '').toLowerCase()];
+                        if (out) out.send([0xB0 | ((e.channel || snippet.channel || 1) - 1), e._cc, e._ccValue != null ? e._ccValue : 0]);
+                    });
+                }
             }
 
             const state = this._activeZonePlayback[obj.id];
@@ -15093,7 +15104,9 @@ const Composer = {
                 const evt = snippet.events[state.nextEventIdx];
                 if (evt.onsetMs > elapsedInZoneMs + lookaheadMs) break;
 
-                if (evt.onsetMs >= elapsedInZoneMs - 50) { // don't play events more than 50ms in the past
+                // don't play NOTES more than 50ms in the past — but a controller or a bend is never dropped for being late (decibel §369: a
+                // frame over 50 ms at a trill's entry lost its CC0, and the trill sounded on the lane's previous preset)
+                if (evt.onsetMs >= elapsedInZoneMs - 50 || evt._cc != null || evt._bend != null) {
                     // Per-event routing (for flocking with multiple instruments)
                     const evtPortName = evt.port ? evt.port.toLowerCase() : defaultPortName;
                     const evtOutput = this._zoneMidiOutputs[evtPortName] || defaultOutput;

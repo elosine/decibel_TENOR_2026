@@ -250,6 +250,7 @@
     // [2a, LGMF 2026-09-25] a system's staff lines come from its model (a lined staff: registry part.staff); five at 1 ss otherwise
     const modelByKey = new Map(model.systems.map(sm => [sm.key !== undefined ? sm.key : sm.part, sm]));
     const linesOf = sm => (sm && sm.staffLines) || [-2, -1, 0, 1, 2];
+    const elecHeads = [];   // [§370] a computer player's head in the gutter, one a page it plays on: { who, yT, yB, ss }
     for (const sysModel of model.systems) {
       let sys;
       // [2a.1] a staff of a multi-staff part is its own system ('<part>:<i>')
@@ -1036,6 +1037,8 @@
           // row (inside its window): as tall at the most as objects.stateWedge.elec.rowFrac of that row, about the row's middle.
           const elecW = it.row === 'elec', rowE = elecW && E.elecReturn ? elecRow(E.elecReturn) : null;
           if (elecW && !rowE) continue;
+          // [§370, DEC-141] its HEAD in the gutter (the bracket and the name, drawn with the system-start groups below — outside the page's clip)
+          if (elecW && it.who && E.elecBracket) { const padW = E.elecWindow ? E.elecWindow.padSs * ssPx : 0; elecHeads.push({ who: it.who, yT: rowE.ry - padW, yB: rowE.ry + rowE.rh + padW, ss: ssPx }); }
           const whole = cutMark >= 0, TEN = 10;   // the composer score's thickness scale
           const maxPx = elecW ? rowE.rh * ((SW.elec && SW.elec.rowFrac) || 1) : (lane.yBotPx - lane.yTopPx) * SW.maxFrac;
           const cy = elecW ? rowE.ry + rowE.rh / 2 : SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
@@ -1164,6 +1167,33 @@
           const xR = clefLeft - SS.braceGapSs * ss;
           parts.push('<g' + cls + ' fill="' + o.ink + '">' +
             Stamps.toSvg(Stamps.scaled(S.brace(key), k, k), { xPx: xR - bg.wSs * k * ss, yPx: yT, ssPx: ss, align: 'topLeft' }) + '</g>');
+        }
+      }
+    }
+
+    // [decibel PLAN 2.7 — RUNNING_LOG §370; DEC-141; rules.json objects.elecBracket · electronics.players] A COMPUTER PLAYER'S HEAD (his words:
+    // 'a small bracket at the left edge of the page alongside the other brackets. Just the height of the electronics … like if it was
+    // another staff … ELEC1 … ELEC2 … ELEC3', per page 'like the current headers'): the system bracket's own line and tips, as tall as
+    // that player's electronics' window, at the other brackets' x; its name where the part labels stand, in their face, centred on the
+    // window. On every page the player's wedge crosses. No row in the registry = no ink.
+    if (E.elecBracket && elecHeads.length && view.gutterPx > 0) {
+      const SS = Object.assign({ bracketThickSs: 0.45, gapSs: 0.5 }, E.systemStart || {}), EB = E.elecBracket;
+      const clefW = Math.max(...Object.keys(CLEF_AT).map(k => (glyphs.clef[k] || { wSs: 0 }).wSs));
+      const tipW = ((glyphs.bracketTip && glyphs.bracketTip.up) || { wSs: 0 }).wSs;
+      const names = (E.electronics && E.electronics.players) || {};
+      for (const h of elecHeads) {
+        const ss = h.ss, xL = MX0 - (clefW + E.clefGutterGapSs) * ss - (SS.gapSs + tipW) * ss, th = (EB.thickSs != null ? EB.thickSs : SS.bracketThickSs) * ss;
+        parts.push('<g class="sysgrp sysgrp-elec" fill="' + o.ink + '">');
+        parts.push('<rect x="' + xL.toFixed(2) + '" y="' + h.yT.toFixed(2) + '" width="' + th.toFixed(2) + '" height="' + (h.yB - h.yT).toFixed(2) + '"/>');
+        if (EB.tips !== false && glyphs.bracketTip) {
+          parts.push(Stamps.toSvg(S.bracketTip('up'), { xPx: xL, yPx: h.yT, ssPx: ss, align: 'origin' }));
+          parts.push(Stamps.toSvg(S.bracketTip('down'), { xPx: xL, yPx: h.yB, ssPx: ss, align: 'origin' }));
+        }
+        parts.push('</g>');
+        const lab = names[h.who] && names[h.who].label;
+        if (lab) {
+          const sz = E.partLabel.sizeSs * (EB.labelScale || 1) * ss, below = (E.partLabel.baselineBelowEm != null ? E.partLabel.baselineBelowEm : 0.32) * sz;
+          parts.push('<text class="elec-name" x="' + (ML + E.partLabel.xPx) + '" y="' + ((h.yT + h.yB) / 2 + below).toFixed(1) + '" font-size="' + sz.toFixed(1) + '"' + fontAttr + ' fill="' + o.muted + '">' + esc(lab) + '</text>');
         }
       }
     }

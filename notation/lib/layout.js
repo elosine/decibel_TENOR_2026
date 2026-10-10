@@ -377,7 +377,7 @@
       if (ov.kind === 'micOpening' && tgt.part !== undefined && tgt.span) { micOpens.push({ part: tgt.part, span: tgt.span }); continue; }
       if (ov.kind === 'badge' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.type) { badges.push(Object.assign({ part: tgt.part, t: tgt.t, type: ov.value.type, place: ov.value.place || 'before' }, ov.value.row ? { row: ov.value.row } : {}, ov.value.slot ? { slot: ov.value.slot } : {})); continue; }
       // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] THE STATE WEDGE (the `stateWedge` overlay): a method's stretches on a lane, in time order
-      if (ov.kind === 'stateWedge' && tgt.part !== undefined && tgt.span && ov.value && Array.isArray(ov.value.segs)) { stateWedges.push(Object.assign({ part: tgt.part, span: tgt.span, segs: ov.value.segs }, ov.value.row ? { row: ov.value.row } : {})); continue; }   // [§360] row 'elec': a computer player's, in the electronics' row
+      if (ov.kind === 'stateWedge' && tgt.part !== undefined && tgt.span && ov.value && Array.isArray(ov.value.segs)) { stateWedges.push(Object.assign({ part: tgt.part, span: tgt.span, segs: ov.value.segs }, ov.value.row ? { row: ov.value.row } : {}, ov.value.who ? { who: ov.value.who } : {})); continue; }   // [§360] row 'elec': a computer player's, in the electronics' row
       // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE ELECTRONICS' RETURN (the `elecReturn` overlay): the region the engine answers in, and how many sounds
       if (ov.kind === 'elecReturn' && tgt.part !== undefined && tgt.span) { elecRets.push({ part: tgt.part, span: tgt.span, count: (ov.value && ov.value.count) || 1, all: !!(ov.value && ov.value.all) }); continue; }
       if (ov.kind === 'elecWindow' && tgt.part !== undefined && tgt.span) { elecWins.push({ part: tgt.part, span: tgt.span, badgeLeft: !!(ov.value && ov.value.badgeLeft) }); continue; }
@@ -3373,7 +3373,8 @@
         for (const w of stateWedges) if (w.part === spec.part && !w.row) items.push({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs });
         for (const w of elecWins) if (w.part === spec.part) items.push({ k: 'elecwin', t0: w.span[0], t1: w.span[1], badgeLeft: w.badgeLeft });
         // [§360] a computer player's wedge lies IN its window: after the window, before the row's badge
-        for (const w of stateWedges) if (w.part === spec.part && w.row) items.push({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs, row: w.row });
+        // [§370] `who` = the computer player (e1 · e2 · e3): the renderer names it in the gutter (rules.json objects.elecBracket · electronics.players)
+        for (const w of stateWedges) if (w.part === spec.part && w.row) items.push(Object.assign({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs, row: w.row }, w.who ? { who: w.who } : {}));
         for (const m of micOpens) if (m.part === spec.part) items.push({ k: 'mic', t0: m.span[0], t1: m.span[1] });
         for (const b of badges) if (b.part === spec.part) items.push(Object.assign({ k: 'badge', t: b.t, type: b.type, place: b.place }, b.row ? { row: b.row } : {}, b.slot ? { slot: b.slot } : {}));   // [§335] `row` only on the electronics' badge · [§355] or a method's, with its `slot` — a language badge's item is as it was
         // [decibel §335] THE ELECTRONICS' RETURNS of this part — placed by the renderer in the lane's electronics' row (rules.json objects.elecReturn)
