@@ -1344,6 +1344,11 @@ for (let i = 0; i < process.argv.length; i++) {
 }
 
 // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS — in this piece a player's page is mostly not notes:
+//   --strikesElec type:t0:t1   [decibel §411] the strikes' ELECTRONICS as one line a lane (its thickness the number of answers a strike gets
+//                              in that stretch of the form), in its grey window, the type's badge before it — the presentation score.
+//   --finalBar t               [decibel §411] the final bar line at t (a thin and a thick line through every lane).
+//   --micBadge type:t0:t1:clear [decibel §411] as --micBadge, and THE OPENINGS STAY UNCOVERED: a badge that would lie on the opening before
+//                              it stands AFTER its own; at a page's edge it is cut like paper, never pushed onto its opening.
 //   --strikes t0:t1            [decibel §410] THE SCATTERED STRIKES of the span from the save's strike windows (zones elecStrike): a mic opening
 //                              (variant 'strike': its own colour) the window's span on each lane that strikes in it · a NOTATED strike's notes draw
 //                              their GC alone · an OPEN strike's notes draw nothing · a strike with no window draws its GCs, no opening.
@@ -1429,34 +1434,47 @@ for (let i = 0; i < process.argv.length; i++) {
   // electronics) is written: its notes draw their GC, and there is no mic opening. Used INSTEAD of --silent · --gcOnly · --mics on the span.
   for (const a of argsOf('strikes')) {
     const fq = a.split(':').map(Number), t0 = fq[0], t1 = fq[1];
-    if (!(t1 > t0)) { console.error('--strikes needs t0:t1 (e.g. --strikes 672:780) — got ' + a); process.exit(2); }
+    if (!(t1 > t0)) { console.error('--strikes needs t0:t1 (e.g. --strikes 672:784) — got ' + a); process.exit(2); }
     const laneOfS = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
+    // [§411, DEC-181 — his "every window should have all the parts"] THE LANES of the ensemble, each by its first part: a window is drawn on
+    // EVERY one of them, whether or not the save has a note for that player in the strike
+    const lanesS = []; { const seenL = new Set(); for (const p of parts) { const k = laneOfS(p); if (!seenL.has(k)) { seenL.add(k); lanesS.push({ k, part: p }); } } }
     const WS = (score.objects || []).filter(o => o.type === 'zone' && o.midiModel === 'elecStrike' && o.endTime > o.startTime && o.startTime >= t0 - 1e-9 && o.startTime < t1 - 1e-9).sort((x, y) => x.startTime - y.startTime);
     if (!WS.length) { console.error('--strikes ' + a + ': no strike window (a zone elecStrike) begins in the span'); process.exit(2); }
     const notesS = doc.events.filter(e => e.onset >= t0 - 1e-9 && e.onset < t1 - 1e-9 && e.env !== 'trill' && e.env !== 'sine');
     const setDev = (e, dv, why) => { const ex = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id); if (ex) ex.value.device = Object.assign({}, ex.value.device, dv); else doc.overlays.push({ id: 'ov-' + why + '-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, dv) }, provenance: 'authored' }); };
-    const taken = new Set(); let nGc = 0, nSil = 0, nMic = 0, nN = 0, nO = 0, nEmpty = 0;
+    const micS = (id, span, value) => { for (const Ln of lanesS) doc.overlays.push({ id: 'ov-mic-' + id + '-' + Ln.part, kind: 'micOpening', target: { part: Ln.part, span: span.slice() }, value: Object.assign({}, value), provenance: 'authored' }); };
+    const taken = new Set(), lacking = []; let nGc = 0, nSil = 0, nN = 0, nO = 0;
     for (const w of WS) {
       const mem = notesS.filter(e => !taken.has(e.id) && e.onset >= w.startTime - 1e-6 && e.onset <= w.endTime + 1e-6);
       mem.forEach(e => taken.add(e.id));
       const mode = (w.elec && w.elec.mode) === 'open' ? 'open' : 'notated';
       if (mode === 'open') nO++; else nN++;
-      if (!mem.length) { nEmpty++; continue; }
       for (const e of mem) { if (mode === 'open') { setDev(e, SILENT_OFF, 'silent'); nSil++; } else { setDev(e, GC_ONLY, 'gconly'); nGc++; } }
-      const seenL = new Set();
-      for (const e of mem.slice().sort((x, y) => partOfEv.get(x.id) - partOfEv.get(y.id))) {
-        const p = partOfEv.get(e.id), k = laneOfS(p);
-        if (seenL.has(k)) continue; seenL.add(k);
-        doc.overlays.push({ id: 'ov-mic-' + w.id + '-' + p, kind: 'micOpening', target: { part: p, span: [+w.startTime.toFixed(4), +Math.min(w.endTime, w1).toFixed(4)] }, value: { source: w.id, variant: 'strike', mode }, provenance: 'authored' });
-        nMic++;
-      }
+      const have = new Set(mem.map(e => laneOfS(partOfEv.get(e.id)))), miss = lanesS.filter(Ln => !have.has(Ln.k));
+      if (miss.length) lacking.push({ t: w.startTime, mode, parts: miss.map(Ln => Ln.part) });
+      micS(w.id, [+w.startTime.toFixed(4), +Math.min(w.endTime, w1).toFixed(4)], { source: w.id, variant: 'strike', mode });
     }
-    const bareS = notesS.filter(e => !taken.has(e.id));
-    for (const e of bareS) setDev(e, GC_ONLY, 'gconly');
-    console.log('  strikes ' + a + ': ' + WS.length + ' window(s) — ' + nN + ' notated (' + nGc + ' note(s) draw their GC) · ' + nO + ' open (' + nSil + ' note(s) draw nothing) · ' + nMic + ' mic opening(s), one a lane that strikes'
-      + (bareS.length ? ' · ' + bareS.length + ' note(s) in no window (bare strikes): their GC, no mic opening' : '') + (nEmpty ? ' · ' + nEmpty + ' window(s) with no note of the window — no opening drawn' : ''));
+    // [§411, DEC-181 — his "The last four strikes should have a window … the same mic opening window, but without the two circle microphone …
+    // remove the GCs … those should be free"] THE BARE STRIKES (notes under no window: no electronics): each is a FREE strike — a window
+    // by the open rule of bank/strike_section.json (open.factor × the strike's length from its first hit, the extra after it), drawn as
+    // the same brick WITHOUT the two circles (noSign: no microphone is meant), on every lane; its notes draw nothing
+    const bareS = notesS.filter(e => !taken.has(e.id)).sort((x, y) => x.onset - y.onset), groupsS = [];
+    for (const e of bareS) { const g = groupsS[groupsS.length - 1]; if (g && e.onset - g[g.length - 1].onset < 1) g.push(e); else groupsS.push([e]); }
+    let OPENS = {}; try { OPENS = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'strike_section.json'), 'utf8')).open || {}; } catch (err) { /* the rule's own defaults */ }
+    const factorS = +OPENS.factor > 0 ? +OPENS.factor : 2, minLenS = (+OPENS.minMs || 50) / 1000;
+    for (const g of groupsS) {
+      const f0 = g[0].onset, l0 = g[g.length - 1].onset, len = Math.max(factorS * (l0 - f0), minLenS);
+      for (const e of g) setDev(e, SILENT_OFF, 'silent');
+      micS('bare-' + Math.round(f0 * 1000), [+f0.toFixed(4), +Math.min(f0 + len, w1).toFixed(4)], { variant: 'strike', mode: 'open', noSign: true, bare: true });
+    }
+    const lackN = lacking.filter(q => q.mode === 'notated'), lackO = lacking.filter(q => q.mode === 'open');
+    console.log('  strikes ' + a + ': ' + WS.length + ' window(s) — ' + nN + ' notated (' + nGc + ' note(s) draw their GC) · ' + nO + ' open (' + nSil + ' note(s) draw nothing) · a mic opening on each of the ' + lanesS.length + ' lanes of every window (' + (WS.length * lanesS.length) + ')'
+      + (groupsS.length ? ' · ' + groupsS.length + ' bare strike(s), ' + bareS.length + ' note(s): a free window with no circles, no GC' : ''));
+    if (lacking.length) console.log('    THE SAVE LACKS A PLAYER in ' + lacking.length + ' strike(s) (' + lacking.reduce((n, q) => n + q.parts.length, 0) + ' lane-places): the lane shows the window; in a NOTATED strike it has no GC to show (' + lackN.length + ' strike(s): '
+      + lackN.map(q => q.t.toFixed(1) + ' p' + q.parts.join('+')).join(' · ') + ') · open: ' + lackO.map(q => q.t.toFixed(1) + ' p' + q.parts.join('+')).join(' · '));
   }
-  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length + argsOf('lineWedge').length + argsOf('elecRing').length;
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length + argsOf('lineWedge').length + argsOf('elecRing').length + argsOf('strikesElec').length + argsOf('finalBar').length;
   if (wantBadges) {
     const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
     const LANG = (RULES.language || {}).types || {};
@@ -1585,6 +1603,39 @@ for (let i = 0; i < process.argv.length; i++) {
       }
       console.log('  elecPlayers ' + a + ': ' + ws.length + ' computer player(s) — ' + ws.map(w => (w.value.who || '?') + ' on part ' + w.target.part).join(' · ') + ', each one window, its own wedge, the badge before it');
     }
+    // [decibel RUNNING_LOG §411, DEC-181 — his "B for the electronics. Let's see how that looks"] --strikesElec type:t0:t1 — THE ELECTRONICS OF THE
+    // STRIKES on the presentation score, as ONE LINE a lane: it begins when the first strike has ended and ends at the first bare strike (the
+    // section's own rule: no answer still sounds there); its THICKNESS is the number of answers a strike gets in that stretch of the form (the
+    // windows' properties.strikeSection: stretch · answers) — 1 · 2 · 3 · 2 · 1 — the most answers the row's full height. In the lane's
+    // electronics' row, in its grey window, the type's badge before it (the three body's computer players' way: a row wedge, a window, a badge).
+    for (const a of argsOf('strikesElec')) {
+      const f = a.split(':'), t0 = parseFloat(f[1]), t1 = parseFloat(f[2]);
+      if ((!LANG[f[0]] && !ELEC[f[0]]) || !(t1 > t0)) { console.error('--strikesElec needs type:t0:t1 with a badge type of rules.json language.types or electronics.badges — got ' + a); process.exit(2); }
+      const WS = (score.objects || []).filter(o => o.type === 'zone' && o.midiModel === 'elecStrike' && o.endTime > o.startTime && o.startTime >= t0 - 1e-9 && o.startTime < t1 - 1e-9).sort((x, y) => x.startTime - y.startTime);
+      if (!WS.length) { console.error('--strikesElec ' + a + ': no strike window begins in the span'); process.exit(2); }
+      const stOf = w => (w.properties && w.properties.strikeSection) || {}, steps = [];
+      for (const w of WS) { const n = +stOf(w).answers || (1 + (((w.elec || {}).chain || []).length)), k = stOf(w).stretch != null ? stOf(w).stretch : n, last = steps[steps.length - 1]; if (!last || last.k !== k) steps.push({ k, n, t: w.startTime }); }
+      const lastW = WS[WS.length - 1], bareT = doc.events.filter(e => e.onset > lastW.endTime + 1e-6 && e.onset < t1 - 1e-9 && e.env !== 'trill' && e.env !== 'sine').map(e => e.onset).sort((x, y) => x - y)[0];
+      const startE = WS[0].endTime, endE = Math.min(bareT != null ? bareT : lastW.endTime + 4, w1), maxN = Math.max.apply(null, steps.map(q => q.n));
+      const segs = steps.map((q, i) => ({ t0: +(i ? q.t : startE).toFixed(4), t1: +(i + 1 < steps.length ? steps[i + 1].t : endE).toFixed(4), state: 'line', thick: [+(10 * q.n / maxN).toFixed(3), +(10 * q.n / maxN).toFixed(3)] })).filter(g => g.t1 > g.t0);
+      const seenE = new Set();
+      for (const p of parts) {
+        const k = laneKey(p); if (seenE.has(k)) continue; seenE.add(k);
+        const spanE = [segs[0].t0, segs[segs.length - 1].t1];
+        doc.overlays.push({ id: 'ov-wedge-answers-' + p, kind: 'stateWedge', target: { part: p, span: spanE.slice() }, value: { segs: segs.map(g => Object.assign({}, g)), row: 'elec', line: 'answers' }, provenance: 'authored' });
+        addBadge(p, spanE[0], f[0], 'before', 'strikeselec', 'elec');
+        doc.overlays.push({ id: 'ov-elecwin-answers-' + p, kind: 'elecWindow', target: { part: p, span: spanE.slice() }, value: { badgeLeft: true }, provenance: 'authored' });
+      }
+      console.log('  strikesElec ' + a + ': ' + seenE.size + ' lane(s), one line ' + segs[0].t0 + ' … ' + segs[segs.length - 1].t1 + ' s — ' + steps.map((q, i) => q.n + ' answer(s) from ' + segs[i].t0.toFixed(1) + ' s').join(' · '));
+    }
+    // [§411, DEC-181] --finalBar t — the final bar line at t, through every lane
+    for (const a of argsOf('finalBar')) {
+      const tF = parseFloat(a);
+      if (!(tF >= w0 && tF < w1)) { console.error('--finalBar needs a time inside the window (e.g. --finalBar 783 with --w1 784) — got ' + a); process.exit(2); }
+      const seenF = new Set();
+      for (const p of parts) { const k = laneKey(p); if (seenF.has(k)) continue; seenF.add(k); doc.overlays.push({ id: 'ov-finalbar-' + p, kind: 'finalBar', target: { part: p, t: +tF.toFixed(4) }, value: { bar: 'final' }, provenance: 'authored' }); }
+      console.log('  finalBar ' + a + ': the final bar line at ' + tF + ' s, through ' + seenF.size + ' lane(s)');
+    }
     const AFTER = [].concat(...argsOf('micBadgeAfter').map(a => a.split(',').filter(Boolean).map(x => { const p = x.split('@'); return { t: parseFloat(p[0]), part: p.length > 1 ? parseInt(p[1], 10) : null, raw: x }; })));
     if (AFTER.some(q => !isFinite(q.t))) { console.error('--micBadgeAfter needs the start time of a mic opening, t[@part][,t…] (e.g. --micBadgeAfter 145.054,154.677)'); process.exit(2); }
     for (const a of argsOf('micBadge')) {
@@ -1595,6 +1646,9 @@ for (let i = 0; i < process.argv.length; i++) {
       for (const o of s.mics) {
         const aft = AFTER.find(q => Math.abs(q.t - o.target.span[0]) < 0.03 && (q.part == null || q.part === o.target.part));
         if (aft) { aft.used = (aft.used || 0) + 1; addBadge(o.target.part, o.target.span[1], s.type, 'after', 'mic'); }
+        // [§411, DEC-181] type:t0:t1:clear — THE MIC OPENINGS STAY UNCOVERED: the badge is told its opening's end (tEnd) and to avoid the other
+        // openings (the renderer stands it AFTER its own where 'before' would lie on the opening before), and at a page's edge it is cut like paper
+        else if (s.mode === 'clear') doc.overlays.push({ id: 'ov-badge-mic-' + s.type + '-' + o.target.part + '-' + Math.round(o.target.span[0] * 1000), kind: 'badge', target: { part: o.target.part, t: +o.target.span[0].toFixed(4) }, value: { type: s.type, place: 'before', avoid: 'mic', tEnd: +o.target.span[1].toFixed(4), edge: 'cut' }, provenance: 'authored' });
         else addBadge(o.target.part, o.target.span[0], s.type, 'before', 'mic');
       }
       console.log('  micBadge ' + a + ': ' + s.mics.length + ' opening(s)');

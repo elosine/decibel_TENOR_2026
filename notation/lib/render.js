@@ -309,6 +309,27 @@
       };
       let elecGrainDefined = false;   // [§336] the window's grain filter is defined once a sheet
       const hasGc = new Set((sysModel.items || []).filter(x => x.k === 'gc' && x.ev).map(x => x.ev));   // §401h
+      // [decibel RUNNING_LOG §411, DEC-181 — his "keep the mic openings unoccluded. That's the window to play in"] THE BADGES THAT MUST LEAVE THE
+      // MIC OPENINGS UNCOVERED (a badge item's avoid 'mic', with its opening's end tEnd): each lane's are placed here, once, in time order —
+      // BEFORE its opening where that place is free, else AFTER it where that is free, else NOT AT ALL. Free = on no other mic opening of the
+      // lane and on no badge already placed. In page pixels; the differences are the same on every page, so a badge cut at a page turn
+      // stands the same on both sides of it.
+      const avoidPlace = new Map();
+      {
+        const AV = (sysModel.items || []).filter(x => x.k === 'badge' && x.avoid === 'mic' && x.tEnd != null && !x.row).sort((p, q) => p.t - q.t);
+        if (AV.length && E.badge) {
+          const bsA = E.badge.sizeSs * ssPx, gpA = E.badge.gapSs * ssPx, xA = tt => view.xOfSeconds(tt);
+          const micsA = (sysModel.items || []).filter(x => x.k === 'mic').map(m => [xA(m.t0), xA(m.t1)]), placedA = [];
+          const freeA = (x0, own) => !micsA.some(m => m !== own && m[1] > x0 + 0.5 && m[0] < x0 + bsA - 0.5) && !placedA.some(q => q + bsA > x0 + 0.5 && q < x0 + bsA - 0.5);
+          for (const b of AV) {
+            const own = micsA.find(m => Math.abs(m[0] - xA(b.t)) < 0.01 && Math.abs(m[1] - xA(b.tEnd)) < 0.01) || null;
+            const xBefore = xA(b.t) - gpA - bsA, xAfter = xA(b.tEnd) + gpA;
+            const x0 = freeA(xBefore, own) ? xBefore : freeA(xAfter, own) ? xAfter : null;
+            avoidPlace.set(b, x0);
+            if (x0 != null) placedA.push(x0);
+          }
+        }
+      }
       // [2c.4] curShift: the clamp's shift for the item being drawn (0 unless it is a clamp kind in a shifted unit — x + 0 = x)
       let curShift = 0;
       const X = (t, dxSs) => view.xOfSeconds(t) + (dxSs || 0) * ssPx + curShift;
@@ -414,11 +435,11 @@
       // wedge — is drawn FIRST, under every mark of the players' (the trill's curve, a GC, a mic opening pass over it): the pane lowest, then
       // the bricks and the wedge, then the badge.
       const ELEC_LAYER = it => (it.k === 'elecwin' ? -3 : (it.k === 'elecret' || (it.k === 'wedge' && it.row === 'elec')) ? -2 : (it.k === 'badge' && it.row === 'elec') ? -1 : null);
-      const LAYER = it => { const e = ELEC_LAYER(it); return e != null ? e : it.k === 'envcurve' ? 1 : it.k === 'goline' ? 2 : 0; };
+      const LAYER = it => { const e = ELEC_LAYER(it); return e != null ? e : it.k === 'envcurve' ? 1 : it.k === 'goline' ? 2 : it.k === 'gc' ? 3 : 0; };   // [decibel §411, DEC-181 — his "on everywhere in the score, let's put the GCs on top"] the GC is drawn LAST, over every other mark of its lane
       const itemsInLayers = [...sysModel.items, ...addGo].sort((a, b) => LAYER(a) - LAYER(b));
       for (const it of itemsInLayers) {
         // [2c.3] a cut kind's ink goes inside the page's clip — wrapped in `finally`, so every branch's `continue` is honoured
-        const cutMark = (cutKind(it.k) && it.k !== 'gc') ? parts.length : -1;   // the GC wraps its arc alone (its impact is a point)
+        const cutMark = ((cutKind(it.k) && it.k !== 'gc') || (SCR && it.k === 'badge' && it.edge === 'cut')) ? parts.length : -1;   // [§411] a badge marked edge 'cut' is cut like paper too   // the GC wraps its arc alone (its impact is a point)
         curShift = (SCR && it.t !== undefined && clampKind(it.k)) ? shiftOf(it.t) : 0;   // [2c.4] the unit's clamp
         try {
         if (it.k === 'staff') {
@@ -978,6 +999,17 @@
           } else
           parts.push('<rect x="' + x0.toFixed(2) + '" y="' + (yC - h / 2).toFixed(2) + '" width="' + Math.max(1, x1 - x0).toFixed(2) +
             '" height="' + h.toFixed(2) + '" fill="' + fillRB + '" opacity="' + RB.opacity + '"/>');
+        } else if (it.k === 'finalbar') {
+          // [decibel RUNNING_LOG §411 — DEC-181; rules.json objects.finalBar → engraving.render.finalBar] THE FINAL BAR LINE: a thin line and a thick
+          // one, the thin line's left edge on its time, through the WHOLE system — each lane draws its own stretch, reaching over half the gap
+          // to its neighbours, so the bar is one unbroken line from the first lane's top to the last lane's bottom. The lanes' dividers run on.
+          const FB = E.finalBar;
+          if (!FB || !owns(it.t)) continue;
+          const allTop = Math.min.apply(null, view.systems.map(s => s.yTopPx)), allBot = Math.max.apply(null, view.systems.map(s => s.yBotPx));
+          const yF1 = lane.yTopPx <= allTop + 0.5 ? lane.yTopPx : lane.yTopPx - laneHalfGapPx, yF2 = lane.yBotPx >= allBot - 0.5 ? lane.yBotPx : lane.yBotPx + laneHalfGapPx;
+          const xF = view.xOfSeconds(it.t), thinF = FB.thinSs * ssPx, gapF = FB.gapSs * ssPx, thickF = FB.thickSs * ssPx;
+          parts.push('<rect class="final-bar" x="' + xF.toFixed(2) + '" y="' + yF1.toFixed(2) + '" width="' + thinF.toFixed(2) + '" height="' + (yF2 - yF1).toFixed(2) + '" fill="' + FB.colour + '"/>' +
+            '<rect class="final-bar" x="' + (xF + thinF + gapF).toFixed(2) + '" y="' + yF1.toFixed(2) + '" width="' + thickF.toFixed(2) + '" height="' + (yF2 - yF1).toFixed(2) + '" fill="' + FB.colour + '"/>');
         } else if (it.k === 'sinebox') {
           // [decibel PLAN 2.12 — RUNNING_LOG §404; DEC-173; rules.json objects.sineBox → engraving.render.sineBox] THE SINE'S BOX: how a sine tone
           // of the electronics is written — the open head of its pitch on its time, and round the head a box in the electronics' purple (the
@@ -1029,7 +1061,7 @@
             '" stroke-width="' + (MO.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + MO.strokeOpacity + '"/>');
           const SG = MO.sign;
           let micSign = '';
-          if (SG && (whole || it.t0 >= w0 - 1e-9)) {   // the sign stands at the opening's own start
+          if (SG && !it.noSign && (whole || it.t0 >= w0 - 1e-9)) {   // [§411] noSign: a window to play in with NO microphone (the last, bare strikes) — the brick alone   // the sign stands at the opening's own start
             const sx = view.xOfSeconds(it.t0) + SG.insetSs * ssPx, sy = row.y + row.h / 2;
             micSign = ('<circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.ringSs * ssPx).toFixed(2) + '" fill="none" stroke="' + SG.colour +
               '" stroke-width="' + (SG.ringStrokeSs * ssPx).toFixed(2) + '"/><circle cx="' + sx.toFixed(2) + '" cy="' + sy.toFixed(2) + '" r="' + (SG.dotSs * ssPx).toFixed(2) + '" fill="' + SG.colour + '"/>');
@@ -1059,7 +1091,11 @@
           // badge's size (the drones: the multiphonics badge 'same size as a three body problem')
           const ty = (TB && TB[it.type]) || ((elec || meth) && LG && LG.types && LG.types[it.type]) || null;
           const sttCol = stt && E.stateWedge && E.stateWedge.states && E.stateWedge.states[it.type] ? E.stateWedge.states[it.type].colour : null;
-          if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
+          // [decibel §411, DEC-181 — his "those edge cases, you can just let the badge bleed over … cut like the Matisse … I'd rather the full mic window
+          // be seen"] edge 'cut' (set by the cutter on a section's badges): at a page's edge the badge is CUT LIKE PAPER — drawn where its ink
+          // falls, on every page it crosses, inside the page's clip — and never pushed right onto its own mic opening
+          const cutB = !!(SCR && it.edge === 'cut');
+          if (!BG || !ty || !LG || (!cutB && !owns(it.t)) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
           const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
           // [decibel §394] dxSs: a badge 'at' its time that stands a small gap RIGHT of it (a trill's badge beside its go line — the layout's techBadge)
           // [decibel §395, DEC-163 — his "the gap between the go line and the left edge of the trill badge should be the same as the gap between
@@ -1070,13 +1106,21 @@
           // (t = the opening's END), where 'before' would have put it on something else
           const offPx = it.place === 'at' ? 0 : it.place === 'after' ? BG.gapSs * ssPx : -(BG.gapSs * ssPx + bs);
           let bx = view.xOfSeconds(it.t) + dxPx + offPx - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
+          // [§411, DEC-181 — his "move the badge to the right side of the mic opening … anywhere where the badge is overlaying the mic opening in
+          // the left … keep the mic openings unoccluded. That's the window to play in"] avoid 'mic': a badge before its opening that would lie
+          // over ANOTHER mic opening of the lane (the strike before, less than a badge away) stands AFTER its own opening instead — the
+          // badge's gap right of the opening's end (tEnd)
+          // (placed once a lane, in time order — avoidPlace, at the system's start: before its opening where that is free, else after it where
+          // THAT is free, else not drawn — in a run of strikes closer than a badge, the neighbours' badges and the opening's own colour say it)
+          if (avoidPlace.has(it)) { const xP = avoidPlace.get(it); if (xP == null) continue; bx = xP; }
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
           // [decibel RUNNING_LOG §397, DEC-165 — his "on the right edge, let's use clamping … badges have an … alternative position to the left of
           // the go line … the same gap … That'll be the default clamping for badges. So let's write that in"] THE BADGES' CLAMP AT A PAGE'S END
           // (page_rules.json edge.badge.screenEnd 'mirror'): a badge that stands AFTER its line — 'at' its time with a gap — and would run past the
           // frame takes its ALTERNATE place, BEFORE the line: its right edge the same gap before it. The line itself never moves.
           if (SCR && EDGE && EDGE.badge && EDGE.badge.screenEnd === 'mirror' && it.place === 'at' && dxPx > 0 && bx + bs > view.widthPx) bx = view.xOfSeconds(it.t) - dxPx - bs;
-          if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
+          if (SCR && !cutB) bx = Math.max(bx, view.xOfSeconds(w0));
+          if (cutB && !(bx + bs > view.xOfSeconds(w0) && bx < view.xOfSeconds(w1))) continue;   // none of its ink on this page
           // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above
           // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and
           // not in the mic's row; `ground` = its square's own fill (colour 'state' = the state's colour) at its opacity, not the badges' ground.
@@ -1300,7 +1344,7 @@
   // the page, not to the music). check_print_edges reads these rather than
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
-    'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
+    'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge', 'finalbar'];   // [§550] the grace's stroke · [§557] the uneven group's
   const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin', 'wedge', 'sinebox'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket

@@ -29,7 +29,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | a section's colour | THE DESIGNATED LANGUAGE COLOUR (DEC-174): a section's own graphic takes the colour its type's badge sign is drawn in — the trill's curve the trills' blue `#5b9bf5`, the drones' line wedge the multiphonics' yellow `#F7C40A`. Each is a pointer at the language table: it moves with the badge | decided for those two, built |
 | a badge on a mic opening | where the openings stand alone — the drones: yes, each one · the opening: yes, each one (DEC-117; it was "none" until then) | decided for those two |
 | two badges together | a METHOD large, its MATERIAL small beside it (the three body problem) · two materials side by side, equal (section 2) | decided for the three body; the rule **(AI)** |
-| the conductor's arc (GC) | only where an event is one exact moment: the accented long tones. NOT in the opening. **Its shape is piece #2's** (DEC-160, RUNNING_LOG §392: a 0.6 s fall, a 0.5 s rebound to 80 %; magenta) | decided |
+| the conductor's arc (GC) | only where an event is one exact moment: the accented long tones. NOT in the opening. **Its shape is piece #2's** (DEC-160, RUNNING_LOG §392: a 0.6 s fall, a 0.5 s rebound to 80 %; magenta). **DRAWN ON TOP of every other mark, everywhere in the score** (DEC-181, §411) | decided |
 
 ---
 
@@ -103,9 +103,12 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **No staff** (the staff ends at the page turn at 668 s).
 - **A WRITTEN strike** (the 22 he marked notated): a conductor's arc (GC) for each note, in the note's own lane, its impact at the note's time.
 - **A FREE strike** (the 41 he marked open): nothing for its notes — the player strikes freely inside the mic opening.
-- **Every strike:** a mic opening the strike window's own length on each lane that strikes in it, in THE STABILO YELLOW `#E6D53A` (the mic opening's look otherwise), the scattered strikes' badge 12 px before it.
-- **The last four strikes** (no electronics): their arcs, no mic opening **(AI — to confirm)**.
-- **Open:** the 14 places where a badge stands on the opening before it · the electronics on the presentation score (a talk) · the section into the main score.
+- **Every strike:** a mic opening the strike window's own length ON ALL FIVE LANES (DEC-181 — whether or not the save has a note for the player), in THE STABILO YELLOW `#E6D53A` (the mic opening's look otherwise).
+- **The badge and the opening (DEC-181): THE MIC OPENING IS NEVER COVERED — "that's the window to play in".** The scattered strikes' badge stands 12 px BEFORE its opening; where that would lie on the opening before, 12 px AFTER it; where neither side is free (a run of strikes closer than a badge), no badge. At a page's edge the badge is cut like paper.
+- **The last four strikes** (no electronics): FREE — the same window with NO two circles (no microphone is meant), no arcs.
+- **A final bar line** at 783 s, through every lane; the dividers run on.
+- **THE ELECTRONICS (the presentation score; his "B"):** on every lane, in a grey window with the scattered strikes' badge, ONE PURPLE LINE from the first strike's end to the first of the last four, its thickness the number of answers a strike gets there — 1 · 2 · 3 · 2 · 1.
+- **Open:** the 11 written strikes that lack a player in the save (the lane shows the window, no arc) · the six strikes with no badge · the section into the main score.
 
 ---
 

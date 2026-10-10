@@ -927,9 +927,11 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Built:** the cutter's `--strikes t0:t1` — from the save's strike windows (zones `elecStrike`, `elec.mode` his word): a mic opening the window's span on each lane that strikes in it (`variant: 'strike'` → `rules.json` `objects.micOpening.variants.strike` → `colours.micStrike` #E6D53A) · a NOTATED strike's notes draw their GC alone · an OPEN strike's notes draw nothing · a strike with no window (the last four) draws its GCs and no opening. The staff's range now ends at 668 s.
 
-**The page:** `node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 780 --id approaching-strikes --label "Approaching — the scattered strikes (677 … 779 s)" --exp --strikes 672:780 --micBadge scatteredStrikes:672:780` — 10 pages (the main score's turns), 63 windows (22 notated · 41 open), 290 openings and badges, 117 GCs.
+**The page:** `node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 784 --id approaching-strikes --label "Approaching — the scattered strikes (677 … 779 s)" --exp --strikes 672:784 --micBadge scatteredStrikes:672:784:clear --strikesElec scatteredStrikes:672:784 --finalBar 783` — 10 pages (the main score's turns), 63 windows (22 notated · 41 open), 290 openings and badges, 117 GCs.
 
-**Open, his:** the 14 places where a badge stands on the opening before it (strikes under 0.37 s apart; one at a page turn) · the last four strikes as GCs (the AI's reading) · THE ELECTRONICS on the presentation score — three ways put to him in §410's reply · then the section into the main score (PLAN 2.10).
+**SINCE §411 (DEC-181) — HIS SECOND PASS, BUILT:** every window on ALL FIVE lanes · the last four strikes FREE (a window with no circles, no GC) · `--micBadge …:clear`: the badge before its opening, else after it, else none — never on a mic opening; cut like paper at a page's edge · THE GC ON TOP of every mark, everywhere · `--finalBar 783` · THE ELECTRONICS as one line a lane, its thickness the number of answers (`--strikesElec`).
+
+**Open, his:** the 11 written strikes whose save lacks a player (a window, no GC; `docs/RENDER.md` § 0.2 has the list — the notes not written) · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10).
 
 ## 3. The performance score — `todo`
 

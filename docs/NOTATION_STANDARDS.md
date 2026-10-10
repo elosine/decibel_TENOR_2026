@@ -245,3 +245,14 @@ session**. Page turns in PARTS (a turn where the player rests) are PLAN 3's, not
 6. **ONE HEIGHT (DEC-177, RUNNING_LOG §408).** Every box is as tall as the tallest of the piece — `heightSs`, four staff spaces (the bass flute's at 451 s, under its 8va). It is CENTRED on its notation, then moved by the least amount that leaves neither edge on a line (rule 3); a tie goes away from the staff's middle. Rule 3's growing is what is left for a notation too tall for the row.
 
 *Built for the sine tone: `container.json` `devices.byEnv.sine` · `notation/lib/layout.js` (the measuring, at the unit's end) · `render.js` (the `sinebox` branch). Edge class `cut` on screen: at a page turn the box is cut like paper; a box that begins within a few pixels of a page's start has its left border under the page's edge (the one case in the piece, at 560.1 s: seen by him, fine — DEC-179).*
+
+## §8 A BADGE AND ITS MIC OPENING — the strikes' rule. WRITTEN 2026-10-10 (decibel RUNNING_LOG §411; DEC-181)
+
+*His words: "keep the mic openings unoccluded. That's the window to play in." For a section whose mic openings are windows to play in — the scattered strikes — set by the cutter's `--micBadge type:t0:t1:clear`:*
+
+1. **The badge stands BEFORE its opening**, the badge's gap before it — where that place lies on no other mic opening and on no badge.
+2. **Else AFTER its opening**, the same gap after its end — on the same condition.
+3. **Else it is not drawn.** In a run of strikes closer than a badge the neighbours' badges and the opening's own colour say what it is.
+4. **At a page's edge the badge is cut like paper** — drawn where it falls, on both pages — never pushed onto its opening. *(The presentation score's choice for this section; the registered class of a badge, `page_rules.json` `edge.badge`, is unchanged, and "for the actual performance scores, we'll figure out the proper clamping".)*
+
+*Everywhere in the score since the same day: THE GC IS DRAWN ON TOP of every other mark of its lane.*

@@ -5,7 +5,7 @@
   "score": "piece-Draft01c",
   "window": [
    672,
-   780
+   784
   ],
   "parts": [
    0,
@@ -21,7 +21,7 @@
   "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance)",
   "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 780 --id approaching-strikes --label \"Approaching — the scattered strikes (677 … 779 s)\" --exp --strikes 672:780 --micBadge scatteredStrikes:672:780"
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 784 --id approaching-strikes --label \"Approaching — the scattered strikes (677 … 779 s)\" --exp --strikes 672:784 --micBadge scatteredStrikes:672:784:clear --strikesElec scatteredStrikes:672:784 --finalBar 783"
  },
  "events": [
   {
@@ -7733,7 +7733,7 @@
    "part": 0,
    "span": [
     778.597,
-    780
+    784
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -8503,7 +8503,7 @@
    "part": 1,
    "span": [
     778.503,
-    780
+    784
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -9077,7 +9077,7 @@
    "part": 2,
    "span": [
     778.594,
-    780
+    784
    ],
    "class": "ord-sustained",
    "strategy": "unresolved",
@@ -9343,7 +9343,7 @@
    "part": 3,
    "span": [
     775.666,
-    780
+    784
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -10239,7 +10239,7 @@
    "part": 4,
    "span": [
     778.474,
-    780
+    784
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -11177,7 +11177,7 @@
    "part": 5,
    "span": [
     778.485,
-    780
+    784
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -11301,6 +11301,23 @@
    "kind": "micOpening",
    "target": {
     "part": 0,
+    "span": [
+     676.9,
+     677.239
+    ]
+   },
+   "value": {
+    "source": "zn-1599",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1599-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
     "span": [
      676.9,
      677.239
@@ -11473,6 +11490,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1600-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     678.666,
+     679.036
+    ]
+   },
+   "value": {
+    "source": "zn-1600",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1600-1",
    "kind": "micOpening",
    "target": {
@@ -11490,10 +11524,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1600-3",
+   "id": "ov-mic-zn-1600-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      678.666,
      679.036
@@ -12326,10 +12360,27 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1604-3",
+   "id": "ov-mic-zn-1604-1",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 1,
+    "span": [
+     682.416,
+     682.902
+    ]
+   },
+   "value": {
+    "source": "zn-1604",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1604-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      682.416,
      682.902
@@ -12943,6 +12994,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1607-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     685.681,
+     686.027
+    ]
+   },
+   "value": {
+    "source": "zn-1607",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1607-4",
    "kind": "micOpening",
    "target": {
@@ -13146,10 +13214,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1608-3",
+   "id": "ov-mic-zn-1608-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      686.86,
      687.25
@@ -13293,6 +13361,23 @@
    "kind": "micOpening",
    "target": {
     "part": 0,
+    "span": [
+     689.009,
+     689.347
+    ]
+   },
+   "value": {
+    "source": "zn-1609",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1609-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
     "span": [
      689.009,
      689.347
@@ -13470,6 +13555,23 @@
    "kind": "micOpening",
    "target": {
     "part": 1,
+    "span": [
+     690.684,
+     691.552
+    ]
+   },
+   "value": {
+    "source": "zn-1610",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1610-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      690.684,
      691.552
@@ -13886,10 +13988,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1612-3",
+   "id": "ov-mic-zn-1612-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      694.265,
      694.519
@@ -14033,6 +14135,23 @@
    "kind": "micOpening",
    "target": {
     "part": 0,
+    "span": [
+     695.022,
+     695.234
+    ]
+   },
+   "value": {
+    "source": "zn-1613",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1613-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
     "span": [
      695.022,
      695.234
@@ -14246,10 +14365,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1614-3",
+   "id": "ov-mic-zn-1614-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      696.116,
      696.446
@@ -14666,10 +14785,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1616-3",
+   "id": "ov-mic-zn-1616-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      699.662,
      700.156
@@ -15066,10 +15185,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1618-3",
+   "id": "ov-mic-zn-1618-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      701.794,
      702.616
@@ -15603,6 +15722,40 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1621-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     705.516,
+     705.724
+    ]
+   },
+   "value": {
+    "source": "zn-1621",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1621-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     705.516,
+     705.724
+    ]
+   },
+   "value": {
+    "source": "zn-1621",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1621-4",
    "kind": "micOpening",
    "target": {
@@ -15918,6 +16071,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1623-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     709.116,
+     709.442
+    ]
+   },
+   "value": {
+    "source": "zn-1623",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1623-1",
    "kind": "micOpening",
    "target": {
@@ -15939,6 +16109,23 @@
    "kind": "micOpening",
    "target": {
     "part": 2,
+    "span": [
+     709.116,
+     709.442
+    ]
+   },
+   "value": {
+    "source": "zn-1623",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1623-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
     "span": [
      709.116,
      709.442
@@ -16118,10 +16305,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1624-3",
+   "id": "ov-mic-zn-1624-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      709.966,
      710.44
@@ -16318,10 +16505,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1625-3",
+   "id": "ov-mic-zn-1625-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      710.666,
      711.504
@@ -16718,10 +16905,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1627-3",
+   "id": "ov-mic-zn-1627-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      714.416,
      715.042
@@ -16878,10 +17065,27 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1628-3",
+   "id": "ov-mic-zn-1628-1",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 1,
+    "span": [
+     715.266,
+     715.742
+    ]
+   },
+   "value": {
+    "source": "zn-1628",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1628-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      715.266,
      715.742
@@ -17054,6 +17258,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1629-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     716.966,
+     717.374
+    ]
+   },
+   "value": {
+    "source": "zn-1629",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1629-2",
    "kind": "micOpening",
    "target": {
@@ -17178,6 +17399,40 @@
    "kind": "micOpening",
    "target": {
     "part": 0,
+    "span": [
+     718.696,
+     719.032
+    ]
+   },
+   "value": {
+    "source": "zn-1630",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1630-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     718.696,
+     719.032
+    ]
+   },
+   "value": {
+    "source": "zn-1630",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1630-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      718.696,
      719.032
@@ -17750,6 +18005,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1633-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     721.816,
+     722.104
+    ]
+   },
+   "value": {
+    "source": "zn-1633",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1633-2",
    "kind": "micOpening",
    "target": {
@@ -17950,10 +18222,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1634-3",
+   "id": "ov-mic-zn-1634-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      723.928,
      724.766
@@ -18116,6 +18388,40 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1635-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     724.816,
+     725.065
+    ]
+   },
+   "value": {
+    "source": "zn-1635",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1635-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     724.816,
+     725.065
+    ]
+   },
+   "value": {
+    "source": "zn-1635",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1635-5",
    "kind": "micOpening",
    "target": {
@@ -18262,6 +18568,23 @@
    "kind": "micOpening",
    "target": {
     "part": 1,
+    "span": [
+     726.966,
+     727.441
+    ]
+   },
+   "value": {
+    "source": "zn-1636",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1636-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      726.966,
      727.441
@@ -18668,6 +18991,23 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-mic-zn-1638-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     729.216,
+     729.575
+    ]
+   },
+   "value": {
+    "source": "zn-1638",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-mic-zn-1638-5",
    "kind": "micOpening",
    "target": {
@@ -19017,6 +19357,23 @@
    "kind": "micOpening",
    "target": {
     "part": 0,
+    "span": [
+     730.283,
+     730.503
+    ]
+   },
+   "value": {
+    "source": "zn-1640",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1640-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
     "span": [
      730.283,
      730.503
@@ -20826,10 +21183,27 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1649-3",
+   "id": "ov-mic-zn-1649-1",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 1,
+    "span": [
+     741.272,
+     741.578
+    ]
+   },
+   "value": {
+    "source": "zn-1649",
+    "variant": "strike",
+    "mode": "notated"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1649-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      741.272,
      741.578
@@ -20986,10 +21360,27 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1650-3",
+   "id": "ov-mic-zn-1650-1",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 1,
+    "span": [
+     742.366,
+     742.44
+    ]
+   },
+   "value": {
+    "source": "zn-1650",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1650-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      742.366,
      742.44
@@ -21125,6 +21516,23 @@
      "dynBesideStem": false,
      "brick": false
     }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1651-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     744.666,
+     745.006
+    ]
+   },
+   "value": {
+    "source": "zn-1651",
+    "variant": "strike",
+    "mode": "open"
    },
    "provenance": "authored"
   },
@@ -21546,10 +21954,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1653-3",
+   "id": "ov-mic-zn-1653-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      746.666,
      746.828
@@ -21946,10 +22354,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1655-3",
+   "id": "ov-mic-zn-1655-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      749.166,
      749.546
@@ -22310,6 +22718,23 @@
    "kind": "micOpening",
    "target": {
     "part": 1,
+    "span": [
+     752.216,
+     753.084
+    ]
+   },
+   "value": {
+    "source": "zn-1657",
+    "variant": "strike",
+    "mode": "open"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-1657-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
     "span": [
      752.216,
      753.084
@@ -22906,10 +23331,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-mic-zn-1660-3",
+   "id": "ov-mic-zn-1660-2",
    "kind": "micOpening",
    "target": {
-    "part": 3,
+    "part": 2,
     "span": [
      761.366,
      761.9
@@ -23177,7 +23602,7 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1498",
+   "id": "ov-silent-ev-wc-1498",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1498"
@@ -23187,24 +23612,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1499",
+   "id": "ov-silent-ev-wc-1499",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1499"
@@ -23214,24 +23635,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1500",
+   "id": "ov-silent-ev-wc-1500",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1500"
@@ -23241,24 +23658,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1501",
+   "id": "ov-silent-ev-wc-1501",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1501"
@@ -23268,24 +23681,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1502",
+   "id": "ov-silent-ev-wc-1502",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1502"
@@ -23295,24 +23704,110 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1504",
+   "id": "ov-mic-bare-769979-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     769.979,
+     770.233
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-769979-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     769.979,
+     770.233
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-769979-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     769.979,
+     770.233
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-769979-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     769.979,
+     770.233
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-769979-5",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     769.979,
+     770.233
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-1504",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1504"
@@ -23322,24 +23817,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1505",
+   "id": "ov-silent-ev-wc-1505",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1505"
@@ -23349,24 +23840,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1506",
+   "id": "ov-silent-ev-wc-1506",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1506"
@@ -23376,24 +23863,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1507",
+   "id": "ov-silent-ev-wc-1507",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1507"
@@ -23403,24 +23886,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1508",
+   "id": "ov-silent-ev-wc-1508",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1508"
@@ -23430,24 +23909,110 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1510",
+   "id": "ov-mic-bare-772166-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     772.166,
+     772.66
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-772166-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     772.166,
+     772.66
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-772166-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     772.166,
+     772.66
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-772166-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     772.166,
+     772.66
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-772166-5",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     772.166,
+     772.66
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-1510",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1510"
@@ -23457,24 +24022,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1511",
+   "id": "ov-silent-ev-wc-1511",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1511"
@@ -23484,24 +24045,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1512",
+   "id": "ov-silent-ev-wc-1512",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1512"
@@ -23511,24 +24068,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1513",
+   "id": "ov-silent-ev-wc-1513",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1513"
@@ -23538,24 +24091,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1514",
+   "id": "ov-silent-ev-wc-1514",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1514"
@@ -23565,24 +24114,110 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1516",
+   "id": "ov-mic-bare-775666-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     775.666,
+     775.842
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-775666-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     775.666,
+     775.842
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-775666-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     775.666,
+     775.842
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-775666-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     775.666,
+     775.842
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-775666-5",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     775.666,
+     775.842
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-1516",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1516"
@@ -23592,24 +24227,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1517",
+   "id": "ov-silent-ev-wc-1517",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1517"
@@ -23619,24 +24250,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1518",
+   "id": "ov-silent-ev-wc-1518",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1518"
@@ -23646,24 +24273,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1519",
+   "id": "ov-silent-ev-wc-1519",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1519"
@@ -23673,24 +24296,20 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1520",
+   "id": "ov-silent-ev-wc-1520",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-1520"
@@ -23700,19 +24319,625 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": true,
+     "gc": false,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false,
-     "gcGeom": "lane",
-     "gcStyle": null,
-     "gcImpact": null,
-     "gcSpread": 0
+     "brick": false
     }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-778474-0",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     778.474,
+     778.72
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-778474-1",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     778.474,
+     778.72
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-778474-2",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     778.474,
+     778.72
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-778474-4",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     778.474,
+     778.72
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-bare-778474-5",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     778.474,
+     778.72
+    ]
+   },
+   "value": {
+    "variant": "strike",
+    "mode": "open",
+    "noSign": true,
+    "bare": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-answers-0",
+   "kind": "stateWedge",
+   "target": {
+    "part": 0,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 677.239,
+      "t1": 690.684,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     },
+     {
+      "t0": 690.684,
+      "t1": 718.696,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 718.696,
+      "t1": 749.166,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 749.166,
+      "t1": 765.023,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 765.023,
+      "t1": 769.979,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     }
+    ],
+    "row": "elec",
+    "line": "answers"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-strikeselec-scatteredStrikes-0-677239",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 677.239
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-answers-0",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-answers-1",
+   "kind": "stateWedge",
+   "target": {
+    "part": 1,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 677.239,
+      "t1": 690.684,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     },
+     {
+      "t0": 690.684,
+      "t1": 718.696,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 718.696,
+      "t1": 749.166,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 749.166,
+      "t1": 765.023,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 765.023,
+      "t1": 769.979,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     }
+    ],
+    "row": "elec",
+    "line": "answers"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-strikeselec-scatteredStrikes-1-677239",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 677.239
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-answers-1",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-answers-2",
+   "kind": "stateWedge",
+   "target": {
+    "part": 2,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 677.239,
+      "t1": 690.684,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     },
+     {
+      "t0": 690.684,
+      "t1": 718.696,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 718.696,
+      "t1": 749.166,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 749.166,
+      "t1": 765.023,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 765.023,
+      "t1": 769.979,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     }
+    ],
+    "row": "elec",
+    "line": "answers"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-strikeselec-scatteredStrikes-2-677239",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 677.239
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-answers-2",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-answers-4",
+   "kind": "stateWedge",
+   "target": {
+    "part": 4,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 677.239,
+      "t1": 690.684,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     },
+     {
+      "t0": 690.684,
+      "t1": 718.696,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 718.696,
+      "t1": 749.166,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 749.166,
+      "t1": 765.023,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 765.023,
+      "t1": 769.979,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     }
+    ],
+    "row": "elec",
+    "line": "answers"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-strikeselec-scatteredStrikes-4-677239",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 677.239
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-answers-4",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-answers-5",
+   "kind": "stateWedge",
+   "target": {
+    "part": 5,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 677.239,
+      "t1": 690.684,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     },
+     {
+      "t0": 690.684,
+      "t1": 718.696,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 718.696,
+      "t1": 749.166,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 749.166,
+      "t1": 765.023,
+      "state": "line",
+      "thick": [
+       6.667,
+       6.667
+      ]
+     },
+     {
+      "t0": 765.023,
+      "t1": 769.979,
+      "state": "line",
+      "thick": [
+       3.333,
+       3.333
+      ]
+     }
+    ],
+    "row": "elec",
+    "line": "answers"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-strikeselec-scatteredStrikes-5-677239",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 677.239
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-answers-5",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     677.239,
+     769.979
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-finalbar-0",
+   "kind": "finalBar",
+   "target": {
+    "part": 0,
+    "t": 783
+   },
+   "value": {
+    "bar": "final"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-finalbar-1",
+   "kind": "finalBar",
+   "target": {
+    "part": 1,
+    "t": 783
+   },
+   "value": {
+    "bar": "final"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-finalbar-2",
+   "kind": "finalBar",
+   "target": {
+    "part": 2,
+    "t": 783
+   },
+   "value": {
+    "bar": "final"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-finalbar-4",
+   "kind": "finalBar",
+   "target": {
+    "part": 4,
+    "t": 783
+   },
+   "value": {
+    "bar": "final"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-finalbar-5",
+   "kind": "finalBar",
+   "target": {
+    "part": 5,
+    "t": 783
+   },
+   "value": {
+    "bar": "final"
    },
    "provenance": "authored"
   },
@@ -23725,7 +24950,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 677.239,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-676900",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 676.9
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 677.239,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23738,7 +24982,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 677.239,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23751,7 +24998,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 677.239,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23764,7 +25014,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 677.239,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-678666",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 678.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 679.036,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23777,20 +25046,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 679.036,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-678666",
+   "id": "ov-badge-mic-scatteredStrikes-2-678666",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 678.666
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 679.036,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23803,7 +25078,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 679.036,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23816,7 +25094,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 679.036,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23829,7 +25110,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 680.119,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23842,7 +25126,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 680.119,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23855,7 +25142,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 680.119,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23868,7 +25158,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 680.119,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23881,7 +25174,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 680.119,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23894,7 +25190,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 681.472,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23907,7 +25206,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 681.472,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23920,7 +25222,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 681.472,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23933,7 +25238,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 681.472,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23946,7 +25254,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 681.472,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23959,7 +25270,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.163,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23972,7 +25286,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.163,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23985,7 +25302,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.163,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -23998,7 +25318,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.163,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24011,7 +25334,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.163,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24024,20 +25350,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.902,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-682416",
+   "id": "ov-badge-mic-scatteredStrikes-1-682416",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 1,
     "t": 682.416
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.902,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-682416",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 682.416
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.902,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24050,7 +25398,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.902,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24063,7 +25414,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 682.902,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24076,7 +25430,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.41,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24089,7 +25446,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.41,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24102,7 +25462,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.41,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24115,7 +25478,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.41,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24128,7 +25494,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.41,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24141,7 +25510,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.954,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24154,7 +25526,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.954,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24167,7 +25542,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.954,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24180,7 +25558,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.954,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24193,7 +25574,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 683.954,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24206,7 +25590,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 686.027,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24219,7 +25606,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 686.027,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-685681",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 685.681
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 686.027,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24232,7 +25638,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 686.027,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24245,7 +25654,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 686.027,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24258,7 +25670,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 687.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24271,20 +25686,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 687.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-686860",
+   "id": "ov-badge-mic-scatteredStrikes-2-686860",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 686.86
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 687.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24297,7 +25718,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 687.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24310,7 +25734,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 687.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24323,7 +25750,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 689.347,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-689009",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 689.009
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 689.347,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24336,7 +25782,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 689.347,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24349,7 +25798,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 689.347,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24362,7 +25814,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 689.347,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24375,7 +25830,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 691.552,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24388,7 +25846,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 691.552,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-690684",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 690.684
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 691.552,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24401,7 +25878,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 691.552,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24414,7 +25894,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 691.552,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24427,7 +25910,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 692.385,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24440,7 +25926,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 692.385,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24453,7 +25942,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 692.385,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24466,7 +25958,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 692.385,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24479,7 +25974,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 692.385,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24492,7 +25990,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 694.519,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24505,20 +26006,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 694.519,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-694265",
+   "id": "ov-badge-mic-scatteredStrikes-2-694265",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 694.265
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 694.519,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24531,7 +26038,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 694.519,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24544,7 +26054,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 694.519,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24557,7 +26070,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 695.234,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-695022",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 695.022
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 695.234,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24570,7 +26102,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 695.234,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24583,7 +26118,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 695.234,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24596,7 +26134,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 695.234,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24609,7 +26150,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 696.446,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24622,20 +26166,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 696.446,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-696116",
+   "id": "ov-badge-mic-scatteredStrikes-2-696116",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 696.116
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 696.446,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24648,7 +26198,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 696.446,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24661,7 +26214,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 696.446,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24674,7 +26230,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 697.871,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24687,7 +26246,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 697.871,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24700,7 +26262,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 697.871,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24713,7 +26278,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 697.871,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24726,7 +26294,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 697.871,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24739,7 +26310,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 700.156,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24752,20 +26326,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 700.156,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-699662",
+   "id": "ov-badge-mic-scatteredStrikes-2-699662",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 699.662
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 700.156,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24778,7 +26358,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 700.156,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24791,7 +26374,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 700.156,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24804,7 +26390,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 701.039,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24817,7 +26406,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 701.039,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24830,7 +26422,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 701.039,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24843,7 +26438,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 701.039,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24856,7 +26454,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 701.039,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24869,7 +26470,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 702.616,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24882,20 +26486,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 702.616,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-701794",
+   "id": "ov-badge-mic-scatteredStrikes-2-701794",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 701.794
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 702.616,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24908,7 +26518,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 702.616,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24921,7 +26534,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 702.616,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24934,7 +26550,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 703.096,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24947,7 +26566,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 703.096,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24960,7 +26582,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 703.096,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24973,7 +26598,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 703.096,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24986,7 +26614,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 703.096,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -24999,7 +26630,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 704.86,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25012,7 +26646,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 704.86,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25025,7 +26662,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 704.86,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25038,7 +26678,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 704.86,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25051,7 +26694,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 704.86,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25064,7 +26710,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 705.724,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-705516",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 705.516
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 705.724,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-705516",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 705.516
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 705.724,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25077,7 +26758,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 705.724,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25090,7 +26774,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 705.724,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25103,7 +26790,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 707.34,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25116,7 +26806,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 707.34,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25129,7 +26822,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 707.34,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25142,7 +26838,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 707.34,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25155,7 +26854,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 707.34,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-709116",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 709.116
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 709.442,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25168,7 +26886,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 709.442,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25181,7 +26902,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 709.442,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-709116",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 709.116
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 709.442,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25194,7 +26934,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 709.442,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25207,7 +26950,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 710.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25220,20 +26966,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 710.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-709966",
+   "id": "ov-badge-mic-scatteredStrikes-2-709966",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 709.966
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 710.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25246,7 +26998,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 710.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25259,7 +27014,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 710.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25272,7 +27030,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 711.504,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25285,20 +27046,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 711.504,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-710666",
+   "id": "ov-badge-mic-scatteredStrikes-2-710666",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 710.666
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 711.504,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25311,7 +27078,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 711.504,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25324,7 +27094,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 711.504,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25337,7 +27110,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 713.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25350,7 +27126,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 713.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25363,7 +27142,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 713.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25376,7 +27158,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 713.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25389,7 +27174,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 713.25,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25402,7 +27190,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.042,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25415,20 +27206,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.042,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-714416",
+   "id": "ov-badge-mic-scatteredStrikes-2-714416",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 714.416
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.042,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25441,7 +27238,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.042,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25454,7 +27254,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.042,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25467,20 +27270,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.742,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-715266",
+   "id": "ov-badge-mic-scatteredStrikes-1-715266",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 1,
     "t": 715.266
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.742,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-715266",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 715.266
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.742,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25493,7 +27318,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.742,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25506,7 +27334,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 715.742,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25519,7 +27350,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 717.374,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-716966",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 716.966
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 717.374,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25532,7 +27382,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 717.374,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25545,7 +27398,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 717.374,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25558,7 +27414,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 717.374,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25571,7 +27430,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.032,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-718696",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 718.696
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.032,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-718696",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 718.696
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.032,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25584,7 +27478,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.032,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25597,7 +27494,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.032,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25610,7 +27510,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.858,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25623,7 +27526,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.858,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25636,7 +27542,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.858,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25649,7 +27558,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.858,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25662,7 +27574,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 719.858,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25675,7 +27590,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 721.478,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25688,7 +27606,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 721.478,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25701,7 +27622,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 721.478,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25714,7 +27638,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 721.478,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25727,7 +27654,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 721.478,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25740,7 +27670,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 722.104,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-721816",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 721.816
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 722.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25753,7 +27702,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 722.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25766,7 +27718,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 722.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25779,7 +27734,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 722.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25792,7 +27750,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 724.766,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25805,20 +27766,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 724.766,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-723928",
+   "id": "ov-badge-mic-scatteredStrikes-2-723928",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 723.928
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 724.766,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25831,7 +27798,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 724.766,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25844,7 +27814,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 724.766,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25857,7 +27830,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 725.065,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25870,7 +27846,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 725.065,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-724816",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 724.816
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 725.065,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-724816",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 724.816
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 725.065,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25883,7 +27894,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 725.065,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25896,7 +27910,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 727.441,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25909,7 +27926,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 727.441,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-726966",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 726.966
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 727.441,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25922,7 +27958,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 727.441,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25935,7 +27974,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 727.441,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25948,7 +27990,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 728.357,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25961,7 +28006,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 728.357,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25974,7 +28022,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 728.357,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -25987,7 +28038,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 728.357,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26000,7 +28054,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 728.357,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26013,7 +28070,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 729.575,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26026,7 +28086,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 729.575,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26039,7 +28102,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 729.575,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-729216",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 729.216
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 729.575,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26052,7 +28134,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 729.575,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26065,7 +28150,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.233,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26078,7 +28166,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.233,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26091,7 +28182,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.233,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26104,7 +28198,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.233,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26117,7 +28214,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.233,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26130,7 +28230,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.503,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-730283",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 730.283
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.503,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26143,7 +28262,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.503,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26156,7 +28278,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.503,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26169,7 +28294,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 730.503,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26182,7 +28310,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 731.047,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26195,7 +28326,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 731.047,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26208,7 +28342,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 731.047,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26221,7 +28358,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 731.047,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26234,7 +28374,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 731.047,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26247,7 +28390,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 732.388,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26260,7 +28406,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 732.388,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26273,7 +28422,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 732.388,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26286,7 +28438,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 732.388,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26299,7 +28454,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 732.388,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26312,7 +28470,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 733.666,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26325,7 +28486,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 733.666,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26338,7 +28502,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 733.666,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26351,7 +28518,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 733.666,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26364,7 +28534,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 733.666,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26377,7 +28550,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 734.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26390,7 +28566,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 734.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26403,7 +28582,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 734.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26416,7 +28598,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 734.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26429,7 +28614,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 734.104,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26442,7 +28630,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 735.438,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26455,7 +28646,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 735.438,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26468,7 +28662,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 735.438,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26481,7 +28678,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 735.438,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26494,7 +28694,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 735.438,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26507,7 +28710,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 737.13,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26520,7 +28726,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 737.13,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26533,7 +28742,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 737.13,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26546,7 +28758,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 737.13,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26559,7 +28774,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 737.13,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26572,7 +28790,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 738.651,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26585,7 +28806,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 738.651,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26598,7 +28822,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 738.651,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26611,7 +28838,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 738.651,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26624,7 +28854,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 738.651,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26637,7 +28870,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 740.218,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26650,7 +28886,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 740.218,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26663,7 +28902,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 740.218,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26676,7 +28918,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 740.218,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26689,7 +28934,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 740.218,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26702,20 +28950,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 741.578,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-741272",
+   "id": "ov-badge-mic-scatteredStrikes-1-741272",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 1,
     "t": 741.272
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 741.578,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-741272",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 741.272
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 741.578,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26728,7 +28998,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 741.578,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26741,7 +29014,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 741.578,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26754,20 +29030,42 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 742.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-742366",
+   "id": "ov-badge-mic-scatteredStrikes-1-742366",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 1,
     "t": 742.366
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 742.44,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-742366",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 742.366
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 742.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26780,7 +29078,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 742.44,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26793,7 +29094,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 742.44,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-744666",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 744.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.006,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26806,7 +29126,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.006,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26819,7 +29142,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.006,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26832,7 +29158,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.006,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26845,7 +29174,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.006,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26858,7 +29190,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.846,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26871,7 +29206,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.846,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26884,7 +29222,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.846,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26897,7 +29238,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.846,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26910,7 +29254,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 745.846,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26923,7 +29270,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 746.828,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26936,20 +29286,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 746.828,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-746666",
+   "id": "ov-badge-mic-scatteredStrikes-2-746666",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 746.666
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 746.828,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26962,7 +29318,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 746.828,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26975,7 +29334,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 746.828,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -26988,7 +29350,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 748.795,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27001,7 +29366,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 748.795,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27014,7 +29382,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 748.795,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27027,7 +29398,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 748.795,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27040,7 +29414,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 748.795,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27053,7 +29430,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 749.546,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27066,20 +29446,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 749.546,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-749166",
+   "id": "ov-badge-mic-scatteredStrikes-2-749166",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 749.166
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 749.546,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27092,7 +29478,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 749.546,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27105,7 +29494,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 749.546,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27118,7 +29510,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 750.444,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27131,7 +29526,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 750.444,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27144,7 +29542,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 750.444,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27157,7 +29558,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 750.444,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27170,7 +29574,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 750.444,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27183,7 +29590,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 753.084,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27196,7 +29606,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 753.084,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-752216",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 752.216
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 753.084,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27209,7 +29638,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 753.084,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27222,7 +29654,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 753.084,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27235,7 +29670,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 756.318,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27248,7 +29686,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 756.318,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27261,7 +29702,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 756.318,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27274,7 +29718,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 756.318,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27287,7 +29734,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 756.318,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27300,7 +29750,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 760.106,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27313,7 +29766,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 760.106,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27326,7 +29782,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 760.106,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27339,7 +29798,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 760.106,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27352,7 +29814,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 760.106,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27365,7 +29830,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 761.9,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27378,20 +29846,26 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 761.9,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-scatteredStrikes-3-761366",
+   "id": "ov-badge-mic-scatteredStrikes-2-761366",
    "kind": "badge",
    "target": {
-    "part": 3,
+    "part": 2,
     "t": 761.366
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 761.9,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27404,7 +29878,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 761.9,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27417,7 +29894,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 761.9,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27430,7 +29910,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 765.634,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27443,7 +29926,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 765.634,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27456,7 +29942,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 765.634,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27469,7 +29958,10 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 765.634,
+    "edge": "cut"
    },
    "provenance": "authored"
   },
@@ -27482,7 +29974,330 @@
    },
    "value": {
     "type": "scatteredStrikes",
-    "place": "before"
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 765.634,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-769979",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 769.979
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 770.233,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-769979",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 769.979
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 770.233,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-769979",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 769.979
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 770.233,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-769979",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 769.979
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 770.233,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-5-769979",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 769.979
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 770.233,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-772166",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 772.166
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 772.66,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-772166",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 772.166
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 772.66,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-772166",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 772.166
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 772.66,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-772166",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 772.166
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 772.66,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-5-772166",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 772.166
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 772.66,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-775666",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 775.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 775.842,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-775666",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 775.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 775.842,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-775666",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 775.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 775.842,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-775666",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 775.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 775.842,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-5-775666",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 775.666
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 775.842,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-0-778474",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 778.474
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 778.72,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-1-778474",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 778.474
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 778.72,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-2-778474",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 778.474
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 778.72,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-4-778474",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 778.474
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 778.72,
+    "edge": "cut"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-scatteredStrikes-5-778474",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 778.474
+   },
+   "value": {
+    "type": "scatteredStrikes",
+    "place": "before",
+    "avoid": "mic",
+    "tEnd": 778.72,
+    "edge": "cut"
    },
    "provenance": "authored"
   }
