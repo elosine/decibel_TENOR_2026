@@ -36,7 +36,7 @@ A take's folder: `notation/audio/takes/<score>/<NN>/` — the two recorded files
 
 ## § 0.1 Register — the takes *(append-only)*
 
-*(none yet — the dry run on the opening is PLAN 2.8's step 4)*
+- **2026-10-10 — the DRY RUN, take 01 of `piece-Draft01c`, 0 … 37 s** (RUNNING_LOG §387; the save of 12:41; his engine of 12:30:41, mode `compose`). 82.8 s recorded · 49 notes on 12 tracks. Aligned: score 0 at 17.9471 s · notes 30/30 (±0.34 ms) · drift 0.13 ms over 37 s (3.4 ppm), left. Players: first sound 1.527 s (first note 1.525) · −20.8 LUFS · −1.3 dBTP. Electronics: first sound 6.516 s (the first return, an `ar` roll 123 ms before its centre) · −20.4 LUFS · −0.9 dBTP. Mix (as heard): 43.000 s · float −0.9 dBTP · −19.0 LUFS · LRA 15.5 · gain **−0.1 dB** → **−1.0 dBTP · −19.1 LUFS** → `notation/audio/piece-Draft01c-dry.wav` (a part: not the piece's WAV). His ear: pending.
 
 ---
 

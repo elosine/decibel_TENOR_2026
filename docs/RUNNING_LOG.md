@@ -7687,3 +7687,26 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **The dry run, as it will go:** `node tools/take.js start --score piece-Draft01c --to 37` (from here, at his word) → his ▶ from 0 on the page, to ~45 s → `node tools/take.js stop` (from here; it aligns) → `node tools/take.js mix --out piece-Draft01c-dry` → he hears http://localhost:5500/notation/audio/piece-Draft01c-dry.wav. The notation pages were cut from `piece-3BodyRedo` (their `source.score`): the ♪ render chip finds a WAV of THAT name; a page re-cut from the piece in hand is his word.
 
 **For the paper:** a RENDER (pieces #4 … #6) is the page's MIDI replayed offline — one clock, Reaper's. A TAKE has two: the page's (the system clock, which times the MIDI) and the audio device's (which times the recording). The recorded MIDI is the bridge between them — it is the page's clock written down on the audio clock's timeline — and gives both the offset and the drift from the music's own notes, with no sync signal added to the piece.
+
+## §387. THE DRY RUN — the take's first run in Reaper: the opening recorded with the live electronics, aligned, mixed (PLAN 2.8 step 4) (2026-10-10, Opus)
+
+**What prompted it (verbatim):** *"ready"* — then, after his pass, *"done"*.
+
+**What ran, in order, each ONCE:** `node tools/take.js start --score piece-Draft01c --to 37` → his ▶ from 0 on the composer page → `node tools/take.js stop` → `node tools/take.js mix --out piece-Draft01c-dry`.
+
+**The start (the unknown of §386 — the copy opening with his engine attached over ReaRoute):** it opened and went into record with nothing said by Reaper or the tool. In the copy: REC on its output, fader 0 dB · ELEC RETURN on its output, fader 0 dB · 16 instrument tracks recording their MIDI · WAV 32-bit float · 44,100 Hz · the master 0 dB, no FX. His engine was the one of 12:30:41, in the mode `compose`. (Whether its window said anything is not known — he reported nothing.)
+
+**The take (01):** 82.8 s recorded · 49 notes on 12 tracks · two files, `18-REC-…wav` (82.7 s, stereo) and `17-ELEC RETURN-…wav` (82.8 s, stereo) · the take's tab closed, the rack's current again.
+
+**The alignment, measured:**
+- score time 0 sits **17.9471 s** into the recording (the samplers' loading and his reaching for ▶)
+- **30 of 30** of the opening's notes met a recorded note-on, spread **±0.34 ms**
+- the drift of the page's clock against the audio clock: **0.13 ms over 37 s — 3.4 ppm** — left (the limit is 16 ms). At that rate the whole piece (779 s) would drift under 3 ms; thirty notes over 37 s fix the rate only roughly — the full take measures it on some 670.
+- the players' stem: first sound **1.527 s**, the score's first note 1.525 s (the sampler's attack, 2 ms) · −20.8 LUFS · −1.3 dBTP
+- the electronics' stem: first sound **6.516 s** · −20.4 LUFS · −0.9 dBTP. Read against the score: the first return brick (`zn-54`, behaviour `ar`, the viola's impulse 1) is a region 6.239 … 7.039 s whose centre is 6.639 s; the engine rolled 123 ms BEFORE the centre — inside its "before" band (105 … 240 ms, `bank/elec_route.json` `return.ar`). The electronics are in the stem and sit where the engine's rule puts them.
+
+**The mix:** players 0 dB · electronics 0 dB (as heard) → 48 kHz float, 43.000 s, true peak −0.9 dBTP, −19.0 LUFS, LRA 15.5 LU → ONE gain of −0.1 dB → `notation/audio/piece-Draft01c-dry.wav`, 24-bit, −1.0 dBTP, −19.1 LUFS. First sound 1.527 s.
+
+**So proven, by this one run:** the copy tab beside a living engine · both stems recorded as outputs, the electronics among them · the instrument tracks' MIDI as the reference · the offset from the notes' times alone · the drift measured · the trim to score time · the mix and the gain step. **Not exercised:** the resampling of a real drift (none was needed; proven on the made-up take only, §386) · a take that begins inside the piece · a take of thirteen minutes. **Not done, and not part of the take:** the plan's comparison of the players' stem with an OFFLINE render of the same stretch — that belongs to the fallback (`--players offline`, not built; the offline tools are not re-pointed at this rack).
+
+**His ear:** http://localhost:5500/notation/audio/piece-Draft01c-dry.wav — pending.
