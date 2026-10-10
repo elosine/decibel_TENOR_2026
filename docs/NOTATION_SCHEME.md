@@ -88,8 +88,10 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 ### 5 · The beating section (423 … 668 s) — audible beats
 - **Announced by:** the audible beats' badge.
 - **The staff shows** here, with its clef.
-- **Each pair — a first thought, not fixed:** a pitch in a header, then a swatch or curve the full height of the lane over the stretch the sine sounds; the player's pitch and its duration line on the staff.
-- **Open — to decide at its turn:** all of the above.
+- **THE SINE TONE — BUILT 2026-10-10 (DEC-173, RUNNING_LOG §404), on the working page `approaching-beating` (the old `approaching-beating-423` is gone):** its pitch as an OPEN NOTEHEAD on the staff, the head's left edge on the sine's start, with its accidental (left of the box); round the head A BOX IN THE ELECTRONICS' PURPLE (the return brick's look: pale fill, solid outline, rounded corners) with 0.5 staff space of room over, under and left of the head — 15 px tall — drawn out to the sine's end. The box is the duration line. No go line, no dynamic, no word.
+- **The pitch written** is the pair's pitch, put on the staff as every note of the part is (the presentation score is in C: the bass clarinet at sounding pitch on a bass clef, the bass flute an octave up); the bowed crotales' BAR (their sine sounds two octaves and 17 cents above).
+- **At a page turn** the box is cut like paper and goes on at the next page's start — with no head there.
+- **Open — his, each at its turn:** the margin · the players' own notes (silent on this first pass) · the cents · the crotales' gliding sines (drawn level) · a head restated on a page a sine only crosses · the spelling (all sharps) · the audible beats' badge · the section into the main score.
 
 ### 6 · The scattered strikes (not yet in the piece)
 - **Announced by:** the scattered strikes' badge.

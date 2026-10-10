@@ -113,6 +113,14 @@
       "accommodation": "stamp-atomic",
       "fallback": "tr + the parenthesised neighbour + go line, no curve",
       "status": "proposed"
+    },
+    {
+      "class": "sine",
+      "classify": { "type": "zone", "midiModel": "elecSine", "context": "decibel PLAN 2.12 (2026-10-10) — extracted only with options.sines (notate_section --sines)" },
+      "ir": "event env sine: onset and duration the sine brick's; pitch = the key of the player's note it is paired with (properties.sine.note · .notes; else its own pitch rounded); its true pitch, its cents and its gliss kind in `sine`",
+      "accommodation": "stamp-atomic",
+      "fallback": "an open head and its box",
+      "status": "proposed"
     }
   ]
 }

@@ -33,6 +33,8 @@
 //   --beatGridFit p:u:n:phase:first:last[:flags]   the 7th field a comma list — keepTail · keepLead · keepBoth (§582 · §596) · noTail · noLead (§610: the extra beat on that side dropped)
 //   --beatGridFit p:u:n:phase:first:last   [§569] the same grid FITTED to a cluster (its first and last onsets): 3 beats before, 2 after, clamped clear of the notation before and after (the numbers rules.json objects.tick.grid*)
 //   --trills                 [PLAN 2f.3] the composer score's trill zones as env trill events; the notes they ate left out
+//   --sines                  [decibel PLAN 2.12, §404] the composer score's SINE BRICKS as env sine events: an open head on its time (the pitch
+//                            the player reads), enclosed in the purple box that runs to the sine's end. --silent leaves them their signs.
 //   --trillRate N            [2f.7, §451] a trill's drawn level sampled at N per second (never fewer than 101) — the MAIN file uses 100
 //   --cluster t0-t1[@part]   mark a span as one beamed cluster (repeatable; authored
 //                            overlays). THE MODIFIERS BELOW ARE POSITIONAL: each applies
@@ -283,9 +285,9 @@ process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) 
 const SILENT_SPANS = process.argv.map((a, i) => ((a === '--silent' || a === '--gcOnly') ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
-  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, process.argv.includes('--elecPlayers') ? { performers: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
+  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('sines') ? { sines: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, process.argv.includes('--elecPlayers') ? { performers: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
   date: new Date().toISOString().slice(0, 10),
-  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (flag('wedges') ? ' --wedges' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
+  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('sines') ? ' --sines' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (flag('wedges') ? ' --wedges' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
 });
 // [§400] THE RANGE ALERT AT BUILD TIME: a technique whose registry `written`
 // entry carries a range (the flute's tongue ram: written = sounding + 11,
@@ -1388,7 +1390,7 @@ for (let i = 0; i < process.argv.length; i++) {
     const at = a.split('@'), ts = at[0].split('-').map(Number), part = at.length > 1 ? parseInt(at[1], 10) : null;
     if (!(ts.length === 2 && ts[1] > ts[0]) || (part !== null && !(part >= 0))) { console.error('--silent needs t0-t1 or t0-t1@part (e.g. --silent 0-37)'); process.exit(2); }
     // [decibel §389] the NOTES of the span — a trill (env trill, --trills) is not a note: it keeps its go line, its tr and its curve
-    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part) && e.env !== 'trill');
+    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part) && e.env !== 'trill' && e.env !== 'sine');   // [§404] nor is a sine a note
     for (const e of members) {
       const existing = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id);
       if (existing) existing.value.device = Object.assign({}, existing.value.device, SILENT_OFF);

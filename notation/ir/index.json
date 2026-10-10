@@ -33,17 +33,6 @@
    "exp": true
   },
   {
-   "id": "approaching-beating-423",
-   "label": "Approaching — the beating section (423 … 460 s)",
-   "score": "piece-3BodyRedo",
-   "window": [
-    423,
-    460
-   ],
-   "profile": "trance",
-   "exp": true
-  },
-  {
    "id": "approaching-opening-elec",
    "label": "Approaching — the opening, with the electronics (0 … 37 s)",
    "score": "piece-3BodyRedo",
@@ -94,6 +83,17 @@
    "window": [
     204,
     416
+   ],
+   "profile": "trance",
+   "exp": true
+  },
+  {
+   "id": "approaching-beating",
+   "label": "Approaching — the beating section (423 … 668 s)",
+   "score": "piece-Draft01c",
+   "window": [
+    420,
+    672
    ],
    "profile": "trance",
    "exp": true

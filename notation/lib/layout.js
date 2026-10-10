@@ -1416,6 +1416,10 @@
             let octShift = 0;
             while (yDraw > th) { yDraw -= 3.5; octShift++; }
             while (yDraw < -th) { yDraw += 3.5; octShift--; }
+            // [decibel PLAN 2.12, RUNNING_LOG §404 — DEC-173] THE SINE'S BOX (a device's sineBox): in the place of a duration line — a box in the
+            // electronics' purple round the head, at the head's own height on the staff, from the event's time to its end. Pushed BEFORE the
+            // head's own ink, so the head is drawn over it. Its room round the head is a row (rules.json objects.sineBox.padSs).
+            if (dev.sineBox) items.push({ k: 'sinebox', t0: e.onset, t1: e.onset + e.duration, ySs: yDraw, ev: e.id });
             // THE RING BAR (wc-23 element 2, day 22, composer spec): a black
             // bar whose left edge is flush with the go line and whose right
             // edge is exactly the note's sounding length (for fixed
@@ -1669,6 +1673,10 @@
                       break;
                     }
                   }
+                  // [decibel PLAN 2.12, RUNNING_LOG §404] THE SINE'S BOX: the accidental stands LEFT OF THE BOX — the box's left edge is its pad left
+                  // of the head (device sineBoxPadSs = rules.json objects.sineBox.padSs), and the accidental clears that edge and its outline
+                  // by the same gap it keeps from a head. (A flat is taller than the box: inside it, it would break the box's top.)
+                  if (dev.sineBox && dev.sineBoxPadSs > 0) clearRel = Math.min(clearRel, -nhO.wSs / 2 - dev.sineBoxPadSs - accGap);
                   // anchor-aware horizontal edges (round-2 measurement
                   // finding): a noteY-aligned glyph anchors OFF-CENTER, so
                   // its right edge sits (wSs - anchorX) past the anchor,

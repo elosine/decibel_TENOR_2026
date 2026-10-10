@@ -8080,3 +8080,53 @@ SWEEP_LIST #20, OPEN, not diagnosed (the top of that preset's zone on the viola'
 **The gates:** `check_screen_edges --ir approaching` PASS (35 pages tiled −4 → 416 s; nothing in the gutter, nothing past the frame; 68 go-time indicators each at x(t); 21 animated devices at the page edges — the drones add none) · THE SHIELD green (the main score the one moved) · `check_rules` 31 of 32. Print not run (§396 · §398's list stands).
 
 **Not in the score yet:** the beating section (423 … 668 s) and the strikes (677 … 779 s).
+
+## §404. THE SINE TONES' NOTATION — an open head on its time, in a purple box that runs to the sine's end; the beating section started fresh, the staff back; the seven drones closed (DEC-173) (2026-10-10, Opus)
+
+**What prompted it (DEC-173, verbatim, as the dictation wrote it — "sign tone" is the sine tone):** *"the next section, the staff comes back, full staff per page. And then let's write in the pitches. There'll be the open note head um, notated correctly with accidentals, etc. The left edge will line up, or the note head will line up with the go time. Let's enclose, so we'll, we'll make something like the duration line, and you can see the previous pieces for the sort of thickness of that one. Actually, it's fine, don't, don't look it up. We'll use a duration line, which will be like the purple electronics boxes. That'll serve in the place of the duration line, except it'll encompass the note head. So just draw the purple box tall enough so it encompasses the note head and there's some margin around the note head. And that's how high, how tall that will be, you know, with a comfortable margin at the top and the left and the bottom. And then draw that out. to the end of the sign tone. That'll be the way we designate the sign tones. So let's start with that. And let's just ignore the previous beating score. Let's start fresh. But make sure we understand this is the one we're using for the full score. And then the seven drones, that's fine. Just as is, is fine."*
+
+**The AI's reading, marked as such.** The section is the beating section (423 … 668 s), where the staff shows on whole pages (`rules.json` `staffLines.ensemble.ranges`, from 423.3 s — PLAN 2.1). What is written first is THE SINE TONE: its pitch as an open notehead on the staff, the head on its time, and round the head a box in the electronics' purple that runs out to where the sine ends — the box IS the duration line. "The previous beating score" is the old working page `approaching-beating-423` (cut at §302 from `piece-3BodyRedo`, the stack's default signs): removed from the picker and from the repo. "This is the one we're using for the full score": the new page is the one the main score will take — it is cut from the piece in hand (`piece-Draft01c`, the thirty-five pairs made by hand, §265 … §288) on the main score's own page turns, and joins the main score at his word, as each section has. The players' own notes are not part of this first pass ("let's start with that").
+
+**THE DEVICE SHEET — the sine tone (PLAN 2.12).**
+
+| part | what | where the number lives |
+|---|---|---|
+| the head | an OPEN notehead, its LEFT EDGE on the sine's start; no go line, no GC, no stem | `container.json` `byEnv.sine` (the long tone's unit of piece #6 §531: `nhUnit` · `nhAnchor leftEdge` · `nhHead open`) |
+| the pitch | what the player READS: the pitch of the pair. The key of the note the sine brick names (`properties.sine.note`, the first of `.notes`), less the note's re-key offset; else the sine's own pitch rounded. Put on the staff as every note of the part is — on this view THE PRESENTATION SCORE IS IN C (§45): the bass flute an octave up in treble, the bass clarinet at SOUNDING pitch on a bass clef; a part will read the registry's written form. The bowed crotales: the BAR (the sine sounds two octaves and 17 cents above it) | `extract_core.js`, option `sines` |
+| the accidental | the stack's own (sharps — the naive spelling), LEFT OF THE BOX, clear of its outline by the gap an accidental keeps from a head | `layout.js` (`dev.sineBoxPadSs`) |
+| ledger lines · ottava | the stack's rules, unchanged | — |
+| THE BOX | the electronics' return brick's recipe — the purple `#5F4296` (SOL_purple), fill 18 %, a solid outline 1.5 px, corners 3 px — round the head: 0.5 staff space (3.95 px) of room OVER, UNDER and to the LEFT of the head, so 14.9 px tall (the head 7.0 + 2 × 3.95); from 3.95 px left of the head's left edge to x(the sine's end) exactly | `rules.json` `objects.sineBox` (`padSs` 0.5 — the AI's first number for "comfortable", his to move) → `container.json` `engraving.render.sineBox` |
+| the order | over the staff lines, under the head | the item is pushed before the head's ink |
+| at a page's edge | screen `cut` (clipped like paper at the turn, picked up at the next page's start — with no head there) · print `stub` | `page_rules.json` `edge.sinebox` |
+| not drawn | a dynamic, a word, a duration line, a go line | the device |
+
+**How it was built, in order.**
+
+1. **The extractor** (`notation/lib/extract_core.js`): a new option `sines` — each zone `midiModel: 'elecSine'` that begins in the window on an extracted part becomes an EVENT of `env: 'sine'` (`technique: 'sine'`, onset and length the brick's), carrying `sine: { midi (the sine's own pitch, cents in it), cents, gliss (its kind), note (the paired note) }`. Off, every earlier page is byte-identical (the shield: 25 of 26 unmoved, the one moved the new page).
+2. **A dead end, kept:** the first cut failed the validator sixty times — `span not increasing`. A sine and the note it is paired with begin at the same instant, and same-part chunks are disjoint (spec §5: a chunk ends where the next begins), so the first of the two had no span. **Now whatever begins exactly with a sine lives in the sine's chunk** (class `sine`, the sine first), as a chord's notes live in one. 95 events, 60 chunks, 35 of them a sine with its note.
+3. **A correction, found by listing the thirty-five against their bricks:** the first pitch rule — "the key of the paired note" — wrote two cello pairs a semitone high (452.5 s: D♯2 for D2 · 477.0 s: E2 for D♯2). Those notes are RE-KEYED (§263, the string quartet's rule: a bend past the sampler's ±1 semitone sounds from a moved key with the wheel re-based); what the key moved by is on the note (`properties.sine.keyOffset`: 1) and is now taken off. After it: no sine outside the crotales is written off its own pitch.
+4. **The registry:** `classes.json` a class `sine` · the schema's event property `sine` · `container.json` the device `byEnv.sine` and the row mapping `engraving.render.sineBox` · `rules.json` `objects.sineBox` · `page_rules.json` `edge.sinebox`.
+5. **The layout and the renderer:** a new item `sinebox` { t0, t1, ySs } at the head's own height (after the ottava fold), a LONG kind; the renderer's branch mirrors the mic opening's (whole inside a tiled page's clip; it follows its head if the head's unit is pushed at a page start). The accidental's clearance takes the box's left edge as the thing to clear — first seen straddling the outline by a pixel (the bass clarinet's D♯4 at 426.1 s: 1593.8 … 1598.1 against the box's edge at 1597.2), now 1591 … 1595.
+6. **The cutter** (`tools/notate_section.js`): `--sines`; `--silent` leaves a sine its signs (as it leaves a trill). **The validator** (`tools/ir_validate.js`): a sine event is checked against its brick (time, length, lane, the brick's pitch, the written pitch by the rule above).
+
+**The page** (under *experiments*; the window from 420 s so that its page turns are the main score's): `node tools/notate_section.js --score piece-Draft01c --w0 420 --w1 672 --id approaching-beating --label "Approaching — the beating section (423 … 668 s)" --exp --sines --silent 420-672` — 22 screen pages, 416 … 672 s; the staff on every page; the players' 60 notes silent.
+
+**The thirty-five, as drawn on this view (the presentation score, in C; lengths 8.9 … 55.2 s):**
+
+| lane | n | on the staff, in order | against the sound |
+|---|---|---|---|
+| bass flute (treble) | 8 | E6 · F6 (8va) · E6 · F4 · F4 · D♯4 · C5 · C5 | an octave above it (the instrument's notation) |
+| bass clarinet (BASS clef here) | 7 | D♯4 · D4 · F♯2 · F♯2 · F♯2 · F2 · F2 | AT sounding pitch (in C, §45); its part will read a major ninth higher, treble |
+| crotales, bowed (treble) | 6 | F♯5 · F5 · C♯5 · C♯5 · D5 · D5 — the bars | the sine two octaves + 17 c above, GLIDING (drawn level for now) |
+| viola (alto) | 7 | F5 · F♯5 · C5 · C5 · G♯4 · C5 · C5 | as sounding |
+| cello (bass) | 7 | D♯2 · D2 · D♯2 · A♯2 · A♯2 · A♯2 · A♯2 | as sounding |
+
+**Measured in the running app** (page 1 of 22, 416 … 428 s): the cello's head left edge at x 1188.6 = x(423.307 s) to the pixel; its box from x 1184.6, y 987.4, 14.9 px tall, the head 3.9 px inside its left, top and bottom; five staff lines on each of the five lanes; the percussion's unpitched part draws nothing. Page 4 (452 … 464 s): the cello's D2 with no accidental.
+
+**The gates:** `check_screen_edges --ir approaching-beating` PASS (22 pages tiled 416 → 672 s; 965 leaves, nothing in the gutter, nothing past the frame; 0 units clamped; 0 animated devices) · THE SHIELD green (25 of 26 identical; the new page the one moved) · `check_rules` 31 of 32 (the standing red) · the page VALID against its source · the main score still VALID. Print not run.
+
+**Not in it yet — his, each at his word:** the players' own notes (silent on this pass) · the cents (the crotales' +17) · the six crotales sines glide — drawn level · a page a sine only crosses shows the box with no head · every accidental a sharp (a respell is one overlay) · the audible beats' badge · the section into the main score · the presentation view's electronics for it.
+
+**THE SEVEN DRONES: closed** — *"that's fine. Just as is, is fine."* (§403's question: the seven that begin the instant the one before ends carry no badge of their own.)
+
+**The old page:** `notation/ir/approaching-beating-423.ir.json` deleted and its row taken out of `notation/ir/index.json` — in git's history if ever wanted.

@@ -258,6 +258,23 @@ function againstSource(doc, errs) {
       if (partT !== undefined && o.layer !== partT) errs.push(`${e.id}: containing chunk part ${partT} != trill layer ${o.layer}`);
       continue;
     }
+    // [decibel PLAN 2.12, RUNNING_LOG §404] a sine event sources a composer-score SINE BRICK (a zone, midiModel 'elecSine'): its onset the
+    // brick's startTime, its length the brick's, its part the brick's lane; its pitch the key of the player's note the brick names (what the
+    // player reads), else the brick's own pitch rounded; the brick's own pitch kept in sine.midi
+    if (e.env === 'sine') {
+      if (o.type !== 'zone' || o.midiModel !== 'elecSine' || !o.elec) { errs.push(`${e.id}: env sine but source ${e.source.objectId} is not a sine brick`); continue; }
+      if (Math.abs(e.onset - o.startTime) > 1e-9) errs.push(`${e.id}: onset ${e.onset} != sine startTime ${o.startTime}`);
+      if (Math.abs(e.duration - (o.endTime - o.startTime)) > 1e-3) errs.push(`${e.id}: duration ${e.duration} != sine span ${o.endTime - o.startTime}`);
+      if (!e.sine || Math.abs(e.sine.midi - +o.elec.midi) > 1e-9) errs.push(`${e.id}: sine.midi != the brick's pitch ${o.elec.midi}`);
+      const pn = e.sine && e.sine.note ? byId.get(e.sine.note) : null;
+      if (e.sine && e.sine.note && !pn) errs.push(`${e.id}: the paired note ${e.sine.note} is not in ${e.source.score}`);
+      const koS = pn && pn.properties && pn.properties.sine ? (+pn.properties.sine.keyOffset || 0) : 0;   // a re-keyed note: the key it was written at
+      const want = pn && pn.sonifyNote != null ? Math.round(pn.sonifyNote) - koS : Math.round(+o.elec.midi);
+      if (e.pitch.midi !== want) errs.push(`${e.id}: midi ${e.pitch.midi} != ${pn ? 'the paired note ' + pn.id + ' key ' : 'the sine pitch '}${want}`);
+      const partS = partOf.get(e.id);
+      if (partS !== undefined && o.layer !== partS) errs.push(`${e.id}: containing chunk part ${partS} != sine lane ${o.layer}`);
+      continue;
+    }
     if (o.type !== 'waveCurve' || o.startSeconds === undefined) {
       errs.push(`${e.id}: source object ${e.source.objectId} is not a waveCurve — a sounding event never sources a ${o.type}`);
       continue;

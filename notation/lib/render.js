@@ -978,6 +978,21 @@
           } else
           parts.push('<rect x="' + x0.toFixed(2) + '" y="' + (yC - h / 2).toFixed(2) + '" width="' + Math.max(1, x1 - x0).toFixed(2) +
             '" height="' + h.toFixed(2) + '" fill="' + fillRB + '" opacity="' + RB.opacity + '"/>');
+        } else if (it.k === 'sinebox') {
+          // [decibel PLAN 2.12 — RUNNING_LOG §404; DEC-173; rules.json objects.sineBox → engraving.render.sineBox] THE SINE'S BOX: how a sine tone
+          // of the electronics is written — the open head of its pitch on its time, and round the head a box in the electronics' purple (the
+          // return brick's recipe: a pale fill, a solid outline, rounded corners) that runs out to the sine's end, in the place of a duration
+          // line. padSs of room over, under and to the LEFT of the head; its right edge the sine's end exactly. A LONG kind: on a tiled screen
+          // page drawn whole inside the page's clip (cut like paper at a turn). It follows its head when the head's unit is clamped at a page start.
+          const SB = E.sineBox;
+          if (!SB || !crosses(it.t0, it.t1)) continue;
+          const wholeS = cutMark >= 0, padS = SB.padSs * ssPx, headH = glyphs.notehead.open.hSs * ssPx;
+          const xS0 = view.xOfSeconds(it.t0) - padS + (it.t0 >= w0 ? shiftOf(it.t0) : 0);
+          const xSa = wholeS ? xS0 : Math.max(xS0, view.xOfSeconds(w0)), xSb = view.xOfSeconds(wholeS ? it.t1 : Math.min(it.t1, wInk));
+          const hS = headH + 2 * padS, yS0 = Y(it.ySs) - hS / 2;
+          parts.push('<rect class="sine-box" x="' + xSa.toFixed(2) + '" y="' + yS0.toFixed(2) + '" width="' + Math.max(1, xSb - xSa).toFixed(2) + '" height="' + hS.toFixed(2) +
+            '" rx="' + (SB.cornerSs * ssPx).toFixed(2) + '" fill="' + SB.colour + '" fill-opacity="' + SB.fillOpacity + '" stroke="' + SB.colour +
+            '" stroke-width="' + (SB.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + SB.strokeOpacity + '"/>');
         } else if (it.k === 'mic') {
           // [decibel PLAN 2.4 · 2.6 — RUNNING_LOG §325; rules.json objects.micOpening → engraving.render.micOpening] THE MIC OPENING: when the
           // player plays into the microphone, and for how long — the composer score's own brick (a rounded rectangle, its colour as a pale
@@ -1259,7 +1274,7 @@
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
     'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
-  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin', 'wedge'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
+  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin', 'wedge', 'sinebox'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket
   // belongs to a beam group and the splicer is stamp-atomic — no cut severs a

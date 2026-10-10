@@ -50,6 +50,10 @@
     // sampled by TIME, never fewer than 101 — the two-piano piece's pre-baked curves (100/s). 0 = the fixed 101 of
     // piece #4's swells, which a 17 s trill spread 28 px apart at the video scale (the corners the composer saw).
     trillRate: 0,
+    // [decibel PLAN 2.12, RUNNING_LOG §404] with options.sines: the composer score's SINE BRICKS (zones, midiModel 'elecSine') become events
+    // of env 'sine' — the pitch the player reads (the key of the note the sine is paired with), from the brick's start to its end. Off =
+    // every earlier page byte-identical.
+    sines: false,
     // the curve windows a trill reads by name — composer.html CURVE_LAYERS / CURVE_NAMES
     // [decibel 2026-10-10, RUNNING_LOG §389] THIS piece's: six lanes, META 6, the windows A · B · C on layers 7 · 8 · 9. The copy-forward had
     // left piece #6's 8 · 9 · 10 here (seven lanes) — a lane NUMBER in a default: a trill on window A would have read window B's curves.
@@ -268,7 +272,8 @@
     for (let i = 0; i < items.length;) {
       let j = i + 1;
       // [2f.3] a trill stands alone — it is a sustained event, never a chord member
-      if (items[i].cls !== 'trill') while (j < items.length && items[j].cls !== 'trill' && items[j].ev.onset - items[i].ev.onset <= tol) j++;
+      // [§404] a sine, like a trill, stands alone — never a chord member
+      if (items[i].cls !== 'trill' && items[i].cls !== 'sine') while (j < items.length && items[j].cls !== 'trill' && items[j].cls !== 'sine' && items[j].ev.onset - items[i].ev.onset <= tol) j++;
       if (j - i === 1) out.push(items[i]);
       else out.push({ ev: items[i].ev, cls: 'chord', chord: items.slice(i, j) });
       i = j;
@@ -381,6 +386,10 @@
       && o.startTime >= w0 && o.startTime < w1 && parts.includes(o.layer)) : [];
     if (opt.trills) for (const o of score.objects || []) if (o.type === 'zone' && o.midiModel === 'trill') trillIds.add(o.id);
     let eatenN = 0, drawnN = 0;
+    // [§404] with options.sines: the sine bricks that begin in the window, on the parts extracted
+    const sineZones = opt.sines ? (score.objects || []).filter(o => o.type === 'zone' && o.midiModel === 'elecSine' && o.elec && isFinite(+o.elec.midi)
+      && o.startTime >= w0 && o.startTime < w1 && o.endTime > o.startTime && parts.includes(o.layer)) : [];
+    const byIdS = opt.sines ? new Map((score.objects || []).map(o => [o.id, o])) : null;
     const objs = score.objects.filter(o => {
       if (!inWin(o)) return false;
       // [decibel 2026-10-10, RUNNING_LOG §389] A DRAWN CURVE on a player's lane — no note, no technique (the reference curve a trill reads
@@ -394,12 +403,31 @@
       return true;
     }).map(o => ({ o, t: o.startSeconds }))
       .concat(zones.map(z => ({ z, o: z, t: z.startTime })))
+      .concat(sineZones.map(z => ({ sz: z, o: z, t: z.startTime })))
       .sort((a, b) => a.t - b.t || a.o.layer - b.o.layer);
 
     const events = [];
     const perPart = new Map(parts.map(p => [p, []]));
     let flatN = 0;
-    for (const { o: o0, z } of objs) {
+    for (const { o: o0, z, sz } of objs) {
+      if (sz) {
+        // THE SINE (decibel PLAN 2.12): what the PLAYER reads is the pitch of their own note under it — the key of the note the brick
+        // names (properties.sine.note; the first of .notes for a bar bowed several times under one sine). For most pairs that IS the sine's
+        // pitch; the bowed crotales sound two octaves above their written bar, and the sine with them. Its own pitch is kept in `sine`.
+        const ps = (sz.properties && sz.properties.sine) || {}, ids = Array.isArray(ps.notes) && ps.notes.length ? ps.notes : (ps.note ? [ps.note] : []);
+        const pn = ids.map(i => byIdS.get(i)).find(n => n && n.sonifyNote != null);
+        // THE KEY THE NOTE WAS WRITTEN AT: a note whose bend passed the sampler's range sounds from a MOVED key (the string quartet's re-key,
+        // decibel §263 — the cello's D2 pair played from the key D#2 with the wheel re-based); what it moved by is on the note
+        // (properties.sine.keyOffset) and is taken off again — the player reads the pitch of the pair, not the sampler's key.
+        const ko = pn && pn.properties && pn.properties.sine ? (+pn.properties.sine.keyOffset || 0) : 0;
+        const m = +sz.elec.midi, midi = pn ? Math.round(pn.sonifyNote) - ko : Math.round(m);
+        const ev = { id: 'ev-' + sz.id, source: { score: scoreName, objectId: sz.id }, onset: sz.startTime, duration: +(sz.endTime - sz.startTime).toFixed(4),
+          pitch: { midi, spelled: naiveSpell(midi) }, technique: 'sine', provenance: 'derived', env: 'sine',
+          sine: Object.assign({ midi: m, cents: Math.round((m - Math.round(m)) * 100), gliss: (sz.elec.gliss && sz.elec.gliss.kind) || 'none' }, pn ? { note: pn.id } : {}) };
+        events.push(ev);
+        perPart.get(sz.layer).push({ ev, cls: 'sine', obj: sz });
+        continue;
+      }
       if (z) {
         const T = z.trill;
         if (!(z.endTime > z.startTime)) { warnings.push(z.id + ': trill with no duration — skipped'); continue; }
@@ -505,6 +533,18 @@
       const partChunks = []; // {firstOnset, make(spanEnd) -> chunk}
       const clsOf = new Map(list.map(x => [x.ev.id, x.cls]));
       let items = list.map(x => ({ ev: x.ev, cls: x.cls }));
+      // [decibel PLAN 2.12, RUNNING_LOG §404] A SINE AND THE NOTE IT IS PAIRED WITH BEGIN AT THE SAME INSTANT, and same-part chunks are disjoint
+      // (spec §5: a chunk ends where the next begins) — two chunks at one onset would leave the first with no span. So whatever begins exactly
+      // with a sine lives in the SINE's chunk (class sine, the sine first), as a chord's notes live in one. Only with options.sines.
+      if (opt.sines) {
+        const taken = new Set();
+        for (const s of items) {
+          if (s.cls !== 'sine') continue;
+          const mates = items.filter(x => x !== s && x.cls !== 'sine' && x.cls !== 'trill' && !taken.has(x) && Math.abs(x.ev.onset - s.ev.onset) < 1e-9);
+          if (mates.length) { mates.forEach(m => taken.add(m)); s.chord = [{ ev: s.ev, cls: 'sine' }].concat(mates); }
+        }
+        if (taken.size) items = items.filter(x => !taken.has(x));
+      }
       // [2a.4, the septet — 2026-09-11] CHORDS (opt.chords): a player may
       // sound several notes at ONE onset — the piano's chords, a string's
       // double stop. Notes within CHORD_TOL of a group's first onset are one
@@ -736,6 +776,7 @@
           date: date || 'undated',
           tool: toolName || 'extract_core',
           notes: 'Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL ' + opt.TOL + ' s. Regenerable; authored content belongs in overlays only.'
+            + (opt.sines ? ' SINES (decibel PLAN 2.12): ' + sineZones.length + ' sine brick(s) as env sine events.' : '')
             + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + (drawnN ? drawnN + ' drawn lane curve(s) (no note) not extracted; ' : '') + flatN + ' trill(s) read a flat level.' : '')
             + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : '')
             + (opt.elec ? ' THE ELECTRONICS (decibel PLAN 2.7): ' + elecOverlays.length + ' zone(s) elecPlay as elecReturn overlays.' : '')

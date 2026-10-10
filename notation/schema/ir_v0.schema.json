@@ -363,6 +363,10 @@
        "type": "string"
       }
      }
+    },
+    "sine": {
+     "type": "object",
+     "description": "decibel PLAN 2.12 (2026-10-10, RUNNING_LOG §404): A SINE TONE of the electronics as an event (env 'sine'; notate_section --sines) - a zone elecSine of the composer score. The event's pitch is the key of the player's note the sine is paired with (what the player reads); here: midi = the sine's own sounding pitch (cents in it), cents = over the rounded semitone, gliss = its gliss kind (none | line | to | from | through | around), note = the paired note's id. Optional."
     }
    }
   },
