@@ -901,7 +901,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **The pages** (the window from 204 s so that the page turns are the official score's): ONE page since §402 (the players' page removed: he opened it and found no electronics) — `node tools/notate_section.js --score piece-Draft01c --w0 204 --w1 416 --id approaching-drones-elec --label "Approaching — the drones (210 … 415 s) — with the electronics" --exp --mics --silent 204-416 --micBadge multiphonics:204:416 --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --elec --elecBadge multiphonics:204:416:room:0.5 --elecWindow 204:416`. **§401 (DEC-169): the big badge stands clear to the left — big badge · gap · the line begins · gap · the first opening's small badge (`leadCentre` now means this; the line takes its lead from it). §402 (DEC-171): no meter in this section — a level that is not drawn has no meter (`notation/lib/animobj.js`).**
 
-**Open, his:** the line's colour (orange and black are the other two free) · ~~the seven drones that follow the one before with no gap carry no badge of their own~~ CLOSED 2026-10-10 (DEC-173: "that's fine. Just as is, is fine") · the pie dial on an opening (DEC-103) · then the section into the official score (PLAN 2.10).
+**THE COLOUR, DECIDED 2026-10-10 (DEC-174; RUNNING_LOG §405):** the line is the multiphonics' own yellow — `objects.stateWedge.lines.drones.colour` points at the language table's row (his principle: "the designated language music color"; the trill's curve took the trills' blue the same way, `objects.envCurve.colour`).
+
+**Open, his:** ~~the line's colour~~ · ~~the seven drones that follow the one before with no gap carry no badge of their own~~ CLOSED 2026-10-10 (DEC-173: "that's fine. Just as is, is fine") · the pie dial on an opening (DEC-103) · then the section into the official score (PLAN 2.10).
 
 ### 2.12 THE SINE TONE — its notation: an open head on its time in the purple box that runs to the sine's end — `built 2026-10-10 on a working page, his eye pending` (DEC-173; RUNNING_LOG §404 — the device sheet is there)
 

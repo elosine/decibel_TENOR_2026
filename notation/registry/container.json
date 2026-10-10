@@ -840,7 +840,7 @@
     "strokeWPx": "@objects.curve.strokeWPx",
     "strokeOpacity": "@objects.curve.strokeOpacity",
     "fillOpacity": "@objects.curve.fillOpacity",
-    "color": "@colours.limeGreen.value",
+    "color": "@objects.envCurve.colour",
     "_note": "day 22, retuned same day (composer: no outline; surge back edge = 90° cut, drawn by render when env=surge): fill-only at 0.3 so the shape reads alone. Piece #1 numbers (stroke 1.5 @ 0.8, fill 0.15) kept here for the record.",
     "pathOpacity": "@objects.curve.pathOpacity",
     "_d42Note": "D42 (2026-09-13, RUNNING_LOG §447): the two-piano piece's curve look is the standard for these curves, across the board — limeGreen #99FF00 (#2 ColorMap rgb(153,255,0)), fill-opacity 0.3, a 2 px stroke of the same colour round the whole shape, opacity 0.3 on the path = interior 9 %, outline 30 %. Was the tuba's #2E7D32, fill 0.3, no stroke (day 22)."

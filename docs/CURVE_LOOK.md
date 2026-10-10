@@ -125,3 +125,5 @@ device is wanted.* Both are drawn per lane at the cursor, from `builds/performan
 - **2026-10-10 — decibel TENOR 2026, the trills of section 2** — the standard applied unchanged (the look · 100 samples a second · the floor at 1 of 10 · the meter) to a trill with no pitch; measured on the page: the longest straight segment 1.75 px, the curve's start 21.0 px above the bottom of a 209.6 px lane. decibel RUNNING_LOG §389.
 
 - **2026-10-10 — decibel TENOR 2026, the floor OFF** — his eye on the trills: "have the curves start at 0" — `curveFloor` 0.1 → 0 in this piece (every trill here is a single rise from nothing); the look, the density and the meter stand. decibel RUNNING_LOG §390.
+
+- **2026-10-10 — decibel TENOR 2026, the colour** — his word: "instead of the green let's use that blue that the trill symbol in the badge is written in" — in this piece the env curve is the trill's curve and takes the trills' language colour: `rules.json` `objects.envCurve.colour` → `@language.types.trills.colour` (the format's blue #5b9bf5). The transparency and the outline of § 2 stand; the crescendo curve and the meters keep limeGreen. decibel RUNNING_LOG §405 (DEC-174).

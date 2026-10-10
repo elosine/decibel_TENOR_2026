@@ -8130,3 +8130,28 @@ SWEEP_LIST #20, OPEN, not diagnosed (the top of that preset's zone on the viola'
 **THE SEVEN DRONES: closed** — *"that's fine. Just as is, is fine."* (§403's question: the seven that begin the instant the one before ends carry no badge of their own.)
 
 **The old page:** `notation/ir/approaching-beating-423.ir.json` deleted and its row taken out of `notation/ir/index.json` — in git's history if ever wanted.
+
+## §405. THE DESIGNATED LANGUAGE COLOUR — the trill's curve in the trills' blue, the drones' line wedge in the multiphonics' yellow (DEC-174) (2026-10-10, Opus)
+
+**What prompted it (DEC-174, verbatim):** *"Let's make some changes to previous sections. And you can just change them in the main score. You don't have to change them in the subscores as well. Let's use the designated language music color. So for the trill curves, keep the same transparency. keep the same outline and those style elements, but instead of the green let's use that blue that the trill symbol in the badge is written in. I think it's one of the Solowit colors, or it might not be actually that one. Whichever that blue is, let's use that. For the multiphonic line wedge, let's use that yellow, even if we already used it in the um, three body. So this is the yellow that the, the note heads and the outline use in the badge."*
+
+**The principle, in his words:** *"Let's use the designated language music color."* A section's own graphic takes the colour its language type's badge sign is drawn in. Two graphics changed; nothing else was asked and nothing else was touched.
+
+**Which blue.** The trills' badge sign is drawn in `formatBlue` **#5b9bf5** — the badge FORMAT's own light blue (piece #1's flocking badge; DEC-92, §309), NOT a Sol LeWitt colour (`SOL_blue` is #186DBF, the three body problem's far-apart state). His doubt was right: "it might not be actually that one".
+
+**What was changed — two rows, each a POINTER at the language table, so the graphic moves with its badge:**
+
+| graphic | row (`notation/registry/rules.json`) | was | is |
+|---|---|---|---|
+| the trill's curve | `objects.envCurve.colour` | `@colours.limeGreen.value` #99FF00 | `@language.types.trills.colour` → `@colours.formatBlue.value` **#5b9bf5** |
+| the drones' line wedge | `objects.stateWedge.lines.drones.colour` | `@colours.SOL_green.value` #219D4C | `@language.types.multiphonics.colour` → `@colours.SOL_yellow.value` **#F7C40A** |
+
+`container.json` `engraving.render.envCurve.color` now points at the row (`@objects.envCurve.colour`) where it had pointed past it at the palette; the rules module follows a pointer up to four hops (`notation/lib/rules.js` `compile`), these are three and two. The curve's transparency and outline — D42's 30 % fill, a 2 px outline, 30 % on the path (`objects.curve`) — untouched, as he said. The yellow is also the three body problem's approaching state; kept at his word ("even if we already used it").
+
+**Where it shows.** A colour is a ROW, read at a reload — no page was re-cut. So it shows on the main score AND on the working pages (`approaching-trills` · `approaching-drones-elec`); he had said the subscores need not change, not that they must not.
+
+**Measured in the running app, the main score:** page 13 of 35 (140 … 152 s) — ten curve paths `fill #5b9bf5`, fill-opacity 0.3, a 2 px stroke of the same blue, opacity 0.3, and no lime green left on the page · page 19 (212 … 224 s) — the five lanes' line `fill #F7C40A` at 0.85, no SOL_green left.
+
+**The gates:** THE SHIELD 26 of 26 identical (a colour moves nothing) · `check_rules` 31 of 32 (the standing red) · `docs/ENGRAVING_RULES.md` regenerated.
+
+**Left as it was, put to him in one line:** THE LEVEL METER that rides the trill's curve in the video view (`animated.curveMeter`, #99FF00) is still lime green — a separate object, not named.
