@@ -7110,3 +7110,15 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Read in the running app** (his 5500, the AI's pane, `approaching-opening`, page 1): seven mic openings, each 41.9 px tall; seven badges, each 36 px.
 
 **His guess against the numbers:** not the same height — the mic opening is 5.9 px TALLER than its badge (the badge went back to 36 px at DEC-117; both were at their first sizes only before DEC-105, and then too the mic was the taller: 41.9 against 36). The mic's row is as tall as its tallest thing (§328): 8 … 50 px now, the badge hanging from the same top edge and ending 6 px higher. Put to him in one line, nothing changed for it (the rule of §329: a second change is his): equal would be the mic at 36 px (`heightFrac` 0.172) or the badge at 42 px (`sizeSs` 5.3).
+
+## §351. THE BADGE AS TALL AS ITS MIC OPENING — his "c" (DEC-123) (2026-10-10, Opus)
+
+**His word:** *"c"* — of a · leave it · b · the mic down to 36 px · c · the badge up to 42 px.
+
+**One number:** `notation/registry/rules.json` `objects.badge.sizeSs` 4.557 → **5.3** — 5.3 staff spaces is a fifth of the lane (26.5 staff spaces), the very height `objects.micOpening.heightFrac` 0.2 gives: 41.9 px at the 1080 frame. The two rows now say one size in two units; a change to one is a change to make in the other (noted on the row). `gapSs` 1.52 (12 px) untouched. `gen_engraving_rules.js` · `check_rules.js` 31 of 32 (§45's red). No re-cut.
+
+**The badge's size, its whole trail** (for the paper: a size found by eye in four moves): 36 px, the format's own (DEC-90) → 54 px, "50 % bigger" (DEC-105) → 36 px, "back to the original" when a badge went before every opening (DEC-117) → 42 px, the mic opening's own height (DEC-123). The mic opening's: 42 px, the composer score's brick (DEC-98) → 29 px, "30 % less tall" (DEC-105) → 42 px, "back to the way it was" (DEC-122). What settled it was not a number but a relation — the two the same height, side by side.
+
+**Left as it was, said to him:** the electronics' flocking badge on the presentation page is its own row (`objects.elecBadge`, 36 px) — smaller than the players' badge again, as DEC-111 first asked.
+
+**Read in the running app** (his 5500, the AI's pane, `approaching-opening`, page 1): seven badges, each the 36-unit drawing scaled × 1.16306 = 41.9 px, its top at y 15.9; seven mic openings, each 41.9 px tall, top at y 15.9 — the same height from the same edge. *(A note on reading the page: a badge is one 36-unit drawing under a `scale(…)`; its rectangle's own attribute always says 36 — the size is the scale. §350's "36 px" was right only because the scale was 1 then.)*

@@ -32,7 +32,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 
 ## 2 · The signs chosen
 
-**The six badges** — a rounded square, dark slate, the sign in its colour; 36 px in the score — the format's own size (DEC-117; 54 px from DEC-105 until then) (`bank/language/language.json`; http://localhost:5500/language/index.html)
+**The six badges** — a rounded square, dark slate, the sign in its colour; 42 px in the score — the mic opening's own height, a fifth of the lane (DEC-123; 36 px at DEC-117, 54 px at DEC-105) (`bank/language/language.json`; http://localhost:5500/language/index.html)
 
 | type | sign | colour |
 |---|---|---|
@@ -57,7 +57,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 
 ### 1 · The opening (0 … 37 s) — short attacks — IN THE NOTATION SCORE
 - **Announced by:** nothing apart — every mic opening carries the badge (DEC-117; until then: once in each lane, before that player's first opening).
-- **Each event:** the short attacks' badge, 36 px, then its mic opening 12 px after it. No conductor's arc. No note.
+- **Each event:** the short attacks' badge, 42 px — as tall as its mic opening (DEC-123) — then the mic opening 12 px after it. No conductor's arc. No note.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
 - **Open:** nothing, but for his eye on the new sizes.
 - **Presentation view (DEC-111 · DEC-112 · DEC-114):** at the lane's bottom, for each of the player's five return bricks a see-through slate-grey WINDOW round the pair: the flocking badge (the quartet's colours), then the purple brick — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
@@ -102,7 +102,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 | | px |
 |---|---|
 | the gap under the dividing line — the size a first number **(AI)** | 0 … 8 |
-| **the mic's row** — the mic opening (42 px tall, at 8 … 50, DEC-122) and the badge (36 px, DEC-117) both hang from its top | 8 … 50 |
+| **the mic's row** — the mic opening (42 px tall, at 8 … 50, DEC-122) and the badge (42 px too, DEC-123) both hang from its top, equal | 8 … 50 |
 | free | 50 … 89 |
 | the staff, where it shows | 89 … 121 |
 | free | 121 … 202 |
@@ -120,7 +120,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 2. ✓ the badge and its mic — in the opening a badge before EVERY mic opening (DEC-117); the drones the same way at their turn.
 3. the three body problem's line wedge, and its state signs.
 4. the standard gap — its size (8 px drawn).
-5. ✓ the badges' size — 36 px, the original (DEC-117; 54 px from DEC-105 until then), 12 px before the mic opening.
+5. ✓ the badges' size — 42 px, the mic opening's height (DEC-123; 36 px at DEC-117, 54 px at DEC-105), 12 px before the mic opening.
 
 ---
 
@@ -148,7 +148,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 as re-cut at DEC-117 (a badge, 36 px, before EVERY mic opening, 12 px before it · the mic opening 42 px tall again (DEC-122), hung from the top, its fill 18 %, its outline solid). The mic is 6 px taller than the badge — he expected them equal: his to say.
+1. ► His eye on section 1 as re-cut at DEC-117 (a badge before EVERY mic opening, 12 px before it · the mic opening 42 px tall again (DEC-122) and the badge 42 px with it (DEC-123, his "c") — equal · hung from the top, the mic's fill 18 %, its outline solid).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's / presentation view — section 1 BUILT (§335): his eye; then its sections 2 … 6, each at its turn with the players' signs.

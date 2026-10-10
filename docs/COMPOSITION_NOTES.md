@@ -1259,3 +1259,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"And then in the notation score, can you increase the height back of the microphone openings? I think we reduced it by 30%. So back to the way it was. It's probably going to be the same height as the badge now."*
 
 *(The AI's reading, marked as such: the mic opening's height back to what it was before DEC-105's "30 % less tall" — a fifth of the lane, 41.9 px, the composer score's own brick. His guess is not quite so: the badge is 36 px since DEC-117, so the mic opening is 6 px TALLER than its badge. Only the height was asked — nothing else moved; the difference put to him. RUNNING_LOG §350.)*
+
+### DEC-123 · 2026-10-10 — the badge as tall as its mic opening: "c"
+
+*(His word, verbatim — Opus, asked a · leave it (mic 42, badge 36) · b · the mic down to the badge's 36 · c · the badge up to the mic's 42:)* *"c"*
+
+*(The AI's reading, marked as such: the language badge grows to the mic opening's height, a fifth of the lane — the two equal, side by side in the mic's row. Not said, so not touched: the 12 px between them · the electronics' flocking badge on the presentation page, 36 px — smaller than the players' badge again, as his DEC-111 first asked ("flocking badge but smaller"). RUNNING_LOG §351.)*
