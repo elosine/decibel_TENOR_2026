@@ -779,7 +779,7 @@
    "elecWindow": { "colour": "@objects.elecWindow.colour", "fillOpacity": "@objects.elecWindow.fillOpacity", "strokeOpacity": "@objects.elecWindow.strokeOpacity", "strokeSs": "@objects.elecWindow.strokeSs", "padSs": "@objects.elecWindow.padSs", "grain": "@objects.elecWindow.grain" },
    "electronics": { "badges": "@electronics.badges", "players": "@electronics.players" },
    "elecBracket": { "thickSs": "@objects.elecBracket.thickSs", "tips": "@objects.elecBracket.tips", "labelScale": "@objects.elecBracket.labelScale" },
-   "stateWedge": { "place": "@objects.stateWedge.place", "maxFrac": "@objects.stateWedge.maxFrac", "fillOpacity": "@objects.stateWedge.fillOpacity", "states": "@objects.stateWedge.states", "change": "@objects.stateWedge.change", "elec": "@objects.stateWedge.elec" },
+   "stateWedge": { "place": "@objects.stateWedge.place", "maxFrac": "@objects.stateWedge.maxFrac", "fillOpacity": "@objects.stateWedge.fillOpacity", "states": "@objects.stateWedge.states", "lines": "@objects.stateWedge.lines", "change": "@objects.stateWedge.change", "elec": "@objects.stateWedge.elec" },
    "methodBadge": { "scale": "@objects.methodBadge.scale" },
    "methods": { "badges": "@methods.badges" },
    "stateSign": { "sizeSs": "@objects.stateSign.sizeSs", "gapSs": "@objects.stateSign.gapSs", "place": "@objects.stateSign.place", "ground": "@objects.stateSign.ground" },

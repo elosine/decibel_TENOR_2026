@@ -1014,7 +1014,9 @@
           const elec = it.row === 'elec', meth = it.row === 'method', stt = it.row === 'state';
           const BG = elec ? E.elecBadge : stt ? E.stateSign : E.badge, LG = E.language, MO = E.micOpening, ER = E.elecReturn;
           const TB = elec ? (E.electronics && E.electronics.badges) : meth ? (E.methods && E.methods.badges) : stt ? (E.stateSigns && E.stateSigns.types) : (LG && LG.types);
-          const ty = (TB && TB[it.type]) || (elec && LG && LG.types && LG.types[it.type]) || null;
+          // [§399, DEC-167] a METHOD-row badge may be one of the LANGUAGE's types too: a section announced by its material's badge at the method
+          // badge's size (the drones: the multiphonics badge 'same size as a three body problem')
+          const ty = (TB && TB[it.type]) || ((elec || meth) && LG && LG.types && LG.types[it.type]) || null;
           const sttCol = stt && E.stateWedge && E.stateWedge.states && E.stateWedge.states[it.type] ? E.stateWedge.states[it.type].colour : null;
           if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
           const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
@@ -1038,6 +1040,8 @@
           // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and
           // not in the mic's row; `ground` = its square's own fill (colour 'state' = the state's colour) at its opacity, not the badges' ground.
           let by = row.yOf(bs);
+          // [§399, DEC-167 — his "Let's center it vertically"] v 'middle': the badge stands about the LANE's middle (where a line wedge runs), not in the mic's row
+          if (it.v === 'middle') by = (lane.yTopPx + lane.yBotPx - bs) / 2;
           const SWb = E.stateWedge;
           if (stt && BG.place === 'aboveWedge' && SWb && SWb.states) {
             const TENb = 10, maxPxB = (lane.yBotPx - lane.yTopPx) * SWb.maxFrac;   // the composer score's thickness scale
@@ -1074,7 +1078,14 @@
             const sg = it.segs[si];
             if (!crosses(sg.t0, sg.t1)) continue;
             let c0, c1, h0, h1;
-            if (sg.state === 'change') {
+            // [decibel RUNNING_LOG §399, DEC-167] A SECTION'S OWN LINE (the overlay's `line` → rules.json objects.stateWedge.lines.<name>.colour): a
+            // stretch that carries its thickness itself — thick [from, to] on the composer score's 0 … 10 — in the line's one colour: his dictated
+            // shape in time, not a method's states. Same place, same maxFrac, same cut at a page as the state wedge.
+            const LN = it.line && SW.lines ? SW.lines[it.line] : null;
+            if (Array.isArray(sg.thick)) {
+              if (!LN) continue;
+              c0 = c1 = LN.colour; h0 = +sg.thick[0]; h1 = +sg.thick[1];
+            } else if (sg.state === 'change') {
               const A = endsOf(sg.from) || (si > 0 ? endsOf(it.segs[si - 1].state) : null), B = endsOf(sg.to) || (si + 1 < it.segs.length ? endsOf(it.segs[si + 1].state) : null);
               if (!A || !B) continue;
               c0 = A.c; c1 = B.c; h0 = A.b; h1 = B.a;

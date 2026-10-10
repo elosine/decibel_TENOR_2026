@@ -80,6 +80,7 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 ### 4 · The drones (211 … 415 s) — multiphonics
 - **Announced by:** the multiphonics' badge.
 - **Each recording:** a mic opening, 6 … 9 s long — its LENGTH is the duration — carrying its own multiphonics badge.
+- **BUILT 2026-10-10 (DEC-167, RUNNING_LOG §399), on two working pages — `approaching-drones` · `approaching-drones-elec`:** the 15 mic openings, the multiphonics badge before each · at the section's start, on every lane, ONE multiphonics badge the size of the three body problem's, centred in the lane, the badge's gap before the wedge · **a LINE WEDGE on every lane, at the three body problem's place, SOL_green: 4 until 316 s · to 10 by 331 · 10 until 351 · to 2 by 374 · 2 to the end** · THE ELECTRONICS (the presentation page): each drone a purple line in its own grey pane at the lane's bottom with the multiphonics badge before it — no brackets. *Open: the line's colour · seven drones that follow the one before with no gap have no badge of their own.*
 - **A pie dial** on each opening shows its duration running out (his note, DEC-103).
 - **Between recordings:** the player plays multiphonics freely; nothing is drawn.
 - **Open:** where the badge and the pie sit on the opening.

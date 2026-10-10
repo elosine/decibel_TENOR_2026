@@ -889,6 +889,16 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **To come:** the drones · the beating section · the strikes · the electronics' layer (a second file, or a view of this one — his).
 
+### 2.11 THE DRONES — their notation: the mic openings and their badge, the section's line wedge, the announcing badge, the electronics — `built 2026-10-10 on two working pages, his eye pending` (DEC-167; RUNNING_LOG §399 — the device sheet is there)
+
+**Why:** his dictation — the mic openings; the multiphonics badge before each; the electronics as in section 1 (a grey box, the multiphonics badge, the purple line; no brackets — every part has its own); at the section's start a multiphonics badge the size of the three body problem's, centred, the proper gap before what follows; on every part a line wedge at the three body problem's place in a Sol LeWitt colour not used there: 4 until 316 s, growing to 10 by 331, 10 until 351, down to 2 by 374, 2 to the end.
+
+**Built:** the cutter's `--lineWedge <name>:t:th,…` (a section's own line: his shape; the colour a row, `rules.json` `objects.stateWedge.lines.drones` = SOL_green) · `--announce type:t0:t1:leadCentre` (a language badge at the method badge's size, centred in the lane) · `--elecBadge` takes a language type and `:room:S`. The renderer draws the line with the state wedge's own code.
+
+**The pages** (the window from 204 s so that the page turns are the official score's): with the electronics — `node tools/notate_section.js --score piece-Draft01c --w0 204 --w1 416 --id approaching-drones-elec --label "Approaching — the drones, with the electronics (210 … 415 s)" --exp --mics --silent 204-416 --micBadge multiphonics:204:416 --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --elec --elecBadge multiphonics:204:416:room:0.5 --elecWindow 204:416` · the players' — `node tools/notate_section.js --score piece-Draft01c --w0 204 --w1 416 --id approaching-drones --label "Approaching — the drones (210 … 415 s)" --exp --mics --silent 204-416 --micBadge multiphonics:204:416 --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2`.
+
+**Open, his:** the line's colour (orange and black are the other two free) · the seven drones that follow the one before with no gap carry no badge of their own · the pie dial on an opening (DEC-103) · then the section into the official score (PLAN 2.10).
+
 ## 3. The performance score — `todo`
 
 *To be laid out when we discuss it.*
