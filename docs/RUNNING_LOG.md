@@ -8184,3 +8184,11 @@ Every go line at x(t) of its sine to the pixel (the gate: 35 of 35), the box's o
 **ONE CASE AT A PAGE'S EDGE, by the registered protocol, put to him:** the crotales' sine at 560.107 s begins 0.1 s (16 px) after a page turn. What the rules give: its notation is pushed 1.7 px right (the gate's one clamp; its gap before the go line 1.9 px) · its box's left border falls 3.9 px before the page's start and is cut by the page — the box reads as if it came from the page before · its badge, which belongs before the go line, is held at the page's start and lies on the first 26 px of its own line. Not cured: his call (memory: cases first).
 
 **Small things as they fell:** the ottava's hook stands 1.2 px before the go line (the unit's right ink is the head's; the hook's end gap is the stack's) · no page was re-cut — the device and the rows are read at a reload · the working page only; the main score has no beating section yet.
+
+## §407. A NOTE FOR THE NEXT TAKE — the percussion at 236.4 s is too quiet (DEC-176) (2026-10-10, Opus)
+
+**What prompted it (DEC-176, verbatim):** *"perc at 236.4 too quiet, just take notes for the rerender"*
+
+**What is there** (read from `piece-Draft01c`, one look, to make the note usable): the percussionist's first drone recording — the bowed China cymbal, `wc-737`, 236.607 … 245.457 s, key 57, a plain note at velocity 64 — under the mic opening `perc-drone-1` (`zn-736`, 236.507 … 243.977 s, 7.47 s).
+
+**Done:** a line in `docs/RENDER.md` § 0.2 (the list for the next take), beside the viola's silent first note. **Nothing changed in the score, nothing measured, nothing diagnosed** — his word: just notes. The list now holds two things heard in take 02: the viola's first note silent (4.48 s) · the percussion at 236.4 s too quiet.
