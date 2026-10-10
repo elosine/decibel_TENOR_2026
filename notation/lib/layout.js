@@ -1479,7 +1479,8 @@
             // gap), its LEFT edge afterGoGapSs right of the go line. It takes the technique symbol's place; without techBadge the symbol stands.
             if (dev.techBadge && !dev.nhUnit) {
               const gapB = dev.afterGoGapSs != null ? dev.afterGoGapSs : (o.nhGapSs != null ? o.nhGapSs : 0.25);
-              items.push({ k: 'badge', t: tU, type: dev.techBadge, place: 'at', dxSs: gapB });
+              // [§395, DEC-163] techBadgeGap 'topGap': the renderer measures the side gap off the badge's own top gap (the divider above the lane)
+              items.push(Object.assign({ k: 'badge', t: tU, type: dev.techBadge, place: 'at' }, dev.techBadgeGap === 'topGap' ? { dx: 'topGap' } : { dxSs: gapB }));
             } else if (dev.techSymbol && !dev.nhUnit && dev.techSymbolAt === 'laneTop') {
               const sgT = glyphs.articulation && glyphs.articulation[dev.techSymbol];
               if (!sgT) warnings.push('event ' + e.id + ': technique symbol glyph "' + dev.techSymbol + '" missing — not drawn');

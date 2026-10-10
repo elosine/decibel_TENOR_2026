@@ -1501,3 +1501,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"Now let me see the trill or instead of the trill symbol, can I see it with the trill badges? And we'll have a similar placement. There'll be the smaller trill badges, the smaller badges, same size as we used for the opening, the short attacks there. And same lane height there with the, the gap at top. But also let's maintain that gap to the left side between that and the go line."*
 
 *(The AI's reading, marked as such: every trill carries the trills' badge where the bare `tr` stood — the size of the opening's badges, the same top under the standard gap, the same small gap right of the go line. "Let me see" — a look to judge; the `tr` glyph is one key away. RUNNING_LOG §394.)*
+
+### DEC-163 · 2026-10-10 — the badge's gap from the go line = its gap from the lane divider
+
+*(His words, verbatim — Opus:)* *"So the gap between the go line and the left edge of the trill badge should be the same as the gap between the top of the trill badge and the lane line, the lane divider."*
+
+*(The AI's reading, marked as such: one gap on two sides — the badge stands as far right of its go line as its top stands under the grey line above its lane (9.9 px at the 1080 frame; it was 2 px beside the line). Built so the side gap is measured from the top gap, never a second number. RUNNING_LOG §395.)*

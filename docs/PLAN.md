@@ -869,6 +869,8 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE TRILL'S BADGE, 2026-10-10 (DEC-162, RUNNING_LOG §394):** the trills' badge of the language in the `tr`'s place on every trill — `devices.byEnv.trill.techBadge: "trills"`; `objects.badge.sizeSs` (the opening's), the mic row's top, `anchors.D.gapSs` right of the go line; the `tr` glyph kept in the device, one key away.
 
+**THE BADGE'S GAP, 2026-10-10 (DEC-163, RUNNING_LOG §395):** its left edge as far from the go line as its top from the divider above — `devices.byEnv.trill.techBadgeGap: "topGap"`, measured by the renderer off `objects.micOpening.gapSs` and the lanes' own spacing (9.9 px); a badge kept whole inside the frame's right edge.
+
 **Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · whether section 2 still gets its announcing badges, now that each trill has its own · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`

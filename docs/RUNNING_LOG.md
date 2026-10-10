@@ -7871,3 +7871,19 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **Proven:** THE SHIELD green (23 of 24, the trills page the one moved, expected) · `check_rules` 31 of 32 (§45's red; `docs/ENGRAVING_RULES.md` regenerated) · `check_screen_edges --ir approaching-trills` PASS.
 
 **What this does to the scheme:** DEC-100 had a badge ANNOUNCE a section once and "no badge on each" trill (the curve with `tr` was the instance's own sign); DEC-117 then put a badge before EVERY mic opening of the opening. Section 2 now follows the opening: every trill carries its badge. Whether the section still gets its two announcing badges side by side is his, in section 2's talk.
+
+## §395. THE TRILL BADGE'S SIDE GAP = ITS TOP GAP — as far from its go line as from the divider above it; and two corrections of the page count (DEC-163) (2026-10-10, Opus)
+
+**What prompted it (DEC-163, verbatim):** *"So the gap between the go line and the left edge of the trill badge should be the same as the gap between the top of the trill badge and the lane line, the lane divider."*
+
+**The two gaps as they stood, measured:** the badge's top is the standard gap (1 ss, 7.9 px) under its LANE's top; the divider — the thin grey line, 1.03 px — stands at the middle of the 4 px between two lanes, 2 px above that lane's top. So from the divider to the badge's top: **9.9 px**. Beside the go line the badge had kept the `tr`'s 0.25 ss: **2.0 px**.
+
+**Built — the side gap is MEASURED OFF the top gap, not given a second number:** `container.json` `devices.byEnv.trill.techBadgeGap: "topGap"` → the layout marks the badge item `dx: topGap` → the renderer places its left edge `objects.micOpening.gapSs` × the staff space + the divider's distance from the lane's top (half the gap between adjacent lanes, read from the view's own bands) to the right of x(t). Line-centre to badge-edge on both sides. If the standard gap's row moves, both gaps move together. The frame's first lane has no divider over it; its badges take the same side gap as the others'.
+
+**A second change the number forced — handled inside the badge's own edge class, told to him:** the bass flute's trill at 144.95 s begins 0.05 s before a page turn (its go line at x 1872; the page's music ends at 1880, the frame at 1920). With 2 px the badge ended at 1915.9; with 9.9 it would have run to **1923.8, 3.8 px past the frame** (`check_screen_edges` FAILED on it). The badge's class is `clamp · whole` ("drawn whole on the page that owns its time"): the renderer now also keeps a badge from running past the frame's RIGHT edge — it stands against the edge instead. That one badge: left 1878.1, right 1920.0, **6.1 px** from its go line. The other 33: 9.9 px. No other page's badge moves (the four earlier badge pages re-checked: PASS; the shield unchanged for them).
+
+**Measured in the running app** (page 3 of 8, 145 … 157 s — eight trills): the side gap **9.9 px** on each (one reads 10.0, rounding) · the top gap, divider's centre to badge's top, **9.9 px** on each of the six that have a divider above.
+
+**Proven:** THE SHIELD green (23 of 24, the trills page the one moved, expected) · `check_rules` 31 of 32 (§45's red) · `check_screen_edges` PASS on `approaching-trills` and on `approaching-opening` · `-opening-elec` · `-threebody` · `-threebody-elec`.
+
+**CORRECTIONS (the log is append-only):** §391 · §393 said the page is "SEVEN pages". The cut window is 84 s (125 … 209), but the app's screen pages are a 12 s grid that begins at 121 s here: **EIGHT screen pages, 121 … 217 s** (`check_screen_edges` probes 16 frames, two a page). And the page measured at §393 · §394 as "page 3, 149 … 161 s" is page 3 of 8, **145 … 157 s** — the measurements themselves stand.

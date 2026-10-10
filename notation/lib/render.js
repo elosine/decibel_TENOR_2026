@@ -169,6 +169,15 @@
         '" width="' + (xb - xa).toFixed(2) + '" height="' + th.toFixed(2) + '"/>').join('') + '</g>');
     }
 
+    // [decibel §395] THE DIVIDER'S DISTANCE FROM A LANE'S TOP: the lane line stands at the middle of the gap between adjacent lanes (just above),
+    // so it is half that gap — the same for every lane, the frame's first included (which has no line over it: its marks keep the others' place)
+    const laneHalfGapPx = (() => {
+      if (!Array.isArray(view.systems) || view.systems.length < 2) return 0;
+      const bands = view.systems.map(s => [s.yTopPx, s.yBotPx]).sort((a, b) => a[0] - b[0] || b[1] - a[1]), Ls = [];
+      for (const b of bands) { const q = Ls[Ls.length - 1]; if (q && b[0] < q[1] - 1e-6) q[1] = Math.max(q[1], b[1]); else Ls.push(b.slice()); }
+      return Ls.length > 1 ? Math.max(0, (Ls[1][0] - Ls[0][1]) / 2) : 0;
+    })();
+
     const [w0, w1] = view.window;
     // Page ownership is HALF-OPEN at the right edge (an event exactly on a
     // cut belongs to the NEXT page — review finding: it inked on both).
@@ -1010,8 +1019,15 @@
           if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
           const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
           // [decibel §394] dxSs: a badge 'at' its time that stands a small gap RIGHT of it (a trill's badge beside its go line — the layout's techBadge)
-          let bx = view.xOfSeconds(it.t) + (it.dxSs ? it.dxSs * ssPx : 0) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
+          // [decibel §395, DEC-163 — his "the gap between the go line and the left edge of the trill badge should be the same as the gap between
+          // the top of the trill badge and … the lane divider"] dx 'topGap': the badge stands as far RIGHT of its time's line as its top stands
+          // UNDER the divider above its lane — the row's standard gap plus the divider's own distance from the lane's top. One measure, two sides.
+          const dxPx = it.dx === 'topGap' ? MO.gapSs * ssPx + laneHalfGapPx : (it.dxSs ? it.dxSs * ssPx : 0);
+          let bx = view.xOfSeconds(it.t) + dxPx - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
+          // [decibel §395] a badge is drawn WHOLE (edge class clamp · whole): one whose time lies so near the page's end that it would run past the
+          // frame is drawn up against the frame's edge instead — its gap from its line the smaller for it, on that page only
+          if (SCR && !stt) bx = Math.min(bx, view.widthPx - bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above
           // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and
