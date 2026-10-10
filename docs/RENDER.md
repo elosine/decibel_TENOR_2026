@@ -2,6 +2,44 @@
 
 > **Provenance (septet LGMF 2026, 2026-09-17):** copied unchanged from piece #5 `septet_2026/docs/RENDER.md` with the port of the code it describes (PLAN 0b / 0g). **It describes the tool as it was built for the TEMPUS septet: its instrument names, its `§N` references into that piece's `RUNNING_LOG`, and its measurements are piece #5's.** The mechanism is what carries. Where this piece changes the tool, the change is recorded here and dated. **Nothing in it runs yet:** it describes capturing the composer's playback through the Reaper bridge, and this piece has no rack (0e).
 
+> **THIS PIECE (decibel TENOR 2026, 2026-10-10 — PLAN 2.8; RUNNING_LOG §384 … §386): THE AUDIO IS A TAKE, NOT A RENDER.** § 0 below is this piece's route. Everything from "# The audio render" on is the OFFLINE render of pieces #4 … #6, unchanged — it has no electronics in it; here it is only the fallback for the players' part (not built: `take.js mix --players offline`). Its measure-and-gain step is shared with the take: `tools/lib/gain_step.js`.
+
+# § 0 The take — the piece played once with the live electronics, recorded, aligned, mixed
+
+**Why:** the electronics are a LIVE process (the engine hears the players over ReaRoute, is told by the page at play time, rolls at the moment; its sound returns on the track `ELEC RETURN`). An offline render has no engine in it. So the piece is PLAYED in real time and recorded.
+
+```
+node tools/take.js start --score <name> [--from 0] [--to S]     # a COPY of the rack opens in its own tab and RECORDS
+        ▶ on the composer page, from --from — HIS (his Chrome has the MIDI)
+node tools/take.js stop                                         # stops, gathers, closes the tab, ALIGNS
+node tools/take.js mix [--out <name>] [--elec-db 0] [--up --maxUp 6]   # the stems summed → the gain step → notation/audio/<name>.wav
+node tools/take.js list
+```
+
+Needs: Reaper open on the rack, SAVED, the bridge alive · his engine up (`start_electronics.bat`) — asked one hello, never started or stopped · the composer page on the score, in his Chrome.
+
+| # | Rule | Why |
+|---|---|---|
+| 1 | **The rack is never written** — the take is a copy (`reaper/<score>_take.rpp`) in its own tab; a rack with unsaved changes refuses | the rack is his; the copy would miss the changes |
+| 2 | **Three things on one timeline:** `REC`'s output (the players' sum, post-fader) · `ELEC RETURN`'s output (the engine) · the sixteen instrument tracks' MIDI | two stems for the mix; the MIDI is the alignment's reference |
+| 3 | **Both stems are recorded as OUTPUTS** | an input recording is moved by Reaper's latency compensation, an output recording is not; recorded alike, the files hold the relation he hears |
+| 4 | **Only `ELEC RETURN`'s record mode moves** ("do not record" → "output"); no arm, no monitoring changes | the sound path of the copy is the rack's |
+| 5 | **32-bit float** | piece #4's clip lesson: a peak over 0 dBFS is measured, not clipped |
+| 6 | **Aligned by the recorded MIDI, by time alone** — the offset AND the drift | the page runs on the system clock, the recording on the audio clock; the recorded notes are the one written on the other |
+| 7 | **A drift past 16 ms at the take's end is resampled; under it, shared between the two ends** | half a frame of the film; under it the correction is not worth a resampling |
+| 8 | **The mix is what he heard** — REC's own fader undone, the master's applied, the electronics at unity (`--elec-db` moves the MIX only) | the take is a recording of the room, not a re-balance |
+| 9 | **The gain step is the render's** — the true peak measured on the float file, ONE plain gain to −1 dBTP, 24-bit; no limiter, no normalize | the loudness range is the composition |
+| 10 | **A take of a part says `--out`** — it may not write the piece's WAV | a dry run must not replace the piece's audio |
+| 11 | **Each take is another roll of the electronics** — by design; the players' part is the same every time | the engine decides at the moment |
+
+A take's folder: `notation/audio/takes/<score>/<NN>/` — the two recorded files (Reaper's names; `take.json` says which), `midi.json`, `take.json`, `align.json`, `aligned/players.wav` · `aligned/elec.wav` (score time, sample 0 = `--from`). Gitignored.
+
+## § 0.1 Register — the takes *(append-only)*
+
+*(none yet — the dry run on the opening is PLAN 2.8's step 4)*
+
+---
+
 # The audio render — the composer's playback, recorded in Reaper, linked to the notation score
 
 *RUNNING_LOG §453 (2026-09-13). The composer: "Let's prep the recording and sort out the trill midi and then generate the midi file and

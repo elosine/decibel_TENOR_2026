@@ -1459,3 +1459,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable:)* *"a"* — then *"good to write whole plan"*
 
 *(The AI's reading, marked as such: "a" = the shape of RUNNING_LOG §384 — one real-time pass of the piece from his page with the engine up, Reaper recording the players' sum and the electronics' return as two stems in a copy of the rack, aligned to score time, mixed, through the existing gain step, named for the notation page, the video unchanged. "good to write whole plan" = every step with its sub-steps written at once — PLAN.md § 2.8, five steps: the take · the alignment · the mix and the gain · the dry run on the opening as the one proof · the video unchanged. Nothing built. RUNNING_LOG §385.)*
+
+### DEC-156 · 2026-10-10 — build the take
+
+*(His words, verbatim — Opus, after his switch of model:)* *"go build"*
+
+*(The AI's reading, marked as such: PLAN.md § 2.8 built as one — `tools/take.js` and the shared gain step; steps 1 … 3 done, the dry run on the opening (step 4) waits on his ▶. RUNNING_LOG §386.)*

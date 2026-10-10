@@ -50,7 +50,9 @@ const RPP = path.join(ROOT, 'reaper', NAME + '_render.rpp');
 const RAWDIR = path.join(ROOT, 'notation', 'audio', 'raw');
 const RAW = path.join(RAWDIR, NAME + '-float.wav');
 const OUT = path.join(ROOT, 'notation', 'audio', NAME + '.wav');
-const FF = (() => { try { return execFileSync('where', ['ffmpeg'], { encoding: 'utf8' }).split(/\r?\n/)[0].trim(); } catch (e) { return 'ffmpeg'; } })();
+// [2026-10-10, PLAN 2.8 step 3 c] the measure-and-gain step is tools/lib/gain_step.js — ONE copy, shared with the live take's mix (tools/take.js)
+const G = require('./lib/gain_step.js');
+const FF = G.FF;
 const log = s => console.log(s);
 
 const B = process.env.REAPER_BRIDGE || path.join(process.env.APPDATA, 'REAPER', 'bridge');
@@ -182,18 +184,10 @@ return { closed = true, current = q }`, 60000);
   }
 
   // MEASURE — the file itself, never a passage
-  const probe = JSON.parse(execFileSync(FF.replace(/ffmpeg(\.exe)?$/i, 'ffprobe$1'), ['-v', 'error', '-show_entries', 'stream=codec_name,sample_rate,channels,duration_ts', '-of', 'json', RAW], { encoding: 'utf8' })).streams[0];
-  const meas = f => spawnSync(FF, ['-hide_banner', '-nostats', '-i', f, '-af', 'ebur128=peak=true+sample,silencedetect=noise=-80dB:d=0.05', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 28 }).stderr;
-  const readM = txt => {
-    const sum = txt.slice(txt.lastIndexOf('Summary:'));
-    const num = re => { const m = sum.match(re); return m ? +m[1] : null; };
-    const sil = [...txt.matchAll(/silence_end: ([\d.]+)/g)].map(m => +m[1]);
-    const silStart0 = /silence_start: 0\b/.test(txt) || /silence_start: -?0\.0/.test(txt);
-    return { I: num(/I:\s+(-?[\d.]+) LUFS/), LRA: num(/LRA:\s+(-?[\d.]+) LU/), truePeak: num(/True peak:\s+Peak:\s+(-?[\d.]+|-inf) dBFS/), samplePeak: num(/Sample peak:\s+Peak:\s+(-?[\d.]+|-inf) dBFS/), firstSound: silStart0 && sil.length ? sil[0] : 0 };
-  };
-  let m = readM(meas(RAW));
+  const probe = G.probe(RAW);
+  let m = G.measure(RAW);
   if (WINDOW) {   // a demo file: the peak and the first sound are the window's, not the whole file's
-    const w = readM(spawnSync(FF, ['-hide_banner', '-nostats', '-ss', String(WINDOW[0]), '-to', String(WINDOW[1]), '-i', RAW, '-af', 'ebur128=peak=true+sample,silencedetect=noise=-80dB:d=0.05', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 28 }).stderr);
+    const w = G.measure(RAW, { window: WINDOW });
     log('   the whole file: true peak ' + m.truePeak + ' dBTP · ' + m.I + ' LUFS — the gain is read in the window ' + WINDOW.join('–') + ' s');
     m = Object.assign(w, { firstSound: +(WINDOW[0] + w.firstSound).toFixed(3) });
   }
@@ -202,12 +196,11 @@ return { closed = true, current = q }`, 60000);
   log('   true peak ' + m.truePeak + ' dBTP · sample peak ' + m.samplePeak + ' dBFS · ' + m.I + ' LUFS · LRA ' + m.LRA + ' LU · first sound at ' + m.firstSound + ' s');
   if (probe.codec_name !== 'pcm_f32le') log('   WARNING: the render is not 32-bit float (' + probe.codec_name + ') — a peak over 0 would already be clipped');
   const firstOnset = Math.min(...cap.expect.notes.map(n => n.t0), ...cap.expect.snippets.map(s => s.start + Math.min(...s.notes.map(x => x[3])) / 1000));
-  let gain = (m.truePeak > PEAK || WINDOW || UP) ? +(PEAK - m.truePeak).toFixed(2) : 0;
-  if (MAXUP != null && gain > MAXUP) { log('   the gain up to --peak would be ' + gain + ' dB — capped at --maxUp ' + MAXUP + ' dB'); gain = MAXUP; }
-  execFileSync(FF, ['-hide_banner', '-loglevel', 'error', '-y', '-i', RAW, '-af', 'volume=' + gain + 'dB', '-c:a', 'pcm_s24le', OUT]);
-  const m2 = WINDOW
-    ? readM(spawnSync(FF, ['-hide_banner', '-nostats', '-ss', String(WINDOW[0]), '-to', String(WINDOW[1]), '-i', OUT, '-af', 'ebur128=peak=true+sample', '-f', 'null', '-'], { encoding: 'utf8', maxBuffer: 1 << 28 }).stderr)
-    : readM(meas(OUT));
+  const gf = G.gainFor(m.truePeak, { peak: PEAK, always: !!WINDOW, up: UP, maxUp: MAXUP });   // down to --peak; up only for a demo window or --up; capped at --maxUp
+  const gain = gf.gain;
+  if (gf.gain !== gf.wanted) log('   the gain up to --peak would be ' + gf.wanted + ' dB — capped at --maxUp ' + MAXUP + ' dB');
+  G.writeGain(RAW, OUT, gain);
+  const m2 = WINDOW ? G.measure(OUT, { window: WINDOW, silence: false }) : G.measure(OUT);
   log('7. ' + path.relative(ROOT, OUT) + ' · 24-bit · gain ' + gain + ' dB (plain, no limiter) → true peak ' + m2.truePeak + ' dBTP · sample peak ' + m2.samplePeak + ' dBFS');
   log('   the equivalent master fader for a direct 24-bit render: ' + gain + ' dB');
   log('   sync: the first onset in the score ' + firstOnset.toFixed(3) + ' s · the first sound in the file ' + m.firstSound + ' s (a sampler\'s attack lands a few ms after)');

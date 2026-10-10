@@ -99,3 +99,8 @@ bank/palette/photos/
 bank/palette/lascaux_chart/
 # Python's cache beside tools/palette/*.py
 __pycache__/
+
+# the live takes (tools/take.js, PLAN 2.8): the recorded stems and the copy of the rack they were recorded in — big, re-made by a take
+notation/audio/takes/
+reaper/*_take.rpp
+reaper/*_take.rpp-bak
