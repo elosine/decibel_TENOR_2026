@@ -1405,3 +1405,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus; first:)* *"So in the general fund of effects, when we roll, I guess we pull from essentially their presets. Can you list those for me and also give me the stat of how many are of those are these distortion type effects?"* *(then:)* *"Okay, so I don't know how it's structured, but can we make the distortion types all like one item? So we have the 27 ones, and then all the distortion effects will be like one element in there. In other words, I want them to come up less often. then can you very simply describe where we are now? You did a bunch of things. So first, tell me how to hear all the things in the main score. So do I have to, for example, restart the engine or reload, etc.? Then can you just very succinctly summarize the changes you made and what I'm to be listening for? And then thirdly, can you help me understand the details of in the main save score now, what changes have been made to those samples so far?"*
 
 *(The AI's reading, marked as such: the thirteen distortion presets are ONE card of every deal from now on — 28 cards in place of 40, about three distortion plays in the opening's 75 where there were 25. It governs the rolls to come; the opening as it stands was not re-dealt. RUNNING_LOG §375.)*
+
+### DEC-147 · 2026-10-10 — the opening's effects at fff; the draft is 1c
+
+*(His words, verbatim — Opus:)* *"opening effects to FFF, please. And let's use a new draft letter. 1C. Already saved."*
+
+*(The AI's reading, marked as such: every return of the opening (0 … 37 s) written fff — the level he set brick by brick in the audition, now in the piece; in his new copy `piece-Draft01c`, which is the piece from here. RUNNING_LOG §376.)*

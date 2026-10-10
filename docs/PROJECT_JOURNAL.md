@@ -225,7 +225,8 @@ next, where we are; reorganizations only on his approval.
 - **THEN (RUNNING_LOG §374; DEC-145): the opening's distortion plays 25 → 10** (fuzz · diode · octave · crush), the fifteen dealt among the other effects — `node tools/thin_effects.js --score piece-Draft01b --effects fuzz,diode,octave,crush --keep 10 --seed N [--render]`; `--off` puts every play back. The fifteen new versions are in the bank.
 - **THEN (RUNNING_LOG §375; DEC-146): the distortions are ONE CARD of every deal to come** (`bank/presets.json` `groups.distortion`) — 28 cards, ~3 distortion plays in 75. Nothing re-dealt. A kept deal comes back by its frozen score now, not by its seed.
 - **AT 12:10 (read from the machine):** his engine still the one of 09:32 — THE RESTART IS STILL HIS, for the last-hit fix only · `piece-Draft01b` holds every tool write, unsaved-over · the main score's opening returns are "as played"; the fff is in the audition copy only.
-- **His steps for the opening:** `piece-Draft01b` → File ▾ → Reload BEFORE any Save → play 0 … 37 s TWICE (the first pass still returns the earlier takes).
+- **THEN (RUNNING_LOG §376; DEC-147): THE PIECE IN HAND IS `scores/piece-Draft01c.json`** (his, untracked — 1b plus this) — the opening's 25 return bricks WRITTEN fff (`node tools/return_level.js --score <name> --mark fff --from 0 --to 37`; `--played` undoes).
+- **His steps for the opening:** `piece-Draft01c` → File ▾ → Reload BEFORE any Save → play 0 … 37 s TWICE (the first pass still returns the earlier takes).
 
 **► CHECKPOINT #3 OF SESSION 3, just below, IS THE COLD-START BLOCK (2026-10-09, RUNNING_LOG §339). What follows in this NEXT UP paragraph is the trail that led to it — read the block first.**
 

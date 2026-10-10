@@ -7529,3 +7529,17 @@ The viola's six now 48 · 50 · 55 · 57 · 66 · 77 (they were 50 · 50 · 51 �
 **What it changes that he did not ask for, said:** a seed no longer gives the deal it gave before today (the deck is shorter) — the five kept deals of `bank/candidates.json` come back by their FROZEN scores, not by their commands · a pattern brick with "a preset for every impact" keeps what it has until its Generate is pressed again · the strikes' short versions (§337) were dealt before this and stand.
 
 **THE SAME EXCHANGE — where things stand, asked for and given** (*"very simply describe where we are now … how to hear all the things in the main score … summarize the changes you made and what I'm to be listening for … in the main save score now, what changes have been made to those samples so far"*), read from the machine at 12:10: his engine is the one of 09:32:44 — it has NONE of today's engine fix (§369's last-hit rule): a restart is still his · `piece-Draft01b` on disk is the tools' last write (12:01:26: the bass clarinet's drone key, the pitch roll, the fifteen swaps — all three in it; he has not saved over it) · his audition copy saved 12:01:17. In the main score the opening's 25 return bricks are still "as played": the written fff is in the audition copy only.
+
+## §376. THE OPENING'S RETURNS WRITTEN fff — in his new copy, `piece-Draft01c` (DEC-147) (2026-10-10, Opus)
+
+**What prompted it (DEC-147, verbatim):** *"opening effects to FFF, please. And let's use a new draft letter. 1C. Already saved."* — his answer to the offer of §375's summary (the main score's opening was still "as played"; the written fff lived in the audition copy only).
+
+**Read first:** `scores/piece-Draft01c.json` (HIS, untracked; saved 12:19:53, ten seconds after his save of 1b) — object for object the same as 1b, and both hold the tools' writes of today (20 pitch tags · 15 effect swaps · the bass clarinet's drone on key 38): he had reloaded before saving.
+
+**Built, because it is the second time it was asked — `tools/return_level.js`:** `node tools/return_level.js --score <name> --mark fff [--from 0] [--to 37] [--played] [--dry]` — every return brick that starts in the stretch gets its Level written, the mark given (`elec.dyn` `mode: mark`); a shape or anything else a brick's dynamic holds stays; `--played` takes the dynamic off again. (§371's change of the audition copy was a script of the moment; this is its tool.)
+
+**Done, once:** `--score piece-Draft01c --mark fff --from 0 --to 37` — 25 return bricks, all "as played" before, written fff now; read back against a copy taken first: 1148 objects identical, 25 changed in level only, none otherwise. No render: a level is applied when the brick is played (the engine brings each sample to the mark against its own loudness, PLAN 11.3).
+
+**What it means for the sound, for the record:** "as played" returns each version at the level its banked render has; written fff asks the engine to bring every one of the 75 to the top mark of the electronics' ladder (`bank/elec_route.json` `level.reference`) against its own measured loudness, within the ladder's lift cap. His finding in the audition, carried to the piece. **Not heard.**
+
+**THE PIECE IN HAND IS `piece-Draft01c` from here** (1b is the state before the level).
