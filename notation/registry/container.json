@@ -840,12 +840,13 @@
    },
    "gc": {
     "preset": {
-     "stiffness": 62,
-     "damping": 100,
-     "ictus": 90,
-     "descentRatio": 60,
-     "duration": 0.6
+     "stiffness": 50,
+     "damping": 80,
+     "ictus": 120,
+     "descentRatio": 55,
+     "duration": 1.1
     },
+    "_presetNote": "decibel RUNNING_LOG §392 (DEC-160, his word: \"Let's grab the GCs from piece two, the percussion piano piece. Any one of the ones from the beginning … Still magenta, though. I just mean the shape and arc and speed and all that\"): THE PRESET IS PIECE #2's — composition_for_two_pianos_and_two_percussion, builds/performance/score.json databases.gcs: all 203 of its GCs carry stiffness 50 · damping 80 · ictus 120 · descentRatio 55 · duration 1.1 (the first six, at 3.000 · 4.629 · 7.465 s, among them): the fall 0.605 s before the impact (power 3.4), the rebound 0.495 s after it to 80 % of the drop (power 2). Its drawing math (calculateTrajectory · renderGC) is this module's own, line for line (notation/lib/gc.js is piece #1's, which #2 shares), so the preset is the whole of the shape. WAS piece #1's Short (62 · 100 · 90 · 60 · 0.6: 0.36 s down, 0.24 s up to the full height). Written in TWO places that must agree: engraving.render.gc.preset (the arc) and animated.gc.preset (the ball).",
     "color": "@colours.gc.value",
     "look": {
      "arcStrokePx": 1.5,
@@ -924,12 +925,13 @@
   },
   "gc": {
    "preset": {
-    "stiffness": 62,
-    "damping": 100,
-    "ictus": 90,
-    "descentRatio": 60,
-    "duration": 0.6
+    "stiffness": 50,
+    "damping": 80,
+    "ictus": 120,
+    "descentRatio": 55,
+    "duration": 1.1
    },
+   "_presetNote": "decibel RUNNING_LOG §392 (DEC-160, his word: \"Let's grab the GCs from piece two, the percussion piano piece. Any one of the ones from the beginning … Still magenta, though. I just mean the shape and arc and speed and all that\"): THE PRESET IS PIECE #2's — composition_for_two_pianos_and_two_percussion, builds/performance/score.json databases.gcs: all 203 of its GCs carry stiffness 50 · damping 80 · ictus 120 · descentRatio 55 · duration 1.1 (the first six, at 3.000 · 4.629 · 7.465 s, among them): the fall 0.605 s before the impact (power 3.4), the rebound 0.495 s after it to 80 % of the drop (power 2). Its drawing math (calculateTrajectory · renderGC) is this module's own, line for line (notation/lib/gc.js is piece #1's, which #2 shares), so the preset is the whole of the shape. WAS piece #1's Short (62 · 100 · 90 · 60 · 0.6: 0.36 s down, 0.24 s up to the full height). Written in TWO places that must agree: engraving.render.gc.preset (the arc) and animated.gc.preset (the ball).",
    "color": "@colours.gc.value",
    "opacity": 0.85,
    "look": {

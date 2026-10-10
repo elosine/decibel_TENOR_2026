@@ -7805,3 +7805,29 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **Proven:** THE SHIELD green — 23 of 24 identical, the trills page the one moved, expected · `check_rules` 31 of 32 (§45's red; `docs/ENGRAVING_RULES.md` regenerated — it counts each page's overrides) · `check_screen_edges --ir approaching-trills` PASS (68 go-time indicators each at x(t) on the page that owns it; 33 animated devices at the page edges).
 
 **For the scheme:** DEC-100 had the accented long tone as "a conductor's arc with a mic opening over its impact". Today the arc stands alone, by his word, "right now"; the mic comes back when he says.
+
+## §392. THE GC's SHAPE FROM PIECE #2 — one preset, read from its performance score; still magenta (DEC-160) (2026-10-10, Opus)
+
+**What prompted it (DEC-160, verbatim):** *"Let's grab the GCs from piece two, the percussion piano piece. Any one of the ones from the beginning, like from the first 10 seconds or so. Still magenta, though. I just mean the the shape and uh, arc and speed and all that."*
+
+**Read in piece #2** (`composition_for_two_pianos_and_two_percussion`, read-only): `builds/performance/score.json` `databases.gcs.gcs` — 203 GCs. **Every one carries the same five numbers:** stiffness **50** · damping **80** · ictus **120** · descentRatio **55** · duration **1.1** (178 neonMagenta, 25 yellow). The six of the first ten seconds (two each at 3.000 · 4.629 · 7.465 s — an anticipator's and its reactor's, "envelope shared") are that preset: each begins 0.605 s before its impact and ends 0.495 s after. So "any one from the beginning" is the piece's one GC.
+
+**Its drawing, compared line for line** (`builds/performance/index.html` `calculateTrajectory` · `renderGC`) with this engine's `notation/lib/gc.js`: THE SAME MATH — the fall h·(1 − u^p) with p = 1 + ictus/1000 × 20, the rebound reboundHeight·(1 − (1 − u)^q) with q = 1 + stiffness/50 and reboundHeight = h × damping/100, the time shared by descentRatio, 100 samples a phase, h = the track's height − 10, a 1.5 px stroke, an impact dot of radius 4. (gc.js says of itself "piece #1's renderGC verbatim"; piece #2 carries that same code.) **So the preset IS the shape, the arc and the speed; nothing else had to move.**
+
+**What the numbers mean, against what was here** (piece #1's "Short": 62 · 100 · 90 · 60 · 0.6):
+
+| | was | now — piece #2's |
+|---|---|---|
+| the whole gesture | 0.6 s | **1.1 s** |
+| the fall, before the impact | 0.36 s, power 2.8 | **0.605 s, power 3.4** — longer, and it hangs higher before it drops |
+| the rebound, after | 0.24 s, power 2.24, back to the FULL height | **0.495 s, power 2.0, to 80 %** of the drop |
+
+**Built — one row, written in two places that must agree:** `notation/registry/container.json` `engraving.render.gc.preset` (the static arc) and `animated.gc.preset` (the ball that rides it), each with a `_presetNote`. The colour untouched (`colours.gc`, `rgb(255, 21, 160)`). No re-cut: a row is read at a reload. The beat ball (`animated.beatBall`) is another device and keeps its own.
+
+**Measured in the running app** (page 1; 147.3 px a second): the bass clarinet's arc begins **89.1 px** before its impact (0.605 s), lands on the lane's bottom edge at x 1369.5 (the end of the bass flute's curve, as before), and rises for **72.9 px** (0.495 s) to **159.7 px** above the impact — 0.80 of the 199.6 px drop · 201 points, stroke 1.5.
+
+**One difference from piece #2's page, NOT changed:** there the impact sits 5 px above the track's bottom (`impactY = trackBottom − 5`) and the apex 5 px under its top; this engine's registry has had the impact ON the lane's bottom edge and the apex 10 px under the top since the earlier pieces (`render.gc.look.impactInsetPx` 0). The same drop height, the whole arc 5 px lower. He asked for the shape, the arc and the speed; the inset is one number if he wants it.
+
+**Proven:** `check_rules` 31 of 32 (§45's red; `docs/ENGRAVING_RULES.md` regenerated) · THE SHIELD green, 24 of 24 identical (the preset is the renderer's, no layout moves) · `check_screen_edges --ir approaching-trills` PASS.
+
+**Still open from §391:** the tutti's five GCs (197.907 s, 0.55 s after their trills end) — where the notes are; his a / b unanswered.

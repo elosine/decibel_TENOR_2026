@@ -1483,3 +1483,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"gcs in the appropriate lane and matched in time with the peak, the end of the trill. So the first one, the moment the trill ends in the flute, the bass clarinet should have a GC impact at that point. And nothing else right now, just the GC in addition to the trill curves."*
 
 *(The AI's reading, marked as such: each of section 2's 34 short notes into the microphones draws a GC in its own player's lane, its impact at the note's time — which for 29 of them is the very end of another player's trill, the peak of that curve. The mic openings come off the page ("nothing else right now"). The last five, the tutti, sit 0.55 s after their trills in the score: drawn where they are, put to him. RUNNING_LOG §391.)*
+
+### DEC-160 · 2026-10-10 — the GC's shape from piece #2
+
+*(His words, verbatim — Opus:)* *"Let's grab the GCs from piece two, the percussion piano piece. Any one of the ones from the beginning, like from the first 10 seconds or so. Still magenta, though. I just mean the the shape and uh, arc and speed and all that."*
+
+*(The AI's reading, marked as such: this piece's GC takes piece #2's preset — all 203 of that piece's GCs share one: a 0.6 s fall, a 0.5 s rebound to 80 % of the drop, 1.1 s whole. The colour stays this lineage's magenta. RUNNING_LOG §392.)*

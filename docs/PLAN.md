@@ -863,6 +863,8 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE GCs, 2026-10-10 (DEC-159, RUNNING_LOG §391):** each hit draws its GC alone, in its own lane, its impact at the note's time = the end of another player's trill (29 of 34 to the millisecond; the tutti's five 0.55 s after their trills, as composed) — the cutter's new `--gcOnly t0-t1[@part]`; the mic openings off the page at his word ("nothing else right now"); the page re-cut 125 … 209 s, seven pages: `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label "Approaching — the trills (125 … 209 s)" --trills --trillRate 100 --gcOnly 125-209`.
 
+**THE GC's SHAPE, 2026-10-10 (DEC-160, RUNNING_LOG §392):** piece #2's — its one preset, stiffness 50 · damping 80 · ictus 120 · descentRatio 55 · duration 1.1, in `container.json` `engraving.render.gc.preset` and `animated.gc.preset` (the two must agree); still magenta; a reload.
+
 **Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`

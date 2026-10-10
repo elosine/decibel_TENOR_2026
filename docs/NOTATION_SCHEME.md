@@ -26,7 +26,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | a badge | says what KIND of sound. SECTIONAL: it announces a section once | decided |
 | a badge on a mic opening | where the openings stand alone — the drones: yes, each one · the opening: yes, each one (DEC-117; it was "none" until then) | decided for those two |
 | two badges together | a METHOD large, its MATERIAL small beside it (the three body problem) · two materials side by side, equal (section 2) | decided for the three body; the rule **(AI)** |
-| the conductor's arc (GC) | only where an event is one exact moment: the accented long tones. NOT in the opening | decided |
+| the conductor's arc (GC) | only where an event is one exact moment: the accented long tones. NOT in the opening. **Its shape is piece #2's** (DEC-160, RUNNING_LOG §392: a 0.6 s fall, a 0.5 s rebound to 80 %; magenta) | decided |
 
 ---
 
