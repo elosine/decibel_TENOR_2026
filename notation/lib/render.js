@@ -1023,8 +1023,16 @@
           // the top of the trill badge and … the lane divider"] dx 'topGap': the badge stands as far RIGHT of its time's line as its top stands
           // UNDER the divider above its lane — the row's standard gap plus the divider's own distance from the lane's top. One measure, two sides.
           const dxPx = it.dx === 'topGap' ? MO.gapSs * ssPx + laneHalfGapPx : (it.dxSs ? it.dxSs * ssPx : 0);
-          let bx = view.xOfSeconds(it.t) + dxPx - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
+          // [§397, DEC-165] place 'after': the badge's LEFT edge the badge's gap after x(t) — a badge hand-placed to the right of its mic opening
+          // (t = the opening's END), where 'before' would have put it on something else
+          const offPx = it.place === 'at' ? 0 : it.place === 'after' ? BG.gapSs * ssPx : -(BG.gapSs * ssPx + bs);
+          let bx = view.xOfSeconds(it.t) + dxPx + offPx - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
+          // [decibel RUNNING_LOG §397, DEC-165 — his "on the right edge, let's use clamping … badges have an … alternative position to the left of
+          // the go line … the same gap … That'll be the default clamping for badges. So let's write that in"] THE BADGES' CLAMP AT A PAGE'S END
+          // (page_rules.json edge.badge.screenEnd 'mirror'): a badge that stands AFTER its line — 'at' its time with a gap — and would run past the
+          // frame takes its ALTERNATE place, BEFORE the line: its right edge the same gap before it. The line itself never moves.
+          if (SCR && EDGE && EDGE.badge && EDGE.badge.screenEnd === 'mirror' && it.place === 'at' && dxPx > 0 && bx + bs > view.widthPx) bx = view.xOfSeconds(it.t) - dxPx - bs;
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above
           // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and

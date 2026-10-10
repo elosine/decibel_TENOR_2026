@@ -21,7 +21,7 @@
   "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance) --trills --mics --trillRate 100",
   "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 34 zone(s) elecOpen as micOpening overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label \"Approaching — the trills (125 … 209 s)\" --trills --trillRate 100 --gcOnly 125-209 --mics --micBadge accentedLongTones:125:209"
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label \"Approaching — the trills (125 … 209 s)\" --trills --trillRate 100 --gcOnly 125-209 --mics --micBadge accentedLongTones:125:209 --micBadgeAfter 145.054,154.677,169.076"
  },
  "events": [
   {
@@ -17152,15 +17152,15 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-accentedLongTones-1-145054",
+   "id": "ov-badge-mic-accentedLongTones-1-145554",
    "kind": "badge",
    "target": {
     "part": 1,
-    "t": 145.054
+    "t": 145.554
    },
    "value": {
     "type": "accentedLongTones",
-    "place": "before"
+    "place": "after"
    },
    "provenance": "authored"
   },
@@ -17230,15 +17230,15 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-accentedLongTones-2-154677",
+   "id": "ov-badge-mic-accentedLongTones-2-155177",
    "kind": "badge",
    "target": {
     "part": 2,
-    "t": 154.677
+    "t": 155.177
    },
    "value": {
     "type": "accentedLongTones",
-    "place": "before"
+    "place": "after"
    },
    "provenance": "authored"
   },
@@ -17321,15 +17321,15 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-mic-accentedLongTones-1-169076",
+   "id": "ov-badge-mic-accentedLongTones-1-169576",
    "kind": "badge",
    "target": {
     "part": 1,
-    "t": 169.076
+    "t": 169.576
    },
    "value": {
     "type": "accentedLongTones",
-    "place": "before"
+    "place": "after"
    },
    "provenance": "authored"
   },

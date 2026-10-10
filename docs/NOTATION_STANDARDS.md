@@ -170,6 +170,8 @@ before the page turn". This section is the print's rule, one line per drawn kind
 **40 · 40 px** (`prefatory.marginPx`) · on both, t0 = left margin + gutter, tω = the width less the right margin, and nothing timed ever
 in the gutter. The right margin holds a last object's overhang (both exporters assert it).
 
+**THE BADGES' CLAMP AT A PAGE'S END — decibel TENOR 2026 (his word 2026-10-10, DEC-165; RUNNING_LOG §397; `page_rules.json` `edge.badge.screenEnd: "mirror"`):** the one kind for which something DOES move at a screen page's end. A badge that stands after its line (a trill's badge beside its go line) and would run past the FRAME takes its alternate place before the line — its right edge the same gap before the line; the line is never moved; ink that only enters the right margin stays. Screen only. "For now, we'll see how it plays out." A badge that lands on its own mic opening at a page's start is NOT a rule: it is placed after the opening by hand, case by case (`notate_section --micBadgeAfter`).
+
 **The values:** `whole` — drawn on the page that owns its time, complete, never cut · `stub` — may take the cut only if its head and a
 minimum stub fit before it, else it goes over whole · `never-sever` — a cut may not fall inside it · `continue` — broken at the cut and
 continued on the next page · `furniture` — the page's own. **Ownership stays half-open** (#5's D59, kept for print, §340 (4)): an event

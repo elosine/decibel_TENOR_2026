@@ -1350,6 +1350,8 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
 //                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
 //   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
+//   --micBadgeAfter t[@part][,t…]   [decibel §397] BY HAND: the mic opening that begins at t carries its badge AFTER it (the same gap, right of
+//                              the opening's end) — for an opening whose badge would otherwise land on something else. Case by case.
 // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] A METHOD'S SECTION (the three body problem):
 //   --wedges                   (an extraction option) the composer score's containers of a method in the window (zones `tb`), ONE `stateWedge`
 //                              overlay a lane: the line wedge, its colour and thickness by the player's state (rules.json objects.stateWedge)
@@ -1476,11 +1478,22 @@ for (let i = 0; i < process.argv.length; i++) {
       }
       console.log('  elecPlayers ' + a + ': ' + ws.length + ' computer player(s) — ' + ws.map(w => (w.value.who || '?') + ' on part ' + w.target.part).join(' · ') + ', each one window, its own wedge, the badge before it');
     }
+    const AFTER = [].concat(...argsOf('micBadgeAfter').map(a => a.split(',').filter(Boolean).map(x => { const p = x.split('@'); return { t: parseFloat(p[0]), part: p.length > 1 ? parseInt(p[1], 10) : null, raw: x }; })));
+    if (AFTER.some(q => !isFinite(q.t))) { console.error('--micBadgeAfter needs the start time of a mic opening, t[@part][,t…] (e.g. --micBadgeAfter 145.054,154.677)'); process.exit(2); }
     for (const a of argsOf('micBadge')) {
       const s = read('micBadge', a);
-      for (const o of s.mics) addBadge(o.target.part, o.target.span[0], s.type, 'before', 'mic');
+      // [decibel RUNNING_LOG §397, DEC-165 — his "let's just work this out for these ones … move that one to the right of the mic opening. Same
+      // gap"] --micBadgeAfter t[@part][,t…]: the opening that begins at t (within 30 ms) carries its badge AFTER it — the badge's left edge the
+      // badge's gap right of the opening's END — where 'before' would land it on something else. BY HAND, case by case: no rule decides it.
+      for (const o of s.mics) {
+        const aft = AFTER.find(q => Math.abs(q.t - o.target.span[0]) < 0.03 && (q.part == null || q.part === o.target.part));
+        if (aft) { aft.used = (aft.used || 0) + 1; addBadge(o.target.part, o.target.span[1], s.type, 'after', 'mic'); }
+        else addBadge(o.target.part, o.target.span[0], s.type, 'before', 'mic');
+      }
       console.log('  micBadge ' + a + ': ' + s.mics.length + ' opening(s)');
     }
+    for (const q of AFTER) if (q.used !== 1) { console.error('--micBadgeAfter ' + q.raw + ': ' + (q.used ? q.used + ' openings begin there — say which part, t@part' : 'no mic opening with a badge begins there (is --micBadge given for that span?)')); process.exit(2); }
+    if (AFTER.length) console.log('  micBadgeAfter: ' + AFTER.length + ' badge(s) after their opening (' + AFTER.map(q => q.raw).join(', ') + ')');
     // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] --elecBadge: the electronics' badge once a lane, in the electronics' row — before the lane's
     // first return brick of the span, or at t0 with :start. Its type is a row of rules.json electronics.badges, not of the language.
     for (const a of argsOf('elecBadge')) {
