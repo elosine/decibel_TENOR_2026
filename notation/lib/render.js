@@ -984,15 +984,24 @@
           // return brick's recipe: a pale fill, a solid outline, rounded corners) that runs out to the sine's end, in the place of a duration
           // line. padSs of room over, under and to the LEFT of the head; its right edge the sine's end exactly. A LONG kind: on a tiled screen
           // page drawn whole inside the page's clip (cut like paper at a turn). It follows its head when the head's unit is clamped at a page start.
+          // [§406, DEC-175] the box as the layout measured it — dxSs its left edge from x(t0), topSs · botSs its edges on the staff — round ALL the
+          // notation, which stands BEFORE the go line; the go line inside it, the box's own height, at the moment the sine starts (it never
+          // moves: a go-time mark); the right edge the sine's end. An item without the measures (a page laid out before §406) = round the head.
           const SB = E.sineBox;
           if (!SB || !crosses(it.t0, it.t1)) continue;
           const wholeS = cutMark >= 0, padS = SB.padSs * ssPx, headH = glyphs.notehead.open.hSs * ssPx;
-          const xS0 = view.xOfSeconds(it.t0) - padS + (it.t0 >= w0 ? shiftOf(it.t0) : 0);
+          const xGoS = view.xOfSeconds(it.t0), shS = it.t0 >= w0 ? shiftOf(it.t0) : 0;
+          const xS0 = it.dxSs != null ? Math.min(xGoS + it.dxSs * ssPx + shS, xGoS - padS) : xGoS - padS + shS;
+          const yST = it.topSs != null ? Y(it.topSs) : Y(it.ySs) - headH / 2 - padS, ySB = it.botSs != null ? Y(it.botSs) : Y(it.ySs) + headH / 2 + padS;
           const xSa = wholeS ? xS0 : Math.max(xS0, view.xOfSeconds(w0)), xSb = view.xOfSeconds(wholeS ? it.t1 : Math.min(it.t1, wInk));
-          const hS = headH + 2 * padS, yS0 = Y(it.ySs) - hS / 2;
-          parts.push('<rect class="sine-box" x="' + xSa.toFixed(2) + '" y="' + yS0.toFixed(2) + '" width="' + Math.max(1, xSb - xSa).toFixed(2) + '" height="' + hS.toFixed(2) +
+          parts.push('<rect class="sine-box" x="' + xSa.toFixed(2) + '" y="' + yST.toFixed(2) + '" width="' + Math.max(1, xSb - xSa).toFixed(2) + '" height="' + (ySB - yST).toFixed(2) +
             '" rx="' + (SB.cornerSs * ssPx).toFixed(2) + '" fill="' + SB.colour + '" fill-opacity="' + SB.fillOpacity + '" stroke="' + SB.colour +
             '" stroke-width="' + (SB.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + SB.strokeOpacity + '"/>');
+          if (it.go && E.goLine && owns(it.t0)) {
+            const GLs = E.goLine;
+            parts.push('<line' + GO(it.t0) + ' class="sine-go" x1="' + xGoS.toFixed(2) + '" y1="' + yST.toFixed(1) + '" x2="' + xGoS.toFixed(2) + '" y2="' + ySB.toFixed(1) +
+              '" stroke="' + GLs.color + '" stroke-width="' + GLs.wPx + '" stroke-opacity="' + GLs.opacity + '" stroke-dasharray="' + GLs.dash + '"/>');
+          }
         } else if (it.k === 'mic') {
           // [decibel PLAN 2.4 · 2.6 — RUNNING_LOG §325; rules.json objects.micOpening → engraving.render.micOpening] THE MIC OPENING: when the
           // player plays into the microphone, and for how long — the composer score's own brick (a rounded rectangle, its colour as a pale
@@ -1062,6 +1071,9 @@
           let by = row.yOf(bs);
           // [§399, DEC-167 — his "Let's center it vertically"] v 'middle': the badge stands about the LANE's middle (where a line wedge runs), not in the mic's row
           if (it.v === 'middle') by = (lane.yTopPx + lane.yBotPx - bs) / 2;
+          // [decibel §406, DEC-175 — his "at the bottom of the lane with the appropriate gap from the bottom of the lane up to the bottom of the …
+          // badge"] v 'bottom': the badge stands at the LANE's bottom, the standard gap (the mic row's own, mirrored) under it
+          if (it.v === 'bottom') by = lane.yBotPx - MO.gapSs * ssPx - bs;
           const SWb = E.stateWedge;
           if (stt && BG.place === 'aboveWedge' && SWb && SWb.states) {
             const TENb = 10, maxPxB = (lane.yBotPx - lane.yTopPx) * SWb.maxFrac;   // the composer score's thickness scale
@@ -1091,7 +1103,10 @@
           if (elecW && it.who && E.elecBracket) { const padW = E.elecWindow ? E.elecWindow.padSs * ssPx : 0; elecHeads.push({ who: it.who, yT: rowE.ry - padW, yB: rowE.ry + rowE.rh + padW, ss: ssPx }); }
           const whole = cutMark >= 0, TEN = 10;   // the composer score's thickness scale
           const maxPx = elecW ? rowE.rh * ((SW.elec && SW.elec.rowFrac) || 1) : (lane.yBotPx - lane.yTopPx) * SW.maxFrac;
-          const cy = elecW ? rowE.ry + rowE.rh / 2 : SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
+          // [decibel §406, DEC-175 — his "center the line wedge vertically on the badge"] row 'badgeLow': THE PLAYER'S LINE — about the middle of a
+          // badge that stands at the lane's BOTTOM (the standard gap under it): its own badge's height, whatever the line's thickness
+          const lowW = it.row === 'badgeLow' && E.badge && E.micOpening;
+          const cy = elecW ? rowE.ry + rowE.rh / 2 : lowW ? lane.yBotPx - E.micOpening.gapSs * ssPx - E.badge.sizeSs * ssPx / 2 : SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
           const halfOf = v => (v / TEN) * maxPx / 2;
           const endsOf = st => { const r = SW.states[st]; if (!r) return null; const th = Array.isArray(r.thick) ? r.thick : [r.thick, r.thick]; return { c: r.colour, a: +th[0], b: +th[1] }; };
           for (let si = 0; si < it.segs.length; si++) {

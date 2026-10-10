@@ -1359,7 +1359,8 @@
             }
             // [2f.4] goLineTopAsGc: the go line keeps the length a GC-bearing note's has in this part (§401h) — the
             // trill carries no GC, and its go line must still match the section's strikes (TRILL_NOTATION_SPEC §4)
-            if (dev.goLine) items.push(Object.assign({ k: 'goline', t: tU, ev: e.id }, dev.goLineTopAsGc ? { topAsGc: true } : {}));
+            // [decibel §406] goLine 'sineBox': the go line is drawn by the sine's box, inside it — no lane-high line here
+            if (dev.goLine && dev.goLine !== 'sineBox') items.push(Object.assign({ k: 'goline', t: tU, ev: e.id }, dev.goLineTopAsGc ? { topAsGc: true } : {}));
             // THE ONSET HEAD (day 35, the morph section): a small black
             // notehead LEFT-ALIGNED to the go line — the same rule the
             // clusters use, "every partial's notehead left edge sits on its
@@ -1419,7 +1420,9 @@
             // [decibel PLAN 2.12, RUNNING_LOG §404 — DEC-173] THE SINE'S BOX (a device's sineBox): in the place of a duration line — a box in the
             // electronics' purple round the head, at the head's own height on the staff, from the event's time to its end. Pushed BEFORE the
             // head's own ink, so the head is drawn over it. Its room round the head is a row (rules.json objects.sineBox.padSs).
-            if (dev.sineBox) items.push({ k: 'sinebox', t0: e.onset, t1: e.onset + e.duration, ySs: yDraw, ev: e.id });
+            // [§406] its place and height are measured at the unit's END, when every mark of the notation has landed (sineBoxItem, below)
+            let sineBoxItem = null;
+            if (dev.sineBox) { sineBoxItem = { k: 'sinebox', t0: e.onset, t1: e.onset + e.duration, ySs: yDraw, ev: e.id }; items.push(sineBoxItem); }
             // THE RING BAR (wc-23 element 2, day 22, composer spec): a black
             // bar whose left edge is flush with the go line and whose right
             // edge is exactly the note's sounding length (for fixed
@@ -1673,10 +1676,6 @@
                       break;
                     }
                   }
-                  // [decibel PLAN 2.12, RUNNING_LOG §404] THE SINE'S BOX: the accidental stands LEFT OF THE BOX — the box's left edge is its pad left
-                  // of the head (device sineBoxPadSs = rules.json objects.sineBox.padSs), and the accidental clears that edge and its outline
-                  // by the same gap it keeps from a head. (A flat is taller than the box: inside it, it would break the box's top.)
-                  if (dev.sineBox && dev.sineBoxPadSs > 0) clearRel = Math.min(clearRel, -nhO.wSs / 2 - dev.sineBoxPadSs - accGap);
                   // anchor-aware horizontal edges (round-2 measurement
                   // finding): a noteY-aligned glyph anchors OFF-CENTER, so
                   // its right edge sits (wSs - anchorX) past the anchor,
@@ -2511,6 +2510,42 @@
                     recChrome(items[items.length - 1], above ? 'above' : 'below', above ? labTop : hook, above ? -hook : labBot);
                     Object.defineProperty(chromeTip, 'ottava', { value: items[items.length - 1], writable: true, enumerable: false, configurable: true });
                   }
+                }
+                // [decibel PLAN 2.12, RUNNING_LOG §406 — DEC-175] THE SINE'S BOX GOES ROUND ALL THE NOTATION. Measured here, the unit complete:
+                // its LEFT edge the pad left of the unit's leftmost ink (the head, a ledger line's overhang, the accidental, the ottava's sign);
+                // its TOP and BOTTOM the pad clear of the highest and lowest ink (the ottava's sign and hook with them) — and AN EDGE NEVER RIDES A
+                // LINE: an edge that falls among the staff's lines or this note's ledger lines, or within half a space of the outermost of them,
+                // goes to THE MIDDLE OF A SPACE — the one at or just inside the padded edge when it still leaves minPad over the ink, else the
+                // next one out (the box grows; his image 1: the bottom edge in the C space, image 3: between the A and the C ledger lines).
+                // Its right edge is the sine's end (the renderer); the go line stands inside it at the sine's start. All in staff spaces.
+                if (sineBoxItem) {
+                  const padB = dev.sineBoxPadSs > 0 ? dev.sineBoxPadSs : 0.5, minPadB = padB * (dev.sineBoxMinPadFrac != null ? dev.sineBoxMinPadFrac : 0.4);
+                  let bL = leftEdgeDx, bT = inkTopY, bB = inkBotY;
+                  let otB = null;
+                  if (octShift !== 0) for (let iB = items.length - 1; iB >= 0 && !otB; iB--) if (items[iB].k === 'ottava' && items[iB].ev === e.id) otB = items[iB];
+                  if (otB) {   // the sign's ink about its line: the label rides it (its baseline lineAttachAboveBaselineSs under it), the hook turns back to the staff
+                    const OB = stds.ottava || {}, lgB = glyphs.ottavaText && glyphs.ottavaText[otB.label];
+                    const attB = OB.lineAttachAboveBaselineSs != null ? OB.lineAttachAboveBaselineSs : 0.32, hookB = OB.hookLengthSs || 0.8, labB = lgB ? lgB.hSs - attB : 0;
+                    bL = Math.min(bL, otB.dx0Ss);
+                    bT = Math.max(bT, otB.ySs + (otB.dir === 'above' ? labB : Math.max(labB, hookB)));
+                    bB = Math.min(bB, otB.ySs - (otB.dir === 'above' ? Math.max(hookB, attB) : attB));
+                  }
+                  const linesB = [-2, -1, 0, 1, 2].concat(ledgers);
+                  const edgeB = (ink, dir) => {   // dir +1 the top edge · −1 the bottom edge; worked outward-positive
+                    const sInk = dir * ink, s = sInk + padB, Lo = linesB.map(v => dir * v), oHi = Math.max.apply(null, Lo), oLo = Math.min.apply(null, Lo);
+                    if (s >= oHi + 0.5 - 1e-9 || s <= oLo - 0.5 + 1e-9) return dir * s;   // half a space or more clear of every line: as the pad gives it
+                    const mIn = Math.floor(s - 0.5 + 1e-9) + 0.5;                          // the middle of a space at or just inside the padded edge
+                    return dir * ((mIn - sInk >= minPadB - 1e-9) ? mIn : mIn + 1);
+                  };
+                  sineBoxItem.dxSs = +(bL - padB).toFixed(6);
+                  sineBoxItem.topSs = +edgeB(bT, 1).toFixed(6);
+                  sineBoxItem.botSs = +edgeB(bB, -1).toFixed(6);
+                  if (dev.goLine === 'sineBox') sineBoxItem.go = true;
+                  // THE PLAYER'S LINE (rules.json objects.playerLine): one thickness from the sine's go line to its end, in its line's colour, its
+                  // type's badge before it — both at the lane's bottom (the renderer: row 'badgeLow' · v 'bottom')
+                  if (dev.playerLine && dev.playerLineThick > 0)
+                    items.push({ k: 'wedge', t0: e.onset, t1: e.onset + e.duration, segs: [{ t0: e.onset, t1: e.onset + e.duration, state: 'line', thick: [dev.playerLineThick, dev.playerLineThick] }], line: dev.playerLine, row: 'badgeLow' });
+                  if (dev.playerBadge) items.push({ k: 'badge', t: e.onset, type: dev.playerBadge, place: 'before', v: 'bottom' });
                 }
               }
             }

@@ -913,7 +913,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **The page:** `node tools/notate_section.js --score piece-Draft01c --w0 420 --w1 672 --id approaching-beating --label "Approaching — the beating section (423 … 668 s)" --exp --sines --silent 420-672` — 22 pages, 416 … 672 s (the main score's turns), 35 sines, the players' 60 notes silent. The old page `approaching-beating-423` is gone.
 
-**Open, his:** the margin (0.5 staff space) · the players' own notes · the cents · the crotales' gliding sines (drawn level) · a head restated where a sine only crosses a page · the spelling (all sharps) · the audible beats' badge · the section into the main score (PLAN 2.10) · its electronics on the presentation view.
+**SINCE §406 (DEC-175) — REBUILT TO HIS FIVE RULES (`docs/NOTATION_STANDARDS.md` § 7):** the box goes round ALL the notation (head · accidental · ledger lines · ottava), the padding from the outermost ink, a ledger's overhang an edge; an edge never rides a staff or ledger line — it sits in the middle of a space, the box growing to get there (`objects.sineBox.minPadFrac`); the notation BEFORE its go line (the device on anchor B), the go line INSIDE the box at the sine's start, the right edge the sine's end. **THE PLAYER'S LINE** (`rules.json` `objects.playerLine`): a line wedge of thickness 3 in the audible beats' orange from the go line to the sine's end, the audible beats' badge before it, both at the lane's bottom (the badge the standard gap above it, the line centred on the badge). Measured in the running app; screen edges PASS (35 go lines at x(t)).
+
+**Open, his:** the sine at 560.1 s, 0.1 s after a page turn (its badge lands on its own line; its box's left border is under the page's edge) · the margin (0.5 staff space) · the players' own notes · the cents · the crotales' gliding sines (drawn level) · a head restated where a sine only crosses a page · the spelling (all sharps) · the section into the main score (PLAN 2.10) · its electronics on the presentation view.
 
 ## 3. The performance score — `todo`
 
