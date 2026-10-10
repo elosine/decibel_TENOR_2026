@@ -25,6 +25,10 @@
   "_voices": "the new orchestration, a voice a lane (the recipes' keys, sandbox/instruments.js): bass flute and bass clarinet SLAP TONGUE (Slap Tongue Velocity) · viola and cello BARTOK PIZZICATO (Bartok Pizzicato Velocity). A lane not named — the percussion, the mallets — is left as it sounds.",
   "ranges": { "bass_flute": { "slap": [48, 63] }, "viola": { "bartok_vel": [50, 79] } },
   "_ranges": "where a voice really sounds, when that is narrower than its recipe says — MEASURED in this piece (RUNNING_LOG §74 · §221: the bass flute's slap answers only keys 48 … 63; §224: the viola's Bartok was captured silent at the recipe's top — 50 … 79 used since). A voice not listed takes the recipe's own range (bass clarinet slap 34 … 65 · cello Bartok 36 … 71). A note outside its voice's range is moved by OCTAVES into it (his: 'pick a new MIDI note or an octave deviation').",
+  "sets": {
+   "flutterGettato": { "voices": { "bass_flute": "flutter_vel", "bass_clarinet": "flutter_vel", "viola": "gettato_vel", "cello": "gettato_vel" }, "n": 20 }
+  },
+  "_sets": "DEC-135 (RUNNING_LOG §363; his words: 'one more orchestration set. Let's have the bass flute do flutter tongue velocity and the bass clarinet do flutter tongue velocity as well. And then the two strings do gettato velocity. And let's change about 20 of the current percussive ones to that new set'): FURTHER SETS of voices, by name. `node tools/strike_orch.js --score <name> --set flutterGettato [--n 20]` moves n strikes NOW IN THE FIRST SET (voices above — slap tongue, Bartok pizzicato), drawn at random, to the set's voices; each note goes first back on the pitch it had BEFORE it became percussive (kept on the note), then by octaves into the new voice's range only where needed (the recipe's: bass flute flutter 48 … 86 · bass clarinet flutter 34 … 60 · viola gettato 48 … 93 · cello gettato 36 … 76).",
   "pitchShare": 0.5,
   "_pitchShare": "of the strikes LEFT after the new voices, this share (one of every two) takes the PITCHES of one of his takes below (his: 'change about half of those and just change their pitches').",
   "pitchTakes": "strikePitches",

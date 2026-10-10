@@ -15,6 +15,8 @@
 // half and half of the rest, spread through the section, by --seed.
 //
 //   node tools/strike_orch.js --score sec05e [--seed 1] [--dry]
+//   node tools/strike_orch.js --score sec05h --set flutterGettato [--n 20] [--seed 1] [--dry]    N strikes of the FIRST set's voices move to a
+//                                                                             NAMED set (orch.sets), each note first back on its pitched key
 //   node tools/strike_orch.js --score sec05g --more 13 [--seed 1] [--dry]     N MORE strikes into the new voices, drawn at random among
 //                                                                             every strike still on another voice (his pitches kept)
 //
@@ -65,6 +67,40 @@ const still = strikes.filter((x) => !x.notes.some((o) => o.properties && o.prope
 const A = MORE != null ? new Set(SC.shuffle(still.slice(), rnd).slice(0, MORE)) : drawSpread(open, +O.share || 0.5), rest = MORE != null ? [] : open.filter((x) => !A.has(x)), B = MORE == null && takes.length ? drawSpread(rest, +O.pitchShare || 0.5) : new Set();
 const lines = []; let nA = 0, nB = 0, moved = 0, kept = 0, noFit = 0;
 const tag = (o, key, v) => { o.properties = Object.assign({}, o.properties, { [key]: v }); };
+// --set <name> [--n N] (DEC-135: 'one more orchestration set … change about 20 of the current percussive ones to that new set … find the
+// original pitched version of those before they became the percussive version … and then apply those articulations'): N strikes NOW IN THE
+// FIRST SET'S VOICES (orch.voices — the percussive ones), drawn at random, move to the voices of orch.sets.<name>. Each note is first put
+// back on the PITCH IT HAD BEFORE it became percussive (kept on the note: properties.strikeOrch.from.key), then moved by octaves only if
+// the new voice's range needs it. A strike already moved to a named set is not drawn again. Nothing else is drawn in this mode.
+const SET = arg('set');
+if (SET) {
+    const S = (O.sets || {})[SET]; if (!S || !S.voices) die('bank/strike_section.json orch.sets has no set "' + SET + '" (' + Object.keys(O.sets || {}).join(' · ') + ')');
+    for (const [inst, voice] of Object.entries(S.voices)) if (!INS[inst] || !(INS[inst].techniques || []).some((q) => q.key === voice)) die('orch.sets.' + SET + ': ' + inst + ' has no voice ' + voice + ' (sandbox/instruments.js)');
+    const N = Math.max(0, Math.round(+arg('n', S.n || 0)) || 0);
+    const inFirst = (o) => o.properties && o.properties.strikeOrch && !o.properties.strikeOrch.set && O.voices[instOf(o.layer)] === o.technique;
+    const cand = strikes.filter((x) => x.notes.some(inFirst) && !x.notes.some((o) => o.properties && o.properties.strikeOrch && o.properties.strikeOrch.set));
+    const pick = new Set(SC.shuffle(cand.slice(), rnd).slice(0, N));
+    const ls = []; let back = 0, oct = 0, n = 0;
+    for (const x of strikes.filter((q) => pick.has(q))) {
+        const said = [];
+        for (const o of x.notes) {
+            const inst = instOf(o.layer), voice = S.voices[inst]; if (!voice) continue;
+            const so = o.properties && o.properties.strikeOrch, orig = so && so.from && so.from.key != null ? so.from.key : o.sonifyNote;
+            const key = fit(orig, rangeOf(inst, voice)); if (key == null) continue;
+            if (orig !== o.sonifyNote) back++;
+            if (key !== orig) oct++;
+            said.push(short(o.layer) + ' ' + o.technique + ' ' + pn(o.sonifyNote) + ' → ' + voice + ' ' + pn(key) + (orig !== o.sonifyNote ? ' (back on its pitched ' + pn(orig) + (key !== orig ? ', then ' + (key > orig ? '+' : '−') + Math.abs(key - orig) / 12 + ' oct for the range' : '') + ')' : key !== orig ? ' (' + (key > orig ? '+' : '−') + Math.abs(key - orig) / 12 + ' oct for the range)' : ''));
+            if (!DRY) { tag(o, 'strikeOrch', { from: so && so.from ? so.from : { technique: o.technique, key: o.sonifyNote }, set: SET, seed: SEED }); o.technique = voice; o.sonifyNote = key; }
+        }
+        if (said.length) { n++; ls.push(String(x.n).padStart(3) + '  ' + x.f.toFixed(2).padStart(6) + ' s  ' + said.join(' · ')); }
+    }
+    const outS = [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + strikes.length + ' strikes · ' + cand.length + ' in the first set\'s voices (' + Object.values(O.voices).filter((v, i, a) => a.indexOf(v) === i).join(' · ') + ') · ' + N + ' asked, drawn at random · seed ' + SEED,
+        'THE SET ' + SET + ' (' + Object.entries(S.voices).map(([i, v]) => i.replace('_', ' ') + ' ' + v).join(' · ') + ') on ' + n + ' strikes: ' + back + ' notes put back on the pitch they had before they became percussive, ' + oct + ' moved by octaves for the new voice\'s range — ' + (cand.length - n) + ' strikes stay in the first set', ''].concat(ls);
+    if (DRY) { outS.push('(dry — nothing written)'); console.log(outS.join('\n')); process.exit(0); }
+    fs.writeFileSync(FILE, JSON.stringify(s));
+    outS.push('written: scores/' + NAME + '.json — in the page: File ▾ → Reload');
+    console.log(outS.join('\n')); process.exit(0);
+}
 // (A) the new voices
 for (const x of strikes.filter((q) => A.has(q))) {
     const said = [];
