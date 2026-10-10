@@ -1559,3 +1559,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"And no curve meter in this section, in the multiphonic section, please. The, probably the only place we're using that meter is in the trill curves."*
 
 *(The AI's reading, marked as such: the lime tube at the cursor rides a curve that is on the page — the trills'. The drones' held notes carry a level in the data but draw nothing: no meter for them. RUNNING_LOG §402.)*
+
+### DEC-172 · 2026-10-10 — the drones into the main score; the curves over the electronics confirmed
+
+*(His words, verbatim — Opus:)* *"What is the seven drones with no badge of their own? And then go ahead and add it to the main score. And just confirm that the trill curves are drawn over the electronics windows. I just couldn't tell because of the transparency. If they are, that's fine."*
+
+*(The AI's reading, marked as such: a question (what the seven are — answered, nothing changed), a go (the drones section joins the main score), and a check (the trill curves lie over the electronics' windows — they do; the pane shows through the curve's pale fill). RUNNING_LOG §403.)*

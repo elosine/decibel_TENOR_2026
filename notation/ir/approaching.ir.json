@@ -5,7 +5,7 @@
   "score": "piece-Draft01c",
   "window": [
    0,
-   209
+   416
   ],
   "parts": [
    0,
@@ -20,8 +20,8 @@
   "createdBy": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
   "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
-  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 64 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 59 zone(s) elecPlay as elecReturn overlays. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 209 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 209 s)\" --mics --silent 0-125 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209"
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 79 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 85 zone(s) elecPlay as elecReturn overlays. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 416 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 415 s)\" --mics --silent 0-125 --silent 209-416 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416"
  },
  "events": [
   {
@@ -18975,6 +18975,2441 @@
    "provenance": "derived",
    "mode": "plain",
    "vel": 83
+  },
+  {
+   "id": "ev-wc-729",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-729"
+   },
+   "onset": 210.727,
+   "duration": 4.688999999999993,
+   "pitch": {
+    "midi": 54,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 87
+  },
+  {
+   "id": "ev-wc-731",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-731"
+   },
+   "onset": 216.465,
+   "duration": 5.388000000000005,
+   "pitch": {
+    "midi": 38,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-733",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-733"
+   },
+   "onset": 223.057,
+   "duration": 5.700000000000017,
+   "pitch": {
+    "midi": 44,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 76
+  },
+  {
+   "id": "ev-wc-735",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-735"
+   },
+   "onset": 229.807,
+   "duration": 5.950000000000017,
+   "pitch": {
+    "midi": 52,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 68
+  },
+  {
+   "id": "ev-wc-737",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-737"
+   },
+   "onset": 236.607,
+   "duration": 8.849999999999994,
+   "pitch": {
+    "midi": 57,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "china_cymbals_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 64
+  },
+  {
+   "id": "ev-wc-739",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-739"
+   },
+   "onset": 242.32,
+   "duration": 7.180000000000007,
+   "pitch": {
+    "midi": 38,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-742",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-742"
+   },
+   "onset": 250.146,
+   "duration": 7.260000000000019,
+   "pitch": {
+    "midi": 49,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-745",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-745"
+   },
+   "onset": 253.679,
+   "duration": 7.739999999999981,
+   "pitch": {
+    "midi": 52,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-748",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-748"
+   },
+   "onset": 262.954,
+   "duration": 7.079999999999984,
+   "pitch": {
+    "midi": 57,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "china_cymbals_bow",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-750",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-750"
+   },
+   "onset": 266.334,
+   "duration": 6.279999999999973,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-753",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-753"
+   },
+   "onset": 271.429,
+   "duration": 7.8700000000000045,
+   "pitch": {
+    "midi": 34,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 1
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-757",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-757"
+   },
+   "onset": 280.13,
+   "duration": 6.360000000000014,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "mp_short",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-759",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-759"
+   },
+   "onset": 283.629,
+   "duration": 6.359999999999957,
+   "pitch": {
+    "midi": 56,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-810",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-810"
+   },
+   "onset": 285.711,
+   "duration": 3.8349999999999795,
+   "pitch": {
+    "midi": 37,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 94
+  },
+  {
+   "id": "ev-wc-796",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-796"
+   },
+   "onset": 294.255,
+   "duration": 4.381000000000029,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 73
+  },
+  {
+   "id": "ev-wc-811",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-811"
+   },
+   "onset": 295.24,
+   "duration": 4.221000000000004,
+   "pitch": {
+    "midi": 45,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 76
+  },
+  {
+   "id": "ev-wc-861",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-861"
+   },
+   "onset": 295.676,
+   "duration": 5.076999999999998,
+   "pitch": {
+    "midi": 36,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 91
+  },
+  {
+   "id": "ev-wc-765",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-765"
+   },
+   "onset": 299.38,
+   "duration": 6.810000000000002,
+   "pitch": {
+    "midi": 55,
+    "spelled": {
+     "step": "G",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-769",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-769"
+   },
+   "onset": 303.296,
+   "duration": 6.759999999999991,
+   "pitch": {
+    "midi": 57,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "china_cymbals_bow",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714,
+     0.5714
+    ]
+   }
+  },
+  {
+   "id": "ev-wc-797",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-797"
+   },
+   "onset": 308.408,
+   "duration": 5.51400000000001,
+   "pitch": {
+    "midi": 56,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 78
+  },
+  {
+   "id": "ev-wc-862",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-862"
+   },
+   "onset": 309.697,
+   "duration": 5.11099999999999,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 95
+  },
+  {
+   "id": "ev-wc-844",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-844"
+   },
+   "onset": 312.721,
+   "duration": 4.8840000000000146,
+   "pitch": {
+    "midi": 48,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 88
+  },
+  {
+   "id": "ev-wc-832",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-832"
+   },
+   "onset": 315.213,
+   "duration": 3.8489999999999895,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 90
+  },
+  {
+   "id": "ev-wc-812",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-812"
+   },
+   "onset": 315.78,
+   "duration": 5.427000000000021,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 95
+  },
+  {
+   "id": "ev-wc-863",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-863"
+   },
+   "onset": 319.457,
+   "duration": 5.40500000000003,
+   "pitch": {
+    "midi": 39,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 100
+  },
+  {
+   "id": "ev-wc-845",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-845"
+   },
+   "onset": 322.915,
+   "duration": 4.678999999999974,
+   "pitch": {
+    "midi": 61,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 68
+  },
+  {
+   "id": "ev-wc-798",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-798"
+   },
+   "onset": 324.661,
+   "duration": 4.502999999999986,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 69
+  },
+  {
+   "id": "ev-wc-833",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-833"
+   },
+   "onset": 327.729,
+   "duration": 5.033999999999992,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-813",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-813"
+   },
+   "onset": 331.789,
+   "duration": 3.910000000000025,
+   "pitch": {
+    "midi": 47,
+    "spelled": {
+     "step": "B",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_mw",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 96
+  },
+  {
+   "id": "ev-wc-864",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-864"
+   },
+   "onset": 331.899,
+   "duration": 4.1340000000000146,
+   "pitch": {
+    "midi": 52,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 93
+  },
+  {
+   "id": "ev-wc-799",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-799"
+   },
+   "onset": 335.162,
+   "duration": 5.038000000000011,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 60
+  },
+  {
+   "id": "ev-wc-846",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-846"
+   },
+   "onset": 335.995,
+   "duration": 7.624000000000024,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 90
+  },
+  {
+   "id": "ev-wc-814",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-814"
+   },
+   "onset": 338.865,
+   "duration": 3.634999999999991,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_mw",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 75
+  },
+  {
+   "id": "ev-wc-865",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-865"
+   },
+   "onset": 342.633,
+   "duration": 4.579000000000008,
+   "pitch": {
+    "midi": 38,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 105
+  },
+  {
+   "id": "ev-wc-834",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-834"
+   },
+   "onset": 346.271,
+   "duration": 4.942999999999984,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 108
+  },
+  {
+   "id": "ev-wc-800",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-800"
+   },
+   "onset": 350.526,
+   "duration": 4.750999999999976,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 53
+  },
+  {
+   "id": "ev-wc-847",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-847"
+   },
+   "onset": 352.492,
+   "duration": 6.771999999999991,
+   "pitch": {
+    "midi": 61,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 100
+  },
+  {
+   "id": "ev-wc-866",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-866"
+   },
+   "onset": 352.863,
+   "duration": 5.362000000000023,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 108
+  },
+  {
+   "id": "ev-wc-815",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-815"
+   },
+   "onset": 355.397,
+   "duration": 3.52800000000002,
+   "pitch": {
+    "midi": 54,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 93
+  },
+  {
+   "id": "ev-wc-835",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-835"
+   },
+   "onset": 360.456,
+   "duration": 3.2139999999999986,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 121
+  },
+  {
+   "id": "ev-wc-867",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-867"
+   },
+   "onset": 361.02,
+   "duration": 5.975999999999999,
+   "pitch": {
+    "midi": 56,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 106
+  },
+  {
+   "id": "ev-wc-816",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-816"
+   },
+   "onset": 362.147,
+   "duration": 3.5880000000000223,
+   "pitch": {
+    "midi": 52,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 88
+  },
+  {
+   "id": "ev-wc-801",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-801"
+   },
+   "onset": 363.19,
+   "duration": 4.785000000000025,
+   "pitch": {
+    "midi": 58,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "mp_loop",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 48
+  },
+  {
+   "id": "ev-wc-848",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-848"
+   },
+   "onset": 366.117,
+   "duration": 4.794999999999959,
+   "pitch": {
+    "midi": 58,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 95
+  },
+  {
+   "id": "ev-wc-868",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-868"
+   },
+   "onset": 368.442,
+   "duration": 4.9979999999999905,
+   "pitch": {
+    "midi": 43,
+    "spelled": {
+     "step": "G",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 117
+  },
+  {
+   "id": "ev-wc-817",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-817"
+   },
+   "onset": 371.716,
+   "duration": 4.048000000000002,
+   "pitch": {
+    "midi": 40,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 94
+  },
+  {
+   "id": "ev-wc-836",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-836"
+   },
+   "onset": 373.958,
+   "duration": 4.400999999999954,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 127
+  },
+  {
+   "id": "ev-wc-849",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-849"
+   },
+   "onset": 374.508,
+   "duration": 0.6510000000000105,
+   "pitch": {
+    "midi": 48,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 108
+  },
+  {
+   "id": "ev-wc-850",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-850"
+   },
+   "onset": 375.526,
+   "duration": 4.238999999999976,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 103
+  },
+  {
+   "id": "ev-wc-869",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-869"
+   },
+   "onset": 377.047,
+   "duration": 7.560000000000002,
+   "pitch": {
+    "midi": 37,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 106
+  },
+  {
+   "id": "ev-wc-818",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-818"
+   },
+   "onset": 380.849,
+   "duration": 3.7210000000000036,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 79
+  },
+  {
+   "id": "ev-wc-851",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-851"
+   },
+   "onset": 382.961,
+   "duration": 0.5589999999999691,
+   "pitch": {
+    "midi": 49,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 99
+  },
+  {
+   "id": "ev-wc-852",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-852"
+   },
+   "onset": 384.98,
+   "duration": 5.651999999999987,
+   "pitch": {
+    "midi": 49,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 109
+  },
+  {
+   "id": "ev-wc-819",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-819"
+   },
+   "onset": 386.715,
+   "duration": 4.221000000000004,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 108
+  },
+  {
+   "id": "ev-wc-837",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-837"
+   },
+   "onset": 386.842,
+   "duration": 3.883000000000038,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 107
+  },
+  {
+   "id": "ev-wc-802",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-802"
+   },
+   "onset": 387.705,
+   "duration": 4.581999999999994,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel_mwinv",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 75
+  },
+  {
+   "id": "ev-wc-870",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-870"
+   },
+   "onset": 392.122,
+   "duration": 7.132000000000005,
+   "pitch": {
+    "midi": 40,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 105
+  },
+  {
+   "id": "ev-wc-853",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-853"
+   },
+   "onset": 392.221,
+   "duration": 5.923000000000002,
+   "pitch": {
+    "midi": 48,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sp_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 117
+  },
+  {
+   "id": "ev-wc-803",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-803"
+   },
+   "onset": 396.091,
+   "duration": 4.51400000000001,
+   "pitch": {
+    "midi": 54,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel_mwinv",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 80
+  },
+  {
+   "id": "ev-wc-838",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-838"
+   },
+   "onset": 397.532,
+   "duration": 4.145000000000039,
+   "pitch": {
+    "midi": 93,
+    "spelled": {
+     "step": "A",
+     "alter": 0,
+     "octave": 6
+    }
+   },
+   "technique": "susp_cymbals_bright_bow",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 121
+  },
+  {
+   "id": "ev-wc-820",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-820"
+   },
+   "onset": 397.731,
+   "duration": 3.3520000000000323,
+   "pitch": {
+    "midi": 50,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 103
+  },
+  {
+   "id": "ev-wc-804",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-804"
+   },
+   "onset": 409.848,
+   "duration": 4.611999999999966,
+   "pitch": {
+    "midi": 54,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 86
   }
  ],
  "chunks": [
@@ -19655,12 +22090,180 @@
    "part": 0,
    "span": [
     197.907,
-    209
+    210.727
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-643"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-729",
+   "part": 0,
+   "span": [
+    210.727,
+    250.146
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-729"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-742",
+   "part": 0,
+   "span": [
+    250.146,
+    280.13
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-742"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-757",
+   "part": 0,
+   "span": [
+    280.13,
+    294.255
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-757"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-796",
+   "part": 0,
+   "span": [
+    294.255,
+    308.408
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-796"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-797",
+   "part": 0,
+   "span": [
+    308.408,
+    324.661
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-797"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-798",
+   "part": 0,
+   "span": [
+    324.661,
+    335.162
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-798"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-799",
+   "part": 0,
+   "span": [
+    335.162,
+    350.526
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-799"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-800",
+   "part": 0,
+   "span": [
+    350.526,
+    363.19
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-800"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-801",
+   "part": 0,
+   "span": [
+    363.19,
+    387.705
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-801"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-802",
+   "part": 0,
+   "span": [
+    387.705,
+    396.091
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-802"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-803",
+   "part": 0,
+   "span": [
+    396.091,
+    409.848
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-803"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-wc-804",
+   "part": 0,
+   "span": [
+    409.848,
+    416
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-804"
    ],
    "provenance": "derived"
   },
@@ -20383,12 +22986,208 @@
    "part": 1,
    "span": [
     197.907,
-    209
+    216.465
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-646"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-731",
+   "part": 1,
+   "span": [
+    216.465,
+    242.32
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-731"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-739",
+   "part": 1,
+   "span": [
+    242.32,
+    271.429
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-739"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-753",
+   "part": 1,
+   "span": [
+    271.429,
+    285.711
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-753"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-810",
+   "part": 1,
+   "span": [
+    285.711,
+    295.24
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-810"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-811",
+   "part": 1,
+   "span": [
+    295.24,
+    315.78
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-811"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-812",
+   "part": 1,
+   "span": [
+    315.78,
+    331.789
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-812"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-813",
+   "part": 1,
+   "span": [
+    331.789,
+    338.865
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-813"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-814",
+   "part": 1,
+   "span": [
+    338.865,
+    355.397
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-814"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-815",
+   "part": 1,
+   "span": [
+    355.397,
+    362.147
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-815"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-816",
+   "part": 1,
+   "span": [
+    362.147,
+    371.716
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-816"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-817",
+   "part": 1,
+   "span": [
+    371.716,
+    380.849
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-817"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-818",
+   "part": 1,
+   "span": [
+    380.849,
+    386.715
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-818"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-819",
+   "part": 1,
+   "span": [
+    386.715,
+    397.731
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-819"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-wc-820",
+   "part": 1,
+   "span": [
+    397.731,
+    416
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-820"
    ],
    "provenance": "derived"
   },
@@ -20859,12 +23658,152 @@
    "part": 2,
    "span": [
     197.907,
-    209
+    236.607
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-649"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-737",
+   "part": 2,
+   "span": [
+    236.607,
+    262.954
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-737"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-748",
+   "part": 2,
+   "span": [
+    262.954,
+    303.296
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-748"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-769",
+   "part": 2,
+   "span": [
+    303.296,
+    315.213
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-769"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-832",
+   "part": 2,
+   "span": [
+    315.213,
+    327.729
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-832"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-833",
+   "part": 2,
+   "span": [
+    327.729,
+    346.271
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-833"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-834",
+   "part": 2,
+   "span": [
+    346.271,
+    360.456
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-834"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-835",
+   "part": 2,
+   "span": [
+    360.456,
+    373.958
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-835"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-836",
+   "part": 2,
+   "span": [
+    373.958,
+    386.842
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-836"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-837",
+   "part": 2,
+   "span": [
+    386.842,
+    397.532
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-837"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-2-wc-838",
+   "part": 2,
+   "span": [
+    397.532,
+    416
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-838"
    ],
    "provenance": "derived"
   },
@@ -21181,7 +24120,7 @@
    "part": 3,
    "span": [
     183.625,
-    209
+    416
    ],
    "class": "trill",
    "strategy": "unresolved",
@@ -22035,12 +24974,194 @@
    "part": 4,
    "span": [
     197.907,
-    209
+    229.807
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-658"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-735",
+   "part": 4,
+   "span": [
+    229.807,
+    266.334
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-735"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-750",
+   "part": 4,
+   "span": [
+    266.334,
+    299.38
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-750"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-765",
+   "part": 4,
+   "span": [
+    299.38,
+    312.721
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-765"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-844",
+   "part": 4,
+   "span": [
+    312.721,
+    322.915
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-844"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-845",
+   "part": 4,
+   "span": [
+    322.915,
+    335.995
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-845"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-846",
+   "part": 4,
+   "span": [
+    335.995,
+    352.492
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-846"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-847",
+   "part": 4,
+   "span": [
+    352.492,
+    366.117
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-847"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-848",
+   "part": 4,
+   "span": [
+    366.117,
+    374.508
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-848"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-849",
+   "part": 4,
+   "span": [
+    374.508,
+    375.526
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-849"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-850",
+   "part": 4,
+   "span": [
+    375.526,
+    382.961
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-850"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-851",
+   "part": 4,
+   "span": [
+    382.961,
+    384.98
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-851"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-852",
+   "part": 4,
+   "span": [
+    384.98,
+    392.221
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-852"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-853",
+   "part": 4,
+   "span": [
+    392.221,
+    416
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-853"
    ],
    "provenance": "derived"
   },
@@ -22819,12 +25940,194 @@
    "part": 5,
    "span": [
     197.907,
-    209
+    223.057
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-655"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-733",
+   "part": 5,
+   "span": [
+    223.057,
+    253.679
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-733"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-745",
+   "part": 5,
+   "span": [
+    253.679,
+    283.629
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-745"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-759",
+   "part": 5,
+   "span": [
+    283.629,
+    295.676
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-759"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-861",
+   "part": 5,
+   "span": [
+    295.676,
+    309.697
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-861"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-862",
+   "part": 5,
+   "span": [
+    309.697,
+    319.457
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-862"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-863",
+   "part": 5,
+   "span": [
+    319.457,
+    331.899
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-863"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-864",
+   "part": 5,
+   "span": [
+    331.899,
+    342.633
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-864"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-865",
+   "part": 5,
+   "span": [
+    342.633,
+    352.863
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-865"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-866",
+   "part": 5,
+   "span": [
+    352.863,
+    361.02
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-866"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-867",
+   "part": 5,
+   "span": [
+    361.02,
+    368.442
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-867"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-868",
+   "part": 5,
+   "span": [
+    368.442,
+    377.047
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-868"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-869",
+   "part": 5,
+   "span": [
+    377.047,
+    392.122
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-869"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-wc-870",
+   "part": 5,
+   "span": [
+    392.122,
+    416
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-870"
    ],
    "provenance": "derived"
   }
@@ -23851,6 +27154,246 @@
    "value": {
     "source": "zn-656",
     "sample": "vc-petal-35"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-728",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     210.627,
+     218.267
+    ]
+   },
+   "value": {
+    "source": "zn-728",
+    "sample": "bfl-drone-1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-730",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     216.365,
+     222.935
+    ]
+   },
+   "value": {
+    "source": "zn-730",
+    "sample": "bcl-drone-1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-732",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     222.957,
+     231.867
+    ]
+   },
+   "value": {
+    "source": "zn-732",
+    "sample": "vc-drone-1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-734",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     229.707,
+     237.887
+    ]
+   },
+   "value": {
+    "source": "zn-734",
+    "sample": "va-drone-1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-736",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     236.507,
+     243.977
+    ]
+   },
+   "value": {
+    "source": "zn-736",
+    "sample": "perc-drone-1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-738",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     242.22,
+     249.5
+    ]
+   },
+   "value": {
+    "source": "zn-738",
+    "sample": "bcl-drone-2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-741",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     250.046,
+     257.406
+    ]
+   },
+   "value": {
+    "source": "zn-741",
+    "sample": "bfl-drone-2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-744",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     253.579,
+     261.419
+    ]
+   },
+   "value": {
+    "source": "zn-744",
+    "sample": "vc-drone-2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-747",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     262.854,
+     270.034
+    ]
+   },
+   "value": {
+    "source": "zn-747",
+    "sample": "perc-drone-2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-749",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     266.234,
+     272.614
+    ]
+   },
+   "value": {
+    "source": "zn-749",
+    "sample": "va-drone-2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-752",
+   "kind": "micOpening",
+   "target": {
+    "part": 1,
+    "span": [
+     271.329,
+     279.299
+    ]
+   },
+   "value": {
+    "source": "zn-752",
+    "sample": "bcl-drone-3"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-756",
+   "kind": "micOpening",
+   "target": {
+    "part": 0,
+    "span": [
+     280.03,
+     286.49
+    ]
+   },
+   "value": {
+    "source": "zn-756",
+    "sample": "bfl-drone-3"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-758",
+   "kind": "micOpening",
+   "target": {
+    "part": 5,
+    "span": [
+     283.529,
+     289.989
+    ]
+   },
+   "value": {
+    "source": "zn-758",
+    "sample": "vc-drone-3"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-764",
+   "kind": "micOpening",
+   "target": {
+    "part": 4,
+    "span": [
+     299.28,
+     306.19
+    ]
+   },
+   "value": {
+    "source": "zn-764",
+    "sample": "va-drone-3"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-mic-zn-768",
+   "kind": "micOpening",
+   "target": {
+    "part": 2,
+    "span": [
+     303.196,
+     310.056
+    ]
+   },
+   "value": {
+    "source": "zn-768",
+    "sample": "perc-drone-3"
    },
    "provenance": "authored"
   },
@@ -24947,6 +28490,474 @@
     "count": 1,
     "all": false,
     "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-740",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     248.267,
+     278.587
+    ]
+   },
+   "value": {
+    "source": "zn-740",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-743",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     252.937,
+     278.887
+    ]
+   },
+   "value": {
+    "source": "zn-743",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-746",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     261.867,
+     276.177
+    ]
+   },
+   "value": {
+    "source": "zn-746",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-751",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     267.887,
+     302.617
+    ]
+   },
+   "value": {
+    "source": "zn-751",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-754",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     273.977,
+     286.797
+    ]
+   },
+   "value": {
+    "source": "zn-754",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-755",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     279.497,
+     309.297
+    ]
+   },
+   "value": {
+    "source": "zn-755",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-760",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     287.407,
+     298.307
+    ]
+   },
+   "value": {
+    "source": "zn-760",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-761",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     291.417,
+     303.577
+    ]
+   },
+   "value": {
+    "source": "zn-761",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-762",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     294.467,
+     300.037
+    ]
+   },
+   "value": {
+    "source": "zn-762",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-763",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     298.577,
+     316.487
+    ]
+   },
+   "value": {
+    "source": "zn-763",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-766",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     300.037,
+     313.407
+    ]
+   },
+   "value": {
+    "source": "zn-766",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-767",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     302.617,
+     336.187
+    ]
+   },
+   "value": {
+    "source": "zn-767",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-770",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     309.297,
+     345.127
+    ]
+   },
+   "value": {
+    "source": "zn-770",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-771",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     316.487,
+     336.057
+    ]
+   },
+   "value": {
+    "source": "zn-771",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-772",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     316.677,
+     340.057
+    ]
+   },
+   "value": {
+    "source": "zn-772",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-773",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     319.987,
+     336.137
+    ]
+   },
+   "value": {
+    "source": "zn-773",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-774",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     336.187,
+     367.157
+    ]
+   },
+   "value": {
+    "source": "zn-774",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-775",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     340.057,
+     350.227
+    ]
+   },
+   "value": {
+    "source": "zn-775",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-776",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     343.977,
+     356.017
+    ]
+   },
+   "value": {
+    "source": "zn-776",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-777",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     348.807,
+     379.877
+    ]
+   },
+   "value": {
+    "source": "zn-777",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-778",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     349.307,
+     373.417
+    ]
+   },
+   "value": {
+    "source": "zn-778",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-779",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     367.537,
+     405.197
+    ]
+   },
+   "value": {
+    "source": "zn-779",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-780",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     372.797,
+     408.607
+    ]
+   },
+   "value": {
+    "source": "zn-780",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-781",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     377.787,
+     389.397
+    ]
+   },
+   "value": {
+    "source": "zn-781",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-782",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     386.187,
+     414.787
+    ]
+   },
+   "value": {
+    "source": "zn-782",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-783",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     392.807,
+     404.197
+    ]
+   },
+   "value": {
+    "source": "zn-783",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false
    },
    "provenance": "authored"
   },
@@ -30214,6 +34225,1432 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-silent-ev-wc-729",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-729"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-731",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-731"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-733",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-733"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-735",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-735"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-737",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-737"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-739",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-739"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-742",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-742"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-745",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-745"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-748",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-748"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-750",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-750"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-753",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-753"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-757",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-757"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-759",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-759"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-810",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-810"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-796",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-796"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-811",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-811"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-861",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-861"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-765",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-765"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-769",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-769"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-797",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-797"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-862",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-862"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-844",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-844"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-832",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-832"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-812",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-812"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-863",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-863"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-845",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-845"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-798",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-798"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-833",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-833"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-813",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-813"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-864",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-864"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-799",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-799"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-846",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-846"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-814",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-814"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-865",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-865"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-834",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-834"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-800",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-800"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-847",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-847"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-866",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-866"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-815",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-815"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-835",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-835"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-867",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-867"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-816",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-816"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-801",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-801"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-848",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-848"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-868",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-868"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-817",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-817"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-836",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-836"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-849",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-849"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-850",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-850"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-869",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-869"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-818",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-818"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-851",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-851"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-852",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-852"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-819",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-819"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-837",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-837"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-802",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-802"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-870",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-870"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-853",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-853"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-803",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-803"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-838",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-838"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-820",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-820"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-804",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-804"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-gconly-ev-wc-457",
    "kind": "engraving",
    "target": {
@@ -31132,6 +36569,321 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-linewedge-drones-0",
+   "kind": "stateWedge",
+   "target": {
+    "part": 0,
+    "span": [
+     210.627,
+     414.787
+    ]
+   },
+   "value": {
+    "line": "drones",
+    "segs": [
+     {
+      "t0": 210.627,
+      "t1": 316,
+      "state": "line",
+      "thick": [
+       4,
+       4
+      ]
+     },
+     {
+      "t0": 316,
+      "t1": 331,
+      "state": "line",
+      "thick": [
+       4,
+       10
+      ]
+     },
+     {
+      "t0": 331,
+      "t1": 351,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 351,
+      "t1": 374,
+      "state": "line",
+      "thick": [
+       10,
+       2
+      ]
+     },
+     {
+      "t0": 374,
+      "t1": 414.787,
+      "state": "line",
+      "thick": [
+       2,
+       2
+      ]
+     }
+    ],
+    "leadSs": 8.34
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-linewedge-drones-1",
+   "kind": "stateWedge",
+   "target": {
+    "part": 1,
+    "span": [
+     210.627,
+     414.787
+    ]
+   },
+   "value": {
+    "line": "drones",
+    "segs": [
+     {
+      "t0": 210.627,
+      "t1": 316,
+      "state": "line",
+      "thick": [
+       4,
+       4
+      ]
+     },
+     {
+      "t0": 316,
+      "t1": 331,
+      "state": "line",
+      "thick": [
+       4,
+       10
+      ]
+     },
+     {
+      "t0": 331,
+      "t1": 351,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 351,
+      "t1": 374,
+      "state": "line",
+      "thick": [
+       10,
+       2
+      ]
+     },
+     {
+      "t0": 374,
+      "t1": 414.787,
+      "state": "line",
+      "thick": [
+       2,
+       2
+      ]
+     }
+    ],
+    "leadSs": 8.34
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-linewedge-drones-2",
+   "kind": "stateWedge",
+   "target": {
+    "part": 2,
+    "span": [
+     210.627,
+     414.787
+    ]
+   },
+   "value": {
+    "line": "drones",
+    "segs": [
+     {
+      "t0": 210.627,
+      "t1": 316,
+      "state": "line",
+      "thick": [
+       4,
+       4
+      ]
+     },
+     {
+      "t0": 316,
+      "t1": 331,
+      "state": "line",
+      "thick": [
+       4,
+       10
+      ]
+     },
+     {
+      "t0": 331,
+      "t1": 351,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 351,
+      "t1": 374,
+      "state": "line",
+      "thick": [
+       10,
+       2
+      ]
+     },
+     {
+      "t0": 374,
+      "t1": 414.787,
+      "state": "line",
+      "thick": [
+       2,
+       2
+      ]
+     }
+    ],
+    "leadSs": 8.34
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-linewedge-drones-4",
+   "kind": "stateWedge",
+   "target": {
+    "part": 4,
+    "span": [
+     210.627,
+     414.787
+    ]
+   },
+   "value": {
+    "line": "drones",
+    "segs": [
+     {
+      "t0": 210.627,
+      "t1": 316,
+      "state": "line",
+      "thick": [
+       4,
+       4
+      ]
+     },
+     {
+      "t0": 316,
+      "t1": 331,
+      "state": "line",
+      "thick": [
+       4,
+       10
+      ]
+     },
+     {
+      "t0": 331,
+      "t1": 351,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 351,
+      "t1": 374,
+      "state": "line",
+      "thick": [
+       10,
+       2
+      ]
+     },
+     {
+      "t0": 374,
+      "t1": 414.787,
+      "state": "line",
+      "thick": [
+       2,
+       2
+      ]
+     }
+    ],
+    "leadSs": 8.34
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-linewedge-drones-5",
+   "kind": "stateWedge",
+   "target": {
+    "part": 5,
+    "span": [
+     210.627,
+     414.787
+    ]
+   },
+   "value": {
+    "line": "drones",
+    "segs": [
+     {
+      "t0": 210.627,
+      "t1": 316,
+      "state": "line",
+      "thick": [
+       4,
+       4
+      ]
+     },
+     {
+      "t0": 316,
+      "t1": 331,
+      "state": "line",
+      "thick": [
+       4,
+       10
+      ]
+     },
+     {
+      "t0": 331,
+      "t1": 351,
+      "state": "line",
+      "thick": [
+       10,
+       10
+      ]
+     },
+     {
+      "t0": 351,
+      "t1": 374,
+      "state": "line",
+      "thick": [
+       10,
+       2
+      ]
+     },
+     {
+      "t0": 374,
+      "t1": 414.787,
+      "state": "line",
+      "thick": [
+       2,
+       2
+      ]
+     }
+    ],
+    "leadSs": 8.34
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-badge-announce-threeBody-0-39000",
    "kind": "badge",
    "target": {
@@ -31268,6 +37020,91 @@
    "value": {
     "type": "shortAttacks",
     "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-announce-multiphonics-0-210627",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "method",
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-announce-multiphonics-1-210627",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "method",
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-announce-multiphonics-2-210627",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "method",
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-announce-multiphonics-4-210627",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "method",
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-announce-multiphonics-5-210627",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "method",
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },
@@ -32541,6 +38378,201 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-badge-mic-multiphonics-0-210627",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 210.627
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-1-216365",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 216.365
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-5-222957",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 222.957
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-4-229707",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 229.707
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-2-236507",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 236.507
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-1-242220",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 242.22
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-0-250046",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 250.046
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-5-253579",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 253.579
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-2-262854",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 262.854
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-4-266234",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 266.234
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-1-271329",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 271.329
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-0-280030",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 280.03
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-5-283529",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 283.529
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-4-299280",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 299.28
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-multiphonics-2-303196",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 303.196
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-badge-elec-flocking-4-6239",
    "kind": "badge",
    "target": {
@@ -33347,6 +39379,272 @@
    },
    "value": {
     "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-0-248267",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 248.267
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-1-252937",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 252.937
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-5-261867",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 261.867
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-4-267887",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 267.887
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-2-273977",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 273.977
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-1-279497",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 279.497
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-0-287407",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 287.407
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-5-291417",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 291.417
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-2-294467",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 294.467
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-2-316677",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 316.677
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-5-319987",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 319.987
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-5-343977",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 343.977
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-1-348807",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 348.807
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-0-349307",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 349.307
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-2-367537",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 367.537
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-5-372797",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 372.797
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-4-377787",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 377.787
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-0-386187",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 386.187
+   },
+   "value": {
+    "type": "multiphonics",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-multiphonics-1-392807",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 392.807
+   },
+   "value": {
+    "type": "multiphonics",
     "place": "before",
     "row": "elec"
    },
@@ -34230,6 +40528,396 @@
     "span": [
      197.907,
      207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-248267",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     248.267,
+     278.587
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-252937",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     252.937,
+     278.887
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-261867",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     261.867,
+     276.177
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-267887",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     267.887,
+     302.617
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-273977",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     273.977,
+     286.797
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-279497",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     279.497,
+     309.297
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-287407",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     287.407,
+     298.307
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-291417",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     291.417,
+     303.577
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-294467",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     294.467,
+     300.037
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-298577",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     298.577,
+     316.487
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-300037",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     300.037,
+     313.407
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-302617",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     302.617,
+     336.187
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-309297",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     309.297,
+     345.127
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-316487",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     316.487,
+     336.057
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-316677",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     316.677,
+     340.057
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-319987",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     319.987,
+     336.137
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-336187",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     336.187,
+     367.157
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-340057",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     340.057,
+     350.227
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-343977",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     343.977,
+     356.017
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-348807",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     348.807,
+     379.877
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-349307",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     349.307,
+     373.417
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-367537",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     367.537,
+     405.197
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-372797",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     372.797,
+     408.607
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-377787",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     377.787,
+     389.397
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-386187",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     386.187,
+     414.787
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-392807",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     392.807,
+     404.197
     ]
    },
    "value": {
