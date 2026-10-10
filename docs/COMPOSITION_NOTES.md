@@ -1411,3 +1411,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"opening effects to FFF, please. And let's use a new draft letter. 1C. Already saved."*
 
 *(The AI's reading, marked as such: every return of the opening (0 … 37 s) written fff — the level he set brick by brick in the audition, now in the piece; in his new copy `piece-Draft01c`, which is the piece from here. RUNNING_LOG §376.)*
+
+### DEC-148 · 2026-10-10 — the final ensemble petals: always missed from the section's start, hit after a short rewind
+
+*(His words, verbatim — Fable:)* *"The final ensemble pedal of resonance. The first time through, there was a delay and it was weak. The second time through, I just rewinded a little bit and played it and it played okay. I tried it a few more times. It seems if I rewind to the beginning of that section and play it all the way through, it always misses. And then if I just rewind a little bit, it hits it. I'm not sure what the problem is. Is it maybe the, over, the electronics are overloaded or? If you can look into it, that'd be great."*
+
+*(The AI's reading, marked as such: the bank's timestamps show it — on the full pass five renders still ran under the hit (this morning's rule let a take through whenever its loudness differed from the reference's, and round-robin samples always differ); the short rewind had nothing queued. The condition is dropped; nothing renders in section 2 now. One more engine restart. RUNNING_LOG §377.)*
