@@ -881,7 +881,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Why:** his word — "combine all the sections done so far now into the official notated score". The lineage's ONE MAIN notation file (#5's D41): the film, the print and the page he proofs all read it; the section pages are working pages.
 
-**The file:** `notation/ir/approaching.ir.json`, first in the picker (the working pages under *experiments*), cut from the piece in hand: `node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 416 --id approaching --label "Approaching — THE SCORE (so far: 0 … 415 s)" --mics --silent 0-125 --silent 209-416 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416`.
+**The file:** `notation/ir/approaching.ir.json`, first in the picker (the working pages under *experiments*), cut from the piece in hand: `node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 672 --id approaching --label "Approaching — THE SCORE (so far: 0 … 668 s)" --mics --silent 0-125 --silent 209-672 --gcOnly 125-209 --trills --trillRate 100 --sines --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416`.
 
 **The rule for it:** a section is notated on its working page first; when he has seen it, its flags join this command and `--w1` grows. The page turns of this file (12 s from −4 s) are the film's — a badge's hand placement is decided HERE, on these turns, not on a working page's.
 
@@ -891,7 +891,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §403 (DEC-172): FOUR SECTIONS, 0 … 415 s, 35 screen pages — the drones joined** (their flags as on the working page; the trill curves confirmed drawn over the electronics).
 
-**To come:** the beating section · the strikes.
+**SINCE §410 (DEC-180): FIVE SECTIONS, 0 … 668 s, 57 screen pages — the beating section joined** (the working page's flags: `--sines`, `--silent 209-672`).
+
+**To come:** the strikes (their working page built — PLAN 2.13).
 
 ### 2.11 THE DRONES — their notation: the mic openings and their badge, the section's line wedge, the announcing badge, the electronics — `built 2026-10-10; IN THE MAIN SCORE since §403 (DEC-172); one working page` (DEC-167; RUNNING_LOG §399 — the device sheet is there)
 
@@ -918,6 +920,16 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 **SINCE §408 (DEC-177): ONE HEIGHT** — `objects.sineBox.heightSs` 4, the tallest box's (the bass flute's at 451 s, measured 4.01): every box that tall, centred on its notation, moved by the least amount that leaves no edge on a line; the go line from border to border (the gaps of its dash eased). **The 560.1 s case: seen, fine (DEC-179).**
 
 **Open, his:** the margin (0.5 staff space) · the players' own notes · the cents · the crotales' gliding sines (drawn level) · a head restated where a sine only crosses a page · the spelling (all sharps) · the section into the main score (PLAN 2.10) · its electronics on the presentation view.
+
+### 2.13 THE SCATTERED STRIKES — their notation: a GC on every note of a written strike, a mic opening on every strike, the badge before each — `built 2026-10-10 on a working page, his eye pending; the electronics a talk` (DEC-180; RUNNING_LOG §410)
+
+**Why:** his dictation — GCs on the strikes he marked to be scored; mic openings for all of them, in the Stabilo yellow (everything else the mic opening's own); the scattered strikes' badge before each opening; the electronics HELD for a talk.
+
+**Built:** the cutter's `--strikes t0:t1` — from the save's strike windows (zones `elecStrike`, `elec.mode` his word): a mic opening the window's span on each lane that strikes in it (`variant: 'strike'` → `rules.json` `objects.micOpening.variants.strike` → `colours.micStrike` #E6D53A) · a NOTATED strike's notes draw their GC alone · an OPEN strike's notes draw nothing · a strike with no window (the last four) draws its GCs and no opening. The staff's range now ends at 668 s.
+
+**The page:** `node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 780 --id approaching-strikes --label "Approaching — the scattered strikes (677 … 779 s)" --exp --strikes 672:780 --micBadge scatteredStrikes:672:780` — 10 pages (the main score's turns), 63 windows (22 notated · 41 open), 290 openings and badges, 117 GCs.
+
+**Open, his:** the 14 places where a badge stands on the opening before it (strikes under 0.37 s apart; one at a page turn) · the last four strikes as GCs (the AI's reading) · THE ELECTRONICS on the presentation score — three ways put to him in §410's reply · then the section into the main score (PLAN 2.10).
 
 ## 3. The performance score — `todo`
 

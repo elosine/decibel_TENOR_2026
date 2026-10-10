@@ -5,7 +5,7 @@ decisions: what is decided, what is open, in the order they will be settled. It 
 how each was reached is `RUNNING_LOG.md` §299 … and `COMPOSITION_NOTES.md` DEC-87 … — his words are quoted there, not here.
 The plan items are `PLAN.md` § 2. Marked **(AI)** = the AI's reading or suggestion, not yet his.)*
 
-**THE OFFICIAL SCORE (since 2026-10-10, DEC-166, RUNNING_LOG §398): http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — THE SCORE (so far: 0 … 415 s)* (first in the picker; FOUR sections since §403 — the drones joined) → `view`: video.** One file, cut from the piece in hand: section 1 · the three body problem · section 2 (the trills and the accented long tones). **It is THE PRESENTATION SCORE (DEC-168, RUNNING_LOG §400): it carries the electronics of all three sections — a courtesy display, drawn BEHIND everything, not in the players' parts: section 1's return bricks, the three computer players, and for section 2 a purple brick of about ten seconds from each hit (the resonant filters' ring, approximated) with the accented long tones' badge in its grey pane.** The section pages are working pages, under *experiments*. Its command is PLAN.md § 2.10.
+**THE OFFICIAL SCORE (since 2026-10-10, DEC-166, RUNNING_LOG §398): http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — THE SCORE (so far: 0 … 668 s)* (first in the picker; FIVE sections since §410 — the beating section joined) → `view`: video.** One file, cut from the piece in hand: section 1 · the three body problem · section 2 (the trills and the accented long tones). **It is THE PRESENTATION SCORE (DEC-168, RUNNING_LOG §400): it carries the electronics of all three sections — a courtesy display, drawn BEHIND everything, not in the players' parts: section 1's return bricks, the three computer players, and for section 2 a purple brick of about ten seconds from each hit (the resonant filters' ring, approximated) with the accented long tones' badge in its grey pane.** The section pages are working pages, under *experiments*. Its command is PLAN.md § 2.10.
 
 **To see a section's working page:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325). **The presentation view:** `ir`: *Approaching — the opening, with the electronics (0 … 37 s)* — the same page plus the electronics' layer (§335).
 The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`place`: laneTop · laneMiddle · laneBottom; `gapSs`) and `objects.badge` — change a row, reload the app. *(The earlier working drawing: http://localhost:5500/signs/layout.html.)*
@@ -99,10 +99,13 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **The sine at 560.1 s** (0.1 s after a page turn: its badge on the start of its own line): seen, FINE (DEC-179).
 - **Open — his, each at its turn:** the margin · the players' own notes (silent on this pass) · the cents · the crotales' gliding sines (drawn level) · a head restated on a page a sine only crosses · the spelling (all sharps) · the section into the main score.
 
-### 6 · The scattered strikes (not yet in the piece)
-- **Announced by:** the scattered strikes' badge.
-- **Each strike:** a mic opening says when.
-- **Open:** a badge on each opening, by the same rule as the drones **(AI)** · strikes written out against strikes left free.
+### 6 · The scattered strikes (677 … 779 s) — BUILT 2026-10-10 on the working page `approaching-strikes` (DEC-180, RUNNING_LOG §410)
+- **No staff** (the staff ends at the page turn at 668 s).
+- **A WRITTEN strike** (the 22 he marked notated): a conductor's arc (GC) for each note, in the note's own lane, its impact at the note's time.
+- **A FREE strike** (the 41 he marked open): nothing for its notes — the player strikes freely inside the mic opening.
+- **Every strike:** a mic opening the strike window's own length on each lane that strikes in it, in THE STABILO YELLOW `#E6D53A` (the mic opening's look otherwise), the scattered strikes' badge 12 px before it.
+- **The last four strikes** (no electronics): their arcs, no mic opening **(AI — to confirm)**.
+- **Open:** the 14 places where a badge stands on the opening before it · the electronics on the presentation score (a talk) · the section into the main score.
 
 ---
 

@@ -282,7 +282,9 @@ const SEQ_GROUPS = [];
 process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) SEQ_GROUPS.push(process.argv[i + 1]); });
 // [decibel §355] the spans of --silent t0-t1 (no @part): their notes are never joined into pulse runs at the extraction (options.oneshots) —
 // a silent note makes no beat, no beam, no tempo label
-const SILENT_SPANS = process.argv.map((a, i) => ((a === '--silent' || a === '--gcOnly') ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
+const SILENT_SPANS = process.argv.map((a, i) => ((a === '--silent' || a === '--gcOnly') ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0])
+  // [decibel §410] and the spans of --strikes t0:t1: a strike's notes are scattered attacks, never a pulse
+  .concat(process.argv.map((a, i) => (a === '--strikes' ? String(process.argv[i + 1] || '') : null)).filter(Boolean).map(s => s.split(':').slice(0, 2).map(Number)).filter(s => s.length === 2 && s[1] > s[0]));
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
   scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('sines') ? { sines: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, process.argv.includes('--elecPlayers') ? { performers: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
@@ -1342,6 +1344,10 @@ for (let i = 0; i < process.argv.length; i++) {
 }
 
 // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS — in this piece a player's page is mostly not notes:
+//   --strikes t0:t1            [decibel §410] THE SCATTERED STRIKES of the span from the save's strike windows (zones elecStrike): a mic opening
+//                              (variant 'strike': its own colour) the window's span on each lane that strikes in it · a NOTATED strike's notes draw
+//                              their GC alone · an OPEN strike's notes draw nothing · a strike with no window draws its GCs, no opening.
+//                              INSTEAD of --silent · --gcOnly · --mics on the span; --micBadge then finds these openings.
 //   --mics                     (an extraction option, above) every mic opening of the composer score in the window, as `micOpening` overlays
 //   --silent t0-t1[@part]      the notes that begin in [t0, t1) DRAW NOTHING: --bare's switches, and the brick off as well; with no @part they
 //                              are also never joined into pulse runs at the extraction (no beat, no beam, no tempo label is made of them). In his scheme an
@@ -1413,6 +1419,42 @@ for (let i = 0; i < process.argv.length; i++) {
       else doc.overlays.push({ id: 'ov-gconly-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, GC_ONLY) }, provenance: 'authored' });
     }
     console.log('  gcOnly ' + a + ': ' + members.length + ' note(s) draw their GC alone');
+  }
+  // [decibel PLAN 2.13, RUNNING_LOG §410 — DEC-180, his "Let's add GCs to all the ones I marked that should be scored. And then the mic openings
+  // for all of them"] --strikes t0:t1 — THE SCATTERED STRIKES of the span, read from the save's STRIKE WINDOWS (zones elecStrike, his word on each:
+  // elec.mode notated | open): · every window is A MIC OPENING, the window's own span, on each LANE that has a note in it (the microphones are
+  // pooled; a lane that does not strike is shown none), marked variant 'strike' (its own colour, rules.json objects.micOpening.variants) ·
+  // the notes of a NOTATED strike draw ONLY THEIR GC (--gcOnly's device: the arc, its impact at the note's own time) · the notes of an OPEN
+  // strike draw nothing (the player strikes freely inside the opening) · a strike with NO window (the section's last, bare ones — no
+  // electronics) is written: its notes draw their GC, and there is no mic opening. Used INSTEAD of --silent · --gcOnly · --mics on the span.
+  for (const a of argsOf('strikes')) {
+    const fq = a.split(':').map(Number), t0 = fq[0], t1 = fq[1];
+    if (!(t1 > t0)) { console.error('--strikes needs t0:t1 (e.g. --strikes 672:780) — got ' + a); process.exit(2); }
+    const laneOfS = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
+    const WS = (score.objects || []).filter(o => o.type === 'zone' && o.midiModel === 'elecStrike' && o.endTime > o.startTime && o.startTime >= t0 - 1e-9 && o.startTime < t1 - 1e-9).sort((x, y) => x.startTime - y.startTime);
+    if (!WS.length) { console.error('--strikes ' + a + ': no strike window (a zone elecStrike) begins in the span'); process.exit(2); }
+    const notesS = doc.events.filter(e => e.onset >= t0 - 1e-9 && e.onset < t1 - 1e-9 && e.env !== 'trill' && e.env !== 'sine');
+    const setDev = (e, dv, why) => { const ex = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id); if (ex) ex.value.device = Object.assign({}, ex.value.device, dv); else doc.overlays.push({ id: 'ov-' + why + '-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, dv) }, provenance: 'authored' }); };
+    const taken = new Set(); let nGc = 0, nSil = 0, nMic = 0, nN = 0, nO = 0, nEmpty = 0;
+    for (const w of WS) {
+      const mem = notesS.filter(e => !taken.has(e.id) && e.onset >= w.startTime - 1e-6 && e.onset <= w.endTime + 1e-6);
+      mem.forEach(e => taken.add(e.id));
+      const mode = (w.elec && w.elec.mode) === 'open' ? 'open' : 'notated';
+      if (mode === 'open') nO++; else nN++;
+      if (!mem.length) { nEmpty++; continue; }
+      for (const e of mem) { if (mode === 'open') { setDev(e, SILENT_OFF, 'silent'); nSil++; } else { setDev(e, GC_ONLY, 'gconly'); nGc++; } }
+      const seenL = new Set();
+      for (const e of mem.slice().sort((x, y) => partOfEv.get(x.id) - partOfEv.get(y.id))) {
+        const p = partOfEv.get(e.id), k = laneOfS(p);
+        if (seenL.has(k)) continue; seenL.add(k);
+        doc.overlays.push({ id: 'ov-mic-' + w.id + '-' + p, kind: 'micOpening', target: { part: p, span: [+w.startTime.toFixed(4), +Math.min(w.endTime, w1).toFixed(4)] }, value: { source: w.id, variant: 'strike', mode }, provenance: 'authored' });
+        nMic++;
+      }
+    }
+    const bareS = notesS.filter(e => !taken.has(e.id));
+    for (const e of bareS) setDev(e, GC_ONLY, 'gconly');
+    console.log('  strikes ' + a + ': ' + WS.length + ' window(s) — ' + nN + ' notated (' + nGc + ' note(s) draw their GC) · ' + nO + ' open (' + nSil + ' note(s) draw nothing) · ' + nMic + ' mic opening(s), one a lane that strikes'
+      + (bareS.length ? ' · ' + bareS.length + ' note(s) in no window (bare strikes): their GC, no mic opening' : '') + (nEmpty ? ' · ' + nEmpty + ' window(s) with no note of the window — no opening drawn' : ''));
   }
   const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length + argsOf('lineWedge').length + argsOf('elecRing').length;
   if (wantBadges) {

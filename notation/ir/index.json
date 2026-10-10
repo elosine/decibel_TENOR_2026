@@ -2,11 +2,11 @@
  "irs": [
   {
    "id": "approaching",
-   "label": "Approaching — THE SCORE (so far: 0 … 415 s)",
+   "label": "Approaching — THE SCORE (so far: 0 … 668 s)",
    "score": "piece-Draft01c",
    "window": [
     0,
-    416
+    672
    ],
    "profile": "trance"
   },
@@ -94,6 +94,17 @@
    "window": [
     420,
     672
+   ],
+   "profile": "trance",
+   "exp": true
+  },
+  {
+   "id": "approaching-strikes",
+   "label": "Approaching — the scattered strikes (677 … 779 s)",
+   "score": "piece-Draft01c",
+   "window": [
+    672,
+    780
    ],
    "profile": "trance",
    "exp": true

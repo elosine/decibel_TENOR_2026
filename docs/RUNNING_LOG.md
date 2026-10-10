@@ -8212,3 +8212,45 @@ Every go line at x(t) of its sine to the pixel (the gate: 35 of 35), the box's o
 **DEC-178, verbatim:** *"Please, clarinet at 527.75 is too quiet. for re-render."* — What is there (one look at `piece-Draft01c`): the bass clarinet's beating pair that begins at 528.007 s — the note `wc-917`, F♯2 (key 42), senza vibrato, **velocity 37 (the page's p)**, 528.007 … 557.107 s, under its sine `zn-918` written f. A line in `docs/RENDER.md` § 0.2. Nothing changed, nothing diagnosed. The list for the next take now holds three things he heard in take 02: the viola's first note silent (4.48 s) · the percussion at 236.4 s too quiet · the clarinet at 527.75 s too quiet.
 
 **DEC-179, verbatim:** *"badge at 560 fine"* — the one edge case §406 put to him (the crotales' sine 0.1 s after a page turn: its badge held at the page's start, on the first of its own line). Seen, accepted as the rules give it. Closed; nothing built.
+
+## §410. THE BEATING SECTION IN THE MAIN SCORE · THE SCATTERED STRIKES' NOTATION (GCs on the written strikes, a mic opening on every strike in the Stabilo yellow, the badge before each) · HOW THE ELECTRONICS ANSWER THERE (DEC-180) (2026-10-10, Opus)
+
+**What prompted it (DEC-180, verbatim; "Stabilio" is the dictation's Stabilo):** *"add the beating section to the main score; And then let's work on the scattered strikes one. Let's add GCs to all the ones I marked that should be scored. And then the mic openings for all of them. Let's use a slightly different color. No, actually, never mind. Well, yeah, okay, no. Let's use the slightly different color. Can I see the, you made a page for me that showed all the highlighting yellow colors. Actually, let's use, I think there was a Stabilio one. It was a little bit more orange. Let's use that color. But everything else is same transparency, border, etc. And then let's put the badge in its proper location before the mic opening. And then explain to me how the electronics are playing back here. Are they I just mean what makes sense to show them for the presentation score. I guess the gray, the gray box with the badge and the purple line, that's fine, but I'm just wondering how long. Is there like a probability space in which the strike can come back? Well, let, hold on the electronics notation. Let's just talk about it. Because really, it'll just be one long line, probably. Yeah, let's just start with the mic openings and the GCs where they belong. And the badges. And then after that's in place, you can give me some recommendations about showing electronics in the presentation score."*
+
+**1 · THE BEATING SECTION IS IN THE MAIN SCORE.** The command (the picker's first, *Approaching — THE SCORE (so far: 0 … 668 s)*): `--w1 672` · `--silent 209-672` · `--sines` added to §403's — the working page's flags, on the same page turns. 432 events (35 of them sines) · **57 screen pages, −4 … 672 s** · FIVE sections. `check_screen_edges --ir approaching` PASS (103 go-time indicators at x(t); the one clamp is the sine at 560.11 s, his "fine") · VALID against its source · the shield green (the main score the one moved).
+
+**2 · THE STRIKES' NOTATION — the working page `approaching-strikes`** (under *experiments*; the window from 672 s, so its page turns are the main score's): `node tools/notate_section.js --score piece-Draft01c --w0 672 --w1 780 --id approaching-strikes --label "Approaching — the scattered strikes (677 … 779 s)" --exp --strikes 672:780 --micBadge scatteredStrikes:672:780` — 310 notes, 10 screen pages, 668 … 780 s.
+
+*What "the ones I marked" are:* each strike in the piece lies under a STRIKE WINDOW brick whose word is his (`elec.mode`: **notated** 22 · **open** 41 — his letters of DEC-119, kept on the bricks); the section's last four strikes have no window (no electronics).
+
+| | what is drawn | count |
+|---|---|---|
+| a NOTATED strike | a GC for each of its notes, in the note's own lane, its impact at the note's own time (section 2's GC, the lane's geometry) | 22 strikes · 97 GCs |
+| an OPEN strike | nothing for its notes — the player strikes freely inside the opening | 41 strikes · 193 notes |
+| EVERY strike with a window | A MIC OPENING the window's own span on each LANE that has a note in it (the microphones are pooled; a lane that does not strike is shown none) | 63 windows · 290 openings |
+| the badge | the scattered strikes' badge, 12 px before every opening (as section 1's) | 290 |
+| the last four strikes (no window) | their GCs, no mic opening — THE AI'S READING: a strike with no window can only be written | 20 GCs |
+
+**The colour:** the openings are **#E6D53A** — the candidate `bossYellow` of `bank/signs/mic_opening.json` (§319's page of yellows: "a Stabilo Boss yellow, as printed" — the only Stabilo of the five, and the one that leans to orange). A new colour row `rules.json` `colours.micStrike` and a VARIANT of the mic opening, `objects.micOpening.variants.strike` — the colour alone; the fill's 18 %, the solid outline, the corners, the row and the two circles are the mic opening's own (read from the page: `0.18 / 1 / 1.5 px`, 41.9 px tall).
+
+**Built:** the cutter's **`--strikes t0:t1`** (reads the save's zones `elecStrike`; INSTEAD of `--silent` · `--gcOnly` · `--mics` on the span; its notes are kept out of pulse runs like a silent span's — the first cut had made 114 of the chunks into "simple bars") · a mic overlay's `variant` through the layout to the renderer · **`staffLines.ensemble.ranges` `to`: "end" → 668** — the staff ends at the page turn before the strikes (the beating section's last sine ends at 668.1 s: 16 px of its box stand on the strikes' first page with no staff under them).
+
+**The gates:** `check_screen_edges --ir approaching-strikes` PASS (10 pages; 117 go-time indicators at x(t); 0 clamped units) · `check_rules` 31 of 32 · THE SHIELD: the three pages expected moved, AND TWO OF THE TUBA PIECE'S FIXTURES (`tuba:db1` [0, 753] · `tuba:trance-a4` [499, 753]) — the only two whose windows pass 668 s: the staff rule is in THIS piece's absolute seconds and now ends there. Explained, not a fault of a page of this piece.
+
+**WHAT THE RULES GIVE AT 14 PLACES, PUT TO HIM (measured on the page):** a badge needs 54 px (0.37 s) before its opening; where a strike follows the one before by less, its badge stands ON the opening before it — 13 pairs of strikes (56 lane-places) and one strike 0.2 s after a page turn whose badge is held at the page's start on its own opening (4 lanes). Not cured: his call.
+
+**3 · HOW THE ELECTRONICS ANSWER HERE — read from the score and `bank/strike_responses.json`, for the talk he asked for.** While a window is open the engine listens to the five microphones together and keeps only WHEN and HOW LOUD each hit was; nothing is recorded. When the strike has ended (a silence of about 0.15 s) it answers: the strike's own rhythm, CHANGED (nine ways — as played · reversed · inverted · spread · compressed · scrambled · rotated · thinned · thickened), played on the processed impulses of the bank (the two short endings), one sample a player, at the strike's loudness. 139 answers to 63 strikes: 12 strikes answered once, 26 twice, 25 three times (his form 1 · 2 · 3 · 2 · 1); a further answer changes the rhythm of THE ANSWER BEFORE IT.
+
+**When an answer comes — his "probability space":** each answer carries a timing WORD with a range, and the place inside the range is a draw from the window's own seed (the score's; the same at every pass):
+
+| timing | the answer begins | answers |
+|---|---|---|
+| right after | 0.3 … 0.8 s after the strike's last hit | 41 |
+| a beat later | 1 … 2 s after | 42 |
+| call and response | after about the strike's own length again (0.8 … 1.2 ×) | 42 |
+| much later | 6 … 15 s after | 7 |
+| in a later window | at the start of a later strike, 10 … 15 s on | 7 |
+
+So what moves at a performance is the PLAYERS, not the dice: an answer is measured from the strike's last hit and made of its rhythm — fixed for a written strike, free inside the window for an open one.
+
+**An estimate of where the answers lie (from the ranges, a 0.6 s sample assumed — NOT measured on the engine):** they run from about 677.4 s to about 770 s. Taken at the middle of each range: about thirty bursts with gaps mostly under 2 s, sounding some 67 of the 93 s. Taken as "anywhere each could fall": five stretches, the last ONE LINE of 69 s (from about 700 s on). One answer can slide by about 1.2 s (the "much later" ones by up to 10). His guess — "it'll just be one long line, probably" — holds.

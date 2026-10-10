@@ -1020,9 +1020,12 @@
           const MO = E.micOpening;
           if (!MO || !crosses(it.t0, it.t1)) continue;
           const whole = cutMark >= 0, row = micRow(MO);
+          // [decibel §410, DEC-180] a VARIANT (rules.json objects.micOpening.variants.<name>) changes the COLOUR alone — the strikes' Stabilo yellow;
+          // the fill's and the outline's opacity, the corners, the row and the two circles are the mic opening's own
+          const micCol = (it.variant && MO.variants && MO.variants[it.variant] && MO.variants[it.variant].colour) || MO.colour;
           const xa = view.xOfSeconds(whole ? it.t0 : Math.max(it.t0, w0)), xb = view.xOfSeconds(whole ? it.t1 : Math.min(it.t1, wInk));
           const micRect = ('<rect class="mic-open" x="' + xa.toFixed(2) + '" y="' + row.y.toFixed(2) + '" width="' + Math.max(1, xb - xa).toFixed(2) + '" height="' + row.h.toFixed(2) +
-            '" rx="' + (MO.cornerSs * ssPx).toFixed(2) + '" fill="' + MO.colour + '" fill-opacity="' + MO.fillOpacity + '" stroke="' + MO.colour +
+            '" rx="' + (MO.cornerSs * ssPx).toFixed(2) + '" fill="' + micCol + '" fill-opacity="' + MO.fillOpacity + '" stroke="' + micCol +
             '" stroke-width="' + (MO.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + MO.strokeOpacity + '"/>');
           const SG = MO.sign;
           let micSign = '';

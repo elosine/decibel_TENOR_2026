@@ -5,7 +5,7 @@
   "score": "piece-Draft01c",
   "window": [
    0,
-   416
+   672
   ],
   "parts": [
    0,
@@ -17,11 +17,11 @@
   ]
  },
  "provenance": {
-  "createdBy": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
+  "createdBy": "tools/notate_section.js (profile trance) --trills --sines --mics --elec --wedges --trillRate 100",
   "date": "2026-10-10",
-  "tool": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
-  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 79 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 85 zone(s) elecPlay as elecReturn overlays. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 416 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 415 s)\" --mics --silent 0-125 --silent 209-416 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416"
+  "tool": "tools/notate_section.js (profile trance) --trills --sines --mics --elec --wedges --trillRate 100",
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. SINES (decibel PLAN 2.12): 35 sine brick(s) as env sine events. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 79 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 85 zone(s) elecPlay as elecReturn overlays. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 672 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 668 s)\" --mics --silent 0-125 --silent 209-672 --gcOnly 125-209 --trills --trillRate 100 --sines --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416"
  },
  "events": [
   {
@@ -21410,6 +21410,5163 @@
    "provenance": "derived",
    "mode": "plain",
    "vel": 86
+  },
+  {
+   "id": "ev-wc-877",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-877"
+   },
+   "onset": 423.307,
+   "duration": 18.399999999999977,
+   "pitch": {
+    "midi": 39,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-878",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-878"
+   },
+   "onset": 423.307,
+   "duration": 18.4,
+   "pitch": {
+    "midi": 39,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 39,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-877"
+   }
+  },
+  {
+   "id": "ev-wc-879",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-879"
+   },
+   "onset": 424.007,
+   "duration": 20.399999999999977,
+   "pitch": {
+    "midi": 76,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-880",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-880"
+   },
+   "onset": 424.007,
+   "duration": 20.4,
+   "pitch": {
+    "midi": 76,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 76,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-879"
+   }
+  },
+  {
+   "id": "ev-wc-881",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-881"
+   },
+   "onset": 425.707,
+   "duration": 25.30000000000001,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-882",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-882"
+   },
+   "onset": 425.707,
+   "duration": 25.3,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 77,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-881"
+   }
+  },
+  {
+   "id": "ev-wc-885",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-885"
+   },
+   "onset": 426.107,
+   "duration": 13.799999999999955,
+   "pitch": {
+    "midi": 63,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-886",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-886"
+   },
+   "onset": 426.107,
+   "duration": 13.8,
+   "pitch": {
+    "midi": 63,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 63,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-885"
+   }
+  },
+  {
+   "id": "ev-wc-883",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-883"
+   },
+   "onset": 426.107,
+   "duration": 6.609999999999957,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-884",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-884"
+   },
+   "onset": 426.107,
+   "duration": 39.2,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 102.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-883"
+   }
+  },
+  {
+   "id": "ev-wc-887",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-887"
+   },
+   "onset": 433.317,
+   "duration": 5.618999999999971,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-888",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-888"
+   },
+   "onset": 439.536,
+   "duration": 5.521999999999991,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-889",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-889"
+   },
+   "onset": 445.658,
+   "duration": 6.2169999999999845,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-890",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-890"
+   },
+   "onset": 446.707,
+   "duration": 55.19999999999999,
+   "pitch": {
+    "midi": 62,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-891",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-891"
+   },
+   "onset": 446.707,
+   "duration": 55.2,
+   "pitch": {
+    "midi": 62,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 62,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-890"
+   }
+  },
+  {
+   "id": "ev-wc-892",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-892"
+   },
+   "onset": 451.307,
+   "duration": 35.099999999999966,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-893",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-893"
+   },
+   "onset": 451.307,
+   "duration": 35.1,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 77,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-892"
+   }
+  },
+  {
+   "id": "ev-wc-894",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-894"
+   },
+   "onset": 452.475,
+   "duration": 6.2409999999999854,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-895",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-895"
+   },
+   "onset": 452.507,
+   "duration": 15.300000000000011,
+   "pitch": {
+    "midi": 39,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-896",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-896"
+   },
+   "onset": 452.507,
+   "duration": 15.3,
+   "pitch": {
+    "midi": 38,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 38,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-895"
+   }
+  },
+  {
+   "id": "ev-wc-897",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-897"
+   },
+   "onset": 459.316,
+   "duration": 5.991000000000042,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-898",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-898"
+   },
+   "onset": 461.807,
+   "duration": 52.799999999999955,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-899",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-899"
+   },
+   "onset": 461.807,
+   "duration": 52.8,
+   "pitch": {
+    "midi": 78,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 78,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-898"
+   }
+  },
+  {
+   "id": "ev-wc-900",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-900"
+   },
+   "onset": 471.707,
+   "duration": 6.447999999999979,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-901",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-901"
+   },
+   "onset": 471.707,
+   "duration": 28.1,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 101.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-900"
+   }
+  },
+  {
+   "id": "ev-wc-902",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-902"
+   },
+   "onset": 477.007,
+   "duration": 51.19999999999999,
+   "pitch": {
+    "midi": 40,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-903",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-903"
+   },
+   "onset": 477.007,
+   "duration": 51.2,
+   "pitch": {
+    "midi": 39,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 39,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-902"
+   }
+  },
+  {
+   "id": "ev-wc-904",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-904"
+   },
+   "onset": 478.755,
+   "duration": 6.0849999999999795,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-905",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-905"
+   },
+   "onset": 485.44,
+   "duration": 6.5160000000000196,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-906",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-906"
+   },
+   "onset": 492.556,
+   "duration": 7.251000000000033,
+   "pitch": {
+    "midi": 77,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-907",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-907"
+   },
+   "onset": 494.407,
+   "duration": 32.80000000000001,
+   "pitch": {
+    "midi": 76,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-908",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-908"
+   },
+   "onset": 494.407,
+   "duration": 32.8,
+   "pitch": {
+    "midi": 76,
+    "spelled": {
+     "step": "E",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 76,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-907"
+   }
+  },
+  {
+   "id": "ev-wc-909",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-909"
+   },
+   "onset": 510.407,
+   "duration": 10.599999999999966,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-910",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-910"
+   },
+   "onset": 510.407,
+   "duration": 10.6,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 42,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-909"
+   }
+  },
+  {
+   "id": "ev-wc-911",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-911"
+   },
+   "onset": 510.707,
+   "duration": 5.836000000000013,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-912",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-912"
+   },
+   "onset": 510.707,
+   "duration": 43.3,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 97.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-911"
+   }
+  },
+  {
+   "id": "ev-wc-913",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-913"
+   },
+   "onset": 517.143,
+   "duration": 5.352999999999952,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-914",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-914"
+   },
+   "onset": 521.507,
+   "duration": 14.5,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-915",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-915"
+   },
+   "onset": 521.507,
+   "duration": 14.5,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 72,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-914"
+   }
+  },
+  {
+   "id": "ev-wc-916",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-916"
+   },
+   "onset": 523.096,
+   "duration": 5.009999999999991,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-917",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-917"
+   },
+   "onset": 528.007,
+   "duration": 29.100000000000023,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-918",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-918"
+   },
+   "onset": 528.007,
+   "duration": 29.1,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 42,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-917"
+   }
+  },
+  {
+   "id": "ev-wc-919",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-919"
+   },
+   "onset": 528.706,
+   "duration": 5.434999999999945,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-920",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-920"
+   },
+   "onset": 533.307,
+   "duration": 19.199999999999932,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-921",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-921"
+   },
+   "onset": 533.307,
+   "duration": 19.2,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 53,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-920"
+   }
+  },
+  {
+   "id": "ev-wc-922",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-922"
+   },
+   "onset": 534.407,
+   "duration": 21.399999999999977,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-923",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-923"
+   },
+   "onset": 534.407,
+   "duration": 21.4,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 46,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-922"
+   }
+  },
+  {
+   "id": "ev-wc-924",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-924"
+   },
+   "onset": 534.741,
+   "duration": 6.024000000000001,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-925",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-925"
+   },
+   "onset": 541.365,
+   "duration": 5.977999999999952,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-926",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-926"
+   },
+   "onset": 542.307,
+   "duration": 16.600000000000023,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-927",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-927"
+   },
+   "onset": 542.307,
+   "duration": 16.6,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 72,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-926"
+   }
+  },
+  {
+   "id": "ev-wc-928",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-928"
+   },
+   "onset": 547.943,
+   "duration": 6.0639999999999645,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-929",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-929"
+   },
+   "onset": 560.107,
+   "duration": 6.415000000000077,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-930",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-930"
+   },
+   "onset": 560.107,
+   "duration": 27.2,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 97.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-929"
+   }
+  },
+  {
+   "id": "ev-wc-931",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-931"
+   },
+   "onset": 562.707,
+   "duration": 10.700000000000045,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-932",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-932"
+   },
+   "onset": 562.707,
+   "duration": 10.7,
+   "pitch": {
+    "midi": 53,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 3
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 53,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-931"
+   }
+  },
+  {
+   "id": "ev-wc-933",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-933"
+   },
+   "onset": 566.307,
+   "duration": 20.399999999999977,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-934",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-934"
+   },
+   "onset": 566.307,
+   "duration": 20.4,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 46,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-933"
+   }
+  },
+  {
+   "id": "ev-wc-935",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-935"
+   },
+   "onset": 567.122,
+   "duration": 6.419000000000096,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-936",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-936"
+   },
+   "onset": 567.407,
+   "duration": 30.699999999999932,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-937",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-937"
+   },
+   "onset": 567.407,
+   "duration": 30.7,
+   "pitch": {
+    "midi": 42,
+    "spelled": {
+     "step": "F",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 42,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-936"
+   }
+  },
+  {
+   "id": "ev-wc-938",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-938"
+   },
+   "onset": 569.607,
+   "duration": 20,
+   "pitch": {
+    "midi": 68,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-939",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-939"
+   },
+   "onset": 569.607,
+   "duration": 20,
+   "pitch": {
+    "midi": 68,
+    "spelled": {
+     "step": "G",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 68,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-938"
+   }
+  },
+  {
+   "id": "ev-wc-940",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-940"
+   },
+   "onset": 574.141,
+   "duration": 6.525000000000091,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-941",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-941"
+   },
+   "onset": 581.266,
+   "duration": 6.041000000000054,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-942",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-942"
+   },
+   "onset": 582.807,
+   "duration": 29.399999999999977,
+   "pitch": {
+    "midi": 51,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-943",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-943"
+   },
+   "onset": 582.807,
+   "duration": 29.4,
+   "pitch": {
+    "midi": 51,
+    "spelled": {
+     "step": "D",
+     "alter": 1,
+     "octave": 3
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 51,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-942"
+   }
+  },
+  {
+   "id": "ev-wc-944",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-944"
+   },
+   "onset": 593.407,
+   "duration": 14.899999999999977,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-945",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-945"
+   },
+   "onset": 593.407,
+   "duration": 14.9,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 46,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-944"
+   }
+  },
+  {
+   "id": "ev-wc-946",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-946"
+   },
+   "onset": 595.707,
+   "duration": 5.597999999999956,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-947",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-947"
+   },
+   "onset": 595.707,
+   "duration": 44.2,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 98.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-946"
+   }
+  },
+  {
+   "id": "ev-wc-948",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-948"
+   },
+   "onset": 599.307,
+   "duration": 23.199999999999932,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-949",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-949"
+   },
+   "onset": 599.307,
+   "duration": 23.2,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 72,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-948"
+   }
+  },
+  {
+   "id": "ev-wc-950",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-950"
+   },
+   "onset": 601.905,
+   "duration": 5.942999999999984,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-951",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-951"
+   },
+   "onset": 607.407,
+   "duration": 8.899999999999977,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-952",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-952"
+   },
+   "onset": 607.407,
+   "duration": 8.9,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 41,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-951"
+   }
+  },
+  {
+   "id": "ev-wc-953",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-953"
+   },
+   "onset": 608.448,
+   "duration": 6,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-954",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-954"
+   },
+   "onset": 615.048,
+   "duration": 5.816000000000031,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-955",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-955"
+   },
+   "onset": 617.207,
+   "duration": 27.200000000000045,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-956",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-956"
+   },
+   "onset": 617.207,
+   "duration": 27.2,
+   "pitch": {
+    "midi": 46,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 46,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-955"
+   }
+  },
+  {
+   "id": "ev-wc-957",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-957"
+   },
+   "onset": 619.607,
+   "duration": 20.100000000000023,
+   "pitch": {
+    "midi": 60,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-958",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-958"
+   },
+   "onset": 619.607,
+   "duration": 20.1,
+   "pitch": {
+    "midi": 60,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 60,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-957"
+   }
+  },
+  {
+   "id": "ev-wc-959",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-959"
+   },
+   "onset": 621.464,
+   "duration": 5.589999999999918,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-960",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-960"
+   },
+   "onset": 626.207,
+   "duration": 41.799999999999955,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29,
+     0.29
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-961",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-961"
+   },
+   "onset": 626.207,
+   "duration": 41.8,
+   "pitch": {
+    "midi": 41,
+    "spelled": {
+     "step": "F",
+     "alter": 0,
+     "octave": 2
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 41,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-960"
+   }
+  },
+  {
+   "id": "ev-wc-962",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-962"
+   },
+   "onset": 627.654,
+   "duration": 6.15300000000002,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-963",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-963"
+   },
+   "onset": 632.507,
+   "duration": 26.700000000000045,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "senza_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-964",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-964"
+   },
+   "onset": 632.507,
+   "duration": 26.7,
+   "pitch": {
+    "midi": 72,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 72,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-963"
+   }
+  },
+  {
+   "id": "ev-wc-965",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-965"
+   },
+   "onset": 634.407,
+   "duration": 5.5,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-966",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-966"
+   },
+   "onset": 646.707,
+   "duration": 6.41700000000003,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-zn-967",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-967"
+   },
+   "onset": 646.707,
+   "duration": 19,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 98.17,
+    "cents": 17,
+    "gliss": "line",
+    "note": "wc-966"
+   }
+  },
+  {
+   "id": "ev-wc-968",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-968"
+   },
+   "onset": 649.507,
+   "duration": 18.600000000000023,
+   "pitch": {
+    "midi": 60,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "vib_vel",
+   "provenance": "derived",
+   "level": {
+    "samples": [
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14,
+     0.14
+    ]
+   }
+  },
+  {
+   "id": "ev-zn-969",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "zn-969"
+   },
+   "onset": 649.507,
+   "duration": 18.6,
+   "pitch": {
+    "midi": 60,
+    "spelled": {
+     "step": "C",
+     "alter": 0,
+     "octave": 4
+    }
+   },
+   "technique": "sine",
+   "provenance": "derived",
+   "env": "sine",
+   "sine": {
+    "midi": 60,
+    "cents": 0,
+    "gliss": "none",
+    "note": "wc-968"
+   }
+  },
+  {
+   "id": "ev-wc-970",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-970"
+   },
+   "onset": 653.724,
+   "duration": 5.51400000000001,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
+  },
+  {
+   "id": "ev-wc-971",
+   "source": {
+    "score": "piece-Draft01c",
+    "objectId": "wc-971"
+   },
+   "onset": 659.838,
+   "duration": 5.869000000000028,
+   "pitch": {
+    "midi": 74,
+    "spelled": {
+     "step": "D",
+     "alter": 0,
+     "octave": 5
+    }
+   },
+   "technique": "crot_bowed",
+   "provenance": "derived",
+   "mode": "plain",
+   "vel": 55
   }
  ],
  "chunks": [
@@ -22258,12 +27415,132 @@
    "part": 0,
    "span": [
     409.848,
-    416
+    424.007
    ],
    "class": "ord-sustained",
    "strategy": "unresolved",
    "events": [
     "ev-wc-804"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-880",
+   "part": 0,
+   "span": [
+    424.007,
+    451.307
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-880",
+    "ev-wc-879"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-893",
+   "part": 0,
+   "span": [
+    451.307,
+    494.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-893",
+    "ev-wc-892"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-908",
+   "part": 0,
+   "span": [
+    494.407,
+    533.307
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-908",
+    "ev-wc-907"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-921",
+   "part": 0,
+   "span": [
+    533.307,
+    562.707
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-921",
+    "ev-wc-920"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-932",
+   "part": 0,
+   "span": [
+    562.707,
+    582.807
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-932",
+    "ev-wc-931"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-943",
+   "part": 0,
+   "span": [
+    582.807,
+    619.607
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-943",
+    "ev-wc-942"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-958",
+   "part": 0,
+   "span": [
+    619.607,
+    649.507
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-958",
+    "ev-wc-957"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-0-zn-969",
+   "part": 0,
+   "span": [
+    649.507,
+    672
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-969",
+    "ev-wc-968"
    ],
    "provenance": "derived"
   },
@@ -23182,12 +28459,117 @@
    "part": 1,
    "span": [
     397.731,
-    416
+    426.107
    ],
    "class": "ord-sustained",
    "strategy": "unresolved",
    "events": [
     "ev-wc-820"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-886",
+   "part": 1,
+   "span": [
+    426.107,
+    446.707
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-886",
+    "ev-wc-885"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-891",
+   "part": 1,
+   "span": [
+    446.707,
+    510.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-891",
+    "ev-wc-890"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-910",
+   "part": 1,
+   "span": [
+    510.407,
+    528.007
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-910",
+    "ev-wc-909"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-918",
+   "part": 1,
+   "span": [
+    528.007,
+    567.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-918",
+    "ev-wc-917"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-937",
+   "part": 1,
+   "span": [
+    567.407,
+    607.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-937",
+    "ev-wc-936"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-952",
+   "part": 1,
+   "span": [
+    607.407,
+    626.207
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-952",
+    "ev-wc-951"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-1-zn-961",
+   "part": 1,
+   "span": [
+    626.207,
+    672
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-961",
+    "ev-wc-960"
    ],
    "provenance": "derived"
   },
@@ -23798,7 +29180,7 @@
    "part": 2,
    "span": [
     397.532,
-    416
+    672
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -24120,12 +29502,452 @@
    "part": 3,
    "span": [
     183.625,
-    416
+    426.107
    ],
    "class": "trill",
    "strategy": "unresolved",
    "events": [
     "ev-zn-566"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-884",
+   "part": 3,
+   "span": [
+    426.107,
+    433.317
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-884",
+    "ev-wc-883"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-887",
+   "part": 3,
+   "span": [
+    433.317,
+    439.536
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-887"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-888",
+   "part": 3,
+   "span": [
+    439.536,
+    445.658
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-888"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-889",
+   "part": 3,
+   "span": [
+    445.658,
+    452.475
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-889"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-894",
+   "part": 3,
+   "span": [
+    452.475,
+    459.316
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-894"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-897",
+   "part": 3,
+   "span": [
+    459.316,
+    471.707
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-897"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-901",
+   "part": 3,
+   "span": [
+    471.707,
+    478.755
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-901",
+    "ev-wc-900"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-904",
+   "part": 3,
+   "span": [
+    478.755,
+    485.44
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-904"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-905",
+   "part": 3,
+   "span": [
+    485.44,
+    492.556
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-905"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-906",
+   "part": 3,
+   "span": [
+    492.556,
+    510.707
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-906"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-912",
+   "part": 3,
+   "span": [
+    510.707,
+    517.143
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-912",
+    "ev-wc-911"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-913",
+   "part": 3,
+   "span": [
+    517.143,
+    523.096
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-913"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-916",
+   "part": 3,
+   "span": [
+    523.096,
+    528.706
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-916"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-919",
+   "part": 3,
+   "span": [
+    528.706,
+    534.741
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-919"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-924",
+   "part": 3,
+   "span": [
+    534.741,
+    541.365
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-924"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-925",
+   "part": 3,
+   "span": [
+    541.365,
+    547.943
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-925"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-928",
+   "part": 3,
+   "span": [
+    547.943,
+    560.107
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-928"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-930",
+   "part": 3,
+   "span": [
+    560.107,
+    567.122
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-930",
+    "ev-wc-929"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-935",
+   "part": 3,
+   "span": [
+    567.122,
+    574.141
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-935"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-940",
+   "part": 3,
+   "span": [
+    574.141,
+    581.266
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-940"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-941",
+   "part": 3,
+   "span": [
+    581.266,
+    595.707
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-941"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-947",
+   "part": 3,
+   "span": [
+    595.707,
+    601.905
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-947",
+    "ev-wc-946"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-950",
+   "part": 3,
+   "span": [
+    601.905,
+    608.448
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-950"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-953",
+   "part": 3,
+   "span": [
+    608.448,
+    615.048
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-953"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-954",
+   "part": 3,
+   "span": [
+    615.048,
+    621.464
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-954"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-959",
+   "part": 3,
+   "span": [
+    621.464,
+    627.654
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-959"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-962",
+   "part": 3,
+   "span": [
+    627.654,
+    634.407
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-962"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-965",
+   "part": 3,
+   "span": [
+    634.407,
+    646.707
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-965"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-zn-967",
+   "part": 3,
+   "span": [
+    646.707,
+    653.724
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-967",
+    "ev-wc-966"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-970",
+   "part": 3,
+   "span": [
+    653.724,
+    659.838
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-970"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-3-wc-971",
+   "part": 3,
+   "span": [
+    659.838,
+    672
+   ],
+   "class": "ord-sustained",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-971"
    ],
    "provenance": "derived"
   },
@@ -25156,12 +30978,117 @@
    "part": 4,
    "span": [
     392.221,
-    416
+    425.707
    ],
    "class": "ord-sustained",
    "strategy": "unresolved",
    "events": [
     "ev-wc-853"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-882",
+   "part": 4,
+   "span": [
+    425.707,
+    461.807
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-882",
+    "ev-wc-881"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-899",
+   "part": 4,
+   "span": [
+    461.807,
+    521.507
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-899",
+    "ev-wc-898"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-915",
+   "part": 4,
+   "span": [
+    521.507,
+    542.307
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-915",
+    "ev-wc-914"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-927",
+   "part": 4,
+   "span": [
+    542.307,
+    569.607
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-927",
+    "ev-wc-926"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-939",
+   "part": 4,
+   "span": [
+    569.607,
+    599.307
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-939",
+    "ev-wc-938"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-949",
+   "part": 4,
+   "span": [
+    599.307,
+    632.507
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-949",
+    "ev-wc-948"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-zn-964",
+   "part": 4,
+   "span": [
+    632.507,
+    672
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-964",
+    "ev-wc-963"
    ],
    "provenance": "derived"
   },
@@ -26122,12 +32049,117 @@
    "part": 5,
    "span": [
     392.122,
-    416
+    423.307
    ],
    "class": "ord-sustained",
    "strategy": "unresolved",
    "events": [
     "ev-wc-870"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-878",
+   "part": 5,
+   "span": [
+    423.307,
+    452.507
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-878",
+    "ev-wc-877"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-896",
+   "part": 5,
+   "span": [
+    452.507,
+    477.007
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-896",
+    "ev-wc-895"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-903",
+   "part": 5,
+   "span": [
+    477.007,
+    534.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-903",
+    "ev-wc-902"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-923",
+   "part": 5,
+   "span": [
+    534.407,
+    566.307
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-923",
+    "ev-wc-922"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-934",
+   "part": 5,
+   "span": [
+    566.307,
+    593.407
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-934",
+    "ev-wc-933"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-945",
+   "part": 5,
+   "span": [
+    593.407,
+    617.207
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-945",
+    "ev-wc-944"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-5-zn-956",
+   "part": 5,
+   "span": [
+    617.207,
+    672
+   ],
+   "class": "sine",
+   "strategy": "unresolved",
+   "events": [
+    "ev-zn-956",
+    "ev-wc-955"
    ],
    "provenance": "derived"
   }
@@ -35632,6 +41664,1386 @@
    "kind": "engraving",
    "target": {
     "event": "ev-wc-804"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-877",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-877"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-879",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-879"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-881",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-881"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-885",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-885"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-883",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-883"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-887",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-887"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-888",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-888"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-889",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-889"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-890",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-890"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-892",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-892"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-894",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-894"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-895",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-895"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-897",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-897"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-898",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-898"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-900",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-900"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-902",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-902"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-904",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-904"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-905",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-905"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-906",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-906"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-907",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-907"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-909",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-909"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-911",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-911"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-913",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-913"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-914",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-914"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-916",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-916"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-917",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-917"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-919",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-919"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-920",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-920"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-922",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-922"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-924",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-924"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-925",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-925"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-926",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-926"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-928",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-928"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-929",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-929"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-931",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-931"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-933",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-933"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-935",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-935"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-936",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-936"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-938",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-938"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-940",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-940"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-941",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-941"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-942",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-942"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-944",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-944"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-946",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-946"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-948",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-948"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-950",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-950"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-951",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-951"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-953",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-953"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-954",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-954"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-955",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-955"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-957",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-957"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-959",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-959"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-960",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-960"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-962",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-962"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-963",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-963"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-965",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-965"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-966",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-966"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-968",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-968"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-970",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-970"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": false,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-silent-ev-wc-971",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-971"
    },
    "value": {
     "device": {
