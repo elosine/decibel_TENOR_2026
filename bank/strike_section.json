@@ -1,0 +1,46 @@
+{
+ "_doc": "SECTION 5B, THE STRIKES — HIS DATA (PLAN.md 1.9 · 17.3; DEC-119 · DEC-120; RUNNING_LOG §342 … §346, 2026-10-09). His strike takes stand in a score of his (scores/sec05b.json), inserted by hand. `node tools/strike_windows.js --score sec05b [--seed N] [--replace] [--dry]` reads THIS file and lays a STRIKE WINDOW brick over every strike that has electronics: its word (notated · open), its span, how many times the electronics answers it, and each answer's rhythm and timing. Nothing here is read by the page or the engine: a change is heard after the tool with --replace and File ▾ → Reload — no engine restart.",
+
+ "sequence": "NNNNNNNN NO ON OOON OOOONOO OONOO NNN NNNNO OOO NO OOOOOO O ONOOO",
+ "_sequence": "HIS LETTERS, as he read them out (DEC-119): N = NOTATED — the strike is played as written (GCs, like piece #5's scattered strikes) · O = OPEN — the ensemble strikes freely inside the window; in the composer score what he played stands in for them. Laid on the strikes IN TIME ORDER, one letter a strike; spaces are only his breaths. He read 53 letters; the score holds fewer strikes with electronics — the letters past the last one fall off the end (his word: 'however many are in the score now'). To move a letter: edit this line, then the tool with --replace.",
+
+ "noElectronicsLast": 4,
+ "_noElectronicsLast": "the last strikes of the section that get NO window and no answer (his: 'the last four strikes have no electronics').",
+
+ "keepEndingClear": true,
+ "_keepEndingClear": "THE AI'S READING, his to reverse with one word (false): no answer may still be sounding when the first of the bare last strikes begins — a timing that would carry an answer into them is swapped for the next timing of the deck that fits, and said in the tool's list. With false, a late answer may fall across the bare strikes.",
+
+ "open": {
+  "factor": 2,
+  "_factor": "an OPEN window is this many times its strike's own length (first hit to last hit) — his 'at least double', no floor (his 'double is fine'). The extra goes AFTER the strike; where the next window is close it goes BEFORE the strike instead; only where neither side has room is the window shorter, and the tool says by how much.",
+  "minMs": 50,
+  "_minMs": "not a floor of his: the least length the engine takes for a window (a strike of one hit has no length to double)."
+ },
+
+ "notated": {
+  "leadMs": 100,
+  "trailMs": 100,
+  "_doc": "a NOTATED window is only the electronics' ear: it hugs its strike — this much before the first hit and after the last, less where a neighbour is close. The players do not see it; they see the strike written out."
+ },
+
+ "minGapMs": 50,
+ "_minGapMs": "his 'smidge': the least room left between two windows — they never overlap.",
+
+ "guardMs": 100,
+ "_guardMs": "technical: a window ends at least this long before the NEXT strike's first hit and begins at least this long after the strike BEFORE's last hit, so that no hit is heard by two windows (the engine listens 50 ms before a window's start and for the brick's own gap after its end).",
+
+ "stretches": {
+  "answers": [1, 2, 3, 1],
+  "_answers": "THE LARGE FORM (DEC-120): the section in stretches of TIME — in the first every strike is answered once, then twice, then three times, then once again. A strike belongs to the stretch its first hit falls in.",
+  "minRatio": 0.6,
+  "_minRatio": "each stretch is SHORTER than the one before ('progressively shorter'), and the shortest is no less than this share of the longest ('the shortest one shouldn't be that much shorter than the longest one'). The AI's first number.",
+  "stepMax": 0.97,
+  "_stepMax": "a stretch is at most this share of the one before it — so that 'shorter' is always heard as shorter. The AI's number."
+ },
+
+ "roll": {
+  "transformations": ["asPlayed", "retrograde", "invert", "spread", "compress", "scramble", "rotate", "thin", "thicken"],
+  "timings": ["rightAfter", "aBeatLater", "callResponse", "muchLater", "inLaterWindow"],
+  "_doc": "what an answer is rolled from — the rig's catalogue WHOLE (DEC-120: 'all the ones … the strike rig that we chose are fine. You can just do a random roll'): each answer draws a rhythm and a timing from a shuffled deck of each (none again until all are used, seeded by --seed). To take one out of the section, delete its word here. The numbers behind each word are bank/strike_responses.json. In a cascade each answer changes the rhythm of the answer before it; the effects on the samples are dealt afresh by the engine at every answer."
+ }
+}

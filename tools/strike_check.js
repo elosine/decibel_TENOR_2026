@@ -82,7 +82,8 @@ if (!score) check('the rig score exists', false, FILE + ' — node tools/build_s
 else {
     wins = score.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecStrike').sort((a, b) => a.startTime - b.startTime);
     notes = score.objects.filter((o) => o.type === 'waveCurve' && o.sonifyNote != null && o.layer < score.tracks.length);
-    const takes = (score.metadata.rig || {}).takes || [];
+    // the page's save drops metadata.rig (his save of the rig, 2026-10-09): the takes are then read from the windows' own tags
+    const takes = ((score.metadata || {}).rig || {}).takes || wins.map((w) => ((w.properties || {}).rig || {}).take).filter(Boolean);
     check('a window over every take, each with a rhythm, a timing and its own seed', wins.length === takes.length && wins.every((w) => SC.TYPES.includes(w.elec.type) && SC.TIMINGS.includes(w.elec.timing) && w.elec.seed > 0) && new Set(wins.map((w) => w.elec.seed)).size === wins.length, wins.length + ' windows, ' + takes.length + ' takes');
     const under = (w) => notes.filter((n) => n.startSeconds >= w.startTime - 0.05 && n.startSeconds <= w.endTime);
     check('every window holds its take\'s notes, and no other window\'s', wins.every((w) => under(w).length > 0 && under(w).every((n) => n.groupId === under(w)[0].groupId)) && wins.every((w, i) => !i || w.startTime > wins[i - 1].endTime), wins.map((w) => under(w).length).join(' '));
@@ -91,6 +92,7 @@ else {
     check('every transformation and every timing on several strikes; no pair twice', SC.TYPES.every((t) => tc[t] >= 2) && SC.TIMINGS.every((t) => wc[t] >= 2) && pairs.size === wins.length, Object.entries(tc).map(([k, v]) => k + ' ' + v).join(' · ') + ' | ' + Object.entries(wc).map(([k, v]) => k + ' ' + v).join(' · '));
     check('every note of the rig is in the set and at the dynamic the builder says', notes.every((n) => n.recVel === notes[0].recVel) && notes.filter((n) => n.layer === 4 || n.layer === 5).every((n) => n.technique === 'stac_vel'), (score.metadata.rig || {}).art + ' · ' + (score.metadata.rig || {}).dyn + ' · ' + notes.length + ' notes');
 }
+let LEO_ = null;   // the module under the stub, kept for the section's checks below
 console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):');
 {
     const sent = [], doc = { createElement: () => { const n = { children: [], style: {}, appendChild(k) { this.children.push(k); return k; }, addEventListener() {}, setAttribute() {}, blur() {} }; return n; } };
@@ -99,7 +101,7 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
     const win = { addEventListener() {}, document: doc, LE: { cfg: { players: [] }, ready: Promise.resolve(), playerOf: (port) => WHO[port] || null, send: (kind, data) => { sent.push({ kind, data }); return Promise.resolve(null); } } };
     const ctx = vm.createContext({ window: win, LE: win.LE, document: doc, fetch: () => Promise.resolve({ ok: false }), performance: { now: () => nowMs }, setTimeout, clearTimeout, console, Promise });
     for (const f of ['le_objects.js', 'le_strike.js']) vm.runInContext(fs.readFileSync(path.join(ROOT, 'electronics', 'score', f), 'utf8'), ctx, { filename: f });
-    const LEO = win.LEObjects;
+    const LEO = win.LEObjects; LEO_ = LEO;
     const objs = score ? score.objects : [];
     const host = { objects: objs, playStartTime: 0, playStartOffset: 0, pixelsPerSecond: 30, activeLane: 2, selectedObject: null, isPartAudible: () => true, stopPlay() {}, renderZone() {}, showPropertyPanel() {}, markDirty() {}, pushUndoState() {}, getTimeAtPlayhead: () => 50,
         createZone(p) { const z = Object.assign({ id: 'zn-new-' + (objs.length + 1), type: 'zone', properties: {} }, p); objs.push(z); return z; }, saveStatus: {} };
@@ -142,6 +144,57 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
         const m2 = LEO.strikeMessage(w1, null, 0);
         check('the box writes the whole setting; the message carries it', m2.type === 'thin' && m2.timing === 'muchLater' && m2.level === 'ff' && m2.deal === 'all' && m2.answerOf === 'W1' && m2.players === 'bfl,vc' && m2.samples === 'a-1,b-2' && /wLo=6,wHi=15/.test(m2.dials), LEO.strikeLabel(w1));
     } else check('a window to test the brick on', false, 'no rig');
+}
+// ---- THE SECTION (PLAN.md 1.9 · 17.3; RUNNING_LOG §346): his strikes under the windows tools/strike_windows.js laid — run after a change to
+// bank/strike_section.json or the tool, the score laid again first. Skipped, said, where no score of that name holds such windows.
+{
+    const SNAME = arg('section', 'sec05b'), SFILE = path.join(ROOT, 'scores', SNAME + '.json');
+    const sec = fs.existsSync(SFILE) ? JSON.parse(fs.readFileSync(SFILE, 'utf8')) : null;
+    const zs = sec ? sec.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecStrike' && o.properties && o.properties.strikeSection).sort((a, b) => a.startTime - b.startTime) : [];
+    console.log('STRIKE_CHECK the section (' + SNAME + '):');
+    if (!zs.length) console.log('  —    no windows of tools/strike_windows.js in scores/' + SNAME + '.json: skipped');
+    else {
+        const W = require(path.join(ROOT, 'tools', 'strike_windows.js')), C = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'strike_section.json'), 'utf8'));
+        const strikes = W.strikesOf(sec), bare = +C.noElectronicsLast || 0, n = strikes.length - bare, seq = String(C.sequence).toUpperCase().replace(/[^NO]/g, '');
+        const byGroup = new Map(strikes.map((x) => [x.group, x])), own = (z) => byGroup.get(z.properties.strikeSection.group);
+        check('a window over every strike but the last ' + bare + ', in time order, each on its own strike', zs.length === n && zs.every((z, i) => own(z) === strikes[i] && z.elec.id === 'W' + (i + 1)), zs.length + ' windows · ' + strikes.length + ' strikes');
+        check('each window says his letter: N notated · O open', zs.every((z, i) => z.elec.mode === (seq[i] === 'O' ? 'open' : 'notated')), zs.filter((z) => z.elec.mode === 'open').length + ' open · ' + zs.filter((z) => z.elec.mode === 'notated').length + ' notated · ' + (seq.length - n) + ' letters past the end');
+        const mg = (+C.minGapMs || 50) / 1000;
+        check('no two windows overlap; at least ' + ms(mg) + ' ms between them', zs.every((z, i) => !i || z.startTime - zs[i - 1].endTime >= mg - 0.0015), 'the least: ' + ms(Math.min(...zs.slice(1).map((z, i) => z.startTime - zs[i].endTime))) + ' ms');
+        // the engine's ear: a window takes a hit from 50 ms before its start to its grace after its end
+        const hears = (z, t) => t >= z.startTime - 0.05 && t <= z.endTime + (z.elec.graceMs != null ? z.elec.graceMs : z.elec.gapMs) / 1000;
+        const all = strikes.flatMap((x, i) => x.notes.map((o) => ({ t: o.startSeconds, i })));
+        check('every hit of a strike with electronics is heard by its own window and by no other; no hit of the bare last strikes by any', all.every((h) => { const by = zs.map((z, k) => (hears(z, h.t) ? k : -1)).filter((k) => k >= 0); return h.i < n ? by.length === 1 && by[0] === h.i : by.length === 0; }), all.length + ' hits');
+        check('the silence that ends a strike is longer than the strike\'s own widest gap', zs.every((z) => z.elec.gapMs > own(z).widest * 1000), 'gaps ' + Math.min(...zs.map((z) => z.elec.gapMs)) + ' … ' + Math.max(...zs.map((z) => z.elec.gapMs)) + ' ms');
+        const F = +(C.open || {}).factor || 2, opens = zs.filter((z) => z.elec.mode === 'open');
+        check('an open window holds its strike and is ' + F + ' × its length (the engine\'s least 50 ms)', opens.every((z) => { const x = own(z), L = x.l - x.f; return z.startTime <= x.f + 0.0006 && z.endTime >= x.l - 0.0006 && z.endTime - z.startTime >= Math.max(F * L, 0.05) - 0.002; }),
+            opens.length + ' open, ' + ms(Math.min(...opens.map((z) => z.endTime - z.startTime))) + ' … ' + ms(Math.max(...opens.map((z) => z.endTime - z.startTime))) + ' ms');
+        // the form: the answers by where a strike falls — 1 · 2 · 3 · 1 in time, each stretch shorter, the shortest ≥ minRatio of the longest
+        const runs = []; zs.forEach((z) => { const a = SC.chainOf(z.elec).length + 1; if (!runs.length || runs[runs.length - 1].a !== a) runs.push({ a, from: own(z).f, k: 0 }); runs[runs.length - 1].k++; });
+        const want = (C.stretches || {}).answers || [1], seed = zs[0].properties.strikeSection.seed;
+        const L = W.lay(Object.assign({}, sec, { objects: sec.objects.filter((o) => !(o.type === 'zone' && o.midiModel === 'elecStrike')) }), C, CAT, seed), len = L.stretches.map((q) => q.lengthS);
+        check('the form: the strikes answered ' + want.join(' · ') + ' times in turn; each stretch shorter than the one before, the shortest at least ' + (C.stretches || {}).minRatio + ' of the longest',
+            runs.map((r) => r.a).join() === want.join() && len.every((v, i) => !i || v < len[i - 1]) && Math.min(...len) / Math.max(...len) >= (+(C.stretches || {}).minRatio || 0) - 1e-9,
+            runs.map((r) => '×' + r.a + ': ' + r.k + ' strikes').join(' · ') + ' | ' + len.map((v) => v.toFixed(1)).join(' > ') + ' s');
+        check('the score\'s windows are what the tool lays from his file at seed ' + seed + ' (a window changed by hand in the page shows here)', L.wins.length === zs.length && L.wins.every((w, i) => w.start === zs[i].startTime && w.end === zs[i].endTime && JSON.stringify(w.elec) === JSON.stringify(zs[i].elec)), L.wins.length + ' windows');
+        const ends = L.wins.map((w) => w.cas[w.cas.length - 1].endS), firstBare = strikes[n];
+        if (C.keepEndingClear && firstBare) check('the ending is kept clear: the last answer is over before the first bare strike', Math.max(...ends) < firstBare.f, Math.max(...ends).toFixed(2) + ' s < ' + firstBare.f.toFixed(2) + ' s');
+        // the cascade on the brick: the message, the label, the preview
+        const z3 = zs.find((z) => SC.chainOf(z.elec).length === 2), x3 = z3 && own(z3);
+        if (z3 && LEO_) {
+            const m = LEO_.strikeMessage(z3, null, 0), ch = SC.chainOf(z3.elec), cas = SC.cascade(x3.ons, z3.elec, CAT);
+            check('a window answered three times: its message says so — the links, each link\'s own numbers, its word, its grace', m.answers === 3 && m.chain === ch.map((l) => l.type + ':' + l.timing + ':' + l.seed).join(',') && m.dials2 === SC.dialsText(SC.dialsFor(CAT, ch[0].type, ch[0].timing)) && m.dials3 === SC.dialsText(SC.dialsFor(CAT, ch[1].type, ch[1].timing)) && m.mode === z3.elec.mode && m.graceMs === z3.elec.graceMs && m.gapMs === z3.elec.gapMs,
+                LEO_.strikeLabel(z3) + ' | chain ' + m.chain);
+            const xp = LEO_.strikeExpected({ objects: sec.objects, isPartAudible: () => true }, z3);
+            check('its preview is the cascade: answer 2 from answer 1\'s rhythm, answer 3 from answer 2\'s, each begun after the one before',
+                xp && xp.answers.length === 3 && xp.answers.every((a, i) => a.onsets.length === cas[i].onsets.length && a.onsets.every((o, j) => near(o.atMs, cas[i].onsets[j].atMs)) && near(a.fromMs, cas[i].fromMs))
+                && cas.every((a, i) => !i || JSON.stringify(a.onsets) === JSON.stringify(SC.answer(cas[i - 1].onsets, ch[i - 1], SC.dialsFor(CAT, ch[i - 1].type, ch[i - 1].timing)).onsets)) && cas.every((a, i) => !i || a.fromMs > cas[i - 1].fromMs + SC.spanMs(cas[i - 1].onsets)),
+                xp ? xp.answers.map((a) => SC.TYPE_NAME[a.type] + ' at ' + a.startS.toFixed(2) + ' s').join(' → ') : 'no preview');
+            const one = zs.find((z) => !SC.chainOf(z.elec).length), m1 = LEO_.strikeMessage(one, null, 0);
+            check('a window answered once sends no chain — the message as it always was, with its word and its grace', !('chain' in m1) && !('answers' in m1) && !('dials2' in m1) && m1.mode === one.elec.mode && m1.graceMs === one.elec.graceMs, LEO_.strikeLabel(one));
+        }
+    }
+    function ms(x) { return Math.round(x * 1000); }
 }
 console.log(fails ? 'STRIKE_CHECK FAIL — ' + fails + ' check(s)' : 'STRIKE_CHECK PASS');
 process.exit(fails ? 1 : 0);
