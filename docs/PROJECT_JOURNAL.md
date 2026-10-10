@@ -210,6 +210,8 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
+**► 2026-10-10 17:39 (Opus, RUNNING_LOG §408 · §409; DEC-177 … DEC-179): THE SINE BOXES ONE HEIGHT (the tallest's, four staff spaces; centred on the notation, moved off the lines), the go line from border to border — on the working page `approaching-beating`. The badge at 560 s: "fine", closed. The list for the next take (`docs/RENDER.md` § 0.2) holds three: the viola's first note silent · the percussion at 236.4 s too quiet · the bass clarinet at 527.75 s too quiet. The beating section is not in the main score yet.**
+
 **► 2026-10-10 17:01 (Opus, RUNNING_LOG §406; DEC-175): THE METER BLUE; THE SINE'S BOX REBUILT TO HIS RULES (round all the notation; an edge in the middle of a space, never on a line; the notation before a go line that stands inside the box — `docs/NOTATION_STANDARDS.md` § 7); THE PLAYER'S LINE (thickness 3, the audible beats' orange, its badge before it, at the lane's bottom). All on the working page `approaching-beating`; a reload, no re-cut. OPEN WITH HIM: the one sine 0.1 s after a page turn (560.1 s) — its badge lands on its own line, its box's left border is cut by the page. The section is not in the main score yet.**
 
 **► 2026-10-10 16:41 (Opus, RUNNING_LOG §405; DEC-174): THE DESIGNATED LANGUAGE COLOUR — the trill's curve is the trills' blue (`#5b9bf5`), the drones' line wedge the multiphonics' yellow (`#F7C40A`): two rows of `rules.json` pointing at the language table; a reload, no re-cut. Open with him: the curve's level meter is still lime green. The beating section's working page (§404) still waits on his eye.**

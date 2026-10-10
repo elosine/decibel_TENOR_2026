@@ -1589,3 +1589,21 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"perc at 236.4 too quiet, just take notes for the rerender"*
 
 *(The AI's reading, marked as such: heard in the take's audio; the place is the percussionist's first drone recording, the bowed China cymbal. A note for the next take, nothing to change now. RUNNING_LOG §407; `docs/RENDER.md` § 0.2.)*
+
+### DEC-177 · 2026-10-10 — the purple boxes all as tall as the tallest; the go line from border to border
+
+*(His words, verbatim — "sign box" is the sine's box — Opus:)* *"the sign box, purple one, at 451. If this in the bass flute, if this is the tallest one, let's make all of them this tall. Um, and if not, let's make them all the, the height of the tallest one. And then you'll just need to center it, center the note or center it around the notation, just like this one is. However, if that centering like occludes one of the staff lines or whatever, then let's go ahead and adjust it. So I guess it's vertical position. So it doesn't include one of the staff lines. And then let's make the um, go line just like this one, more or less go line from top, of the purple box at the bottom, all the way connecting the two borders, if you know it's possible. I know it's a dotted line."*
+
+*(The AI's reading, marked as such: one height for every sine box — the height of the bass flute's at 451 s if it is the tallest, which it is; each box centred on its notation as that one is; where the centring puts an edge on a staff line, the box is moved up or down, not resized; the go line to touch both borders. RUNNING_LOG §408.)*
+
+### DEC-178 · 2026-10-10 — for the re-render: the clarinet at 527.75 s too quiet
+
+*(His words, verbatim — Opus:)* *"Please, clarinet at 527.75 is too quiet. for re-render."*
+
+*(The AI's reading, marked as such: heard in the take's audio; the place is the bass clarinet's beating note that begins at 528.0 s, F♯2. A note for the next take only. RUNNING_LOG §409; `docs/RENDER.md` § 0.2.)*
+
+### DEC-179 · 2026-10-10 — the badge at 560 s: fine
+
+*(His words, verbatim — Opus:)* *"badge at 560 fine"*
+
+*(The AI's reading, marked as such: his answer to the one edge case put to him at §406 — the crotales' sine that begins 0.1 s after a page turn, its badge held at the page's start on its own line. Left as the rules give it. RUNNING_LOG §409.)*

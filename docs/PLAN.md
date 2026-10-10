@@ -915,7 +915,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §406 (DEC-175) — REBUILT TO HIS FIVE RULES (`docs/NOTATION_STANDARDS.md` § 7):** the box goes round ALL the notation (head · accidental · ledger lines · ottava), the padding from the outermost ink, a ledger's overhang an edge; an edge never rides a staff or ledger line — it sits in the middle of a space, the box growing to get there (`objects.sineBox.minPadFrac`); the notation BEFORE its go line (the device on anchor B), the go line INSIDE the box at the sine's start, the right edge the sine's end. **THE PLAYER'S LINE** (`rules.json` `objects.playerLine`): a line wedge of thickness 3 in the audible beats' orange from the go line to the sine's end, the audible beats' badge before it, both at the lane's bottom (the badge the standard gap above it, the line centred on the badge). Measured in the running app; screen edges PASS (35 go lines at x(t)).
 
-**Open, his:** the sine at 560.1 s, 0.1 s after a page turn (its badge lands on its own line; its box's left border is under the page's edge) · the margin (0.5 staff space) · the players' own notes · the cents · the crotales' gliding sines (drawn level) · a head restated where a sine only crosses a page · the spelling (all sharps) · the section into the main score (PLAN 2.10) · its electronics on the presentation view.
+**SINCE §408 (DEC-177): ONE HEIGHT** — `objects.sineBox.heightSs` 4, the tallest box's (the bass flute's at 451 s, measured 4.01): every box that tall, centred on its notation, moved by the least amount that leaves no edge on a line; the go line from border to border (the gaps of its dash eased). **The 560.1 s case: seen, fine (DEC-179).**
+
+**Open, his:** the margin (0.5 staff space) · the players' own notes · the cents · the crotales' gliding sines (drawn level) · a head restated where a sine only crosses a page · the spelling (all sharps) · the section into the main score (PLAN 2.10) · its electronics on the presentation view.
 
 ## 3. The performance score — `todo`
 

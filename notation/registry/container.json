@@ -323,6 +323,7 @@
       "sineBox": true,
       "sineBoxPadSs": "@objects.sineBox.padSs",
       "sineBoxMinPadFrac": "@objects.sineBox.minPadFrac",
+      "sineBoxHeightSs": "@objects.sineBox.heightSs",
       "playerLine": "@objects.playerLine.line",
       "playerLineThick": "@objects.playerLine.thick",
       "playerBadge": "@objects.playerLine.badge",

@@ -2538,8 +2538,29 @@
                     return dir * ((mIn - sInk >= minPadB - 1e-9) ? mIn : mIn + 1);
                   };
                   sineBoxItem.dxSs = +(bL - padB).toFixed(6);
-                  sineBoxItem.topSs = +edgeB(bT, 1).toFixed(6);
-                  sineBoxItem.botSs = +edgeB(bB, -1).toFixed(6);
+                  let topB = edgeB(bT, 1), botB = edgeB(bB, -1);
+                  // [decibel RUNNING_LOG §408 — DEC-177, his "let's make all of them this tall … center it around the notation … if that centering …
+                  // occludes one of the staff lines … adjust … its vertical position"] ONE HEIGHT (rules.json objects.sineBox.heightSs — the tallest
+                  // box of the piece): the box that tall, CENTRED on the notation's ink, then moved by the LEAST amount that leaves neither edge on
+                  // a line — each edge half a space from every staff line and ledger line (the middle of a space, or clear of them all). A tie
+                  // (a head on a line: half a space up or down) goes AWAY from the staff's middle, so a pitch sits in its box as the tallest's
+                  // does. A notation that will not fit keeps the growing rule above, and says so.
+                  const HB = dev.sineBoxHeightSs > 0 ? dev.sineBoxHeightSs : 0;
+                  if (HB) {
+                    if ((bT - bB) + 2 * minPadB > HB + 1e-9) warnings.push('sine box ' + e.id + ': its notation (' + (bT - bB).toFixed(2) + ' ss) with the least padding is taller than objects.sineBox.heightSs (' + HB + ') — the box keeps its own height; raise the row');
+                    else {
+                      const cB = (bT + bB) / 2, t0B = cB + HB / 2, b0B = cB - HB / 2, sgB = cB >= 0 ? 1 : -1;
+                      const clearB = y => linesB.every(v => Math.abs(y - v) >= 0.5 - 0.02);
+                      const candB = [0];
+                      for (const v of linesB) for (const hh of [-0.5, 0.5]) { candB.push(v + hh - t0B); candB.push(v + hh - b0B); }
+                      candB.sort((p, q) => Math.abs(p) - Math.abs(q) > 1e-6 ? 1 : Math.abs(q) - Math.abs(p) > 1e-6 ? -1 : (q - p) * sgB);
+                      const dB = candB.find(d => clearB(t0B + d) && clearB(b0B + d) && t0B + d - bT >= minPadB - 1e-9 && bB - (b0B + d) >= minPadB - 1e-9);
+                      if (dB == null) warnings.push('sine box ' + e.id + ': no place for a box ' + HB + ' ss tall clear of the lines — it keeps its own height');
+                      else { topB = t0B + dB; botB = b0B + dB; }
+                    }
+                  }
+                  sineBoxItem.topSs = +topB.toFixed(6);
+                  sineBoxItem.botSs = +botB.toFixed(6);
                   if (dev.goLine === 'sineBox') sineBoxItem.go = true;
                   // THE PLAYER'S LINE (rules.json objects.playerLine): one thickness from the sine's go line to its end, in its line's colour, its
                   // type's badge before it — both at the lane's bottom (the renderer: row 'badgeLow' · v 'bottom')

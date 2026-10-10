@@ -95,7 +95,9 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **SINCE DEC-175 (RUNNING_LOG §406) — THE BOX GOES ROUND ALL THE NOTATION** (the head, its accidental, its ledger lines, its ottava), the padding from the outermost ink; **an edge never rides a staff line or a ledger line — it sits in the middle of a space**, the box growing to get there; a ledger line's overhang is an edge. The rules: `docs/NOTATION_STANDARDS.md` § 7.
 - **The notation stands BEFORE a go line; the go line is INSIDE the box**, the box's own height, at the moment the sine starts. The box's right edge is the sine's end.
 - **THE PLAYER'S LINE (DEC-175):** under each sine, at the lane's BOTTOM, a line wedge of thickness 3 in the audible beats' orange from the go line to the sine's end (its right edge the box's), with the audible beats' badge before it — the badge the standard gap above the lane's bottom, the line centred on the badge.
-- **Open — his, each at its turn:** the one sine that begins 0.1 s after a page turn (560.1 s: its badge on its own line, its box's left border under the page's edge) · the margin · the players' own notes (silent on this pass) · the cents · the crotales' gliding sines (drawn level) · a head restated on a page a sine only crosses · the spelling (all sharps) · the section into the main score.
+- **ONE HEIGHT (DEC-177, RUNNING_LOG §408):** every box is as tall as the tallest — the bass flute's at 451 s under its 8va, four staff spaces (31.6 px) — centred on its notation, then moved by the least amount that leaves no edge on a line. The go line runs from border to border.
+- **The sine at 560.1 s** (0.1 s after a page turn: its badge on the start of its own line): seen, FINE (DEC-179).
+- **Open — his, each at its turn:** the margin · the players' own notes (silent on this pass) · the cents · the crotales' gliding sines (drawn level) · a head restated on a page a sine only crosses · the spelling (all sharps) · the section into the main score.
 
 ### 6 · The scattered strikes (not yet in the piece)
 - **Announced by:** the scattered strikes' badge.

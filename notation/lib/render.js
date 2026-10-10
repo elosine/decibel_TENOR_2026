@@ -999,8 +999,17 @@
             '" stroke-width="' + (SB.strokeSs * ssPx).toFixed(2) + '" stroke-opacity="' + SB.strokeOpacity + '"/>');
           if (it.go && E.goLine && owns(it.t0)) {
             const GLs = E.goLine;
-            parts.push('<line' + GO(it.t0) + ' class="sine-go" x1="' + xGoS.toFixed(2) + '" y1="' + yST.toFixed(1) + '" x2="' + xGoS.toFixed(2) + '" y2="' + ySB.toFixed(1) +
-              '" stroke="' + GLs.color + '" stroke-width="' + GLs.wPx + '" stroke-opacity="' + GLs.opacity + '" stroke-dasharray="' + GLs.dash + '"/>');
+            // [§408, DEC-177 — his "go line from top of the purple box [to] the bottom, all the way connecting the two borders … I know it's a
+            // dotted line"] BORDER TO BORDER: the go line's own dash length, the GAPS eased so that a whole number of dashes fills the box —
+            // a dash begins on the top border and one ends on the bottom
+            const dsS = String(GLs.dash || '').split(',').map(Number), LhS = ySB - yST;
+            let dashS = GLs.dash;
+            if (dsS.length === 2 && dsS[0] > 0 && dsS[1] >= 0 && LhS > 2 * dsS[0]) {
+              const nS = Math.max(2, Math.round((LhS + dsS[1]) / (dsS[0] + dsS[1]))), gS = (LhS - nS * dsS[0]) / (nS - 1);
+              if (gS >= 0.5) dashS = dsS[0] + ',' + gS.toFixed(3);
+            }
+            parts.push('<line' + GO(it.t0) + ' class="sine-go" x1="' + xGoS.toFixed(2) + '" y1="' + yST.toFixed(2) + '" x2="' + xGoS.toFixed(2) + '" y2="' + ySB.toFixed(2) +
+              '" stroke="' + GLs.color + '" stroke-width="' + GLs.wPx + '" stroke-opacity="' + GLs.opacity + '" stroke-dasharray="' + dashS + '"/>');
           }
         } else if (it.k === 'mic') {
           // [decibel PLAN 2.4 · 2.6 — RUNNING_LOG §325; rules.json objects.micOpening → engraving.render.micOpening] THE MIC OPENING: when the
