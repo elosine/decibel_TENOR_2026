@@ -867,7 +867,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE MIC OPENINGS, 2026-10-10 (DEC-161, RUNNING_LOG §393):** back on the page (`--mics`), each the save's zone = the engine's window (34 of 34 equal); two that broke his rule of §237 closed in the score by the new `tools/mic_gaps.js` (100 ms before the same player's next opening or trill). The cut now: `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label "Approaching — the trills (125 … 209 s)" --trills --trillRate 100 --gcOnly 125-209 --mics`.
 
-**Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+**THE TRILL'S BADGE, 2026-10-10 (DEC-162, RUNNING_LOG §394):** the trills' badge of the language in the `tr`'s place on every trill — `devices.byEnv.trill.techBadge: "trills"`; `objects.badge.sizeSs` (the opening's), the mic row's top, `anchors.D.gapSs` right of the go line; the `tr` glyph kept in the device, one key away.
+
+**Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · whether section 2 still gets its announcing badges, now that each trill has its own · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`
 

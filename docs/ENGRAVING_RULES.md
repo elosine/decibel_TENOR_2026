@@ -43,7 +43,7 @@ LAYER 1 — THE ANCHOR (§414 · §416 · §418): which point of a unit sits on 
 
 Every device of the registry (container.json engraving.layout.devices · figures) and of the technique table (techniques.json familyDevice), its anchor row, its members, and the § that decided it (`sheet` — gate 7). A NEW device begins with a device sheet (`docs/PLANNING_METHOD.md`).
 
-- **byEnv.trill** — anchor **D** · members techSymbol · goLine · envCurve · sheet: decibel RUNNING_LOG §389 (the trill with NO PITCH: the go line · tr · the level curve) — after #5 §438 · §445 · §451 (docs/TRILL_NOTATION_SPEC.md · docs/CURVE_LOOK.md)
+- **byEnv.trill** — anchor **D** · members badge · techSymbol · goLine · envCurve · sheet: decibel RUNNING_LOG §389 (the trill with NO PITCH: the go line · tr · the level curve) — after #5 §438 · §445 · §451 (docs/TRILL_NOTATION_SPEC.md · docs/CURVE_LOOK.md)
 - **byEnv.surge** — anchor **B** · members head · ledger · accidental · ottava · dynamic · dynArrow · goLine · envCurve · sheet: #4 day 22 (the device membership, the nh-unit)
 - **byEnv.strike** — anchor **C** · members cueHead · ledger · accidental · stem · flag · staccatoDot · accent · dynamic · ottava · goLine · gc · sheet: #5 §400 (a strike wears the strike unit)
 - **byEnv.sequence** — anchor **B** · members head · ledger · accidental · number · instruction · dynamic · dynArrow · dynamicLabel · paren · niente · goLine · crescCurve · sheet: §447 (PLAN 2e — first §368 … §380, PLAN 2d) · the fade signs §459 (PLAN 2f — §457 his (a) · (i))

@@ -1495,3 +1495,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"then the mic openings in their standard spots. are those you had them there before are they the correct duration or do they reflect the actual duration of the opening in the mic in the live electronics or let's just make sure they do however Just be wary of the mic openings in percussion at 154. I thought we had resolved those, but the mic openings shouldn't be overlapping. We'll draw it that way, but also we need to make sure the live electronics reflect that. And also the cello at 151. The mic opening shouldn't bleed into the start of the trill. Maybe a little bit of a gap. before."*
 
 *(The AI's reading, marked as such: the mic openings drawn again in their row at the lane's top; each must be the engine's real window — it is, the page and the notation read one zone. The percussionist's two openings at 154 s and the cello's at 151.5 s are corrected IN THE SCORE, so the drawing and the live electronics agree: each ends 100 ms before what it met. His memory is right: both were fixed on 2026-10-08 and the fix is in no file. RUNNING_LOG §393.)*
+
+### DEC-162 · 2026-10-10 — the trills' badge in place of the tr
+
+*(His words, verbatim — Opus:)* *"Now let me see the trill or instead of the trill symbol, can I see it with the trill badges? And we'll have a similar placement. There'll be the smaller trill badges, the smaller badges, same size as we used for the opening, the short attacks there. And same lane height there with the, the gap at top. But also let's maintain that gap to the left side between that and the go line."*
+
+*(The AI's reading, marked as such: every trill carries the trills' badge where the bare `tr` stood — the size of the opening's badges, the same top under the standard gap, the same small gap right of the go line. "Let me see" — a look to judge; the `tr` glyph is one key away. RUNNING_LOG §394.)*

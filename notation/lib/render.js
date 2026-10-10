@@ -1009,7 +1009,8 @@
           const sttCol = stt && E.stateWedge && E.stateWedge.states && E.stateWedge.states[it.type] ? E.stateWedge.states[it.type].colour : null;
           if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
           const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
-          let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
+          // [decibel §394] dxSs: a badge 'at' its time that stands a small gap RIGHT of it (a trill's badge beside its go line — the layout's techBadge)
+          let bx = view.xOfSeconds(it.t) + (it.dxSs ? it.dxSs * ssPx : 0) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above

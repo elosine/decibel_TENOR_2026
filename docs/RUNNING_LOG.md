@@ -7854,3 +7854,20 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **Proven:** `mic_gaps.js --dry` after the write: every opening clear · the page's 34 spans equal to the save's · THE SHIELD green (23 of 24, the trills page the one moved, expected) · `check_rules` 31 of 32 (§45's red) · `check_screen_edges --ir approaching-trills` PASS.
 
 **What follows from it:** the take of §388 (`notation/audio/piece-Draft01c.wav`) is the playback of the save BEFORE this change — two windows 107 and 160 ms longer there. A new take whenever he wants the audio to be the score's. **And his Reload comes before any Save** — the same trap is how this was lost the first time.
+
+## §394. THE TRILL'S SIGN IS THE TRILLS' BADGE — in the `tr`'s place, the opening's badge size, the same top, the same gap beside the go line (DEC-162) (2026-10-10, Opus)
+
+**What prompted it (DEC-162, verbatim — sent while §393 was being written up):** *"Now let me see the trill or instead of the trill symbol, can I see it with the trill badges? And we'll have a similar placement. There'll be the smaller trill badges, the smaller badges, same size as we used for the opening, the short attacks there. And same lane height there with the, the gap at top. But also let's maintain that gap to the left side between that and the go line."*
+
+**Read as:** each trill carries the language's TRILLS badge (DEC-92: `tr` with its wavy line in the format's blue, on the badges' dark ground) where the bare `tr` stood — at the size of the opening's badges (`objects.badge.sizeSs` 5.3, a fifth of the lane, 41.9 px: "the smaller badges" against the three body problem's method badge at 1.3 ×), hung from the top under the standard gap (the mic's row, the mic openings' own top edge), its LEFT edge the same small gap right of the go line that the `tr` kept (`anchors.D.gapSs`, 0.25 ss = 2 px).
+
+**Built — three small places, no re-cut:**
+- **the device** `container.json` `devices.byEnv.trill`: `techBadge: "trills"` (a type of `rules.json` `language.types`); `memberRows` gains `badge`. The `tr` glyph's keys stay in the device and stand again the moment `techBadge` is taken out — one key either way.
+- **the layout** `notation/lib/layout.js`: a device with `techBadge` and no nh-unit emits a `badge` item at the event's time (`place: at`, `dxSs` = `afterGoGapSs`), in the technique symbol's stead.
+- **the renderer** `notation/lib/render.js`: a badge `at` its time honours `dxSs` — its left edge that far right of x(t). Everything else is the badge as built at §325: the mic's row, `objects.badge`, the edge class `clamp`.
+
+**Measured in the running app** (page 3, 149 … 161 s, eight trills): every badge **41.9 × 41.9 px**, its top **15.9 px** (the mic openings' own top on that page: 15.9), its left edge **2.0 px** right of its go line (1142.5 against 1140.5 · 536.5 against 534.5 · …) · no `tr` glyph left on the page · the cello's shortened mic opening ends at 1129.5, its trill's go line 1144.2, the badge from 1146.2.
+
+**Proven:** THE SHIELD green (23 of 24, the trills page the one moved, expected) · `check_rules` 31 of 32 (§45's red; `docs/ENGRAVING_RULES.md` regenerated) · `check_screen_edges --ir approaching-trills` PASS.
+
+**What this does to the scheme:** DEC-100 had a badge ANNOUNCE a section once and "no badge on each" trill (the curve with `tr` was the instance's own sign); DEC-117 then put a badge before EVERY mic opening of the opening. Section 2 now follows the opening: every trill carries its badge. Whether the section still gets its two announcing badges side by side is his, in section 2's talk.

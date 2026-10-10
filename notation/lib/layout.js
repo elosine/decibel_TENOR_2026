@@ -1472,7 +1472,15 @@
             // UNDER IT: a device with a techSymbol, no nh-unit, and techSymbolAt 'laneTop'. The sign stands in the upper left corner of the
             // event's curve — its LEFT ink afterGoGapSs right of the go line (the trill column's rule, #5 §445 · §452, with one member), its TOP
             // techSymbolTopGapSs under the lane's top (the standard gap; the row the mic openings hang in). The renderer places it by the lane.
-            if (dev.techSymbol && !dev.nhUnit && dev.techSymbolAt === 'laneTop') {
+            // [decibel RUNNING_LOG §394, DEC-162 — his "instead of the trill symbol, can I see it with the trill badges … the smaller badges, same size
+            // as we used for the opening … same lane height there with the gap at top … maintain that gap to the left side between that and the go
+            // line"] THE DEVICE'S SIGN AS A LANGUAGE BADGE: a device with `techBadge` (a type of rules.json language.types) and no nh-unit draws that
+            // badge where the sign stood — in the mic's row (objects.badge: the opening's badges' size, hung from the row's top under the standard
+            // gap), its LEFT edge afterGoGapSs right of the go line. It takes the technique symbol's place; without techBadge the symbol stands.
+            if (dev.techBadge && !dev.nhUnit) {
+              const gapB = dev.afterGoGapSs != null ? dev.afterGoGapSs : (o.nhGapSs != null ? o.nhGapSs : 0.25);
+              items.push({ k: 'badge', t: tU, type: dev.techBadge, place: 'at', dxSs: gapB });
+            } else if (dev.techSymbol && !dev.nhUnit && dev.techSymbolAt === 'laneTop') {
               const sgT = glyphs.articulation && glyphs.articulation[dev.techSymbol];
               if (!sgT) warnings.push('event ' + e.id + ': technique symbol glyph "' + dev.techSymbol + '" missing — not drawn');
               else {
