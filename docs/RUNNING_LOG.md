@@ -7555,3 +7555,22 @@ The viola's six now 48 · 50 · 55 · 57 · 66 · 77 (they were 50 · 50 · 51 �
 **Done (the engine's §70):** the drive condition is gone — a reference is in hand when the variant's row was made as live with the plan row's own dials; a changed preset renders once more, `render all planned` renders all. A live ring driven by an earlier take's gains follows the microphone: louder for a louder hit, as a ring from a microphone should. `electronics/sc/petals_live_test.scd` PASS (the check turned: a take 6 dB softer renders nothing now). **His restart is its first run — the third today; said to him plainly.** With it, section 2 queues NO render on any pass; what is heard at the last hit is then the live road alone.
 
 **Kept, for the live-electronics discussion (NITS, the engine's):** the hold still looks only backward; this piece no longer meets it in section 2, but any piece whose non-live variants wait behind a run of close openings will.
+
+## §378. THE BASS CLARINET'S FIRST DRONE RECORDING IS STILL SHORT — measured, not the key; and the last hit read on the restarted engine (DEC-149) (2026-10-10, Opus)
+
+**What prompted it (DEC-149, verbatim):** *"second bass clarinet mic still short Can you collect up the outstanding problems and then make a, a useful summary for the checkpoint? And then I'm going to checkpoint and clear and pass it on to Fable."*
+
+**The bass clarinet at 216.4 s — §369's cure was WRONG.** Read from the bank: `bcl-drone-1` captured 12:26:17 with the note on key 38 — **1799 ms of a 6570 ms window, −32.1 LUFS** (on key 46 it had been 1564 ms, −48.8). Louder, as short. The raw recordings, level over time (`node tools/vet/wav_env.js bank/samples/raw/zn-730.wav 200`):
+
+```
+at 216 s (zn-730, his note wc-731)    0.2 s −31 · 0.6 s −25.6 (the peak) · 1.0 s −35.6 · 1.4 s −51.8 · 1.8 s −64.5 · 2.0 s −70 … silence
+at 242 s (zn-738, the builder's wc-739) 0.2 s −29.5 · 0.6 s −21.8 · 1.4 s −15.1 · 2.4 s −12.0 (the peak) · … 7.2 s −15.1 — held throughout
+```
+
+The SAME key (38), the same preset (`mp_short`), the same lane: one swells for two seconds and holds seven, the other peaks at 0.6 s and is gone by 1.4. So the sample is long enough; **this note is not held** — or it is another, shorter sample of the preset. What differs between the two notes, and nothing else does: `wc-731` is HIS PLAYED NOTE (`sonifyMode: plain`, `recVel` 91 — the main channel, 1) · `wc-739` is a builder's note (`velAbs` 100, no mode — a shaped note, on a curve channel). The page's plain-note road was read (`composer.html`, the note scheduler): a long note's note-off is sent when its end comes into view; no early off was found there. **Two candidates, neither proven:** a velocity layer of *Multiphonics Velocity* (91 against 100 — his "the velocity does not matter" was said of the sound, not of the length) · the main channel's Kontakt slot against a curve channel's. His other played entries hold (the flute's 4.8 s, the viola's, the cello's — all plain, all channel 1), which leans to the velocity layer.
+
+**NOT DIAGNOSED. The remedy by construction, ready, at his word:** give `wc-731` the sounding fields of the note that works (`velAbs` 100, no `sonifyMode` / `recVel`, the builder's flat curve) — one edit of `piece-Draft01c`, then his Reload. To KNOW the cause instead: key 38 twice on the main channel, at velocity 91 and at 100 — it sounds through his rack; his word.
+
+**The lesson, for the record of method:** §369 took "its capture is short" for "its sample is short" and moved the key — a diagnosis from one number. The raw recording's shape was on disk and would have said it in a minute: a held multiphonic swells, a released one falls. A capture's LENGTH is read with its SHAPE.
+
+**The last hit, read on the restarted engine (no claim of his ear):** `sclang` started 12:30:41, after §377's commit (12:28:34). His full pass of section 2 then: the hits captured 12:31:24 … 12:32:22, and **the five at the last hit all captured, 12:32:33** — eleven seconds after the hit before, as the score has them; in the full passes before it they had not been captured at all. **Not one reference render since 12:30.** By the bank the cure holds on a living engine; whether the petals rang is his to say.

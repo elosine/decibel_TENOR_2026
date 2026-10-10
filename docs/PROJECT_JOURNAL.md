@@ -212,7 +212,40 @@ next, where we are; reorganizations only on his approval.
 
 **► CHECKPOINT #4 OF SESSION 3, below (2026-10-10, RUNNING_LOG §368), IS THE COLD-START BLOCK — read it first. Everything else in this NEXT UP section, checkpoint #3 included, is the trail that led to it.**
 
-**► SINCE CHECKPOINT #4 (2026-10-10, Opus; RUNNING_LOG §369 … §371; DEC-140 … DEC-142) — read with the block:**
+**► THE HANDOVER — WHAT IS OUTSTANDING (2026-10-10 12:35, Opus; RUNNING_LOG §369 … §378; DEC-140 … DEC-149) — written for the checkpoint he asked for and for Fable after the clear. THIS BLOCK IS THE COLD START; the "SINCE CHECKPOINT #4" bullets under it are its trail.**
+
+*THE PIECE IN HAND: `scores/piece-Draft01c.json` (his, untracked) — 12:59, six sections. His engine: started 12:30:41, it has every fix of today.*
+
+**A · PROBLEMS OPEN, in the order to take them**
+1. **THE BASS CLARINET'S FIRST DRONE RECORDING (216.4 s) IS STILL SHORT — NOT DIAGNOSED (SWEEP_LIST #18, §378).** Not the key: §369's cure (46 → 38) was wrong. Measured from the raw recordings: this note's sound peaks at 0.6 s and is gone by 1.4 s; the SAME key at 242 s swells and holds seven seconds. The failing note is HIS PLAYED one (`wc-731`: `plain`, velocity 91, the main channel); the one that holds is a builder's (`wc-739`: velocity 100, shaped, a curve channel). Candidates: a velocity layer of the preset (the likelier — his other played entries hold on the same channel) · the channel's slot. **The remedy, ready, at his word:** give `wc-731` the working note's sounding fields — one edit of `piece-Draft01c`, then his Reload. To know the cause: key 38 at velocity 91 and at 100 on the main channel (it sounds; his word).
+2. **THE LAST PETAL HIT (198 s) — CURED BY THE BANK'S RECORD, HIS EAR UNSAID.** Two rounds (§369 · §377): renders ran under it in the one gap over 6 s. On the engine of 12:30 his full pass captured all five at the hit (12:32:33) and no render ran. ASK what he heard; if it missed: his screen first.
+3. **THE TRILLS' VOICE (the page, §369) — unsaid.** A trill played from its own start should be in the ordinary voice now (his F5 was needed).
+4. **THE OPENING IN 1c — UNHEARD AS IT STANDS:** rolled pitches (seed 1, 20 of 30 notes) · distortions 25 → 10 · every return written fff. The first pass after the roll still returns the earlier takes: twice.
+5. **The bass clarinet's THIRD drone recording** (key 34, 271 s) was never measured — after 1.
+
+**B · HIS LETTERS, UNANSWERED (each one line; ask only when its subject comes up)**
+- the diode's length: a · leave it (~400 ms, the impulse's own) · b · a short ring-out stacked after it (~850 ms)
+- the opening re-dealt under the one-card rule (about 3 distortions of 75; it has 10 now): only if he asks
+- the bass flute moves 2 notes of 6 in a pitch roll — a sweep of its four unmapped articulations would widen it (it SOUNDS, minutes): at his word
+- a preset edited from the card: a build, at his word
+
+**C · THE NOTATION — WHERE HE LEFT IT**
+- THE THREE BODY PROBLEM's electronics: each computer player has a HEAD in the gutter — a small bracket and ELEC1 · ELEC2 · ELEC3 (built, §370; **his eye unsaid**). He was told the three are FAMILIES (winds · percussion · strings samples).
+- **He said he would give "what's next on the notation of the electronics"** — that is the next talk (Fable). His standing order after it: section 2 of the notation (the arc of an accented long tone meeting its mic) → the drones → the beating section → the strikes. `docs/NOTATION_SCHEME.md` first.
+
+**D · THE TOOLS OF TODAY (each a line; CLAUDE.md's last state blocks have the commands)**
+- `tools/impulse_pitches.js` + `bank/impulse_pitches.json` — the opening's impulses on other pitches (`--seed N` another variation · `--off` his own pitches)
+- `tools/thin_effects.js` — fewer plays of named effects, the rest dealt again (`--off` puts back)
+- `tools/return_level.js` — a stretch's return bricks at one written level (`--played` takes it off)
+- `bank/presets.json` `groups.distortion` — the distortions ONE card of every deal (a seed no longer gives its old deal)
+- the card: a preset's settings shown whole · the page: a trill's preset always lands · the engine: a live petals queues no render
+
+**E · HOW HIS FILES STAND**
+- `piece-Draft01c` = 1b + the written fff. 1b = `piece-Draft01` + the drone key, the pitch roll, the fifteen swaps. `audition-sec01-fx-updates` = his audition copy (74 bricks fff, his own changes) — HIS WORKING FILE, never touched without his word.
+- **Every tool write is undone by its tool** (`--off` · `--played`; the drone key's `keyWas` is on its opening). The "before" copies are in this session's scratchpad only — NOT durable.
+- After a tool writes a score he has open: File ▾ → Reload BEFORE any Save; "did my save survive" is read from the file, brick by brick (§372).
+
+**► SINCE CHECKPOINT #4 (2026-10-10, Opus; RUNNING_LOG §369 … §371; DEC-140 … DEC-142) — the trail of the block above:**
 - **THE PIECE IN HAND IS `scores/piece-Draft01b.json`** (his copy of `piece-Draft01`; untracked, his).
 - **Three faults of the playback, fixed, NOT HEARD:** the trills' voice (the page: `composer.html`'s zone tick — his F5) · the last petal hit under a burst of renders (the engine: a live petals with its level in hand queues no render — HIS ENGINE RESTART is its first run; a reading from the bank's stamps, the engine's window not seen) · the bass clarinet's first drone recording at 216.4 s (the score: its note key 46 → 38). **His steps: the composer page F5 → `piece-Draft01b` → File ▾ → Reload BEFORE any Save · the engine's window closed, `start_electronics.bat`.**
 - **If the last hit still misses after the restart:** his SCREEN first — the engine's window at the hit says `live · … the microphone open …` for each of the five and whether a `plan · … to render` line stands before it.
