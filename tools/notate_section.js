@@ -278,11 +278,14 @@ if (TRILL_RATE != null && !(parseFloat(TRILL_RATE) > 0)) { console.error('--tril
 // [LGMF PLAN 2d.1] --sequence <grp-seq-…> (repeatable): the group's notes are breaths of the sequence device (env 'sequence')
 const SEQ_GROUPS = [];
 process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) SEQ_GROUPS.push(process.argv[i + 1]); });
+// [decibel §355] the spans of --silent t0-t1 (no @part): their notes are never joined into pulse runs at the extraction (options.oneshots) —
+// a silent note makes no beat, no beam, no tempo label
+const SILENT_SPANS = process.argv.map((a, i) => (a === '--silent' ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
-  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
+  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
   date: new Date().toISOString().slice(0, 10),
-  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
+  toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (flag('wedges') ? ' --wedges' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
 });
 // [§400] THE RANGE ALERT AT BUILD TIME: a technique whose registry `written`
 // entry carries a range (the flute's tongue ram: written = sounding + 11,
@@ -1338,11 +1341,17 @@ for (let i = 0; i < process.argv.length; i++) {
 
 // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS — in this piece a player's page is mostly not notes:
 //   --mics                     (an extraction option, above) every mic opening of the composer score in the window, as `micOpening` overlays
-//   --silent t0-t1[@part]      the notes that begin in [t0, t1) DRAW NOTHING: --bare's switches, and the brick off as well. In his scheme an
+//   --silent t0-t1[@part]      the notes that begin in [t0, t1) DRAW NOTHING: --bare's switches, and the brick off as well; with no @part they
+//                              are also never joined into pulse runs at the extraction (no beat, no beam, no tempo label is made of them). In his scheme an
 //                              event of such a section is its mic opening alone; the note stays in the IR (the save is the ground truth).
 //   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
 //                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
 //   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
+// [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] A METHOD'S SECTION (the three body problem):
+//   --wedges                   (an extraction option) the composer score's containers of a method in the window (zones `tb`), ONE `stateWedge`
+//                              overlay a lane: the line wedge, its colour and thickness by the player's state (rules.json objects.stateWedge)
+//   --announce a+b:t0:t1:lead  the announcement BEFORE t0 on every lane, badges side by side — a method's badge (rules.json methods.badges,
+//                              the larger) then its material's (language.types): --announce threeBody+shortAttacks:39:123.3:lead
 // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE PRESENTATION VIEW'S OWN LAYER — the hint of the electronics, never on a player's page:
 //   --elec                     (an extraction option, above) every return brick of the composer score in the window, as `elecReturn` overlays
 //                              (its span the region the engine rolls the sounds inside; its count the sounds it carries) — drawn in the
@@ -1374,7 +1383,8 @@ for (let i = 0; i < process.argv.length; i++) {
   if (wantBadges) {
     const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
     const LANG = (RULES.language || {}).types || {};
-    const ELEC = (RULES.electronics || {}).badges || {};   // [§335] the electronics' own badges (the presentation view's)
+    const ELEC = (RULES.electronics || {}).badges || {};
+    const METH = (RULES.methods || {}).badges || {};   // [§355] the methods' badges (a section's way of playing together)   // [§335] the electronics' own badges (the presentation view's)
     const mics = doc.overlays.filter(o => o.kind === 'micOpening').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
     const rets = doc.overlays.filter(o => o.kind === 'elecReturn').sort((a, b) => a.target.span[0] - b.target.span[0] || a.target.part - b.target.part);
     const elecBefore = new Set();   // [§336] 'part@t' of every electronics' badge placed BEFORE a brick — the window reaches left to it
@@ -1386,8 +1396,20 @@ for (let i = 0; i < process.argv.length; i++) {
       return { type: f[0], t0, t1, mode: f[3] || null, mics: mics.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9) };
     };
     // [§335] a badge's `row`: absent = the mic's row (a language badge) · 'elec' = the electronics' row (the presentation view's badge)
-    const addBadge = (part, t, type, place, why, row) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: Object.assign({ type, place }, row ? { row } : {}), provenance: 'authored' });
+    const addBadge = (part, t, type, place, why, row, slot) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: Object.assign({ type, place }, row ? { row } : {}, slot ? { slot } : {}), provenance: 'authored' });
     for (const a of argsOf('announce')) {
+      // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] :lead = the announcement stands BEFORE t0 on every lane (a section with no mic opening to
+      // stand before). `a+b` = badges side by side, read left to right, the last nearest the section's start; a name of rules.json
+      // methods.badges is a METHOD's badge (the larger, objects.methodBadge.scale), a name of language.types the material's.
+      const fa = a.split(':');
+      if (fa[3] === 'lead') {
+        const types = fa[0].split('+'), t0 = parseFloat(fa[1]), t1 = parseFloat(fa[2]);
+        if (!(t1 > t0) || !types.length || types.some(x => !LANG[x] && !METH[x])) { console.error('--announce …:lead needs type[+type]:t0:t1:lead with types of rules.json methods.badges (' + Object.keys(METH).join(' · ') + ') or language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
+        const seen = new Set();
+        for (const p of parts) { const k = laneKey(p); if (seen.has(k)) continue; seen.add(k); types.forEach((x, i) => addBadge(p, t0, x, 'before', 'announce', METH[x] ? 'method' : null, types.length - 1 - i)); }
+        console.log('  announce ' + a + ': ' + seen.size + ' lane(s), ' + types.join(' then ') + ' before ' + t0 + ' s');
+        continue;
+      }
       const s = read('announce', a);
       if (s.mode === 'start') {
         const seen = new Set();

@@ -44,9 +44,11 @@
  "_guardMs": "technical: a window ends at least this long before the NEXT strike's first hit and begins at least this long after the strike BEFORE's last hit, so that no hit is heard by two windows (the engine listens 50 ms before a window's start and for the brick's own gap after its end).",
 
  "stretches": {
-  "answers": [1, 2, 3, 4, 2, 1],
-  "_answers": "THE LARGE FORM (DEC-120, restructured DEC-121): the section in stretches of TIME, in a row — in the first every strike is answered once, then twice, three times, FOUR times, then a coda: twice, then once; then the bare last strikes. A strike belongs to the stretch its first hit falls in.",
-  "grow": 4,
+  "answers": [1, 2, 3, 2, 1],
+  "_answers": "THE LARGE FORM (DEC-120, restructured DEC-121): the section in stretches of TIME, in a row — in the first every strike is answered once, then twice, then three times, then a coda: twice, then once; then the bare last strikes. (DEC-128: the stretch of FOUR answers is OUT — his words: too dense; it stood between the three and the coda.) A strike belongs to the stretch its first hit falls in.",
+  "strikes": [11, 20, 25, 6, 1],
+  "_strikes": "DEC-127 (RUNNING_LOG §355), HIS COUNTS: how many STRIKES each stretch holds, in order — 11 answered once · 20 twice · 25 three times · then the coda, 6 twice · 1 once. DEC-128 (RUNNING_LOG §356): the fourteen strikes of the four-answer stretch shared out to the two-answer and the three-answer stretches in proportion to their own 14 and 17 (six and eight); the first stretch and the ending kept. BEFORE IT (DEC-127): 11 · 14 · 17 · 14 four times · then the coda, 6 twice · 1 once ('reducing the four strikes section and adding it to various other ones'; the coda's ×2 'four to six' — six is what the 63 strikes leave). While this line is here the form is CUT BY THESE COUNTS and nothing below is rolled. If he inserts or takes out strikes the counts no longer add up: they are then read as proportions and shared out (the tool says so). Delete this line to roll the form in time again (grow · minRatio · coda below).",
+  "grow": 3,
   "_grow": "DEC-121, his 'invert the growth': the first `grow` stretches RISE — the ×1 the shortest, each a little longer than the one before, the ×4 the longest; the stretches after them are THE CODA, each shorter than the one before and shorter than the opening. (0 = the earlier rule: every stretch shorter than the one before.)",
   "minRatio": 0.6,
   "_minRatio": "the shortest of the growing stretches is no less than this share of the longest ('a little bit longer' each — gentle steps). The AI's first number.",

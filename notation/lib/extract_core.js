@@ -194,6 +194,8 @@
   // on the player's grid). Multi-node material (drawn crescendos, morphs)
   // always SPLITS a stream — its realization is its own chunk.
   const STREAM_JOINABLE = new Set(['fixed-oneshot', 'ord-sustained']);
+  // [decibel §355] options.oneshots → a test "does this event begin in a span whose notes stand alone?", or null
+  const aloneOf = opt => (Array.isArray(opt.oneshots) && opt.oneshots.length ? (e => opt.oneshots.some(s => e.onset >= s[0] - 1e-9 && e.onset < s[1] - 1e-9)) : null);
 
   // Segment one part's time-sorted {ev, cls} items: joinable items form
   // pulse runs; splitter items flush the run and stand alone.
@@ -203,9 +205,14 @@
     let run = [];
     let unit = null;
     const flush = () => { if (run.length) runs.push({ events: run, unit }); run = []; unit = null; };
+    // [decibel PLAN 2.6, RUNNING_LOG §355] options.oneshots [[t0, t1] …]: a note that begins in such a span is NEVER joined to a pulse run — it
+    // stands alone, as a single does. For a section whose notes are one simulated realisation and draw nothing (the three body problem): no
+    // beat, no beam, no tempo label is made of them. Absent = as it always was.
+    const alone = aloneOf(opt);
     for (const item of items) {
       if (!STREAM_JOINABLE.has(item.cls)) { flush(); splitters.push(item); continue; }
       const e = item.ev;
+      if (alone && alone(e)) { flush(); run.push(e); flush(); continue; }
       if (!run.length) { run.push(e); continue; }
       const d = e.onset - run[run.length - 1].onset;
       if (d <= opt.TOL) {
@@ -279,9 +286,11 @@
     let run = [];
     const flush = () => { if (run.length) runs.push(run); run = []; };
     const iois = [];
+    const alone = aloneOf(opt);   // [decibel §355] options.oneshots — see segment()
     for (const item of items) {
       if (!STREAM_JOINABLE.has(item.cls)) { flush(); splitters.push(item); continue; }
       const e = item.ev;
+      if (alone && alone(e)) { flush(); run.push(e); flush(); continue; }
       if (!run.length) { run.push(e); continue; }
       const d = e.onset - run[run.length - 1].onset;
       if (d <= opt.TOL / 2) { splitters.push(item); continue; } // stacked duplicate
@@ -660,6 +669,32 @@
       .map(o => ({ id: 'ov-elec-' + o.id, kind: 'elecReturn', target: { part: o.layer, span: [+o.startTime.toFixed(4), +Math.min(o.endTime, w1).toFixed(4)] },
         value: { source: o.id, behaviour: (o.elec && o.elec.behaviour) || 'plain', count: elecCount(o.elec), all: !!(o.elec && o.elec.name === '*') }, provenance: 'authored' }));
 
+    // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] with options.wedges: THE STATE WEDGE — the composer score's containers of a method (zones
+    // with zoneFunction 'tb', the three body problem's: properties.tb.state far · change · approaching · closePass · breakRejoin; a change's
+    // from · to) that begin in the window, on the parts extracted, as ONE 'stateWedge' overlay A LANE: target { part, span }, value
+    // { segs: [{ t0, t1, state, from?, to? }] } in time order — one continuous wedge a player through the section. A break and rejoin and
+    // the change after it are ONE stretch (DEC-47: 'the silence and the change are one'): that change is folded into it.
+    const wedgeOverlays = [];
+    if (opt.wedges) {
+      const byPart = new Map();
+      for (const o of (score.objects || [])) {
+        if (o.type !== 'zone' || o.zoneFunction !== 'tb' || !(o.properties && o.properties.tb) || !parts.includes(o.layer) || !(o.startTime >= w0 && o.startTime < w1)) continue;
+        if (!byPart.has(o.layer)) byPart.set(o.layer, []);
+        byPart.get(o.layer).push(o);
+      }
+      for (const [part, zs] of [...byPart.entries()].sort((a, b) => a[0] - b[0])) {
+        zs.sort((a, b) => a.startTime - b.startTime);
+        const segs = [];
+        for (const z of zs) {
+          const tb = z.properties.tb, t0 = +z.startTime.toFixed(4), t1 = +Math.min(z.endTime, w1).toFixed(4), last = segs[segs.length - 1];
+          if (!(t1 > t0)) continue;
+          if (tb.state === 'change' && tb.from === 'breakRejoin' && last && last.state === 'breakRejoin') { last.t1 = t1; continue; }
+          segs.push(Object.assign({ t0, t1, state: String(tb.state) }, tb.state === 'change' ? { from: String(tb.from || ''), to: String(tb.to || '') } : {}));
+        }
+        if (segs.length) wedgeOverlays.push({ id: 'ov-wedge-' + part + '-' + Math.round(segs[0].t0 * 1000), kind: 'stateWedge', target: { part, span: [segs[0].t0, segs[segs.length - 1].t1] }, value: { segs }, provenance: 'authored' });
+      }
+    }
+
     return {
       doc: {
         irVersion: '0.1',
@@ -672,11 +707,12 @@
           notes: 'Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL ' + opt.TOL + ' s. Regenerable; authored content belongs in overlays only.'
             + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + flatN + ' trill(s) read a flat level.' : '')
             + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : '')
-            + (opt.elec ? ' THE ELECTRONICS (decibel PLAN 2.7): ' + elecOverlays.length + ' zone(s) elecPlay as elecReturn overlays.' : ''),
+            + (opt.elec ? ' THE ELECTRONICS (decibel PLAN 2.7): ' + elecOverlays.length + ' zone(s) elecPlay as elecReturn overlays.' : '')
+            + (opt.wedges ? ' THE STATE WEDGES (decibel PLAN 2.6): ' + wedgeOverlays.length + ' lane(s), ' + wedgeOverlays.reduce((n, o) => n + o.value.segs.length, 0) + ' stretch(es) of the tb containers as stateWedge overlays.' : ''),
         },
         events,
         chunks,
-        overlays: micOverlays.concat(elecOverlays),
+        overlays: micOverlays.concat(elecOverlays, wedgeOverlays),
       },
       warnings,
     };

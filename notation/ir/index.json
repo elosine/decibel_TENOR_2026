@@ -40,6 +40,16 @@
     37
    ],
    "profile": "trance"
+  },
+  {
+   "id": "approaching-threebody",
+   "label": "Approaching — the three body problem (39 … 123 s)",
+   "score": "piece-3BodyRedo",
+   "window": [
+    37,
+    125
+   ],
+   "profile": "trance"
   }
  ]
 }

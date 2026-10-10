@@ -48,7 +48,7 @@ yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs
 
 **The electronics' signs (the presentation view only)** — the WINDOW: a plain slate-grey rectangle (#708090), fill 10 %, outline 55 %, a grain at 6 %, 4 px round the electronics' row, one round each brick and its badge (DEC-114) · the RETURN BRICK: the mic opening's recipe in purple (#5F4296), its length the region, its height the count (5.8 px a sound, five = the mic opening's height) · the FLOCKING BADGE: piece #1's, slate #2d3748 with the birds in its light blue #5b9bf5, 36 px, 12 px before each brick (`rules.json` `objects.elecWindow` · `objects.elecReturn` · `objects.elecBadge` · the table `electronics`).
 
-**Still to draw:** the three body problem's own badge (piece #2 has one — three discs on orbits, no square) · the line wedge ·
+**Still to draw:** *(the three body problem's badge and the line wedge: drawn, DEC-126)* ·
 the pie dial on a drone's opening (the stack has one: piece #6's breath's clock).
 
 ---
@@ -63,10 +63,10 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **Presentation view (DEC-111 · DEC-112 · DEC-114):** at the lane's bottom, for each of the player's five return bricks a see-through slate-grey WINDOW round the pair: the flocking badge (the quartet's colours), then the purple brick — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
 
 ### 2 · The three body problem (39 … 123 s) — a method, on short attacks
-- **Announced by:** the three body badge, large, with the short attacks' badge small beside it.
-- **Each stretch:** a LINE WEDGE, whose colour and thickness change with the player's state (far apart · approaching · close pass · break and rejoin).
+- **Announced by:** the three body badge — piece #2's own, ported — 30 % larger than a language badge (54 px), then the short attacks' badge (42 px), side by side, ending 12 px before the section's start, on every lane (DEC-126). **BUILT, RUNNING_LOG §355.**
+- **The whole section:** ONE CONTINUOUS LINE WEDGE a player — the composer score's own line wedge, about the lane's middle — its colour and thickness by the player's state (DEC-126): **far apart** blue, thin · **approaching** yellow, growing · **close pass** red, thick · **break and rejoin** purple, a hairline. Across a change it ramps from the one to the other, the colour with it. A break and rejoin and the change after it are one stretch (DEC-47). The colours and thicknesses are the AI's first, his to move: `rules.json` `objects.stateWedge`. **BUILT — the page *Approaching — the three body problem*.**
 - **No mics** in this section.
-- **Open — to decide at its turn:** a simple sign per state as well (an abbreviation? a number?) · the wedge's look · its place in the lane · the three body badge itself.
+- **Open, in his order (DEC-126):** (1) how each state is DENOTED — a number, an abbreviation, something else; (2) whether and how the electronics — the three computer players — are shown to the conductor. His eye on the wedge and the badges first.
 
 ### 3 · Trills and accented long tones (125 … 210 s)
 - **Announced by:** the trills' badge and the accented long tones' badge, side by side.

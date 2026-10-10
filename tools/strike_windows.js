@@ -101,6 +101,30 @@ const stretchesOf = (t0, t1, S, rnd) => {
     let t = t0;
     return lens.map((L, i) => { const from = t; t += L; return { i, answers: answers[i], from: r3(from), to: r3(i === m - 1 ? t1 : t), lengthS: r3(L) }; });
 };
+// THE FORM BY COUNTS (DEC-127: "I'll mention about the number of strikes"): `stretches.strikes` — how many strikes each stretch holds.
+// The counts are his when they add up to the strikes with electronics; when they do not (he has inserted or taken out strikes since),
+// they are read as PROPORTIONS and the strikes are shared out by the largest remainder — every stretch he gave a count keeps at least one.
+const countsOf = (S, n) => {
+    const want = Array.isArray(S.strikes) ? S.strikes.map((v) => Math.max(0, +v || 0)) : null, m = (S.answers || [1]).length;
+    if (!want || want.length !== m || !n) return null;
+    const sum = want.reduce((a, b) => a + b, 0); if (!sum) return null;
+    if (sum === n) return { counts: want.map(Math.round), exact: true };
+    const share = want.map((v) => v * n / sum), counts = share.map((v, i) => Math.max(want[i] > 0 ? 1 : 0, Math.floor(v)));
+    let left = n - counts.reduce((a, b) => a + b, 0);
+    const order = share.map((v, i) => ({ i, r: v - Math.floor(v) })).sort((a, b) => b.r - a.r || a.i - b.i);
+    for (let k = 0; left > 0; k++, left--) counts[order[k % m].i]++;
+    for (let k = 0; left < 0; k++) { const i = order[(m - 1 - (k % m))].i; if (counts[i] > 1) { counts[i]--; left++; } if (k > 10 * m) break; }
+    return { counts, exact: false, sum };
+};
+const stretchesByCount = (strikes, byCount, answersSpec, t1) => {
+    const answers = answersSpec.map((v) => Math.max(1, Math.min(SC.MAXLINKS + 1, Math.round(+v) || 1)));
+    let k = 0;
+    const firsts = byCount.counts.map((c) => { const at = k; k += c; return at; });
+    return byCount.counts.map((c, i) => {
+        const from = strikes[firsts[i]] ? strikes[firsts[i]].f : t1, nextI = firsts[i] + c, to = i === byCount.counts.length - 1 || !strikes[nextI] ? t1 : strikes[nextI].f;
+        return { i, answers: answers[i], from: r3(from), to: r3(Math.min(to, t1)), lengthS: r3(Math.min(to, t1) - from), count: c, first: firsts[i] };
+    });
+};
 // a pool from a list (each once) or from weights { name: count } (each `count` times — a weighted deck, DEC-121); a deck shuffled, dealt, shuffled again when empty
 const poolOf = (spec, known) => Array.isArray(spec) ? spec.filter((t) => known.includes(t)) : Object.entries(spec || {}).filter(([t, n]) => known.includes(t) && +n > 0).flatMap(([t, n]) => new Array(Math.round(+n)).fill(t));
 const deck = (pool, rnd) => { let d = []; return () => { if (!d.length) d = SC.shuffle(pool.slice(), rnd); return d.shift(); }; };
@@ -120,14 +144,16 @@ const lay = (s, C, CAT, seed, opt) => {
     }
     const sp = spans(strikes, letters, C), firstBare = strikes[n];
     const t0 = n ? strikes[0].f : 0, t1 = firstBare ? firstBare.f : (n ? strikes[n - 1].l + 0.001 : 0);
-    const st = stretchesOf(t0, t1, C.stretches || {}, SC.rng(seed * 7919 + 17));
+    // THE FORM: by his COUNTS of strikes a stretch when the file gives them (`stretches.strikes`, DEC-127) — else rolled in time
+    const byCount = countsOf(C.stretches || {}, n);
+    const st = byCount ? stretchesByCount(strikes, byCount, (C.stretches || {}).answers || [1], t1) : stretchesOf(t0, t1, C.stretches || {}, SC.rng(seed * 7919 + 17));
     const R = C.roll || {}, typePool = poolOf(R.transformations || SC.TYPES, SC.TYPES), timingPool = poolOf(R.timings || SC.TIMINGS, SC.TIMINGS), timings = [...new Set(timingPool)];
     if (!typePool.length || !timingPool.length) throw new Error('bank/strike_section.json roll: no transformation or no timing the module knows');
     const rnd = SC.rng(seed * 101 + 7), nextType = deck(typePool, rnd), nextTiming = deck(timingPool, rnd);
     const S = CAT.samples || {}, raw = S.raw !== false;   // DEC-121: the raw captures in a reply's deck, or the processed versions only
     const limit = C.keepEndingClear && firstBare ? firstBare.f - 0.1 : Infinity;
     const wins = sp.map((w, k) => {
-        const x = strikes[k], stretch = st.find((q) => x.f >= q.from - 1e-9 && x.f < q.to) || st[st.length - 1], ear = earOf(x, w, strikes[k + 1], CAT.gapMs);
+        const x = strikes[k], stretch = (byCount ? st.find((q) => k >= q.first && k < q.first + q.count) : st.find((q) => x.f >= q.from - 1e-9 && x.f < q.to)) || st[st.length - 1], ear = earOf(x, w, strikes[k + 1], CAT.gapMs);
         let links = [], swapped = [], dropped = 0, unavoidable = false;
         const endOf = (ls) => { const c = SC.cascade(x.ons, { type: ls[0].type, timing: ls[0].timing, seed: ls[0].seed, chain: ls.slice(1) }, CAT), a = c[c.length - 1]; return x.l + (a.fromMs + SC.spanMs(a.onsets)) / 1000; };
         for (let j = 1; j <= stretch.answers; j++) links.push({ type: nextType(), timing: nextTiming(), seed: seed * 10000 + (k + 1) * 10 + j });
@@ -146,9 +172,9 @@ const lay = (s, C, CAT, seed, opt) => {
         return Object.assign({}, w, { n: k + 1, x, stretch: stretch.i, answers: links.length, elec, cas, swapped, dropped, unavoidable });
     });
     const seqLen = String(C.sequence || '').toUpperCase().replace(/[^NO]/g, '').length;
-    return { strikes, wins, stretches: st, bare: strikes.slice(n), letters, surplus: earlier.size && !(opt && opt.letters) ? 0 : seqLen - n, kept, fresh: fresh_, newGroups: strikes.slice(0, n).filter((x) => earlier.size && !earlier.has(x.group)).map((x) => x.group) };
+    return { strikes, wins, stretches: st, byCount, bare: strikes.slice(n), letters, surplus: earlier.size && !(opt && opt.letters) ? 0 : seqLen - n, kept, fresh: fresh_, newGroups: strikes.slice(0, n).filter((x) => earlier.size && !earlier.has(x.group)).map((x) => x.group) };
 };
-module.exports = { strikesOf, spans, earOf, stretchesOf, poolOf, lay, noteMark };
+module.exports = { strikesOf, spans, earOf, stretchesOf, countsOf, stretchesByCount, poolOf, lay, noteMark };
 if (require.main !== module) return;
 
 // ---- the tool -------------------------------------------------------------------------------------------------------------------
@@ -168,7 +194,7 @@ const nm = (a) => SC.TYPE_NAME[a.type] + ' (' + SC.TIMING_NAME[a.timing] + ')';
 const out = [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + L.strikes.length + ' strikes · ' + L.wins.length + ' with electronics · the last ' + L.bare.length + ' bare · seed ' + SEED,
     (L.kept || L.fresh ? 'the words: ' + L.letters.join('') + '   (' + L.kept + ' kept from the windows laid before · ' + L.fresh + ' new strikes ' + (C.newStrikes === 'notated' ? 'notated' : 'open') + ' — paste the string into `sequence` and lay with --letters to move one)' : 'his letters: ' + L.letters.join('') + (L.surplus ? '   (' + L.surplus + ' more in the file fall off the end)' : '')),
     'the form: ' + L.stretches.map((q) => q.from.toFixed(1) + ' → ' + q.to.toFixed(1) + ' s (' + q.lengthS.toFixed(1) + ' s): ×' + q.answers + ', ' + L.wins.filter((w) => w.stretch === q.i).length + ' strikes').join(' · ')
-        + ' — the shortest ' + Math.round(100 * Math.min(...L.stretches.map((q) => q.lengthS)) / Math.max(...L.stretches.map((q) => q.lengthS))) + ' % of the longest' + (L.wins.some((w) => w.elec.raw === false) ? ' · processed versions only' : ''), '',
+        + (L.byCount ? ' — by his counts of strikes' + (L.byCount.exact ? '' : ' (they add up to ' + L.byCount.sum + ', the score has ' + L.wins.length + ': shared out in proportion)') : ' — rolled in time, the shortest ' + Math.round(100 * Math.min(...L.stretches.map((q) => q.lengthS)) / Math.max(...L.stretches.map((q) => q.lengthS))) + ' % of the longest') + (L.wins.some((w) => w.elec.raw === false) ? ' · processed versions only' : ''), '',
     ' n   strike  at (s)   word      the window (s)        long    of its strike           answers'];
 for (const w of L.wins) {
     const len = w.end - w.start, Ls = w.x.l - w.x.f;

@@ -7172,3 +7172,48 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 | bare | 96.0 · 98.2 · 101.7 · 104.5 | | | 4 | 0 |
 
 161 answers on 63 windows. **Seen in the numbers, said to him:** the coda holds THREE strikes in fourteen seconds (2 + 1) — the stretches are cut in TIME and his strikes thin out toward the end (five in the last 20 s before the bare four), so the ×2 and ×1 of the coda are barely heard as stretches; the growth carries 13 · 14 · 17 · 16 strikes. *(his word: the next entry)*
+
+## §355. THE STRIKES' FORM BY HIS COUNTS (DEC-127) · THE THREE BODY PROBLEM'S PAGE — the line wedge and the two badges, built in the notation score (DEC-126) (2026-10-10, Opus)
+
+### A · The strikes: the form cut by his counts of strikes
+
+**What prompted it:** DEC-127, verbatim in COMPOSITION_NOTES — after the proportions of §354 he answered in STRIKES: 11 answered once · 14 twice · 17 three times · 14 four times · "four to six" twice · one once.
+
+**Built:** `bank/strike_section.json` `stretches.strikes` [11, 14, 17, 14, 6, 1] — while that line stands the form is CUT BY THE COUNTS (the first 11 strikes, the next 14 …) and nothing is rolled; the stretch boundaries fall on strikes, so the seconds are a result. `tools/strike_windows.js` `countsOf` · `stretchesByCount`: counts that add up to the strikes with electronics are taken exactly; counts that do not (he inserts strikes often) are read as PROPORTIONS and shared out by the largest remainder, said in the list. Without the line the form is rolled in time as before (§349). "Four to six" for the coda's twice: six is what 63 strikes leave. `strike_check.js` checks the counts.
+
+**The lay on `sec05d` (seed 1):** 13.7 s ×1 (11 strikes) · 19.3 s ×2 (14) · 20.9 s ×3 (17) · 18.3 s ×4 (14) · 16.0 s ×2 (6) · 4.9 s ×1 (1); 159 answers. PASS. *(Superseded an hour later by §356.)*
+
+### B · The three body problem's page in the notation score
+
+**What prompted it:** DEC-126 — *"three body problem is the bigger three body badge. It's the short attacks, smaller badge. And then we're using the line wedge object … one continuous line wedge, but a different color for every section. And you can just pick from the solid colors as you wish for now … draw the line wedges in, the badges, and then let's discuss the sections indicators and then electronics."*
+
+**Lineage first — two things found before anything was drawn:**
+- **"The line wedge object" is the COMPOSER SCORE's own** (Insert ▾ → Line wedge; `composer.html` `createLineWedge` · `generateLWPath`): a filled band about the lane's middle, a list of nodes `{ pos, thickness }`, thickness 0 … 10 where 10 is a THIRD of the lane's height, straight edges between nodes. (The notation stack's row `objects.lineWedge` is another thing under the same name — a filling ring over a held note, piece #4's, disabled.)
+- **The three body problem's badge exists, his and finished:** piece #2, `scripts/badges/three_body/three_body_badge.svg` — nine trajectory arcs of three bodies and the three bodies, in a rounded square ("locked session 63"). 38 KB: the arcs are polylines of 200 … 500 points; the bodies small bezier shapes.
+
+**Built (the road, save → page):**
+- **The badge** — `node tools/language/port_three_body.js` (new): reads piece #2's drawing (read only), maps its own square onto this piece's 36 units, thins each arc to 70 points (8.9 KB in all), keeps the bodies as drawn under one transform, and writes the block `methods` of `rules.json` (`methods.badges.threeBody`). A METHOD's badge is neither one of the language's six nor the electronics'. Its colour: the format's blue (`@colours.formatBlue.value`) — the AI's pick: the lineage's other method badge, the quartet's flocking, is that blue on that ground. His to change (the tool keeps a colour changed in the file).
+- **Its size** — `objects.methodBadge.scale` 1.3: a method's badge is 1.3 × the language badge, 54.5 px against 41.9 (his "30 % bigger than the current badge"). The short attacks' badge beside it keeps the language badge's size.
+- **The wedge** — `objects.stateWedge`: `maxFrac` 0.3333 (the composer score's third) · `fillOpacity` 0.85 · `place` laneMiddle · `states` — **far apart: SOL_blue, thickness 1.5 · approaching: SOL_yellow, 2.5 growing to 6 · close pass: SOL_red, 9 · break and rejoin: SOL_purple, 0.6** · `change: ramp`. The colours are the AI's picks from the SOL set at his word; the thicknesses its first numbers — thin = sparse and apart, thick = dense and close, approaching the one true wedge.
+- **The extraction** (`notation/lib/extract_core.js`, option `wedges`): the save's containers `zoneFunction: 'tb'` on each lane become ONE `stateWedge` overlay a lane, `value.segs` in time order. **A break and rejoin and the change after it are folded into one stretch** (DEC-47: "the silence and the change are one") — eight stretches a player, not nine.
+- **The drawing** (`notation/lib/layout.js` item `wedge` · `render.js`): one polygon a stretch, no gap between them. In a state: its colour, its thickness. Across a CHANGE: a ramp from the state before's end to the state after's start in an SVG gradient from the one colour to the other (the gradient's id is the lane's, the stretch's and the page's — two pages in one document never share one). A long kind, cut like paper at a page turn (`page_rules.json` `wedge`).
+- **The announcement** — the cutter's `--announce a+b:t0:t1:lead`: the badges side by side BEFORE t0 on every lane (a section with no mic opening to stand before); a name of `methods.badges` is the larger. The badge overlay's `row: 'method'` and `slot` (how many language badges it stands further from its time).
+- **The page:** `node tools/notate_section.js --score piece-3BodyRedo --w0 37 --w1 125 --id approaching-threebody --label "Approaching — the three body problem (39 … 123 s)" --silent 37-125 --wedges --announce threeBody+shortAttacks:39:123.3:lead` — five lanes, eight pages; on each lane the three body badge and the short attacks' badge end 12 px before 39 s, then the wedge runs to 123.3 s.
+
+**A fault met and cured on the way — `--silent` was not silent here.** The opening's notes are single events, far apart; the three body's 177 simulated notes fall into regular runs, and the extractor made 51 of the chunks PULSE STREAMS — each drew a tempo label ("unit 964.0 ms · beat 0.964 s (62 bpm) × 1"), a technique name, beams' rectangles; `check_screen_edges` failed on a text past the frame and `check_rules` on heads past the ottava threshold. The cure is at the extraction, not in the drawing: `options.oneshots` — a note that begins in a `--silent` span is never joined to a pulse run (`extract_core.js` `aloneOf`, in both segmenters); the cutter passes the silent spans. 177 events, 177 single chunks, nothing drawn of them. The notes stay in the IR (the save is the ground truth).
+
+**Proven:** `check_rules` 31 of 32 (§45's red) · THE SHIELD green — 21 of 22 layouts identical, the new page the one moved (a baseline taken before the first edit) · `check_screen_edges --ir approaching-threebody` PASS · **seen in the running app** (his 5500, the AI's pane, three pages): page 1 — the two badges at 875.7 and 942.1 px (54.4 and 41.9 px wide, the second ending 12 px before the wedge), the blue wedge 10.5 px thick from 996 px; page 3 — the yellow wedge growing, the cello's change turning orange; page 5 — the red band 63 px thick tapering through red → purple to the thin purple line. NOT rendered: the film, the print.
+
+**NOT built, his order (DEC-126):** how each state is DENOTED (numbers · abbreviations · other) — a talk · whether and how the electronics (the three computer players, 27 containers) are shown to the conductor — a talk.
+
+## §356. THE STRETCH OF FOUR ANSWERS TAKEN OUT — "too dense"; the form 11 · 20 · 25 · 6 · 1 in `sec05d` and `sec05e` (DEC-128) (2026-10-10, Opus)
+
+**What prompted it:** DEC-128, verbatim in COMPOSITION_NOTES — said mid-build, HAVING HEARD the lay of §355 A: the cascade's first verdict from his ear. *"the four responses section is too dense. So let's eliminate the four responses section and then spread it out to the three and the two … proportionally. But let's leave the one response … let's keep the ending."*
+
+**The arithmetic:** the fourteen strikes of the four-answer stretch shared between the twice (14) and the three-times (17) stretches in proportion — 14 × 14/31 = 6.3 → 6 · 14 × 17/31 = 7.7 → 8. `stretches.answers` [1, 2, 3, 2, 1] · `strikes` [11, 20, 25, 6, 1] · `grow` 3 (for the time roll, unused while the counts stand).
+
+**The lay (seed 1), in both files:** 3.0 → 16.7 s ×1 (13.7 s, 11 strikes) · → 44.7 s ×2 (28.0 s, 20) · → 75.2 s ×3 (30.5 s, 25) · → 91.2 s ×2 (16.0 s, 6) · → 96.0 s ×1 (4.9 s, 1) · the bare four. 11 + 40 + 75 + 12 + 1 = **139 answers** (159 with the four-answer stretch). The last answer ends at 93.8 s. `strike_check.js --section sec05e` PASS.
+
+**Which file:** he said "I'll save this as section 5E" and `scores/sec05e.json` was on disk five seconds after `sec05d` (09:52:07 · 09:52:12), object for object the same. The new form was laid into `sec05d` first, then into `sec05e` — both carry it; `sec05e` is his working file.
+
+**What his ear settled, for the paper:** the cascade as a device stands (he asked for no change to it); its depth has a ceiling in this texture — three. The four-answer stretch held 14 strikes × 4 = 56 answers in 18 seconds, on top of the late answers of the stretch before.

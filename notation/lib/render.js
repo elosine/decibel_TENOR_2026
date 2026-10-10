@@ -990,15 +990,55 @@
           // page that owns its time; on a tiled screen page never left of the page's own start (edge class `clamp`).
           // [§335, DEC-111] A badge whose 'row' is 'elec' is THE ELECTRONICS' badge (rules.json electronics.badges · objects.elecBadge): the same
           // format, drawn in the lane's electronics' row — the presentation view's layer.
-          const elec = it.row === 'elec';
+          // [§355, DEC-126] A badge whose 'row' is 'method' is A METHOD'S badge (rules.json methods.badges · objects.methodBadge): in the mic's row,
+          // objects.methodBadge.scale times the language badge. `slot` n = it stands n language badges (each with its gap) further from its
+          // time than a badge with none — the method's badge with the badge of the section's material beside it.
+          const elec = it.row === 'elec', meth = it.row === 'method';
           const BG = elec ? E.elecBadge : E.badge, LG = E.language, MO = E.micOpening, ER = E.elecReturn;
-          const TB = elec ? (E.electronics && E.electronics.badges) : (LG && LG.types), ty = TB && TB[it.type];
+          const TB = elec ? (E.electronics && E.electronics.badges) : meth ? (E.methods && E.methods.badges) : (LG && LG.types), ty = TB && TB[it.type];
           if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO)) continue;
-          const bs = BG.sizeSs * ssPx, row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
-          let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs);
+          const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
+          let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
             '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
+        } else if (it.k === 'wedge') {
+          // [decibel PLAN 2.6 — RUNNING_LOG §355; DEC-102 · DEC-126; rules.json objects.stateWedge → engraving.render.stateWedge] THE STATE WEDGE:
+          // the composer score's own line wedge — a filled band about the lane's middle, its thickness 0 … 10 of `maxFrac` of the lane's
+          // height — drawn ONCE a player through a whole section, one stretch after another with no gap: in a STATE its colour and its
+          // thickness (a number, or [from, to] for a wedge inside the state); across a CHANGE a ramp from the state before's end to the
+          // state after's start, in a gradient from the one colour to the other. A LONG kind, cut like paper at a page turn (on a tiled
+          // screen page drawn whole inside the page's clip; elsewhere cut at the page's own span, its thickness read at the cut).
+          // No row in the registry = no ink; a state with no row draws nothing.
+          const SW = E.stateWedge;
+          if (!SW || !SW.states || !crosses(it.t0, it.t1)) continue;
+          const whole = cutMark >= 0, maxPx = (lane.yBotPx - lane.yTopPx) * SW.maxFrac, TEN = 10;   // the composer score's thickness scale
+          const cy = SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
+          const halfOf = v => (v / TEN) * maxPx / 2;
+          const endsOf = st => { const r = SW.states[st]; if (!r) return null; const th = Array.isArray(r.thick) ? r.thick : [r.thick, r.thick]; return { c: r.colour, a: +th[0], b: +th[1] }; };
+          for (let si = 0; si < it.segs.length; si++) {
+            const sg = it.segs[si];
+            if (!crosses(sg.t0, sg.t1)) continue;
+            let c0, c1, h0, h1;
+            if (sg.state === 'change') {
+              const A = endsOf(sg.from) || (si > 0 ? endsOf(it.segs[si - 1].state) : null), B = endsOf(sg.to) || (si + 1 < it.segs.length ? endsOf(it.segs[si + 1].state) : null);
+              if (!A || !B) continue;
+              c0 = A.c; c1 = B.c; h0 = A.b; h1 = B.a;
+            } else { const S = endsOf(sg.state); if (!S) continue; c0 = c1 = S.c; h0 = S.a; h1 = S.b; }
+            const ta = whole ? sg.t0 : Math.max(sg.t0, w0), tb = whole ? sg.t1 : Math.min(sg.t1, wInk);
+            if (!(tb > ta)) continue;
+            const at = t => h0 + (h1 - h0) * (t - sg.t0) / (sg.t1 - sg.t0), ha = halfOf(at(ta)), hb = halfOf(at(tb));
+            const xa = view.xOfSeconds(ta), xb = view.xOfSeconds(tb);
+            let fill = c0;
+            if (c0 !== c1) {   // the gradient is laid over the stretch's own span, cut or not; its id is this lane's, this stretch's, this page's
+              const gid = 'swg-' + sysModel.part + '-' + Math.round(sg.t0 * 1000) + '-' + Math.round(w0 * 1000);
+              parts.push('<defs><linearGradient id="' + gid + '" gradientUnits="userSpaceOnUse" x1="' + view.xOfSeconds(sg.t0).toFixed(2) + '" y1="0" x2="' + view.xOfSeconds(sg.t1).toFixed(2) +
+                '" y2="0"><stop offset="0" stop-color="' + c0 + '"/><stop offset="1" stop-color="' + c1 + '"/></linearGradient></defs>');
+              fill = 'url(#' + gid + ')';
+            }
+            parts.push('<path class="state-wedge state-' + esc(sg.state) + '" d="M' + xa.toFixed(2) + ' ' + (cy - ha).toFixed(2) + 'L' + xb.toFixed(2) + ' ' + (cy - hb).toFixed(2) +
+              'L' + xb.toFixed(2) + ' ' + (cy + hb).toFixed(2) + 'L' + xa.toFixed(2) + ' ' + (cy + ha).toFixed(2) + 'Z" fill="' + fill + '" fill-opacity="' + SW.fillOpacity + '"/>');
+          }
         } else if (it.k === 'elecwin') {
           // [decibel PLAN 2.7 — RUNNING_LOG §336; DEC-112; rules.json objects.elecWindow → engraving.render.elecWindow] THE ELECTRONICS' WINDOW: a
           // see-through slate-grey pane over a lane's whole electronics' row for the stretch — the badge and the bricks lie ON it — that says
@@ -1119,7 +1159,7 @@
   // keeping a second list that could quietly disagree with the loop above.
   const POINT_KINDS = ['glyph', 'rest', 'stem', 'dot', 'ledger', 'beam', 'text', 'attackline', 'tick',
     'barline', 'tempotext', 'glissline', 'niente', 'dynarrow', 'hairpin', 'ottava', 'lvslur', 'goline', 'gc', 'slash', 'squiggle', 'badge'];   // [§550] the grace's stroke · [§557] the uneven group's
-  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
+  const LONG_KINDS = ['envcurve', 'cresccurve', 'glisscurve', 'ringbar', 'brick', 'hairpin-timed', 'slur', 'mic', 'elecret', 'elecwin', 'wedge'];   // [§335] the electronics' return brick spans its region · [§336] the window spans the lane's stretch   // [2g.4] the timed hairpin spans time · [§555] the slur spans its notes
   const FURNITURE_KINDS = ['staff', 'clef'];
   // 'tuplet' is neither: it has no window gate at all, because a tuplet bracket
   // belongs to a beam group and the splicer is stamp-atomic — no cut severs a

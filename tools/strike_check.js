@@ -173,10 +173,11 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
         const runs = []; zs.forEach((z) => { const a = SC.chainOf(z.elec).length + 1; if (!runs.length || runs[runs.length - 1].a !== a) runs.push({ a, from: own(z).f, k: 0 }); runs[runs.length - 1].k++; });
         const ST = C.stretches || {}, want = ST.answers || [1], seed = zs[0].properties.strikeSection.seed, grow = Math.round(+ST.grow || 0);
         const L = W.lay(sec, C, CAT, seed), len = L.stretches.map((q) => q.lengthS);   // the score as it stands: the windows in it give the words (DEC-124)
-        const shapeOk = grow
+        // by his counts (stretches.strikes, DEC-127): each stretch holds the count the tool gave it; else the rolled shape in time
+        const shapeOk = L.byCount ? runs.map((r) => r.k).join() === L.byCount.counts.join() : grow
             ? len.slice(0, grow).every((v, i) => !i || v > len[i - 1]) && len[0] / len[grow - 1] >= (+ST.minRatio || 0) - 1e-9 && len.slice(grow).every((v, i, a) => v < (i ? a[i - 1] : len[0]))   // rising to the peak, then a coda each shorter and shorter than the opening
             : len.every((v, i) => !i || v < len[i - 1]) && Math.min(...len) / Math.max(...len) >= (+ST.minRatio || 0) - 1e-9;
-        check('the form: the strikes answered ' + want.join(' · ') + ' times in turn; ' + (grow ? 'the first ' + grow + ' stretches rising (the first ≥ ' + ST.minRatio + ' of the peak), then a coda each shorter than the one before and than the opening' : 'each stretch shorter than the one before, the shortest ≥ ' + ST.minRatio + ' of the longest'),
+        check('the form: the strikes answered ' + want.join(' · ') + ' times in turn; ' + (L.byCount ? 'cut by his counts of strikes (' + (ST.strikes || []).join(' · ') + (L.byCount.exact ? '' : ' — shared out in proportion') + ')' : grow ? 'the first ' + grow + ' stretches rising (the first ≥ ' + ST.minRatio + ' of the peak), then a coda each shorter than the one before and than the opening' : 'each stretch shorter than the one before, the shortest ≥ ' + ST.minRatio + ' of the longest'),
             runs.map((r) => r.a).join() === want.join() && shapeOk,
             runs.map((r) => '×' + r.a + ': ' + r.k + ' strikes').join(' · ') + ' | ' + len.map((v) => v.toFixed(1)).join(' · ') + ' s');
         if ((CAT.samples || {}).raw === false) check('the replies play the processed versions only (the catalogue\'s samples.raw false): every window says so', zs.every((z) => z.elec.raw === false) && (LEO_ ? LEO_.strikeMessage(zs[0], null, 0).raw === 0 : true), zs.length + ' windows');
