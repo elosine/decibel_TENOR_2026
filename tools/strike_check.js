@@ -171,14 +171,18 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
             opens.length + ' open, ' + ms(Math.min(...opens.map((z) => z.endTime - z.startTime))) + ' … ' + ms(Math.max(...opens.map((z) => z.endTime - z.startTime))) + ' ms');
         // the form: the answers by where a strike falls — 1 · 2 · 3 · 1 in time, each stretch shorter, the shortest ≥ minRatio of the longest
         const runs = []; zs.forEach((z) => { const a = SC.chainOf(z.elec).length + 1; if (!runs.length || runs[runs.length - 1].a !== a) runs.push({ a, from: own(z).f, k: 0 }); runs[runs.length - 1].k++; });
-        const want = (C.stretches || {}).answers || [1], seed = zs[0].properties.strikeSection.seed;
+        const ST = C.stretches || {}, want = ST.answers || [1], seed = zs[0].properties.strikeSection.seed, grow = Math.round(+ST.grow || 0);
         const L = W.lay(Object.assign({}, sec, { objects: sec.objects.filter((o) => !(o.type === 'zone' && o.midiModel === 'elecStrike')) }), C, CAT, seed), len = L.stretches.map((q) => q.lengthS);
-        check('the form: the strikes answered ' + want.join(' · ') + ' times in turn; each stretch shorter than the one before, the shortest at least ' + (C.stretches || {}).minRatio + ' of the longest',
-            runs.map((r) => r.a).join() === want.join() && len.every((v, i) => !i || v < len[i - 1]) && Math.min(...len) / Math.max(...len) >= (+(C.stretches || {}).minRatio || 0) - 1e-9,
-            runs.map((r) => '×' + r.a + ': ' + r.k + ' strikes').join(' · ') + ' | ' + len.map((v) => v.toFixed(1)).join(' > ') + ' s');
+        const shapeOk = grow
+            ? len.slice(0, grow).every((v, i) => !i || v > len[i - 1]) && len[0] / len[grow - 1] >= (+ST.minRatio || 0) - 1e-9 && len.slice(grow).every((v, i, a) => v < (i ? a[i - 1] : len[0]))   // rising to the peak, then a coda each shorter and shorter than the opening
+            : len.every((v, i) => !i || v < len[i - 1]) && Math.min(...len) / Math.max(...len) >= (+ST.minRatio || 0) - 1e-9;
+        check('the form: the strikes answered ' + want.join(' · ') + ' times in turn; ' + (grow ? 'the first ' + grow + ' stretches rising (the first ≥ ' + ST.minRatio + ' of the peak), then a coda each shorter than the one before and than the opening' : 'each stretch shorter than the one before, the shortest ≥ ' + ST.minRatio + ' of the longest'),
+            runs.map((r) => r.a).join() === want.join() && shapeOk,
+            runs.map((r) => '×' + r.a + ': ' + r.k + ' strikes').join(' · ') + ' | ' + len.map((v) => v.toFixed(1)).join(' · ') + ' s');
+        if ((CAT.samples || {}).raw === false) check('the replies play the processed versions only (the catalogue\'s samples.raw false): every window says so', zs.every((z) => z.elec.raw === false) && (LEO_ ? LEO_.strikeMessage(zs[0], null, 0).raw === 0 : true), zs.length + ' windows');
         check('the score\'s windows are what the tool lays from his file at seed ' + seed + ' (a window changed by hand in the page shows here)', L.wins.length === zs.length && L.wins.every((w, i) => w.start === zs[i].startTime && w.end === zs[i].endTime && JSON.stringify(w.elec) === JSON.stringify(zs[i].elec)), L.wins.length + ' windows');
         const ends = L.wins.map((w) => w.cas[w.cas.length - 1].endS), firstBare = strikes[n];
-        if (C.keepEndingClear && firstBare) check('the ending is kept clear: the last answer is over before the first bare strike', Math.max(...ends) < firstBare.f, Math.max(...ends).toFixed(2) + ' s < ' + firstBare.f.toFixed(2) + ' s');
+        if (C.keepEndingClear && firstBare) check('the ending is kept clear: the last answer is over before the first bare strike (a lone answer that cannot fit is said)', L.wins.every((w) => w.cas[w.cas.length - 1].endS < firstBare.f || w.unavoidable), Math.max(...ends).toFixed(2) + ' s against ' + firstBare.f.toFixed(2) + ' s · ' + L.wins.filter((w) => w.swapped.length || w.dropped).length + ' windows kept clear, ' + L.wins.filter((w) => w.unavoidable).length + ' over');
         // the cascade on the brick: the message, the label, the preview
         const z3 = zs.find((z) => SC.chainOf(z.elec).length === 2), x3 = z3 && own(z3);
         if (z3 && LEO_) {

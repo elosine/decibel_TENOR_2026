@@ -30,17 +30,27 @@
  "_guardMs": "technical: a window ends at least this long before the NEXT strike's first hit and begins at least this long after the strike BEFORE's last hit, so that no hit is heard by two windows (the engine listens 50 ms before a window's start and for the brick's own gap after its end).",
 
  "stretches": {
-  "answers": [1, 2, 3, 1],
-  "_answers": "THE LARGE FORM (DEC-120): the section in stretches of TIME — in the first every strike is answered once, then twice, then three times, then once again. A strike belongs to the stretch its first hit falls in.",
+  "answers": [1, 2, 3, 4, 2, 1],
+  "_answers": "THE LARGE FORM (DEC-120, restructured DEC-121): the section in stretches of TIME, in a row — in the first every strike is answered once, then twice, three times, FOUR times, then a coda: twice, then once; then the bare last strikes. A strike belongs to the stretch its first hit falls in.",
+  "grow": 4,
+  "_grow": "DEC-121, his 'invert the growth': the first `grow` stretches RISE — the ×1 the shortest, each a little longer than the one before, the ×4 the longest; the stretches after them are THE CODA, each shorter than the one before and shorter than the opening. (0 = the earlier rule: every stretch shorter than the one before.)",
   "minRatio": 0.6,
-  "_minRatio": "each stretch is SHORTER than the one before ('progressively shorter'), and the shortest is no less than this share of the longest ('the shortest one shouldn't be that much shorter than the longest one'). The AI's first number.",
+  "_minRatio": "the shortest of the growing stretches is no less than this share of the longest ('a little bit longer' each — gentle steps). The AI's first number.",
   "stepMax": 0.97,
-  "_stepMax": "a stretch is at most this share of the one before it — so that 'shorter' is always heard as shorter. The AI's number."
+  "_stepMax": "a growing stretch is at most this share of the next — so that 'longer' is always heard as longer. The AI's number.",
+  "coda": {
+   "share": 0.15,
+   "_share": "the coda's share of the section's time (first strike → first bare strike). DEC-121, his 'nine and five seconds at the end, about that' on a section of 93 s: 0.15 → about 14 s.",
+   "step": [0.5, 0.6],
+   "_step": "each coda stretch is this share of the one before it, drawn: 9 s then 5 s, about."
+  }
  },
 
  "roll": {
   "transformations": ["asPlayed", "retrograde", "invert", "spread", "compress", "scramble", "rotate", "thin", "thicken"],
-  "timings": ["rightAfter", "aBeatLater", "callResponse", "muchLater", "inLaterWindow"],
-  "_doc": "what an answer is rolled from — the rig's catalogue WHOLE (DEC-120: 'all the ones … the strike rig that we chose are fine. You can just do a random roll'): each answer draws a rhythm and a timing from a shuffled deck of each (none again until all are used, seeded by --seed). To take one out of the section, delete its word here. The numbers behind each word are bank/strike_responses.json. In a cascade each answer changes the rhythm of the answer before it; the effects on the samples are dealt afresh by the engine at every answer."
+  "_transformations": "every rhythm equally likely, under any timing (DEC-121, his 'b'): a shuffled deck of these, none again until all are used. To take one out, delete its word.",
+  "timings": { "rightAfter": 6, "callResponse": 6, "aBeatLater": 6, "muchLater": 1, "inLaterWindow": 1 },
+  "_timings": "DEC-121, HIS EAR ON THE RIG turned into weights (his 'b'): how many of each timing go into one deck of twenty — the deck shuffled, dealt an answer at a time, shuffled again when empty. His categories followed the timing: the three QUICK ones (right after · call and response · a beat later) were his category 1 ('mostly'), the two LATE ones (much later · in a later window) his category 3 ('once in a while') — so 6 · 6 · 6 · 1 · 1: a late answer one in ten. A number is a share; 0 takes a timing out.",
+  "_doc": "what an answer is rolled from — the rig's catalogue WHOLE (DEC-120: 'all the ones … the strike rig that we chose are fine. You can just do a random roll'), weighted by his ear (DEC-121). The numbers behind each word are bank/strike_responses.json. In a cascade each answer changes the rhythm of the answer before it; the samples and their effects are dealt afresh by the engine at every answer — PROCESSED VERSIONS ONLY since DEC-121 (bank/strike_responses.json samples.raw false)."
  }
 }

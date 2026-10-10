@@ -15,9 +15,11 @@
 //                 windows closer than minGapMs; none nearer a neighbouring strike's hit than guardMs.
 //   THE EAR       each brick's gapMs (the silence that ends its strike) is longer than the strike's own widest gap; its graceMs (how
 //                 long after its end a hit still belongs to it) stops short of the next strike — so no hit is heard by two windows.
-//   THE FORM      `stretches` — the time from the first strike to the first bare one cut into stretches, each shorter than the one
-//                 before (the shortest ≥ minRatio of the longest): in them a strike is answered 1 · 2 · 3 · 1 times. Rolled by --seed.
-//   THE ANSWERS   `roll` — each answer draws a rhythm and a timing from a shuffled deck of each (none again until all are used).
+//   THE FORM      `stretches` — the time from the first strike to the first bare one cut into stretches: with `grow` (DEC-121) the first
+//                 `grow` rise to the peak (each longer, the first ≥ minRatio of the peak) and the rest are a CODA (coda.share of the
+//                 time, each coda.step of the one before); in them a strike is answered 1 · 2 · 3 · 4 · 2 · 1 times. Rolled by --seed.
+//   THE ANSWERS   `roll` — each answer draws a rhythm and a timing from a shuffled deck of each (none again until all are used); a
+//                 deck may be WEIGHTED — { name: count } says how many of each go in (DEC-121: his ear on the rig as weights).
 //                 Answer 1 changes the strike's rhythm; answer 2 changes ANSWER 1's; answer 3 answer 2's (the brick's `chain`). The
 //                 samples and their effects are dealt afresh by the engine at every answer. With keepEndingClear, a timing that would
 //                 carry an answer into the bare last strikes is swapped for one that fits (said).
@@ -73,14 +75,31 @@ const earOf = (x, w, next, catGap) => {
     const graceMs = next ? Math.max(0, Math.min(gapMs, ms(next.f - w.end) - 40)) : gapMs;
     return { gapMs, graceMs };
 };
-// THE LARGE FORM: the time [t0, t1) in stretches, each shorter than the one before, the shortest ≥ minRatio of the longest
+// THE LARGE FORM: the time [t0, t1) in stretches. With `grow` (DEC-121): the first `grow` stretches RISE to the peak — each longer than the
+// one before, the first ≥ minRatio of the peak — and the rest are THE CODA: coda.share of the time, each coda.step of the one before.
+// Without it (the earlier rule): each stretch shorter than the one before, the shortest ≥ minRatio of the longest.
 const stretchesOf = (t0, t1, S, rnd) => {
     const answers = (S.answers || [1]).map((n) => Math.max(1, Math.min(SC.MAXLINKS + 1, Math.round(+n) || 1))), m = answers.length;
-    const hi = Math.min(0.999, +S.stepMax || 0.97), lo = Math.min(hi, m > 1 ? Math.pow(Math.max(0.01, Math.min(1, +S.minRatio || 0.6)), 1 / (m - 1)) : 1);
-    const rel = [1]; for (let i = 1; i < m; i++) rel.push(rel[i - 1] * SC.draw(lo, hi, rnd));
-    const unit = (t1 - t0) / rel.reduce((a, b) => a + b, 0); let t = t0;
-    return rel.map((r, i) => { const from = t; t += r * unit; return { i, answers: answers[i], from: r3(from), to: r3(i === m - 1 ? t1 : t), lengthS: r3(r * unit) }; });
+    const hi = Math.min(0.999, +S.stepMax || 0.97), ratio = Math.max(0.01, Math.min(1, +S.minRatio || 0.6)), T = t1 - t0;
+    const grow = Math.max(0, Math.min(m, Math.round(+S.grow || 0)));
+    let lens;
+    if (!grow) {
+        const lo = Math.min(hi, m > 1 ? Math.pow(ratio, 1 / (m - 1)) : 1), rel = [1];
+        for (let i = 1; i < m; i++) rel.push(rel[i - 1] * SC.draw(lo, hi, rnd));
+        const unit = T / rel.reduce((a, b) => a + b, 0); lens = rel.map((r) => r * unit);
+    } else {
+        const lo = Math.min(hi, grow > 1 ? Math.pow(ratio, 1 / (grow - 1)) : 1), g = new Array(grow).fill(1);
+        for (let i = grow - 2; i >= 0; i--) g[i] = g[i + 1] * SC.draw(lo, hi, rnd);   // backwards from the peak: each a share of the next
+        const k = m - grow, C = S.coda || {}, share = k ? Math.max(0, Math.min(0.9, +C.share || 0.15)) : 0, st = Array.isArray(C.step) ? C.step : [0.5, 0.6];
+        const c = []; for (let j = 0; j < k; j++) c.push(j ? c[j - 1] * SC.draw(+st[0], +st[1], rnd) : 1);
+        const codaT = T * share, growT = T - codaT, gs = g.reduce((a, b) => a + b, 0), cs = c.reduce((a, b) => a + b, 0) || 1;
+        lens = g.map((r) => r / gs * growT).concat(c.map((r) => r / cs * codaT));
+    }
+    let t = t0;
+    return lens.map((L, i) => { const from = t; t += L; return { i, answers: answers[i], from: r3(from), to: r3(i === m - 1 ? t1 : t), lengthS: r3(L) }; });
 };
+// a pool from a list (each once) or from weights { name: count } (each `count` times — a weighted deck, DEC-121); a deck shuffled, dealt, shuffled again when empty
+const poolOf = (spec, known) => Array.isArray(spec) ? spec.filter((t) => known.includes(t)) : Object.entries(spec || {}).filter(([t, n]) => known.includes(t) && +n > 0).flatMap(([t, n]) => new Array(Math.round(+n)).fill(t));
 const deck = (pool, rnd) => { let d = []; return () => { if (!d.length) d = SC.shuffle(pool.slice(), rnd); return d.shift(); }; };
 // the whole lay, pure: the score's strikes + his file + the catalogue + a seed → the windows (nothing written)
 const lay = (s, C, CAT, seed) => {
@@ -90,31 +109,33 @@ const lay = (s, C, CAT, seed) => {
     const letters = seq.slice(0, n).split(''), sp = spans(strikes, letters, C), firstBare = strikes[n];
     const t0 = n ? strikes[0].f : 0, t1 = firstBare ? firstBare.f : (n ? strikes[n - 1].l + 0.001 : 0);
     const st = stretchesOf(t0, t1, C.stretches || {}, SC.rng(seed * 7919 + 17));
-    const R = C.roll || {}, types = (R.transformations || SC.TYPES).filter((t) => SC.TYPES.includes(t)), timings = (R.timings || SC.TIMINGS).filter((t) => SC.TIMINGS.includes(t));
-    if (!types.length || !timings.length) throw new Error('bank/strike_section.json roll: no transformation or no timing the module knows');
-    const rnd = SC.rng(seed * 101 + 7), nextType = deck(types, rnd), nextTiming = deck(timings, rnd);
+    const R = C.roll || {}, typePool = poolOf(R.transformations || SC.TYPES, SC.TYPES), timingPool = poolOf(R.timings || SC.TIMINGS, SC.TIMINGS), timings = [...new Set(timingPool)];
+    if (!typePool.length || !timingPool.length) throw new Error('bank/strike_section.json roll: no transformation or no timing the module knows');
+    const rnd = SC.rng(seed * 101 + 7), nextType = deck(typePool, rnd), nextTiming = deck(timingPool, rnd);
+    const S = CAT.samples || {}, raw = S.raw !== false;   // DEC-121: the raw captures in a reply's deck, or the processed versions only
     const limit = C.keepEndingClear && firstBare ? firstBare.f - 0.1 : Infinity;
     const wins = sp.map((w, k) => {
         const x = strikes[k], stretch = st.find((q) => x.f >= q.from - 1e-9 && x.f < q.to) || st[st.length - 1], ear = earOf(x, w, strikes[k + 1], CAT.gapMs);
-        const links = [], swapped = [];
+        let links = [], swapped = [], dropped = 0, unavoidable = false;
         const endOf = (ls) => { const c = SC.cascade(x.ons, { type: ls[0].type, timing: ls[0].timing, seed: ls[0].seed, chain: ls.slice(1) }, CAT), a = c[c.length - 1]; return x.l + (a.fromMs + SC.spanMs(a.onsets)) / 1000; };
-        for (let j = 1; j <= stretch.answers; j++) {
-            const l = { type: nextType(), timing: nextTiming(), seed: seed * 10000 + (k + 1) * 10 + j };
-            if (endOf(links.concat([l])) > limit) {   // it would still sound over the bare strikes: the first other timing that fits, else the one that ends soonest
-                const was = l.timing, tries = timings.filter((t) => t !== was).map((t) => ({ t, end: endOf(links.concat([Object.assign({}, l, { timing: t })])) }));
-                const fit = tries.find((q) => q.end <= limit) || tries.concat([{ t: was, end: endOf(links.concat([l])) }]).sort((a, b) => a.end - b.end)[0];
-                if (fit && fit.t !== was) { l.timing = fit.t; swapped.push('answer ' + j + ': ' + SC.TIMING_NAME[was] + ' → ' + SC.TIMING_NAME[fit.t]); }
-            }
-            links.push(l);
+        for (let j = 1; j <= stretch.answers; j++) links.push({ type: nextType(), timing: nextTiming(), seed: seed * 10000 + (k + 1) * 10 + j });
+        // THE ENDING KEPT CLEAR: while the last answer would still sound at the first bare strike, the one swap of a timing that brings
+        // the end soonest; when no swap helps, the last answer is dropped (said); a lone answer that cannot fit is left, said.
+        while (endOf(links) > limit) {
+            let best = null;
+            links.forEach((l, i) => timings.forEach((t) => { if (t === l.timing) return; const alt = links.map((q, j) => (j === i ? Object.assign({}, q, { timing: t }) : q)), e = endOf(alt); if (!best || e < best.e) best = { i, t, e, alt }; }));
+            if (best && best.e < endOf(links) - 1e-6) { swapped.push('answer ' + (best.i + 1) + ': ' + SC.TIMING_NAME[links[best.i].timing] + ' → ' + SC.TIMING_NAME[best.t]); links = best.alt; continue; }
+            if (links.length > 1) { links.pop(); dropped++; continue; }
+            unavoidable = true; break;
         }
         const elec = Object.assign({ id: 'W' + (k + 1), mode: w.mode, type: links[0].type, timing: links[0].timing, seed: links[0].seed, gapMs: ear.gapMs, graceMs: ear.graceMs,
-            level: CAT.level || 'mimic', deal: CAT.deal || 'robin', players: [], samples: 'bank', processed: !!((CAT.samples || SC.DEFAULTS.samples).processed) }, links.length > 1 ? { chain: links.slice(1) } : {});
+            level: CAT.level || 'mimic', deal: CAT.deal || 'robin', players: [], samples: 'bank', processed: !!((CAT.samples || SC.DEFAULTS.samples).processed) }, raw ? {} : { raw: false }, links.length > 1 ? { chain: links.slice(1) } : {});
         const cas = SC.cascade(x.ons, elec, CAT).map((a) => Object.assign(a, { startS: r3(x.l + a.fromMs / 1000), endS: r3(x.l + (a.fromMs + SC.spanMs(a.onsets)) / 1000) }));
-        return Object.assign({}, w, { n: k + 1, x, stretch: stretch.i, answers: links.length, elec, cas, swapped });
+        return Object.assign({}, w, { n: k + 1, x, stretch: stretch.i, answers: links.length, elec, cas, swapped, dropped, unavoidable });
     });
     return { strikes, wins, stretches: st, bare: strikes.slice(n), letters, surplus: seq.length - n };
 };
-module.exports = { strikesOf, spans, earOf, stretchesOf, lay, noteMark };
+module.exports = { strikesOf, spans, earOf, stretchesOf, poolOf, lay, noteMark };
 if (require.main !== module) return;
 
 // ---- the tool -------------------------------------------------------------------------------------------------------------------
@@ -134,13 +155,13 @@ const nm = (a) => SC.TYPE_NAME[a.type] + ' (' + SC.TIMING_NAME[a.timing] + ')';
 const out = [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + L.strikes.length + ' strikes · ' + L.wins.length + ' with electronics · the last ' + L.bare.length + ' bare · seed ' + SEED,
     'his letters: ' + L.letters.join('') + (L.surplus ? '   (' + L.surplus + ' more in the file fall off the end)' : ''),
     'the form: ' + L.stretches.map((q) => q.from.toFixed(1) + ' → ' + q.to.toFixed(1) + ' s (' + q.lengthS.toFixed(1) + ' s): ×' + q.answers + ', ' + L.wins.filter((w) => w.stretch === q.i).length + ' strikes').join(' · ')
-        + ' — the shortest ' + Math.round(100 * Math.min(...L.stretches.map((q) => q.lengthS)) / Math.max(...L.stretches.map((q) => q.lengthS))) + ' % of the longest', '',
+        + ' — the shortest ' + Math.round(100 * Math.min(...L.stretches.map((q) => q.lengthS)) / Math.max(...L.stretches.map((q) => q.lengthS))) + ' % of the longest' + (L.wins.some((w) => w.elec.raw === false) ? ' · processed versions only' : ''), '',
     ' n   strike  at (s)   word      the window (s)        long    of its strike           answers'];
 for (const w of L.wins) {
     const len = w.end - w.start, Ls = w.x.l - w.x.f;
     const how = w.mode === 'open' ? ('×' + (Ls > 0 ? (len / Ls).toFixed(2) : '—') + (w.early ? ', ' + ms(w.early) + ' ms before it' : '') + (w.short ? ', SHORT by ' + ms(w.short) + ' ms' : '')) : ('hugs: −' + ms(w.lead) + ' +' + ms(w.trail) + ' ms');
     out.push(String(w.n).padStart(2) + '   ' + ('#' + w.x.strike).padEnd(6) + '  ' + w.x.f.toFixed(2).padStart(6) + '   ' + w.mode.padEnd(8) + '  ' + (w.start.toFixed(2) + ' → ' + w.end.toFixed(2)).padEnd(20) + '  ' + (ms(len) + ' ms').padEnd(7) + ' ' + how.padEnd(23) + ' ×' + w.answers + '  ' + w.cas.map(nm).join(' → ')
-        + '  · to ' + w.cas[w.cas.length - 1].endS.toFixed(1) + ' s' + (w.swapped.length ? '  [kept clear of the ending — ' + w.swapped.join('; ') + ']' : ''));
+        + '  · to ' + w.cas[w.cas.length - 1].endS.toFixed(1) + ' s' + (w.swapped.length || w.dropped ? '  [kept clear of the ending — ' + w.swapped.concat(w.dropped ? [w.dropped + ' answer' + (w.dropped > 1 ? 's' : '') + ' dropped'] : []).join('; ') + ']' : '') + (w.unavoidable ? '  [OVER THE BARE STRIKES — no timing fits]' : ''));
 }
 L.bare.forEach((x, i) => out.push(String(L.wins.length + i + 1).padStart(2) + '   ' + ('#' + x.strike).padEnd(6) + '  ' + x.f.toFixed(2).padStart(6) + '   —         no electronics'));
 const shortN = L.wins.filter((w) => w.short).length, earlyN = L.wins.filter((w) => w.early).length, lastEnd = Math.max(0, ...L.wins.map((w) => w.cas[w.cas.length - 1].endS));
@@ -167,7 +188,7 @@ const sheet = ['# SECTION 5B, THE STRIKES — `scores/' + NAME + '.json`', '',
     L.strikes.length + ' strikes of his, ' + L.wins.length + ' with electronics, the last ' + L.bare.length + ' bare. **NOTATED** = played as written; **OPEN** = the ensemble strikes freely inside the window (what he played stands in for them). The electronics hears each strike through its window and answers after it — once, twice or three times by where the strike falls in the form; in a cascade each answer changes the rhythm of the answer before it.', '',
     '**The form (seed ' + SEED + '):** ' + L.stretches.map((q) => q.from.toFixed(1) + ' → ' + q.to.toFixed(1) + ' s — ' + q.lengthS.toFixed(1) + ' s, **' + q.answers + '** answer' + (q.answers > 1 ? 's' : '') + ' a strike, ' + L.wins.filter((w) => w.stretch === q.i).length + ' strikes').join(' · ') + '.', '',
     '| n | strike # | at (s) | word | the window (s) | long (ms) | answers | the answers: rhythm (timing) | the last answer ends (s) |', '|---|---|---|---|---|---|---|---|---|']
-    .concat(L.wins.map((w) => '| ' + w.n + ' | ' + w.x.strike + ' | ' + w.x.f.toFixed(2) + ' | **' + w.mode + '** | ' + w.start.toFixed(2) + ' → ' + w.end.toFixed(2) + (w.early ? ' (begins ' + ms(w.early) + ' ms before the strike)' : '') + (w.short ? ' (SHORT by ' + ms(w.short) + ' ms)' : '') + ' | ' + ms(w.end - w.start) + ' | ' + w.answers + ' | ' + w.cas.map(nm).join(' → ') + (w.swapped.length ? ' *(kept clear of the ending)*' : '') + ' | ' + w.cas[w.cas.length - 1].endS.toFixed(1) + ' |'))
+    .concat(L.wins.map((w) => '| ' + w.n + ' | ' + w.x.strike + ' | ' + w.x.f.toFixed(2) + ' | **' + w.mode + '** | ' + w.start.toFixed(2) + ' → ' + w.end.toFixed(2) + (w.early ? ' (begins ' + ms(w.early) + ' ms before the strike)' : '') + (w.short ? ' (SHORT by ' + ms(w.short) + ' ms)' : '') + ' | ' + ms(w.end - w.start) + ' | ' + w.answers + ' | ' + w.cas.map(nm).join(' → ') + (w.swapped.length || w.dropped ? ' *(kept clear of the ending' + (w.dropped ? ': ' + w.dropped + ' dropped' : '') + ')*' : '') + (w.unavoidable ? ' *(over the bare strikes — no timing fits)*' : '') + ' | ' + w.cas[w.cas.length - 1].endS.toFixed(1) + ' |'))
     .concat(L.bare.map((x, i) => '| ' + (L.wins.length + i + 1) + ' | ' + x.strike + ' | ' + x.f.toFixed(2) + ' | — | no electronics | | | | |'))
     .concat(['', 'A letter moved, a number changed: `bank/strike_section.json`, then the tool with `--replace`, then File ▾ → Reload — no engine restart. Another roll of the form and the answers: `--seed N`. One window by hand: its panel (Mode · Answers · a row an answer).']);
 fs.writeFileSync(path.join(ROOT, 'docs', 'STRIKE_SECTION.md'), sheet.join('\n') + '\n');

@@ -9,6 +9,8 @@
  "samples": {
   "processed": true,
   "_processed": "the processed versions of the impulses are rolled beside the raw captures; a player's deck is shuffled when empty, none twice until all are used",
+  "raw": false,
+  "_raw": "DEC-121 (RUNNING_LOG §349), his 'all the impulses should be processed in this response': false = the RAW captures are OUT of a reply's deck — only the processed versions (with the endings above) are dealt; true = the captures in beside them, as the rig first had it. A brick's own `raw` overrides.",
   "envs": [
    "perc",
    "expodec"
