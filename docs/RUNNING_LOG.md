@@ -7263,6 +7263,31 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 
 **Another roll is one number:** `--seed 3 --replace`, then File ▾ → Reload — no engine restart. The proposals of §358 (the change of state · the electronics in the notation) still wait for his letters.
 
+## §365. SECTION 5 IN THE PIECE — `piece-Draft01`, the first strike at 677 s · THE STATE SIGNS AS HE CHOSE THEM, in the notation (DEC-137) (2026-10-10, Opus)
+
+### A · Section 5 into the main score (running order 17.4)
+
+**His word (DEC-137):** *"sec05-finalDraft Section five is there … insert it into the main score now called piece-Draft01 and insert it at 677. So the first strike starts at 677."*
+
+**Read first:** `scores/sec05-finalDraft.json` (HIS, saved 10:52:37) — 441 objects: 67 strikes (20 staccato · 27 slap tongue and Bartók pizzicato · 20 flutter tongue and gettato), 63 windows at seed 2; its first strike at 3.034 s of its own time, its last object ending at 104.77 s. `scores/piece-Draft01.json` (HIS, saved 10:55:20) — the piece's 732 objects, ending at 668.11 s, no strike in it.
+
+**Done:** `node tools/insert_section.js --from sec05-finalDraft --into piece-Draft01 --at 673.966`, once (677 − 3.034: the section's time zero, so that the first strike's first hit is at 677.000). 441 objects copied with new ids and moved times, each tagged `properties.section { name: sec05-finalDraft, at: 673.966 }`; the piece's own 732 objects compared whole: unchanged. **THE PIECE IS NOW 0 → 778.73 s — 12 min 59 s, six sections:** the opening · the three body problem · the trills and petal hits · the drones · the beating section (to 668.1 s) · a gap of 8.8 s · THE STRIKES 676.9 → 778.7 s (the first strike 677.0, the last — bare — 778.47). In the piece every strike with electronics is heard by exactly one window (63 of 63, counted with each window's own grace).
+
+**A change to section 5 later:** in `sec05-finalDraft` (or its successor), then the same command with `--replace`; a change he makes by hand in the piece stays in the piece and is lost by a `--replace`.
+
+### B · The state signs, as chosen
+
+**His word (DEC-137):** *"let's do I and the dot size is good. And actually, you can make the small badges about 25% bigger, but keep the gap the same above the line wedge."*
+
+**Into the notation, together (as §364 said):**
+- **The drawings with the bigger dots** — `node tools/signs/state_signs_to_rules.js` (new): the table `stateSigns` of `rules.json` written from `bank/signs/state_signs.json` (only that block; the states' long names kept).
+- **The ground "i"** — `objects.stateSign.ground` { colour `state`, opacity 0.15 }: the square in the state's own colour at 15 %, not the badges' dark slate.
+- **The size** — `sizeSs` 3.4 → 4.25: 33.6 px.
+- **The place** — `place` `aboveWedge`, `gapSs` 1 (7.9 px, the working page's 8 px): the sign's BOTTOM a gap above THE HIGHEST POINT OF THE LINE WEDGE, read as the top of the wedge's thickest state (the close pass's 63 px band, 31.5 px above the lane's middle) — so every sign of a lane stands at one height, its top 73 px above the middle and 32 px under the lane's top line. The renderer's badge branch; no re-cut (the signs' overlays are as they were).
+- **The alternative left as a word, said to him:** a sign that sits a gap above the wedge WHERE IT STANDS (low over the thin stretches, high over the thick) — the working page drew it that way, a piece of each state's own wedge under each sign. His sentence (DEC-134: "find the highest point of the line wedge") is what is built.
+
+**Proven:** `check_rules` 31 of 32 (§45's red) · THE SHIELD green (the layouts unchanged since §360's baseline but for the two three body pages) · `check_screen_edges` PASS on both pages · **seen in the running app**, page 5 of the players' page: five break and rejoin signs, each 33.6 px, purple dots of radius 4.2 on a ground of #5F4296 at 15 %, each with its left edge where its lane's ramp begins and its bottom 7.9 px above the red band's top (sign 39.9 … 73.5 px, band from 81.4 px in the first lane). The working page rebuilt at the new size.
+
 ## §360. THE THREE BODY PROBLEM — the state signs on the players' page, the computer players on a presentation page (DEC-132, his "1b; 2b") (2026-10-10, Opus)
 
 **His letters:** *"1b; 2b"* — a small picture-sign of the state where its ramp begins · one long grey box a computer player with its own small wedge and one small badge at its start.

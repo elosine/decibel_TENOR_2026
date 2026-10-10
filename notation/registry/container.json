@@ -784,7 +784,7 @@
    "stateWedge": { "place": "@objects.stateWedge.place", "maxFrac": "@objects.stateWedge.maxFrac", "fillOpacity": "@objects.stateWedge.fillOpacity", "states": "@objects.stateWedge.states", "change": "@objects.stateWedge.change", "elec": "@objects.stateWedge.elec" },
    "methodBadge": { "scale": "@objects.methodBadge.scale" },
    "methods": { "badges": "@methods.badges" },
-   "stateSign": { "sizeSs": "@objects.stateSign.sizeSs", "gapSs": "@objects.stateSign.gapSs" },
+   "stateSign": { "sizeSs": "@objects.stateSign.sizeSs", "gapSs": "@objects.stateSign.gapSs", "place": "@objects.stateSign.place", "ground": "@objects.stateSign.ground" },
    "stateSigns": { "types": "@stateSigns.types" },
    "fontFamily": "@faces.text.family",
    "partLabel": {

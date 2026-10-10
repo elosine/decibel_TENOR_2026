@@ -1,7 +1,9 @@
 {
  "_doc": "THE THREE BODY PROBLEM'S STATE SIGNS — the working page's data (decibel PLAN 2.6; RUNNING_LOG §364; DEC-136). His word on the four signs of §360: 'I think what you have is fine … The dots about 50% bigger and everything else adjusted accordingly' — and, of the ground: 'the current color, but at dramatically decreased transparency? Like somewhere around like 30%. Can I see there's a blue gray that we use? It should be in the color palette … recommend some other background colors and just let me see them all with all the variations for this three body.' `node tools/signs/build_state_signs.js` draws every sign on every ground: http://localhost:5500/signs/state_signs.html. A ground is a row of `grounds`; a sign a row of `states`. NOTHING HERE IS IN THE NOTATION YET: the score still draws §360's signs (rules.json stateSigns). When he names a ground, the signs here, the ground and their place (above the wedge's highest point, DEC-134) go into the notation together.",
 
- "format": { "units": 36, "cornerUnits": 4, "sizePx": 27, "_doc": "the badge format's 36 units and corner; 27 px is the state sign's size in the score at the 1080 frame — 'the badge's size is good' (DEC-134)" },
+ "chosen": { "ground": "i", "date": "2026-10-10", "his": "let's do I and the dot size is good. And actually, you can make the small badges about 25% bigger, but keep the gap the same above the line wedge (DEC-137)", "inTheNotation": "rules.json objects.stateSign: ground { colour state, opacity 0.15 } · sizeSs 4.25 · place aboveWedge · gapSs 1; the drawings by tools/signs/state_signs_to_rules.js" },
+
+ "format": { "units": 36, "cornerUnits": 4, "sizePx": 34, "_doc": "the badge format's 36 units and corner; 34 px is the state sign's size in the score at the 1080 frame — 27 px (DEC-134) made 25 % bigger (DEC-137)" },
 
  "dots": { "was": 2.8, "now": 4.2, "_doc": "the dots' radius in the format's units: 50 % bigger (2.8 → 4.2; the close pass's 3 → 4.5). 'Everything else adjusted accordingly': the dots moved apart so that none touch where they did not, the trails thicker (1.4 → 2) and shortened to end clear of their dots." },
 

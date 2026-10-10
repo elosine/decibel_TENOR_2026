@@ -1314,6 +1314,12 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 
 *(The AI's reading, marked as such: a new seed for the lay — every answer's rhythm and timing drawn again, and with the new seeds on the bricks the engine's deal of samples and effects too; the form, the words (notated · open), the windows' spans and his notes as they are. His file is now `scores/sec05f.json` — it holds the re-orchestration of DEC-129 and the form of DEC-128 (he reloaded before saving: read from the file). The proposals of DEC-130 are still unanswered. RUNNING_LOG §359.)*
 
+### DEC-137 · 2026-10-10 — section 5 into the main score at 677 s; the state signs decided: ground "i", the dots as shown, 25 % bigger, the same gap above the wedge
+
+*(His words, verbatim — Opus:)* *"sec05-finalDraft Section five is there. Can you take this and insert it into the main score now called piece-Draft01 and insert it at 677. So the first strike starts at 677. Then for the three body, let's do I and the dot size is good. And actually, you can make the small badges about 25% bigger, but um, keep the gap the same above the line wedge."*
+
+*(The AI's reading, marked as such: (1) SECTION 5 IS FINISHED as a draft — `scores/sec05-finalDraft.json` (his; the 67 strikes in three orchestrations, the 63 windows at seed 2) — and goes into THE PIECE, now `scores/piece-Draft01.json`, so that its first strike falls at 677 s: the section's own time zero at 673.966 s. (2) THE STATE SIGNS: ground i of the working page — the state's own colour at 15 %; the bigger dots as shown; the sign itself a quarter bigger (27 → 34 px); its bottom the same gap above the line wedge as on the page (8 px). "The highest point of the line wedge" (DEC-134) read as the top of the wedge's thickest state — every sign of a lane at one height; said to him, one word of a row to make it follow the wedge under each sign instead. Built: RUNNING_LOG §365.)*
+
 ### DEC-132 · 2026-10-10 — the three body problem: a picture-sign at each change of state; the computer players as one grey box each with its own small wedge
 
 *(His words, verbatim — Opus, to the two sets of proposals of DEC-130:)* *"1b; 2b"*

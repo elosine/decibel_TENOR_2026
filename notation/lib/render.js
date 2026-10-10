@@ -1007,8 +1007,21 @@
           let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
-          parts.push('<g class="badge badge-' + esc(it.type) + (stt ? ' state-sign' : '') + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
-            '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(stt ? sttCol : ty.colour) + '</g>');
+          // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above
+          // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and
+          // not in the mic's row; `ground` = its square's own fill (colour 'state' = the state's colour) at its opacity, not the badges' ground.
+          let by = row.yOf(bs);
+          const SWb = E.stateWedge;
+          if (stt && BG.place === 'aboveWedge' && SWb && SWb.states) {
+            const TENb = 10, maxPxB = (lane.yBotPx - lane.yTopPx) * SWb.maxFrac;   // the composer score's thickness scale
+            const topTh = Object.keys(SWb.states).reduce((m, k) => { const th = SWb.states[k].thick; return Math.max(m, Array.isArray(th) ? Math.max(+th[0], +th[1]) : +th); }, 0);
+            const cyB = SWb.place === 'laneTop' ? lane.yTopPx + maxPxB / 2 : SWb.place === 'laneBottom' ? lane.yBotPx - maxPxB / 2 : (lane.yTopPx + lane.yBotPx) / 2;
+            by = cyB - (topTh / TENb) * maxPxB / 2 - BG.gapSs * ssPx - bs;
+          }
+          const gFill = stt && BG.ground ? (BG.ground.colour === 'state' ? sttCol : BG.ground.colour) : LG.format.ground;
+          const gOp = stt && BG.ground && BG.ground.opacity != null ? '" fill-opacity="' + BG.ground.opacity : '';
+          parts.push('<g class="badge badge-' + esc(it.type) + (stt ? ' state-sign' : '') + '" transform="translate(' + bx.toFixed(2) + ' ' + by.toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
+            '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + gFill + gOp + '"/>' + String(ty.sign).split('currentColor').join(stt ? sttCol : ty.colour) + '</g>');
         } else if (it.k === 'wedge') {
           // [decibel PLAN 2.6 — RUNNING_LOG §355; DEC-102 · DEC-126; rules.json objects.stateWedge → engraving.render.stateWedge] THE STATE WEDGE:
           // the composer score's own line wedge — a filled band about the lane's middle, its thickness 0 … 10 of `maxFrac` of the lane's
