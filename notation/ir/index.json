@@ -50,6 +50,16 @@
     125
    ],
    "profile": "trance"
+  },
+  {
+   "id": "approaching-threebody-elec",
+   "label": "Approaching — the three body problem, with the electronics (39 … 123 s)",
+   "score": "piece-3BodyRedo",
+   "window": [
+    37,
+    125
+   ],
+   "profile": "trance"
   }
  ]
 }

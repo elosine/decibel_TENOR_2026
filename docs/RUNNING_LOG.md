@@ -7262,3 +7262,32 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **The lay:** all 63 windows' answers changed; 139 answers — right after 41 · a beat later 42 · call and response 42 · much later 7 · in a later window 7 (the weights' one late answer in ten); the last answer ends at 93.1 s, the bare four from 96.0 s. `strike_check.js --section sec05f` PASS.
 
 **Another roll is one number:** `--seed 3 --replace`, then File ▾ → Reload — no engine restart. The proposals of §358 (the change of state · the electronics in the notation) still wait for his letters.
+
+## §360. THE THREE BODY PROBLEM — the state signs on the players' page, the computer players on a presentation page (DEC-132, his "1b; 2b") (2026-10-10, Opus)
+
+**His letters:** *"1b; 2b"* — a small picture-sign of the state where its ramp begins · one long grey box a computer player with its own small wedge and one small badge at its start.
+
+### 1b · The state signs
+
+- **The four drawings** (the table `stateSigns` of `rules.json`, by hand; the AI's first): three bodies each, in the badge's 36 units — **far apart** three dots at the corners of a wide triangle · **approaching** the three closer, each with a short trail behind it · **close pass** the three clustered, nearly touching · **break and rejoin** two together, the third flung out on a dashed trail.
+- **The colour is the state's own** — the renderer takes it from `objects.stateWedge.states.<state>.colour`: a wedge colour he moves moves its sign. The ground is the badges'.
+- **The size:** `objects.stateSign.sizeSs` 3.4 = 27 px, two thirds of a language badge (the AI's first number).
+- **Where:** in the mic's row at the lane's top, the sign's left edge on the time the RAMP into its state begins — so it says where the player is heading as the wedge starts to turn; the section's first state at the wedge's own start; the last far apart (reached from a break with no ramp, DEC-47) at its own start. Five a lane, 25 in all. On a screen page a sign is kept whole inside the page (a clamp on the right as on the left).
+- **The road:** the cutter makes them with `--wedges` (a `badge` overlay, `row: 'state'`); no row in the registry = no ink.
+
+### 2b · The computer players (the presentation view)
+
+- **Extraction** (`extract_core.js`, option `performers`): the save's zones `elecPerformer`, grouped by computer player (`elec.id` e1 · e2 · e3), become ONE `stateWedge` overlay each with `row: 'elec'` — the same stretches as a player's, folded the same way.
+- **Drawing:** a computer player's wedge is the players' wedge small — the same colours, at the most `objects.stateWedge.elec.rowFrac` 0.8 of the electronics' row tall (29 px), about that row's middle — inside ONE electronics' window (the grey pane of §336) that runs its whole orbit, 39 → 123.3 s, with the short attacks' badge at the electronics' size (36 px) before it. An electronics' badge may now be one of the LANGUAGE's types: the material a computer player plays.
+- **Where they stand:** at the bottom of the bass clarinet's lane (e1, the winds' samples), the percussionist's (e2) and the cello's (e3) — where their bricks stand in the composer score.
+- **The cutter:** `--elecPlayers shortAttacks`. The page: `approaching-threebody-elec` — the players' page plus this layer.
+
+**The two cuts:**
+`node tools/notate_section.js --score piece-3BodyRedo --w0 37 --w1 125 --id approaching-threebody --label "Approaching — the three body problem (39 … 123 s)" --silent 37-125 --wedges --announce threeBody+shortAttacks:39:123.3:lead`
+`node tools/notate_section.js --score piece-3BodyRedo --w0 37 --w1 125 --id approaching-threebody-elec --label "Approaching — the three body problem, with the electronics (39 … 123 s)" --silent 37-125 --wedges --announce threeBody+shortAttacks:39:123.3:lead --elecPlayers shortAttacks`
+
+**Proven:** `check_rules` 31 of 32 (§45's red) · THE SHIELD green, 21 of 23 identical, the two three body pages the ones moved (a baseline taken before the first edit) · `check_screen_edges` PASS on both · **seen in the running app**, page 2 of the presentation page (49 … 61 s): on each lane the blue wedge turning yellow through its ramp, the yellow approaching sign 27 px at the top where the ramp begins (at 1450 · 907 · 907 · 982 · 701 px — each player's own time); under the bass clarinet, the percussion and the cello a grey window 44 px tall running the page, a hair-thin blue wedge in it turning yellow. NOT rendered: the film, the print. Pages 1 and 3 … 8 not looked at.
+
+**What the two layers say together, for the paper:** the players read WHAT TO DO from a shape (thin · growing · thick · a hairline) and a picture (three bodies); the conductor reads from the same shapes, small and in grey panes, that three more players are on the same orbit at their own times. Nothing on either page claims a sound: only what is true at every performance (§333).
+
+**A question of his, mid-build — "how many strikes are still pitched":** section 5F, from the file — 33 of the 67 strikes are still on the pitched staccato voices (17 on his takes' pitches, 16 as they were); 34 on slap tongue and Bartók pizzicato.

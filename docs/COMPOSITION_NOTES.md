@@ -1313,3 +1313,11 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"Could we seed and then re-roll the electronics and the um, response type? And I saved it as section 5F."*
 
 *(The AI's reading, marked as such: a new seed for the lay — every answer's rhythm and timing drawn again, and with the new seeds on the bricks the engine's deal of samples and effects too; the form, the words (notated · open), the windows' spans and his notes as they are. His file is now `scores/sec05f.json` — it holds the re-orchestration of DEC-129 and the form of DEC-128 (he reloaded before saving: read from the file). The proposals of DEC-130 are still unanswered. RUNNING_LOG §359.)*
+
+### DEC-132 · 2026-10-10 — the three body problem: a picture-sign at each change of state; the computer players as one grey box each with its own small wedge
+
+*(His words, verbatim — Opus, to the two sets of proposals of DEC-130:)* *"1b; 2b"*
+
+*(What the letters stood for, as put to him: 1b — "a small picture-sign of the state, in its colour on the badge's ground, where its ramp begins: three dots far apart · closing · clustered · scattered. No words." · 2b — "one long grey box per computer player along the lane's bottom, with that player's own small wedge inside it and one small badge at its start." The AI's reading, marked as such: both built in the notation score at once (his method: a decided look is built there) — the signs on the players' page, the boxes on a presentation page beside it. The four drawings are the AI's first. RUNNING_LOG §360.)*
+
+*(And, mid-build, a question:)* *"how many um, strikes are still pitched."* *(Answered from the file: of the 67 strikes of section 5F, 33 are still on the pitched staccato voices — 17 of them on the pitches of his takes, 16 with the pitches they had — and 34 are on slap tongue and Bartók pizzicato. Every strike keeps its percussion note.)*

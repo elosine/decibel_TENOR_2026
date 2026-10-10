@@ -1,6 +1,6 @@
 {
  "irVersion": "0.1",
- "id": "approaching-threebody",
+ "id": "approaching-threebody-elec",
  "source": {
   "score": "piece-3BodyRedo",
   "window": [
@@ -20,8 +20,8 @@
   "createdBy": "tools/notate_section.js (profile trance) --wedges",
   "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance) --wedges",
-  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. THE STATE WEDGES (decibel PLAN 2.6): 5 lane(s), 40 stretch(es) of the tb containers as stateWedge overlays.",
-  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 37 --w1 125 --id approaching-threebody --label \"Approaching — the three body problem (39 … 123 s)\" --silent 37-125 --wedges --announce threeBody+shortAttacks:39:123.3:lead"
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
+  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 37 --w1 125 --id approaching-threebody-elec --label \"Approaching — the three body problem, with the electronics (39 … 123 s)\" --silent 37-125 --wedges --announce threeBody+shortAttacks:39:123.3:lead --elecPlayers shortAttacks"
  },
  "events": [
   {
@@ -6534,6 +6534,198 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-wedge-elec-1-e1-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 1,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 51.159,
+      "state": "far"
+     },
+     {
+      "t0": 51.159,
+      "t1": 54.048,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 54.048,
+      "t1": 72.943,
+      "state": "approaching"
+     },
+     {
+      "t0": 72.943,
+      "t1": 76.221,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 76.221,
+      "t1": 89.554,
+      "state": "closePass"
+     },
+     {
+      "t0": 89.554,
+      "t1": 92.443,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 92.443,
+      "t1": 112.509,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 112.509,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-elec-3-e2-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 3,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 51.794,
+      "state": "far"
+     },
+     {
+      "t0": 51.794,
+      "t1": 57.405,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 57.405,
+      "t1": 71.729,
+      "state": "approaching"
+     },
+     {
+      "t0": 71.729,
+      "t1": 74.507,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 74.507,
+      "t1": 92.126,
+      "state": "closePass"
+     },
+     {
+      "t0": 92.126,
+      "t1": 94.951,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 94.951,
+      "t1": 113.261,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 113.261,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-elec-5-e3-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 5,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 53.825,
+      "state": "far"
+     },
+     {
+      "t0": 53.825,
+      "t1": 56.492,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 56.492,
+      "t1": 70.054,
+      "state": "approaching"
+     },
+     {
+      "t0": 70.054,
+      "t1": 74.887,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 74.887,
+      "t1": 87.268,
+      "state": "closePass"
+     },
+     {
+      "t0": 87.268,
+      "t1": 90.982,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 90.982,
+      "t1": 108.494,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 108.494,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e3"
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-silent-ev-wc-1017",
    "kind": "engraving",
    "target": {
@@ -11091,6 +11283,93 @@
     "type": "far",
     "place": "at",
     "row": "state"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elecplayer-e1-shortAttacks-1-39000",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-e1-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elecplayer-e2-shortAttacks-3-39000",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-3-e2-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 3,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elecplayer-e3-shortAttacks-5-39000",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-e3-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
    },
    "provenance": "authored"
   }

@@ -694,6 +694,31 @@
         if (segs.length) wedgeOverlays.push({ id: 'ov-wedge-' + part + '-' + Math.round(segs[0].t0 * 1000), kind: 'stateWedge', target: { part, span: [segs[0].t0, segs[segs.length - 1].t1] }, value: { segs }, provenance: 'authored' });
       }
     }
+    // [decibel PLAN 2.7, RUNNING_LOG §360 — DEC-132, his '2b'] with options.performers: THE COMPUTER PLAYERS, for the presentation view — the
+    // composer score's zones 'elecPerformer' that begin in the window (elec.id e1 · e2 …; elec.state, a change's from · to), ONE 'stateWedge'
+    // overlay A COMPUTER PLAYER with value.row 'elec' (drawn in the lane's electronics' row) and value.who: the same stretches, folded the
+    // same way — a fourth, fifth and sixth player on the same orbit. WHEN each is in WHICH state is the score's and the same at every
+    // performance; what it plays inside one is decided live.
+    if (opt.performers) {
+      const byWho = new Map();
+      for (const o of (score.objects || [])) {
+        if (o.type !== 'zone' || o.midiModel !== 'elecPerformer' || !o.elec || !parts.includes(o.layer) || !(o.startTime >= w0 && o.startTime < w1)) continue;
+        const k = o.layer + '|' + String(o.elec.id || '');
+        if (!byWho.has(k)) byWho.set(k, []);
+        byWho.get(k).push(o);
+      }
+      for (const [k, zs] of [...byWho.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
+        zs.sort((a, b) => a.startTime - b.startTime);
+        const part = zs[0].layer, who = String(zs[0].elec.id || ''), segs = [];
+        for (const z of zs) {
+          const e = z.elec, t0 = +z.startTime.toFixed(4), t1 = +Math.min(z.endTime, w1).toFixed(4), last = segs[segs.length - 1];
+          if (!(t1 > t0)) continue;
+          if (e.state === 'change' && e.from === 'breakRejoin' && last && last.state === 'breakRejoin') { last.t1 = t1; continue; }
+          segs.push(Object.assign({ t0, t1, state: String(e.state) }, e.state === 'change' ? { from: String(e.from || ''), to: String(e.to || '') } : {}));
+        }
+        if (segs.length) wedgeOverlays.push({ id: 'ov-wedge-elec-' + part + '-' + who + '-' + Math.round(segs[0].t0 * 1000), kind: 'stateWedge', target: { part, span: [segs[0].t0, segs[segs.length - 1].t1] }, value: { segs, row: 'elec', who }, provenance: 'authored' });
+      }
+    }
 
     return {
       doc: {

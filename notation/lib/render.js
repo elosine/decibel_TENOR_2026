@@ -993,15 +993,22 @@
           // [§355, DEC-126] A badge whose 'row' is 'method' is A METHOD'S badge (rules.json methods.badges · objects.methodBadge): in the mic's row,
           // objects.methodBadge.scale times the language badge. `slot` n = it stands n language badges (each with its gap) further from its
           // time than a badge with none — the method's badge with the badge of the section's material beside it.
-          const elec = it.row === 'elec', meth = it.row === 'method';
-          const BG = elec ? E.elecBadge : E.badge, LG = E.language, MO = E.micOpening, ER = E.elecReturn;
-          const TB = elec ? (E.electronics && E.electronics.badges) : meth ? (E.methods && E.methods.badges) : (LG && LG.types), ty = TB && TB[it.type];
-          if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO)) continue;
+          // [§360, DEC-132 — his '1b'] A badge whose 'row' is 'state' is A STATE SIGN (rules.json stateSigns.types · objects.stateSign): a small
+          // picture-sign in the mic's row, its colour THE STATE'S OWN (objects.stateWedge.states.<state>.colour), its left edge on its time —
+          // on a screen page kept whole inside the page. An electronics' badge may also be one of the LANGUAGE's types (the material a
+          // computer player plays), at the electronics' badge's size.
+          const elec = it.row === 'elec', meth = it.row === 'method', stt = it.row === 'state';
+          const BG = elec ? E.elecBadge : stt ? E.stateSign : E.badge, LG = E.language, MO = E.micOpening, ER = E.elecReturn;
+          const TB = elec ? (E.electronics && E.electronics.badges) : meth ? (E.methods && E.methods.badges) : stt ? (E.stateSigns && E.stateSigns.types) : (LG && LG.types);
+          const ty = (TB && TB[it.type]) || (elec && LG && LG.types && LG.types[it.type]) || null;
+          const sttCol = stt && E.stateWedge && E.stateWedge.states && E.stateWedge.states[it.type] ? E.stateWedge.states[it.type].colour : null;
+          if (!BG || !ty || !LG || !owns(it.t) || (elec ? !ER : !MO) || (stt && !sttCol)) continue;
           const bs = BG.sizeSs * ssPx * (meth && E.methodBadge ? E.methodBadge.scale : 1), row = elec ? elecRow(ER) : micRow(MO), u = LG.format.viewUnits;
           let bx = view.xOfSeconds(it.t) - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
+          if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
-          parts.push('<g class="badge badge-' + esc(it.type) + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
-            '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(ty.colour) + '</g>');
+          parts.push('<g class="badge badge-' + esc(it.type) + (stt ? ' state-sign' : '') + '" transform="translate(' + bx.toFixed(2) + ' ' + row.yOf(bs).toFixed(2) + ') scale(' + (bs / u).toFixed(5) + ')">' +
+            '<rect width="' + u + '" height="' + u + '" rx="' + LG.format.cornerUnits + '" fill="' + LG.format.ground + '"/>' + String(ty.sign).split('currentColor').join(stt ? sttCol : ty.colour) + '</g>');
         } else if (it.k === 'wedge') {
           // [decibel PLAN 2.6 — RUNNING_LOG §355; DEC-102 · DEC-126; rules.json objects.stateWedge → engraving.render.stateWedge] THE STATE WEDGE:
           // the composer score's own line wedge — a filled band about the lane's middle, its thickness 0 … 10 of `maxFrac` of the lane's
@@ -1012,8 +1019,13 @@
           // No row in the registry = no ink; a state with no row draws nothing.
           const SW = E.stateWedge;
           if (!SW || !SW.states || !crosses(it.t0, it.t1)) continue;
-          const whole = cutMark >= 0, maxPx = (lane.yBotPx - lane.yTopPx) * SW.maxFrac, TEN = 10;   // the composer score's thickness scale
-          const cy = SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
+          // [§360, DEC-132 — his '2b'] row 'elec': A COMPUTER PLAYER's wedge — the same stretches and colours, small, in the lane's electronics'
+          // row (inside its window): as tall at the most as objects.stateWedge.elec.rowFrac of that row, about the row's middle.
+          const elecW = it.row === 'elec', rowE = elecW && E.elecReturn ? elecRow(E.elecReturn) : null;
+          if (elecW && !rowE) continue;
+          const whole = cutMark >= 0, TEN = 10;   // the composer score's thickness scale
+          const maxPx = elecW ? rowE.rh * ((SW.elec && SW.elec.rowFrac) || 1) : (lane.yBotPx - lane.yTopPx) * SW.maxFrac;
+          const cy = elecW ? rowE.ry + rowE.rh / 2 : SW.place === 'laneTop' ? lane.yTopPx + maxPx / 2 : SW.place === 'laneBottom' ? lane.yBotPx - maxPx / 2 : (lane.yTopPx + lane.yBotPx) / 2;
           const halfOf = v => (v / TEN) * maxPx / 2;
           const endsOf = st => { const r = SW.states[st]; if (!r) return null; const th = Array.isArray(r.thick) ? r.thick : [r.thick, r.thick]; return { c: r.colour, a: +th[0], b: +th[1] }; };
           for (let si = 0; si < it.segs.length; si++) {
@@ -1031,7 +1043,7 @@
             const xa = view.xOfSeconds(ta), xb = view.xOfSeconds(tb);
             let fill = c0;
             if (c0 !== c1) {   // the gradient is laid over the stretch's own span, cut or not; its id is this lane's, this stretch's, this page's
-              const gid = 'swg-' + sysModel.part + '-' + Math.round(sg.t0 * 1000) + '-' + Math.round(w0 * 1000);
+              const gid = 'swg-' + sysModel.part + (elecW ? 'e' : '') + '-' + Math.round(sg.t0 * 1000) + '-' + Math.round(w0 * 1000);
               parts.push('<defs><linearGradient id="' + gid + '" gradientUnits="userSpaceOnUse" x1="' + view.xOfSeconds(sg.t0).toFixed(2) + '" y1="0" x2="' + view.xOfSeconds(sg.t1).toFixed(2) +
                 '" y2="0"><stop offset="0" stop-color="' + c0 + '"/><stop offset="1" stop-color="' + c1 + '"/></linearGradient></defs>');
               fill = 'url(#' + gid + ')';

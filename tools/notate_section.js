@@ -283,7 +283,7 @@ process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) 
 const SILENT_SPANS = process.argv.map((a, i) => (a === '--silent' ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
-  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
+  scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, process.argv.includes('--elecPlayers') ? { performers: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
   date: new Date().toISOString().slice(0, 10),
   toolName: 'tools/notate_section.js (profile ' + profile + ')' + (flag('bricks') ? ' --bricks' : '') + (flag('trills') ? ' --trills' : '') + (flag('mics') ? ' --mics' : '') + (flag('elec') ? ' --elec' : '') + (flag('wedges') ? ' --wedges' : '') + (TRILL_RATE != null ? ' --trillRate ' + parseFloat(TRILL_RATE) : ''),
 });
@@ -1350,6 +1350,11 @@ for (let i = 0; i < process.argv.length; i++) {
 // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] A METHOD'S SECTION (the three body problem):
 //   --wedges                   (an extraction option) the composer score's containers of a method in the window (zones `tb`), ONE `stateWedge`
 //                              overlay a lane: the line wedge, its colour and thickness by the player's state (rules.json objects.stateWedge)
+//                              — and with it THE STATE SIGNS (rules.json stateSigns.types · objects.stateSign): a small picture-sign of each state
+//                              where the ramp into it begins [§360, his '1b']
+//   --elecPlayers type         [§360, his '2b' — the presentation view] THE COMPUTER PLAYERS of the window (zones `elecPerformer`): for each ONE
+//                              electronics' window over its whole span, its own small state wedge in it, the badge `type` before it:
+//                              --elecPlayers shortAttacks
 //   --announce a+b:t0:t1:lead  the announcement BEFORE t0 on every lane, badges side by side — a method's badge (rules.json methods.badges,
 //                              the larger) then its material's (language.types): --announce threeBody+shortAttacks:39:123.3:lead
 // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE PRESENTATION VIEW'S OWN LAYER — the hint of the electronics, never on a player's page:
@@ -1379,7 +1384,7 @@ for (let i = 0; i < process.argv.length; i++) {
     }
     console.log('  silent ' + a + ': ' + members.length + ' note(s) draw nothing');
   }
-  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length;
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length;
   if (wantBadges) {
     const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
     const LANG = (RULES.language || {}).types || {};
@@ -1422,6 +1427,34 @@ for (let i = 0; i < process.argv.length; i++) {
         for (const o of first.values()) addBadge(o.target.part, o.target.span[0], s.type, 'before', 'announce');
         console.log('  announce ' + a + ': ' + first.size + ' lane(s), each before its first mic opening');
       }
+    }
+    // [decibel PLAN 2.6, RUNNING_LOG §360 — DEC-132, his '1b'] THE STATE SIGNS, with --wedges: on every lane's wedge a small picture-sign of each
+    // state (rules.json stateSigns.types) where the RAMP into it begins — the first state and a state reached with no ramp: at its own start
+    if (flag('wedges')) {
+      const SIGNS = (RULES.stateSigns || {}).types || {};
+      let nSigns = 0;
+      for (const w of doc.overlays.filter(o => o.kind === 'stateWedge' && !(o.value && o.value.row))) {
+        w.value.segs.forEach((sg, i) => {
+          if (sg.state === 'change' || !SIGNS[sg.state]) return;
+          const prev = w.value.segs[i - 1];
+          addBadge(w.target.part, prev && prev.state === 'change' ? prev.t0 : sg.t0, sg.state, 'at', 'state', 'state');
+          nSigns++;
+        });
+      }
+      console.log('  state signs: ' + nSigns + ' (a sign where the ramp into each state begins)');
+    }
+    // [decibel PLAN 2.7, RUNNING_LOG §360 — DEC-132, his '2b'] --elecPlayers type: THE COMPUTER PLAYERS, the presentation view's — for each (the
+    // extraction's `stateWedge` overlays with row 'elec') ONE electronics' window over its whole span, its own small wedge in it, and the
+    // badge `type` before it (a row of electronics.badges, or one of the language's types — the material it plays)
+    for (const a of argsOf('elecPlayers')) {
+      if (!ELEC[a] && !LANG[a]) { console.error('--elecPlayers needs a badge type of rules.json electronics.badges (' + Object.keys(ELEC).join(' · ') + ') or language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
+      const ws = doc.overlays.filter(o => o.kind === 'stateWedge' && o.value && o.value.row === 'elec');
+      if (!ws.length) { console.error('--elecPlayers ' + a + ': no computer player (a zone elecPerformer) begins in the window'); process.exit(2); }
+      for (const w of ws) {
+        addBadge(w.target.part, w.target.span[0], a, 'before', 'elecplayer-' + (w.value.who || ''), 'elec');
+        doc.overlays.push({ id: 'ov-elecwin-' + w.target.part + '-' + (w.value.who || '') + '-' + Math.round(w.target.span[0] * 1000), kind: 'elecWindow', target: { part: w.target.part, span: w.target.span }, value: { badgeLeft: true }, provenance: 'authored' });
+      }
+      console.log('  elecPlayers ' + a + ': ' + ws.length + ' computer player(s) — ' + ws.map(w => (w.value.who || '?') + ' on part ' + w.target.part).join(' · ') + ', each one window, its own wedge, the badge before it');
     }
     for (const a of argsOf('micBadge')) {
       const s = read('micBadge', a);

@@ -781,9 +781,11 @@
    "elecBadge": { "sizeSs": "@objects.elecBadge.sizeSs", "gapSs": "@objects.elecBadge.gapSs" },
    "elecWindow": { "colour": "@objects.elecWindow.colour", "fillOpacity": "@objects.elecWindow.fillOpacity", "strokeOpacity": "@objects.elecWindow.strokeOpacity", "strokeSs": "@objects.elecWindow.strokeSs", "padSs": "@objects.elecWindow.padSs", "grain": "@objects.elecWindow.grain" },
    "electronics": { "badges": "@electronics.badges" },
-   "stateWedge": { "place": "@objects.stateWedge.place", "maxFrac": "@objects.stateWedge.maxFrac", "fillOpacity": "@objects.stateWedge.fillOpacity", "states": "@objects.stateWedge.states", "change": "@objects.stateWedge.change" },
+   "stateWedge": { "place": "@objects.stateWedge.place", "maxFrac": "@objects.stateWedge.maxFrac", "fillOpacity": "@objects.stateWedge.fillOpacity", "states": "@objects.stateWedge.states", "change": "@objects.stateWedge.change", "elec": "@objects.stateWedge.elec" },
    "methodBadge": { "scale": "@objects.methodBadge.scale" },
    "methods": { "badges": "@methods.badges" },
+   "stateSign": { "sizeSs": "@objects.stateSign.sizeSs", "gapSs": "@objects.stateSign.gapSs" },
+   "stateSigns": { "types": "@stateSigns.types" },
    "fontFamily": "@faces.text.family",
    "partLabel": {
     "xPx": 4,
