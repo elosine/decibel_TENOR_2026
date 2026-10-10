@@ -1321,3 +1321,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(What the letters stood for, as put to him: 1b — "a small picture-sign of the state, in its colour on the badge's ground, where its ramp begins: three dots far apart · closing · clustered · scattered. No words." · 2b — "one long grey box per computer player along the lane's bottom, with that player's own small wedge inside it and one small badge at its start." The AI's reading, marked as such: both built in the notation score at once (his method: a decided look is built there) — the signs on the players' page, the boxes on a presentation page beside it. The four drawings are the AI's first. RUNNING_LOG §360.)*
 
 *(And, mid-build, a question:)* *"how many um, strikes are still pitched."* *(Answered from the file: of the 67 strikes of section 5F, 33 are still on the pitched staccato voices — 17 of them on the pitches of his takes, 16 with the pitches they had — and 34 are on slap tongue and Bartók pizzicato. Every strike keeps its percussion note.)*
+
+### DEC-133 · 2026-10-10 — section 5G: thirteen more strikes into the percussive voices, at random
+
+*(His words, verbatim — Opus, told that 33 strikes were still pitched:)* *"Let's replace about 10 more of those in random. Let's do 13 with uh, more percussive, with random um, distribution. and this is section 5G."*
+
+*(The AI's reading, marked as such: thirteen of the 33 strikes still on the staccato voices move to the percussive ones — slap tongue, Bartók pizzicato — drawn plainly at random, not spread by rule; a strike on the pitches of one of his takes keeps those pitches (by octaves where the new voice needs it). Then 47 percussive, 20 pitched. His file is `scores/sec05g.json`. RUNNING_LOG §361.)*

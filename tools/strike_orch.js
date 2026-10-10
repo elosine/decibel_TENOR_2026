@@ -15,6 +15,8 @@
 // half and half of the rest, spread through the section, by --seed.
 //
 //   node tools/strike_orch.js --score sec05e [--seed 1] [--dry]
+//   node tools/strike_orch.js --score sec05g --more 13 [--seed 1] [--dry]     N MORE strikes into the new voices, drawn at random among
+//                                                                             every strike still on another voice (his pitches kept)
 //
 // A strike is a group of notes (`grp-strike-…`). A strike already changed by this tool (a note tagged `properties.strikeOrch` or
 // `properties.strikePitch`, which keeps what the note was) is not drawn again — a later run touches only strikes inserted since.
@@ -55,7 +57,12 @@ strikes.forEach((x, i) => { x.n = i + 1; x.done = x.notes.some((o) => o.properti
 const open = strikes.filter((x) => !x.done), rnd = SC.rng(SEED * 2741 + 5);
 // of every `per` strikes in a row, `take` drawn — a share spread through the section
 const drawSpread = (list, share) => { const out = new Set(), per = Math.max(1, Math.round(1 / Math.max(0.01, Math.min(1, share)))); for (let i = 0; i < list.length; i += per) { const blk = list.slice(i, i + per); if (blk.length < per && rnd() >= blk.length / per) continue; out.add(blk[Math.min(blk.length - 1, Math.floor(rnd() * blk.length))]); } return out; };
-const A = drawSpread(open, +O.share || 0.5), rest = open.filter((x) => !A.has(x)), B = takes.length ? drawSpread(rest, +O.pitchShare || 0.5) : new Set();
+// --more N (DEC-133: 'replace about 10 more of those in random. Let's do 13 with more percussive, with random distribution'): N MORE strikes
+// take the new voices, drawn AT RANDOM among every strike that still has a note on another voice of those lanes — one already on his takes'
+// pitches too (it keeps those pitches, moved by octaves where the new voice needs it). Nothing else is drawn in this mode.
+const MORE = arg('more') == null ? null : Math.max(0, Math.round(+arg('more')) || 0);
+const still = strikes.filter((x) => !x.notes.some((o) => o.properties && o.properties.strikeOrch) && x.notes.some((o) => O.voices[instOf(o.layer)] && o.technique !== O.voices[instOf(o.layer)]));
+const A = MORE != null ? new Set(SC.shuffle(still.slice(), rnd).slice(0, MORE)) : drawSpread(open, +O.share || 0.5), rest = MORE != null ? [] : open.filter((x) => !A.has(x)), B = MORE == null && takes.length ? drawSpread(rest, +O.pitchShare || 0.5) : new Set();
 const lines = []; let nA = 0, nB = 0, moved = 0, kept = 0, noFit = 0;
 const tag = (o, key, v) => { o.properties = Object.assign({}, o.properties, { [key]: v }); };
 // (A) the new voices
@@ -87,7 +94,9 @@ for (const x of strikes.filter((q) => B.has(q))) {
     if (said.length) { nB++; used[t.name] = (used[t.name] || 0) + 1; lines.push(String(x.n).padStart(3) + '  ' + x.f.toFixed(2).padStart(6) + ' s  ' + t.name.padEnd(13) + ' ' + said.join(' · ')); }
 }
 lines.sort();
-const out = [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + strikes.length + ' strikes' + (strikes.length - open.length ? ' · ' + (strikes.length - open.length) + ' already changed by this tool, left' : '') + ' · seed ' + SEED,
+const out = MORE != null ? [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + strikes.length + ' strikes · ' + still.length + ' still on other voices · ' + MORE + ' more asked, drawn at random · seed ' + SEED,
+    'NEW VOICES on ' + nA + ' more strikes: ' + moved + ' notes moved by octaves into the voice\'s range, ' + kept + ' at their own pitch' + (noFit ? ', ' + noFit + ' left (no octave fits)' : '') + ' — ' + (still.length - nA) + ' strikes stay on the other voices', ''].concat(lines)
+    : [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + strikes.length + ' strikes' + (strikes.length - open.length ? ' · ' + (strikes.length - open.length) + ' already changed by this tool, left' : '') + ' · seed ' + SEED,
     'NEW VOICES on ' + nA + ' strikes (' + Object.entries(O.voices).map(([i, v]) => i.replace('_', ' ') + ' ' + v).join(' · ') + '): ' + moved + ' notes moved by octaves into the voice\'s range, ' + kept + ' at their own pitch' + (noFit ? ', ' + noFit + ' left (no octave fits)' : ''),
     'HIS PITCHES on ' + nB + ' of the ' + rest.length + ' left (' + takes.length + ' takes ' + prefix + '1 … ' + takes.length + ': ' + takes.map((t) => t.name.slice(prefix.length) + '×' + (used[t.name] || 0)).join(' ') + ')',
     'untouched: ' + (strikes.length - nA - nB - (strikes.length - open.length)) + ' strikes', ''].concat(lines);

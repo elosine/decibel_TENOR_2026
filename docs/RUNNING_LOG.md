@@ -7291,3 +7291,11 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **What the two layers say together, for the paper:** the players read WHAT TO DO from a shape (thin · growing · thick · a hairline) and a picture (three bodies); the conductor reads from the same shapes, small and in grey panes, that three more players are on the same orbit at their own times. Nothing on either page claims a sound: only what is true at every performance (§333).
 
 **A question of his, mid-build — "how many strikes are still pitched":** section 5F, from the file — 33 of the 67 strikes are still on the pitched staccato voices (17 on his takes' pitches, 16 as they were); 34 on slap tongue and Bartók pizzicato.
+
+## §361. SECTION 5G — thirteen more strikes into the percussive voices, drawn at random (DEC-133) (2026-10-10, Opus)
+
+**What prompted it (DEC-133, verbatim):** *"Let's replace about 10 more of those in random. Let's do 13 with uh, more percussive, with random um, distribution. and this is section 5G."* — his answer to the count of §360 (33 strikes still pitched).
+
+**Built:** `tools/strike_orch.js --more N` — N more strikes take the new voices (`orch.voices`), drawn AT RANDOM (a seeded shuffle, no spreading rule) among every strike that still has a note on another voice of those lanes; a strike already on the pitches of one of his takes is a candidate too and keeps those pitches, moved by octaves where the new voice's range needs it. Nothing else is drawn in this mode.
+
+**The run on `scores/sec05g.json`** (HIS, untracked; saved 10:34:24 — 5F as re-rolled at seed 2, read from the file): `node tools/strike_orch.js --score sec05g --more 13`, once — strikes 7 · 11 · 14 · 19 · 21 · 26 · 29 · 32 · 34 · 35 · 42 · 56 · 65 (9.2 … 98.2 s; eleven of them before 57 s — a random draw, as asked); 48 notes, 9 moved by octaves. **In the section now: 47 strikes on slap tongue and Bartók pizzicato, 20 on the staccato voices.** The windows and their answers untouched; `strike_check.js --section sec05g` PASS.
