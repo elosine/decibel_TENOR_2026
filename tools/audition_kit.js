@@ -112,6 +112,24 @@ async function sendPlan(lines, port) {
   console.log('the plan sent to the engine — ' + lines.length + ' variants, render 1: the engine makes them from the bank now.');
 }
 
+// THE DEAL'S CARDS (DEC-146, RUNNING_LOG §375 — his words: "can we make the distortion types all like one item? So we have the 27 ones,
+// and then all the distortion effects will be like one element in there. In other words, I want them to come up less often"): every
+// dealt preset is one card — but the presets of a GROUP (bank/presets.json `groups`: { name: { effects: [...], keys: [...] } }) are ONE
+// card between them; when that card comes up its members take turns, in a seeded order of their own. So thirteen distortion presets
+// come up as often as one preset. A file with no groups: a card a preset, as before. (The page's own dealer, the pattern brick's, reads
+// the same row: electronics/score/le_objects.js dealCards.)
+function dealCards(P, pool, rnd) {
+  const G = (P && P.groups) || {}, groupOf = (p) => Object.keys(G).find((g) => g[0] !== '_' && G[g] && ((G[g].effects || []).includes(p.effect) || (G[g].keys || []).includes(p.key)));
+  const cards = [], byGroup = new Map();
+  for (const p of pool) {
+    const g = groupOf(p);
+    if (!g) { cards.push({ key: p.key, size: 1, next: () => p }); continue; }
+    if (!byGroup.has(g)) { const c = { key: '(' + g + ')', group: g, members: [], i: 0 }; c.next = () => c.members[c.i++ % c.members.length]; byGroup.set(g, c); cards.push(c); }
+    byGroup.get(g).members.push(p);
+  }
+  for (const c of byGroup.values()) { c.members = c.members.map((x) => [rnd(), x]).sort((a, b) => a[0] - b[0]).map((x) => x[1]); c.size = c.members.length; }
+  return cards;
+}
 function writeSheet(name, text) {
   const dir = path.join(ROOT, 'docs', 'auditions'), file = path.join(dir, name + '.md');
   fs.mkdirSync(dir, { recursive: true });
@@ -120,4 +138,4 @@ function writeSheet(name, text) {
 }
 const clock = (t) => Math.floor(t / 60) + ':' + String(Math.floor(t % 60)).padStart(2, '0');
 
-module.exports = { ROOT, PRESETS, arg, flag, readJson, rel, mulberry32, noteName, hz, PLAYERS, impulses, spread, zoneMaker, writeScore, writePresets, planLines, sendPlan, writeSheet, clock };
+module.exports = { ROOT, PRESETS, arg, flag, readJson, rel, mulberry32, noteName, hz, PLAYERS, impulses, spread, zoneMaker, writeScore, writePresets, planLines, sendPlan, dealCards, writeSheet, clock };

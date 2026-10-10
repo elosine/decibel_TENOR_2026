@@ -61,7 +61,9 @@ if (CLEAR) {
   const dealable = P.presets.filter((p) => p.deal !== false);   // an audition's presets (`deal: false`, RUNNING_LOG §151) are never dealt
   const pool = CLASS ? dealable.filter((p) => p.class === CLASS) : dealable;
   if (!pool.length) { console.error('no preset of class "' + CLASS + '" in bank/presets.json — the classes: ' + Object.keys(P.classes || {}).join(' · ')); process.exit(2); }
-  const order = shuffled(pool, mulberry32(SEED * 7919 + 3));
+  // THE CARDS (DEC-146): a preset a card — but a GROUP of bank/presets.json `groups` (the distortions) is ONE card between its presets,
+  // which take turns when it comes up (tools/audition_kit.js dealCards). No groups in the file: the deal as it always was.
+  const order = shuffled(require('./audition_kit.js').dealCards(P, pool, mulberry32(SEED * 7919 + 5)), mulberry32(SEED * 7919 + 3));
   // THE ENVELOPES, by the mix: exact shares of the plays (the largest remainders round it), shuffled — or the ONE envelope asked for
   if (ENV && !P.envelopes[ENV]) { console.error('no envelope "' + ENV + '" in bank/presets.json — one of: ' + Object.keys(P.envelopes).join(' · ')); process.exit(2); }
   const mix = ENV ? [[ENV, 1]] : Object.entries(P.mix || { perc: 1 }).filter(([k, w]) => P.envelopes[k] && w > 0), wSum = mix.reduce((s, [, w]) => s + w, 0);
@@ -71,7 +73,7 @@ if (CLEAR) {
   // a later lap: a preset never under the envelope it had before — the envelope is traded with a later play's
   const had = new Map();
   plays.forEach((p, i) => {
-    p.preset = order[i % order.length];
+    p.preset = order[i % order.length].next();
     const used = had.get(p.preset.key) || [];
     if (!ENV && used.includes(envs[i])) {
       let j = -1;
@@ -89,7 +91,7 @@ if (CLEAR) {
     if (p.env === 'tail') { const c = p.preset.capMs || (P.envelopes.tail || {}).capMs || 4000; return 'rings ≤ ' + (Array.isArray(c) ? c.join('…') : c) + ' ms past it'; }
     return row ? Math.round(row.lengthMs / rate * (+p.preset.durX || +cls.durX || 1)) + ' ms' : 'not captured';
   };
-  console.log('THE DEAL — ' + NAME + ' [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') · seed ' + SEED + ' · ' + plays.length + ' plays on ' + dealt.length + ' bricks · ' + order.length + ' presets'
+  console.log('THE DEAL — ' + NAME + ' [' + FROM + ', ' + (TO === Infinity ? 'end' : TO) + ') · seed ' + SEED + ' · ' + plays.length + ' plays on ' + dealt.length + ' bricks · ' + order.length + ' cards (' + pool.length + ' presets' + order.filter((c) => c.group).map((c) => ' · the ' + c.size + ' of "' + c.group + '" one card').join('') + ')'
     + (skipped ? ' · ' + skipped + ' brick(s) left alone (a pattern, or *)' : ''));
   plays.forEach((p, i) => console.log(String(i + 1).padStart(3) + '  ' + p.z.startTime.toFixed(2).padStart(6) + ' s  ' + lane(p.z.layer).padEnd(13) + (p.z.elec.behaviour || 'plain').padEnd(8) + p.name.padEnd(16)
     + '→ ' + (p.preset.key + '-' + p.env).padEnd(17) + lengthOf(p).padEnd(8) + ' ' + p.preset.name));

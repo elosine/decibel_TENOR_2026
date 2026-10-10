@@ -44,6 +44,18 @@
   "gauss": 0.1,
   "tri": 0.1
  },
+ "groups": {
+  "_what": "GROUPS OF A DEAL (DEC-146, RUNNING_LOG §375 — his words: \"can we make the distortion types all like one item? So we have the 27 ones, and then all the distortion effects will be like one element in there. In other words, I want them to come up less often\"). Every dealt preset is one CARD of a deal; the presets of a group are ONE card between them — when that card comes up its members take turns, in a seeded order. A group is named by its EFFECTS (every dealt preset of those effects, so a new generation of presets stays grouped) and/or by preset KEYS. Read by every dealer: tools/deal_variants.js · tools/deal_strike_variants.js · tools/thin_effects.js (tools/audition_kit.js dealCards) and the page's pattern brick (electronics/score/le_objects.js dealCards — after an F5). To put an effect back among the single cards: take its name out of the list. To drop the rule: delete the group.",
+  "distortion": {
+   "effects": [
+    "fuzz",
+    "diode",
+    "octave",
+    "crush"
+   ],
+   "what": "the distortions — fuzz · diode ring · octave fuzz · crush: thirteen presets, one card. In a lap of the deck (27 single presets + this card = 28) one play is a distortion, where thirteen of forty were."
+  }
+ },
  "presets": [
   {
    "key": "feedback1",

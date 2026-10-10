@@ -33,8 +33,9 @@ if (!raws.length) { console.error('no impulse capture in the index for ' + PLAYE
 // the deal: a seeded shuffled order of the dealt presets, cycled — none twice until all are used
 const rand = K.mulberry32(SEED);
 const shuffle = (a) => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); const t = b[i]; b[i] = b[j]; b[j] = t; } return b; };
+const cards = K.dealCards(P, dealt, K.mulberry32(SEED * 7919 + 5));   // a GROUP of bank/presets.json `groups` is one card between its presets (DEC-146)
 let deck = [];
-const next = () => { if (!deck.length) deck = shuffle(dealt); return deck.shift(); };
+const next = () => { if (!deck.length) deck = shuffle(cards); return deck.shift().next(); };
 const have = new Set(rows.map((r) => r.name));
 const objects = []; let already = 0;
 for (const env of ENVS) for (const r of raws) { const p = next(); const v = p.key + '-' + env; if (have.has(r.name + '~' + v)) already++; objects.push({ elec: { name: r.name, variants: { [r.name]: v } }, startTime: 0 }); }

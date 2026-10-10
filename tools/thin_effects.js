@@ -74,13 +74,14 @@ else {
     // the rest of the dealt pool, one deck, none twice until all are used; never a version the stretch already has
     const rest = P.presets.filter((p) => p.deal !== false && !named.includes(p.effect));
     if (!rest.length) die('no dealt preset outside ' + named.join(' · '));
+    const cards = K.dealCards(P, rest, K.mulberry32(seed * 7919 + 5));   // a GROUP of the presets file is one card between its presets (DEC-146)
     const has1 = new Set(plays.filter((p) => !go.includes(p)).map((p) => p.n + '~' + p.v));
     let deck = [];
     for (const p of go) {
         let pick = null;
         for (let tries = 0; tries < rest.length * 2 && !pick; tries++) {
-            if (!deck.length) deck = shuffle(rest.slice());
-            const c = deck.shift(), v = c.key + '-' + p.env;
+            if (!deck.length) deck = shuffle(cards.slice());
+            const c = deck.shift().next(), v = c.key + '-' + p.env;
             if (!has1.has(p.n + '~' + v)) pick = { c, v };
         }
         if (!pick) die('no preset left for ' + p.n + ' — every one of the rest is on it already');
