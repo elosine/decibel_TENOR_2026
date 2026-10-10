@@ -1,0 +1,32 @@
+{
+ "_doc": "THE THREE BODY PROBLEM'S STATE SIGNS — the working page's data (decibel PLAN 2.6; RUNNING_LOG §364; DEC-136). His word on the four signs of §360: 'I think what you have is fine … The dots about 50% bigger and everything else adjusted accordingly' — and, of the ground: 'the current color, but at dramatically decreased transparency? Like somewhere around like 30%. Can I see there's a blue gray that we use? It should be in the color palette … recommend some other background colors and just let me see them all with all the variations for this three body.' `node tools/signs/build_state_signs.js` draws every sign on every ground: http://localhost:5500/signs/state_signs.html. A ground is a row of `grounds`; a sign a row of `states`. NOTHING HERE IS IN THE NOTATION YET: the score still draws §360's signs (rules.json stateSigns). When he names a ground, the signs here, the ground and their place (above the wedge's highest point, DEC-134) go into the notation together.",
+
+ "format": { "units": 36, "cornerUnits": 4, "sizePx": 27, "_doc": "the badge format's 36 units and corner; 27 px is the state sign's size in the score at the 1080 frame — 'the badge's size is good' (DEC-134)" },
+
+ "dots": { "was": 2.8, "now": 4.2, "_doc": "the dots' radius in the format's units: 50 % bigger (2.8 → 4.2; the close pass's 3 → 4.5). 'Everything else adjusted accordingly': the dots moved apart so that none touch where they did not, the trails thicker (1.4 → 2) and shortened to end clear of their dots." },
+
+ "states": [
+  { "id": "far", "name": "far apart", "colour": "SOL_blue",
+    "sign": "<g fill='currentColor'><circle cx='8' cy='27.5' r='4.2'/><circle cx='28' cy='27.5' r='4.2'/><circle cx='18' cy='8.5' r='4.2'/></g>" },
+  { "id": "approaching", "name": "approaching", "colour": "SOL_yellow",
+    "sign": "<g fill='currentColor' stroke='currentColor' stroke-width='2' stroke-linecap='round'><path fill='none' d='M3.6 30.2L6.4 27.8M32.4 30.2L29.6 27.8M18 3.2L18 6.6'/><circle cx='11.5' cy='23.5' r='4.2' stroke='none'/><circle cx='24.5' cy='23.5' r='4.2' stroke='none'/><circle cx='18' cy='12.8' r='4.2' stroke='none'/></g>" },
+  { "id": "closePass", "name": "close pass", "colour": "SOL_red",
+    "sign": "<g fill='currentColor'><circle cx='13.2' cy='21.6' r='4.5'/><circle cx='22.8' cy='21.6' r='4.5'/><circle cx='18' cy='13.4' r='4.5'/></g>" },
+  { "id": "breakRejoin", "name": "break and rejoin", "colour": "SOL_purple",
+    "sign": "<g fill='currentColor' stroke='currentColor' stroke-width='2' stroke-linecap='round'><path fill='none' stroke-dasharray='2 3.2' d='M21.6 17.2L25.3 12.6'/><circle cx='9.5' cy='25.5' r='4.2' stroke='none'/><circle cx='18' cy='21.2' r='4.2' stroke='none'/><circle cx='28.2' cy='8.3' r='4.2' stroke='none'/></g>" }
+ ],
+
+ "grounds": [
+  { "id": "a", "name": "the badge's own ground, as it is today", "fill": "#2d3748", "opacity": 1, "from": "the format's dark slate (every badge of the piece)", "asked": true },
+  { "id": "b", "name": "the badge's own ground at 30 %", "fill": "#2d3748", "opacity": 0.3, "from": "his: 'the current color, but at dramatically decreased transparency … around like 30%'", "asked": true },
+  { "id": "c", "name": "blueGrey", "fill": "#708090", "opacity": 1, "from": "his palette's blueGrey — the grey of the electronics' window", "asked": true },
+  { "id": "d", "name": "blueGrey at 30 %", "fill": "#708090", "opacity": 0.3, "from": "the same, as light as he asked of the first", "asked": true },
+  { "id": "e", "name": "lightGrey", "fill": "#ADADB7", "opacity": 1, "from": "his palette's lightGrey" },
+  { "id": "f", "name": "lightGrey at 30 %", "fill": "#ADADB7", "opacity": 0.3, "from": "his palette's lightGrey, nearly paper" },
+  { "id": "g", "name": "navyBlue", "fill": "#1C4879", "opacity": 1, "from": "his palette's navyBlue — the colour of the duration lines" },
+  { "id": "h", "name": "SOL black", "fill": "#151415", "opacity": 1, "from": "the SOL set's black — the strongest contrast for all four colours" },
+  { "id": "i", "name": "the state's own colour at 15 %", "fill": "state", "opacity": 0.15, "from": "a tint of the sign's own colour: the square belongs to its wedge" },
+  { "id": "j", "name": "no ground — an outline in the state's colour", "fill": "none", "stroke": "state", "from": "the square kept as a frame only" },
+  { "id": "k", "name": "no ground at all", "fill": "none", "from": "the three bodies alone on the paper" }
+ ]
+}
