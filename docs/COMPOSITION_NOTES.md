@@ -1357,3 +1357,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus; first:)* *"the small badges, what is the transparency of the background, please?"* *(answered: the state's own colour at 15 % opacity. Then:)* *"try 22"*
 
 *(The AI's reading, marked as such: the ground's opacity 15 % → 22 % — a try, his eye to follow. RUNNING_LOG §366.)*
+
+### DEC-139 · 2026-10-10 — an audition file of every FX version of the first section, by player
+
+*(His words, verbatim — Opus:)* *"I want to, in the first section, I want to inspect all of the FX versions. So can you make a, another save file that just has, I guess, a brick for each electronics um, impulse and just in a row with like a second or two between them and in and, and sequence. So all the bass flute ones and then all the bass clarinet ones, etc. Where I can and and only do this if it's easy enough, you don't have to make a new build. If I can see what's going on with the electronics inside, like click the brick and get a card. I think we had something like this. If it's, if that requires a lot of new coding, then just um, give me some alternatives."*
+
+*(The AI's reading, marked as such: it was easy — the earlier auditions' kit makes return bricks and a score; nothing in the page or the engine is new. One plain return brick for each processed version the opening plays (0 … 37 s of `piece-Draft01`), the players in turn, three seconds apart; each plays the render the bank already holds. A click on a brick opens the return brick's own panel — its "Processed as" row names the preset and the ending. RUNNING_LOG §367.)*

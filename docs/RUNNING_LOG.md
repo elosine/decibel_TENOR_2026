@@ -7366,3 +7366,13 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **His words:** *"the small badges, what is the transparency of the background, please?"* — 15 % opacity, the state's own colour. Then *"try 22"*.
 
 **One number:** `notation/registry/rules.json` `objects.stateSign.ground.opacity` 0.15 → 0.22. `gen_engraving_rules.js` · `check_rules.js` 31 of 32 (§45's red). A reload of the notation app shows it; no re-cut. A try: his eye decides.
+
+## §367. AN AUDITION OF SECTION 1's FX VERSIONS — `audition-sec01-fx`, a brick a version, the players in turn (DEC-139) (2026-10-10, Opus)
+
+**What prompted it:** DEC-139, verbatim in COMPOSITION_NOTES — to inspect every processed version the first section plays; "only do this if it's easy enough"; a card on a click.
+
+**It was easy:** `tools/audition_kit.js` (the petals' and the chords' auditions, §151) already makes a return brick and writes a new score. New: **`node tools/build_fx_audition.js [--from piece-Draft01] [--t0 0] [--t1 37] [--name audition-sec01-fx] [--gap 3] [--replace] [--render]`** — it reads the return bricks of a stretch of a score and every (sample → version) they play (`elec.variants`), and writes ONE PLAIN return brick for each on its player's lane, the players in turn (bass flute · bass clarinet · percussion · viola · cello), a player's versions by impulse number then by first use. No page code, no engine code.
+
+**The score `scores/audition-sec01-fx.json`:** 74 versions — bass flute 15 · bass clarinet 15 · percussion 15 · viola 15 · cello 14 (the opening's 25 return bricks make 75 plays; one version is played twice) — 3 s apart, a longer breath between players, 0:02 … 3:53. **All 74 have a render in the bank** — the renders of his last pass of the piece; the tool sends NO plan, so nothing is made anew (with `--render` every version is made again, and a preset's ranges are drawn afresh). **The card:** a click on a brick opens the return brick's panel — "Processed as": the preset, the ending, ▶ — and the brick's note says where the section plays it (`… as feedback8-tail (feedback) · in piece-Draft01 at 7.9 s (ar)`). **The sheet** `docs/auditions/audition-sec01-fx.md`: a row a version — the time, the player, the impulse, the preset, its effect, its ending, the preset's dials from `bank/presets.json` (a range shown as `a … b`), where in the section.
+
+**Not claimed:** the page not opened; nothing heard. The engine needs no restart (a return brick asks for a banked sample by name).
