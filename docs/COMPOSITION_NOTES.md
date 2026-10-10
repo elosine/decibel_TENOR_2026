@@ -1453,3 +1453,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable:)* *"Let's work out now what we need to build to render the audio for the final presentation video with now using live electronics. So we've successfully rendered audio in the last few pieces, but those didn't have electronics. So let's figure out what needs to be made or changed so that we can render the audio with the MIDI and the live electronics."*
 
 *(The AI's reading, marked as such: the lineage's render is offline — the page's MIDI captured, Reaper renders a copy of the rack; the electronics are a live process and are absent from it. The way put to him: one real-time pass recorded in Reaper as two stems — the players' sum on the REC track, the engine on ELEC RETURN — aligned, mixed, through the existing gain step, named for the notation page. The planning method entered. RUNNING_LOG §384.)*
+
+### DEC-155 · 2026-10-10 — the render's shape, and the plan written whole
+
+*(His words, verbatim — Fable:)* *"a"* — then *"good to write whole plan"*
+
+*(The AI's reading, marked as such: "a" = the shape of RUNNING_LOG §384 — one real-time pass of the piece from his page with the engine up, Reaper recording the players' sum and the electronics' return as two stems in a copy of the rack, aligned to score time, mixed, through the existing gain step, named for the notation page, the video unchanged. "good to write whole plan" = every step with its sub-steps written at once — PLAN.md § 2.8, five steps: the take · the alignment · the mix and the gain · the dry run on the opening as the one proof · the video unchanged. Nothing built. RUNNING_LOG §385.)*
