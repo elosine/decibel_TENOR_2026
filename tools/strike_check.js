@@ -155,10 +155,10 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
     if (!zs.length) console.log('  —    no windows of tools/strike_windows.js in scores/' + SNAME + '.json: skipped');
     else {
         const W = require(path.join(ROOT, 'tools', 'strike_windows.js')), C = JSON.parse(fs.readFileSync(path.join(ROOT, 'bank', 'strike_section.json'), 'utf8'));
-        const strikes = W.strikesOf(sec), bare = +C.noElectronicsLast || 0, n = strikes.length - bare, seq = String(C.sequence).toUpperCase().replace(/[^NO]/g, '');
+        const strikes = W.strikesOf(sec), bare = +C.noElectronicsLast || 0, n = strikes.length - bare;
         const byGroup = new Map(strikes.map((x) => [x.group, x])), own = (z) => byGroup.get(z.properties.strikeSection.group);
         check('a window over every strike but the last ' + bare + ', in time order, each on its own strike', zs.length === n && zs.every((z, i) => own(z) === strikes[i] && z.elec.id === 'W' + (i + 1)), zs.length + ' windows · ' + strikes.length + ' strikes');
-        check('each window says his letter: N notated · O open', zs.every((z, i) => z.elec.mode === (seq[i] === 'O' ? 'open' : 'notated')), zs.filter((z) => z.elec.mode === 'open').length + ' open · ' + zs.filter((z) => z.elec.mode === 'notated').length + ' notated · ' + (seq.length - n) + ' letters past the end');
+        check('each window says a word — notated or open (the file\'s letters at a first lay; a window laid before keeps its word, a new strike takes newStrikes — DEC-124)', zs.every((z) => z.elec.mode === 'open' || z.elec.mode === 'notated'), zs.filter((z) => z.elec.mode === 'open').length + ' open · ' + zs.filter((z) => z.elec.mode === 'notated').length + ' notated · as laid: ' + zs.map((z) => (z.elec.mode === 'open' ? 'O' : 'N')).join(''));
         const mg = (+C.minGapMs || 50) / 1000;
         check('no two windows overlap; at least ' + ms(mg) + ' ms between them', zs.every((z, i) => !i || z.startTime - zs[i - 1].endTime >= mg - 0.0015), 'the least: ' + ms(Math.min(...zs.slice(1).map((z, i) => z.startTime - zs[i].endTime))) + ' ms');
         // the engine's ear: a window takes a hit from 50 ms before its start to its grace after its end
@@ -172,7 +172,7 @@ console.log('STRIKE_CHECK the brick (the engine\'s module under a stub window):'
         // the form: the answers by where a strike falls — 1 · 2 · 3 · 1 in time, each stretch shorter, the shortest ≥ minRatio of the longest
         const runs = []; zs.forEach((z) => { const a = SC.chainOf(z.elec).length + 1; if (!runs.length || runs[runs.length - 1].a !== a) runs.push({ a, from: own(z).f, k: 0 }); runs[runs.length - 1].k++; });
         const ST = C.stretches || {}, want = ST.answers || [1], seed = zs[0].properties.strikeSection.seed, grow = Math.round(+ST.grow || 0);
-        const L = W.lay(Object.assign({}, sec, { objects: sec.objects.filter((o) => !(o.type === 'zone' && o.midiModel === 'elecStrike')) }), C, CAT, seed), len = L.stretches.map((q) => q.lengthS);
+        const L = W.lay(sec, C, CAT, seed), len = L.stretches.map((q) => q.lengthS);   // the score as it stands: the windows in it give the words (DEC-124)
         const shapeOk = grow
             ? len.slice(0, grow).every((v, i) => !i || v > len[i - 1]) && len[0] / len[grow - 1] >= (+ST.minRatio || 0) - 1e-9 && len.slice(grow).every((v, i, a) => v < (i ? a[i - 1] : len[0]))   // rising to the peak, then a coda each shorter and shorter than the opening
             : len.every((v, i) => !i || v < len[i - 1]) && Math.min(...len) / Math.max(...len) >= (+ST.minRatio || 0) - 1e-9;

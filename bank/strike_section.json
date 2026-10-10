@@ -4,6 +4,20 @@
  "sequence": "NNNNNNNN NO ON OOON OOOONOO OONOO NNN NNNNO OOO NO OOOOOO O ONOOO",
  "_sequence": "HIS LETTERS, as he read them out (DEC-119): N = NOTATED — the strike is played as written (GCs, like piece #5's scattered strikes) · O = OPEN — the ensemble strikes freely inside the window; in the composer score what he played stands in for them. Laid on the strikes IN TIME ORDER, one letter a strike; spaces are only his breaths. He read 53 letters; the score holds fewer strikes with electronics — the letters past the last one fall off the end (his word: 'however many are in the score now'). To move a letter: edit this line, then the tool with --replace.",
 
+ "newStrikes": "open",
+ "_newStrikes": "DEC-124 (RUNNING_LOG §352): on a lay over windows laid before (--replace), every strike that HAD a window keeps its word from it, and a strike that had none — one he inserted since — takes THIS word (his 'the new ones need the mic openings': open). The letters above are read whole only at a first lay, or with --letters. The tool prints the words as laid, as a letter string, to paste into `sequence` if he wants to move one.",
+
+ "perc": {
+  "share": 0.5,
+  "_share": "DEC-124 ('change up some of the strikes to various instruments'): this share of the percussion lane's strike notes, drawn, is moved from the plain voice to one of the instruments below — a key inside the instrument's own range, the note's time and loudness kept. `node tools/strike_perc.js --score <name> [--seed 1] [--dry]`.",
+  "pool": ["bongos_hands", "bongos_fingers", "bongos_sticks", "shime_daiko_hands", "shime_daiko_taiko_sticks", "shime_daiko_rods", "bass_drum_alt_sticks", "bass_drum_alt_hard_felt", "bass_drum_alt_hard_felt_cloth_damped", "bass_drum_alt_medium_felt", "bass_drum_alt_rods", "wood_blocks_hard_mallets", "wood_blocks_soft_mallets", "china_cymbals_felt_mallet", "china_cymbals_stick", "small_metals_spring_coil", "susp_cymbals_bright_felt_mallet", "susp_cymbals_bright_stick", "toms_high_sticks", "toms_high_felt", "toms_high_rods"],
+  "_pool": "the percussion lane's STRUCK voices (sandbox/instruments.js percussion): the bows, scrapes and brushes left out — a strike is struck. Dealt round robin, none again until all are used. Delete a word to take it out.",
+  "malletEvery": 3,
+  "_malletEvery": "DEC-124 ('every few, put in a mallets one … a replacement instead of the non-pitched percussion for that note, play a pitched mallet'): one strike in this many (rolled among the strikes that have a percussion note) has ONE of its percussion notes moved to the MALLETS lane — a pitched instrument below, any pitch inside its range, the note's time, length and loudness kept; it stays part of its strike (the window hears the mallets' lane as the percussionist).",
+  "mallets": ["crot_main_felt", "crot_main_metal", "crot_main_plastic", "glock_main_hard", "glock_main_medium", "glock_main_soft", "xylo_main_hard", "xylo_main_medium", "xylo_main_soft", "mar_main_full_hard", "mar_main_full_soft", "mar_main_rubber"],
+  "_mallets": "the mallets lane's struck voices (sandbox/instruments.js bowed_vibraphone — the Ricotti four): crotales · glockenspiel · xylophone · marimba. Dealt round robin."
+ },
+
  "noElectronicsLast": 4,
  "_noElectronicsLast": "the last strikes of the section that get NO window and no answer (his: 'the last four strikes have no electronics').",
 

@@ -3,7 +3,10 @@
 // strike of a score that has electronics, a STRIKE WINDOW brick (electronics/score/le_strike.js) — marked NOTATED or OPEN from his
 // letters, spanned by his rules, told how many times the electronics answers it and with what.
 //
-//   node tools/strike_windows.js --score sec05b [--seed 1] [--replace] [--dry]
+//   node tools/strike_windows.js --score sec05b [--seed 1] [--replace] [--letters] [--dry]
+//
+// ON A LAY OVER WINDOWS LAID BEFORE (--replace; DEC-124): a strike that had a window keeps its word from it; a strike inserted since takes
+// the file's `newStrikes` word (said NEW in the list); the file's letters are read whole only at a first lay or with --letters.
 //
 // THE STRIKES are his: the notes he inserted from the Strikes drawer, a strike a group (`grp-strike-…`), taken in time order. His
 // notes are never touched. Every number is HIS, in bank/strike_section.json (a `_doc` a number):
@@ -102,11 +105,20 @@ const stretchesOf = (t0, t1, S, rnd) => {
 const poolOf = (spec, known) => Array.isArray(spec) ? spec.filter((t) => known.includes(t)) : Object.entries(spec || {}).filter(([t, n]) => known.includes(t) && +n > 0).flatMap(([t, n]) => new Array(Math.round(+n)).fill(t));
 const deck = (pool, rnd) => { let d = []; return () => { if (!d.length) d = SC.shuffle(pool.slice(), rnd); return d.shift(); }; };
 // the whole lay, pure: the score's strikes + his file + the catalogue + a seed → the windows (nothing written)
-const lay = (s, C, CAT, seed) => {
+const lay = (s, C, CAT, seed, opt) => {
     const strikes = strikesOf(s), bare = Math.max(0, Math.round(+C.noElectronicsLast || 0)), n = Math.max(0, strikes.length - bare);
-    const seq = String(C.sequence || '').toUpperCase().replace(/[^NO]/g, '');
-    if (seq.length < n) throw new Error('the sequence in bank/strike_section.json has ' + seq.length + ' letters; the score has ' + n + ' strikes with electronics (' + strikes.length + ' − the last ' + bare + ')');
-    const letters = seq.slice(0, n).split(''), sp = spans(strikes, letters, C), firstBare = strikes[n];
+    // THE WORDS: a strike that HAD a window of this tool keeps its word; one without (inserted since) takes `newStrikes`; the file's letters
+    // are read whole only at a first lay or with --letters (DEC-124)
+    const earlier = new Map(s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecStrike' && o.properties && o.properties.strikeSection && o.properties.strikeSection.group).map((o) => [o.properties.strikeSection.group, o.elec && o.elec.mode === 'open' ? 'O' : 'N']));
+    const fresh = (C.newStrikes === 'notated' ? 'N' : 'O');
+    let letters, kept = 0, fresh_ = 0;
+    if (earlier.size && !(opt && opt.letters)) { letters = strikes.slice(0, n).map((x) => { if (earlier.has(x.group)) { kept++; return earlier.get(x.group); } fresh_++; return fresh; }); }
+    else {
+        const seq = String(C.sequence || '').toUpperCase().replace(/[^NO]/g, '');
+        if (seq.length < n) throw new Error('the sequence in bank/strike_section.json has ' + seq.length + ' letters; the score has ' + n + ' strikes with electronics (' + strikes.length + ' − the last ' + bare + ')');
+        letters = seq.slice(0, n).split('');
+    }
+    const sp = spans(strikes, letters, C), firstBare = strikes[n];
     const t0 = n ? strikes[0].f : 0, t1 = firstBare ? firstBare.f : (n ? strikes[n - 1].l + 0.001 : 0);
     const st = stretchesOf(t0, t1, C.stretches || {}, SC.rng(seed * 7919 + 17));
     const R = C.roll || {}, typePool = poolOf(R.transformations || SC.TYPES, SC.TYPES), timingPool = poolOf(R.timings || SC.TIMINGS, SC.TIMINGS), timings = [...new Set(timingPool)];
@@ -133,7 +145,8 @@ const lay = (s, C, CAT, seed) => {
         const cas = SC.cascade(x.ons, elec, CAT).map((a) => Object.assign(a, { startS: r3(x.l + a.fromMs / 1000), endS: r3(x.l + (a.fromMs + SC.spanMs(a.onsets)) / 1000) }));
         return Object.assign({}, w, { n: k + 1, x, stretch: stretch.i, answers: links.length, elec, cas, swapped, dropped, unavoidable });
     });
-    return { strikes, wins, stretches: st, bare: strikes.slice(n), letters, surplus: seq.length - n };
+    const seqLen = String(C.sequence || '').toUpperCase().replace(/[^NO]/g, '').length;
+    return { strikes, wins, stretches: st, bare: strikes.slice(n), letters, surplus: earlier.size && !(opt && opt.letters) ? 0 : seqLen - n, kept, fresh: fresh_, newGroups: strikes.slice(0, n).filter((x) => earlier.size && !earlier.has(x.group)).map((x) => x.group) };
 };
 module.exports = { strikesOf, spans, earOf, stretchesOf, poolOf, lay, noteMark };
 if (require.main !== module) return;
@@ -149,18 +162,18 @@ const s = JSON.parse(fs.readFileSync(useWork ? WORK : FILE, 'utf8'));
 const mine = (o) => o.type === 'zone' && o.midiModel === 'elecStrike' && o.properties && o.properties.strikeSection;
 const had = s.objects.filter(mine).length, byHand = s.objects.filter((o) => o.type === 'zone' && o.midiModel === 'elecStrike' && !mine(o)).length;
 if (had && !REPLACE && !DRY) die(had + ' windows of this tool are in ' + NAME + ' already — --replace lays them again (a change made to one of them in the page is lost)');
-let L; try { L = lay(s, C, CAT, SEED); } catch (e) { die(e.message); }
+let L; try { L = lay(s, C, CAT, SEED, { letters: flag('letters') }); } catch (e) { die(e.message); }
 const TR = s.tracks || [], short = (l) => (TR[l] && (TR[l].short || TR[l].label || TR[l].id)) || 'L' + l;
 const nm = (a) => SC.TYPE_NAME[a.type] + ' (' + SC.TIMING_NAME[a.timing] + ')';
 const out = [NAME + (useWork ? ' (the page\'s working copy — newer than the save)' : '') + ': ' + L.strikes.length + ' strikes · ' + L.wins.length + ' with electronics · the last ' + L.bare.length + ' bare · seed ' + SEED,
-    'his letters: ' + L.letters.join('') + (L.surplus ? '   (' + L.surplus + ' more in the file fall off the end)' : ''),
+    (L.kept || L.fresh ? 'the words: ' + L.letters.join('') + '   (' + L.kept + ' kept from the windows laid before · ' + L.fresh + ' new strikes ' + (C.newStrikes === 'notated' ? 'notated' : 'open') + ' — paste the string into `sequence` and lay with --letters to move one)' : 'his letters: ' + L.letters.join('') + (L.surplus ? '   (' + L.surplus + ' more in the file fall off the end)' : '')),
     'the form: ' + L.stretches.map((q) => q.from.toFixed(1) + ' → ' + q.to.toFixed(1) + ' s (' + q.lengthS.toFixed(1) + ' s): ×' + q.answers + ', ' + L.wins.filter((w) => w.stretch === q.i).length + ' strikes').join(' · ')
         + ' — the shortest ' + Math.round(100 * Math.min(...L.stretches.map((q) => q.lengthS)) / Math.max(...L.stretches.map((q) => q.lengthS))) + ' % of the longest' + (L.wins.some((w) => w.elec.raw === false) ? ' · processed versions only' : ''), '',
     ' n   strike  at (s)   word      the window (s)        long    of its strike           answers'];
 for (const w of L.wins) {
     const len = w.end - w.start, Ls = w.x.l - w.x.f;
     const how = w.mode === 'open' ? ('×' + (Ls > 0 ? (len / Ls).toFixed(2) : '—') + (w.early ? ', ' + ms(w.early) + ' ms before it' : '') + (w.short ? ', SHORT by ' + ms(w.short) + ' ms' : '')) : ('hugs: −' + ms(w.lead) + ' +' + ms(w.trail) + ' ms');
-    out.push(String(w.n).padStart(2) + '   ' + ('#' + w.x.strike).padEnd(6) + '  ' + w.x.f.toFixed(2).padStart(6) + '   ' + w.mode.padEnd(8) + '  ' + (w.start.toFixed(2) + ' → ' + w.end.toFixed(2)).padEnd(20) + '  ' + (ms(len) + ' ms').padEnd(7) + ' ' + how.padEnd(23) + ' ×' + w.answers + '  ' + w.cas.map(nm).join(' → ')
+    out.push(String(w.n).padStart(2) + '   ' + ('#' + w.x.strike).padEnd(6) + '  ' + w.x.f.toFixed(2).padStart(6) + '   ' + w.mode.padEnd(8) + (L.newGroups.includes(w.x.group) ? 'NEW ' : '    ') + (w.start.toFixed(2) + ' → ' + w.end.toFixed(2)).padEnd(20) + '  ' + (ms(len) + ' ms').padEnd(7) + ' ' + how.padEnd(23) + ' ×' + w.answers + '  ' + w.cas.map(nm).join(' → ')
         + '  · to ' + w.cas[w.cas.length - 1].endS.toFixed(1) + ' s' + (w.swapped.length || w.dropped ? '  [kept clear of the ending — ' + w.swapped.concat(w.dropped ? [w.dropped + ' answer' + (w.dropped > 1 ? 's' : '') + ' dropped'] : []).join('; ') + ']' : '') + (w.unavoidable ? '  [OVER THE BARE STRIKES — no timing fits]' : ''));
 }
 L.bare.forEach((x, i) => out.push(String(L.wins.length + i + 1).padStart(2) + '   ' + ('#' + x.strike).padEnd(6) + '  ' + x.f.toFixed(2).padStart(6) + '   —         no electronics'));
