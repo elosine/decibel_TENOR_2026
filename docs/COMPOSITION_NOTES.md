@@ -1441,3 +1441,15 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable, at `/postclear`:)* *"please go on the bcl drone note fix"*
 
 *(The AI's reading, marked as such: the remedy by construction written out at checkpoint #5 — the note under the first bass clarinet drone recording (216.4 s) given the sounding fields of the note that holds at 242 s. Applied in `piece-Draft01c`; his Reload and a pass from ~214 s next; a capture that holds proves the remedy, not the cause. RUNNING_LOG §382.)*
+
+### DEC-153 · 2026-10-10 — the clarinet's third drone recording stays
+
+*(His words, verbatim — Fable:)* *"Just leave it for now."*
+
+*(The AI's reading, marked as such: the third bass clarinet recording (key 34, 271 s), short by its key's sample, is left as it is; its drones stretch the loud 3.3 s take. RUNNING_LOG §383 · §384.)*
+
+### DEC-154 · 2026-10-10 — the audio render with the live electronics, a plan item
+
+*(His words, verbatim — Fable:)* *"Let's work out now what we need to build to render the audio for the final presentation video with now using live electronics. So we've successfully rendered audio in the last few pieces, but those didn't have electronics. So let's figure out what needs to be made or changed so that we can render the audio with the MIDI and the live electronics."*
+
+*(The AI's reading, marked as such: the lineage's render is offline — the page's MIDI captured, Reaper renders a copy of the rack; the electronics are a live process and are absent from it. The way put to him: one real-time pass recorded in Reaper as two stems — the players' sum on the REC track, the engine on ELEC RETURN — aligned, mixed, through the existing gain step, named for the notation page. The planning method entered. RUNNING_LOG §384.)*
