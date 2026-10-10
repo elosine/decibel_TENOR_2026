@@ -18,6 +18,19 @@
   "_mallets": "the mallets lane's struck voices (sandbox/instruments.js bowed_vibraphone — the Ricotti four): crotales · glockenspiel · xylophone · marimba. Dealt round robin."
  },
 
+ "orch": {
+  "share": 0.5,
+  "_share": "DEC-129 (RUNNING_LOG §357; his words: 'replace the orchestration for about half of them'): this share of the strikes — drawn one of every two in time order, so they are spread through the section — takes the NEW VOICES below. `node tools/strike_orch.js --score <name> [--seed 1] [--dry]`.",
+  "voices": { "bass_flute": "slap", "bass_clarinet": "slap", "viola": "bartok_vel", "cello": "bartok_vel" },
+  "_voices": "the new orchestration, a voice a lane (the recipes' keys, sandbox/instruments.js): bass flute and bass clarinet SLAP TONGUE (Slap Tongue Velocity) · viola and cello BARTOK PIZZICATO (Bartok Pizzicato Velocity). A lane not named — the percussion, the mallets — is left as it sounds.",
+  "ranges": { "bass_flute": { "slap": [48, 63] }, "viola": { "bartok_vel": [50, 79] } },
+  "_ranges": "where a voice really sounds, when that is narrower than its recipe says — MEASURED in this piece (RUNNING_LOG §74 · §221: the bass flute's slap answers only keys 48 … 63; §224: the viola's Bartok was captured silent at the recipe's top — 50 … 79 used since). A voice not listed takes the recipe's own range (bass clarinet slap 34 … 65 · cello Bartok 36 … 71). A note outside its voice's range is moved by OCTAVES into it (his: 'pick a new MIDI note or an octave deviation').",
+  "pitchShare": 0.5,
+  "_pitchShare": "of the strikes LEFT after the new voices, this share (one of every two) takes the PITCHES of one of his takes below (his: 'change about half of those and just change their pitches').",
+  "pitchTakes": "strikePitches",
+  "_pitchTakes": "the Strikes drawer's takes whose names begin so, numbered 1 … N (bank/panel_snapshots.json — his ten, strikePitches1 … strikePitches10): each gives one pitch a lane. Dealt EXHAUSTIVELY — every take once, in a shuffled order, before any comes again. A note on a lane the take names takes its pitch; the percussion and the mallets are left; a lane the take does not name keeps its note."
+ },
+
  "noElectronicsLast": 4,
  "_noElectronicsLast": "the last strikes of the section that get NO window and no answer (his: 'the last four strikes have no electronics').",
 

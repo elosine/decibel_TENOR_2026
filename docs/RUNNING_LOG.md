@@ -7217,3 +7217,36 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Which file:** he said "I'll save this as section 5E" and `scores/sec05e.json` was on disk five seconds after `sec05d` (09:52:07 · 09:52:12), object for object the same. The new form was laid into `sec05d` first, then into `sec05e` — both carry it; `sec05e` is his working file.
 
 **What his ear settled, for the paper:** the cascade as a device stands (he asked for no change to it); its depth has a ceiling in this texture — three. The four-answer stretch held 14 strikes × 4 = 56 answers in 18 seconds, on top of the late answers of the stretch before.
+
+## §357. SECTION 5E RE-ORCHESTRATED AND RE-PITCHED — slap tongue and Bartók pizzicato on half the strikes, his ten pitch takes on half of the rest (DEC-129) (2026-10-10, Opus)
+
+**What prompted it:** DEC-129, verbatim in COMPOSITION_NOTES. Asked first: how many ensemble strikes — 67 (63 with electronics: 22 notated, 41 open; four bare).
+
+**Read before building:**
+- The voices' keys (`sandbox/instruments.js`): bass flute `slap` (Slap Tongue Velocity) · bass clarinet `slap` · viola `bartok_vel` · cello `bartok_vel` (Bartok Pizzicato Velocity).
+- Their ranges, and the two this piece has MEASURED narrower than the recipe says: the bass flute's slap answers only 48 … 63 (§74 · §221 — a key above is silent) · the viola's Bartók 50 … 79 (§224 — captured silent at the recipe's top). The bass clarinet's slap 34 … 65 and the cello's Bartók 36 … 71 by the recipe.
+- His ten takes `strikePitches1 … strikePitches10` (`bank/panel_snapshots.json`, the Strikes drawer's): each a harmony with ONE pitch a lane — bass clarinet 38 … 60 · bass flute 49 … 65 · viola 48 … 93 · cello 39 … 71 · the percussion one; `strikePitches3` names no bass flute.
+
+**Built — `node tools/strike_orch.js --score sec05e [--seed 1] [--dry]`, his numbers in `bank/strike_section.json` `orch`:**
+- **(A) the new voices** on `orch.share` 0.5 of the strikes: each note on a lane of `orch.voices` moves to that voice; a key outside the voice's range (`orch.ranges`, else the recipe's) moves by OCTAVES into it.
+- **(B) his pitches** on `orch.pitchShare` 0.5 of the strikes left: a note on a lane the take names takes the take's pitch; the takes dealt EXHAUSTIVELY (a shuffled deck of the ten, shuffled again when empty); the percussion and the mallets left; a lane the take does not name keeps its note.
+- **Which strikes:** in time order in pairs — of every two, one drawn for (A); of every two of the rest, one for (B): spread through the section, never a long run of one kind.
+- A changed note is tagged (`properties.strikeOrch` · `properties.strikePitch`, with what it was); a strike with a tagged note is not drawn again.
+
+**The run (seed 1): 34 strikes in the new voices** — 128 notes, 43 of them moved by octaves (the bass flute's slap zone is an octave and a third: most of its notes fell) — **17 strikes on his pitches** (takes 1 · 4 · 7 once, the seven others twice) — **16 untouched.** In the section now: bass flute 33 slap · 31 staccato · bass clarinet 28 slap · 27 staccato · viola 33 Bartók · 31 staccato · cello 34 Bartók · 33 staccato. No note outside its voice's range.
+
+**HIS SAVE HAD PUT THE OLD FORM BACK — found by the check, cured.** `sec05e.json` was saved at 10:08:39, after §356's lay, FROM THE PAGE'S OWN COPY: the page had not been reloaded, so the save wrote the six-stretch form (the one he had judged too dense) back over the lay. `strike_orch.js` took that file as its base, rightly; `strike_check.js` then said the windows were not what the tool lays (×4: 14 strikes). The windows were laid again on top of the new orchestration (`strike_windows.js --replace`, once): 11 · 20 · 25 · 6 · 1, PASS. **The rule, said to him:** after a tool writes a score he has open — File ▾ → Reload BEFORE any Save; a Save from a page that has not reloaded puts the page's older copy back.
+
+**NOT CLAIMED:** the page; his ear. The engine is untouched (no restart).
+
+## §358. THE THREE BODY PROBLEM'S PAGE KEPT — proposals for the change of state and for the electronics (DEC-130) (2026-10-10, Opus)
+
+**His verdict (DEC-130, verbatim):** *"What you've done looks good. Let's keep that."* — the wedge, its colours and thicknesses, the two badges of §355 stand. Asked: *"if there should be some sort of sign or indicator when the mode in three body problem changes. And then how we should represent the electronics. I'll take proposals"*.
+
+**What the page already says, measured:** a state is a colour and a thickness; a change is a ramp 2.3 … 6.0 s long (20 of them in the save, 15 drawn — a break's change is folded in) in a gradient. What it does not say: WHICH state a colour is, to a player who has not learned the four.
+
+**Proposals put to him — the change of state:** (a) nothing more — the wedge is the sign · (b) a small PICTURE-SIGN of the state, in the state's colour on the badge's ground, where its ramp begins — three dots far apart · closing · clustered · scattered; no words (DEC-99) · (c) a number 1 … 4 there · (d) a thin vertical line where a change begins. The AI leans to (b): his notation speaks in badges; a number has to be learned twice.
+
+**Proposals put to him — the electronics (the three computer players, in the presentation view only):** (a) as the opening: a grey window for each of the 27 containers, a small short attacks' badge in each (his own first thought, DEC-125) · (b) ONE grey window a computer player along the lane's bottom (under the bass clarinet, the percussion, the cello — where their bricks stand in the score), with that player's OWN small state wedge inside it and one small badge at its start: it shows what is true — a fourth, fifth and sixth player on the same orbit · (c) nothing. The AI leans to (b): 27 boxes say "something here" 27 times; a wedge says what.
+
+*(his word: the next entry)*

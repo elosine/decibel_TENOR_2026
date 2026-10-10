@@ -1,6 +1,6 @@
 # SECTION 5B, THE STRIKES — `scores/sec05e.json`
 
-*Laid 2026-10-10 13:53 by `node tools/strike_windows.js --score sec05e --seed 1 --replace` (PLAN.md 1.9 · 17.3). Regenerated at every lay — do not edit. His numbers: `bank/strike_section.json`.*
+*Laid 2026-10-10 14:11 by `node tools/strike_windows.js --score sec05e --seed 1 --replace` (PLAN.md 1.9 · 17.3). Regenerated at every lay — do not edit. His numbers: `bank/strike_section.json`.*
 
 67 strikes of his, 63 with electronics, the last 4 bare. **NOTATED** = played as written; **OPEN** = the ensemble strikes freely inside the window (what he played stands in for them). The electronics hears each strike through its window and answers after it — once, twice or three times by where the strike falls in the form; in a cascade each answer changes the rhythm of the answer before it.
 
