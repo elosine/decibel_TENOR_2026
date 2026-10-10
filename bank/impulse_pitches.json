@@ -1,0 +1,31 @@
+{
+ "_what": "THE OPENING'S IMPULSES — WHERE EACH ARTICULATION MAY BE ROLLED (DEC-144, RUNNING_LOG §373). HIS DATA: tools/impulse_pitches.js reads this file and never writes it. For each lane's instrument and each articulation: keys = [lowest, highest] MIDI key a roll may give a note of that articulation, and basis = why those keys are known to SOUND. The rule of the file: a key is in only on evidence — a measured zone, a zone read from his Kontakt, or keys the bank has captured — because a key outside a preset's zone is silent (or, on Xsample, a function key) and its impulse is then not captured at all. An articulation with no row here is LEFT at its pitch by the roll, and the tool says so. To widen a row: a higher or lower key that has sounded (a pass, a sweep with tools/key_sweep.js), then the number here.",
+
+ "bass_flute": {
+  "slap": { "keys": [48, 63], "basis": "measured (RUNNING_LOG §74: the slap preset's zone 48 … 64; tools/petal_hit.js ZONES 48 … 63)" },
+  "stac_vel": { "keys": [48, 72], "basis": "captured at 50 · 53 · 61 · 72 (the impulse batch, bank/impulse_bank.json — all banked, §197); 48 the instrument's lowest key" }
+ },
+ "bass_clarinet": {
+  "slap": { "keys": [34, 65], "basis": "the preset's zone as read from his Kontakt (the recipe, piece #5's R5); captured at 35 … 63 (the petal hits, the batch)" },
+  "secco": { "keys": [34, 65], "basis": "the preset's zone as read from his Kontakt; captured at 41 · 52 · 58" },
+  "flutter_vel": { "keys": [34, 60], "basis": "the preset's zone as read from his Kontakt (the flutter presets stop at 60)" },
+  "flutter_vel_mwinv": { "keys": [34, 60], "basis": "the preset's zone as read from his Kontakt (the flutter presets stop at 60)" }
+ },
+ "bowed_vibraphone": {
+  "glock_shorts_hard": { "keys": [55, 84], "basis": "the patch's range in the Ricotti catalogue (bank/ricotti_catalog.json, swept §32); captured at 58 · 70" },
+  "crot_main_metal_damped": { "keys": [60, 84], "basis": "the patch's range in the Ricotti catalogue; captured at 63 · 81" }
+ },
+ "viola": {
+  "bartok_vel": { "keys": [50, 79], "basis": "measured (tools/petal_hit.js ZONES; bank/strike_section.json orch.ranges): silent at 80" },
+  "marcato_sfz_vel": { "keys": [48, 61], "basis": "captured at 51 · 61; 48 the open C string. Above 61: not known" },
+  "sp_spicc_vel": { "keys": [48, 68], "basis": "captured at 62 · 68; silent at 84 (§196). Between 69 and 83: not known" },
+  "bow_op_vel": { "keys": [48, 50], "basis": "captured at 50 (the staccato sibling at 49). Above: not known" }
+ },
+ "cello": {
+  "gettato_vel": { "keys": [36, 74], "basis": "captured at 36 · 39 · 45 · 49 · 54 · 56 · 57 · 68 · 74 (the petal hits, the batch)" },
+  "col_legno_vel": { "keys": [36, 63], "basis": "captured at 38 · 44 · 63. Above: not known" },
+  "bartok_vel": { "keys": [36, 66], "basis": "captured at 36 · 50 · 66 (the recipe gives 36 … 71)" },
+  "bow_op_x_marcato_sfz_mw_vel": { "keys": [36, 44], "basis": "captured at 44; 36 the open C string. Above: not known" },
+  "bow_op_vel": { "keys": [36, 49], "basis": "captured at 49 (the staccato sibling at 47). Above: not known" }
+ }
+}
