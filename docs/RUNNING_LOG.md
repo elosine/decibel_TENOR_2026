@@ -6958,3 +6958,26 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **"Is the notation score the same page width as the previous two pieces? It seems cropped" (DEC-116) — MEASURED, the same:** `notation/registry/container.json` in this repo, in `septet_LGMF_2026` and in `septet_2026` — the frame 1920 × 1080 · the names' gutter 72 px · the margins 40 px left and right (this repo and #6; #5 predates the margin rule) · `timeScale.defaults.trance` 12 s a page · the zoom view ×2; `notation/lib/coords.js` and the app's `fitSheet` the copy-forward's, unchanged (the video view fits the whole frame to the window: `min(1, innerWidth / W, innerHeight / H)`; the zoom view fits the width only, at twice the size). **Two readings offered him, neither confirmed:** the app in its ZOOM view (the `⇆ video/zoom` button — the page twice as big, scrolling sideways) · the LAST page of the opening's cut (0 … 37 s on 12 s pages: page 4 holds 36 … 37 s of music with the lead-in, then a bar at 37 s — the cut's end — and empty paper). **Open: which page and which view.** Not looked at on his screen; no screenshot asked for yet — the next step if it is neither.
 
 **The session, for the paper (what it shows):** the presentation view's electronics went through four rounds in an hour, each a sentence of his and a re-cut — the region and the count as the only facts drawn (§333), purple at the bottom (§334 · §335), the quartet's blue birds and a grey window (§336), the window local (§338). The method that made it cheap: every look a row of the registry and every placement a flag of the cutter, so his sentence is one word or one re-cut.
+
+## §340. SECTION 1 — A BADGE BEFORE EVERY MIC OPENING, AT THE ORIGINAL SIZE (DEC-117) (2026-10-09, Opus)
+
+**What prompted it (DEC-117, verbatim):** *"All right, I think for the first section, we're going to need the badge before every mic opening. So let's go back to the original size, which was 50. Well, this is 50% bigger than it was before. So whatever that is. And put one in front of every uh, mic opening."* — his first word after the postclear of checkpoint #3; of the three things offered (the presentation page · the cropped page · the strikes) he took none and gave this instead.
+
+**What it overturns:** DEC-102 (§323) — "the opening has no badge on its openings", one announcing badge a lane (kept at DEC-105, enlarged there by half). The reason he gives is the need, not a look: "we're going to need the badge before every mic opening". The AI's reading of the need, unconfirmed: with one badge a lane, a player on pages 2 … 4 sees a bare yellow brick and nothing that says what to play.
+
+**The size:** "the original size … this is 50 % bigger than it was before" = the size before DEC-105: `sizeSs` 4.557 = 36 px at the 1080 frame — the format's own size (piece #1's flocking badge), and the size the electronics' flocking badge already has on the presentation page. So the two badges are equal now.
+
+**Built — one number and one flag:**
+- `notation/registry/rules.json` `objects.badge.sizeSs` 6.835 → 4.557. `gapSs` 1.52 (12 px) NOT touched — he named the size only (the rule of §329: a property changes on the part he named).
+- The cut: `--announce shortAttacks:0:37` → `--micBadge shortAttacks:0:37` (the flag built at §325 for the drones), on BOTH pages of section 1:
+  `node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening --label "Approaching — the opening (0 … 37 s)" --mics --silent 0-37 --micBadge shortAttacks:0:37`
+  `node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening-elec --label "Approaching — the opening, with the electronics (0 … 37 s)" --mics --silent 0-37 --micBadge shortAttacks:0:37 --elec --elecBadge flocking:0:37:each --elecWindow 0:37`
+- `node tools/gen_engraving_rules.js` (393 lines) · `node tools/check_rules.js` 31 of 32 (§45's red: no sequence page to compare).
+
+**The numbers:** `approaching-opening` — 30 mic openings, 30 badges (5 before). `approaching-opening-elec` — 30 mic openings, 55 badges (30 short attacks + 25 flocking), 25 return bricks, 25 windows. The mic's row is as tall as its tallest thing (§328): 36 px now, so it runs 8 … 44 px from the lane's top (8 … 62 before); the mic opening, 29 px, still hangs from the row's top.
+
+**Seen in the running app** (his 5500, the AI's pane, the video view, page 1 of `approaching-opening`): seven openings, a dark badge before each. Pages 2 … 4 not looked at; the film and the print not rendered.
+
+**The cut read the save of `piece-3BodyRedo` as it stood** (modified by him since the commit of §291 — his live work): had he moved a mic opening in the first 37 s, the page would follow it. Not compared.
+
+**Recorded:** `docs/NOTATION_SCHEME.md` (the rules' table, the opening's block, the lane's map 8 … 44, the open list) · the row's `ref`.

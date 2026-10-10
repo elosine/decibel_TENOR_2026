@@ -24,7 +24,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | which pitch · which percussion instrument | the player's choice, within the type **(AI — to confirm)** | open |
 | the mic opening | a yellow brick: WHEN to play into the microphone, and for how long. Always at ONE height: **the TOP of the lane, for now** | decided (DEC-103) — drawn, his eye |
 | a badge | says what KIND of sound. SECTIONAL: it announces a section once | decided |
-| a badge on a mic opening | where the openings stand alone — the drones: yes, each one · the opening: none | decided for those two |
+| a badge on a mic opening | where the openings stand alone — the drones: yes, each one · the opening: yes, each one (DEC-117; it was "none" until then) | decided for those two |
 | two badges together | a METHOD large, its MATERIAL small beside it (the three body problem) · two materials side by side, equal (section 2) | decided for the three body; the rule **(AI)** |
 | the conductor's arc (GC) | only where an event is one exact moment: the accented long tones. NOT in the opening | decided |
 
@@ -32,7 +32,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 
 ## 2 · The signs chosen
 
-**The six badges** — a rounded square, dark slate, the sign in its colour; 54 px in the score (DEC-105) (`bank/language/language.json`; http://localhost:5500/language/index.html)
+**The six badges** — a rounded square, dark slate, the sign in its colour; 36 px in the score — the format's own size (DEC-117; 54 px from DEC-105 until then) (`bank/language/language.json`; http://localhost:5500/language/index.html)
 
 | type | sign | colour |
 |---|---|---|
@@ -56,8 +56,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 ## 3 · Section by section — what a player sees
 
 ### 1 · The opening (0 … 37 s) — short attacks — IN THE NOTATION SCORE
-- **Announced by:** the short attacks' badge, once in each lane, before that player's first mic opening (kept and resized by him, DEC-105).
-- **Each event:** a mic opening, ALONE. No conductor's arc. No note. No badge on it.
+- **Announced by:** nothing apart — every mic opening carries the badge (DEC-117; until then: once in each lane, before that player's first opening).
+- **Each event:** the short attacks' badge, 36 px, then its mic opening 12 px after it. No conductor's arc. No note.
 - **On the page:** 30 openings on four pages, each 0.5 s = 77 px.
 - **Open:** nothing, but for his eye on the new sizes.
 - **Presentation view (DEC-111 · DEC-112 · DEC-114):** at the lane's bottom, for each of the player's five return bricks a see-through slate-grey WINDOW round the pair: the flocking badge (the quartet's colours), then the purple brick — its length the region (0.8 … 2.5 s), its thickness the number of returning sounds (one → five). Nothing on the brick. *(Built, RUNNING_LOG §335 — the page `approaching-opening-elec`; the numbers the AI's first, his to move, one word each: `rules.json` `objects.elecReturn` (the brick: its place, its height a sound) · `objects.elecBadge` (the badge's size) · `colours.elecPurple` (the purple).)*
@@ -102,8 +102,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 | | px |
 |---|---|
 | the gap under the dividing line — the size a first number **(AI)** | 0 … 8 |
-| **the mic's row** — the mic opening (29 px tall, at 8 … 37) and the badge (54 px) both hang from its top | 8 … 62 |
-| free | 62 … 89 |
+| **the mic's row** — the mic opening (29 px tall, at 8 … 37) and the badge (36 px, DEC-117) both hang from its top | 8 … 44 |
+| free | 44 … 89 |
 | the staff, where it shows | 89 … 121 |
 | free | 121 … 202 |
 | the gap above the next dividing line | 202 … 210 |
@@ -117,10 +117,10 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 1. the mic's height — the TOP, for now (DEC-103).
 
 **To place, in this order**
-2. **► the badge and its mic** — the announcing badge is drawn two ways; a badge ON an opening comes with the drones.
+2. ✓ the badge and its mic — in the opening a badge before EVERY mic opening (DEC-117); the drones the same way at their turn.
 3. the three body problem's line wedge, and its state signs.
 4. the standard gap — its size (8 px drawn).
-5. ✓ the badges' size — 54 px, 12 px before the mic opening: his numbers (DEC-105).
+5. ✓ the badges' size — 36 px, the original (DEC-117; 54 px from DEC-105 until then), 12 px before the mic opening.
 
 ---
 
@@ -130,7 +130,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 **The principle (AI, unopposed):** draw as fact only what is true at every performance — the REGION, the COUNT, the KIND; an onset is true only of one realisation.
 
-**The electronics' "italics" — how their signs are told from the players' (DEC-111 · DEC-112):** THE WINDOW — a plain see-through slate-grey rectangle with a subtle grain round each brick and its badge (his "something to identify that these are electronics"; "just local", DEC-114) · the place, the lane's BOTTOM · the brick PURPLE · their badge the quartet's flocking badge, smaller than the language badges, before every brick.
+**The electronics' "italics" — how their signs are told from the players' (DEC-111 · DEC-112):** THE WINDOW — a plain see-through slate-grey rectangle with a subtle grain round each brick and its badge (his "something to identify that these are electronics"; "just local", DEC-114) · the place, the lane's BOTTOM · the brick PURPLE · their badge the quartet's flocking badge, 36 px — the language badges' size too since DEC-117 — before every brick.
 
 | section | the hint | status |
 |---|---|---|
@@ -148,7 +148,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 with his numbers of DEC-105 and DEC-106 (the badge 54 px, 12 px before its mic · the mic opening 29 px tall, hung from the top) and DEC-107 · DEC-108 (its fill 18 %, its outline solid).
+1. ► His eye on section 1 as re-cut at DEC-117 (a badge, 36 px, before EVERY mic opening, 12 px before it · the mic opening 29 px tall, hung from the top, its fill 18 %, its outline solid).
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's / presentation view — section 1 BUILT (§335): his eye; then its sections 2 … 6, each at its turn with the players' signs.

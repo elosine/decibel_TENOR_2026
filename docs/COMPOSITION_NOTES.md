@@ -1215,3 +1215,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Fable:)* *"And is the notation score the same page width as the previous two pieces? It seems cropped."*
 
 *(The AI's reading, marked as such: a question about the notation app's page. Measured against pieces #5 and #6: the same in every number that sets it. Two things that can look like a crop put to him; which page and which view he sees it on is NOT yet said — open. RUNNING_LOG §339.)*
+
+### DEC-117 · 2026-10-09 — section 1: the badge before EVERY mic opening, at its original size
+
+*(His words, verbatim — Opus, after the postclear of checkpoint #3:)* *"All right, I think for the first section, we're going to need the badge before every mic opening. So let's go back to the original size, which was 50. Well, this is 50% bigger than it was before. So whatever that is. And put one in front of every uh, mic opening."*
+
+*(The AI's reading, marked as such: TWO things — (1) the short attacks' badge before each of the opening's 30 mic openings, not once a lane; this overturns DEC-102's "the opening has no badge on its openings" · (2) the badge back to the size it had before DEC-105's "50 % bigger": 36 px, the format's own. Not said, so not touched: the gap between a badge and its mic opening (12 px, DEC-105) · the mic opening itself. Read as holding for both pages of section 1 — the players' and the one with the electronics. Built: RUNNING_LOG §340.)*

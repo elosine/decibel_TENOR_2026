@@ -18,10 +18,10 @@
  },
  "provenance": {
   "createdBy": "tools/notate_section.js (profile trance) --mics",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance) --mics",
   "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. MIC OPENINGS (decibel PLAN 2.4): 30 zone(s) elecOpen as micOpening overlays.",
-  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening --label \"Approaching — the opening (0 … 37 s)\" --mics --silent 0-37 --announce shortAttacks:0:37"
+  "build": "node tools/notate_section.js --score piece-3BodyRedo --w0 0 --w1 37 --id approaching-opening --label \"Approaching — the opening (0 … 37 s)\" --mics --silent 0-37 --micBadge shortAttacks:0:37"
  },
  "events": [
   {
@@ -2249,7 +2249,7 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-announce-shortAttacks-0-1425",
+   "id": "ov-badge-mic-shortAttacks-0-1425",
    "kind": "badge",
    "target": {
     "part": 0,
@@ -2262,7 +2262,7 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-announce-shortAttacks-1-2569",
+   "id": "ov-badge-mic-shortAttacks-1-2569",
    "kind": "badge",
    "target": {
     "part": 1,
@@ -2275,7 +2275,7 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-announce-shortAttacks-2-4045",
+   "id": "ov-badge-mic-shortAttacks-2-4045",
    "kind": "badge",
    "target": {
     "part": 2,
@@ -2288,7 +2288,7 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-announce-shortAttacks-4-4380",
+   "id": "ov-badge-mic-shortAttacks-4-4380",
    "kind": "badge",
    "target": {
     "part": 4,
@@ -2301,11 +2301,336 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-badge-announce-shortAttacks-5-5112",
+   "id": "ov-badge-mic-shortAttacks-5-5112",
    "kind": "badge",
    "target": {
     "part": 5,
     "t": 5.112
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-4-6539",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 6.539
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-3-6891",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 6.891
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-0-8151",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 8.151
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-5-9800",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 9.8
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-1-10037",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 10.037
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-2-11122",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 11.122
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-0-12082",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 12.082
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-4-13273",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 13.273
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-5-14842",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 14.842
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-1-16253",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 16.253
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-5-17718",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 17.718
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-4-17999",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 17.999
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-0-18762",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 18.762
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-1-20694",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 20.694
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-3-22161",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 22.161
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-4-22891",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 22.891
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-2-24495",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 24.495
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-0-25725",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 25.725
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-5-26070",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 26.07
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-1-27313",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 27.313
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-2-29750",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 29.75
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-4-31200",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 31.2
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-0-32400",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 32.4
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-5-32900",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 32.9
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-shortAttacks-1-34300",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 34.3
    },
    "value": {
     "type": "shortAttacks",
