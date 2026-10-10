@@ -7485,3 +7485,33 @@ The viola's six now 48 · 50 · 55 · 57 · 66 · 77 (they were 50 · 50 · 51 �
 **What follows a roll, said to him:** the samples keep their names (`bfl-impulse-1` …), so the first pass of the opening captures the new pitches and still returns the earlier takes' renders where a return comes sooner than its render — the SECOND pass is the new pitches throughout. And the versions his FX audition plays are these same names: after a pass of the opening they are renders of the new pitches.
 
 **Proven:** the tool's dry run and its write, read back (20 notes tagged, the file's other 1153 objects untouched, its form kept). **Not heard.** No key outside a row was drawn; whether every row's every key sounds is the evidence's claim, not a test of today.
+
+## §374. THE OPENING'S DISTORTIONS, 25 → 10 — the fifteen dealt again among the rest (DEC-145) (2026-10-10, Opus)
+
+**What prompted it (DEC-145, his words):** first a count — *"in the initial set of effects. For that first section, can you tell me how many of the sort of uh, distortion effects are? So I'm saying fuzz, diode, um, octave, crush."* Counted from `piece-Draft01b`, 0 … 37 s: **25 of the 75 returns** — diode 9 · octave 6 · crush 6 · fuzz 4 (the other fifty: feedback 13 · icy 13 · greyhole 8 · jpverb 8 · comb 4 · cres 4). Then: *"Okay, let's reduce those by 10. And so 210. So let's reduce by 15. And then those 15 just redistribute, just roll for the rest of the ones. And then can you tell me in the fund how many effects presets are one of these? And tell me what CRES is."*
+
+**Read as** (the dictation's "210" = "to ten"): the 25 down TO 10, so 15 fewer; the 15 take a preset of the other effects, by a roll.
+
+**Built — `tools/thin_effects.js`:** `node tools/thin_effects.js --score <name> --effects fuzz,diode,octave,crush --keep 10 [--from 0] [--to 37] [--seed 1] [--off] [--dry] [--render]`.
+- **Who keeps:** the count to keep is shared among the named effects in proportion to what each has (largest remainders; each keeps at least one) — of 25 → 10: diode 4 of 9 · fuzz 2 of 4 · octave 2 of 6 · crush 2 of 6; WHICH plays, by the seed.
+- **What the others take:** a preset from the rest of the dealt pool (`deal` not false, its effect not named — 27 of the 40), one seeded deck, none twice until all are used, never a version that sample already plays in the stretch. The play keeps its sample, its envelope (all `tail` here), its brick.
+- **Reversible:** what a play was is on its brick (`properties.fxSwap`); a new seed deals again from the stretch as it was; `--off` puts all back.
+
+**Seed 1, written into `piece-Draft01b`** (a copy taken first) and the fifteen new versions asked of his living engine at once (`--render`; all fifteen in the index, made after 11:55):
+
+```
+  9.50 s  vc-impulse-1    octave8 → greyhole5       29.85 s  perc-impulse-4  fuzz8   → greyhole4
+ 12.18 s  bfl-impulse-1   diode8  → feedback1       29.85 s  perc-impulse-1  crush1  → comb3
+ 14.94 s  vc-impulse-2    crush1  → cres5           31.30 s  va-impulse-5    diode7  → jpverb2
+ 17.70 s  va-impulse-3    diode1  → feedback3       31.30 s  va-impulse-2    octave5 → icy2
+ 18.46 s  bfl-impulse-3   crush4  → jpverb6         32.50 s  bfl-impulse-1   diode1  → icy5
+ 21.90 s  perc-impulse-3  fuzz2   → feedback2       32.50 s  bfl-impulse-2   diode2  → icy3
+ 22.99 s  va-impulse-3    octave6 → icy4            34.40 s  bcl-impulse-4   octave6 → icy1
+                                                    34.40 s  bcl-impulse-5   crush8  → greyhole1
+```
+
+**The opening after it:** icy 18 · feedback 16 · greyhole 11 · jpverb 10 · comb 5 · cres 5 · diode 4 · fuzz 2 · octave 2 · crush 2 — 75. A consequence, not chosen: the long-ringing effects (icy · feedback · greyhole · jpverb) are 55 of the 75 now, where they were 42.
+
+**His two questions, answered:** in the pool of 40 dealt presets, **13** are one of the four — diode 5 · crush 3 · octave 3 · fuzz 2. **CRES** is the chain's *complex resonator* (`electronics/score/le_process.js`: "one ringing partial"): the impulse strikes ONE resonant pitch, drawn at each render between 100 and 2000 Hz, which rings on (the three presets' decays 0.56 · 0.68 · 0.75) — in his own terms, a single petal.
+
+**Not heard.** His audition copy (`audition-sec01-fx-updates`) still lists the opening's versions as they were before this swap; it is his working file and was not touched.
