@@ -2,6 +2,8 @@
 
 > **Provenance (septet LGMF 2026, 2026-09-17):** copied unchanged from piece #5 `septet_2026/docs/CURVE_LOOK.md` with the port of the code it describes (PLAN 0b / 0g). **It describes the tool as it was built for the TEMPUS septet: its instrument names, its `§N` references into that piece's `RUNNING_LOG`, and its measurements are piece #5's.** The mechanism is what carries. Where this piece changes the tool, the change is recorded here and dated.
 
+> **THIS PIECE (decibel TENOR 2026, 2026-10-10 — RUNNING_LOG §389):** the standard below is used AS IT IS for section 2's trills — § 2 (the one closed path, lime green) and § 2a (**the smoothing: 100 samples a second; the drawn floor at 1 of 10**) and § 6 (the meter). Its values live in `notation/registry/rules.json` `objects.curve` · `colours.limeGreen` and `container.json` `devices.byEnv.trill.curveFloor`; a trills page is cut with `--trills --trillRate 100`. § 8 has the line.
+
 # The curve look — the standard for every curve drawn on a score
 
 *D42, the composer, 2026-09-13 (RUNNING_LOG §446–§447). Carry it forward with the engine: this piece, piece #4's rehearsal and
@@ -119,3 +121,5 @@ device is wanted.* Both are drawn per lane at the cursor, from `builds/performan
   the outline. The motive pie and the line-wedge meter recorded as #2's spec (§7), not enabled. RUNNING_LOG §448.
 - **2026-09-13 — 2f.7** — the density (100 samples per second) and the drawn floor at 1 of 10, on the septet's trills (§2a). The morph
   crescendo not yet — his word. RUNNING_LOG §450–§451.
+
+- **2026-10-10 — decibel TENOR 2026, the trills of section 2** — the standard applied unchanged (the look · 100 samples a second · the floor at 1 of 10 · the meter) to a trill with no pitch; measured on the page: the longest straight segment 1.75 px, the curve's start 21.0 px above the bottom of a 209.6 px lane. decibel RUNNING_LOG §389.

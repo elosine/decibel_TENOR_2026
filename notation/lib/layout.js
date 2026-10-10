@@ -1468,6 +1468,20 @@
             // eight"). Emitted inside the nh-unit, which knows the head's x;
             // a techText on a device with no nh-unit takes the tag row.
             if (dev.techText && !dev.nhUnit) items.push(Object.assign({ k: 'text', t: e.onset, dxSs: 0, ySs: o.tagY != null ? o.tagY : 3.5, text: dev.techText, seq: 'techText' }, WORD));
+            // [decibel PLAN 2.9, RUNNING_LOG §389 — his "the go line, the TR symbol … there won't be any pitch"] A TECHNIQUE SYMBOL WITH NO NOTE
+            // UNDER IT: a device with a techSymbol, no nh-unit, and techSymbolAt 'laneTop'. The sign stands in the upper left corner of the
+            // event's curve — its LEFT ink afterGoGapSs right of the go line (the trill column's rule, #5 §445 · §452, with one member), its TOP
+            // techSymbolTopGapSs under the lane's top (the standard gap; the row the mic openings hang in). The renderer places it by the lane.
+            if (dev.techSymbol && !dev.nhUnit && dev.techSymbolAt === 'laneTop') {
+              const sgT = glyphs.articulation && glyphs.articulation[dev.techSymbol];
+              if (!sgT) warnings.push('event ' + e.id + ': technique symbol glyph "' + dev.techSymbol + '" missing — not drawn');
+              else {
+                const kT = dev.techSymbolScale > 0 ? dev.techSymbolScale : 1;
+                const gapT = dev.afterGoGapSs != null ? dev.afterGoGapSs : (o.nhGapSs != null ? o.nhGapSs : 0.25);
+                items.push(Object.assign({ k: 'glyph', g: 'artic-' + dev.techSymbol, t: tU, dxSs: gapT + sgT.wSs * kT / 2, ySs: 0, align: 'center',
+                  laneTopGapSs: dev.techSymbolTopGapSs != null ? dev.techSymbolTopGapSs : 1 }, kT !== 1 ? { scale: kT } : {}));
+              }
+            }
             if (dev.nhUnit) {
               // THE NH-UNIT (device element 3, day 22): open head (stemless)
               // + accidental + ledgers + ottava, right-anchored a fixed gap

@@ -51,7 +51,9 @@
     // piece #4's swells, which a 17 s trill spread 28 px apart at the video scale (the corners the composer saw).
     trillRate: 0,
     // the curve windows a trill reads by name — composer.html CURVE_LAYERS / CURVE_NAMES
-    CURVE_WINDOWS: { A: 8, B: 9, C: 10 },
+    // [decibel 2026-10-10, RUNNING_LOG §389] THIS piece's: six lanes, META 6, the windows A · B · C on layers 7 · 8 · 9. The copy-forward had
+    // left piece #6's 8 · 9 · 10 here (seven lanes) — a lane NUMBER in a default: a trill on window A would have read window B's curves.
+    CURVE_WINDOWS: { A: 7, B: 8, C: 9 },
     // [LGMF PLAN 2d.1, 2026-09-25, RUNNING_LOG §382] with options.sequences (a list of `grp-seq-*` group ids): a note the
     // sequence drawer wrote (srcKind 'sequence') in one of those groups is a BREATH of the sequence device — env 'sequence'
     // (registry byEnv.sequence). Opt-in by group, so a page built without it (every page before 2d) extracts exactly as before.
@@ -378,9 +380,13 @@
     const zones = opt.trills ? (score.objects || []).filter(o => o.type === 'zone' && o.midiModel === 'trill' && o.trill
       && o.startTime >= w0 && o.startTime < w1 && parts.includes(o.layer)) : [];
     if (opt.trills) for (const o of score.objects || []) if (o.type === 'zone' && o.midiModel === 'trill') trillIds.add(o.id);
-    let eatenN = 0;
+    let eatenN = 0, drawnN = 0;
     const objs = score.objects.filter(o => {
       if (!inWin(o)) return false;
+      // [decibel 2026-10-10, RUNNING_LOG §389] A DRAWN CURVE on a player's lane — no note, no technique (the reference curve a trill reads
+      // by curveRef 'lane') — sounds nothing and is not an event: the trill that reads it carries its shape. It was never met before (every
+      // earlier window held notes only on its lanes), and the classifier refuses what it cannot name.
+      if (o.sonifyNote == null && !o.technique) { drawnN++; return false; }
       if (opt.trills && o.mutedBy) {
         if (trillIds.has(o.mutedBy)) { eatenN++; return false; }
         warnings.push(o.id + ': mutedBy ' + o.mutedBy + ', which is not a trill in this score — extracted as a note (a stale stamp; a Save refreshes it)');
@@ -730,7 +736,7 @@
           date: date || 'undated',
           tool: toolName || 'extract_core',
           notes: 'Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL ' + opt.TOL + ' s. Regenerable; authored content belongs in overlays only.'
-            + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + flatN + ' trill(s) read a flat level.' : '')
+            + (opt.trills ? ' TRILLS (PLAN 2f.3): ' + zones.length + ' trill zone(s) as env trill; ' + eatenN + ' eaten note(s) (mutedBy) not extracted; ' + (drawnN ? drawnN + ' drawn lane curve(s) (no note) not extracted; ' : '') + flatN + ' trill(s) read a flat level.' : '')
             + (opt.mics ? ' MIC OPENINGS (decibel PLAN 2.4): ' + micOverlays.length + ' zone(s) elecOpen as micOpening overlays.' : '')
             + (opt.elec ? ' THE ELECTRONICS (decibel PLAN 2.7): ' + elecOverlays.length + ' zone(s) elecPlay as elecReturn overlays.' : '')
             + (opt.wedges ? ' THE STATE WEDGES (decibel PLAN 2.6): ' + wedgeOverlays.length + ' lane(s), ' + wedgeOverlays.reduce((n, o) => n + o.value.segs.length, 0) + ' stretch(es) of the tb containers as stateWedge overlays.' : ''),

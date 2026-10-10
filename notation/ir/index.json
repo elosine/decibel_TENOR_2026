@@ -60,6 +60,16 @@
     125
    ],
    "profile": "trance"
+  },
+  {
+   "id": "approaching-trills",
+   "label": "Approaching — the trills (125 … 210 s)",
+   "score": "piece-Draft01c",
+   "window": [
+    125,
+    211
+   ],
+   "profile": "trance"
   }
  ]
 }

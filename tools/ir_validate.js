@@ -290,6 +290,9 @@ function completeness(doc, errs) {
     if (o.type !== 'waveCurve' || o.layer === 10) continue;
     if (!doc.source.parts.includes(o.layer)) continue;
     if (o.startSeconds < w0 || o.startSeconds >= w1) continue; // half-open (A3 ownership law)
+    // [decibel 2026-10-10, RUNNING_LOG §389] a DRAWN CURVE on a player's lane — no note, no technique (the reference curve a trill reads by
+    // curveRef 'lane') — is not an event: the extractor leaves it out (extract_core.js), and a document is complete without it
+    if (o.sonifyNote == null && !o.technique) continue;
     if (withTrills && o.mutedBy && (score.objects || []).some(z => z.id === o.mutedBy && z.type === 'zone' && z.midiModel === 'trill')) continue;
     if (!have.has(o.id)) errs.push(`--complete: S1 object ${o.id} (layer ${o.layer}, t=${o.startSeconds}) has no event in this document`);
   }

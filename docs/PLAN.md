@@ -847,6 +847,20 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE FIRST FULL TAKE, 2026-10-10 (RUNNING_LOG §388):** take 02 of `piece-Draft01c`, 0 … 778.7 s — 673 of 673 notes met (±0.45 ms) · the drift −9.65 ms over the piece (−12.4 ppm), left and shared · mixed as heard: 784.732 s, +0.4 dBTP float, ONE gain of −1.4 dB → −1.0 dBTP · −19.2 LUFS · LRA 11.6 → **`notation/audio/piece-Draft01c.wav`**. Each further take is a line in `docs/RENDER.md` § 0.1. **Open:** his ear on it · a re-take whenever the score is saved again (the WAV is the playback of the save AT THE TAKE) · step 5: the film needs the whole piece's pages cut from the score the WAV is named for.
 
+### 2.9 THE TRILLS — their notation: the go line · `tr` · the level curve, NO PITCH — `built 2026-10-10, his eye on it pending` (DEC-157; RUNNING_LOG §389 — the device sheet is there)
+
+**Why:** section 2 (125 … 210 s) is trills and accented long tones; his word: the trill curves as in piece #5 (*Scattered Substance*), the go line, the `tr` of the font, no pitch, the same format of curve, and the smoothing worked out there.
+
+**What came forward from piece #5, unchanged** (`docs/TRILL_NOTATION_SPEC.md` · `docs/CURVE_LOOK.md`, both here since the copy-forward): the curve's look D42 (limeGreen `#99FF00`, fill 0.3, a 2 px outline, 0.3 on the path — `rules.json` `objects.curve` · `colours.limeGreen`) · the go line at the onset (`objects.goLine`; its top at the GC arc's height) · the `tr` (Emmentaler `scripts.trill` × `objects.techSymbol.sizeTrill` 0.57) · **the smoothing: 100 samples a second of his own drawn curve (`--trillRate 100`) and the drawn floor at 1 of 10 (`curveFloor` 0.1)** · the meter at the cursor.
+
+**What changed for this piece:** the device `container.json` `devices.byEnv.trill` has NO NOTE — `nhUnit` false, no neighbour, no `sfz`; the `tr` stands alone in the curve's upper left corner (`techSymbolAt: laneTop`: its left ink `anchors.D.gapSs` right of the go line, its top `objects.micOpening.gapSs` — the standard gap — under the lane's top). The layout and the renderer each took one branch for a sign with no note under it.
+
+**Found on the way, fixed:** the extractor's curve windows were piece #6's layers (8 · 9 · 10; here 7 · 8 · 9) · a drawn curve on a player's lane (a trill's own reference curve) was taken for a note · `--silent` swallowed the trills with the notes.
+
+**The page:** `approaching-trills`, eight pages, cut from `piece-Draft01c` — `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 211 --id approaching-trills --label "Approaching — the trills (125 … 210 s)" --trills --trillRate 100 --silent 125-211 --mics` — 34 trills as curves, the other notes silent, the 35 mic openings drawn. Shield green · `check_rules` 31 of 32 · screen edges PASS · measured in the running app (§389).
+
+**Open, his:** the `tr`'s size (piece #5's, 10.8 × 9.9 px — one number) and place · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+
 ## 3. The performance score — `todo`
 
 *To be laid out when we discuss it.*

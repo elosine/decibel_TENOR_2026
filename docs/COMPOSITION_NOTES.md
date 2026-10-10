@@ -1465,3 +1465,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus, after his switch of model:)* *"go build"*
 
 *(The AI's reading, marked as such: PLAN.md § 2.8 built as one — `tools/take.js` and the shared gain step; steps 1 … 3 done, the dry run on the opening (step 4) waits on his ▶. RUNNING_LOG §386.)*
+
+### DEC-157 · 2026-10-10 — the trills' notation: piece #5's trill curve, no pitch
+
+*(His words, verbatim — Opus:)* *"Okay, let's get back to the notation. This is the next section, the trills. We're going to make the trill curves like I did in piece number five, scattered substance. So could you look there, please? We'll go ahead and use the go line, the TR symbol in the font that we pulled there. There won't be any pitch. And we'll use that same format of curve. The colors, the outline, everything the same. And then there was also, we spent some time working out the smooth, smoothing, curve smoothing algorithm just to make sure the curve is smooth. So let's start there. If you can pull that information and bring it forward and then draw the curves for the trills in the next section."*
+
+*(The AI's reading, marked as such: section 2's trills drawn as piece #5's trill device with its note taken out — the go line at the onset, the `tr` (Emmentaler) in the curve's upper left corner, the level curve in D42's look; "the smoothing" = that piece's two rules, 100 samples a second and the drawn floor at 1 of 10. Built in the notation engine; the page `approaching-trills`. RUNNING_LOG §389.)*

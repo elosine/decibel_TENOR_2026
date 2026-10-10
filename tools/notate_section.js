@@ -1376,7 +1376,8 @@ for (let i = 0; i < process.argv.length; i++) {
   for (const a of argsOf('silent')) {
     const at = a.split('@'), ts = at[0].split('-').map(Number), part = at.length > 1 ? parseInt(at[1], 10) : null;
     if (!(ts.length === 2 && ts[1] > ts[0]) || (part !== null && !(part >= 0))) { console.error('--silent needs t0-t1 or t0-t1@part (e.g. --silent 0-37)'); process.exit(2); }
-    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part));
+    // [decibel §389] the NOTES of the span — a trill (env trill, --trills) is not a note: it keeps its go line, its tr and its curve
+    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part) && e.env !== 'trill');
     for (const e of members) {
       const existing = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id);
       if (existing) existing.value.device = Object.assign({}, existing.value.device, SILENT_OFF);

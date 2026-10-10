@@ -462,7 +462,11 @@
           // [§494 — the running order's step 1, his "demonstrate the color head"] a bow's head in its SEAT's hue when rules.json
           // vibMarks.headColour is 'seat' — the bar's own colours (render.ringBar.color · colorSeat2); every other glyph the group's ink
           const seatFill = it.seat != null && E.ringBar && E.ringBar.headColour === 'seat' ? (it.seat === 1 && E.ringBar.colorSeat2 ? E.ringBar.colorSeat2 : E.ringBar.color) : null;
-          const stamp = Stamps.toSvg((it.scale || it.scaleY) ? Stamps.scaled(boxFor(it.g), it.scale || 1, it.scaleY != null ? it.scaleY : (it.scale || 1)) : boxFor(it.g), { xPx: X(it.t, it.dxSs), yPx: (it.sys ? sysYOf(it.sys) : Y)(it.ySs), ssPx, align: it.align });
+          const gBox = (it.scale || it.scaleY) ? Stamps.scaled(boxFor(it.g), it.scale || 1, it.scaleY != null ? it.scaleY : (it.scale || 1)) : boxFor(it.g);
+          // [decibel §389] laneTopGapSs: a sign with no note under it (the trill's tr) hangs from the LANE's top — its top ink that gap under the
+          // dividing line, whatever the staff does; placed by its own height (its anchor is its centre)
+          const gY = it.laneTopGapSs != null ? lane.yTopPx + (it.laneTopGapSs + gBox.hSs / 2) * ssPx : (it.sys ? sysYOf(it.sys) : Y)(it.ySs);
+          const stamp = Stamps.toSvg(gBox, { xPx: X(it.t, it.dxSs), yPx: gY, ssPx, align: it.align });
           parts.push(seatFill ? '<g fill="' + seatFill + '">' + stamp + '</g>' : stamp);
         } else if (it.k === 'rest') {
           // day 23: a rest at LP's own vertical placement — the glyph's topSs

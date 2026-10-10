@@ -124,16 +124,14 @@
    "devices": {
     "byEnv": {
      "trill": {
-      "sheet": "#5 §445 (the column right of its go line) · §438 (docs/TRILL_NOTATION_SPEC.md)",
+      "sheet": "decibel RUNNING_LOG §389 (the trill with NO PITCH: the go line · tr · the level curve) — after #5 §438 · §445 · §451 (docs/TRILL_NOTATION_SPEC.md · docs/CURVE_LOOK.md)",
       "anchorRow": "D",
-      "memberRows": ["head","ledger","accidental","techSymbol","smallHead","paren","trillPitch","dynamic","ottava","goLine","envCurve"],
+      "memberRows": ["techSymbol","goLine","envCurve"],
       "afterGoGapSs": "@anchors.D.gapSs",
       "goLine": true,
       "goLineTopAsGc": true,
       "gc": false,
-      "nhUnit": true,
-      "nhHead": "open",
-      "nhAnchor": "afterGo",
+      "nhUnit": false,
       "brick": false,
       "ringBar": false,
       "letRing": false,
@@ -143,19 +141,13 @@
       "curveBand": "lane",
       "curveFloor": 0.1,
       "dynPair": false,
-      "dynMark": "sfz",
+      "dynMark": false,
       "techSymbol": "trill",
       "techSymbolScale": "@objects.techSymbol.sizeTrill",
-      "trillPitch": {
-       "groupPadSs": "@objects.trillPitch.groupPadSs",
-       "parenScale": "@objects.paren.sizeTrill",
-       "parenInnerSs": "@objects.trillPitch.parenInnerSs",
-       "headScale": "@objects.smallHead.size",
-       "accScale": "@objects.smallHead.size",
-       "accPadSs": "@objects.trillPitch.accPadSs",
-       "naturals": false
-      }
+      "techSymbolAt": "laneTop",
+      "techSymbolTopGapSs": "@objects.micOpening.gapSs"
      },
+     "_trillNoPitchNote": "decibel PLAN 2.9 (2026-10-10, RUNNING_LOG §389; his words: 'make the trill curves like I did in piece number five … use the go line, the TR symbol in the font that we pulled there. There won't be any pitch. And we'll use that same format of curve. The colors, the outline, everything the same'): THIS piece's trill is piece #5's with the note taken out — the go line at the onset (as #5: goLineTopAsGc), the level curve over the exact span on the whole lane (the D42 look, objects.curve + colours.limeGreen; curveFloor 0.1 — the drawn floor at 1 of 10, #5 §451; sampled at 100 per second by the cutter's --trillRate 100), and tr (Emmentaler scripts.trill × objects.techSymbol.sizeTrill) with NO NOTE UNDER IT: techSymbolAt laneTop — its left ink afterGoGapSs right of the go line, its top techSymbolTopGapSs under the lane's top, the standard gap (the curve's upper left corner, his scheme DEC-100). OUT against #5: nhUnit (the open head, its ledgers, accidental, ottava) · trillPitch (the parenthesised neighbour) · dynMark sfz (no dynamics in the players' parts, DEC-99) · nhAnchor afterGo (the column's rule now lives in the one sign's own placement). The pitched form, to bring back for a piece that writes the pitch: nhUnit true · nhHead open · nhAnchor afterGo · dynMark sfz · trillPitch { groupPadSs @objects.trillPitch.groupPadSs · parenScale @objects.paren.sizeTrill · parenInnerSs @objects.trillPitch.parenInnerSs · headScale and accScale @objects.smallHead.size · accPadSs @objects.trillPitch.accPadSs · naturals false } and memberRows head · ledger · accidental · techSymbol · smallHead · paren · trillPitch · dynamic · ottava · goLine · envCurve (docs/TRILL_NOTATION_SPEC.md § 7).",
      "_trillNote": "PLAN 2f.4 (2026-09-13, RUNNING_LOG §438; docs/TRILL_NOTATION_SPEC.md): the TRILL is the tuba's surge with a trill on it — the open nh-unit (no stem, no brick, no ring bar), the parenthesised neighbour after it (trillPitch: LilyPond's pitched-trill group measured by tools/fixtures/lp_probes/trill.ly — group padding 0.30, parens at font-size −4 = 0.63, inner padding 0.42, the neighbour head and accidental at 0.794 of the house, accidental gap 0.20, no naturals), the whole column nhGapSs (0.25) before the go line; the go line at the onset with the strikes' length (goLineTopAsGc — §401h) and NO GC (the composer: 'no gc for trills, they are too close to the other gcs for percussive notes'); `tr` = the technique-symbol slot above (glyphs.articulation.trill at 0.70, GLYPH_SIZING Ornaments — the pedal's factor), the strikes' symbol-above rule; sfz on every attack by the tuba's below-chain and side-with-room rule (chainSide deliberately UNSET: a device chainSide would disable the room test); the level curve over the exact span in the envCurve colour, never peak-cut, over the part's whole lane (curveBand). The level is the composer score's own trill reference (IR amendment 8).",
      "_surgeTemplateNote": "PLAN 2i.8 (2026-09-15, RUNNING_LOG §530, D54): curveTemplate — the device draws the STANDARD shape of its family (cresc.js segmentFor: the ratio-5 exponential, slope 0.40 — the look of the tuba's db1 surges) in place of the event's own level samples, sampled through sonify_core.evalWaveCurve at CURVE_LOOK §2a's density (100/s, never fewer than 101), then the cut; no curveZero, no curveFloor. Why: the septet's crescendo run (78 swells, 526.8–559.4 s) SOUNDS through the sampler-bent surge (CN-49's listening tests: under 10 % for 60 % of the span), which drawn reads as silence then a spike; the IR keeps the bent samples as the truth of what sounds (D9), and the template is a drawing rule on the device — piece-wide, like dynPair, not a build flag. The meters ride it (drawnOf, D50).",
      "surge": {
