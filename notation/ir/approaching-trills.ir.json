@@ -5,7 +5,7 @@
   "score": "piece-Draft01c",
   "window": [
    125,
-   211
+   209
   ],
   "parts": [
    0,
@@ -17,11 +17,11 @@
   ]
  },
  "provenance": {
-  "createdBy": "tools/notate_section.js (profile trance) --trills --mics --trillRate 100",
+  "createdBy": "tools/notate_section.js (profile trance) --trills --trillRate 100",
   "date": "2026-10-10",
-  "tool": "tools/notate_section.js (profile trance) --trills --mics --trillRate 100",
-  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 35 zone(s) elecOpen as micOpening overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 211 --id approaching-trills --label \"Approaching — the trills (125 … 210 s)\" --trills --trillRate 100 --silent 125-211 --mics"
+  "tool": "tools/notate_section.js (profile trance) --trills --trillRate 100",
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level.",
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label \"Approaching — the trills (125 … 209 s)\" --trills --trillRate 100 --gcOnly 125-209"
  },
  "events": [
   {
@@ -14628,27 +14628,6 @@
    "provenance": "derived",
    "mode": "plain",
    "vel": 83
-  },
-  {
-   "id": "ev-wc-729",
-   "source": {
-    "score": "piece-Draft01c",
-    "objectId": "wc-729"
-   },
-   "onset": 210.727,
-   "duration": 4.688999999999993,
-   "pitch": {
-    "midi": 54,
-    "spelled": {
-     "step": "F",
-     "alter": 1,
-     "octave": 3
-    }
-   },
-   "technique": "mp_short",
-   "provenance": "derived",
-   "mode": "plain",
-   "vel": 87
   }
  ],
  "chunks": [
@@ -14839,26 +14818,12 @@
    "part": 0,
    "span": [
     197.907,
-    210.727
+    209
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-643"
-   ],
-   "provenance": "derived"
-  },
-  {
-   "id": "ch-0-wc-729",
-   "part": 0,
-   "span": [
-    210.727,
-    211
-   ],
-   "class": "ord-sustained",
-   "strategy": "unresolved",
-   "events": [
-    "ev-wc-729"
    ],
    "provenance": "derived"
   },
@@ -15063,7 +15028,7 @@
    "part": 1,
    "span": [
     197.907,
-    211
+    209
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -15161,7 +15126,7 @@
    "part": 2,
    "span": [
     197.907,
-    211
+    209
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -15245,7 +15210,7 @@
    "part": 3,
    "span": [
     183.625,
-    211
+    209
    ],
    "class": "trill",
    "strategy": "unresolved",
@@ -15413,7 +15378,7 @@
    "part": 4,
    "span": [
     197.907,
-    211
+    209
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -15609,7 +15574,7 @@
    "part": 5,
    "span": [
     197.907,
-    211
+    209
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -15621,567 +15586,7 @@
  ],
  "overlays": [
   {
-   "id": "ov-mic-zn-458",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     129.435,
-     129.935
-    ]
-   },
-   "value": {
-    "source": "zn-458",
-    "sample": "bcl-petal-1"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-476",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     132.392,
-     132.892
-    ]
-   },
-   "value": {
-    "source": "zn-476",
-    "sample": "bfl-petal-2"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-500",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     135.585,
-     136.085
-    ]
-   },
-   "value": {
-    "source": "zn-500",
-    "sample": "va-petal-3"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-503",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     136.524,
-     137.024
-    ]
-   },
-   "value": {
-    "source": "zn-503",
-    "sample": "vc-petal-4"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-470",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     138.875,
-     139.375
-    ]
-   },
-   "value": {
-    "source": "zn-470",
-    "sample": "bcl-petal-5"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-473",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     140.158,
-     140.658
-    ]
-   },
-   "value": {
-    "source": "zn-473",
-    "sample": "va-petal-6"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-516",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     143.037,
-     143.537
-    ]
-   },
-   "value": {
-    "source": "zn-516",
-    "sample": "bfl-petal-7"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-519",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     143.996,
-     144.496
-    ]
-   },
-   "value": {
-    "source": "zn-519",
-    "sample": "perc-petal-8"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-522",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     145.054,
-     145.554
-    ]
-   },
-   "value": {
-    "source": "zn-522",
-    "sample": "bcl-petal-9"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-531",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     146.418,
-     146.918
-    ]
-   },
-   "value": {
-    "source": "zn-531",
-    "sample": "va-petal-10"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-534",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     148.031,
-     148.531
-    ]
-   },
-   "value": {
-    "source": "zn-534",
-    "sample": "vc-petal-11"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-629",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     151.513,
-     152.013
-    ]
-   },
-   "value": {
-    "source": "zn-629",
-    "sample": "vc-petal-30"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-575",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     153.176,
-     153.676
-    ]
-   },
-   "value": {
-    "source": "zn-575",
-    "sample": "bcl-petal-12"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-578",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     154.237,
-     154.737
-    ]
-   },
-   "value": {
-    "source": "zn-578",
-    "sample": "perc-petal-13"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-581",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     154.677,
-     155.177
-    ]
-   },
-   "value": {
-    "source": "zn-581",
-    "sample": "perc-petal-14"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-584",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     155.179,
-     155.679
-    ]
-   },
-   "value": {
-    "source": "zn-584",
-    "sample": "bfl-petal-15"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-587",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     156.886,
-     157.386
-    ]
-   },
-   "value": {
-    "source": "zn-587",
-    "sample": "va-petal-16"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-590",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     158.369,
-     158.869
-    ]
-   },
-   "value": {
-    "source": "zn-590",
-    "sample": "bcl-petal-17"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-593",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     158.804,
-     159.304
-    ]
-   },
-   "value": {
-    "source": "zn-593",
-    "sample": "vc-petal-18"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-596",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     160.989,
-     161.489
-    ]
-   },
-   "value": {
-    "source": "zn-596",
-    "sample": "bfl-petal-19"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-599",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     165.046,
-     165.546
-    ]
-   },
-   "value": {
-    "source": "zn-599",
-    "sample": "perc-petal-20"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-602",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     169.076,
-     169.576
-    ]
-   },
-   "value": {
-    "source": "zn-602",
-    "sample": "bcl-petal-21"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-605",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     172.659,
-     173.159
-    ]
-   },
-   "value": {
-    "source": "zn-605",
-    "sample": "va-petal-22"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-608",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     176.833,
-     177.333
-    ]
-   },
-   "value": {
-    "source": "zn-608",
-    "sample": "vc-petal-23"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-611",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     179.192,
-     179.692
-    ]
-   },
-   "value": {
-    "source": "zn-611",
-    "sample": "bfl-petal-24"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-614",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     181.372,
-     181.872
-    ]
-   },
-   "value": {
-    "source": "zn-614",
-    "sample": "perc-petal-25"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-617",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     183.04,
-     183.54
-    ]
-   },
-   "value": {
-    "source": "zn-617",
-    "sample": "bcl-petal-26"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-620",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     184.851,
-     185.351
-    ]
-   },
-   "value": {
-    "source": "zn-620",
-    "sample": "va-petal-27"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-623",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     187.291,
-     187.791
-    ]
-   },
-   "value": {
-    "source": "zn-623",
-    "sample": "vc-petal-28"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-644",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     197.807,
-     198.307
-    ]
-   },
-   "value": {
-    "source": "zn-644",
-    "sample": "bfl-petal-31"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-647",
-   "kind": "micOpening",
-   "target": {
-    "part": 1,
-    "span": [
-     197.807,
-     198.307
-    ]
-   },
-   "value": {
-    "source": "zn-647",
-    "sample": "bcl-petal-32"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-650",
-   "kind": "micOpening",
-   "target": {
-    "part": 2,
-    "span": [
-     197.807,
-     198.307
-    ]
-   },
-   "value": {
-    "source": "zn-650",
-    "sample": "perc-petal-33"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-659",
-   "kind": "micOpening",
-   "target": {
-    "part": 4,
-    "span": [
-     197.807,
-     198.307
-    ]
-   },
-   "value": {
-    "source": "zn-659",
-    "sample": "va-petal-34"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-656",
-   "kind": "micOpening",
-   "target": {
-    "part": 5,
-    "span": [
-     197.807,
-     198.307
-    ]
-   },
-   "value": {
-    "source": "zn-656",
-    "sample": "vc-petal-35"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-mic-zn-728",
-   "kind": "micOpening",
-   "target": {
-    "part": 0,
-    "span": [
-     210.627,
-     211
-    ]
-   },
-   "value": {
-    "source": "zn-728",
-    "sample": "bfl-drone-1"
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-silent-ev-wc-457",
+   "id": "ov-gconly-ev-wc-457",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-457"
@@ -16191,20 +15596,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-475",
+   "id": "ov-gconly-ev-wc-475",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-475"
@@ -16214,20 +15623,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-499",
+   "id": "ov-gconly-ev-wc-499",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-499"
@@ -16237,20 +15650,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-502",
+   "id": "ov-gconly-ev-wc-502",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-502"
@@ -16260,20 +15677,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-469",
+   "id": "ov-gconly-ev-wc-469",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-469"
@@ -16283,20 +15704,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-472",
+   "id": "ov-gconly-ev-wc-472",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-472"
@@ -16306,20 +15731,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-515",
+   "id": "ov-gconly-ev-wc-515",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-515"
@@ -16329,20 +15758,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-518",
+   "id": "ov-gconly-ev-wc-518",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-518"
@@ -16352,20 +15785,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-521",
+   "id": "ov-gconly-ev-wc-521",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-521"
@@ -16375,20 +15812,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-530",
+   "id": "ov-gconly-ev-wc-530",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-530"
@@ -16398,20 +15839,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-533",
+   "id": "ov-gconly-ev-wc-533",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-533"
@@ -16421,20 +15866,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-628",
+   "id": "ov-gconly-ev-wc-628",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-628"
@@ -16444,20 +15893,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-574",
+   "id": "ov-gconly-ev-wc-574",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-574"
@@ -16467,20 +15920,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-577",
+   "id": "ov-gconly-ev-wc-577",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-577"
@@ -16490,20 +15947,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-580",
+   "id": "ov-gconly-ev-wc-580",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-580"
@@ -16513,20 +15974,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-583",
+   "id": "ov-gconly-ev-wc-583",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-583"
@@ -16536,20 +16001,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-586",
+   "id": "ov-gconly-ev-wc-586",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-586"
@@ -16559,20 +16028,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-589",
+   "id": "ov-gconly-ev-wc-589",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-589"
@@ -16582,20 +16055,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-592",
+   "id": "ov-gconly-ev-wc-592",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-592"
@@ -16605,20 +16082,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-595",
+   "id": "ov-gconly-ev-wc-595",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-595"
@@ -16628,20 +16109,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-598",
+   "id": "ov-gconly-ev-wc-598",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-598"
@@ -16651,20 +16136,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-601",
+   "id": "ov-gconly-ev-wc-601",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-601"
@@ -16674,20 +16163,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-604",
+   "id": "ov-gconly-ev-wc-604",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-604"
@@ -16697,20 +16190,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-607",
+   "id": "ov-gconly-ev-wc-607",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-607"
@@ -16720,20 +16217,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-610",
+   "id": "ov-gconly-ev-wc-610",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-610"
@@ -16743,20 +16244,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-613",
+   "id": "ov-gconly-ev-wc-613",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-613"
@@ -16766,20 +16271,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-616",
+   "id": "ov-gconly-ev-wc-616",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-616"
@@ -16789,20 +16298,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-619",
+   "id": "ov-gconly-ev-wc-619",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-619"
@@ -16812,20 +16325,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-622",
+   "id": "ov-gconly-ev-wc-622",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-622"
@@ -16835,20 +16352,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-643",
+   "id": "ov-gconly-ev-wc-643",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-643"
@@ -16858,20 +16379,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-646",
+   "id": "ov-gconly-ev-wc-646",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-646"
@@ -16881,20 +16406,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-649",
+   "id": "ov-gconly-ev-wc-649",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-649"
@@ -16904,20 +16433,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-658",
+   "id": "ov-gconly-ev-wc-658",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-658"
@@ -16927,20 +16460,24 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"
   },
   {
-   "id": "ov-silent-ev-wc-655",
+   "id": "ov-gconly-ev-wc-655",
    "kind": "engraving",
    "target": {
     "event": "ev-wc-655"
@@ -16950,37 +16487,18 @@
      "curve": false,
      "cut": false,
      "goLine": false,
-     "gc": false,
+     "gc": true,
      "nhUnit": false,
      "nhDot": false,
      "ringBar": false,
      "dynMark": false,
      "dynPair": false,
      "dynBesideStem": false,
-     "brick": false
-    }
-   },
-   "provenance": "authored"
-  },
-  {
-   "id": "ov-silent-ev-wc-729",
-   "kind": "engraving",
-   "target": {
-    "event": "ev-wc-729"
-   },
-   "value": {
-    "device": {
-     "curve": false,
-     "cut": false,
-     "goLine": false,
-     "gc": false,
-     "nhUnit": false,
-     "nhDot": false,
-     "ringBar": false,
-     "dynMark": false,
-     "dynPair": false,
-     "dynBesideStem": false,
-     "brick": false
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
     }
    },
    "provenance": "authored"

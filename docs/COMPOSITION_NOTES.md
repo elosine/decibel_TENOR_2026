@@ -1477,3 +1477,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus, on seeing the trills' page:)* *"double the tr size and have the curves start at 0"*
 
 *(The AI's reading, marked as such: the `tr` sign × 2 (about 22 × 20 px), kept on its two edges · no drawn floor — a trill's curve begins on the lane's bottom edge, where piece #5's began a tenth of the lane up. RUNNING_LOG §390.)*
+
+### DEC-159 · 2026-10-10 — a GC for each hit, at the trill's end; nothing else
+
+*(His words, verbatim — Opus:)* *"gcs in the appropriate lane and matched in time with the peak, the end of the trill. So the first one, the moment the trill ends in the flute, the bass clarinet should have a GC impact at that point. And nothing else right now, just the GC in addition to the trill curves."*
+
+*(The AI's reading, marked as such: each of section 2's 34 short notes into the microphones draws a GC in its own player's lane, its impact at the note's time — which for 29 of them is the very end of another player's trill, the peak of that curve. The mic openings come off the page ("nothing else right now"). The last five, the tutti, sit 0.55 s after their trills in the score: drawn where they are, put to him. RUNNING_LOG §391.)*

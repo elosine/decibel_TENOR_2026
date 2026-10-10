@@ -861,7 +861,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **HIS EYE, 2026-10-10 (DEC-158, RUNNING_LOG §390): "double the tr size and have the curves start at 0"** — `rules.json` `objects.techSymbol.sizeTrill` 0.57 → 1.14 (21.6 × 19.8 px, its two edges kept) · `container.json` `devices.byEnv.trill.curveFloor` 0.1 → 0 (no drawn floor: a curve begins on the lane's bottom edge). Two rows, a reload, no re-cut.
 
-**Open, his:** then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+**THE GCs, 2026-10-10 (DEC-159, RUNNING_LOG §391):** each hit draws its GC alone, in its own lane, its impact at the note's time = the end of another player's trill (29 of 34 to the millisecond; the tutti's five 0.55 s after their trills, as composed) — the cutter's new `--gcOnly t0-t1[@part]`; the mic openings off the page at his word ("nothing else right now"); the page re-cut 125 … 209 s, seven pages: `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label "Approaching — the trills (125 … 209 s)" --trills --trillRate 100 --gcOnly 125-209`.
+
+**Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`
 

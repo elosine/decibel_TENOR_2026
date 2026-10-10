@@ -280,7 +280,7 @@ const SEQ_GROUPS = [];
 process.argv.forEach((a, i) => { if (a === '--sequence' && process.argv[i + 1]) SEQ_GROUPS.push(process.argv[i + 1]); });
 // [decibel §355] the spans of --silent t0-t1 (no @part): their notes are never joined into pulse runs at the extraction (options.oneshots) —
 // a silent note makes no beat, no beam, no tempo label
-const SILENT_SPANS = process.argv.map((a, i) => (a === '--silent' ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
+const SILENT_SPANS = process.argv.map((a, i) => ((a === '--silent' || a === '--gcOnly') ? String(process.argv[i + 1] || '') : null)).filter(s => s && !s.includes('@')).map(s => s.split('-').map(Number)).filter(s => s.length === 2 && s[1] > s[0]);
 const { doc, warnings } = Extract.extract(score, {
   // chords (2a.4): the ensemble's players may sound several notes at one onset
   scoreName, window: [w0, w1], parts, id, registry, sampleLengths, profile, options: Object.assign(ENS_APPLIES ? { chords: true } : {}, flag('trills') ? { trills: true } : {}, flag('mics') ? { mics: true } : {}, flag('elec') ? { elec: true } : {}, flag('wedges') ? { wedges: true } : {}, process.argv.includes('--elecPlayers') ? { performers: true } : {}, SILENT_SPANS.length ? { oneshots: SILENT_SPANS } : {}, TRILL_RATE != null ? { trillRate: parseFloat(TRILL_RATE) } : {}, SEQ_GROUPS.length ? { sequences: SEQ_GROUPS } : {}), metaLayer, techniques,
@@ -1344,6 +1344,9 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --silent t0-t1[@part]      the notes that begin in [t0, t1) DRAW NOTHING: --bare's switches, and the brick off as well; with no @part they
 //                              are also never joined into pulse runs at the extraction (no beat, no beam, no tempo label is made of them). In his scheme an
 //                              event of such a section is its mic opening alone; the note stays in the IR (the save is the ground truth).
+//   --gcOnly t0-t1[@part]      [decibel §391] the notes that begin in [t0, t1) draw ONLY THEIR GC (the arc, its impact at the note's own time; the
+//                              lane's geometry on every lane) — --silent with the GC kept; never joined into pulse runs either. Used INSTEAD of
+//                              --silent on the span.
 //   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
 //                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
 //   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
@@ -1384,6 +1387,22 @@ for (let i = 0; i < process.argv.length; i++) {
       else doc.overlays.push({ id: 'ov-silent-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, SILENT_OFF) }, provenance: 'authored' });
     }
     console.log('  silent ' + a + ': ' + members.length + ' note(s) draw nothing');
+  }
+  // [decibel RUNNING_LOG §391, DEC-159 — his "gcs in the appropriate lane and matched in time with the peak, the end of the trill … just the GC"]
+  // --gcOnly t0-t1[@part]: the notes of the span draw ONLY THEIR GC — the arc and its impact at the note's own time — and nothing else of the
+  // note (--silent's switches). The LANE's geometry on every lane (objects.gc style 1: the impact at the lane's bottom, the apex at its top),
+  // whatever the technique's own device asks for: these lanes have no staff to aim at. A trill is not a note.
+  const GC_ONLY = Object.assign({}, SILENT_OFF, { gc: true, gcGeom: 'lane', gcStyle: null, gcImpact: null, gcSpread: 0 });
+  for (const a of argsOf('gcOnly')) {
+    const at = a.split('@'), ts = at[0].split('-').map(Number), part = at.length > 1 ? parseInt(at[1], 10) : null;
+    if (!(ts.length === 2 && ts[1] > ts[0]) || (part !== null && !(part >= 0))) { console.error('--gcOnly needs t0-t1 or t0-t1@part (e.g. --gcOnly 125-209)'); process.exit(2); }
+    const members = doc.events.filter(e => e.onset >= ts[0] - 1e-9 && e.onset < ts[1] - 1e-9 && (part === null || partOfEv.get(e.id) === part) && e.env !== 'trill');
+    for (const e of members) {
+      const existing = doc.overlays.find(o => o.kind === 'engraving' && o.target.event === e.id);
+      if (existing) existing.value.device = Object.assign({}, existing.value.device, GC_ONLY);
+      else doc.overlays.push({ id: 'ov-gconly-' + e.id, kind: 'engraving', target: { event: e.id }, value: { device: Object.assign({}, GC_ONLY) }, provenance: 'authored' });
+    }
+    console.log('  gcOnly ' + a + ': ' + members.length + ' note(s) draw their GC alone');
   }
   const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length;
   if (wantBadges) {
