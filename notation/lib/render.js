@@ -1025,9 +1025,6 @@
           const dxPx = it.dx === 'topGap' ? MO.gapSs * ssPx + laneHalfGapPx : (it.dxSs ? it.dxSs * ssPx : 0);
           let bx = view.xOfSeconds(it.t) + dxPx - (it.place === 'at' ? 0 : BG.gapSs * ssPx + bs) - (it.slot ? it.slot * (BG.gapSs + BG.sizeSs) * ssPx : 0);
           if (SCR && stt) bx = Math.min(bx, view.xOfSeconds(wInk) - bs);
-          // [decibel §395] a badge is drawn WHOLE (edge class clamp · whole): one whose time lies so near the page's end that it would run past the
-          // frame is drawn up against the frame's edge instead — its gap from its line the smaller for it, on that page only
-          if (SCR && !stt) bx = Math.min(bx, view.widthPx - bs);
           if (SCR) bx = Math.max(bx, view.xOfSeconds(w0));
           // [§365, DEC-134 · DEC-137] A STATE SIGN'S PLACE AND GROUND (objects.stateSign): `place` aboveWedge = its BOTTOM stands `gapSs` above
           // THE HIGHEST POINT OF THE LINE WEDGE — the top of the wedge's thickest state, so every sign of a lane stands at one height — and

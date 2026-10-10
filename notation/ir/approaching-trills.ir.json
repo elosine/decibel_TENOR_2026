@@ -21,7 +21,7 @@
   "date": "2026-10-10",
   "tool": "tools/notate_section.js (profile trance) --trills --mics --trillRate 100",
   "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 34 zone(s) elecOpen as micOpening overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label \"Approaching — the trills (125 … 209 s)\" --trills --trillRate 100 --gcOnly 125-209 --mics"
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label \"Approaching — the trills (125 … 209 s)\" --trills --trillRate 100 --gcOnly 125-209 --mics --micBadge accentedLongTones:125:209"
  },
  "events": [
   {
@@ -17044,6 +17044,448 @@
      "gcImpact": null,
      "gcSpread": 0
     }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-129435",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 129.435
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-132392",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 132.392
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-135585",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 135.585
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-136524",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 136.524
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-138875",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 138.875
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-140158",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 140.158
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-143037",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 143.037
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-143996",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 143.996
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-145054",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 145.054
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-146418",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 146.418
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-148031",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 148.031
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-151513",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 151.513
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-153176",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 153.176
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-154237",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 154.237
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-154677",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 154.677
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-155179",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 155.179
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-156886",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 156.886
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-158369",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 158.369
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-158804",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 158.804
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-160989",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 160.989
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-165046",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 165.046
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-169076",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 169.076
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-172659",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 172.659
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-176833",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 176.833
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-179192",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 179.192
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-181372",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 181.372
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-183040",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 183.04
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-184851",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 184.851
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-187291",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 187.291
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-0-197807",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 197.807
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-1-197807",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 197.807
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-2-197807",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 197.807
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-4-197807",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 197.807
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-mic-accentedLongTones-5-197807",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 197.807
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before"
    },
    "provenance": "authored"
   }
