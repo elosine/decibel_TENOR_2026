@@ -7574,3 +7574,25 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **The lesson, for the record of method:** §369 took "its capture is short" for "its sample is short" and moved the key — a diagnosis from one number. The raw recording's shape was on disk and would have said it in a minute: a held multiphonic swells, a released one falls. A capture's LENGTH is read with its SHAPE.
 
 **The last hit, read on the restarted engine (no claim of his ear):** `sclang` started 12:30:41, after §377's commit (12:28:34). His full pass of section 2 then: the hits captured 12:31:24 … 12:32:22, and **the five at the last hit all captured, 12:32:33** — eleven seconds after the hit before, as the score has them; in the full passes before it they had not been captured at all. **Not one reference render since 12:30.** By the bank the cure holds on a living engine; whether the petals rang is his to say.
+
+## §379. THE COMPUTER PLAYERS' NAMES IN TITLE CASE — Elec1 · Elec2 · Elec3 (DEC-150) (2026-10-10, Opus)
+
+**What prompted it (DEC-150, verbatim):** *"elec label title case"* — said as the checkpoint was being written.
+
+**Done:** `notation/registry/rules.json` `electronics.players` — `ELEC1 · ELEC2 · ELEC3` → **`Elec1 · Elec2 · Elec3`**, as the part labels are written (BFl · BCl · Perc · Va · Vc). One row; `docs/ENGRAVING_RULES.md` regenerated; `check_rules` 31 of 32 (§45's red); read back as the renderer gets it (`render.electronics.players`). The name's size stays 0.8 of a part label (§370's number, his to move — the lower-case letters are narrower, so 1 may clear the bracket now: not measured). Shown at a reload of the notation app; not looked at in it.
+
+## §380. CHECKPOINT #5 OF SESSION 3 (2026-10-10, Opus)
+
+**At his word** (*"I'm going to checkpoint and clear and pass it on to Fable"*). The stretch §369 … §379: his ear went through the piece and the audition of the opening's effects, and each remark became a fix or a roll within the hour — eleven entries, eight commits.
+
+**What the stretch made:** three tools for the opening's sound, each undone by itself (`tools/impulse_pitches.js` · `tools/thin_effects.js` · `tools/return_level.js`) and two rows of his data (`bank/impulse_pitches.json` · `bank/presets.json` `groups`); two fixes of the page (a trill's preset always lands · a preset's settings in the card); one of the engine, in two rounds (a live petals queues no render); the notation's heads for the three computer players. The piece is `scores/piece-Draft01c.json`.
+
+**What the stretch got wrong, twice, the same way — kept for the paper's method section:** a cause named from ONE number. The bass clarinet's capture was short, so the key was moved (§369) — the raw recording's shape, on disk all along, says the note is not held (§378). The last hit's renders were stopped by a rule with a tolerance (§369) — the bank's own rows show round-robin takes five decibels apart, which no 1.5 dB tolerance survives (§377). Both second looks took a minute and read what the machine had already written down. The rule that comes of it is in CLAUDE.md and the journal: the bank's stamps and the raw recordings are read before a cause is named.
+
+**Open at the checkpoint:** journal §2's first block, THE HANDOVER — the bass clarinet's first drone recording (not diagnosed, a remedy written out) · his ear on everything else · his next word on the notation of the electronics. **Resume on Fable, his word.**
+
+## §381. THE OPENING'S RETURNS FROM fff TO ff (DEC-151) (2026-10-10, Opus — after the checkpoint's entry, before its commit)
+
+**What prompted it (DEC-151, verbatim):** *"1st section go to ff pls"* — twenty minutes after the same bricks were written fff (§376). Whether he had heard the opening at fff is not said; his engine and his page were up.
+
+**Done, once:** `node tools/return_level.js --score piece-Draft01c --mark ff --from 0 --to 37` — the 25 return bricks of the opening, written fff → written ff (one step of the ladder, 4 dB; `bank/elec_route.json` `level.stepDb`). His save of 12:32:46 held the fff; a copy was taken first. Nothing else moved. No render: a level is applied at the play. **The checkpoint's block is corrected to ff.**

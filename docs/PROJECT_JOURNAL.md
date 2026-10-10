@@ -210,7 +210,7 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► CHECKPOINT #4 OF SESSION 3, below (2026-10-10, RUNNING_LOG §368), IS THE COLD-START BLOCK — read it first. Everything else in this NEXT UP section, checkpoint #3 included, is the trail that led to it.**
+**► CHECKPOINT #5 OF SESSION 3, just below (2026-10-10 12:40, RUNNING_LOG §380) — THE HANDOVER block and the checkpoint lines that close it — IS THE COLD-START BLOCK: read it first. Everything else in this NEXT UP section, checkpoint #4 included, is the trail that led to it.**
 
 **► THE HANDOVER — WHAT IS OUTSTANDING (2026-10-10 12:35, Opus; RUNNING_LOG §369 … §378; DEC-140 … DEC-149) — written for the checkpoint he asked for and for Fable after the clear. THIS BLOCK IS THE COLD START; the "SINCE CHECKPOINT #4" bullets under it are its trail.**
 
@@ -220,7 +220,7 @@ next, where we are; reorganizations only on his approval.
 1. **THE BASS CLARINET'S FIRST DRONE RECORDING (216.4 s) IS STILL SHORT — NOT DIAGNOSED (SWEEP_LIST #18, §378).** Not the key: §369's cure (46 → 38) was wrong. Measured from the raw recordings: this note's sound peaks at 0.6 s and is gone by 1.4 s; the SAME key at 242 s swells and holds seven seconds. The failing note is HIS PLAYED one (`wc-731`: `plain`, velocity 91, the main channel); the one that holds is a builder's (`wc-739`: velocity 100, shaped, a curve channel). Candidates: a velocity layer of the preset (the likelier — his other played entries hold on the same channel) · the channel's slot. **The remedy, ready, at his word:** give `wc-731` the working note's sounding fields — one edit of `piece-Draft01c`, then his Reload. To know the cause: key 38 at velocity 91 and at 100 on the main channel (it sounds; his word).
 2. **THE LAST PETAL HIT (198 s) — CURED BY THE BANK'S RECORD, HIS EAR UNSAID.** Two rounds (§369 · §377): renders ran under it in the one gap over 6 s. On the engine of 12:30 his full pass captured all five at the hit (12:32:33) and no render ran. ASK what he heard; if it missed: his screen first.
 3. **THE TRILLS' VOICE (the page, §369) — unsaid.** A trill played from its own start should be in the ordinary voice now (his F5 was needed).
-4. **THE OPENING IN 1c — UNHEARD AS IT STANDS:** rolled pitches (seed 1, 20 of 30 notes) · distortions 25 → 10 · every return written fff. The first pass after the roll still returns the earlier takes: twice.
+4. **THE OPENING IN 1c — UNHEARD AS IT STANDS:** rolled pitches (seed 1, 20 of 30 notes) · distortions 25 → 10 · every return WRITTEN ff (fff at DEC-147, then his "1st section go to ff", DEC-151, §381). The first pass after the roll still returns the earlier takes: twice.
 5. **The bass clarinet's THIRD drone recording** (key 34, 271 s) was never measured — after 1.
 
 **B · HIS LETTERS, UNANSWERED (each one line; ask only when its subject comes up)**
@@ -230,7 +230,7 @@ next, where we are; reorganizations only on his approval.
 - a preset edited from the card: a build, at his word
 
 **C · THE NOTATION — WHERE HE LEFT IT**
-- THE THREE BODY PROBLEM's electronics: each computer player has a HEAD in the gutter — a small bracket and ELEC1 · ELEC2 · ELEC3 (built, §370; **his eye unsaid**). He was told the three are FAMILIES (winds · percussion · strings samples).
+- THE THREE BODY PROBLEM's electronics: each computer player has a HEAD in the gutter — a small bracket and Elec1 · Elec2 · Elec3 (built, §370; title case at his word, §379; **his eye unsaid**). He was told the three are FAMILIES (winds · percussion · strings samples).
 - **He said he would give "what's next on the notation of the electronics"** — that is the next talk (Fable). His standing order after it: section 2 of the notation (the arc of an accented long tone meeting its mic) → the drones → the beating section → the strikes. `docs/NOTATION_SCHEME.md` first.
 
 **D · THE TOOLS OF TODAY (each a line; CLAUDE.md's last state blocks have the commands)**
@@ -241,9 +241,33 @@ next, where we are; reorganizations only on his approval.
 - the card: a preset's settings shown whole · the page: a trill's preset always lands · the engine: a live petals queues no render
 
 **E · HOW HIS FILES STAND**
-- `piece-Draft01c` = 1b + the written fff. 1b = `piece-Draft01` + the drone key, the pitch roll, the fifteen swaps. `audition-sec01-fx-updates` = his audition copy (74 bricks fff, his own changes) — HIS WORKING FILE, never touched without his word.
+- `piece-Draft01c` = 1b + the opening's returns at a written level — ff now (fff for twenty minutes). 1b = `piece-Draft01` + the drone key, the pitch roll, the fifteen swaps. `audition-sec01-fx-updates` = his audition copy (74 bricks fff, his own changes) — HIS WORKING FILE, never touched without his word.
 - **Every tool write is undone by its tool** (`--off` · `--played`; the drone key's `keyWas` is on its opening). The "before" copies are in this session's scratchpad only — NOT durable.
 - After a tool writes a score he has open: File ▾ → Reload BEFORE any Save; "did my save survive" is read from the file, brick by brick (§372).
+
+**CHECKPOINT #5 OF SESSION 3 — the lines that close the handover** *(2026-10-10 12:40, Opus — mid-session checkpoint; the stretch §369 … §378 was Opus's but for §377, Fable's; written for a session that has never seen this chat)*
+
+- **The task and its state:** his ear is going through the piece and each thing he hears becomes a fix or a roll the same hour — the opening's sound (the FX audition, the pitch roll, fewer distortions, the level), three faults of the playback, and the notation of the three body problem's electronics beside it. Everything asked is built and committed; block A is what is still open.
+- **The latest deliverables:** `scores/piece-Draft01c.json` (his — the piece) · `tools/impulse_pitches.js` · `tools/thin_effects.js` · `tools/return_level.js` · `bank/impulse_pitches.json` · `bank/presets.json` (`groups`, the diodes at mix 1) · the page's zone tick and the card's settings line · the engine's `liveHasRef` · the notation's ELEC heads (`notation/lib/render.js`, `rules.json` `objects.elecBracket`).
+- **THE NEXT CONCRETE STEP:** after the playback, ask him ONE line and nothing more — **"The clarinet's drone note first, or your next word on the notation of the electronics?"** Then, on his word:
+  - **the clarinet (A · 1) — the remedy, exactly:** in `scores/piece-Draft01c.json` (no working copy of the page on disk, or one that does not differ; a copy first; the file is compact JSON — write it back compact), the object `wc-731`: delete `sonifyMode` and `recVel`, set `velAbs` 100, `nodes` to two points `{ pos 0 | 1, y 5.714285714285714, smooth 0.25 }`, `segments` to `[{ model: 'bezier', slope: 0 }]` — the sounding fields of `wc-739`, the note that holds; leave its id, lane, times, key 38, technique, properties. Then his File ▾ → Reload and a pass from ~214 s. READ THE RESULT YOURSELF, no hands: the bank's row `bcl-drone-1` (`lengthMs` against the window's 6570) and `node tools/vet/wav_env.js bank/samples/raw/zn-730.wav 200` — a held multiphonic swells for two seconds and stays. If it still falls at 0.6 s the cause is the channel, not the note: his screen and his word before anything else.
+  - **the notation:** `docs/NOTATION_SCHEME.md` first (§ 3 · 2 and § 5's table); his method stands — discuss first, nothing drawn until he asks, then built in the notation app; a look is a row of `rules.json`, a placement a flag of the cutter.
+  - **a fault he reports:** the bank's own stamps and the raw recordings are read BEFORE a cause is named (two of today's first cures were wrong by one number each — §369 against §377 · §378).
+- **Resume reads:** nothing beyond §2. *At his word for the notation:* `docs/NOTATION_SCHEME.md`.
+- **Decisions pending him:** the clarinet remedy's go · what he heard at the last hit on the engine of 12:30 · the trills · the opening in 1c (twice) · his eye on the ELEC heads · the diode's length (a · b) · and block B's standing offers.
+- **Not done, so not claimed:** nothing built today has been HEARD or SEEN by him as far as he has said, but the audition's levels (his own finding) · the page fix and the card line were never opened in a running page by the AI (the MIDI road is his Chrome's) · the ELEC heads were seen on page 2 only · the film and the print are not rendered for any page.
+- **What this block does not know:** whether the page he has open is on `piece-Draft01c` as written at 12:23 (he saved it then; the level was in it) · whether he pressed F5 since the page fixes (the trills' fix and the card line need it).
+- **Model:** he resumes on FABLE (his word) — right for the notation talk. The clarinet remedy is a five-line edit either model can make; a build from a decided look is Opus's.
+- **Deliberately uncommitted — nineteen, all his or the engine's, none staged:**
+  - `scores/piece-Draft01c.json` — untracked: THE PIECE IN HAND. His to commit.
+  - `scores/piece-Draft01b.json` · `scores/piece-Draft01.json` — untracked: the two states before it (1b = before the written level; `piece-Draft01` = before today's changes).
+  - `scores/audition-sec01-fx-updates.json` — untracked: his audition copy, his working file.
+  - `scores/sec05-finalDraft.json` · `scores/sec05a.json` … `scores/sec05h.json` (eight) · `scores/sec05-strikes-a.json` · `scores/piece-sec05-a.json` — untracked: the strikes' versions of this morning, as at checkpoint #4.
+  - `scores/piece-3BodyRedo.json` · `scores/strike-rig.json` — modified: his saves, as at checkpoint #4.
+  - `bank/panel_snapshots.json` — modified: his takes.
+  - `bank/samples/index.json` — modified: the engine's own writes (today's captures and renders).
+  - *(gitignored: the five old working copies of `node tools/unsaved_check.js` — unchanged, none the piece.)*
+- **The engine's repo is in step:** `git subtree push` after §377 (`a11b387`, the mirror pulled); nothing in `electronics/` changed since.
 
 **► SINCE CHECKPOINT #4 (2026-10-10, Opus; RUNNING_LOG §369 … §371; DEC-140 … DEC-142) — the trail of the block above:**
 - **THE PIECE IN HAND IS `scores/piece-Draft01b.json`** (his copy of `piece-Draft01`; untracked, his).
@@ -451,7 +475,9 @@ workflow below, step by step, on his word.
 | ☑ | PLAN.md 2.1 THE LOOK — built 2026-10-09 (§302): five lanes · the lane line · the staff only where it plays · the clef with it | Opus | — |
 | ☑ | 2.2 the SOL colours named (§307) · 2.3 the six badges chosen (§318) · 2.4 the mic opening chosen (§319) and BUILT in the notation engine with the badge (§325) · SECTION 1 laid out in the notation score (`approaching-opening`) | Opus | — |
 | ☑ | section 1's numbers (DEC-105 … 109) · PLAN 2.7 THE PRESENTATION VIEW opened and SECTION 1 OF IT BUILT — the window, the flocking badge, the purple brick (§333 … §338, DEC-110 … 114) · the strikes' replies on the two short endings, HEARD AND GOOD (§337 · §339, DEC-113 · 115) | Fable (at his word, talks and builds) | — |
-| **►** | **ASK, in one line, what he found in `audition-sec01-fx` (the opening's 74 processed versions) — then act on his word (checkpoint #4 of session 3). Open beside it: his eye on the three body pages · his ear on `piece-Draft01` · SECTION 2 of the notation, a talk** | **Fable** (the talks) · Opus (a number, a re-cut, a re-roll, a build from a decided look) | a clear before a talk is cheap: the docs carry everything |
+| **►** | **ASK, in one line: "the clarinet's drone note first, or your next word on the notation of the electronics?" — then act on his word (checkpoint #5 of session 3, THE HANDOVER: the clarinet's remedy is written out there; the notation talk reads `docs/NOTATION_SCHEME.md`)** | **Fable** (his word; the talk) · Opus (a build from a decided look) | cleared at this checkpoint |
+| ☑ | the FX audition and what followed it (§367 … §378): the audition's bricks fff · the diodes at mix 1 · the card's settings line · the opening on rolled pitches, 10 distortions, written fff (`piece-Draft01c`) · the distortions one card of a deal · the trills' preset · the last petal hit (two rounds) · the ELEC heads | Opus (§377 Fable) | — |
+| — | **(the row before, kept:) ASK, in one line, what he found in `audition-sec01-fx` (the opening's 74 processed versions) — then act on his word (checkpoint #4 of session 3). Open beside it: his eye on the three body pages · his ear on `piece-Draft01` · SECTION 2 of the notation, a talk** | **Fable** (the talks) · Opus (a number, a re-cut, a re-roll, a build from a decided look) | a clear before a talk is cheap: the docs carry everything |
 | ☑ | SECTION 5 composed, built and IN THE PIECE (`piece-Draft01`, 12:59) · the three body problem's notation (the wedge, the badges, the state signs, the computer players) · the opening's badge before every mic opening (§340 … §367) | Fable (talks) · Opus (builds) | — |
 | — | **(the row before, kept:) ASK, in one line, what he wants: his eye on the presentation page · the page that looks cropped (which page, which view — DEC-116) · the strikes (17.2). Then, in his order: THE THREE BODY PROBLEM's signs — a talk, then built in the score (its presentation view with it); section 2 · the drones · the beating section · the strikes after it** | **Fable** (the talks) · Opus (a number, a re-cut, a build from a decided sheet) | a clear before a talk is cheap: the docs carry everything |
 | — | 17.2 THE STRIKES' CATALOGUE decided — a talk (the rig is heard: "those strikes are good"); then 17.3 the come-backs and the section simulated; his copy of the piece for it: `piece-sec05-a` (journal §2's checkpoint #1 workflow) | Fable (the talk) · Opus (the build) | — |

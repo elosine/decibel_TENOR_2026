@@ -135,13 +135,13 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 | section | the hint | status |
 |---|---|---|
 | 1 the opening | for each return brick a grey window round the flocking badge and the purple brick, the brick's thickness the count one → five | decided (DEC-111 · DEC-112 · DEC-114); **BUILT (§335 … §338)** — the page *Approaching — the opening, with the electronics*; his eye |
-| 2 the three body problem | ONE grey window a computer player (three: under the bass clarinet, the percussion, the cello) over its whole orbit, its own small state wedge inside, the short attacks' badge before it · **in the gutter of every page, beside each window: a small system bracket as tall as the window and the name ELEC1 · ELEC2 · ELEC3** (DEC-141 — 'like if it was another staff'; `rules.json` `objects.elecBracket` · `electronics.players`; the name 0.8 of a part label, the AI's number) | decided (DEC-132, his '2b'; DEC-141); **BUILT (§360 · §370)** — the page *Approaching — the three body problem, with the electronics*; his eye |
+| 2 the three body problem | ONE grey window a computer player (three: under the bass clarinet, the percussion, the cello) over its whole orbit, its own small state wedge inside, the short attacks' badge before it · **in the gutter of every page, beside each window: a small system bracket as tall as the window and the name Elec1 · Elec2 · Elec3** (DEC-141 — 'like if it was another staff'; title case, DEC-150; `rules.json` `objects.elecBracket` · `electronics.players`; the name 0.8 of a part label, the AI's number) | decided (DEC-132, his '2b'; DEC-141); **BUILT (§360 · §370)** — the page *Approaching — the three body problem, with the electronics*; his eye |
 | 3 trills and accented long tones | the petals' ring (about ten seconds after the mic) — open | to discuss |
 | 4 the drones | the drones, up to five at once — open | to discuss |
 | 5 the beating section | the sine — the pitch header and swatch are already in the players' scheme; what else is the view's — open | to discuss |
 | 6 the strikes | the answer after the strike — open | to discuss |
 
-- **Who the three computer players are (his question, DEC-141; read from the save):** three FAMILIES, all five instruments in — ELEC1 (drawn under the bass clarinet) plays the WINDS' samples, bass flute and bass clarinet · ELEC2 (under the percussion) the percussion's · ELEC3 (under the cello) the STRINGS', viola and cello. The lane a window is drawn on is only where its brick stands in the composer score.
+- **Who the three computer players are (his question, DEC-141; read from the save):** three FAMILIES, all five instruments in — Elec1 (drawn under the bass clarinet) plays the WINDS' samples, bass flute and bass clarinet · Elec2 (under the percussion) the percussion's · Elec3 (under the cello) the STRINGS', viola and cello. The lane a window is drawn on is only where its brick stands in the composer score.
 - The five options drawn before his idea: http://localhost:5500/signs/conductor.html (a side page for choosing; the build goes in the notation app).
 - What the electronics do in each section: `bank/signs/conductor.json`.
 

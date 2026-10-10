@@ -1423,3 +1423,15 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"second bass clarinet mic still short Can you collect up the outstanding problems and then make a, a useful summary for the checkpoint? And then I'm going to checkpoint and clear and pass it on to Fable."*
 
 *(The AI's reading, marked as such: the recording at 216 s — the one of DEC-140 — is as short as before: the change of key did not cure it. Measured: the note is not held (its sound falls from 0.6 s), where the same key sustains seven seconds at 242 s; the cause is not found, a remedy is ready. The outstanding list is journal §2's first block. RUNNING_LOG §378.)*
+
+### DEC-150 · 2026-10-10 — the electronics' labels in title case
+
+*(His words, verbatim — Opus:)* *"elec label title case"*
+
+*(The AI's reading, marked as such: the three computer players' names in the gutter — Elec1 · Elec2 · Elec3, written as the part labels are. RUNNING_LOG §379.)*
+
+### DEC-151 · 2026-10-10 — the first section's electronics down to ff
+
+*(His words, verbatim — Opus:)* *"1st section go to ff pls"*
+
+*(The AI's reading, marked as such: the opening's returns, written fff since DEC-147, one step down — written ff, in `piece-Draft01c`. RUNNING_LOG §381.)*
