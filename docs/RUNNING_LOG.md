@@ -7710,3 +7710,28 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **So proven, by this one run:** the copy tab beside a living engine · both stems recorded as outputs, the electronics among them · the instrument tracks' MIDI as the reference · the offset from the notes' times alone · the drift measured · the trim to score time · the mix and the gain step. **Not exercised:** the resampling of a real drift (none was needed; proven on the made-up take only, §386) · a take that begins inside the piece · a take of thirteen minutes. **Not done, and not part of the take:** the plan's comparison of the players' stem with an OFFLINE render of the same stretch — that belongs to the fallback (`--players offline`, not built; the offline tools are not re-pointed at this rack).
 
 **His ear:** http://localhost:5500/notation/audio/piece-Draft01c-dry.wav — pending.
+
+## §388. THE FIRST FULL TAKE — the whole piece with the live electronics, recorded, aligned, mixed: `notation/audio/piece-Draft01c.wav` (2026-10-10, Opus)
+
+**What prompted it (verbatim):** *"ready"* (after the dry run's link; what he heard in it he did not say — he went on) — then, after the piece had played, *"done"*.
+
+**What ran, each ONCE:** `node tools/take.js start --score piece-Draft01c` → his ▶ from 0 to the end → `node tools/take.js stop` → `node tools/take.js mix`.
+
+**The take (02):** the rack as saved 2026-10-09 03:54 UTC · `piece-Draft01c` as saved 12:41 local · his engine of 12:30:41, mode `compose` · 817 s recorded · **1,386 notes on 16 tracks** · `18-REC-261010_1421.wav` · `17-ELEC RETURN-261010_1421.wav` (817 s each, 44.1 kHz, stereo, 32-bit float). The take's tab closed; the rack's current again.
+
+**The alignment, measured on the whole piece:**
+- score time 0 sits **13.9195 s** into the recording
+- **673 of 673** notes met a recorded note-on (the 707 of the save less the 34 a trill has taken over), spread **±0.45 ms** — the time pattern alone, no pitch, no track
+- **the drift: −9.65 ms over 778.7 s — −12.4 ppm** (the recording's span is the shorter: the page's clock runs a hair fast against the audio device's). Under the 16 ms limit, so LEFT and shared: the two ends each 4.8 ms off, the middle exact. The dry run's 3.4 ppm (30 notes over 37 s) was inside its own error; this figure stands on 673 notes over thirteen minutes. `node tools/take.js align --score piece-Draft01c --take 02 --resample always` then `mix` would take it out with no new take.
+- the players' stem: 784.732 s · first sound 1.533 s (the first note 1.525 s: the sampler's 2 ms and the start's share of the drift) · −20.7 LUFS · **+0.1 dBTP** (float: measured, not clipped)
+- the electronics' stem: 784.732 s · first sound 6.479 s (the first return's `ar` roll, about 160 ms before its centre this time — another roll, as designed; the dry run's was 123 ms) · **−19.9 LUFS** · −1.0 dBTP (the bus's ceiling)
+
+**The mix (as heard: players 0 dB · electronics 0 dB):** 48 kHz float · **784.732 s (13 min 4.7 s)** · true peak **+0.4 dBTP** · −17.8 LUFS · LRA 11.6 LU → ONE plain gain of **−1.4 dB** → **`notation/audio/piece-Draft01c.wav`**, 24-bit · **−1.0 dBTP · −19.2 LUFS**. First sound 1.533 s. No `--up`: the gain went down by itself.
+
+**Against the lineage, for the paper:** piece #6's last render — offline, no electronics — was 886.7 s at −28.8 LUFS, LRA 20, peaking −11 dBTP before a +6 dB lift. This piece, with the electronics at the level he composed them, sits at −17.8 LUFS, LRA 11.6, and needs 1.4 dB DOWN: over the whole piece the electronics' stem is the louder of the two by 0.8 LU. A measurement of the take, not a verdict (the level is his, and parked).
+
+**Proven by this run, beyond the dry run:** a take of thirteen minutes · the drift measured on the whole piece · all sixteen instrument tracks' MIDI. **Still not exercised on a real take:** the resampling (not needed) · a take that begins inside the piece.
+
+**For the film:** the WAV is named for the score; the notation pages cut so far name `piece-3BodyRedo` in `source.score`, so the ♪ render chip does not show it on them yet — the pages are cut from the piece in hand when the notation is whole (or re-cut now, at his word). The WAV by itself: http://localhost:5500/notation/audio/piece-Draft01c.wav.
+
+**A full take on disk:** the two recorded stems and the two aligned ones — about 1.1 GB in `notation/audio/takes/piece-Draft01c/02/`, gitignored.
