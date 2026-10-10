@@ -89,18 +89,7 @@
   },
   {
    "id": "approaching-drones-elec",
-   "label": "Approaching — the drones, with the electronics (210 … 415 s)",
-   "score": "piece-Draft01c",
-   "window": [
-    204,
-    416
-   ],
-   "profile": "trance",
-   "exp": true
-  },
-  {
-   "id": "approaching-drones",
-   "label": "Approaching — the drones (210 … 415 s)",
+   "label": "Approaching — the drones (210 … 415 s) — with the electronics",
    "score": "piece-Draft01c",
    "window": [
     204,

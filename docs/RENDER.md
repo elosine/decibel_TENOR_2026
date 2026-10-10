@@ -34,6 +34,14 @@ Needs: Reaper open on the rack, SAVED, the bridge alive · his engine up (`start
 
 A take's folder: `notation/audio/takes/<score>/<NN>/` — the two recorded files (Reaper's names; `take.json` says which), `midi.json`, `take.json`, `align.json`, `aligned/players.wav` · `aligned/elec.wav` (score time, sample 0 = `--from`). Gitignored.
 
+## § 0.2 FOR THE NEXT TAKE — what a re-render must look at *(collected as it is found; a line is struck when a take has it right)*
+
+- **The viola's first note is silent** (2026-10-10, RUNNING_LOG §400; SWEEP_LIST #20) — `wc-22`, 4.480 s, Bartók pizzicato, **key 77** (the pitch roll of §373 put it there; it was 71): the MIDI arrives, the viola makes no sound, its microphone window is empty, and the returns of `va-impulse-1` play the capture of BEFORE the roll. Before a take: a key that sounds there (`node tools/impulse_pitches.js --score <the piece> --off` puts every rolled note back; or the table's row `viola.bartok_vel` narrowed and another seed). Of the take's 79 microphone windows this is the only silent one.
+- **Two mic openings are shorter in the score than in take 02** (§393): `vc-petal-30` now ends 151.906 s, `perc-petal-13` 154.577 s. A take after his Reload has them.
+- **The clock's drift** was 9.65 ms over the piece in take 02, left and shared between the two ends. It can be taken out of an existing take with no new one: `node tools/take.js align --take NN --resample always` then `mix`.
+- **A full pass first** — the returns of a take play the captures of the pass before it.
+- **The notation's page for the audio:** the official score `approaching` names `piece-Draft01c`; a take of another score name needs the score re-cut from it (PLAN 2.10).
+
 ## § 0.1 Register — the takes *(append-only)*
 
 - **2026-10-10 — the DRY RUN, take 01 of `piece-Draft01c`, 0 … 37 s** (RUNNING_LOG §387; the save of 12:41; his engine of 12:30:41, mode `compose`). 82.8 s recorded · 49 notes on 12 tracks. Aligned: score 0 at 17.9471 s · notes 30/30 (±0.34 ms) · drift 0.13 ms over 37 s (3.4 ppm), left. Players: first sound 1.527 s (first note 1.525) · −20.8 LUFS · −1.3 dBTP. Electronics: first sound 6.516 s (the first return, an `ar` roll 123 ms before its centre) · −20.4 LUFS · −0.9 dBTP. Mix (as heard): 43.000 s · float −0.9 dBTP · −19.0 LUFS · LRA 15.5 · gain **−0.1 dB** → **−1.0 dBTP · −19.1 LUFS** → `notation/audio/piece-Draft01c-dry.wav` (a part: not the piece's WAV). His ear: unsaid — he went on to the full take.

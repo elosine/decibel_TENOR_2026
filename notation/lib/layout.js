@@ -375,9 +375,9 @@
       // [decibel PLAN 2.4 · 2.6, RUNNING_LOG §325] THE LANE'S OWN MARKS: a mic opening (the `micOpening` overlay — when the player plays into the
       // microphone, and for how long) and a language badge (the `badge` overlay — what kind of sound). They belong to the LANE, not to a note.
       if (ov.kind === 'micOpening' && tgt.part !== undefined && tgt.span) { micOpens.push({ part: tgt.part, span: tgt.span }); continue; }
-      if (ov.kind === 'badge' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.type) { badges.push(Object.assign({ part: tgt.part, t: tgt.t, type: ov.value.type, place: ov.value.place || 'before' }, ov.value.row ? { row: ov.value.row } : {}, ov.value.slot ? { slot: ov.value.slot } : {}, ov.value.v ? { v: ov.value.v } : {})); continue; }
+      if (ov.kind === 'badge' && tgt.part !== undefined && tgt.t !== undefined && ov.value && ov.value.type) { badges.push(Object.assign({ part: tgt.part, t: tgt.t, type: ov.value.type, place: ov.value.place || 'before' }, ov.value.row ? { row: ov.value.row } : {}, ov.value.slot ? { slot: ov.value.slot } : {}, ov.value.v ? { v: ov.value.v } : {}, ov.value.dxSs ? { dxSs: ov.value.dxSs } : {})); continue; }
       // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] THE STATE WEDGE (the `stateWedge` overlay): a method's stretches on a lane, in time order
-      if (ov.kind === 'stateWedge' && tgt.part !== undefined && tgt.span && ov.value && Array.isArray(ov.value.segs)) { stateWedges.push(Object.assign({ part: tgt.part, span: tgt.span, segs: ov.value.segs }, ov.value.row ? { row: ov.value.row } : {}, ov.value.who ? { who: ov.value.who } : {}, ov.value.line ? { line: ov.value.line } : {})); continue; }   // [§360] row 'elec': a computer player's, in the electronics' row
+      if (ov.kind === 'stateWedge' && tgt.part !== undefined && tgt.span && ov.value && Array.isArray(ov.value.segs)) { stateWedges.push(Object.assign({ part: tgt.part, span: tgt.span, segs: ov.value.segs }, ov.value.row ? { row: ov.value.row } : {}, ov.value.who ? { who: ov.value.who } : {}, ov.value.line ? { line: ov.value.line } : {}, ov.value.leadSs > 0 ? { leadSs: ov.value.leadSs } : {})); continue; }   // [§360] row 'elec': a computer player's, in the electronics' row
       // [decibel PLAN 2.7, RUNNING_LOG §335 — DEC-111] THE ELECTRONICS' RETURN (the `elecReturn` overlay): the region the engine answers in, and how many sounds
       if (ov.kind === 'elecReturn' && tgt.part !== undefined && tgt.span) { elecRets.push({ part: tgt.part, span: tgt.span, count: (ov.value && ov.value.count) || 1, all: !!(ov.value && ov.value.all) }); continue; }
       if (ov.kind === 'elecWindow' && tgt.part !== undefined && tgt.span) { elecWins.push({ part: tgt.part, span: tgt.span, badgeLeft: !!(ov.value && ov.value.badgeLeft) }); continue; }
@@ -3393,13 +3393,13 @@
       if (!(spec.staff > 0)) {
         // [decibel §336] THE ELECTRONICS' WINDOW first, so the row's badges and bricks are drawn over it
         // [decibel §355] THE STATE WEDGE first of all: the lane's own ground, everything else is drawn over it
-        for (const w of stateWedges) if (w.part === spec.part && !w.row) items.push(Object.assign({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs }, w.line ? { line: w.line } : {}));   // [§399] line: a section's own line wedge
+        for (const w of stateWedges) if (w.part === spec.part && !w.row) items.push(Object.assign({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs }, w.line ? { line: w.line } : {}, w.leadSs > 0 ? { leadSs: w.leadSs } : {}));   // [§399] line: a section's own line wedge
         for (const w of elecWins) if (w.part === spec.part) items.push({ k: 'elecwin', t0: w.span[0], t1: w.span[1], badgeLeft: w.badgeLeft });
         // [§360] a computer player's wedge lies IN its window: after the window, before the row's badge
         // [§370] `who` = the computer player (e1 · e2 · e3): the renderer names it in the gutter (rules.json objects.elecBracket · electronics.players)
         for (const w of stateWedges) if (w.part === spec.part && w.row) items.push(Object.assign({ k: 'wedge', t0: w.span[0], t1: w.span[1], segs: w.segs, row: w.row }, w.who ? { who: w.who } : {}));
         for (const m of micOpens) if (m.part === spec.part) items.push({ k: 'mic', t0: m.span[0], t1: m.span[1] });
-        for (const b of badges) if (b.part === spec.part) items.push(Object.assign({ k: 'badge', t: b.t, type: b.type, place: b.place }, b.row ? { row: b.row } : {}, b.slot ? { slot: b.slot } : {}, b.v ? { v: b.v } : {}));   // [§399] v 'middle': centred in the lane   // [§335] `row` only on the electronics' badge · [§355] or a method's, with its `slot` — a language badge's item is as it was
+        for (const b of badges) if (b.part === spec.part) items.push(Object.assign({ k: 'badge', t: b.t, type: b.type, place: b.place }, b.row ? { row: b.row } : {}, b.slot ? { slot: b.slot } : {}, b.v ? { v: b.v } : {}, b.dxSs ? { dxSs: b.dxSs } : {}));   // [§399] v 'middle': centred in the lane   // [§335] `row` only on the electronics' badge · [§355] or a method's, with its `slot` — a language badge's item is as it was
         // [decibel §335] THE ELECTRONICS' RETURNS of this part — placed by the renderer in the lane's electronics' row (rules.json objects.elecReturn)
         for (const r of elecRets) if (r.part === spec.part) items.push({ k: 'elecret', t0: r.span[0], t1: r.span[1], count: r.count, all: r.all });
       }

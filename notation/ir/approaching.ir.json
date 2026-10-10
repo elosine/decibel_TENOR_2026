@@ -17,11 +17,11 @@
   ]
  },
  "provenance": {
-  "createdBy": "tools/notate_section.js (profile trance) --trills --mics --wedges --trillRate 100",
+  "createdBy": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
   "date": "2026-10-10",
-  "tool": "tools/notate_section.js (profile trance) --trills --mics --wedges --trillRate 100",
-  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 64 zone(s) elecOpen as micOpening overlays. THE STATE WEDGES (decibel PLAN 2.6): 5 lane(s), 40 stretch(es) of the tb containers as stateWedge overlays.",
-  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 209 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 209 s)\" --mics --silent 0-125 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadgeAfter 8.151,140.158,154.677"
+  "tool": "tools/notate_section.js (profile trance) --trills --mics --elec --wedges --trillRate 100",
+  "notes": "Derived extraction (B1). Segmentation: DB-6 greedy IOI runs, TOL 0.015 s. Regenerable; authored content belongs in overlays only. TRILLS (PLAN 2f.3): 34 trill zone(s) as env trill; 34 eaten note(s) (mutedBy) not extracted; 1 drawn lane curve(s) (no note) not extracted; 0 trill(s) read a flat level. MIC OPENINGS (decibel PLAN 2.4): 64 zone(s) elecOpen as micOpening overlays. THE ELECTRONICS (decibel PLAN 2.7): 59 zone(s) elecPlay as elecReturn overlays. THE STATE WEDGES (decibel PLAN 2.6): 8 lane(s), 64 stretch(es) of the tb containers as stateWedge overlays.",
+  "build": "node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 209 --id approaching --label \"Approaching — THE SCORE (so far: 0 … 209 s)\" --mics --silent 0-125 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209"
  },
  "events": [
   {
@@ -23855,6 +23855,1102 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-elec-zn-54",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     6.239,
+     7.039
+    ]
+   },
+   "value": {
+    "source": "zn-54",
+    "behaviour": "ar",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-56",
+   "kind": "elecReturn",
+   "target": {
+    "part": 3,
+    "span": [
+     6.591,
+     7.391
+    ]
+   },
+   "value": {
+    "source": "zn-56",
+    "behaviour": "ar",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-58",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     7.851,
+     8.651
+    ]
+   },
+   "value": {
+    "source": "zn-58",
+    "behaviour": "ar",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-60",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     9.5,
+     10.3
+    ]
+   },
+   "value": {
+    "source": "zn-60",
+    "behaviour": "ar",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-62",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     9.737,
+     10.537
+    ]
+   },
+   "value": {
+    "source": "zn-62",
+    "behaviour": "ar",
+    "count": 1,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-64",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     11.222,
+     12.222
+    ]
+   },
+   "value": {
+    "source": "zn-64",
+    "behaviour": "chain",
+    "count": 2,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-66",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     12.182,
+     13.182
+    ]
+   },
+   "value": {
+    "source": "zn-66",
+    "behaviour": "chain",
+    "count": 2,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-68",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     13.373,
+     14.373
+    ]
+   },
+   "value": {
+    "source": "zn-68",
+    "behaviour": "chain",
+    "count": 2,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-70",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     14.942,
+     15.942
+    ]
+   },
+   "value": {
+    "source": "zn-70",
+    "behaviour": "chain",
+    "count": 2,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-72",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     16.353,
+     17.353
+    ]
+   },
+   "value": {
+    "source": "zn-72",
+    "behaviour": "chain",
+    "count": 2,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-76",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     17.418,
+     19.218
+    ]
+   },
+   "value": {
+    "source": "zn-76",
+    "behaviour": "arChain",
+    "count": 3,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-78",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     17.699,
+     19.499
+    ]
+   },
+   "value": {
+    "source": "zn-78",
+    "behaviour": "arChain",
+    "count": 3,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-80",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     18.462,
+     20.262
+    ]
+   },
+   "value": {
+    "source": "zn-80",
+    "behaviour": "arChain",
+    "count": 3,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-82",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     20.394,
+     22.194
+    ]
+   },
+   "value": {
+    "source": "zn-82",
+    "behaviour": "arChain",
+    "count": 3,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-84",
+   "kind": "elecReturn",
+   "target": {
+    "part": 3,
+    "span": [
+     21.9,
+     23.661
+    ]
+   },
+   "value": {
+    "source": "zn-84",
+    "behaviour": "arChain",
+    "count": 3,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-95",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     22.991,
+     24.991
+    ]
+   },
+   "value": {
+    "source": "zn-95",
+    "behaviour": "chain",
+    "count": 4,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-96",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     24.595,
+     26.595
+    ]
+   },
+   "value": {
+    "source": "zn-96",
+    "behaviour": "chain",
+    "count": 4,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-97",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     25.825,
+     27.825
+    ]
+   },
+   "value": {
+    "source": "zn-97",
+    "behaviour": "chain",
+    "count": 4,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-98",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     26.17,
+     28.17
+    ]
+   },
+   "value": {
+    "source": "zn-98",
+    "behaviour": "chain",
+    "count": 4,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-99",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     27.413,
+     29.413
+    ]
+   },
+   "value": {
+    "source": "zn-99",
+    "behaviour": "chain",
+    "count": 4,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-101",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     29.85,
+     32.35
+    ]
+   },
+   "value": {
+    "source": "zn-101",
+    "behaviour": "chain",
+    "count": 5,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-103",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     31.3,
+     33.8
+    ]
+   },
+   "value": {
+    "source": "zn-103",
+    "behaviour": "chain",
+    "count": 5,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-105",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     32.5,
+     35
+    ]
+   },
+   "value": {
+    "source": "zn-105",
+    "behaviour": "chain",
+    "count": 5,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-107",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     33,
+     35.5
+    ]
+   },
+   "value": {
+    "source": "zn-107",
+    "behaviour": "chain",
+    "count": 5,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-109",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     34.4,
+     36.9
+    ]
+   },
+   "value": {
+    "source": "zn-109",
+    "behaviour": "chain",
+    "count": 5,
+    "all": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-459",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     129.535,
+     138.475
+    ]
+   },
+   "value": {
+    "source": "zn-459",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-477",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     132.492,
+     142.492
+    ]
+   },
+   "value": {
+    "source": "zn-477",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-501",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     135.685,
+     139.758
+    ]
+   },
+   "value": {
+    "source": "zn-501",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-504",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     136.624,
+     146.624
+    ]
+   },
+   "value": {
+    "source": "zn-504",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-471",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     138.975,
+     144.654
+    ]
+   },
+   "value": {
+    "source": "zn-471",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-474",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     140.258,
+     146.018
+    ]
+   },
+   "value": {
+    "source": "zn-474",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-517",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     143.137,
+     153.137
+    ]
+   },
+   "value": {
+    "source": "zn-517",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-520",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     144.096,
+     153.837
+    ]
+   },
+   "value": {
+    "source": "zn-520",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-523",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     145.154,
+     152.776
+    ]
+   },
+   "value": {
+    "source": "zn-523",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-532",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     146.518,
+     156.486
+    ]
+   },
+   "value": {
+    "source": "zn-532",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-535",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     148.131,
+     151.113
+    ]
+   },
+   "value": {
+    "source": "zn-535",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-630",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     151.613,
+     158.404
+    ]
+   },
+   "value": {
+    "source": "zn-630",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-576",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     153.276,
+     157.969
+    ]
+   },
+   "value": {
+    "source": "zn-576",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-579",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     154.337,
+     154.729
+    ]
+   },
+   "value": {
+    "source": "zn-579",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-582",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     154.777,
+     164.646
+    ]
+   },
+   "value": {
+    "source": "zn-582",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-585",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     155.279,
+     160.589
+    ]
+   },
+   "value": {
+    "source": "zn-585",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-588",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     156.986,
+     166.986
+    ]
+   },
+   "value": {
+    "source": "zn-588",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-591",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     158.469,
+     168.469
+    ]
+   },
+   "value": {
+    "source": "zn-591",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-594",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     158.904,
+     168.904
+    ]
+   },
+   "value": {
+    "source": "zn-594",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-597",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     161.089,
+     171.089
+    ]
+   },
+   "value": {
+    "source": "zn-597",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-600",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     165.146,
+     175.146
+    ]
+   },
+   "value": {
+    "source": "zn-600",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-603",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     169.176,
+     179.176
+    ]
+   },
+   "value": {
+    "source": "zn-603",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-606",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     172.759,
+     182.759
+    ]
+   },
+   "value": {
+    "source": "zn-606",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-609",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     176.933,
+     186.891
+    ]
+   },
+   "value": {
+    "source": "zn-609",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-612",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     179.292,
+     189.292
+    ]
+   },
+   "value": {
+    "source": "zn-612",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-615",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     181.472,
+     191.472
+    ]
+   },
+   "value": {
+    "source": "zn-615",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-618",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     183.14,
+     193.14
+    ]
+   },
+   "value": {
+    "source": "zn-618",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-621",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     184.951,
+     194.951
+    ]
+   },
+   "value": {
+    "source": "zn-621",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-624",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     187.391,
+     197.391
+    ]
+   },
+   "value": {
+    "source": "zn-624",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-645",
+   "kind": "elecReturn",
+   "target": {
+    "part": 0,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "source": "zn-645",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-648",
+   "kind": "elecReturn",
+   "target": {
+    "part": 1,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "source": "zn-648",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-651",
+   "kind": "elecReturn",
+   "target": {
+    "part": 2,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "source": "zn-651",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-660",
+   "kind": "elecReturn",
+   "target": {
+    "part": 4,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "source": "zn-660",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elec-zn-657",
+   "kind": "elecReturn",
+   "target": {
+    "part": 5,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "source": "zn-657",
+    "behaviour": "plain",
+    "count": 1,
+    "all": false,
+    "ring": 10
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-wedge-0-39000",
    "kind": "stateWedge",
    "target": {
@@ -24161,6 +25257,198 @@
       "state": "far"
      }
     ]
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-elec-1-e1-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 1,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 51.159,
+      "state": "far"
+     },
+     {
+      "t0": 51.159,
+      "t1": 54.048,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 54.048,
+      "t1": 72.943,
+      "state": "approaching"
+     },
+     {
+      "t0": 72.943,
+      "t1": 76.221,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 76.221,
+      "t1": 89.554,
+      "state": "closePass"
+     },
+     {
+      "t0": 89.554,
+      "t1": 92.443,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 92.443,
+      "t1": 112.509,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 112.509,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e1"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-elec-3-e2-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 3,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 51.794,
+      "state": "far"
+     },
+     {
+      "t0": 51.794,
+      "t1": 57.405,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 57.405,
+      "t1": 71.729,
+      "state": "approaching"
+     },
+     {
+      "t0": 71.729,
+      "t1": 74.507,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 74.507,
+      "t1": 92.126,
+      "state": "closePass"
+     },
+     {
+      "t0": 92.126,
+      "t1": 94.951,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 94.951,
+      "t1": 113.261,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 113.261,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e2"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-wedge-elec-5-e3-39000",
+   "kind": "stateWedge",
+   "target": {
+    "part": 5,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "segs": [
+     {
+      "t0": 39,
+      "t1": 53.825,
+      "state": "far"
+     },
+     {
+      "t0": 53.825,
+      "t1": 56.492,
+      "state": "change",
+      "from": "far",
+      "to": "approaching"
+     },
+     {
+      "t0": 56.492,
+      "t1": 70.054,
+      "state": "approaching"
+     },
+     {
+      "t0": 70.054,
+      "t1": 74.887,
+      "state": "change",
+      "from": "approaching",
+      "to": "closePass"
+     },
+     {
+      "t0": 74.887,
+      "t1": 87.268,
+      "state": "closePass"
+     },
+     {
+      "t0": 87.268,
+      "t1": 90.982,
+      "state": "change",
+      "from": "closePass",
+      "to": "breakRejoin"
+     },
+     {
+      "t0": 90.982,
+      "t1": 108.494,
+      "state": "breakRejoin"
+     },
+     {
+      "t0": 108.494,
+      "t1": 123.261,
+      "state": "far"
+     }
+    ],
+    "row": "elec",
+    "who": "e3"
    },
    "provenance": "authored"
   },
@@ -30334,6 +31622,93 @@
    "provenance": "authored"
   },
   {
+   "id": "ov-badge-elecplayer-e1-shortAttacks-1-39000",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-e1-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elecplayer-e2-shortAttacks-3-39000",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-3-e2-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 3,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elecplayer-e3-shortAttacks-5-39000",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 39
+   },
+   "value": {
+    "type": "shortAttacks",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-e3-39000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     39,
+     123.261
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
    "id": "ov-badge-mic-shortAttacks-0-1425",
    "kind": "badge",
    "target": {
@@ -31162,6 +32537,1703 @@
    "value": {
     "type": "accentedLongTones",
     "place": "before"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-6239",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 6.239
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-3-6591",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 6.591
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-7851",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 7.851
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-9500",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 9.5
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-9737",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 9.737
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-11222",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 11.222
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-12182",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 12.182
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-13373",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 13.373
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-14942",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 14.942
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-16353",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 16.353
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-17418",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 17.418
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-17699",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 17.699
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-18462",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 18.462
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-20394",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 20.394
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-3-21900",
+   "kind": "badge",
+   "target": {
+    "part": 3,
+    "t": 21.9
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-22991",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 22.991
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-24595",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 24.595
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-25825",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 25.825
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-26170",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 26.17
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-27413",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 27.413
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-2-29850",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 29.85
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-4-31300",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 31.3
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-0-32500",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 32.5
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-5-33000",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 33
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-flocking-1-34400",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 34.4
+   },
+   "value": {
+    "type": "flocking",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-129535",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 129.535
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-132492",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 132.492
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-135685",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 135.685
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-136624",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 136.624
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-138975",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 138.975
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-140258",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 140.258
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-143137",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 143.137
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-2-144096",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 144.096
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-145154",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 145.154
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-146518",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 146.518
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-148131",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 148.131
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-151613",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 151.613
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-153276",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 153.276
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-2-154337",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 154.337
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-155279",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 155.279
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-156986",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 156.986
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-158469",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 158.469
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-158904",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 158.904
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-161089",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 161.089
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-2-165146",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 165.146
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-169176",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 169.176
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-172759",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 172.759
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-176933",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 176.933
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-179292",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 179.292
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-2-181472",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 181.472
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-183140",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 183.14
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-184951",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 184.951
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-187391",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 187.391
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-0-197907",
+   "kind": "badge",
+   "target": {
+    "part": 0,
+    "t": 197.907
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-1-197907",
+   "kind": "badge",
+   "target": {
+    "part": 1,
+    "t": 197.907
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-2-197907",
+   "kind": "badge",
+   "target": {
+    "part": 2,
+    "t": 197.907
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-4-197907",
+   "kind": "badge",
+   "target": {
+    "part": 4,
+    "t": 197.907
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-badge-elec-accentedLongTones-5-197907",
+   "kind": "badge",
+   "target": {
+    "part": 5,
+    "t": 197.907
+   },
+   "value": {
+    "type": "accentedLongTones",
+    "place": "before",
+    "row": "elec"
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-6239",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     6.239,
+     7.039
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-3-6591",
+   "kind": "elecWindow",
+   "target": {
+    "part": 3,
+    "span": [
+     6.591,
+     7.391
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-7851",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     7.851,
+     8.651
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-9500",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     9.5,
+     10.3
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-9737",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     9.737,
+     10.537
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-11222",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     11.222,
+     12.222
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-12182",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     12.182,
+     13.182
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-13373",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     13.373,
+     14.373
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-14942",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     14.942,
+     15.942
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-16353",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     16.353,
+     17.353
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-17418",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     17.418,
+     19.218
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-17699",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     17.699,
+     19.499
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-18462",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     18.462,
+     20.262
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-20394",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     20.394,
+     22.194
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-3-21900",
+   "kind": "elecWindow",
+   "target": {
+    "part": 3,
+    "span": [
+     21.9,
+     23.661
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-22991",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     22.991,
+     24.991
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-24595",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     24.595,
+     26.595
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-25825",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     25.825,
+     27.825
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-26170",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     26.17,
+     28.17
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-27413",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     27.413,
+     29.413
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-29850",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     29.85,
+     32.35
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-31300",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     31.3,
+     33.8
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-32500",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     32.5,
+     35
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-33000",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     33,
+     35.5
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-34400",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     34.4,
+     36.9
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-129535",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     129.535,
+     138.475
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-132492",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     132.492,
+     142.492
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-135685",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     135.685,
+     139.758
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-136624",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     136.624,
+     146.624
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-138975",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     138.975,
+     144.654
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-140258",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     140.258,
+     146.018
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-143137",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     143.137,
+     153.137
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-144096",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     144.096,
+     153.837
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-145154",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     145.154,
+     152.776
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-146518",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     146.518,
+     156.486
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-148131",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     148.131,
+     151.113
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-151613",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     151.613,
+     158.404
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-153276",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     153.276,
+     157.969
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-154337",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     154.337,
+     154.729
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-154777",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     154.777,
+     164.646
+    ]
+   },
+   "value": {
+    "badgeLeft": false
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-155279",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     155.279,
+     160.589
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-156986",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     156.986,
+     166.986
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-158469",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     158.469,
+     168.469
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-158904",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     158.904,
+     168.904
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-161089",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     161.089,
+     171.089
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-165146",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     165.146,
+     175.146
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-169176",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     169.176,
+     179.176
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-172759",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     172.759,
+     182.759
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-176933",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     176.933,
+     186.891
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-179292",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     179.292,
+     189.292
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-181472",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     181.472,
+     191.472
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-183140",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     183.14,
+     193.14
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-184951",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     184.951,
+     194.951
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-187391",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     187.391,
+     197.391
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-0-197907",
+   "kind": "elecWindow",
+   "target": {
+    "part": 0,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-1-197907",
+   "kind": "elecWindow",
+   "target": {
+    "part": 1,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-2-197907",
+   "kind": "elecWindow",
+   "target": {
+    "part": 2,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-4-197907",
+   "kind": "elecWindow",
+   "target": {
+    "part": 4,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-elecwin-5-197907",
+   "kind": "elecWindow",
+   "target": {
+    "part": 5,
+    "span": [
+     197.907,
+     207.907
+    ]
+   },
+   "value": {
+    "badgeLeft": true
    },
    "provenance": "authored"
   }

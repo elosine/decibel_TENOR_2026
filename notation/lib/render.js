@@ -409,8 +409,13 @@
       // curve OVER the notation, the go line over the curve. (The animation
       // overlay is its own SVG above everything; within a layer, push order
       // holds — stable sort.)
-      const LAYER = k => (k === 'envcurve' ? 1 : k === 'goline' ? 2 : 0);
-      const itemsInLayers = [...sysModel.items, ...addGo].sort((a, b) => LAYER(a.k) - LAYER(b.k));
+      // [decibel RUNNING_LOG §400, DEC-168 — his "let's place them behind everything. So the electronics are just a … courtesy display. So they
+      // don't need to be in front of anything"] THE ELECTRONICS' LAYER — the pane, the return bricks, the electronics' badges, a computer player's
+      // wedge — is drawn FIRST, under every mark of the players' (the trill's curve, a GC, a mic opening pass over it): the pane lowest, then
+      // the bricks and the wedge, then the badge.
+      const ELEC_LAYER = it => (it.k === 'elecwin' ? -3 : (it.k === 'elecret' || (it.k === 'wedge' && it.row === 'elec')) ? -2 : (it.k === 'badge' && it.row === 'elec') ? -1 : null);
+      const LAYER = it => { const e = ELEC_LAYER(it); return e != null ? e : it.k === 'envcurve' ? 1 : it.k === 'goline' ? 2 : 0; };
+      const itemsInLayers = [...sysModel.items, ...addGo].sort((a, b) => LAYER(a) - LAYER(b));
       for (const it of itemsInLayers) {
         // [2c.3] a cut kind's ink goes inside the page's clip — wrapped in `finally`, so every branch's `continue` is honoured
         const cutMark = (cutKind(it.k) && it.k !== 'gc') ? parts.length : -1;   // the GC wraps its arc alone (its impact is a point)
@@ -1093,7 +1098,10 @@
             const ta = whole ? sg.t0 : Math.max(sg.t0, w0), tb = whole ? sg.t1 : Math.min(sg.t1, wInk);
             if (!(tb > ta)) continue;
             const at = t => h0 + (h1 - h0) * (t - sg.t0) / (sg.t1 - sg.t0), ha = halfOf(at(ta)), hb = halfOf(at(tb));
-            const xa = view.xOfSeconds(ta), xb = view.xOfSeconds(tb);
+            // [decibel RUNNING_LOG §401, DEC-169] leadSs: a section's line BEGINS that far left of its first time — the room of the first mic
+            // opening's own badge and its gaps — at its first thickness, so the eye meets the line before the section's first mark
+            const lead = (it.leadSs > 0 && si === 0 && ta === sg.t0) ? it.leadSs * ssPx : 0;
+            const xa = view.xOfSeconds(ta) - lead, xb = view.xOfSeconds(tb);
             let fill = c0;
             if (c0 !== c1) {   // the gradient is laid over the stretch's own span, cut or not; its id is this lane's, this stretch's, this page's
               const gid = 'swg-' + sysModel.part + (elecW ? 'e' : '') + '-' + Math.round(sg.t0 * 1000) + '-' + Math.round(w0 * 1000);

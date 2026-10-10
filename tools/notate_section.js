@@ -1350,6 +1350,8 @@ for (let i = 0; i < process.argv.length; i++) {
 //   --announce type:t0:t1[:start]   A SECTION'S BADGE — the language type `type` (rules.json language.types), once in each lane: before that
 //                              lane's first mic opening in [t0, t1); with :start, at t0 on every lane instead.
 //   --micBadge type:t0:t1      every mic opening that begins in [t0, t1) carries the badge `type` before it (the drones).
+//   --elecRing t0:t1:S[:R]     [decibel §400] every return brick that begins in [t0, t1) is DRAWN about S seconds long (what it plays rings on:
+//                              the trills section's resonant filters), ended R s (0.5) before its lane's next brick. An approximation, by his word.
 //   --announce type:t0:t1:leadCentre   [decibel §399] ONE badge of the language at the method badge's size, centred in the lane, before t0 on every lane.
 //   --lineWedge name:t:th,t:th,…       [decibel §399] A SECTION'S OWN LINE WEDGE on every lane — the colour a row (rules.json objects.stateWedge.lines.<name>),
 //                              the shape his: th on the composer score's 0 … 10 at each t, straight between. (--elecBadge also takes a language type, and
@@ -1410,7 +1412,7 @@ for (let i = 0; i < process.argv.length; i++) {
     }
     console.log('  gcOnly ' + a + ': ' + members.length + ' note(s) draw their GC alone');
   }
-  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length + argsOf('lineWedge').length;
+  const wantBadges = argsOf('announce').length + argsOf('micBadge').length + argsOf('elecBadge').length + argsOf('elecWindow').length + (flag('wedges') ? 1 : 0) + argsOf('elecPlayers').length + argsOf('lineWedge').length + argsOf('elecRing').length;
   if (wantBadges) {
     const RULES = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadRules(ROOT);
     const LANG = (RULES.language || {}).types || {};
@@ -1421,13 +1423,32 @@ for (let i = 0; i < process.argv.length; i++) {
     const elecBefore = new Set();   // [§336] 'part@t' of every electronics' badge placed BEFORE a brick — the window reaches left to it
     // a lane = a part, or the parts the ensemble joins in one lane (the percussionist's two)
     const laneKey = p => { const g = ((ENS && ENS.groups) || []).find(g => g.kind === 'lane' && Array.isArray(g.parts) && g.parts.includes(p)); return g ? 'L' + g.parts[0] : 'P' + p; };
+    // [decibel RUNNING_LOG §400, DEC-168 — his "it'll be the approximate duration of the … resonant filters and you don't have to do any
+    // measuring or anything just approximate it"] --elecRing t0:t1:S[:R] — every return brick that begins in [t0, t1) is DRAWN S seconds long: what
+    // it plays rings on about that long (the save's brick is only as long as the sample). It ends R seconds (0.5) before the same lane's
+    // next brick begins, and is never shorter than the save's own. An APPROXIMATION, said so on the overlay (value.ring). Before the badges
+    // and the windows, which read the spans.
+    for (const a of argsOf('elecRing')) {
+      const fr = a.split(':').map(Number), t0 = fr[0], t1 = fr[1], S = fr[2], Rm = fr.length > 3 ? fr[3] : 0.5;
+      if (!(t1 > t0) || !(S > 0) || !(Rm >= 0)) { console.error('--elecRing needs t0:t1:S[:R] (e.g. --elecRing 125:209:10) — got ' + a); process.exit(2); }
+      let nR = 0, cut = 0;
+      for (const o of rets) {
+        const s0 = o.target.span[0]; if (!(s0 >= t0 - 1e-9 && s0 < t1 - 1e-9)) continue;
+        const next = Math.min(Infinity, ...rets.filter(q => q !== o && laneKey(q.target.part) === laneKey(o.target.part) && q.target.span[0] > s0 + 1e-9).map(q => q.target.span[0]));
+        const end = Math.max(o.target.span[1], Math.min(s0 + S, next - Rm, w1));
+        if (end < s0 + S - 1e-6) cut++;
+        o.target.span[1] = +end.toFixed(4); o.value = Object.assign({}, o.value, { ring: S }); nR++;
+      }
+      if (!nR) { console.error('--elecRing ' + a + ': no return brick in the span (is --elec given?)'); process.exit(2); }
+      console.log('  elecRing ' + a + ': ' + nR + ' brick(s) drawn about ' + S + ' s long' + (cut ? ', ' + cut + ' ended sooner by the lane\'s next brick' : ''));
+    }
     const read = (name, a) => {
       const f = a.split(':'), t0 = parseFloat(f[1]), t1 = parseFloat(f[2]);
       if (!LANG[f[0]] || !(t1 > t0)) { console.error('--' + name + ' needs type:t0:t1 with a type of rules.json language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
       return { type: f[0], t0, t1, mode: f[3] || null, mics: mics.filter(o => o.target.span[0] >= t0 - 1e-9 && o.target.span[0] < t1 - 1e-9) };
     };
     // [§335] a badge's `row`: absent = the mic's row (a language badge) · 'elec' = the electronics' row (the presentation view's badge)
-    const addBadge = (part, t, type, place, why, row, slot, v) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: Object.assign({ type, place }, row ? { row } : {}, slot ? { slot } : {}, v ? { v } : {}), provenance: 'authored' });
+    const addBadge = (part, t, type, place, why, row, slot, v, dxSs) => doc.overlays.push({ id: 'ov-badge-' + why + '-' + type + '-' + part + '-' + Math.round(t * 1000), kind: 'badge', target: { part, t: +t.toFixed(4) }, value: Object.assign({ type, place }, row ? { row } : {}, slot ? { slot } : {}, v ? { v } : {}, dxSs ? { dxSs } : {}), provenance: 'authored' });
     // [decibel RUNNING_LOG §399, DEC-167 — his "each part will have a line wedge like the ones we used in the three body problem … it'll be a four
     // until 316. And then from 316 to 331, it's going to grow to 10 …"] --lineWedge name:t:th,t:th,… — A SECTION'S OWN LINE WEDGE on every lane:
     // `name` a row of rules.json objects.stateWedge.lines (its colour); the points his dictation, t in seconds, th on the composer score's
@@ -1438,13 +1459,18 @@ for (let i = 0; i < process.argv.length; i++) {
       if (!LINES[name] || pts.length < 2 || pts.some(p => p.length !== 2 || !isFinite(p[0]) || !(p[1] >= 0)) || pts.some((p, k) => k && !(p[0] > pts[k - 1][0]))) {
         console.error('--lineWedge needs name:t:th,t:th,… — a name of rules.json objects.stateWedge.lines (' + Object.keys(LINES).join(' · ') + '), at least two points, the times rising — got ' + a); process.exit(2);
       }
+      // [decibel RUNNING_LOG §401, DEC-169 — his "big badge, right edge, horizontal gap to green line, green line, left edge, about … the same
+      // amount of gap … and then the … left edge of the small multiphonic badge"] a line whose section is announced by a :leadCentre badge at
+      // its first time BEGINS before that time by a mic badge and its two gaps — the room the section's first opening's own badge takes
+      const BDG = (RULES.objects || {}).badge || {};
+      const leadSs = argsOf('announce').some(x => { const q = x.split(':'); return q[3] === 'leadCentre' && Math.abs(parseFloat(q[1]) - pts[0][0]) < 1e-6; }) ? +(2 * BDG.gapSs + BDG.sizeSs).toFixed(4) : 0;
       const seen = new Set();
       for (const p of parts) {
         const k = laneKey(p); if (seen.has(k)) continue; seen.add(k);
         doc.overlays.push({ id: 'ov-linewedge-' + name + '-' + p, kind: 'stateWedge', target: { part: p, span: [pts[0][0], pts[pts.length - 1][0]] },
-          value: { line: name, segs: pts.slice(1).map((q, n) => ({ t0: pts[n][0], t1: q[0], state: 'line', thick: [pts[n][1], q[1]] })) }, provenance: 'authored' });
+          value: Object.assign({ line: name, segs: pts.slice(1).map((q, n) => ({ t0: pts[n][0], t1: q[0], state: 'line', thick: [pts[n][1], q[1]] })) }, leadSs > 0 ? { leadSs } : {}), provenance: 'authored' });
       }
-      console.log('  lineWedge ' + name + ': ' + seen.size + ' lane(s), ' + pts.map(p => p[1] + ' at ' + p[0] + ' s').join(' → '));
+      console.log('  lineWedge ' + name + ': ' + seen.size + ' lane(s), ' + pts.map(p => p[1] + ' at ' + p[0] + ' s').join(' → ') + (leadSs ? ' · beginning ' + leadSs + ' ss before its first time (the section\'s badge stands before it)' : ''));
     }
     for (const a of argsOf('announce')) {
       // [decibel PLAN 2.6, RUNNING_LOG §355 — DEC-126] :lead = the announcement stands BEFORE t0 on every lane (a section with no mic opening to
@@ -1456,9 +1482,13 @@ for (let i = 0; i < process.argv.length; i++) {
       // language at the METHOD badge's size (objects.methodBadge.scale), centred in the lane, the badge's gap before t0, on every lane
       if (fa[3] === 'leadCentre') {
         const t0 = parseFloat(fa[1]), t1 = parseFloat(fa[2]);
+        // [§401, DEC-169 — his "the section badge, let's have it clear to the left of everything … before the first mic opening and its badge"]
+        // in order, left to right: THE BIG BADGE · a gap · (where the section's line begins) · a gap · the first opening's own badge · a gap ·
+        // the opening at t0. So the big badge stands one badge-and-gap further left (slot 1) and one gap more (dxSs).
+        const LEADGAP = +(((RULES.objects || {}).badge || {}).gapSs || 0);
         if (!LANG[fa[0]] || !(t1 > t0)) { console.error('--announce …:leadCentre needs type:t0:t1:leadCentre with a type of rules.json language.types (' + Object.keys(LANG).join(' · ') + ') — got ' + a); process.exit(2); }
         const seen = new Set();
-        for (const p of parts) { const k = laneKey(p); if (seen.has(k)) continue; seen.add(k); addBadge(p, t0, fa[0], 'before', 'announce', 'method', 0, 'middle'); }
+        for (const p of parts) { const k = laneKey(p); if (seen.has(k)) continue; seen.add(k); addBadge(p, t0, fa[0], 'before', 'announce', 'method', 1, 'middle', -LEADGAP); }
         console.log('  announce ' + a + ': ' + seen.size + ' lane(s), ' + fa[0] + ' at the method badge\'s size, centred in the lane, before ' + t0 + ' s');
         continue;
       }

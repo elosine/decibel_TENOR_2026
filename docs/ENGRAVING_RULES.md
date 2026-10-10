@@ -386,7 +386,6 @@ files the picker lists. A rung-8 override carries five fields (the object · the
 - `approaching-threebody-elec` — 177 override(s): device ×177
 - `approaching-trills` — 34 override(s): device ×34
 - `approaching-drones-elec` — 62 override(s): device ×62
-- `approaching-drones` — 62 override(s): device ×62
 
 ---
 

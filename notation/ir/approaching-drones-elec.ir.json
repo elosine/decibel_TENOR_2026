@@ -5523,7 +5523,8 @@
        2
       ]
      }
-    ]
+    ],
+    "leadSs": 8.34
    },
    "provenance": "authored"
   },
@@ -5585,7 +5586,8 @@
        2
       ]
      }
-    ]
+    ],
+    "leadSs": 8.34
    },
    "provenance": "authored"
   },
@@ -5647,7 +5649,8 @@
        2
       ]
      }
-    ]
+    ],
+    "leadSs": 8.34
    },
    "provenance": "authored"
   },
@@ -5709,7 +5712,8 @@
        2
       ]
      }
-    ]
+    ],
+    "leadSs": 8.34
    },
    "provenance": "authored"
   },
@@ -5771,7 +5775,8 @@
        2
       ]
      }
-    ]
+    ],
+    "leadSs": 8.34
    },
    "provenance": "authored"
   },
@@ -5786,7 +5791,9 @@
     "type": "multiphonics",
     "place": "before",
     "row": "method",
-    "v": "middle"
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },
@@ -5801,7 +5808,9 @@
     "type": "multiphonics",
     "place": "before",
     "row": "method",
-    "v": "middle"
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },
@@ -5816,7 +5825,9 @@
     "type": "multiphonics",
     "place": "before",
     "row": "method",
-    "v": "middle"
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },
@@ -5831,7 +5842,9 @@
     "type": "multiphonics",
     "place": "before",
     "row": "method",
-    "v": "middle"
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },
@@ -5846,7 +5859,9 @@
     "type": "multiphonics",
     "place": "before",
     "row": "method",
-    "v": "middle"
+    "slot": 1,
+    "v": "middle",
+    "dxSs": -1.52
    },
    "provenance": "authored"
   },

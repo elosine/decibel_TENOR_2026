@@ -432,6 +432,10 @@
         const e = evById.get(id);
         if (e && e.level && e.level.samples && e.level.samples.length >= 2) {
           if (laneOwned(c.part, e.onset, e.onset + e.duration)) continue;
+          // [decibel RUNNING_LOG §402, DEC-171 — his "no curve meter in this section, in the multiphonic section … the only place we're using that
+          // meter is in the trill curves"] A LEVEL THAT IS NOT DRAWN HAS NO METER: an event whose device says curve false (a silent note — the
+          // cutter's --silent · --gcOnly) keeps its level in the IR and rides nothing; the meter rides a curve that is on the page
+          if (devOf) { const dvm = devOf(e); if (dvm && dvm.curve === false) continue; }
           out.push({ kind: 'curveMeter', part: c.part, t0: e.onset, t1: e.onset + e.duration, samples: (drawnOf && drawnOf(e)) || e.level.samples, _src: 'ir-level' });
         }
       }
