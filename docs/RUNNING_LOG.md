@@ -7152,3 +7152,23 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Where the AI could not read him — put as one letter, nothing built:** the multiphonics badge and the mic openings belong to the drones; the three body section has neither. (a) the three body problem as agreed at DEC-102, "multiphonic" standing for the SHORT ATTACKS' badge: its own badge 30 % bigger (54.5 px against the 42 px of DEC-123) with the short attacks' beside it, no mic opening, a grey box with a small short attacks' badge for each of the 27 containers of the computer players · (b) the DRONES: the multiphonics badge, the 15 mic openings each with its badge, a grey box with a small multiphonics badge for each of the 26 drones · (c) both, each its own way.
 
 **Said with it:** the three body problem's own badge is NOT DRAWN in this piece yet (NOTATION_SCHEME: "still to draw") — the lineage has one, piece #2's three discs on their orbits, with no square; put into this piece's square it is a candidate, his to see. The players' own signs in that section — the line wedge, a sign per state — are still open and were not named today.
+
+## §354. HIS ANSWER ON THE THREE BODY PROBLEM (a; one continuous line wedge, a colour a state) · THE STRIKES' PROPORTIONS ON `sec05d`, shown first (DEC-126) (2026-10-10, Opus)
+
+**His answer (DEC-126, verbatim in COMPOSITION_NOTES):** the two sections were conflated — the three body problem it is: its badge the bigger, the short attacks' the smaller; the LINE WEDGE, one continuous, a different colour for every stretch (read: each state), the colours the AI's from the SOL set for now; the wedges and the badges to be drawn, then two talks — how each state is denoted, then the electronics for the conductor. **But first:** *"let me see the proportions real quick first before you work on the rest"* — the strikes' form, on his new file.
+
+**`scores/sec05d.json` (HIS, untracked, saved 09:35:54):** the same 67 strikes as `sec05c`, none new, none gone; the 63 windows of §352 in it; the last four bare.
+
+**The form as the tool lays it on `sec05d` at seed 1 (computed, nothing written)** — first strike 3.0 s → first bare strike 96.0 s, 93.0 s:
+
+| answers a strike | from → to (s) | long | share | strikes | answers |
+|---|---|---|---|---|---|
+| ×1 | 3.0 → 19.2 | 16.2 s | 17 % | 13 | 13 |
+| ×2 | 19.2 → 38.2 | 19.0 s | 20 % | 14 | 28 |
+| ×3 | 38.2 → 59.3 | 21.1 s | 23 % | 17 | 51 |
+| ×4 | 59.3 → 82.1 | 22.7 s | 24 % | 16 | 64 |
+| ×2 (coda) | 82.1 → 91.1 | 9.1 s | 10 % | 2 | 4 |
+| ×1 (coda) | 91.1 → 96.0 | 4.9 s | 5 % | 1 | 1 |
+| bare | 96.0 · 98.2 · 101.7 · 104.5 | | | 4 | 0 |
+
+161 answers on 63 windows. **Seen in the numbers, said to him:** the coda holds THREE strikes in fourteen seconds (2 + 1) — the stretches are cut in TIME and his strikes thin out toward the end (five in the last 20 s before the bare four), so the ×2 and ×1 of the coda are barely heard as stretches; the growth carries 13 · 14 · 17 · 16 strikes. *(his word: the next entry)*
