@@ -1607,7 +1607,7 @@ for (let i = 0; i < process.argv.length; i++) {
     // STRIKES on the presentation score, as ONE LINE a lane: it begins when the first strike has ended and ends at the first bare strike (the
     // section's own rule: no answer still sounds there); its THICKNESS is the number of answers a strike gets in that stretch of the form (the
     // windows' properties.strikeSection: stretch · answers) — 1 · 2 · 3 · 2 · 1 — the most answers the row's full height. In the lane's
-    // electronics' row, in its grey window, the type's badge before it (the three body's computer players' way: a row wedge, a window, a badge).
+    // electronics' row, in its grey window, the type's badge before it. [§412] Drawn as RETURN BRICKS, section 1's (§411 had a solid row wedge).
     for (const a of argsOf('strikesElec')) {
       const f = a.split(':'), t0 = parseFloat(f[1]), t1 = parseFloat(f[2]);
       if ((!LANG[f[0]] && !ELEC[f[0]]) || !(t1 > t0)) { console.error('--strikesElec needs type:t0:t1 with a badge type of rules.json language.types or electronics.badges — got ' + a); process.exit(2); }
@@ -1617,16 +1617,19 @@ for (let i = 0; i < process.argv.length; i++) {
       for (const w of WS) { const n = +stOf(w).answers || (1 + (((w.elec || {}).chain || []).length)), k = stOf(w).stretch != null ? stOf(w).stretch : n, last = steps[steps.length - 1]; if (!last || last.k !== k) steps.push({ k, n, t: w.startTime }); }
       const lastW = WS[WS.length - 1], bareT = doc.events.filter(e => e.onset > lastW.endTime + 1e-6 && e.onset < t1 - 1e-9 && e.env !== 'trill' && e.env !== 'sine').map(e => e.onset).sort((x, y) => x - y)[0];
       const startE = WS[0].endTime, endE = Math.min(bareT != null ? bareT : lastW.endTime + 4, w1), maxN = Math.max.apply(null, steps.map(q => q.n));
-      const segs = steps.map((q, i) => ({ t0: +(i ? q.t : startE).toFixed(4), t1: +(i + 1 < steps.length ? steps[i + 1].t : endE).toFixed(4), state: 'line', thick: [+(10 * q.n / maxN).toFixed(3), +(10 * q.n / maxN).toFixed(3)] })).filter(g => g.t1 > g.t0);
+      const segs = steps.map((q, i) => ({ t0: +(i ? q.t : startE).toFixed(4), t1: +(i + 1 < steps.length ? steps[i + 1].t : endE).toFixed(4), n: q.n })).filter(g => g.t1 > g.t0);
       const seenE = new Set();
       for (const p of parts) {
         const k = laneKey(p); if (seenE.has(k)) continue; seenE.add(k);
         const spanE = [segs[0].t0, segs[segs.length - 1].t1];
-        doc.overlays.push({ id: 'ov-wedge-answers-' + p, kind: 'stateWedge', target: { part: p, span: spanE.slice() }, value: { segs: segs.map(g => Object.assign({}, g)), row: 'elec', line: 'answers' }, provenance: 'authored' });
+        // [§412, DEC-182 — his "Can we make the electronic line the one we've been using? … rounded and … more transparent … like the one in
+        // section one"] THE RETURN BRICK (objects.elecReturn: a rounded rectangle, a pale fill, a solid outline), one a stretch of the form, end
+        // to end; its HEIGHT what a brick's height always is — how many sounds it carries: here the answers a strike gets (1 · 2 · 3 · 2 · 1)
+        segs.forEach((g, i) => doc.overlays.push({ id: 'ov-elec-answers-' + p + '-' + i, kind: 'elecReturn', target: { part: p, span: [g.t0, g.t1] }, value: { count: g.n, answers: g.n, of: 'strikes' }, provenance: 'authored' }));
         addBadge(p, spanE[0], f[0], 'before', 'strikeselec', 'elec');
         doc.overlays.push({ id: 'ov-elecwin-answers-' + p, kind: 'elecWindow', target: { part: p, span: spanE.slice() }, value: { badgeLeft: true }, provenance: 'authored' });
       }
-      console.log('  strikesElec ' + a + ': ' + seenE.size + ' lane(s), one line ' + segs[0].t0 + ' … ' + segs[segs.length - 1].t1 + ' s — ' + steps.map((q, i) => q.n + ' answer(s) from ' + segs[i].t0.toFixed(1) + ' s').join(' · '));
+      console.log('  strikesElec ' + a + ': ' + seenE.size + ' lane(s), ' + segs.length + ' return brick(s) end to end, ' + segs[0].t0 + ' … ' + segs[segs.length - 1].t1 + ' s — ' + segs.map(g => g.n + ' answer(s) from ' + g.t0.toFixed(1) + ' s').join(' · '));
     }
     // [§411, DEC-181] --finalBar t — the final bar line at t, through every lane
     for (const a of argsOf('finalBar')) {

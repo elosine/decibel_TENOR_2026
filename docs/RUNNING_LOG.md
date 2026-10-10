@@ -8278,3 +8278,35 @@ So what moves at a performance is the PLAYERS, not the dice: an answer is measur
 **7 · THE ELECTRONICS, HIS "B"** — `--strikesElec scatteredStrikes:672:784`: on every lane's electronics' row (the bottom), in its grey window with the scattered strikes' badge before it, ONE PURPLE LINE from the end of the first strike (677.24 s) to the first of the last four strikes (769.98 s — the section's own rule: no answer still sounds there), its THICKNESS the number of answers a strike gets in that stretch of his form: **1 from 677.2 · 2 from 690.7 · 3 from 718.7 · 2 from 749.2 · 1 from 765.0 s** — 9.6 · 19.2 · 28.8 px (three answers = the row wedge's full height). A row wedge with a line's colour (`objects.stateWedge.lines.answers` = the electronics' purple), the three body's computer players' construction.
 
 **The gates:** `check_screen_edges` PASS on the strikes page (97 go-time indicators — the written strikes' GCs — at x(t)) and on the main score · `check_rules` 31 of 32 · THE SHIELD 26 of 27, the strikes page the one moved. A first run of the edge gate failed on the final bar (tagged as a go-time mark, its thin line's centre 0.75 px off its time): a bar line is not a cue — untagged.
+
+## §412. THE STRIKES' ELECTRONICS AS SECTION 1's BRICKS · THE ELEVEN WRITTEN STRIKES THAT LACK A PART, WITH THEIR TAKES · THE WINDOW AT 742.37 s DOUBLED IN THE SCORE · THE LINE AFTER THE FINAL BAR REMOVED (DEC-182) (2026-10-10, Opus)
+
+**What prompted it (DEC-182, verbatim):** *"Can we make the electronic line the one we've been using? I think it was, was it rounded and it was um, more transparent, I think, right? Yeah, like the one in section one. And the, the ones with GCs that don't have all five parts in, can you tell me the time code and the take? And I'll try to get rhythms for those. So you can put GCs in the other parts. the mic opening at 742.3. Let's double that in the score, but also in the electronics, or take a note at least to, to do that, if it's not easy enough to do now. Then the ending has too many bar lines. There's the ending bar line and there's an extra vertical line after that at 783.96. Let's just remove that second vertical line."*
+
+**1 · THE ELECTRONICS' LINE IS THE RETURN BRICK.** §411 had drawn his "B" as a solid row wedge (fill 85 %). Now `--strikesElec` writes `elecReturn` overlays — section 1's own object (`objects.elecReturn`: a rounded rectangle, the purple at 18 %, a solid outline, corners 3 px): FIVE bricks a lane, end to end, one a stretch of the form, each brick's HEIGHT what a brick's height has meant since DEC-111 — how many sounds it carries: here the answers a strike gets. Read on the page: 5.9 · 11.7 · 17.6 px for 1 · 2 · 3 answers, `fill-opacity 0.18 · stroke-opacity 1 · rx 3`; no wedge left. The grey window and the badge as before. The colour row `stateWedge.lines.answers` of §411 is taken out again (unused).
+
+**2 · THE WRITTEN STRIKES THAT LACK A PART — his ask: "the time code and the take … I'll try to get rhythms for those".** Eleven. The time is the strike's first hit; the take is the one in his Strikes drawer whose strike this is (the window's bank strike number against each take's — two strikes are held by two takes each; the one named first is the one that fits the order he inserted them in):
+
+| time code | seconds | take | bank strike | lacks |
+|---|---|---|---|---|
+| 11:17.0 | 677.00 | strikes01 *(strikes32 is the same strike)* | #3 | bass clarinet |
+| 11:18.8 | 678.77 | strikes02 | #51 | bass flute |
+| 11:22.5 | 682.52 | strikes06 | #58 | bass clarinet |
+| 11:49.2 | 709.22 | strikes31 | #2 | bass flute · viola |
+| 11:57.1 | 717.07 | strikes36 | #9 | bass clarinet |
+| 12:01.9 | 721.92 | strikes39 | #12 | bass clarinet |
+| 12:04.9 | 724.87 | strikes40 | #15 | percussion · viola |
+| 12:07.1 | 727.07 | strikes41 | #17 | percussion |
+| 12:09.3 | 729.32 | strikes42 | #18 | viola |
+| 12:10.4 | 730.37 | strikes44 | #20 | bass clarinet |
+| 12:21.4 | 741.37 | strikes45 *(strikes15 is the same strike)* | #21 | bass clarinet |
+
+Thirteen places. Until the notes exist those lanes show the window and no GC. *(The ten FREE strikes that lack a player need nothing: the window is on every lane.)*
+
+**3 · THE WINDOW AT 742.37 s IS DOUBLED — in the score, so in the electronics too.** A mic opening on the page and the electronics' ear are ONE brick of the save (`zn-1650`, an OPEN strike of four hits inside 37 ms, so its window was 74 ms): `endTime` 742.440 → **742.514 s** (0.148 s); the next hit is at 744.666 s, so its grace and gap stand; what it was is on the brick (`properties.windowDoubled`). Written into `scores/piece-Draft01c.json` (the file kept its own formatting; a copy of the file before is in the session's scratch folder). The page re-cut: the opening is 21.8 px wide (was 10.9). **Not in `sec05-finalDraft`, the section's own file: a re-insertion from it would undo this.** The take's audio is of the save before it (`docs/RENDER.md` § 0.2).
+
+**FOUND WHILE DOING IT — his composer page's WORKING COPY is older than three tool edits.** `scores/piece-Draft01c-work.json` (written by his page at 17:25) still has the two mic openings of §393 at their OLD ends (154.737 · 152.013 s; the save has 154.577 · 151.906) and now this window at its old length: his page has not reloaded since 15:18. Its other 62 differences from the save are the page's own stamps (34 `midiSnippet`, 28 return bricks re-measured by a few ms) — no edit of his is in it. **A Save from that page would write all three back — the way §393's fix was lost the first time. File ▾ → Reload before any Save; it loses nothing.**
+
+**4 · THE EXTRA LINE AT THE END.** It was the page's EDGE BAR — a thin grey line every page draws at the system's right edge, and on the last page at the END OF THE WINDOW (784 s; `engraving.render.systemEndBar`, appended by `notation/app/notation.html` and `notation/lib/static_page.js`). Now the page the material ends on draws NO edge bar when the notation has its own final bar line (an item `finalbar`) — both places, so the app and the film agree. Read on the last page: the final bar's two lines at x 1143.3 · 1147.2 and nothing after them. **LINEAGE, found here:** piece #6 already had a final bar line for the PRINT (`objects.finalBarLine`, §772: LilyPond's thin 0.19 · gap 0.30 · thick 0.60, at the window's end, staff line to staff line) — §411's `objects.finalBar` now takes its numbers from that row (one copy); the two differ in place: this one stands at a time of his choosing, through the lanes.
+
+**The gates:** `check_screen_edges --ir approaching-strikes` PASS · `check_rules` 31 of 32 · THE SHIELD 26 of 27, the strikes page the one moved.

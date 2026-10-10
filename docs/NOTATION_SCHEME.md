@@ -107,7 +107,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **The badge and the opening (DEC-181): THE MIC OPENING IS NEVER COVERED — "that's the window to play in".** The scattered strikes' badge stands 12 px BEFORE its opening; where that would lie on the opening before, 12 px AFTER it; where neither side is free (a run of strikes closer than a badge), no badge. At a page's edge the badge is cut like paper.
 - **The last four strikes** (no electronics): FREE — the same window with NO two circles (no microphone is meant), no arcs.
 - **A final bar line** at 783 s, through every lane; the dividers run on.
-- **THE ELECTRONICS (the presentation score; his "B"):** on every lane, in a grey window with the scattered strikes' badge, ONE PURPLE LINE from the first strike's end to the first of the last four, its thickness the number of answers a strike gets there — 1 · 2 · 3 · 2 · 1.
+- **THE ELECTRONICS (the presentation score; his "B", in section 1's look since DEC-182):** on every lane, in a grey window with the scattered strikes' badge, FIVE PURPLE BRICKS end to end (the return brick: rounded, pale, outlined) from the first strike's end to the first of the last four, each brick's HEIGHT the number of answers a strike gets there — 1 · 2 · 3 · 2 · 1.
+- **The end:** the final bar line alone — the page's own edge bar is not drawn after it (DEC-182).
 - **Open:** the 11 written strikes that lack a player in the save (the lane shows the window, no arc) · the six strikes with no badge · the section into the main score.
 
 ---

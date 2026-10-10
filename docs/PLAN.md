@@ -931,7 +931,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §411 (DEC-181) — HIS SECOND PASS, BUILT:** every window on ALL FIVE lanes · the last four strikes FREE (a window with no circles, no GC) · `--micBadge …:clear`: the badge before its opening, else after it, else none — never on a mic opening; cut like paper at a page's edge · THE GC ON TOP of every mark, everywhere · `--finalBar 783` · THE ELECTRONICS as one line a lane, its thickness the number of answers (`--strikesElec`).
 
-**Open, his:** the 11 written strikes whose save lacks a player (a window, no GC; `docs/RENDER.md` § 0.2 has the list — the notes not written) · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10).
+**SINCE §412 (DEC-182):** the electronics as section 1's RETURN BRICKS (five a lane, the height the answers) · no edge bar after the final bar line · the window at 742.37 s doubled IN THE SCORE (`zn-1650` → 742.514 s; not in `sec05-finalDraft`) · the eleven written strikes that lack a part listed for him with time code and take (RUNNING_LOG §412; `docs/RENDER.md` § 0.2) — HE BRINGS THE RHYTHMS, then the GCs go in.
+
+**Open, his:** the rhythms for those eleven · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10).
 
 ## 3. The performance score — `todo`
 
