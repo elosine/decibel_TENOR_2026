@@ -1435,3 +1435,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"1st section go to ff pls"*
 
 *(The AI's reading, marked as such: the opening's returns, written fff since DEC-147, one step down — written ff, in `piece-Draft01c`. RUNNING_LOG §381.)*
+
+### DEC-152 · 2026-10-10 — go on the bass clarinet's drone note
+
+*(His words, verbatim — Fable, at `/postclear`:)* *"please go on the bcl drone note fix"*
+
+*(The AI's reading, marked as such: the remedy by construction written out at checkpoint #5 — the note under the first bass clarinet drone recording (216.4 s) given the sounding fields of the note that holds at 242 s. Applied in `piece-Draft01c`; his Reload and a pass from ~214 s next; a capture that holds proves the remedy, not the cause. RUNNING_LOG §382.)*

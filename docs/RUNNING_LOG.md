@@ -7596,3 +7596,21 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **What prompted it (DEC-151, verbatim):** *"1st section go to ff pls"* — twenty minutes after the same bricks were written fff (§376). Whether he had heard the opening at fff is not said; his engine and his page were up.
 
 **Done, once:** `node tools/return_level.js --score piece-Draft01c --mark ff --from 0 --to 37` — the 25 return bricks of the opening, written fff → written ff (one step of the ladder, 4 dB; `bank/elec_route.json` `level.stepDb`). His save of 12:32:46 held the fff; a copy was taken first. Nothing else moved. No render: a level is applied at the play. **The checkpoint's block is corrected to ff.**
+
+## §382. THE CLARINET'S DRONE NOTE GIVEN THE WORKING NOTE'S FIELDS — the remedy by construction, at his word (DEC-152) (2026-10-10, Fable)
+
+**What prompted it (DEC-152, verbatim):** `/postclear please go on the bcl drone note fix` — his go on the remedy written out at checkpoint #5 (journal §2's handover, A · 1; SWEEP_LIST #18; §378).
+
+**The two notes, read from `piece-Draft01c` before the edit** (both key 38, technique `mp_short`, the bass clarinet's lane):
+- `wc-731`, the one that fails (216.465 … 221.853 s, under the opening `zn-730` 216.365 … 222.935 s, its window 6.57 s): `sonifyMode: plain` · `recVel 91` · its curve two points at y 7.2 on a `power` segment — his PLAYED entry (the opening's `properties.rec.entry: his`; the note's `performanceNotes: TAKE`).
+- `wc-739`, the one that holds (242.32 … 249.5 s): no `sonifyMode`, no `recVel` · `velAbs 100` · two points at y 5.714285714285714 on a `bezier` segment — the builder's duration line (`properties.droneSim`).
+
+**Done, once:** `wc-731` took the sounding fields of `wc-739` exactly — `sonifyMode` and `recVel` deleted, `velAbs` 100, the two nodes at y 5.714285714285714 (smooth 0.25), the segment `bezier`, slope 0. Kept: its id, type, layer, times, colour, fill, opacity, its note "TAKE", its section tag, key 38, the technique. The file written back compact as it was (872,179 → 872,188 bytes; no trailing newline, as before); checked against the copy taken first: ONE object differs, the count (1,173) and every other top-level key equal. No working copy of the page was on disk. The copy is in this session's scratchpad only (not durable); the BEFORE, whole:
+
+`{"id":"wc-731","type":"waveCurve","layer":1,"startSeconds":216.465,"endSeconds":221.853,"nodes":[{"pos":0,"y":7.2,"smooth":0.25},{"pos":1,"y":7.2,"smooth":0.25}],"segments":[{"model":"power","slope":0}],"color":"#607D8B","fillMode":"bottom","opacity":0.55,"performanceNotes":"TAKE","properties":{"section":{"name":"drone-section","at":209.307}},"sonifyNote":38,"technique":"mp_short","sonifyMode":"plain","recVel":91}`
+
+**What the edit changes, said plainly:** the note is a SHAPED note now, not a struck one (`docs/DYNAMICS_LAW.md`: struck at the velocity `velAbs` gives, the fader on a curve channel at the curve's height) — the same construction as every builder's drone recording, and those hold. His played dynamic (velocity 91) is replaced by the builder's 100 and the curve's height; whether that is louder or softer at the microphone than his take is NOT measured — the new capture's `loudDb` against −32.1 (the short one's) will say.
+
+**What it does not do:** diagnose. The cause is still one of two (a velocity layer of the preset · the channel's slot), and this edit moves BOTH at once — the velocity 91 → 100 and the channel main → curve — so a capture that holds proves the remedy, not the cause. The cause is known at his word only: key 38 at velocity 91 and at 100 on the main channel, two notes played by hand (it sounds).
+
+**The reading after his pass** (File ▾ → Reload of `piece-Draft01c` BEFORE any Save · the engine up, no restart · play from ~214 s through 223 s): the bank's row `bcl-drone-1` — its `captured` stamp after 12:34:35 and `lengthMs` against the window's 6570 (1,844 before) — and `node tools/vet/wav_env.js bank/samples/raw/zn-730.wav 200`: a held multiphonic swells over about two seconds and stays; the short one peaked at 0.6 s and was gone by 1.4 s. If it still falls at 0.6 s, the velocity and the channel are both cleared and the cause is elsewhere: his screen (the engine's window) and his word before anything else.
