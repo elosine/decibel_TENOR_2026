@@ -865,6 +865,8 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE GC's SHAPE, 2026-10-10 (DEC-160, RUNNING_LOG §392):** piece #2's — its one preset, stiffness 50 · damping 80 · ictus 120 · descentRatio 55 · duration 1.1, in `container.json` `engraving.render.gc.preset` and `animated.gc.preset` (the two must agree); still magenta; a reload.
 
+**THE MIC OPENINGS, 2026-10-10 (DEC-161, RUNNING_LOG §393):** back on the page (`--mics`), each the save's zone = the engine's window (34 of 34 equal); two that broke his rule of §237 closed in the score by the new `tools/mic_gaps.js` (100 ms before the same player's next opening or trill). The cut now: `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 209 --id approaching-trills --label "Approaching — the trills (125 … 209 s)" --trills --trillRate 100 --gcOnly 125-209 --mics`.
+
 **Open, his:** the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`

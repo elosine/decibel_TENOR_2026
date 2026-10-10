@@ -1489,3 +1489,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"Let's grab the GCs from piece two, the percussion piano piece. Any one of the ones from the beginning, like from the first 10 seconds or so. Still magenta, though. I just mean the the shape and uh, arc and speed and all that."*
 
 *(The AI's reading, marked as such: this piece's GC takes piece #2's preset — all 203 of that piece's GCs share one: a 0.6 s fall, a 0.5 s rebound to 80 % of the drop, 1.1 s whole. The colour stays this lineage's magenta. RUNNING_LOG §392.)*
+
+### DEC-161 · 2026-10-10 — the mic openings back; a player's microphone never open twice, never into the trill
+
+*(His words, verbatim — Opus:)* *"then the mic openings in their standard spots. are those you had them there before are they the correct duration or do they reflect the actual duration of the opening in the mic in the live electronics or let's just make sure they do however Just be wary of the mic openings in percussion at 154. I thought we had resolved those, but the mic openings shouldn't be overlapping. We'll draw it that way, but also we need to make sure the live electronics reflect that. And also the cello at 151. The mic opening shouldn't bleed into the start of the trill. Maybe a little bit of a gap. before."*
+
+*(The AI's reading, marked as such: the mic openings drawn again in their row at the lane's top; each must be the engine's real window — it is, the page and the notation read one zone. The percussionist's two openings at 154 s and the cello's at 151.5 s are corrected IN THE SCORE, so the drawing and the live electronics agree: each ends 100 ms before what it met. His memory is right: both were fixed on 2026-10-08 and the fix is in no file. RUNNING_LOG §393.)*
