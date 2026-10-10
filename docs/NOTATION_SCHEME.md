@@ -5,7 +5,9 @@ decisions: what is decided, what is open, in the order they will be settled. It 
 how each was reached is `RUNNING_LOG.md` §299 … and `COMPOSITION_NOTES.md` DEC-87 … — his words are quoted there, not here.
 The plan items are `PLAN.md` § 2. Marked **(AI)** = the AI's reading or suggestion, not yet his.)*
 
-**To see it — IN THE NOTATION SCORE:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325). **The presentation view:** `ir`: *Approaching — the opening, with the electronics (0 … 37 s)* — the same page plus the electronics' layer (§335).
+**THE OFFICIAL SCORE (since 2026-10-10, DEC-166, RUNNING_LOG §398): http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — THE SCORE (so far: 0 … 209 s)* (first in the picker) → `view`: video.** One file, cut from the piece in hand: section 1 · the three body problem · section 2 (the trills and the accented long tones). The section pages are working pages, under *experiments*. Its command is PLAN.md § 2.10.
+
+**To see a section's working page:** http://localhost:5500/notation/app/notation.html → `ir`: *Approaching — the opening (0 … 37 s)* → `view`: video. Laid out so far: section 1 (RUNNING_LOG §325). **The presentation view:** `ir`: *Approaching — the opening, with the electronics (0 … 37 s)* — the same page plus the electronics' layer (§335).
 The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`place`: laneTop · laneMiddle · laneBottom; `gapSs`) and `objects.badge` — change a row, reload the app. *(The earlier working drawing: http://localhost:5500/signs/layout.html.)*
 
 ---

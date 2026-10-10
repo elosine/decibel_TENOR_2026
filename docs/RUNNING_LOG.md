@@ -7945,3 +7945,33 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **The gates:** `check_screen_edges --ir approaching-trills` **PASS** (nothing past the frame; 0 units clamped; 68 go-time indicators each at x(t)) — red since §395, green by his rule · `check_print_edges` PASS · the four earlier badge pages re-checked, PASS · THE SHIELD green (23 of 24, the trills page the one moved, expected) · `check_rules` 31 of 32 (§45's red).
 
 **What is NOT covered, said once:** the rule acts when a badge would leave the FRAME; a badge 'after' its opening at a page's end, and a badge before an opening at a page's start that is NOT hand-placed, are still the lineage's (clamped right, a flag). When one breaks, his word: a new rule then. Print: §396's list stands (the planner cannot measure a badge yet).
+
+## §398. THE OFFICIAL NOTATED SCORE — the three finished sections in ONE file, 0 … 209 s, cut from the piece in hand; the tutti left as written (DEC-166) (2026-10-10, Opus)
+
+**What prompted it.** First: *"What's the issue with the 2T?"* (the tutti) — answered: no fault; the last five hits are written half a second after their trills end, so their GC impacts come after the curves' peaks, where every other hit's sits on one. **Then (DEC-166, verbatim):** *"Right, leave as written. can we combine all the sections done so far now into the official notated score?"*
+
+**The tutti: LEFT AS WRITTEN** — the five GCs at 197.907 s stay where the notes are (§391's open question, closed).
+
+**THE OFFICIAL SCORE — `notation/ir/approaching.ir.json`**, the lineage's ONE MAIN notation file (#5's D41), first in the picker, the working pages under *experiments*:
+
+`node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 209 --id approaching --label "Approaching — THE SCORE (so far: 0 … 209 s)" --mics --silent 0-125 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadgeAfter 8.151,140.158,154.677`
+
+It is the three section cuts in one command, from **`piece-Draft01c`** (the two earlier pages had been cut from `piece-3BodyRedo`, the same music in those stretches): **section 1, 0 … 37 s** — the 30 mic openings, the short attacks' badge before each, the notes silent · **the three body problem, 39 … 123 s** — on every lane the method's badge and the short attacks' before 39 s, one state wedge a lane, the 25 state signs · **section 2, 125 … 209 s** — the 34 trills (a go line, the trills' badge, the level curve), a GC for each of the 34 hits, their 34 mic openings each with the accented long tones' badge. 275 events; **18 screen pages, −4 … 212 s** (the 4 s lead-in, then 12 s a page).
+
+**THE PAGE TURNS MOVED — and the cases with them (§396's point, now real).** The section pages tiled from their own starts; the score tiles from −4 s, its turns at 8, 20, … 140, 152 … s. Computed from the save before the cut, on the registry's numbers:
+- **two badges would hang off a page's START onto their own mic openings:** the bass flute's opening at **8.151 s** (22 px into the page that begins at 8 s) and the viola's at **140.158 s** (23 px into the page at 140 s). His cure of §397 for exactly this — the badge AFTER the opening, the same gap — is applied to these two, by hand, in the cut (`--micBadgeAfter`). *(The first has been so on the working page `approaching-opening` since §340: that page tiles from −4 s too. It was not noticed; the working page is left as it is.)*
+- **the percussionist's second badge at 154.677 s** still follows his first opening by 0.44 s whatever the turns: after its opening, as he placed it.
+- **the bass clarinet's two at 145.054 and 169.076 s**, which he moved at §397, are mid-page here and cover nothing: BACK before their openings — the cure follows its cause. One number in the cut brings either back.
+- **one trill badge at a page's END:** the bass flute's trill at 151.981 s, 2.8 px before the turn at 152 s — his RULE of §397 puts its badge before its go line (computed: 1825.4 → 1867.3).
+- after the cut, from the page's own data: **no two things overlap in any lane's mic row, nothing pushed right at a page start, nothing past the frame.**
+
+**The gates on the official score:**
+- `check_screen_edges --ir approaching` **PASS** — 18 pages tiled −4 → 209 s, every kind with its edge class, 0 units clamped, nothing timed in the gutter, nothing past the frame (the rightmost ink at x 1877.2), 68 go-time indicators each at x(t) on the page that owns it, 21 animated devices at the page edges.
+- THE SHIELD green (24 of 25 identical, the new file the one added) · `check_rules` 31 of 32 (§45's red).
+- **`check_print_edges --ir approaching` — 1 FAILURE, and it is the one §396 foretold.** 21 print pages, the cuts placed by the objects (17 full, 3 pushed, 0 forced); on **print page 4** (cut at 30.96 s) the viola's short attacks' badge stands before its mic opening at 31.2 s and hangs 0.13 s back across the cut — *"1 element straddles the clef gutter"*. The print planner cannot measure a badge (`render.js` `spanSsOf` has no `badge` case), so it did not move the cut back to where the badge's ink begins. The print class of a badge is already `whole`; what is missing is the measurement. **NOT built — print is its own rule-set, at his word.**
+
+**Seen in the running app:** the picker — *Approaching — THE SCORE (so far: 0 … 209 s)* first, then the group *experiments*; page 4 of 18 (32 … 44 s, the join of the opening and the three body problem): 3 mic openings, 8 short attacks' badges, 5 three body badges, 5 *far* state signs; **the ♪ render chip shows** — the score names `piece-Draft01c`, so the take of §388 (`notation/audio/piece-Draft01c.wav`) is its audio.
+
+**The picker's order:** `notation/ir/index.json` — `approaching` moved to the top, the seven other pages marked `exp` (the lineage's rule: one in the main section). A re-cut of `approaching` replaces it in place; a working page re-cut WITHOUT `--exp` returns to the main section.
+
+**What the official score does NOT hold yet:** the drones (210 … 415 s), the beating section (423 … 668 s), the strikes (677 … 779 s) — not notated; the electronics' layer (the presentation view's purple bricks and computer players exist only on the two `-elec` working pages). `--w1` grows as sections are notated.

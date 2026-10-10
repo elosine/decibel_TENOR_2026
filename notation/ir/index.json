@@ -1,6 +1,16 @@
 {
  "irs": [
   {
+   "id": "approaching",
+   "label": "Approaching — THE SCORE (so far: 0 … 209 s)",
+   "score": "piece-Draft01c",
+   "window": [
+    0,
+    209
+   ],
+   "profile": "trance"
+  },
+  {
    "id": "decibel-first-sound",
    "label": "first sound (container 6 test)",
    "score": "decibel-first-sound",
@@ -19,7 +29,8 @@
     0,
     37
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   },
   {
    "id": "approaching-beating-423",
@@ -29,7 +40,8 @@
     423,
     460
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   },
   {
    "id": "approaching-opening-elec",
@@ -39,7 +51,8 @@
     0,
     37
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   },
   {
    "id": "approaching-threebody",
@@ -49,7 +62,8 @@
     37,
     125
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   },
   {
    "id": "approaching-threebody-elec",
@@ -59,7 +73,8 @@
     37,
     125
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   },
   {
    "id": "approaching-trills",
@@ -69,7 +84,8 @@
     125,
     209
    ],
-   "profile": "trance"
+   "profile": "trance",
+   "exp": true
   }
  ]
 }

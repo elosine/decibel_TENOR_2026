@@ -835,7 +835,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Step 4 — THE DRY RUN, the one proof.** The opening: `take.js start --to 37` · his ▶ from 0 · `stop` (align runs) · `mix --out <score>-dry`. MEASURED, not watched: the offset found (the first note `wc-19` at 1.525 s, key 48, the bass flute's slap — the first sound a sampler's attack after it) · the drift over 37 s · the stems 43 s long · the electronics PRESENT in `elec.wav` (its first sound after the first opening `zn-47` at 1.425 s plus the engine's lag) · the mix's true peak and loudness · the players' stem against an offline render of the same stretch (the same notes at the same times — the fallback proven in passing). Heard by him on the notation page's chip (`approaching-opening`'s `source.score` pointed at the dry WAV's name, or the WAV named for it) — then the full take at his word. No second proof.
 
-**Step 5 — THE VIDEO.** Unchanged: `node tools/export_video.js --ir <the main IR> --view video --fps 30 --audio notation/audio/<score>.wav --out <mp4>`. It needs THE WHOLE PIECE'S notation pages (2.1 … 2.7's work, not cut yet) and the main IR's `source.score` = the score's name = the WAV's name. Nothing to build here; a dependency of the notation.
+**Step 5 — THE VIDEO.** *(Since §398 the main IR exists: `approaching`, 0 … 209 s, named for `piece-Draft01c` — the take is already its audio; the film waits on the sections not yet notated.)* Unchanged: `node tools/export_video.js --ir <the main IR> --view video --fps 30 --audio notation/audio/<score>.wav --out <mp4>`. It needs THE WHOLE PIECE'S notation pages (2.1 … 2.7's work, not cut yet) and the main IR's `source.score` = the score's name = the WAV's name. Nothing to build here; a dependency of the notation.
 
 **Open to him, each with the AI's default:** one take or by section → ONE TAKE (sections only if a take fails) · the players live or offline → LIVE (the take is what he heard; offline is the fallback) · the electronics in the mix → as heard (`--elec-db 0`) · the engine's mode for a take → `compose`, as it stands. **A take is the piece's length in real time (13 min) and each take is another roll of the electronics, by design.**
 
@@ -875,7 +875,19 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **THE EDGES SETTLED, 2026-10-10 (DEC-165, RUNNING_LOG §397):** HIS RULE — a badge after its go line that would leave the frame stands before the line, the same gap (`page_rules.json` `edge.badge.screenEnd: "mirror"`, "for now") · BY HAND, no rule — three badges after their mic openings (`--micBadgeAfter 145.054,154.677,169.076`); both edge gates pass.
 
-**Open, his:** print: the badge's ink into the planner, and his three print decisions, at the print score · the tutti's five (their GCs where the notes are, or the notes moved onto the trills' end) · whether section 2 still gets its announcing badges, now that each trill has its own · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+**Open, his:** print: the badge's ink into the planner, and his three print decisions, at the print score · the tutti's five: LEFT AS WRITTEN (DEC-166, RUNNING_LOG §398) · whether section 2 still gets its announcing badges, now that each trill has its own · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+
+### 2.10 THE OFFICIAL SCORE — one file for the whole piece, grown section by section — `built 2026-10-10 for 0 … 209 s (sections 1 · the three body problem · 2)` (DEC-166; RUNNING_LOG §398)
+
+**Why:** his word — "combine all the sections done so far now into the official notated score". The lineage's ONE MAIN notation file (#5's D41): the film, the print and the page he proofs all read it; the section pages are working pages.
+
+**The file:** `notation/ir/approaching.ir.json`, first in the picker (the working pages under *experiments*), cut from the piece in hand: `node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 209 --id approaching --label "Approaching — THE SCORE (so far: 0 … 209 s)" --mics --silent 0-125 --gcOnly 125-209 --trills --trillRate 100 --wedges --announce threeBody+shortAttacks:39:123.3:lead --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadgeAfter 8.151,140.158,154.677`.
+
+**The rule for it:** a section is notated on its working page first; when he has seen it, its flags join this command and `--w1` grows. The page turns of this file (12 s from −4 s) are the film's — a badge's hand placement is decided HERE, on these turns, not on a working page's.
+
+**Its edges today:** screen gate PASS (no overlap in any mic row; one trill badge before its line by his rule, 151.981 s; three badges by hand after their openings — 8.151 · 140.158 · 154.677 s) · print gate 1 FAILURE (print page 4: a badge across the cut at 30.96 s — the planner cannot measure a badge; a small build, at his word).
+
+**To come:** the drones · the beating section · the strikes · the electronics' layer (a second file, or a view of this one — his).
 
 ## 3. The performance score — `todo`
 
