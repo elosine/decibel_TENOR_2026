@@ -7135,3 +7135,20 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **A fault of the AI's own, caught by its count:** `strike_perc.js` was run twice in one shell line (once for its first lines, once for its last) — the second pass rolled the twenty notes the first had left plain: 28 varied, 26 to the mallets, nearly every other strike. The copy taken before the build was put back and the three tools run ONCE: the numbers above. A tool that writes a score is run once per line.
 
 **`strike_check.js`:** the words are read from the laid windows now (a lay over an earlier lay keeps them; the file's letters bind a first lay only); the lay it compares against is made on the score AS IT STANDS. PASS, 46, on `sec05c` (310 hits each heard by one window; the ending clear). NOT CLAIMED: the page; a living engine; his ear.
+
+## §353. THE NOTATION OF "THE THREE BODY PROBLEMS SECTION" — a talk: which section, and are the electronics predictable (DEC-125) (2026-10-10, Opus)
+
+**What prompted it:** DEC-125, verbatim in COMPOSITION_NOTES — the section's badge 30 % bigger than the current badge, "the multiphonic badge" beside it, "all the mic openings", and a question: are the electronics' windows re-rolled every time, or predictable — and so drawn for the conductor as the grey box with a smaller multiphonics badge?
+
+**Measured in the piece (`piece-3BodyRedo`), before answering:**
+- **The three body problem, 39 … 123 s:** 177 notes of the five players inside 45 containers (10 far apart · 5 approaching · 5 close pass · 5 break and rejoin · 20 changes) · 27 containers of the three computer players (e1 · e2 · e3, at the bottom of the bass clarinet's, the mallets' and the cello's lanes, 2.7 … 18.9 s each) · **no mic opening.**
+- **The drones, 211 … 415 s:** 15 mic openings (three a player, 6.4 … 8.9 s) · 26 drone bricks (6 … 36 s, four to six a player).
+
+**His question, answered from how the two sections are made:**
+- **The three body problem:** WHEN each computer player is in WHICH state is in the score — rolled once by the builder (seed 165), the same at every performance. WHAT it plays inside a state is decided live, sound by sound, from what it hears (`performer.scd`): never the same twice.
+- **The drones:** each drone's START and LENGTH are in the score — rolled once by the builder, the same at every performance. Its SOUND is made from that night's recording.
+- So in both the BOX is true at every performance and the sounds inside it are not — the principle the presentation view was built on (§333: draw as fact only the region, the count, the kind). A grey box per container or per drone, with a small badge in it, is honest for a conductor. A new roll per performance is nowhere built (parked at DEC-46; the strikes' at DEC-120): if he takes it, the boxes stop being true and the view must say "about here".
+
+**Where the AI could not read him — put as one letter, nothing built:** the multiphonics badge and the mic openings belong to the drones; the three body section has neither. (a) the three body problem as agreed at DEC-102, "multiphonic" standing for the SHORT ATTACKS' badge: its own badge 30 % bigger (54.5 px against the 42 px of DEC-123) with the short attacks' beside it, no mic opening, a grey box with a small short attacks' badge for each of the 27 containers of the computer players · (b) the DRONES: the multiphonics badge, the 15 mic openings each with its badge, a grey box with a small multiphonics badge for each of the 26 drones · (c) both, each its own way.
+
+**Said with it:** the three body problem's own badge is NOT DRAWN in this piece yet (NOTATION_SCHEME: "still to draw") — the lineage has one, piece #2's three discs on their orbits, with no square; put into this piece's square it is a candidate, his to see. The players' own signs in that section — the line wedge, a sign per state — are still open and were not named today.
