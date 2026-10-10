@@ -97,7 +97,7 @@ next, where we are; reorganizations only on his approval.
   16.3 the balance PARKED with volume · 16.4 his takes — done his way, by hand · 16.5 ☑ in the piece.
 - **► 17 THE STRIKES SECTION (section 5) — OPENED 2026-10-09, PLAN.md § 1.9:** 17.1 ☑ the rig BUILT (done but for his ear) · ► 17.2 the
   catalogue decided — from his ear on the rig · 17.3 the section simulated · 17.4 into the piece · 17.5 the concert side (deferred) · 17.6 the record.
-- **► POSITION: STEP 17 — 17.1 BUILT, and since 2026-10-09 (DEC-113, §337) the replies with effects on the two SHORT endings (perc · expodec; the engine filters the deck; 266 short versions rendered); HEARD — *"those strikes are good, those envelopes are good"* (DEC-115, §339). ► NEXT: 17.2 the catalogue decided, a talk.**
+- **► POSITION: STEP 17 — 17.1 BUILT and HEARD (DEC-115, §339) · 17.2 ANSWERED (DEC-120, §343: the catalogue whole, rolled) · ► 17.3 SECTION 5B PLANNED WHOLE 2026-10-09 (DEC-119 · 120; §342 … §345; PLAN.md 17.3a … 17.3d, his "go" on the top line): his 54 strikes in `scores/sec05b.json` (HIS, untracked), notated or open by his letters, the open windows doubled; the large form one · two · three · one answers a strike, rolled; the cascade of rhythms in the engine. NOTHING BUILT. ► NEXT: THE BUILD of 17.3a … 17.3c as one — Opus, after a clear; then his restart · F5 · `sec05b` from 0.**
 
 ### 17.1 THE RIG IS BUILT (2026-10-09, Fable, at his *"go and build as much as possible independently"* — RUNNING_LOG §297)
 
