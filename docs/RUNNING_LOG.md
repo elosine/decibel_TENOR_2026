@@ -7360,3 +7360,9 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 - **The alternative left as a word, said to him:** a sign that sits a gap above the wedge WHERE IT STANDS (low over the thin stretches, high over the thick) — the working page drew it that way, a piece of each state's own wedge under each sign. His sentence (DEC-134: "find the highest point of the line wedge") is what is built.
 
 **Proven:** `check_rules` 31 of 32 (§45's red) · THE SHIELD green (the layouts unchanged since §360's baseline but for the two three body pages) · `check_screen_edges` PASS on both pages · **seen in the running app**, page 5 of the players' page: five break and rejoin signs, each 33.6 px, purple dots of radius 4.2 on a ground of #5F4296 at 15 %, each with its left edge where its lane's ramp begins and its bottom 7.9 px above the red band's top (sign 39.9 … 73.5 px, band from 81.4 px in the first lane). The working page rebuilt at the new size.
+
+## §366. THE STATE SIGNS' GROUND AT 22 % — "try 22" (DEC-138) (2026-10-10, Opus)
+
+**His words:** *"the small badges, what is the transparency of the background, please?"* — 15 % opacity, the state's own colour. Then *"try 22"*.
+
+**One number:** `notation/registry/rules.json` `objects.stateSign.ground.opacity` 0.15 → 0.22. `gen_engraving_rules.js` · `check_rules.js` 31 of 32 (§45's red). A reload of the notation app shows it; no re-cut. A try: his eye decides.

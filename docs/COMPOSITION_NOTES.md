@@ -1351,3 +1351,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"sec05-finalDraft Section five is there. Can you take this and insert it into the main score now called piece-Draft01 and insert it at 677. So the first strike starts at 677. Then for the three body, let's do I and the dot size is good. And actually, you can make the small badges about 25% bigger, but um, keep the gap the same above the line wedge."*
 
 *(The AI's reading, marked as such: (1) SECTION 5 IS FINISHED as a draft — `scores/sec05-finalDraft.json` (his; the 67 strikes in three orchestrations, the 63 windows at seed 2) — and goes into THE PIECE, now `scores/piece-Draft01.json`, so that its first strike falls at 677 s: the section's own time zero at 673.966 s. (2) THE STATE SIGNS: ground i of the working page — the state's own colour at 15 %; the bigger dots as shown; the sign itself a quarter bigger (27 → 34 px); its bottom the same gap above the line wedge as on the page (8 px). "The highest point of the line wedge" (DEC-134) read as the top of the wedge's thickest state — every sign of a lane at one height; said to him, one word of a row to make it follow the wedge under each sign instead. Built: RUNNING_LOG §365.)*
+
+### DEC-138 · 2026-10-10 — the state signs' ground: "try 22"
+
+*(His words, verbatim — Opus; first:)* *"the small badges, what is the transparency of the background, please?"* *(answered: the state's own colour at 15 % opacity. Then:)* *"try 22"*
+
+*(The AI's reading, marked as such: the ground's opacity 15 % → 22 % — a try, his eye to follow. RUNNING_LOG §366.)*
