@@ -2,7 +2,7 @@
 
 > **Provenance (septet LGMF 2026, 2026-09-17):** copied unchanged from piece #5 `septet_2026/docs/CURVE_LOOK.md` with the port of the code it describes (PLAN 0b / 0g). **It describes the tool as it was built for the TEMPUS septet: its instrument names, its `§N` references into that piece's `RUNNING_LOG`, and its measurements are piece #5's.** The mechanism is what carries. Where this piece changes the tool, the change is recorded here and dated.
 
-> **THIS PIECE (decibel TENOR 2026, 2026-10-10 — RUNNING_LOG §389):** the standard below is used AS IT IS for section 2's trills — § 2 (the one closed path, lime green) and § 2a (**the smoothing: 100 samples a second; the drawn floor at 1 of 10**) and § 6 (the meter). Its values live in `notation/registry/rules.json` `objects.curve` · `colours.limeGreen` and `container.json` `devices.byEnv.trill.curveFloor`; a trills page is cut with `--trills --trillRate 100`. § 8 has the line.
+> **THIS PIECE (decibel TENOR 2026, 2026-10-10 — RUNNING_LOG §389):** the standard below is used for section 2's trills — § 2 (the one closed path, lime green) AS IT IS, § 2a's DENSITY (**100 samples a second**) and § 6 (the meter). **§ 2a's FLOOR IS OFF here since DEC-158 (RUNNING_LOG §390, his word: "have the curves start at 0"): `curveFloor` 0 — level 0 is drawn on the lane's bottom edge.** Its values live in `notation/registry/rules.json` `objects.curve` · `colours.limeGreen` and `container.json` `devices.byEnv.trill.curveFloor`; a trills page is cut with `--trills --trillRate 100`. § 8 has the line.
 
 # The curve look — the standard for every curve drawn on a score
 
@@ -123,3 +123,5 @@ device is wanted.* Both are drawn per lane at the cursor, from `builds/performan
   crescendo not yet — his word. RUNNING_LOG §450–§451.
 
 - **2026-10-10 — decibel TENOR 2026, the trills of section 2** — the standard applied unchanged (the look · 100 samples a second · the floor at 1 of 10 · the meter) to a trill with no pitch; measured on the page: the longest straight segment 1.75 px, the curve's start 21.0 px above the bottom of a 209.6 px lane. decibel RUNNING_LOG §389.
+
+- **2026-10-10 — decibel TENOR 2026, the floor OFF** — his eye on the trills: "have the curves start at 0" — `curveFloor` 0.1 → 0 in this piece (every trill here is a single rise from nothing); the look, the density and the meter stand. decibel RUNNING_LOG §390.

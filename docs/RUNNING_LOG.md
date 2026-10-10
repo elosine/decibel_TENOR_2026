@@ -7771,3 +7771,17 @@ The SAME key (38), the same preset (`mp_short`), the same lane: one swells for t
 **Not on the page, and not asked:** the accented long tone's conductor's arc (its mic opening is drawn, alone) · the section's two announcing badges (the trills' and the accented long tones', side by side) · the electronics (the petals' ring). Section 2's own talk, in his order.
 
 **For the paper:** the trill's notation dropped its pitch between two pieces and kept everything else — the sign shrinks to what the performer cannot choose: WHEN (the go line), HOW LONG (the curve's span), HOW LOUD OVER TIME (its height). The curve is the composer's own drawn control curve, the one the playback follows, sampled densely enough that the page needs no smoothing of its own.
+
+## §390. HIS EYE ON THE TRILLS — the `tr` twice its size; the curves start at 0 (DEC-158) (2026-10-10, Opus)
+
+**What prompted it (DEC-158, verbatim):** *"double the tr size and have the curves start at 0"* — on seeing the page of §389.
+
+**Two rows, no code, no re-cut** (a row is read at a reload of the notation app):
+- `notation/registry/rules.json` `objects.techSymbol.sizeTrill` **0.57 → 1.14** — the `tr` 10.8 × 9.9 px → **21.6 × 19.8 px**. It keeps the two edges it was given (the rule of DEC-106: a change of size keeps the thing's edge): its left ink 0.25 ss right of the go line, its top the standard gap under the lane's top — it grew to the right and downward.
+- `notation/registry/container.json` `devices.byEnv.trill.curveFloor` **0.1 → 0** — NO drawn floor: level 0 is drawn on the lane's bottom edge. Read: "start at 0" = the curve begins from nothing, on the baseline, where piece #5's floor had it begin a tenth of the lane up. Every one of this section's 34 trills starts at level 0 and rises to 10, so each now rises from the bottom edge to the top. The whole curve is drawn at its true level (the floor was 0.1 + 0.9 v over the whole span, not at the start only); the meter rides the same samples.
+
+**What this overturns, for the record:** the floor was half of what piece #5 called the smoothing (§451 there — his "0 = 1 graphically", because a curve at its minimum showed "hardly anything"). There the trills read curves that DIP to near zero mid-span and sit low for long stretches; here every curve is a single rise, and a rise from nothing is the gesture. The other half — 100 samples a second — stands. `docs/CURVE_LOOK.md` § 2a's own line said the floor was "provisional until the composer's eye on the page".
+
+**Measured in the running app** (page 1, the bass flute's first trill): the curve's first point at y **217.6 px** = the lane's bottom edge (it was 196.6) · its top at the lane's top, 8.0 px · the `tr` 21.6 × 19.8 px, its left ink 763.3 px (the go line at 761.3: 2.0 px, as before), its top 15.9 px (as before).
+
+**Proven:** THE SHIELD green — 23 of 24 identical, `approaching-trills` the one moved, expected (a baseline taken before the edit) · `check_rules` 31 of 32 (§45's red; `docs/ENGRAVING_RULES.md` regenerated) · `check_screen_edges --ir approaching-trills` PASS.

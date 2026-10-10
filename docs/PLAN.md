@@ -859,7 +859,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **The page:** `approaching-trills`, eight pages, cut from `piece-Draft01c` — `node tools/notate_section.js --score piece-Draft01c --w0 125 --w1 211 --id approaching-trills --label "Approaching — the trills (125 … 210 s)" --trills --trillRate 100 --silent 125-211 --mics` — 34 trills as curves, the other notes silent, the 35 mic openings drawn. Shield green · `check_rules` 31 of 32 · screen edges PASS · measured in the running app (§389).
 
-**Open, his:** the `tr`'s size (piece #5's, 10.8 × 9.9 px — one number) and place · then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
+**HIS EYE, 2026-10-10 (DEC-158, RUNNING_LOG §390): "double the tr size and have the curves start at 0"** — `rules.json` `objects.techSymbol.sizeTrill` 0.57 → 1.14 (21.6 × 19.8 px, its two edges kept) · `container.json` `devices.byEnv.trill.curveFloor` 0.1 → 0 (no drawn floor: a curve begins on the lane's bottom edge). Two rows, a reload, no re-cut.
+
+**Open, his:** then section 2's own talk: the accented long tone's arc meeting its mic, the two announcing badges, the electronics' ring.
 
 ## 3. The performance score — `todo`
 
