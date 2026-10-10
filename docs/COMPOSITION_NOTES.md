@@ -1307,3 +1307,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus, mid-build:)* *"And then, yes, let's discuss the notation. What you've done looks good. Let's keep that. But let's discuss if there should be some sort of sign or indicator when the mode in three body problem changes. And then how we should represent the electronics. I'll take proposals when you have a moment."*
 
 *(The AI's reading, marked as such: the line wedge and the two badges of §355 are KEPT — the colours and thicknesses the AI picked stand until he moves them. Two talks, in his order: a sign where a player's state changes · how the three computer players are shown. Proposals put to him, nothing drawn: RUNNING_LOG §358.)*
+
+### DEC-131 · 2026-10-10 — section 5F: the electronics and the response types re-rolled
+
+*(His words, verbatim — Opus:)* *"Could we seed and then re-roll the electronics and the um, response type? And I saved it as section 5F."*
+
+*(The AI's reading, marked as such: a new seed for the lay — every answer's rhythm and timing drawn again, and with the new seeds on the bricks the engine's deal of samples and effects too; the form, the words (notated · open), the windows' spans and his notes as they are. His file is now `scores/sec05f.json` — it holds the re-orchestration of DEC-129 and the form of DEC-128 (he reloaded before saving: read from the file). The proposals of DEC-130 are still unanswered. RUNNING_LOG §359.)*

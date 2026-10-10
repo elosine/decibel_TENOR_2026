@@ -7250,3 +7250,15 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Proposals put to him — the electronics (the three computer players, in the presentation view only):** (a) as the opening: a grey window for each of the 27 containers, a small short attacks' badge in each (his own first thought, DEC-125) · (b) ONE grey window a computer player along the lane's bottom (under the bass clarinet, the percussion, the cello — where their bricks stand in the score), with that player's OWN small state wedge inside it and one small badge at its start: it shows what is true — a fourth, fifth and sixth player on the same orbit · (c) nothing. The AI leans to (b): 27 boxes say "something here" 27 times; a wedge says what.
 
 *(his word: the next entry)*
+
+## §359. SECTION 5F — the answers re-rolled, seed 2 (DEC-131) (2026-10-10, Opus)
+
+**What prompted it (DEC-131, verbatim):** *"Could we seed and then re-roll the electronics and the um, response type? And I saved it as section 5F."*
+
+**Read first:** `scores/sec05f.json` (HIS, untracked; saved 10:29:39, seven seconds after `sec05e`) holds what §357 left — 34 strikes in the new voices, 17 on his pitches, the form 11 · 20 · 25 · 6 · 1 at seed 1. He had reloaded before saving this time.
+
+**Done:** `node tools/strike_windows.js --score sec05f --seed 2 --replace`, once. The seed moves three things: the two decks an answer's rhythm and timing are dealt from · each window's own seeds (`seed · 10000 + window · 10 + answer`: the dice of its transformation and timing draws) · and, through those seeds, the engine's shuffle of each player's deck of samples when it runs dry — other samples, other effects. NOT moved: the form (his counts), the words (63 kept from the windows), the spans, his notes (compared whole: unchanged).
+
+**The lay:** all 63 windows' answers changed; 139 answers — right after 41 · a beat later 42 · call and response 42 · much later 7 · in a later window 7 (the weights' one late answer in ten); the last answer ends at 93.1 s, the bare four from 96.0 s. `strike_check.js --section sec05f` PASS.
+
+**Another roll is one number:** `--seed 3 --replace`, then File ▾ → Reload — no engine restart. The proposals of §358 (the change of state · the electronics in the notation) still wait for his letters.
