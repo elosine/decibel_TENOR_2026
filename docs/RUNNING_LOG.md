@@ -7100,3 +7100,13 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **Read from the machine:** between the first lay (§346) and this one his last three strikes moved earlier (52 … 54 at 101.7 · 105.1 s now; 109.0 before) — his live work; the tools took the newer copy as their base, as they must.
 
 **Proven once:** `strike_test.scd` PASS (one check more: the pool with raw false) · `strike_check.js` PASS (46; the form's new rule, the processed-only rule) · `node --check`. NOT CLAIMED: a living engine (his predates the cascade AND the raw switch — one restart serves both); the page; his ear.
+
+## §350. THE NOTATION — the mic opening back to its first height (DEC-122) (2026-10-10, Opus)
+
+**What prompted it (DEC-122, verbatim):** *"in the notation score, can you increase the height back of the microphone openings? I think we reduced it by 30%. So back to the way it was. It's probably going to be the same height as the badge now."*
+
+**One number:** `notation/registry/rules.json` `objects.micOpening.heightFrac` 0.14 → 0.2 — a fifth of the lane, 41.9 px at the 1080 frame, the composer score's own brick (DEC-98); DEC-105 had taken 30 % off (29 px). Nothing else touched: it still hangs from the row's top under the 8 px gap (DEC-106), fill 18 %, outline solid, the yellow over the two circles. `gen_engraving_rules.js` · `check_rules.js` 31 of 32 (§45's red). No re-cut — a row is read at a reload.
+
+**Read in the running app** (his 5500, the AI's pane, `approaching-opening`, page 1): seven mic openings, each 41.9 px tall; seven badges, each 36 px.
+
+**His guess against the numbers:** not the same height — the mic opening is 5.9 px TALLER than its badge (the badge went back to 36 px at DEC-117; both were at their first sizes only before DEC-105, and then too the mic was the taller: 41.9 against 36). The mic's row is as tall as its tallest thing (§328): 8 … 50 px now, the badge hanging from the same top edge and ending 6 px higher. Put to him in one line, nothing changed for it (the rule of §329: a second change is his): equal would be the mic at 36 px (`heightFrac` 0.172) or the badge at 42 px (`sizeSs` 5.3).

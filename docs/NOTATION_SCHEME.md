@@ -43,7 +43,7 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | audible beats | the added wave inside its two-pinch outline | SOL_orange |
 | scattered strikes | nine solid triangles diving at a ground line | SOL_green |
 
-**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 18 % (the composer score's is 35 %; 29 px tall, from the top — DEC-105 … DEC-109), the yellow lying OVER the two circles, a solid outline in the same
+**The mic opening** — as the composer score draws it: a rectangle, corners 3 px, plain yellow #FFFF00 at 18 % (the composer score's is 35 %; 42 px tall — a fifth of the lane, the composer score's own height again since DEC-122 (29 px from DEC-105 until then) — from the top, DEC-106 … DEC-109), the yellow lying OVER the two circles, a solid outline in the same
 yellow, the sign ◉ (`bank/signs/mic_opening.json`; http://localhost:5500/signs/index.html). No name on it.
 
 **The electronics' signs (the presentation view only)** — the WINDOW: a plain slate-grey rectangle (#708090), fill 10 %, outline 55 %, a grain at 6 %, 4 px round the electronics' row, one round each brick and its badge (DEC-114) · the RETURN BRICK: the mic opening's recipe in purple (#5F4296), its length the region, its height the count (5.8 px a sound, five = the mic opening's height) · the FLOCKING BADGE: piece #1's, slate #2d3748 with the birds in its light blue #5b9bf5, 36 px, 12 px before each brick (`rules.json` `objects.elecWindow` · `objects.elecReturn` · `objects.elecBadge` · the table `electronics`).
@@ -102,8 +102,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 | | px |
 |---|---|
 | the gap under the dividing line — the size a first number **(AI)** | 0 … 8 |
-| **the mic's row** — the mic opening (29 px tall, at 8 … 37) and the badge (36 px, DEC-117) both hang from its top | 8 … 44 |
-| free | 44 … 89 |
+| **the mic's row** — the mic opening (42 px tall, at 8 … 50, DEC-122) and the badge (36 px, DEC-117) both hang from its top | 8 … 50 |
+| free | 50 … 89 |
 | the staff, where it shows | 89 … 121 |
 | free | 121 … 202 |
 | the gap above the next dividing line | 202 … 210 |
@@ -148,7 +148,7 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 
 ## 6 · Open, in the order to settle
 
-1. ► His eye on section 1 as re-cut at DEC-117 (a badge, 36 px, before EVERY mic opening, 12 px before it · the mic opening 29 px tall, hung from the top, its fill 18 %, its outline solid).
+1. ► His eye on section 1 as re-cut at DEC-117 (a badge, 36 px, before EVERY mic opening, 12 px before it · the mic opening 42 px tall again (DEC-122), hung from the top, its fill 18 %, its outline solid). The mic is 6 px taller than the badge — he expected them equal: his to say.
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's / presentation view — section 1 BUILT (§335): his eye; then its sections 2 … 6, each at its turn with the players' signs.
