@@ -8310,3 +8310,28 @@ Thirteen places. Until the notes exist those lanes show the window and no GC. *(
 **4 · THE EXTRA LINE AT THE END.** It was the page's EDGE BAR — a thin grey line every page draws at the system's right edge, and on the last page at the END OF THE WINDOW (784 s; `engraving.render.systemEndBar`, appended by `notation/app/notation.html` and `notation/lib/static_page.js`). Now the page the material ends on draws NO edge bar when the notation has its own final bar line (an item `finalbar`) — both places, so the app and the film agree. Read on the last page: the final bar's two lines at x 1143.3 · 1147.2 and nothing after them. **LINEAGE, found here:** piece #6 already had a final bar line for the PRINT (`objects.finalBarLine`, §772: LilyPond's thin 0.19 · gap 0.30 · thick 0.60, at the window's end, staff line to staff line) — §411's `objects.finalBar` now takes its numbers from that row (one copy); the two differ in place: this one stands at a time of his choosing, through the lanes.
 
 **The gates:** `check_screen_edges --ir approaching-strikes` PASS · `check_rules` 31 of 32 · THE SHIELD 26 of 27, the strikes page the one moved.
+
+## §413. THE RHYTHM OF A MISSING PART, READ FROM HIS A TAKES — it is there; and the A takes move other players too (DEC-183) (2026-10-10, Opus)
+
+**What prompted it (DEC-183, verbatim):** *"I saved strikes one and two as one A and two A. See if you are able to get rhythm information from there. And we'll have to figure out a way to use the A versions for the re-render of the audio. But first, see if you can get the rhythm for the missing note directly from the take."*
+
+**What a take holds** (`bank/panel_snapshots.json` → `panels.strikes.<name>.state`): the bank strike it plays (`strikeId`) and `voices` — for EACH HIT of that strike, the lane that has it (−1 = nobody), its pitch and its voice. The hits' times are the strike's own, in `bank/scattered_strikes.json` (`notes[i].dtMs`). So a player's rhythm in a take = the time of the hit the take gives that player. Nothing had to be run: the two files are enough.
+
+**The two A takes** (`strikes01a` · `strikes02a`, saved 2026-10-10 22:51 · 22:53 UTC), set on the piece's own times (the strike's first written hit: 677.000 s · 678.766 s):
+
+| strike | player | in the A take | in the piece now |
+|---|---|---|---|
+| 1 — 11:17.0 (bank #3; hits at 0 · 98 · 156 · 157 · 191 · 237 · 397 ms) | bass flute | 677.000 s (hit 2) | 677.139 s (hit 6) |
+| | viola | 677.058 s (hit 3) | 677.000 s (hit 2) |
+| | cello | 677.059 s (hit 4) | the same |
+| | percussion | 677.093 s (hit 5) | the same |
+| | **bass clarinet — the missing one** | **677.139 s (hit 6)** | none |
+| 2 — 11:18.8 (bank #51; hits at 0 · 61 · 77 · 134 · 149 · 170 ms) | cello | 678.766 s (hit 1) | 678.843 s (hit 3) |
+| | percussion | 678.827 s (hit 2) | 678.766 s (hit 1, a mallet note since the percussion pass) |
+| | **bass flute — the missing one** | **678.843 s (hit 3)** | none |
+| | viola | 678.900 s (hit 4) | 678.936 s (hit 6) |
+| | bass clarinet | 678.915 s (hit 5) | the same |
+
+**The finding that matters:** the A takes do not ADD a player to the old deal — they are a NEW deal of the strike's hits to five players. The missing player gets a hit that ANOTHER player holds in the piece now (the clarinet takes the flute's hit; the flute takes the cello's), and that player moves on. So there are two ways to use them in the notation, and they differ: (a) only the missing player's time from A, the other four as the piece has them — the new GC then falls on the same instant as another player's; (b) the whole A deal for the strike — three players' GCs move in each, and the page differs from the audio of take 02 until a re-render uses the A takes. PUT TO HIM; nothing drawn.
+
+**For the re-render, said in one line to him:** a strike of the score can be replaced by its A take at the same start with the drawer's own code (as `tools/strike_take.js` inserts a take), then given back what the section did to it afterwards (its articulation set, its window) — a small tool, at his word.
