@@ -6981,3 +6981,17 @@ The AI's note: a and c are HINTS in his sense — they claim no timing; b and d 
 **The cut read the save of `piece-3BodyRedo` as it stood** (modified by him since the commit of §291 — his live work): had he moved a mic opening in the first 37 s, the page would follow it. Not compared.
 
 **Recorded:** `docs/NOTATION_SCHEME.md` (the rules' table, the opening's block, the lane's map 8 … 44, the open list) · the row's `ref`.
+
+## §341. THE STRIKES DRAWER — "then + N s": the playhead moves on after an insert, so the next strike lands after the last (DEC-118) (2026-10-09, Opus)
+
+**What prompted it (DEC-118, verbatim):** *"what does insert @ after previous do in the strikes drawer?"* — answered from the code (`score/public/strike_drawer.js` `insert('after')`, the septet's U11 of 2026-09-04): the loaded strike is written after the strike numbered ONE BELOW it as that one stands in the open score — its last onset + the onset gap recorded between the two in the bank; the previous strike must be in the score; a re-press at the same time replaces. Then: *"I'm inserting these newly played strikes into the score. I don't think they have an original rhythmic position. And I have to open up the drawer and then insert and then close the drawer and then move the cursor on the score and then do that repeat. So is there any way I can stay in the drawer and whatever strike I pick next will just end up after the last one I inserted? Only if this is a quick fix of some sort."*
+
+**Why the existing button does not serve him:** his sixty strikes were played one after another into `scores/strikes.json` only to be banked — the gap between #17 and #18 there is how long he waited, not a rhythm; and "previous" is by number, not by what he inserted last.
+
+**What was considered:** (a) a fourth button, "after the last one I inserted" — needs the drawer to remember an insert across takes and across an undo; (b) the playhead moved on by the insert itself — nothing to remember, and every other tool that reads the playhead follows. (b), and OPT-IN: the drawer's rule "an insert at the same time replaces the earlier one" depends on the playhead staying, and the septet's work used it.
+
+**Built — one box, eight lines:** beside `Insert @ playhead`, **`then + [ ] s`** (`#skThen`). A number in it → after an Insert @ playhead the playhead is parked that many seconds past the inserted strike's LAST ONSET (the same measure of a strike's end as U11), by the two lines `gotoOriginal` already parks it with (`C.scrollOffset` · `C.applyScroll()`); the status line ends `· playhead → 12.345 s`. Empty → the playhead stays, as it always did. Not while playing; only the playhead's insert (not @ original time, not @ after previous, not a crescendo's swell). The box lives in the page until an F5; it is in no take.
+
+**His loop now:** the number typed once → pick a take · Insert @ playhead · pick the next · Insert @ playhead …
+
+**Proven:** `node --check` · `node tools/strike_take.js … --dry` (the tool loads this file with no page: no box, so nothing moves — it inserts as before). **NOT tried in the page** — a try on the throwaway needs the whole recipe of stubs (`docs/VERIFICATION_RECIPE.md`) and he asked for a quick fix; his F5 is its first run.

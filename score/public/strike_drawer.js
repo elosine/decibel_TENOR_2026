@@ -236,6 +236,9 @@ const D = {
               '<span style="color:#555">|</span>' +
               '<button id="skGoto" style="' + btn + '" title="park the playhead on the original time of this strike (picking a strike no longer moves the playhead)">&#8982; original</button>' +
               '<button id="skInsert" style="' + btn + '" title="write the strike at the playhead as a gesture (groupId + META shape) — a COPY: an earlier insert of this strike is replaced only if it sits at this same time">Insert @ playhead</button>' +
+              // [decibel §341, DEC-118] THEN → +N s: with a number here, an Insert @ playhead parks the playhead N seconds past the strike's last
+              // onset — the next strike picked lands after it, the drawer never left. Empty = the playhead stays, as it always did.
+              '<label title="after Insert @ playhead, move the playhead this many seconds past the strike&#39;s last onset — the next strike you insert lands after this one. Empty = the playhead stays where it is">then +<input id="skThen" type="number" min="0" step="0.5" style="' + inp + ';width:44px"> s</label>' +
               '<button id="skAtTime" style="' + btn + '" title="write the strike into WHATEVER score is open, at the time it was played (no need to open its source save); original notes found there are replaced">Insert @ original time</button>' +
               '<button id="skAfter" style="' + btn + '" title="U11: write the strike after the PREVIOUS strike as it stands in the open score — start = its last onset + the recorded onset gap between the two; an earlier insert of this strike is replaced">Insert @ after previous</button>' +
               '<button id="skBack" style="' + btn + '" title="one step back">back</button>' +
@@ -1509,11 +1512,11 @@ const D = {
             replaceMsg += gone ? (' · replaced ' + gone + ' original notes') : ' · no originals in this score';
         }
         const group = 'grp-strike-' + this.strike.index + '-' + Math.floor(t * 10) + (replace === true ? 'r' : replace === 'after' ? 'a' : '');
-        let maxEnd = t; const busy = [];   // TRILLS_TOOL §7 (phase 3): a card on a player who is trilling at that moment is skipped — the run keeps its timing
+        let maxEnd = t, lastOn = t; const busy = [];   // TRILLS_TOOL §7 (phase 3): a card on a player who is trilling at that moment is skipped — the run keeps its timing
         notes.forEach(n => {
             const start = t + n.onMs / 1000, dur = n.durMs / 1000;
             if (typeof C.trillCovers === 'function' && C.trillCovers(n.lane, +start.toFixed(3))) { busy.push(((TRK()[n.lane] || {}).short || ('L' + n.lane)) + '@' + start.toFixed(2)); return; }
-            maxEnd = Math.max(maxEnd, start + dur);
+            maxEnd = Math.max(maxEnd, start + dur); lastOn = Math.max(lastOn, start);
             // PLAN 1c.2b (2026-09-19, §95): the drawn height MEANS the anchor — the score reads a held note's top as 65 + 62·h (heldDyn,
             // HELD_LO/HI), so the height written here is (anchor − 65) / 62, and the inserted note plays back at the level Hear played.
             // It used to be vel / 127, which met the score's scale only at fff: an inserted `p` came back as `f`. A hair above 0 so the
@@ -1541,7 +1544,14 @@ const D = {
         // door); every tool that writes a curve event drops the map here.
         if (C.curveDirty) C.curveDirty();
         C.renderAll(); C.markDirty();
-        this.setStatus((replace === 'after' ? '#' + this.strike.index + ' → ' + t.toFixed(3) + ' s' + afterMsg + ' · ' : '') + 'inserted ' + (notes.length - busy.length) + ' notes at ' + t.toFixed(3) + ' s' + (replace === true ? ' (original time)' : replace === 'after' ? ' (after previous)' : ' (playhead)') + ' as ' + group + replaceMsg + (busy.length ? ' · ' + busy.length + ' skipped — trilling: ' + busy.join(' ') : ''));
+        // [decibel §341, DEC-118] THEN → +N s (the box beside Insert @ playhead): the playhead parked past this strike's last onset, as
+        // gotoOriginal parks it. Only the playhead's insert; never while playing; no box (the tool without the page) or an empty one = nothing.
+        let thenMsg = '';
+        if (!replace && !C.isPlaying && typeof C.applyScroll === 'function') {
+            const box = this.el && this.el.querySelector ? this.el.querySelector('#skThen') : null, adv = box ? parseFloat(box.value) : NaN;
+            if (isFinite(adv) && adv >= 0) { const next = +(lastOn + adv).toFixed(3); C.scrollOffset = next * C.pixelsPerSecond; C.applyScroll(); thenMsg = ' · playhead → ' + next.toFixed(3) + ' s'; }
+        }
+        this.setStatus((replace === 'after' ? '#' + this.strike.index + ' → ' + t.toFixed(3) + ' s' + afterMsg + ' · ' : '') + 'inserted ' + (notes.length - busy.length) + ' notes at ' + t.toFixed(3) + ' s' + (replace === true ? ' (original time)' : replace === 'after' ? ' (after previous)' : ' (playhead)') + ' as ' + group + replaceMsg + (busy.length ? ' · ' + busy.length + ' skipped — trilling: ' + busy.join(' ') : '') + thenMsg);
     },
 
     // ------------------------------------------------------------------ back / takes (O)
