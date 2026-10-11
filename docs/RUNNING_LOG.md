@@ -8595,3 +8595,21 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 - e · *Each player opens the score's website, and the score appears in their web browser, like an online video game.*
 
 **The AI's recommendation:** a — it is his own sentence, tightened. The page is not changed until he picks: both sentences go in together.
+
+## §433. THE TITLE BLOCK CHOSEN — the piece first, the ensemble not named (DEC-197); built on the page (2026-10-11, Opus 5.5)
+
+**His words:** *"a but not written for Decibel, lets see that, formatted"*.
+
+**The AI's reading:** the letter answers §431 (the piece line) — only its candidate a carries "written for Decibel". Whether the same "a" also answers §432 (the blurb's second sentence), asked in the turn before, he did not say.
+
+**DEC-197 — the top of the performance instructions:** THE PIECE FIRST, as on a title page — *Approaching* the largest thing on the sheet · under it, in italics, *for bass flute, bass clarinet, percussion, viola, cello and electronics* · then *Justin Yang, 2026* · then a rule and PERFORMANCE INSTRUCTIONS as the second heading. **The ensemble is not named** (his word; the reason not given — the call is anonymous or not, the AI has not read it and does not guess). The inherited one-line italic subheader of pieces 4 and 5 is gone from this piece's page.
+
+**Built, on the real page (his "lets see that, formatted"):**
+- `docs/notation_instructions/index.html` — `.title-block` (`.piece-title` · `.piece-for` · `.piece-by`) and `<h1 class="doc-name">`.
+- `docs/notation_instructions/styles.css` — one block appended for those four rules; everything above it is still piece 5's stylesheet, unchanged.
+- THE BLURB on the page is now his dictated first sentence — *The score for Approaching is in a computer-animated digital format.* — followed by candidate a of §432 (*To play it, you go to a website and the score appears in your web browser, like an online video game.*), put there so that he sees the block with the new text under it; **the second sentence is NOT chosen** — said to him in one line.
+- Looked at once in the running server's page (the AI's pane, 561 px wide): the block draws as designed. The pane did not load the web font; his Chrome will.
+
+**Two things that are the AI's on the page, his to strike:** the year "2026" (kept from candidate a — he removed only the ensemble) · the instruments' order (the score's lanes, top to bottom).
+
+**Deferred, flagged:** the print exporter's instruction pages read the old shape (an `<h1>` then `<p class="subtitle">`) for their title strip — `docs/NITS.md`, for when the print score is made.
