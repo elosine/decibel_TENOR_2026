@@ -258,3 +258,7 @@ h1.doc-name {
     border-top: 2px solid #333;
     border-bottom: none;
 }
+
+/* Approaching 2026-10-11 (RUNNING_LOG §436): the demo video's link at the body's size (piece 5's rule above made it 1.3 ×) —
+   his word: "the link text itself in smaller font than was used previously". */
+.demo-link { font-size: 1em; }
