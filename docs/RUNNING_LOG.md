@@ -8967,3 +8967,13 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - **the scattered strikes — the AI's pick:** the bass flute's lane at 11:25, 685.2 … 688.0 s, zoomed — the free strike and the conducted one of §452's five-lane image, and at the lane's bottom the electronics' pane with the answers' bricks.
 
 **Spacing, by his three spaces, measured in the page:** the heading → the first paragraph 29.2 · the general paragraph → the first item 29.1 · a paragraph → its image 20.8 · an image → the next paragraph 29.3. One rule added (two text blocks in a row inside a section).
+
+## §460. THE GREY BOXES — the electronics' layer, told to the reader of the full score (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"Gray boxes are used in the full score to show the approximate time and type of live electronics that are playing. And then if you can grab an image of that as well."*
+
+**On the page,** last in *Live Electronics*: *Gray boxes are used in the full score to show the approximate time and type of live electronics that are playing.* — his words; and its image (`elec_greybox_va_6.svg`, the AI's pick): the viola in the opening, 5.6 … 7.5 s, zoomed, no cursor — the player's own mic opening and badge at the top of the lane, and at the bottom the grey box of the opening's first return: the flocking badge (the TYPE) and the purple bar (the TIME). Looked at once as a rendered picture.
+
+**FOR THE PAPER — the sentence is the presentation view's principle (§333, DEC-110) in his own words for a reader:** "approximate time and type". The layer was designed on the rule that only what is true at every performance is drawn as fact — the region the engine rolls inside, the count, the kind — because the electronics' own timings are rolled afresh each night; "approximate" is that rule said to a player in one word. And "in the full score": the parts will not carry it (DEC-168 — "a courtesy display"), which this sentence now tells the reader of the instructions too.
+
+**With this the grey panes that stand in six of the page's images** (the cursor's, the conductor's, the long tone's, the strikes') **are explained on the page** — until now they were flagged to him at each image as unexplained.
