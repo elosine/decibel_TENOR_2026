@@ -8782,3 +8782,20 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - e · (two sentences) … against these sine tones. Small glissandos away from the unison make the beating: the further from the unison, the faster the beats.
 
 **The AI's remark, marked as such:** "from unison" says one direction; in the section as composed (§269 … §288) a pair rises from the unison and holds, or FALLS toward it and stops short (never below 0.6 beats a second), or rises, holds and falls — so "around" or "above or below" is nearer to what the players will meet. The recommendation: a. And e is the only one that tells a player what the bend DOES.
+
+## §445. SCATTERED STRIKES — his two sentences; the pebbles simile, five wordings put to him (2026-10-11, Opus 5.5)
+
+**His words** (dictated, thinking aloud): *"scattered strikes are a ensemble language type. Scattered strikes is an ensemble language type. The ensemble will attempt to, no, the ensemble will produce a clustered impulse within a short time frame. Like the sound you might get if you threw a handful of pebbles in the air. Or like the sound you might get when You throw a handful of pebbles in the air, they land. Can you help me phrase that better? The simile or the metaphor is that you throw a handful of pebbles in the air and when they impact at different times, that's the sound. So I think it's More elegant or better stated, it's like the sound when you throw a handful of pebbles in the air, but in actuality, you're hearing the impact. So how can you get the idea of the impact without complicating the sentence?"*
+
+**What he settled, on the page** in the Scattered Strikes row, in the form of §444 (the bold name, a colon, plain sentences): ***Scattered Strikes:*** *Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame.* His corrections on the way are part of the record: "are" → "is" (the type is one thing); "will attempt to" → "will produce" (an instruction, not a hope). "An ENSEMBLE language type" is a distinction the page had not made: the other five are a player's own sound, this one exists only between players — in Braxton's twelve there is no such type (§307: the piece's fifth and sixth are its own).
+
+**THE SIMILE — his image, for the paper:** a handful of pebbles thrown in the air; what is heard is not the throw but the pebbles landing, each at its own instant, close together. It is the image the section was composed from (the sixty strikes he played, §290; "scattered strikes" since piece 4) said for a player in one line. His difficulty, in his words: the throw is the elegant half of the sentence, the impact is the half that sounds.
+
+**Put to him — each the whole second sentence** (the AI's wordings; NOT on the page: at §432 … §434 a wording of the AI's stood on the page unchosen and he asked for his own back):
+- a · The ensemble will produce a clustered impulse within a short time frame, like a tossed handful of pebbles hitting the ground.
+- b · … within a short time frame, like a handful of pebbles landing.
+- c · … within a short time frame, like the sound of a handful of pebbles, thrown in the air, as they land.
+- d · … within a short time frame, like the patter of a handful of pebbles hitting the ground.
+- e · … within a short time frame: a handful of pebbles thrown in the air, heard as they land.
+
+**The AI's recommendation:** a — the throw is one word ("tossed") and the sentence ends on the impact.
