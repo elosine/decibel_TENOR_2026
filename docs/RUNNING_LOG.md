@@ -8335,3 +8335,37 @@ Thirteen places. Until the notes exist those lanes show the window and no GC. *(
 **The finding that matters:** the A takes do not ADD a player to the old deal — they are a NEW deal of the strike's hits to five players. The missing player gets a hit that ANOTHER player holds in the piece now (the clarinet takes the flute's hit; the flute takes the cello's), and that player moves on. So there are two ways to use them in the notation, and they differ: (a) only the missing player's time from A, the other four as the piece has them — the new GC then falls on the same instant as another player's; (b) the whole A deal for the strike — three players' GCs move in each, and the page differs from the audio of take 02 until a re-render uses the A takes. PUT TO HIM; nothing drawn.
 
 **For the re-render, said in one line to him:** a strike of the score can be replaced by its A take at the same start with the drawer's own code (as `tools/strike_take.js` inserts a take), then given back what the section did to it afterwards (its articulation set, its window) — a small tool, at his word.
+
+## §414. THE ELEVEN STRIKES REPLACED BY HIS A TAKES, IN THE SCORE — the piece is `piece-Draft01d`; the GCs of the missing players come from the notes (DEC-184) (2026-10-10, Opus)
+
+**What prompted it (DEC-184, verbatim):** *"Okay, those are done. Strike one and two are AA, and the rest are A. A few of them change the notes of other players, but most of those are just the missing players. But you can replace those strikes altogether with these ones. That's fine. and get the rhythm for the missing players from these as well. So the new strike audio for the render, and then the rhythms for the GCs where they are missing. And then I reloaded C, but I saved a new version as D."*
+
+**The piece in hand is `scores/piece-Draft01d.json`** (his, untracked). Read before anything was written: D is C object for object (1,173; no difference beyond the page's own stamps), so it holds the three tool edits (the two mic openings of §393 · the window at 742.37 s of §412 · the clarinet's drone note of §382). His reload of C is the step §412 asked for.
+
+**His takes:** `strikes01aa` · `strikes02aa` · `strikes06a` · `strikes31a` · `strikes36a` · `strikes39a` · `strikes40a` · `strikes41a` · `strikes42a` · `strikes44a` · `strikes45a` — each the bank strike of the written strike that lacked a player (§412's table). The two "aa" are his second go at strikes 1 and 2: §413's "a" takes had been a new deal of every hit; the "aa" keep the old deal and give the missing player the free hit.
+
+**THE TOOL — `node tools/strike_swap.js --score <name> --swap t=take,… [--art staccato] [--dyn f] [--backup <file>] [--dry]`** (new). A strike at a time: the take is laid out by THE DRAWER'S OWN CODE (`tools/strike_take.js`'s `placeTake`, in the staccato set at f — the section's base) into a scratch score, so its lanes, folds and doubled hits are the page's; the strike's place in time is found from its own notes (each sits on a hit of the bank strike, ±1.5 ms). Then by player: · a player the strike HAS keeps the note it is (its voice from the section's passes — the orchestration set, the percussion pass's instrument, a pitch take's pitch); it MOVES only if the take gives the player another hit, and is RE-PITCHED only if the take's pitch differs from the pitch the note was first inserted on (by octaves into its voice) · a player the strike LACKED gets a new note on the take's hit, in the voice of the strike's own orchestration — the voice of its family's other player in that strike (flute ↔ clarinet, viola ↔ cello), by octaves into its measured range; with no such neighbour, the drawer's own · the window keeps its lead and trail about the strike's first and last hit and its ear is set again from the strike's widest gap (`strike_windows.js`'s rule).
+
+**A FINDING THAT SET ONE RULE OF THE TOOL — the percussionist has ONE note a strike.** The drawer lays a take's two mallet seats as notes (strike 1's take: three notes for the percussionist). The piece has none of them: all 19 strike notes on the mallets lane were put there by the percussion pass (`properties.strikePerc`), none comes from a take's seat. So a swap uses the take's percussion hit and NOT its mallet seats — as every other strike of the section stands. Said to him.
+
+**What was written** (the command: `--swap 677.0=strikes01aa,678.77=strikes02aa,682.52=strikes06a,709.22=strikes31a,717.07=strikes36a,721.92=strikes39a,724.87=strikes40a,727.07=strikes41a,729.32=strikes42a,730.37=strikes44a,741.37=strikes45a`; a dry run first, read line by line; a copy of the save before is in the session's scratch folder):
+
+| strike | take | added | changed |
+|---|---|---|---|
+| 11:17.0 | strikes01aa | bass clarinet at 677.058 s (A3, flutter tongue) | — |
+| 11:18.8 | strikes02aa | bass flute at 678.915 s (G3, staccato — with the clarinet's hit) | — |
+| 11:22.5 | strikes06a | bass clarinet at 682.791 s (E4, slap) | — |
+| 11:49.2 | strikes31a | bass flute at 709.342 s (A3, flutter — with the clarinet's hit) | **THE VIOLA STILL HAS NO NOTE: the take gives it no hit** |
+| 11:57.1 | strikes36a | bass clarinet at 717.066 s (E3, slap — with the flute's hit) | — |
+| 12:01.9 | strikes39a | bass clarinet at 721.916 s (C♯4, slap) | the percussion moves 721.916 → 721.977 s |
+| 12:04.9 | strikes40a | percussion at 725.015 s · viola at 724.939 s (F4, staccato) | the window ends 725.115 s (was 725.065) |
+| 12:07.1 | strikes41a | percussion at 727.216 s | — |
+| 12:09.3 | strikes42a | viola at 729.416 s (E4, staccato) | — |
+| 12:10.4 | strikes44a | bass clarinet at 730.537 s (G3, flutter) | the window ends 730.637 s (was 730.503) |
+| 12:21.4 | strikes45a | bass clarinet at 741.372 s (F4, staccato) | the bass flute moves 741.478 → 741.379 s and takes F♯5 · the viola takes E5 · the mallet note moves 4 ms · the window ends 741.553 s |
+
+**12 notes added · 3 moved · 2 re-pitched · none taken out;** the score has 1,185 objects, 322 strike notes, every id once.
+
+**The strikes' page re-cut FROM D** (the same flags; `--score piece-Draft01d`): 322 notes · **109 GCs** on the written strikes (97 + 12) · of the written strikes only 11:49.2 still shows a lane with no GC (the viola) · the ten FREE strikes that lack a player are as they were (a window on every lane is all they need). `check_screen_edges` PASS (109 go-time indicators at x(t)) · the shield green (the strikes page the one moved) · the page VALID against D.
+
+**For the audio:** the next take is of `piece-Draft01d` (`node tools/take.js start --score piece-Draft01d`); `notation/audio/piece-Draft01c.wav` (take 02) is the piece BEFORE these twelve notes. The main score `approaching` is still cut from C — C and D are the same up to 672 s, and a page cut from D would find no audio until that take exists. `docs/RENDER.md` § 0.2 says so.

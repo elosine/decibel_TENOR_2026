@@ -109,7 +109,8 @@ the pie dial on a drone's opening (the stack has one: piece #6's breath's clock)
 - **A final bar line** at 783 s, through every lane; the dividers run on.
 - **THE ELECTRONICS (the presentation score; his "B", in section 1's look since DEC-182):** on every lane, in a grey window with the scattered strikes' badge, FIVE PURPLE BRICKS end to end (the return brick: rounded, pale, outlined) from the first strike's end to the first of the last four, each brick's HEIGHT the number of answers a strike gets there — 1 · 2 · 3 · 2 · 1.
 - **The end:** the final bar line alone — the page's own edge bar is not drawn after it (DEC-182).
-- **Open:** the 11 written strikes that lack a player in the save (the lane shows the window, no arc) · the six strikes with no badge · the section into the main score.
+- **The written strikes are whole since DEC-184 (§414):** eleven lacked a player; each was replaced in the score (`piece-Draft01d`) by his A take, and the missing players' arcs come from the notes — 109 arcs. ONE lane is still empty: the viola at 11:49.2 (its take gives it no hit).
+- **Open:** the viola at 11:49.2 · the six strikes with no badge · the section into the main score.
 
 ---
 

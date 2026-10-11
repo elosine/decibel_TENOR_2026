@@ -1631,3 +1631,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"I saved strikes one and two as one A and two A. See if you are able to get rhythm information from there. And we'll have to figure out a way to use the A versions for the re-render of the audio. But first, see if you can get the rhythm for the missing note directly from the take."*
 
 *(The AI's reading, marked as such: the takes `strikes01a` · `strikes02a` are his re-deals of the first two strikes with all five players; the question is whether a tool can read each player's time out of a take — it can — so that the missing parts' arcs can be drawn; using the A takes for the audio is a later step. RUNNING_LOG §413.)*
+
+### DEC-184 · 2026-10-10 — the A takes are done: replace the strikes with them; the piece is saved as D
+
+*(His words, verbatim — Opus:)* *"Okay, those are done. Strike one and two are AA, and the rest are A. A few of them change the notes of other players, but most of those are just the missing players. But you can replace those strikes altogether with these ones. That's fine. and get the rhythm for the missing players from these as well. So the new strike audio for the render, and then the rhythms for the GCs where they are missing. And then I reloaded C, but I saved a new version as D."*
+
+*(The AI's reading, marked as such: the eleven written strikes that lacked a player now each have a take of his with all the players — "aa" for strikes one and two, "a" for the other nine; each strike may be replaced whole by its take in the score, which gives the missing players their notes (the audio of the next render) and their times (the arcs of the notation); the piece he works in is now piece-Draft01d. RUNNING_LOG §414.)*

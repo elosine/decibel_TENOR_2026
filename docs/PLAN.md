@@ -933,7 +933,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §412 (DEC-182):** the electronics as section 1's RETURN BRICKS (five a lane, the height the answers) · no edge bar after the final bar line · the window at 742.37 s doubled IN THE SCORE (`zn-1650` → 742.514 s; not in `sec05-finalDraft`) · the eleven written strikes that lack a part listed for him with time code and take (RUNNING_LOG §412; `docs/RENDER.md` § 0.2) — HE BRINGS THE RHYTHMS, then the GCs go in.
 
-**Open, his:** the rhythms for those eleven · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10).
+**SINCE §414 (DEC-184): THE ELEVEN ARE REPLACED BY HIS A TAKES, IN THE SCORE** — `node tools/strike_swap.js --score piece-Draft01d --swap t=take,…` (the drawer's own layout of the take; a player the strike has keeps its note and its voice, a player it lacked gets a note in the strike's own orchestration; the percussionist one note a strike; the window re-spanned): 12 notes added. The page is cut from `piece-Draft01d` now: 109 GCs.
+
+**Open, his:** the viola at 11:49.2 (709.22 s — `strikes31a` gives it no hit) · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10) · the next take, of D.
 
 ## 3. The performance score — `todo`
 
