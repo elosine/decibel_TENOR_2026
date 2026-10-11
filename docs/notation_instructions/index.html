@@ -194,11 +194,59 @@
     </div>
 </div>
 
-<!-- ═══ Live Electronics (RUNNING_LOG §458) — the heading HIS ("New section, please, live electronics"); nothing is written
-     under it yet: its first paragraph goes in at his dictation (the page's Edit switch types into lines that exist — it does
-     not make a section's first one). What the section may have to say is collected in docs/PERFORMANCE_NOTES.md
-     (rows 6 · 7 · 8 · 11 · 17 · 18) — none of it his wording yet. ═══ -->
+<!-- ═══ Live Electronics (RUNNING_LOG §458 · §459) — the heading and THE TEXT HIS, dictated in one go (§459); set as he said it,
+     with these few changes, each told to him: "indicates" → "indicate" (a plural) · "during the duration" → "for the duration"
+     (his own phrase in the rest of the dictation) · "short attack attacks windows" → "short attack windows" · in section four
+     "the yellow line" → "the yellow box" (the recording is the long mic opening; that section also has a real yellow LINE,
+     the free-playing line of Language Music) · "morph", for which he asked a better word → "transform".
+     "recording icon" is his own first name for the two circles in a mic opening; other names were put to him.
+     The section numbers are his: one = the opening · three = the trills and accented long tones · four = the multiphonics ·
+     five = the audible beats (two is the three body problem; the scattered strikes are the last).
+     THE IMAGES, crops of the main score (notation/ir/approaching.ir.json):
+     · section one (his description: the opening, the two winds, the page's left side with the brackets, cropped at the right):
+       the bass flute and the bass clarinet from the film's first page edge, -4 … 3.5 s, at the page's size — the gutter, the
+       staff's snippet at 0 s, each player's first mic opening (1.43 · 2.57 s) with its short attacks badge;
+     · section three (the AI's pick): the bass flute's first accented long tone, 132.49 s — the badge, the mic opening, the
+       conductor's arc, and the electronics' pane with the ring's brick running on; zoomed;
+     · section four (his description: a multiphonics badge and a full duration box): the cello's first recording,
+       222.96 … 231.87 s, at the page's size (8.9 s is longer than a zoomed screen) — the section's yellow line runs through;
+     · section five (his pick: "around 9:25 of the bass flute … the purple electronics box, as well as the badge and red line"):
+       562.0 … 567.4 s, zoomed — the sine's note in its purple box from 562.71 s, the audible beats badge, the orange line;
+     · the scattered strikes (the AI's pick): the bass flute's lane at 11:25, 685.2 … 688.0 s, zoomed — a free strike and a
+       conducted one, and at the lane's bottom the electronics' pane with the answers' bricks.
+     Regenerate:
+     node tools/capture_lane.js --ir approaching --part bfl --toPart bcl --t 500 --zoom 1 --gutter --span -4:3.5 --out docs/notation_instructions/images/elec_opening_winds_0.svg
+     node tools/capture_lane.js --ir approaching --part bfl --t 100 --span 131.7:136.05 --out docs/notation_instructions/images/elec_longtone_bfl_132.svg
+     node tools/capture_lane.js --ir approaching --part vc --t 100 --zoom 1 --span 222.3:232.4 --out docs/notation_instructions/images/elec_multiphonic_vc_223.svg
+     node tools/capture_lane.js --ir approaching --part bfl --t 100 --span 562.0:567.4 --out docs/notation_instructions/images/elec_sine_bfl_563.svg
+     node tools/capture_lane.js --ir approaching --part bfl --t 100 --span 685.2:688.0 --out docs/notation_instructions/images/elec_strikes_bfl_685.svg ═══ -->
 <h3>Live Electronics</h3>
+
+<div class="notation-section">
+    <div class="description">
+        <p>Yellow boxes with a recording icon indicate a microphone opening. Your microphone will be live for the duration of the yellow box, and the live electronics will either record your input or use your input for live processing.</p>
+    </div>
+    <div class="description">
+        <p>In section one of the piece, there are a number of short attack windows. You would play one attack within the window. These will be cropped by the system and used throughout the piece to generate live electronics.</p>
+    </div>
+    <img class="zoomed" style="--w: 1217" src="images/elec_opening_winds_0.svg" alt="The left side of the first page: the bracket and the two wind staves, bass flute and bass clarinet. On each lane a dark badge with three red triangles and a yellow box with a small double circle, the clarinet's a little later than the flute's">
+    <div class="description">
+        <p>In section three of the piece, a performer's accented long tone will activate resonant filters live, for the duration of the mic window.</p>
+    </div>
+    <img class="zoomed" style="--w: 1282" src="images/elec_longtone_bfl_132.svg" alt="One lane: a dark badge with a white wedge and line, a yellow box with a double circle, a bouncing-ball arc landing in it; at the bottom of the lane a grey pane with a purple bar that runs on to the right">
+    <div class="description">
+        <p>In section four, the multiphonic section, the mic openings will record your multiphonics for the duration of the yellow box into a buffer to be used for live processing throughout this section. These buffers will be used as samples that will be processed and played back, so everything you play for the duration of the box will be used for the live processing.</p>
+    </div>
+    <img class="zoomed" style="--w: 1488" src="images/elec_multiphonic_vc_223.svg" alt="One lane: a dark badge with a yellow boxed chord, then a long yellow box with a double circle at its start; a yellow line runs along the lane">
+    <div class="description">
+        <p>In section five of the piece, the audible beating section, the electronics will play sine tones at specific pitches. These are indicated in the purple boxes, and they will play that pitch for the duration of the purple box. Performers will then create audible beats against the sine tones. The percussion will use bowed crotales in this section.</p>
+    </div>
+    <img class="zoomed" style="--w: 1591" src="images/elec_sine_bfl_563.svg" alt="One staff: an open note head in a purple box that runs on to the right; below it a dark badge with an orange wave and an orange line running on to the right">
+    <div class="description">
+        <p>In the scattered strikes section, the mic openings will record the rhythm of the ensemble strike and transform the strike patterns to produce the live electronics in this section.</p>
+    </div>
+    <img class="zoomed" style="--w: 825" src="images/elec_strikes_bfl_685.svg" alt="One lane: two yellow boxes, each with a dark green badge before it, a bouncing-ball arc landing in the second; at the bottom of the lane a grey pane with purple bars">
+</div>
 
 </body>
 </html>

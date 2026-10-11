@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1217" height="459" viewBox="0.0 -22.0 1217.0 459.2"><rect x="0.0" y="-22.0" width="1217.0" height="459.2" fill="#fff"/>
+<rect x="0" y="0" width="1920" height="1080" fill="#fff"/>
+<g class="lane-lines" fill="#8a8a8a"><rect x="40.00" y="219.09" width="1840.00" height="1.03"/><rect x="40.00" y="432.69" width="1840.00" height="1.03"/><rect x="40.00" y="646.29" width="1840.00" height="1.03"/><rect x="40.00" y="859.89" width="1840.00" height="1.03"/></g>
+<g class="sys sys-p0" fill="#111">
+<text x="44" y="115.6" font-size="8.7" font-family="'Crimson Pro Light', serif" fill="#8a8a8a">BFl</text>
+<defs><filter id="elecGrain" x="0" y="0" width="1" height="1"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter></defs>
+<rect class="elec-window" x="1806.09" y="169.75" width="73.91" height="43.90" fill="#708090" fill-opacity="0.1" stroke="#708090" stroke-width="1.50" stroke-opacity="0.55"/><rect class="elec-grain" x="1806.09" y="169.75" width="73.91" height="43.90" filter="url(#elecGrain)" opacity="0.06"/>
+<rect class="elec-return" x="1858.05" y="203.83" width="21.95" height="5.87" rx="3.00" fill="#5F4296" fill-opacity="0.18" stroke="#5F4296" stroke-width="1.50" stroke-opacity="1"/>
+<g class="badge badge-flocking" transform="translate(1810.04 173.70) scale(1.00001)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='#5b9bf5'><path transform='translate(21.4,12.7) rotate(144)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.2,8.1) rotate(138)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,14.5) rotate(105)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(24.7,13.6) rotate(99)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,10.3) rotate(92)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(28.6,9.5) rotate(104)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.4,16.6) rotate(116)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(26.1,16.6) rotate(132)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(27.7,14.4) rotate(119)' d='M2,0 -1.2,1.2 V-1.2 Z'/></g></g>
+<rect x="112.00" y="128.20" width="36.83" height="0.79"/>
+<rect x="112.00" y="120.31" width="36.83" height="0.79"/>
+<rect x="112.00" y="112.41" width="36.83" height="0.79"/>
+<rect x="112.00" y="104.50" width="36.83" height="0.79"/>
+<rect x="112.00" y="96.61" width="36.83" height="0.79"/>
+<g transform="translate(85.819 82.946) scale(7.90000)"><path d="M1.056 7.319 1.06 7.147H1.044C0.848 7.147 0.68 7.043 0.576 6.887C0.616 6.903 0.656 6.911 0.7 6.911C0.908 6.911 1.08 6.739 1.08 6.531C1.08 6.307 0.916 6.119 0.7 6.119C0.464 6.119 0.252 6.299 0.252 6.531C0.252 6.967 0.6 7.319 1.032 7.319ZM1.836 5.591C1.78 5.099 1.692 4.639 1.596 4.175C2.024 4.219 2.288 4.575 2.288 4.935C2.288 5.211 2.108 5.495 1.836 5.591ZM0.288 4.667C0.288 4.027 0.712 3.539 1.14 3.055C1.208 3.287 1.268 3.523 1.324 3.755C0.916 3.847 0.684 4.191 0.684 4.543C0.684 4.823 0.832 5.111 1.152 5.283C1.164 5.287 1.176 5.291 1.188 5.291C1.236 5.291 1.276 5.247 1.276 5.203C1.276 5.183 1.268 5.163 1.248 5.143C1.024 5.015 0.924 4.827 0.924 4.651C0.924 4.419 1.104 4.207 1.42 4.175C1.524 4.651 1.616 5.123 1.672 5.631C1.564 5.647 1.456 5.655 1.344 5.655C0.804 5.655 0.288 5.207 0.288 4.667ZM1.332 5.827C1.456 5.827 1.572 5.815 1.688 5.795C1.7 5.919 1.704 6.039 1.704 6.163C1.704 6.235 1.7 6.311 1.696 6.383C1.672 6.779 1.432 7.139 1.06 7.147L1.056 7.319C1.512 7.307 1.836 6.883 1.864 6.407C1.868 6.331 1.872 6.251 1.872 6.175C1.872 6.035 1.864 5.895 1.852 5.755C1.956 5.723 2.056 5.679 2.144 5.611C2.44 5.387 2.572 5.075 2.572 4.771C2.572 4.239 2.168 3.727 1.548 3.727C1.532 3.727 1.512 3.731 1.496 3.731C1.428 3.455 1.356 3.175 1.272 2.903C1.648 2.467 1.992 2.019 1.992 1.447C1.992 0.995 1.744 0.351 1.46 0.015C1.436 -0.005 1.404 -0.005 1.38 0.015C1.004 0.287 0.784 0.723 0.784 1.183C0.784 1.391 0.788 1.599 0.812 1.807C0.844 2.067 0.916 2.319 0.992 2.567C0.524 3.107 0 3.623 0 4.331C0 5.139 0.58 5.827 1.332 5.827ZM1.704 1.115C1.704 1.619 1.44 2.023 1.12 2.411C1.048 2.167 0.976 1.931 0.976 1.635C0.976 1.195 1.228 0.791 1.624 0.599C1.688 0.799 1.704 0.895 1.704 1.115Z"/></g>
+<circle cx="922.82" cy="36.86" r="5.29" fill="none" stroke="#333333" stroke-width="1.30"/><circle cx="922.82" cy="36.86" r="2.29" fill="#333333"/><rect class="mic-open" x="911.28" y="15.90" width="73.67" height="41.92" rx="3.00" fill="#FFFF00" fill-opacity="0.18" stroke="#FFFF00" stroke-width="1.50" stroke-opacity="1"/>
+<g class="badge badge-shortAttacks" transform="translate(857.41 15.90) scale(1.16306)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='none' stroke='#D11520' stroke-width='1.6' stroke-linejoin='round'><polygon points='12,14 12,23 5,18.5'/><polygon points='21.5,13.5 21.5,22 15,17.8'/><polygon points='27.5,13.5 31.5,22.5 23.5,22.5'/></g></g>
+</g>
+<g class="sys sys-p1" fill="#111">
+<text x="44" y="329.2" font-size="8.7" font-family="'Crimson Pro Light', serif" fill="#8a8a8a">BCl</text>
+<rect x="112.00" y="341.81" width="36.83" height="0.79"/>
+<rect x="112.00" y="333.90" width="36.83" height="0.79"/>
+<rect x="112.00" y="326.00" width="36.83" height="0.79"/>
+<rect x="112.00" y="318.11" width="36.83" height="0.79"/>
+<rect x="112.00" y="310.20" width="36.83" height="0.79"/>
+<g transform="translate(84.429 310.189) scale(7.90000)"><path d="M 2.28 1.552 c 0 -0.112 0.092 -0.204 0.204 -0.204 s 0.204 0.092 0.204 0.204 s -0.092 0.204 -0.204 0.204 s -0.204 -0.092 -0.204 -0.204 z M 2.28 0.552 c 0 -0.112 0.092 -0.204 0.204 -0.204 s 0.204 0.092 0.204 0.204 s -0.092 0.204 -0.204 0.204 s -0.204 -0.092 -0.204 -0.204 z M 0.98 0 c 0.688 0 1.172 0.352 1.172 1.004 c 0 1.052 -1.052 1.656 -2.064 2.084 c -0.012 0.012 -0.024 0.016 -0.036 0.016 c -0.028 0 -0.052 -0.024 -0.052 -0.052 c 0 -0.012 0.004 -0.024 0.016 -0.036 c 0.808 -0.472 1.648 -1.06 1.648 -1.972 c 0 -0.48 -0.252 -0.94 -0.684 -0.94 c -0.296 0 -0.516 0.216 -0.616 0.504 c 0.044 -0.02 0.088 -0.032 0.136 -0.032 c 0.22 0 0.4 0.18 0.4 0.4 c 0 0.232 -0.176 0.424 -0.4 0.424 c -0.24 0 -0.448 -0.188 -0.448 -0.424 c 0 -0.532 0.408 -0.976 0.928 -0.976 z"/></g>
+<circle cx="1091.37" cy="250.46" r="5.29" fill="none" stroke="#333333" stroke-width="1.30"/><circle cx="1091.37" cy="250.46" r="2.29" fill="#333333"/><rect class="mic-open" x="1079.83" y="229.50" width="73.67" height="41.92" rx="3.00" fill="#FFFF00" fill-opacity="0.18" stroke="#FFFF00" stroke-width="1.50" stroke-opacity="1"/>
+<g class="badge badge-shortAttacks" transform="translate(1025.95 229.50) scale(1.16306)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='none' stroke='#D11520' stroke-width='1.6' stroke-linejoin='round'><polygon points='12,14 12,23 5,18.5'/><polygon points='21.5,13.5 21.5,22 15,17.8'/><polygon points='27.5,13.5 31.5,22.5 23.5,22.5'/></g></g>
+</g>
+<g class="sysgrp sysgrp-bracket" fill="#111">
+<rect x="65.92" y="97.00" width="3.56" height="245.20"/>
+<g transform="translate(65.919 86.485) scale(7.90000)"><path d="M0 1.555H0.3C0.992 1.555 1.456 0.675 1.852 0.099C1.896 0.031 1.792 -0.041 1.748 0.027C1.384 0.563 0.936 1.107 0.3 1.107H0.1C0.044 1.107 0 1.151 0 1.207Z"/></g>
+<g transform="translate(65.919 340.430) scale(7.90000)"><path d="M0 0V0.348C0 0.404 0.044 0.448 0.1 0.448H0.3C0.936 0.448 1.384 0.992 1.748 1.528C1.792 1.596 1.896 1.524 1.852 1.456C1.456 0.88 0.992 0 0.3 0Z"/></g>
+</g>
+<g class="sysgrp sysgrp-bracket" fill="#111">
+<rect x="65.92" y="737.80" width="3.56" height="245.20"/>
+<g transform="translate(65.919 727.285) scale(7.90000)"><path d="M0 1.555H0.3C0.992 1.555 1.456 0.675 1.852 0.099C1.896 0.031 1.792 -0.041 1.748 0.027C1.384 0.563 0.936 1.107 0.3 1.107H0.1C0.044 1.107 0 1.151 0 1.207Z"/></g>
+<g transform="translate(65.919 981.230) scale(7.90000)"><path d="M0 0V0.348C0 0.404 0.044 0.448 0.1 0.448H0.3C0.936 0.448 1.384 0.992 1.748 1.528C1.792 1.596 1.896 1.524 1.852 1.456C1.456 0.88 0.992 0 0.3 0Z"/></g>
+</g>
+<g class="anim"></g></svg>
