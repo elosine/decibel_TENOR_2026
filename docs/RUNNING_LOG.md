@@ -9012,3 +9012,21 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 19. "The full score is in C. Parts will be transposed." — carried from piece 5, resting on an open call.
 
 **And one of form, not content:** the page has two forms of entry — *Gradient Curves.* ends its bold lead in a period, the two language types in a colon.
+
+## §462. SIX CHANGES AFTER THE AUDIT — the sections named; the percussion's two instruments placed; "in C" out; a heading for the three body problem (DEC-201) (2026-10-11, Opus 5.5)
+
+**His words** (dictated, right after the audit of §461): *"in the live electronics where it says in section one of the piece. We'll just say in section one of the piece, the short attacks section. There are a number of short attack windows. And then same with in section three of the piece, the trill and accented long tones section, or the trills and accented long tones section. Then in section six, the scattered strikes section. then create a new heading three body problem. And then you can put in parentheses section two. Then in the percussion instrumentation section, where it says symbols bowed, and then you can put a note after that, recommended for the multiphonics section, multiphonics section, but at the player's discretion. And then after the crotales bowed, you'll put use in the audible beats section. and then take out the full scores and see paragraph."* ("symbols" = cymbals; "the full scores and see" = "The full score is in C".)
+
+**On the page — each an exact replacement in the file as it stood after his saves:**
+- *In section one of the piece, **the short attacks section**, there are a number of short attack windows.*
+- *In section three of the piece, **the trills and accented long tones section**, a performer's accented long tone will activate resonant filters live …*
+- *In **section six**, the scattered strikes section, the mic openings will record the rhythm of the ensemble strike …*
+- a new heading, last on the page: ***Three Body Problem (Section Two)*** — nothing under it yet.
+- *Percussion: crotales (bowed), **used in the audible beats section**; cymbals (bowed), **recommended for the multiphonics section, but at the player's discretion**. The rest of the instruments are chosen at the player's discretion.* (the semicolon the AI's, to keep the two apart).
+- *The full score is in C. Parts will be transposed.* — OUT.
+
+**What the audit's list lost by these six (§461's numbers):** 6 in part — every section named in the text now carries its name and number, one · three · four · five · six, and two has its heading (a list of the six is still nowhere) · 11 — the cymbals are tied to the multiphonics · 19 — the carried "in C" sentence is gone, and with it the page's only claim about transposition · 1 · 2 — a place for them now exists.
+
+**DEC-201 — THE PERCUSSION: ONE INSTRUMENT IS REQUIRED.** At §438 (DEC-199) two were named and the AI read both as fixed; he has now said which is which: the bowed CROTALES are the audible beats' instrument (the sines are tuned against them), the bowed CYMBALS are a recommendation for the multiphonics — the percussionist's "multiphonic" is theirs to find. The notation scheme's § 1 is brought up to it.
+
+**HIS SECTION NUMBERS, complete since this entry:** one the short attacks · two the three body problem · three the trills and accented long tones · four the multiphonics · five the audible beats · six the scattered strikes.
