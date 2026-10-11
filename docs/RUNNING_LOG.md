@@ -8834,3 +8834,9 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - The AI's recommendation: a; and e if the page will show exactly these two ways (the box and the curve) — the score has more (the conductor's arc, the sine's box, the line wedge), so "different ways" may be what he means.
 
 **Spacing, one rule more on his three spaces:** an image belongs to the text ABOVE it — a paragraph space over it (as before), a SECTION space under it before the next text; the list of badges the same (20.6 → 29.2 px, measured in the page).
+
+## §449. THE BOUNCING BALL'S OWN SENTENCE (2026-10-11, Opus 5.5)
+
+**His words** (dictated, sent while the AI was at work on §448; the full stops are the transcription's pauses): *"bouncing ball conductors aid with rhythmic precision. Play. At the precise moment of impact, using the ictus of the bouncing ball. To inform the attack."*
+
+**On the page,** the third paragraph of *Animated Conduction Tools*: ***Bouncing-ball conductors*** *aid with rhythmic precision. Play at the precise moment of impact, using the ictus of the bouncing ball to inform the attack.* The first sentence is piece 5's, kept; the second is new, his, in the place of the go-line sentence he took out at §440. It says what the device is FOR in this piece: the conducted notes here are single attacks (the hits of section 2, the notated strikes) with no dotted line under them — the impact itself is the instruction, and "ictus" is the conductor's word for it (the preset's own name for that parameter: piece 2's `ictus 120`, §392).
