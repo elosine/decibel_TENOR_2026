@@ -210,6 +210,8 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
+**► SINCE THE CHECKPOINT (2026-10-11, RUNNING_LOG §428 — his word *"commit my scores and the rack"*): HIS SCORES AND THE RACK ARE IN GIT — the sixteen that were untracked (`piece-Draft01d`, THE PIECE, among them), the two tracked saves, and `reaper/decibel_rack.rpp` with the cymbal’s fader. In the block below read "untracked" as "committed 2026-10-11"; pending decisions 2 · 3 are closed. Still modified and his: `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` (the engine’s index). A change he makes to a score after this is again his to commit.**
+
 **► CHECKPOINT #7 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 00:1x, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §419 … §427: Fable for the fixes and the two takes, Opus 5.5 for the film; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #6 included, is the trail.)*
 
 **In one breath:** DRAFT 01 HAS ITS PAGE, ITS AUDIO AND ITS FILM, AND THEY AGREE — tagged `Approaching-Draft01-film_1.0`. The page: the main score `notation/ir/approaching.ir.json` (six sections, 66 screen pages, the presentation score). The audio: `notation/audio/piece-Draft01d.wav` — take 02 of `piece-Draft01d`, the piece played once with the live electronics. The film: `notation/video/approved/2026-10-10-draft01/V-MAIN.mp4` — the wide shot alone, approved by him (*"good"*). Nothing is mid-build.
