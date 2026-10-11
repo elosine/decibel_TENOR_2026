@@ -9258,3 +9258,15 @@ Sources: Szebehely, "Review of the dynamical aspects of triple systems" (IAU Col
 **The AI's look:** twenty-odd pages as pictures over the build (page 1 · the first page of each section · a page inside each · the three-body's first page with its two announcing badges · the last page · both instruction sheets · the cover) — nothing outside the block, nothing on top of something it should not be.
 
 **OWED, HIS (step 5):** his eye on the proofs — the cover's rows · the density · the three edge calls and the pane without grain · the sine box that comes over a page with no note head · the instructions on two sheets. Then his eye on the whole file (step 6), then the archive and the tag (step 7).
+
+## §481. "WE CAN KEEP THAT SCORE" — the print score approved, archived and tagged; PLAN 2.16 done (DEC-204) (2026-10-11, Opus 5.5)
+
+**His words, on the proofs and the whole file:** *"Okay, that's good. We can keep that score, that print score."*
+
+**DEC-204 — the print score of Draft 01 is the file as built.** His three questions answered by it, each the built option: the cover's instruments on TWO rows (the title 86.5 pt) · the density 10.32 s a page, the film's (77 pages) · a sine's box that comes over a page turn left as it is, no note head restated. And the AI's six paper rules stand unopposed: no grain on the pane · a short mic opening never cut · a trill's badge restated after a cut · the GC whole · one final bar line with the lanes ending at it · two of the film's hand-placed badges before their opening on paper.
+
+**Step 7, done:** `print/score/approved/2026-10-11-draft01/` — the PDF (a copy, `cmp`-identical; gitignored, on this machine: 80 pages, 1 650 140 bytes, sha256 `8b42cf2b…523883fb`), a copy of `cover.json`, and the README (what made it · the command · the five gates' numbers · what is known and left) · the tag **`Approaching-Draft01-print_1.0`** (the AI's name after the film's, his to rename), pushed · CLAUDE.md § Apps has the print line (§480) · `docs/RENDER.md` § 5 points at it · journal §2 and PLANNER current.
+
+**NOT re-rendered at the approval:** he approved what he saw; the archived file IS that file (made 15:32, the instructions page as of 15:06 — no save of his after). The page was confirmed the filmed one (`git diff Approaching-Draft01-film_1.0 -- notation/ir/approaching.ir.json` empty).
+
+**DRAFT 01 NOW HAS:** its page (the main score `approaching`) · its audio (take 02 of `piece-Draft01d`) · its film (`V-MAIN`, tagged) · its performance instructions (his page) · its print score (tagged). **How the day's print went, for the record:** planned whole from piece 5's precedent in one sitting (§475), built in one more (§476 … §480) — seven steps where piece 5 needed six, the extra one the page edges, because this piece's page is made of badges and boxes the print planner had never measured. Every fault met was found by a gate or on a page looked at as a picture, none by him.

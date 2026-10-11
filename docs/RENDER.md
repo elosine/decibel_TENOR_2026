@@ -154,3 +154,11 @@ Then: the notation page (CTRL+SHIFT+R) → the MAIN file → **♪ render** → 
   0 hanging, read-back ok; moved against the committed MIDI: `08 Trumpet SI2` and the whole-piece file only (the trumpet's note-on at
   367.804 read off the track). Reaper: 29 items by name; 285 s. Render: 886.664 s · float **−11.0 dBTP** · −28.8 LUFS · LRA 20 ·
   `--up --maxUp 6`: **capped at +6.0 dB** → **−5.0 dBTP · −22.8 LUFS** · first sound 1.686 s. Linked: unchanged. The film re-made from it.
+
+## §5 The print score *(a pointer — it is not an audio render)*
+
+The print score is made by `bash print/score/build.sh` (PLAN § 2.16; the commands, the five gates and paper's own rules:
+CLAUDE.md § Apps, THE PRINT SCORE). It is drawn from the page `notation/ir/approaching.ir.json` AS FILMED, never from the save, and
+never rebuilt for a draft that has its film. **The order when the score moves:** the page → the take (§ 0) → the film → the print.
+The approved file of Draft 01: `print/score/approved/2026-10-11-draft01/` (its README says what made it; the tag
+`Approaching-Draft01-print_1.0`).

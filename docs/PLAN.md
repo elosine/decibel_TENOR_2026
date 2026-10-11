@@ -972,7 +972,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **open, his** the audit's list (RUNNING_LOG §461) · a sentence for each of the four bare language types · the names and placings in journal §2's checkpoint #8.
 - **deferred** the print score's instruction pages do not know this page's title block, its badge list or its two-column rows (`docs/NITS.md`, two entries of 2026-10-11).
 
-### 2.16 THE PRINT SCORE — the presentation score on paper: the cover · the performance instructions · the whole piece — `building 2026-10-11 — steps 1 … 4 BUILT, 5 · 6 the AI's half done (RUNNING_LOG §476 … §480): the proofs and the whole 80-page PDF are made, the five gates green; HIS EYE OWED at 5 and 6` *(planned the same day, §475)*
+### 2.16 THE PRINT SCORE — the presentation score on paper: the cover · the performance instructions · the whole piece — `done 2026-10-11 — APPROVED ("Okay, that's good. We can keep that score, that print score", DEC-204), archived `print/score/approved/2026-10-11-draft01/`, tagged `Approaching-Draft01-print_1.0` (RUNNING_LOG §476 … §481): 80 pages (cover · 2 · 77), the five gates green` *(planned the same day, §475)*
 
 *(Opened at his word, 2026-10-11: "make a plan to produce a print score … You can go ahead and write the plan. Here on Opus is fine. And you don't need to review the plan with me until after it's written … we can use the same methods and models we've been using since piece four, I think. But it's probably piece five that will give you the latest techniques." Written whole from the precedent, then the top line and the questions put to him — the planning method's phases 2 and 3 in that order, at his word.)*
 
@@ -1026,7 +1026,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 > - `node tools/check_print_front.js` — nothing overflows a column, nothing is clipped; each instruction page looked at through `tools/print_look.js`
 > - the page is still being written (four language types have no sentence; the audit's list): the print takes it AS IT STANDS at each render — nothing to freeze before step 6
 >
-> **5. The proof pages — HIS EYE** — ◐ THE AI'S HALF DONE 2026-10-11 (RUNNING_LOG §480): seven proof PDFs in `print/score/` (`PROOF-front-matter` · `PROOF-A3-frame` · `PROOF-edge-calls` · `PROOF-cover-one-row` · the density trio 8.5 · 10.3 · 12), each measured (inside A3 · fonts embedded · 0 raster). ► HIS EYE
+> **5. The proof pages — HIS EYE** — ☑ DONE 2026-10-11 (his eye: "that's good" — the built options kept: two rows · 10.3 s · the sine box as it is; RUNNING_LOG §481). *The AI's half (§480):* seven proof PDFs in `print/score/` (`PROOF-front-matter` · `PROOF-A3-frame` · `PROOF-edge-calls` · `PROOF-cover-one-row` · the density trio 8.5 · 10.3 · 12), each measured (inside A3 · fonts embedded · 0 raster). ► HIS EYE
 >
 > Result when done: he has looked at one set of proof PDFs — the cover (one row · two rows) · the instructions · one music page from each of the six sections · the density trio · a page for each of step 2's three calls — and his notes are collected, fixed in one pass, the proof re-made.
 >
@@ -1035,7 +1035,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 > - the look decisions here are HIS: the density · the cover's rows and words · how the instruction pages break · the pane without its grain · the three edge calls of step 2 · the time ruler on this piece's lanes · what the colours do on paper (a mic opening's yellow at 18 %, the pale grounds of the state signs)
 > - his findings collected as he names them, fixed together on his go, the proof again
 >
-> **6. The full render — HIS EYE** — ◐ THE AI'S HALF DONE 2026-10-11 (RUNNING_LOG §480): `print/score/Approaching-score-JYang.pdf`, 80 pages (cover · 2 · 77), 1.57 MB, the five gates green (frame · front · pdf · pages · edges); rendered BEFORE his proof calls — a call of his means the same build again. ► HIS EYE, after step 5
+> **6. The full render — HIS EYE** — ☑ DONE 2026-10-11 (his "We can keep that score"; the file he saw is the file kept, not re-rendered — RUNNING_LOG §481). *The AI's half (§480):* `print/score/Approaching-score-JYang.pdf`, 80 pages (cover · 2 · 77), 1.57 MB, the five gates green (frame · front · pdf · pages · edges); rendered BEFORE his proof calls — a call of his means the same build again. ► HIS EYE, after step 5
 >
 > Result when done: the whole PDF — cover · instructions · every page of the music — rendered from the page as filmed, the five gates green, the AI's page-through done, his "print good".
 >
@@ -1044,7 +1044,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 > - the AI's page-through, every page: the ink inside the block · page 1 · the last page · each section's first page (its announcing badge)
 > - his eye → notes → one pass → "print good"
 >
-> **7. Archive and docs**
+> **7. Archive and docs** — ☑ DONE 2026-10-11 (RUNNING_LOG §481): the archive folder with the PDF (gitignored), `cover.json` and the README · the tag `Approaching-Draft01-print_1.0`, pushed · CLAUDE.md § Apps · `docs/RENDER.md` § 5 · the two NITS closed
 >
 > Result when done: the approved PDF is in `print/score/approved/<date>-draft01/` with its README, the tag is on the commit, and the docs name the print line.
 >
