@@ -8977,3 +8977,38 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **FOR THE PAPER — the sentence is the presentation view's principle (§333, DEC-110) in his own words for a reader:** "approximate time and type". The layer was designed on the rule that only what is true at every performance is drawn as fact — the region the engine rolls inside, the count, the kind — because the electronics' own timings are rolled afresh each night; "approximate" is that rule said to a player in one word. And "in the full score": the parts will not carry it (DEC-168 — "a courtesy display"), which this sentence now tells the reader of the instructions too.
 
 **With this the grey panes that stand in six of the page's images** (the cursor's, the conductor's, the long tone's, the strikes') **are explained on the page** — until now they were flagged to him at each image as unexplained.
+
+## §461. AN AUDIT OF THE INSTRUCTIONS PAGE — what the score shows or asks that the page does not yet say (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"And then can you do an audit and list in this chat anything that I might have missed that still needs explaining?"*
+
+**Method:** the page's text as it stands on disk (his own saves in it), read against two lists — what a player meets in the score (`docs/NOTATION_SCHEME.md`, section by section) and what the notes were to cover (`docs/PERFORMANCE_NOTES.md`, rows 1 … 18). Nothing on the page was changed. Given to him as a bare list, one line an item:
+
+**Not on the page at all**
+1. THE THREE BODY PROBLEM (section two): its badge, the line that changes colour and thickness, the four small state signs, and what a player does in each of the four states (rows 10 · 14).
+2. The three computer players of that section — Elec1 · Elec2 · Elec3, in the gutter of the full score (row 11).
+3. Four of the six types have a name and no sentence: Short Attacks · Trills · Accented Long Tones · Multiphonics.
+4. PITCH: that it is the player's choice outside the audible beats (still "to confirm" in the scheme).
+5. DYNAMICS: the score has none; the page does not say so, nor what governs loudness (row 7).
+6. A LIST OF THE SECTIONS: the text says "section one … five" and never lists them; section two is not named anywhere.
+
+**Said in part**
+7. Accented long tones: what the player actually plays — the window is half a second, the name says "long tone" (row 13: one short clean note; the electronics ring on).
+8. "Within the duration of the yellow box" stands for three different things: one attack inside it (section one) · a sound held through it (the multiphonics, row 15) · one strike inside it (the strikes).
+9. Section four has two yellows: the yellow line (play freely) and the yellow boxes (recorded).
+10. Audible beats: the written note held without vibrato; the bowed crotales cannot bend — there the sine moves (rows 9 · 17).
+11. The percussionist's "multiphonic" is a bowed cymbal — in Instrumentation, not in the multiphonics' paragraph.
+12. A yellow box WITHOUT the recording icon (the last four strikes): no microphone, no electronics.
+
+**Signs that are on the page's images or in the score and are never named**
+13. The dotted vertical line (the start of a trill's curve; inside the purple box) — its sentence was taken out at §440.
+14. The badge with small blue triangles inside the grey boxes of section one (the flocking badge) — not one of the six.
+15. The large badges at a section's start, beside the usual size.
+16. The thickness of the purple bar in a grey box (how many sounds).
+
+**Practical**
+17. How the score is opened and started: the address, who starts it, how the players stay together, the four seconds before the piece begins.
+18. The set-up: a microphone a player, the sound check, who runs the electronics (rows 8 · 12) — out of Instrumentation at his word (§438); perhaps a technical rider's.
+19. "The full score is in C. Parts will be transposed." — carried from piece 5, resting on an open call.
+
+**And one of form, not content:** the page has two forms of entry — *Gradient Curves.* ends its bold lead in a period, the two language types in a colon.
