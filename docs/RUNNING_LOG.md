@@ -8516,3 +8516,14 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 - NOT looked at again: the wide frames are those probed at §424 (nine, eight looked at). NOT watched by the AI.
 
 **Kept, not removed:** §424's film with close-ups (`…-V-CUT-seed7.mp4`, its own file) · the close-up groups in the registry and the cut list in git — unused by this film, there if he asks for a close-up version later.
+
+## §426. THE FILM APPROVED, ARCHIVED AND TAGGED — Approaching-Draft01-film_1.0 (DEC-195; PLAN 2.14) (2026-10-10, Opus 5.5)
+
+**His word on the wide film (§425):** *"good, archive and tag then /checkpoint"*.
+
+**Done, piece #6's way (its §700):**
+- THE ARCHIVE: `notation/video/approved/2026-10-10-draft01/` — `V-MAIN.mp4` (a copy of `renders/Approaching-Draft01-V-MAIN.mp4`, `cmp`-identical, sha256 `66f3aed7…`; not in git) and a README in git: what made it (the save of 22:30, the main score at `31f5ace`, the take's WAV `e6e85c29…`, the frame, the opening and ending, no close-ups at his word, the fonts, the command), what was measured, what stands open beside it. No cut list in the archive: this film has none.
+- THE TAG: `Approaching-Draft01-film_1.0`, annotated, on the commit that carries this entry, pushed — this repo's first tag. It marks the page (the main score, six sections), the audio (take 02 of D) and the film that agree. The name is the AI's, after piece #6's `Recombination-Draft01-film_1.0`; the title is tentative — his to rename.
+- PLAN § 2.14: steps 7 · 8 done.
+
+**The day's arc, for the paper (2026-10-10, the evening):** the fixes for the re-render analyzed and written (§419 · §420) → take 01 of D, READ by a meter watch on every track, which found what his ear had only suspected — nineteen notes with no sound under their keys (§421) → the keys moved, the tool that dealt them corrected, the cymbal lifted at the fader (§422) → take 02 of D, the piece's audio (§423) → the film by piece #6's approach, every sign of this piece first put through the film's rasterizer (§424) → at his word the film without zooms (§425) → approved on its first watch-through. Piece #6's film took five renders and found four faults in the watching; this one's faults were found before the render, in the take and in the probes — by reading what the machine can read before asking his eye and ear.
