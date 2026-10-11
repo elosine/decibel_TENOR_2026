@@ -972,6 +972,88 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 - **open, his** the audit's list (RUNNING_LOG §461) · a sentence for each of the four bare language types · the names and placings in journal §2's checkpoint #8.
 - **deferred** the print score's instruction pages do not know this page's title block, its badge list or its two-column rows (`docs/NITS.md`, two entries of 2026-10-11).
 
+### 2.16 THE PRINT SCORE — the presentation score on paper: the cover · the performance instructions · the whole piece — `planned 2026-10-11 (RUNNING_LOG §475), seven steps written whole, NOTHING BUILT`
+
+*(Opened at his word, 2026-10-11: "make a plan to produce a print score … You can go ahead and write the plan. Here on Opus is fine. And you don't need to review the plan with me until after it's written … we can use the same methods and models we've been using since piece four, I think. But it's probably piece five that will give you the latest techniques." Written whole from the precedent, then the top line and the questions put to him — the planning method's phases 2 and 3 in that order, at his word.)*
+
+***Why:*** Draft 01 has its page, its audio and its film (2.10 · 2.8 · 2.14); the print is the one deliverable of the draft not made. The exporter, its five gates and the cover template came with the copy-forward and HAVE NEVER RUN ON THIS PIECE'S PAGES — and this piece's page is made of signs no earlier piece printed (badges, mic openings, line wedges, the electronics' panes, sine boxes).
+
+**The precedent, step for step:** piece 5 (*Recombination*, `septet_LGMF_2026`) — its PLAN `2b-P`, six steps, built in one day (its RUNNING_LOG §766 … §773); behind it piece 4's PLAN 2b (the page-edge rule, here already in `notation/registry/page_rules.json` `edge`). **Not rebuilt, by rule:** the page `approaching` as filmed (the tag `Approaching-Draft01-film_1.0`, cut from `piece-Draft01d`) — the print is OF that page; `build.sh --rebuild-ir` is not used for Draft 01. **Builder: Opus**, from step 1, after a checkpoint and a clear; his eye at steps 5 and 6 only.
+
+**Result when done:** one PDF — the cover · the performance instructions · the six sections on A3 landscape, each page the frame the approved film draws (five lanes, the electronics' layer behind) — the five gates green (frame · front · pdf · pages · edges), his "print good", archived with its README and tagged. *(An estimate, not a count: 779 s at 10 … 12 s a page is 65 … 80 music pages.)*
+
+**What is here already, carried at the port:** `tools/export_print.js` · the gates `check_print_frame` · `check_print_front` · `check_print_pdf` · `check_print_pages` · `check_print_edges` · `tools/print_look.js` (a print page as a PNG, the AI's way to look) · `print/score/build.sh` · `print/cover/make_cover.ps1` + `cover.json` + `print/formats.json` — the build script and the cover's words still say *Recombination*. Every kind this piece added already has its `print` class in `page_rules.json` (mic · sinebox · wedge · elecret · elecwin `stub` · badge · finalbar · gc `whole` · envcurve `continue`).
+
+**What is known to be missing, found while the notation was built:** the print planner cannot measure a badge (§396 · §398 — one failure standing, print page 4) · the electronics' pane carries a grain that is an SVG filter, which Chrome prints as a picture (the PDF gate allows none) · the frame and page checks count an earlier piece's cast · the page carries its own final bar line AND the exporter asks for the print's · the instruction pages do not know this page's title block, its badge lists, its two-column rows, or its two image scales (`docs/NITS.md`, two entries of 2026-10-11).
+
+> **1. The frame and the paper** (the exporter's first run on this piece's page, checked against the film)
+>
+> Result when done: `node tools/export_print.js --ir approaching --at T` draws what the film draws at the same moment — the five lanes and the lines between them, the short names and brackets in the gutter, the staff only where it plays, the electronics' layer behind — on the A3 landscape sheet; the page count and the time a page holds are known; `build.sh` is this piece's.
+>
+> - `print/score/build.sh` made this piece's: out `print/score/Approaching-score-JYang.pdf` · the page `approaching` · its chain line (`scores/piece-Draft01d.json` → `notation/ir/approaching.ir.json` → the PDF) · one moment a section for the proofs: 20 · 80 · 150 · 300 · 560 · 720 s · `--rebuild-ir` left in the script, not used
+> - the first run, into the scratchpad: `node tools/export_print.js --ir approaching --htmlOnly --at 20,80,150,300,560,720`, looked at through `node tools/print_look.js`. What it draws is READ, not assumed: the lanes and their lines · the labels and brackets · the staff's snippet at 0 s and the staff of the beating section · the Elec1 · Elec2 · Elec3 heads on the three-body pages · the time ruler (the print's own — paper has no cursor) · page 1 (placed by its objects; no 4 s lead-in on paper, piece 5's call) · section marks (none expected) · the page count
+> - `node tools/check_print_frame.js --ir approaching` against the film at the same moments — PASS, or the first fault found. The likely one: the frame and page checks count systems, labels, brackets and a brace by an earlier piece's cast; this piece's census comes FROM THE ENSEMBLE (`notation/registry/ensemble.json`: five lanes, groups of `kind: lane`, the percussionist's two parts overlaid in one, a hidden one-line staff) — the checks are re-pointed to the data, never relaxed (piece 5's step 1)
+> - the final bar line, exactly ONE on the last page: the page carries its own (the item `finalbar` at 783 s, `objects.finalBar`) and the exporter asks for the print's (`finalBar: true`, `objects.finalBarLine` — the same numbers); read which draws, cure a double in the exporter; `check_print_pages` already demands exactly one
+> - the electronics' grain: `objects.elecWindow.grain` is an SVG noise filter, and Chrome prints a filtered shape as a PICTURE; `check_print_pdf` allows no raster. On paper the pane is drawn WITHOUT the grain — a print-only switch, the registry's row and the film untouched (the AI's call; his eye at step 5)
+> - the density: the default and two neighbours (`--sec`) as three proof PDFs for step 5 — the lane never changes size, only the time a page holds (the screen holds 12 s; piece 5's paper 10.3 s)
+>
+> **2. The page edges on paper** (this piece's signs under the print's own rules; the planner learns the badge)
+>
+> Result when done: `node tools/check_print_edges.js --ir approaching` PASSES on every page — no sign of this piece is split by a page cut against its class, nothing timed hangs in the gutter or past a system's end — and each case the gate found was settled by a registered rule, not by a patch in the renderer.
+>
+> - the badge's ink given to the planner: `notation/lib/render.js` `spanSsOf` gets its `badge` case (the size and the gap from the rows; a state sign and a method's badge by their own rows; `place` before · after · at), so that a badge travels WITH its owner — a mic opening and the badge before it are one object, a trill's badge and its go line, the announcing badges and the line they announce. The failure standing since §398 (print page 4, the cut at 30.96 s) is the proof
+> - every kind this piece added, walked once on a page where it meets a cut, against its registered `print` class: mic `stub` · badge `whole` · sinebox `stub` · wedge `stub` (the state wedge, the drones' line, the player's line) · elecret · elecwin `stub` · envcurve `continue` (the trill's curve) · gc `whole` · finalbar `whole` · the state sign (a badge) · the Elec heads (furniture)
+> - the three print calls foreseen at §396 — each built to the AI's recommendation and SHOWN at step 5 on a real page, his to overturn: **(a)** a mic opening of the opening or of section three is half a second long, and a cut stub of it reads badly — a rule by LENGTH: an opening shorter than a set number of staff spaces is never cut; the drones' long openings and the strikes' windows stay `stub` · **(b)** a trill's curve that runs over a cut is restated on the next page by its BADGE (the lineage restated a trill's line with "(tr)") · **(c)** the GC stays `whole`; it is 1.1 s wide here, so more pages close early — the count is reported
+> - the screen's hand-made cases are IN the locked page (three badges placed after their openings for the FILM's page turns; the strikes' badges cut like paper at a screen edge). On paper they stand where the page says and the print's cuts are placed around them; a collision the gate finds is cured in the plan of the cut or by a print-only rule — never by re-cutting the page
+> - a new edge case = what the registered class gives, the gate's line, the choice put to him (the protocol of §396). Before and after any change to `render.js`: `node tools/check_rules.js` and THE SHIELD — the film's pages must not move
+>
+> **3. The cover** (this piece's words into the house template)
+>
+> Result when done: `print/cover/cover-a3-landscape.svg` reads *Approaching* / "for bass flute, bass clarinet, percussion, viola, cello and electronics" / Justin Yang, in the house style, at the exact sheet the exporter prints.
+>
+> - `print/cover/cover.json`: `title` Approaching (TENTATIVE, DEC-87 — the cover moves with it) · `subtitle` the instructions page's own line (the ensemble not named, DEC-197) · `name` Justin Yang (the page says "Justin Yang, 2026"; the house cover has the name alone)
+> - `powershell -ExecutionPolicy Bypass -File print/cover/make_cover.ps1` → the SVG and its report (the sizes, the widest line against the margin); the instruments' line on ONE row and on TWO, both made for his eye at step 5 (piece 5: two rows kept the title large)
+> - `node tools/check_print_front.js` proves the face (EngraversGothic BT) RESOLVED in the PDF — it falls back silently otherwise; the face is on this machine, never in the repo
+>
+> **4. The instructions on paper** (the print reads the page as he has written it; the exporter learns this page's blocks)
+>
+> Result when done: the performance instructions print from `docs/notation_instructions/index.html` as it stands — its title block, every image at the size the page gives it, each badge beside its text, each two-column row a row — with nothing clipped, and nothing in the exporter that names a heading or an image of this piece.
+>
+> - the title strip: the exporter's pattern (`<h1>` then `<p class="subtitle">`) does not match this page's `.title-block` then `<h1 class="doc-name">`; it reads the block (the piece · its instruments · the composer) and the document's name
+> - the blocks it does not know, each kept whole across a column or a page: `.badge-list` / `.badge-row` (the six language badges, the four state badges — a small image and its text beside it) · `.ways` / `.way-row` (image left, text right) · `.way-wide` (a whole-page image, its text under it) · `.demo-link` (the link printed as a visible address and kept as a PDF link, piece 5's way)
+> - TWO IMAGE SCALES: nine score images are at the zoomed size and four at the page's own size (the winds' whole page · the five-lane strikes · the opening's winds · the cello's long recording); the print's one-scale arithmetic would draw those four twice too large — the exporter takes each image's scale from the page's own rule in `styles.css`, not from a table of names
+> - the dress: piece 5's — two columns on the landscape sheet, the page's three standard spaces scaled with the type. This page is far longer than piece 5's one sheet (five headed sections, thirteen score images, ten badges): SEVERAL pages, the breaks MEASURED in Chrome (a heading never ends a column, an image never leaves its text) or named with `--insBreak`
+> - `node tools/check_print_front.js` — nothing overflows a column, nothing is clipped; each instruction page looked at through `tools/print_look.js`
+> - the page is still being written (four language types have no sentence; the audit's list): the print takes it AS IT STANDS at each render — nothing to freeze before step 6
+>
+> **5. The proof pages — HIS EYE**
+>
+> Result when done: he has looked at one set of proof PDFs — the cover (one row · two rows) · the instructions · one music page from each of the six sections · the density trio · a page for each of step 2's three calls — and his notes are collected, fixed in one pass, the proof re-made.
+>
+> - `bash print/score/build.sh --proof` → the proof PDFs; MEASURED before he looks: the sheet inside A3 · the fonts embedded · zero raster · nothing outside the sheet · the gates' numbers
+> - the AI's own look first (`tools/print_look.js`), then the files to him, as files
+> - the look decisions here are HIS: the density · the cover's rows and words · how the instruction pages break · the pane without its grain · the three edge calls of step 2 · the time ruler on this piece's lanes · what the colours do on paper (a mic opening's yellow at 18 %, the pale grounds of the state signs)
+> - his findings collected as he names them, fixed together on his go, the proof again
+>
+> **6. The full render — HIS EYE**
+>
+> Result when done: the whole PDF — cover · instructions · every page of the music — rendered from the page as filmed, the five gates green, the AI's page-through done, his "print good".
+>
+> - `bash print/score/build.sh` (no `--rebuild-ir`) → `print/score/Approaching-score-JYang.pdf`; the gates in the script: frame · front BEFORE the render, pdf · pages · edges AFTER
+> - `node tools/check_print_pages.js` on THIS ensemble's census (step 1's re-pointing): the five labels, the lanes, the ruler and the folio on every page; the final bar line exactly once
+> - the AI's page-through, every page: the ink inside the block · page 1 · the last page · each section's first page (its announcing badge)
+> - his eye → notes → one pass → "print good"
+>
+> **7. Archive and docs**
+>
+> Result when done: the approved PDF is in `print/score/approved/<date>-draft01/` with its README, the tag is on the commit, and the docs name the print line.
+>
+> - the archive folder: the PDF (gitignored — "back it up"), a copy of `cover.json`, the README (the command · the page's and the save's commit · sha256 · pages · MB · the five gates' numbers)
+> - the tag `Approaching-Draft01-print_1.0` (the AI's name after the film's, his to rename), pushed
+> - CLAUDE.md § Apps: the print command, the gates "not optional", the instruction blocks the exporter knows · `docs/RENDER.md`'s print section · journal §2 and PLANNER current · the two `docs/NITS.md` entries of 2026-10-11 closed
+
+**Outside the plan, his:** the sheet (A3 landscape is the house's since piece 3; what the call asks is his to check — `--format tabloid-landscape` · `letter-landscape` exist, a cover for that sheet first) · the title (tentative) and the cover's words · THE PARTS (the same cut without its electronics flags, transposed where a staff shows — not in this item) · the performance score (§ 3) · **if the score moves** (a note, a level, a re-take): the page, the audio and the film move first — a print is OF the filmed page.
+
 ## 3. The performance score — `todo`
 
 *To be laid out when we discuss it.*
