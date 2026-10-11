@@ -8401,3 +8401,11 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **THE AUDIO — said to him:** the ♪ render chip looks for `notation/audio/<the page's score>.*`. The main score now names `piece-Draft01d`, and the only take is of C (`piece-Draft01c.wav`, take 02 — the piece before the thirteen notes of §414 · §415). So the main score plays SILENT in the app until a take of D exists. Not papered over: a copy of take 02 under D's name would call it D's audio. His to say (a take of D · or take 02 standing in meanwhile).
 
 **Print:** not run (the planner cannot measure a badge — §396 · §398's list stands).
+
+## §417. CHECKPOINT #6 OF SESSION 3 — the notation of the whole piece built; the main score cut from D (2026-10-10, Opus)
+
+**What prompted it:** his *"/checkpoint"*, with §416's last addition.
+
+**The stretch, §382 … §416, in order:** the bass clarinet's first drone note remedied (§382 · §383) · THE TAKE planned, built, proven and made — the piece played once in real time and recorded with its live electronics (§384 … §388; `tools/take.js`; take 02) · THE NOTATION, section by section, each on a working page and then into ONE main score: the trills (the level curve, no pitch; the GCs at each hit; the mic openings; the badges; the edge protocol and his rule for a badge at a page's end — §389 … §397) · the official score (§398) and its electronics, drawn behind everything (§400) · the drones (§399 … §403) · the sine tones — the staff back, an open head in a purple box, the box's five rules, one height, the player's line and badge (§404 … §409) · the designated language colour (§405) · the scattered strikes — GCs on the written ones, a window on every lane in the Stabilo yellow, the badge never on an opening, the last four free, a final bar line, the electronics as bricks (§410 … §412) · the eleven written strikes that lacked a player replaced by his A takes in the score (§413 … §415; `tools/strike_swap.js`) · the whole piece in the main score, from `piece-Draft01d` (§416).
+
+**What the checkpoint wrote:** `docs/PROJECT_JOURNAL.md` §2, the block CHECKPOINT #6 OF SESSION 3 at the top of NEXT UP — the state, the next step as an instruction (ask in one line: his eye · the take · print), the resume reads, the eight decisions pending, what the stretch taught, the uncommitted list. No lessons pass, no tag: a save-point.

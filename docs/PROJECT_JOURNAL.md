@@ -210,7 +210,50 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► 2026-10-10 21:15 (Opus, RUNNING_LOG §413 · §414; DEC-183 · DEC-184): THE PIECE IN HAND IS `scores/piece-Draft01d.json` (his). THE ELEVEN WRITTEN STRIKES THAT LACKED A PLAYER ARE REPLACED BY HIS A TAKES IN IT (`tools/strike_swap.js` — 12 notes added, 3 moved, 2 re-pitched); the strikes' page is cut from D: 109 GCs. **HIS: File ▾ → Reload of `piece-Draft01d` in the composer page BEFORE any Save.** OPEN: the viola at 11:49.2 (709.22 s; `strikes31a` gives it no hit) · the six strikes with no badge · the strikes into the main score · THE NEXT TAKE IS OF D (`docs/RENDER.md` § 0.2); the main score is still cut from C.**
+**► CHECKPOINT #6 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-10 21:24, Opus — mid-session checkpoint; the stretch RUNNING_LOG §382 … §417, Opus but for Fable's first three entries; written for a session that has never seen this chat)*
+
+**In one breath:** THE NOTATION OF THE WHOLE PIECE IS BUILT. The main score — `notation/ir/approaching.ir.json`, *Approaching — THE SCORE (0 … 779 s)*, first in the notation app's picker (http://localhost:5500/notation/app/notation.html) — holds SIX sections on 66 screen pages, each with its electronics (it is the PRESENTATION score), to a final bar line at 783 s. It is cut from **`scores/piece-Draft01d.json` — THE PIECE IN HAND** (his, untracked). Nothing is mid-build. He steered each section as it was made; he has not yet said what he sees in the whole.
+
+**Where things stand:**
+- **the piece:** `piece-Draft01d` = `piece-Draft01c` + the eleven written strikes that lacked a player replaced by his A takes (`tools/strike_swap.js`; 13 notes added) + the strike window at 742.37 s doubled. C and D are the same up to 672 s.
+- **the main score's command:** CLAUDE.md § Apps, THE OFFICIAL SCORE (also PLAN.md § 2.10). The working pages (one a section, under *experiments*) are re-cut with `--exp`.
+- **the audio:** take 02 = `notation/audio/piece-Draft01c.wav`, of C. The main score names D, so its ♪ render chip is SILENT until a take of D exists.
+- **the film** (PLAN 2.8 step 5): waits on that take.
+
+**THE NEXT CONCRETE STEP.** At `/postclear`: play this block back in five bullets at the most, then STOP and ask him in ONE line — *"your eye on the whole score, the re-render (a take of D), or print?"* Start only on his word.
+- **If he says the take:** read `docs/RENDER.md` § 0 and § 0.2 first. He at the desk, his engine up (`start_electronics.bat`), the composer page on `piece-Draft01d` after File ▾ → Reload. Ask first whether he wants the three levels of § 0.2 changed before it (the viola's first note silent — key 77, NOT diagnosed · the percussion at 236.4 s too quiet · the bass clarinet at 527.75 s too quiet; nothing was changed for them). Then from here: `node tools/take.js start --score piece-Draft01d` → his ▶ from 0 to the end (a full pass before it, so the returns are this state's) → `node tools/take.js stop` → `node tools/take.js mix`. The WAV lands as `notation/audio/piece-Draft01d.wav` and the main score finds it.
+- **If he gives a notation change:** `docs/NOTATION_SCHEME.md` first. A LOOK is a row of `notation/registry/rules.json` (seen at a reload); a PLACEMENT is a flag of `tools/notate_section.js` (a re-cut — of the section's working page AND of the main score). After every cut: `node tools/gen_engraving_rules.js`, then `node tools/check_rules.js` (31 of 32 is this piece's green), `node tools/layout_shield.js --write <file>` before and `--diff <file> --expect <ids>` after, `node tools/check_screen_edges.js --ir <id>`.
+
+**Resume reads:** nothing beyond §2 to ask the question. `docs/RENDER.md` § 0 · § 0.2 only if he says the take. `docs/NOTATION_SCHEME.md` only if he gives a notation change.
+
+**Decisions pending the composer (the bare list):**
+1. Six strikes in two tight runs show no badge (681.7 · 682.4 · 683.1 · 729.8 · 730.3 · 733.1 s) — no room on either side without covering a mic opening.
+2. The percussionist has ONE note a strike: his A takes' two mallet seats were not used (the AI's rule, the section's own practice).
+3. The main score's audio until a take of D: wait, or let take 02 stand in under D's name.
+4. The three levels before a re-take (`docs/RENDER.md` § 0.2).
+5. The beating section's open points: the box's margin · the players' own notes (silent) · the cents · the crotales' gliding sines (drawn level) · a head restated on a page a sine only crosses · every accidental a sharp.
+6. The ten FREE strikes whose save lacks a player (the window is on every lane; the notes matter only for the audio).
+7. Print: the planner cannot measure a badge (`render.js` `spanSsOf`); three print decisions — when the print score is made.
+8. The parts (the main score's command without its electronics flags): not cut.
+
+**What this stretch taught — what a cold session trips on:**
+- **HIS SAVE CAN UNDO A TOOL'S WRITE.** After a tool writes a score he has open: File ▾ → Reload BEFORE any Save. BEFORE a tool runs on a score: compare the save with `scores/<name>-work.json` — the tools take the NEWER as their base, and a stale working copy that is newer than the save would carry the old data back in (§412 found one).
+- **`scores/sec05-finalDraft.json` (the strikes' own file) has neither the swaps nor the doubled window:** never re-insert the section from it.
+- **Edge cases follow the registered protocol** (`notation/registry/page_rules.json` `edge`): say what it gives, put the choice; a case he names is cured by hand; no universal rule unless he says "that is the rule". The strikes' badges are his own exception: never on a mic opening, cut like paper at a page's edge (`docs/NOTATION_STANDARDS.md` § 8).
+- **The rules sheet goes stale at every cut** (a second red in `check_rules` = run `gen_engraving_rules`).
+- **In the AI's browser pane** (hidden — measure by JavaScript, no screenshots): the notation app's `#next` · `#prev` redraw the page; the picker is `#ir` (set its value, dispatch `change`).
+- **A strike take** (`bank/panel_snapshots.json` `panels.strikes.<name>.state.voices`) names the lane of each hit of its bank strike; the hits' times are `bank/scattered_strikes.json` `strikes.<id>.notes[i].dtMs`.
+
+**The deliberately-uncommitted list** (`git status --short` at the checkpoint):
+- `bank/panel_snapshots.json` (M) — his takes, the A takes among them; tracked, his to commit.
+- `bank/samples/index.json` (M) — the engine's index, rewritten at every pass of his engine.
+- `scores/piece-3BodyRedo.json` · `scores/strike-rig.json` (M) — the page's saves of two tracked scores; his.
+- untracked, ALL HIS, never committed without his word: `scores/piece-Draft01.json` · `01b` · `01c` (the piece before the swaps; take 02's score; the working pages `approaching-trills` · `-drones-elec` · `-beating` are cut from it) · **`01d` (THE PIECE)** · `piece-sec05-a` · `sec05-finalDraft` · `sec05-strikes-a` · `sec05a` … `sec05h` · `audition-sec01-fx-updates`.
+- NOT in the repo: the session's scratch folder holds a copy of the score before each tool write of today (`piece-Draft01c.before-412.json` · `piece-Draft01d.before-swap.json` · `piece-Draft01d.before-swap31aa.json`).
+
+**Model:** Fable for a talk (his eye on the whole, a notation decision); Opus for the take, a re-cut or a build.
+
+**► (the trail, before checkpoint #6) 2026-10-10 21:15 (Opus, RUNNING_LOG §413 · §414; DEC-183 · DEC-184): THE PIECE IN HAND IS `scores/piece-Draft01d.json` (his). THE ELEVEN WRITTEN STRIKES THAT LACKED A PLAYER ARE REPLACED BY HIS A TAKES IN IT (`tools/strike_swap.js` — 12 notes added, 3 moved, 2 re-pitched); the strikes' page is cut from D: 109 GCs. **HIS: File ▾ → Reload of `piece-Draft01d` in the composer page BEFORE any Save.** OPEN: the viola at 11:49.2 (709.22 s; `strikes31a` gives it no hit) · the six strikes with no badge · the strikes into the main score · THE NEXT TAKE IS OF D (`docs/RENDER.md` § 0.2); the main score is still cut from C.**
 
 **► 2026-10-10 18:34 (Opus, RUNNING_LOG §412; DEC-182): the strikes' electronics as section 1's return bricks · no edge bar after the final bar line · the window at 742.37 s doubled in `piece-Draft01c` (`zn-1650`) · THE ELEVEN WRITTEN STRIKES THAT LACK A PART listed with time code and take (§412) — HE BRINGS RHYTHMS. **⚠ HIS: File ▾ → Reload of `piece-Draft01c` in the composer page BEFORE any Save — its working copy (17:25) predates three tool edits (the two mic openings of §393 · this window) and a Save from it would write them back.** Still open: the six strikes with no badge · the strikes into the main score.**
 
