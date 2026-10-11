@@ -271,6 +271,10 @@ IDs always with their names.
 - **Building a plan item / analyzing an issue for the plan:** `docs/PLANNING_METHOD.md` — three phases, fixed formats
 - **Where this start left the protocol:** `docs/PROTOCOL_DEVIATIONS.md` — one line at the moment of each deviation
 - **Faults met while composing:** `docs/SWEEP_LIST.md` · **Deferred, real but not now:** `docs/NITS.md`
+- **THE PAPER'S READING LIST (2026-10-11, at his word):** `docs/PAPER_REFERENCES.md` — the research and references as found, each with
+  how sure its citation is (✔ seen · ◐ partly · ✗ the AI's memory): the interaction-score literature (Nyman · Wolff scholarship ·
+  Zorn · James Saunders's "rule-based compositions" / "group behaviours as music") and the physics behind the three-body section.
+  A new reference found in any session goes in there, with its mark
 - **The performance notes — what they must cover, collected as decided:** `docs/PERFORMANCE_NOTES.md`
 - **The performance instructions — THE PAGE (begun 2026-10-11, his prose):** `docs/notation_instructions/index.html` ·
   http://localhost:5500/docs/notation_instructions/index.html
@@ -333,6 +337,10 @@ somehow, same deadline. So let's keep good journal notes. Like lab notes along t
 paper's, literally: every entry carries what a reader of the paper would need — his words, what was tried and rejected, the numbers,
 the reasoning, the references — and a compositional or technical move that is not in the log is lost to the paper. The paper is HIS;
 the deadline is his to keep (he keeps his own time, D5); the AI's part is the record, as the work happens, never asked for.
+
+**THE PAPER'S TITLE, TENTATIVE — his words, 2026-10-11 (RUNNING_LOG §476):** *"Notation, Performance and Sonification Practices in the
+Composition Approaching and in Improvisation with Live Electronics"*. Three subjects named in it — notation · performance ·
+sonification: an entry that bears on one of them says so.
 
 **CORRECTED by him, 2026-10-04 (RUNNING_LOG §17):** *"a correction for the tenor call. I'll write one paper talking about both the
 decibel piece and my um, improvisation with live electronics."* — **ONE paper, TWO subjects.** So the record is kept for a paper

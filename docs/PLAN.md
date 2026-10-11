@@ -1064,3 +1064,6 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 written during or directly after the piece — the lab journal is its source, kept to that standard from §1.
 **CORRECTED 2026-10-04 (RUNNING_LOG §17): ONE paper for the TENOR call, about this piece AND his improvisation with live
 electronics** — its sources are this lab journal, the engine's, and the improviser piece's own once it exists.
+**THE PAPER'S TITLE, TENTATIVE — his words, 2026-10-11 (RUNNING_LOG §476):** *"Notation, Performance and Sonification Practices in
+the Composition Approaching and in Improvisation with Live Electronics"*. For it, already in the record: the names and key texts
+of the interaction-score literature (RUNNING_LOG §465) · the physics' own names for the three-body phases (§469).
