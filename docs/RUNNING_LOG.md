@@ -8733,3 +8733,9 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **Met on the way:** the film's rasterizer (resvg) panics on the conductor crop (`Option::unwrap` in its geometry) — of no account for the page, which Chrome draws; noted in case these crops are ever put through it. And a shell command over about 8 KB failed whole on this machine with a false "matching quote" error, as the standing note says: this entry went in from a file.
 
 **Not asked, not done:** the rest of piece 5's page (the duration line, the ragged stems, the vibraphone, the percussion legend, the gradient curves' headers, the timbral glissando, the tuning) — that piece's devices.
+
+## §440. THE GO-LINE SENTENCE OUT (2026-10-11, Opus 5.5)
+
+**His words:** *"please take out the dotted vertical line marks sentence."*
+
+**Done:** the third paragraph of *Animated Conduction Tools* is now *"**Bouncing-ball conductors** aid with rhythmic precision."* — piece 5's second sentence there (*"The **dotted vertical line** marks the **go-time** for events."*) is off this piece's page. The AI had flagged it at §439 as carried: in this piece a conducted note draws its arc and no dotted line (the dotted go line stands only at a trill's start and inside a sine's box). His reason was not given. Nothing else on the page moved.
