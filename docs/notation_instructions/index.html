@@ -82,7 +82,7 @@
 <div class="notation-section">
     <div class="description">
         <p>There are a number of animated conduction tools that are intuitive to follow and aid performers in realizing the score.</p>
-        <p>A <strong>scrolling cursor</strong> runs throughout the piece at a consistent speed and indicates when things are to be played. Notation is spaced proportionally in time &#8212; distance on the page equals duration.</p>
+        <p>A <strong>scrolling cursor</strong> runs throughout the piece at a consistent speed and indicates when things are to be played. Notation is spaced proportionally in time — distance on the page equals duration.</p>
         <p><strong>Bouncing-ball conductors</strong> aid with rhythmic precision. Play at the precise moment of impact, using the ictus of the bouncing ball to inform the attack.</p>
     </div>
     <div class="zoomed-row">
@@ -142,13 +142,13 @@
             <img class="zoomed" style="--w: 84" src="images/badge_beats.svg" alt="Badge: a beating wave inside its outline, in orange and white on a dark square">
             <!-- HIS TEXT, dictated (RUNNING_LOG §444): the name takes a COLON, the sentence after it is plain. Its ending is the
                  wording he chose of five (§446, "a"): "around the unison" in place of his first "from unison pitch". -->
-            <p><strong>Audible Beats:</strong> For this musical material, the live electronics will generate sine tones at specific pitches, and the performer can generate audible beating against these sine tones using small glissandos around the unison.</p>
+            <p><strong>Audible Beats:</strong> For this musical material, the live electronics will generate sine tones at specific pitches. The performer will generate audible beating against these sine tones using small glissandos around the unison.</p>
         </div>
         <div class="badge-row">
             <img class="zoomed" style="--w: 84" src="images/badge_scatteredStrikes.svg" alt="Badge: small triangles diving at a ground line, in green on a dark square">
             <!-- HIS TEXT, dictated (RUNNING_LOG §445) — the two sentences he settled; THE SIMILE is his image (a handful of pebbles
                  thrown in the air, heard as they land) in the wording he chose of five (§447, "a"). -->
-            <p><strong>Scattered Strikes:</strong> Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a tossed handful of pebbles hitting the ground.</p>
+            <p><strong>Scattered Strikes:</strong> Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a handful of tossed pebbles hitting the ground.</p>
         </div>
     </div>
     <!-- HOW A LANGUAGE TYPE IS NOTATED (RUNNING_LOG §448) — HIS TEXT, dictated; the first paragraph's second sentence is his
@@ -183,6 +183,18 @@
          crops), and at the others' scale it would be twice the column's width. Regenerate:
          node tools/capture_lane.js --ir approaching --part bfl --toPart bcl --t 500 --zoom 1 --gutter --span 560:572 --out docs/notation_instructions/images/language_line_winds_560.svg -->
     <img class="zoomed" style="--w: 1880" src="images/language_line_winds_560.svg" alt="Two staves across a whole page, bass flute above bass clarinet. On each, a dark badge with an orange wave, then an orange line running to the right edge; above each line, on the staff, an open note head in a purple box that runs on as long as the line">
+    <!-- THE SCATTERED STRIKES' TWO FORMS (RUNNING_LOG §452) — HIS TEXT, dictated ("for scattered strikes, …"), set here after
+         the three ways of notating a type, where his dictation had reached; his to move up into the Scattered Strikes row.
+         THE IMAGE IS HIS PICK: "all five parts, from about 11:25, mid-page … two strikes. The first one is no GCs, and then right
+         next to it has GCs, and they're about the same duration" — the strike windows at 685.68 … 686.03 s (free: the yellow
+         box alone) and 686.86 … 687.25 s (conducted: a bouncing ball for every player), on all five lanes, 685.0 … 687.9 s.
+         At the PAGE's size (Z 1), as the winds' image above it: five lanes at the zoomed size would be taller than a screen.
+         Regenerate:
+         node tools/capture_lane.js --ir approaching --part bfl --toPart vc --t 600 --zoom 1 --span 685.0:687.9 --out docs/notation_instructions/images/strikes_all_685.svg -->
+    <div class="description">
+        <p>Some of the scattered strikes are notated rhythmically with the bouncing-ball conductors. Some are just the yellow duration box without the bouncing-ball conductors. In these cases, the ensemble would try to create a scattered strike within the time frame of the yellow box. Each performer will have the same time frame.</p>
+    </div>
+    <img class="zoomed" style="--w: 427" src="images/strikes_all_685.svg" alt="All five lanes of the score. First a yellow box with a green badge before it on every lane and nothing else; then a second yellow box on every lane, and under each a bouncing-ball arc landing at a slightly different moment in each lane">
 </div>
 
 </body>

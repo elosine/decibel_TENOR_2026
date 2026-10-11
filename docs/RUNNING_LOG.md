@@ -8866,3 +8866,17 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **The line he calls red is the audible beats' orange** (`SOL_orange` #E04424, a red-orange since §305) — the colour's own history: read off photographs of LeWitt's walls as "a RED-ORANGE".
 
 **Seen once on the page** (the AI's pane at 1280 px): both staves, both badges, both lines to the right edge, the purple boxes above them.
+
+## §452. THE SCATTERED STRIKES' TWO FORMS — conducted and free; the image of both, all five parts (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"for scattered strikes, some of the scattered strikes are notated rhythmically with the bouncing ball conductors. Some are just the yellow duration box without the bouncing ball conductors. In these cases, The ensemble would try to create a scattered strike within the time frame of the yellow box. Each performer will have the same time frame. And then let's grab the image, all five parts, from about 11:25, uh, mid-page. There is two strikes. The first one is no GCs, and then right next to it has GCs, and they're about the same duration."*
+
+**On the page,** at the end of *Language Music*, after the coloured line's image: *Some of the scattered strikes are notated rhythmically with the bouncing-ball conductors. Some are just the yellow duration box without the bouncing-ball conductors. In these cases, the ensemble would try to create a scattered strike within the time frame of the yellow box. Each performer will have the same time frame.* — his words, the lead-in "for scattered strikes," taken as where it belongs and left out of the sentence. WHERE IT STANDS is the AI's reading: after the three ways of notating a type, where his dictation had reached, not up in the Scattered Strikes row of the list (said to him; one word moves it).
+
+**The image, his pick by time code** (`strikes_all_685.svg`): all five lanes, 685.0 … 687.9 s of the main score — the strike window at 685.68 … 686.03 s, FREE (the yellow box with its badge on every lane and nothing else: `mode: open` in the save) and the one at 686.86 … 687.25 s, CONDUCTED (the box, and under it a bouncing ball for every player, each landing at its own instant: the five notes fall between 686.96 and 687.15 s — the scatter, 190 ms wide, drawn). The two boxes are 0.35 and 0.39 s long: "about the same duration", as he saw. Found in the IR by listing the windows of the page that holds 11:25 (680 … 692 s) with their mode; the pair is the only free-then-conducted neighbours on it.
+
+**Its scale:** the PAGE's (Z 1), as the winds' image above it — five lanes at the zoomed size would be about 950 px tall on the page, more than a screen; at the page's size it is 187 × 481 px. The page now holds images at two scales by one principle: ONE LANE IN DETAIL at the zoomed size (piece 5's one scale), SEVERAL LANES OR A WHOLE PAGE at the page's own size. Said to him.
+
+**In the image and not asked for:** the grey band with purple lines at the bottom of every lane — the electronics' layer of the strikes (§412: their answers as return bricks, 677 … 770 s, on every lane); every image of this section cut from the presentation score has it.
+
+**FOR THE PAPER:** his paragraph is the performance instruction of DEC-119 (§342: each strike NOTATED or OPEN) in a player's words, and it adds one fact the makers' vocabulary never needed: "Each performer will have the same time frame" — the window is the ensemble's, one span on five lanes (§411: every window drawn on all the lanes, whatever the save holds).
