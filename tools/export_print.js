@@ -55,6 +55,7 @@ const secArg = arg('sec', null);
 const pagesArg = arg('pages', null);
 const atArg = arg('at', null);        // select the page(s) CONTAINING this second — a comma list makes a proof PDF (2b.3)
 const wantRuler = arg('ruler', 'on') !== 'off';
+const KEEP_GRAIN = arg('grain', 'off') === 'on';   // [decibel PLAN 2.16 step 1] the electronics' pane's grain on paper: off (a filter prints as a picture)
 const wantCover = arg('cover', 'off') !== 'off';
 const wantInstructions = arg('instructions', 'off') !== 'off';
 const htmlOnly = flag('htmlOnly');
@@ -111,6 +112,30 @@ const C = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadContainer(
 const ens = rd('notation/registry/ensemble.json');
 const T = rd('notation/registry/techniques.json');
 const ir = rd(path.join('notation', 'ir', irId + '.ir.json'));
+// [decibel PLAN 2.16 step 2, RUNNING_LOG §477] A BADGE HAND-PLACED AFTER ITS MIC OPENING IS A SCREEN PLACEMENT. The cutter's
+// --micBadgeAfter (§397, his "let's just work this out for these ones") puts a badge after its opening where the FILM's page turn falls
+// just before that opening and the badge would have been pushed onto it. Paper has other cuts, and the print plan now keeps a badge
+// and its opening together (Render.inkSpanSs) — so on paper such a badge stands BEFORE its opening, as every other does. The page
+// (the IR) is not touched: this is the print's own reading of it; the frame check's --plan screen page keeps the screen's placement.
+if (!SCREEN_PLAN) {
+  const mics = (ir.overlays || []).filter(o => o.kind === 'micOpening' && o.target && Array.isArray(o.target.span));
+  const back = [];
+  for (const o of ir.overlays || []) {
+    if (o.kind !== 'badge' || !o.value || o.value.place !== 'after' || !/^ov-badge-mic-/.test(o.id || '')) continue;
+    const at = q => Math.abs(q.target.span[1] - o.target.t) < 1e-6;
+    const m = mics.find(q => q.target.part === o.target.part && at(q)) || mics.find(at);
+    if (!m) continue;
+    // …but NOT where the badge was placed after because of a NEIGHBOUR, not a page turn: another opening of the same player ending
+    // less than half a second before this one begins (the percussionist's pair at 154.6 s, 0.1 s apart) — there "before" would lie
+    // on that opening, on paper as on the screen, and his placement stands. (Half a second: more than a badge and its gap at any
+    // density the print uses.)
+    const g = (ens.groups || []).find(q => q.joined && Array.isArray(q.parts) && q.parts.includes(m.target.part));
+    const lane = g ? g.parts : [m.target.part];
+    if (mics.some(q => q !== m && lane.includes(q.target.part) && q.target.span[1] <= m.target.span[0] + 1e-6 && q.target.span[1] > m.target.span[0] - 0.5)) continue;
+    o.target.t = m.target.span[0]; o.value.place = 'before'; back.push(m.target.span[0]);
+  }
+  if (back.length && !flag('quiet') && !arg('planJson', null)) console.log('  ' + back.length + ' badge(s) placed after their mic opening for the film\'s page turns stand BEFORE it on paper (' + back.map(t => t.toFixed(2) + ' s').join(' · ') + ')');
+}
 
 // [PLAN 2b.1.1 — 2026-09-17] THE FRAME'S PARTS COME FROM THE REALIZED ENSEMBLE, exactly as the video's do. They came from
 // `ir.source.parts` — the parts the IR happens to carry — which is why the print drew six systems and no piano: the grand
@@ -404,7 +429,8 @@ const faces = [
 // the words in print/cover/cover.json at the sheet print/formats.json names — no piece's name in the path, nothing to edit here.
 function coverSvg() {
   if (!wantCover) return null;
-  const p = path.join(ROOT, 'print', 'cover', 'cover-' + formatName + '.svg');
+  // [decibel PLAN 2.16 step 5, §480] --coverFile <svg>: another cover than the piece's own (a proof of the same words on one row)
+  const p = arg('coverFile', null) ? path.resolve(arg('coverFile', null)) : path.join(ROOT, 'print', 'cover', 'cover-' + formatName + '.svg');
   if (!fs.existsSync(p)) {
     console.error('  ! --cover on but ' + path.relative(ROOT, p) + ' is missing.');
     console.error('    draw it first:  powershell -ExecutionPolicy Bypass -File print/cover/make_cover.ps1 -Format ' + formatName);
@@ -452,7 +478,16 @@ const INS_CSS = (() => {
     frame: pick(/:root\s*\{[^}]*--frame\s*:\s*([\d.]+)/, '1920', ':root --frame'),
     rowGap: pick(/\.zoomed-row\s*\{[^}]*\bgap\s*:\s*([^;}]+)/, '2%', '.zoomed-row gap'),
     entryGap: pick(/\.entry-row\s*\{[^}]*\bgap\s*:\s*([^;}]+)/, '3%', '.entry-row gap'),
+    // [decibel PLAN 2.16 step 4, RUNNING_LOG §479] the blocks a later page added, each read from the stylesheet when it is there (a
+    // page without them is not warned about them): a badge beside its text · an image left, its text right · and WHICH TEXT A SCORE
+    // IMAGE BELONGS TO — `:root { --figure-belongs: above }` says an image stands under the text it illustrates (this piece's page);
+    // absent, an image is held to the text on BOTH sides, as piece #6's page needed (a sentence under its figure explained it).
+    badgeGap: opt(/\.badge-row\s*\{[^}]*\bgap\s*:\s*([^;}]+)/, '1.1em'),
+    waysLeft: opt(/\.ways\s*\{[^}]*--left\s*:\s*([\d.]+)/, '0.55'),
+    wayGap: opt(/\.way-row\s*\{[^}]*column-gap\s*:\s*([^;}]+)/, '4.5%'),
+    figureBelongs: opt(/:root\s*\{[^}]*--figure-belongs\s*:\s*([a-z]+)/, 'both'),
   };
+  function opt(re, def) { const m = re.exec(css); return m ? m[1].trim() : def; }
 })();
 let INS_REPORT = '';
 let _insPages;   // built once — the measured break costs a Chrome run, and the page count is asked for twice
@@ -465,9 +500,20 @@ function instructionsPages() {
   body = body.replace(/<!--[\s\S]*?-->/g, '');            // regen-command comments
   // title block spans both columns; the rest flows
   const tm = /<h1>([\s\S]*?)<\/h1>\s*<p class="subtitle">([\s\S]*?)<\/p>/.exec(body);
-  const title = tm ? tm[1] : 'Performance Instructions';
-  const subtitle = tm ? tm[2] : '';
+  let title = tm ? tm[1] : 'Performance Instructions';
+  let subtitle = tm ? tm[2] : '';
   if (tm) body = body.replace(tm[0], '');
+  // [decibel PLAN 2.16 step 4, RUNNING_LOG §479] THE PAGE THAT OPENS WITH THE PIECE: a `.title-block` (the piece's name · its
+  // instruments · the composer) and then `<h1 class="doc-name">`, the document's name (this piece's page since its §433). On paper the
+  // cover has just said the piece, so the strip leads with the DOCUMENT's name and carries the block's three lines beside it, in the
+  // strip's own small italic; the block and the heading leave the columns. Read by class, so any page built this way prints the same.
+  const tb = !tm && /<div class="title-block">\s*<div class="piece-title">([\s\S]*?)<\/div>\s*<div class="piece-for">([\s\S]*?)<\/div>\s*<div class="piece-by">([\s\S]*?)<\/div>\s*<\/div>\s*<h1[^>]*>([\s\S]*?)<\/h1>/.exec(body);
+  if (tb) {
+    const txt = s => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    title = txt(tb[4]);
+    subtitle = [tb[1], tb[2], tb[3]].map(txt).filter(Boolean).join(' — ');
+    body = body.replace(tb[0], '');
+  }
   // INLINE EVERY IMAGE (an SVG scales by CSS width; inlined, its own 'Crimson Pro Light' <text> resolves against the embedded
   // faces — an <img> would isolate it and fall back). The attributes are read in ANY order.
   const missing = [], plain = [];
@@ -477,8 +523,12 @@ function instructionsPages() {
     if (!A.src) return '';
     const p = path.join(INS_DIR, A.src);
     if (!fs.existsSync(p)) { missing.push(A.src); return ''; }
-    const inner = /\.svg$/i.test(A.src) ? fs.readFileSync(p, 'utf8').replace(/^<\?xml[^>]*\?>\s*/, '')
+    let inner = /\.svg$/i.test(A.src) ? fs.readFileSync(p, 'utf8').replace(/^<\?xml[^>]*\?>\s*/, '')
       : '<img src="file:///' + p.replace(/\\/g, '/') + '" style="display:block;width:100%;height:auto">';   // a raster image: check_print_pdf will say so
+    // [decibel PLAN 2.16 step 4, §479] a score image is a crop of the score, so it carries the electronics' pane WITH its grain — the
+    // same filter that prints as a picture (above, at the music pages): dropped here too (the first proof of the front matter held
+    // 20 raster images, every one a grain). `--grain on` keeps it.
+    if (!KEEP_GRAIN) inner = inner.replace(/<defs><filter id="elecGrain"[\s\S]*?<\/filter><\/defs>/g, '').replace(/<rect class="elec-grain"[^>]*\/>/g, '');
     const w = /--w\s*:\s*([\d.]+)/.exec(A.style || '');
     if (/\bzoomed\b/.test(A.class || '') && w) return '<div class="figwrap zoomed" style="--w:' + w[1] + '">' + inner + '</div>';
     // inside <figure class="zoomed"> the FIGURE carries the width and its image fills it (styles.css, §706)
@@ -607,7 +657,29 @@ function styleBlock() {
     // image and bottom text … fit in column 1") — by adjacency, not by a block built around one page's markup.
     '.cols h3,.cols h4,.cols .entry-lead{break-after:avoid;}\n' +
     '.cols > .figwrap,.cols .notation-section > .figwrap,.cols .zoomed-row,.cols .pair{break-before:avoid;}\n' +
-    '.cols :is(.figwrap,.zoomed-row,.pair) + .description{break-before:avoid;break-inside:avoid;}\n' +
+    // [decibel PLAN 2.16 step 4, §479] …unless the page says its images stand UNDER the text they illustrate (--figure-belongs: above):
+    // then the text after an image is the next thing, free to start a column — holding it too would chain a whole section into one
+    // unbreakable block (text · image · text · image …), which no column can take.
+    (INS_CSS.figureBelongs === 'above' ? '' : '.cols :is(.figwrap,.zoomed-row,.pair) + .description{break-before:avoid;break-inside:avoid;}\n') +
+    // [decibel PLAN 2.16 step 4, §479] THE BLOCKS OF A LATER PAGE (this piece's): a link line · a LIST OF BADGES, each a small image with
+    // its text beside it · the WAYS, an image on the left and its text on the right, or a wide image with its text under it. Each row is
+    // kept whole; a list never leaves the line that introduces it. The gaps and the image column's share are the stylesheet's.
+    '.cols .demo-link{margin:0 0 5px;}\n' +
+    '.cols .badge-list,.cols .ways{margin:4px 0 6px;break-before:avoid;}\n' +
+    '.cols .badge-row{display:flex;align-items:center;gap:' + INS_CSS.badgeGap + ';margin-top:4px;break-inside:avoid;}\n' +
+    '.cols .badge-row:first-child{margin-top:0;}\n' +
+    '.cols .badge-row > .figwrap{flex:none;margin:0;}\n' +
+    '.cols .badge-row p{margin:0;}\n' +
+    '.cols .ways{--left:' + INS_CSS.waysLeft + ';}\n' +
+    '.cols .way-row{display:flex;align-items:flex-start;column-gap:' + INS_CSS.wayGap + ';margin-top:9px;break-inside:avoid;}\n' +
+    '.cols .way-wide{margin-top:9px;break-inside:avoid;}\n' +
+    '.cols .ways > :first-child{margin-top:0;}\n' +
+    '.cols .way-img{display:contents;}\n' +
+    '.cols .way-row .figwrap.zoomed{flex:none;margin:0;width:min(calc(var(--left) * 100%), calc(var(--w) / var(--frame) * 100%));}\n' +
+    '.cols .way-wide .figwrap{margin:0;}\n' +
+    '.cols .way-wide p{margin:5px 0 0;}\n' +
+    '.cols .way-text{flex:1;min-width:0;}\n' +
+    '.cols .way-text p{margin:0;}\n' +
     '</style>';
 }
 
@@ -625,7 +697,7 @@ function buildHtml() {
   sel.forEach((i, n) => {
     const view = viewFor(i);
     // [2b-P.1] --plan screen: the page as export_video's staticSvg draws it — the screen's edge rules, nothing of paper's
-    const svg = SCREEN_PLAN ? StaticPage.staticPageSvg({
+    let svg = SCREEN_PLAN ? StaticPage.staticPageSvg({
       model, view, glyphs, C, srcEnd, reshow: pages[i].reshow, ownsEnd: i === pages.length - 1, ensemble: ENS,
       screenEdges: pageRules.screenPlan === 'tile'
         ? { edge: pageRules.edge || {}, first: pages[i].t0 <= SCREEN_T0 + 1e-9, clampGoLine: pageRules.clampGoLine } : undefined,
@@ -640,6 +712,11 @@ function buildHtml() {
       edgeBar: false,
       finalBar: true,       // [2b-P step 5, §772] the print's thin + thick final barline at the piece's end (rules.json objects.finalBarLine)
     });
+    // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] ON PAPER THE ELECTRONICS' PANE HAS NO GRAIN. The grain (rules.json objects.elecWindow.grain)
+    // is an SVG noise FILTER, and Chrome's print-to-pdf turns a filtered shape into a PICTURE — the delivered file must hold no raster
+    // (check_print_pdf). So the print page drops the filter and its rectangles; the pane's fill and outline stay. The registry's row, the
+    // screen and the film are untouched (the frame check's --plan screen page keeps the grain, as the film does). `--grain on` keeps it.
+    if (!SCREEN_PLAN && !KEEP_GRAIN) svg = svg.replace(/<defs><filter id="elecGrain"[\s\S]*?<\/filter><\/defs>/g, '').replace(/<rect class="elec-grain"[^>]*\/>/g, '');
     // [2b.7.1] the folio reads what the page OWNS — with ownership that is exactly the music on it, reserves excluded.
     const t0 = ownedOf(i)[0], t1 = Math.min(ownedOf(i)[1], srcEnd);
     out.push('<div class="page">');

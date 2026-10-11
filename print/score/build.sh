@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # THE PRINT SCORE, END TO END — the answer to "how do I re-render after I change
-# the score?" (composer, piece #4 day 37; the septet's 2026-09-17; made THIS piece's
-# 2026-10-03, PLAN 2b-P step 1).
+# the score?" (composer, piece #4 day 37; the septet's 2026-09-17; piece #6's 2026-10-03;
+# made THIS piece's — Approaching — 2026-10-11, decibel PLAN 2.16 step 1, RUNNING_LOG §476).
 #
 # THE CHAIN, and the step that is easy to miss:
 #
-#     scores/piece-Recombination-Draft01-done.json --(notate_section)--> notation/ir/piece-decibel.ir.json --(export_print)--> PDF
-#                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#     scores/piece-Draft01d.json --(notate_section)--> notation/ir/approaching.ir.json --(export_print)--> PDF
+#                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #     The print score is drawn from the IR, NOT from the save file. Edit the
 #     score, re-run export_print alone, and you render the OLD notation with no
 #     error of any kind. That is why --rebuild-ir exists.
@@ -15,33 +15,37 @@
 #   bash print/score/build.sh --proof         # the proof PDFs only (one page per section · the front matter · the density trio), fast
 #   bash print/score/build.sh --rebuild-ir    # rebuild the IR from the score FIRST, then render
 #
-# DRAFT 01 IS PRINTED WITHOUT --rebuild-ir (PLAN 2b-P): the print is OF the page that was locked and filmed
-# (the tag Recombination-Draft01-film_1.0). A rebuild moves the page under the film and the audio — if the score
-# moves, the whole loop is journal §2 "IF THE SCORE MOVES AGAIN" (the gates, the audio, the film, then this).
-# The rebuild goes through this piece's runner, tools/reextract.js, which re-runs the IR's OWN recorded build
-# (`provenance.build`) on a fresh copy of the save — the record is ~26 KB of command line, which a shell `eval`
-# does not survive here. [That line was re-pointed on 2026-10-03 and has NOT been run from this script.]
+# DRAFT 01 IS PRINTED WITHOUT --rebuild-ir (PLAN 2.16): the print is OF the page that was filmed (the tag
+# Approaching-Draft01-film_1.0). A rebuild moves the page under the film and the audio — if the score moves,
+# the page, the take and the film move first (PLAN 2.16, "if the score moves"), then this.
+# The exporter says "piece-Draft01d.json is NEWER than approaching.ir.json": true and meant — the save took the
+# take's fixes (keys that sound, levels) after the page was cut, and none of them is drawn (RUNNING_LOG §423).
+# The rebuild goes through tools/reextract.js, which re-runs the IR's OWN recorded build (`provenance.build`)
+# on a fresh copy of the save. [Carried from piece #6; NOT run from this script here.]
 #
 # Density, margins, the instructions' break: pass through, e.g.
 #   bash print/score/build.sh --sec 12
 #   bash print/score/build.sh --margin 0.4
-#   bash print/score/build.sh --insBreak "Gradient Curves"
+#   bash print/score/build.sh --insBreak "Language Music"
 #
-# THE SHEET IS A3 LANDSCAPE, kept at his word (LG-328, 2026-10-03): the Lake George call names no sheet
-# ("professional standards"), so the house format of pieces #4 and #5 stands — 419.7 x 296.8 mm drawn, inside
-# DIN A3. It is the exporter's default; Tabloid (11 x 17 in) is the US near-equivalent: --format tabloid-landscape,
-# and a cover for that sheet first (print/cover/make_cover.ps1 -Format tabloid-landscape).
+# THE SHEET IS A3 LANDSCAPE, at his word (2026-10-11, RUNNING_LOG §476 — "a yes"): the house format since the tubas —
+# 419.7 x 296.8 mm drawn, inside DIN A3. It is the exporter's default; Tabloid (11 x 17 in) is the US near-equivalent:
+# --format tabloid-landscape, and a cover for that sheet first (print/cover/make_cover.ps1 -Format tabloid-landscape).
 #
-# THE PIECE ENDS ON A FINAL BARLINE (2026-10-03, his eye on the whole PDF — RUNNING_LOG §772 · §773): thin + thick, LilyPond's "|."
-# (0.19 · 0.30 · 0.60 ss), ink, opaque, from the top staff's top line to the bottom staff's bottom line. It is the print's default —
-# export_print asks for it, the numbers are rules.json objects.finalBarLine, and check_print_pages FAILS a score without it. Nothing
-# to pass here; a later piece inherits it with the stack.
+# THE ELECTRONICS' LAYER IS ON PAPER, at his word ("b yes") — the grey panes and purple bars of the presentation score.
+# The pane's GRAIN is not: it is an SVG filter, and a filter prints as a picture (export_print drops it; --grain on keeps it).
+#
+# THE PIECE ENDS ON A FINAL BAR LINE at 783 s — this piece's page carries its own (the item `finalbar`, rules.json
+# objects.finalBar, RUNNING_LOG §411) through every lane; check_print_pages FAILS a score without exactly one.
 set -e
 cd "$(dirname "$0")/../.."
-OUT=print/score/Recombination-score-JYang.pdf
-IR=piece-decibel
-# one moment per section: the first sequence · section 2 · the second take -> take morph · the last chord
-AT=100,300,600,870
+OUT=print/score/Approaching-score-JYang.pdf
+IR=approaching
+# one moment per section: the opening · the three-body problem · the trills and accented long tones · the multiphonics ·
+# the audible beats · the scattered strikes
+AT=20,80,150,300,560,720
+# the density trio's moment: a page of section three (trills, bouncing balls, mic openings — the densest kind of page)
+DENS=150
 
 REBUILD=0
 PROOF=0
@@ -57,15 +61,14 @@ done
 if [ "$REBUILD" = "1" ]; then
   echo "=== REBUILDING $IR FROM ITS OWN provenance.build (tools/reextract.js) ==="
   # snapshot first: the IR schema is a GATE and a rejected build DELETES the page
-  # (PROJECT_JOURNAL, "THE TRAPS THIS DAY FOUND" #1; this piece's §632).
   cp "notation/ir/$IR.ir.json" "notation/ir/$IR.ir.json.bak"
   echo "  snapshot: notation/ir/$IR.ir.json.bak"
   IR="$IR" node tools/reextract.js ""
-  echo "=== IR rebuilt — the film and the audio are now of an OLDER page (journal §2, IF THE SCORE MOVES AGAIN) ==="
+  echo "=== IR rebuilt — the film and the audio are now of an OLDER page ==="
 fi
 
 # THE TWO CHECKS THAT MUST PASS BEFORE A PAGE IS BELIEVED:
-#   the frame  — the printed page is the filmed page (systems, labels, brackets, brace, census — from the ensemble)
+#   the frame  — the printed page is the filmed page (systems, labels, brackets, census — from the ensemble)
 #   the front  — the cover's face resolved, and no column is being clipped
 echo "=== CHECKS ==="
 node tools/check_print_frame.js --ir "$IR" --at "$AT"
@@ -75,12 +78,14 @@ if [ "$PROOF" = "1" ]; then
   echo "=== THE PROOF PAGES (one per section) ==="
   node tools/export_print.js --ir "$IR" --at "$AT" --out print/score/PROOF-A3-frame.pdf "${PASS[@]}"
   node tools/export_print.js --ir "$IR" --cover on --instructions on --pages 1 --out print/score/PROOF-front-matter.pdf "${PASS[@]}"
-  echo "=== THE DENSITY TRIO (the same moment at three densities — the staff never changes, only the time a page holds) ==="
-  node tools/export_print.js --ir "$IR" --sec 8.5 --at 300 --out print/score/PROOF-density-8.5.pdf
-  node tools/export_print.js --ir "$IR"           --at 300 --out print/score/PROOF-density-10.3.pdf   # the default = the film's own density
-  node tools/export_print.js --ir "$IR" --sec 12  --at 300 --out print/score/PROOF-density-12.pdf
+  echo "=== THE DENSITY TRIO (the same moment at three densities — the lane never changes, only the time a page holds) ==="
+  node tools/export_print.js --ir "$IR" --sec 8.5 --at "$DENS" --out print/score/PROOF-density-8.5.pdf
+  node tools/export_print.js --ir "$IR"           --at "$DENS" --out print/score/PROOF-density-10.3.pdf   # the default = the film's own density
+  node tools/export_print.js --ir "$IR" --sec 12  --at "$DENS" --out print/score/PROOF-density-12.pdf
+  echo "=== THE PAGE-EDGE CALLS (PLAN 2.16 step 2: page 1 · a page turn in the opening · a trill page with restated badges · the last page) ==="
+  node tools/export_print.js --ir "$IR" --at 1,12,157,782 --out print/score/PROOF-edge-calls.pdf "${PASS[@]}"
   echo "=== CHECKING THE PROOF FILES ==="
-  for F in print/score/PROOF-A3-frame.pdf print/score/PROOF-front-matter.pdf; do node tools/check_print_pdf.js --pdf "$F"; done
+  for F in print/score/PROOF-A3-frame.pdf print/score/PROOF-front-matter.pdf print/score/PROOF-edge-calls.pdf; do node tools/check_print_pdf.js --pdf "$F"; done
   echo "=== DONE (proofs) ==="
   exit 0
 fi
@@ -91,7 +96,7 @@ echo "=== CHECKING THE PDF ==="
 node tools/check_print_pdf.js --pdf "$OUT"
 echo "=== WALKING EVERY PAGE ==="
 node tools/check_print_pages.js --ir "$IR" "${PASS[@]}"
-echo "=== THE PAGE EDGES (PLAN 2c — the cut placed by the objects) ==="
+echo "=== THE PAGE EDGES (the cut placed by the objects) ==="
 node tools/check_print_edges.js --ir "$IR" "${PASS[@]}"
 echo "=== DONE ==="
 ls -la "$OUT"

@@ -40,7 +40,8 @@ const C = require(path.join(ROOT, 'notation', 'lib', 'rules.js')).loadContainer(
 const ENS = require(path.join(ROOT, 'notation', 'lib', 'layout.js')).ensembleFor(rd('notation/registry/ensemble.json'), (C.realizations || {})['video-jury']);
 const WANT = {
   systems: ENS.parts.reduce((a, p) => a + ((p.staves && p.staves.length) || 1), 0),
-  labels: ENS.parts.flatMap(p => (p.staff && p.staff.lines) ? p.staff.lines.map(l => l.short) : [p.short]).join(','),
+  // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] a part with `noLabel` draws no name (ensemble.json part 3, overlaid in the percussionist's lane)
+  labels: ENS.parts.filter(p => !p.noLabel).flatMap(p => (p.staff && p.staff.lines) ? p.staff.lines.map(l => l.short) : [p.short]).join(','),
   brbr: (ENS.groups || []).filter(g => g.kind === 'bracket').length + '/' + (ENS.groups || []).filter(g => g.kind === 'brace').length,
 };
 const LABEL_X = ((((C.engraving || {}).render || {}).partLabel || {}).xPx != null) ? C.engraving.render.partLabel.xPx : 4;
@@ -74,8 +75,13 @@ const probe = `
     // the terminal barline: static_page draws it as <g class="final-barline"> — the print's FINAL barline, a thin bar and a thick bar,
     // opaque (§772 · §773, his "keep this as part of the print score system for future scores"). The screen's grey page-edge bar
     // (a full-height rect WITH an opacity) does not count: a print that falls back to it fails here.
+    // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] A NOTATION MAY CARRY ITS OWN FINAL BAR LINE (the item finalbar — rules.json
+    // objects.finalBar, drawn by each lane as two <rect class="final-bar">, thin then thick, opaque, one unbroken bar through the lanes):
+    // it counts as the piece's final bar, and static_page then draws no second one. BOTH on one page = 2 here, and the walk fails.
+    const own=[...mus.querySelectorAll('rect.final-bar')];
+    const ownOk=own.length>=2&&own.length%2===0&&own.every(x=>!x.hasAttribute('opacity')&&!x.hasAttribute('fill-opacity'))&&parseFloat(own[0].getAttribute('width'))<parseFloat(own[1].getAttribute('width'));
     const endbar=[...mus.querySelectorAll('g.final-barline')].filter(g=>{const r=[...g.querySelectorAll('rect')];
-      return r.length===2&&r.every(x=>!x.hasAttribute('opacity')&&!x.hasAttribute('fill-opacity'))&&parseFloat(r[0].getAttribute('width'))<parseFloat(r[1].getAttribute('width'));}).length;
+      return r.length===2&&r.every(x=>!x.hasAttribute('opacity')&&!x.hasAttribute('fill-opacity'))&&parseFloat(r[0].getAttribute('width'))<parseFloat(r[1].getAttribute('width'));}).length+(ownOk?1:0);
     let outside=0;
     for (const el of pg.querySelectorAll('.hdr,.mus,.fol')) {
       const b=el.getBoundingClientRect();
@@ -95,6 +101,7 @@ const m = /data-m="([^"]*)"/.exec(c.stdout || '');
 if (!m) { console.error('no measurement came back from Chrome'); process.exit(1); }
 
 const LABELS = WANT.labels;
+const ELEC_NAMES = (() => { try { const P = (rd('notation/registry/rules.json').electronics || {}).players || {}; return Object.keys(P).map(k => P[k].label).filter(Boolean); } catch (e) { return []; } })();
 const rows = m[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&').split(' ;; ').map(s => s.split('|'));
 const music = rows.filter(r => r[1] === 'music');
 let bad = 0, endbars = [];
@@ -102,14 +109,20 @@ for (const [n, kind, sys, labels, brbr, ruler, folio, endbar, outside] of rows) 
   if (kind !== 'music') { if (verbose) console.log('  --   page ' + n + '  ' + kind); continue; }
   const problems = [];
   if (+sys !== WANT.systems) problems.push('systems ' + sys + ', expected ' + WANT.systems);
-  if (labels !== LABELS) problems.push('labels "' + labels + '" != "' + LABELS + '"');
+  // [decibel PLAN 2.16 step 6, RUNNING_LOG §480] THE ELECTRONICS' PLAYERS HAVE NAMES IN THE GUTTER TOO, where they play (this piece's three
+  // computer players of the three-body problem: rules.json electronics.players — Elec1 · Elec2 · Elec3, a small bracket and a name on
+  // every page their window crosses). So a page's labels are the ensemble's, and after them ANY of the registered players' names, in
+  // the registry's order — nothing else. A page without them is the ensemble's alone, as before.
+  const extra = labels.startsWith(LABELS) ? labels.slice(LABELS.length).split(',').filter(Boolean) : null;
+  const elecOk = extra && extra.every(x => ELEC_NAMES.includes(x)) && extra.join(',') === ELEC_NAMES.filter(x => extra.includes(x)).join(',');
+  if (labels !== LABELS && !(extra && extra.length && elecOk)) problems.push('labels "' + labels + '" != "' + LABELS + '"' + (ELEC_NAMES.length ? ' (+ any of ' + ELEC_NAMES.join(' · ') + ')' : ''));
   if (brbr !== WANT.brbr) problems.push('brackets/brace ' + brbr + ', expected ' + WANT.brbr);
   const [ticks, clocks] = ruler.split('/').map(Number);
   if (!(ticks > 3)) problems.push('ruler has ' + ticks + ' lines');
   if (!(clocks >= 1)) problems.push('ruler has no clock numbers');
   if (!/\d+:\d\d\s+–\s+\d+:\d\d/.test(folio)) problems.push('folio reads "' + folio + '"');
   if (+outside) problems.push(outside + ' block(s) outside the sheet');
-  if (+endbar) endbars.push(+n);
+  for (let k = 0; k < +endbar; k++) endbars.push(+n);   // one entry a final bar: two on a page fail the "exactly once" below
   if (problems.length) { bad++; console.log('  FAIL page ' + n + '  ' + problems.join(' · ')); }
   else if (verbose) console.log('  OK   page ' + n + '  ' + labels + '  ruler ' + ruler + '  folio ' + folio);
 }

@@ -50,7 +50,9 @@ const ENS = Layout.ensembleFor(rd('notation/registry/ensemble.json'), rz);
 // THE EXPECTED FRAME, from the ensemble
 const WANT = {
   systems: ENS.parts.reduce((a, p) => a + ((p.staves && p.staves.length) || 1), 0),
-  labels: ENS.parts.flatMap(p => (p.staff && p.staff.lines) ? p.staff.lines.map(l => l.short) : [p.short]).join(','),
+  // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] a part with `noLabel` draws no name (the percussionist's two parts are overlaid in ONE
+  // lane under one name, DEC-88: ensemble.json part 3) — the expected labels leave it out, as the page does
+  labels: ENS.parts.filter(p => !p.noLabel).flatMap(p => (p.staff && p.staff.lines) ? p.staff.lines.map(l => l.short) : [p.short]).join(','),
   brackets: (ENS.groups || []).filter(g => g.kind === 'bracket').length,
   braces: (ENS.groups || []).filter(g => g.kind === 'brace').length,
 };

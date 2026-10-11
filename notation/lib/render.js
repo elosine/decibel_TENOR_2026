@@ -115,12 +115,32 @@
       default: return null;
     }
   }
+  // [decibel PLAN 2.16 step 2, RUNNING_LOG §477] A BADGE'S INK FOR THE PRINT PLAN — [left, right] in staff spaces from x(it.t), by the
+  // very numbers the badge branch of renderSection places it with: its row's size and gap (objects.badge · elecBadge · stateSign, a
+  // method's badge scaled by objects.methodBadge.scale), its place (before · at · after), its slot, its dx. The print planner could not
+  // measure a badge (§396 · §398: a badge before its mic opening hung back across a page cut), so a cut could fall between a badge and
+  // what it announces. With this span a badge is part of the UNIT at its time, and the mic opening, the trill, the line or the pane
+  // that begins there goes over the page WITH it. PRINT ONLY, deliberately: it is read by inkSpanSs (the print plan), NOT by spanSsOf —
+  // on the screen a badge has its own clamp (page_rules edge.badge), and its span inside a unit would move the film's pages.
+  // 'topGap' (a trill's badge beside its go line) needs the lane's half gap, which only a view knows: 0.3 ss stands in, a little wide.
+  function badgeSpanSs(it, E) {
+    const elec = it.row === 'elec', meth = it.row === 'method', stt = it.row === 'state';
+    const BG = elec ? E.elecBadge : stt ? E.stateSign : E.badge, MO = E.micOpening || {};
+    if (!BG || !(BG.sizeSs > 0)) return null;
+    const bs = BG.sizeSs * (meth && E.methodBadge ? E.methodBadge.scale : 1), gap = BG.gapSs || 0;
+    const dx = it.dx === 'topGap' ? (MO.gapSs || 0) + 0.3 : (it.dxSs || 0);
+    const off = it.place === 'at' ? 0 : it.place === 'after' ? gap : -(gap + bs);
+    const l = dx + off - (it.slot ? it.slot * (gap + BG.sizeSs) : 0);
+    return [l, l + bs];
+  }
   const _stampsOf = new WeakMap();
   // the same span for a caller with no view (export_print's plan): the registry's engraving merged over the defaults, as renderSection does
   function inkSpanSs(it, glyphs, engraving) {
+    const E = Object.assign(engravingDefaults(), engraving || {});
+    if (it.k === 'badge') return badgeSpanSs(it, E);
     let S = _stampsOf.get(glyphs);
     if (!S) { S = boxForOf(Stamps.makeStamps(glyphs)); _stampsOf.set(glyphs, S); }
-    return spanSsOf(it, { boxFor: S, glyphs, E: Object.assign(engravingDefaults(), engraving || {}) });
+    return spanSsOf(it, { boxFor: S, glyphs, E });
   }
   // a GC item's reach in SECONDS — [pre, post] — by the params render draws it with (the registry preset under the item's own)
   function gcPrePost(it, engraving) {
@@ -162,7 +182,16 @@
       const bands = view.systems.map(s => [s.yTopPx, s.yBotPx, s.ssPx]).sort((a, b) => a[0] - b[0] || b[1] - a[1]);
       const lanesY = [];
       for (const b of bands) { const L = lanesY[lanesY.length - 1]; if (L && b[0] < L[1] - 1e-6) L[1] = Math.max(L[1], b[1]); else lanesY.push(b.slice()); }
-      const th = E.laneLine.thickSs * lanesY[0][2], xa = view.marginLeftPx || 0, xb = view.widthPx - (view.marginRightPx || 0), ys = [];
+      const th = E.laneLine.thickSs * lanesY[0][2], xa = view.marginLeftPx || 0, ys = [];
+      let xb = view.widthPx - (view.marginRightPx || 0);
+      // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] ON PAPER THE LANES END AT THE FINAL BAR LINE: on a print page (opts.printEdges) that
+      // holds the notation's own final bar (an item `finalbar`), the lane lines stop at the bar's right edge — a sheet does not run on past
+      // the end of the piece. The screen and the film (no printEdges) are untouched: there the dividers run on, as built at §411.
+      if (opts && opts.printEdges && E.finalBar) {
+        const fbIt = ((model && model.systems) || []).reduce((f, sm) => f || (sm.items || []).find(it => it.k === 'finalbar'), null);
+        if (fbIt && fbIt.t > view.window[0] && fbIt.t <= view.window[1])
+          xb = Math.min(xb, view.xOfSeconds(fbIt.t) + (E.finalBar.thinSs + E.finalBar.gapSs + E.finalBar.thickSs) * lanesY[0][2]);
+      }
       for (let i = 0; i + 1 < lanesY.length; i++) ys.push((lanesY[i][1] + lanesY[i + 1][0]) / 2);
       if (E.laneLine.outer) { ys.unshift(lanesY[0][0]); ys.push(lanesY[lanesY.length - 1][1]); }
       if (ys.length) parts.push('<g class="lane-lines" fill="' + E.laneLine.colour + '">' + ys.map(y => '<rect x="' + xa.toFixed(2) + '" y="' + (y - th / 2).toFixed(2) +
@@ -582,6 +611,22 @@
           // the drawn level curve over the FULL lane band (piece #1: value
           // 0..1 maps bottom -> top of the track), clipped to the window
           if (!crosses(it.t0, it.t1)) continue;
+          // [decibel PLAN 2.16 step 2, RUNNING_LOG §477 — the second of §396's three print calls; the AI's recommendation, his eye at the
+          // proof] ON PAPER A CURVE THAT COMES OVER FROM THE PAGE BEFORE IS RESTATED BY ITS BADGE. A level curve is `continue` in print:
+          // broken at the cut and carried on. The page it arrives on would show a curve with nothing to say what it is a curve OF (the
+          // lineage restated a trill's line with "(tr)"; here a trill is its badge). So on a PRINT page (opts.printEdges), a curve that
+          // began before the page's start draws the badge that stands at its own start — the same sign, the same size and row — at the
+          // page's start, the badge's usual side gap in from the edge. The screen and the film (no printEdges) never do this.
+          if (PRE && it.t0 < w0 - 1e-6 && it.t1 > w0 + 1e-6 && E.badge && E.language && E.micOpening) {
+            const tb = (sysModel.items || []).find(x => x.k === 'badge' && x.place === 'at' && !x.row && Math.abs(x.t - it.t0) < 1e-6);
+            const tyR = tb && E.language.types && E.language.types[tb.type];
+            if (tyR) {
+              const bsR = E.badge.sizeSs * ssPx, uR = E.language.format.viewUnits;
+              const bxR = view.xOfSeconds(w0) + E.micOpening.gapSs * ssPx + laneHalfGapPx, byR = micRow(E.micOpening).yOf(bsR);
+              parts.push('<g class="badge badge-' + esc(tb.type) + ' badge-restated" transform="translate(' + bxR.toFixed(2) + ' ' + byR.toFixed(2) + ') scale(' + (bsR / uR).toFixed(5) + ')">' +
+                '<rect width="' + uR + '" height="' + uR + '" rx="' + E.language.format.cornerUnits + '" fill="' + E.language.format.ground + '"/>' + String(tyR.sign).split('currentColor').join(tyR.colour) + '</g>');
+            }
+          }
           const EC = E.envCurve;
           // [2f.4] band 'lane': a multi-staff part's curve spans its whole lane (the piano's trills), as its go line does
           const yT = it.band === 'lane' ? lane.yTopPx : sys.yTopPx, yB = it.band === 'lane' ? lane.yBotPx : sys.yBotPx;

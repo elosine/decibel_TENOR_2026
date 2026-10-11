@@ -78,7 +78,12 @@
     // container engraving.render.systemEndBar.final. Only when the caller asks (`finalBar` — export_print): the screen and the film
     // keep their edge bar byte for byte.
     const fb = eb && eb.final;
-    if (o.finalBar && fb && view.systems.length && endInWindow) {
+    // [decibel PLAN 2.16 step 1, RUNNING_LOG §476] a notation that carries its OWN final bar line (an item `finalbar`, §411) ends on that
+    // one — on paper too: the print's is not drawn over it (the last page had two, a second of time apart). The screen never asks.
+    const ownFinal = ((o.model && o.model.systems) || []).some(sm => (sm.items || []).some(it => it.k === 'finalbar'));
+    if (o.finalBar && ownFinal) {
+      /* the notation's own final bar is the piece's; nothing appended */
+    } else if (o.finalBar && fb && view.systems.length && endInWindow) {
       const sysTop = view.systems[0], sysBot = view.systems[view.systems.length - 1];
       const linesOf = sys => { const sm = ((o.model && o.model.systems) || []).find(m => (m.key !== undefined ? m.key : m.part) === sys.part); return (sm && sm.staffLines) || [-2, -1, 0, 1, 2]; };
       const ys = sysTop.yOfSs(Math.max(...linesOf(sysTop))), ye = sysBot.yOfSs(Math.min(...linesOf(sysBot)));

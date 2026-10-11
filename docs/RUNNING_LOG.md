@@ -9188,3 +9188,73 @@ Sources: Szebehely, "Review of the dynamical aspects of triple systems" (IAU Col
 **Put to him with the top line (the only things that are his before the build):** the sheet (A3 landscape, the house's — the call's own word is his) · the electronics' layer on paper, as the film (assumed yes) · the parts are NOT in this item · the cover's three lines. Everything else is shown at the proof.
 
 **Also in this entry — nothing built, nothing run:** no tool of the print chain was executed; the plan's facts about them are read from their files' headers and from piece 5's record.
+
+## §476. HIS FOUR "YES" AND "GO BUILD"; THE PAPER'S TITLE; PLAN 2.16 STEP 1 BUILT — the frame and the paper (2026-10-11, Opus 5.5)
+
+**His words on the top line's four questions:** *"a yes, b yes, c yes, d yes; go build"* — a · the sheet is A3 landscape · b · the electronics' layer is on paper, as the film · c · the full score only, the parts not in this item · d · the cover's three lines: *Approaching* / "for bass flute, bass clarinet, percussion, viola, cello and electronics" / Justin Yang. Built here, in the same session, at his word.
+
+**Mid-build, two messages of his:**
+- *"Notation, Performance and Sonification Practices in the Composition Approaching and in Improvisation with Live Electronics -tentative title for paper"* — THE PAPER'S TITLE, TENTATIVE. Written into PLAN.md § 4 and CLAUDE.md's paper block. (The AI's reading, marked: three subjects — notation · performance · sonification; the record should say which an entry bears on.)
+- *"also pls document the research and references you surfaced recently with james saunders et al"* — done as **`docs/PAPER_REFERENCES.md`**: the interaction-score literature of §465 and the physics of §469, each reference with how sure its citation is (✔ seen on its own page · ◐ partly confirmed · ✗ the AI's memory only), what was looked for and not found, and what has not been researched at all (the screen-score literature, sonification, the improvisation). A pointer in CLAUDE.md's orient list.
+
+**STEP 1 — THE FIRST RUN, read not assumed** (`node tools/export_print.js --ir approaching --htmlOnly --at 20,80,150,300,560,720`, looked at through `tools/print_look.js`, ten pages in all over the step): A3 landscape 420 × 297 mm, margin 12.7 mm, music block 394 × 258 mm · **5 lanes**, a lane 50.1 mm, the staff 7.55 mm where it shows (the lineage's number to the hundredth) · **10.32 s a page**, the film's own density · **77 pages for 784 s** · the frame `BFl · BCl · Perc · Va · Vc`. What the pages draw: the lanes and the thin lines between them · the five names and the two brackets in the gutter · the staff with its clefs through the beating section only · the mic openings, the badges, the panes with their purple bars, the state wedges and state signs, the trill curves, the GC arcs, the sine boxes, the players' orange lines · Elec1 · Elec2 · Elec3 with their small brackets on the three-body pages · the time ruler and the folio (`m:ss – m:ss`) · no section marks · **page 1 opens at 0:00, placed by its objects — no 4 s lead-in on paper**, as piece 5's. The exporter's note "piece-Draft01d.json is NEWER than approaching.ir.json" is true and meant: the save took the take's fixes after the page was cut and none of them is drawn (§423).
+
+**THE FRAME CHECK** (`node tools/check_print_frame.js --ir approaching --at 20,80,150,300,560,720`): the census was IDENTICAL in every system at all six moments from the first run — the printed page is the filmed page. It failed on one thing: it wanted a name for every part, and this ensemble's part 3 (the mallets, overlaid in the percussionist's lane) has `noLabel`. Re-pointed to the data, in it and in `check_print_pages.js`: a part with `noLabel` contributes no name. **PASS, six moments; the bite proven** (`--sec 11` → "THE WINDOWS DIFFER").
+
+**THREE THINGS THE FIRST PAGES SHOWED, each fixed for paper only:**
+- **the grain** — 59 uses of the noise filter in six pages. `export_print.js` drops the filter and its rectangles from the PRINT page (`--grain on` keeps them); the frame check's `--plan screen` page keeps the grain, as the film does. The pane's fill and outline stay.
+- **two final bar lines on the last page**, a second of time apart: this piece's own at 783 s (the item `finalbar`, through every lane) and the print's at the page's end (784 s, `finalBar: true`). `notation/lib/static_page.js`: when the notation carries its own, the print's is not drawn. `check_print_pages.js` now counts the notation's own (`rect.final-bar`, thin then thick, opaque) and counts BOTH kinds, so two on a page fail.
+- **the lanes ran on past the final bar** to the sheet's edge. `notation/lib/render.js`: on a PRINT page that holds the notation's final bar, the lane lines stop at its right edge. (On the screen they run on, as built at §411.)
+
+**`print/score/build.sh` is this piece's:** out `print/score/Approaching-score-JYang.pdf` · the page `approaching` · the six proof moments · the density trio at 150 s (a page of section three, the densest kind) · `--rebuild-ir` left in, not used.
+
+**The AI's calls here, his to reverse:** no grain on paper · the lanes ending at the final bar on the last sheet · the ruler still runs the last second to 784 s (the page's end), past the bar — left.
+
+## §477. PLAN 2.16 STEP 2 BUILT — THE PAGE EDGES ON PAPER: the planner measures a badge; three print rules; the gate green (2026-10-11, Opus 5.5)
+
+**The gate's first run on the whole page** (`node tools/check_print_edges.js --ir approaching`): 77 pages, 864 point items each owned once, 734 long items (414 mic openings · 110 return bricks · 93 panes · 48 wedges · 35 sine boxes · 34 curves), 10 pages pushed, 0 forced — and **3 FAILURES**: pages 4 · 47 · 62, "element(s) straddle the clef gutter". All three were badges hanging back across a cut: the one foretold at §398, and two more in the beating section (the audible beats' badge before a player's line).
+
+**THE BADGE MEASURED** (`notation/lib/render.js` `badgeSpanSs`, read through `inkSpanSs`): a badge's ink in staff spaces from its time, by the numbers the renderer places it with — its row's size and gap (`objects.badge` · `elecBadge` · `stateSign`; a method's badge × `objects.methodBadge.scale`), its place (before · at · after), its slot, its dx. **PRINT ONLY, by construction:** the span is given to the print plan and NOT to `spanSsOf`, which the screen's clamp also reads — on the screen a badge has its own clamp, and its span inside a unit would have moved the film's pages. With it, a badge is part of the unit at its time, and the opening, the trill, the line or the pane that begins there goes over the page WITH it.
+
+**THREE RULES FOR PAPER** (§396's three print calls, built to the AI's recommendation, his eye at the proof):
+- **(a) a short mic opening is never cut** — `page_rules.json` `edge.mic.printWholeUnderSs` 20: an opening shorter than 20 staff spaces of paper (about a second at this density) is whole; `splice.js` `edgeIntervals` reads the row. The half-second boxes of sections one and three; a multiphonic's recording and a strike's window still take the cut by the stub rule.
+- **(b) a trill's curve that comes over a cut is restated by its badge** — `render.js`, on a print page: a curve begun before the page's start draws the badge of its own start at the page's start, the usual side gap in. Fifteen in the score, on print pages 14 … 20.
+- **(c) the GC stays whole** — nothing built; the count is the gate's (14 pages pushed in all).
+
+**TWO MORE, met on the pages:**
+- **the strikes' badges** (`avoid: 'mic'`: before the opening where free, else after it, else none — §411) are decided by the renderer on the page. The plan first held BOTH places as one block: one page FORCED (page 72, a run of strikes longer than a sheet). Rebuilt: the plan now decides each badge's place THE SAME WAY as the renderer (`splice.js`, in staff spaces instead of pixels) — 0 forced.
+- **the film's hand-placed badges** (`--micBadgeAfter 8.151,140.158,154.677`, §397 · §398): two of the three are page-turn cases of the FILM and stand mid-page on paper, after their box, where every other badge stands before. `export_print.js`, print only: such a badge stands BEFORE its opening on paper — unless another opening of the same player ends less than half a second before (the percussionist's pair at 154.6 s: a neighbour, not a page turn; his placement stands). The first version put all three back and the percussionist's badge landed on his first box — seen on the page, corrected.
+
+**THE GATE, after:** `check_print_edges: PASS` — 77 pages · 62 full · 14 pushed (142 objects moved whole) · 0 forced · 6 pages end more than half a second early, at most 1.14 s (11 % of the width) · no timed ink in the gutter, none past a system's end · 144 GC arcs = 144 dots = 144 owned strikes · 49 curve paths, none from a neighbouring page.
+
+**THE FILM UNTOUCHED, proven:** the screen's own pages (`export_print --plan screen`, the same `StaticPage` and `Render` the film draws through), the whole piece, with the three changed libraries (`render.js` · `static_page.js` · `splice.js`) and with the committed ones: **the same sha256** (`155d5513…`). `check_screen_edges --ir approaching` PASS · `check_rules` 31 of 32 (this piece's green).
+
+**Seen on the pages and NOT built — for the proof, his:** a sine's purple box that comes over from the page before shows no note head on the new page (the pitch is not restated) — the open point of the beating section's notation, sharper on paper than on the screen.
+
+## §478. PLAN 2.16 STEP 3 BUILT — THE COVER (2026-10-11, Opus 5.5)
+
+`print/cover/cover.json` → `print/cover/cover-a3-landscape.svg` by `powershell -ExecutionPolicy Bypass -File print/cover/make_cover.ps1`: *Approaching* / "for bass flute, bass clarinet, percussion, viola, cello and electronics" / Justin Yang, the house style. **On TWO rows the title is 86.5 pt (house 99); on ONE row 51 pt** — the two-row cover is the committed one (his choice for piece 5's), the one-row made beside it for the proof (`--Words` · `-Out` into the scratchpad; the exporter's new `--coverFile <svg>` prints it). `check_print_front`: the face RESOLVED (EngraversGothic BT, drawn 488 pt against 487.2 measured, drift 1.8 %).
+
+## §479. PLAN 2.16 STEP 4 BUILT — THE INSTRUCTIONS ON PAPER: two sheets (2026-10-11, Opus 5.5)
+
+**What the exporter learned** (`tools/export_print.js`, nothing that names this piece):
+- **the title strip** — a page that opens with `.title-block` (the piece · its instruments · the composer) and `<h1 class="doc-name">`: the strip leads with the document's name and carries the block's three lines beside it ("Performance Instructions — *Approaching — for bass flute … — Justin Yang, 2026*"); the block and the heading leave the columns. The old pattern (`<h1>` + `<p class="subtitle">`) still works.
+- **the blocks** — `.badge-list` / `.badge-row` (a small image, its text beside it) · `.ways` / `.way-row` (image left, text right) · `.way-wide` (a wide image, its text under it) · `.demo-link`; each row kept whole, a list never parted from the line that introduces it; the gaps and the image column's share read from the page's stylesheet.
+- **which text an image belongs to** — a new word on the page's stylesheet, `:root { --figure-belongs: above }` (`docs/notation_instructions/styles.css`): on this page an image stands UNDER the text it illustrates (his rule of §448). The exporter held an image to the text on BOTH sides (piece 5's page, where a sentence under a figure explained it) — here that chained a whole section (text · image · text · image …) into one unbreakable block. With the word, only the text above is held.
+- **the grain, again** — a score image is a crop of the score and carries the pane's grain: the first front-matter proof held **20 raster images**, every one a grain. Dropped at the inlining, as on the music pages.
+
+**NITS's worry about two image scales was unfounded:** the page's one rule (an image's width = its `--w` / 1920 of the column) already covers the four whole-page crops, and the print applies the same rule to its own column. Nothing built; seen right on the proof.
+
+**THE RESULT:** the instructions print on **TWO sheets**, two columns each, the break MEASURED before *Live Electronics* (sheet 1: the blurb · Instrumentation · Animated Conduction Tools · Language Music; sheet 2: Live Electronics · Three-Body Problem). `check_print_front` PASS: columns 929 · 814 and 806 · 674 of 980 px — nothing clipped.
+
+## §480. PLAN 2.16 STEPS 5 · 6, THE AI'S HALF — the proofs made and measured; the whole score rendered, the five gates green (2026-10-11, Opus 5.5)
+
+**The proofs** (`bash print/score/build.sh --proof`, and two more): `PROOF-A3-frame.pdf` (six pages, one a section) · `PROOF-front-matter.pdf` (the cover on two rows · the two instruction sheets · music page 1) · `PROOF-cover-one-row.pdf` · `PROOF-density-8.5.pdf` · `-10.3.pdf` · `-12.pdf` (the same moment of section three; 94 · 77 · 66 pages for the piece) · `PROOF-edge-calls.pdf` (page 1 · the page turn at 0:09 · a trill page with restated badges · the last page). Each MEASURED: the sheet 1189.92 × 840.96 pt, inside DIN A3 · the fonts embedded · **0 raster** · the one link kept.
+
+**The whole score** (`bash print/score/build.sh`): **`print/score/Approaching-score-JYang.pdf` — 80 pages (the cover · 2 of instructions · 77 of music), 1.57 MB.** The five gates: **frame PASS** (six moments) · **front PASS** · **pdf PASS** (0 raster, 0 fonts not embedded) · **pages PASS** (77 music pages carry the frame, a ruler and a folio; the final bar line exactly once, on the last) · **edges PASS** (0 forced).
+
+**The page walk's one fault, re-pointed:** `check_print_pages.js` failed ten pages for carrying "Elec1, Elec2, Elec3" after the ensemble's five names. The electronics' players are registered (`rules.json` `electronics.players`): a page's labels are the ensemble's, and after them any of those names, in the registry's order — nothing else.
+
+**The AI's look:** twenty-odd pages as pictures over the build (page 1 · the first page of each section · a page inside each · the three-body's first page with its two announcing badges · the last page · both instruction sheets · the cover) — nothing outside the block, nothing on top of something it should not be.
+
+**OWED, HIS (step 5):** his eye on the proofs — the cover's rows · the density · the three edge calls and the pane without grain · the sine box that comes over a page with no note head · the instructions on two sheets. Then his eye on the whole file (step 6), then the archive and the tag (step 7).

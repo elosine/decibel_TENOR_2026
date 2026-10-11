@@ -331,3 +331,10 @@ h1.doc-name { margin-bottom: 0.622em; }
 /* Approaching 2026-10-11 (RUNNING_LOG §459): two text blocks in a row inside a section (the Live Electronics' opening paragraph
    and the first of its items) stand a SECTION space apart — 27.8 px by piece 5's 0.8em, 29.2 with this. */
 .notation-section .description + .description { margin-top: 0.88em; }
+
+/* Approaching 2026-10-11 (PLAN 2.16 step 4, RUNNING_LOG §479): FOR THE PRINT SCORE'S INSTRUCTION PAGES. On this page a score image
+   stands UNDER the text it illustrates (his rule of §448: "an image belongs to the text above it"). tools/export_print.js reads this
+   one word: `above` = on paper an image is never parted from the text above it, and the text after it may start a new column;
+   without the property an image is held to the text on both sides (piece 5's page, where a sentence under a figure explained it).
+   The page in the browser does not use it. */
+:root { --figure-belongs: above; }

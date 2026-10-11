@@ -248,14 +248,14 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
 
 ## The performance instructions' page (2026-10-11, RUNNING_LOG §433)
 
-- **The print score's instruction pages do not know this page's title block.** `tools/export_print.js` (its `instructionPages`, ~line 467)
+- ☑ DONE 2026-10-11 (PLAN 2.16 step 4, RUNNING_LOG §479: the exporter reads the block by class; the strip leads with the document's name). *As noted:* **The print score's instruction pages do not know this page's title block.** `tools/export_print.js` (its `instructionPages`, ~line 467)
   takes an `<h1>` followed by `<p class="subtitle">` as the title strip of each instruction page. Since §433 the page opens with
   `.title-block` (the piece · its instruments · the composer) and then `<h1 class="doc-name">`: the pattern does not match, so the strip
   falls back to "Performance Instructions" with no subtitle and the title block flows into the first column. To do WHEN THE PRINT SCORE
   IS MADE: teach the exporter the block (the strip's two spans from `.piece-title` and `.piece-for` · `.piece-by`), or his word on
   what the printed strip says.
 
-- **The instruction pages of the print score do not know two of this page's layouts** (2026-10-11, RUNNING_LOG §442 · §454): the list of
+- ☑ DONE 2026-10-11 (PLAN 2.16 step 4, RUNNING_LOG §479: the badge lists and the two-column rows are kept on paper; the two image scales needed nothing — the page's one rule already covers the whole-page crops). *As noted:* **The instruction pages of the print score do not know two of this page's layouts** (2026-10-11, RUNNING_LOG §442 · §454): the list of
   badges (`.badge-list` / `.badge-row`: a badge, its name and text beside it) and the ways a type is notated (`.ways` / `.way-row`:
   an image left, its text right; `.way-wide`: a whole-page image with its text under it). `tools/export_print.js` carries its own
   stylesheet for the instruction pages (`.cols …`) and sizes an image by its class `zoomed` and `--w`; in its two narrow columns these

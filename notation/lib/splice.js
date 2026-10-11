@@ -202,8 +202,35 @@
     for (const sys of (model && model.systems) || []) {
       const items = sys.items || [];
       const units = new Map();
+      // [decibel PLAN 2.16 step 2, RUNNING_LOG §477] A BADGE THAT KEEPS ITS MIC OPENING CLEAR (`avoid: 'mic'`, with its opening's end tEnd —
+      // §411) is drawn BEFORE its opening where that place is free, else AFTER the opening's end where that is free, else NOT AT ALL.
+      // The renderer decides it once a lane, in time order (render.js avoidPlace); the plan decides it HERE THE SAME WAY, in staff
+      // spaces instead of page pixels (the differences are the same): free = on no other mic opening of the lane and on no badge
+      // already placed. So the plan knows where each such badge's ink is — before: in its opening's unit; after: one object with its
+      // opening, from the opening's start to the badge's right edge; none: no ink.
+      const avoidPlan = new Map();
+      {
+        const AV = items.filter(x => x.k === 'badge' && x.avoid === 'mic' && x.tEnd != null && !x.row).sort((p, q) => p.t - q.t);
+        if (AV.length && P('badge') === 'whole' && o.secPerSs > 0) {
+          const X = t => t / o.secPerSs, TOL = 0.06;
+          const mics = items.filter(x => x.k === 'mic').map(m => [X(m.t0), X(m.t1)]), placed = [];
+          for (const b of AV) {
+            const e = o.inkSpanSs(b);
+            if (!e) continue;
+            const bs = e[1] - e[0], gp = -e[1];
+            const free = (x0, own) => !mics.some(m => m !== own && m[1] > x0 + TOL && m[0] < x0 + bs - TOL) && !placed.some(q => q + bs > x0 + TOL && q < x0 + bs - TOL);
+            const own = mics.find(m => Math.abs(m[0] - X(b.t)) < 1e-3 && Math.abs(m[1] - X(b.tEnd)) < 1e-3) || null;
+            const xB = X(b.t) - gp - bs, xA = X(b.tEnd) + gp;
+            const where = free(xB, own) ? 'before' : free(xA, own) ? 'after' : 'none';
+            avoidPlan.set(b, where);
+            if (where !== 'none') placed.push(where === 'before' ? xB : xA);
+            if (where === 'after') out.push({ a: b.t, b: b.tEnd + sec(gp + bs), kind: 'badge (after its opening)', part: sys.part, t: b.t });
+          }
+        }
+      }
       for (const it of items) {
         if (it.t === undefined || it.k === 'gc' || P(it.k) !== 'whole') continue;
+        if (avoidPlan.has(it) && avoidPlan.get(it) !== 'before') continue;   // its ink is not before its opening (after: the object above · none: no ink)
         const e = o.inkSpanSs(it);
         if (!e) continue;
         const u = units.get(key(it.t)) || { t: it.t, a: Infinity, b: -Infinity };
@@ -227,6 +254,15 @@
         } else if ((pv === 'stub' || pv === 'continue') && isFinite(it.t0) && isFinite(it.t1)) {
           if (it.k === 'brick' && o.hideBricks) continue;
           const u = units.get(key(it.t0));
+          // [decibel PLAN 2.16 step 2, RUNNING_LOG §477 — the first of §396's three print calls] A SHORT LONG-KIND IS WHOLE: a kind whose
+          // row carries `printWholeUnderSs` (page_rules.edge — the mic opening) is never cut when it is shorter than that on paper. A
+          // half-second box cut into a stub and a remainder reads as two boxes; the long ones (a multiphonic's recording, a strike's
+          // window) may still take the cut by the stub rule below.
+          const wholeUnder = o.edge && o.edge[it.k] && o.edge[it.k].printWholeUnderSs;
+          if (wholeUnder > 0 && it.t1 - it.t0 < sec(wholeUnder)) {
+            out.push({ a: u ? Math.min(u.a, it.t0) : it.t0, b: it.t1, kind: it.k + ' (whole: short)', part: sys.part, t: it.t0 });
+            continue;
+          }
           const lineStart = it.t0 + (it.dx0Ss ? sec(it.dx0Ss) : 0);
           const need = Math.max(u ? u.b : it.t0, lineStart) + o.stubSec;
           out.push({ a: u ? Math.min(u.a, it.t0) : it.t0, b: Math.min(need, it.t1), kind: it.k + ' (head + stub)', part: sys.part, t: it.t0 });
