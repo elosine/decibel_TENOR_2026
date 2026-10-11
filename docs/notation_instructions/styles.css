@@ -323,3 +323,7 @@ h1.doc-name { margin-bottom: 0.622em; }
 .notation-section .way-wide img.zoomed { display: block; margin: 0; }
 .way-wide p { margin: 0.8em 0 0 0; }
 .way-text p { margin: 0; }
+
+/* Approaching 2026-10-11 (RUNNING_LOG §458): a section that ends on the two-column rows stands a SECTION space above the next
+   heading, as one that ends on an image does (§441) — the last row's bottom edge taken as its baseline. */
+.notation-section > .ways:last-child { margin-bottom: 1.19em; }

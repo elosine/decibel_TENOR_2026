@@ -8931,3 +8931,18 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - f · … next to a yellow box **calls for** this language, played within the duration of the yellow box.
 
 **The AI's recommendation:** e — the plain imperative, the usual voice of performance instructions, and it carries to the other two unchanged ("When a language type has a gradient curve, play that language following the gradient of the curve."). If the sign should stay the subject of the sentence: a.
+
+## §458. A NEW SECTION — LIVE ELECTRONICS; and four saves of his own on the page (2026-10-11, Opus 5.5)
+
+**His words:** *"New section, please, live electronics."*
+
+**On the page:** the heading *Live Electronics*, last on the page, nothing under it yet. (A first try put an empty paragraph under it for him to type into; taken back within the minute — the Edit switch drops an empty paragraph at a Save, and one typed into it afterwards would be filed after the line before it, in the section above. A section's first paragraph is the AI's to place, at his dictation.)
+
+**READ FROM THE MACHINE — he has been writing on the page himself:** four more safety copies (11:07:59 · 11:10:56 · 11:15:33 · 11:17:19). What his hand changed, from the diff:
+- **the gradient curve:** *A language type with a gradient curve **indicates that you would play** that language type following the gradient of the curve. In the pictured example, the curve **represents** trill intensity. This could be a combination of speed and volume, **and/or** any other parameters a performer **would** use to develop a gradient of trill intensity.*
+- **the coloured line:** *A language music badge with an extended colored line **indicates that you would play** this language type freely throughout the duration of the line. Line thickness gives a general indication of density or intensity, to be interpreted freely. **Each language type is assigned a color, the color of the badge.*** — the colour remark out of its parentheses and into a sentence of its own at the end: the placing the AI had recommended at §450 (b), in his own words.
+- **the scattered strikes' two forms, rewritten whole:** *Scattered strikes are notated in two different ways. For some of the scattered strikes there is a specific rhythm notated for the strike using bouncing-ball conductors. Others have a time-window within which a strike is to occur, indicated by a yellow duration box. In these cases, the ensemble would try to create a scattered strike within the time frame of the yellow box.* — "Each performer will have the same time frame" is gone, by his hand. (He typed "Scattared"; put right — spelling only, the practice of piece 5's page.)
+
+**So §457's question is answered by what he did, not by a letter:** he kept "indicates that you would" and carried it himself to the two other sentences — the one grammar he was after. The AI's six alternatives were not taken.
+
+**The method, now that there are two writers:** every edit of this turn was made from the file as it stood on disk after his last save (a script that touches only its own two places), after listing `versions/`. His page, if still in Edit, is older than the file again: said to him first.
