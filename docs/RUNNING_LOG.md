@@ -8759,3 +8759,11 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **The badges are the chosen ones, from the bank — not drawn again:** `node tools/language/to_instructions.js` (new) writes `docs/notation_instructions/images/badge_<type>.svg` for every chosen type through `tools/language/badge_lib.js`, the drawing the working page of §307 and the notation registry (`to_rules.js`) share. Three readers of one bank now: the candidates' page, the score, the instructions. **Their size is the score images' one scale** (piece 5's rule): a badge is 41.9 px in the frame, 84 in the zoomed frame, so `--w 84` — 36.8 px on the page, which is, within a pixel, the 36 px the badge format was designed at in the quartet.
 
 **Seen once on the page** (the AI's pane at 1280 px): six rows, each badge 36.8 px square, its name 18.7 px to its right, 10.2 px between rows. The rows are `.badge-row` (a flex pair: `img.zoomed` + a paragraph — so the Edit switch reaches each name); the list stands a paragraph space under the sentence.
+
+## §443. THE DEMO VIDEO IS ONE LINE (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"demo recording sentence in the smaller normal font, still bold, then colon and the link on the same line in the smaller font as well."*
+
+**On the page:** ***Demo Recording with Score-Following Video:*** *https://youtu.be/EMYu62G8KiM* — one line in the body's size: piece 5's heading is now the line's bold lead, a colon (inside the bold), the link after it. Third form of this item in a morning: a heading with a large link under it (piece 5's, §436) → the link at the body's size, a paragraph space under the heading (§439) → one line. It reads now as a line of the introduction rather than a section of its own — the page's first heading is *Instrumentation*.
+
+**Spacing, by the system, read once in the page:** the blurb → the line 21.0 px (a paragraph space — two paragraphs), the line → *Instrumentation* 29.2 px (a section space). Whether the line should stand a section space under the blurb, as its heading did, is his — said to him in one line. The rule `h3 + .demo-link` (§439) went with the heading.

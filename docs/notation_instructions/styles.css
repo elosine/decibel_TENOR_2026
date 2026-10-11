@@ -278,13 +278,12 @@ h1.doc-name { margin-bottom: 0.622em; }
 .notation-section { margin-bottom: 0; }
 .notation-section + .notation-section, .notation-section + h4 { margin-top: 0; }
 
-/* Approaching 2026-10-11 (RUNNING_LOG §439): two more gaps on the three spaces, measured the same way.
-   · the demo video's link sits a PARAGRAPH space under its heading — his word: "single spacing … after the demo heading and
-     before the link" (it had been given the section space with the other headings). A negative top margin: it meets the heading's
-     bottom margin and the two add up.
+/* Approaching 2026-10-11 (RUNNING_LOG §439): one more gap on the three spaces, measured the same way.
    · an entry that follows a row of images (the caption above it) starts a SECTION space below the caption. Text → an image under
-     it is already a paragraph space by piece 5's 0.8em, and is left. */
-h3 + .demo-link { margin-top: -0.485em; }
+     it is already a paragraph space by piece 5's 0.8em, and is left.
+   (§443: the demo video is ONE LINE now — its heading became the line's bold lead — so the rule that set the link a paragraph
+   space under that heading, `h3 + .demo-link`, is gone with the heading. The line is a paragraph: a paragraph space under the
+   blurb, a section space above the next heading, by the system.) */
 .notation-section .zoomed-row + .description { margin-top: 0.36em; }
 
 /* Approaching 2026-10-11 (RUNNING_LOG §441): an image that ENDS a section stands a SECTION space above the next heading, its
