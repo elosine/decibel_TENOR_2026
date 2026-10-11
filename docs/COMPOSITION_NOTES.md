@@ -1643,3 +1643,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His word, verbatim — Opus:)* *"31aa"*
 
 *(The AI's reading, marked as such: the take `strikes31aa` is saved; run the swap for the strike at 11:49.2 with it. RUNNING_LOG §415.)*
+
+### DEC-186 · 2026-10-10 — the strikes into the main score
+
+*(His words, verbatim — Opus:)* *"add the strikes to the main score and /checkpoint"*
+
+*(The AI's reading, marked as such: the scattered strikes' pages join the official score, which is then the whole piece; then a checkpoint. RUNNING_LOG §416.)*

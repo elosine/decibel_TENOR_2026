@@ -8383,3 +8383,21 @@ Thirteen places. Until the notes exist those lanes show the window and no GC. *(
 - the window: 709.116 … 709.442 → 709.116 … 709.562 s (the strike's last hit is later)
 
 **The page re-cut from D:** 323 notes · **110 GCs · no written strike lacks a player** (the cutter's own count: 0); the ten free strikes that lack one are as they were. `check_screen_edges` PASS (110 go-time indicators at x(t)) · the shield green · VALID against D.
+
+## §416. THE STRIKES IN THE MAIN SCORE — the whole piece: six sections, 0 … 779 s, 66 pages, cut from `piece-Draft01d` (DEC-186) (2026-10-10, Opus)
+
+**What prompted it (DEC-186, verbatim):** *"add the strikes to the main score and /checkpoint"*
+
+**The main score is cut from D now** — the strikes as they stand since §414 · §415 exist only in `piece-Draft01d`, and a notation file has one source; C and D are the same piece up to 672 s (§414), so the first five sections sit as they sat. The command (the picker's first, *Approaching — THE SCORE (0 … 779 s)*):
+
+node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approaching --label "Approaching — THE SCORE (0 … 779 s)" --mics --silent 0-125 --silent 209-672 --gcOnly … --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416 --strikes 672:784 --micBadge scatteredStrikes:672:784:clear --strikesElec scatteredStrikes:672:784 --finalBar 783
+
+*(the five sections' flags between the two ends are §410's, unchanged — the whole command is in CLAUDE.md § Apps and PLAN.md § 2.10)*
+
+**755 events · 66 screen pages, −4 … 788 s · SIX sections:** the opening · the three body problem · the trills and accented long tones · the drones · the beating section · the scattered strikes, to the final bar line at 783 s. The strikes' flags are the working page's (§411 … §415), whose window was set on the main score's page turns.
+
+**The gates:** `check_screen_edges --ir approaching` PASS — 66 pages tiled −4 → 788 s, 8,639 leaves, nothing past the frame, **213 go-time indicators each at x(t)** (the one clamp is the sine at 560.11 s, his "fine") · THE SHIELD green (the main score the one moved) · VALID against D (755 events, 1,860 overlays) · `check_rules` 31 of 32 once the rules sheet was generated again — **the sheet lists each page's count of overrides, so it goes stale at EVERY re-cut of a page, not only at a change of a row: `node tools/gen_engraving_rules.js` after a cut.** Seen in the running app: the last page (66) ends on the final bar's two lines and nothing after; a strikes page (680 … 692 s) has the Stabilo openings, the GCs, the badges, the purple bricks, no staff.
+
+**THE AUDIO — said to him:** the ♪ render chip looks for `notation/audio/<the page's score>.*`. The main score now names `piece-Draft01d`, and the only take is of C (`piece-Draft01c.wav`, take 02 — the piece before the thirteen notes of §414 · §415). So the main score plays SILENT in the app until a take of D exists. Not papered over: a copy of take 02 under D's name would call it D's audio. His to say (a take of D · or take 02 standing in meanwhile).
+
+**Print:** not run (the planner cannot measure a badge — §396 · §398's list stands).

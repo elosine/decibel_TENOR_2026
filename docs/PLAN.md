@@ -881,7 +881,7 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Why:** his word — "combine all the sections done so far now into the official notated score". The lineage's ONE MAIN notation file (#5's D41): the film, the print and the page he proofs all read it; the section pages are working pages.
 
-**The file:** `notation/ir/approaching.ir.json`, first in the picker (the working pages under *experiments*), cut from the piece in hand: `node tools/notate_section.js --score piece-Draft01c --w0 0 --w1 672 --id approaching --label "Approaching — THE SCORE (so far: 0 … 668 s)" --mics --silent 0-125 --silent 209-672 --gcOnly 125-209 --trills --trillRate 100 --sines --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416`.
+**The file:** `notation/ir/approaching.ir.json`, first in the picker (the working pages under *experiments*), cut from the piece in hand: `node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approaching --label "Approaching — THE SCORE (0 … 779 s)" --mics --silent 0-125 --silent 209-672 --gcOnly 125-209 --trills --trillRate 100 --sines --wedges --announce threeBody+shortAttacks:39:123.3:lead --announce multiphonics:210.627:414.787:leadCentre --lineWedge drones:210.627:4,316:4,331:10,351:10,374:2,414.787:2 --micBadge shortAttacks:0:37 --micBadge accentedLongTones:125:209 --micBadge multiphonics:209:416 --micBadgeAfter 8.151,140.158,154.677 --elec --elecBadge flocking:0:37:each --elecWindow 0:37 --elecPlayers shortAttacks --elecRing 125:209:10 --elecBadge accentedLongTones:125:209:room:0.5 --elecWindow 125:209 --elecBadge multiphonics:209:416:room:0.5 --elecWindow 209:416 --strikes 672:784 --micBadge scatteredStrikes:672:784:clear --strikesElec scatteredStrikes:672:784 --finalBar 783`.
 
 **The rule for it:** a section is notated on its working page first; when he has seen it, its flags join this command and `--w1` grows. The page turns of this file (12 s from −4 s) are the film's — a badge's hand placement is decided HERE, on these turns, not on a working page's.
 
@@ -893,7 +893,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §410 (DEC-180): FIVE SECTIONS, 0 … 668 s, 57 screen pages — the beating section joined** (the working page's flags: `--sines`, `--silent 209-672`).
 
-**To come:** the strikes (their working page built — PLAN 2.13).
+**SINCE §416 (DEC-186): THE WHOLE PIECE — SIX SECTIONS, 0 … 779 s, 66 screen pages, to the final bar line at 783 s; CUT FROM `piece-Draft01d`** (the strikes joined with their working page's flags). Its audio chip is silent until a take of D exists (take 02 is of C).
+
+**To come:** print (the planner cannot measure a badge) · the film (PLAN 2.8 step 5) after the next take.
 
 ### 2.11 THE DRONES — their notation: the mic openings and their badge, the section's line wedge, the announcing badge, the electronics — `built 2026-10-10; IN THE MAIN SCORE since §403 (DEC-172); one working page` (DEC-167; RUNNING_LOG §399 — the device sheet is there)
 
@@ -937,7 +939,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **§415 (DEC-185):** the last, 11:49.2, replaced by `strikes31aa` — every written strike has its five players; 110 GCs.
 
-**Open, his:** the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10) · the next take, of D.
+**IN THE MAIN SCORE since §416 (DEC-186).**
+
+**Open, his:** the six strikes in tight runs that show no badge · the next take, of D.
 
 ## 3. The performance score — `todo`
 
