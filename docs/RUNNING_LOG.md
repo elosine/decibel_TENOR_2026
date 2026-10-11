@@ -8739,3 +8739,13 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **His words:** *"please take out the dotted vertical line marks sentence."*
 
 **Done:** the third paragraph of *Animated Conduction Tools* is now *"**Bouncing-ball conductors** aid with rhythmic precision."* — piece 5's second sentence there (*"The **dotted vertical line** marks the **go-time** for events."*) is off this piece's page. The AI had flagged it at §439 as carried: in this piece a conducted note draws its arc and no dotted line (the dotted go line stands only at a trill's start and inside a sine's box). His reason was not given. Nothing else on the page moved.
+
+## §441. A NEW HEADING — LANGUAGE MUSIC (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"a new heading, language music. This composition employs a version of Anthony Braxton's language music."*
+
+**On the page,** after the Gradient Curves image: the heading *Language Music* and his sentence — *"This composition employs a version of Anthony Braxton's Language Music."* The capitals in the sentence are the AI's (Braxton's own name for his system, as his handout at the Library of Congress writes it — §307); his to lower. This is the first sentence in which the piece names its model in public: until now "a variation of Anthony Braxton's Language Music" lived in the log (§307, DEC-90) and in the six badges.
+
+**What the section will have to carry, none of it written:** the six types and their badges (short attacks · trills · accented long tones · multiphonics · audible beats · scattered strikes — `bank/language/language.json`, `docs/NOTATION_SCHEME.md`), and that a badge names a KIND of sound and leaves the rest to the player (DEC-99: no dynamics, no words in the parts; DEC-199: the percussion's instrument). His to dictate.
+
+**Spacing:** the section before it ends on an image, a case the three spaces had not met: the image's bottom edge → the next heading was 22.0 px; set to the section space, 29.2 (`styles.css`, one rule), the edge taken as the image's baseline. Heading → its text: 29.2, by the system.
