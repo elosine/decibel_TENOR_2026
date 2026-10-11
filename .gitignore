@@ -40,6 +40,11 @@ print/score/**/*.pdf
 # the call's screenshots (his, 2026-10-03: "A, keep it local") — this repo is public and they show his account's address
 docs/call/
 
+# THE PERFORMANCE INSTRUCTIONS' REFERENCE COPIES (2026-10-11, RUNNING_LOG §430): another piece's page, copied here only so he can
+# read it beside this piece's on the same server (http://localhost:5500/docs/notation_instructions/ref/<piece>/index.html).
+# Not this piece's content: it lives in its own repo. This piece's page (docs/notation_instructions/index.html · styles.css) IS committed.
+docs/notation_instructions/ref/
+
 # Probe / research artefacts
 probes/_selftest_render.wav
 probes/last_bend_analysis.json

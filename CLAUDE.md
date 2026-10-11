@@ -7,6 +7,16 @@ Composition #7 in the custom-composition-system lineage
 → #3 `for_bass_clarinet_harp_and_accordion` → #4 `for_seven_tubas` → #5 `septet_2026`
 → #6 `septet_LGMF_2026` → this).
 
+**THE PIECES' NUMBERS — HIS, SINCE 2026-10-11 (RUNNING_LOG §430, DEC-196):** *"moving forward, we'll say string quartet one, two piano
+two percussion two, Tuba three, scattered substance four, and recombination five. And so this one approaching will be six."*
+**1** the string quartet · **2** the two pianos and two percussion · **3** the tubas · **4** *Scattered Substance* (`septet_2026`) ·
+**5** *Recombination* (`septet_LGMF_2026`) · **6** *Approaching* (this piece). **Say and write these from now on, the number WITH its
+name.** **EVERYTHING WRITTEN BEFORE THAT DATE — the line above, the rest of this file, the journal, the logs, the comments in the
+code — uses the OLD numbers, ONE HIGHER from the tubas on:** old #4 = the tubas (3) · old #5 = *Scattered Substance* (4) · old #6 =
+*Recombination* (5) · old #7 = this piece (6). Old #3 was `for_bass_clarinet_harp_and_accordion`: it has no number in his list (the
+AI's reading: named by its name, not counted — his to say). The old text is NOT rewritten; an entry dated 2026-10-11 or later uses
+the new numbers. The other repos and `composition-system` still carry the old numbers — changed only at his word.
+
 Written for **the Decibel ensemble** (Decibel New Music), as a submission to **the TENOR conference's call** — in his words
 (`#6` COMPOSITION_NOTES LG-334, 2026-10-03): due November 14, the instrumentation "not final". **The AI has not read the
 call or the ensemble's site**; nothing was looked up. **He keeps his own time** (journal D5; his words, `#6 §806`: *"I don't
@@ -207,6 +217,8 @@ Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are th
 
 **► CHECKPOINT #7 OF SESSION 3 (Opus 5.5, RUNNING_LOG §426 · §427; DEC-195): THE FILM IS APPROVED (*"good"*), ARCHIVED AND TAGGED — `notation/video/approved/2026-10-10-draft01/V-MAIN.mp4` (on the machine; its README in git) · the tag `Approaching-Draft01-film_1.0` (the AI’s name, his to rename). DRAFT 01 HAS ITS PAGE (the main score `approaching`), ITS AUDIO (take 02 of `piece-Draft01d`) AND ITS FILM, AND THEY AGREE; nothing is mid-build.** THE COLD START is journal §2’s CHECKPOINT #7. **What a cold session must know first: (1) the piece is `scores/piece-Draft01d.json`, his — IN GIT since 2026-10-11 at his word (RUNNING_LOG §428, with his other scores and the rack); a later save of his is again his to commit; (2) a change to it means a new take, then the film again under a new name; (3) a take is READ (`tools/vet/peak_watch_take.lua` + `tools/vet/peak_watch_read.js`), a film’s new sign is PROBED and looked at before a render.** ► NEXT, at `/postclear`: the block played back, then ONE line — "what is next: your ear’s findings on the take, the print score, the parts, the performance notes, or the live-electronics discussion?" Fable for a talk, Opus for a take, a film, print or the parts.
 
+**► 2026-10-11 (Opus 5.5, RUNNING_LOG §430; DEC-196): THE PERFORMANCE INSTRUCTIONS' PAGE IS BEGUN — `docs/notation_instructions/index.html`, served at http://localhost:5500/docs/notation_instructions/index.html:** THREE THINGS ONLY, at his word — the title, the subheader (*Approaching, for bass flute, bass clarinet, percussion, viola, cello and electronics — Justin Yang*) and the blurb (the score is a computer-animated score, served from the cloud, shown in a web browser) — each taken from piece 5's page (*Recombination*) with the name and the instruments changed and nothing else; the stylesheet piece 5's, byte for byte. **THE PROSE IS HIS** (the AI inserts his dictation verbatim; the tracker of what the notes must cover is `docs/PERFORMANCE_NOTES.md`). It is the ONE SOURCE of the print score's instruction pages (`tools/export_print.js --instructions`); its images, when they come, are crops by `tools/capture_lane.js`. **Piece 5's page beside it — a viewing copy, GITIGNORED (`docs/notation_instructions/ref/`): http://localhost:5500/docs/notation_instructions/ref/recombination/index.html** (as committed there at `b93646e`). **AND THE PIECES ARE RE-NUMBERED BY HIM (the block at the top of this file): this piece is 6, *Recombination* 5.** ► NEXT: his word on the page — what goes on it next is his dictation.
+
 ## READ FIRST — how to work here
 
 **`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,
@@ -258,6 +270,8 @@ IDs always with their names.
 - **Where this start left the protocol:** `docs/PROTOCOL_DEVIATIONS.md` — one line at the moment of each deviation
 - **Faults met while composing:** `docs/SWEEP_LIST.md` · **Deferred, real but not now:** `docs/NITS.md`
 - **The performance notes — what they must cover, collected as decided:** `docs/PERFORMANCE_NOTES.md`
+- **The performance instructions — THE PAGE (begun 2026-10-11, his prose):** `docs/notation_instructions/index.html` ·
+  http://localhost:5500/docs/notation_instructions/index.html
 - **THE CANDIDATES — the shelf of process-brick settings he has heard and wants kept** (2026-10-05, §109 · §113): **the data is
   `bank/candidates.json`; `docs/CANDIDATES.md` is RENDERED from it by `node tools/candidates.js` — edit the JSON, then render.** A row
   whenever he says "keep this" / "candidate" (a screenshot or the box's JSON is enough): the setting as paste-able JSON, what it was

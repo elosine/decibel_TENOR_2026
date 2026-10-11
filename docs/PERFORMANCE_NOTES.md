@@ -6,6 +6,10 @@ write them, you can just keep track of the things that need notes … note and a
 Each row: what the note must say · the decision behind it · where the wording already exists.
 Append a row whenever a decision needs a line in the notes; never write the notes here.*
 
+*THE PAGE the notes are written on (begun 2026-10-11, RUNNING_LOG §430 — the title, the subheader and the blurb only):
+`docs/notation_instructions/index.html` · http://localhost:5500/docs/notation_instructions/index.html. Rows written before
+2026-10-11 say "piece #5" for* Scattered Substance *and "piece #6" for* Recombination *— his numbers since that day are 4 and 5.*
+
 | # | The note must cover | Decided | Wording exists at |
 |---|---|---|---|
 
