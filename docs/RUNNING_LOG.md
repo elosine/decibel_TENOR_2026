@@ -8905,3 +8905,9 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **The texts were MOVED, not retyped:** the rearrangement was done by a script that lifts the four paragraphs and the four image lines out of the file as it stands and sets them into the new frame — so his own edits of §453 could not be lost to a stale copy in the AI's context (the lesson of that entry, applied). The script refuses if it does not find exactly four of each, in the order it expects.
 
 **Deferred, flagged (docs/NITS.md):** the print score's instruction pages have their own stylesheet in tools/export_print.js and know neither this grid nor the badge list — for when the print score is made.
+
+## §455. THE TEXT FOLLOWS ITS IMAGE — one gap on every two-column row (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"Can you, adjust each column so that the text is less uh, left justified against the image. So the spacing, the column spacing, the horizontal spacing between the trill image and the text paragraph is good. So you would move the yellow box um, text to the left with that much spacing between the image and the beginning of the text."*
+
+**Done:** on the three two-column rows of §454 the text no longer starts at a common column (59 % across, wherever its image ended); it begins ONE FIXED GAP after its own image — the gap he pointed at, the trill curve's: 38 px, written as 4.5 % of the column. Measured in the page (the AI's pane at 1280 px): image → text 37.8 px on all three (the yellow box's text moved 329 px to the left and is 673 px wide now; the trill row is as it was; the strikes' text is 615 px wide). The whole-page winds entry is untouched. One rule changed in `styles.css` (a grid of two fixed columns → a flex row; the image's wrapper made `display: contents` so the image keeps its own scale against the whole row); `index.html` is not touched — his page needs only a reload to see it, and a Save from it is not refused.

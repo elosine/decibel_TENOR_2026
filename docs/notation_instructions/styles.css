@@ -307,14 +307,19 @@ h1.doc-name { margin-bottom: 0.622em; }
 
 /* Approaching 2026-10-11 (RUNNING_LOG §454): THE WAYS A LANGUAGE TYPE IS NOTATED, IN TWO COLUMNS — his word: "the image on the
    left and then the text on the right", except the whole-page image, which keeps the full width with its text under it.
-   --left is the image column's share of the text column (0.55: the widest two-column image, the trill curve, is 54.5 %).
-   An image keeps its own scale (--w / --frame of the TEXT column, hence the division by --left) and is only made smaller
-   if it would not fit its column. Rows stand a section space apart, edge to edge; a text is set level with its image's top. */
+   EACH TEXT BEGINS ONE FIXED GAP AFTER ITS OWN IMAGE (his word, §455) — the gap that stood between the trill curve and its
+   paragraph, 38 px (4.5 % of the column): the text does not start at a common column any more, it follows its image.
+   An image keeps its own scale (--w / --frame of the text column) and is only made smaller if it would take more than
+   --left of the row (0.55; none does). The wrapper .way-img is `display: contents`, so the image itself is the row's first
+   item and its percentage width is read against the whole row. Rows stand a section space apart, edge to edge; a text is set
+   level with its image's top. */
 .ways { --left: 0.55; margin-top: 0.8em; }
-.way-row { display: grid; grid-template-columns: calc(var(--left) * 100%) 1fr; column-gap: 4%; align-items: start; }
+.way-row { display: flex; align-items: flex-start; column-gap: 4.5%; }
 .way-row, .way-wide { margin-top: 1.7em; }
 .ways > :first-child { margin-top: 0; }
-.notation-section .way-img img.zoomed { display: block; margin: 0; width: min(100%, calc(var(--w) / var(--frame) * 100% / var(--left))); }
+.way-img { display: contents; }
+.way-text { flex: 1; min-width: 0; }
+.notation-section .way-row img.zoomed { display: block; flex: none; margin: 0; width: min(calc(var(--left) * 100%), calc(var(--w) / var(--frame) * 100%)); }
 .notation-section .way-wide img.zoomed { display: block; margin: 0; }
 .way-wide p { margin: 0.8em 0 0 0; }
 .way-text p { margin: 0; }
