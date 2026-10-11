@@ -8805,3 +8805,9 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **His words:** *"a for sine tones"* — of §444's five endings.
 
 **On the page:** ***Audible Beats:*** *For this musical material, the live electronics will generate sine tones at specific pitches, and the performer can generate audible beating against these sine tones using small glissandos around the unison.* His sentence, the last three words the chosen wording ("from unison pitch" → "around the unison": both directions, toward as well as away). The pebbles' five (§445) are still open — his letter said "for sine tones" only.
+
+## §447. SCATTERED STRIKES — the simile chosen (2026-10-11, Opus 5.5)
+
+**His words:** *"a for the pebbles"* — of §445's five.
+
+**On the page:** ***Scattered Strikes:*** *Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a tossed handful of pebbles hitting the ground.* The image is his, the wording the one he chose: the throw in one word, the sentence ending on the impact. Two of the six types have their sentence now (Audible Beats · Scattered Strikes); four rows hold the bare name.
