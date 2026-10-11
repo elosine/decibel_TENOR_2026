@@ -45,7 +45,8 @@ const MIME = {
     '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png',
     '.woff': 'font/woff', '.woff2': 'font/woff2', '.mid': 'audio/midi',
     '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.ttf': 'font/ttf', '.pdf': 'application/pdf',
-    '.md': 'text/plain; charset=utf-8'
+    '.md': 'text/plain; charset=utf-8',
+    '.mp4': 'video/mp4'   // [2026-10-10, PLAN 2.14] the film, watched in his Chrome from a link (notation/video/**/*.mp4, gitignored)
 };
 
 // dots allowed (D17: version labels such as -v1.5); never `..` and never a leading dot
@@ -1210,6 +1211,21 @@ const server = http.createServer((req, res) => {
             // never let the browser cache app code — a stale composer.html
             // silently drops new features (the 2026-08-13 resize confusion)
             res.setHeader('Cache-Control', 'no-store');
+            // [2026-10-10, PLAN 2.14 — the film as a link in chat] A PLAYER SEEKS BY BYTE RANGE: Chrome asks a media file with
+            // `Range: bytes=a-b`; answered whole (as every file was) the film plays from the start and cannot be scrubbed. Only a request
+            // that carries the header takes this branch — every other GET is served exactly as before.
+            const rg = /^bytes=(\d*)-(\d*)$/.exec(String(req.headers.range || ''));
+            if (rg && (rg[1] || rg[2])) {
+                const size = fs.statSync(filepath).size;
+                let a = rg[1] ? parseInt(rg[1], 10) : Math.max(0, size - parseInt(rg[2], 10));
+                let b = rg[1] && rg[2] ? Math.min(parseInt(rg[2], 10), size - 1) : size - 1;
+                res.setHeader('Accept-Ranges', 'bytes');
+                if (a > b || a >= size) { res.statusCode = 416; res.setHeader('Content-Range', 'bytes */' + size); return res.end(); }
+                res.statusCode = 206;
+                res.setHeader('Content-Range', 'bytes ' + a + '-' + b + '/' + size);
+                res.setHeader('Content-Length', b - a + 1);
+                return fs.createReadStream(filepath, { start: a, end: b }).pipe(res);
+            }
             return fs.createReadStream(filepath).pipe(res);
         }
     }

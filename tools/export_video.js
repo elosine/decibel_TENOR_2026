@@ -336,8 +336,14 @@ const HALVES = (() => {
     return { name, top: Math.min(...ss.map(s => s.yTopPx)), bot: Math.max(...ss.map(s => s.yBotPx)) };
   }).filter(Boolean).sort((a, b) => a.top - b.top);
   const out = {};
-  ext.forEach((e, i) => {
-    out[e.name] = { lo: i === 0 ? 0 : Math.ceil(ext[i - 1].bot), hi: i === ext.length - 1 ? MH : Math.ceil(e.bot),
+  // [decibel PLAN 2.14 — 2026-10-10, RUNNING_LOG §424] THE GROUPS MAY SHARE A LANE. Five lanes do not split into two groups that both fill
+  // the frame; this piece's groups are the top three and the bottom three, the percussionist's lane in both. So a group's paper is set by
+  // the LANES, not by the group before it: `lo` = the bottom of the lane just above the group (0 if none), `hi` = the group's own bottom
+  // (the master's end if no lane lies below). For groups that partition the lanes — pieces #5 · #6 — this is the rule as it was.
+  const EPS = 0.5;
+  ext.forEach((e) => {
+    const above = zv.systems.filter(s => s.yBotPx <= e.top + EPS), below = zv.systems.some(s => s.yTopPx >= e.bot - EPS);
+    out[e.name] = { lo: above.length ? Math.ceil(Math.max(...above.map(s => s.yBotPx))) : 0, hi: below ? Math.ceil(e.bot) : MH,
       y0: Math.round((e.top + e.bot) / 2 - H / 2), top: e.top, bot: e.bot };
   });
   return out;

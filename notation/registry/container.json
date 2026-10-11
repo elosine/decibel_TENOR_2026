@@ -56,8 +56,9 @@
    "_status": "provisional, DEFERRED — Z is a pure view parameter (PP-6 invariant holds at any Z); adjust freely once the zoom window exists (V1)"
   },
   "video-cut": {
-   "zoomZ": 1.85,
-   "halves": { "V-TOP": [0, 1, 2, 3], "V-BOT": [4, 5, 6, 7] },
+   "zoomZ": 1.68,
+   "halves": { "V-TOP": [0, 1, 2, 3], "V-BOT": [2, 3, 4, 5] },
+   "_noteDecibel": "decibel PLAN 2.14 (2026-10-10, RUNNING_LOG §424; his 'same approach as piece 6' — the wide shot with close-ups): the groups pointed at THIS ensemble's FIVE lanes — V-TOP the top three (BFl 0 · BCl 1 · the percussionist's lane, Perc 2 + Mal 3), V-BOT the bottom three (the percussionist's lane · Va 4 · Vc 5); THE PERCUSSIONIST'S LANE IS IN BOTH (five lanes do not split into two groups that both fill the frame — export_video.js HALVES sets a group's paper by the lanes since this piece). zoomZ 1.68 = three lanes (636.8 px of the wide frame) x 1.68 = 1070 px, ~5 px to spare at each edge; it was 1.85 (pieces #5 · #6, groups of four and three unequal lanes). The sweep: 12 / 1.68 = 7.1 s per close-up window. THE AI'S CALL, his to change: the two numbers are these two lines.",
    "_noteLGMF": "LGMF PLAN 2b-F step 5 (2026-10-01, RUNNING_LOG §693; his \"b\" — the wide shot with close-ups): the halves re-pointed at THIS ensemble — V-TOP the four winds (EH 0 · Bsn 1 · Hn 2 · Tpt 3), V-BOT the percussionist's two staves and the strings (Perc 4 · Vib 5 · Vc 6 · DB 7); they were piece #5's seven parts ([0,1,2] · [3,4,5,6]). zoomZ kept at #5's 1.85 until his eye on the close-up test.",
    "_note": "septet PLAN 2i.10.2 (2026-09-16, RUNNING_LOG §558): THE DEMO VIDEO'S CLOSE-UPS. The tuba cut the 2x master at y = 1080 (ten equal lanes, five each); the septet's lanes are unequal (the piano 1.576), so y = 1080 fell 58 px inside Vn1 and the four strings at 2x (1122 px) could not fit a 1080 frame. Each close-up is a GROUP of parts: winds + piano on top, the strings below; the zoom master is rendered at zoomZ, the group's lanes are centred in the 1080 frame and every row outside the group (the other group, the gap past its lane edge) is paper. zoomZ 1.85 = the strings' measured ink (y 508-1075 of the wide frame, 568 px) x 1.85 = 1051 px, ~15 px to spare at each edge; 1080 x 1.85 = 1998 exactly. The sweep: 12 / 1.85 = 6.5 s per close-up window (the tuba's 6)."
   },

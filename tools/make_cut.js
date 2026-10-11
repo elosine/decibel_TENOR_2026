@@ -42,9 +42,11 @@ const rand = rng(SEED);
 // [septet PLAN 2i.10.3 — 2026-09-16, RUNNING_LOG §559] the septet's sections, measured from the save: section 1 from its first strike
 // to M1's marker; M1 and M2 from their markers to their last morph note; section 3 from its first strike (444) to its last (624). The
 // tuba's map (the opening gesture … TRANCE, to 751.42) lives in piece #4's copy.
+// [decibel PLAN 2.14 — 2026-10-10, RUNNING_LOG §424] THIS PIECE's sections (Approaching, piece-Draft01d; journal §2) — for the report only.
+// The septet's map (section 1 … section 3, to 624 s) lives in piece #5's copy; the tuba's in piece #4's.
 const SECTIONS = [
-  [0.61, 183.00, 'SECTION 1'], [183.00, 304.80, 'M1 BEATING BLOOM'],
-  [314.00, 435.50, 'M2 SPECTRAL DRIFT'], [444.00, 624.00, 'SECTION 3'],
+  [0, 36.9, 'THE OPENING'], [39.0, 123.3, 'THREE BODY'], [125.4, 209.0, 'TRILLS'],
+  [210.6, 414.8, 'DRONES'], [423.3, 668.1, 'BEATING'], [676.9, 778.7, 'STRIKES'],
 ];
 const where = (a, b) => {
   const hit = SECTIONS.filter(s => b > s[0] && a < s[1]).map(s => s[2]);

@@ -1655,3 +1655,35 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"to add to the render list the multiple strikes at 680.6. I can't tell, but I think some of them might not be sounding or aren't sounding, uh, aren't synced, aren't sounding on time. So let's double check those. And actually, if you can verify that the GCs are where they should be, and we can eliminate the notation side."*
 
 *(The AI's reading, marked as such: a note for the re-render about the run of strikes around 680.6 s — he suspects missing or late sounds; and a check to make now: are the conductor's arcs at the right times, so that the notation can be ruled out. RUNNING_LOG §418.)*
+
+### DEC-188 · 2026-10-10 — the fixes before the re-render; the bass clarinet's low pairs up to mf
+
+*(His words, verbatim — Fable:)* *"lets prepare/analyze the fixes and then make a rerender of the audio"* — then, on the four analyzed: *"I'll take your recommendations for the bass clarinet. Let's go up to MF."*
+
+*(The AI's reading, marked as such: the recommendation was the five low beating pairs of the bass clarinet (F2 · F♯2), not the one note he had flagged; their notes from p to mf, the sines left at f. RUNNING_LOG §419.)*
+
+### DEC-189 · 2026-10-10 — the other three fixes as recommended
+
+*(His words, verbatim — Fable:)* *"yes, go with the recommendations"*
+
+*(The AI's reading, marked as such: the viola's first note back to the key he played (71) · the cymbal's first recording on the builder's sounding fields at velocity 100 · the two strike notes at the edge of their range an octave down · only the cymbal's stretch passed before the take. RUNNING_LOG §420.)*
+
+### DEC-190 · 2026-10-10 — if we are rerunning: the bowed cymbals, recordings one and two, could do with boosting
+
+*(His words, verbatim — Fable, sent while take 01 of D was being read:)* *"If we're rerunning it again, then the first drone capture, the first bow symbol, the perk drone one was a little quiet as well. And actually perk drone two was a little quiet too, though not as quiet as drone one. Those could do with some boosting."*
+
+*(The AI's reading, marked as such: "the first bow symbol" = the bowed China cymbal, the percussionist's first drone recording (236.6 s); "perk drone two" = the second (263 s). "Rerunning" read as his go for another take. The lever was the AI's call: the China Cymbal track's fader +4 dB, and velocity 127 on the first. RUNNING_LOG §421.)*
+
+### DEC-191 · 2026-10-10 — (no new word of his) the silent keys moved before the rerun
+
+*(The AI's call, under DEC-190's "if we're rerunning" and his "ready" — NOT his words:)* the meter watch through take 01 of D found nineteen notes silent by their keys (seventeen percussion strike notes, the viola's Bartók at 78 twice); each was moved onto the nearest sounding key of its own voice before the second take, and the tool that had dealt them was fixed. Told to him before his "ready". RUNNING_LOG §422.
+
+### DEC-192 · 2026-10-10 — (no new word of his) the bowed cymbal does not follow velocity
+
+*(The AI's finding, read off take 02 of D — NOT his words:)* the bowed China cymbal peaked the same at velocity 127 as at 100; its lift in the take is the fader's 4 dB. His ear on the result is pending. RUNNING_LOG §423.
+
+### DEC-193 · 2026-10-10 — the video: the same approach as piece 6
+
+*(His words, verbatim — Opus:)* *"lets move on to the video; same approach as piece 6"*
+
+*(The AI's reading, marked as such: piece #6's film as that piece's record has it (its RUNNING_LOG §687 … §700) — the audio first (done: take 02 of D) · the film opens on the 4 s lead-in with no title card · the last page held while the sound rings out · the wide shot with close-ups, crossfaded, cut by the seeded recipe · every render its own file · his watch-through · on his "good" the archive. What piece #6 could not hand over is the close-up groups: that ensemble was eight lanes, this one is five — the AI's call, his to change. RUNNING_LOG §424.)*
