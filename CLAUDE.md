@@ -203,6 +203,8 @@ Journal §2's RUNNING ORDER, then its block SESSION 1 — STEP 1 IS DONE, are th
 
 **► 2026-10-10 (Opus 5.5, RUNNING_LOG §424; DEC-193; PLAN.md § 2.14): THE FILM — PIECE #6’s APPROACH, THE FIRST RENDER MADE: `notation/video/renders/Approaching-Draft01-V-CUT-seed7.mp4`** (gitignored; 788.7 s, 1920 × 1080, 30 fps, the take of D under it, in sync to 0.1 ms). The wide shot with nine close-ups (seed 7), crossfaded; it opens on the 4 s lead-in, no title card; the last page is held under the tail. **THE CLOSE-UP GROUPS ARE THE AI’S CALL, HIS TO CHANGE: the top three lanes · the bottom three, the percussionist’s lane in both, zoom 1.68** (five lanes do not split into two groups that fill the frame). Every sign of this piece was put through the film’s rasterizer first, a frame a section, and looked at. **EVERY RENDER KEEPS ITS OWN NAME** (`-r2` …). ► NEXT: his watch-through; then other groups or another seed at his word; on his "good" the archive and a tag (piece #6’s §700).
 
+**► THEN (Opus 5.5, RUNNING_LOG §425; DEC-194 — his word: *"lets have the video without any zooms"*): THE FILM IS THE WIDE SHOT ALONE — `notation/video/renders/Approaching-Draft01-V-MAIN.mp4`** (788.7 s; the same command without `--cut` and its fades; 7 min). The render with close-ups is kept beside it; the close-up groups and the cut list stay in the repo, unused. ► NEXT: his watch-through of V-MAIN; on his "good" the archive and a tag.
+
 ## READ FIRST — how to work here
 
 **`docs/AI_METHODOLOGY.md`** is the composer's standing instruction on scoping, decisions,

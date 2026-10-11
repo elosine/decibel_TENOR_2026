@@ -1687,3 +1687,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"lets move on to the video; same approach as piece 6"*
 
 *(The AI's reading, marked as such: piece #6's film as that piece's record has it (its RUNNING_LOG §687 … §700) — the audio first (done: take 02 of D) · the film opens on the 4 s lead-in with no title card · the last page held while the sound rings out · the wide shot with close-ups, crossfaded, cut by the seeded recipe · every render its own file · his watch-through · on his "good" the archive. What piece #6 could not hand over is the close-up groups: that ensemble was eight lanes, this one is five — the AI's call, his to change. RUNNING_LOG §424.)*
+
+### DEC-194 · 2026-10-10 — the video without any zooms
+
+*(His words, verbatim — Opus, after the first render with nine close-ups and the AI's a · b · c on the close-up groups:)* *"lets have the video without any zooms"*
+
+*(The AI's reading, marked as such: the film is the wide shot alone — no close-ups, no cut list. Here the film departs from piece #6's, at his word. RUNNING_LOG §425.)*

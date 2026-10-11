@@ -8505,3 +8505,14 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **5 · THE FILM AS A LINK.** His rule: a thing to look at is a clickable `http://localhost:<port>/…` link. `score/server.js` served every file whole and did not know `.mp4` (a click downloaded it; a player could not scrub). Two changes: the type `video/mp4`; a GET that carries `Range: bytes=a-b` is answered 206 with that slice — every other GET exactly as before. PROVEN ONCE on the throwaway server (5501, started from here): a range request 206 with the right `Content-Range`, the 100 bytes identical to the file's, a plain request unchanged; the film's own link 206 · `video/mp4`. **His server (5500) has it after its next restart**; until then the film plays from `http://localhost:5501/notation/video/renders/Approaching-Draft01-V-CUT-seed7.mp4` while the throwaway is up.
 
 **Not done, his:** the watch-through · the close-up groups if he wants them otherwise (two lines of `container.json`, then the same render under `-r2`) · another cut (another seed) · on his "good": the archive and a tag. **The film is of the audio of §423 and the pages cut at §416** — the IR holds the earlier pitches of the twenty moved notes (§422), which the film does not draw (a strike has no pitch on the page).
+
+## §425. THE FILM WITHOUT ANY ZOOMS — the wide shot alone (DEC-194; PLAN 2.14) (2026-10-10, Opus 5.5)
+
+**His word**, on §424's film and its one decision (the close-up groups a · b · c): *"lets have the video without any zooms"* — c, in his own words: no close-ups. Where this film leaves piece #6's (which he chose with close-ups, its §692 "b"): there eight lanes at ~6 px a staff space were hard to read wide; here five lanes are already large in the wide shot.
+
+**The render:** `node tools/export_video.js --ir approaching --view video --fps 30 --t1 784.7 --audio notation/audio/piece-Draft01d.wav --out notation/video/renders/Approaching-Draft01-V-MAIN.mp4` — the command of §424 without `--cut` and its fades (a fade exists only between a cut's segments). 23,661 frames, 66 page rasters (the wide pages, once each), **7.0 min**, 56.2 fps, ffmpeg exit 0.
+- **Measured off the file:** **788.700 s** · h264 1920 × 1080 · 30 fps · AAC · both streams from **0.000** · the first sound at **5.5353 s** (the WAV's 1.5353 + the 4.000 s lead-in) · 43,958,064 bytes (41.9 MB) · sha256 `66f3aed79dfa06a11430810b2515ca0f1da335268a76289b61e0ca5b52315a2e`.
+- The pages are the main score's 66, turned every 12 s — the page turns whose edge cases he judged (PLAN 2.10). §424's note on the close-ups' other page turns does not apply to this film.
+- NOT looked at again: the wide frames are those probed at §424 (nine, eight looked at). NOT watched by the AI.
+
+**Kept, not removed:** §424's film with close-ups (`…-V-CUT-seed7.mp4`, its own file) · the close-up groups in the registry and the cut list in git — unused by this film, there if he asks for a close-up version later.
