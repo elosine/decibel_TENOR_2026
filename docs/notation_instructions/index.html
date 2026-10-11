@@ -62,5 +62,48 @@
     </div>
 </div>
 
+<!-- ═══ Animated Conduction Tools (RUNNING_LOG §439) — piece 5's section UP TO THE TEMPO FRAME, at his word: the three paragraphs
+     are his text of that page, word for word; the two images in the other order (the cursor first, the conductor to its right).
+     THE IMAGES' SIZE (piece 5's rule, its §704): every score image is a crop of the ZOOMED presentation score (Z 2 of the 1920-px
+     frame; tools/capture_lane.js refuses a wider span), shown at ONE scale — an image's width is --w / 1920 of the text column
+     (styles.css, img.zoomed; --w = the crop width the tool prints).
+     THIS PIECE'S IMAGES, cut from the main score (notation/ir/approaching.ir.json) — the AI's picks, his to change:
+     · the cursor: the viola in the opening, 3.75 … 7.25 s — two mic openings (4.38 · 6.54 s), a short attacks' badge before each,
+       the cursor just into the first; at the lower right the electronics' pane of the first return (6.2 … 7.0 s). No stretch of
+       one lane in the opening holds two openings without a return's pane.
+     · the conductor: the bass clarinet's first hit of section 2, 129.535 s — the accented long tones' badge, the mic opening, the
+       arc; captured at 129.37 s, the ball coming down, the cursor between the badge and the opening.
+     Regenerate:
+     node tools/capture_lane.js --ir approaching --part va --t 4.39 --span 3.75:7.25 --out docs/notation_instructions/images/cursor_va_4.svg
+     node tools/capture_lane.js --ir approaching --part bcl --t 129.37 --span 128.75:130.15 --out docs/notation_instructions/images/conductor_bcl_129.svg ═══ -->
+<h3>Animated Conduction Tools</h3>
+
+<div class="notation-section">
+    <div class="description">
+        <p>There are a number of animated conduction tools that are intuitive to follow and aid performers in realizing the score.</p>
+        <p>A <strong>scrolling cursor</strong> runs throughout the piece at a consistent speed and indicates when things are to be played. Notation is spaced proportionally in time &#8212; distance on the page equals duration.</p>
+        <p><strong>Bouncing-ball conductors</strong> aid with rhythmic precision. The <strong>dotted vertical line</strong> marks the <strong>go-time</strong> for events.</p>
+    </div>
+    <div class="zoomed-row">
+        <figure class="zoomed" style="--w: 1031">
+            <img src="images/cursor_va_4.svg" alt="One lane of the score: two yellow mic openings, each with a dark badge of three red triangles before it; the cursor, a vertical line, is just reaching the first opening">
+            <figcaption>Animated scrolling cursor</figcaption>
+        </figure>
+        <figure class="zoomed" style="--w: 413">
+            <img src="images/conductor_bcl_129.svg" alt="A curved arc falling to the bottom of the lane and rebounding, a ball on it at the cursor, a dark badge and a yellow mic opening at the top">
+            <figcaption>Bouncing-ball conductor</figcaption>
+        </figure>
+    </div>
+    <!-- GRADIENT CURVES (RUNNING_LOG §439) — HIS TEXT, dictated, where piece 5's tempo frame stood; the bold lead ends in a
+         PERIOD, not a dash (his word, for this page's entries). Image, the AI's pick: the bass flute's first trill of section 2,
+         125.407 … 129.535 s — the go line, the trills' badge, the curve, the cursor and the level meter at 127.9 s (mid-curve).
+         Regenerate:
+         node tools/capture_lane.js --ir approaching --part bfl --t 127.9 --span 125.05:129.75 --out docs/notation_instructions/images/curve_bfl_125.svg -->
+    <div class="description">
+        <p><strong>Gradient Curves.</strong> This score uses graphic curves to describe continuous change over time. An animated curve follower appears alongside the cursor and gives the real-time position in the curve.</p>
+    </div>
+    <img class="zoomed" style="--w: 1385" src="images/curve_bfl_125.svg" alt="A dotted go line, a dark badge with the trill sign, and a blue curve rising to the right; the cursor crosses the curve halfway along, a small meter beside it filled to the curve's height">
+</div>
+
 </body>
 </html>

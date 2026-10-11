@@ -22,7 +22,11 @@
 // window is REFUSED instead of lowering Z (--fit restores the old behaviour). The page then shows each image at
 // crop width / frame width of its text column (styles.css `img.zoomed`, --w = the crop's width printed below).
 //
-//   --part   an index 0–7 or a name: eh bsn hn tpt perc vib vc db
+//   --part   an index 0–5 or a name: bfl bcl perc mal va vc (perc and mal are the percussionist's ONE lane)
+//
+// APPROACHING (2026-10-11, RUNNING_LOG §439): the frame is built as tools/export_video.js builds it NOW — Coords.ensembleFrame
+// (the joined lane) and the registry's edges (Coords.edgesOf: the gutter AND the two margins). The inline lane arithmetic this
+// tool carried from piece 5 predates both: it drew six equal lanes and a frame 80 px wider in music than the score's.
 //   --toPart crop a contiguous RANGE of lanes, --part through --toPart
 //            (multi-lane shots); default = the single --part lane
 //   --span   the time range the image shows (the crop)
@@ -50,7 +54,7 @@ const arg = (name, dflt) => {
   const i = process.argv.indexOf('--' + name);
   return i >= 0 ? process.argv[i + 1] : dflt;
 };
-const NAMES = ['eh', 'bsn', 'hn', 'tpt', 'perc', 'vib', 'vc', 'db'];
+const NAMES = ['bfl', 'bcl', 'perc', 'mal', 'va', 'vc'];   // [Approaching §439] this piece's six parts (perc and mal share ONE lane)
 const partArg = v => { const i = NAMES.indexOf(String(v).toLowerCase()); return i >= 0 ? i : parseInt(v, 10); };
 const part = partArg(arg('part', '0'));
 const toPart = partArg(arg('toPart', String(part)));
@@ -104,39 +108,32 @@ const lanes = rz.lanes || { padTopPx: 8, padBotPx: 8, gapPx: 4 };
 const W = (C.frame && C.frame.widthPx) || 1920;
 const H = (C.frame && C.frame.heightPx) || 1080;
 const pageSeconds = (C.timeScale && C.timeScale.defaults && C.timeScale.defaults.trance) || 12;
-let topPad = lanes.padTopPx / H, botPad = lanes.padBotPx / H;
-const gap = lanes.gapPx / H;
-const weights = ENS ? FRAME_PARTS.map(p => (ensPart(p) && ensPart(p).weight) || 1) : lanes.weights;
-const units = ENS ? weights.reduce((a, b) => a + b, 0) : FRAME_PARTS.length;
-let lanePx = ((1 - topPad - botPad - gap * (FRAME_PARTS.length - 1)) / units) * H;
-if (lanes.sparseCapPx && lanePx > lanes.sparseCapPx) {
-  lanePx = lanes.sparseCapPx;
-  const content = (lanePx * units + lanes.gapPx * (FRAME_PARTS.length - 1)) / H;
-  topPad = botPad = Math.max(0, (1 - content) / 2);
-}
-let systems = Coords.systemsForParts(FRAME_PARTS, { topPad, botPad, gap, weights });
-const ssPerSystem = lanePx / (((C.staff && C.staff.staffHeightPx) || 31.6) / 4);
-if (ENS) {
-  systems.forEach((s, i) => { s.ssPerSystem = ssPerSystem * weights[i]; });
-  const gs = ((C.engraving || {}).layout || {}).grandStaff;
-  systems = Coords.withStaves(systems, p => (ensPart(p) && ensPart(p).staves && ensPart(p).staves.length) || 1,
-    gs && gs.interStaffGapSs > 0 ? { interStaffGapSs: gs.interStaffGapSs } : undefined);
-}
-const gutterPx = (C.prefatory && C.prefatory.gutterPx) || 0;
+// [Approaching §439] THE FRAME AS export_video.js BUILDS IT: the lanes from Coords.ensembleFrame (weights, staves, the joined lane),
+// the edges from the registry — one arithmetic for the film, the app and these images
+const FRAME = Coords.ensembleFrame(FRAME_PARTS, {
+  heightPx: H, lanes, staffHeightPx: (C.staff && C.staff.staffHeightPx) || 31.6,
+  grandStaff: ((C.engraving || {}).layout || {}).grandStaff,
+  weightOf: ENS ? (p => (ensPart(p) && ensPart(p).weight) || 1) : undefined,
+  stavesOf: p => (ensPart(p) && ensPart(p).staves && ensPart(p).staves.length) || 1,
+  ensemble: ENS,
+});
+const systems = FRAME.systems, ssPerSystem = FRAME.ssPerSystem;
+const EDGES = Coords.edgesOf(C);
+const dead = (EDGES.gutterPx || 0) + (EDGES.marginLeftPx || 0) + (EDGES.marginRightPx || 0);
 
 // ---- the window: the app's zoom window (Coords.zoomCfg), centred on the span ----
 const zoomDefault = ((C.realizations || {})['zoom-working'] || {}).zoomZ || 2;
 let Z = parseFloat(arg('zoom', String(zoomDefault)));
-const baseCfg = { widthPx: W, heightPx: H, window: [0, pageSeconds], gutterPx, systems, ssPerSystem };
-const basePps = (W - gutterPx) / pageSeconds;
-const spanOf = z => (W - z * gutterPx) / (z * basePps);
+const baseCfg = Object.assign({ widthPx: W, heightPx: H, window: [0, pageSeconds], systems, ssPerSystem }, EDGES);
+const basePps = (W - dead) / pageSeconds;
+const spanOf = z => (W - z * dead) / (z * basePps);   // Coords.zoomCfg's own arithmetic
 if (s1 - s0 > spanOf(Z)) {
   if (process.argv.indexOf('--fit') < 0) {   // [§704] one scale for every image: the zoom's own
     console.error('capture_lane: the span ' + (s1 - s0).toFixed(2) + ' s is wider than the zoom window at Z ' + Z +
       ' (' + spanOf(Z).toFixed(2) + ' s) — shorten it, or pass --fit to lower Z');
     process.exit(1);
   }
-  Z = W / (basePps * (s1 - s0) + gutterPx);   // --fit: the wide span wins, Z drops until it fits
+  Z = W / (basePps * (s1 - s0) + dead);   // --fit: the wide span wins, Z drops until it fits
 }
 const winSpan = spanOf(Z);
 const mid = (s0 + s1) / 2;
