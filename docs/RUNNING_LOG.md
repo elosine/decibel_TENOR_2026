@@ -8672,3 +8672,11 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **What the draft does NOT settle — said to him:** (1) REQUIRED or the player's choice — outside the audible beats the score shows no instrument and no pitch (a mic opening and a badge), so most of the twelve are the simulation's choices, not the notation's demands; the bowed crotales at their pitches and a bowed metal for the drones are the ones the piece cannot do without (the open question of §325). (2) Who runs the electronics — not written anywhere; the line says only what the players and the house meet. (3) "in C … transposed" is piece 5's sentence carried; the parts' pitch form is one of his three open notation calls (journal §2, running order step 4). Piece 5's two tuning lines (fundamentals, cents) are that piece's and were left out.
 
 **Read from the machine at this turn:** his score server answers the new route (`GET /api/instructions` 200 on 5500) — he has restarted it; `versions/` is empty — he has not saved from the page yet.
+
+## §437. THE DEMO VIDEO'S LINK (2026-10-11, Opus 5.5)
+
+**His word:** the address alone — `https://youtu.be/EMYu62G8KiM?si=…` — in answer to §436's ask for the video's address (taken to be his upload of the Draft 01 film; he did not say, and the AI did not open it).
+
+**On the page:** `https://youtu.be/EMYu62G8KiM`, as the link and as its text, at the body's size. **The `?si=…` tail is left off** — it is YouTube's share tracker (it marks which share a visit came from), the address works without it, and piece 5's link on its page is written bare in the same way; the tail is not in this public repo either. Said to him in one line, his to put back. **Not checked by the AI:** the link was not opened — which video it shows is his word (the lineage's habit of reading a video's title before wiring it was for pages with several links).
+
+**For the paper:** the piece now has a public address for its sounding form — if the upload is the approved film, the score-following film of Draft 01 (the main score with its electronics layer, under take 02 of `piece-Draft01d`, §423 … §426).
