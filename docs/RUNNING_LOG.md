@@ -9139,3 +9139,7 @@ Sources: Szebehely, "Review of the dynamical aspects of triple systems" (IAU Col
 - **The one look (a new kind of image):** the AI's browser pane on his 5500 at 1280 px — four rows, the image 29 × 29 px, the texts aligned at one left edge; read by JavaScript and one screenshot.
 
 **Not done, said:** the size is one number if he wants them as large as the six (`--w 84`); alt texts are the AI's.
+
+## §471. THE COLOUR REMARK SHORTENED (2026-10-11, Opus 5.5)
+
+**His words:** *"Each language type is assigned a color and just delete the color of the badge."* On the page, in *Language Music*, under the whole-page winds image (the coloured line, §450): "Each language type is assigned a color, the color of the badge." → **"Each language type is assigned a color."** One exact replacement in `docs/notation_instructions/index.html`; no save of his since the last edit (the newest file in `versions/` is 14:44:08). The AI's reading, marked: with the three body problem's state signs on the page a badge's colour is no longer only a language type's (a state sign has its state's colour), and the audible beats' badge is in two tones — the shorter sentence stays true.
