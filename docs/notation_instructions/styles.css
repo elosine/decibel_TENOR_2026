@@ -298,3 +298,9 @@ h1.doc-name { margin-bottom: 0.622em; }
 .badge-row:first-child { margin-top: 0; }
 .notation-section .badge-row img.zoomed { flex: none; margin: 0; outline: none; }
 .badge-row p { margin: 0; }
+
+/* Approaching 2026-10-11 (RUNNING_LOG §448): AN IMAGE BELONGS TO THE TEXT ABOVE IT — a paragraph space over it (piece 5's 0.8em,
+   left), a SECTION space under it before the next text; the list of badges the same. Measured from the image's (the list's)
+   bottom edge to the top of the capitals below: 20.6 px before, 29.2 with this. */
+.notation-section img.zoomed + .description,
+.notation-section .badge-list + .description { margin-top: 1.31em; }

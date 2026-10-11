@@ -150,6 +150,23 @@
             <p><strong>Scattered Strikes:</strong> Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a tossed handful of pebbles hitting the ground.</p>
         </div>
     </div>
+    <!-- HOW A LANGUAGE TYPE IS NOTATED (RUNNING_LOG §448) — HIS TEXT, dictated; the first paragraph's second sentence is his
+         first wording (he asked for alternatives; none chosen yet). The two images are the AI's picks, crops of the main score:
+         · the box: the viola's first mic opening of the piece (4.38 … 4.88 s) with the short attacks' badge before it — the top
+           of the lane only (the mic's row), the cursor out of the crop;
+         · the curve: the cello's first trill of section 2, 129.535 … 132.489 s — the trills' badge, the go line, the whole
+           curve, the cursor and the level meter at 131.25 s. Its lane holds nothing else in the span.
+         Regenerate:
+         node tools/capture_lane.js --ir approaching --part va --t 0 --span 3.95:4.95 --padTop 0 --padBot -303 --out docs/notation_instructions/images/language_box_va_4.svg
+         node tools/capture_lane.js --ir approaching --part vc --t 131.25 --span 129.2:132.75 --out docs/notation_instructions/images/language_curve_vc_130.svg -->
+    <div class="description">
+        <p>The use of language music is notated in different ways. A yellow box indicates playing this language type in the time window.</p>
+    </div>
+    <img class="zoomed" style="--w: 295" src="images/language_box_va_4.svg" alt="A dark badge with three small red triangles, and to its right a yellow box with a small double circle in it">
+    <div class="description">
+        <p>A language type with a gradient curve indicates playing that language type following the gradient of the curve. In the pictured example, the curve would represent trill intensity. This could be a combination of speed and volume, and any other parameters a performer might use to develop a gradient of trill intensity.</p>
+    </div>
+    <img class="zoomed" style="--w: 1046" src="images/language_curve_vc_130.svg" alt="A dotted go line, the trills' badge beside it, and a blue curve rising to the right; the cursor crosses the curve partway along, a small meter beside it filled to the curve's height">
 </div>
 
 </body>

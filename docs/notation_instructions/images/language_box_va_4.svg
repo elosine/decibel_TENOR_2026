@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="295" height="116" viewBox="884.7 1297.6 294.7 116.2"><rect x="884.7" y="1297.6" width="294.7" height="116.2" fill="#fff"/>
+<rect x="0" y="0" width="1920" height="2160" fill="#fff"/>
+<g class="lane-lines" fill="#8a8a8a"><rect x="80.00" y="438.17" width="1760.00" height="2.05"/><rect x="80.00" y="865.37" width="1760.00" height="2.05"/><rect x="80.00" y="1292.57" width="1760.00" height="2.05"/><rect x="80.00" y="1719.77" width="1760.00" height="2.05"/></g>
+<g class="sys sys-p4" fill="#111">
+<text x="84" y="1512.8" font-size="17.4" font-family="'Crimson Pro Light', serif" fill="#8a8a8a">Va</text>
+<defs><filter id="elecGrain" x="0" y="0" width="1" height="1"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/></filter></defs>
+<rect class="elec-window" x="1455.24" y="1621.10" width="347.55" height="87.80" fill="#708090" fill-opacity="0.1" stroke="#708090" stroke-width="3.00" stroke-opacity="0.55"/><rect class="elec-grain" x="1455.24" y="1621.10" width="347.55" height="87.80" filter="url(#elecGrain)" opacity="0.06"/>
+<rect class="elec-return" x="1559.16" y="1689.26" width="235.73" height="11.74" rx="6.00" fill="#5F4296" fill-opacity="0.18" stroke="#5F4296" stroke-width="3.00" stroke-opacity="1"/>
+<g class="badge badge-flocking" transform="translate(1463.14 1629.00) scale(2.00002)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='#5b9bf5'><path transform='translate(21.4,12.7) rotate(144)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.2,8.1) rotate(138)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,14.5) rotate(105)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(24.7,13.6) rotate(99)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(18.6,10.3) rotate(92)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(28.6,9.5) rotate(104)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(21.4,16.6) rotate(116)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(26.1,16.6) rotate(132)' d='M2,0 -1.2,1.2 V-1.2 Z'/><path transform='translate(27.7,14.4) rotate(119)' d='M2,0 -1.2,1.2 V-1.2 Z'/></g></g>
+<circle cx="1034.44" cy="1355.32" r="10.59" fill="none" stroke="#333333" stroke-width="2.61"/><circle cx="1034.44" cy="1355.32" r="4.58" fill="#333333"/><rect class="mic-open" x="1011.37" y="1313.40" width="147.33" height="83.84" rx="6.00" fill="#FFFF00" fill-opacity="0.18" stroke="#FFFF00" stroke-width="3.00" stroke-opacity="1"/>
+<circle cx="1670.63" cy="1355.32" r="10.59" fill="none" stroke="#333333" stroke-width="2.61"/><circle cx="1670.63" cy="1355.32" r="4.58" fill="#333333"/><rect class="mic-open" x="1647.56" y="1313.40" width="147.33" height="83.84" rx="6.00" fill="#FFFF00" fill-opacity="0.18" stroke="#FFFF00" stroke-width="3.00" stroke-opacity="1"/>
+<g class="badge badge-shortAttacks" transform="translate(903.62 1313.40) scale(2.32611)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='none' stroke='#D11520' stroke-width='1.6' stroke-linejoin='round'><polygon points='12,14 12,23 5,18.5'/><polygon points='21.5,13.5 21.5,22 15,17.8'/><polygon points='27.5,13.5 31.5,22.5 23.5,22.5'/></g></g>
+<g class="badge badge-shortAttacks" transform="translate(1539.80 1313.40) scale(2.32611)"><rect width="36" height="36" rx="4" fill="#2d3748"/><g fill='none' stroke='#D11520' stroke-width='1.6' stroke-linejoin='round'><polygon points='12,14 12,23 5,18.5'/><polygon points='21.5,13.5 21.5,22 15,17.8'/><polygon points='27.5,13.5 31.5,22.5 23.5,22.5'/></g></g>
+</g>
+<g class="sysgrp sysgrp-bracket" fill="#111">
+<rect x="131.84" y="194.00" width="7.11" height="490.40"/>
+<g transform="translate(131.839 172.970) scale(15.80000)"><path d="M0 1.555H0.3C0.992 1.555 1.456 0.675 1.852 0.099C1.896 0.031 1.792 -0.041 1.748 0.027C1.384 0.563 0.936 1.107 0.3 1.107H0.1C0.044 1.107 0 1.151 0 1.207Z"/></g>
+<g transform="translate(131.839 680.861) scale(15.80000)"><path d="M0 0V0.348C0 0.404 0.044 0.448 0.1 0.448H0.3C0.936 0.448 1.384 0.992 1.748 1.528C1.792 1.596 1.896 1.524 1.852 1.456C1.456 0.88 0.992 0 0.3 0Z"/></g>
+</g>
+<g class="sysgrp sysgrp-bracket" fill="#111">
+<rect x="131.84" y="1475.60" width="7.11" height="490.40"/>
+<g transform="translate(131.839 1454.570) scale(15.80000)"><path d="M0 1.555H0.3C0.992 1.555 1.456 0.675 1.852 0.099C1.896 0.031 1.792 -0.041 1.748 0.027C1.384 0.563 0.936 1.107 0.3 1.107H0.1C0.044 1.107 0 1.151 0 1.207Z"/></g>
+<g transform="translate(131.839 1962.461) scale(15.80000)"><path d="M0 0V0.348C0 0.404 0.044 0.448 0.1 0.448H0.3C0.936 0.448 1.384 0.992 1.748 1.528C1.792 1.596 1.896 1.524 1.852 1.456C1.456 0.88 0.992 0 0.3 0Z"/></g>
+</g>
+<g class="anim"></g></svg>

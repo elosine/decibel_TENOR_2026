@@ -8811,3 +8811,26 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **His words:** *"a for the pebbles"* — of §445's five.
 
 **On the page:** ***Scattered Strikes:*** *Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a tossed handful of pebbles hitting the ground.* The image is his, the wording the one he chose: the throw in one word, the sentence ending on the impact. Two of the six types have their sentence now (Audible Beats · Scattered Strikes); four rows hold the bare name.
+
+## §448. HOW A LANGUAGE TYPE IS NOTATED — the yellow box and the gradient curve; two images (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"The use of language music is notated in different ways. A yellow box indicates playing this language type in the time window. Can you give me some alternatives to this sentence? And then can you produce an image of just the short attacks badge next to a yellow container? a language type with a gradient curve means or indicates play that language type following the gradient of the curve. In the pictured example, the curve would represent trill intensity. This could be a combination of speed and volume. And any other parameters A performer might use to develop a gradient of trill intensity. And then can you get an image that includes the full badge, go line, a full curve, and then the cursor somewhere midway through the curve?"*
+
+**On the page,** under the six types:
+- *The use of language music is notated in different ways. A yellow box indicates playing this language type in the time window.* — his words; under it THE IMAGE: the short attacks' badge and a yellow box, nothing else (`language_box_va_4.svg`: the viola's first mic opening of the piece, 4.38 … 4.88 s — only the top of the lane, the mic's row; the cursor out of the crop; 295 px of the zoomed frame, 129 × 51 px on the page).
+- *A language type with a gradient curve indicates playing that language type following the gradient of the curve. In the pictured example, the curve would represent trill intensity. This could be a combination of speed and volume, and any other parameters a performer might use to develop a gradient of trill intensity.* — his words ("means or indicates play" → "indicates playing", to match the sentence before it; one comma); under it THE IMAGE: the cello's first trill of section 2 (`language_curve_vc_130.svg`, 129.535 … 132.489 s): the trills' badge, the go line, the whole curve, the cursor and the level meter at 131.25 s. A second trill, not the bass flute's of §439, so that the page does not show one picture twice; chosen as the next trill whose lane holds nothing else in its span.
+
+**FOR THE PAPER — what these two sentences fix in public:** (1) the YELLOW BOX, which the score's makers have called a mic opening since §64 (it is the window in which the engine records), is told to the PLAYER as a time window in which to play a language type — the microphone is not mentioned; (2) a trill's curve is INTENSITY, the player's to realise — "a combination of speed and volume, and any other parameters a performer might use". The simulation drives a trill's loudness by the curve (the velocity of each strike, §213 … §224); the instruction is wider than the simulation, by his word.
+
+**Asked for: alternatives to the sentence.** Put to him (the AI's wordings; his own stays on the page until he picks):
+- for "A yellow box indicates playing this language type in the time window."
+  - a · A yellow box marks a window of time: play the language type shown beside it within that window.
+  - b · A yellow box is a time window. Play the language type beside it inside the window.
+  - c · A badge beside a yellow box means: play that language type within the time the box spans.
+  - d · A yellow box shows when to play: the language type beside it is played within the box.
+- for "The use of language music is notated in different ways."
+  - e · The language types are notated in two ways.
+  - f · A language type appears in the score in one of several ways.
+- The AI's recommendation: a; and e if the page will show exactly these two ways (the box and the curve) — the score has more (the conductor's arc, the sine's box, the line wedge), so "different ways" may be what he means.
+
+**Spacing, one rule more on his three spaces:** an image belongs to the text ABOVE it — a paragraph space over it (as before), a SECTION space under it before the next text; the list of badges the same (20.6 → 29.2 px, measured in the page).
