@@ -8917,3 +8917,17 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **His words** (dictated): *"a language music badge next to a yellow box indicates that you would play this language within the duration of the yellow box."*
 
 **On the page,** beside the image of the badge and the box: *A language music badge next to a yellow box indicates that you would play this language within the duration of the yellow box.* — in place of *"A yellow box indicates playing this language type in the time window."* (§448). None of the AI's four alternatives was taken; what he kept from having read them is their one shared point — the BADGE is the subject, the box is where it applies (alternative c began "A badge beside a yellow box means"). The sentence now opens as the coloured line's does ("A language music badge with an extended colored line …"): two of the three ways are said in one grammar. "This language", not "this language type": his word, left.
+
+## §457. "INDICATES THAT YOU WOULD" — other ways to say it, put to him (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"Can I get an alternative or some alternatives for indicates that you would? So I'm using that phraseology to say, for example, a language type with a gradient curve indicates that you would play that language."*
+
+**What he is after:** ONE turn of phrase for all the sentences that say what a sign asks of a player (the yellow box · the gradient curve · the coloured line) — since §456 he has been making them one grammar. **Put to him, each on the yellow box's sentence** (nothing changed on the page):
+- a · A language music badge next to a yellow box **means: play** this language within the duration of the yellow box.
+- b · … next to a yellow box **tells you to play** this language within the duration of the yellow box.
+- c · … next to a yellow box **asks you to play** this language within the duration of the yellow box.
+- d · … next to a yellow box **is an instruction to play** this language within the duration of the yellow box.
+- e · **When** a language music badge stands next to a yellow box, **play** this language within the duration of the yellow box.
+- f · … next to a yellow box **calls for** this language, played within the duration of the yellow box.
+
+**The AI's recommendation:** e — the plain imperative, the usual voice of performance instructions, and it carries to the other two unchanged ("When a language type has a gradient curve, play that language following the gradient of the curve."). If the sign should stay the subject of the sentence: a.
