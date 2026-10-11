@@ -210,7 +210,49 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► CHECKPOINT #8 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 midday, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §430 … §463, all on Opus 5.5; written for a session that has never seen this chat. Everything below it in NEXT UP — the three "SINCE THE CHECKPOINT" paragraphs and checkpoint #7 included — is the trail.)*
+**► CHECKPOINT #9 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 late afternoon, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §465 … §482, all on Opus 5.5; written for a session that has never seen this chat. Everything below it in NEXT UP — the two "THE PRINT SCORE …" paragraphs, "SINCE CHECKPOINT #8" and checkpoint #8 itself — is the trail.)*
+
+**In one breath:** DRAFT 01 OF *APPROACHING* HAS ALL FIVE OF ITS THINGS, AND THEY AGREE — the page (the main score `notation/ir/approaching.ir.json`) · the audio (take 02 of `piece-Draft01d`) · the film (`V-MAIN`, tagged) · the performance instructions (`docs/notation_instructions/index.html`, his prose, every heading filled) · **the print score, planned, built, approved and tagged this stretch** (`print/score/approved/2026-10-11-draft01/`, the tag `Approaching-Draft01-print_1.0`). Nothing is mid-build. Nothing is in hand.
+
+**What the stretch made (each is also a line of CLAUDE.md):**
+- the instructions' last section, *Three-Body Problem (Section Two)* — HIS text: the three-body problem is a **performance model** (DEC-202), the physics in lay words, **four phases** (DEC-203) each with its state sign as a badge; two new instructions (the close pass: "respond or react to the energy in the cluster" · the rejoin an opportunity); a copy edit of the whole page, his picks applied;
+- **`docs/PAPER_REFERENCES.md`** — the paper's reading list as found, each citation marked ✔ · ◐ · ✗; and the paper's tentative title, *Notation, Performance and Sonification Practices in the Composition Approaching and in Improvisation with Live Electronics*;
+- **the print score** — PLAN § 2.16, seven steps, done: `bash print/score/build.sh` → 80 pages (the cover · 2 sheets of instructions · 77 of music), A3 landscape, the five gates green; DEC-204, his *"We can keep that score"*.
+
+**THE NEXT CONCRETE STEP.** At `/postclear`: play this block back in five bullets at the most, then STOP and ask in ONE line — *"what is next: the open points of the instructions page, the parts, your ear's findings on the take, the live-electronics discussion, or the paper?"* Start only on his word. Then:
+- **the instructions page** — before ANY edit of `docs/notation_instructions/index.html`: `ls docs/notation_instructions/versions/` (a new file = he has saved since), read the lines FROM THE FILE, change them by exact replacement (the Edit tool, or a script that checks each anchor is there once), and tell him in the reply's FIRST line to press F5 before he types. His wording stays on the page until he picks a letter; options go in the chat. **A change to the page after 15:06 on 2026-10-11 is not in the print: `bash print/score/build.sh` again (5 min), a new archive folder and tag only at his "good".**
+- **the parts** — NOT planned: a plan item first (`docs/PLANNING_METHOD.md`; phase 1 with him). What is known: the same cut as the main score without its electronics flags and a new `--id` (CLAUDE.md § Apps, THE OFFICIAL SCORE); `print/score/build.sh` is written for the one page `approaching`; a staff shows only in the audible beats section (416 … 668 s), which is where a transposing part would differ (the bass clarinet, the bass flute) — Q5, the pitch form, is his.
+- **his ear's findings on take 02** — a level or a note is changed in `scores/piece-Draft01d.json` by a small script (a copy first; the save against `-work.json`, the NEWER is the base), then File ▾ → Reload before any Save, a new take (`docs/RENDER.md` § 0), the film under a new name, the print again.
+- **the paper** — `docs/PAPER_REFERENCES.md` § 3 says what has not been searched at all (the screen-score literature, sonification, the improvisation). A new reference goes into that file with its mark.
+
+**Resume reads:** nothing beyond §2 to ask the question. *If he turns to the paper:* `docs/PAPER_REFERENCES.md`. *If the parts:* `docs/PLANNING_METHOD.md` and PLAN.md § 2.16 (the print's item, the model for it). *If the live-electronics discussion:* `docs/NITS.md`.
+
+**Decisions pending the composer (the bare list):**
+1. A sentence for each of the four language types that have none — Short Attacks · Trills · Accented Long Tones · Multiphonics.
+2. The audit's list on the instructions page (RUNNING_LOG §461): what is left of its nineteen.
+3. Two names he asked for: the two circles in a mic opening ("recording icon" is on the page) · a word for "morph" ("transform" is on the page).
+4. Live Electronics, section four: "yellow box" stands where he dictated "yellow line" — unconfirmed.
+5. "a system that is completely determined but impossible to predict" — left as he wrote it; the copy edit's number 10 ("far ahead") not taken.
+6. The two tags' names (`Approaching-Draft01-film_1.0` · `-print_1.0`) — the AI's; the title is tentative.
+7. His ear's findings on take 02 (the cymbals at +4 dB · the clarinet's low pairs at mf · the spring coil at 702.7 s).
+8. The parts · the performance score (PLAN § 3) · the live-electronics discussion · the paper.
+9. THE PIECES' NUMBERS (DEC-196): the other repos and `composition-system` still carry the old numbers; the trio has no number.
+
+**What the stretch taught — what a cold session trips on:**
+- **PRINT IS ITS OWN RULE-SET ON THE SAME ENGINE.** A change for paper goes where only the print reads it (a badge's span through `Render.inkSpanSs`, never `spanSsOf`; `opts.printEdges` in the renderer; the exporter's own page), and after ANY change to `notation/lib/` the film's pages are proven unmoved — `export_print --plan screen --htmlOnly` before and after, one sha256.
+- **A GATE IS RE-POINTED TO THE DATA, NEVER RELAXED** (a part with `noLabel`; the electronics' players' names from `rules.json`) — and a page is LOOKED AT (`tools/print_look.js`) before a gate is believed: the picture found the badge on the percussionist's box and the lanes running past the final bar.
+- **AN SVG FILTER PRINTS AS A PICTURE.** The pane's grain; it was in the score images of the instructions too (20 raster images in the first front-matter proof). `check_print_pdf` catches it.
+- **A BADGE PLACED AFTER ITS OPENING BY HAND** is one of two different things: a film page-turn case (back before its opening on paper) or a neighbour case (stays) — told apart by another opening of the same player ending within half a second.
+- **`docs/notation_instructions/styles.css` IS CRLF**; a heredoc append writes LF (found and normalised, §479). Count line endings before appending to a file.
+- **He writes on the page while the AI edits it** — eight AI edits and four saves of his this stretch, no collision, by the habit above.
+
+**The deliberately-uncommitted list** (`git status --short` at the checkpoint): ` M bank/samples/index.json` — the engine's index, rewritten at every pass of his engine; his and the engine's, left as always. Nothing else is modified or untracked. **On this machine and GITIGNORED, so that a cold session knows they exist:** `print/score/Approaching-score-JYang.pdf` and its copy in `print/score/approved/2026-10-11-draft01/` (THE PRINT SCORE — back it up) · seven `print/score/PROOF-*.pdf` · `docs/notation_instructions/versions/` (the page before each of his saves) · `docs/notation_instructions/ref/` (reading pages). The session's scratchpad (its edit scripts, the pictures of print pages) dies with the session; nothing in it is needed.
+
+**The engine's repo is in step:** nothing in `electronics/` changed this stretch.
+
+**Model:** Fable for a talk (the paper, the live-electronics discussion, the parts' phase 1, a question of wording); Opus for the page, a re-print, a build.
+
+**► (the trail — the cold-start block until checkpoint #9) CHECKPOINT #8 OF SESSION 3** *(2026-10-11 midday, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §430 … §463, all on Opus 5.5; written for a session that has never seen this chat. Everything below it in NEXT UP — the three "SINCE THE CHECKPOINT" paragraphs and checkpoint #7 included — is the trail.)*
 
 **In one breath:** THE PERFORMANCE INSTRUCTIONS' PAGE EXISTS AND IS MOSTLY WRITTEN — `docs/notation_instructions/index.html`, http://localhost:5500/docs/notation_instructions/index.html — begun and built this stretch, HIS PROSE THROUGHOUT (dictated to the AI, or typed by his own hand on the page through its Edit switch). Draft 01 (the page of the score, the audio, the film — checkpoint #7) is untouched. Nothing is mid-build.
 

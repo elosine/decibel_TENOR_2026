@@ -1699,3 +1699,31 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus, on the wide film `V-MAIN`:)* *"good, archive and tag then /checkpoint"*
 
 *(The AI's reading, marked as such: the film without zooms is approved; archive it piece #6's way and tag the repo; then a checkpoint. The tag's name is the AI's, after the pattern of piece #6's — his to rename. RUNNING_LOG §426.)*
+
+*(DEC-196 … DEC-201, 2026-10-11 — the pieces' numbers, the instructions page's title block, its spaces, the percussion's instruments, the sections named — are recorded with his words in `RUNNING_LOG.md` §430 … §462 and were not copied here; the entries below resume this file.)*
+
+### DEC-202 · 2026-10-11 — the three-body problem is a PERFORMANCE MODEL; its text for the players
+
+*(His words, verbatim — Opus, dictating the last section of the performance instructions:)* *"The three body problem is a performance algorithm that uses the three body problem from physics as a framework to guide ensemble music interaction. Section two of this piece is based on this algorithm. And then can you recommend some alternatives for the word algorithm? I'm not sure this is exactly what I'm, the word I'm looking for. Maybe a paradigm or a description, the name for a paradigm or description of social behavior that tends to follow certain trends like the prisoner's dilemma, that sort of thing."* — then, of six words offered: *"The three body problem is a performance model that uses the three body problem from physics as a framework to guide ensemble music interaction. Section two is based on this model."*
+
+*(Two new instructions, dictated the same afternoon:)* for the close pass — *"in the close pass, as close to them as you can without playing at the same time. You can respond or react to the energy in the cluster."* · for the break and rejoin — *"break, then after a silence, rejoin. If the opportunity presents itself, try to rejoin the texture just after another cluster has broken up."*
+
+*(The physics, as he wrote it on the page by his own hand — read from the file as it stands after his copy-edit picks of DEC-203:)* two bodies "form perfectly predictable patterns, but with three bodies the predictability falls apart in an interesting way: deterministic chaos — a system that is completely determined but impossible to predict"; then one sentence a phase: far enough apart, little effect on each other · drawing closer, the paths bend and each body's motion depends on the others · a close encounter, the bodies "pull hard on each other, and in that moment they trade energy" · "Finally, a body is ejected and it travels away on a long, slow loop until gravity brings it back into the cycle again."
+
+*(The AI's reading, marked as such: "model" as the social sciences use it — the prisoner's dilemma is a model: a simple picture that gives tendencies, not outcomes; "algorithm" promised a fixed result, the opposite of the section's point. The trade of energy he found in the physics came back into the players' language within the hour: in the close pass a player may answer the cluster's ENERGY, not only place an onset beside another's. The rejoin is now unconditional and its timing an opportunity — a player who never hears a cluster break still has a way back in. RUNNING_LOG §466 … §473.)*
+
+### DEC-203 · 2026-10-11 — the model's four are PHASES; the physics' spelling "three-body"
+
+*(His words, verbatim — Opus, his picks from a copy edit of the page:)* *"fix: 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 and the, 12, 13 four phases + "this language type".; and the recorded strike patterns will be used and transformed to produce... ; fix as appropriate: "Break, then after a silence, rejoin." → "Break, then, after a silence, rejoin." ; on the curve;"*
+
+*(The AI's reading, marked as such: on the page the model "has four phases, each represented by its own badge" — chosen of states · phases · stages so that "section" means only the piece's six; and "three-body problem" is hyphenated there, the physics' spelling. He left one finding untaken: "impossible to predict" stays without "far ahead". The code, the registry and the older docs keep "states" and "three body". RUNNING_LOG §474.)*
+
+### DEC-204 · 2026-10-11 — the print score is kept
+
+*(His words, verbatim — Opus, on the proofs and the whole 80-page file:)* *"Okay, that's good. We can keep that score, that print score."* — after *"a yes, b yes, c yes, d yes; go build"* to the plan's four questions (A3 landscape · the electronics' layer on paper · the full score only · the cover's three lines).
+
+*(The AI's reading, marked as such: the file as built is Draft 01's print score — the cover's instruments on two rows, 10.3 seconds a page, a sine's box left without a restated note after a page turn, the AI's paper rules unopposed. Archived and tagged. RUNNING_LOG §475 … §481.)*
+
+### The paper's title, tentative · 2026-10-11
+
+*(His words, verbatim:)* *"Notation, Performance and Sonification Practices in the Composition Approaching and in Improvisation with Live Electronics -tentative title for paper"* — and *"also pls document the research and references you surfaced recently with james saunders et al"* (→ `docs/PAPER_REFERENCES.md`).
