@@ -210,6 +210,48 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
+**► CHECKPOINT #7 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 00:1x, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §419 … §427: Fable for the fixes and the two takes, Opus 5.5 for the film; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #6 included, is the trail.)*
+
+**In one breath:** DRAFT 01 HAS ITS PAGE, ITS AUDIO AND ITS FILM, AND THEY AGREE — tagged `Approaching-Draft01-film_1.0`. The page: the main score `notation/ir/approaching.ir.json` (six sections, 66 screen pages, the presentation score). The audio: `notation/audio/piece-Draft01d.wav` — take 02 of `piece-Draft01d`, the piece played once with the live electronics. The film: `notation/video/approved/2026-10-10-draft01/V-MAIN.mp4` — the wide shot alone, approved by him (*"good"*). Nothing is mid-build.
+
+**Where things stand:**
+- **the piece:** `scores/piece-Draft01d.json` (HIS, UNTRACKED — the only copy of the piece as it now is). Since checkpoint #6 it holds this evening's fixes, all by tool, each tagged on its note: the viola's first note back to key 71 · the cymbal's first recording on the builder's fields at velocity 127 · the five low bass clarinet beating pairs' notes `mf` (velocity 72) · two strike notes an octave down · seventeen percussion strike notes and the viola's two Bartók notes moved onto keys that sound (`properties.keyFix` · `rangeFix` · `levelFix`, each with `was`). He Reloaded the page before take 02.
+- **the rack:** `reaper/decibel_rack.rpp` saved by him at 22:34 with the China Cymbal track's fader +4 dB (`bank/trims.json` `byEar` says so) — modified in the tree, his to commit.
+- **the audio is a TAKE, and a take is READ:** `tools/vet/peak_watch_take.lua` (launched right after `take.js start`) + `node tools/vet/peak_watch_read.js --score <name> --take NN` (right after `take.js stop`) — every note's own track, did it sound. It found nineteen notes with no sound under their keys in take 01 of D; take 02 has one faint (the spring coil, 702.7 s).
+- **the film:** PLAN § 2.14, done. The first render had nine close-ups; his word *"lets have the video without any zooms"* made it the wide shot alone. The close-up groups (`container.json` `realizations.video-cut`) and `notation/video/cut-list.json` stay in the repo, unused.
+
+**THE NEXT CONCRETE STEP.** At `/postclear`: play this block back in five bullets at the most, then STOP and ask him in ONE line — *"what is next: your ear's findings on the take, the print score, the parts, the performance notes, or the live-electronics discussion?"* Start only on his word.
+- **If he gives a level or a note to change:** change it in `piece-Draft01d` by a small script (a copy first; compare the save with `scores/piece-Draft01d-work.json` before writing — the NEWER is the base), tell him File ▾ → Reload BEFORE any Save, then a new take (`docs/RENDER.md` § 0 — CLAUDE.md § Apps, THE TAKE) and the film again under A NEW NAME (CLAUDE.md § Apps, THE FILM: the same command, `--out …-V-MAIN-r2.mp4`; ~7 min); a new archive folder and tag only at his "good".
+- **If he says print:** piece #6's record first (its PLAN `2b-P`, its RUNNING_LOG §766 on) — the print planner cannot measure a badge here (`notation/lib/render.js` `spanSsOf` has no `badge` case; `check_print_edges --ir approaching` fails on one), and three print decisions are his.
+- **If he says the parts:** the main score's command (CLAUDE.md § Apps, THE OFFICIAL SCORE) without its electronics flags, a new `--id`.
+
+**Resume reads:** nothing beyond §2 to ask the question. `docs/RENDER.md` § 0 · § 0.2 only for a take. `docs/NOTATION_SCHEME.md` only for a notation change. `docs/NITS.md` only for the live-electronics discussion.
+
+**Decisions pending the composer (the bare list):**
+1. His ear on three levels in take 02: the bowed China cymbals at +4 dB (the bow ignores velocity — more = the fader again) · the bass clarinet's low pairs at mf · the spring coil at 702.7 s (faint, a quiet patch).
+2. The piece in hand is not in git (`piece-Draft01d` and his other scores, untracked) — commit at his word, as at §291.
+3. The rack's save (the cymbal's fader) — commit at his word.
+4. The tag's name (`Approaching-Draft01-film_1.0`, the AI's, after piece #6's; the title is tentative).
+5. Still open from checkpoint #6: six strikes with no badge · the percussionist's one note a strike · the beating section's open points · the ten FREE strikes whose save lacks a player · print's three decisions · the parts not cut.
+
+**What this stretch taught — what a cold session trips on:**
+- **THE FILM'S RASTERIZER IS NOT CHROME.** A new drawn kind is probed (`export_video.js --probe <t>`) and LOOKED AT before a render; the notation app and every gate measure Chrome.
+- **A KEY INSIDE A VOICE'S DECLARED RANGE CAN HAVE NO SOUND:** the percussion's plain voice `main` sits on the Bongos track and sounds only on a bongo key; a by-key voice's keys are sparse (`sandbox/instruments.js` BY_KEY_MAPS — `strike_perc.js` draws from the list now); the viola's Bartók has none above 66. A new tool that picks a key reads the voice's `keys`, not its range.
+- **THE BOWED CHINA CYMBAL IGNORES VELOCITY** — its level is the track's fader (or a CC not wired). `apply_trims.lua` would reset the crotales he raised by hand: never run it for one track; `node tools/reaper_job.js fader "<track>" <dB>`, then his CTRL+S (the API set does not mark the project unsaved, and `take.js` copies the rack FROM DISK).
+- **A long shell command (over ~8 KB) fails here with a false quoting error:** long texts and scripts go through the Write tool into the session's scratchpad, then one short command.
+- **Every film render keeps its own name**; the takes are ~1.1 GB each in `notation/audio/takes/` (four on disk: two of C, two of D), his to clear.
+- **His score server (5500) was started before `server.js` learned `.mp4`:** a film link there downloads the file until he restarts it.
+
+**The deliberately-uncommitted list** (`git status --short` at the checkpoint):
+- `bank/panel_snapshots.json` (M) — his takes; tracked, his to commit.
+- `bank/samples/index.json` (M) — the engine's index, rewritten at every pass of his engine.
+- `reaper/decibel_rack.rpp` (M) — HIS save of 22:34 (the cymbal's fader); his to commit.
+- `scores/piece-3BodyRedo.json` · `scores/strike-rig.json` (M) — the page's saves of two tracked scores; his.
+- untracked, ALL HIS, never committed without his word: `scores/piece-Draft01.json` · `01b` · `01c` · **`01d` (THE PIECE)** · `piece-sec05-a` · `sec05-finalDraft` · `sec05-strikes-a` · `sec05a` … `sec05h` · `audition-sec01-fx-updates`.
+- NOT in the repo, on the machine: the film files (`notation/video/renders/` two, `approved/2026-10-10-draft01/V-MAIN.mp4`), the probe frames (`notation/video/probe/`), the WAVs, the takes. The copies of `piece-Draft01d` before each tool write of this evening are in the dying session's scratchpad only — the way back is on the notes themselves (`was`).
+
+**Model:** Fable for a talk (his findings, the live-electronics discussion, the performance notes); Opus for a take, a film, print or the parts.
+
 **► 2026-10-10 23:5x (Opus 5.5, RUNNING_LOG §425; DEC-194) — THE FILM IS THE WIDE SHOT ALONE, at his word (*"lets have the video without any zooms"*): `notation/video/renders/Approaching-Draft01-V-MAIN.mp4`** (gitignored; 788.7 s, 1920 × 1080, 30 fps, the take of D under it, the first sound 4.000 s after the WAV’s; 41.9 MB). The first render with close-ups (`…-V-CUT-seed7.mp4`, the block below) is kept beside it; the close-up groups and the cut list stay in the repo, unused. **► NEXT: his watch-through of V-MAIN. On his "good": the archive `notation/video/approved/<date>-draft01/` and a tag (piece #6’s §700). A fault he finds = a probe of that moment first (`export_video.js --probe <t>`).** The link plays from 5501 (the throwaway, up from this session) and from 5500 after his score server’s next restart.
 
 **► 2026-10-10 23:2x (Opus 5.5, RUNNING_LOG §424; DEC-193; PLAN.md § 2.14) — THE FILM, PIECE #6’s APPROACH: THE FIRST RENDER OF THE WHOLE FILM IS MADE — `notation/video/renders/Approaching-Draft01-V-CUT-seed7.mp4` (gitignored; 788.7 s = the 4 s lead-in + the take; 1920 × 1080, 30 fps; the first sound 4.000 s after the WAV’s; 42.6 MB).** The wide shot with NINE close-ups (seed 7, piece #5’s recipe, crossfades), the last page held under the tail, no title card. THE CLOSE-UP GROUPS ARE THE AI’S CALL, HIS TO CHANGE (`container.json` `realizations.video-cut`): the top three lanes · the bottom three, the percussionist’s lane in both, zoom 1.68 (`export_video.js` `HALVES` lets groups share a lane). Before the render, one frame a section through the film’s rasterizer, looked at: every sign of this piece is drawn (piece #6’s two film faults were of that kind). `score/server.js` knows `.mp4` and answers a byte range (the film scrubs in Chrome) — HIS SERVER HAS IT AFTER ITS NEXT RESTART; the throwaway on 5501 serves it meanwhile. **► NEXT: HIS WATCH-THROUGH. Then, at his word: other groups or another seed (the same render under `-r2`, ~9 min) · on his "good" the archive `notation/video/approved/<date>-draft01/` and a tag (piece #6’s §700). A fault he finds in the film that the notation app does not show = the rasterizer: probe that moment (`export_video.js --probe <t>`), look, fix in `notation/lib/render.js` or the exporter’s fonts.** Left as known: a close-up turns its pages at other moments than the wide shot, so a badge at a close-up’s page start can sit on its own mic opening (one at 150 s, the percussionist’s) — a case he names is cured by hand.
