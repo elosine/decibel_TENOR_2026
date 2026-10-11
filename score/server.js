@@ -395,6 +395,36 @@ const server = http.createServer((req, res) => {
             return R.json({ success: true, row, rows: shelf.load() });
         });
     }
+    // 2026-10-11 (RUNNING_LOG §435): THE PERFORMANCE INSTRUCTIONS' EDIT SWITCH — he types into the page itself
+    // (docs/notation_instructions/edit.js) and its Save posts the whole file here. ONE file, a fixed path — nothing in the request names it.
+    // GET = { html, sha } (the file as it is on disk, and its sha1) · POST { html, base } = write it, where `base` is the sha the page
+    // got when it began editing: a file that has changed on disk since (the AI's edit, another tab) is NOT written over — 409, and the
+    // page tells him to reload. The file as it was before each save is kept in docs/notation_instructions/versions/ (gitignored).
+    if (url === '/api/instructions') {
+        const insFile = path.join(__dirname, '..', 'docs', 'notation_instructions', 'index.html');
+        const sha = buf => require('crypto').createHash('sha1').update(buf).digest('hex');
+        if (!fs.existsSync(insFile)) return R.status(404).json({ success: false, error: 'no instructions page' });
+        if (req.method !== 'POST') { const now = fs.readFileSync(insFile); return R.json({ success: true, sha: sha(now), html: now.toString('utf8') }); }
+        const chunks = [];                                  // whole buffers: the page's text has characters of several bytes
+        req.on('data', c => chunks.push(c));
+        return req.on('end', () => {
+            let body;
+            try { body = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch (e) { return R.status(400).json({ success: false, error: 'Bad JSON' }); }
+            const html = body && body.html;
+            if (typeof html !== 'string' || html.length > 4e6 || !/<body>[\s\S]*<\/body>/.test(html)) return R.status(400).json({ success: false, error: 'a whole page is needed' });
+            const was = fs.readFileSync(insFile);
+            if (sha(was) !== body.base) return R.status(409).json({ success: false, error: 'the file changed on disk since the page read it', sha: sha(was) });
+            const d = new Date(), p2 = n => String(n).padStart(2, '0');
+            const stamp = d.getFullYear() + p2(d.getMonth() + 1) + p2(d.getDate()) + '-' + p2(d.getHours()) + p2(d.getMinutes()) + p2(d.getSeconds());
+            const vdir = path.join(path.dirname(insFile), 'versions');
+            if (!fs.existsSync(vdir)) fs.mkdirSync(vdir, { recursive: true });
+            fs.writeFileSync(path.join(vdir, 'index-' + stamp + '.html'), was);
+            const out = Buffer.from(html, 'utf8');
+            fs.writeFileSync(insFile, out);
+            console.log('instructions: saved from the page (' + out.length + ' bytes; the file before it: versions/index-' + stamp + '.html)');
+            return R.json({ success: true, sha: sha(out) });
+        });
+    }
     // PLAN 1c (2026-09-03): re-ingest a save into the scattered-strike database from the
     // Strikes drawer. Runs tools/strike_db.js as a child (the tool stays the one authority on
     // the capture); returns its census text. Body: { score, gap?, sim?, label? }.

@@ -44,6 +44,8 @@ docs/call/
 # read it beside this piece's on the same server (http://localhost:5500/docs/notation_instructions/ref/<piece>/index.html).
 # Not this piece's content: it lives in its own repo. This piece's page (docs/notation_instructions/index.html · styles.css) IS committed.
 docs/notation_instructions/ref/
+# THE EDIT SWITCH'S SAFETY COPIES (RUNNING_LOG §435): the page as it was before each Save made from the browser — on this machine only.
+docs/notation_instructions/versions/
 
 # Probe / research artefacts
 probes/_selftest_render.wav
