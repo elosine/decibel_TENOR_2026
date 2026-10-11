@@ -290,3 +290,12 @@ h3 + .demo-link { margin-top: -0.485em; }
 /* Approaching 2026-10-11 (RUNNING_LOG §441): an image that ENDS a section stands a SECTION space above the next heading, its
    bottom edge taken as its baseline (22.0 px before; 29.2 with this). */
 .notation-section > img.zoomed:last-child { margin-bottom: 1.19em; }
+
+/* Approaching 2026-10-11 (RUNNING_LOG §442): THE LANGUAGE TYPES IN TWO COLUMNS — a badge, its name beside it in bold. The badge
+   is an img.zoomed at the score images' one scale (--w 84), without the outline a score crop carries. The list stands a paragraph
+   space under the sentence above it (piece 5's 0.8em, as text → an image). */
+.badge-list { margin-top: 0.8em; }
+.badge-row { display: flex; align-items: center; gap: 1.1em; margin-top: 0.6em; }
+.badge-row:first-child { margin-top: 0; }
+.notation-section .badge-row img.zoomed { flex: none; margin: 0; outline: none; }
+.badge-row p { margin: 0; }

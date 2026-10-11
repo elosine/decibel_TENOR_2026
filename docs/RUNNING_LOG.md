@@ -8749,3 +8749,13 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **What the section will have to carry, none of it written:** the six types and their badges (short attacks · trills · accented long tones · multiphonics · audible beats · scattered strikes — `bank/language/language.json`, `docs/NOTATION_SCHEME.md`), and that a badge names a KIND of sound and leaves the rest to the player (DEC-99: no dynamics, no words in the parts; DEC-199: the percussion's instrument). His to dictate.
 
 **Spacing:** the section before it ends on an image, a case the three spaces had not met: the image's bottom edge → the next heading was 22.0 px; set to the section space, 29.2 (`styles.css`, one rule), the edge taken as the image's baseline. Heading → its text: 29.2, by the system.
+
+## §442. THE SIX LANGUAGE TYPES ON THE PAGE — a badge and its name, in two columns (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"then in two columns, the image or the badge on the left, and then the name on the right in bold."*
+
+**On the page,** under the sentence of §441: six rows — the badge, then its name in bold — in the order the types enter the piece: **Short Attacks** (the opening; the three body problem) · **Trills** and **Accented Long Tones** (section 2) · **Multiphonics** (the drones) · **Audible Beats** · **Scattered Strikes**. The names are the bank's (`bank/language/language.json`), capitalised as this page's other leads; no period after a name that stands alone — when he gives a type its sentence, the lead takes the period of §439's rule. The three body problem's badge is NOT in the list: it is a method's sign, not a language type (said to him in one line).
+
+**The badges are the chosen ones, from the bank — not drawn again:** `node tools/language/to_instructions.js` (new) writes `docs/notation_instructions/images/badge_<type>.svg` for every chosen type through `tools/language/badge_lib.js`, the drawing the working page of §307 and the notation registry (`to_rules.js`) share. Three readers of one bank now: the candidates' page, the score, the instructions. **Their size is the score images' one scale** (piece 5's rule): a badge is 41.9 px in the frame, 84 in the zoomed frame, so `--w 84` — 36.8 px on the page, which is, within a pixel, the 36 px the badge format was designed at in the quartet.
+
+**Seen once on the page** (the AI's pane at 1280 px): six rows, each badge 36.8 px square, its name 18.7 px to its right, 10.2 px between rows. The rows are `.badge-row` (a flex pair: `img.zoomed` + a paragraph — so the Edit switch reaches each name); the list stands a paragraph space under the sentence.
