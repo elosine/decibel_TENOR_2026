@@ -8767,3 +8767,18 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **On the page:** ***Demo Recording with Score-Following Video:*** *https://youtu.be/EMYu62G8KiM* — one line in the body's size: piece 5's heading is now the line's bold lead, a colon (inside the bold), the link after it. Third form of this item in a morning: a heading with a large link under it (piece 5's, §436) → the link at the body's size, a paragraph space under the heading (§439) → one line. It reads now as a line of the introduction rather than a section of its own — the page's first heading is *Instrumentation*.
 
 **Spacing, by the system, read once in the page:** the blurb → the line 21.0 px (a paragraph space — two paragraphs), the line → *Instrumentation* 29.2 px (a section space). Whether the line should stand a section space under the blurb, as its heading did, is his — said to him in one line. The rule `h3 + .demo-link` (§439) went with the heading.
+
+## §444. THE FIRST TYPE GETS ITS SENTENCE — AUDIBLE BEATS (2026-10-11, Opus 5.5)
+
+**His words** (dictated; the full stops inside the sentence are the transcription's pauses): *"Audible beats colon. New sentence in regular font size, no bold. For this musical material, the live electronics will generate sine tones. At specific pitches and the performer can generate audible beating against these sine tones. Using small glissandos from unison. Pitch. Can you give me some options for the sentence using small glissandos from unison pitch?"*
+
+**On the page,** in the Audible Beats row of the six: ***Audible Beats:*** *For this musical material, the live electronics will generate sine tones at specific pitches, and the performer can generate audible beating against these sine tones using small glissandos from unison pitch.* — his words, one comma the AI's. THE FORM OF A TYPE'S ENTRY: the bold name, a COLON, then a plain sentence (the page's other entry, *Gradient Curves.*, ends its lead in a period — two forms on one page now; his to make one). The five other rows keep the bare name until he gives each its sentence.
+
+**Asked for: other ways to say the last phrase.** Put to him, each the sentence's ending:
+- a · … using small glissandos around the unison.
+- b · … by bending the pitch slightly above or below the unison.
+- c · … with small glissandos away from the unison and back.
+- d · … by playing very slightly out of tune with them, in slow, small glissandos.
+- e · (two sentences) … against these sine tones. Small glissandos away from the unison make the beating: the further from the unison, the faster the beats.
+
+**The AI's remark, marked as such:** "from unison" says one direction; in the section as composed (§269 … §288) a pair rises from the unison and holds, or FALLS toward it and stops short (never below 0.6 beats a second), or rises, holds and falls — so "around" or "above or below" is nearer to what the players will meet. The recommendation: a. And e is the only one that tells a player what the bend DOES.
