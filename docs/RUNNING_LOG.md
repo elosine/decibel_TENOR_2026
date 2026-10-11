@@ -8880,3 +8880,12 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **In the image and not asked for:** the grey band with purple lines at the bottom of every lane — the electronics' layer of the strikes (§412: their answers as return bricks, 677 … 770 s, on every lane); every image of this section cut from the presentation score has it.
 
 **FOR THE PAPER:** his paragraph is the performance instruction of DEC-119 (§342: each strike NOTATED or OPEN) in a player's words, and it adds one fact the makers' vocabulary never needed: "Each performer will have the same time frame" — the window is the ensemble's, one span on five lanes (§411: every window drawn on all the lanes, whatever the save holds).
+
+## §453. HIS OWN HAND ON THE PAGE — the Edit switch's first use; two sentences reworded by him (2026-10-11, Opus 5.5)
+
+**Read from the machine, not told:** three safety copies in `docs/notation_instructions/versions/` (10:54:36 · 10:54:38 · 10:55:28) — he saved from the page three times while the AI was cutting the images of §451 · §452. The diff of the page across that stretch shows what he typed:
+- **Audible Beats:** *… will generate sine tones at specific pitches. The performer will generate audible beating against these sine tones using small glissandos around the unison.* — the one sentence made two; "can" → "will" (an instruction, as "will attempt to" → "will produce" at §445).
+- **Scattered Strikes:** *… like a handful of tossed pebbles hitting the ground.* — "a tossed handful of pebbles" → "a handful of tossed pebbles".
+- and the dash in the scrolling cursor's paragraph is now the character itself where the file had its numbered code — the one normalisation a save from the page makes (§435), the same dash to a reader.
+
+**The switch held, on his Chrome, on its first real use:** only the lines he changed moved; every comment, every image line and the order of the file are as they were. **And the two writers met for the first time:** his saves fell between two of the AI's writes; the AI's next edit (§452) was an exact-text replacement elsewhere in the file and went onto HIS version, so nothing of his was lost — by luck of the tool, not by the rule the AI had set itself at §435 (to ask about unsaved typing before editing the file). The other direction still stands: his page, if left in Edit since 10:55, is older than the file now — its next Save will be refused and say so. Said to him first thing.
