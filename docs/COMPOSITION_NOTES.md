@@ -1649,3 +1649,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"add the strikes to the main score and /checkpoint"*
 
 *(The AI's reading, marked as such: the scattered strikes' pages join the official score, which is then the whole piece; then a checkpoint. RUNNING_LOG §416.)*
+
+### DEC-187 · 2026-10-10 — for the render list: the strikes at 680.6 may not sound or not be on time; verify the GCs
+
+*(His words, verbatim — Opus:)* *"to add to the render list the multiple strikes at 680.6. I can't tell, but I think some of them might not be sounding or aren't sounding, uh, aren't synced, aren't sounding on time. So let's double check those. And actually, if you can verify that the GCs are where they should be, and we can eliminate the notation side."*
+
+*(The AI's reading, marked as such: a note for the re-render about the run of strikes around 680.6 s — he suspects missing or late sounds; and a check to make now: are the conductor's arcs at the right times, so that the notation can be ruled out. RUNNING_LOG §418.)*
