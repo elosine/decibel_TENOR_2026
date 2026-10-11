@@ -8613,3 +8613,24 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **Two things that are the AI's on the page, his to strike:** the year "2026" (kept from candidate a — he removed only the ensemble) · the instruments' order (the score's lanes, top to bottom).
 
 **Deferred, flagged:** the print exporter's instruction pages read the old shape (an `<h1>` then `<p class="subtitle">`) for their title strip — `docs/NITS.md`, for when the print score is made.
+
+## §434. THE TITLE BLOCK'S GAPS — two sizes, his rule; his own blurb back; a way to type into the page asked for (DEC-198) (2026-10-11, Opus 5.5)
+
+**His words**, with a screenshot of the page of §433 in his Chrome (dictated): *"So the amount of vertical space between the title and the ensemble. Let's make that same amount of vertical space between the ensemble and my name. And then the current space, it might be the same, but the current space between the ensemble and my name, before you reduce it, let's use that amount of space between my name and the dividing line. And then again, the dividing line and the title performance instructions. And then can you recommend a, uh, I guess, a word processing or writing format, potentially still based in HTML, where I can see it just like I see it now, and you can edit it, but I can also edit myself. Word process, I can type, I can click and type. If that if there's a quick one, that's fine. We don't have to put too much thought into it. If not, that's fine. We'll just continue to work like this. And then can I see the first paragraph there? Except instead of your sentence to play it, let me have my original sentence back, I guess with the, like, it is, I forgot, I forgot it now, but you'll just need something like it is in a digital format or something like that. It is served online or something."*
+
+**DEC-198 — the block has TWO gap sizes** ("the ensemble" in his words = the line of instruments): a SMALL one, title → instruments = instruments → composer; a LARGE one — what stood between the instruments and the composer — composer → rule = rule → PERFORMANCE INSTRUCTIONS.
+
+**How a "gap" was measured (the AI's choice, said to him):** not the CSS margins — the lines differ in size and leading, so equal margins do not look equal — but what the eye sees: from the BASELINE of the line above (or the rule) to the TOP OF THE TALL LETTERS of the line below (or the rule). Read in the running page (the AI's pane at 1280 px wide, Lato loaded, body 17 px; a zero-size inline probe for each baseline, the canvas's text metrics for the letter tops). At the pane's own 561 px the instruments and the heading both wrap to two lines and every figure is wrong — the first reading was thrown away.
+
+| gap | before | asked | after |
+|---|---|---|---|
+| title → instruments | 22.7 px | (the reference) | 22.5 |
+| instruments → composer | 32.9 | = 22.7 | 22.7 |
+| composer → rule | 42.0 | = 32.9 | 32.7 |
+| rule → PERFORMANCE INSTRUCTIONS | 20.3 | = 32.9 | 33.2 |
+
+**The three numbers moved in `styles.css`:** `.piece-by` `margin-top` 0.9 → 0.344em · `h1.doc-name` `margin-top` 1.6 → 1.17em · its `padding-top` 0.5 → 1.093em (solved from the measures; the pairs agree within half a pixel). Not touched: the title → instruments gap itself, the gap from the heading down to the blurb. (The other reading of "space" — from the tails of p and g down to the next line's top — gives 14.7 and 29.9 px before; not used: tails are sparse, the baseline is the edge the eye reads.)
+
+**The blurb:** his "original sentence" is the one he dictated at §432 and could not recall — *"It is served from the cloud and displayed in a web browser, like an online video game."* — put back word for word after his first; the AI's candidate is out. The paragraph on the page is now wholly his: *The score for Approaching is in a computer-animated digital format. It is served from the cloud and displayed in a web browser, like an online video game.*
+
+**The writing format — recommended, NOT built:** the page itself with an edit switch — a button that makes every paragraph click-and-type in place, and a Save that writes `index.html` through the score server (a small script on the page, one save route in `score/server.js`, one restart of his score server; the save refused if the file changed since the page was loaded, so that neither of us writes over the other). Why this and not a word processor: it IS the page he sees, it stays the one source of the print score's instruction pages, and the AI goes on editing the same file. Google Docs was the alternative named — he could type and the AI could edit it, but it would not look like the page and would have to be copied over. His "go" awaited.
