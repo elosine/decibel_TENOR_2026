@@ -8799,3 +8799,9 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - e · … within a short time frame: a handful of pebbles thrown in the air, heard as they land.
 
 **The AI's recommendation:** a — the throw is one word ("tossed") and the sentence ends on the impact.
+
+## §446. AUDIBLE BEATS — the ending chosen: "around the unison" (2026-10-11, Opus 5.5)
+
+**His words:** *"a for sine tones"* — of §444's five endings.
+
+**On the page:** ***Audible Beats:*** *For this musical material, the live electronics will generate sine tones at specific pitches, and the performer can generate audible beating against these sine tones using small glissandos around the unison.* His sentence, the last three words the chosen wording ("from unison pitch" → "around the unison": both directions, toward as well as away). The pebbles' five (§445) are still open — his letter said "for sine tones" only.
