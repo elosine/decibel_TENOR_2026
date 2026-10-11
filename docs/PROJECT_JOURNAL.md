@@ -210,7 +210,7 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► SINCE THE CHECKPOINT (2026-10-11, RUNNING_LOG §428 — his word *"commit my scores and the rack"*): HIS SCORES AND THE RACK ARE IN GIT — the sixteen that were untracked (`piece-Draft01d`, THE PIECE, among them), the two tracked saves, and `reaper/decibel_rack.rpp` with the cymbal’s fader. In the block below read "untracked" as "committed 2026-10-11"; pending decisions 2 · 3 are closed. Still modified and his: `bank/panel_snapshots.json` (his takes) · `bank/samples/index.json` (the engine’s index). A change he makes to a score after this is again his to commit.**
+**► SINCE THE CHECKPOINT (2026-10-11, RUNNING_LOG §428 — his word *"commit my scores and the rack"*): HIS SCORES AND THE RACK ARE IN GIT — the sixteen that were untracked (`piece-Draft01d`, THE PIECE, among them), the two tracked saves, and `reaper/decibel_rack.rpp` with the cymbal’s fader. In the block below read "untracked" as "committed 2026-10-11"; pending decisions 2 · 3 are closed. His takes (`bank/panel_snapshots.json`) too, at his next word (§429). Still modified: `bank/samples/index.json` only (the engine’s index, rewritten at every pass). A change he makes to a score after this is again his to commit.**
 
 **► CHECKPOINT #7 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 00:1x, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §419 … §427: Fable for the fixes and the two takes, Opus 5.5 for the film; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #6 included, is the trail.)*
 

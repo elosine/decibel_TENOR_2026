@@ -8543,3 +8543,7 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **Committed, by explicit paths (as at §291):** the sixteen untracked scores — `piece-Draft01` · `01b` · `01c` · **`01d` (THE PIECE: six sections, 12:59, with the evening's fixes of §419 … §422; the save take 02 of D and the film were made from)** · `piece-sec05-a` · `sec05-finalDraft` · `sec05-strikes-a` · `sec05a` … `sec05h` · `audition-sec01-fx-updates` — the page's saves of two tracked scores (`piece-3BodyRedo` · `strike-rig`) and `reaper/decibel_rack.rpp` as he saved it at 22:34 (the China Cymbal track's fader +4 dB, §422). 24 MB in all. The tag `Approaching-Draft01-film_1.0` (§426) sits two commits before this one: the piece it names is the file committed here, unchanged since.
 
 **Left, not named by him:** `bank/panel_snapshots.json` (his takes — the Strikes drawer's and the others'; modified) · `bank/samples/index.json` (the engine's index, rewritten at every pass). Said to him in one line.
+
+## §429. HIS TAKES COMMITTED, at his word (2026-10-11, Opus 5.5)
+
+**His word**, on §428's one line about what was left: *"commit the takes too"* — `bank/panel_snapshots.json` (his panel takes: the Strikes drawer's `strikes01 … 45` and the A takes of §414 · §415, the beating takes, the strike-pitch takes), committed as it stands. The only modified file left in the tree is `bank/samples/index.json`, the engine's index, rewritten at every pass of his engine.
