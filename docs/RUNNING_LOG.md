@@ -8852,3 +8852,17 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 **FOR THE PAPER — the three ways are now all said in his words, and they are a scale of freedom:** the YELLOW BOX (a window: play the type inside it) · the GRADIENT CURVE (play the type along a drawn intensity) · the COLOURED LINE (play the type freely for the line's length, its thickness a general density or intensity "to be interpreted freely"). In the score the line is the line wedge of §355 · §399 · §406: the three body problem's state wedge, the drones' line, the orange line under each sine. The principle that a section's graphic takes its language type's colour (§405, "the designated language colour") reaches the player here as one parenthesis: each language type has an assigned color.
 
 **The AI's remark, marked as such:** the three body problem's line changes COLOUR by state (blue · yellow · red · purple, §355), so there the line's colour is not the badge's — the sentence as it stands is true of the drones and the audible beats; said to him in one line.
+
+## §451. THE COLOURED LINE'S IMAGE — his pick, the winds over a whole page at 9:24 (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"Oh, and for that one, can you get the image around 8 minutes and 50 seconds? This would be the uh, the sign tone badge with the red line, and just so we can have as much of the red line as possible. Actually, you can include that full wind staff with the two um, badges there to the end of the page."* — and, sent while the AI was cutting it: *"Actually, a better one is around 9 minutes and 24 section, uh, seconds. Just include the entire win staff and that whole page width. So the entire wins the two lanes."* ("sign tone" = sine tone; "win" = wind.)
+
+**On the page,** under the coloured-line paragraph of §450: `language_line_winds_560.svg` — the bass flute and the bass clarinet over THE WHOLE PAGE of the main score that holds 9:24 (560 … 572 s), gutter included (the bracket, the two clefs): the flute's audible beats badge and its line from 562.71 s, the clarinet's from 567.41 s, both running to the page's end, and on each staff the sine's note in its purple box. It is the first image on the page that he chose by looking at the score himself, by time code.
+
+**What was tried, in order:** (1) his first time code, 8:50 — the page 524 … 536 s: the clarinet's badge at 528.01 s, the flute's at 533.31 s; cut as the two lanes from 527.35 s to the page's end, put on the page, not yet looked at when (2) his second message came; that file is gone, never committed.
+
+**THE ONE-SCALE RULE IS BROKEN BY THIS IMAGE, KNOWINGLY (said to him).** Piece 5's rule (its §704, his word then): every score image is a crop of the ZOOMED score, all at one scale, so a zoomed screen's 5.5 s is the most an image can hold. He asked here for a whole page's width — 12 s — which exists only in the score UNZOOMED: the image is cut at Z 1 (`--zoom 1 --gutter`), half the scale of the page's other images (a badge 18 px here against 37 px in the list above it). At the one scale it would be twice the column's width. The first cut had the same fault in a smaller degree (Z 1.35 by `--fit`: its two badges stood 5.3 s apart).
+
+**The line he calls red is the audible beats' orange** (`SOL_orange` #E04424, a red-orange since §305) — the colour's own history: read off photographs of LeWitt's walls as "a RED-ORANGE".
+
+**Seen once on the page** (the AI's pane at 1280 px): both staves, both badges, both lines to the right edge, the purple boxes above them.
