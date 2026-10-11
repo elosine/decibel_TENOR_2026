@@ -32,11 +32,14 @@ const useWork = fs.existsSync(WORK) && fs.statSync(WORK).mtimeMs > fs.statSync(F
 const s = JSON.parse(fs.readFileSync(useWork ? WORK : FILE, 'utf8'));
 const PERC = s.tracks.findIndex((t) => t.instKey === 'percussion'), MAL = s.tracks.findIndex((t) => t.instKey === 'bowed_vibraphone');
 if (PERC < 0 || MAL < 0) die('the score has no percussion or no mallets lane');
-const techOf = (inst, key) => { const t = (INS[inst].techniques || []).find((x) => x.key === key); if (!t) die(inst + ': no voice ' + key + ' (bank/strike_section.json perc)'); return { key, lo: t.rangeLow != null ? t.rangeLow : INS[inst].rangeLow, hi: t.rangeHigh != null ? t.rangeHigh : INS[inst].rangeHigh }; };
+const techOf = (inst, key) => { const t = (INS[inst].techniques || []).find((x) => x.key === key); if (!t) die(inst + ': no voice ' + key + ' (bank/strike_section.json perc)'); return { key, lo: t.rangeLow != null ? t.rangeLow : INS[inst].rangeLow, hi: t.rangeHigh != null ? t.rangeHigh : INS[inst].rangeHigh, keys: t.keys ? t.keys.map((k) => k.midi) : null }; };
+// A BY-KEY VOICE'S KEYS ARE SPARSE (2026-10-10, RUNNING_LOG §421 · §422): `bongos_sticks` declares 60 … 79 and has ten keys; `toms_high_rods` 53 … 81 and six.
+// A key drawn inside the declared range landed on an empty key — fifteen silent strikes in take 01 of D. The draw is from the voice's own
+// list (`keys`, the recipe's BY_KEY_MAPS) when it has one; the range only for a voice without a list (the pitched mallets).
 const pool = (C.pool || []).map((k) => techOf('percussion', k)), mallets = (C.mallets || []).map((k) => techOf('bowed_vibraphone', k));
 if (!pool.length) die('bank/strike_section.json perc.pool is empty');
 const rnd = SC.rng(SEED * 3571 + 11), deck = (p) => { let d = []; return () => { if (!d.length) d = SC.shuffle(p.slice(), rnd); return d.shift(); }; };
-const nextPerc = deck(pool), nextMal = deck(mallets), keyIn = (t) => t.lo + Math.floor(rnd() * (t.hi - t.lo + 1));
+const nextPerc = deck(pool), nextMal = deck(mallets), keyIn = (t) => t.keys && t.keys.length ? t.keys[Math.floor(rnd() * t.keys.length)] : t.lo + Math.floor(rnd() * (t.hi - t.lo + 1));
 // the strikes' percussion notes, by strike in time order
 const g = new Map();
 for (const o of s.objects) { if (o.type !== 'waveCurve' || o.sonifyNote == null || o.layer !== PERC || !/^grp-strike-/.test(String(o.groupId || '')) || o.technique !== 'main' || (o.properties && o.properties.strikePerc)) continue; if (!g.has(o.groupId)) g.set(o.groupId, []); g.get(o.groupId).push(o); }

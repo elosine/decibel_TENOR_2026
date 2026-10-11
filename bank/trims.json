@@ -226,7 +226,13 @@
    "jsVolumeDb": 0,
    "soundingS": 1.49,
    "nPitches": 3,
-   "reference": "the instrument mean across its measured pitches"
+   "reference": "the instrument mean across its measured pitches",
+   "byEar": {
+    "at": "2026-10-10",
+    "deltaDb": 4,
+    "faderDbNow": 0.01,
+    "why": "DEC-190 (RUNNING_LOG §421): the bowed China cymbal a little quiet in take 01 of D — the fader alone, set through the bridge; apply_trims.lua NOT run (it would reset the crotales he raised by hand, §273)"
+   }
   },
   {
    "inst": "small_metals_spring_coil",
