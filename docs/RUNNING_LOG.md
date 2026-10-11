@@ -8564,3 +8564,19 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 **The links:** http://localhost:5500/docs/notation_instructions/index.html · http://localhost:5500/docs/notation_instructions/ref/recombination/index.html
 
 **For the paper:** the instructions page is the last document of the lineage's delivery set (the page · the audio · the film · the print score with its instruction pages); piece 5's has six headed sections — the demo link, the instrumentation, the animated conduction tools, the gradient curves, the timbral glissando, the micro-tonal tuning. Of these the conduction tools (the scrolling cursor, the bouncing-ball conductor, the go line) are this piece's too; the others are that piece's own material. What this piece's page must cover is the eighteen rows of `docs/PERFORMANCE_NOTES.md` (the mic opening and its badge · the six language types · the three body problem's four states · the drones' recordings · the sine's box · the strikes, notated and open · the house), none of it written yet: he writes the notes in one sitting.
+
+## §431. THE PIECE LINE — six ways put to him, on a working page (2026-10-11, Opus 5.5)
+
+**His words**, on seeing the page of §430 (dictated): *"Approaching, for bass flute, bass clarinet, percussion, viola, cello and electronics — Justin Yang the peace line. Can we think of a different formatting and a uh, yeah, different formatting for this or style, I guess. So if these were standalone, for example, uh, give me some suggestions, please, about how I should say what piece this these performance structures are for and the fact that I wrote the piece and then the ensemble name. I'm just not, I don't think there's enough Anyways, just give me some possibilities for this, please."*
+
+**The AI's reading:** the one italic line inherited from pieces 4 and 5 carries three facts at one weight — the piece, its instruments, the composer — and not the ensemble; read as a STANDALONE sheet (away from the score) the page does not say plainly enough what it belongs to. His sentence breaks off at "I don't think there's enough"; what there is not enough of was not said.
+
+**Put to him — `docs/notation_instructions/title_options.html`** (http://localhost:5500/docs/notation_instructions/title_options.html), each the top of the page as it would stand, the blurb grey under it for scale:
+- **a** the piece first, as on a title page — *Approaching* large, the instruments, "Justin Yang, 2026 — written for Decibel", then PERFORMANCE INSTRUCTIONS as the second heading
+- **b** the document first, then three short lines — the piece and year · the composer · for whom, with the instruments
+- **c** labelled lines — Piece · Composer · Written for · Instrumentation
+- **d** one plain sentence — "These are the performance instructions for *Approaching* (2026), composed by Justin Yang for Decibel: …"
+- **e** like a printed score's first page — the title centred, "for Decibel" under it, the composer at the right, the instruments in a row
+- **f** the piece's name in the heading itself (*Approaching* — Performance Instructions), a credit line, the instruments moved down to their own section (piece 5's page has one)
+
+**The AI's recommendation, one line:** a — on a sheet that travels alone the piece's name should be the largest thing on it. **Two things in the candidates are the AI's and not his:** the year "2026", and the ensemble written "Decibel" — the exact form of its name was not looked up (the standing note: the AI has read neither the call nor the ensemble's site). Nothing on `index.html` was changed: the one he picks moves there, its rules into `styles.css`.

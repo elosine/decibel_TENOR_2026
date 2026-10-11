@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The piece line — options</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* A WORKING PAGE (RUNNING_LOG §431, 2026-10-11): candidates for the top of the performance instructions — how the page says
+           which piece it is for, who wrote it, and for whom. Nothing here is in styles.css: the one he picks moves to index.html
+           and its rules to the stylesheet. THE ENSEMBLE'S NAME IS WRITTEN "Decibel" — its exact form is his (not looked up). */
+        body { font-family: 'Lato', sans-serif; }
+        .opt { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 34px 40px 26px; margin: 0 0 14px 0; }
+        .tag { display: flex; align-items: baseline; gap: 14px; margin: 46px 0 10px 0; }
+        .tag b { font-size: 1.5em; }
+        .tag span { color: #666; }
+        .blurb { color: #999; margin: 1.6em 0 0 0; }
+        .note { color: #666; font-size: 0.92em; margin-bottom: 0; }
+        .opt h1 { margin-top: 0; }
+
+        /* a — the piece first */
+        .a-title { font-size: 2.6em; font-weight: 700; line-height: 1.1; }
+        .a-for { font-style: italic; color: #444; font-size: 1.08em; margin-top: 0.35em; }
+        .a-by { margin-top: 0.9em; font-size: 1.08em; }
+        .a-doc { margin-top: 1.6em; padding-top: 0.5em; border-top: 2px solid #333; font-size: 1.25em; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+        /* b — the document first, three lines */
+        .b-piece { font-size: 1.5em; margin-top: 0.5em; }
+        .b-by { font-size: 1.1em; margin-top: 0.15em; }
+        .b-for { font-style: italic; color: #555; margin-top: 0.5em; }
+
+        /* c — labelled lines */
+        .c-grid { display: grid; grid-template-columns: 9.5em 1fr; row-gap: 0.3em; margin-top: 0.9em; }
+        .c-grid dt { color: #666; font-size: 0.86em; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 0.2em; }
+        .c-grid dd { margin: 0; }
+
+        /* d — one sentence */
+        .d-line { font-size: 1.12em; margin-top: 0.8em; margin-bottom: 0; }
+
+        /* e — a score's first page */
+        .e-title { text-align: center; font-size: 2.6em; font-weight: 700; line-height: 1.1; }
+        .e-ded { text-align: center; font-style: italic; font-size: 1.15em; margin-top: 0.3em; }
+        .e-by { text-align: right; font-size: 1.1em; margin-top: 1.1em; }
+        .e-inst { text-align: center; color: #555; margin-top: 0.9em; }
+        .e-doc { text-align: center; margin-top: 1.5em; padding-top: 0.6em; border-top: 2px solid #333; font-size: 1.2em; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+
+        /* f — the title joined */
+        .f-by { font-size: 1.1em; margin-top: 0.5em; }
+        .f-h3 { font-size: 1.2em; font-weight: 600; margin-top: 1.5em; margin-bottom: 0.15em; }
+    </style>
+</head>
+<body>
+
+<h1>The piece line — six ways</h1>
+<p class="subtitle">Each box is the top of the page as it would stand. The grey line under it is the blurb, for scale.</p>
+
+<!-- ═══ a ═══ -->
+<div class="tag"><b>a</b><span>The piece first, like a title page. The document's name comes second.</span></div>
+<div class="opt">
+    <div class="a-title">Approaching</div>
+    <div class="a-for">for bass flute, bass clarinet, percussion, viola, cello and electronics</div>
+    <div class="a-by">Justin Yang, 2026 &#8212; written for Decibel</div>
+    <div class="a-doc">Performance Instructions</div>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+</div>
+
+<!-- ═══ b ═══ -->
+<div class="tag"><b>b</b><span>The document first, then three short lines: the piece, the composer, for whom.</span></div>
+<div class="opt">
+    <h1>Performance Instructions</h1>
+    <div class="b-piece"><em>Approaching</em> (2026)</div>
+    <div class="b-by">Justin Yang</div>
+    <div class="b-for">for Decibel &#8212; bass flute, bass clarinet, percussion, viola, cello and electronics</div>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+</div>
+
+<!-- ═══ c ═══ -->
+<div class="tag"><b>c</b><span>Labelled lines. Nothing to work out: each fact has its name beside it.</span></div>
+<div class="opt">
+    <h1>Performance Instructions</h1>
+    <dl class="c-grid">
+        <dt>Piece</dt><dd><em>Approaching</em> (2026)</dd>
+        <dt>Composer</dt><dd>Justin Yang</dd>
+        <dt>Written for</dt><dd>Decibel</dd>
+        <dt>Instrumentation</dt><dd>bass flute, bass clarinet, percussion, viola, cello, electronics</dd>
+    </dl>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+</div>
+
+<!-- ═══ d ═══ -->
+<div class="tag"><b>d</b><span>One plain sentence that says all of it.</span></div>
+<div class="opt">
+    <h1>Performance Instructions</h1>
+    <p class="d-line">These are the performance instructions for <em>Approaching</em> (2026), composed by Justin Yang for Decibel: bass flute, bass clarinet, percussion, viola, cello and electronics.</p>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+</div>
+
+<!-- ═══ e ═══ -->
+<div class="tag"><b>e</b><span>Like the first page of a printed score: title centred, the dedication under it, the composer at the right.</span></div>
+<div class="opt">
+    <div class="e-title">Approaching</div>
+    <div class="e-ded">for Decibel</div>
+    <div class="e-by">Justin Yang (2026)</div>
+    <div class="e-inst">bass flute &#183; bass clarinet &#183; percussion &#183; viola &#183; cello &#183; electronics</div>
+    <div class="e-doc">Performance Instructions</div>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+</div>
+
+<!-- ═══ f ═══ -->
+<div class="tag"><b>f</b><span>The piece's name in the heading itself. The instruments move down to their own section.</span></div>
+<div class="opt">
+    <h1><em>Approaching</em> &#8212; Performance Instructions</h1>
+    <div class="f-by">Justin Yang (2026), for Decibel</div>
+    <p class="blurb">The score for <em>Approaching</em> is a computer-animated score, served from the cloud and displayed in a web browser, like an online video game.</p>
+    <div class="f-h3">Instrumentation</div>
+    <p class="note">Bass flute, bass clarinet, percussion, viola, cello, electronics.</p>
+</div>
+
+</body>
+</html>
