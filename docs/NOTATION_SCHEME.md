@@ -23,7 +23,8 @@ The places are rows of `notation/registry/rules.json`: `objects.micOpening` (`pl
 | the electronics' hint | in the PRESENTATION VIEW only — a layer on the players' page, at the lane's BOTTOM (the mic at the top: into the microphone above, out of the speakers below). THE WINDOW says "electronics": a plain see-through slate-grey rectangle, its outline stronger than its fill, a very subtle grain, LOCAL — one round each return brick and the badge before it (DEC-112 · DEC-114). The return brick PURPLE (DEC-111). The flocking badge of piece #1 in the quartet's own colours (slate ground, light-blue birds), 36 px, before EVERY brick | decided for section 1 (DEC-111 · DEC-112), built; the rule for the rest **(AI)** |
 | dynamics | none in the lanes | decided |
 | words | none in the lanes — a badge says what to play, the performance notes say how | decided |
-| which pitch · which percussion instrument | the player's choice, within the type **(AI — to confirm)** | open |
+| which percussion instrument | THE PLAYER'S CHOICE — his word 2026-10-11 (RUNNING_LOG §438, DEC-199), on the performance instructions page: *"Percussion: crotales (bowed), cymbals (bowed). The rest of the instruments are chosen at the player's discretion."* Two are fixed, both bowed: the crotales (the audible beats), the cymbals (the drones) | decided |
+| which pitch | the player's choice, within the type **(AI — to confirm)** | open |
 | the mic opening | a yellow brick: WHEN to play into the microphone, and for how long. Always at ONE height: **the TOP of the lane, for now** | decided (DEC-103) — drawn, his eye |
 | a badge | says what KIND of sound. SECTIONAL: it announces a section once | decided |
 | a section's colour | THE DESIGNATED LANGUAGE COLOUR (DEC-174): a section's own graphic takes the colour its type's badge sign is drawn in — the trill's curve the trills' blue `#5b9bf5`, the drones' line wedge the multiphonics' yellow `#F7C40A`. Each is a pointer at the language table: it moves with the badge | decided for those two, built |
@@ -173,4 +174,4 @@ A generic hint of what the electronics do, for a conductor, a jury, an audience 
 2. Then by section: the three body problem (the wedge · a sign per state · its badge) → section 2 (the arc and the mic) → the drones (the badge and the pie on each opening) → the beating section → the strikes.
 3. The standard gap · the badges' size.
 4. The conductor's / presentation view — section 1 BUILT (§335): his eye; then its sections 2 … 6, each at its turn with the players' signs.
-5. To confirm: pitch and percussion instrument are the player's choice.
+5. To confirm: pitch is the player's choice. (The percussion instrument IS — decided 2026-10-11, DEC-199: all but the bowed crotales and the bowed cymbals.)
