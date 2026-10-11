@@ -8580,3 +8580,18 @@ node tools/notate_section.js --score piece-Draft01d --w0 0 --w1 784 --id approac
 - **f** the piece's name in the heading itself (*Approaching* — Performance Instructions), a credit line, the instruments moved down to their own section (piece 5's page has one)
 
 **The AI's recommendation, one line:** a — on a sheet that travels alone the piece's name should be the largest thing on it. **Two things in the candidates are the AI's and not his:** the year "2026", and the ensemble written "Decibel" — the exact form of its name was not looked up (the standing note: the AI has read neither the call nor the ensemble's site). Nothing on `index.html` was changed: the one he picks moves there, its rules into `styles.css`.
+
+## §432. THE BLURB — his new first sentence; alternatives asked for "it is served from the cloud" (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"The score for Approaching is in a computer-animated digital format. It is served from the cloud and displayed in a web browser, like an online video game. Can you give me some alternatives for the phrase, it is served from the cloud? I guess what I want to communicate here in general is it's like a online video game where you can access it from your local web browser. I don't know that they necessarily need to know that it's served in that sense. I don't know if people understand or care about what that is. But I just want to convey that in order to play this score, you can go online and go to a website, and then the score will appear in your web browser, like an online video game."*
+
+**What it settles:** the blurb's first sentence is now his own — *"The score for Approaching is in a computer-animated digital format."* (pieces 4 and 5 said "is a computer-animated score, served from the cloud …" in one sentence). **His point about the second:** "served" is the maker's word, not the player's; what a player needs is the ACT — go online, open a website, the score appears in your browser — and the likeness, an online video game.
+
+**Put to him, for the second sentence (the AI's wordings, his to choose or reword):**
+- a · *To play it, you go to a website and the score appears in your web browser, like an online video game.*
+- b · *It is opened online, at a web address, and plays in your web browser, like an online video game.*
+- c · *It lives online: you open the score's website and it appears in your browser, like an online video game.*
+- d · *Like an online video game, it is played from a website, in your own web browser.*
+- e · *Each player opens the score's website, and the score appears in their web browser, like an online video game.*
+
+**The AI's recommendation:** a — it is his own sentence, tightened. The page is not changed until he picks: both sentences go in together.
