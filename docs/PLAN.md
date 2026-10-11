@@ -960,6 +960,18 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **Known and left, said to him:** the close-ups turn their pages at other moments than the wide shot (a close-up page is 6.7 s), so the page-edge cases judged on the wide pages (2.10) are not the close-ups' — a badge at a close-up's page start can be held on its own mic opening (one seen in the probe at 150 s, the percussionist's). The registered protocol as written; a case he names is cured by hand · a GC's impact ball on the lane above a group shows as a half dot at the group's top edge (inherited, piece #6's §693).
 
+### 2.15 THE PERFORMANCE INSTRUCTIONS' PAGE — `in hand since 2026-10-11 (RUNNING_LOG §430 … §464): written section by section at his dictation; ONE HEADING EMPTY (the three body problem)`
+
+*(Not planned step by step: he said "make a page" and has dictated it since. This item is the record of what it is and where it stands.)*
+
+- **The page:** `docs/notation_instructions/index.html` · `styles.css` · `images/` — http://localhost:5500/docs/notation_instructions/index.html. HIS prose; the ONE SOURCE of the print score's instruction pages (`tools/export_print.js --instructions`).
+- **done** the title block (the piece first; the ensemble not named — DEC-197 · 198) · the blurb · the demo line · Instrumentation (DEC-199 · 201) · Animated Conduction Tools · Language Music (the six badges; the ways a type is notated, in two columns) · Live Electronics (by section; the grey boxes) · the page's three standard spaces (DEC-200).
+- **done** THE EDIT SWITCH (`docs/notation_instructions/edit.js` · `GET / POST /api/instructions` in `score/server.js`, §435): he types into the page; a save is refused when the file changed underneath.
+- **done** the images' tool brought to this piece's frame (`tools/capture_lane.js`, §439) · the badges as image files (`tools/language/to_instructions.js`, §442).
+- **next** the text under *Three Body Problem (Section Two)* — his dictation, or a draft from `docs/THREE_BODY.md` § 2 for him to cut.
+- **open, his** the audit's list (RUNNING_LOG §461) · a sentence for each of the four bare language types · the names and placings in journal §2's checkpoint #8.
+- **deferred** the print score's instruction pages do not know this page's title block, its badge list or its two-column rows (`docs/NITS.md`, two entries of 2026-10-11).
+
 ## 3. The performance score — `todo`
 
 *To be laid out when we discuss it.*
