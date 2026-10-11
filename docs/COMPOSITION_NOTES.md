@@ -1637,3 +1637,9 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 *(His words, verbatim — Opus:)* *"Okay, those are done. Strike one and two are AA, and the rest are A. A few of them change the notes of other players, but most of those are just the missing players. But you can replace those strikes altogether with these ones. That's fine. and get the rhythm for the missing players from these as well. So the new strike audio for the render, and then the rhythms for the GCs where they are missing. And then I reloaded C, but I saved a new version as D."*
 
 *(The AI's reading, marked as such: the eleven written strikes that lacked a player now each have a take of his with all the players — "aa" for strikes one and two, "a" for the other nine; each strike may be replaced whole by its take in the score, which gives the missing players their notes (the audio of the next render) and their times (the arcs of the notation); the piece he works in is now piece-Draft01d. RUNNING_LOG §414.)*
+
+### DEC-185 · 2026-10-10 — the take for 11:49.2 with the viola: 31aa
+
+*(His word, verbatim — Opus:)* *"31aa"*
+
+*(The AI's reading, marked as such: the take `strikes31aa` is saved; run the swap for the strike at 11:49.2 with it. RUNNING_LOG §415.)*

@@ -935,7 +935,9 @@ pedals of resonance and the recent engine's processing are PHASE 2, not here. Th
 
 **SINCE §414 (DEC-184): THE ELEVEN ARE REPLACED BY HIS A TAKES, IN THE SCORE** — `node tools/strike_swap.js --score piece-Draft01d --swap t=take,…` (the drawer's own layout of the take; a player the strike has keeps its note and its voice, a player it lacked gets a note in the strike's own orchestration; the percussionist one note a strike; the window re-spanned): 12 notes added. The page is cut from `piece-Draft01d` now: 109 GCs.
 
-**Open, his:** the viola at 11:49.2 (709.22 s — `strikes31a` gives it no hit) · the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10) · the next take, of D.
+**§415 (DEC-185):** the last, 11:49.2, replaced by `strikes31aa` — every written strike has its five players; 110 GCs.
+
+**Open, his:** the six strikes in tight runs that show no badge · then the section into the main score (PLAN 2.10) · the next take, of D.
 
 ## 3. The performance score — `todo`
 

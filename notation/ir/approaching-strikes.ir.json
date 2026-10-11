@@ -2577,28 +2577,6 @@
    "vel": 100
   },
   {
-   "id": "ev-wc-1665",
-   "source": {
-    "score": "piece-Draft01d",
-    "objectId": "wc-1665"
-   },
-   "onset": 709.342,
-   "duration": 0.10900000000003729,
-   "pitch": {
-    "midi": 57,
-    "spelled": {
-     "step": "A",
-     "alter": 0,
-     "octave": 3
-    }
-   },
-   "technique": "flutter_vel",
-   "provenance": "derived",
-   "env": "strike",
-   "mode": "plain",
-   "vel": 109
-  },
-  {
    "id": "ev-wc-1336",
    "source": {
     "score": "piece-Draft01d",
@@ -2619,6 +2597,50 @@
    "env": "strike",
    "mode": "plain",
    "vel": 100
+  },
+  {
+   "id": "ev-wc-1674",
+   "source": {
+    "score": "piece-Draft01d",
+    "objectId": "wc-1674"
+   },
+   "onset": 709.377,
+   "duration": 0.797,
+   "pitch": {
+    "midi": 70,
+    "spelled": {
+     "step": "A",
+     "alter": 1,
+     "octave": 4
+    }
+   },
+   "technique": "gettato_vel",
+   "provenance": "derived",
+   "env": "strike",
+   "mode": "plain",
+   "vel": 109
+  },
+  {
+   "id": "ev-wc-1665",
+   "source": {
+    "score": "piece-Draft01d",
+    "objectId": "wc-1665"
+   },
+   "onset": 709.462,
+   "duration": 0.11400000000003274,
+   "pitch": {
+    "midi": 73,
+    "spelled": {
+     "step": "C",
+     "alter": 1,
+     "octave": 5
+    }
+   },
+   "technique": "flutter_vel",
+   "provenance": "derived",
+   "env": "strike",
+   "mode": "plain",
+   "vel": 109
   },
   {
    "id": "ev-wc-1338",
@@ -7437,7 +7459,7 @@
    "part": 0,
    "span": [
     706.902,
-    709.342
+    709.462
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
@@ -7450,7 +7472,7 @@
    "id": "ch-0-wc-1665",
    "part": 0,
    "span": [
-    709.342,
+    709.462,
     710.064
    ],
    "class": "ord-sustained",
@@ -10083,12 +10105,26 @@
    "part": 4,
    "span": [
     706.957,
-    710.157
+    709.377
    ],
    "class": "fixed-oneshot",
    "strategy": "unresolved",
    "events": [
     "ev-wc-1331"
+   ],
+   "provenance": "derived"
+  },
+  {
+   "id": "ch-4-wc-1674",
+   "part": 4,
+   "span": [
+    709.377,
+    710.157
+   ],
+   "class": "fixed-oneshot",
+   "strategy": "unresolved",
+   "events": [
+    "ev-wc-1674"
    ],
    "provenance": "derived"
   },
@@ -16557,10 +16593,10 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1665",
+   "id": "ov-gconly-ev-wc-1336",
    "kind": "engraving",
    "target": {
-    "event": "ev-wc-1665"
+    "event": "ev-wc-1336"
    },
    "value": {
     "device": {
@@ -16584,10 +16620,37 @@
    "provenance": "authored"
   },
   {
-   "id": "ov-gconly-ev-wc-1336",
+   "id": "ov-gconly-ev-wc-1674",
    "kind": "engraving",
    "target": {
-    "event": "ev-wc-1336"
+    "event": "ev-wc-1674"
+   },
+   "value": {
+    "device": {
+     "curve": false,
+     "cut": false,
+     "goLine": false,
+     "gc": true,
+     "nhUnit": false,
+     "nhDot": false,
+     "ringBar": false,
+     "dynMark": false,
+     "dynPair": false,
+     "dynBesideStem": false,
+     "brick": false,
+     "gcGeom": "lane",
+     "gcStyle": null,
+     "gcImpact": null,
+     "gcSpread": 0
+    }
+   },
+   "provenance": "authored"
+  },
+  {
+   "id": "ov-gconly-ev-wc-1665",
+   "kind": "engraving",
+   "target": {
+    "event": "ev-wc-1665"
    },
    "value": {
     "device": {
@@ -16617,7 +16680,7 @@
     "part": 0,
     "span": [
      709.116,
-     709.442
+     709.562
     ]
    },
    "value": {
@@ -16634,7 +16697,7 @@
     "part": 1,
     "span": [
      709.116,
-     709.442
+     709.562
     ]
    },
    "value": {
@@ -16651,7 +16714,7 @@
     "part": 2,
     "span": [
      709.116,
-     709.442
+     709.562
     ]
    },
    "value": {
@@ -16668,7 +16731,7 @@
     "part": 4,
     "span": [
      709.116,
-     709.442
+     709.562
     ]
    },
    "value": {
@@ -16685,7 +16748,7 @@
     "part": 5,
     "span": [
      709.116,
-     709.442
+     709.562
     ]
    },
    "value": {
@@ -27738,7 +27801,7 @@
     "type": "scatteredStrikes",
     "place": "before",
     "avoid": "mic",
-    "tEnd": 709.442,
+    "tEnd": 709.562,
     "edge": "cut"
    },
    "provenance": "authored"
@@ -27754,7 +27817,7 @@
     "type": "scatteredStrikes",
     "place": "before",
     "avoid": "mic",
-    "tEnd": 709.442,
+    "tEnd": 709.562,
     "edge": "cut"
    },
    "provenance": "authored"
@@ -27770,7 +27833,7 @@
     "type": "scatteredStrikes",
     "place": "before",
     "avoid": "mic",
-    "tEnd": 709.442,
+    "tEnd": 709.562,
     "edge": "cut"
    },
    "provenance": "authored"
@@ -27786,7 +27849,7 @@
     "type": "scatteredStrikes",
     "place": "before",
     "avoid": "mic",
-    "tEnd": 709.442,
+    "tEnd": 709.562,
     "edge": "cut"
    },
    "provenance": "authored"
@@ -27802,7 +27865,7 @@
     "type": "scatteredStrikes",
     "place": "before",
     "avoid": "mic",
-    "tEnd": 709.442,
+    "tEnd": 709.562,
     "edge": "cut"
    },
    "provenance": "authored"

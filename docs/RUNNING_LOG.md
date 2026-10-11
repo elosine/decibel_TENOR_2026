@@ -8369,3 +8369,17 @@ Thirteen places. Until the notes exist those lanes show the window and no GC. *(
 **The strikes' page re-cut FROM D** (the same flags; `--score piece-Draft01d`): 322 notes · **109 GCs** on the written strikes (97 + 12) · of the written strikes only 11:49.2 still shows a lane with no GC (the viola) · the ten FREE strikes that lack a player are as they were (a window on every lane is all they need). `check_screen_edges` PASS (109 go-time indicators at x(t)) · the shield green (the strikes page the one moved) · the page VALID against D.
 
 **For the audio:** the next take is of `piece-Draft01d` (`node tools/take.js start --score piece-Draft01d`); `notation/audio/piece-Draft01c.wav` (take 02) is the piece BEFORE these twelve notes. The main score `approaching` is still cut from C — C and D are the same up to 672 s, and a page cut from D would find no audio until that take exists. `docs/RENDER.md` § 0.2 says so.
+
+## §415. THE LAST ONE — the strike at 11:49.2 replaced by `strikes31aa`: every written strike has its five players (DEC-185) (2026-10-10, Opus)
+
+**What prompted it (DEC-185, verbatim):** *"31aa"* — his answer to §414's one strike left: the take for 11:49.2 re-saved with a hit for the viola.
+
+**The take** `strikes31aa` (bank strike #2, five hits): cello hit 1 · percussion hit 2 · bass clarinet hit 3 · VIOLA hit 4 · bass flute hit 5 — the flute no longer doubles the clarinet's hit, and the two mallet seats of `strikes31a` are gone.
+
+**Before writing:** D's save (21:17) held §414's twelve notes and there was no working copy — he had reloaded and saved. A dry run first, then `node tools/strike_swap.js --score piece-Draft01d --swap 709.22=strikes31aa`:
+
+- the VIOLA: new at 709.377 s, A♯4, gettato (the cello's voice in this strike)
+- the bass flute: MOVES 709.342 → 709.462 s and takes C♯5 (§414 had added it on the clarinet's hit, A3)
+- the window: 709.116 … 709.442 → 709.116 … 709.562 s (the strike's last hit is later)
+
+**The page re-cut from D:** 323 notes · **110 GCs · no written strike lacks a player** (the cutter's own count: 0); the ten free strikes that lack one are as they were. `check_screen_edges` PASS (110 go-time indicators at x(t)) · the shield green · VALID against D.
