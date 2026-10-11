@@ -8889,3 +8889,19 @@ So the three stand at about 33 : 29 : 21 px. **One gap he did not name was moved
 - and the dash in the scrolling cursor's paragraph is now the character itself where the file had its numbered code — the one normalisation a save from the page makes (§435), the same dash to a reader.
 
 **The switch held, on his Chrome, on its first real use:** only the lines he changed moved; every comment, every image line and the order of the file are as they were. **And the two writers met for the first time:** his saves fell between two of the AI's writes; the AI's next edit (§452) was an exact-text replacement elsewhere in the file and went onto HIS version, so nothing of his was lost — by luck of the tool, not by the rule the AI had set itself at §435 (to ask about unsaved typing before editing the file). The other direction still stands: his page, if left in Edit since 10:55, is older than the file now — its next Save will be refused and say so. Said to him first thing.
+
+## §454. THE WAYS A TYPE IS NOTATED, IN TWO COLUMNS — but the whole-page image (2026-10-11, Opus 5.5)
+
+**His words** (dictated): *"the use of language music is notated in different ways: And then let's have two columns. So the image on the left and then the text on the right."* — and, sent while the AI was at it: *"except the full page images. Let's have, or just the one, I guess, the badges, the sign tone ones. Let's just have text under that one."*
+
+**On the page:** the lead-in *The use of language music is notated in different ways:* (the colon his), then four entries in his order —
+- the YELLOW BOX — its image on the left, its sentence on the right;
+- the GRADIENT CURVE — the image left, the text right;
+- the COLOURED LINE (the "sine tone" badges: the winds over a whole page) — THE EXCEPTION, his: the image at the full width, its text UNDER it (it had stood above);
+- the SCATTERED STRIKES' two forms — the five-lane image left, the text right.
+
+**How it is built:** a grid, the image column 55 % of the text column (the widest two-column image, the trill curve, is 54.5 %), a 4 % gutter, the text 41 %; the text level with its image's top; a section space (29 px) between entries, edge to edge. An image keeps its own scale in its column — it is made smaller only if it would not fit, and none does. Seen once in the page (the AI's pane at 1280 px): the four entries as above, the text column starting at the same place on every two-column row.
+
+**The texts were MOVED, not retyped:** the rearrangement was done by a script that lifts the four paragraphs and the four image lines out of the file as it stands and sets them into the new frame — so his own edits of §453 could not be lost to a stale copy in the AI's context (the lesson of that entry, applied). The script refuses if it does not find exactly four of each, in the order it expects.
+
+**Deferred, flagged (docs/NITS.md):** the print score's instruction pages have their own stylesheet in tools/export_print.js and know neither this grid nor the badge list — for when the print score is made.

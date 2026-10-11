@@ -151,50 +151,47 @@
             <p><strong>Scattered Strikes:</strong> Scattered strikes is an ensemble language type. The ensemble will produce a clustered impulse within a short time frame, like a handful of tossed pebbles hitting the ground.</p>
         </div>
     </div>
-    <!-- HOW A LANGUAGE TYPE IS NOTATED (RUNNING_LOG §448) — HIS TEXT, dictated; the first paragraph's second sentence is his
-         first wording (he asked for alternatives; none chosen yet). The two images are the AI's picks, crops of the main score:
-         · the box: the viola's first mic opening of the piece (4.38 … 4.88 s) with the short attacks' badge before it — the top
-           of the lane only (the mic's row), the cursor out of the crop;
-         · the curve: the cello's first trill of section 2, 129.535 … 132.489 s — the trills' badge, the go line, the whole
-           curve, the cursor and the level meter at 131.25 s. Its lane holds nothing else in the span.
+    <!-- HOW A LANGUAGE TYPE IS NOTATED (RUNNING_LOG §448 … §454) — HIS TEXT throughout, dictated (and since §453 edited by
+         his own hand on the page). THE LAYOUT IS HIS (§454): a lead-in ending in a colon, then TWO COLUMNS — the image on the
+         left, its text on the right — but the winds' whole-page image, which keeps the full width with its text UNDER it.
+         The yellow box's sentence is his first wording (alternatives were put to him at §448; none chosen).
+         THE IMAGES, crops of the main score (notation/ir/approaching.ir.json):
+         · the box (the AI's pick): the viola's first mic opening of the piece, 4.38 … 4.88 s, the short attacks' badge before
+           it — the top of the lane only, the cursor out of the crop;
+         · the curve (the AI's pick): the cello's first trill of section 2, 129.535 … 132.489 s — the trills' badge, the go
+           line, the whole curve, the cursor and the level meter at 131.25 s;
+         · the line (HIS pick, by time code — §451): the bass flute and the bass clarinet over the whole page that holds 9:24,
+           560 … 572 s, gutter included — two audible beats badges, two lines to the page's end, the sines in their boxes;
+         · the strikes (HIS pick — §452): all five lanes at 11:25, 685.0 … 687.9 s — a free strike (the box alone), then a
+           conducted one (a bouncing ball for every player).
+         TWO SCALES, ONE PRINCIPLE: one lane in detail at the zoomed size (Z 2, piece 5's one scale: the box, the curve);
+         several lanes or a whole page at the page's own size (Z 1: the line, the strikes).
          Regenerate:
          node tools/capture_lane.js --ir approaching --part va --t 0 --span 3.95:4.95 --padTop 0 --padBot -303 --out docs/notation_instructions/images/language_box_va_4.svg
-         node tools/capture_lane.js --ir approaching --part vc --t 131.25 --span 129.2:132.75 --out docs/notation_instructions/images/language_curve_vc_130.svg -->
-    <div class="description">
-        <p>The use of language music is notated in different ways. A yellow box indicates playing this language type in the time window.</p>
-    </div>
-    <img class="zoomed" style="--w: 295" src="images/language_box_va_4.svg" alt="A dark badge with three small red triangles, and to its right a yellow box with a small double circle in it">
-    <div class="description">
-        <p>A language type with a gradient curve indicates playing that language type following the gradient of the curve. In the pictured example, the curve would represent trill intensity. This could be a combination of speed and volume, and any other parameters a performer might use to develop a gradient of trill intensity.</p>
-    </div>
-    <img class="zoomed" style="--w: 1046" src="images/language_curve_vc_130.svg" alt="A dotted go line, the trills' badge beside it, and a blue curve rising to the right; the cursor crosses the curve partway along, a small meter beside it filled to the curve's height">
-    <!-- THE COLOURED LINE (RUNNING_LOG §450) — HIS TEXT, dictated. The aside about colour is his third try of three ("the badge
-         color" · "the badge / line color" · "each language type has an assigned color"), set in parentheses; other placings were
-         put to him. No image asked for. In the score this is the line wedge: the drones' yellow line (multiphonics), the three
-         body problem's line (short attacks), the orange line under a sine (audible beats). -->
-    <div class="description">
-        <p>A language music badge with an extended colored line (each language type has an assigned color) indicates playing in this language type freely throughout the duration of the line. Line thickness gives a general indication of density or intensity, to be interpreted freely.</p>
-    </div>
-    <!-- THE LINE'S IMAGE (RUNNING_LOG §451) — HIS PICK, his second (the first was the page at 8:50): "around 9 minutes and 24
-         seconds. Just include the entire wind staff and that whole page width … the two lanes" — the bass flute and the bass
-         clarinet over THE WHOLE PAGE of the main score that holds 9:24, 560 … 572 s, with the gutter (the names, the clefs): the
-         flute's audible beats badge and line from 562.71 s, the clarinet's from 567.41 s, each with its sine in its box on the staff.
-         THIS IMAGE IS NOT AT THE ONE SCALE of the others: a whole page is the score UNZOOMED (Z 1 — half the size of the zoomed
-         crops), and at the others' scale it would be twice the column's width. Regenerate:
-         node tools/capture_lane.js --ir approaching --part bfl --toPart bcl --t 500 --zoom 1 --gutter --span 560:572 --out docs/notation_instructions/images/language_line_winds_560.svg -->
-    <img class="zoomed" style="--w: 1880" src="images/language_line_winds_560.svg" alt="Two staves across a whole page, bass flute above bass clarinet. On each, a dark badge with an orange wave, then an orange line running to the right edge; above each line, on the staff, an open note head in a purple box that runs on as long as the line">
-    <!-- THE SCATTERED STRIKES' TWO FORMS (RUNNING_LOG §452) — HIS TEXT, dictated ("for scattered strikes, …"), set here after
-         the three ways of notating a type, where his dictation had reached; his to move up into the Scattered Strikes row.
-         THE IMAGE IS HIS PICK: "all five parts, from about 11:25, mid-page … two strikes. The first one is no GCs, and then right
-         next to it has GCs, and they're about the same duration" — the strike windows at 685.68 … 686.03 s (free: the yellow
-         box alone) and 686.86 … 687.25 s (conducted: a bouncing ball for every player), on all five lanes, 685.0 … 687.9 s.
-         At the PAGE's size (Z 1), as the winds' image above it: five lanes at the zoomed size would be taller than a screen.
-         Regenerate:
+         node tools/capture_lane.js --ir approaching --part vc --t 131.25 --span 129.2:132.75 --out docs/notation_instructions/images/language_curve_vc_130.svg
+         node tools/capture_lane.js --ir approaching --part bfl --toPart bcl --t 500 --zoom 1 --gutter --span 560:572 --out docs/notation_instructions/images/language_line_winds_560.svg
          node tools/capture_lane.js --ir approaching --part bfl --toPart vc --t 600 --zoom 1 --span 685.0:687.9 --out docs/notation_instructions/images/strikes_all_685.svg -->
     <div class="description">
-        <p>Some of the scattered strikes are notated rhythmically with the bouncing-ball conductors. Some are just the yellow duration box without the bouncing-ball conductors. In these cases, the ensemble would try to create a scattered strike within the time frame of the yellow box. Each performer will have the same time frame.</p>
+        <p>The use of language music is notated in different ways:</p>
     </div>
-    <img class="zoomed" style="--w: 427" src="images/strikes_all_685.svg" alt="All five lanes of the score. First a yellow box with a green badge before it on every lane and nothing else; then a second yellow box on every lane, and under each a bouncing-ball arc landing at a slightly different moment in each lane">
+    <div class="ways">
+        <div class="way-row">
+            <div class="way-img"><img class="zoomed" style="--w: 295" src="images/language_box_va_4.svg" alt="A dark badge with three small red triangles, and to its right a yellow box with a small double circle in it"></div>
+            <div class="way-text"><p>A yellow box indicates playing this language type in the time window.</p></div>
+        </div>
+        <div class="way-row">
+            <div class="way-img"><img class="zoomed" style="--w: 1046" src="images/language_curve_vc_130.svg" alt="A dotted go line, the trills' badge beside it, and a blue curve rising to the right; the cursor crosses the curve partway along, a small meter beside it filled to the curve's height"></div>
+            <div class="way-text"><p>A language type with a gradient curve indicates playing that language type following the gradient of the curve. In the pictured example, the curve would represent trill intensity. This could be a combination of speed and volume, and any other parameters a performer might use to develop a gradient of trill intensity.</p></div>
+        </div>
+        <div class="way-wide">
+            <img class="zoomed" style="--w: 1880" src="images/language_line_winds_560.svg" alt="Two staves across a whole page, bass flute above bass clarinet. On each, a dark badge with an orange wave, then an orange line running to the right edge; above each line, on the staff, an open note head in a purple box that runs on as long as the line">
+            <p>A language music badge with an extended colored line (each language type has an assigned color) indicates playing in this language type freely throughout the duration of the line. Line thickness gives a general indication of density or intensity, to be interpreted freely.</p>
+        </div>
+        <div class="way-row">
+            <div class="way-img"><img class="zoomed" style="--w: 427" src="images/strikes_all_685.svg" alt="All five lanes of the score. First a yellow box with a green badge before it on every lane and nothing else; then a second yellow box on every lane, and under each a bouncing-ball arc landing at a slightly different moment in each lane"></div>
+            <div class="way-text"><p>Some of the scattered strikes are notated rhythmically with the bouncing-ball conductors. Some are just the yellow duration box without the bouncing-ball conductors. In these cases, the ensemble would try to create a scattered strike within the time frame of the yellow box. Each performer will have the same time frame.</p></div>
+        </div>
+    </div>
 </div>
 
 </body>

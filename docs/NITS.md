@@ -254,3 +254,11 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
   falls back to "Performance Instructions" with no subtitle and the title block flows into the first column. To do WHEN THE PRINT SCORE
   IS MADE: teach the exporter the block (the strip's two spans from `.piece-title` and `.piece-for` · `.piece-by`), or his word on
   what the printed strip says.
+
+- **The instruction pages of the print score do not know two of this page's layouts** (2026-10-11, RUNNING_LOG §442 · §454): the list of
+  badges (`.badge-list` / `.badge-row`: a badge, its name and text beside it) and the ways a type is notated (`.ways` / `.way-row`:
+  an image left, its text right; `.way-wide`: a whole-page image with its text under it). `tools/export_print.js` carries its own
+  stylesheet for the instruction pages (`.cols …`) and sizes an image by its class `zoomed` and `--w`; in its two narrow columns these
+  rows will stack or overflow. To do WHEN THE PRINT SCORE IS MADE, with the title strip above — and his word on how the printed
+  pages should lay them out. Two images are at the page's size (Z 1), not the zoomed one: the print's one-scale arithmetic will
+  draw them twice too large unless told.
