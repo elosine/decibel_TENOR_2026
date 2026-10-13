@@ -342,6 +342,15 @@ paper's, literally: every entry carries what a reader of the paper would need �
 the reasoning, the references — and a compositional or technical move that is not in the log is lost to the paper. The paper is HIS;
 the deadline is his to keep (he keeps his own time, D5); the AI's part is the record, as the work happens, never asked for.
 
+**THE PAPER'S METHOD LIVES IN ANOTHER REPO — `paperSubmissions` (2026-10-13, RUNNING_LOG §484 · §485):**
+`C:\Users\jwloy\GitHub\paperSubmissions` (`github.com/elosine/paperSubmissions`, PRIVATE) is his "paper developing system" —
+three passes (the research into a dossier · the decision among kinds of paper · the writing in a science explainer's voice,
+from a composer's perspective), a topic list, a library for the voice; designed 2026-10-13, not yet built; its `CLAUDE.md` and
+`docs/PLAN.md` say where it stands. **The paper of *Approaching* is its FIRST RUN** (its PLAN step 8): the first pass READS this
+repo's record — this log, `COMPOSITION_NOTES.md`, the journal's decisions, `PAPER_REFERENCES.md`, `NOTATION_SCHEME.md`, the
+instructions page — and never edits it. A talk about the method, its topics or its language is held and recorded THERE; what
+he says here about the PIECE still goes into this log as always.
+
 **THE PAPER'S TITLE, TENTATIVE — his words, 2026-10-11 (RUNNING_LOG §476):** *"Notation, Performance and Sonification Practices in the
 Composition Approaching and in Improvisation with Live Electronics"*. Three subjects named in it — notation · performance ·
 sonification: an entry that bears on one of them says so.
