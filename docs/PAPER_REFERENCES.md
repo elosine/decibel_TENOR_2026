@@ -94,6 +94,17 @@ anticipation–reaction returns and its three-body section sit in that overlap.
 - Not found by any search: a text on Wolff's *Burdocks* in particular; a text that sets Cardew inside this family other than
   Nyman's book.
 
+### 1.4 From his own experience — a personal communication (added 2026-10-13)
+
+- **Christian Wolff, to him, in conversation** (his words, typed 2026-10-13 — RUNNING_LOG §485): Wolff *"originally came up
+  with these contegent processes eg in for 1 2 or 3 people to imitate the pointilistic counterpoint of webern"*; and of his
+  own work: *"similarly I pursue performance models like flocking or anticipation reaction to achieve a particular type of
+  counterpoint"*. — **Why it matters:** it is the MOTIVE for the performance models of this piece, in his voice, and a
+  direct line from Wolff. A personal communication is cited as such; when and where Wolff said it is his to give.
+- ✗ The piece he names: Christian Wolff, *For 1, 2 or 3 People* — the AI's memory gives 1964; not looked up. CHECK before citing.
+- A lead, not followed: whether Wolff says the same in print (his collected writings and interviews) — a printed source
+  beside the personal one would let the paper cite both.
+
 ---
 
 ## 2. The three-body problem — the physics behind section two
