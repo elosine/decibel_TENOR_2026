@@ -151,6 +151,17 @@ which one body is temporarily ejected, stays bound, and comes back.
 
 ---
 
+## 2b. SINCE 2026-10-13 THE OUTWARD RESEARCH FOR THE PAPER IS KEPT IN ANOTHER REPO
+
+The paper's method has a stage for it — "the gathering" — and its file is
+**`C:\Users\jwloy\GitHub\paperSubmissions\papers\tenor-2027\GATHERING.md`** (with `FRAME.md` beside it: the questions
+gathered on). First round, 2026-10-13, each source with its mark: Saunders's chapter read in its draft (it has no machine
+in the group, and is about the social process, not the sound) · Rowe's "player paradigm" · Lewis's *Voyager* · Tatar and
+Pasquier's survey of musical agents · Reynolds's boids and Blackwell and Young's Swarm Music · van der Steen and Keller's
+model of anticipation and adaptation · Manoury's "virtual scores" · and, at his pointer, Risset's *Duet for One Pianist*
+for the scattered strikes' answers. **A new reference for the paper goes THERE from now on;** this file stays as the
+record of what was found during the composing (sections 1 · 2).
+
 ## 3. Not yet researched — the paper's other two subjects
 
 The title names three: notation · performance · sonification. Sections 1 and 2 bear on PERFORMANCE (the interaction; the model).
