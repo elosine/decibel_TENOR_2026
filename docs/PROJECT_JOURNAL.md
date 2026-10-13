@@ -210,7 +210,37 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► CHECKPOINT #9 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-11 late afternoon, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §465 … §482, all on Opus 5.5; written for a session that has never seen this chat. Everything below it in NEXT UP — the two "THE PRINT SCORE …" paragraphs, "SINCE CHECKPOINT #8" and checkpoint #8 itself — is the trail.)*
+**► CHECKPOINT #10 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-13, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §483; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #9 included, is the trail.)*
+
+**In one breath:** NOTHING IN THIS REPO MOVED SINCE CHECKPOINT #9 — Draft 01 of *Approaching* stands with its five things. HIS WORD AT THE POSTCLEAR WAS THE OTHER PIECE: *"let's begin the live electronics piece with Improviser"* — in **the workshop** (his word for `C:\Users\jwloy\GitHub\live-electronics-engine`), and he works on it IN A NEW CHAT OPENED THERE. This repo is at rest until he comes back to it.
+
+**What the stretch made, none of it here:**
+- the survey of the workshop — its journal §186 (`live-electronics-engine/docs/journal/2026-10-11.md`) — and a NOW block at the top of its `docs/plan/next-session.md`: the organisation discussion first (how the workshop and its pieces are organised — when a piece breaks off into its own repo, how the workshop goes on, what a piece carries away), opened by ONE question, UNANSWERED: **a** · the workshop's browser piece as it was heading · **b** · changed since *Approaching* (live microphones, the SuperCollider engine);
+- an idea for the Switch~ piece, in the planning repo: `composition-planning-and-notes/docs/ideas/switch-flute-audible-partials.md` (the flute's higher partials made audible; pushed).
+
+**THE NEXT CONCRETE STEP.** At `/postclear` IN THIS REPO: play this block back in three bullets, then STOP and ask in ONE line — *"back on Approaching — the open points of the instructions page, the parts, your ear's findings on the take, the live-electronics discussion, or the paper? (The improviser piece is in the workshop's own chat.)"* Start only on his word; checkpoint #9's block below says what each choice needs.
+- **If he speaks of the improviser piece here:** do not work on it from this repo's session — say in one line that its hand-over is in the workshop (the NOW block of its `docs/plan/next-session.md`; a new chat on that folder, then `/session-start`), and that this session's page tools are tied to this repo. A question about it that reading can answer: read there; write nothing there but its own journal.
+- **If his answer to the a · b becomes known here:** b changes the engine's plan (`electronics/docs/PLAN.md`, objectives 1 · 8 and part 9 — the improviser piece as a port of the scrolling-score stack on the SuperCollider engine); a leaves that plan's "three pieces" as two, his to say. Either way the engine's plan is edited in `electronics/docs/`, at his word, never guessed.
+
+**Resume reads:** nothing beyond §2.
+
+**Decisions pending the composer (the bare list):**
+1. The improviser piece: a or b (asked in the workshop's chat).
+2. Everything on checkpoint #9's list below — unchanged.
+3. His timeline file (`composition-planning-and-notes/docs/next.md`) says "Two Papers" for TENOR; this repo's record says ONE paper on two subjects (2026-10-04, RUNNING_LOG §17) — told him once, his to settle.
+
+**What the stretch taught — what a cold session trips on:**
+- **"THE IMPROVISER PIECE" IS TWO DESIGNS UNDER ONE NAME until he answers** — the engine plan's (the SuperCollider engine, live microphones) and the workshop's (the browser, a rendered file, no live input). Assume neither.
+- **A session's page tools belong to the repo it was opened in** — another repo's running pages are a session opened there.
+- **The planning repo is written by other sessions too:** fetch before a push there (the first push was refused; an ordinary merge, never a force).
+
+**The deliberately-uncommitted list** (`git status --short` at the checkpoint): ` M bank/samples/index.json` — the engine's index, rewritten at every pass of his engine; his and the engine's, left as always. Nothing else is modified or untracked. **In the other two repos:** the workshop — clean, pushed (`a31f51e`) · the planning repo — pushed (`7f3bff6`); its ` M docs/plan-by-date.md` was there before this session, not the AI's, left.
+
+**The engine's repo is in step:** nothing in `electronics/` changed this stretch.
+
+**Model:** the organisation talk in the workshop is Fable's. Back here, as checkpoint #9 says: Fable for a talk; Opus for the page, a re-print or a build.
+
+**► (the trail — the cold-start block until checkpoint #10) CHECKPOINT #9 OF SESSION 3** *(2026-10-11 late afternoon, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §465 … §482, all on Opus 5.5; written for a session that has never seen this chat. Everything below it in NEXT UP — the two "THE PRINT SCORE …" paragraphs, "SINCE CHECKPOINT #8" and checkpoint #8 itself — is the trail.)*
 
 **In one breath:** DRAFT 01 OF *APPROACHING* HAS ALL FIVE OF ITS THINGS, AND THEY AGREE — the page (the main score `notation/ir/approaching.ir.json`) · the audio (take 02 of `piece-Draft01d`) · the film (`V-MAIN`, tagged) · the performance instructions (`docs/notation_instructions/index.html`, his prose, every heading filled) · **the print score, planned, built, approved and tagged this stretch** (`print/score/approved/2026-10-11-draft01/`, the tag `Approaching-Draft01-print_1.0`). Nothing is mid-build. Nothing is in hand.
 
