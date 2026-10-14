@@ -9325,3 +9325,22 @@ Sources: Szebehely, "Review of the dynamical aspects of triple systems" (IAU Col
 **Also his, the same message, on the electronics of this piece:** *"electronics are generally thought by me as another compositional material … less about how electronics listen but that the mic openings double as performer instructions, ie they have a certian time frame to fit a certian type of material, it touches structured improv and then how the system interprets and uses those recordings, types of processing and the compositional de isions I made to make them and how they follow the flocking algorithim and how I designed the computer algo to imitate the behavioral one"*. For the paper (the AI's reading, marked as such): the microphone opening is ONE SIGN WITH TWO READERS — to the player a window of time for a type of material, to the engine the span it records (the notation's `micOpening` and the engine's `/le/open` are one zone of the save, RUNNING_LOG §393); and the computer players of section two were designed to imitate the players' behavioural model, not the reverse (§183 … §191).
 
 **Recorded where:** the anecdote as a personal communication in `docs/PAPER_REFERENCES.md` § 1.4. Nothing else in this repo moves.
+
+## §486. The paper, the rest of the day — worked in `paperSubmissions`; nothing here moved (2026-10-13, Opus 5.5)
+
+**A pointer, for whoever opens a session here.** After §484 · §485 the chat stayed in this repo and the whole of the paper's
+work was done and recorded in the private repo `C:\Users\jwloy\GitHub\paperSubmissions` (its `CLAUDE.md` has a RESUME HERE
+block; his words are in its `docs/CONCEPT_NOTES.md`, PS-1 … PS-63).
+
+**What happened there, in one breath:** the paper-developing method was designed and run on two pieces (*Approaching* and
+*Sýnthesi Alpha*) as far as its hinge; he then left the protocol (*"we'll evaluate system later"*) and chose to write TWO
+papers on the LIVE ELECTRONICS, one a piece, section by section (*"reverse funnel"*). Paper A is this piece's: its five
+sections are outlined from this log (the mic opening and structured improvisation · the behavioural models and their
+imitation by the electronics · a kind of playing made through processing · the audible beats · the scattered strikes), its
+first section laid out and waiting on him. He spent the evening on paper B (how flow was captured from his playing for
+*Sýnthesi Alpha*) and will resume there.
+
+**For this repo:** it was READ, never edited, by that work — except these log entries and the paragraph in `CLAUDE.md`. Its
+record was mapped there by headings (the log is too large to read whole) and six stories were written from it by
+background readers; a quote or a number from one of them is checked against its entry here before it goes into the paper.
+`bank/samples/index.json` is still his uncommitted change, untouched.
