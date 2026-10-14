@@ -9344,3 +9344,12 @@ first section laid out and waiting on him. He spent the evening on paper B (how 
 record was mapped there by headings (the log is too large to read whole) and six stories were written from it by
 background readers; a quote or a number from one of them is checked against its entry here before it goes into the paper.
 `bank/samples/index.json` is still his uncommitted change, untouched.
+
+## §487. CHECKPOINT #11 OF SESSION 3 — the paper B page, before a clear (2026-10-14, Opus 5.5)
+
+A pointer, as §486. Since §486 the chat has stayed on paper B in `paperSubmissions`: he dictated its opening onto the page —
+the goal (an improvising partner made from live electronics), the model ("similar to motion capture in filmmaking"), the
+library of behaviour — and a walk-through of one 24-second stretch of *Sýnthesi-Alpha*, pass by pass, with graphs of the
+players' measured readings and sound clips made for it. The record is there: `papers/tenor-2027/DICTATION.md` (D-1 … D-24),
+`REFERENCE_NOTES.md` (R-1 … R-16, with the corrections the AI owed him), `docs/CONCEPT_NOTES.md` (PS-60 … PS-64). The
+cold start: `papers/tenor-2027/RESUME.md`. Nothing of *Approaching* moved; its paper (A) waits.

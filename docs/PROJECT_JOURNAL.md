@@ -210,7 +210,23 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
-**► CHECKPOINT #10 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-13, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §483; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #9 included, is the trail.)*
+**► CHECKPOINT #11 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-14, Opus 5.5 — mid-session checkpoint; RUNNING_LOG §486 · §487; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #10 included, is the trail.)*
+
+**In one breath:** NOTHING OF THE PIECE MOVED. The chat stayed in this repo, but its whole work since checkpoint #10 is **THE PAPER, in the private repo `C:\Users\jwloy\GitHub\paperSubmissions`** — he is writing **paper B** (*the live electronics of Sýnthesi-Alpha*, TENOR 2027) **by dictation, on its page** http://localhost:5600/papers/tenor-2027/paper-b.html (`papers/tenor-2027/paper-b.html`, served by his paper server on port 5600, `start_paper_server.bat`). Paper A (this piece's) waits.
+
+**THE NEXT CONCRETE STEP.** At `/postclear`: read the one file below, play it back in three bullets, then ask in ONE line — *"Ready for the video — dictate when you are?"* — and wait. His outline (on the page, D-24): the video · the sampling and performing of samples from the base layer · the sequencing and processing of those performances, with how the video informs the live improviser. When he dictates: TRANSCRIBE (the record word for word in `DICTATION.md`; the page with light corrections), no input unless he asks.
+
+**Resume reads:** `C:\Users\jwloy\GitHub\paperSubmissions\papers\tenor-2027\RESUME.md` — whole. Nothing else to start; it names what to read when he reaches each part.
+
+**Decisions pending the composer:** the number in his sentence "I then created 51 phrases…" — 51 (the containers: the base layer) or 67 (the short phrases cut from it) · the title's hyphen, *Sýnthesi-Alpha* "for now" · moving the paper's running order to paper B. Checkpoint #10's and #9's lists below stand.
+
+**What a cold session trips on:** every git command for the paper runs in `paperSubmissions`, never here · before any edit of the page: `ls papers/tenor-2027/versions/` and read the lines from the FILE — he edits the page too; after: "press F5 before your next Edit" · an explanation he asks for is the SHORTEST true one first (memory `explain-simplest-first`) · several things the AI had told him were wrong and are corrected in `REFERENCE_NOTES.md` (R-10 · R-13 · R-14 · R-15) — the RESUME file lists the facts to keep.
+
+**The deliberately-uncommitted list** (`git status --short`): here ` M bank/samples/index.json` — the engine's index, his, left as always · `paperSubmissions` — clean, pushed.
+
+**Model:** Opus for the transcription, the page and the graphs; Fable only for a talk on the paper's framing.
+
+**► (the trail — the cold-start block until checkpoint #11) CHECKPOINT #10 OF SESSION 3** *(2026-10-13, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §483; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #9 included, is the trail.)*
 
 **In one breath:** NOTHING IN THIS REPO MOVED SINCE CHECKPOINT #9 — Draft 01 of *Approaching* stands with its five things. HIS WORD AT THE POSTCLEAR WAS THE OTHER PIECE: *"let's begin the live electronics piece with Improviser"* — in **the workshop** (his word for `C:\Users\jwloy\GitHub\live-electronics-engine`), and he works on it IN A NEW CHAT OPENED THERE. This repo is at rest until he comes back to it.
 
