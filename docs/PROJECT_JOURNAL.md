@@ -226,6 +226,13 @@ next, where we are; reorganizations only on his approval.
 
 **Model:** Opus for the transcription, the page and the graphs; Fable only for a talk on the paper's framing.
 
+**SINCE CHECKPOINT #11 (the same day) — side questions; the paper and its RESUME file did not move; the next step stands.**
+- **A note for the Switch~ piece**, his words: *"Dense counterpoint interrupted by spectral chords."* → `composition-planning-and-notes/docs/ideas/switch-dense-counterpoint-spectral-chords.md` (pushed, `7b28530`).
+- **His studio questions, answered in the chat only** (they belong in his audio-engineering repo `jwy_audioEngineering`; NOT written there from this session — offered to him):
+  - Reaper's "Set locators by regions" (Logic's Cmd+U) = the action **"Time selection: Set time selection to items"** (? → filter → Run; bind CTRL+U with Add…).
+  - **Realphones is in Reaper's MONITORING FX** (`%APPDATA%\REAPER\reaper-hwoutfx.ini`), not on a master track: View → Monitoring FX. From dSONIQ's user guide: **Correction 75 % is their recommended default** (not below 50 %) · **no crossfeed switch** — the binaural Environment simulation gives it · the buttons are factory snapshots: Phones = correction only · **Normal = for mixing** · Ambient = more spacious. His own convention (`jwy_audioEngineering/archive/Mastering-Log.md`): **Environment ~35 % while mixing, 100 % for translation checks**; bypass Realphones before recording with IEMs from Reaper.
+  - **Viator DSP Stimulate** (the harmonics half of his TwinTube stand-in on the SAX BUS; his preset to be saved as "sax"): a starting point given — Oversample on · Range 4 kHz · Amount ~25 % · Even ~6 dB · Odd ~2 dB · Mix 100 % · Trim to match bypass loudness (an "air" option: 8 kHz · 20 % · Even 4 · Odd 3 · Mix 50 %). General exciter practice, not from his notes.
+
 **► (the trail — the cold-start block until checkpoint #11) CHECKPOINT #10 OF SESSION 3** *(2026-10-13, Opus 5.5 — mid-session checkpoint; the stretch RUNNING_LOG §483; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #9 included, is the trail.)*
 
 **In one breath:** NOTHING IN THIS REPO MOVED SINCE CHECKPOINT #9 — Draft 01 of *Approaching* stands with its five things. HIS WORD AT THE POSTCLEAR WAS THE OTHER PIECE: *"let's begin the live electronics piece with Improviser"* — in **the workshop** (his word for `C:\Users\jwloy\GitHub\live-electronics-engine`), and he works on it IN A NEW CHAT OPENED THERE. This repo is at rest until he comes back to it.
