@@ -9353,3 +9353,29 @@ library of behaviour — and a walk-through of one 24-second stretch of *Sýnthe
 players' measured readings and sound clips made for it. The record is there: `papers/tenor-2027/DICTATION.md` (D-1 … D-24),
 `REFERENCE_NOTES.md` (R-1 … R-16, with the corrections the AI owed him), `docs/CONCEPT_NOTES.md` (PS-60 … PS-64). The
 cold start: `papers/tenor-2027/RESUME.md`. Nothing of *Approaching* moved; its paper (A) waits.
+
+## §488. THE HARVEST — what this piece hands to the Switch~ piece (2026-10-20, Fable, in this repo at his word)
+
+**What prompted it.** The Switch~ piece's start (`switch_2026`, a repo of two files that morning), its session opened there. Put to him
+there: the protocol's step 1 needs a finished piece to harvest; *Approaching* had no `HARVEST.md`. His words: *"approaching is done and will
+submit when call opens, not sure what 4 is pls explain more simply, what is harvest and how does it impact this"* — explained in plain
+words (one short list of what the finished piece hands on; he reads once; "take now" becomes a step at the copy) — then *"a for the
+harvest"* (the full harvest, one file, over the light read). Offered as its own session in this repo; he chose "do it here".
+
+**What was read (1.1).** `NITS.md` whole · journal §2's three blocks and the open questions · `PLAN.md`'s statuses · `PROTOCOL_DEVIATIONS.md`
+whole · `SWEEP_LIST.md`'s status column · `electronics/docs/NITS.md` · `NOTATION_SCHEME.md` · `PERFORMANCE_NOTES.md`'s rows · `tools/port/`.
+`MORPH_NOTES.md` §4 has no entry of this piece's (0 `DEC-`): the morph tool was never used here.
+
+**What was written.** `docs/HARVEST.md` — 62 lines: 43 take now (by container: 2 → 6 · 3 → 14 · 4 → 8 · 5 → 6 · 6 → 4 · 7 → 3 · 8 → 2 ·
+9 → 2) · 8 later · 9 leave. The IDs are `H6-N` so they never collide with *Recombination*'s `H-N`, which the protocol cites.
+
+**The findings that weigh most, the AI's reading:** the deviations register IS v2 and was never written back (H6-1) · `tools/port/` is the
+template the protocol's 3.7 only described (H6-7) · `electronics/` must go on the leave list and come by subtree (H6-9) · the piano
+returns in the Switch~ piece, so the quiet role's fallbacks and the roles helper stop being harmless (H6-13 · H6-14) · the UVI how-to is
+unwritten and the new piece puts three instruments on SI2 (H6-24) · the hole he named — "what got brought over and where to look" —
+becomes 4.0's read-out per instrument (H6-22).
+
+**Also said today, for the record:** the performance scores are being worked out now and the Tempus septet is first to receive parts —
+so the parked performance architecture (DEC-46) waits on that (H6-47).
+
+**Not claimed:** his read (1.3). The verdicts are proposals until it.
