@@ -12,7 +12,7 @@
 > instructions' page in hand; his word 2026-10-20: *"approaching is done and will submit when call opens."*
 >
 > **One line per item:** the item — kind · its source → the container it goes to. The verdicts are the AI's proposals (1.2) until
-> **HIS READ (1.3):** ‹his words, the date, the RUNNING_LOG §›.
+> **HIS READ (1.3), 2026-10-20:** *"all as proposed, go ahead with container 2"* — 43 take now · 8 later · 9 leave stand (RUNNING_LOG §488).
 > A "take now" becomes a step in its container at the Switch~ piece's start. A "later" goes to the home's `BACKLOG.md` (9.6).
 >
 > Kinds: **fix** a tool or code fix · **rule** an engraving / layout rule · **method** a way of working · **lesson** a thing learned about

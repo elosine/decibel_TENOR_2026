@@ -9379,3 +9379,6 @@ becomes 4.0's read-out per instrument (H6-22).
 so the parked performance architecture (DEC-46) waits on that (H6-47).
 
 **Not claimed:** his read (1.3). The verdicts are proposals until it.
+
+**— later the same day, HIS READ (1.3):** *"all as proposed, go ahead with container 2"* — the 62 verdicts stand as proposed. The Switch~
+piece's container 2 begins in its own repo; the eight LATER items go to `composition-system/BACKLOG.md` at that start's 10.0.
