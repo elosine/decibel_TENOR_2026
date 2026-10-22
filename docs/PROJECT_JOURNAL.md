@@ -1,5 +1,13 @@
 # PROJECT JOURNAL — decibel_TENOR_2026 (the Decibel piece)
 
+<!-- card:tenor -->
+<!-- Chief of Staff card: rewrite these three lines (and the date) at the end of every session on this project. Plain words, one line each. Read by home-management/tools/brief.js; list in home-management/docs/PROJECTS.md. -->
+> **▶ Where I left off** · updated 2026-10-22
+> - **Last:** the piece is assembled end to end — piece-Draft01, six sections, 12:59 (Oct 10).
+> - **Decided:** your order — the notation next, then the live-electronics talk. Volume stays parked.
+> - **Next:** the notation setup — three calls of yours (pitch form · percussion line order · short names).
+<!-- /card -->
+
 > One file. Seven sections. Everything important lives here.
 > §2 is read at every session start — keep it ~40 lines; trim old sessions to one line each.
 > The lab journal (`RUNNING_LOG.md`) is the raw trail underneath; this is the curated state.
