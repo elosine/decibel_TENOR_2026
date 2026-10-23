@@ -1,13 +1,5 @@
 # PROJECT JOURNAL — decibel_TENOR_2026 (the Decibel piece)
 
-<!-- card:tenor -->
-<!-- Chief of Staff card: the PA keeps it current from its scan of this repo (home-management/tools/scan.js); a session here may update it too. Plain words, one line each. List: home-management/docs/PROJECTS.md. -->
-> **▶ Where I left off** · updated 2026-10-23
-> - **Last:** notes for paper A, the behavioral algorithms — Wolff (For 1, 2 or 3 People) and LeWitt (Oct 22).
-> - **Decided:** your order — the notation next, then the live-electronics talk. Volume stays parked.
-> - **Next:** the notation setup — three calls of yours (pitch form · percussion line order · short names); the papers alongside.
-<!-- /card -->
-
 > One file. Seven sections. Everything important lives here.
 > §2 is read at every session start — keep it ~40 lines; trim old sessions to one line each.
 > The lab journal (`RUNNING_LOG.md`) is the raw trail underneath; this is the curated state.
