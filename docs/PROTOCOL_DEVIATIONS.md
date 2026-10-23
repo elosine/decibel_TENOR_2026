@@ -4,6 +4,8 @@
 reconstructed after. Read line by line at the end of the start (10.0); each lesson then goes back into the
 protocol as a dated entry under the step it touches. A deviation is not a fault — it is how the protocol learns.)*
 
+**WRITTEN BACK 2026-10-23 — by the Switch~ piece's 10.0** (`switch_2026` RUNNING_LOG §25): every line below is in `composition-system/protocol/NEW_PIECE_PROTOCOL.md` as a dated v2 entry under its step. This start's own 10.0 had not run.
+
 **The protocol version this piece runs:** v1 — this is its FIRST RUN (its test, and v2's source — 10.3)
 
 | Date | Step | What the protocol said | What was done | Why |

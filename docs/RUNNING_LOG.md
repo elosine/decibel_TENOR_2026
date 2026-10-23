@@ -9382,3 +9382,9 @@ so the parked performance architecture (DEC-46) waits on that (H6-47).
 
 **— later the same day, HIS READ (1.3):** *"all as proposed, go ahead with container 2"* — the 62 verdicts stand as proposed. The Switch~
 piece's container 2 begins in its own repo; the eight LATER items go to `composition-system/BACKLOG.md` at that start's 10.0.
+
+## §489. The register written back — by the Switch~ piece's 10.0 (2026-10-23)
+
+This start's 10.0 never ran (its register held ~25 "for v2" lines since 2026-10-04). The Switch~ piece's start ran BY those lines
+(`switch_2026` RUNNING_LOG §5 … §24) and its 10.0 wrote both registers into the protocol as v2 (`composition-system` `2185de3`;
+`switch_2026` RUNNING_LOG §25). A line at the top of `docs/PROTOCOL_DEVIATIONS.md` says so. Nothing else here moved.
