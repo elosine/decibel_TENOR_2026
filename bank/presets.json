@@ -9410,6 +9410,78 @@
    },
    "deal": false,
    "audition": "piece-drones"
+  },
+  {
+   "key": "dc29",
+   "name": "D1 of va-drone-3 · expodec · 1/43 · ov 12 · arch 0.4 → 1.43 s · 30.97 s, in 1.1 out 1.39 · CUT AT 323 s",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1100,
+   "durMs": 16080,
+   "relMs": 1390,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0232,
+    "icFromMs": "region@0.17",
+    "icWin": "0.4@0,1.43@15484,0.4@30967",
+    "icOverlaps": 12,
+    "icEnv": 4
+   },
+   "deal": false,
+   "audition": "piece-drones-cut"
+  },
+  {
+   "key": "dc15",
+   "name": "D2 of bcl-drone-3 from bcl-drone-2 · expodec · 1/58 · ov 14 · falling 0.48 → 1.55 s · 31.07 s, in 1.91 out 5.4 · CUT AT 323 s",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1910,
+   "durMs": 6050,
+   "relMs": 3640,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0171,
+    "icFromMs": "region@0.94",
+    "icWin": "1.55@0,0.48@31070",
+    "icOverlaps": 14,
+    "icEnv": 4
+   },
+   "deal": false,
+   "audition": "piece-drones-cut"
+  },
+  {
+   "key": "dc20",
+   "name": "D2 of bfl-drone-3 from bfl-drone-1 · expodec · 1/81 · ov 24 · tremolo 1.15 s · 24.11 s, in 2.41 out 1.41 · CUT AT 323 s",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 2410,
+   "durMs": 14550,
+   "relMs": 1410,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0123,
+    "icFromMs": "region@0.2",
+    "icWin": 1.15,
+    "icOverlaps": 24,
+    "icEnv": 4
+   },
+   "deal": false,
+   "audition": "piece-drones-cut"
   }
  ],
  "generated": {
@@ -9574,6 +9646,12 @@
    "what": "the piece's last drone on each track with a long fade-out — copies of the drone section's presets (tools/drone_fade.js)",
    "command": "node tools/drone_fade.js --score piece-sec03-a2 --fade 11",
    "when": "2026-10-09T04:21"
+  },
+  "piece-drones-cut": {
+   "n": 3,
+   "what": "drones shortened where a cut in the piece crosses them — copies of the drone section's presets",
+   "command": "cut of piece-Draft02-CutB at 323 s (2026-10-24)",
+   "when": "2026-10-24T12:50"
   }
  }
 }
