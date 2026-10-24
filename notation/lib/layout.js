@@ -849,7 +849,9 @@
           const P = SH.pageS || 12, LD = SH.pageLeadInS || 0, pageStart = t => Math.floor((t + LD) / P) * P - LD, pageEnd = t => Math.ceil((t + LD) / P) * P - LD;
           const s0 = SH.openingFrom === 'pageStart' ? -LD : 0;
           const spans = [[s0, s0 + (SH.openingS || 0)]];
-          for (const r of SH.ranges || []) {
+          // [decibel 2026-10-24, Draft 02] a score named in `rangesByScore` (the IR's source score) has its own ranges; others take `ranges`
+          const RR = (SH.rangesByScore && ir.source && SH.rangesByScore[ir.source.score]) || SH.ranges || [];
+          for (const r of RR) {
             const from = SH.wholePages ? pageStart(+r.fromS) : +r.fromS;
             const toRaw = r.to === 'end' ? Infinity : +r.to, to = (SH.wholePages && isFinite(toRaw)) ? pageEnd(toRaw) : toRaw;
             if (to > from) spans.push([from, to]);

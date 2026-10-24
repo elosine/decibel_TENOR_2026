@@ -225,13 +225,19 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    `piece-Draft02-CutA` … `-CutJ` with their backups (`scores/backups/`) are the trail; RUNNING_LOG §493 · §494.
 2. ► **The piece reorganized — the notation from the Final score** *(his words, 2026-10-24: "I think it's just repeating stuff we've
    done before")*
-   - 2a. `piece-Draft02-Final` into git (his file — at his word).
+   - 2a. ☑ `piece-Draft02-Final` into git (his word, 2026-10-24; `ab9f601`).
    - 2b. The main notation score re-cut from it UNDER A NEW NAME (Draft 01's `approaching` stays as it is): the command of
      CLAUDE.md § Apps, every time moved to the new sections, the final bar line after the strikes. Two things for his eye: the drones'
      line wedge (its thickness was drawn for the longer section) · the badges at the new page turns (the hand-placed cases, judged
      again, case by case).
-   - 2c. The gates (screen edges · the shield · the rules, `gen_engraving_rules.js`) → his eye on the score.
-   - 2d. The instructions page read through for anything the cut changed (the sections and their numbers all stay).
+     ☑ BUILT 2026-10-24 (RUNNING_LOG §495): **`approaching-d02`**, *Approaching — Draft 02 (0 … 562 s)*, first in the picker; the
+     command in CLAUDE.md § Apps. The staff's range is per score now (`rules.json` `staffLines.ensemble.rangesByScore`). For his eye:
+     the drones' line moved with the cut's block move (−38.2 s: 4 until 277.8 · to 10 by 292.8 · 10 to the end — its fall to 2 was
+     cut with the section) · the two badges after their openings (152.2 · 153.7 s — Draft 01's same two cases, his cure) · one sine
+     0.02 s after a page turn (332.0 s, its notation held 21 px right — Draft 01's 560 s case, "fine").
+   - 2c. ☑ The gates: screen edges PASS · the shield green (only `approaching-d02` moved) · the rules 31 of 32 (the standing red) →
+     ► his eye on the score.
+   - 2d. ☑ The instructions page read through: nothing the cut changed (no times in its text; its images show the same signs).
 3. **The new media — each under a new name**
    - 3a. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
      `take.js start` → his ▶ from 0 → `stop` → the take read (every note sounded) → `mix` → `notation/audio/piece-Draft02-Final.wav`
@@ -239,7 +245,9 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    - 3b. THE FILM: the wide shot (no close-ups, his Draft 01 choice) over the new score with the take → his watch-through →
      archived and tagged on his "good". About 9:30 with the lead-in and the tail — under 10 minutes.
    - 3c. THE PRINT SCORE: `print/score/build.sh` on the new score (the five gates) → his look → archived and tagged.
-4. **The anonymous versions** — his name is on two things only: the print score's cover and the instructions page (*"Justin Yang,
+4. **The two versions — REGULAR (named) and REVIEW (anonymous), BOTH KEPT IN THE REPO** *(his word, 2026-10-24: "also keep/make a
+   'regular' non anonymized version and store in repo")* — the film and the PDFs fit in git (the Draft 01 film was 44 MB, the
+   print 1.6 MB); the WAV (~200 MB) does not (GitHub's limit is 100 MB): an MP3 in git, the WAV on the machine. His name is on two things only: the print score's cover and the instructions page (*"Justin Yang,
    2026"* and his YouTube demo link). The film and the music pages carry none (checked 2026-10-24).
    - 4a. The instructions page's review copy: no name, no demo line (the links PDF carries the film).
    - 4b. The print score's review copy: the cover without the name; the PDF's document properties cleared.

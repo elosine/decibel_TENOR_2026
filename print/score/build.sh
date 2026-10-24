@@ -39,13 +39,16 @@
 # objects.finalBar, RUNNING_LOG §411) through every lane; check_print_pages FAILS a score without exactly one.
 set -e
 cd "$(dirname "$0")/../.."
-OUT=print/score/Approaching-score-JYang.pdf
-IR=approaching
+# [2026-10-24, Draft 02] the score, the file and the moments may be given from outside (Draft 01 the defaults):
+#   IR=approaching-d02 OUT=print/score/Approaching-Draft02-score-JYang.pdf AT=20,80,150,260,380,500 bash print/score/build.sh
+#   … and the review copy: the same with OUT=…-review.pdf and  --coverFile print/cover/cover-a3-landscape-review.svg --insFile docs/notation_instructions/review.html
+OUT="${OUT:-print/score/Approaching-score-JYang.pdf}"
+IR="${IR:-approaching}"
 # one moment per section: the opening · the three-body problem · the trills and accented long tones · the multiphonics ·
 # the audible beats · the scattered strikes
-AT=20,80,150,300,560,720
+AT="${AT:-20,80,150,300,560,720}"
 # the density trio's moment: a page of section three (trills, bouncing balls, mic openings — the densest kind of page)
-DENS=150
+DENS="${DENS:-150}"
 
 REBUILD=0
 PROOF=0

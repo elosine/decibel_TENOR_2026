@@ -494,8 +494,10 @@ let _insPages;   // built once — the measured break costs a Chrome run, and th
 function instructionsPages() {
   if (!wantInstructions) return null;
   if (_insPages !== undefined) return _insPages;
-  const src = path.join(INS_DIR, 'index.html');
-  if (!fs.existsSync(src)) { console.error('  ! --instructions on but docs/notation_instructions/index.html is missing; skipping'); return (_insPages = null); }
+  // [decibel 2026-10-24, Draft 02] --insFile <html>: another source than the page itself — the review copy (no name), made by
+  // tools/review_copy.js beside it in the same folder, so its images resolve the same
+  const src = arg('insFile', null) ? path.resolve(arg('insFile', null)) : path.join(INS_DIR, 'index.html');
+  if (!fs.existsSync(src)) { console.error('  ! --instructions on but ' + path.relative(ROOT, src) + ' is missing; skipping'); return (_insPages = null); }
   let body = /<body>([\s\S]*)<\/body>/.exec(fs.readFileSync(src, 'utf8'))[1];
   body = body.replace(/<!--[\s\S]*?-->/g, '');            // regen-command comments
   // title block spans both columns; the rest flows

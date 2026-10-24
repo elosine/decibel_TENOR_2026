@@ -9460,3 +9460,37 @@ moved or taken out; `--scale` a stretch pulled in) and whole stretches moved by 
   squeezed like the rest (a — the opening chord keeps them; b would have taken out the F#7 and moved the F7 back whole); the cello's
   first two pairs kept, only its D#2 shortened (b), ending where the map puts it (382.72, 24.4 s, was 33.3). The beats now 326.67 →
   464.80 (138.1 s), the strikes 469.80, **the piece ends 571.63 (9:31.6)**.
+
+## §495. Draft 02's notation, and the two versions begun (2026-10-24, Opus 5.5)
+
+His word, the cut finished: *"Let's just write out a project plan on everything that needs to happen now to get this piece
+submission ready … I think it's just repeating stuff we've done before."* — the running order's steps 2 … 5 written out (journal
+§2); then *"comit/push final scores; 4. also keep/make a 'regular' non anonnymized version and store in repo … then go for the rest."*
+
+- **The Final score** `scores/piece-Draft02-Final.json` committed (`ab9f601`): 9:21.8 to the last note.
+- **THE NOTATION, `approaching-d02`** — Draft 01's command with every time moved to the new sections (the opening 0 … 36.9 · the
+  three body problem 38.0 … 122.3 · the trills 124.4 … 189.4 · the drones 201.7 … 314.1 · the beats 317.8 … 455.0 · the strikes
+  460.0 … 561.8; the final bar line 566.1, Draft 01's 4.27 s after the last note). Draft 01's `approaching` untouched.
+- **THE STAFF'S RANGE WAS ONE SCORE'S SECONDS** (`rules.json` `staffLines.ensemble.ranges`, 423.3 … 668 of Draft 01): a new key
+  `rangesByScore` names a range per source score (the IR's `source.score`), the old `ranges` the default; `layout.js` reads it (two
+  lines). Draft 02: 317.75 … 452 (the page turn before the strikes' first page, Draft 01's own choice at 668). The shield, its before
+  taken from HEAD's two files: 27 of 28 identical, only `approaching-d02` moved.
+- **THE DRONES' LINE WEDGE is his dictated shape (§399) in absolute times**, and the cut moved his free multiphonics unevenly (12 of
+  them by the CutA block move −29.27 then −8.92 = −38.19; the rest by hand, −20 … −118 s). The shape moved by the block move: 4 until
+  277.81 · to 10 by 292.81 · 10 to the section's end 314.08 — the fall to 2 (Draft 01's 351 … 374) lies past the cut at 323 (CutB)
+  and is gone. Rejected: squeezing the shape in proportion to the shorter section (the peak would fall at 268 … 279, while the free
+  multiphonics are densest at 285 … 310). For his eye.
+- **THE BADGES AT THE NEW PAGE TURNS** — measured from the IR (a badge 53.9 px = 0.366 s before its opening; the turns at 8 + 12 k):
+  two land on an opening — the bass clarinet's at 152.18 (0.18 s after the turn at 152) and the percussionist's at 153.68 (0.10 s
+  after his opening before): THE SAME TWO CASES as Draft 01's §397 / §398, given his cure — `--micBadgeAfter`. The screen-edge gate's
+  one flag: the bass flute's sine at 332.02, 0.02 s after a turn, its notation held 21 px right — Draft 01's 560 s case ("fine").
+- **THE INSTRUCTIONS PAGE** needs nothing from the cut (no times in its text; its images show the same signs).
+- **THE TWO VERSIONS** — the print can now be built for any score (`build.sh` takes IR · OUT · AT · DENS from outside); the
+  review copy of the instructions is GENERATED, `node tools/review_copy.js` → `docs/notation_instructions/review.html` (no name line,
+  no YouTube demo line, no edit switch, no comments — the page's comments carry his links); the exporter's `--insFile`; the cover
+  without the name, `print/cover/cover-review.json` → `cover-a3-landscape-review.svg`. His name was on two things only: the cover
+  and the instructions page (the film and the music pages carry none).
+- **5B decided as a recommendation:** OSF (osf.io), a private project and an ANONYMIZED view-only link — built for double-blind
+  review, large files as they are, live while the project lives; not Google Drive (the owner's name), not a GitHub page (a new
+  account; 100 MB a file). Vimeo's free plan: whether "Unlisted" is still offered was not confirmed (the search's sources disagree);
+  "Anyone" under the neutral account is the fallback.

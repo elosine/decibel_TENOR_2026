@@ -1,6 +1,16 @@
 {
  "irs": [
   {
+   "id": "approaching-d02",
+   "label": "Approaching — Draft 02 (0 … 562 s)",
+   "score": "piece-Draft02-Final",
+   "window": [
+    0,
+    567
+   ],
+   "profile": "trance"
+  },
+  {
    "id": "approaching",
    "label": "Approaching — THE SCORE (0 … 779 s)",
    "score": "piece-Draft01d",
