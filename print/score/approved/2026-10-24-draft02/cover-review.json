@@ -1,0 +1,6 @@
+{
+  "_doc": "THE COVER OF THE REVIEW COPY (TENOR 2027, double-blind — running order step 4, 2026-10-24): cover.json's words without the name. Draw:  powershell -ExecutionPolicy Bypass -File print/cover/make_cover.ps1 -Words print/cover/cover-review.json -Out print/cover/cover-a3-landscape-review.svg",
+  "title": "Approaching",
+  "subtitle": ["for bass flute, bass clarinet, percussion,", "viola, cello and electronics"],
+  "name": ""
+}
