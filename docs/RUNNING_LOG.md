@@ -9399,3 +9399,11 @@ SuperCollider crops and keeps them; how the performance takes them up is "server
 compositional reason for the multiphonics: section 4's drones can only play back what has been recorded in the piece itself,
 so they start late; pre-recorded multiphonics let them start SOONER. Filed in NITS (the live-electronics discussion). Not in
 the TENOR running order — it comes after the submissions, before a performance.
+
+## §491. The drones for the cut: a seeded roll inside a length (2026-10-24, Opus 5.5)
+
+He asked whether section 4's returns are fixed or rolled, and decided (DEC-206): the section gets a finite length and a seed
+fits the returns inside it. Read from `bank/drone_section.json` and the record: that is how the section was built (length 270,
+seed 1, the rules above), held in the score as fixed bricks; in the piece its end was then cut by hand to 204 s. For the cut
+(running order step 2) the drones are re-built at the new length — the builder `--replace`, `drone_check.js`, then the
+insertion into the cut piece — rather than trimmed. A per-performance roll stays for the live-electronics discussion.

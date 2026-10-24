@@ -1738,3 +1738,17 @@ scattered strikes) AND a few MULTIPHONICS. SuperCollider crops and keeps them as
 "server-based negotiation", to be worked out. The point for the multiphonics: with some recorded beforehand, the drones'
 playback (section 4) can begin SOONER in the piece than its own live recordings allow. It extends PERFORMANCE_NOTES row 12 (the
 recording session, DEC-37). Not now: before the performance, after the TENOR submissions.
+
+### DEC-206 · The drones: a seeded roll inside a length he sets · 2026-10-24
+
+*(His words, verbatim:)* *"And then tell me in the multiphonic section, the purple electronics playbacks. So basically, I guess they're playing into the live mic and multiphonic, and then I think it's like 30 seconds about later it comes back. But tell me if those are fixed timings already. So in the actual final performance, or is that a roll when they start the performance? Just give me a general idea. You don't have to figure it out perfectly. And I guess we'll work that out when we work out the live electronics. I guess my preference is that that's a roll. It doesn't have to be every performance, but like a seeded one where then, I guess for the cut, I just want to understand that it's going to be different every time, or depending on the seeded version, so that, you know, this is just a demo. I'm going to move things around, but expect that they'll, I guess the decision I'm making right now is that I'll just have a certain time length for this. It's not about trying to get in one more playback of the electronics. This section will just have a certain finite time, and then the seed will fit in the, you know, the granular responses, the time stretch responses within that time frame. And I want to see if that's more or less the way it is now."*
+
+*(The AI's reading, not his words:)* HIS DECISION: section 4 (the multiphonics) has a set length, and a seeded roll fits the
+recordings and the stretched returns inside it — the cut is never about fitting in one more playback. AS BUILT it is so, more
+or less: `tools/build_drone_section.js` takes `bank/drone_section.json` — `lengthS` (270 when built) and `seed` (1) — and fits
+three recordings a player (6 … 9 s each, all before 120 s), each followed 30 s after its window by a string of drones (10 … 40 s,
+rests 0 … 20 s), each part's last drone fading over 11 s at the end. The score then holds that roll as FIXED bricks — the same
+timings at every playback of this score — while the SOUND is re-recorded at every pass. The piece's drones differ from a pure
+roll: after insertion their end was cut by hand (270 s → 204 s) and the last drones given long fades by `drone_fade.js`. A
+roll at each performance is not built (with the strikes' "a new roll every performance", for the live-electronics
+discussion). FOR THE CUT: the drones' new length is a number in the file and the builder re-rolls to fit it — not a hand cut.
