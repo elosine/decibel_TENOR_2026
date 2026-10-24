@@ -241,6 +241,8 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
 
 **III · Paper A — form 2**
 13. **Paper A** — his draft, with the performance score system.
+    - ☐ Find and download, or get access to, a copy of Christian Wolff's *For 1, 2 or 3 People* (his to-do, 2026-10-24) —
+      Edition Peters, 1964 (◐, `paperSubmissions/papers/tenor-2027/GATHERING.md` row 1).
 14. **Form 2 submitted** — paper A + *Approaching*.
 
 **► CHECKPOINT #11 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-14, Opus 5.5 — mid-session checkpoint; RUNNING_LOG §486 · §487; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #10 included, is the trail.)*
