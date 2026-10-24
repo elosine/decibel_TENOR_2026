@@ -242,7 +242,7 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    - 3a. ☑ TAKE 01 made 2026-10-24 (§496) → `notation/audio/piece-Draft02-Final.wav`; the 13 quiet or silent notes LEFT as in Draft 01 (his "a"); ► his ear with the score. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
      `take.js start` → his ▶ from 0 → `stop` → the take read (every note sounded) → `mix` → `notation/audio/piece-Draft02-Final.wav`
      → his ear.
-   - 3b. THE FILM: the wide shot (no close-ups, his Draft 01 choice) over the new score with the take → his watch-through →
+   - 3b. ☑ RENDERED 2026-10-24: `notation/video/renders/Approaching-Draft02-V-MAIN.mp4` (9:31.8 with the lead-in, 33 MB, 5 min to render); ► his watch-through. THE FILM: the wide shot (no close-ups, his Draft 01 choice) over the new score with the take → his watch-through →
      archived and tagged on his "good". About 9:30 with the lead-in and the tail — under 10 minutes.
    - 3c. THE PRINT SCORE: `print/score/build.sh` on the new score (the five gates) → his look → archived and tagged.
 4. **The two versions — REGULAR (named) and REVIEW (anonymous), BOTH KEPT IN THE REPO** *(his word, 2026-10-24: "also keep/make a
