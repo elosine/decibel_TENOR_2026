@@ -9494,3 +9494,17 @@ submission ready … I think it's just repeating stuff we've done before."* — 
   review, large files as they are, live while the project lives; not Google Drive (the owner's name), not a GitHub page (a new
   account; 100 MB a file). Vimeo's free plan: whether "Unlisted" is still offered was not confirmed (the search's sources disagree);
   "Anyone" under the neutral account is the fallback.
+
+## §496. The take of Draft 02 (2026-10-24, Opus 5.5)
+
+His word: *"Is there a new audio render? Or can we make that then? For the notation score."* — running order 3a. All 128 processed
+versions the Final score names were already in the bank (no plan sent, no pass before). `take.js start` first refused: Reaper reported
+the rack with FORWARD slashes (the tab opened through the bridge earlier in the day) and `samePath` compared the strings as they came —
+fixed (the slashes normalized). TAKE 01 of `piece-Draft02-Final`: 729.9 s recorded, 1,324 notes on 16 tracks; aligned 661 of 661
+(±0.45 ms), the drift −6.96 ms over 561.8 s (−12.4 ppm, left); the players −20.3 LUFS, the electronics −19.7 LUFS; mixed as heard,
+one gain of −2.2 dB → **`notation/audio/piece-Draft02-Final.wav`**, −1.0 dBTP · −19.8 LUFS · LRA 11.4. THE READ: 13 of 692 notes did
+not lift their own track above −45 dB — THE SAME 13 as in Draft 01's approved take (take 02 of `piece-Draft01d`, read again for the
+comparison; its fourteenth, the spring coil, was cut): five simulated notes of the three body problem with no sample on their key (the
+viola's Bartók at key 80 ×3, the cello's sul ponticello spiccato at 72 ×2) · a muted note under the tutti trill (its trill sounds) · the
+bowed China cymbal ×3 and the bowed crotales ×2, quiet before the fader · the bass clarinet's short multiphonic at key 40 and its
+drone recording at key 46 (the 1.5 s sample, §383). Nothing new: offered to him as a fix and a re-take, his call.

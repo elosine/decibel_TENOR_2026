@@ -82,7 +82,7 @@ function job(lua, timeoutMs) {
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const L = s => '[[' + s + ']]';                           // a Lua long string: a Windows path goes in as it is
-const samePath = (a, b) => String(a || '').toLowerCase() === String(b || '').toLowerCase();
+const samePath = (a, b) => { const n = (x) => String(x || '').replace(/\\/g, '/').toLowerCase(); return n(a) === n(b); };   // a tab opened through the bridge reports forward slashes
 async function waitHeartbeatNames(file) {                 // RUNNING_LOG §553 (#5): the guard reads the heartbeat; wait until it names the tab
   for (let w = Date.now(); ; await sleep(250)) {
     const h = heartbeat();
