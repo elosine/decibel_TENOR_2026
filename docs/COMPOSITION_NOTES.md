@@ -1772,3 +1772,11 @@ THERE TOGETHER — no part's drones trail off early. Done: the bass flute, bass 
 (shortened by the cut; his page drew them short because it reads drone lengths only at F5, hence his "bigger gaps"); the
 percussion's and the cello's last drones lengthened to 323; one more cello drone in its gap after 263 s. FOR THE LIVE BUILD:
 the section's end is a common cut-off for all five parts' electronics — the per-performance roll must keep it.
+
+### DEC-209 · The multiphonics section's electronics near constant — in the live build · 2026-10-24
+
+*(His words, verbatim:)* *"And then just make a note for when we're doing the electronics. I think I want to have a constant electronics in the multiphonics section, or pretty constant. So we'll tighten up the gaps then. No need to change the demo score though."*
+
+*(The AI's reading, not his words:)* in performance the drones of section 4 (the multiphonics) sound CONSTANTLY, or nearly — the
+rests between a part's drones (the roll's 0 … 20 s, `bank/drone_section.json`) tightened when the live electronics are built.
+THE DEMO SCORE (`piece-Draft02-Cut…`) STAYS AS IT IS. Goes with DEC-206 · 207 · 208.

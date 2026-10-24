@@ -257,6 +257,9 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
 - **2026-10-24 (DEC-208) — THE MULTIPHONICS SECTION ENDS TOGETHER: all five parts' electronics stop at the section's end**
   (323 s in `piece-Draft02-CutB`) — whatever a roll gives, its last drones are lengthened, cut or filled to end there. The live
   build keeps the common end. Verbatim: COMPOSITION_NOTES DEC-208.
+- **2026-10-24 (DEC-209) — THE MULTIPHONICS SECTION'S ELECTRONICS NEAR CONSTANT:** in the live build the drones
+  sound constantly, or nearly — the rests between a part's drones tightened then (the roll's rest range). The demo score is NOT
+  changed. Verbatim: COMPOSITION_NOTES DEC-209.
 
 ## The performance instructions' page (2026-10-11, RUNNING_LOG §433)
 
