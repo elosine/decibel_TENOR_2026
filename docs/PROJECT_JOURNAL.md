@@ -254,7 +254,7 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    - 4c. The film and the audio: their file metadata cleared, neutral file names.
 5. ► **Posted anonymously**
    - 5a. ☑ The film on YOUTUBE (not Vimeo — his own Vimeo account would name him; a second channel under his Google account, `Approaching review`), unlisted: https://youtu.be/sq5tcHfPGyY — seen logged out, 2026-10-24.
-   - 5b. The audio and the score PDF on the one anonymous media page (a free static host, a neutral name — not Google Drive, not
+   - 5b. ☑ ON OSF 2026-10-24 (not a web page — his account by ORCID; the project private; an ANONYMIZED view-only link: https://osf.io/4zmev/overview?view_only=1f82df4e89a94eb1be9dbc07adc07220). WAS: The audio and the score PDF on the one anonymous media page (a free static host, a neutral name — not Google Drive, not
      his YouTube).
    - 5c. The artistic PDF: a description (its research: animated notation for live electronics · the performance models · the
      language badges) + the anonymous links; its properties cleared; every link opened from a logged-out browser. Held for form 2.

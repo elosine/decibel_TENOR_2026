@@ -23,4 +23,6 @@ shared by an ANONYMIZED view-only link; both links collected in the artistic PDF
 
 - **The film — YouTube, unlisted, the channel `Approaching review`:** https://youtu.be/sq5tcHfPGyY (2026-10-24; seen logged out: the
   channel name `Approaching review`, the title `Approaching`, 9:32. YouTube's `?si=` share tag left off — it ties a link to the sharer).
-- **The score and the audio — OSF:** to come.
+- **The score and the audio — OSF, the ANONYMIZED view-only link** (2026-10-24; the project `Approaching`, private, three files:
+  `Approaching-score.pdf` · `Approaching-audio.wav` · `Approaching-audio.mp3`): https://osf.io/4zmev/overview?view_only=1f82df4e89a94eb1be9dbc07adc07220
+  — never the project's plain address (it names him to anyone it is shown to).
