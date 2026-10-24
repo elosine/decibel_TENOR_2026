@@ -223,7 +223,7 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    sections: the opening 0 … 36.9 · the three body problem 38.0 … 122.3 · the trills and accented long tones 124.4 … 189.4 · the
    multiphonics (drones) 201.7 … 314.1 · the audible beats 317.8 … 455.0 · the scattered strikes 460.0 … 561.8. The working files
    `piece-Draft02-CutA` … `-CutJ` with their backups (`scores/backups/`) are the trail; RUNNING_LOG §493 · §494.
-2. ► **The piece reorganized — the notation from the Final score** *(his words, 2026-10-24: "I think it's just repeating stuff we've
+2. ☑ **The piece reorganized — the notation from the Final score** *(approved — his word 2026-10-24: "notation scores approved")* *(his words, 2026-10-24: "I think it's just repeating stuff we've
    done before")*
    - 2a. ☑ `piece-Draft02-Final` into git (his word, 2026-10-24; `ab9f601`).
    - 2b. The main notation score re-cut from it UNDER A NEW NAME (Draft 01's `approaching` stays as it is): the command of
@@ -236,9 +236,9 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
      cut with the section) · the two badges after their openings (152.2 · 153.7 s — Draft 01's same two cases, his cure) · one sine
      0.02 s after a page turn (332.0 s, its notation held 21 px right — Draft 01's 560 s case, "fine").
    - 2c. ☑ The gates: screen edges PASS · the shield green (only `approaching-d02` moved) · the rules 31 of 32 (the standing red) →
-     ► his eye on the score.
+     his eye on the score — ☑ approved.
    - 2d. ☑ The instructions page read through: nothing the cut changed (no times in its text; its images show the same signs).
-3. **The new media — each under a new name**
+3. ► **The new media — each under a new name**
    - 3a. ☑ TAKE 01 made 2026-10-24 (§496) → `notation/audio/piece-Draft02-Final.wav`; the 13 quiet or silent notes LEFT as in Draft 01 (his "a"); ► his ear with the score. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
      `take.js start` → his ▶ from 0 → `stop` → the take read (every note sounded) → `mix` → `notation/audio/piece-Draft02-Final.wav`
      → his ear.
