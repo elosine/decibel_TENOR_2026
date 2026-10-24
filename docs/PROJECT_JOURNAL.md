@@ -219,17 +219,37 @@ useful; changes land only on his approval. A post-clear model reads this block a
 facts, the flags with recommendations and where things live: `paperSubmissions/papers/tenor-2027/SUBMISSION_PLAN.md`.
 
 **I · *Approaching* — ready and posted** *(submitted later, with paper A)*
-1. ► **The cut** — under 10 minutes from 13: which sections and stretches go (his). Done when the cut is written down.
-2. **The cut made; the piece reorganized** — a new piece file from `piece-Draft01d`; the sections moved or shortened; the main
-   notation score re-cut; the instructions page where a section changes.
-   *Working (2026-10-24): his files `piece-Draft02-CutA` → `-CutB` → `-CutC` (backups beside them and in `scores/backups/`); section 4
-   cut at 323 s, its electronics ending together (DEC-208); everything after moved to start at 330 s. The beating pairs are edited
-   one by one with `node tools/beat_edit.js --score <name> --at <s> [--lane …] --end <s> | --move <±s> | --delete` — nothing else moves.*
-3. **The new media** — a new take (the audio) → the film → the print score, each under a new name.
-4. **The anonymous versions** — the film, the audio, the print score and the instructions without his name; the PDFs' document
-   properties cleared.
-5. **Posted anonymously** — a neutral account (Vimeo unlisted, one media page); the links checked; the artistic PDF (description +
-   links) ready and held.
+1. ☑ **The cut** — done 2026-10-24: **`scores/piece-Draft02-Final.json`** (his), **9:21.8** to the last note (was 12:59). Its
+   sections: the opening 0 … 36.9 · the three body problem 38.0 … 122.3 · the trills and accented long tones 124.4 … 189.4 · the
+   multiphonics (drones) 201.7 … 314.1 · the audible beats 317.8 … 455.0 · the scattered strikes 460.0 … 561.8. The working files
+   `piece-Draft02-CutA` … `-CutJ` with their backups (`scores/backups/`) are the trail; RUNNING_LOG §493 · §494.
+2. ► **The piece reorganized — the notation from the Final score** *(his words, 2026-10-24: "I think it's just repeating stuff we've
+   done before")*
+   - 2a. `piece-Draft02-Final` into git (his file — at his word).
+   - 2b. The main notation score re-cut from it UNDER A NEW NAME (Draft 01's `approaching` stays as it is): the command of
+     CLAUDE.md § Apps, every time moved to the new sections, the final bar line after the strikes. Two things for his eye: the drones'
+     line wedge (its thickness was drawn for the longer section) · the badges at the new page turns (the hand-placed cases, judged
+     again, case by case).
+   - 2c. The gates (screen edges · the shield · the rules, `gen_engraving_rules.js`) → his eye on the score.
+   - 2d. The instructions page read through for anything the cut changed (the sections and their numbers all stay).
+3. **The new media — each under a new name**
+   - 3a. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
+     `take.js start` → his ▶ from 0 → `stop` → the take read (every note sounded) → `mix` → `notation/audio/piece-Draft02-Final.wav`
+     → his ear.
+   - 3b. THE FILM: the wide shot (no close-ups, his Draft 01 choice) over the new score with the take → his watch-through →
+     archived and tagged on his "good". About 9:30 with the lead-in and the tail — under 10 minutes.
+   - 3c. THE PRINT SCORE: `print/score/build.sh` on the new score (the five gates) → his look → archived and tagged.
+4. **The anonymous versions** — his name is on two things only: the print score's cover and the instructions page (*"Justin Yang,
+   2026"* and his YouTube demo link). The film and the music pages carry none (checked 2026-10-24).
+   - 4a. The instructions page's review copy: no name, no demo line (the links PDF carries the film).
+   - 4b. The print score's review copy: the cover without the name; the PDF's document properties cleared.
+   - 4c. The film and the audio: their file metadata cleared, neutral file names.
+5. **Posted anonymously**
+   - 5a. A neutral account (his to make) on Vimeo; the film uploaded unlisted under a neutral title.
+   - 5b. The audio and the score PDF on the one anonymous media page (a free static host, a neutral name — not Google Drive, not
+     his YouTube).
+   - 5c. The artistic PDF: a description (its research: animated notation for live electronics · the performance models · the
+     language badges) + the anonymous links; its properties cleared; every link opened from a logged-out browser. Held for form 2.
 
 **II · *Sýnthesi Alpha* + paper B — form 1, submitted**
 6. ***Sýnthesi Alpha* re-recorded with piano** — record and mix (`jwy_audioEngineering`).
