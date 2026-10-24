@@ -252,16 +252,16 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    - 4a. The instructions page's review copy: no name, no demo line (the links PDF carries the film).
    - 4b. The print score's review copy: the cover without the name; the PDF's document properties cleared.
    - 4c. The film and the audio: their file metadata cleared, neutral file names.
-5. ► **Posted anonymously**
+5. ☑ **Posted anonymously** *(2026-10-24 — part I done; his Incognito check of the OSF link outstanding)*
    - 5a. ☑ The film on YOUTUBE (not Vimeo — his own Vimeo account would name him; a second channel under his Google account, `Approaching review`), unlisted: https://youtu.be/sq5tcHfPGyY — seen logged out, 2026-10-24.
    - 5b. ☑ ON OSF 2026-10-24 (not a web page — his account by ORCID; the project private; an ANONYMIZED view-only link: https://osf.io/4zmev/overview?view_only=1f82df4e89a94eb1be9dbc07adc07220). WAS: The audio and the score PDF on the one anonymous media page (a free static host, a neutral name — not Google Drive, not
      his YouTube).
-   - 5c. The artistic PDF: a description (its research: animated notation for live electronics · the performance models · the
+   - 5c. ☑ DRAFTED 2026-10-24: `submission/tenor-2027/review/Approaching-links.pdf` (one page: title · instruments · duration · the two links; no description — his word: the paper does the explaining; PAPER A GOES WITH IT at form 2). WAS: The artistic PDF: a description (its research: animated notation for live electronics · the performance models · the
      language badges) + the anonymous links; its properties cleared; every link opened from a logged-out browser. Held for form 2.
 
 **II · *Sýnthesi Alpha* + paper B — form 1, submitted**
-6. ***Sýnthesi Alpha* re-recorded with piano** — record and mix (`jwy_audioEngineering`).
-7. **Its media cut** — inside 10 minutes (9:57 of sound once the silences go); the new demo film.
+6. ► ***Sýnthesi Alpha* CUT DOWN** — his order, 2026-10-24: *"I want to actually cut down, if possible, the piece, and then I'll re-record a new piano part. And then finish the paper."* Inside 10 minutes (9:57 of sound once the silences go — more if he cuts); then the new demo film.
+7. **The piano re-recorded** over the cut — record and mix (`jwy_audioEngineering`).
 8. **Posted anonymously.**
 9. **Paper B finished** — the sections still to write (the sampling and performing · the sequencing and processing · the video's
    part · an ending).
