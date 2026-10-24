@@ -253,7 +253,7 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
    - 4b. The print score's review copy: the cover without the name; the PDF's document properties cleared.
    - 4c. The film and the audio: their file metadata cleared, neutral file names.
 5. ► **Posted anonymously**
-   - 5a. A neutral account (his to make) on Vimeo; the film uploaded unlisted under a neutral title.
+   - 5a. ☑ The film on YOUTUBE (not Vimeo — his own Vimeo account would name him; a second channel under his Google account, `Approaching review`), unlisted: https://youtu.be/sq5tcHfPGyY — seen logged out, 2026-10-24.
    - 5b. The audio and the score PDF on the one anonymous media page (a free static host, a neutral name — not Google Drive, not
      his YouTube).
    - 5c. The artistic PDF: a description (its research: animated notation for live electronics · the performance models · the

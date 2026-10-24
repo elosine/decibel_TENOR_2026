@@ -18,3 +18,9 @@ MP3's encoder tag). The PDFs' properties: the title `approaching-d02 — print s
 
 **Where they go (step 5):** the film on Vimeo under a neutral account; the score PDF and the audio on OSF (osf.io), a private project
 shared by an ANONYMIZED view-only link; both links collected in the artistic PDF.
+
+## The links (step 5)
+
+- **The film — YouTube, unlisted, the channel `Approaching review`:** https://youtu.be/sq5tcHfPGyY (2026-10-24; seen logged out: the
+  channel name `Approaching review`, the title `Approaching`, 9:32. YouTube's `?si=` share tag left off — it ties a link to the sharer).
+- **The score and the audio — OSF:** to come.
