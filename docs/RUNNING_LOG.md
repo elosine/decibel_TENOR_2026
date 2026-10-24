@@ -9407,3 +9407,15 @@ fits the returns inside it. Read from `bank/drone_section.json` and the record: 
 seed 1, the rules above), held in the score as fixed bricks; in the piece its end was then cut by hand to 204 s. For the cut
 (running order step 2) the drones are re-built at the new length — the builder `--replace`, `drone_check.js`, then the
 insertion into the cut piece — rather than trimmed. A per-performance roll stays for the live-electronics discussion.
+
+## §492. The drones in performance: pre-recorded first, live as it becomes ready (2026-10-24, Opus 5.5)
+
+At his word the AI moved section 4's returns and his free multiphonics 29.27 s earlier in `piece-Draft02-CutA` (the first
+return 248.27 → 219.00; 26 returns, 47 notes; the mic openings and the recordings stayed; a backup
+`scores/piece-Draft02-CutA.before-move.json`) and flagged that each recording's first drone now starts 0.7 s after it ends —
+too soon for a live render. His answer (DEC-207, verbatim there) is the design: in performance the first drones come from the
+multiphonics recorded BEFORE the performance (DEC-205) — stretched live, or pre-rendered as buffers — and the live captures
+join as they become ready, mixed with them. So the score may put the electronics right after the first openings; what plays
+there is the pre-recorded material. In the demo take the engine has no pre-recorded set: what it plays at those first drones
+is to be seen at the take (the record says a processed variant asked for too early plays its earlier render, and a shaped one
+with no render plays nothing).

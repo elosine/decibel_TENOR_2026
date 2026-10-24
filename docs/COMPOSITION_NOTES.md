@@ -1752,3 +1752,13 @@ timings at every playback of this score — while the SOUND is re-recorded at ev
 roll: after insertion their end was cut by hand (270 s → 204 s) and the last drones given long fades by `drone_fade.js`. A
 roll at each performance is not built (with the strikes' "a new roll every performance", for the live-electronics
 discussion). FOR THE CUT: the drones' new length is a number in the file and the builder re-rolls to fit it — not a hand cut.
+
+### DEC-207 · The drones in performance: pre-recorded first, live as it becomes ready · 2026-10-24
+
+*(His words, verbatim:)* *"So that was what I was talking about with my note. When we'd actually do the live electronics, the first samples will be from the samples they collected earlier. So that's why I'm adding multiphonic sample gathering during the pre-performance collection or, you know, preparation. So the first, so this way I can move up the electronics to be right after the first mic openings. So then the live electronics could use the pre-recorded samples. We'll have to figure that out, the timing, but they can use the pre-recorded samples to generate the initial time stretches or even have them pre-generated, pre-recorded as sound buffers and then use the live inputs later on when they're ready or as they become ready. And then that way we have, I have a flexibility of when I can insert the pre-recorded playbacks. What I mean is the, I mean, sorry, the live performance capture. granulated, live performance capture granulated, granulated live portions can be mixed in with the sample ones. So then there's more flexibility there."*
+
+*(The AI's reading, not his words:)* the reason for DEC-205's multiphonics: in performance the FIRST drones come from the
+multiphonics each player recorded beforehand — time-stretched from them, or even pre-rendered and loaded as buffers — so the
+electronics can enter right after the first mic openings (his move of 29 s in `piece-Draft02-CutA`). The live captures,
+granulated, join as each becomes ready, mixed with the pre-recorded ones; that gives him freedom in where the live-captured
+playbacks enter. The timing between the two is for the live-electronics discussion.

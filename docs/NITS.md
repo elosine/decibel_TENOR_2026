@@ -251,6 +251,9 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
   the scattered strikes) and a few MULTIPHONICS; SuperCollider crops and keeps them; the performance uses them ("server-based
   negotiation", later). **For section 4, the multiphonics: pre-recorded ones let the drones' playback start SOONER in the
   piece.** Extends PERFORMANCE_NOTES row 12. Verbatim: COMPOSITION_NOTES DEC-205.
+  **And DEC-207 (the same day): in performance the first drones are made from those PRE-RECORDED multiphonics — stretched
+  from them, or pre-rendered as buffers — so they can enter right after the first mic openings; the live captures,
+  granulated, are mixed in as each becomes ready.** The timing between the two: to work out here.
 
 ## The performance instructions' page (2026-10-11, RUNNING_LOG §433)
 
