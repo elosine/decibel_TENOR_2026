@@ -210,6 +210,9 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
+> **MOVED 2026-10-24 → `paperSubmissions/papers/tenor-2027/SUBMISSION_PLAN.md` §0 — the running order and its marks live THERE now**
+> (his: "I do everything from paper submissions"). This copy is FROZEN as it stood at the move: part I (*Approaching*) done here.
+
 ### RUNNING ORDER (2026-10-24) — TENOR 2027: *Approaching* ready and posted · form 1 (*Sýnthesi Alpha* + paper B) submitted · then paper A and form 2 *(the call closes 14 Nov 2026)*
 
 **HOW THIS LIST WORKS:** one step at a time — ► marks the active step, ☑ marks done; update the marks the moment a step wraps, not
