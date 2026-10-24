@@ -16,7 +16,7 @@ step 4 (`docs/PROJECT_JOURNAL.md` §2); the approvals: `notation/video/approved/
 Their metadata is cleared (`ffmpeg -map_metadata -1 … -fflags +bitexact`): what is left is the container's own (handler names; the
 MP3's encoder tag). The PDFs' properties: the title `approaching-d02 — print score`, no author.
 
-**Where they go (step 5):** the film on Vimeo under a neutral account; the score PDF and the audio on OSF (osf.io), a private project
+**Where they go (step 5):** the film on YouTube, unlisted, under a neutral channel (his own Vimeo account would name him); the score PDF and the audio on OSF (osf.io), a private project
 shared by an ANONYMIZED view-only link; both links collected in the artistic PDF.
 
 ## The links (step 5)
