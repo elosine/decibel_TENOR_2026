@@ -246,6 +246,12 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
 
 - **2026-10-09 (RUNNING_LOG §346) — the strikes section, for the live-electronics discussion and the notation's turn:** **A NEW ROLL EVERY PERFORMANCE** — his, deferred (*"we can decide this later, but it might be a new roll every performance"*, DEC-120): today the form (the four stretches) and every answer's rhythm and timing are rolled by `tools/strike_windows.js` from a seed and WRITTEN on the bricks; a roll per performance means the engine draws them at its start from a seed of the day — the bricks then carry only the word and the count · **the bare last strikes carry no word** — a window holds `notated` · `open`, and the four strikes without electronics have no window: the notation will need their word from somewhere (his three letters past the end read O O O for strikes 51 … 53 — unconfirmed; `bank/strike_section.json` `sequence` holds them) · **the concert's ear on windows this close** (17.5): the simulation tells each window its own notes; the pooled microphones will hear a ringing ensemble 230 ms before the next strike — the attack detector is the open build, and a window's `graceMs` is the number it will lean on · **late timings stack in a cascade** (much later · in a later window, twice or three times: an answer may begin 25 s after its strike) — his catalogue as rolled; the lever is two lists, `bank/strike_section.json` `roll`.
 
+- **2026-10-24 (DEC-205, RUNNING_LOG §490) — PERFORMANCE-READY, before the parts go out: THE PRE-PERFORMANCE RECORDING APP.** His
+  note: each player, before the performance, records into an animated app of MIC OPENINGS only — the short attacks (section 1,
+  the scattered strikes) and a few MULTIPHONICS; SuperCollider crops and keeps them; the performance uses them ("server-based
+  negotiation", later). **For section 4, the multiphonics: pre-recorded ones let the drones' playback start SOONER in the
+  piece.** Extends PERFORMANCE_NOTES row 12. Verbatim: COMPOSITION_NOTES DEC-205.
+
 ## The performance instructions' page (2026-10-11, RUNNING_LOG §433)
 
 - ☑ DONE 2026-10-11 (PLAN 2.16 step 4, RUNNING_LOG §479: the exporter reads the block by class; the strip leads with the document's name). *As noted:* **The print score's instruction pages do not know this page's title block.** `tools/export_print.js` (its `instructionPages`, ~line 467)

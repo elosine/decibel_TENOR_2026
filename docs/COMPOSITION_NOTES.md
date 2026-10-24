@@ -1727,3 +1727,14 @@ fast. The look-ahead and the full rendering stand (DEC-21's talk). Lengths for o
 ### The paper's title, tentative · 2026-10-11
 
 *(His words, verbatim:)* *"Notation, Performance and Sonification Practices in the Composition Approaching and in Improvisation with Live Electronics -tentative title for paper"* — and *"also pls document the research and references you surfaced recently with james saunders et al"* (→ `docs/PAPER_REFERENCES.md`).
+
+### DEC-205 · The pre-performance recording app — with multiphonics · 2026-10-24
+
+*(His words, verbatim:)* *"And then, I don't know if we already have some notes, Will, before the final like parts submission time, we'll need to shore up all the live electronics, etc., and get this piece performance ready. And so I don't know if we already have a section for that, but I want to include a section for the multiphonics, or just a note for the multiphonics section. Let's also pre-record some multiphonics. So I actually have to develop a little app that each player will, you know, sit down with at some point before the performance, at any time really, and record a bunch of samples, those, in particular, those impulses, those attacks, short attacks for the beginning and for the scattered strikes part. But also let's add to that multiphonics. So they'll capture a few of their multiphonics. So basically we'll have like an animated app, kind of like the score, but just with mic openings. And then they'll play into them. There'll be a certain duration. And then Super Collider will clip those and keep those as samples and be able to add those to the actual performance piece somehow. So probably some server-based negotiation. Anyways, we'll work all that out later. But I also want to add that to pre-record some multiphonics so we can start the multiphonics playback sooner in the piece."*
+
+*(The AI's reading, not his words:)* before the performance — at any time — each player sits with a small ANIMATED APP, like the
+score but only MIC OPENINGS, and plays into each for its length: the short attacks (the impulses of section 1 and of the
+scattered strikes) AND a few MULTIPHONICS. SuperCollider crops and keeps them as samples, which the performance then uses —
+"server-based negotiation", to be worked out. The point for the multiphonics: with some recorded beforehand, the drones'
+playback (section 4) can begin SOONER in the piece than its own live recordings allow. It extends PERFORMANCE_NOTES row 12 (the
+recording session, DEC-37). Not now: before the performance, after the TENOR submissions.

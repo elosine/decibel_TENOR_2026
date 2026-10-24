@@ -9388,3 +9388,14 @@ piece's container 2 begins in its own repo; the eight LATER items go to `composi
 This start's 10.0 never ran (its register held ~25 "for v2" lines since 2026-10-04). The Switch~ piece's start ran BY those lines
 (`switch_2026` RUNNING_LOG §5 … §24) and its 10.0 wrote both registers into the protocol as v2 (`composition-system` `2185de3`;
 `switch_2026` RUNNING_LOG §25). A line at the top of `docs/PROTOCOL_DEVIATIONS.md` says so. Nothing else here moved.
+
+## §490. The pre-performance recording app — with multiphonics (2026-10-24, Opus 5.5, a note at his word)
+
+Mid-way through setting up the TENOR running order, he named the work that makes the piece PERFORMANCE-READY before the parts
+go out, and asked for a note — verbatim in COMPOSITION_NOTES DEC-205. What it adds to what was on file (PERFORMANCE_NOTES row
+12, the recording session, DEC-37 — "I'll make a thing for them to do at some point"): the "thing" is now an ANIMATED APP of mic
+openings only, which each player plays into before the performance, at any time; the short attacks AND a few multiphonics;
+SuperCollider crops and keeps them; how the performance takes them up is "server-based negotiation", for later. The
+compositional reason for the multiphonics: section 4's drones can only play back what has been recorded in the piece itself,
+so they start late; pre-recorded multiphonics let them start SOONER. Filed in NITS (the live-electronics discussion). Not in
+the TENOR running order — it comes after the submissions, before a performance.
