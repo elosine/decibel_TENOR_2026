@@ -222,6 +222,9 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
 1. ► **The cut** — under 10 minutes from 13: which sections and stretches go (his). Done when the cut is written down.
 2. **The cut made; the piece reorganized** — a new piece file from `piece-Draft01d`; the sections moved or shortened; the main
    notation score re-cut; the instructions page where a section changes.
+   *Working (2026-10-24): his files `piece-Draft02-CutA` → `-CutB` → `-CutC` (backups beside them and in `scores/backups/`); section 4
+   cut at 323 s, its electronics ending together (DEC-208); everything after moved to start at 330 s. The beating pairs are edited
+   one by one with `node tools/beat_edit.js --score <name> --at <s> [--lane …] --end <s> | --move <±s> | --delete` — nothing else moves.*
 3. **The new media** — a new take (the audio) → the film → the print score, each under a new name.
 4. **The anonymous versions** — the film, the audio, the print score and the instructions without his name; the PDFs' document
    properties cleared.
