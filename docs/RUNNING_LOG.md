@@ -9430,3 +9430,33 @@ brick from it only after F5 — he saw three drones "short" and asked for fills 
 electronics end at 323 — the percussion's and cello's last drones lengthened (`df33` · `df25`), one fill in the cello's gap
 (`df10g`, 266.26 … 287.72), audition `piece-drones-fill`. Backups beside the files: `.before-move` · `-move2` · `-move3` ·
 `.before-cut` · `.before-fill`. The original gap from the multiphonics to the audible beats was 8.85 s (414.46 → 423.31).
+
+## §494. The cut of the audible beats, CutC → CutG (2026-10-24, Opus 5.5)
+
+Running order step 1 (the cut under 10 minutes), in his files `piece-Draft02-CutC` … `-CutG` (his, untracked), each step a tool run
+with a backup beside the file or in `scores/backups/`. The beating pairs are edited by `tools/beat_edit.js` (one pair's end cut,
+moved or taken out; `--scale` a stretch pulled in) and whole stretches moved by `tools/shift_after.js`.
+
+- **CutC → CutD:** the beats moved to 330 s; then his *"let's do 35% … across the board"* (`beat_edit.js --scale 0.65`); the gaps
+  between sections set to 6 · 7 · 5 s; the beats ended by 475 s (the crotales' last two pairs moved up to a 2 s gap and shortened by
+  one percentage; the other parts' last gaps closed to 2 s, then cut at 475 if still over).
+- **CutF:** the 475 ending applied again (it had gone into CutD while he worked on in CutE); the multiphonics → beats gap shortened
+  (his "320"); the trills → multiphonics gap RESTORED to the original, 12.67 s (read from `piece-Draft01d`: 198.06 → 210.73). The
+  beats then ran 5:26.7 → 7:59.2 (152.5 s), the piece to 9:46.0.
+- **CutG, his three steps:** (1) *"everything 415 and on moves up"* — the crotales' C#7 brick from 415.59 to 414, everything after it
+  −1.59 s (the shift tool refused: its guard is global and the viola's pair runs to 414.81 on another lane — the move done by a
+  script with the same record handling); (2) *"shorten all the gaps over 4 seconds … let's do 25%"* — per part, a gap over 4 s ×0.75,
+  under 4 s kept, each part's later pairs moved up by what its gaps lost (the last pair earlier by bfl 5.2 · bcl 4.9 · mal 3.9 · va 6.8
+  · vc 8.1 s; the C#7 then at 411.2); the strikes kept 5 s after the beats' last note; (3) the first chord (take `opening`) shortened so
+  the bass flute's F5 ends at 360 — he asked *"what's a logical way to do this?"*, wanting to keep the overlapping with what follows,
+  the parts' vertical relation, and the proportion by which a part outlasts another (*"the D4 in the bass clarinet is X percentage
+  longer than the F5"*). **THE ACCORDION, proposed and taken (his "go, crotales a, cello b"):** a time map — the section's first note
+  (326.67) fixed, everything before the next chord's first entry (380.67) squeezed by one factor toward it (×0.8355, set by the F5's
+  end), everything from that entry on moved up as one block (−8.885 s); a pair's new start and end are the map of its old ones (its
+  end cut, the shape kept to the cut). So every distance in the first chord shrinks by the same 16 % (the bass clarinet outlasts the
+  flute by 8.4 s, was 10.1), what follows keeps its overlaps exactly, and the tails that ring into the next chord (va F#5 · vc D#2 ·
+  bfl E5) end as far into it as before. Rejected: cutting only each part's last pair of the chord (the bass flute's E5 would then fall
+  1.6 s after the F5, or leave a 10 s hole) — the one map keeps every relation by construction. His two choices: the crotales
+  squeezed like the rest (a — the opening chord keeps them; b would have taken out the F#7 and moved the F7 back whole); the cello's
+  first two pairs kept, only its D#2 shortened (b), ending where the map puts it (382.72, 24.4 s, was 33.3). The beats now 326.67 →
+  464.80 (138.1 s), the strikes 469.80, **the piece ends 571.63 (9:31.6)**.
