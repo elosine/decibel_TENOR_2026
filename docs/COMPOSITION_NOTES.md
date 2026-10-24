@@ -1762,3 +1762,13 @@ multiphonics each player recorded beforehand — time-stretched from them, or ev
 electronics can enter right after the first mic openings (his move of 29 s in `piece-Draft02-CutA`). The live captures,
 granulated, join as each becomes ready, mixed with the pre-recorded ones; that gives him freedom in where the live-captured
 playbacks enter. The timing between the two is for the live-electronics discussion.
+
+### DEC-208 · The multiphonics section's electronics end together · 2026-10-24
+
+*(His words, verbatim:)* *"And you put one more purple brick electronics somewhere in the gap in the cello, the gap starting at 263. And then can you re-render all the electronics? Oh, actually, can you put one more in the viola at the end there? Actually, I'll tell you what, let's have all the electronics end at 323. So at the end, if you need to insert an extra brick or extend the previous brick. So the bigger gaps, I guess, like bass flute, viola, and yeah, that's it. Let's put an extra brick in there, electronics, and then extend it to 323. So all five parts will end at 323, the electronics will end there. And then extend the other ones. And then add a note to that live electronics performance build. Of that decision, we're just gonna have the end electronics all end together at 323. And then could you re-render all the electronics, please, so I can listen to it?"*
+
+*(The AI's reading, not his words:)* in the cut (`piece-Draft02-CutB`) section 4 ends at 323 s, and EVERY PART'S ELECTRONICS END
+THERE TOGETHER — no part's drones trail off early. Done: the bass flute, bass clarinet and viola drones already ended at 323
+(shortened by the cut; his page drew them short because it reads drone lengths only at F5, hence his "bigger gaps"); the
+percussion's and the cello's last drones lengthened to 323; one more cello drone in its gap after 263 s. FOR THE LIVE BUILD:
+the section's end is a common cut-off for all five parts' electronics — the per-performance roll must keep it.

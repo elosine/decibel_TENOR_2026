@@ -254,6 +254,9 @@ A drone made with `icy` is not steady even on a steady source: 3 … 8 dB of noi
   **And DEC-207 (the same day): in performance the first drones are made from those PRE-RECORDED multiphonics — stretched
   from them, or pre-rendered as buffers — so they can enter right after the first mic openings; the live captures,
   granulated, are mixed in as each becomes ready.** The timing between the two: to work out here.
+- **2026-10-24 (DEC-208) — THE MULTIPHONICS SECTION ENDS TOGETHER: all five parts' electronics stop at the section's end**
+  (323 s in `piece-Draft02-CutB`) — whatever a roll gives, its last drones are lengthened, cut or filled to end there. The live
+  build keeps the common end. Verbatim: COMPOSITION_NOTES DEC-208.
 
 ## The performance instructions' page (2026-10-11, RUNNING_LOG §433)
 

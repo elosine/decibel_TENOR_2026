@@ -9419,3 +9419,14 @@ join as they become ready, mixed with them. So the score may put the electronics
 there is the pre-recorded material. In the demo take the engine has no pre-recorded set: what it plays at those first drones
 is to be seen at the take (the record says a processed variant asked for too early plays its earlier render, and a shaped one
 with no render plays nothing).
+
+## §493. The cut of section 4 at 323 s, and its electronics ending together (2026-10-24, Opus 5.5)
+
+Running order step 1 (the cut), in his files `piece-Draft02-CutA` → `-CutB`: the returns and his free multiphonics moved
+29.27 s earlier (§492); each player's later recordings 12 s earlier, the third ones a rolled 6 … 11 s after the second (seed
+1); then the section CUT AT 323 s — three drones shortened by copies of their presets (`dc15` · `dc20` · `dc29`, audition
+`piece-drones-cut`), 5 returns and 13 free notes after it deleted. A drone's length is its preset's `durMs`; the page draws a
+brick from it only after F5 — he saw three drones "short" and asked for fills that were not needed. DEC-208: all five parts'
+electronics end at 323 — the percussion's and cello's last drones lengthened (`df33` · `df25`), one fill in the cello's gap
+(`df10g`, 266.26 … 287.72), audition `piece-drones-fill`. Backups beside the files: `.before-move` · `-move2` · `-move3` ·
+`.before-cut` · `.before-fill`. The original gap from the multiphonics to the audible beats was 8.85 s (414.46 → 423.31).

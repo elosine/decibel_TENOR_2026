@@ -9482,6 +9482,78 @@
    },
    "deal": false,
    "audition": "piece-drones-cut"
+  },
+  {
+   "key": "df33",
+   "name": "D1 of perc-drone-3 · 3-stage linear · 1/51 · ov 29 · rising 0.05 → 1.55 s · 10.17 s, in 4.56 out 1.58 · TO 323 (all parts end together)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 4560,
+   "durMs": 12210,
+   "relMs": 1580,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0196,
+    "icFromMs": "region@0.68",
+    "icWin": "0.05@0,1.55@10171",
+    "icOverlaps": 29,
+    "icEnv": 1
+   },
+   "deal": false,
+   "audition": "piece-drones-fill"
+  },
+  {
+   "key": "df25",
+   "name": "D2 of vc-drone-3 from vc-drone-2 · expodec · 1/79 · ov 19 · rising 0.31 → 1.41 s · 12.04 s, in 1.61 out 1.65 · TO 323 (all parts end together)",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1610,
+   "durMs": 14900,
+   "relMs": 1650,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0127,
+    "icFromMs": "region@0.35",
+    "icWin": "0.31@0,1.41@12040",
+    "icOverlaps": 19,
+    "icEnv": 4
+   },
+   "deal": false,
+   "audition": "piece-drones-fill"
+  },
+  {
+   "key": "df10g",
+   "name": "D1 of vc-drone-2 · 3-stage linear · 1/84 · ov 22 · rough 0.3 s · 12.16 s, in 1.53 out 1.38 · FILL in the cello's gap",
+   "effect": "icy",
+   "class": "time",
+   "end": "shape",
+   "atkMs": 1530,
+   "durMs": 21460,
+   "relMs": 1380,
+   "curve": 0,
+   "args": {
+    "icMix": 1,
+    "icRand": 0.2,
+    "icPitch": 0,
+    "icLoop": 1,
+    "icSpeed": 0.0119,
+    "icFromMs": "region@0.01",
+    "icWin": 0.3,
+    "icOverlaps": 22,
+    "icEnv": 1
+   },
+   "deal": false,
+   "audition": "piece-drones-fill"
   }
  ],
  "generated": {
@@ -9652,6 +9724,12 @@
    "what": "drones shortened where a cut in the piece crosses them — copies of the drone section's presets",
    "command": "cut of piece-Draft02-CutB at 323 s (2026-10-24)",
    "when": "2026-10-24T12:50"
+  },
+  "piece-drones-fill": {
+   "n": 3,
+   "what": "drones lengthened so every part's electronics end together at 323 s, and a fill in the cello's gap — copies of the drone section's presets",
+   "command": "piece-Draft02-CutB, 2026-10-24 (DEC-208)",
+   "when": "2026-10-24T12:55"
   }
  }
 }
