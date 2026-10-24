@@ -210,6 +210,39 @@ next, where we are; reorganizations only on his approval.
 
 ### NEXT UP
 
+### RUNNING ORDER (2026-10-24) — TENOR 2027: *Approaching* ready and posted · form 1 (*Sýnthesi Alpha* + paper B) submitted · then paper A and form 2 *(the call closes 14 Nov 2026)*
+
+**HOW THIS LIST WORKS:** one step at a time — ► marks the active step, ☑ marks done; update the marks the moment a step wraps, not
+later. At every wrap the AI states: what finished · what's next · where we are in the order. The AI proposes reorganizations when
+useful; changes land only on his approval. A post-clear model reads this block and announces the position before doing anything.
+**His words (2026-10-24):** "hang on to the things we need to do, and I'll just focus on things one at a time in order." The call's
+facts, the flags with recommendations and where things live: `paperSubmissions/papers/tenor-2027/SUBMISSION_PLAN.md`.
+
+**I · *Approaching* — ready and posted** *(submitted later, with paper A)*
+1. ► **The cut** — under 10 minutes from 13: which sections and stretches go (his). Done when the cut is written down.
+2. **The cut made; the piece reorganized** — a new piece file from `piece-Draft01d`; the sections moved or shortened; the main
+   notation score re-cut; the instructions page where a section changes.
+3. **The new media** — a new take (the audio) → the film → the print score, each under a new name.
+4. **The anonymous versions** — the film, the audio, the print score and the instructions without his name; the PDFs' document
+   properties cleared.
+5. **Posted anonymously** — a neutral account (Vimeo unlisted, one media page); the links checked; the artistic PDF (description +
+   links) ready and held.
+
+**II · *Sýnthesi Alpha* + paper B — form 1, submitted**
+6. ***Sýnthesi Alpha* re-recorded with piano** — record and mix (`jwy_audioEngineering`).
+7. **Its media cut** — inside 10 minutes (9:57 of sound once the silences go); the new demo film.
+8. **Posted anonymously.**
+9. **Paper B finished** — the sections still to write (the sampling and performing · the sequencing and processing · the video's
+   part · an ending).
+10. **Paper B in the template** — Word or LaTeX, 4–12 pages; figures, captions, references (`CITATIONS_B.md`); anonymized; the PDF's
+    properties cleared.
+11. **Paper B's media posted anonymously; the links PDF.**
+12. **Form 1 submitted** — Airtable, "Paper + artistic presentation".
+
+**III · Paper A — form 2**
+13. **Paper A** — his draft, with the performance score system.
+14. **Form 2 submitted** — paper A + *Approaching*.
+
 **► CHECKPOINT #11 OF SESSION 3 IS THE COLD-START BLOCK** *(2026-10-14, Opus 5.5 — mid-session checkpoint; RUNNING_LOG §486 · §487; written for a session that has never seen this chat. Everything below it in NEXT UP, checkpoint #10 included, is the trail.)*
 
 **In one breath:** NOTHING OF THE PIECE MOVED. The chat stayed in this repo, but its whole work since checkpoint #10 is **THE PAPER, in the private repo `C:\Users\jwloy\GitHub\paperSubmissions`** — he is writing **paper B** (*the live electronics of Sýnthesi-Alpha*, TENOR 2027) **by dictation, on its page** http://localhost:5600/papers/tenor-2027/paper-b.html (`papers/tenor-2027/paper-b.html`, served by his paper server on port 5600, `start_paper_server.bat`). Paper A (this piece's) waits.
