@@ -239,7 +239,7 @@ facts, the flags with recommendations and where things live: `paperSubmissions/p
      ► his eye on the score.
    - 2d. ☑ The instructions page read through: nothing the cut changed (no times in its text; its images show the same signs).
 3. **The new media — each under a new name**
-   - 3a. ☑ TAKE 01 made 2026-10-24 (§496) → `notation/audio/piece-Draft02-Final.wav`; ► his ear with the score. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
+   - 3a. ☑ TAKE 01 made 2026-10-24 (§496) → `notation/audio/piece-Draft02-Final.wav`; the 13 quiet or silent notes LEFT as in Draft 01 (his "a"); ► his ear with the score. THE TAKE of the Final score: his engine and Reaper up · one full pass first (the electronics rendered for this state) ·
      `take.js start` → his ▶ from 0 → `stop` → the take read (every note sounded) → `mix` → `notation/audio/piece-Draft02-Final.wav`
      → his ear.
    - 3b. THE FILM: the wide shot (no close-ups, his Draft 01 choice) over the new score with the take → his watch-through →
